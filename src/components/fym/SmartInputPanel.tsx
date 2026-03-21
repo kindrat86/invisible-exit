@@ -31,6 +31,24 @@ const TARGET_PRESETS = [
   { label: "$10,000", value: 10000 },
 ];
 
+const EXPENSES_PRESETS = [
+  { label: "$3,000", value: 3000 },
+  { label: "$5,000", value: 5000 },
+  { label: "$8,000", value: 8000 },
+];
+
+const SIDE_REVENUE_PRESETS = [
+  { label: "$0", value: 0 },
+  { label: "$500", value: 500 },
+  { label: "$2,000", value: 2000 },
+];
+
+const SALARY_PRESETS = [
+  { label: "$60k", value: 60000 },
+  { label: "$100k", value: 100000 },
+  { label: "$150k", value: 150000 },
+];
+
 function HelpTip({ text }: { text: string }) {
   return (
     <TooltipProvider delayDuration={200}>
@@ -142,6 +160,16 @@ export default function SmartInputPanel({
               onUpdate("monthlyExpenses", parseFloat(e.target.value) || 0)
             }
           />
+          <div className="flex gap-1.5 flex-wrap">
+            {EXPENSES_PRESETS.map((p) => (
+              <PresetPill
+                key={p.value}
+                label={p.label}
+                active={inputs.monthlyExpenses === p.value}
+                onClick={() => onUpdate("monthlyExpenses", p.value)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Monthly side revenue */}
@@ -163,6 +191,16 @@ export default function SmartInputPanel({
               onUpdate("monthlySideRevenue", parseFloat(e.target.value) || 0)
             }
           />
+          <div className="flex gap-1.5 flex-wrap">
+            {SIDE_REVENUE_PRESETS.map((p) => (
+              <PresetPill
+                key={p.value}
+                label={p.label}
+                active={inputs.monthlySideRevenue === p.value}
+                onClick={() => onUpdate("monthlySideRevenue", p.value)}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -226,6 +264,16 @@ export default function SmartInputPanel({
               onUpdate("corporateSalary", parseFloat(e.target.value) || 0)
             }
           />
+          <div className="flex gap-1.5 flex-wrap">
+            {SALARY_PRESETS.map((p) => (
+              <PresetPill
+                key={p.value}
+                label={p.label}
+                active={inputs.corporateSalary === p.value}
+                onClick={() => onUpdate("corporateSalary", p.value)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Target monthly revenue */}
