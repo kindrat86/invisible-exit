@@ -67,6 +67,16 @@ const FYM = () => {
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
             The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
           </p>
+          <div className="max-w-3xl mx-auto mb-10">
+            <video
+              controls
+              preload="metadata"
+              className="w-full rounded-xl shadow-2xl shadow-black/30 border border-white/10"
+            >
+              <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/FYM.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div className="mb-8">
             <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
             <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
