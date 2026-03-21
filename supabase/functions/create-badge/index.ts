@@ -132,7 +132,7 @@ serve(async (req) => {
     );
   } catch (error) {
     console.error("create-badge error:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ error: "An unexpected error occurred. Please try again." }), {
       status: 400,
       headers: { ...getCorsHeaders(req), "Content-Type": "application/json" },
     });
