@@ -63,15 +63,14 @@ const OTOFounding = () => {
       {/* Section 2b: OTO Video */}
       <section className="bg-gray-50 pb-16 px-6">
         <div className="mx-auto max-w-2xl">
-          <div className="relative w-full overflow-hidden rounded-xl shadow-lg" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/PLACEHOLDER"
-              title="Why 46 Managing Directors Already Locked In"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          <video
+            controls
+            preload="metadata"
+            className="w-full rounded-xl shadow-lg"
+          >
+            <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/OTO_Founding.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <p className="text-center text-gray-500 text-sm mt-4">
             Watch: Why 46 Managing Directors Already Locked In
           </p>
