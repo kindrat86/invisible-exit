@@ -9,6 +9,11 @@ export interface FymEntry {
   fym_freedom_number: number;
   created_at: string;
   deleted_at: string | null;
+  monthly_growth_rate: number | null;
+  corporate_salary: number | null;
+  target_monthly_revenue: number | null;
+  freedom_level: number | null;
+  combined_readiness_score: number | null;
 }
 
 export interface CalculatorInputs {
