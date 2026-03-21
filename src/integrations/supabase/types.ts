@@ -54,6 +54,11 @@ export type Database = {
           fym_monthly: number
           fym_total: number
           fym_freedom_number: number
+          monthly_growth_rate: number
+          corporate_salary: number
+          target_monthly_revenue: number
+          freedom_level: number
+          combined_readiness_score: number
           created_at: string
           deleted_at: string | null
         }
@@ -66,6 +71,11 @@ export type Database = {
           fym_monthly: number
           fym_total: number
           fym_freedom_number: number
+          monthly_growth_rate?: number
+          corporate_salary?: number
+          target_monthly_revenue?: number
+          freedom_level?: number
+          combined_readiness_score?: number
           created_at?: string
           deleted_at?: string | null
         }
@@ -78,12 +88,114 @@ export type Database = {
           fym_monthly?: number
           fym_total?: number
           fym_freedom_number?: number
+          monthly_growth_rate?: number
+          corporate_salary?: number
+          target_monthly_revenue?: number
+          freedom_level?: number
+          combined_readiness_score?: number
           created_at?: string
           deleted_at?: string | null
         }
         Relationships: [
           {
             foreignKeyName: "fym_entries_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      fym_scenarios: {
+        Row: {
+          id: string
+          user_id: string
+          created_at: string
+          updated_at: string
+          name: string
+          starting_revenue: number
+          monthly_growth_rate: number
+          monthly_expenses: number
+          is_active: boolean
+          sort_order: number
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          created_at?: string
+          updated_at?: string
+          name?: string
+          starting_revenue?: number
+          monthly_growth_rate?: number
+          monthly_expenses?: number
+          is_active?: boolean
+          sort_order?: number
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          created_at?: string
+          updated_at?: string
+          name?: string
+          starting_revenue?: number
+          monthly_growth_rate?: number
+          monthly_expenses?: number
+          is_active?: boolean
+          sort_order?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fym_scenarios_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      invisibility_scores: {
+        Row: {
+          id: string
+          user_id: string
+          total_score: number
+          entity_score: number
+          digital_score: number
+          compliance_score: number
+          operational_score: number
+          financial_score: number
+          answers: Record<string, boolean>
+          fixes_count: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          total_score: number
+          entity_score?: number
+          digital_score?: number
+          compliance_score?: number
+          operational_score?: number
+          financial_score?: number
+          answers?: Record<string, boolean>
+          fixes_count?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          total_score?: number
+          entity_score?: number
+          digital_score?: number
+          compliance_score?: number
+          operational_score?: number
+          financial_score?: number
+          answers?: Record<string, boolean>
+          fixes_count?: number
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "invisibility_scores_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"

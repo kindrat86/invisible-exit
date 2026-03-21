@@ -48,7 +48,7 @@ function DashboardContent() {
   const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
   const [showOnboarding, setShowOnboarding] = useState(false);
-  const [loadedEntry, setLoadedEntry] = useState<CalculatorInputs | null>(null);
+
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
   const { data: latestEntry, refetch: refetchLatest } = useLatestFymEntry(userId);
@@ -98,8 +98,7 @@ function DashboardContent() {
   }, [refetchEntries, refetchLatest]);
 
   const handleLoadEntry = useCallback(
-    (entry: CalculatorInputs) => {
-      setLoadedEntry(entry);
+    (_entry: CalculatorInputs) => {
       setActiveTab("calculator");
     },
     [setActiveTab]
@@ -198,7 +197,10 @@ function DashboardContent() {
                 <FYMCalculator
                   userId={userId}
                   onSaved={handleSaved}
-                  initialValues={loadedEntry}
+                  entries={entries}
+                  latestEntry={latestEntry}
+                  latestInvisibility={latestInvisibility}
+                  onSwitchTab={setActiveTab}
                 />
               </TabsContent>
 

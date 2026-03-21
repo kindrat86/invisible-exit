@@ -16,13 +16,23 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Shield, X } from "lucide-react";
+import { Search, Shield, X, RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 import ideaData from "@/data/idea-directory.json";
 import type { IdeaEntry } from "@/types/fym";
 
-const ideas = ideaData as IdeaEntry[];
+const allIdeas = ideaData as IdeaEntry[];
 
-const INDUSTRIES = [...new Set(ideas.map((i) => i.industry))].sort();
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+const INDUSTRIES = [...new Set(allIdeas.map((i) => i.industry))].sort();
 const REVENUE_TIERS = [
   "$0-500/mo",
   "$500-2K/mo",
@@ -39,12 +49,25 @@ const TIME_INVESTMENTS = [
 const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"];
 
 export default function IdeaDirectory() {
+  const [ideas, setIdeas] = useState<IdeaEntry[]>(allIdeas);
   const [search, setSearch] = useState("");
   const [industry, setIndustry] = useState("all");
   const [revenueTier, setRevenueTier] = useState("all");
   const [timeInvestment, setTimeInvestment] = useState("all");
   const [difficulty, setDifficulty] = useState("all");
   const [selectedIdea, setSelectedIdea] = useState<IdeaEntry | null>(null);
+  const [regenerating, setRegenerating] = useState(false);
+
+  const handleRegenerate = () => {
+    setRegenerating(true);
+    setTimeout(() => {
+      setIdeas(shuffleArray(allIdeas));
+      setRegenerating(false);
+      toast.success(
+        "Fresh ideas loaded. Found something interesting? Save it to your pipeline."
+      );
+    }, 800);
+  };
 
   const hasFilters =
     search ||
@@ -173,9 +196,23 @@ export default function IdeaDirectory() {
           )}
         </div>
 
-        <p className="text-sm text-[#8A95A8]">
-          Showing {filtered.length} of {ideas.length} ideas
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-[#8A95A8]">
+            Showing {filtered.length} of {ideas.length} ideas
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleRegenerate}
+            disabled={regenerating}
+            className="border-gray-200 bg-white hover:bg-gray-50 rounded-lg px-4 py-2 text-sm font-medium text-gray-600 flex items-center gap-2"
+          >
+            <RefreshCw
+              className={`h-4 w-4 ${regenerating ? "animate-spin" : ""}`}
+            />
+            {regenerating ? "Generating..." : "Regenerate Ideas"}
+          </Button>
+        </div>
       </div>
 
       {/* Grid */}
