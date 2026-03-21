@@ -18,7 +18,10 @@ export default function DashboardNav({ email }: DashboardNavProps) {
   return (
     <nav className="bg-white border-b border-gray-200 px-4 sm:px-6 py-3">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <span className="text-[#0B1D3A] font-bold text-lg">FYM Dashboard</span>
+        <div className="flex flex-col leading-tight">
+          <span className="text-[#0B1D3A] font-bold text-lg">F**K YOU MONEY</span>
+          <span className="text-[10px] text-[#4A5568] tracking-wide">Powered by Invisible Exit</span>
+        </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-[#4A5568] hidden sm:inline">
             {email}
