@@ -68,7 +68,7 @@ const OTOFounding = () => {
             ))}
           </ul>
           <p className="text-gray-700 text-lg leading-[1.7] mt-8">
-            After we close the founding round, this goes to USD 97/month. Right now, you lock it in for life.
+            After we close the founding round, this goes to $97/mo. Right now, you lock it in for life.
           </p>
         </div>
       </section>
@@ -97,13 +97,13 @@ const OTOFounding = () => {
             </ul>
             <div className="border-t border-white/10 pt-6 text-center">
               <p className="text-white/70 text-lg mb-1">
-                Total Value: <span className="font-bold text-white text-2xl">$314/month</span>
+                Total Value: <span className="font-bold text-white text-2xl">$314/mo</span>
               </p>
               <p className="text-white/40 mb-1">
-                Normal Price After Founding: <span className="line-through">$97/month</span>
+                Normal Price After Founding: <span className="line-through">$97/mo</span>
               </p>
               <p className="text-3xl font-bold text-[#60A5FA] mb-2">
-                Your Founding Price: $19/month, locked for life
+                Your Founding Price: $19/mo, locked for life
               </p>
               <p className="text-white/50 text-sm">
                 80% savings. 54 of 100 founding spots remaining.
@@ -123,7 +123,7 @@ const OTOFounding = () => {
             to="/checkout/founding"
             className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors mb-6"
           >
-            Yes, Lock In My Founding Price at $19/month
+            Yes, Lock In My Founding Price at $19/mo
           </Link>
           <div>
             <Link

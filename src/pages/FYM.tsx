@@ -17,7 +17,7 @@ const FYM = () => {
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. USD 0.97/month."
+        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -26,7 +26,7 @@ const FYM = () => {
     if (ogDesc)
       ogDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. USD 0.97/month."
+        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
       );
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
@@ -46,20 +46,20 @@ const FYM = () => {
             $0.97 From a Stranger While I Slept on a Plane. That's When I Knew the Cage Had a Door.
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know USD 4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
+            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know $4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
           </p>
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
             The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
           </p>
           <div className="mb-8">
-            <span className="text-white text-4xl md:text-5xl font-bold">USD 0.97/month</span>
-            <span className="text-white/50 text-lg ml-3 line-through">USD 12/mo</span>
+            <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
+            <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
           </div>
           <Link
             to="/checkout/fym"
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
           >
-            Start Tracking for USD 0.97/month
+            Start Tracking for $0.97/mo
           </Link>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -100,7 +100,7 @@ const FYM = () => {
               That's when I built what I wish existed: a dashboard that shows your exact MRR across every platform, scores how invisible your operation is, and tells you exactly how many months until you can hand in your notice.
             </p>
             <p>
-              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/month works. The model scales. And nobody needs to know.
+              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/mo works. The model scales. And nobody needs to know.
             </p>
           </div>
           <p className="text-gray-500 text-sm mt-8 text-right">-- Adrian</p>
@@ -124,8 +124,8 @@ const FYM = () => {
                 body: "One wrong move and your employer finds out. You need a system that scores how invisible your operation actually is.",
               },
               {
-                title: "You want USD 4,000/month. But are you 3 months away or 3 years?",
-                body: "You know you want USD 2,500-4,000/month recurring. But you have no idea if you're on track or how many months away you are.",
+                title: "You want $4,000/mo. But are you 3 months away or 3 years?",
+                body: "You know you want $2,500-$4,000/mo recurring. But you have no idea if you're on track or how many months away you are.",
               },
             ].map((card) => (
               <div
@@ -197,7 +197,7 @@ const FYM = () => {
               {
                 title: "See the Exact Date You Can Hand In Your Resignation",
                 subtitle: "Exit Timeline Calculator",
-                body: "Set your target (USD 2,500-4,000/month). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                body: "Set your target ($2,500-$4,000/mo). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
               },
               {
                 title: "Never Run Out of Invisible Income Ideas",
@@ -241,7 +241,7 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            Everything You Get for USD 0.97/month
+            Everything You Get for $0.97/mo
           </h2>
           <div className="rounded-xl border border-gray-200 p-8">
             <ul className="space-y-4 mb-8">
@@ -262,22 +262,22 @@ const FYM = () => {
             </ul>
             <div className="border-t border-gray-200 pt-6 text-center">
               <p className="text-gray-500 text-lg mb-1">
-                Total Value: <span className="font-bold text-gray-900">$110/month</span>
+                Total Value: <span className="font-bold text-gray-900">$110/mo</span>
               </p>
               <p className="text-gray-400 mb-1">
-                Normal Price: <span className="line-through">USD 12/month</span>
+                Normal Price: <span className="line-through">$12/mo</span>
               </p>
               <p className="text-3xl font-bold text-[#60A5FA] mb-2">
-                Your Price: USD 0.97/month
+                Your Price: $0.97/mo
               </p>
               <p className="text-gray-400 text-sm mb-8">
-                Introductory pricing locks in for life. New members after launch pay $12/month.
+                Introductory pricing locks in for life. New members after launch pay $12/mo.
               </p>
               <Link
                 to="/checkout/fym"
                 className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
               >
-                Start for USD 0.97/month
+                Start for $0.97/mo
               </Link>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
@@ -317,7 +317,7 @@ const FYM = () => {
                 What if I don't have any revenue yet?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/month.
+                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/mo.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3">
@@ -347,7 +347,7 @@ const FYM = () => {
             Every Day You Don't Measure Is a Day You Fly Blind
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            USD 0.97/month. Cancel anytime. Your invisible income deserves a real dashboard.
+            $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
           </p>
           <Link
             to="/checkout/fym"

@@ -46,7 +46,7 @@ const Terms = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Subscriptions and Payments</h2>
           <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
             <li>Subscriptions are billed monthly on a recurring basis.</li>
-            <li>Prices are listed in USD and are subject to change with reasonable notice.</li>
+            <li>Prices are listed in $ and are subject to change with reasonable notice.</li>
             <li>Founding Member pricing is locked for the lifetime of the subscription for early adopters.</li>
             <li>All payments are processed through our third-party payment provider.</li>
           </ul>
