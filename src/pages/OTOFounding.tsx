@@ -151,7 +151,7 @@ const OTOFounding = () => {
           </Link>
           <div>
             <Link
-              to="/login"
+              to="/oto/second-tool"
               className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
             >
               No thanks, take me to my dashboard
