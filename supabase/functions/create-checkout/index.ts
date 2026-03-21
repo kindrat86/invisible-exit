@@ -29,15 +29,21 @@ serve(async (req) => {
 
     const { priceId } = await req.json();
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://invisibleexit.com";
-    const finalPriceId = priceId || Deno.env.get("STRIPE_FYM_PRICE_ID")!;
+
+    const isFounding = priceId === "founding";
+    const finalPriceId = isFounding
+      ? Deno.env.get("STRIPE_FOUNDING_PRICE_ID")!
+      : priceId || Deno.env.get("STRIPE_FYM_PRICE_ID")!;
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: finalPriceId, quantity: 1 }],
-      success_url: `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/fym`,
+      success_url: isFounding
+        ? `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`
+        : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: isFounding ? `${siteUrl}/oto/founding` : `${siteUrl}/fym`,
       allow_promotion_codes: false,
-      metadata: { product: "fym_dashboard" },
+      metadata: { product: isFounding ? "founding_member" : "fym_dashboard" },
     });
 
     return new Response(JSON.stringify({ url: session.url }), {
