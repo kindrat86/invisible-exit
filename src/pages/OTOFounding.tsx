@@ -2,11 +2,26 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Check, CheckCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    const { data, error } = await supabase.functions.invoke("create-checkout", {
+      body: { priceId: "founding" },
+    });
+    setCheckoutLoading(false);
+    if (error || !data?.url) {
+      toast.error("Could not start checkout. Please try again.");
+      return;
+    }
+    window.location.href = data.url;
+  };
 
   useEffect(() => {
     document.title = "One-Time Offer: Founding Member | Invisible Exit";
@@ -143,12 +158,13 @@ const OTOFounding = () => {
           <p className="text-gray-600 text-lg leading-relaxed mb-10">
             Same 30-day no-questions guarantee. If Founding Member isn't worth it, email 'refund' and get every cent back.
           </p>
-          <Link
-            to="/checkout/founding"
-            className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors mb-6"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50 mb-6"
           >
-            Yes, Lock In My Founding Price at $19/mo
-          </Link>
+            {checkoutLoading ? "Loading..." : "Yes, Lock In My Founding Price at $19/mo"}
+          </button>
           <div>
             <Link
               to="/login"
