@@ -232,7 +232,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_badge_by_share_id: {
+        Args: { p_share_id: string }
+        Returns: {
+          badge_value: number
+        }[]
+      }
+      is_subscription_active: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
