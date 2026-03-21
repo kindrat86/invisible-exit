@@ -15,7 +15,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <span className="text-white/30 text-xs">Operated by Sipiteno LTD</span>
+        <span className="text-white/30 text-xs">&copy; {new Date().getFullYear()} Invisible Exit</span>
       </div>
     </footer>
   );

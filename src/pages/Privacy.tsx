@@ -22,7 +22,7 @@ const Privacy = () => {
         <div className="mx-auto max-w-3xl prose prose-gray">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
           <p className="text-gray-600 mb-6">
-            Sipiteno LTD ("we", "us", or "our") operates the Invisible Exit platform
+            Invisible Exit ("we", "us", or "our") operates the platform at
             (https://invisibleexit.com). This Privacy Policy explains how we collect, use,
             and protect your personal information when you use our services.
           </p>

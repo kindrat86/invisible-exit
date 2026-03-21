@@ -22,7 +22,7 @@ const Terms = () => {
         <div className="mx-auto max-w-3xl prose prose-gray">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Agreement to Terms</h2>
           <p className="text-gray-600 mb-6">
-            By accessing or using the Invisible Exit platform operated by Sipiteno LTD
+            By accessing or using the Invisible Exit platform
             ("we", "us", or "our"), you agree to be bound by these Terms of Service. If
             you do not agree to these terms, do not use our services.
           </p>
@@ -73,7 +73,7 @@ const Terms = () => {
           <p className="text-gray-600 mb-6">
             All content, features, and functionality of the Invisible Exit platform —
             including text, graphics, logos, and software — are the exclusive property of
-            Sipiteno LTD and are protected by intellectual property laws. You may not
+            Invisible Exit and are protected by intellectual property laws. You may not
             reproduce, distribute, or create derivative works without our prior written
             consent.
           </p>
@@ -88,7 +88,7 @@ const Terms = () => {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Limitation of Liability</h2>
           <p className="text-gray-600 mb-6">
-            To the maximum extent permitted by law, Sipiteno LTD shall not be liable for
+            To the maximum extent permitted by law, Invisible Exit shall not be liable for
             any indirect, incidental, special, consequential, or punitive damages
             arising out of or related to your use of the service, regardless of the
             theory of liability.
@@ -105,7 +105,7 @@ const Terms = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Governing Law</h2>
           <p className="text-gray-600 mb-6">
             These terms shall be governed by and construed in accordance with the laws
-            of the jurisdiction in which Sipiteno LTD is registered, without regard to
+            of the jurisdiction in which Invisible Exit is registered, without regard to
             conflict of law principles.
           </p>
 
