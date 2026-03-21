@@ -49,13 +49,31 @@ const OTOFounding = () => {
       </section>
 
       {/* Section 2: OTO Hook */}
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-50 pt-16 pb-8 px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Before You Go to Your Dashboard...
           </h2>
           <p className="text-gray-600 text-lg">
             I have a one-time offer that's only available right now, on this page. Once you leave, this pricing disappears.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2b: OTO Video */}
+      <section className="bg-gray-50 pb-16 px-6">
+        <div className="mx-auto max-w-2xl">
+          <div className="relative w-full overflow-hidden rounded-xl shadow-lg" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/PLACEHOLDER"
+              title="Why 46 Managing Directors Already Locked In"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <p className="text-center text-gray-500 text-sm mt-4">
+            Watch: Why 46 Managing Directors Already Locked In
           </p>
         </div>
       </section>
