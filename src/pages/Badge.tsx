@@ -23,10 +23,7 @@ export default function Badge() {
       }
 
       const { data, error } = await supabase
-        .from("fym_badges")
-        .select("badge_value")
-        .eq("share_id", shareId)
-        .single();
+        .rpc("get_badge_by_share_id", { p_share_id: shareId });
 
       if (error || !data) {
         setNotFound(true);
