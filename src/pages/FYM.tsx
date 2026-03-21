@@ -21,7 +21,7 @@ const FYM = () => {
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. EUR 0.97/month."
+        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. USD 0.97/month."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -30,7 +30,7 @@ const FYM = () => {
     if (ogDesc)
       ogDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. EUR 0.97/month."
+        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. USD 0.97/month."
       );
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
@@ -47,22 +47,22 @@ const FYM = () => {
             For Managing Directors Building Invisible Income
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Track Your Recurring Revenue to EUR 4,000/Month
+            Track Your Recurring Revenue to USD 4,000/Month
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
             The FYM Dashboard gives you financial visibility across all your micro-SaaS projects.
             Revenue, churn, growth rate, invisibility score. All in one place.
           </p>
           <div className="mb-8">
-            <span className="text-white text-4xl md:text-5xl font-bold">EUR 0.97/month</span>
-            <span className="text-white/50 text-lg ml-3 line-through">EUR 12/mo</span>
+            <span className="text-white text-4xl md:text-5xl font-bold">USD 0.97/month</span>
+            <span className="text-white/50 text-lg ml-3 line-through">USD 12/mo</span>
           </div>
           <a
             href="#pricing"
             onClick={scrollToPricing}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
           >
-            Start Tracking for EUR 0.97/month
+            Start Tracking for USD 0.97/month
           </a>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -86,7 +86,7 @@ const FYM = () => {
               },
               {
                 title: "No Exit Timeline",
-                body: "You know you want EUR 2,500-4,000/month recurring. But you have no idea if you're on track or how many months away you are.",
+                body: "You know you want USD 2,500-4,000/month recurring. But you have no idea if you're on track or how many months away you are.",
               },
             ].map((card) => (
               <div
@@ -119,7 +119,7 @@ const FYM = () => {
               },
               {
                 title: "Exit Timeline Calculator",
-                body: "Set your target (EUR 2,500-4,000/month). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                body: "Set your target (USD 2,500-4,000/month). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
               },
               {
                 title: "Idea Directory",
@@ -158,9 +158,9 @@ const FYM = () => {
             <div className="rounded-xl border border-gray-200 p-8 flex flex-col">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">FYM Dashboard</h3>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">EUR 0.97</span>
+                <span className="text-4xl font-bold text-gray-900">USD 0.97</span>
                 <span className="text-gray-500">/month</span>
-                <span className="block text-gray-400 line-through text-sm mt-1">EUR 12/month</span>
+                <span className="block text-gray-400 line-through text-sm mt-1">USD 12/month</span>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
                 {[
@@ -180,7 +180,7 @@ const FYM = () => {
                 onClick={scrollToPricing}
                 className="inline-block text-center border-2 border-[#60A5FA] text-[#60A5FA] hover:bg-[#60A5FA] hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                Start for EUR 0.97/month
+                Start for USD 0.97/month
               </a>
               <p className="text-gray-400 text-sm text-center mt-3">Cancel anytime</p>
             </div>
@@ -192,12 +192,12 @@ const FYM = () => {
               </span>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Founding Member</h3>
               <div className="mb-1">
-                <span className="text-4xl font-bold text-gray-900">EUR 19</span>
+                <span className="text-4xl font-bold text-gray-900">USD 19</span>
                 <span className="text-gray-500">/month</span>
               </div>
               <p className="text-sm text-[#60A5FA] font-medium mb-2">locked for life</p>
               <span className="text-gray-400 line-through text-sm mb-6">
-                EUR 97/month after founding closes
+                USD 97/month after founding closes
               </span>
               <ul className="space-y-3 mb-8 flex-1">
                 {[
@@ -273,8 +273,8 @@ const FYM = () => {
                 Can I upgrade to Founding Member later?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Yes, but the founding price (EUR 19/month locked for life) is only available during
-                the founding window. After that, it's EUR 97/month.
+                Yes, but the founding price (USD 19/month locked for life) is only available during
+                the founding window. After that, it's USD 97/month.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="difference">
@@ -297,7 +297,7 @@ const FYM = () => {
             Start Measuring Your Exit
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            EUR 0.97/month. Cancel anytime. Your invisible income deserves a real dashboard.
+            USD 0.97/month. Cancel anytime. Your invisible income deserves a real dashboard.
           </p>
           <a
             href="#pricing"
