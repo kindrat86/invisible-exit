@@ -1,0 +1,5 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="80" fill="#1a2744"/>
+  <text x="256" y="312" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="232" font-weight="700" fill="#ffffff" letter-spacing="-8">IE</text>
+  <rect x="96" y="368" width="320" height="20" rx="10" fill="#4a90d9"/>
+</svg>
