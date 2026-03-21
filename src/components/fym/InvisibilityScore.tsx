@@ -262,9 +262,10 @@ export default function InvisibilityScore({ userId }: InvisibilityScoreProps) {
               >
                 <label
                   htmlFor={q.id}
-                  className="text-sm text-[#4A5568] flex-1 cursor-pointer"
+                  className="flex-1 cursor-pointer"
                 >
-                  {q.text}
+                  <span className="text-sm text-[#4A5568]">{q.text}</span>
+                  <span className="block text-xs text-[#8A95A8] mt-0.5">{q.hint}</span>
                 </label>
                 <Switch
                   id={q.id}

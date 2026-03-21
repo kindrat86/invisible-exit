@@ -44,6 +44,7 @@ export interface InvisibilityQuestion {
   category: "entity" | "digital" | "compliance" | "operational" | "financial";
   categoryLabel: string;
   text: string;
+  hint: string;
   yesScore: number;
   fixTitle: string;
   fixDescription: string;
