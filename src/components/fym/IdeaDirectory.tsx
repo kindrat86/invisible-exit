@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +18,10 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, Shield, X, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
-import ideaData from "@/data/idea-directory.json";
+import { allIdeas } from "@/data/idea-generator";
 import type { IdeaEntry } from "@/types/fym";
 
-const allIdeas = ideaData as IdeaEntry[];
+const BATCH_SIZE = 10;
 
 function shuffleArray<T>(arr: T[]): T[] {
   const shuffled = [...arr];
@@ -49,7 +49,10 @@ const TIME_INVESTMENTS = [
 const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"];
 
 export default function IdeaDirectory() {
-  const [ideas, setIdeas] = useState<IdeaEntry[]>(allIdeas);
+  const [shuffledPool, setShuffledPool] = useState<IdeaEntry[]>(() =>
+    shuffleArray(allIdeas)
+  );
+  const [batchIndex, setBatchIndex] = useState(0);
   const [search, setSearch] = useState("");
   const [industry, setIndustry] = useState("all");
   const [revenueTier, setRevenueTier] = useState("all");
@@ -58,16 +61,33 @@ export default function IdeaDirectory() {
   const [selectedIdea, setSelectedIdea] = useState<IdeaEntry | null>(null);
   const [regenerating, setRegenerating] = useState(false);
 
-  const handleRegenerate = () => {
+  const totalBatches = Math.ceil(shuffledPool.length / BATCH_SIZE);
+
+  const currentBatch = useMemo(() => {
+    const start = batchIndex * BATCH_SIZE;
+    return shuffledPool.slice(start, start + BATCH_SIZE);
+  }, [shuffledPool, batchIndex]);
+
+  const handleRegenerate = useCallback(() => {
     setRegenerating(true);
     setTimeout(() => {
-      setIdeas(shuffleArray(allIdeas));
+      const nextIndex = batchIndex + 1;
+      if (nextIndex >= totalBatches) {
+        // All ideas seen — reshuffle and restart
+        setShuffledPool(shuffleArray(allIdeas));
+        setBatchIndex(0);
+        toast.success(
+          "You've seen all ideas! Reshuffled and starting fresh."
+        );
+      } else {
+        setBatchIndex(nextIndex);
+        toast.success(
+          "Fresh ideas loaded. Found something interesting? Save it to your pipeline."
+        );
+      }
       setRegenerating(false);
-      toast.success(
-        "Fresh ideas loaded. Found something interesting? Save it to your pipeline."
-      );
     }, 800);
-  };
+  }, [batchIndex, totalBatches]);
 
   const hasFilters =
     search ||
@@ -85,7 +105,7 @@ export default function IdeaDirectory() {
   };
 
   const filtered = useMemo(() => {
-    let result = ideas;
+    let result = currentBatch;
 
     if (search) {
       const q = search.toLowerCase();
@@ -110,7 +130,10 @@ export default function IdeaDirectory() {
     return result.sort((a, b) =>
       a.is_featured === b.is_featured ? 0 : a.is_featured ? -1 : 1
     );
-  }, [search, industry, revenueTier, timeInvestment, difficulty]);
+  }, [currentBatch, search, industry, revenueTier, timeInvestment, difficulty]);
+
+  const startNum = batchIndex * BATCH_SIZE + 1;
+  const endNum = Math.min((batchIndex + 1) * BATCH_SIZE, shuffledPool.length);
 
   return (
     <div className="space-y-6">
@@ -198,7 +221,7 @@ export default function IdeaDirectory() {
 
         <div className="flex items-center justify-between">
           <p className="text-sm text-[#8A95A8]">
-            Showing {filtered.length} of {ideas.length} ideas
+            Showing {filtered.length} of {BATCH_SIZE} ideas (#{startNum}–{endNum} of {shuffledPool.length.toLocaleString()})
           </p>
           <Button
             variant="outline"
@@ -274,7 +297,7 @@ export default function IdeaDirectory() {
           <p className="text-[#4A5568] text-lg font-medium mb-2">
             No ideas match your filters.
           </p>
-          <p className="text-[#8A95A8]">Try adjusting your search or filters.</p>
+          <p className="text-[#8A95A8]">Try adjusting your search or filters, or regenerate for a new batch.</p>
         </div>
       )}
 
