@@ -13,6 +13,7 @@ import Login from "./pages/Login.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import Badge from "./pages/Badge.tsx";
+import OTOSecondTool from "./pages/OTOSecondTool.tsx";
 import Confirmation from "./pages/Confirmation.tsx";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/oto/second-tool" element={<OTOSecondTool />} />
           <Route path="/fym/badge/:shareId" element={<Badge />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
