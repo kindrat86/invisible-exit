@@ -16,26 +16,26 @@ const TOOL_META: Record<
   string,
   { name: string; icon: typeof BarChart3; dashboardRoute: string }
 > = {
-  fym: { name: "FYM Dashboard", icon: BarChart3, dashboardRoute: "/dashboard/fym" },
+  fym: { name: "FYM Dashboard", icon: BarChart3, dashboardRoute: "/dashboard" },
   "idea-pipeline": {
     name: "Idea Pipeline",
     icon: Lightbulb,
-    dashboardRoute: "/dashboard/idea-pipeline",
+    dashboardRoute: "/dashboard",
   },
   "stealth-ops": {
     name: "Stealth Ops Hub",
     icon: Shield,
-    dashboardRoute: "/dashboard/stealth-ops",
+    dashboardRoute: "/dashboard",
   },
   "launch-control": {
     name: "Launch Control",
     icon: Rocket,
-    dashboardRoute: "/dashboard/launch-control",
+    dashboardRoute: "/dashboard",
   },
   "brand-manager": {
     name: "Brand Manager",
     icon: Palette,
-    dashboardRoute: "/dashboard/brand-manager",
+    dashboardRoute: "/dashboard",
   },
 };
 
@@ -117,10 +117,10 @@ const Confirmation = () => {
               Start here.
             </p>
             <Link
-              to="/dashboard/fym"
+              to="/dashboard"
               className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
             >
-              Open My FYM Dashboard
+              Open My Dashboard
             </Link>
             <p className="text-gray-400 text-sm mt-4">
               Your dashboard is live and ready.
@@ -188,7 +188,7 @@ const Confirmation = () => {
                 You now have access to the private Founding Member community.
               </p>
               <Link
-                to="/dashboard/community"
+                to="/dashboard"
                 className="inline-block border border-[#60A5FA] text-[#60A5FA] hover:bg-[#60A5FA] hover:text-white font-semibold text-sm px-8 py-3 rounded-xl transition-colors"
               >
                 Join the Community
