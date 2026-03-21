@@ -1,14 +1,38 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Check, CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const OTOFounding = () => {
+  const [searchParams] = useSearchParams();
+  const sessionId = searchParams.get("session_id");
+  const [paymentConfirmed, setPaymentConfirmed] = useState(false);
+
   useEffect(() => {
     document.title = "One-Time Offer: Founding Member | Invisible Exit";
-  }, []);
+
+    if (sessionId) {
+      supabase.functions
+        .invoke("verify-session", { body: { session_id: sessionId } })
+        .then(({ data }) => {
+          if (data?.status === "paid") {
+            setPaymentConfirmed(true);
+          }
+        });
+    }
+  }, [sessionId]);
 
   return (
     <div className="min-h-screen">
+      {/* Payment Confirmation Banner */}
+      {paymentConfirmed && (
+        <div className="bg-green-50 border-b border-green-200 px-6 py-4">
+          <p className="text-center text-green-800 font-medium">
+            Payment confirmed. Your FYM Dashboard is being set up. Check your email for login details.
+          </p>
+        </div>
+      )}
+
       {/* Section 1: Purchase Confirmation */}
       <section className="bg-white pt-20 pb-12 px-6">
         <div className="mx-auto max-w-2xl text-center">
@@ -127,12 +151,22 @@ const OTOFounding = () => {
           </Link>
           <div>
             <Link
-              to="/dashboard"
+              to="/login"
               className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
             >
               No thanks, take me to my dashboard
             </Link>
           </div>
+          {sessionId && (
+            <div className="mt-4">
+              <Link
+                to="/login"
+                className="text-[#60A5FA] hover:underline text-sm font-medium"
+              >
+                Skip and go to dashboard
+              </Link>
+            </div>
+          )}
           <p className="text-gray-400 text-xs mt-6">
             Limited founding spots. This offer is only available on this page.
           </p>

@@ -1,6 +1,7 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Check, Lock } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -11,6 +12,21 @@ import {
 } from "@/components/ui/accordion";
 
 const FYM = () => {
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    const { data, error } = await supabase.functions.invoke("create-checkout", {
+      body: {},
+    });
+    setCheckoutLoading(false);
+    if (error || !data?.url) {
+      toast.error("Could not start checkout. Please try again.");
+      return;
+    }
+    window.location.href = data.url;
+  };
+
   useEffect(() => {
     document.title = "FYM Dashboard: Track Your Invisible Income | Invisible Exit";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -55,12 +71,13 @@ const FYM = () => {
             <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
             <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
           </div>
-          <Link
-            to="/checkout/fym"
-            className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            Start Tracking for $0.97/mo
-          </Link>
+            {checkoutLoading ? "Loading..." : "Start Tracking for $0.97/mo"}
+          </button>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
       </section>
@@ -273,12 +290,13 @@ const FYM = () => {
               <p className="text-gray-400 text-sm mb-8">
                 Introductory pricing locks in for life. New members after launch pay $12/mo.
               </p>
-              <Link
-                to="/checkout/fym"
-                className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
+              <button
+                onClick={handleCheckout}
+                disabled={checkoutLoading}
+                className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
               >
-                Start for $0.97/mo
-              </Link>
+                {checkoutLoading ? "Loading..." : "Start for $0.97/mo"}
+              </button>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
           </div>
@@ -349,12 +367,13 @@ const FYM = () => {
           <p className="text-white/70 text-lg mb-10">
             $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
           </p>
-          <Link
-            to="/checkout/fym"
-            className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            Get FYM Dashboard
-          </Link>
+            {checkoutLoading ? "Loading..." : "Get FYM Dashboard"}
+          </button>
         </div>
       </section>
 

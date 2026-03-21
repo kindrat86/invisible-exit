@@ -14,7 +14,115 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          id: string
+          email: string
+          stripe_customer_id: string | null
+          subscription_status: string
+          subscription_tier: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          email: string
+          stripe_customer_id?: string | null
+          subscription_status?: string
+          subscription_tier?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          stripe_customer_id?: string | null
+          subscription_status?: string
+          subscription_tier?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      fym_entries: {
+        Row: {
+          id: string
+          user_id: string
+          runway_months: number
+          monthly_burn: number
+          monthly_revenue: number
+          fym_monthly: number
+          fym_total: number
+          fym_freedom_number: number
+          created_at: string
+          deleted_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          runway_months: number
+          monthly_burn: number
+          monthly_revenue: number
+          fym_monthly: number
+          fym_total: number
+          fym_freedom_number: number
+          created_at?: string
+          deleted_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          runway_months?: number
+          monthly_burn?: number
+          monthly_revenue?: number
+          fym_monthly?: number
+          fym_total?: number
+          fym_freedom_number?: number
+          created_at?: string
+          deleted_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fym_entries_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      fym_badges: {
+        Row: {
+          id: string
+          user_id: string
+          badge_value: number
+          share_id: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          badge_value: number
+          share_id: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          badge_value?: number
+          share_id?: string
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fym_badges_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
