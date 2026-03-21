@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Shield, Lightbulb, Rocket } from "lucide-react";
+import { Shield, Lightbulb, Rocket, Palette } from "lucide-react";
 
 const tools = [
   {
@@ -26,6 +26,14 @@ const tools = [
     description:
       "Step-by-step launch playbook. Go from idea to live and accepting payments faster than your day job allows.",
     cta: "Add Launch Control for $0.97/mo",
+  },
+  {
+    slug: "brand-manager",
+    name: "Brand Manager",
+    icon: Palette,
+    description:
+      "Positioning, visual identity, website templates, voice guide. Build organic YouTube and Reddit presence.",
+    cta: "Add Brand Manager for $0.97/mo",
   },
 ];
 
@@ -67,7 +75,7 @@ const OTOSecondTool = () => {
 
       {/* Section 3: Tool Selection Cards */}
       <section className="pb-16 px-6">
-        <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
           {tools.map((tool) => (
             <div
               key={tool.slug}
