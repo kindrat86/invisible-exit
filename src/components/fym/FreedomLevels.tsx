@@ -52,7 +52,7 @@ export default function FreedomLevels({
 
         <p className="text-sm text-gray-600 mb-4">
           {currentLevelDef?.description ??
-            "You haven't reached your first milestone yet. Start generating revenue to unlock Level 1."}
+            "You haven't earned your first dollar yet. Once a stranger pays you for something you built, you'll unlock Level 1."}
         </p>
 
         {nextLevelDef && (

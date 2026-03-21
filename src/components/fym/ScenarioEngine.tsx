@@ -103,10 +103,10 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
       <div className="flex items-center justify-between mb-4">
         <div>
           <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-            Strategic Planning
+            What-If Scenarios
           </p>
           <h3 className="text-lg font-semibold text-gray-900 tracking-tight">
-            Scenario Planner
+            Compare Different Paths to Freedom
           </h3>
         </div>
         {scenarios.length < 2 && (

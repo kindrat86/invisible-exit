@@ -86,10 +86,10 @@ export function useMorningBriefing(
 
     if (invScore === null) {
       todaysFocus =
-        "Complete your Invisibility audit (0/100). Your operational security matters as much as your revenue.";
+        "Complete your Invisibility audit — find out if your employer could discover your side business. This matters as much as your revenue.";
       focusEstimate = "8 minutes";
     } else if (invScore < 50) {
-      todaysFocus = `Improve your Invisibility score (currently ${invScore}/100). Review the fixes tab.`;
+      todaysFocus = `Your operation is only ${invScore}/100 hidden — your employer could still find you. Review the Invisibility fixes tab.`;
       focusEstimate = "5 minutes";
     } else {
       // Check if entry saved today
@@ -104,11 +104,11 @@ export function useMorningBriefing(
 
       if (!hasTodayEntry) {
         todaysFocus =
-          "Save today's FYM entry to keep your streak alive.";
+          "You haven't logged today yet. Save your numbers to keep your streak alive.";
         focusEstimate = "30 seconds";
       } else if (Number(latestEntry.monthly_revenue) === 0) {
         todaysFocus =
-          "Browse the Idea Directory and save at least one idea to your pipeline.";
+          "You're at $0 revenue. Head to the Idea Directory and pick your first side project to start building.";
         focusEstimate = "10 minutes";
       } else {
         // Check for stalled growth (last 3 entries same revenue)
@@ -123,11 +123,11 @@ export function useMorningBriefing(
 
         if (allSameRevenue) {
           todaysFocus =
-            "Your revenue has been flat for 3 entries. Time to experiment: try a new pricing tier, a new channel, or a new product.";
+            "Your revenue hasn't moved for 3 entries in a row. Time to shake things up — try a different price, reach a new audience, or launch a second product.";
           focusEstimate = "15 minutes";
         } else {
           todaysFocus =
-            "You're on track. Keep building. Check back tomorrow.";
+            "You're on track. Keep building. Come back tomorrow morning before your first meeting.";
           focusEstimate = "";
         }
       }

@@ -36,8 +36,8 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             Welcome
           </p>
           <p className="text-sm text-white/80">
-            Let's calculate your first FYM score. Fill in your numbers below and
-            save your first entry. Your journey starts today.
+            Let's see where you stand. Fill in your numbers below — what you
+            spend, what you earn on the side, and what freedom looks like for you. Then save your first entry. Your exit journey starts today.
           </p>
         </div>
       ) : (
@@ -53,7 +53,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
 
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-white/80 mb-3">
             <span>
-              FYM Score:{" "}
+              Monthly cash flow:{" "}
               <span
                 className={`font-bold ${briefing.fymGap >= 0 ? "text-green-400" : "text-white"}`}
               >

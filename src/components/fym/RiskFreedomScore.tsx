@@ -34,10 +34,10 @@ function RiskFreedomScoreInner({
   return (
     <div>
       <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-        Risk Analysis
+        Exit Readiness
       </p>
       <h3 className="text-lg font-semibold text-gray-900 tracking-tight mb-4">
-        Risk-Adjusted Freedom Score
+        How Ready Are You to Quit?
       </h3>
 
       <div className="grid gap-4 md:grid-cols-2 mb-4">
@@ -60,13 +60,13 @@ function RiskFreedomScoreInner({
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500">Revenue:</span>
+              <span className="text-gray-500">Side income:</span>
               <span className="font-semibold text-gray-900">
                 {formatCurrency(inputs.monthlySideRevenue)}/mo
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500">Gap to Level 4:</span>
+              <span className="text-gray-500">Gap to Walk Away Money:</span>
               <span
                 className={`font-semibold ${gap > 0 ? "text-red-500" : "text-green-500"}`}
               >
@@ -76,7 +76,7 @@ function RiskFreedomScoreInner({
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500">Months to Level 4:</span>
+              <span className="text-gray-500">Months to Walk Away Money:</span>
               <span className="font-semibold text-gray-900">
                 {monthsToLevel4 === 0
                   ? "Already there"
@@ -102,8 +102,8 @@ function RiskFreedomScoreInner({
               />
             </div>
             <p className="text-xs text-gray-400 mt-1.5">
-              Your side income covers {Math.round(financialPct)}% of your
-              monthly expenses.
+              Your side projects currently pay for {Math.round(financialPct)}% of
+              your monthly living costs.
             </p>
           </div>
         </div>
@@ -111,12 +111,12 @@ function RiskFreedomScoreInner({
         {/* Risk Exposure Card */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
           <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">
-            Risk Exposure
+            What You're Risking
           </p>
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-gray-500">Invisibility Score:</span>
+              <span className="text-gray-500">How hidden is your operation:</span>
               <span className="font-semibold text-gray-900">
                 {riskAssessment.invisibilityScore !== null
                   ? `${riskAssessment.invisibilityScore}/100`
@@ -124,13 +124,13 @@ function RiskFreedomScoreInner({
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500">Corporate salary at risk:</span>
+              <span className="text-gray-500">Salary you'd lose if caught:</span>
               <span className="font-semibold text-gray-900">
                 {formatCurrency(inputs.corporateSalary)}/year
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500">Risk/Reward Ratio:</span>
+              <span className="text-gray-500">Salary vs. side income:</span>
               <span className="font-semibold text-gray-900">
                 {isFinite(riskAssessment.riskRewardRatio)
                   ? `${riskAssessment.riskRewardRatio}:1`
@@ -157,7 +157,7 @@ function RiskFreedomScoreInner({
       {/* Combined Freedom Readiness Score */}
       <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
         <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-          Combined Freedom Readiness Score
+          Overall Exit Readiness
         </p>
 
         <div className="flex items-center gap-3 mb-2">
@@ -208,8 +208,8 @@ function RiskFreedomScoreInner({
 
         <p className="text-sm text-gray-600">
           {riskAssessment.combinedScore !== null
-            ? `Your financial progress is ${Math.round(financialPct)}% and your operational security is ${riskAssessment.invisibilityScore}/100.`
-            : `Your financial progress is ${Math.round(financialPct)}% but your operational security is unknown. Complete your Invisibility audit to get your full Freedom Readiness Score.`}
+            ? `Your side income covers ${Math.round(financialPct)}% of your expenses, and your operation is ${riskAssessment.invisibilityScore}/100 hidden from your employer.`
+            : `Your side income covers ${Math.round(financialPct)}% of your expenses, but we don't know how hidden your operation is yet. Complete your Invisibility audit to see your full exit readiness score.`}
         </p>
       </div>
     </div>

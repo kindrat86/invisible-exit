@@ -81,44 +81,42 @@ export const FREEDOM_LEVELS: FreedomLevelDef[] = [
   {
     level: 1,
     name: "Proof of Life",
-    description: "You have a real business. Someone pays you.",
+    description: "A real stranger pays you real money. Your side business is no longer an idea — it's a business.",
     motivationalCopy:
-      "Proof exists. A stranger pays you money. The cage has a door. Now build momentum.",
+      "You did it. Someone you've never met paid you for something you built. The cage has a door. Now build momentum.",
   },
   {
     level: 2,
     name: "Safety Net",
-    description: "6 months of expenses covered by projected side income.",
+    description: "Your projected side income covers 6 months of living expenses. If your boss fires you tomorrow, you're not starting from zero.",
     motivationalCopy:
-      "You have a safety net. Even if everything at work goes sideways, you're not starting from zero.",
+      "You have a safety net. Even if everything at work goes sideways tomorrow, you won't be scrambling. That changes how you show up at work.",
   },
   {
     level: 3,
     name: "Negotiation Power",
-    description:
-      "Side income covers 50% of expenses. You negotiate from strength, not desperation.",
+    description: "Your side income covers half your monthly expenses. You can negotiate your corporate job from strength, not desperation.",
     motivationalCopy:
-      "You have negotiation power. You're no longer trapped. You stay because you choose to, not because you have to.",
+      "You have negotiation power. You're no longer trapped by your salary. You stay because you choose to, not because you have to. That's a completely different feeling.",
   },
   {
     level: 4,
     name: "Walk Away Money",
-    description: "Side income equals expenses. You can quit tomorrow.",
+    description: "Your side income fully covers your monthly expenses. You could quit your job tomorrow and your family's lifestyle wouldn't change.",
     motivationalCopy:
-      "You can walk away. The math works. Now the question isn't 'can I leave?' but 'when do I want to?'",
+      "You can walk away. The math works. Your side projects cover your rent, groceries, insurance, everything. The only question left isn't 'can I leave?' — it's 'when do I want to?'",
   },
   {
     level: 5,
     name: "True FYM",
-    description:
-      "3 years of expenses banked + revenue covers lifestyle. You're free AND wealthy.",
+    description: "Your side income covers your lifestyle AND you've banked 3 years of living expenses. You're not just free — you're wealthy.",
     motivationalCopy:
-      "You did it. True FYM. Three years of runway plus income that covers your life. The cage is open. Walk out whenever you're ready.",
+      "You did it. True FYM. Three years of runway in the bank, plus monthly income that covers your entire life. The cage is open. Hand in your resignation whenever you're ready.",
   },
 ];
 
 export const LEVEL_ZERO_COPY =
-  "Every exit starts with $0. Use the Idea Directory to find your first project. Your corporate experience isn't a weakness. It's founder gold.";
+  "Every exit starts at $0. Head to the Idea Directory and pick your first project. Your years as a Managing Director aren't a weakness — they're founder gold. You already know how to run a business. Now build your own.";
 
 export function evaluateFreedomLevel(data: CalculatorInputsExpanded): number {
   const { monthlySideRevenue, monthlyExpenses, monthsToExit, monthlyGrowthRate } = data;
@@ -283,15 +281,15 @@ export function getRealityCheckRecommendation(
 ): string {
   switch (zone) {
     case "very_achievable":
-      return "Very achievable. This growth rate is well below industry average.";
+      return "Very doable. This growth rate is below what most early SaaS businesses achieve. You're giving yourself plenty of room.";
     case "within_average":
-      return "Within industry average for early-stage SaaS (10-15% MoM). This is achievable.";
+      return "Realistic. Early-stage SaaS businesses typically grow 10-15% per month. This is a solid, achievable pace.";
     case "ambitious":
-      return "Ambitious but possible. Requires strong product-market fit and active marketing.";
+      return "Ambitious but possible. You'll need a product people actively want and consistent marketing effort to hit this.";
     case "very_aggressive":
-      return "Very aggressive. Consider extending your timeline or reducing expenses.";
+      return "This pace is very aggressive. Consider giving yourself more time or cutting your monthly expenses to make the math easier.";
     case "unrealistic":
-      return "Unrealistic at this rate. Extend your timeline, cut expenses, or increase starting revenue.";
+      return "At this rate, the math doesn't work. Give yourself more months, lower your expenses, or start with more revenue to make this realistic.";
   }
 }
 
@@ -330,15 +328,15 @@ export function calculateRiskRewardRatio(
 
 export function getRiskContext(ratio: number): string {
   if (!isFinite(ratio))
-    return "Your corporate income is your only income. Focus on growth AND invisibility.";
+    return "Right now your corporate salary is your only income. If you lost your job tomorrow, you'd have nothing else. Focus on getting your first paying customer AND staying invisible.";
   if (ratio > 20)
-    return "Your corporate income dwarfs your side income. Focus on growth AND invisibility.";
+    return "Your corporate salary is 20x larger than your side income. You're still heavily dependent on your employer. Focus on growing revenue AND keeping your operation invisible.";
   if (ratio > 5)
-    return "You're building real income but still heavily exposed. Keep growing.";
-  if (ratio > 2) return "You're approaching balance. Freedom is close.";
+    return "You're building real side income, but your corporate salary still dwarfs it. Keep growing — you're on the right track but still exposed.";
+  if (ratio > 2) return "You're getting close to balance. Your side income is becoming meaningful compared to your salary. Freedom is within reach.";
   if (ratio > 1)
-    return "Your side income nearly matches your salary. You're almost there.";
-  return "Your side income exceeds your corporate salary. Why are you still there?";
+    return "Your side income nearly matches your corporate salary. You're almost there — start thinking about your transition plan.";
+  return "Your side income exceeds your corporate salary. The math says you can leave. What are you still doing there?";
 }
 
 export function calculateCombinedReadinessScore(

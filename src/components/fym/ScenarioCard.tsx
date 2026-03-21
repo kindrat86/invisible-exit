@@ -121,7 +121,7 @@ function ScenarioCardInner({
       {/* Inputs */}
       <div className="space-y-2 text-sm mb-3">
         <div className="flex items-center justify-between">
-          <Label className="text-xs text-gray-500">Revenue</Label>
+          <Label className="text-xs text-gray-500">Side revenue</Label>
           {isCurrentPath ? (
             <span className="text-sm font-medium text-gray-900">
               {formatCurrency(startingRevenue)}/mo
@@ -138,7 +138,7 @@ function ScenarioCardInner({
           )}
         </div>
         <div className="flex items-center justify-between">
-          <Label className="text-xs text-gray-500">Growth</Label>
+          <Label className="text-xs text-gray-500">Monthly growth</Label>
           {isCurrentPath ? (
             <span className="text-sm font-medium text-gray-900">
               {monthlyGrowthRate}%/mo
@@ -158,7 +158,7 @@ function ScenarioCardInner({
           )}
         </div>
         <div className="flex items-center justify-between">
-          <Label className="text-xs text-gray-500">Expenses</Label>
+          <Label className="text-xs text-gray-500">Monthly expenses</Label>
           {isCurrentPath ? (
             <span className="text-sm font-medium text-gray-900">
               {formatCurrency(monthlyExpenses)}/mo
@@ -196,7 +196,7 @@ function ScenarioCardInner({
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-gray-500">Level 4 in:</span>
+          <span className="text-gray-500">Walk Away Money in:</span>
           <span className="font-semibold text-gray-900">
             {calculations.monthsToLevel4 === 0
               ? "Already there"

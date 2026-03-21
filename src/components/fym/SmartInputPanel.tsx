@@ -111,16 +111,16 @@ export default function SmartInputPanel({
         </button>
       </div>
 
-      {/* Row 1: Financial Reality */}
+      {/* Row 1: What You Spend & Earn */}
       <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">
-        Financial Reality
+        What You Spend & Earn Today
       </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
         {/* Months to exit */}
         <div className="space-y-2">
           <Label htmlFor="monthsToExit" className="text-sm text-gray-700">
-            Months to target exit
-            <HelpTip text="When do you want to be free? Most members target 12-24 months." />
+            Months until you want to quit
+            <HelpTip text="How many months from now do you want to hand in your resignation? Most people target 12-24 months. The shorter the window, the faster you need to grow." />
           </Label>
           <Input
             id="monthsToExit"
@@ -147,8 +147,8 @@ export default function SmartInputPanel({
         {/* Monthly expenses */}
         <div className="space-y-2">
           <Label htmlFor="monthlyExpenses" className="text-sm text-gray-700">
-            Monthly personal expenses (USD)
-            <HelpTip text="Include rent/mortgage, food, insurance, childcare, everything. Be honest, not aspirational." />
+            What you spend each month to live (USD)
+            <HelpTip text="Add up everything: rent or mortgage, groceries, insurance, childcare, car, subscriptions. This is the number your side income needs to cover before you can quit." />
           </Label>
           <Input
             id="monthlyExpenses"
@@ -178,8 +178,8 @@ export default function SmartInputPanel({
             htmlFor="monthlySideRevenue"
             className="text-sm text-gray-700"
           >
-            Current monthly side revenue (USD)
-            <HelpTip text="Your total MRR from all side projects combined. If $0, that's fine. We all start there." />
+            What your side projects earn right now (USD)
+            <HelpTip text="Total monthly recurring revenue from all your side businesses combined. Stripe payments, subscriptions, any recurring income outside your corporate salary. $0 is fine — everyone starts there." />
           </Label>
           <Input
             id="monthlySideRevenue"
@@ -204,16 +204,16 @@ export default function SmartInputPanel({
         </div>
       </div>
 
-      {/* Row 2: Growth Model */}
+      {/* Row 2: Your Exit Trajectory */}
       <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">
-        Growth Model
+        Your Exit Trajectory
       </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {/* Growth rate */}
         <div className="space-y-2">
           <Label htmlFor="monthlyGrowthRate" className="text-sm text-gray-700">
-            Expected monthly growth rate (%)
-            <HelpTip text="SaaS industry average is 10-15% MoM for early-stage. Be realistic." />
+            How fast your revenue grows each month (%)
+            <HelpTip text="If you earn $500 this month and $575 next month, that's 15% growth. Early-stage SaaS businesses typically grow 10-15% per month. Pick Conservative if you're just starting out." />
           </Label>
           <div className="flex items-center gap-2">
             <Input
@@ -251,8 +251,8 @@ export default function SmartInputPanel({
         {/* Corporate salary */}
         <div className="space-y-2">
           <Label htmlFor="corporateSalary" className="text-sm text-gray-700">
-            Current annual corporate salary (USD)
-            <HelpTip text="Your day job salary. Used to calculate risk exposure and full freedom number." />
+            Your corporate salary per year (USD)
+            <HelpTip text="Your total annual pay from your day job before tax. This is the golden handcuff number — the income you need your side projects to replace so you can walk away." />
           </Label>
           <Input
             id="corporateSalary"
@@ -282,8 +282,8 @@ export default function SmartInputPanel({
             htmlFor="targetMonthlyRevenue"
             className="text-sm text-gray-700"
           >
-            Target monthly revenue (USD)
-            <HelpTip text="What monthly recurring revenue means freedom for you?" />
+            The monthly income that sets you free (USD)
+            <HelpTip text="The monthly recurring revenue you need from side projects to cover your lifestyle and quit your job. For most people, this equals monthly expenses plus a safety margin." />
           </Label>
           <Input
             id="targetMonthlyRevenue"

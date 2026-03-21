@@ -68,10 +68,10 @@ export default function ReverseCalculator({ inputs }: ReverseCalculatorProps) {
   return (
     <div>
       <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-        Work Backward
+        Work Backward From Your Goal
       </p>
       <h3 className="text-lg font-semibold text-gray-900 tracking-tight mb-4">
-        Reverse Engineer Your Exit
+        What Growth Rate Do You Need?
       </h3>
 
       <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 shadow-sm p-6">
@@ -104,16 +104,16 @@ export default function ReverseCalculator({ inputs }: ReverseCalculatorProps) {
         {/* Zero revenue state */}
         {revenue <= 0 && (
           <p className="text-sm text-gray-500 italic">
-            You need to generate your first dollar before we can calculate
-            growth rate. Start with the Idea Directory.
+            You need at least $1 in side revenue before we can calculate
+            the growth rate you need. Head to the Idea Directory to find your first project.
           </p>
         )}
 
         {/* Already met */}
         {result && "alreadyMet" in result && result.alreadyMet && (
           <p className="text-sm text-green-600 font-medium">
-            You've already exceeded your target. Congratulations. Consider
-            setting a higher goal.
+            You've already hit your target. Congratulations — you're ahead of
+            schedule. Consider raising your goal to build a bigger safety cushion.
           </p>
         )}
 
@@ -123,18 +123,18 @@ export default function ReverseCalculator({ inputs }: ReverseCalculatorProps) {
             {/* Answer */}
             <div className="mb-5">
               <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-                Answer
+                Required Monthly Growth
               </p>
               <p className="text-4xl font-bold text-[#1B2A4A] font-mono">
                 {result.requiredGrowthRate.toFixed(2)}%
               </p>
-              <p className="text-sm text-gray-500 mt-1">monthly growth needed</p>
+              <p className="text-sm text-gray-500 mt-1">growth per month needed to reach your goal</p>
             </div>
 
             {/* Milestones */}
             <div className="mb-5">
               <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-                That means
+                Your Revenue Month by Month
               </p>
               <div className="space-y-1">
                 {result.milestones.map((m, idx) => (
@@ -161,7 +161,7 @@ export default function ReverseCalculator({ inputs }: ReverseCalculatorProps) {
             {/* Reality check gauge */}
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-                Reality Check
+                How Realistic Is This?
               </p>
               <div className="relative h-3 rounded-full overflow-hidden mb-2">
                 {/* Colored segments */}
