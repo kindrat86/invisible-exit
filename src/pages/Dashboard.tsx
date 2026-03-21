@@ -106,7 +106,7 @@ function DashboardContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F4F7FB]">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
         <div className="max-w-5xl mx-auto p-6 space-y-4 pt-20">
           <Skeleton className="h-10 w-48" />
           <Skeleton className="h-20 w-full" />
@@ -118,7 +118,7 @@ function DashboardContent() {
 
   if (noProfile) {
     return (
-      <div className="min-h-screen bg-[#F4F7FB]">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
         <DashboardNav email={email} />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center space-y-4">
@@ -153,7 +153,7 @@ function DashboardContent() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F4F7FB]">
+    <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
       <DashboardNav email={email} />
 
       <Dialog open={showOnboarding} onOpenChange={setShowOnboarding}>
@@ -174,7 +174,7 @@ function DashboardContent() {
         </DialogContent>
       </Dialog>
 
-      <main className="max-w-5xl mx-auto p-4 sm:p-6">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {isActive ? (
           <>
             <WelcomeHeader email={email} latestEntry={latestEntry} />
@@ -185,12 +185,12 @@ function DashboardContent() {
             />
 
             <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="mb-6 flex overflow-x-auto w-full">
-                <TabsTrigger value="calculator" className="flex-shrink-0">Calculator</TabsTrigger>
-                <TabsTrigger value="history" className="flex-shrink-0">History</TabsTrigger>
-                <TabsTrigger value="trends" className="flex-shrink-0">Trends</TabsTrigger>
-                <TabsTrigger value="invisibility" className="flex-shrink-0">Invisibility</TabsTrigger>
-                <TabsTrigger value="ideas" className="flex-shrink-0">Ideas</TabsTrigger>
+              <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/60 backdrop-blur-sm border border-gray-200/60 rounded-lg p-1">
+                <TabsTrigger value="calculator" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Calculator</TabsTrigger>
+                <TabsTrigger value="history" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">History</TabsTrigger>
+                <TabsTrigger value="trends" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
+                <TabsTrigger value="invisibility" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
+                <TabsTrigger value="ideas" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
               </TabsList>
 
               <TabsContent value="calculator">

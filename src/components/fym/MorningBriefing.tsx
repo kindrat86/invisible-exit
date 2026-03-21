@@ -23,9 +23,9 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
 
   return (
     <div
-      className="rounded-xl p-5 mb-6 transition-all duration-500 ease-out"
+      className="rounded-xl p-6 mb-0 transition-all duration-500 ease-out border border-white/5"
       style={{
-        background: "linear-gradient(to right, #1B2A4A, #0F1D36)",
+        background: "linear-gradient(135deg, #1B2A4A 0%, #0F1D36 60%, #0A1628 100%)",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(10px)",
       }}
@@ -43,10 +43,10 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
       ) : (
         <div>
           <div className="flex items-center justify-between mb-3">
-            <p className="text-xs uppercase tracking-wider text-white/50">
+            <p className="text-[11px] uppercase tracking-[0.08em] text-white/40 font-medium">
               Morning Briefing
             </p>
-            <p className="text-xs uppercase tracking-wider text-white/50">
+            <p className="text-[11px] uppercase tracking-[0.08em] text-white/40 font-medium">
               {briefing.date}
             </p>
           </div>
@@ -55,7 +55,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             <span>
               Monthly cash flow:{" "}
               <span
-                className={`font-bold ${briefing.fymGap >= 0 ? "text-green-400" : "text-white"}`}
+                className={`font-bold font-mono ${briefing.fymGap >= 0 ? "text-green-400" : "text-white"}`}
               >
                 {formatCurrency(briefing.fymGap)}/mo{" "}
                 {briefing.fymGap < 0 ? "gap" : "surplus"}
@@ -63,7 +63,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             </span>
             <span>
               Level{" "}
-              <span className="font-bold text-white">
+              <span className="font-bold font-mono text-white">
                 {briefing.currentLevel}
               </span>{" "}
               of 5: {levelName}
@@ -71,7 +71,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             {briefing.streak > 0 && (
               <span>
                 Streak:{" "}
-                <span className="font-bold text-white">
+                <span className="font-bold font-mono text-white">
                   {briefing.streak} days
                 </span>
               </span>
@@ -101,7 +101,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             </div>
           )}
 
-          <p className="text-sm text-blue-300 font-medium">
+          <p className="text-sm text-blue-300/90 font-medium mt-4 pt-3 border-t border-white/10">
             Today's focus: {briefing.todaysFocus}
             {briefing.focusEstimate && (
               <span className="text-white/50 font-normal">

@@ -24,7 +24,6 @@ function RiskFreedomScoreInner({
   const monthsToLevel4 = calculateMonthsToLevel(inputs, 4);
   const financialPct = Math.min(100, riskAssessment.financialScore);
 
-  // Combined score bar color
   const getBarColor = (score: number) => {
     if (score >= 70) return "#22C55E";
     if (score >= 30) return "#FBBF24";
@@ -32,28 +31,22 @@ function RiskFreedomScoreInner({
   };
 
   return (
-    <div>
-      <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-        Exit Readiness
-      </p>
-      <h3 className="text-lg font-semibold text-gray-900 tracking-tight mb-4">
-        How Ready Are You to Quit?
-      </h3>
+    <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 p-6">
+      <p className="section-label mb-1">Exit Readiness</p>
+      <h3 className="section-title mb-4">How Ready Are You to Quit?</h3>
 
       <div className="grid gap-4 md:grid-cols-2 mb-4">
         {/* Financial Progress Card */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">
-            Financial Progress
-          </p>
+        <div className="bg-gray-50/60 rounded-lg p-5">
+          <p className="section-label mb-3">Financial Progress</p>
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-500">Freedom Level:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {freedomLevel}{" "}
                 {freedomLevel > 0 && (
-                  <span className="font-normal text-gray-500">
+                  <span className="font-normal text-gray-500 font-sans">
                     ({FREEDOM_LEVELS[freedomLevel - 1]?.name})
                   </span>
                 )}
@@ -61,14 +54,14 @@ function RiskFreedomScoreInner({
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Side income:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {formatCurrency(inputs.monthlySideRevenue)}/mo
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Gap to Walk Away Money:</span>
               <span
-                className={`font-semibold ${gap > 0 ? "text-red-500" : "text-green-500"}`}
+                className={`font-semibold font-mono tabular-nums ${gap > 0 ? "text-red-500" : "text-green-500"}`}
               >
                 {gap > 0
                   ? `${formatCurrency(gap)}/mo`
@@ -77,7 +70,7 @@ function RiskFreedomScoreInner({
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Months to Walk Away Money:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {monthsToLevel4 === 0
                   ? "Already there"
                   : monthsToLevel4 !== null
@@ -90,9 +83,9 @@ function RiskFreedomScoreInner({
           <div className="mt-4">
             <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
               <span>Financial progress</span>
-              <span>{Math.round(financialPct)}%</span>
+              <span className="font-mono tabular-nums">{Math.round(financialPct)}%</span>
             </div>
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-gray-200/60 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full transition-all duration-500 ease-out"
                 style={{
@@ -109,15 +102,13 @@ function RiskFreedomScoreInner({
         </div>
 
         {/* Risk Exposure Card */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">
-            What You're Risking
-          </p>
+        <div className="bg-gray-50/60 rounded-lg p-5">
+          <p className="section-label mb-3">What You're Risking</p>
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-500">How hidden is your operation:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {riskAssessment.invisibilityScore !== null
                   ? `${riskAssessment.invisibilityScore}/100`
                   : "??/100"}
@@ -125,13 +116,13 @@ function RiskFreedomScoreInner({
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Salary you'd lose if caught:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {formatCurrency(inputs.corporateSalary)}/year
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-500">Salary vs. side income:</span>
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-gray-900 font-mono tabular-nums">
                 {isFinite(riskAssessment.riskRewardRatio)
                   ? `${riskAssessment.riskRewardRatio}:1`
                   : "N/A"}
@@ -146,7 +137,7 @@ function RiskFreedomScoreInner({
           {riskAssessment.invisibilityScore === null && (
             <Button
               onClick={onSwitchToInvisibility}
-              className="mt-4 bg-[#60A5FA] hover:bg-[#3B82F6] text-white rounded-lg px-4 py-2 text-sm font-medium w-full"
+              className="mt-4 bg-[#60A5FA] hover:bg-[#3B82F6] text-white rounded-lg px-4 py-2 text-sm font-semibold w-full active:scale-[0.98] shadow-sm shadow-blue-200/50 transition-all duration-200"
             >
               Complete Invisibility Audit
             </Button>
@@ -155,13 +146,11 @@ function RiskFreedomScoreInner({
       </div>
 
       {/* Combined Freedom Readiness Score */}
-      <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-        <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
-          Overall Exit Readiness
-        </p>
+      <div className="bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-lg border border-gray-100/50 p-5">
+        <p className="section-label mb-2">Overall Exit Readiness</p>
 
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl font-bold text-gray-900">
+        <div className="flex items-baseline gap-2 mb-2">
+          <span className="text-3xl font-bold text-gray-900 font-mono tabular-nums">
             {riskAssessment.combinedScore !== null
               ? riskAssessment.combinedScore
               : Math.round(financialPct * 0.6)}
@@ -182,7 +171,6 @@ function RiskFreedomScoreInner({
             </div>
           ) : (
             <div className="absolute inset-0 flex rounded-full overflow-hidden">
-              {/* Financial portion (60%) */}
               <div className="relative" style={{ width: "60%" }}>
                 <div className="absolute inset-0 bg-gray-200" />
                 <div
@@ -193,7 +181,6 @@ function RiskFreedomScoreInner({
                   }}
                 />
               </div>
-              {/* Missing invisibility portion (40%) */}
               <div
                 className="relative"
                 style={{

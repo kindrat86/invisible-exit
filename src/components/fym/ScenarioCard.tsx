@@ -83,7 +83,7 @@ function ScenarioCardInner({
 
   return (
     <div
-      className={`bg-white rounded-xl border border-gray-200 shadow-sm p-5 min-w-[300px] snap-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200`}
+      className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 min-w-[280px] sm:min-w-[300px] snap-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
@@ -94,7 +94,7 @@ function ScenarioCardInner({
               <span className="text-sm font-semibold text-gray-900">
                 Current Path
               </span>
-              <span className="text-[10px] uppercase tracking-wider bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded font-medium">
+              <span className="text-[10px] uppercase tracking-wider bg-[#60A5FA]/10 text-[#60A5FA] px-2 py-0.5 rounded-full font-medium">
                 Auto
               </span>
             </div>
@@ -123,7 +123,7 @@ function ScenarioCardInner({
         <div className="flex items-center justify-between">
           <Label className="text-xs text-gray-500">Side revenue</Label>
           {isCurrentPath ? (
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-medium text-gray-900 font-mono tabular-nums">
               {formatCurrency(startingRevenue)}/mo
             </span>
           ) : (
@@ -133,14 +133,14 @@ function ScenarioCardInner({
               onChange={(e) =>
                 onUpdate?.("startingRevenue", parseFloat(e.target.value) || 0)
               }
-              className="h-7 w-28 text-right text-sm"
+              className="h-7 w-28 text-right text-sm font-mono tabular-nums"
             />
           )}
         </div>
         <div className="flex items-center justify-between">
           <Label className="text-xs text-gray-500">Monthly growth</Label>
           {isCurrentPath ? (
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-medium text-gray-900 font-mono tabular-nums">
               {monthlyGrowthRate}%/mo
             </span>
           ) : (
@@ -153,14 +153,14 @@ function ScenarioCardInner({
                   parseFloat(e.target.value) || 0
                 )
               }
-              className="h-7 w-28 text-right text-sm"
+              className="h-7 w-28 text-right text-sm font-mono tabular-nums"
             />
           )}
         </div>
         <div className="flex items-center justify-between">
           <Label className="text-xs text-gray-500">Monthly expenses</Label>
           {isCurrentPath ? (
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-medium text-gray-900 font-mono tabular-nums">
               {formatCurrency(monthlyExpenses)}/mo
             </span>
           ) : (
@@ -173,7 +173,7 @@ function ScenarioCardInner({
                   parseFloat(e.target.value) || 0
                 )
               }
-              className="h-7 w-28 text-right text-sm"
+              className="h-7 w-28 text-right text-sm font-mono tabular-nums"
             />
           )}
         </div>
@@ -185,7 +185,7 @@ function ScenarioCardInner({
           <span className="text-gray-500">
             Reaches {formatCurrency(targetMonthlyRevenue)} in:
           </span>
-          <span className="font-semibold text-gray-900">
+          <span className="font-semibold text-gray-900 font-mono tabular-nums">
             {startingRevenue <= 0
               ? "N/A"
               : calculations.monthsToTarget === 0
@@ -197,7 +197,7 @@ function ScenarioCardInner({
         </div>
         <div className="flex justify-between">
           <span className="text-gray-500">Walk Away Money in:</span>
-          <span className="font-semibold text-gray-900">
+          <span className="font-semibold text-gray-900 font-mono tabular-nums">
             {calculations.monthsToLevel4 === 0
               ? "Already there"
               : calculations.monthsToLevel4 !== null

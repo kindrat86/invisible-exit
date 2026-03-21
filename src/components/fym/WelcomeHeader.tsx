@@ -9,7 +9,7 @@ interface WelcomeHeaderProps {
 export default function WelcomeHeader({ email, latestEntry }: WelcomeHeaderProps) {
   const name = email.split("@")[0];
 
-  let subtitle = "Let's calculate your first FYM score.";
+  let subtitle = "Let's see where you stand on your exit.";
   if (latestEntry) {
     const burn = Number(latestEntry.monthly_burn);
     const revenue = Number(latestEntry.monthly_revenue);
@@ -23,11 +23,11 @@ export default function WelcomeHeader({ email, latestEntry }: WelcomeHeaderProps
   }
 
   return (
-    <div className="mb-6">
-      <h1 className="text-2xl md:text-3xl font-bold text-[#0B1D3A] tracking-tight">
+    <div className="mb-8 animate-fade-in">
+      <h1 className="text-2xl md:text-3xl font-bold text-[#0B1D3A] tracking-tight leading-tight">
         Welcome back, {name}.
       </h1>
-      <p className="text-[#4A5568] mt-1">{subtitle}</p>
+      <p className="text-[#4A5568] mt-1.5 text-base">{subtitle}</p>
     </div>
   );
 }

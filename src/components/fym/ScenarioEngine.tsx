@@ -50,7 +50,6 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
     setScenarios((prev) => prev.filter((s) => s.id !== id));
   };
 
-  // Comparison summary
   const summary = useMemo(() => {
     if (scenarios.length === 0) return null;
 
@@ -99,22 +98,18 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
   }, [scenarios, inputs]);
 
   return (
-    <div>
+    <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-            What-If Scenarios
-          </p>
-          <h3 className="text-lg font-semibold text-gray-900 tracking-tight">
-            Compare Different Paths to Freedom
-          </h3>
+          <p className="section-label mb-1">What-If Scenarios</p>
+          <h3 className="section-title">Compare Different Paths to Freedom</h3>
         </div>
         {scenarios.length < 2 && (
           <Button
             variant="outline"
             size="sm"
             onClick={addScenario}
-            className="text-sm"
+            className="text-sm border-dashed hover:border-[#60A5FA] hover:text-[#60A5FA] transition-colors duration-200"
           >
             <Plus className="h-4 w-4 mr-1" />
             Add Scenario
@@ -122,8 +117,7 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
         )}
       </div>
 
-      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2">
-        {/* Current Path */}
+      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-1 px-1">
         <ScenarioCard
           name="Current Path"
           startingRevenue={inputs.monthlySideRevenue}
@@ -136,7 +130,6 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
           strokeColor="#60A5FA"
         />
 
-        {/* Custom scenarios */}
         {scenarios.map((s, idx) => (
           <ScenarioCard
             key={s.id}
@@ -155,9 +148,8 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
         ))}
       </div>
 
-      {/* Comparison summary */}
       {summary && (
-        <div className="mt-4 bg-gray-50 rounded-lg p-4 text-sm text-gray-700">
+        <div className="mt-4 bg-blue-50/50 border border-blue-100/50 rounded-lg p-4 text-sm text-gray-700">
           {summary}
         </div>
       )}

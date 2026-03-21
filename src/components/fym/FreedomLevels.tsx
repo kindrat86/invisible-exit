@@ -23,13 +23,9 @@ export default function FreedomLevels({
       : currentLevelDef?.motivationalCopy ?? "";
 
   return (
-    <div>
-      <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
-        Progress
-      </p>
-      <h3 className="text-lg font-semibold text-gray-900 tracking-tight mb-4">
-        Your Freedom Level
-      </h3>
+    <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 p-6">
+      <p className="section-label mb-1">Progress</p>
+      <h3 className="section-title mb-4">Your Freedom Level</h3>
 
       <FreedomLevelStepper
         currentLevel={currentLevel}
@@ -37,12 +33,9 @@ export default function FreedomLevels({
       />
 
       {/* Detail card */}
-      <div
-        className="mt-4 rounded-xl border border-gray-100 p-6 shadow-sm"
-        style={{ background: "rgba(255,255,255,0.95)", backdropFilter: "blur(8px)" }}
-      >
+      <div className="mt-4 bg-gray-50/80 rounded-lg p-5">
         <div className="flex items-baseline gap-2 mb-2">
-          <span className="text-2xl font-bold text-gray-900">
+          <span className="text-2xl font-bold text-gray-900 font-mono tabular-nums">
             Level {currentLevel}
           </span>
           <span className="text-sm text-gray-500">
@@ -59,9 +52,9 @@ export default function FreedomLevels({
           <div className="mb-4">
             <div className="flex items-center justify-between text-xs text-gray-500 mb-1.5">
               <span>Progress to Level {nextLevelDef.level}: {nextLevelDef.name}</span>
-              <span>{Math.round(progressToNext)}%</span>
+              <span className="font-mono tabular-nums">{Math.round(progressToNext)}%</span>
             </div>
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-gray-200/60 rounded-full overflow-hidden">
               <div
                 className="h-full bg-[#60A5FA] rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${progressToNext}%` }}
@@ -76,7 +69,9 @@ export default function FreedomLevels({
           </div>
         )}
 
-        <p className="text-sm text-gray-500 italic">{motivationalCopy}</p>
+        <p className="text-sm text-gray-500 italic border-l-2 border-[#60A5FA]/30 pl-3">
+          {motivationalCopy}
+        </p>
       </div>
     </div>
   );

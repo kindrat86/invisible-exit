@@ -65,7 +65,6 @@ export default function FYMCalculator({
     const fymTotal = calculateRunway(fymMonthly, inputs.monthsToExit);
     const fymFreedomNumber = calculateFreedomNumber(inputs.monthlyExpenses);
 
-    // Check for existing entry today
     const today = new Date();
     const startOfDay = new Date(
       today.getFullYear(),
@@ -165,60 +164,91 @@ export default function FYMCalculator({
     setShareOpen(true);
   }, [inputs.monthlyExpenses]);
 
+  const sections = [
+    { key: "briefing", delay: 0 },
+    { key: "inputs", delay: 50 },
+    { key: "levels", delay: 100 },
+    { key: "scenarios", delay: 150 },
+    { key: "reverse", delay: 200 },
+    { key: "risk", delay: 250 },
+    { key: "actions", delay: 300 },
+  ];
+
   return (
     <div className="space-y-8">
       {/* Section 1: Morning Briefing */}
-      <MorningBriefing briefing={briefing} hasEntries={entries.length > 0} />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[0].delay}ms` }}>
+        <MorningBriefing briefing={briefing} hasEntries={entries.length > 0} />
+      </div>
 
       {/* Section 2: Smart Input Panel */}
-      <SmartInputPanel
-        inputs={inputs}
-        onUpdate={updateInput}
-        onReset={resetToDefaults}
-      />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[1].delay}ms` }}>
+        <SmartInputPanel
+          inputs={inputs}
+          onUpdate={updateInput}
+          onReset={resetToDefaults}
+        />
+      </div>
 
       {/* Section 3: Freedom Levels */}
-      <FreedomLevels
-        currentLevel={freedomLevel}
-        progressToNext={progressToNext}
-        monthsToNextLevel={monthsToNextLevel}
-      />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[2].delay}ms` }}>
+        <FreedomLevels
+          currentLevel={freedomLevel}
+          progressToNext={progressToNext}
+          monthsToNextLevel={monthsToNextLevel}
+        />
+      </div>
 
       {/* Section 4: Scenario Planner */}
-      <ScenarioEngine inputs={inputs} />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[3].delay}ms` }}>
+        <ScenarioEngine inputs={inputs} />
+      </div>
 
       {/* Section 5: Reverse Calculator */}
-      <ReverseCalculator inputs={inputs} />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[4].delay}ms` }}>
+        <ReverseCalculator inputs={inputs} />
+      </div>
 
       {/* Section 6: Risk-Adjusted Freedom Score */}
-      <RiskFreedomScore
-        inputs={inputs}
-        freedomLevel={freedomLevel}
-        riskAssessment={risk}
-        onSwitchToInvisibility={() => onSwitchTab("invisibility")}
-      />
+      <div className="animate-fade-in" style={{ animationDelay: `${sections[5].delay}ms` }}>
+        <RiskFreedomScore
+          inputs={inputs}
+          freedomLevel={freedomLevel}
+          riskAssessment={risk}
+          onSwitchToInvisibility={() => onSwitchTab("invisibility")}
+        />
+      </div>
 
       {/* Save & Share */}
-      <div className="flex gap-3 flex-wrap">
-        <Button
-          onClick={handleSave}
-          disabled={saving}
-          variant="outline"
-          className="transition-transform active:scale-95"
-        >
-          {saving
-            ? "Saving..."
-            : savedToday
-              ? "Already logged today. See you tomorrow."
-              : "Save Entry"}
-        </Button>
-        <Button
-          onClick={handleShare}
-          disabled={sharing}
-          className="bg-[#0B1D3A] hover:bg-[#132D5E] text-white"
-        >
-          {sharing ? "Creating badge..." : "Share"}
-        </Button>
+      <div
+        className="bg-white rounded-xl border border-gray-200/80 shadow-sm p-6 animate-fade-in"
+        style={{ animationDelay: `${sections[6].delay}ms` }}
+      >
+        <div className="flex gap-3 flex-wrap">
+          <Button
+            onClick={handleSave}
+            disabled={saving}
+            className={
+              savedToday
+                ? "bg-green-50 text-green-600 border border-green-200 hover:bg-green-100 transition-all duration-200"
+                : "bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold shadow-sm shadow-blue-200/50 active:scale-[0.98] transition-all duration-200"
+            }
+          >
+            {saving
+              ? "Saving..."
+              : savedToday
+                ? "Already logged today. See you tomorrow."
+                : "Save Entry"}
+          </Button>
+          <Button
+            onClick={handleShare}
+            disabled={sharing}
+            variant="outline"
+            className="transition-all duration-200 hover:shadow-sm"
+          >
+            {sharing ? "Creating badge..." : "Share"}
+          </Button>
+        </div>
       </div>
 
       <ShareModal
