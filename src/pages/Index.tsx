@@ -114,6 +114,13 @@ const Index = () => {
         "5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. $0.97/month."
       );
     }
+
+    // Auto-trigger checkout when arriving from email CTA
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("checkout") === "starter") {
+      window.history.replaceState({}, "", window.location.pathname);
+      handleCheckout();
+    }
   }, []);
 
   const handleCheckout = async () => {
