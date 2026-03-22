@@ -91,13 +91,14 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   }
 
   // Upsert profile
+  const tier = session.metadata?.product === "founding_member" ? "founding" : "fym";
   const { error: profileError } = await supabase.from("profiles").upsert(
     {
       id: userId,
       email,
       stripe_customer_id: stripeCustomerId,
       subscription_status: "active",
-      subscription_tier: "fym",
+      subscription_tier: tier,
     },
     { onConflict: "id" }
   );

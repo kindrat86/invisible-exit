@@ -14,87 +14,89 @@ export type Database = {
   }
   public: {
     Tables: {
-      profiles: {
+      fym_badges: {
         Row: {
-          id: string
-          email: string
-          stripe_customer_id: string | null
-          subscription_status: string
-          subscription_tier: string
+          badge_value: number
           created_at: string
-          updated_at: string
+          id: string
+          share_id: string
+          user_id: string
         }
         Insert: {
-          id: string
-          email: string
-          stripe_customer_id?: string | null
-          subscription_status?: string
-          subscription_tier?: string
+          badge_value: number
           created_at?: string
-          updated_at?: string
+          id?: string
+          share_id: string
+          user_id: string
         }
         Update: {
-          id?: string
-          email?: string
-          stripe_customer_id?: string | null
-          subscription_status?: string
-          subscription_tier?: string
+          badge_value?: number
           created_at?: string
-          updated_at?: string
+          id?: string
+          share_id?: string
+          user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "fym_badges_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       fym_entries: {
         Row: {
-          id: string
-          user_id: string
-          runway_months: number
-          monthly_burn: number
-          monthly_revenue: number
-          fym_monthly: number
-          fym_total: number
-          fym_freedom_number: number
-          monthly_growth_rate: number
-          corporate_salary: number
-          target_monthly_revenue: number
-          freedom_level: number
-          combined_readiness_score: number
+          combined_readiness_score: number | null
+          corporate_salary: number | null
           created_at: string
           deleted_at: string | null
-        }
-        Insert: {
-          id?: string
-          user_id: string
-          runway_months: number
-          monthly_burn: number
-          monthly_revenue: number
+          freedom_level: number | null
+          fym_freedom_number: number
           fym_monthly: number
           fym_total: number
-          fym_freedom_number: number
-          monthly_growth_rate?: number
-          corporate_salary?: number
-          target_monthly_revenue?: number
-          freedom_level?: number
-          combined_readiness_score?: number
+          id: string
+          monthly_burn: number
+          monthly_growth_rate: number | null
+          monthly_revenue: number
+          runway_months: number
+          target_monthly_revenue: number | null
+          user_id: string
+        }
+        Insert: {
+          combined_readiness_score?: number | null
+          corporate_salary?: number | null
           created_at?: string
           deleted_at?: string | null
+          freedom_level?: number | null
+          fym_freedom_number: number
+          fym_monthly: number
+          fym_total: number
+          id?: string
+          monthly_burn: number
+          monthly_growth_rate?: number | null
+          monthly_revenue: number
+          runway_months: number
+          target_monthly_revenue?: number | null
+          user_id: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          runway_months?: number
-          monthly_burn?: number
-          monthly_revenue?: number
-          fym_monthly?: number
-          fym_total?: number
-          fym_freedom_number?: number
-          monthly_growth_rate?: number
-          corporate_salary?: number
-          target_monthly_revenue?: number
-          freedom_level?: number
-          combined_readiness_score?: number
+          combined_readiness_score?: number | null
+          corporate_salary?: number | null
           created_at?: string
           deleted_at?: string | null
+          freedom_level?: number | null
+          fym_freedom_number?: number
+          fym_monthly?: number
+          fym_total?: number
+          id?: string
+          monthly_burn?: number
+          monthly_growth_rate?: number | null
+          monthly_revenue?: number
+          runway_months?: number
+          target_monthly_revenue?: number | null
+          user_id?: string
         }
         Relationships: [
           {
@@ -103,95 +105,87 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       fym_scenarios: {
         Row: {
-          id: string
-          user_id: string
           created_at: string
-          updated_at: string
-          name: string
-          starting_revenue: number
-          monthly_growth_rate: number
+          id: string
+          is_active: boolean | null
           monthly_expenses: number
-          is_active: boolean
-          sort_order: number
+          monthly_growth_rate: number
+          name: string
+          sort_order: number | null
+          starting_revenue: number
+          updated_at: string
+          user_id: string
         }
         Insert: {
-          id?: string
-          user_id: string
           created_at?: string
-          updated_at?: string
-          name?: string
-          starting_revenue?: number
-          monthly_growth_rate?: number
+          id?: string
+          is_active?: boolean | null
           monthly_expenses?: number
-          is_active?: boolean
-          sort_order?: number
+          monthly_growth_rate?: number
+          name?: string
+          sort_order?: number | null
+          starting_revenue?: number
+          updated_at?: string
+          user_id: string
         }
         Update: {
-          id?: string
-          user_id?: string
           created_at?: string
-          updated_at?: string
-          name?: string
-          starting_revenue?: number
-          monthly_growth_rate?: number
+          id?: string
+          is_active?: boolean | null
           monthly_expenses?: number
-          is_active?: boolean
-          sort_order?: number
+          monthly_growth_rate?: number
+          name?: string
+          sort_order?: number | null
+          starting_revenue?: number
+          updated_at?: string
+          user_id?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "fym_scenarios_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          }
-        ]
+        Relationships: []
       }
       invisibility_scores: {
         Row: {
-          id: string
-          user_id: string
-          total_score: number
-          entity_score: number
-          digital_score: number
+          answers: Json
           compliance_score: number
-          operational_score: number
-          financial_score: number
-          answers: Record<string, boolean>
-          fixes_count: number
           created_at: string
+          digital_score: number
+          entity_score: number
+          financial_score: number
+          fixes_count: number
+          id: string
+          operational_score: number
+          total_score: number
+          user_id: string
         }
         Insert: {
-          id?: string
-          user_id: string
-          total_score: number
-          entity_score?: number
-          digital_score?: number
+          answers?: Json
           compliance_score?: number
-          operational_score?: number
-          financial_score?: number
-          answers?: Record<string, boolean>
-          fixes_count?: number
           created_at?: string
+          digital_score?: number
+          entity_score?: number
+          financial_score?: number
+          fixes_count?: number
+          id?: string
+          operational_score?: number
+          total_score?: number
+          user_id: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          total_score?: number
-          entity_score?: number
-          digital_score?: number
+          answers?: Json
           compliance_score?: number
-          operational_score?: number
-          financial_score?: number
-          answers?: Record<string, boolean>
-          fixes_count?: number
           created_at?: string
+          digital_score?: number
+          entity_score?: number
+          financial_score?: number
+          fixes_count?: number
+          id?: string
+          operational_score?: number
+          total_score?: number
+          user_id?: string
         }
         Relationships: [
           {
@@ -200,7 +194,7 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
       idea_pipeline: {
@@ -271,47 +265,51 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
-          }
+          },
         ]
       }
-      fym_badges: {
+      profiles: {
         Row: {
-          id: string
-          user_id: string
-          badge_value: number
-          share_id: string
           created_at: string
+          email: string
+          id: string
+          stripe_customer_id: string | null
+          subscription_status: string
+          subscription_tier: string
+          updated_at: string
         }
         Insert: {
-          id?: string
-          user_id: string
-          badge_value: number
-          share_id: string
           created_at?: string
+          email: string
+          id: string
+          stripe_customer_id?: string | null
+          subscription_status?: string
+          subscription_tier?: string
+          updated_at?: string
         }
         Update: {
-          id?: string
-          user_id?: string
-          badge_value?: number
-          share_id?: string
           created_at?: string
+          email?: string
+          id?: string
+          stripe_customer_id?: string | null
+          subscription_status?: string
+          subscription_tier?: string
+          updated_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "fym_badges_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          }
-        ]
+        Relationships: []
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_badge_by_share_id: {
+        Args: { p_share_id: string }
+        Returns: {
+          badge_value: number
+        }[]
+      }
+      is_subscription_active: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never

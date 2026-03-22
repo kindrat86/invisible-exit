@@ -23,15 +23,13 @@ export default function Badge() {
       }
 
       const { data, error } = await supabase
-        .from("fym_badges")
-        .select("badge_value")
-        .eq("share_id", shareId)
-        .single();
+        .rpc("get_badge_by_share_id", { p_share_id: shareId });
 
-      if (error || !data) {
+      if (error || !data || (Array.isArray(data) && data.length === 0)) {
         setNotFound(true);
       } else {
-        setBadgeValue(Number(data.badge_value));
+        const row = Array.isArray(data) ? data[0] : data;
+        setBadgeValue(Number(row.badge_value));
       }
       setLoading(false);
     };
