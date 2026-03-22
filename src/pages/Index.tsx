@@ -173,11 +173,11 @@ const Index = () => {
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
             Hey, my name is Adrian. I am a Managing Director. $120K salary. Less
             than 0.5% equity. I sat down one night and ran the numbers. Even a
-            $1B exit, after taxes and dilution, would pay me less per year than I
-            was already earning. That's when it hit me: this company will never
-            give me enough to walk away. No FYM. No freedom. Just a salary that
-            keeps me showing up. So I started building something invisible on the
-            side. Something that's mine. Here's the system.
+            $1B exit, after taxes and dilution, if I invested every cent at 5%,
+            the passive income still wouldn't cover my yearly salary. I'd still
+            need to work for someone. That's not an exit. That's a longer leash.
+            So I started building something invisible on the side. Something
+            that's mine. Here's the system.
           </p>
 
           {/* Video placeholder */}
