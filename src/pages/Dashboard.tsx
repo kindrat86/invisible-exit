@@ -11,13 +11,6 @@ import ReactivationScreen from "@/components/ReactivationScreen";
 import UpgradeBanner from "@/components/UpgradeBanner";
 import FeatureGate from "@/components/FeatureGate";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFymEntries } from "@/hooks/useFymEntries";
@@ -55,7 +48,6 @@ function DashboardContent() {
   const [noProfile, setNoProfile] = useState(false);
   const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
-  const [showOnboarding, setShowOnboarding] = useState(false);
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
@@ -90,11 +82,6 @@ function DashboardContent() {
         setNoProfile(true);
       } else {
         setProfile(data as Profile);
-        const onboardingKey = `fym_onboarded_${user.id}`;
-        if (!localStorage.getItem(onboardingKey)) {
-          setShowOnboarding(true);
-          localStorage.setItem(onboardingKey, "true");
-        }
       }
       setLoading(false);
     };
@@ -115,11 +102,11 @@ function DashboardContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+      <div className="min-h-screen bg-[#1B2A4A]">
         <div className="max-w-5xl mx-auto p-6 space-y-4 pt-20">
-          <Skeleton className="h-10 w-48" />
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-64 w-full" />
+          <Skeleton className="h-10 w-48 bg-white/10" />
+          <Skeleton className="h-20 w-full bg-white/10" />
+          <Skeleton className="h-64 w-full bg-white/10" />
         </div>
       </div>
     );
@@ -127,14 +114,14 @@ function DashboardContent() {
 
   if (noProfile) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+      <div className="min-h-screen bg-[#1B2A4A]">
         <DashboardNav email={email} />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center space-y-4">
-            <h2 className="text-xl font-bold text-[#0B1D3A]">
+            <h2 className="text-xl font-bold text-white">
               Your account is being set up.
             </h2>
-            <p className="text-[#4A5568]">
+            <p className="text-blue-200">
               Check your email for login details, or refresh this page in a
               moment.
             </p>
@@ -164,26 +151,8 @@ function DashboardContent() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+    <div className="min-h-screen bg-[#1B2A4A]">
       <DashboardNav email={email} />
-
-      <Dialog open={showOnboarding} onOpenChange={setShowOnboarding}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Welcome to your FYM Dashboard</DialogTitle>
-            <DialogDescription>
-              Enter your numbers below to calculate your Founder Yield Monthly.
-              Check in every morning. Watch your exit take shape.
-            </DialogDescription>
-          </DialogHeader>
-          <Button
-            onClick={() => setShowOnboarding(false)}
-            className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
-          >
-            Get Started
-          </Button>
-        </DialogContent>
-      </Dialog>
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {isActive ? (
@@ -198,16 +167,16 @@ function DashboardContent() {
             />
 
             <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/60 backdrop-blur-sm border border-gray-200/60 rounded-lg p-1">
-                <TabsTrigger value="calculator" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Calculator</TabsTrigger>
-                <TabsTrigger value="history" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">History</TabsTrigger>
-                <TabsTrigger value="trends" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
-                <TabsTrigger value="invisibility" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
-                <TabsTrigger value="ideas" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
-                <TabsTrigger value="pipeline" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Pipeline</TabsTrigger>
-                <TabsTrigger value="brand" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
-                <TabsTrigger value="launch" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
-                <TabsTrigger value="stealth" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
+              <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
+                <TabsTrigger value="calculator" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Calculator</TabsTrigger>
+                <TabsTrigger value="history" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">History</TabsTrigger>
+                <TabsTrigger value="trends" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
+                <TabsTrigger value="invisibility" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
+                <TabsTrigger value="ideas" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
+                <TabsTrigger value="pipeline" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Pipeline</TabsTrigger>
+                <TabsTrigger value="brand" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
+                <TabsTrigger value="launch" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
+                <TabsTrigger value="stealth" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
               </TabsList>
 
               <TabsContent value="calculator">

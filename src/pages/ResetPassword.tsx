@@ -38,10 +38,10 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0B1D3A] px-4">
-      <Card className="w-full max-w-md border-[#132D5E] bg-[#0B1D3A]">
+    <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A] px-4">
+      <Card className="w-full max-w-md border-white/10 bg-[#1B2A4A]">
         <CardHeader className="text-center">
-          <p className="text-[#D4A843] text-xs tracking-widest uppercase font-semibold mb-2">
+          <p className="text-blue-400 text-xs tracking-widest uppercase font-semibold mb-2">
             INVISIBLE EXIT
           </p>
           <CardTitle className="text-xl font-bold text-white">
@@ -60,7 +60,7 @@ export default function ResetPassword() {
                 placeholder="Minimum 8 characters"
                 required
                 minLength={8}
-                className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
               />
             </div>
             <div className="space-y-2">
@@ -73,12 +73,12 @@ export default function ResetPassword() {
                 placeholder="Repeat your password"
                 required
                 minLength={8}
-                className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
               />
             </div>
             <Button
               type="submit"
-              className="w-full bg-[#D4A843] hover:bg-[#E0BC5E] text-[#0B1D3A] font-semibold"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
               disabled={loading}
             >
               {loading ? "Updating..." : "Update Password"}
