@@ -65,12 +65,12 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0B1D3A] px-4">
-      <Card className="w-full max-w-md border-[#132D5E] bg-white">
+      <Card className="w-full max-w-md border-[#132D5E] bg-[#0B1D3A]">
         <CardHeader className="text-center">
           <p className="text-[#D4A843] text-xs tracking-widest uppercase font-semibold mb-2">
             INVISIBLE EXIT
           </p>
-          <CardTitle className="text-xl font-bold text-[#0B1D3A]">
+          <CardTitle className="text-xl font-bold text-white">
             {mode === "forgot" ? "Reset Password" : "Sign In"}
           </CardTitle>
         </CardHeader>
@@ -78,7 +78,7 @@ export default function Login() {
           {mode === "password" && (
             <form onSubmit={handlePasswordLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-white">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -86,10 +86,11 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
+                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" className="text-white">Password</Label>
                 <Input
                   id="password"
                   type="password"
@@ -97,6 +98,7 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Your password"
                   required
+                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
@@ -128,7 +130,7 @@ export default function Login() {
           {mode === "magic" && (
             <form onSubmit={handleMagicLink} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email-magic">Email</Label>
+                <Label htmlFor="email-magic" className="text-white">Email</Label>
                 <Input
                   id="email-magic"
                   type="email"
@@ -136,6 +138,7 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
+                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
@@ -157,11 +160,11 @@ export default function Login() {
 
           {mode === "forgot" && (
             <form onSubmit={handleForgotPassword} className="space-y-4">
-              <p className="text-sm text-[#4A5568]">
+              <p className="text-sm text-gray-400">
                 Enter your email and we'll send you a password reset link.
               </p>
               <div className="space-y-2">
-                <Label htmlFor="email-forgot">Email</Label>
+                <Label htmlFor="email-forgot" className="text-white">Email</Label>
                 <Input
                   id="email-forgot"
                   type="email"
@@ -169,6 +172,7 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
+                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
