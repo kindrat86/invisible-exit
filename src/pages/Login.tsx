@@ -18,7 +18,7 @@ export default function Login() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) navigate("/dashboard", { replace: true });
+      if (session) navigate("/fym/dashboard", { replace: true });
     });
   }, [navigate]);
 
@@ -30,7 +30,7 @@ export default function Login() {
     if (error) {
       toast.error(error.message);
     } else {
-      navigate("/dashboard");
+      navigate("/fym/dashboard");
     }
   };
 
@@ -39,7 +39,7 @@ export default function Login() {
     setLoading(true);
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${window.location.origin}/dashboard` },
+      options: { emailRedirectTo: `${window.location.origin}/fym/dashboard` },
     });
     setLoading(false);
     if (error) {
