@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Check,
   Play,
+  LayoutDashboard,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -375,11 +376,53 @@ const OTOFounding = () => {
           </button>
           <div className="mt-8">
             <Link
-              to="/confirmation"
+              to="/dashboard"
               className="text-white/40 hover:text-white/60 text-sm underline transition-colors"
             >
               No thanks, take me to my dashboard
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Email Notice + Dashboard Link */}
+      <section className="bg-[#1B2A4A] px-6 pb-16">
+        <div className="max-w-[720px] mx-auto">
+          <div className="bg-[rgba(96,165,250,0.06)] border border-[rgba(96,165,250,0.15)] rounded-xl p-6 text-center">
+            <h4 className="text-base font-semibold text-white mb-3">
+              Important: Make Sure You Get My Emails
+            </h4>
+            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+              I just sent you a welcome email with your login details and next
+              steps. If you don't see it in the next few minutes, check your spam
+              or promotions folder.
+            </p>
+            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+              To make sure nothing gets lost, add this address to your contacts
+              or favorites:
+            </p>
+
+            <span className="inline-block bg-[rgba(96,165,250,0.12)] text-[#60A5FA] font-mono text-[15px] font-semibold px-4 py-1.5 rounded-md mb-4">
+              escape@invisibleexit.com
+            </span>
+
+            <p className="text-[13px] text-[#4A5568] leading-relaxed">
+              Gmail users: drag the email from Promotions to Primary. Outlook
+              users: right-click and select "Always move to Inbox."
+            </p>
+
+            <div className="border-t border-[rgba(96,165,250,0.15)] mt-6 pt-5">
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center gap-2 text-[#60A5FA] text-sm font-semibold hover:text-[#93c5fd] transition-colors"
+              >
+                <LayoutDashboard className="w-4 h-4" />
+                Go to your dashboard now
+              </Link>
+              <p className="text-[12px] text-[#4A5568] mt-2">
+                Use this link if you didn't receive the welcome email.
+              </p>
+            </div>
           </div>
         </div>
       </section>
