@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check, Lock } from "lucide-react";
+import { Check, Rocket, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
@@ -11,13 +11,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FYM = () => {
+const LaunchControl = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const handleCheckout = async () => {
     setCheckoutLoading(true);
     const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: {},
+      body: { product: "launch-control" },
     });
     setCheckoutLoading(false);
     if (error || !data?.url) {
@@ -28,24 +28,24 @@ const FYM = () => {
   };
 
   useEffect(() => {
-    document.title = "FYM Dashboard: Track Your Invisible Income | Invisible Exit";
+    document.title = "Launch Control: Idea to Live in Days | Invisible Exit";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Step-by-step launch playbook for corporate managers. Go from idea to live and accepting payments faster than your day job allows. $0.97/mo."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "FYM Dashboard: Track Your Invisible Income | Invisible Exit");
+    if (ogTitle) ogTitle.setAttribute("content", "Launch Control: Idea to Live in Days | Invisible Exit");
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc)
       ogDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Step-by-step launch playbook for corporate managers. Go from idea to live and accepting payments faster than your day job allows. $0.97/mo."
       );
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
+    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/launch-control");
   }, []);
 
   return (
@@ -55,38 +55,31 @@ const FYM = () => {
       {/* Section 1: Hero */}
       <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl text-center">
+          <div className="bg-[#60A5FA]/20 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-8">
+            <Rocket className="h-8 w-8 text-[#60A5FA]" />
+          </div>
           <p className="text-white/70 text-sm tracking-widest uppercase mb-4">
-            FOR MANAGING DIRECTORS BUILDING INVISIBLE INCOME
+            FOR CORPORATE MANAGERS WHO BUILD IN THE SHADOWS
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            $0.97 From a Stranger While I Slept on a Plane. That's When I Knew the Cage Had a Door.
+            Go From Idea to Live and Accepting Payments Faster Than Your Day Job Allows
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know $4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
+            You have the idea. You have the ambition. What you don't have is a playbook that works inside the constraints of a 60-hour corporate week, two kids, and a boss who checks LinkedIn.
           </p>
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
-            The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
+            Launch Control is a step-by-step system that takes you from "I have an idea" to "I just got my first payment" without your employer ever knowing.
           </p>
-          <div className="max-w-3xl mx-auto mb-10">
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-xl shadow-2xl shadow-black/30 border border-white/10"
-            >
-              <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/FYM.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
           <div className="mb-8">
             <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
-            <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
+            <span className="text-white/50 text-lg ml-3 line-through">$19/mo</span>
           </div>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Start Tracking for $0.97/mo"}
+            {checkoutLoading ? "Loading..." : "Add Launch Control for $0.97/mo"}
           </button>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -100,34 +93,22 @@ const FYM = () => {
           </p>
           <div className="text-gray-700 text-lg leading-[1.7] space-y-6">
             <p>
-              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my wife and 8-year-old for a family vacation. We climbed into a Tesla taxi outside Schiphol. The driver started the meter. My phone buzzed.
+              I spent nine months on my first side project. Nine months of late nights, rabbit holes, and decisions that didn't matter. Should I use Stripe or Paddle? Next.js or plain HTML? .com or .io?
             </p>
             <p>
-              Two notifications sat side by side in the same tray.
+              By the time I launched, I was exhausted. And the product was mediocre. Not because the idea was bad, but because I burned all my energy on decisions that had nothing to do with getting paid.
             </p>
             <p>
-              The first: a chain of corporate escalation emails. People at my company fighting over responsibilities, grey zones, internal conflicts that had been kicked up to me. Again. At 6 AM. On the first morning of my vacation.
+              My second product took eleven days. Same constraints: full-time job, family, secrecy. But I followed a checklist. Every decision was already made. Tech stack: decided. Payment setup: scripted. Domain and hosting: templated. Launch sequence: step by step.
             </p>
             <p>
-              The second: a Stripe notification. '$0.97 received.'
+              Eleven days from "I wonder if anyone would pay for this" to a Stripe notification on my phone. That second product made more in its first week than the first one made in three months.
             </p>
             <p>
-              A complete stranger, somewhere in the world, had found a landing page I built for plumbers in the USA. A business I know nothing about. In a country I don't live in. Under a name that isn't mine. And they paid me. While I slept on a plane.
+              The difference wasn't talent. It wasn't time. It was having a playbook that eliminated every decision except the one that matters: what problem am I solving and who am I solving it for?
             </p>
             <p>
-              I screamed.
-            </p>
-            <p>
-              The taxi driver looked in the rearview mirror, shocked. My wife looked at me like I was insane. Screaming about less than one euro in a taxi in Amsterdam. Then she saw my face. And she understood: this wasn't about the money. This was the proof that the cage has a door.
-            </p>
-            <p>
-              Later that day, I jumped on a call for those corporate escalations. And something had shifted. I resolved the issue faster, better, more effectively, because I was already detached from the corporate game. I wasn't playing for survival anymore. I was playing while already planning my exit.
-            </p>
-            <p>
-              That's when I built what I wish existed: a dashboard that shows your exact MRR across every platform, scores how invisible your operation is, and tells you exactly how many months until you can hand in your notice.
-            </p>
-            <p>
-              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/mo works. The model scales. And nobody needs to know.
+              Launch Control is that playbook. Every step I followed, packaged so you never have to waste nine months learning what I already know.
             </p>
           </div>
           <p className="text-gray-500 text-sm mt-8 text-right">-- Adrian</p>
@@ -138,21 +119,21 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            You Can't Exit What You Can't Measure
+            Ideas Die in the Gap Between "I Should Build This" and "It's Live"
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "What if you could see every dollar of invisible income in one place?",
-                body: "Your revenue is split across Stripe, PayPal, and three different SaaS dashboards. You spend Sunday nights in spreadsheets instead of with your family.",
+                title: "You have the idea, but no playbook",
+                body: "You've validated the concept in your head a hundred times. But when you sit down at 10 PM with two hours before sleep, you don't know what to do first. So you research. Again.",
               },
               {
-                title: "Are you one Google search away from your boss finding your side project?",
-                body: "One wrong move and your employer finds out. You need a system that scores how invisible your operation actually is.",
+                title: "You're paralyzed by decisions that don't matter",
+                body: "Stripe or Paddle? Vercel or Railway? Next.js or Astro? You spend weekends comparing tools instead of shipping. Every decision feels permanent when you only get 6 hours a week.",
               },
               {
-                title: "You want $4,000/mo. But are you 3 months away or 3 years?",
-                body: "You know you want $2,500-$4,000/mo recurring. But you have no idea if you're on track or how many months away you are.",
+                title: "Your day job doesn't leave room for guesswork",
+                body: "You have maybe 10 hours a week. You can't afford to spend 8 of them on setup, hosting, and payment integrations. You need a system that makes every hour count.",
               },
             ].map((card) => (
               <div
@@ -177,18 +158,18 @@ const FYM = () => {
             {[
               {
                 num: "1",
-                title: "Connect Your Accounts",
-                body: "Link your Stripe, PayPal, and SaaS platforms. Takes less than 2 minutes.",
+                title: "Pick Your Idea",
+                body: "Use the Idea Validator to choose a project that fits your skills, time, and invisibility requirements. No guesswork.",
               },
               {
                 num: "2",
-                title: "Get Your Numbers Instantly",
-                body: "FYM calculates your MRR, invisibility score, and exit timeline automatically.",
+                title: "Follow the Playbook",
+                body: "Step-by-step checklists for tech stack, domain, hosting, payment setup, landing page, and launch sequence. Every decision pre-made.",
               },
               {
                 num: "3",
-                title: "Check In Every Morning",
-                body: "Open your dashboard before your first meeting. Know exactly when you can walk away.",
+                title: "Go Live and Get Paid",
+                body: "Ship your product, flip the switch, and get your first payment. Most members go from idea to live in under two weeks.",
               },
             ].map((step) => (
               <div key={step.num} className="text-center">
@@ -207,29 +188,29 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-            Everything You Need to Measure Your Exit
+            Everything You Need to Ship in Days, Not Months
           </h2>
           <div className="space-y-20">
             {[
               {
-                title: "Know Your Exact MRR Across Every Platform in 10 Seconds",
-                subtitle: "Unified Revenue Tracker",
-                body: "Connect all your income streams. See MRR, ARR, churn rate, and growth trend in one dashboard. Updated daily.",
+                title: "Never Stare at a Blank Screen Again",
+                subtitle: "Launch Checklist",
+                body: "A step-by-step checklist that takes you from zero to live. Each task is specific, time-boxed, and ordered. Just open it and do the next thing.",
               },
               {
-                title: "Sleep Soundly Knowing Your Side Projects Are Invisible",
-                subtitle: "Invisibility Score",
-                body: "Our proprietary scoring system checks how invisible your operation is. Digital footprint, entity separation, compliance gaps. Get a score from 0-100 and specific fixes.",
+                title: "Stop Wasting Weekends Comparing Tools",
+                subtitle: "Tech Stack Selector",
+                body: "Pre-selected, battle-tested stacks for every type of micro-SaaS. Landing page? Done. API backend? Done. Database? Done. No more analysis paralysis.",
               },
               {
-                title: "See the Exact Date You Can Hand In Your Resignation",
-                subtitle: "Exit Timeline Calculator",
-                body: "Set your target ($2,500-$4,000/mo). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                title: "Accept Payments Before Your Next Sprint Planning",
+                subtitle: "Payment Setup Guide",
+                body: "Copy-paste Stripe integration scripts, pricing page templates, and checkout flows. Go from zero to accepting payments in under an hour.",
               },
               {
-                title: "Never Run Out of Invisible Income Ideas",
-                subtitle: "Idea Directory: 500+ Validated Ideas",
-                body: "Browse 500+ validated micro-SaaS ideas organized by industry, revenue tier, and time investment. Each scored for invisibility compatibility.",
+                title: "Your Product Needs a Home. This Gives It One in Minutes",
+                subtitle: "Domain & Hosting Playbook",
+                body: "Step-by-step guides for buying a domain anonymously, setting up hosting invisibly, and deploying without leaving a trace back to your real identity.",
               },
             ].map((feature, i) => (
               <div
@@ -259,7 +240,7 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-xl text-center">
           <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
-            Would it be worth $0.97 to never wonder 'am I close?' again?
+            Would it be worth $0.97 to cut your launch time from months to days?
           </p>
         </div>
       </section>
@@ -273,10 +254,10 @@ const FYM = () => {
           <div className="rounded-xl border border-gray-200 p-8">
             <ul className="space-y-4 mb-8">
               {[
-                { feature: "Know Your Exact MRR Across Every Platform", value: "$29/mo" },
-                { feature: "Invisibility Score: 0-100 with Specific Fixes", value: "$19/mo" },
-                { feature: "Exit Timeline: Your Exact Resignation Date", value: "$15/mo" },
-                { feature: "500+ Validated Micro-SaaS Ideas Directory", value: "$47/mo" },
+                { feature: "Step-by-Step Launch Checklist", value: "$29/mo" },
+                { feature: "Pre-Selected Tech Stacks for Every Use Case", value: "$19/mo" },
+                { feature: "Payment Setup Guide with Copy-Paste Scripts", value: "$25/mo" },
+                { feature: "Anonymous Domain & Hosting Playbook", value: "$15/mo" },
               ].map((item) => (
                 <li key={item.feature} className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-2">
@@ -289,23 +270,23 @@ const FYM = () => {
             </ul>
             <div className="border-t border-gray-200 pt-6 text-center">
               <p className="text-gray-500 text-lg mb-1">
-                Total Value: <span className="font-bold text-gray-900">$110/mo</span>
+                Total Value: <span className="font-bold text-gray-900">$88/mo</span>
               </p>
               <p className="text-gray-400 mb-1">
-                Normal Price: <span className="line-through">$12/mo</span>
+                Normal Price: <span className="line-through">$19/mo</span>
               </p>
               <p className="text-3xl font-bold text-[#60A5FA] mb-2">
                 Your Price: $0.97/mo
               </p>
               <p className="text-gray-400 text-sm mb-8">
-                Introductory pricing locks in for life. New members after launch pay $12/mo.
+                Introductory pricing locks in for life. New members after launch pay $19/mo.
               </p>
               <button
                 onClick={handleCheckout}
                 disabled={checkoutLoading}
                 className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
               >
-                {checkoutLoading ? "Loading..." : "Start for $0.97/mo"}
+                {checkoutLoading ? "Loading..." : "Add Launch Control for $0.97/mo"}
               </button>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
@@ -320,7 +301,7 @@ const FYM = () => {
             30-Day No-Questions Guarantee
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Use FYM Dashboard for 30 days. If you don't check it every single morning like your coffee, if it doesn't make you feel in control of your exit for the first time, email us one word: 'refund.' You'll get every cent back within 24 hours. No forms. No calls. No guilt.
+            Use Launch Control for 30 days. If you don't ship faster than you ever have before, if the playbook doesn't eliminate every "what should I do next?" moment, email us one word: 'refund.' Every cent back within 24 hours. No forms. No calls. No guilt.
           </p>
         </div>
       </section>
@@ -334,34 +315,42 @@ const FYM = () => {
           <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
             <AccordionItem value="faq-1">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Will my employer know I'm using this?
+                Do I need to know how to code?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                No. FYM Dashboard is a private web app. It doesn't appear on any public profile, doesn't send notifications to anyone, and doesn't require your work email. Your data is encrypted and only accessible with your login credentials. We built this specifically for people who need to stay invisible.
+                No. Launch Control includes no-code and AI-assisted paths for every step. If you can follow a checklist and use ChatGPT, you can launch a product. We also include copy-paste scripts for common integrations if you prefer to touch code.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-2">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                What if I don't have any revenue yet?
+                How is this different from a YouTube tutorial?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/mo.
+                YouTube teaches you concepts. Launch Control gives you a sequence. Every decision is already made. You don't watch and learn, you open the checklist and do the next step. It's the difference between studying for a test and having the answer key.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Why not just use a spreadsheet?
+                Will my employer find out I'm building something?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                You can. Most of us did. But a spreadsheet doesn't calculate your invisibility score, doesn't auto-update from Stripe and PayPal, and doesn't tell you how many months until you can quit. FYM replaces the Sunday night spreadsheet session with a 10-second morning check.
+                The playbook includes specific steps for anonymous domain registration, separate browser profiles, entity separation, and digital footprint management. We built this for people whose careers depend on staying invisible.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-4">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Can I upgrade later?
+                How long does it take to go from idea to live?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Yes. After joining FYM Dashboard, you'll have the option to upgrade to Founding Member, which includes the full toolkit: Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, private community, monthly masterclass, and an annual strategy call.
+                Most members with 8-10 hours per week go live within 10-14 days. The playbook is designed for corporate schedules: 1-2 hour blocks in the evenings and a few hours on weekends. No marathon coding sessions required.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq-5">
+              <AccordionTrigger className="text-left text-gray-900 text-base">
+                What if I already have FYM Dashboard?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                They work together perfectly. FYM tracks your numbers once you're live. Launch Control gets you to live in the first place. Think of Launch Control as the ignition and FYM as the instrument panel.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -372,17 +361,17 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Every Day You Don't Measure Is a Day You Fly Blind
+            Every Week Without a Playbook Is a Week Your Idea Stays an Idea
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
+            $0.97/mo. Cancel anytime. Go from idea to live before your next performance review.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Get FYM Dashboard"}
+            {checkoutLoading ? "Loading..." : "Get Launch Control"}
           </button>
         </div>
       </section>
@@ -392,4 +381,4 @@ const FYM = () => {
   );
 };
 
-export default FYM;
+export default LaunchControl;

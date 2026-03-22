@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FYM = () => {
+const StealthOps = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const handleCheckout = async () => {
@@ -28,24 +28,24 @@ const FYM = () => {
   };
 
   useEffect(() => {
-    document.title = "FYM Dashboard: Track Your Invisible Income | Invisible Exit";
+    document.title = "Stealth Ops Hub: Stay Invisible While You Build | Invisible Exit";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Legal structure templates, anonymity playbook, compliance database, and digital footprint scanner. Everything you need to build income your employer will never find."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "FYM Dashboard: Track Your Invisible Income | Invisible Exit");
+    if (ogTitle) ogTitle.setAttribute("content", "Stealth Ops Hub: Stay Invisible While You Build | Invisible Exit");
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc)
       ogDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Legal structure templates, anonymity playbook, compliance database, and digital footprint scanner. Everything you need to build income your employer will never find."
       );
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
+    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/stealth-ops");
   }, []);
 
   return (
@@ -56,37 +56,27 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-white/70 text-sm tracking-widest uppercase mb-4">
-            FOR MANAGING DIRECTORS BUILDING INVISIBLE INCOME
+            FOR THOSE WHO BUILD IN THE SHADOWS
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            $0.97 From a Stranger While I Slept on a Plane. That's When I Knew the Cage Had a Door.
+            One Google Search Away From Losing Everything You've Built
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know $4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
+            You're building invisible income on the side. But your LLC is registered under your real name. Your domain WHOIS is public. Your Stripe account links to your personal email. One curious colleague. One HR audit. One LinkedIn search by your boss. That's all it takes.
           </p>
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
-            The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
+            Stealth Ops Hub gives you the legal templates, anonymity playbook, compliance database, and digital footprint scanner to make your side operation truly invisible.
           </p>
-          <div className="max-w-3xl mx-auto mb-10">
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-xl shadow-2xl shadow-black/30 border border-white/10"
-            >
-              <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/FYM.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
           <div className="mb-8">
             <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
-            <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
+            <span className="text-white/50 text-lg ml-3 line-through">$25/mo</span>
           </div>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Start Tracking for $0.97/mo"}
+            {checkoutLoading ? "Loading..." : "Go Invisible for $0.97/mo"}
           </button>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -100,34 +90,25 @@ const FYM = () => {
           </p>
           <div className="text-gray-700 text-lg leading-[1.7] space-y-6">
             <p>
-              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my wife and 8-year-old for a family vacation. We climbed into a Tesla taxi outside Schiphol. The driver started the meter. My phone buzzed.
+              Six months into my first micro-SaaS, I made a mistake that almost ended everything.
             </p>
             <p>
-              Two notifications sat side by side in the same tray.
+              I registered an LLC under my real name. It was the default option. Took 3 minutes. I didn't think twice.
             </p>
             <p>
-              The first: a chain of corporate escalation emails. People at my company fighting over responsibilities, grey zones, internal conflicts that had been kicked up to me. Again. At 6 AM. On the first morning of my vacation.
+              Two weeks later, a colleague sent me a Slack message: "Hey, I was looking up something for a client and found a company registered under your name. Building something on the side?" He added a winking emoji. Like it was a joke.
             </p>
             <p>
-              The second: a Stripe notification. '$0.97 received.'
+              My heart stopped. I played it off. "Oh that's an old thing from college, never went anywhere." He bought it. This time.
             </p>
             <p>
-              A complete stranger, somewhere in the world, had found a landing page I built for plumbers in the USA. A business I know nothing about. In a country I don't live in. Under a name that isn't mine. And they paid me. While I slept on a plane.
+              That night, I spent 4 hours dismantling every trace. New LLC through a registered agent. WHOIS privacy on every domain. Separate email, separate Stripe, separate everything. I built a checklist. Then a compliance tracker. Then a full system.
             </p>
             <p>
-              I screamed.
+              I realized: the tools to build a SaaS are everywhere. The tools to build one invisibly don't exist. So I built them.
             </p>
             <p>
-              The taxi driver looked in the rearview mirror, shocked. My wife looked at me like I was insane. Screaming about less than one euro in a taxi in Amsterdam. Then she saw my face. And she understood: this wasn't about the money. This was the proof that the cage has a door.
-            </p>
-            <p>
-              Later that day, I jumped on a call for those corporate escalations. And something had shifted. I resolved the issue faster, better, more effectively, because I was already detached from the corporate game. I wasn't playing for survival anymore. I was playing while already planning my exit.
-            </p>
-            <p>
-              That's when I built what I wish existed: a dashboard that shows your exact MRR across every platform, scores how invisible your operation is, and tells you exactly how many months until you can hand in your notice.
-            </p>
-            <p>
-              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/mo works. The model scales. And nobody needs to know.
+              Stealth Ops Hub is everything I wish I had before that Slack message. Legal templates pre-configured for anonymity. A playbook that covers every exposure point. A scanner that finds what you missed. Because if someone finds your side business before you're ready to leave, you don't get to choose when you exit. They choose for you.
             </p>
           </div>
           <p className="text-gray-500 text-sm mt-8 text-right">-- Adrian</p>
@@ -138,21 +119,21 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            You Can't Exit What You Can't Measure
+            You're More Exposed Than You Think
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "What if you could see every dollar of invisible income in one place?",
-                body: "Your revenue is split across Stripe, PayPal, and three different SaaS dashboards. You spend Sunday nights in spreadsheets instead of with your family.",
+                title: "Your name is on public records right now",
+                body: "LLC filings, domain registrations, trademark applications. All searchable. All linked to you. One Google search by your boss, and your invisible income isn't invisible anymore.",
               },
               {
-                title: "Are you one Google search away from your boss finding your side project?",
-                body: "One wrong move and your employer finds out. You need a system that scores how invisible your operation actually is.",
+                title: "Your digital footprint connects your day job to your side project",
+                body: "Same email provider. Same IP address. Same payment processor linked to your personal bank. The dots are there. It just takes one person to connect them.",
               },
               {
-                title: "You want $4,000/mo. But are you 3 months away or 3 years?",
-                body: "You know you want $2,500-$4,000/mo recurring. But you have no idea if you're on track or how many months away you are.",
+                title: "You don't know what you don't know about compliance",
+                body: "Different jurisdictions, different rules. Some states require public disclosure. Some countries report foreign income. One missed filing and you have a legal problem, not just an HR one.",
               },
             ].map((card) => (
               <div
@@ -177,18 +158,18 @@ const FYM = () => {
             {[
               {
                 num: "1",
-                title: "Connect Your Accounts",
-                body: "Link your Stripe, PayPal, and SaaS platforms. Takes less than 2 minutes.",
+                title: "Audit Your Exposure",
+                body: "Run the Digital Footprint Scanner. It checks public records, WHOIS databases, social profiles, and corporate registries to find every trace of your side operation.",
               },
               {
                 num: "2",
-                title: "Get Your Numbers Instantly",
-                body: "FYM calculates your MRR, invisibility score, and exit timeline automatically.",
+                title: "Get Your Stealth Blueprint",
+                body: "Based on your scan results, Stealth Ops Hub generates a personalized anonymity plan: which entities to restructure, which records to seal, which tools to switch.",
               },
               {
                 num: "3",
-                title: "Check In Every Morning",
-                body: "Open your dashboard before your first meeting. Know exactly when you can walk away.",
+                title: "Implement With Templates",
+                body: "Use pre-built legal templates, entity formation guides, and compliance checklists. Everything pre-configured for maximum invisibility. Most members are fully stealth within a weekend.",
               },
             ].map((step) => (
               <div key={step.num} className="text-center">
@@ -207,29 +188,29 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-            Everything You Need to Measure Your Exit
+            Everything You Need to Disappear
           </h2>
           <div className="space-y-20">
             {[
               {
-                title: "Know Your Exact MRR Across Every Platform in 10 Seconds",
-                subtitle: "Unified Revenue Tracker",
-                body: "Connect all your income streams. See MRR, ARR, churn rate, and growth trend in one dashboard. Updated daily.",
+                title: "Separate Your Identity From Your Business in 48 Hours",
+                subtitle: "Anonymity Playbook",
+                body: "Step-by-step guide to decouple your real name from every public record. Registered agents, anonymous LLCs, privacy-first tools, email separation, payment isolation. Covers US, UK, EU, and 12 more jurisdictions.",
               },
               {
-                title: "Sleep Soundly Knowing Your Side Projects Are Invisible",
-                subtitle: "Invisibility Score",
-                body: "Our proprietary scoring system checks how invisible your operation is. Digital footprint, entity separation, compliance gaps. Get a score from 0-100 and specific fixes.",
+                title: "File the Right Paperwork Without Hiring a $500/hr Lawyer",
+                subtitle: "Legal Structure Templates",
+                body: "Pre-built templates for anonymous LLC formation, operating agreements, nominee director arrangements, and holding company structures. Customized for side-project operators who need to stay invisible, not Fortune 500 companies.",
               },
               {
-                title: "See the Exact Date You Can Hand In Your Resignation",
-                subtitle: "Exit Timeline Calculator",
-                body: "Set your target ($2,500-$4,000/mo). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                title: "Know the Rules Before You Break Them by Accident",
+                subtitle: "Compliance Database",
+                body: "Jurisdiction-by-jurisdiction rules for stealth operations. Tax obligations, disclosure requirements, foreign income reporting, employment contract limitations. Searchable by country, state, and business type.",
               },
               {
-                title: "Never Run Out of Invisible Income Ideas",
-                subtitle: "Idea Directory: 500+ Validated Ideas",
-                body: "Browse 500+ validated micro-SaaS ideas organized by industry, revenue tier, and time investment. Each scored for invisibility compatibility.",
+                title: "Find Every Trace of Your Side Business Before Someone Else Does",
+                subtitle: "Digital Footprint Scanner",
+                body: "Automated audit tool that scans public records, WHOIS databases, social media, corporate registries, and payment platforms. Flags every exposure point and gives you a fix for each one. Run it monthly.",
               },
             ].map((feature, i) => (
               <div
@@ -259,7 +240,7 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-xl text-center">
           <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
-            Would it be worth $0.97 to never wonder 'am I close?' again?
+            What would it cost you if your employer found out tomorrow?
           </p>
         </div>
       </section>
@@ -273,10 +254,10 @@ const FYM = () => {
           <div className="rounded-xl border border-gray-200 p-8">
             <ul className="space-y-4 mb-8">
               {[
-                { feature: "Know Your Exact MRR Across Every Platform", value: "$29/mo" },
-                { feature: "Invisibility Score: 0-100 with Specific Fixes", value: "$19/mo" },
-                { feature: "Exit Timeline: Your Exact Resignation Date", value: "$15/mo" },
-                { feature: "500+ Validated Micro-SaaS Ideas Directory", value: "$47/mo" },
+                { feature: "Anonymity Playbook: Full Identity Separation Guide", value: "$47" },
+                { feature: "Legal Structure Templates: LLC, Holding Co, Nominee", value: "$97" },
+                { feature: "Compliance Database: 30+ Jurisdictions", value: "$29/mo" },
+                { feature: "Digital Footprint Scanner: Monthly Audits", value: "$19/mo" },
               ].map((item) => (
                 <li key={item.feature} className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-2">
@@ -289,23 +270,23 @@ const FYM = () => {
             </ul>
             <div className="border-t border-gray-200 pt-6 text-center">
               <p className="text-gray-500 text-lg mb-1">
-                Total Value: <span className="font-bold text-gray-900">$110/mo</span>
+                Total Value: <span className="font-bold text-gray-900">$192+</span>
               </p>
               <p className="text-gray-400 mb-1">
-                Normal Price: <span className="line-through">$12/mo</span>
+                Normal Price: <span className="line-through">$25/mo</span>
               </p>
               <p className="text-3xl font-bold text-[#60A5FA] mb-2">
                 Your Price: $0.97/mo
               </p>
               <p className="text-gray-400 text-sm mb-8">
-                Introductory pricing locks in for life. New members after launch pay $12/mo.
+                Introductory pricing locks in for life. New members after launch pay $25/mo.
               </p>
               <button
                 onClick={handleCheckout}
                 disabled={checkoutLoading}
                 className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
               >
-                {checkoutLoading ? "Loading..." : "Start for $0.97/mo"}
+                {checkoutLoading ? "Loading..." : "Go Invisible for $0.97/mo"}
               </button>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
@@ -320,7 +301,7 @@ const FYM = () => {
             30-Day No-Questions Guarantee
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Use FYM Dashboard for 30 days. If you don't check it every single morning like your coffee, if it doesn't make you feel in control of your exit for the first time, email us one word: 'refund.' You'll get every cent back within 24 hours. No forms. No calls. No guilt.
+            Use Stealth Ops Hub for 30 days. Run the scanner. Download the templates. If you don't feel more protected than you've ever been, if you find a single trace we missed, email us one word: 'refund.' Every cent back within 24 hours. No forms. No calls. No guilt.
           </p>
         </div>
       </section>
@@ -334,34 +315,42 @@ const FYM = () => {
           <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
             <AccordionItem value="faq-1">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Will my employer know I'm using this?
+                Is this legal? I'm not trying to hide from the law.
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                No. FYM Dashboard is a private web app. It doesn't appear on any public profile, doesn't send notifications to anyone, and doesn't require your work email. Your data is encrypted and only accessible with your login credentials. We built this specifically for people who need to stay invisible.
+                Absolutely legal. Everything in Stealth Ops Hub uses legitimate privacy structures: registered agents, anonymous LLCs, WHOIS privacy, and standard corporate formation tools. These are the same tools used by venture capitalists, real estate investors, and public figures. You're not hiding from the law. You're exercising your right to business privacy.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-2">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                What if I don't have any revenue yet?
+                Does my employment contract prevent me from doing this?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/mo.
+                It depends on your contract. Most employment agreements have non-compete or moonlighting clauses, but they vary widely. Our Compliance Database includes a contract analysis checklist that helps you identify exactly which clauses apply and which don't. We always recommend consulting with an employment lawyer for your specific situation.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Why not just use a spreadsheet?
+                How often should I run the Digital Footprint Scanner?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                You can. Most of us did. But a spreadsheet doesn't calculate your invisibility score, doesn't auto-update from Stripe and PayPal, and doesn't tell you how many months until you can quit. FYM replaces the Sunday night spreadsheet session with a 10-second morning check.
+                Monthly. Public records update, new databases come online, and your digital footprint changes as you grow. We recommend setting a recurring reminder. Most members run it on the first of each month. It takes less than 2 minutes and gives you peace of mind for the next 30 days.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-4">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Can I upgrade later?
+                I already have an LLC. Is it too late?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Yes. After joining FYM Dashboard, you'll have the option to upgrade to Founding Member, which includes the full toolkit: Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, private community, monthly masterclass, and an annual strategy call.
+                Not at all. The Anonymity Playbook includes a full section on restructuring existing entities. You can convert a named LLC to an anonymous one, transfer assets to a holding company, or dissolve and reform. Most members who start with an exposed structure are fully stealth within 2-3 weeks.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq-5">
+              <AccordionTrigger className="text-left text-gray-900 text-base">
+                What jurisdictions do you cover?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600">
+                The Compliance Database covers all 50 US states, UK, EU (all member states), Canada, Australia, and 12 additional countries. For entity formation, we focus on the top privacy-friendly jurisdictions: Wyoming, Delaware, New Mexico, Nevada, UK LLP structures, and select offshore options. New jurisdictions are added monthly.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -372,17 +361,17 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Every Day You Don't Measure Is a Day You Fly Blind
+            The Best Time to Go Invisible Was Before You Started. The Second Best Time Is Now.
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
+            $0.97/mo. Cancel anytime. Every day your name is on a public record is a day you're one search away from discovery.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Get FYM Dashboard"}
+            {checkoutLoading ? "Loading..." : "Go Invisible Now"}
           </button>
         </div>
       </section>
@@ -392,4 +381,4 @@ const FYM = () => {
   );
 };
 
-export default FYM;
+export default StealthOps;

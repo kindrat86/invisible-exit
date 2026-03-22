@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check, Lock } from "lucide-react";
+import { Check, Lock, Palette, Youtube, Globe, Megaphone } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
@@ -11,13 +11,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FYM = () => {
+const BrandManager = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const handleCheckout = async () => {
     setCheckoutLoading(true);
     const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: {},
+      body: { cancelPath: "/brand-manager" },
     });
     setCheckoutLoading(false);
     if (error || !data?.url) {
@@ -28,24 +28,24 @@ const FYM = () => {
   };
 
   useEffect(() => {
-    document.title = "FYM Dashboard: Track Your Invisible Income | Invisible Exit";
+    document.title = "Brand Manager: Build an Invisible Brand | Invisible Exit";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Positioning, visual identity, website templates, and organic channel playbooks. Built for corporate managers building invisible income."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "FYM Dashboard: Track Your Invisible Income | Invisible Exit");
+    if (ogTitle) ogTitle.setAttribute("content", "Brand Manager: Build an Invisible Brand | Invisible Exit");
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc)
       ogDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Positioning, visual identity, website templates, and organic channel playbooks. Built for corporate managers building invisible income."
       );
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
+    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/brand-manager");
   }, []);
 
   return (
@@ -56,37 +56,27 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-white/70 text-sm tracking-widest uppercase mb-4">
-            FOR MANAGING DIRECTORS BUILDING INVISIBLE INCOME
+            FOR MANAGING DIRECTORS BUILDING INVISIBLE BRANDS
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            $0.97 From a Stranger While I Slept on a Plane. That's When I Knew the Cage Had a Door.
+            Your Side Business Has No Brand. That's Why Nobody's Buying.
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know $4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
+            You built the product. You set up Stripe. You even got a few sales. But organic traffic is zero. Nobody finds you on YouTube. Nobody talks about you on Reddit. Your landing page looks like it was made in 2014. You don't have a brand problem. You have an invisibility-without-presence problem.
           </p>
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
-            The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
+            Brand Manager gives you positioning, visual identity, website templates, a voice guide, and organic channel playbooks. Everything you need to build a brand that sells without revealing who you are.
           </p>
-          <div className="max-w-3xl mx-auto mb-10">
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-xl shadow-2xl shadow-black/30 border border-white/10"
-            >
-              <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/FYM.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
           <div className="mb-8">
-            <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
-            <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
+            <span className="text-white text-4xl md:text-5xl font-bold">$19/mo</span>
+            <span className="text-white/50 text-lg ml-3">as part of Founding Member</span>
           </div>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Start Tracking for $0.97/mo"}
+            {checkoutLoading ? "Loading..." : "Get Brand Manager for $19/mo"}
           </button>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -100,34 +90,25 @@ const FYM = () => {
           </p>
           <div className="text-gray-700 text-lg leading-[1.7] space-y-6">
             <p>
-              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my wife and 8-year-old for a family vacation. We climbed into a Tesla taxi outside Schiphol. The driver started the meter. My phone buzzed.
+              My first micro-SaaS made $47 in its first month. I was thrilled. Then month two: $51. Month three: $48. Month four: $44. Flat. Dying.
             </p>
             <p>
-              Two notifications sat side by side in the same tray.
+              I looked at my landing page. It was a white page with a headline, three bullet points, and a Stripe button. No logo. No colors. No voice. No personality. It looked like a test page someone forgot to delete.
             </p>
             <p>
-              The first: a chain of corporate escalation emails. People at my company fighting over responsibilities, grey zones, internal conflicts that had been kicked up to me. Again. At 6 AM. On the first morning of my vacation.
+              Then I looked at the competitors who were growing. They had YouTube channels with faceless tutorials. Reddit accounts dropping value in niche subreddits. Landing pages that looked like they were built by a design team. Consistent colors, consistent voice, consistent presence.
             </p>
             <p>
-              The second: a Stripe notification. '$0.97 received.'
+              They weren't better products. They were better brands.
             </p>
             <p>
-              A complete stranger, somewhere in the world, had found a landing page I built for plumbers in the USA. A business I know nothing about. In a country I don't live in. Under a name that isn't mine. And they paid me. While I slept on a plane.
+              I realized something that changed everything: anonymous doesn't mean invisible. You can build a brand that people trust, follow, and buy from, without ever showing your face or revealing your name. The brand is the mask. And the mask is what sells.
             </p>
             <p>
-              I screamed.
+              I rebuilt my landing page. Created a simple visual identity. Started a faceless YouTube channel. Posted helpful threads on Reddit under a brand name. Within 90 days, organic traffic went from 12 visits/month to 1,400. MRR tripled.
             </p>
             <p>
-              The taxi driver looked in the rearview mirror, shocked. My wife looked at me like I was insane. Screaming about less than one euro in a taxi in Amsterdam. Then she saw my face. And she understood: this wasn't about the money. This was the proof that the cage has a door.
-            </p>
-            <p>
-              Later that day, I jumped on a call for those corporate escalations. And something had shifted. I resolved the issue faster, better, more effectively, because I was already detached from the corporate game. I wasn't playing for survival anymore. I was playing while already planning my exit.
-            </p>
-            <p>
-              That's when I built what I wish existed: a dashboard that shows your exact MRR across every platform, scores how invisible your operation is, and tells you exactly how many months until you can hand in your notice.
-            </p>
-            <p>
-              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/mo works. The model scales. And nobody needs to know.
+              Brand Manager is everything I learned, packaged into templates, playbooks, and tools so you can do it in days instead of months.
             </p>
           </div>
           <p className="text-gray-500 text-sm mt-8 text-right">-- Adrian</p>
@@ -138,27 +119,31 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            You Can't Exit What You Can't Measure
+            You Built a Product. But You Didn't Build a Brand.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "What if you could see every dollar of invisible income in one place?",
-                body: "Your revenue is split across Stripe, PayPal, and three different SaaS dashboards. You spend Sunday nights in spreadsheets instead of with your family.",
+                icon: Megaphone,
+                title: "No positioning means no differentiation",
+                body: "Your product does the same thing as 15 others. Without clear positioning, you're competing on price alone. And price is a race to the bottom.",
               },
               {
-                title: "Are you one Google search away from your boss finding your side project?",
-                body: "One wrong move and your employer finds out. You need a system that scores how invisible your operation actually is.",
+                icon: Palette,
+                title: "No visual identity means no trust",
+                body: "Your landing page looks like a weekend project. Visitors bounce in 3 seconds because nothing signals credibility, consistency, or professionalism.",
               },
               {
-                title: "You want $4,000/mo. But are you 3 months away or 3 years?",
-                body: "You know you want $2,500-$4,000/mo recurring. But you have no idea if you're on track or how many months away you are.",
+                icon: Youtube,
+                title: "No organic channels means no compounding growth",
+                body: "You're relying on one-off launches and paid ads. Without YouTube, Reddit, or SEO content, your traffic resets to zero every month.",
               },
             ].map((card) => (
               <div
                 key={card.title}
                 className="bg-white rounded-xl p-8 shadow-sm"
               >
+                <card.icon className="h-8 w-8 text-[#60A5FA] mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{card.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{card.body}</p>
               </div>
@@ -177,18 +162,18 @@ const FYM = () => {
             {[
               {
                 num: "1",
-                title: "Connect Your Accounts",
-                body: "Link your Stripe, PayPal, and SaaS platforms. Takes less than 2 minutes.",
+                title: "Define Your Positioning",
+                body: "Answer 5 questions about your product and market. Brand Manager generates your unique positioning statement, tagline, and competitive angle.",
               },
               {
                 num: "2",
-                title: "Get Your Numbers Instantly",
-                body: "FYM calculates your MRR, invisibility score, and exit timeline automatically.",
+                title: "Generate Your Visual Identity",
+                body: "Pick a style direction. Get a complete brand kit: colors, typography, logo concepts, and landing page templates. Ready to deploy in minutes.",
               },
               {
                 num: "3",
-                title: "Check In Every Morning",
-                body: "Open your dashboard before your first meeting. Know exactly when you can walk away.",
+                title: "Launch Organic Channels",
+                body: "Follow step-by-step playbooks for faceless YouTube, Reddit authority building, and SEO content. All designed to grow without revealing your identity.",
               },
             ].map((step) => (
               <div key={step.num} className="text-center">
@@ -207,29 +192,29 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-            Everything You Need to Measure Your Exit
+            Everything You Need to Build an Invisible Brand
           </h2>
           <div className="space-y-20">
             {[
               {
-                title: "Know Your Exact MRR Across Every Platform in 10 Seconds",
-                subtitle: "Unified Revenue Tracker",
-                body: "Connect all your income streams. See MRR, ARR, churn rate, and growth trend in one dashboard. Updated daily.",
+                title: "Know Exactly How to Position Your Product in a Crowded Market",
+                subtitle: "Brand Positioning Engine",
+                body: "Stop guessing what makes you different. The positioning engine analyzes your product, your market, and your competitors, then generates a positioning statement, tagline, and elevator pitch that actually resonate.",
               },
               {
-                title: "Sleep Soundly Knowing Your Side Projects Are Invisible",
-                subtitle: "Invisibility Score",
-                body: "Our proprietary scoring system checks how invisible your operation is. Digital footprint, entity separation, compliance gaps. Get a score from 0-100 and specific fixes.",
+                title: "Look Like a $10M Company on a $0 Design Budget",
+                subtitle: "Visual Identity Kit",
+                body: "Get a complete brand identity in minutes: color palette, typography system, logo concepts, social media templates, and style guide. Everything consistent, professional, and designed to build trust at first glance.",
               },
               {
-                title: "See the Exact Date You Can Hand In Your Resignation",
-                subtitle: "Exit Timeline Calculator",
-                body: "Set your target ($2,500-$4,000/mo). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                title: "Launch a Landing Page That Converts, Not Just Exists",
+                subtitle: "Website Templates",
+                body: "Choose from battle-tested landing page templates built for micro-SaaS. Optimized for conversion, mobile-first, and ready to customize with your brand kit. No design skills required.",
               },
               {
-                title: "Never Run Out of Invisible Income Ideas",
-                subtitle: "Idea Directory: 500+ Validated Ideas",
-                body: "Browse 500+ validated micro-SaaS ideas organized by industry, revenue tier, and time investment. Each scored for invisibility compatibility.",
+                title: "Build Organic Traffic Without Showing Your Face",
+                subtitle: "Organic Channel Playbooks",
+                body: "Step-by-step guides for faceless YouTube channels, Reddit authority building, and SEO content strategy. Each playbook includes scripts, posting schedules, and growth benchmarks. Designed for people who need to stay anonymous.",
               },
             ].map((feature, i) => (
               <div
@@ -259,7 +244,7 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-xl text-center">
           <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
-            Would it be worth $0.97 to never wonder 'am I close?' again?
+            Would it be worth $19/mo to build a brand that sells while you sleep?
           </p>
         </div>
       </section>
@@ -268,15 +253,20 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            Everything You Get for $0.97/mo
+            Everything You Get as a Founding Member
           </h2>
           <div className="rounded-xl border border-gray-200 p-8">
             <ul className="space-y-4 mb-8">
               {[
-                { feature: "Know Your Exact MRR Across Every Platform", value: "$29/mo" },
-                { feature: "Invisibility Score: 0-100 with Specific Fixes", value: "$19/mo" },
-                { feature: "Exit Timeline: Your Exact Resignation Date", value: "$15/mo" },
-                { feature: "500+ Validated Micro-SaaS Ideas Directory", value: "$47/mo" },
+                { feature: "Brand Positioning Engine", value: "$12/mo" },
+                { feature: "Visual Identity Kit", value: "$15/mo" },
+                { feature: "Website Templates Library", value: "$10/mo" },
+                { feature: "Organic Channel Playbooks (YouTube + Reddit)", value: "$18/mo" },
+                { feature: "Voice & Tone Guide", value: "$8/mo" },
+                { feature: "FYM Dashboard (MRR + Exit Timeline)", value: "$12/mo" },
+                { feature: "Idea Pipeline + Stealth Ops Hub", value: "$40/mo" },
+                { feature: "Private Community + Monthly Masterclass", value: "$146/mo" },
+                { feature: "Annual Strategy Call ($500/year)", value: "$42/mo" },
               ].map((item) => (
                 <li key={item.feature} className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-2">
@@ -289,23 +279,23 @@ const FYM = () => {
             </ul>
             <div className="border-t border-gray-200 pt-6 text-center">
               <p className="text-gray-500 text-lg mb-1">
-                Total Value: <span className="font-bold text-gray-900">$110/mo</span>
+                Total Value: <span className="font-bold text-gray-900">$303/mo</span>
               </p>
               <p className="text-gray-400 mb-1">
-                Normal Price: <span className="line-through">$12/mo</span>
+                Normal Price After Founding: <span className="line-through">$97/mo</span>
               </p>
               <p className="text-3xl font-bold text-[#60A5FA] mb-2">
-                Your Price: $0.97/mo
+                Your Founding Price: $19/mo, locked for life
               </p>
               <p className="text-gray-400 text-sm mb-8">
-                Introductory pricing locks in for life. New members after launch pay $12/mo.
+                80% savings. Limited founding spots remaining.
               </p>
               <button
                 onClick={handleCheckout}
                 disabled={checkoutLoading}
                 className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
               >
-                {checkoutLoading ? "Loading..." : "Start for $0.97/mo"}
+                {checkoutLoading ? "Loading..." : "Lock In My Founding Price at $19/mo"}
               </button>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
@@ -320,7 +310,7 @@ const FYM = () => {
             30-Day No-Questions Guarantee
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Use FYM Dashboard for 30 days. If you don't check it every single morning like your coffee, if it doesn't make you feel in control of your exit for the first time, email us one word: 'refund.' You'll get every cent back within 24 hours. No forms. No calls. No guilt.
+            Use Brand Manager for 30 days. If your landing page doesn't look better, your positioning isn't clearer, and your organic channels aren't growing, email us one word: 'refund.' You'll get every cent back within 24 hours. No forms. No calls. No guilt.
           </p>
         </div>
       </section>
@@ -334,34 +324,34 @@ const FYM = () => {
           <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
             <AccordionItem value="faq-1">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Will my employer know I'm using this?
+                Can I build a brand without revealing my identity?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                No. FYM Dashboard is a private web app. It doesn't appear on any public profile, doesn't send notifications to anyone, and doesn't require your work email. Your data is encrypted and only accessible with your login credentials. We built this specifically for people who need to stay invisible.
+                Yes. That's exactly what Brand Manager is designed for. Every template, playbook, and guide is built for anonymous operators. You'll create a brand identity that builds trust and authority without ever attaching your real name, face, or employer. The brand is the mask.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-2">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                What if I don't have any revenue yet?
+                I have zero design skills. Will this work for me?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/mo.
+                Absolutely. The Visual Identity Kit generates everything for you: colors, fonts, logo concepts, and templates. You don't need Figma, Photoshop, or any design experience. Pick a direction, customize the output, and deploy. Most members have their brand kit ready in under 30 minutes.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Why not just use a spreadsheet?
+                How much time does the organic channel strategy take?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                You can. Most of us did. But a spreadsheet doesn't calculate your invisibility score, doesn't auto-update from Stripe and PayPal, and doesn't tell you how many months until you can quit. FYM replaces the Sunday night spreadsheet session with a 10-second morning check.
+                The playbooks are designed for people with full-time jobs. The YouTube playbook requires 2-3 hours per week for faceless videos. The Reddit strategy takes 20 minutes per day. The SEO content plan is one article per week. All designed to compound over time without burning you out.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-4">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Can I upgrade later?
+                What's included in the Founding Member tier?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Yes. After joining FYM Dashboard, you'll have the option to upgrade to Founding Member, which includes the full toolkit: Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, private community, monthly masterclass, and an annual strategy call.
+                Everything. Brand Manager (positioning, visual identity, templates, voice guide, organic playbooks), plus FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, private community, monthly masterclass, beta access to new features, and an annual 1:1 strategy call. All for $19/mo locked for life.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -372,17 +362,17 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Every Day You Don't Measure Is a Day You Fly Blind
+            A Product Without a Brand Is a Secret Nobody Asked to Keep
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
+            $19/mo. Cancel anytime. Build a brand that sells while you stay invisible.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Get FYM Dashboard"}
+            {checkoutLoading ? "Loading..." : "Get Brand Manager Now"}
           </button>
         </div>
       </section>
@@ -392,4 +382,4 @@ const FYM = () => {
   );
 };
 
-export default FYM;
+export default BrandManager;

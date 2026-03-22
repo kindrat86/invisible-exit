@@ -2,11 +2,26 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Check, CheckCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    const { data, error } = await supabase.functions.invoke("create-checkout", {
+      body: { priceId: "founding" },
+    });
+    setCheckoutLoading(false);
+    if (error || !data?.url) {
+      toast.error("Could not start checkout. Please try again.");
+      return;
+    }
+    window.location.href = data.url;
+  };
 
   useEffect(() => {
     document.title = "One-Time Offer: Founding Member | Invisible Exit";
@@ -49,13 +64,30 @@ const OTOFounding = () => {
       </section>
 
       {/* Section 2: OTO Hook */}
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-50 pt-16 pb-8 px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Before You Go to Your Dashboard...
           </h2>
           <p className="text-gray-600 text-lg">
             I have a one-time offer that's only available right now, on this page. Once you leave, this pricing disappears.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2b: OTO Video */}
+      <section className="bg-gray-50 pb-16 px-6">
+        <div className="mx-auto max-w-2xl">
+          <video
+            controls
+            preload="metadata"
+            className="w-full rounded-xl shadow-lg"
+          >
+            <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/OTO_Founding.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className="text-center text-gray-500 text-sm mt-4">
+            Watch: Why 46 Managing Directors Already Locked In
           </p>
         </div>
       </section>
@@ -143,15 +175,16 @@ const OTOFounding = () => {
           <p className="text-gray-600 text-lg leading-relaxed mb-10">
             Same 30-day no-questions guarantee. If Founding Member isn't worth it, email 'refund' and get every cent back.
           </p>
-          <Link
-            to="/checkout/founding"
-            className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors mb-6"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50 mb-6"
           >
-            Yes, Lock In My Founding Price at $19/mo
-          </Link>
+            {checkoutLoading ? "Loading..." : "Yes, Lock In My Founding Price at $19/mo"}
+          </button>
           <div>
             <Link
-              to="/login"
+              to="/fym/oto/second-tool"
               className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
             >
               No thanks, take me to my dashboard
