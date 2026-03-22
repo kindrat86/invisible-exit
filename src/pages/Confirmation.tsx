@@ -77,7 +77,7 @@ const Confirmation = () => {
             </h1>
             <p className="text-gray-500 text-lg mb-2">
               You're one of 100 founding members. Your price is locked at
-              $19/month for life.
+              $17.99/month for life.
             </p>
             <p className="text-gray-400 text-sm">
               Check your email for login details. Everything is ready.
@@ -291,7 +291,7 @@ const Confirmation = () => {
             </h3>
             <p className="text-gray-500 text-sm mb-3">
               Founding Members get every tool, monthly masterclasses, beta
-              access, and an annual strategy call. $19/month, locked for life.
+              access, and an annual strategy call. $17.99/month, locked for life.
             </p>
             <Link
               to="/founding-member"
