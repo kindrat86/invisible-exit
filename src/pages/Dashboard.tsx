@@ -30,6 +30,7 @@ const ExitTimeline = lazy(() => import("@/components/fym/ExitTimeline"));
 const IdeaDirectory = lazy(() => import("@/components/fym/IdeaDirectory"));
 const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
+const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
 
 interface Profile {
@@ -38,7 +39,7 @@ interface Profile {
   subscription_status: string;
 }
 
-const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "stealth"] as const;
+const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth"] as const;
 type TabValue = (typeof VALID_TABS)[number];
 
 function DashboardContent() {
@@ -199,6 +200,7 @@ function DashboardContent() {
                 <TabsTrigger value="ideas" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
                 <TabsTrigger value="pipeline" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Pipeline</TabsTrigger>
                 <TabsTrigger value="brand" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
+                <TabsTrigger value="launch" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
                 <TabsTrigger value="stealth" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
               </TabsList>
 
@@ -240,6 +242,7 @@ function DashboardContent() {
                       setPendingPipelineIdea(idea);
                       setActiveTab("pipeline");
                     }}
+                    onSwitchTab={setActiveTab}
                   />
                 </Suspense>
               </TabsContent>
@@ -258,6 +261,12 @@ function DashboardContent() {
               <TabsContent value="brand">
                 <Suspense fallback={tabFallback}>
                   <BrandManager userId={userId} />
+                </Suspense>
+              </TabsContent>
+
+              <TabsContent value="launch">
+                <Suspense fallback={tabFallback}>
+                  <LaunchControl userId={userId} />
                 </Suspense>
               </TabsContent>
 
