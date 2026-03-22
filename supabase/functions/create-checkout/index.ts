@@ -27,7 +27,7 @@ serve(async (req) => {
       apiVersion: "2023-10-16",
     });
 
-    const { priceId } = await req.json();
+    const { priceId, cancelPath } = await req.json();
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://invisibleexit.com";
 
     // Whitelist allowed price IDs to prevent injection
@@ -57,7 +57,7 @@ serve(async (req) => {
       success_url: isFounding
         ? `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`
         : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: isFounding ? `${siteUrl}/oto/founding` : `${siteUrl}/fym`,
+      cancel_url: cancelPath ? `${siteUrl}${cancelPath}` : (isFounding ? `${siteUrl}/oto/founding` : `${siteUrl}/fym`),
       allow_promotion_codes: false,
       metadata: { product: isFounding ? "founding_member" : "fym_dashboard" },
     });
