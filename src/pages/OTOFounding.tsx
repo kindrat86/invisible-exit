@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import {
-  Infinity,
-  Crown,
-  Compass,
-  FlaskConical,
-  Lock,
-  ShieldCheck,
-  Check,
-  Play,
-} from "lucide-react";
+import { Check, LayoutDashboard } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { trackEvent } from "@/lib/analytics";
+import VideoPlaceholder from "@/components/oto/VideoPlaceholder";
+import ValueStack from "@/components/oto/ValueStack";
+import PriceCard from "@/components/oto/PriceCard";
+import GuaranteeBox from "@/components/oto/GuaranteeBox";
+
+const DASHBOARD_URL = "https://app.invisibleexit.com/dashboard";
 
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
@@ -27,6 +23,7 @@ const OTOFounding = () => {
 
   useEffect(() => {
     document.title = "Founding Member Invitation | Invisible Exit";
+    trackEvent("oto_page_viewed");
 
     supabase.rpc("get_founding_member_count").then(({ data }) => {
       if (data !== null) setFoundingCount(data);
@@ -42,6 +39,7 @@ const OTOFounding = () => {
   }, [sessionId]);
 
   const handleUpgrade = async () => {
+    trackEvent("oto_cta_clicked");
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke(
@@ -63,328 +61,262 @@ const OTOFounding = () => {
     }
   };
 
-  const ctaLabel = checkoutLoading
-    ? "Loading..."
-    : "Become Founding Member #47 — $17.99/mo Locked for Life";
+  const handleDecline = () => {
+    trackEvent("oto_declined");
+  };
+
+  const handleVideoClick = () => {
+    trackEvent("oto_video_clicked");
+    toast.info("Video coming soon.");
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-
-      {/* Payment Confirmation Banner */}
+    <div className="min-h-screen bg-[#0B1D3A]">
+      {/* ─── 1. Confirmation Banner (sticky) ─── */}
       {paymentConfirmed && (
-        <div className="fixed top-[60px] left-0 right-0 z-40 bg-green-50 border-b border-green-200 px-6 py-3">
-          <p className="text-center text-green-800 font-medium text-sm">
-            Payment confirmed. Your access is being set up now.
-          </p>
+        <div
+          className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(34,197,94,0.2)] px-6 py-3"
+          style={{
+            background: "linear-gradient(135deg, #166534, #14532d)",
+          }}
+        >
+          <div className="max-w-[720px] mx-auto text-center">
+            <p className="text-white font-medium text-sm flex items-center justify-center gap-2">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#22c55e]">
+                <Check className="w-3 h-3 text-white" />
+              </span>
+              Your Invisible Exit membership is active. Your dashboard is ready.
+            </p>
+            <p className="text-[#86efac] text-xs mt-1">
+              Didn't get the welcome email? Check your spam folder, or{" "}
+              <a
+                href={DASHBOARD_URL}
+                className="underline hover:text-white transition-colors"
+              >
+                go directly to your dashboard
+              </a>
+              .
+            </p>
+          </div>
         </div>
       )}
 
-      {/* Section 1: Hero / Acknowledgment */}
-      <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-blue-400 text-sm tracking-widest uppercase mb-6">
-            YOU JUST TOOK THE FIRST STEP
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight max-w-3xl mx-auto mb-6">
-            You Found the Door. Here's the Key to Open It Faster.
+      {/* ─── 2. Hero Section ─── */}
+      <section
+        className={`px-6 pt-16 pb-12 ${paymentConfirmed ? "mt-[72px]" : ""}`}
+      >
+        <div className="max-w-[720px] mx-auto text-center">
+          {/* Badge */}
+          <span className="inline-block bg-[rgba(96,165,250,0.12)] border border-[rgba(96,165,250,0.2)] text-[#60A5FA] text-[12px] uppercase tracking-[1.5px] font-medium px-5 py-2 rounded-full mb-8">
+            ONE-TIME FOUNDING OFFER
+          </span>
+
+          {/* Headline */}
+          <h1 className="text-[clamp(26px,5vw,40px)] font-bold text-white leading-tight mb-6 max-w-2xl mx-auto">
+            You Just Got the Map. Here's What Separates Those Who{" "}
+            <span className="text-[#60A5FA]">Escape in 90 Days</span> from
+            Those Still Planning a Year Later.
           </h1>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
-            You're one of the few who actually did something. Most people dream
-            about escape. You just invested in it.
-          </p>
 
-          {/* Video Placeholder */}
-          <div className="max-w-3xl mx-auto mb-4">
-            <div
-              className="aspect-video rounded-2xl border border-white/10 overflow-hidden bg-slate-800 flex items-center justify-center"
-              data-video-id="oto-founding-video"
-            >
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-20 h-20 rounded-full border-2 border-white/30 flex items-center justify-center">
-                  <Play className="w-8 h-8 text-white/30 ml-1" />
-                </div>
-                <span className="text-white/30 text-sm">
-                  Video coming soon
-                </span>
-              </div>
-            </div>
-          </div>
-          <p className="text-sm text-white/50 text-center">
-            Adrian explains what Founding Members get (2 min)
+          {/* Subtitle */}
+          <p className="text-[17px] text-[#8A95A8] max-w-[560px] mx-auto leading-relaxed">
+            I have something for the first {foundingSpotsLeft} members only.
+            Read this once. It won't appear again.
           </p>
         </div>
       </section>
 
-      {/* Section 2: The "Real Talk" Bridge */}
-      <section className="bg-white py-20 px-6">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-slate-400 text-sm tracking-widest uppercase mb-8">
-            A MESSAGE FROM ADRIAN
+      {/* ─── 3. Video Placeholder ─── */}
+      <section className="px-6 pb-12">
+        <VideoPlaceholder onPlayClick={handleVideoClick} />
+      </section>
+
+      {/* ─── 4. Divider ─── */}
+      <div className="flex justify-center my-11">
+        <div className="w-12 h-[2px] bg-[rgba(96,165,250,0.15)]" />
+      </div>
+
+      {/* ─── 5. Adrian's Story ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-[720px] mx-auto">
+          <p className="text-[11px] uppercase tracking-[2px] text-[#60A5FA] font-medium mb-6">
+            A MESSAGE FROM ME
           </p>
-          <div className="space-y-6 text-slate-700 text-lg leading-relaxed">
-            <p>
-              Here's what I learned after building my first tool. The dashboard
-              shows you where you are. But knowing your number and actually
-              reaching your number are two different things.
-            </p>
-            <p>
-              I needed more than a calculator. I needed to validate ideas before
-              wasting weekends. I needed legal structures to keep everything
-              invisible. I needed a launch system that fits into 5 hours a week.
-              I needed a brand that had zero connection to my real name.
-            </p>
-            <p>
-              So I built all of it. And I'm inviting the first 100 people to use
-              everything, shape the roadmap, and lock in a price that will never
-              increase. I'm calling them Founding Members.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Section 3: What Founding Members Get */}
-      <section className="bg-[#1B2A4A] py-20 px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
-              FOUNDING MEMBER EXCLUSIVES
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              What Only the First 100 Get
-            </h2>
-            <p className="text-white/60">
-              These are not available to anyone else. Ever.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1: Unlimited Everything */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Infinity className="w-8 h-8 text-blue-400 mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Unlimited Everything
-              </h3>
-              <p className="text-white/70 mb-4">
-                No caps. No limits. Unlimited scenarios in FYM. Unlimited ideas
-                in the Pipeline. Full audit in Stealth Ops. Full automation in
-                Launch Control. Complete content calendar in Brand Manager. Use
-                every tool to its full potential.
-              </p>
-              <p className="text-blue-400 text-sm font-semibold">
-                $97/month value
-              </p>
-            </div>
-
-            {/* Card 2: Founding Member Wall */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Crown className="w-8 h-8 text-blue-400 mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Founding Member Wall
-              </h3>
-              <p className="text-white/70 mb-4">
-                Your name. Permanently listed as one of the original 100 who
-                started Invisible Exit. When this grows to 10,000 members,
-                you'll still be there. This is not a feature. It's your place in
-                history.
-              </p>
-              <p className="text-blue-400 text-sm font-semibold">
-                Exclusive, cannot be purchased later
-              </p>
-            </div>
-
-            {/* Card 3: Shape the Roadmap */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Compass className="w-8 h-8 text-blue-400 mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Shape the Roadmap
-              </h3>
-              <p className="text-white/70 mb-4">
-                Founding Members vote on what gets built next. Your feature
-                requests go to the top of the queue. You're not a user. You're a
-                co-creator.
-              </p>
-              <p className="text-blue-400 text-sm font-semibold">
-                $29/month value
-              </p>
-            </div>
-
-            {/* Card 4: Beta Access */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <FlaskConical className="w-8 h-8 text-blue-400 mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Beta Access to Everything
-              </h3>
-              <p className="text-white/70 mb-4">
-                Every new tool. Every new feature. Every integration. Weeks
-                before anyone else. You see the future of Invisible Exit before
-                the public does.
-              </p>
-              <p className="text-blue-400 text-sm font-semibold">
-                $19/month value
-              </p>
-            </div>
-
-            {/* Card 5: Price Locked (full width on md) */}
-            <div className="md:col-span-2 md:max-w-lg md:mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Lock className="w-8 h-8 text-blue-400 mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-3">
-                Price Locked for Life
-              </h3>
-              <p className="text-white/70 mb-4">
-                $17.99/month. Today. Tomorrow. Next year. Five years from now.
-                While everyone else pays the public price after founding closes.
-                Your rate never changes.
-              </p>
-              <p className="text-blue-400 text-sm font-semibold">
-                Save $960/year vs. future pricing
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Value Stack */}
-      <section className="bg-white py-20 px-6">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-            The Math
+          <h2 className="text-[24px] font-bold text-white mb-8">
+            The Wall I Hit at Day 60
           </h2>
-          <p className="text-slate-500 mb-12">
-            What Founding Members get, and what it's worth.
+
+          <div className="space-y-6 text-base leading-[1.7] text-[#8A95A8]">
+            <p>
+              My first two months, I used the dashboard religiously. I validated
+              one idea. I even picked a market. I felt like I was making
+              progress.
+            </p>
+
+            <p className="text-white font-medium">Then reality hit.</p>
+
+            <p>
+              I needed to set up a legal entity that had zero connection to my
+              name. I spent three weekends researching LLC formations in Wyoming
+              versus Delaware versus Estonia. Three weekends I should have spent
+              building. That was roughly $2,400 in lost building time (at my
+              hourly rate) gone to Googling things I could have had answered in
+              minutes.
+            </p>
+
+            <p>
+              Then the launch. I had 5 hours a week. No launch system. I spent 6
+              weeks doing what should have taken 10 days. By the time I shipped,
+              a competitor had launched something similar.
+            </p>
+          </div>
+
+          {/* Highlight quote */}
+          <div className="mt-8 border-l-[3px] border-[#60A5FA] bg-[rgba(96,165,250,0.06)] rounded-r-lg py-5 px-6">
+            <p className="text-[17px] font-medium text-white italic leading-relaxed">
+              "The basic tools show you where the door is. The full system is
+              what actually gets you through it before it closes."
+            </p>
+          </div>
+
+          <p className="mt-8 text-base leading-[1.7] text-[#8A95A8]">
+            That's why I built the complete toolkit. And that's why I'm offering
+            it to you right now, as one of the first {foundingSpotsLeft} people,
+            at a price I will never offer again.
           </p>
-
-          <div className="space-y-4 text-left">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-700">
-                  Unlimited access to all 5 tools
-                </span>
-              </div>
-              <span className="text-slate-400 shrink-0">$97/mo</span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-700">
-                  Founding Member Wall (permanent)
-                </span>
-              </div>
-              <span className="text-slate-400 shrink-0 italic">exclusive</span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-700">Product Roadmap Vote</span>
-              </div>
-              <span className="text-slate-400 shrink-0">$29/mo</span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-700">
-                  Beta Access (early features)
-                </span>
-              </div>
-              <span className="text-slate-400 shrink-0">$19/mo</span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-700">
-                  Lifetime Price Lock (save $960/year)
-                </span>
-              </div>
-              <span className="text-slate-400 shrink-0">$80/mo</span>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-200 mt-8 pt-6">
-            <p className="text-slate-400 mb-1">
-              Total value:{" "}
-              <span className="line-through">$225+/month</span>
-            </p>
-            <p className="text-3xl font-bold text-blue-500 mb-1">
-              $17.99/month
-            </p>
-            <p className="text-sm text-slate-500">
-              Locked for life. After founding closes: $97.99/month.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* Section 5: Scarcity */}
-      <section className="bg-[#1B2A4A] py-16 px-6">
-        <div className="mx-auto max-w-xl text-center">
-          <p className="text-6xl md:text-8xl font-bold text-blue-400 mb-2">
-            {foundingSpotsLeft}
+      {/* ─── 6. Divider ─── */}
+      <div className="flex justify-center my-11">
+        <div className="w-12 h-[2px] bg-[rgba(96,165,250,0.15)]" />
+      </div>
+
+      {/* ─── 7. Value Stack ─── */}
+      <ValueStack />
+
+      {/* ─── 8. Price Card ─── */}
+      <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
+
+      {/* ─── 9. Scarcity Note ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-[720px] mx-auto text-center">
+          <p className="text-base font-bold text-[#60A5FA]">
+            Limited to the first 100 Founding Members.
           </p>
-          <p className="text-xl text-white/70 mb-3">
-            of 100 founding spots remaining
-          </p>
-          <p className="text-white/50 text-sm max-w-md mx-auto">
-            When they're gone, this page disappears. The founding price is gone
+          <p className="text-base text-[#8A95A8] mt-2">
+            When founding closes, this page and this price disappear
             permanently.
           </p>
         </div>
       </section>
 
-      {/* Section 6: Primary CTA */}
-      <section className="bg-[#1B2A4A] pb-8 px-6">
-        <div className="mx-auto max-w-md text-center">
+      {/* ─── 10. Guarantee Box ─── */}
+      <GuaranteeBox />
+
+      {/* ─── 11. Second CTA ─── */}
+      <section className="px-6 py-12">
+        <div className="max-w-[440px] mx-auto text-center">
           <button
             onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-blue-500/20 transition-colors disabled:opacity-50"
+            className="w-full bg-[#60A5FA] hover:bg-[#93c5fd] text-[#0B1D3A] font-bold text-[17px] py-[18px] px-12 rounded-[10px] shadow-[0_4px_24px_rgba(96,165,250,0.25)] hover:shadow-[0_4px_32px_rgba(96,165,250,0.35)] hover:-translate-y-[1px] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {ctaLabel}
+            {checkoutLoading
+              ? "Loading..."
+              : "Become a Founding Member — $17.99/mo"}
           </button>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <Lock className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-white/40 text-sm">
-              Secure payment via Stripe
+          <p className="text-[13px] text-[#4A5568] mt-4">
+            30-day money-back guarantee. Locked for life.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── 12. Email Notice + Dashboard Link ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-[720px] mx-auto">
+          <div className="bg-[rgba(96,165,250,0.06)] border border-[rgba(96,165,250,0.15)] rounded-xl p-6 text-center">
+            <h4 className="text-base font-semibold text-white mb-3">
+              Important: Make Sure You Get My Emails
+            </h4>
+            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+              I just sent you a welcome email with your login details and next
+              steps. If you don't see it in the next few minutes, check your spam
+              or promotions folder.
+            </p>
+            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+              To make sure nothing gets lost, add this address to your contacts
+              or favorites:
+            </p>
+
+            {/* Email highlight */}
+            <span className="inline-block bg-[rgba(96,165,250,0.12)] text-[#60A5FA] font-mono text-[15px] font-semibold px-4 py-1.5 rounded-md mb-4">
+              escape@invisibleexit.com
             </span>
+
+            <p className="text-[13px] text-[#4A5568] leading-relaxed">
+              Gmail users: drag the email from Promotions to Primary. Outlook
+              users: right-click and select "Always move to Inbox."
+            </p>
+
+            {/* Dashboard link */}
+            <div className="border-t border-[rgba(96,165,250,0.15)] mt-6 pt-5">
+              <a
+                href={DASHBOARD_URL}
+                className="inline-flex items-center gap-2 text-[#60A5FA] text-sm font-semibold hover:text-[#93c5fd] transition-colors"
+              >
+                <LayoutDashboard className="w-4 h-4" />
+                Go to your dashboard now
+              </a>
+              <p className="text-[12px] text-[#4A5568] mt-2">
+                Use this link if you didn't receive the welcome email.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 7: Guarantee */}
-      <section className="bg-white py-16 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Zero Risk</h2>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Try the full Founding Member toolkit for 30 days. If it's not worth
-            it, email the word 'refund' and get every cent back. No questions.
-            No hassle. No hard feelings.
-          </p>
-          <ShieldCheck className="w-12 h-12 text-green-500 mx-auto mt-6" />
+      {/* ─── 13. Decline Link ─── */}
+      <section className="px-6 py-8">
+        <div className="text-center">
+          <a
+            href={DASHBOARD_URL}
+            onClick={handleDecline}
+            className="text-sm text-[#4A5568] underline hover:text-[#8A95A8] transition-colors"
+          >
+            No thanks, I'll start with limited access and pay full price later
+            if I change my mind.
+          </a>
         </div>
       </section>
 
-      {/* Section 8: Second CTA + Soft Decline */}
-      <section className="bg-[#1B2A4A] py-16 px-6">
-        <div className="mx-auto max-w-md text-center">
-          <button
-            onClick={handleUpgrade}
-            disabled={checkoutLoading}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-blue-500/20 transition-colors disabled:opacity-50"
-          >
-            {ctaLabel}
-          </button>
-          <div className="mt-8">
+      {/* ─── 14. Footer ─── */}
+      <footer className="border-t border-[rgba(96,165,250,0.15)] px-6 py-8">
+        <div className="max-w-[720px] mx-auto text-center">
+          <p className="text-base font-semibold text-[#8A95A8] mb-3">
+            Invisible Exit
+          </p>
+          <div className="flex items-center justify-center gap-4 mb-3">
             <Link
-              to="/confirmation"
-              className="text-white/40 hover:text-white/60 text-sm underline transition-colors"
+              to="/privacy"
+              className="text-[13px] text-[#4A5568] hover:text-[#8A95A8] transition-colors"
             >
-              No thanks, take me to my dashboard
+              Privacy Policy
+            </Link>
+            <span className="text-[#4A5568]">|</span>
+            <Link
+              to="/terms"
+              className="text-[13px] text-[#4A5568] hover:text-[#8A95A8] transition-colors"
+            >
+              Terms of Service
             </Link>
           </div>
+          <p className="text-[12px] text-[#4A5568]">
+            &copy; {new Date().getFullYear()} Invisible Exit
+          </p>
         </div>
-      </section>
-
-      <Footer />
+      </footer>
     </div>
   );
 };
