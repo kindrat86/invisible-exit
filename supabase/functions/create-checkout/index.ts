@@ -55,9 +55,9 @@ serve(async (req) => {
       mode: "subscription",
       line_items: [{ price: finalPriceId, quantity: 1 }],
       success_url: isFounding
-        ? `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`
-        : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelPath ? `${siteUrl}${cancelPath}` : (isFounding ? `${siteUrl}/oto/founding` : `${siteUrl}/fym`),
+        ? `${siteUrl}/fym/oto/founding?session_id={CHECKOUT_SESSION_ID}`
+        : `${siteUrl}/fym/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelPath ? `${siteUrl}${cancelPath}` : (isFounding ? `${siteUrl}/fym/oto/founding` : `${siteUrl}/fym`),
       allow_promotion_codes: false,
       metadata: { product: isFounding ? "founding_member" : "fym_dashboard" },
     });

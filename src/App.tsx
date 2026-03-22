@@ -47,8 +47,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/oto/founding" element={<OTOFounding />} />
-          <Route path="/oto/second-tool" element={<OTOSecondTool />} />
+          <Route path="/fym/oto/founding" element={<OTOFounding />} />
+          <Route path="/fym/oto/second-tool" element={<OTOSecondTool />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />

@@ -184,7 +184,7 @@ const OTOFounding = () => {
           </button>
           <div>
             <Link
-              to="/oto/second-tool"
+              to="/fym/oto/second-tool"
               className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
             >
               No thanks, take me to my dashboard
