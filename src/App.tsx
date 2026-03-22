@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/fym" element={<FYM />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/oto/founding" element={<OTOFounding />} />
+          <Route path="/fym/oto/founding" element={<OTOFounding />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />

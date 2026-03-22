@@ -34,7 +34,7 @@ serve(async (req) => {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: finalPriceId, quantity: 1 }],
-      success_url: `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${siteUrl}/fym/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/fym`,
       allow_promotion_codes: false,
       metadata: { product: "fym_dashboard" },
