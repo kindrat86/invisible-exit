@@ -41,15 +41,15 @@ export default function QuickStats({
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
+          className="bg-white/5 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
         >
           <div
             className="h-1 transition-all duration-300 group-hover:h-1.5"
             style={{ backgroundColor: stat.accent }}
           />
           <div className="p-5">
-            <p className="section-label">{stat.label}</p>
-            <p className="text-2xl font-bold text-[#0B1D3A] mt-1.5 number-display">
+            <p className="text-[11px] uppercase tracking-wider text-blue-300/70 font-medium">{stat.label}</p>
+            <p className="text-2xl font-bold text-white mt-1.5 number-display">
               {stat.value}
             </p>
           </div>

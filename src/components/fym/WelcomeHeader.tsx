@@ -24,10 +24,10 @@ export default function WelcomeHeader({ email, latestEntry }: WelcomeHeaderProps
 
   return (
     <div className="mb-8 animate-fade-in">
-      <h1 className="text-2xl md:text-3xl font-bold text-[#0B1D3A] tracking-tight leading-tight">
+      <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
         Welcome back, {name}.
       </h1>
-      <p className="text-[#4A5568] mt-1.5 text-base">{subtitle}</p>
+      <p className="text-blue-200 mt-1.5 text-base">{subtitle}</p>
     </div>
   );
 }
