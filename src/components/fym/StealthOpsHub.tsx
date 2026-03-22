@@ -5,7 +5,7 @@ import LegalTemplates from "@/components/fym/stealth/LegalTemplates";
 import AnonymityPlaybook from "@/components/fym/stealth/AnonymityPlaybook";
 import ComplianceDatabase from "@/components/fym/stealth/ComplianceDatabase";
 
-export default function StealthOpsHub() {
+export default function StealthOpsHub({ userId }: { userId: string }) {
   const [activeSection, setActiveSection] = useState("templates");
 
   return (
@@ -53,7 +53,7 @@ export default function StealthOpsHub() {
         </TabsContent>
 
         <TabsContent value="playbook">
-          <AnonymityPlaybook />
+          <AnonymityPlaybook userId={userId} />
         </TabsContent>
 
         <TabsContent value="compliance">

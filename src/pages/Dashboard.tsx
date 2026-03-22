@@ -254,7 +254,7 @@ function DashboardContent() {
               <TabsContent value="stealth">
                 <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access the full compliance playbook and fixes">
                   <Suspense fallback={tabFallback}>
-                    <StealthOpsHub />
+                    <StealthOpsHub userId={userId} />
                   </Suspense>
                 </FeatureGate>
               </TabsContent>

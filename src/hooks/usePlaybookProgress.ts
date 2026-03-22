@@ -1,24 +1,24 @@
 import { useState, useCallback } from "react";
 
-const STORAGE_KEY = "stealth_playbook_progress";
+const STORAGE_PREFIX = "stealth_playbook_progress_";
 
 type ProgressMap = Record<string, string[]>;
 
-function readProgress(): ProgressMap {
+function readProgress(userId: string): ProgressMap {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_PREFIX + userId);
     return raw ? JSON.parse(raw) : {};
   } catch {
     return {};
   }
 }
 
-function writeProgress(data: ProgressMap) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+function writeProgress(userId: string, data: ProgressMap) {
+  localStorage.setItem(STORAGE_PREFIX + userId, JSON.stringify(data));
 }
 
-export function usePlaybookProgress() {
-  const [progress, setProgress] = useState<ProgressMap>(readProgress);
+export function usePlaybookProgress(userId: string) {
+  const [progress, setProgress] = useState<ProgressMap>(() => readProgress(userId));
 
   const isStepCompleted = useCallback(
     (missionId: string, stepId: string) => {
@@ -34,10 +34,10 @@ export function usePlaybookProgress() {
         ? steps.filter((s) => s !== stepId)
         : [...steps, stepId];
       const updated = { ...prev, [missionId]: next };
-      writeProgress(updated);
+      writeProgress(userId, updated);
       return updated;
     });
-  }, []);
+  }, [userId]);
 
   const getMissionProgress = useCallback(
     (missionId: string, totalSteps: number) => {
@@ -51,10 +51,10 @@ export function usePlaybookProgress() {
     setProgress((prev) => {
       const updated = { ...prev };
       delete updated[missionId];
-      writeProgress(updated);
+      writeProgress(userId, updated);
       return updated;
     });
-  }, []);
+  }, [userId]);
 
   return { isStepCompleted, toggleStep, getMissionProgress, resetMission };
 }
