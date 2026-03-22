@@ -2,7 +2,6 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Rocket, X } from "lucide-react";
 import { toast } from "sonner";
-import { getFoundingSpotsLeft } from "@/lib/foundingCountdown";
 
 export default function UpgradeBanner() {
   const [dismissed, setDismissed] = useState(false);
@@ -10,16 +9,11 @@ export default function UpgradeBanner() {
 
   if (dismissed) return null;
 
-  const spotsLeft = getFoundingSpotsLeft();
-  const isFoundingAvailable = spotsLeft > 0;
-  const price = isFoundingAvailable ? "$17.99" : "$97.99";
-  const tier = isFoundingAvailable ? "founding" : "standard";
-
   const handleUpgrade = async () => {
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { tier, returnUrl: window.location.origin + "/dashboard" },
+        body: { tier: "founding", returnUrl: window.location.origin + "/dashboard" },
       });
       if (error) throw error;
       if (data?.url) window.location.href = data.url;
@@ -37,12 +31,9 @@ export default function UpgradeBanner() {
         <Rocket className="w-5 h-5 text-[#60A5FA] shrink-0" />
         <div className="min-w-0">
           <p className="text-white text-sm font-medium">
-            Unlock all features — {price}/month
-            {isFoundingAvailable && " (founding price, locked for life)"}
+            Unlock all features — $17.99/month (founding price, locked for life)
           </p>
-          {isFoundingAvailable && (
-            <p className="text-white/50 text-xs">{spotsLeft} of 100 founding spots remaining</p>
-          )}
+          <p className="text-white/50 text-xs">Limited to the first 100 Founding Members</p>
         </div>
       </div>
       <div className="flex items-center gap-2 shrink-0">
