@@ -44,6 +44,10 @@ const App = () => (
           <Route path="/thank-you" element={<Navigate to="/" replace />} />
           <Route path="/blog" element={<Navigate to="/" replace />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
+          {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
+          <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
+          <Route path="/fym/oto/second-tool" element={<Navigate to="/" replace />} />
+          <Route path="/fym/dashboard" element={<Navigate to="/dashboard" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
