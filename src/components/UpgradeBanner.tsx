@@ -1,23 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Rocket, X } from "lucide-react";
 import { toast } from "sonner";
+import { getFoundingSpotsLeft } from "@/lib/foundingCountdown";
 
 export default function UpgradeBanner() {
-  const [foundingCount, setFoundingCount] = useState<number | null>(null);
   const [dismissed, setDismissed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
-  useEffect(() => {
-    supabase.rpc("get_founding_member_count").then(({ data }) => {
-      if (data !== null) setFoundingCount(data);
-    });
-  }, []);
-
   if (dismissed) return null;
 
-  const spotsLeft = foundingCount !== null ? Math.max(0, 100 - foundingCount) : null;
-  const isFoundingAvailable = spotsLeft === null || spotsLeft > 0;
+  const spotsLeft = getFoundingSpotsLeft();
+  const isFoundingAvailable = spotsLeft > 0;
   const price = isFoundingAvailable ? "$17.99" : "$97.99";
   const tier = isFoundingAvailable ? "founding" : "standard";
 
@@ -46,7 +40,7 @@ export default function UpgradeBanner() {
             Unlock all features — {price}/month
             {isFoundingAvailable && " (founding price, locked for life)"}
           </p>
-          {spotsLeft !== null && isFoundingAvailable && (
+          {isFoundingAvailable && (
             <p className="text-white/50 text-xs">{spotsLeft} of 100 founding spots remaining</p>
           )}
         </div>
