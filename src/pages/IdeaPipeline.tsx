@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import IdeaDirectory from "@/components/fym/IdeaDirectory";
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FYM = () => {
+const IdeaPipeline = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const handleCheckout = async () => {
@@ -28,24 +29,14 @@ const FYM = () => {
   };
 
   useEffect(() => {
-    document.title = "FYM Dashboard: Track Your Invisible Income | Invisible Exit";
+    document.title = "Idea Pipeline: 1,000+ Invisible Business Ideas | Invisible Exit";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
+        "Browse 1,000+ micro-SaaS ideas scored for invisibility, filtered by revenue, time, and difficulty. Validate in 48 hours. Built for corporate managers."
       );
     }
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "FYM Dashboard: Track Your Invisible Income | Invisible Exit");
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc)
-      ogDesc.setAttribute(
-        "content",
-        "Track recurring revenue, churn, and growth across your micro-SaaS projects. Built for corporate managers building income streams invisibly. $0.97/mo."
-      );
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute("content", "https://invisibleexit.com/fym");
   }, []);
 
   return (
@@ -56,27 +47,20 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-white/70 text-sm tracking-widest uppercase mb-4">
-            FOR MANAGING DIRECTORS BUILDING INVISIBLE INCOME
+            FOR CORPORATE MANAGERS WHO NEED A SIDE PROJECT THAT STAYS INVISIBLE
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            $0.97 From a Stranger While I Slept on a Plane. That's When I Knew the Cage Had a Door.
+            1,000+ Micro-SaaS Ideas. Each One Scored for Invisibility. Yours to Build Tonight.
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-6">
-            You're a Managing Director pulling in six figures. But every night after the kids are in bed, you're in a separate browser, building something your employer must never see. You know $4,000/mo in recurring revenue is your ticket out. You just don't know how close you actually are.
+            Stop Googling "side project ideas" at 11 PM. The Idea Pipeline gives you 1,000+ validated
+            business ideas filtered by revenue potential, time investment, technical difficulty, and
+            how invisible they are from your employer.
           </p>
           <p className="text-white/60 text-base max-w-2xl mx-auto mb-10">
-            The FYM Dashboard gives you financial visibility across all your micro-SaaS projects. Revenue, churn, growth rate, invisibility score. All in one place.
+            Every idea includes a monetization model, example tools, startup cost, and a 48-hour
+            validation playbook. Pick one. Validate it this weekend. Start earning next month.
           </p>
-          <div className="max-w-3xl mx-auto mb-10">
-            <video
-              controls
-              preload="metadata"
-              className="w-full rounded-xl shadow-2xl shadow-black/30 border border-white/10"
-            >
-              <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/FYM.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
           <div className="mb-8">
             <span className="text-white text-4xl md:text-5xl font-bold">$0.97/mo</span>
             <span className="text-white/50 text-lg ml-3 line-through">$12/mo</span>
@@ -86,7 +70,7 @@ const FYM = () => {
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Start Tracking for $0.97/mo"}
+            {checkoutLoading ? "Loading..." : "Unlock 1,000+ Ideas for $0.97/mo"}
           </button>
           <p className="text-white/50 text-sm mt-4">Cancel anytime. No questions asked.</p>
         </div>
@@ -100,34 +84,23 @@ const FYM = () => {
           </p>
           <div className="text-gray-700 text-lg leading-[1.7] space-y-6">
             <p>
-              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my wife and 8-year-old for a family vacation. We climbed into a Tesla taxi outside Schiphol. The driver started the meter. My phone buzzed.
+              I spent three months researching my first side project. Three months of reading blog
+              posts, watching YouTube videos, and filling notebooks with ideas that went nowhere.
             </p>
             <p>
-              Two notifications sat side by side in the same tray.
+              Every "top 50 side hustle" list was the same recycled garbage: dropshipping, print on
+              demand, start a podcast. Nothing for someone who needs to stay anonymous. Nothing for
+              someone whose employer has a moonlighting clause.
             </p>
             <p>
-              The first: a chain of corporate escalation emails. People at my company fighting over responsibilities, grey zones, internal conflicts that had been kicked up to me. Again. At 6 AM. On the first morning of my vacation.
+              When I finally found the right idea, a simple landing page builder for plumbers, it
+              took me 48 hours to validate and two weeks to get my first paying customer. The idea
+              itself was worth three months of my life.
             </p>
             <p>
-              The second: a Stripe notification. '$0.97 received.'
-            </p>
-            <p>
-              A complete stranger, somewhere in the world, had found a landing page I built for plumbers in the USA. A business I know nothing about. In a country I don't live in. Under a name that isn't mine. And they paid me. While I slept on a plane.
-            </p>
-            <p>
-              I screamed.
-            </p>
-            <p>
-              The taxi driver looked in the rearview mirror, shocked. My wife looked at me like I was insane. Screaming about less than one euro in a taxi in Amsterdam. Then she saw my face. And she understood: this wasn't about the money. This was the proof that the cage has a door.
-            </p>
-            <p>
-              Later that day, I jumped on a call for those corporate escalations. And something had shifted. I resolved the issue faster, better, more effectively, because I was already detached from the corporate game. I wasn't playing for survival anymore. I was playing while already planning my exit.
-            </p>
-            <p>
-              That's when I built what I wish existed: a dashboard that shows your exact MRR across every platform, scores how invisible your operation is, and tells you exactly how many months until you can hand in your notice.
-            </p>
-            <p>
-              The $0.97 was not income. It was proof. Proof that a complete stranger will pay you for something you built alone, with AI, anonymously, while sleeping. And if $0.97 works, $97 works. $970 works. $9,700/mo works. The model scales. And nobody needs to know.
+              So I built what I wish existed from day one: a curated directory of 1,000+ micro-SaaS
+              ideas, each one scored for how invisible it is, how much it can earn, and exactly how
+              to validate it in a weekend. No more guessing. No more wasted months.
             </p>
           </div>
           <p className="text-gray-500 text-sm mt-8 text-right">-- Adrian</p>
@@ -138,21 +111,21 @@ const FYM = () => {
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
-            You Can't Exit What You Can't Measure
+            The Hardest Part Isn't Building. It's Knowing What to Build.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "What if you could see every dollar of invisible income in one place?",
-                body: "Your revenue is split across Stripe, PayPal, and three different SaaS dashboards. You spend Sunday nights in spreadsheets instead of with your family.",
+                title: "Drowning in generic business ideas that don't apply to you?",
+                body: "Every list assumes you want to be a public founder. You need ideas that work anonymously, under an LLC, with no personal brand required.",
               },
               {
-                title: "Are you one Google search away from your boss finding your side project?",
-                body: "One wrong move and your employer finds out. You need a system that scores how invisible your operation actually is.",
+                title: "No way to know if an idea will blow your cover?",
+                body: "Some side projects require client calls, social media presence, or industry networking. One wrong idea and your employer's HR team gets a tip.",
               },
               {
-                title: "You want $4,000/mo. But are you 3 months away or 3 years?",
-                body: "You know you want $2,500-$4,000/mo recurring. But you have no idea if you're on track or how many months away you are.",
+                title: "Wasting weekends on ideas that don't validate?",
+                body: "You have maybe 10 hours a week. You can't afford to spend 3 months on an idea that was dead on arrival. You need a shortcut to validation.",
               },
             ].map((card) => (
               <div
@@ -171,24 +144,24 @@ const FYM = () => {
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-            How It Works
+            From Idea to Validation in 48 Hours
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 num: "1",
-                title: "Connect Your Accounts",
-                body: "Link your Stripe, PayPal, and SaaS platforms. Takes less than 2 minutes.",
+                title: "Browse 1,000+ Curated Ideas",
+                body: "Every idea is scored for invisibility, revenue potential, time investment, and technical difficulty. Filter to match your exact situation.",
               },
               {
                 num: "2",
-                title: "Get Your Numbers Instantly",
-                body: "FYM calculates your MRR, invisibility score, and exit timeline automatically.",
+                title: "Pick One That Fits Your Life",
+                body: "Filter by industry, startup cost, and hours per week. Find ideas that match your skills, your budget, and your need to stay invisible.",
               },
               {
                 num: "3",
-                title: "Check In Every Morning",
-                body: "Open your dashboard before your first meeting. Know exactly when you can walk away.",
+                title: "Validate This Weekend",
+                body: "Each idea includes a specific validation method you can execute in 48 hours. Cold emails, Reddit posts, landing page tests. Know before you build.",
               },
             ].map((step) => (
               <div key={step.num} className="text-center">
@@ -207,29 +180,29 @@ const FYM = () => {
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-            Everything You Need to Measure Your Exit
+            Everything You Need to Find Your Next Invisible Income Stream
           </h2>
           <div className="space-y-20">
             {[
               {
-                title: "Know Your Exact MRR Across Every Platform in 10 Seconds",
-                subtitle: "Unified Revenue Tracker",
-                body: "Connect all your income streams. See MRR, ARR, churn rate, and growth trend in one dashboard. Updated daily.",
+                title: "1,000+ Ideas You Won't Find on Any Blog",
+                subtitle: "Curated Idea Directory",
+                body: "Not recycled listicles. Each idea is a specific, actionable micro-SaaS concept with a defined niche, monetization model, and example tool stack. Updated regularly.",
               },
               {
-                title: "Sleep Soundly Knowing Your Side Projects Are Invisible",
-                subtitle: "Invisibility Score",
-                body: "Our proprietary scoring system checks how invisible your operation is. Digital footprint, entity separation, compliance gaps. Get a score from 0-100 and specific fixes.",
+                title: "Know Instantly If an Idea Will Blow Your Cover",
+                subtitle: "Invisibility Scoring",
+                body: "Every idea is scored 1-10 for invisibility. A 10 means zero personal branding, no client calls, no social media. A 5 means some client-facing work. Filter to your comfort level.",
               },
               {
-                title: "See the Exact Date You Can Hand In Your Resignation",
-                subtitle: "Exit Timeline Calculator",
-                body: "Set your target ($2,500-$4,000/mo). FYM shows you exactly how many months away you are based on current growth rate. Adjusted weekly.",
+                title: "Filter by Revenue, Time, Cost, and Skill Level",
+                subtitle: "Smart Filters",
+                body: "Only have 3 hours a week? Filter for it. Want ideas under $200 to start? Filter for it. Need no-code only? Filter for it. Find exactly what fits your constraints.",
               },
               {
-                title: "Never Run Out of Invisible Income Ideas",
-                subtitle: "Idea Directory: 500+ Validated Ideas",
-                body: "Browse 500+ validated micro-SaaS ideas organized by industry, revenue tier, and time investment. Each scored for invisibility compatibility.",
+                title: "Stop Researching. Start Validating.",
+                subtitle: "48-Hour Validation Playbooks",
+                body: "Each idea includes a specific validation method: cold email 20 prospects, post on Reddit, launch a landing page. Execute this weekend, know by Monday if it's worth building.",
               },
             ].map((feature, i) => (
               <div
@@ -255,16 +228,32 @@ const FYM = () => {
         </div>
       </section>
 
-      {/* Section 6: Trial Close */}
+      {/* Section 6: Live Preview */}
+      <section className="bg-gray-50 py-24 px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            See It in Action
+          </h2>
+          <p className="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-12">
+            Here's a taste of the Idea Pipeline. Search, filter, and explore real ideas from the
+            directory. The full version includes 1,000+ ideas with detailed validation playbooks.
+          </p>
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 shadow-sm">
+            <IdeaDirectory />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Trial Close */}
       <section className="bg-gray-50 py-20 px-6">
         <div className="mx-auto max-w-xl text-center">
           <p className="text-2xl md:text-3xl font-medium italic text-gray-700">
-            Would it be worth $0.97 to never wonder 'am I close?' again?
+            Would it be worth $0.97 to stop guessing what to build and start building tonight?
           </p>
         </div>
       </section>
 
-      {/* Section 7: Offer Stack + Pricing */}
+      {/* Section 8: Offer Stack + Pricing */}
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
@@ -273,10 +262,11 @@ const FYM = () => {
           <div className="rounded-xl border border-gray-200 p-8">
             <ul className="space-y-4 mb-8">
               {[
-                { feature: "Know Your Exact MRR Across Every Platform", value: "$29/mo" },
-                { feature: "Invisibility Score: 0-100 with Specific Fixes", value: "$19/mo" },
-                { feature: "Exit Timeline: Your Exact Resignation Date", value: "$15/mo" },
-                { feature: "500+ Validated Micro-SaaS Ideas Directory", value: "$47/mo" },
+                { feature: "1,000+ Curated Micro-SaaS Ideas", value: "$47/mo" },
+                { feature: "Invisibility Score for Every Idea (1-10)", value: "$19/mo" },
+                { feature: "Smart Filters: Revenue, Time, Cost, Skill", value: "$15/mo" },
+                { feature: "48-Hour Validation Playbook per Idea", value: "$29/mo" },
+                { feature: "FYM Dashboard: Track Revenue & Exit Timeline", value: "$29/mo" },
               ].map((item) => (
                 <li key={item.feature} className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-2">
@@ -289,7 +279,7 @@ const FYM = () => {
             </ul>
             <div className="border-t border-gray-200 pt-6 text-center">
               <p className="text-gray-500 text-lg mb-1">
-                Total Value: <span className="font-bold text-gray-900">$110/mo</span>
+                Total Value: <span className="font-bold text-gray-900">$139/mo</span>
               </p>
               <p className="text-gray-400 mb-1">
                 Normal Price: <span className="line-through">$12/mo</span>
@@ -305,7 +295,7 @@ const FYM = () => {
                 disabled={checkoutLoading}
                 className="inline-block w-full text-center bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
               >
-                {checkoutLoading ? "Loading..." : "Start for $0.97/mo"}
+                {checkoutLoading ? "Loading..." : "Unlock the Idea Pipeline for $0.97/mo"}
               </button>
               <p className="text-gray-400 text-sm mt-3">Cancel anytime. No questions asked.</p>
             </div>
@@ -313,19 +303,21 @@ const FYM = () => {
         </div>
       </section>
 
-      {/* Section 8: Guarantee */}
+      {/* Section 9: Guarantee */}
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             30-Day No-Questions Guarantee
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Use FYM Dashboard for 30 days. If you don't check it every single morning like your coffee, if it doesn't make you feel in control of your exit for the first time, email us one word: 'refund.' You'll get every cent back within 24 hours. No forms. No calls. No guilt.
+            Browse the full Idea Pipeline for 30 days. If you don't find at least one idea worth
+            validating, if it doesn't save you weeks of research, email us one word: "refund."
+            Every cent back within 24 hours. No forms. No calls. No guilt.
           </p>
         </div>
       </section>
 
-      {/* Section 9: FAQ */}
+      {/* Section 10: FAQ */}
       <section className="bg-white py-24 px-6">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-14">
@@ -334,55 +326,67 @@ const FYM = () => {
           <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
             <AccordionItem value="faq-1">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Will my employer know I'm using this?
+                Are these real ideas or AI-generated fluff?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                No. FYM Dashboard is a private web app. It doesn't appear on any public profile, doesn't send notifications to anyone, and doesn't require your work email. Your data is encrypted and only accessible with your login credentials. We built this specifically for people who need to stay invisible.
+                Every seed idea is based on real market opportunities. The directory includes ideas
+                across 20 industries, each with specific monetization models, tool stacks, and
+                validation methods. These aren't vague concepts like "start an app" — they're
+                specific niches like "AI-powered review response generator for multi-location
+                restaurants."
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-2">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                What if I don't have any revenue yet?
+                What does "invisibility score" mean?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                That's exactly when to start. Use the Idea Directory to find your first project, then track it from dollar one. Many members start at $0 MRR and use the exit timeline as motivation to hit their first $100/mo.
+                Each idea is scored 1-10 for how invisible it is from your employer. A score of
+                9-10 means you can run it with zero personal branding, under an LLC, with no
+                face or real name attached. A score of 5-6 means some client interaction may be
+                needed. Filter by score to match your risk tolerance.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-3">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Why not just use a spreadsheet?
+                I have no coding experience. Are there ideas for me?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                You can. Most of us did. But a spreadsheet doesn't calculate your invisibility score, doesn't auto-update from Stripe and PayPal, and doesn't tell you how many months until you can quit. FYM replaces the Sunday night spreadsheet session with a 10-second morning check.
+                Yes. Filter by "No-Code" or "Low-Code" difficulty. Many ideas use tools like
+                Lovable, Bubble, or Zapier, and require zero programming knowledge. The idea cards
+                show you exactly which tools you'll need.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="faq-4">
               <AccordionTrigger className="text-left text-gray-900 text-base">
-                Can I upgrade later?
+                Do I get the FYM Dashboard too?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600">
-                Yes. After joining FYM Dashboard, you'll have the option to upgrade to Founding Member, which includes the full toolkit: Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, private community, monthly masterclass, and an annual strategy call.
+                Yes. Your $0.97/mo subscription includes full access to the FYM Dashboard (revenue
+                tracking, invisibility score, exit timeline) plus the complete Idea Pipeline. Once
+                you pick an idea and start earning, switch to the dashboard to track your progress
+                toward your exit number.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
       </section>
 
-      {/* Section 10: Final CTA */}
+      {/* Section 11: Final CTA */}
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Every Day You Don't Measure Is a Day You Fly Blind
+            Every Week Without an Idea Is a Week You Stay in the Cage
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            $0.97/mo. Cancel anytime. Your invisible income deserves a real dashboard.
+            $0.97/mo. 1,000+ ideas. Each one scored, filtered, and ready to validate this weekend.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50"
           >
-            {checkoutLoading ? "Loading..." : "Get FYM Dashboard"}
+            {checkoutLoading ? "Loading..." : "Get the Idea Pipeline"}
           </button>
         </div>
       </section>
@@ -392,4 +396,4 @@ const FYM = () => {
   );
 };
 
-export default FYM;
+export default IdeaPipeline;
