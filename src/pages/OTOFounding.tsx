@@ -140,7 +140,7 @@ const OTOFounding = () => {
       <section className="px-6 py-8">
         <div className="max-w-[720px] mx-auto">
           <p className="text-[11px] uppercase tracking-[2px] text-[#60A5FA] font-medium mb-6">
-            A MESSAGE FROM ME
+            MY MESSAGE TO YOU
           </p>
 
           <h2 className="text-[24px] font-bold text-white mb-8">
