@@ -11,13 +11,6 @@ import ReactivationScreen from "@/components/ReactivationScreen";
 import UpgradeBanner from "@/components/UpgradeBanner";
 import FeatureGate from "@/components/FeatureGate";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFymEntries } from "@/hooks/useFymEntries";
@@ -55,7 +48,6 @@ function DashboardContent() {
   const [noProfile, setNoProfile] = useState(false);
   const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
-  const [showOnboarding, setShowOnboarding] = useState(false);
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
@@ -90,11 +82,6 @@ function DashboardContent() {
         setNoProfile(true);
       } else {
         setProfile(data as Profile);
-        const onboardingKey = `fym_onboarded_${user.id}`;
-        if (!localStorage.getItem(onboardingKey)) {
-          setShowOnboarding(true);
-          localStorage.setItem(onboardingKey, "true");
-        }
       }
       setLoading(false);
     };
@@ -166,24 +153,6 @@ function DashboardContent() {
   return (
     <div className="min-h-screen bg-[#1B2A4A]">
       <DashboardNav email={email} />
-
-      <Dialog open={showOnboarding} onOpenChange={setShowOnboarding}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Welcome to your FYM Dashboard</DialogTitle>
-            <DialogDescription>
-              Enter your numbers below to calculate your Founder Yield Monthly.
-              Check in every morning. Watch your exit take shape.
-            </DialogDescription>
-          </DialogHeader>
-          <Button
-            onClick={() => setShowOnboarding(false)}
-            className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
-          >
-            Get Started
-          </Button>
-        </DialogContent>
-      </Dialog>
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {isActive ? (
