@@ -16,7 +16,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, Shield, X, RefreshCw } from "lucide-react";
+import { Search, Shield, X, RefreshCw, Rocket } from "lucide-react";
 import { toast } from "sonner";
 import { allIdeas } from "@/data/idea-generator";
 import type { IdeaEntry } from "@/types/fym";
@@ -48,7 +48,11 @@ const TIME_INVESTMENTS = [
 ];
 const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"];
 
-export default function IdeaDirectory() {
+interface IdeaDirectoryProps {
+  onValidateIdea?: (idea: IdeaEntry) => void;
+}
+
+export default function IdeaDirectory({ onValidateIdea }: IdeaDirectoryProps) {
   const [shuffledPool, setShuffledPool] = useState<IdeaEntry[]>(() =>
     shuffleArray(allIdeas)
   );
@@ -402,6 +406,19 @@ export default function IdeaDirectory() {
                   </Badge>
                 ))}
               </div>
+
+              {onValidateIdea && (
+                <Button
+                  className="w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white mt-2"
+                  onClick={() => {
+                    onValidateIdea(selectedIdea);
+                    setSelectedIdea(null);
+                  }}
+                >
+                  <Rocket className="h-4 w-4 mr-2" />
+                  Validate This Idea
+                </Button>
+              )}
             </div>
           </DialogContent>
         )}
