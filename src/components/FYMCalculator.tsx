@@ -1,16 +1,22 @@
 import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
 import ShareModal from "./ShareModal";
-import MorningBriefing from "./fym/MorningBriefing";
 import SmartInputPanel from "./fym/SmartInputPanel";
 import FreedomLevels from "./fym/FreedomLevels";
 import ScenarioEngine from "./fym/ScenarioEngine";
 import ReverseCalculator from "./fym/ReverseCalculator";
 import RiskFreedomScore from "./fym/RiskFreedomScore";
+import LevelUpCelebration from "./fym/LevelUpCelebration";
 import { useCalculator } from "@/hooks/useCalculator";
-import { useMorningBriefing } from "@/hooks/useMorningBriefing";
 import {
   formatCurrency,
   calculateFymScore,
@@ -49,18 +55,39 @@ export default function FYMCalculator({
     riskAssessment,
   } = useCalculator(latestEntry);
 
-  const briefing = useMorningBriefing(entries, latestEntry, latestInvisibility);
   const risk = riskAssessment(latestInvisibility);
+  const hasEntries = entries.length > 0;
+  const isFirstTime = !hasEntries;
 
   const [saving, setSaving] = useState(false);
   const [sharing, setSharing] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
   const [shareData, setShareData] = useState({ freedomNumber: "", shareUrl: "" });
   const [savedToday, setSavedToday] = useState(false);
+  const [deepAnalysisOpen, setDeepAnalysisOpen] = useState(false);
+  const [deepAnalysisEverOpened, setDeepAnalysisEverOpened] = useState(() => {
+    return localStorage.getItem(`deep_analysis_opened_${userId}`) === "true";
+  });
+
+  // Celebration state
+  const [celebration, setCelebration] = useState<{
+    previousLevel: number;
+    newLevel: number;
+    freedomPct: number;
+  } | null>(null);
+
+  const handleDeepAnalysisToggle = (open: boolean) => {
+    setDeepAnalysisOpen(open);
+    if (open && !deepAnalysisEverOpened) {
+      setDeepAnalysisEverOpened(true);
+      localStorage.setItem(`deep_analysis_opened_${userId}`, "true");
+    }
+  };
 
   const handleSave = useCallback(async () => {
     setSaving(true);
 
+    const previousLevel = latestEntry?.freedom_level ?? 0;
     const fymMonthly = calculateFymScore(inputs.monthlyExpenses, inputs.monthlySideRevenue);
     const fymTotal = calculateRunway(fymMonthly, inputs.monthsToExit);
     const fymFreedomNumber = calculateFreedomNumber(inputs.monthlyExpenses);
@@ -121,19 +148,32 @@ export default function FYMCalculator({
       console.error(error);
     } else {
       setSavedToday(true);
+
+      // Check for level transition
+      if (freedomLevel > previousLevel) {
+        const burn = inputs.monthlyExpenses;
+        const revenue = inputs.monthlySideRevenue;
+        const freedomPct = burn > 0 ? Math.min(Math.round((revenue / burn) * 100), 100) : 0;
+        setCelebration({
+          previousLevel,
+          newLevel: freedomLevel,
+          freedomPct,
+        });
+      }
+
       const levelName =
         freedomLevel > 0 ? FREEDOM_LEVELS[freedomLevel - 1]?.name : "Pre-Launch";
       const daysToNext =
         monthsToNextLevel !== null && monthsToNextLevel > 0
-          ? `${monthsToNextLevel * 30} days to Level ${freedomLevel + 1}`
+          ? `~${monthsToNextLevel * 30} days to Level ${freedomLevel + 1}`
           : freedomLevel >= 5
             ? "You've reached the top"
             : "Keep building";
 
       toast.success(
         existing && existing.length > 0
-          ? `Updated today's entry. Level ${freedomLevel}: ${levelName}. ${daysToNext} at current growth.`
-          : `Entry saved. You're at Level ${freedomLevel}: ${levelName}. ${daysToNext} at current growth.`
+          ? `Updated today's entry. Level ${freedomLevel}: ${levelName}. ${daysToNext}.`
+          : `Entry saved. Level ${freedomLevel}: ${levelName}. ${daysToNext}.`
       );
       onSaved();
     }
@@ -144,6 +184,7 @@ export default function FYMCalculator({
     monthsToNextLevel,
     risk.combinedScore,
     onSaved,
+    latestEntry,
   ]);
 
   const handleShare = useCallback(async () => {
@@ -164,34 +205,30 @@ export default function FYMCalculator({
     setShareOpen(true);
   }, [inputs.monthlyExpenses]);
 
-  const sections = [
-    { key: "briefing", delay: 0 },
-    { key: "inputs", delay: 50 },
-    { key: "levels", delay: 100 },
-    { key: "scenarios", delay: 150 },
-    { key: "reverse", delay: 200 },
-    { key: "risk", delay: 250 },
-    { key: "actions", delay: 300 },
-  ];
-
   return (
     <div className="space-y-8">
-      {/* Section 1: Morning Briefing */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[0].delay}ms` }}>
-        <MorningBriefing briefing={briefing} hasEntries={entries.length > 0} />
-      </div>
+      {/* Celebration overlay */}
+      {celebration && (
+        <LevelUpCelebration
+          previousLevel={celebration.previousLevel}
+          newLevel={celebration.newLevel}
+          freedomPct={celebration.freedomPct}
+          onDismiss={() => setCelebration(null)}
+        />
+      )}
 
-      {/* Section 2: Smart Input Panel */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[1].delay}ms` }}>
+      {/* Section A: Log Your Numbers */}
+      <div className="animate-fade-in">
         <SmartInputPanel
           inputs={inputs}
           onUpdate={updateInput}
           onReset={resetToDefaults}
+          isFirstTime={isFirstTime}
         />
       </div>
 
-      {/* Section 3: Freedom Levels */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[2].delay}ms` }}>
+      {/* Section B: Your Path */}
+      <div className="animate-fade-in" style={{ animationDelay: "50ms" }}>
         <FreedomLevels
           currentLevel={freedomLevel}
           progressToNext={progressToNext}
@@ -199,31 +236,41 @@ export default function FYMCalculator({
         />
       </div>
 
-      {/* Section 4: Scenario Planner */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[3].delay}ms` }}>
-        <ScenarioEngine inputs={inputs} />
+      {/* Deep Analysis (collapsed by default) */}
+      <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
+        <Collapsible open={deepAnalysisOpen} onOpenChange={handleDeepAnalysisToggle}>
+          <CollapsibleTrigger className="w-full bg-white rounded-xl border border-gray-200/80 shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-all">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-semibold text-[#0B1D3A]">
+                Deep Analysis: Scenarios, Reverse Calculator, Risk Score
+              </span>
+              {!deepAnalysisEverOpened && (
+                <Badge className="bg-[#60A5FA]/10 text-[#60A5FA] border-[#60A5FA]/20 text-[10px]">
+                  New
+                </Badge>
+              )}
+            </div>
+            <ChevronDown
+              className={`h-4 w-4 text-[#8A95A8] transition-transform duration-200 ${
+                deepAnalysisOpen ? "rotate-180" : ""
+              }`}
+            />
+          </CollapsibleTrigger>
+          <CollapsibleContent className="space-y-6 mt-4">
+            <ScenarioEngine inputs={inputs} />
+            <ReverseCalculator inputs={inputs} />
+            <RiskFreedomScore
+              inputs={inputs}
+              freedomLevel={freedomLevel}
+              riskAssessment={risk}
+              onSwitchToInvisibility={() => onSwitchTab("invisibility")}
+            />
+          </CollapsibleContent>
+        </Collapsible>
       </div>
 
-      {/* Section 5: Reverse Calculator */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[4].delay}ms` }}>
-        <ReverseCalculator inputs={inputs} />
-      </div>
-
-      {/* Section 6: Risk-Adjusted Freedom Score */}
-      <div className="animate-fade-in" style={{ animationDelay: `${sections[5].delay}ms` }}>
-        <RiskFreedomScore
-          inputs={inputs}
-          freedomLevel={freedomLevel}
-          riskAssessment={risk}
-          onSwitchToInvisibility={() => onSwitchTab("invisibility")}
-        />
-      </div>
-
-      {/* Save & Share */}
-      <div
-        className="bg-white rounded-xl border border-gray-200/80 shadow-sm p-6 animate-fade-in"
-        style={{ animationDelay: `${sections[6].delay}ms` }}
-      >
+      {/* Sticky Save & Share bar */}
+      <div className="sticky bottom-0 z-10 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200/80 shadow-lg p-4">
         <div className="flex gap-3 flex-wrap">
           <Button
             onClick={handleSave}

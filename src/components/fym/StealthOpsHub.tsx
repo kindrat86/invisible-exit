@@ -1,15 +1,33 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Shield, AlertTriangle } from "lucide-react";
+import StealthScoreView from "@/components/fym/StealthScoreView";
 import LegalTemplates from "@/components/fym/stealth/LegalTemplates";
 import AnonymityPlaybook from "@/components/fym/stealth/AnonymityPlaybook";
 import ComplianceDatabase from "@/components/fym/stealth/ComplianceDatabase";
 
 export default function StealthOpsHub({ userId }: { userId: string }) {
-  const [activeSection, setActiveSection] = useState("templates");
+  const [view, setView] = useState<"score" | "templates" | "playbook" | "compliance">("score");
+
+  if (view === "score") {
+    return (
+      <StealthScoreView
+        userId={userId}
+        onOpenSubTab={(tab) => setView(tab as typeof view)}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
+      {/* Back button */}
+      <button
+        onClick={() => setView("score")}
+        className="text-sm text-[#60A5FA] hover:underline"
+      >
+        &larr; Back to Stealth Score
+      </button>
+
       {/* Header */}
       <div>
         <h2 className="text-xl font-bold text-[#0B1D3A]">Stealth Ops Hub</h2>
@@ -20,7 +38,7 @@ export default function StealthOpsHub({ userId }: { userId: string }) {
       </div>
 
       {/* Sub-tabs */}
-      <Tabs value={activeSection} onValueChange={setActiveSection}>
+      <Tabs value={view} onValueChange={(v) => setView(v as typeof view)}>
         <TabsList className="flex w-full bg-white/60 backdrop-blur-sm border border-gray-200/60 rounded-lg p-1">
           <TabsTrigger
             value="templates"
