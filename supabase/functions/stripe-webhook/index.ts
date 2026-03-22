@@ -31,7 +31,62 @@ const WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
   <p style="font-size: 12px; color: #8A95A8;">You received this because you subscribed to FYM Dashboard ($0.97/month). Cancel anytime from your Stripe billing portal.</p>
 </div>`;
 
-async function sendWelcomeEmail(email: string, magicLinkUrl: string) {
+const FOUNDING_WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0B1D3A;">
+  <p style="color: #60A5FA; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT</p>
+  <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.3;">You're in. Founding Member.</h1>
+  <p style="font-size: 18px; line-height: 1.6; color: #3B82F6; font-weight: 600; margin-bottom: 24px;">One of the first 100. This can't be undone.</p>
+  <p style="font-size: 16px; line-height: 1.6; color: #4A5568; margin-bottom: 24px;">Most executives talk about building an exit. You just locked in the tools, the access, and the price that the next 10,000 members will wish they had.</p>
+  <p style="font-size: 16px; line-height: 1.6; color: #4A5568; margin-bottom: 28px;">Your dashboard is ready. Click below to get started.</p>
+  <a href="${magicLinkUrl}" style="display: inline-block; padding: 14px 28px; background: #3B82F6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin-bottom: 36px;">Access Your Founding Dashboard</a>
+  <p style="font-size: 15px; font-weight: 600; color: #0B1D3A; margin-bottom: 16px;">Here is what you just unlocked:</p>
+  <table style="width: 100%; border-collapse: collapse; margin-bottom: 28px;">
+    <tr>
+      <td style="padding: 12px 16px; border-bottom: 1px solid #E2E8F0;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">Price Locked at $17.99/mo For Life</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Public price goes to $97.99/mo. You save $960/year.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 16px; border-bottom: 1px solid #E2E8F0;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">Shape What Gets Built Next</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Vote on the roadmap. Your feature requests go to the top of the queue.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 16px; border-bottom: 1px solid #E2E8F0;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">See Everything First</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Every new tool, integration, and feature weeks before anyone else.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 16px; border-bottom: 1px solid #E2E8F0;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">Your Name on the Founding Wall</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Permanently listed as an original member. Cannot be purchased later.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 12px 16px;">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">Unlimited Access to Every Tool</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">No caps on scenarios, audits, automations, or content calendars. Ever.</p>
+      </td>
+    </tr>
+  </table>
+  <p style="font-size: 14px; line-height: 1.6; color: #8A95A8; margin-bottom: 8px;">Here is what to do first:</p>
+  <ol style="font-size: 14px; line-height: 1.8; color: #4A5568; padding-left: 20px; margin-bottom: 28px;">
+    <li>Click the button above</li>
+    <li>Enter your runway, burn, and revenue</li>
+    <li>See your FYM number</li>
+    <li>Explore your unlimited tools</li>
+  </ol>
+  <p style="font-size: 13px; color: #8A95A8; margin-bottom: 8px; padding: 12px 16px; background: #F7FAFC; border-radius: 6px;">30-day money-back guarantee. Not for you? Email the word "refund" and you're out. No questions.</p>
+  <p style="font-size: 14px; color: #8A95A8;">This link expires in 24 hours. If expired, go to invisibleexit.com/login and use "Sign in with magic link."</p>
+  <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 32px 0;" />
+  <p style="font-size: 12px; color: #8A95A8;">You received this because you joined as a Founding Member ($17.99/month, locked for life). Cancel anytime from your Stripe billing portal.</p>
+</div>`;
+
+async function sendWelcomeEmail(email: string, magicLinkUrl: string, tier: string) {
+  const isFounding = tier === "founding";
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -41,8 +96,8 @@ async function sendWelcomeEmail(email: string, magicLinkUrl: string) {
     body: JSON.stringify({
       from: "Adrian <escape@invisibleexit.com>",
       to: [email],
-      subject: "Your FYM Dashboard is ready",
-      html: WELCOME_EMAIL_HTML(magicLinkUrl),
+      subject: isFounding ? "You're a Founding Member" : "Your FYM Dashboard is ready",
+      html: isFounding ? FOUNDING_WELCOME_EMAIL_HTML(magicLinkUrl) : WELCOME_EMAIL_HTML(magicLinkUrl),
     }),
   });
   if (!res.ok) {
@@ -127,7 +182,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   }
 
   const magicLinkUrl = linkData.properties.action_link;
-  await sendWelcomeEmail(email, magicLinkUrl);
+  await sendWelcomeEmail(email, magicLinkUrl, tier);
 }
 
 async function updateSubscriptionStatus(
