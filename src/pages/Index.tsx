@@ -146,6 +146,10 @@ const Index = () => {
         );
       if (error) throw error;
       toast.success("You're in! We'll send you weekly insights.");
+      // Send welcome email (fire-and-forget)
+      supabase.functions
+        .invoke("newsletter-welcome", { body: { email: subscribeEmail } })
+        .catch((err) => console.error("Welcome email error:", err));
       setSubscribeEmail("");
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
