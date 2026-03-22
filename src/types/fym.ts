@@ -149,3 +149,62 @@ export interface IdeaEntry {
   tags: string[];
   is_featured: boolean;
 }
+
+// ── Idea Pipeline types ──
+
+export type PipelineCategoryKey = "market" | "revenue" | "build" | "invisibility" | "moat";
+
+export interface PipelineQuestion {
+  id: string;
+  category: PipelineCategoryKey;
+  categoryLabel: string;
+  text: string;
+  hint: string;
+  yesScore: number;
+  impact: "Critical" | "Important" | "Nice-to-have";
+  positiveImplication: string;
+  negativeImplication: string;
+}
+
+export interface PipelineCategory {
+  key: PipelineCategoryKey;
+  label: string;
+  maxScore: number;
+}
+
+export type PipelineVerdict = "GO" | "CONDITIONAL_GO" | "NO_GO";
+
+export interface ActionPlanTask {
+  id: string;
+  phase: "hour_0_8" | "hour_8_24" | "hour_24_40" | "hour_40_48";
+  phaseLabel: string;
+  text: string;
+  category: PipelineCategoryKey;
+}
+
+export interface DecisionNode {
+  label: string;
+  passed: boolean;
+  reason: string;
+}
+
+export interface PipelineEntry {
+  id: string;
+  user_id: string;
+  created_at: string;
+  idea_name: string;
+  idea_description: string;
+  source_idea_id: string | null;
+  total_score: number;
+  market_score: number;
+  revenue_score: number;
+  build_score: number;
+  invisibility_score: number;
+  moat_score: number;
+  verdict: PipelineVerdict;
+  answers: Record<string, boolean>;
+  action_plan_checked: Record<string, boolean>;
+  strengths: string[];
+  red_flags: string[];
+  decision_nodes: DecisionNode[];
+}
