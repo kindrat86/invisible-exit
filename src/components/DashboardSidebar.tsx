@@ -16,18 +16,21 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import {
-  LayoutDashboard,
   Calculator,
   History,
   TrendingUp,
   EyeOff,
+  Shield,
   Lightbulb,
   GitBranch,
   Palette,
   Rocket,
-  Shield,
   Lock,
   LogOut,
+  BarChart3,
+  ArrowDownRight,
+  Zap,
+  CheckCircle2,
 } from "lucide-react";
 import SidebarProgressRing from "@/components/fym/SidebarProgressRing";
 import { useState } from "react";
@@ -39,40 +42,80 @@ interface DashboardSidebarProps {
   email: string;
   freedomPct: number;
   isStarter: boolean;
+  phaseCompletion?: Record<number, boolean>;
 }
 
-const NAV_GROUPS = [
+interface NavItem {
+  value: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gated: boolean;
+  gateId?: string;
+}
+
+interface PhaseGroup {
+  phase: number;
+  title: string;
+  items: NavItem[];
+}
+
+const PHASE_GROUPS: PhaseGroup[] = [
   {
-    label: null,
-    items: [
-      { value: "overview", label: "Overview", icon: LayoutDashboard, gated: false },
-    ],
-  },
-  {
-    label: "Track",
+    phase: 1,
+    title: "Know Your Number",
     items: [
       { value: "calculator", label: "Calculator", icon: Calculator, gated: false },
       { value: "history", label: "History", icon: History, gated: false },
-      { value: "trends", label: "Trends", icon: TrendingUp, gated: true },
-      { value: "invisibility", label: "Invisibility", icon: EyeOff, gated: false },
     ],
   },
   {
-    label: "Build",
+    phase: 2,
+    title: "Protect Yourself",
     items: [
-      { value: "ideas", label: "Ideas", icon: Lightbulb, gated: false },
-      { value: "pipeline", label: "Pipeline", icon: GitBranch, gated: true },
-      { value: "brand", label: "Brand", icon: Palette, gated: true },
+      { value: "invisibility", label: "Invisibility Audit", icon: EyeOff, gated: false },
+      { value: "stealth-core", label: "Core Stealth Actions", icon: Shield, gated: false },
     ],
   },
   {
-    label: "Ship",
+    phase: 3,
+    title: "Pick Your Idea",
     items: [
-      { value: "launch", label: "Launch", icon: Rocket, gated: true },
-      { value: "stealth", label: "Stealth Ops", icon: Shield, gated: true },
+      { value: "ideas", label: "Idea Recommender", icon: Lightbulb, gated: false },
+      { value: "pipeline", label: "Pipeline Validation", icon: GitBranch, gated: false, gateId: "pipeline-unlimited" },
+    ],
+  },
+  {
+    phase: 4,
+    title: "Build It",
+    items: [
+      { value: "brand", label: "Brand Manager", icon: Palette, gated: true, gateId: "brand" },
+      { value: "launch", label: "Launch Control", icon: Rocket, gated: true, gateId: "launch" },
+    ],
+  },
+  {
+    phase: 5,
+    title: "Scale It",
+    items: [
+      { value: "trends", label: "Trends", icon: TrendingUp, gated: true, gateId: "trends" },
+      { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: true, gateId: "stealth-full" },
+      { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: true, gateId: "scenarios" },
+      { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: true, gateId: "reverse-calc" },
     ],
   },
 ];
+
+// Flatten all valid tab names
+export const ALL_PHASE_TABS = PHASE_GROUPS.flatMap((g) =>
+  g.items.map((i) => i.value)
+);
+
+function getRecommendedPhase(phaseCompletion?: Record<number, boolean>): number {
+  if (!phaseCompletion) return 1;
+  for (let i = 1; i <= 5; i++) {
+    if (!phaseCompletion[i]) return i;
+  }
+  return 5;
+}
 
 export default function DashboardSidebar({
   activeTab,
@@ -80,10 +123,12 @@ export default function DashboardSidebar({
   email,
   freedomPct,
   isStarter,
+  phaseCompletion,
 }: DashboardSidebarProps) {
   const navigate = useNavigate();
   const { setOpenMobile } = useSidebar();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const recommendedPhase = getRecommendedPhase(phaseCompletion);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -110,6 +155,11 @@ export default function DashboardSidebar({
     }
   };
 
+  // Find which phase the active tab belongs to
+  const activePhase = PHASE_GROUPS.find((g) =>
+    g.items.some((i) => i.value === activeTab)
+  )?.phase ?? 0;
+
   return (
     <Sidebar collapsible="icon" className="border-r border-[#EDF2F7]">
       {/* Header: Logo + Progress Ring */}
@@ -129,59 +179,106 @@ export default function DashboardSidebar({
 
       <SidebarSeparator />
 
-      {/* Navigation */}
-      <SidebarContent>
-        {NAV_GROUPS.map((group, groupIdx) => (
-          <SidebarGroup key={groupIdx}>
-            {group.label && (
-              <SidebarGroupLabel className="text-[10px] uppercase tracking-wider text-[#9CA3AF] font-semibold">
-                {group.label}
-              </SidebarGroupLabel>
-            )}
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {group.items.map((item) => {
-                  const isActive = activeTab === item.value;
-                  const isLocked = item.gated && isStarter;
-                  const Icon = item.icon;
+      {/* Overview link */}
+      <SidebarGroup>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                isActive={activeTab === "overview"}
+                tooltip="Overview"
+                onClick={() => handleNav("overview")}
+                className={
+                  activeTab === "overview"
+                    ? "bg-[#60A5FA]/10 text-[#60A5FA] font-medium border-l-2 border-[#60A5FA] rounded-l-none"
+                    : "text-[#4A5568] hover:bg-[#F4F7FB] hover:text-[#0B1D3A]"
+                }
+              >
+                <Zap className={`h-4 w-4 shrink-0 ${activeTab === "overview" ? "text-[#60A5FA]" : "text-[#9CA3AF]"}`} />
+                <span className="truncate">Overview</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
 
-                  return (
-                    <SidebarMenuItem key={item.value}>
-                      <SidebarMenuButton
-                        isActive={isActive}
-                        tooltip={item.label}
-                        onClick={() => handleNav(item.value)}
-                        className={
-                          isActive
-                            ? "bg-[#60A5FA]/10 text-[#60A5FA] font-medium border-l-2 border-[#60A5FA] rounded-l-none"
-                            : isLocked
-                              ? "text-[#9CA3AF] hover:bg-[#F4F7FB] hover:text-[#4A5568]"
-                              : "text-[#4A5568] hover:bg-[#F4F7FB] hover:text-[#0B1D3A]"
-                        }
-                      >
-                        <Icon
-                          className={`h-4 w-4 shrink-0 ${
+      {/* Phase Navigation */}
+      <SidebarContent>
+        {PHASE_GROUPS.map((group) => {
+          const isCompleted = phaseCompletion?.[group.phase] ?? false;
+          const isRecommended = group.phase === recommendedPhase;
+
+          return (
+            <SidebarGroup key={group.phase}>
+              <SidebarGroupLabel
+                className={`text-[10px] uppercase tracking-wider font-semibold flex items-center gap-2 ${
+                  isRecommended && !isCompleted
+                    ? "text-[#60A5FA]"
+                    : "text-[#9CA3AF]"
+                }`}
+              >
+                <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold shrink-0 ${
+                  isCompleted
+                    ? "bg-green-100 text-green-600"
+                    : isRecommended
+                      ? "bg-[#60A5FA]/10 text-[#60A5FA] ring-1 ring-[#60A5FA]/30"
+                      : "bg-gray-100 text-gray-400"
+                }`}>
+                  {isCompleted ? (
+                    <CheckCircle2 className="h-3 w-3" />
+                  ) : (
+                    group.phase
+                  )}
+                </span>
+                <span className="group-data-[collapsible=icon]:hidden">
+                  {group.title}
+                </span>
+              </SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {group.items.map((item) => {
+                    const isActive = activeTab === item.value;
+                    const isLocked = item.gated && isStarter;
+                    const Icon = item.icon;
+
+                    return (
+                      <SidebarMenuItem key={item.value}>
+                        <SidebarMenuButton
+                          isActive={isActive}
+                          tooltip={item.label}
+                          onClick={() => handleNav(item.value)}
+                          className={
                             isActive
-                              ? "text-[#60A5FA]"
+                              ? "bg-[#60A5FA]/10 text-[#60A5FA] font-medium border-l-2 border-[#60A5FA] rounded-l-none"
                               : isLocked
-                                ? "text-[#9CA3AF]/50"
-                                : "text-[#9CA3AF]"
-                          }`}
-                        />
-                        <span className="truncate">{item.label}</span>
-                      </SidebarMenuButton>
-                      {isLocked && (
-                        <SidebarMenuBadge>
-                          <Lock className="h-3 w-3 text-[#9CA3AF]/50" />
-                        </SidebarMenuBadge>
-                      )}
-                    </SidebarMenuItem>
-                  );
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
+                                ? "text-[#9CA3AF] hover:bg-[#F4F7FB] hover:text-[#4A5568]"
+                                : "text-[#4A5568] hover:bg-[#F4F7FB] hover:text-[#0B1D3A]"
+                          }
+                        >
+                          <Icon
+                            className={`h-4 w-4 shrink-0 ${
+                              isActive
+                                ? "text-[#60A5FA]"
+                                : isLocked
+                                  ? "text-[#9CA3AF]/50"
+                                  : "text-[#9CA3AF]"
+                            }`}
+                          />
+                          <span className="truncate">{item.label}</span>
+                        </SidebarMenuButton>
+                        {isLocked && (
+                          <SidebarMenuBadge>
+                            <Lock className="h-3 w-3 text-[#9CA3AF]/50" />
+                          </SidebarMenuBadge>
+                        )}
+                      </SidebarMenuItem>
+                    );
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          );
+        })}
       </SidebarContent>
 
       {/* Footer: Upgrade CTA + User */}

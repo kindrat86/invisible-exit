@@ -8,12 +8,15 @@ import FYMHistory from "@/components/FYMHistory";
 import DashboardOverview from "@/components/fym/DashboardOverview";
 import ReactivationScreen from "@/components/ReactivationScreen";
 import FeatureGate from "@/components/FeatureGate";
+import OnboardingWizard from "@/components/fym/OnboardingWizard";
+import CoreStealthActions from "@/components/fym/CoreStealthActions";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFymEntries } from "@/hooks/useFymEntries";
 import { useLatestFymEntry } from "@/hooks/useLatestFymEntry";
 import { useLatestInvisibilityScore } from "@/hooks/useInvisibilityScore";
-import { useLatestPipelineEntry } from "@/hooks/useIdeaPipeline";
+import { useLatestPipelineEntry, usePipelineHistory } from "@/hooks/useIdeaPipeline";
+import { useMorningBriefing } from "@/hooks/useMorningBriefing";
 import {
   evaluateFreedomLevel,
   calculateProgressToNextLevel,
@@ -23,11 +26,15 @@ import type { CalculatorInputs, CalculatorInputsExpanded, IdeaEntry } from "@/ty
 
 const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
 const InvisibilityScore = lazy(() => import("@/components/fym/InvisibilityScore"));
+const IdeaQuiz = lazy(() => import("@/components/fym/IdeaQuiz"));
 const IdeaDirectory = lazy(() => import("@/components/fym/IdeaDirectory"));
 const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
 const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
+const StealthScoreView = lazy(() => import("@/components/fym/StealthScoreView"));
+const ScenarioEngine = lazy(() => import("@/components/fym/ScenarioEngine"));
+const ReverseCalculator = lazy(() => import("@/components/fym/ReverseCalculator"));
 
 interface Profile {
   id: string;
@@ -38,7 +45,8 @@ interface Profile {
 
 const VALID_TABS = [
   "overview", "calculator", "history", "trends", "invisibility",
-  "ideas", "pipeline", "brand", "launch", "stealth",
+  "stealth-core", "ideas", "pipeline", "brand", "launch",
+  "stealth-full", "scenarios", "reverse-calc",
 ] as const;
 
 function DashboardContent() {
@@ -52,11 +60,14 @@ function DashboardContent() {
   const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [ideasView, setIdeasView] = useState<"quiz" | "directory">("quiz");
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
   const { data: latestEntry, refetch: refetchLatest } = useLatestFymEntry(userId);
   const { data: latestInvisibility } = useLatestInvisibilityScore(userId);
   const { data: latestPipeline } = useLatestPipelineEntry(userId);
+  const { data: pipelineHistory = [] } = usePipelineHistory(userId);
 
   const setActiveTab = useCallback(
     (tab: string) => {
@@ -95,6 +106,16 @@ function DashboardContent() {
     load();
   }, []);
 
+  // Check if onboarding should show
+  useEffect(() => {
+    if (userId && entries.length === 0 && !loading) {
+      const completed = localStorage.getItem(`onboarding_completed_${userId}`);
+      if (!completed) {
+        setShowOnboarding(true);
+      }
+    }
+  }, [userId, entries.length, loading]);
+
   // Freedom level calculations for overview + sidebar ring
   const expandedInputs = useMemo<CalculatorInputsExpanded>(() => {
     if (!latestEntry) {
@@ -131,6 +152,35 @@ function DashboardContent() {
   const revenue = latestEntry ? Number(latestEntry.monthly_revenue) : 0;
   const freedomPct = burn > 0 ? Math.min(Math.round((revenue / burn) * 100), 100) : 0;
 
+  // Morning briefing for overview
+  const briefing = useMorningBriefing(entries, latestEntry, latestInvisibility);
+
+  // Phase completion tracking
+  const phaseCompletion = useMemo(() => {
+    const completion: Record<number, boolean> = {};
+
+    // Phase 1: Has at least one entry
+    completion[1] = entries.length > 0;
+
+    // Phase 2: Has invisibility score
+    completion[2] = !!latestInvisibility;
+
+    // Phase 3: Has at least one pipeline entry
+    completion[3] = pipelineHistory.length > 0;
+
+    // Phase 4: Check brand/launch progress (localStorage)
+    const brandState = localStorage.getItem(`brand_manager_state_${userId}`);
+    completion[4] = !!brandState;
+
+    // Phase 5: Check if stealth ops have been accessed
+    completion[5] = false; // Advanced features, rarely "complete"
+
+    return completion;
+  }, [entries.length, latestInvisibility, pipelineHistory.length, userId]);
+
+  // Pipeline gating: 1 free validation for starters
+  const pipelineValidationCount = pipelineHistory.length;
+
   const handleSaved = useCallback(() => {
     refetchEntries();
     refetchLatest();
@@ -142,6 +192,12 @@ function DashboardContent() {
     },
     [setActiveTab]
   );
+
+  const handleOnboardingComplete = useCallback(() => {
+    setShowOnboarding(false);
+    refetchEntries();
+    refetchLatest();
+  }, [refetchEntries, refetchLatest]);
 
   if (loading) {
     return (
@@ -188,6 +244,13 @@ function DashboardContent() {
     </div>
   );
 
+  // Onboarding wizard overlay
+  if (showOnboarding && isActive) {
+    return (
+      <OnboardingWizard userId={userId} onComplete={handleOnboardingComplete} />
+    );
+  }
+
   if (!isActive) {
     return (
       <DashboardLayout
@@ -210,6 +273,33 @@ function DashboardContent() {
     );
   }
 
+  // Nudge banner for incomplete prior phases
+  const getNudgeBanner = () => {
+    const tabToPhase: Record<string, number> = {
+      calculator: 1, history: 1,
+      invisibility: 2, "stealth-core": 2,
+      ideas: 3, pipeline: 3,
+      brand: 4, launch: 4,
+      trends: 5, "stealth-full": 5, scenarios: 5, "reverse-calc": 5,
+    };
+    const currentPhase = tabToPhase[activeTab];
+    if (!currentPhase || currentPhase <= 1) return null;
+
+    // Check if prior phases are incomplete
+    for (let i = 1; i < currentPhase; i++) {
+      if (!phaseCompletion[i]) {
+        return (
+          <div className="bg-[#60A5FA]/5 border border-[#60A5FA]/10 rounded-lg px-4 py-3 mb-4">
+            <p className="text-xs text-[#60A5FA]">
+              Tip: Most members complete Phase {i} first. Your freedom number drives everything else.
+            </p>
+          </div>
+        );
+      }
+    }
+    return null;
+  };
+
   return (
     <DashboardLayout
       activeTab={activeTab}
@@ -218,6 +308,8 @@ function DashboardContent() {
       freedomPct={freedomPct}
       isStarter={!!isStarter}
     >
+      {getNudgeBanner()}
+
       {activeTab === "overview" && (
         <DashboardOverview
           email={email}
@@ -230,6 +322,7 @@ function DashboardContent() {
           progressToNext={progressToNext}
           monthsToNextLevel={monthsToNextLevel}
           isStarter={!!isStarter}
+          briefing={briefing}
         />
       )}
 
@@ -248,58 +341,83 @@ function DashboardContent() {
         <FYMHistory userId={userId} refreshKey={0} onLoadEntry={handleLoadEntry} />
       )}
 
-      {activeTab === "trends" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureName="Trend Analysis"
-          lockedMessage="See how your numbers are trending and where you'll be in 6 months."
-        >
-          <Suspense fallback={tabFallback}>
-            <FymTrends userId={userId} />
-          </Suspense>
-        </FeatureGate>
-      )}
-
       {activeTab === "invisibility" && (
         <Suspense fallback={tabFallback}>
           <InvisibilityScore userId={userId} />
         </Suspense>
       )}
 
+      {activeTab === "stealth-core" && (
+        <CoreStealthActions userId={userId} />
+      )}
+
       {activeTab === "ideas" && (
         <Suspense fallback={tabFallback}>
-          <IdeaDirectory
-            onValidateIdea={(idea) => {
-              setPendingPipelineIdea(idea);
-              setActiveTab("pipeline");
-            }}
-            onSwitchTab={setActiveTab}
-          />
+          {ideasView === "quiz" ? (
+            <IdeaQuiz
+              onValidateIdea={(idea) => {
+                setPendingPipelineIdea(idea);
+                setActiveTab("pipeline");
+              }}
+              onSwitchTab={setActiveTab}
+              onBrowseAll={() => setIdeasView("directory")}
+            />
+          ) : (
+            <IdeaDirectory
+              onValidateIdea={(idea) => {
+                setPendingPipelineIdea(idea);
+                setActiveTab("pipeline");
+              }}
+              onSwitchTab={setActiveTab}
+            />
+          )}
+          {ideasView === "directory" && (
+            <div className="mt-4">
+              <button
+                onClick={() => setIdeasView("quiz")}
+                className="text-xs text-[#60A5FA] hover:underline"
+              >
+                Back to Idea Quiz
+              </button>
+            </div>
+          )}
         </Suspense>
       )}
 
       {activeTab === "pipeline" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureName="Idea Pipeline"
-          lockedMessage="Validate your ideas with AI-powered scoring in 48 hours."
-        >
-          <Suspense fallback={tabFallback}>
-            <IdeaPipeline
-              userId={userId}
-              onSwitchTab={setActiveTab}
-              pendingIdea={pendingPipelineIdea}
-              onClearPendingIdea={() => setPendingPipelineIdea(null)}
-            />
-          </Suspense>
-        </FeatureGate>
+        <>
+          {/* Starter users get 1 free validation, then gated */}
+          {isStarter && pipelineValidationCount >= 1 ? (
+            <FeatureGate
+              hasFullAccess={false}
+              featureId="pipeline-unlimited"
+            >
+              <Suspense fallback={tabFallback}>
+                <IdeaPipeline
+                  userId={userId}
+                  onSwitchTab={setActiveTab}
+                  pendingIdea={pendingPipelineIdea}
+                  onClearPendingIdea={() => setPendingPipelineIdea(null)}
+                />
+              </Suspense>
+            </FeatureGate>
+          ) : (
+            <Suspense fallback={tabFallback}>
+              <IdeaPipeline
+                userId={userId}
+                onSwitchTab={setActiveTab}
+                pendingIdea={pendingPipelineIdea}
+                onClearPendingIdea={() => setPendingPipelineIdea(null)}
+              />
+            </Suspense>
+          )}
+        </>
       )}
 
       {activeTab === "brand" && (
         <FeatureGate
           hasFullAccess={!!hasFullAccess}
-          featureName="Brand Manager"
-          lockedMessage="Content calendar, YouTube scripts, and Reddit playbooks to grow your anonymous brand."
+          featureId="brand"
         >
           <Suspense fallback={tabFallback}>
             <BrandManager userId={userId} />
@@ -310,8 +428,7 @@ function DashboardContent() {
       {activeTab === "launch" && (
         <FeatureGate
           hasFullAccess={!!hasFullAccess}
-          featureName="Launch Control"
-          lockedMessage="Full launch automation, checklists, and go-live tracking for people with 5 hours a week."
+          featureId="launch"
         >
           <Suspense fallback={tabFallback}>
             <LaunchControl userId={userId} />
@@ -319,14 +436,52 @@ function DashboardContent() {
         </FeatureGate>
       )}
 
-      {activeTab === "stealth" && (
+      {activeTab === "trends" && (
         <FeatureGate
           hasFullAccess={!!hasFullAccess}
-          featureName="Stealth Ops Hub"
-          lockedMessage="Entity separation, compliance audit, and digital footprint cleanup."
+          featureId="trends"
         >
           <Suspense fallback={tabFallback}>
-            <StealthOpsHub userId={userId} />
+            <FymTrends userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "stealth-full" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="stealth-full"
+        >
+          <Suspense fallback={tabFallback}>
+            <StealthScoreView
+              userId={userId}
+              onOpenSubTab={(subTab) => {
+                // Navigate to the sub-tab within StealthOpsHub
+                setActiveTab("stealth-full");
+              }}
+            />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "scenarios" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="scenarios"
+        >
+          <Suspense fallback={tabFallback}>
+            <ScenarioEngine inputs={expandedInputs} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "reverse-calc" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="reverse-calc"
+        >
+          <Suspense fallback={tabFallback}>
+            <ReverseCalculator inputs={expandedInputs} />
           </Suspense>
         </FeatureGate>
       )}

@@ -7,24 +7,27 @@ interface DashboardTopBarProps {
   onTabChange: (tab: string) => void;
 }
 
-const TAB_LABELS: Record<string, { group: string; label: string }> = {
-  overview: { group: "", label: "Overview" },
-  calculator: { group: "Track", label: "Calculator" },
-  history: { group: "Track", label: "History" },
-  trends: { group: "Track", label: "Trends" },
-  invisibility: { group: "Track", label: "Invisibility" },
-  ideas: { group: "Build", label: "Ideas" },
-  pipeline: { group: "Build", label: "Pipeline" },
-  brand: { group: "Build", label: "Brand" },
-  launch: { group: "Ship", label: "Launch" },
-  stealth: { group: "Ship", label: "Stealth Ops" },
+const TAB_LABELS: Record<string, { phase: string; label: string }> = {
+  overview: { phase: "", label: "Overview" },
+  calculator: { phase: "Phase 1", label: "Calculator" },
+  history: { phase: "Phase 1", label: "History" },
+  invisibility: { phase: "Phase 2", label: "Invisibility Audit" },
+  "stealth-core": { phase: "Phase 2", label: "Core Stealth Actions" },
+  ideas: { phase: "Phase 3", label: "Idea Recommender" },
+  pipeline: { phase: "Phase 3", label: "Pipeline Validation" },
+  brand: { phase: "Phase 4", label: "Brand Manager" },
+  launch: { phase: "Phase 4", label: "Launch Control" },
+  trends: { phase: "Phase 5", label: "Trends" },
+  "stealth-full": { phase: "Phase 5", label: "Full Stealth Ops" },
+  scenarios: { phase: "Phase 5", label: "Scenario Engine" },
+  "reverse-calc": { phase: "Phase 5", label: "Reverse Calculator" },
 };
 
 export default function DashboardTopBar({
   activeTab,
   onTabChange,
 }: DashboardTopBarProps) {
-  const tab = TAB_LABELS[activeTab] ?? { group: "", label: "Dashboard" };
+  const tab = TAB_LABELS[activeTab] ?? { phase: "", label: "Dashboard" };
 
   return (
     <header className="bg-white/80 backdrop-blur-sm border-b border-[#EDF2F7] px-4 h-12 flex items-center gap-3 sticky top-0 z-10">
@@ -34,9 +37,9 @@ export default function DashboardTopBar({
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm min-w-0">
-        {tab.group && (
+        {tab.phase && (
           <>
-            <span className="text-[#9CA3AF] hidden sm:inline">{tab.group}</span>
+            <span className="text-[#9CA3AF] hidden sm:inline">{tab.phase}</span>
             <span className="text-[#9CA3AF] hidden sm:inline">/</span>
           </>
         )}
