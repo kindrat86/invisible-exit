@@ -64,10 +64,10 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0B1D3A] px-4">
-      <Card className="w-full max-w-md border-[#132D5E] bg-[#0B1D3A]">
+    <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A] px-4">
+      <Card className="w-full max-w-md border-white/10 bg-[#1B2A4A]">
         <CardHeader className="text-center">
-          <p className="text-[#D4A843] text-xs tracking-widest uppercase font-semibold mb-2">
+          <p className="text-blue-400 text-xs tracking-widest uppercase font-semibold mb-2">
             INVISIBLE EXIT
           </p>
           <CardTitle className="text-xl font-bold text-white">
@@ -86,7 +86,7 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
-                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               <div className="space-y-2">
@@ -98,12 +98,12 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Your password"
                   required
-                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#D4A843] hover:bg-[#E0BC5E] text-[#0B1D3A] font-semibold"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
                 disabled={loading}
               >
                 {loading ? "Signing in..." : "Sign In"}
@@ -111,14 +111,14 @@ export default function Login() {
               <div className="flex justify-between text-sm">
                 <button
                   type="button"
-                  className="text-[#4A90D9] hover:underline"
+                  className="text-blue-400 hover:text-blue-300 hover:underline"
                   onClick={() => setMode("forgot")}
                 >
                   Forgot password?
                 </button>
                 <button
                   type="button"
-                  className="text-[#4A90D9] hover:underline"
+                  className="text-blue-400 hover:text-blue-300 hover:underline"
                   onClick={() => setMode("magic")}
                 >
                   Sign in with magic link
@@ -138,19 +138,19 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
-                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#D4A843] hover:bg-[#E0BC5E] text-[#0B1D3A] font-semibold"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Magic Link"}
               </Button>
               <button
                 type="button"
-                className="text-sm text-[#4A90D9] hover:underline w-full text-center"
+                className="text-sm text-blue-400 hover:text-blue-300 hover:underline w-full text-center"
                 onClick={() => setMode("password")}
               >
                 Back to password sign in
@@ -172,19 +172,19 @@ export default function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
-                  className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#D4A843] hover:bg-[#E0BC5E] text-[#0B1D3A] font-semibold"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Reset Link"}
               </Button>
               <button
                 type="button"
-                className="text-sm text-[#4A90D9] hover:underline w-full text-center"
+                className="text-sm text-blue-400 hover:text-blue-300 hover:underline w-full text-center"
                 onClick={() => setMode("password")}
               >
                 Back to sign in
