@@ -90,8 +90,16 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     userId = createData.user.id;
   }
 
-  // Upsert profile
-  const tier = session.metadata?.product === "founding_member" ? "founding" : "fym";
+  // Upsert profile — map product metadata to subscription tier
+  const productToTier: Record<string, string> = {
+    starter: "starter",
+    founding: "founding",
+    standard: "standard",
+    // Legacy mappings
+    fym_dashboard: "starter",
+    founding_member: "founding",
+  };
+  const tier = productToTier[session.metadata?.product ?? ""] ?? "starter";
   const { error: profileError } = await supabase.from("profiles").upsert(
     {
       id: userId,

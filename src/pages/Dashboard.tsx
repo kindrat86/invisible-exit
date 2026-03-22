@@ -8,6 +8,8 @@ import FYMHistory from "@/components/FYMHistory";
 import WelcomeHeader from "@/components/fym/WelcomeHeader";
 import QuickStats from "@/components/fym/QuickStats";
 import ReactivationScreen from "@/components/ReactivationScreen";
+import UpgradeBanner from "@/components/UpgradeBanner";
+import FeatureGate from "@/components/FeatureGate";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
@@ -37,6 +39,7 @@ interface Profile {
   id: string;
   email: string;
   subscription_status: string;
+  subscription_tier: string;
 }
 
 const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth"] as const;
@@ -79,7 +82,7 @@ function DashboardContent() {
 
       const { data, error } = await supabase
         .from("profiles")
-        .select("id, email, subscription_status")
+        .select("id, email, subscription_status, subscription_tier")
         .eq("id", user.id)
         .single();
 
@@ -148,6 +151,8 @@ function DashboardContent() {
   }
 
   const isActive = profile?.subscription_status === "active";
+  const hasFullAccess = isActive && (profile?.subscription_tier === "founding" || profile?.subscription_tier === "standard");
+  const isStarter = isActive && profile?.subscription_tier === "starter";
 
   const tabFallback = (
     <div className="flex items-center justify-center py-16">
@@ -183,6 +188,7 @@ function DashboardContent() {
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {isActive ? (
           <>
+            {isStarter && <UpgradeBanner />}
             <WelcomeHeader email={email} latestEntry={latestEntry} />
             <QuickStats
               entries={entries}
@@ -224,9 +230,11 @@ function DashboardContent() {
               </TabsContent>
 
               <TabsContent value="trends">
-                <Suspense fallback={tabFallback}>
-                  <FymTrends userId={userId} />
-                </Suspense>
+                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to see your FYM trends and projections">
+                  <Suspense fallback={tabFallback}>
+                    <FymTrends userId={userId} />
+                  </Suspense>
+                </FeatureGate>
               </TabsContent>
 
               <TabsContent value="invisibility">
@@ -259,21 +267,27 @@ function DashboardContent() {
               </TabsContent>
 
               <TabsContent value="brand">
-                <Suspense fallback={tabFallback}>
-                  <BrandManager userId={userId} />
-                </Suspense>
+                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access content calendar, YouTube scripts, and Reddit playbooks">
+                  <Suspense fallback={tabFallback}>
+                    <BrandManager userId={userId} />
+                  </Suspense>
+                </FeatureGate>
               </TabsContent>
 
               <TabsContent value="launch">
-                <Suspense fallback={tabFallback}>
-                  <LaunchControl userId={userId} />
-                </Suspense>
+                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access launch automation and tracking">
+                  <Suspense fallback={tabFallback}>
+                    <LaunchControl userId={userId} />
+                  </Suspense>
+                </FeatureGate>
               </TabsContent>
 
               <TabsContent value="stealth">
-                <Suspense fallback={tabFallback}>
-                  <StealthOpsHub />
-                </Suspense>
+                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access the full compliance playbook and fixes">
+                  <Suspense fallback={tabFallback}>
+                    <StealthOpsHub />
+                  </Suspense>
+                </FeatureGate>
               </TabsContent>
             </Tabs>
           </>

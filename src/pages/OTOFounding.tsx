@@ -1,207 +1,225 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Check, CheckCircle } from "lucide-react";
+import { Check, CheckCircle, Lock, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+
+const COMPARISON = [
+  {
+    feature: "FYM Dashboard",
+    starter: "1 scenario, basic calculator",
+    full: "Unlimited scenarios, trends, export",
+  },
+  {
+    feature: "Idea Pipeline",
+    starter: "3 ideas, basic validation",
+    full: "Unlimited ideas, AI analysis, scoring",
+  },
+  {
+    feature: "Stealth Ops Hub",
+    starter: "Basic invisibility score",
+    full: "Full audit, fixes, compliance playbook",
+  },
+  {
+    feature: "Launch Control",
+    starter: "View-only checklist",
+    full: "Full launch automation, tracking",
+  },
+  {
+    feature: "Brand Manager",
+    starter: "Basic templates",
+    full: "Content calendar, YouTube scripts, Reddit playbooks",
+  },
+  {
+    feature: "Private Community",
+    starter: null,
+    full: "Access to founding member community",
+  },
+  {
+    feature: "Monthly Masterclass",
+    starter: null,
+    full: "Live sessions with Adrian",
+  },
+  {
+    feature: "Beta Features",
+    starter: null,
+    full: "First access to everything new",
+  },
+];
 
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [foundingCount, setFoundingCount] = useState<number | null>(null);
 
-  const handleCheckout = async () => {
-    setCheckoutLoading(true);
-    const { data, error } = await supabase.functions.invoke("create-checkout", {
-      body: { priceId: "founding" },
-    });
-    setCheckoutLoading(false);
-    if (error || !data?.url) {
-      toast.error("Could not start checkout. Please try again.");
-      return;
-    }
-    window.location.href = data.url;
-  };
+  const foundingSpotsLeft = foundingCount !== null ? Math.max(0, 100 - foundingCount) : null;
+  const isFoundingAvailable = foundingSpotsLeft === null || foundingSpotsLeft > 0;
+  const upgradePrice = isFoundingAvailable ? "$17.99" : "$97.99";
+  const upgradeTier = isFoundingAvailable ? "founding" : "standard";
+  const upgradePriceLabel = isFoundingAvailable
+    ? "$17.99/mo, locked for life"
+    : "$97.99/month";
 
   useEffect(() => {
-    document.title = "One-Time Offer: Founding Member | Invisible Exit";
+    document.title = "Unlock Full Toolkit | Invisible Exit";
 
+    // Fetch founding member count
+    supabase.rpc("get_founding_member_count").then(({ data }) => {
+      if (data !== null) setFoundingCount(data);
+    });
+
+    // Verify payment if session_id present
     if (sessionId) {
       supabase.functions
         .invoke("verify-session", { body: { session_id: sessionId } })
         .then(({ data }) => {
-          if (data?.status === "paid") {
-            setPaymentConfirmed(true);
-          }
+          if (data?.status === "paid") setPaymentConfirmed(true);
         });
     }
   }, [sessionId]);
 
+  const handleUpgrade = async () => {
+    setCheckoutLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: { tier: upgradeTier, returnUrl: window.location.origin + "/confirmation" },
+      });
+      if (error) throw error;
+      if (data?.url) window.location.href = data.url;
+    } catch (err) {
+      toast.error("Could not start checkout. Please try again.");
+      console.error(err);
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Payment Confirmation Banner */}
       {paymentConfirmed && (
         <div className="bg-green-50 border-b border-green-200 px-6 py-4">
           <p className="text-center text-green-800 font-medium">
-            Payment confirmed. Your FYM Dashboard is being set up. Check your email for login details.
+            Payment confirmed. Your Starter access is being set up now.
           </p>
         </div>
       )}
 
-      {/* Section 1: Purchase Confirmation */}
-      <section className="bg-white pt-20 pb-12 px-6">
+      {/* Section 1: Confirmation + Hook */}
+      <section className="pt-20 pb-12 px-6">
         <div className="mx-auto max-w-2xl text-center">
           <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="h-8 w-8 text-green-600" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            You're In. Your FYM Dashboard Is Being Set Up Right Now.
+            You're In. But Before You Go...
           </h1>
           <p className="text-gray-600 text-lg">
-            Check your email for login details. Your dashboard will be ready in under 60 seconds.
+            You just unlocked simplified access to all 5 tools. Right now — only on this page — you can unlock <strong>everything</strong> at founding member pricing.
           </p>
         </div>
       </section>
 
-      {/* Section 2: OTO Hook */}
-      <section className="bg-gray-50 pt-16 pb-8 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Before You Go to Your Dashboard...
+      {/* Section 2: Side-by-Side Comparison */}
+      <section className="py-12 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Starter vs Full Toolkit
           </h2>
-          <p className="text-gray-600 text-lg">
-            I have a one-time offer that's only available right now, on this page. Once you leave, this pricing disappears.
-          </p>
-        </div>
-      </section>
-
-      {/* Section 2b: OTO Video */}
-      <section className="bg-gray-50 pb-16 px-6">
-        <div className="mx-auto max-w-2xl">
-          <video
-            controls
-            preload="metadata"
-            className="w-full rounded-xl shadow-lg"
-          >
-            <source src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/OTO_Founding.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <p className="text-center text-gray-500 text-sm mt-4">
-            Watch: Why 46 Managing Directors Already Locked In
-          </p>
-        </div>
-      </section>
-
-      {/* Section 3: OTO Pitch */}
-      <section className="bg-white py-16 px-6">
-        <div className="mx-auto max-w-2xl">
-          <div className="text-gray-700 text-lg leading-[1.7] space-y-6">
-            <p>
-              FYM Dashboard shows you where you are. But what if you also had the tools, the community, and the strategy calls to get there faster?
-            </p>
-            <p>
-              I took everything I built, every tool, every workflow, every lesson from building businesses invisibly, and packaged it into Founding Member.
-            </p>
-            <p>
-              It gives you everything in FYM Dashboard, plus the complete toolkit to go from 'tracking' to 'exiting':
-            </p>
-          </div>
-          <ul className="space-y-4 mt-8">
-            {[
-              "Idea Pipeline: validate new micro-SaaS ideas in 48 hours with AI analysis and go/no-go decision trees",
-              "Stealth Ops Hub: legal structure templates, anonymity playbook, compliance database. Everything to stay invisible.",
-              "Launch Control: step-by-step launch playbook, content calendar, go-live checklist. Ship faster than your day job allows.",
-              "Brand Manager: positioning, visual identity, website templates, voice guide. Build organic YouTube and Reddit presence.",
-              "Private community of Managing Directors building the same way you are",
-              "Monthly masterclass on invisible income strategies",
-              "Beta access to every new feature before anyone else",
-              "Annual 1:1 strategy call to review your exit plan",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-[#60A5FA] shrink-0 mt-1" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-gray-700 text-lg leading-[1.7] mt-8">
-            After we close the founding round, this goes to $97/mo. Right now, you lock it in for life.
-          </p>
-        </div>
-      </section>
-
-      {/* Section 4: OTO Value Stack */}
-      <section className="bg-[#1B2A4A] py-20 px-6">
-        <div className="mx-auto max-w-xl">
-          <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-            <ul className="space-y-4 mb-8">
-              {[
-                { feature: "FYM Dashboard (already yours)", value: "$12/mo" },
-                { feature: "Idea Pipeline", value: "$15/mo" },
-                { feature: "Stealth Ops Hub", value: "$25/mo" },
-                { feature: "Launch Control", value: "$18/mo" },
-                { feature: "Brand Manager", value: "$27/mo" },
-                { feature: "Private Community", value: "$49/mo" },
-                { feature: "Monthly Masterclass", value: "$97/mo" },
-                { feature: "Beta Access", value: "$29/mo" },
-                { feature: "Annual Strategy Call ($500/year)", value: "$42/mo" },
-              ].map((item) => (
-                <li key={item.feature} className="flex items-center justify-between gap-4">
-                  <span className="text-white/80">{item.feature}</span>
-                  <span className="text-white/40 text-sm whitespace-nowrap">{item.value}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="border-t border-white/10 pt-6 text-center">
-              <p className="text-white/70 text-lg mb-1">
-                Total Value: <span className="font-bold text-white text-2xl">$314/mo</span>
-              </p>
-              <p className="text-white/40 mb-1">
-                Normal Price After Founding: <span className="line-through">$97/mo</span>
-              </p>
-              <p className="text-3xl font-bold text-[#60A5FA] mb-2">
-                Your Founding Price: $19/mo, locked for life
-              </p>
-              <p className="text-white/50 text-sm">
-                80% savings. 54 of 100 founding spots remaining.
-              </p>
+          <div className="rounded-2xl border border-gray-200 overflow-hidden">
+            {/* Header */}
+            <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-200">
+              <div className="p-4 text-sm font-medium text-gray-500">Feature</div>
+              <div className="p-4 text-sm font-medium text-gray-500 text-center">
+                Starter<br />
+                <span className="text-gray-900 font-bold">$0.97/mo</span>
+              </div>
+              <div className="p-4 text-sm font-medium text-[#1B2A4A] text-center bg-blue-50">
+                Full Toolkit<br />
+                <span className="text-[#1B2A4A] font-bold">{upgradePrice}/mo</span>
+              </div>
             </div>
+            {/* Rows */}
+            {COMPARISON.map((row) => (
+              <div key={row.feature} className="grid grid-cols-3 border-b border-gray-100 last:border-b-0">
+                <div className="p-4 text-sm font-medium text-gray-900">{row.feature}</div>
+                <div className="p-4 text-sm text-center">
+                  {row.starter ? (
+                    <span className="text-gray-500">{row.starter}</span>
+                  ) : (
+                    <X className="w-4 h-4 text-gray-300 mx-auto" />
+                  )}
+                </div>
+                <div className="p-4 text-sm text-center bg-blue-50/50">
+                  <span className="text-gray-700">{row.full}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 5: Guarantee + CTA Buttons */}
-      <section className="bg-white py-20 px-6">
+      {/* Section 3: Scarcity + Price */}
+      <section className="bg-[#1B2A4A] py-16 px-6">
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-gray-600 text-lg leading-relaxed mb-10">
-            Same 30-day no-questions guarantee. If Founding Member isn't worth it, email 'refund' and get every cent back.
-          </p>
+          {isFoundingAvailable ? (
+            <>
+              <p className="text-[#60A5FA] text-sm tracking-widest uppercase mb-4">FOUNDING MEMBER PRICING</p>
+              <p className="text-4xl font-bold text-white mb-2">
+                {upgradePrice}<span className="text-lg font-normal text-white/50">/month, locked for life</span>
+              </p>
+              <p className="text-white/60 text-base mb-2">
+                After founding closes: $97.99/month
+              </p>
+              {foundingSpotsLeft !== null && (
+                <div className="mt-4 mb-8">
+                  <p className="text-[#60A5FA] font-bold text-lg">{foundingSpotsLeft} of 100 founding spots remaining</p>
+                  <div className="w-full bg-white/10 rounded-full h-2 mt-2 max-w-xs mx-auto">
+                    <div
+                      className="bg-[#60A5FA] h-2 rounded-full transition-all"
+                      style={{ width: `${((100 - foundingSpotsLeft) / 100) * 100}%` }}
+                    />
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              <p className="text-white/60 text-sm tracking-widest uppercase mb-4">FULL TOOLKIT ACCESS</p>
+              <p className="text-4xl font-bold text-white mb-2">
+                $97.99<span className="text-lg font-normal text-white/50">/month</span>
+              </p>
+              <p className="text-white/60 text-base mb-8">
+                Founding member spots are filled. Standard pricing applies.
+              </p>
+            </>
+          )}
+
           <button
-            onClick={handleCheckout}
+            onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="inline-block w-full bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors disabled:opacity-50 mb-6"
+            className="w-full max-w-md bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-bold text-lg px-10 py-5 rounded-xl transition-colors disabled:opacity-50 mb-4"
           >
-            {checkoutLoading ? "Loading..." : "Yes, Lock In My Founding Price at $19/mo"}
+            {checkoutLoading ? "Loading..." : `Unlock Full Toolkit — ${upgradePriceLabel}`}
           </button>
           <div>
             <Link
-              to="/oto/second-tool"
-              className="text-gray-400 hover:text-gray-600 text-sm transition-colors"
+              to="/confirmation"
+              className="text-white/40 hover:text-white/60 text-sm transition-colors"
             >
-              No thanks, take me to my dashboard
+              No thanks, I'll start with Starter
             </Link>
           </div>
-          {sessionId && (
-            <div className="mt-4">
-              <Link
-                to="/login"
-                className="text-[#60A5FA] hover:underline text-sm font-medium"
-              >
-                Skip and go to dashboard
-              </Link>
-            </div>
-          )}
-          <p className="text-gray-400 text-xs mt-6">
-            Limited founding spots. This offer is only available on this page.
+        </div>
+      </section>
+
+      {/* Section 4: Guarantee */}
+      <section className="bg-white py-12 px-6">
+        <div className="mx-auto max-w-xl text-center">
+          <p className="text-gray-600 text-base">
+            30-day money-back guarantee. If the Full Toolkit isn't worth it, email 'refund' and get every cent back. No questions.
           </p>
         </div>
       </section>

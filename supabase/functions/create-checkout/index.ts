@@ -27,39 +27,44 @@ serve(async (req) => {
       apiVersion: "2023-10-16",
     });
 
-    const { priceId, cancelPath } = await req.json();
+    const { tier, returnUrl } = await req.json();
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://invisibleexit.com";
 
-    // Whitelist allowed price IDs to prevent injection
-    const STRIPE_FYM_PRICE_ID = Deno.env.get("STRIPE_FYM_PRICE_ID")!;
-    const STRIPE_FOUNDING_PRICE_ID = Deno.env.get("STRIPE_FOUNDING_PRICE_ID")!;
-    const ALLOWED_PRICES = new Set([
-      "founding",
-      STRIPE_FYM_PRICE_ID,
-      STRIPE_FOUNDING_PRICE_ID,
-    ]);
+    // Map tier names to Stripe price IDs
+    const TIER_MAP: Record<string, { priceId: string; product: string }> = {
+      starter: {
+        priceId: Deno.env.get("STRIPE_STARTER_PRICE_ID")!,
+        product: "starter",
+      },
+      founding: {
+        priceId: Deno.env.get("STRIPE_FOUNDING_PRICE_ID")!,
+        product: "founding",
+      },
+      standard: {
+        priceId: Deno.env.get("STRIPE_STANDARD_PRICE_ID")!,
+        product: "standard",
+      },
+    };
 
-    if (priceId !== undefined && priceId !== null && !ALLOWED_PRICES.has(priceId)) {
-      return new Response(JSON.stringify({ error: "Invalid price" }), {
+    const tierConfig = TIER_MAP[tier];
+    if (!tierConfig) {
+      return new Response(JSON.stringify({ error: "Invalid tier" }), {
         status: 400,
         headers: { ...getCorsHeaders(req), "Content-Type": "application/json" },
       });
     }
 
-    const isFounding = priceId === "founding";
-    const finalPriceId = isFounding
-      ? STRIPE_FOUNDING_PRICE_ID
-      : priceId || STRIPE_FYM_PRICE_ID;
+    const successUrl = returnUrl
+      ? `${returnUrl.startsWith("http") ? "" : siteUrl}${returnUrl}?session_id={CHECKOUT_SESSION_ID}`
+      : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
-      line_items: [{ price: finalPriceId, quantity: 1 }],
-      success_url: isFounding
-        ? `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`
-        : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelPath ? `${siteUrl}${cancelPath}` : (isFounding ? `${siteUrl}/oto/founding` : `${siteUrl}/fym`),
+      line_items: [{ price: tierConfig.priceId, quantity: 1 }],
+      success_url: successUrl,
+      cancel_url: `${siteUrl}/`,
       allow_promotion_codes: false,
-      metadata: { product: isFounding ? "founding_member" : "fym_dashboard" },
+      metadata: { product: tierConfig.product },
     });
 
     return new Response(JSON.stringify({ url: session.url }), {
