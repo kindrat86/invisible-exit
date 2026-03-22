@@ -118,11 +118,6 @@ const OTOFounding = () => {
             Those Still Planning a Year Later.
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-[17px] text-[#8A95A8] max-w-[560px] mx-auto leading-relaxed">
-            I have something for the first 100 members only. Read this once.
-            It won't appear again.
-          </p>
         </div>
       </section>
 
