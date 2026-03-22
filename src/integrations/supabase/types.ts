@@ -197,6 +197,77 @@ export type Database = {
           },
         ]
       }
+      idea_pipeline: {
+        Row: {
+          id: string
+          user_id: string
+          created_at: string
+          idea_name: string
+          idea_description: string
+          source_idea_id: string | null
+          total_score: number
+          market_score: number
+          revenue_score: number
+          build_score: number
+          invisibility_score: number
+          moat_score: number
+          verdict: string
+          answers: Record<string, boolean>
+          action_plan_checked: Record<string, boolean>
+          strengths: string[]
+          red_flags: string[]
+          decision_nodes: Array<{ label: string; passed: boolean; reason: string }>
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          created_at?: string
+          idea_name: string
+          idea_description: string
+          source_idea_id?: string | null
+          total_score: number
+          market_score?: number
+          revenue_score?: number
+          build_score?: number
+          invisibility_score?: number
+          moat_score?: number
+          verdict: string
+          answers?: Record<string, boolean>
+          action_plan_checked?: Record<string, boolean>
+          strengths?: string[]
+          red_flags?: string[]
+          decision_nodes?: Array<{ label: string; passed: boolean; reason: string }>
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          created_at?: string
+          idea_name?: string
+          idea_description?: string
+          source_idea_id?: string | null
+          total_score?: number
+          market_score?: number
+          revenue_score?: number
+          build_score?: number
+          invisibility_score?: number
+          moat_score?: number
+          verdict?: string
+          answers?: Record<string, boolean>
+          action_plan_checked?: Record<string, boolean>
+          strengths?: string[]
+          red_flags?: string[]
+          decision_nodes?: Array<{ label: string; passed: boolean; reason: string }>
+        }
+        Relationships: [
+          {
+            foreignKeyName: "idea_pipeline_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string

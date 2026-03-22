@@ -1,17 +1,26 @@
 import { formatCurrency } from "@/lib/fym-calculations";
-import type { FymEntry } from "@/types/fym";
+import type { FymEntry, PipelineEntry } from "@/types/fym";
 import type { InvisibilityScore } from "@/types/fym";
 
 interface QuickStatsProps {
   entries: FymEntry[];
   latestEntry: FymEntry | null | undefined;
   latestInvisibility: InvisibilityScore | null | undefined;
+  latestPipeline?: PipelineEntry | null | undefined;
+}
+
+function getPipelineLabel(entry: PipelineEntry | null | undefined): string {
+  if (!entry) return "—";
+  if (entry.verdict === "GO") return "GO";
+  if (entry.verdict === "CONDITIONAL_GO") return "MAYBE";
+  return "NO-GO";
 }
 
 export default function QuickStats({
   entries,
   latestEntry,
   latestInvisibility,
+  latestPipeline,
 }: QuickStatsProps) {
   const currentMrr = latestEntry ? Number(latestEntry.monthly_revenue) : 0;
   const burn = latestEntry ? Number(latestEntry.monthly_burn) : 0;
@@ -24,10 +33,11 @@ export default function QuickStats({
     { label: "Invisibility", value: `${invisScore}/100`, accent: "#A78BFA" },
     { label: "Days Tracked", value: String(daysTracked), accent: "#34D399" },
     { label: "Freedom", value: `${freedomPct}%`, accent: "#FBBF24" },
+    { label: "Pipeline", value: getPipelineLabel(latestPipeline), accent: "#F472B6" },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
       {stats.map((stat) => (
         <div
           key={stat.label}
