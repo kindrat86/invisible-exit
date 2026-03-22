@@ -5,6 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import ProgressRing from "@/components/fym/ProgressRing";
+import ContextualUpgradeCard from "@/components/fym/ContextualUpgradeCard";
 import {
   INVISIBILITY_QUESTIONS,
   CATEGORIES,
@@ -16,9 +17,10 @@ import {
 
 interface InvisibilityScoreProps {
   userId: string;
+  hasFullAccess?: boolean;
 }
 
-export default function InvisibilityScore({ userId }: InvisibilityScoreProps) {
+export default function InvisibilityScore({ userId, hasFullAccess = true }: InvisibilityScoreProps) {
   const { data: latestScore } = useLatestInvisibilityScore(userId);
   const saveMutation = useSaveInvisibilityScore(userId);
 
@@ -107,6 +109,10 @@ export default function InvisibilityScore({ userId }: InvisibilityScoreProps) {
   const totalQuestions = INVISIBILITY_QUESTIONS.length;
   const currentCategory = categoryQuestions[currentStep];
 
+  // Determine visible fixes based on tier
+  const visibleFixes = hasFullAccess ? fixes : fixes.slice(0, 3);
+  const remainingFixesCount = fixes.length - visibleFixes.length;
+
   // Results view
   if (showResults) {
     return (
@@ -189,7 +195,7 @@ export default function InvisibilityScore({ userId }: InvisibilityScoreProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {fixes.map((fix) => (
+              {visibleFixes.map((fix) => (
                 <div
                   key={fix.id}
                   className="p-4 rounded-lg border border-gray-100 bg-gray-50"
@@ -217,8 +223,32 @@ export default function InvisibilityScore({ userId }: InvisibilityScoreProps) {
                   </div>
                 </div>
               ))}
+
+              {/* Starter: show remaining fixes upgrade card */}
+              {!hasFullAccess && remainingFixesCount > 0 && (
+                <div className="mt-4 rounded-lg border border-amber-200/50 bg-amber-50/30 dark:bg-amber-950/20 p-4">
+                  <p className="text-sm font-medium">
+                    + {remainingFixesCount} more recommendations identified.
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Founding members get the full fix list with step-by-step
+                    instructions, cost estimates, and legal templates for each.
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
+        )}
+
+        {/* Moment 2: Audit complete contextual upgrade (starters only) */}
+        {!hasFullAccess && (
+          <ContextualUpgradeCard
+            momentId="audit-complete"
+            dynamicValues={{
+              score: scores.total,
+              totalFixes: fixes.length,
+            }}
+          />
         )}
       </div>
     );

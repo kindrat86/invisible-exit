@@ -10,6 +10,7 @@ interface LevelUpCelebrationProps {
   newLevel: number;
   freedomPct: number;
   onDismiss: () => void;
+  hasFullAccess?: boolean;
 }
 
 const LEVEL_MESSAGES: Record<string, string> = {
@@ -36,6 +37,7 @@ export default function LevelUpCelebration({
   newLevel,
   freedomPct,
   onDismiss,
+  hasFullAccess = true,
 }: LevelUpCelebrationProps) {
   const levelDef = newLevel > 0 ? FREEDOM_LEVELS[newLevel - 1] : null;
   const levelName = levelDef?.name ?? "Pre-Launch";
@@ -129,6 +131,12 @@ export default function LevelUpCelebration({
             Continue
           </Button>
         </div>
+
+        {!hasFullAccess && (
+          <p className="text-xs text-white/30 mt-4">
+            Founding members unlock 8 more tools to accelerate from Level {newLevel} to Level 5.
+          </p>
+        )}
       </div>
     </div>
   );

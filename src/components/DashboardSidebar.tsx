@@ -31,6 +31,8 @@ import {
   ArrowDownRight,
   Zap,
   CheckCircle2,
+  CheckCircle,
+  Clock,
 } from "lucide-react";
 import SidebarProgressRing from "@/components/fym/SidebarProgressRing";
 import { useState } from "react";
@@ -43,6 +45,7 @@ interface DashboardSidebarProps {
   freedomPct: number;
   isStarter: boolean;
   phaseCompletion?: Record<number, boolean>;
+  pipelineValidationsRemaining?: number;
 }
 
 interface NavItem {
@@ -51,6 +54,8 @@ interface NavItem {
   icon: React.ComponentType<{ className?: string }>;
   gated: boolean;
   gateId?: string;
+  badge?: string;
+  badgeVariant?: "default" | "warning";
 }
 
 interface PhaseGroup {
@@ -59,7 +64,7 @@ interface PhaseGroup {
   items: NavItem[];
 }
 
-const PHASE_GROUPS: PhaseGroup[] = [
+const FOUNDING_PHASE_GROUPS: PhaseGroup[] = [
   {
     phase: 1,
     title: "Know Your Number",
@@ -81,40 +86,74 @@ const PHASE_GROUPS: PhaseGroup[] = [
     title: "Pick Your Idea",
     items: [
       { value: "ideas", label: "Idea Recommender", icon: Lightbulb, gated: false },
-      { value: "pipeline", label: "Pipeline Validation", icon: GitBranch, gated: false, gateId: "pipeline-unlimited" },
+      { value: "pipeline", label: "Pipeline Validation", icon: GitBranch, gated: false },
     ],
   },
   {
     phase: 4,
     title: "Build It",
     items: [
-      { value: "brand", label: "Brand Manager", icon: Palette, gated: true, gateId: "brand" },
-      { value: "launch", label: "Launch Control", icon: Rocket, gated: true, gateId: "launch" },
+      { value: "brand", label: "Brand Manager", icon: Palette, gated: false },
+      { value: "launch", label: "Launch Control", icon: Rocket, gated: false },
     ],
   },
   {
     phase: 5,
     title: "Scale It",
     items: [
-      { value: "trends", label: "Trends", icon: TrendingUp, gated: true, gateId: "trends" },
-      { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: true, gateId: "stealth-full" },
-      { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: true, gateId: "scenarios" },
-      { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: true, gateId: "reverse-calc" },
+      { value: "trends", label: "Trends", icon: TrendingUp, gated: false },
+      { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: false },
+      { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: false },
+      { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: false },
     ],
   },
 ];
 
-// Flatten all valid tab names
-export const ALL_PHASE_TABS = PHASE_GROUPS.flatMap((g) =>
+function getStarterPhaseGroups(pipelineValidationsRemaining: number): PhaseGroup[] {
+  const badgeText = pipelineValidationsRemaining > 0
+    ? `${pipelineValidationsRemaining} left`
+    : "0 left";
+  const badgeVariant = pipelineValidationsRemaining > 0 ? "default" as const : "warning" as const;
+
+  return [
+    {
+      phase: 1,
+      title: "Know Your Number",
+      items: [
+        { value: "calculator", label: "Calculator", icon: Calculator, gated: false },
+        { value: "history", label: "History", icon: Clock, gated: false },
+      ],
+    },
+    {
+      phase: 2,
+      title: "Protect Yourself",
+      items: [
+        { value: "invisibility", label: "Invisibility Audit", icon: Shield, gated: false },
+        { value: "stealth-core", label: "Core Actions", icon: Lock, gated: false },
+      ],
+    },
+    {
+      phase: 3,
+      title: "Pick Your Idea",
+      items: [
+        { value: "ideas", label: "Idea Finder", icon: Lightbulb, gated: false },
+        { value: "pipeline", label: "Validate", icon: CheckCircle, gated: false, badge: badgeText, badgeVariant },
+      ],
+    },
+  ];
+}
+
+// Flatten all valid tab names (includes all possible tabs)
+export const ALL_PHASE_TABS = FOUNDING_PHASE_GROUPS.flatMap((g) =>
   g.items.map((i) => i.value)
 );
 
-function getRecommendedPhase(phaseCompletion?: Record<number, boolean>): number {
+function getRecommendedPhase(phaseCompletion?: Record<number, boolean>, maxPhase = 5): number {
   if (!phaseCompletion) return 1;
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= maxPhase; i++) {
     if (!phaseCompletion[i]) return i;
   }
-  return 5;
+  return maxPhase;
 }
 
 export default function DashboardSidebar({
@@ -124,11 +163,18 @@ export default function DashboardSidebar({
   freedomPct,
   isStarter,
   phaseCompletion,
+  pipelineValidationsRemaining = 1,
 }: DashboardSidebarProps) {
   const navigate = useNavigate();
   const { setOpenMobile } = useSidebar();
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const recommendedPhase = getRecommendedPhase(phaseCompletion);
+
+  const navGroups = isStarter
+    ? getStarterPhaseGroups(pipelineValidationsRemaining)
+    : FOUNDING_PHASE_GROUPS;
+
+  const maxPhase = isStarter ? 3 : 5;
+  const recommendedPhase = getRecommendedPhase(phaseCompletion, maxPhase);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -140,23 +186,13 @@ export default function DashboardSidebar({
     setOpenMobile(false);
   };
 
-  const handleUpgrade = async () => {
-    setCheckoutLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { tier: "founding", returnUrl: window.location.origin + "/dashboard" },
-      });
-      if (error) throw error;
-      if (data?.url) window.location.href = data.url;
-    } catch {
-      toast.error("Could not start checkout. Please try again.");
-    } finally {
-      setCheckoutLoading(false);
-    }
+  const handleUpgrade = () => {
+    onTabChange("upgrade");
+    setOpenMobile(false);
   };
 
   // Find which phase the active tab belongs to
-  const activePhase = PHASE_GROUPS.find((g) =>
+  const activePhase = navGroups.find((g) =>
     g.items.some((i) => i.value === activeTab)
   )?.phase ?? 0;
 
@@ -204,7 +240,7 @@ export default function DashboardSidebar({
 
       {/* Phase Navigation */}
       <SidebarContent>
-        {PHASE_GROUPS.map((group) => {
+        {navGroups.map((group) => {
           const isCompleted = phaseCompletion?.[group.phase] ?? false;
           const isRecommended = group.phase === recommendedPhase;
 
@@ -238,7 +274,6 @@ export default function DashboardSidebar({
                 <SidebarMenu>
                   {group.items.map((item) => {
                     const isActive = activeTab === item.value;
-                    const isLocked = item.gated && isStarter;
                     const Icon = item.icon;
 
                     return (
@@ -250,25 +285,29 @@ export default function DashboardSidebar({
                           className={
                             isActive
                               ? "bg-[#60A5FA]/10 text-[#60A5FA] font-medium border-l-2 border-[#60A5FA] rounded-l-none"
-                              : isLocked
-                                ? "text-[#9CA3AF] hover:bg-[#F4F7FB] hover:text-[#4A5568]"
-                                : "text-[#4A5568] hover:bg-[#F4F7FB] hover:text-[#0B1D3A]"
+                              : "text-[#4A5568] hover:bg-[#F4F7FB] hover:text-[#0B1D3A]"
                           }
                         >
                           <Icon
                             className={`h-4 w-4 shrink-0 ${
                               isActive
                                 ? "text-[#60A5FA]"
-                                : isLocked
-                                  ? "text-[#9CA3AF]/50"
-                                  : "text-[#9CA3AF]"
+                                : "text-[#9CA3AF]"
                             }`}
                           />
                           <span className="truncate">{item.label}</span>
                         </SidebarMenuButton>
-                        {isLocked && (
+                        {item.badge && (
                           <SidebarMenuBadge>
-                            <Lock className="h-3 w-3 text-[#9CA3AF]/50" />
+                            <span
+                              className={`text-[0.65rem] font-medium px-1.5 py-0.5 rounded-full ${
+                                item.badgeVariant === "warning"
+                                  ? "bg-amber-100 text-amber-700"
+                                  : "bg-blue-100/80 text-blue-700"
+                              }`}
+                            >
+                              {item.badge}
+                            </span>
                           </SidebarMenuBadge>
                         )}
                       </SidebarMenuItem>
@@ -286,12 +325,11 @@ export default function DashboardSidebar({
         {isStarter && (
           <button
             onClick={handleUpgrade}
-            disabled={checkoutLoading}
-            className="w-full bg-[#1B2A4A] hover:bg-[#0B1D3A] text-white text-xs font-semibold px-3 py-2.5 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center gap-2 mb-2 group-data-[collapsible=icon]:p-2"
+            className="w-full bg-[#1B2A4A] hover:bg-[#0B1D3A] text-white text-xs font-semibold px-3 py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2 mb-2 group-data-[collapsible=icon]:p-2"
           >
             <Rocket className="h-3.5 w-3.5 shrink-0" />
             <span className="group-data-[collapsible=icon]:hidden">
-              {checkoutLoading ? "..." : "Upgrade"}
+              Upgrade
             </span>
           </button>
         )}

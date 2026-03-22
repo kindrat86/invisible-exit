@@ -33,6 +33,7 @@ interface FYMCalculatorProps {
   latestEntry: FymEntry | null | undefined;
   latestInvisibility: InvisibilityScore | null | undefined;
   onSwitchTab: (tab: string) => void;
+  hasFullAccess?: boolean;
 }
 
 export default function FYMCalculator({
@@ -42,6 +43,7 @@ export default function FYMCalculator({
   latestEntry,
   latestInvisibility,
   onSwitchTab,
+  hasFullAccess = true,
 }: FYMCalculatorProps) {
   const {
     inputs,
@@ -205,6 +207,25 @@ export default function FYMCalculator({
     setShareOpen(true);
   }, [inputs.monthlyExpenses]);
 
+  // Mock data for blurred previews
+  const mockScenarioInputs = {
+    monthsToExit: 18,
+    monthlyExpenses: 5000,
+    monthlySideRevenue: 500,
+    monthlyGrowthRate: 15,
+    corporateSalary: 80000,
+    targetMonthlyRevenue: 8000,
+  };
+
+  const mockReverseInputs = {
+    monthsToExit: 18,
+    monthlyExpenses: 5000,
+    monthlySideRevenue: 500,
+    monthlyGrowthRate: 15,
+    corporateSalary: 80000,
+    targetMonthlyRevenue: 8000,
+  };
+
   return (
     <div className="space-y-8">
       {/* Celebration overlay */}
@@ -214,6 +235,7 @@ export default function FYMCalculator({
           newLevel={celebration.newLevel}
           freedomPct={celebration.freedomPct}
           onDismiss={() => setCelebration(null)}
+          hasFullAccess={hasFullAccess}
         />
       )}
 
@@ -236,37 +258,120 @@ export default function FYMCalculator({
         />
       </div>
 
-      {/* Deep Analysis (collapsed by default) */}
+      {/* Deep Analysis section */}
       <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
-        <Collapsible open={deepAnalysisOpen} onOpenChange={handleDeepAnalysisToggle}>
-          <CollapsibleTrigger className="w-full bg-white rounded-xl border border-gray-200/80 shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-all">
-            <div className="flex items-center gap-3">
+        {hasFullAccess ? (
+          /* Founding users: collapsible Deep Analysis */
+          <Collapsible open={deepAnalysisOpen} onOpenChange={handleDeepAnalysisToggle}>
+            <CollapsibleTrigger className="w-full bg-white rounded-xl border border-gray-200/80 shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-all">
+              <div className="flex items-center gap-3">
+                <span className="text-sm font-semibold text-[#0B1D3A]">
+                  Deep Analysis: Scenarios, Reverse Calculator, Risk Score
+                </span>
+                {!deepAnalysisEverOpened && (
+                  <Badge className="bg-[#60A5FA]/10 text-[#60A5FA] border-[#60A5FA]/20 text-[10px]">
+                    New
+                  </Badge>
+                )}
+              </div>
+              <ChevronDown
+                className={`h-4 w-4 text-[#8A95A8] transition-transform duration-200 ${
+                  deepAnalysisOpen ? "rotate-180" : ""
+                }`}
+              />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="space-y-6 mt-4">
+              <ScenarioEngine inputs={inputs} />
+              <ReverseCalculator inputs={inputs} />
+              <RiskFreedomScore
+                inputs={inputs}
+                freedomLevel={freedomLevel}
+                riskAssessment={risk}
+                onSwitchToInvisibility={() => onSwitchTab("invisibility")}
+              />
+            </CollapsibleContent>
+          </Collapsible>
+        ) : (
+          /* Starter users: static blurred previews */
+          <div className="space-y-6">
+            <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm p-4">
               <span className="text-sm font-semibold text-[#0B1D3A]">
-                Deep Analysis: Scenarios, Reverse Calculator, Risk Score
+                Deep Analysis
               </span>
-              {!deepAnalysisEverOpened && (
-                <Badge className="bg-[#60A5FA]/10 text-[#60A5FA] border-[#60A5FA]/20 text-[10px]">
-                  New
-                </Badge>
-              )}
             </div>
-            <ChevronDown
-              className={`h-4 w-4 text-[#8A95A8] transition-transform duration-200 ${
-                deepAnalysisOpen ? "rotate-180" : ""
-              }`}
-            />
-          </CollapsibleTrigger>
-          <CollapsibleContent className="space-y-6 mt-4">
-            <ScenarioEngine inputs={inputs} />
-            <ReverseCalculator inputs={inputs} />
-            <RiskFreedomScore
-              inputs={inputs}
-              freedomLevel={freedomLevel}
-              riskAssessment={risk}
-              onSwitchToInvisibility={() => onSwitchTab("invisibility")}
-            />
-          </CollapsibleContent>
-        </Collapsible>
+
+            {/* Teaser 1: Scenario Engine */}
+            <div className="relative rounded-xl border border-border/50 overflow-hidden">
+              <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
+                <ScenarioEngine inputs={mockScenarioInputs} />
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/60 backdrop-blur-[2px] p-6 text-center">
+                <h3 className="text-lg font-semibold mb-2">"What If?" Scenario Engine</h3>
+                <p className="text-sm text-muted-foreground max-w-md mb-4">
+                  Compare up to 3 different growth paths side by side.
+                  See which combination of revenue, expenses, and growth rate
+                  gets you to freedom fastest.
+                </p>
+                <p className="text-xs text-muted-foreground/80 mb-4 italic">
+                  Founding members use Scenario Engine to shave 4-8 months off their timeline
+                  by optimizing one variable.
+                </p>
+                <Button
+                  onClick={() => onSwitchTab("upgrade")}
+                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
+                >
+                  See Founding Toolkit
+                </Button>
+              </div>
+            </div>
+
+            {/* Teaser 2: Reverse Calculator */}
+            <div className="relative rounded-xl border border-border/50 overflow-hidden">
+              <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
+                <ReverseCalculator inputs={mockReverseInputs} />
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/60 backdrop-blur-[2px] p-6 text-center">
+                <h3 className="text-lg font-semibold mb-2">Reverse Calculator</h3>
+                <p className="text-sm text-muted-foreground max-w-md mb-4">
+                  "I want to reach $X/month in Y months. What growth rate do I need?"
+                  Work backwards from your goal. Know exactly what's required.
+                </p>
+                <Button
+                  onClick={() => onSwitchTab("upgrade")}
+                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
+                >
+                  See Founding Toolkit
+                </Button>
+              </div>
+            </div>
+
+            {/* Teaser 3: Risk-Adjusted Freedom Score (split rendering) */}
+            <div className="relative rounded-xl border border-border/50 overflow-hidden">
+              <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
+                <RiskFreedomScore
+                  inputs={inputs}
+                  freedomLevel={freedomLevel}
+                  riskAssessment={risk}
+                  onSwitchToInvisibility={() => onSwitchTab("invisibility")}
+                />
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/60 backdrop-blur-[2px] p-6 text-center">
+                <h3 className="text-lg font-semibold mb-2">Exit Readiness Score</h3>
+                <p className="text-sm text-muted-foreground max-w-md mb-4">
+                  Your exit readiness combines financial progress (60%) and
+                  invisibility score (40%) into a single number.
+                  How ready are you to walk away?
+                </p>
+                <Button
+                  onClick={() => onSwitchTab("upgrade")}
+                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
+                >
+                  See Founding Toolkit
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Sticky Save & Share bar */}
