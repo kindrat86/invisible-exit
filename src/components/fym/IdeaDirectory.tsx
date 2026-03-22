@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, Shield, X, RefreshCw, Rocket } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { allIdeas } from "@/data/idea-generator";
 import type { IdeaEntry } from "@/types/fym";
@@ -50,9 +51,11 @@ const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"
 
 interface IdeaDirectoryProps {
   onValidateIdea?: (idea: IdeaEntry) => void;
+  onSwitchTab?: (tab: string) => void;
 }
 
-export default function IdeaDirectory({ onValidateIdea }: IdeaDirectoryProps) {
+export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirectoryProps) {
+  const [, setSearchParams] = useSearchParams();
   const [shuffledPool, setShuffledPool] = useState<IdeaEntry[]>(() =>
     shuffleArray(allIdeas)
   );
@@ -417,6 +420,28 @@ export default function IdeaDirectory({ onValidateIdea }: IdeaDirectoryProps) {
                 >
                   <Rocket className="h-4 w-4 mr-2" />
                   Validate This Idea
+                </Button>
+              )}
+
+              {onSwitchTab && (
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSearchParams(
+                      {
+                        tab: "launch",
+                        ideaId: selectedIdea.id,
+                        ideaTitle: selectedIdea.title,
+                      },
+                      { replace: true }
+                    );
+                    setSelectedIdea(null);
+                    onSwitchTab("launch");
+                  }}
+                  className="w-full font-semibold"
+                >
+                  <Rocket className="h-4 w-4 mr-2" />
+                  Launch This Idea
                 </Button>
               )}
             </div>
