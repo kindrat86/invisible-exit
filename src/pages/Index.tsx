@@ -66,19 +66,31 @@ const TOOLS = [
 const FAQS = [
   {
     q: "What do I get for $0.97/month?",
-    a: "Access to all 5 tools: FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager. Everything you need to calculate your freedom number, validate ideas, stay invisible, launch products, and build your brand.",
+    a: "FYM Dashboard tells you exactly how much recurring revenue you need to quit. Idea Pipeline finds and validates your first product in 48 hours. Stealth Ops Hub makes sure your employer never finds out. Launch Control ships your product in weeks, not months. Brand Manager builds your audience without showing your face. All five, one price.",
+  },
+  {
+    q: "Does this violate my employment contract?",
+    a: "Most employment contracts restrict you from competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. You build in unrelated markets, on your own time, with your own tools. The Stealth Ops Hub runs a compliance audit against common contract clauses (non-compete, IP assignment, moonlighting) and flags anything that needs attention. That said, every contract is different. We always recommend reviewing yours with a legal professional.",
   },
   {
     q: "Can my employer find out?",
     a: "The Stealth Ops Hub is specifically designed to prevent that. It includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure with no connection to your name.",
   },
   {
+    q: "Do I need technical skills to build a micro-SaaS?",
+    a: "No. The Idea Pipeline filters for builds that work with no-code tools and AI-assisted development. You don't need to write code. If you can manage a team and run a P&L, you have more than enough skill to build and launch a micro-SaaS. The system handles the technical scaffolding.",
+  },
+  {
     q: "What if I don't have a business idea yet?",
     a: "That's exactly what the Idea Pipeline is for. It has 500+ validated micro-SaaS ideas organized by industry, time investment, and revenue tier. Most founding members find 3-5 ideas worth exploring in their first session.",
   },
   {
-    q: "Who is Adrian?",
-    a: "A 37-year-old Managing Director at a European tech company. $120K salary. 0.01% equity. 18-month IPO clock. Building invisible recurring revenue and documenting the process. Identity protected, because that's the whole point.",
+    q: "What if my company IPOs and I get my equity payout?",
+    a: "Great. Then you'll have two income streams instead of one. Nothing about Invisible Exit requires you to quit. It's insurance, not an ultimatum. If the IPO happens and it's life-changing money, you celebrate. If it doesn't, or the payout disappoints, you already have a backup generating revenue.",
+  },
+  {
+    q: "How long until I actually make money?",
+    a: "Most members validate their first idea within 30 days. First revenue varies: some hit it in 60 days, some in 6 months. It depends on the idea you pick and how you use your 5 hours per week. This is not a 'get rich quick' pitch. It's a system for building real recurring revenue alongside your career.",
   },
   {
     q: "Can I cancel anytime?",
@@ -104,41 +116,43 @@ const Index = () => {
       <Navbar />
 
       {/* ── 1. Hero ── */}
-      <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
+      <section className="bg-[#1B2A4A] pt-32 pb-12 px-6">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-blue-400 text-sm tracking-widest uppercase mb-6">
             FOR CORPORATE MANAGERS WHO WANT OUT
           </p>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto mb-6">
-            You're Making Your Founder Rich. When Do You Start Making Yourself
-            Rich?
+            You're Building a Company You'll Never Own.
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
-            I was a Managing Director. $120K salary. 0.01% equity. I did the
-            math and realized even a $100M exit would net me $10,000. So I built
-            something invisible on the side. Here's the system.
+            Hey, my name is Adrian. I am a Managing Director. $120K salary. Less
+            than 0.5% equity. I sat down one night and ran the numbers. Even a
+            $1B exit, after taxes and dilution, would pay me less per year than I
+            was already earning. That's when it hit me: this company will never
+            give me enough to walk away. No FYM. No freedom. Just a salary that
+            keeps me showing up. So I started building something invisible on the
+            side. Something that's mine. Here's the system.
           </p>
 
           {/* Video placeholder */}
           <div
-            className="mx-auto max-w-3xl rounded-2xl border border-white/10 overflow-hidden"
-            data-video-id="hero-video"
+            id="video-slot"
+            className="mx-auto max-w-3xl rounded-xl overflow-hidden"
           >
-            <div className="aspect-video bg-slate-800 flex flex-col items-center justify-center gap-3">
-              <div className="w-20 h-20 rounded-full border-2 border-white/30 flex items-center justify-center">
-                <Play className="w-8 h-8 text-white/30 ml-1" />
+            <div className="aspect-video bg-[#1e293b] flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-blue-400 flex items-center justify-center">
+                <Play className="w-7 h-7 text-slate-900 ml-1" fill="currentColor" />
               </div>
-              <span className="text-white/30 text-sm">Video coming soon</span>
             </div>
           </div>
-          <p className="text-sm text-white/50 text-center mt-3">
-            Watch: How I Built $10K/Month While My Employer Had No Idea (3 min)
+          <p className="text-sm text-white/50 text-center mt-3 italic">
+            "Hey, my name is Adrian. I am a Managing Director..."
           </p>
 
           {/* CTA directly below video */}
-          <div className="mt-6">
+          <div className="mt-4">
             <Link
               to="/checkout/toolkit"
               className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2"
@@ -166,8 +180,8 @@ const Index = () => {
             <div className="space-y-6 text-slate-700 text-lg leading-relaxed">
               <p>
                 Corporate loyalty is a transaction, not a virtue. Companies
-                design equity structures to keep you, not to reward you. 0.01%
-                is a leash disguised as a partnership.
+                design equity structures to keep you, not to reward you. Less
+                than 0.5% is a leash disguised as a partnership.
               </p>
               <p>
                 The acquisition payout is a lottery ticket. You can't build your
@@ -176,7 +190,7 @@ const Index = () => {
               <p>
                 Your 15 years of corporate operations experience isn't a
                 weakness. It's founder gold. You understand customers, systems,
-                and execution better than any 22-year-old with a pitch deck.
+                and execution better than anyone with just a pitch deck.
               </p>
               <p>
                 You don't need to quit your job to start. You don't need a
@@ -342,12 +356,6 @@ const Index = () => {
               revenue.
             </p>
           </div>
-          <Link
-            to="/story"
-            className="inline-block mt-8 text-blue-500 hover:underline text-base"
-          >
-            Read Adrian's full story
-          </Link>
         </div>
       </section>
 
@@ -360,7 +368,7 @@ const Index = () => {
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
             <p className="text-slate-600 leading-relaxed">
               A 37-year-old Managing Director at a European tech company. $120K
-              salary. 0.01% equity. 18-month IPO clock. Building invisible
+              salary. Less than 0.5% equity. 18-month IPO clock. Building invisible
               recurring revenue and documenting the process. Identity protected,
               because that's the whole point.
             </p>
@@ -374,7 +382,7 @@ const Index = () => {
       {/* ── 8. FAQ ── */}
       <section className="bg-white py-20 px-6 border-t border-slate-100">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Questions</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-8">Questions Corporate Managers Ask</h2>
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
