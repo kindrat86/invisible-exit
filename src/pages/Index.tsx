@@ -191,10 +191,6 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <p className="text-sm text-white/50 text-center mt-3 italic">
-            "Hey, my name is Adrian. I am a Managing Director..."
-          </p>
-
           {/* CTA directly below video */}
           <div className="mt-4">
             <button
