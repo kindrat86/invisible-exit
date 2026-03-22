@@ -39,19 +39,19 @@ export default function ResetPassword() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0B1D3A] px-4">
-      <Card className="w-full max-w-md border-[#132D5E] bg-white">
+      <Card className="w-full max-w-md border-[#132D5E] bg-[#0B1D3A]">
         <CardHeader className="text-center">
           <p className="text-[#D4A843] text-xs tracking-widest uppercase font-semibold mb-2">
             INVISIBLE EXIT
           </p>
-          <CardTitle className="text-xl font-bold text-[#0B1D3A]">
+          <CardTitle className="text-xl font-bold text-white">
             Set New Password
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="new-password">New Password</Label>
+              <Label htmlFor="new-password" className="text-white">New Password</Label>
               <Input
                 id="new-password"
                 type="password"
@@ -60,10 +60,11 @@ export default function ResetPassword() {
                 placeholder="Minimum 8 characters"
                 required
                 minLength={8}
+                className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="confirm-password">Confirm Password</Label>
+              <Label htmlFor="confirm-password" className="text-white">Confirm Password</Label>
               <Input
                 id="confirm-password"
                 type="password"
@@ -72,6 +73,7 @@ export default function ResetPassword() {
                 placeholder="Repeat your password"
                 required
                 minLength={8}
+                className="bg-[#132D5E] border-[#1E3A5F] text-white placeholder:text-gray-400"
               />
             </div>
             <Button
