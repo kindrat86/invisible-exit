@@ -254,3 +254,38 @@ export interface BrandManagerState {
   startedAt: string;
   lastUpdatedAt: string;
 }
+
+// ── Launch Control ──
+
+export interface LaunchTask {
+  id: string;
+  phaseId: string;
+  title: string;
+  description: string;
+  estimatedMinutes: number;
+  tip: string;
+  sortOrder: number;
+}
+
+export interface LaunchPhase {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  sortOrder: number;
+  tasks: LaunchTask[];
+  completionCopy: string;
+}
+
+export interface LaunchProgress {
+  id: string;
+  user_id: string;
+  created_at: string;
+  updated_at: string;
+  selected_idea_id: string | null;
+  selected_idea_title: string | null;
+  completed_tasks: Record<string, boolean>;
+  notes: Record<string, string>;
+  started_at: string;
+  completed_at: string | null;
+}
