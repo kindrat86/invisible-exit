@@ -14,11 +14,11 @@ const supabase = createClient(
 
 const WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0B1D3A;">
-  <p style="color: #D4A843; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT</p>
+  <p style="color: #60A5FA; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT</p>
   <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; line-height: 1.3;">Your FYM Dashboard is ready.</h1>
   <p style="font-size: 16px; line-height: 1.6; color: #4A5568; margin-bottom: 24px;">Welcome to Invisible Exit. You just made the decision most executives only think about.</p>
   <p style="font-size: 16px; line-height: 1.6; color: #4A5568; margin-bottom: 24px;">Click the button below to access your dashboard.</p>
-  <a href="${magicLinkUrl}" style="display: inline-block; padding: 14px 28px; background: #D4A843; color: #0B1D3A; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin-bottom: 32px;">Access Your Dashboard</a>
+  <a href="${magicLinkUrl}" style="display: inline-block; padding: 14px 28px; background: #3B82F6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px; margin-bottom: 32px;">Access Your Dashboard</a>
   <p style="font-size: 14px; line-height: 1.6; color: #8A95A8; margin-bottom: 8px;">Here is what to do first:</p>
   <ol style="font-size: 14px; line-height: 1.8; color: #4A5568; padding-left: 20px; margin-bottom: 32px;">
     <li>Click the button above</li>
@@ -148,7 +148,7 @@ serve(async (req) => {
 
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(rawBody, signature!, webhookSecret);
+    event = await stripe.webhooks.constructEventAsync(rawBody, signature!, webhookSecret);
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
     return new Response(JSON.stringify({ error: "Invalid signature" }), {
