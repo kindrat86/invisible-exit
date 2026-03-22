@@ -9,8 +9,6 @@ import ValueStack from "@/components/oto/ValueStack";
 import PriceCard from "@/components/oto/PriceCard";
 import GuaranteeBox from "@/components/oto/GuaranteeBox";
 
-const DASHBOARD_URL = "https://app.invisibleexit.com/dashboard";
-
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
@@ -89,12 +87,12 @@ const OTOFounding = () => {
             </p>
             <p className="text-[#86efac] text-xs mt-1">
               Didn't get the welcome email? Check your spam folder, or{" "}
-              <a
-                href={DASHBOARD_URL}
+              <Link
+                to="/dashboard"
                 className="underline hover:text-white transition-colors"
               >
                 go directly to your dashboard
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -262,13 +260,13 @@ const OTOFounding = () => {
 
             {/* Dashboard link */}
             <div className="border-t border-[rgba(96,165,250,0.15)] mt-6 pt-5">
-              <a
-                href={DASHBOARD_URL}
+              <Link
+                to="/dashboard"
                 className="inline-flex items-center gap-2 text-[#60A5FA] text-sm font-semibold hover:text-[#93c5fd] transition-colors"
               >
                 <LayoutDashboard className="w-4 h-4" />
                 Go to your dashboard now
-              </a>
+              </Link>
               <p className="text-[12px] text-[#4A5568] mt-2">
                 Use this link if you didn't receive the welcome email.
               </p>
@@ -280,14 +278,14 @@ const OTOFounding = () => {
       {/* ─── 13. Decline Link ─── */}
       <section className="px-6 py-8">
         <div className="text-center">
-          <a
-            href={DASHBOARD_URL}
+          <Link
+            to="/dashboard"
             onClick={handleDecline}
             className="text-sm text-[#4A5568] underline hover:text-[#8A95A8] transition-colors"
           >
             No thanks, I'll start with limited access and pay full price later
             if I change my mind.
-          </a>
+          </Link>
         </div>
       </section>
 
