@@ -49,7 +49,7 @@ const OTOFounding = () => {
         {
           body: {
             tier: "founding",
-            returnUrl: window.location.origin + "/confirmation",
+            returnUrl: window.location.origin + "/checkout/success",
           },
         }
       );

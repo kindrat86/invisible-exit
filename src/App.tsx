@@ -13,6 +13,7 @@ import ResetPassword from "./pages/ResetPassword.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import Badge from "./pages/Badge.tsx";
 import Confirmation from "./pages/Confirmation.tsx";
+import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/oto/founding" element={<OTOFounding />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/checkout/success" element={<CheckoutSuccess />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/privacy" element={<Privacy />} />
