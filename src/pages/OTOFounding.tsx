@@ -83,7 +83,7 @@ const OTOFounding = () => {
       {/* Section 1: Hero / Acknowledgment */}
       <section className="bg-[#1B2A4A] pt-32 pb-20 px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-amber-400 text-sm tracking-widest uppercase mb-6">
+          <p className="text-blue-400 text-sm tracking-widest uppercase mb-6">
             YOU JUST TOOK THE FIRST STEP
           </p>
           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight max-w-3xl mx-auto mb-6">
@@ -147,7 +147,7 @@ const OTOFounding = () => {
       <section className="bg-[#1B2A4A] py-20 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <p className="text-amber-400 text-sm tracking-widest uppercase mb-4">
+            <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
               FOUNDING MEMBER EXCLUSIVES
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -161,7 +161,7 @@ const OTOFounding = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1: Unlimited Everything */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Infinity className="w-8 h-8 text-amber-400 mb-4" />
+              <Infinity className="w-8 h-8 text-blue-400 mb-4" />
               <h3 className="text-lg font-semibold text-white mb-3">
                 Unlimited Everything
               </h3>
@@ -171,14 +171,14 @@ const OTOFounding = () => {
                 Launch Control. Complete content calendar in Brand Manager. Use
                 every tool to its full potential.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
+              <p className="text-blue-400 text-sm font-semibold">
                 $97/month value
               </p>
             </div>
 
             {/* Card 2: Founding Member Wall */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Crown className="w-8 h-8 text-amber-400 mb-4" />
+              <Crown className="w-8 h-8 text-blue-400 mb-4" />
               <h3 className="text-lg font-semibold text-white mb-3">
                 Founding Member Wall
               </h3>
@@ -188,14 +188,14 @@ const OTOFounding = () => {
                 you'll still be there. This is not a feature. It's your place in
                 history.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
+              <p className="text-blue-400 text-sm font-semibold">
                 Exclusive, cannot be purchased later
               </p>
             </div>
 
             {/* Card 3: Shape the Roadmap */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Compass className="w-8 h-8 text-amber-400 mb-4" />
+              <Compass className="w-8 h-8 text-blue-400 mb-4" />
               <h3 className="text-lg font-semibold text-white mb-3">
                 Shape the Roadmap
               </h3>
@@ -204,14 +204,14 @@ const OTOFounding = () => {
                 requests go to the top of the queue. You're not a user. You're a
                 co-creator.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
+              <p className="text-blue-400 text-sm font-semibold">
                 $29/month value
               </p>
             </div>
 
             {/* Card 4: Beta Access */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <FlaskConical className="w-8 h-8 text-amber-400 mb-4" />
+              <FlaskConical className="w-8 h-8 text-blue-400 mb-4" />
               <h3 className="text-lg font-semibold text-white mb-3">
                 Beta Access to Everything
               </h3>
@@ -220,14 +220,14 @@ const OTOFounding = () => {
                 before anyone else. You see the future of Invisible Exit before
                 the public does.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
+              <p className="text-blue-400 text-sm font-semibold">
                 $19/month value
               </p>
             </div>
 
             {/* Card 5: Price Locked (full width on md) */}
             <div className="md:col-span-2 md:max-w-lg md:mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
-              <Lock className="w-8 h-8 text-amber-400 mb-4" />
+              <Lock className="w-8 h-8 text-blue-400 mb-4" />
               <h3 className="text-lg font-semibold text-white mb-3">
                 Price Locked for Life
               </h3>
@@ -236,7 +236,7 @@ const OTOFounding = () => {
                 While everyone else pays the public price after founding closes.
                 Your rate never changes.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
+              <p className="text-blue-400 text-sm font-semibold">
                 Save $960/year vs. future pricing
               </p>
             </div>
@@ -257,7 +257,7 @@ const OTOFounding = () => {
           <div className="space-y-4 text-left">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-700">
                   Unlimited access to all 5 tools
                 </span>
@@ -266,7 +266,7 @@ const OTOFounding = () => {
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-700">
                   Founding Member Wall (permanent)
                 </span>
@@ -275,14 +275,14 @@ const OTOFounding = () => {
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-700">Product Roadmap Vote</span>
               </div>
               <span className="text-slate-400 shrink-0">$29/mo</span>
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-700">
                   Beta Access (early features)
                 </span>
@@ -291,7 +291,7 @@ const OTOFounding = () => {
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-700">
                   Lifetime Price Lock (save $960/year)
                 </span>
@@ -305,7 +305,7 @@ const OTOFounding = () => {
               Total value:{" "}
               <span className="line-through">$225+/month</span>
             </p>
-            <p className="text-3xl font-bold text-amber-500 mb-1">
+            <p className="text-3xl font-bold text-blue-500 mb-1">
               $17.99/month
             </p>
             <p className="text-sm text-slate-500">
@@ -318,7 +318,7 @@ const OTOFounding = () => {
       {/* Section 5: Scarcity */}
       <section className="bg-[#1B2A4A] py-16 px-6">
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-6xl md:text-8xl font-bold text-amber-400 mb-2">
+          <p className="text-6xl md:text-8xl font-bold text-blue-400 mb-2">
             {foundingSpotsLeft}
           </p>
           <p className="text-xl text-white/70 mb-3">
@@ -337,7 +337,7 @@ const OTOFounding = () => {
           <button
             onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-amber-500/20 transition-colors disabled:opacity-50"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-blue-500/20 transition-colors disabled:opacity-50"
           >
             {ctaLabel}
           </button>
@@ -369,7 +369,7 @@ const OTOFounding = () => {
           <button
             onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-amber-500/20 transition-colors disabled:opacity-50"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-5 px-10 rounded-xl text-lg shadow-lg shadow-blue-500/20 transition-colors disabled:opacity-50"
           >
             {ctaLabel}
           </button>
