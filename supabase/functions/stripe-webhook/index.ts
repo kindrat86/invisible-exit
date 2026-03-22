@@ -110,7 +110,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     await supabase.auth.admin.generateLink({
       type: "magiclink",
       email,
-      options: { redirectTo: `${siteUrl}/dashboard` },
+      options: { redirectTo: `${siteUrl}/fym/dashboard` },
     });
 
   if (linkError) {
