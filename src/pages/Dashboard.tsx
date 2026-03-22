@@ -27,6 +27,7 @@ const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
 const InvisibilityScore = lazy(() => import("@/components/fym/InvisibilityScore"));
 const ExitTimeline = lazy(() => import("@/components/fym/ExitTimeline"));
 const IdeaDirectory = lazy(() => import("@/components/fym/IdeaDirectory"));
+const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
 
 interface Profile {
   id: string;
@@ -34,7 +35,7 @@ interface Profile {
   subscription_status: string;
 }
 
-const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas"] as const;
+const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "stealth"] as const;
 type TabValue = (typeof VALID_TABS)[number];
 
 function DashboardContent() {
@@ -191,6 +192,7 @@ function DashboardContent() {
                 <TabsTrigger value="trends" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
                 <TabsTrigger value="invisibility" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
                 <TabsTrigger value="ideas" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
+                <TabsTrigger value="stealth" className="flex-shrink-0 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
               </TabsList>
 
               <TabsContent value="calculator">
@@ -227,6 +229,12 @@ function DashboardContent() {
               <TabsContent value="ideas">
                 <Suspense fallback={tabFallback}>
                   <IdeaDirectory />
+                </Suspense>
+              </TabsContent>
+
+              <TabsContent value="stealth">
+                <Suspense fallback={tabFallback}>
+                  <StealthOpsHub />
                 </Suspense>
               </TabsContent>
             </Tabs>
