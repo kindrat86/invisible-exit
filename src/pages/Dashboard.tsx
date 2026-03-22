@@ -1,27 +1,28 @@
-import { useEffect, useState, useCallback, lazy, Suspense } from "react";
+import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import AuthGuard from "@/components/AuthGuard";
-import DashboardNav from "@/components/DashboardNav";
+import DashboardLayout from "@/components/DashboardLayout";
 import FYMCalculator from "@/components/FYMCalculator";
 import FYMHistory from "@/components/FYMHistory";
-import WelcomeHeader from "@/components/fym/WelcomeHeader";
-import QuickStats from "@/components/fym/QuickStats";
+import DashboardOverview from "@/components/fym/DashboardOverview";
 import ReactivationScreen from "@/components/ReactivationScreen";
-import UpgradeBanner from "@/components/UpgradeBanner";
 import FeatureGate from "@/components/FeatureGate";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFymEntries } from "@/hooks/useFymEntries";
 import { useLatestFymEntry } from "@/hooks/useLatestFymEntry";
 import { useLatestInvisibilityScore } from "@/hooks/useInvisibilityScore";
 import { useLatestPipelineEntry } from "@/hooks/useIdeaPipeline";
-import type { CalculatorInputs, IdeaEntry } from "@/types/fym";
+import {
+  evaluateFreedomLevel,
+  calculateProgressToNextLevel,
+  calculateMonthsToLevel,
+} from "@/lib/fym-calculations";
+import type { CalculatorInputs, CalculatorInputsExpanded, IdeaEntry } from "@/types/fym";
 
 const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
 const InvisibilityScore = lazy(() => import("@/components/fym/InvisibilityScore"));
-const ExitTimeline = lazy(() => import("@/components/fym/ExitTimeline"));
 const IdeaDirectory = lazy(() => import("@/components/fym/IdeaDirectory"));
 const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
@@ -35,13 +36,15 @@ interface Profile {
   subscription_tier: string;
 }
 
-const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth"] as const;
-type TabValue = (typeof VALID_TABS)[number];
+const VALID_TABS = [
+  "overview", "calculator", "history", "trends", "invisibility",
+  "ideas", "pipeline", "brand", "launch", "stealth",
+] as const;
 
 function DashboardContent() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const tabParam = searchParams.get("tab") as TabValue | null;
-  const activeTab = tabParam && VALID_TABS.includes(tabParam) ? tabParam : "calculator";
+  const tabParam = searchParams.get("tab");
+  const activeTab = tabParam && (VALID_TABS as readonly string[]).includes(tabParam) ? tabParam : "overview";
 
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +60,11 @@ function DashboardContent() {
 
   const setActiveTab = useCallback(
     (tab: string) => {
-      setSearchParams({ tab }, { replace: true });
+      if (tab === "overview") {
+        setSearchParams({}, { replace: true });
+      } else {
+        setSearchParams({ tab }, { replace: true });
+      }
     },
     [setSearchParams]
   );
@@ -88,6 +95,42 @@ function DashboardContent() {
     load();
   }, []);
 
+  // Freedom level calculations for overview + sidebar ring
+  const expandedInputs = useMemo<CalculatorInputsExpanded>(() => {
+    if (!latestEntry) {
+      return {
+        monthsToExit: 24,
+        monthlyExpenses: 0,
+        monthlySideRevenue: 0,
+        monthlyGrowthRate: 0,
+        corporateSalary: 0,
+        targetMonthlyRevenue: 0,
+      };
+    }
+    return {
+      monthsToExit: Number(latestEntry.runway_months) || 24,
+      monthlyExpenses: Number(latestEntry.monthly_burn) || 0,
+      monthlySideRevenue: Number(latestEntry.monthly_revenue) || 0,
+      monthlyGrowthRate: Number(latestEntry.monthly_growth_rate) || 0,
+      corporateSalary: Number(latestEntry.corporate_salary) || 0,
+      targetMonthlyRevenue: Number(latestEntry.target_monthly_revenue) || 0,
+    };
+  }, [latestEntry]);
+
+  const freedomLevel = useMemo(() => evaluateFreedomLevel(expandedInputs), [expandedInputs]);
+  const progressToNext = useMemo(
+    () => calculateProgressToNextLevel(expandedInputs, freedomLevel),
+    [expandedInputs, freedomLevel]
+  );
+  const monthsToNextLevel = useMemo(
+    () => (freedomLevel < 5 ? calculateMonthsToLevel(expandedInputs, freedomLevel + 1) : null),
+    [expandedInputs, freedomLevel]
+  );
+
+  const burn = latestEntry ? Number(latestEntry.monthly_burn) : 0;
+  const revenue = latestEntry ? Number(latestEntry.monthly_revenue) : 0;
+  const freedomPct = burn > 0 ? Math.min(Math.round((revenue / burn) * 100), 100) : 0;
+
   const handleSaved = useCallback(() => {
     refetchEntries();
     refetchLatest();
@@ -114,21 +157,16 @@ function DashboardContent() {
 
   if (noProfile) {
     return (
-      <div className="min-h-screen bg-[#1B2A4A]">
-        <DashboardNav email={email} />
-        <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+        <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-[#0B1D3A]">
               Your account is being set up.
             </h2>
-            <p className="text-blue-200">
-              Check your email for login details, or refresh this page in a
-              moment.
+            <p className="text-[#4A5568]">
+              Check your email for login details, or refresh this page in a moment.
             </p>
-            <Button
-              variant="outline"
-              onClick={() => window.location.reload()}
-            >
+            <Button variant="outline" onClick={() => window.location.reload()}>
               Refresh
             </Button>
           </div>
@@ -150,136 +188,149 @@ function DashboardContent() {
     </div>
   );
 
-  return (
-    <div className="min-h-screen bg-[#1B2A4A]">
-      <DashboardNav email={email} />
-
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {isActive ? (
-          <>
-            {isStarter && <UpgradeBanner />}
-            <WelcomeHeader email={email} latestEntry={latestEntry} />
-            <QuickStats
-              entries={entries}
-              latestEntry={latestEntry}
-              latestInvisibility={latestInvisibility}
-              latestPipeline={latestPipeline}
-            />
-
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
-                <TabsTrigger value="calculator" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Calculator</TabsTrigger>
-                <TabsTrigger value="history" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">History</TabsTrigger>
-                <TabsTrigger value="trends" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
-                <TabsTrigger value="invisibility" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
-                <TabsTrigger value="ideas" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
-                <TabsTrigger value="pipeline" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Pipeline</TabsTrigger>
-                <TabsTrigger value="brand" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
-                <TabsTrigger value="launch" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
-                <TabsTrigger value="stealth" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="calculator">
-                <FYMCalculator
-                  userId={userId}
-                  onSaved={handleSaved}
-                  entries={entries}
-                  latestEntry={latestEntry}
-                  latestInvisibility={latestInvisibility}
-                  onSwitchTab={setActiveTab}
-                />
-              </TabsContent>
-
-              <TabsContent value="history">
-                <FYMHistory
-                  userId={userId}
-                  refreshKey={0}
-                  onLoadEntry={handleLoadEntry}
-                />
-              </TabsContent>
-
-              <TabsContent value="trends">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to see your FYM trends and projections">
-                  <Suspense fallback={tabFallback}>
-                    <FymTrends userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="invisibility">
-                <Suspense fallback={tabFallback}>
-                  <InvisibilityScore userId={userId} />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="ideas">
-                <Suspense fallback={tabFallback}>
-                  <IdeaDirectory
-                    onValidateIdea={(idea) => {
-                      setPendingPipelineIdea(idea);
-                      setActiveTab("pipeline");
-                    }}
-                    onSwitchTab={setActiveTab}
-                  />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="pipeline">
-                <Suspense fallback={tabFallback}>
-                  <IdeaPipeline
-                    userId={userId}
-                    onSwitchTab={setActiveTab}
-                    pendingIdea={pendingPipelineIdea}
-                    onClearPendingIdea={() => setPendingPipelineIdea(null)}
-                  />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="brand">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access content calendar, YouTube scripts, and Reddit playbooks">
-                  <Suspense fallback={tabFallback}>
-                    <BrandManager userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="launch">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access launch automation and tracking">
-                  <Suspense fallback={tabFallback}>
-                    <LaunchControl userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="stealth">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access the full compliance playbook and fixes">
-                  <Suspense fallback={tabFallback}>
-                    <StealthOpsHub userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-            </Tabs>
-          </>
-        ) : (
-          <ReactivationScreen
-            onViewHistory={() => setActiveTab("history")}
-          />
-        )}
-
-        {!isActive && activeTab === "history" && (
+  if (!isActive) {
+    return (
+      <DashboardLayout
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        email={email}
+        freedomPct={freedomPct}
+        isStarter={false}
+      >
+        <ReactivationScreen onViewHistory={() => setActiveTab("history")} />
+        {activeTab === "history" && (
           <div className="mt-6">
             <FYMHistory userId={userId} refreshKey={0} />
-            <Button
-              variant="outline"
-              className="mt-4"
-              onClick={() => setActiveTab("calculator")}
-            >
+            <Button variant="outline" className="mt-4" onClick={() => setActiveTab("overview")}>
               Back
             </Button>
           </div>
         )}
-      </main>
-    </div>
+      </DashboardLayout>
+    );
+  }
+
+  return (
+    <DashboardLayout
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+      email={email}
+      freedomPct={freedomPct}
+      isStarter={!!isStarter}
+    >
+      {activeTab === "overview" && (
+        <DashboardOverview
+          email={email}
+          entries={entries}
+          latestEntry={latestEntry}
+          latestInvisibility={latestInvisibility}
+          latestPipeline={latestPipeline}
+          onTabChange={setActiveTab}
+          freedomLevel={freedomLevel}
+          progressToNext={progressToNext}
+          monthsToNextLevel={monthsToNextLevel}
+          isStarter={!!isStarter}
+        />
+      )}
+
+      {activeTab === "calculator" && (
+        <FYMCalculator
+          userId={userId}
+          onSaved={handleSaved}
+          entries={entries}
+          latestEntry={latestEntry}
+          latestInvisibility={latestInvisibility}
+          onSwitchTab={setActiveTab}
+        />
+      )}
+
+      {activeTab === "history" && (
+        <FYMHistory userId={userId} refreshKey={0} onLoadEntry={handleLoadEntry} />
+      )}
+
+      {activeTab === "trends" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureName="Trend Analysis"
+          lockedMessage="See how your numbers are trending and where you'll be in 6 months."
+        >
+          <Suspense fallback={tabFallback}>
+            <FymTrends userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "invisibility" && (
+        <Suspense fallback={tabFallback}>
+          <InvisibilityScore userId={userId} />
+        </Suspense>
+      )}
+
+      {activeTab === "ideas" && (
+        <Suspense fallback={tabFallback}>
+          <IdeaDirectory
+            onValidateIdea={(idea) => {
+              setPendingPipelineIdea(idea);
+              setActiveTab("pipeline");
+            }}
+            onSwitchTab={setActiveTab}
+          />
+        </Suspense>
+      )}
+
+      {activeTab === "pipeline" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureName="Idea Pipeline"
+          lockedMessage="Validate your ideas with AI-powered scoring in 48 hours."
+        >
+          <Suspense fallback={tabFallback}>
+            <IdeaPipeline
+              userId={userId}
+              onSwitchTab={setActiveTab}
+              pendingIdea={pendingPipelineIdea}
+              onClearPendingIdea={() => setPendingPipelineIdea(null)}
+            />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "brand" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureName="Brand Manager"
+          lockedMessage="Content calendar, YouTube scripts, and Reddit playbooks to grow your anonymous brand."
+        >
+          <Suspense fallback={tabFallback}>
+            <BrandManager userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "launch" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureName="Launch Control"
+          lockedMessage="Full launch automation, checklists, and go-live tracking for people with 5 hours a week."
+        >
+          <Suspense fallback={tabFallback}>
+            <LaunchControl userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "stealth" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureName="Stealth Ops Hub"
+          lockedMessage="Entity separation, compliance audit, and digital footprint cleanup."
+        >
+          <Suspense fallback={tabFallback}>
+            <StealthOpsHub userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+    </DashboardLayout>
   );
 }
 
