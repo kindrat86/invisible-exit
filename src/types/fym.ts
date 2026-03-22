@@ -213,3 +213,44 @@ export interface PipelineEntry {
   red_flags: string[];
   decision_nodes: DecisionNode[];
 }
+
+// ── Brand Manager types ──
+
+export type BrandPhaseId = "positioning" | "visual-identity" | "website" | "voice" | "organic-presence";
+
+export interface BrandTask {
+  id: string;
+  phaseId: BrandPhaseId;
+  title: string;
+  description: string;
+  type: "checkbox" | "fill-in" | "choice" | "template";
+  prompt?: string;
+  placeholder?: string;
+  options?: string[];
+  templateContent?: string;
+  weight: number;
+  hint?: string;
+}
+
+export interface BrandPhase {
+  id: BrandPhaseId;
+  title: string;
+  subtitle: string;
+  icon: string;
+  tasks: BrandTask[];
+  maxScore: number;
+}
+
+export interface BrandTaskCompletion {
+  completed: boolean;
+  textValue?: string;
+  selectedOption?: string;
+  updatedAt: string;
+}
+
+export interface BrandManagerState {
+  taskCompletions: Record<string, BrandTaskCompletion>;
+  currentPhaseIndex: number;
+  startedAt: string;
+  lastUpdatedAt: string;
+}
