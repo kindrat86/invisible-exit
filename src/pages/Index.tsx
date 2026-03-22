@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -19,6 +18,8 @@ import {
   Play,
   Lock,
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const TOOLS = [
   {
@@ -99,6 +100,10 @@ const FAQS = [
 ];
 
 const Index = () => {
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+
   useEffect(() => {
     document.title =
       "Invisible Exit: Build Invisible Recurring Revenue While Employed";
@@ -110,6 +115,45 @@ const Index = () => {
       );
     }
   }, []);
+
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke(
+        "create-checkout",
+        { body: { tier: "starter" } }
+      );
+      if (error) throw error;
+      if (data?.url) window.location.href = data.url;
+    } catch (err) {
+      toast.error("Could not start checkout. Please try again.");
+      console.error(err);
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
+  const handleEmailSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!subscribeEmail) return;
+    setEmailLoading(true);
+    try {
+      const { error } = await supabase
+        .from("subscribers")
+        .upsert(
+          { email: subscribeEmail, source: "landing_page" },
+          { onConflict: "email" }
+        );
+      if (error) throw error;
+      toast.success("You're in! We'll send you weekly insights.");
+      setSubscribeEmail("");
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+      console.error(err);
+    } finally {
+      setEmailLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -153,13 +197,14 @@ const Index = () => {
 
           {/* CTA directly below video */}
           <div className="mt-4">
-            <Link
-              to="/checkout/toolkit"
-              className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2"
+            <button
+              onClick={handleCheckout}
+              disabled={checkoutLoading}
+              className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
             >
-              Start Your Invisible Exit, $0.97/month
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+              {checkoutLoading ? "Loading..." : "Start Your Invisible Exit, $0.97/month"}
+              {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
+            </button>
             <p className="text-sm text-white/40 mt-3">
               Cancel anytime. No contracts. No sales calls. 30-day money-back
               guarantee.
@@ -308,13 +353,14 @@ const Index = () => {
           <p className="text-white/50 mb-10">
             Secure payment via Stripe. No sales calls. No spam.
           </p>
-          <Link
-            to="/checkout/toolkit"
-            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
           >
-            Start Your Invisible Exit, $0.97/month
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+            {checkoutLoading ? "Loading..." : "Start Your Invisible Exit, $0.97/month"}
+            {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
+          </button>
           <p className="text-sm text-white/40 text-center mt-4">
             30-day money-back guarantee. If you don't validate at least one idea
             in 30 days, full refund.
@@ -407,13 +453,14 @@ const Index = () => {
           <p className="text-white/60 mb-10">
             $0.97/month. 5 tools. 5 hours a week. Start building your exit.
           </p>
-          <Link
-            to="/checkout/toolkit"
-            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2"
+          <button
+            onClick={handleCheckout}
+            disabled={checkoutLoading}
+            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
           >
-            Start for $0.97/month
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+            {checkoutLoading ? "Loading..." : "Start for $0.97/month"}
+            {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
+          </button>
         </div>
       </section>
 
@@ -429,22 +476,23 @@ const Index = () => {
             Unsubscribe anytime.
           </p>
           <form
-            action="/api/subscribe"
-            method="POST"
+            onSubmit={handleEmailSubscribe}
             className="flex gap-2 max-w-md mx-auto"
           >
             <input
               type="email"
-              name="email"
               required
+              value={subscribeEmail}
+              onChange={(e) => setSubscribeEmail(e.target.value)}
               placeholder="Your email"
               className="flex-1 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/40 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400/50"
             />
             <button
               type="submit"
-              className="bg-white/10 hover:bg-white/20 text-white/70 rounded-xl py-3 px-6 text-sm font-medium transition-colors"
+              disabled={emailLoading}
+              className="bg-white/10 hover:bg-white/20 text-white/70 rounded-xl py-3 px-6 text-sm font-medium transition-colors disabled:opacity-50"
             >
-              Subscribe
+              {emailLoading ? "..." : "Subscribe"}
             </button>
           </form>
           <div className="flex items-center justify-center gap-1.5 mt-4">
