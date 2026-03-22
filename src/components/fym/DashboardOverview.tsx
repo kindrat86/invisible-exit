@@ -3,6 +3,7 @@ import { formatCurrency, calculateFreedomNumber, projectRevenue } from "@/lib/fy
 import ProgressRing from "@/components/fym/ProgressRing";
 import FreedomLevels from "@/components/fym/FreedomLevels";
 import MorningBriefing from "@/components/fym/MorningBriefing";
+import ContextualUpgradeCard from "@/components/fym/ContextualUpgradeCard";
 import type { FymEntry, InvisibilityScore, PipelineEntry, MorningBriefingData } from "@/types/fym";
 import {
   Calculator,
@@ -11,8 +12,10 @@ import {
   Rocket,
   ChevronRight,
   Flame,
+  TrendingUp,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 interface DashboardOverviewProps {
   email: string;
@@ -25,7 +28,10 @@ interface DashboardOverviewProps {
   progressToNext: number;
   monthsToNextLevel: number | null;
   isStarter: boolean;
+  hasFullAccess?: boolean;
   briefing?: MorningBriefingData | null;
+  pipelineHistory?: PipelineEntry[];
+  userId?: string;
 }
 
 export default function DashboardOverview({
@@ -39,7 +45,10 @@ export default function DashboardOverview({
   progressToNext,
   monthsToNextLevel,
   isStarter,
+  hasFullAccess = false,
   briefing,
+  pipelineHistory = [],
+  userId = "",
 }: DashboardOverviewProps) {
   const hasEntries = entries.length > 0;
 
@@ -63,12 +72,15 @@ export default function DashboardOverview({
       progressToNext={progressToNext}
       monthsToNextLevel={monthsToNextLevel}
       isStarter={isStarter}
+      hasFullAccess={hasFullAccess}
       briefing={briefing}
+      pipelineHistory={pipelineHistory}
+      userId={userId}
     />
   );
 }
 
-// ─── First-Time User Overview ───
+// --- First-Time User Overview ---
 
 function FirstTimeOverview({
   onTabChange,
@@ -80,7 +92,6 @@ function FirstTimeOverview({
 
   const freedomNumber = calculateFreedomNumber(income);
   const monthlyTarget = income;
-  // Estimate months to target at 15% growth starting from $100
   const estimatedMonths = income > 0
     ? Math.ceil(Math.log(monthlyTarget / 100) / Math.log(1.15))
     : 24;
@@ -178,7 +189,12 @@ function FirstTimeOverview({
   );
 }
 
-// ─── Returning User Overview ───
+// --- Returning User Overview ---
+
+interface ReturningOverviewProps extends DashboardOverviewProps {
+  pipelineHistory: PipelineEntry[];
+  userId: string;
+}
 
 function ReturningOverview({
   email,
@@ -191,50 +207,211 @@ function ReturningOverview({
   progressToNext,
   monthsToNextLevel,
   isStarter,
+  hasFullAccess,
   briefing,
-}: Omit<DashboardOverviewProps, "briefing"> & { briefing?: MorningBriefingData | null }) {
+  pipelineHistory,
+  userId,
+}: ReturningOverviewProps) {
   const currentMrr = latestEntry ? Number(latestEntry.monthly_revenue) : 0;
   const burn = latestEntry ? Number(latestEntry.monthly_burn) : 0;
   const freedomPct = burn > 0 ? Math.min(Math.round((currentMrr / burn) * 100), 100) : 0;
   const invisScore = latestInvisibility?.total_score ?? 0;
 
-  // Determine next move
+  // Core stealth actions completion
+  let coreActionsCompleted = 0;
+  try {
+    const raw = localStorage.getItem(`core_stealth_${userId}`);
+    if (raw) {
+      const progress = JSON.parse(raw);
+      coreActionsCompleted = ["core_email", "core_domain", "core_bank", "core_devices", "core_entity"]
+        .filter((id) => progress[id]).length;
+    }
+  } catch {}
+
+  // Idea quiz completion check
+  const hasCompletedIdeaQuiz = localStorage.getItem(`idea_quiz_completed_${userId}`) === "true" || pipelineHistory.length > 0;
+
+  // Get invisibility score history for Moment 3
+  // We approximate: if user has latest invisibility + core actions done, we check localStorage for first score
+  let firstInvisScore = 0;
+  let latestInvisScore = invisScore;
+  try {
+    const stored = localStorage.getItem(`first_invis_score_${userId}`);
+    if (stored) {
+      firstInvisScore = parseInt(stored, 10);
+    } else if (latestInvisibility) {
+      // Save current as first if not yet stored
+      localStorage.setItem(`first_invis_score_${userId}`, String(invisScore));
+      firstInvisScore = invisScore;
+    }
+  } catch {}
+
+  // Determine next move based on tier
   const getNextMove = () => {
+    if (isStarter) {
+      return getNextMoveForStarter();
+    }
+    return getNextMoveForFounding();
+  };
+
+  const getNextMoveForStarter = () => {
+    // Priority 1: No entries yet (won't reach here since we check hasEntries)
+    if (entries.length === 0) {
+      return {
+        text: "Calculate your freedom number",
+        description: "One number changes everything. Takes 2 minutes.",
+        time: "2 min",
+        tab: "calculator",
+        buttonLabel: "Open Calculator",
+      };
+    }
+
+    // Priority 2: No invisibility audit
     if (!latestInvisibility) {
       return {
         text: "Complete your Invisibility Audit",
+        description: "Find out how visible your side business would be to your employer.",
         time: "10 min",
         tab: "invisibility",
+        buttonLabel: "Start Audit",
+      };
+    }
+
+    // Priority 3: Core actions not complete
+    if (coreActionsCompleted < 5) {
+      return {
+        text: `Finish your core stealth actions (${coreActionsCompleted}/5)`,
+        description: "The 5 fundamentals that make your business invisible.",
+        time: "varies",
+        tab: "stealth-core",
+        buttonLabel: "Continue Actions",
+      };
+    }
+
+    // Priority 4: No ideas explored
+    if (!hasCompletedIdeaQuiz) {
+      return {
+        text: "Find your best business idea",
+        description: "Answer 5 questions. Get 3 personalized recommendations.",
+        time: "5 min",
+        tab: "ideas",
+        buttonLabel: "Take the Quiz",
+      };
+    }
+
+    // Priority 5: No validation done
+    if (pipelineHistory.length === 0) {
+      return {
+        text: "Validate your top idea",
+        description: "Run it through 25 questions across 5 categories. Get a GO or NO-GO verdict.",
+        time: "15 min",
+        tab: "pipeline",
+        buttonLabel: "Start Validation",
+      };
+    }
+
+    // Priority 6: Validation done, hasn't upgraded
+    const latestValidation = pipelineHistory[0];
+    if (latestValidation?.verdict === "GO" || latestValidation?.verdict === "CONDITIONAL_GO") {
+      return {
+        text: `Your idea "${latestValidation.idea_name}" scored ${latestValidation.verdict === "CONDITIONAL_GO" ? "CONDITIONAL GO" : "GO"}`,
+        description: "Next step: Build your brand and launch. Both available in the Founding Toolkit.",
+        time: "",
+        tab: "upgrade",
+        buttonLabel: "See Founding Toolkit",
+      };
+    }
+
+    // Fallback: NO-GO verdict
+    return {
+      text: "That idea didn't pass. Try another one.",
+      description: "Founding members get unlimited validations to find the right fit.",
+      time: "",
+      tab: "upgrade",
+      buttonLabel: "Unlock Unlimited Validations",
+    };
+  };
+
+  const getNextMoveForFounding = () => {
+    if (!latestInvisibility) {
+      return {
+        text: "Complete your Invisibility Audit",
+        description: "Find out how visible your side business would be to your employer.",
+        time: "10 min",
+        tab: "invisibility",
+        buttonLabel: "Start Audit",
       };
     }
     if (!latestPipeline) {
       return {
         text: "Find your best idea",
+        description: "Answer 5 questions. Get 3 personalized recommendations.",
         time: "5 min quiz",
         tab: "ideas",
+        buttonLabel: "Take the Quiz",
       };
     }
     if (latestPipeline.verdict !== "NO_GO") {
       return {
         text: "Start your Launch Checklist",
+        description: "47 steps to go from validated idea to first paying customer.",
         time: "15 min",
         tab: "launch",
+        buttonLabel: "Open Launch Control",
       };
     }
     return {
       text: "Log today's numbers",
+      description: "Track your freedom progress. 30 seconds.",
       time: "30 seconds",
       tab: "calculator",
+      buttonLabel: "Open Calculator",
     };
   };
 
   const nextMove = getNextMove();
+
+  // Trends single-insight teaser (Change 12)
+  let revenueChangePercent = 0;
+  let showTrendsTeaser = false;
+  if (!hasFullAccess && entries.length >= 3) {
+    const firstEntry = entries[entries.length - 1];
+    const latestEntryData = entries[0];
+    const firstRevenue = Number(firstEntry.monthly_revenue) || 0;
+    const latestRevenue = Number(latestEntryData.monthly_revenue) || 0;
+    const revenueChange = latestRevenue - firstRevenue;
+    revenueChangePercent = firstRevenue > 0
+      ? Math.round((revenueChange / firstRevenue) * 100)
+      : latestRevenue > 0 ? 100 : 0;
+    // Only show if there's actual data movement
+    showTrendsTeaser = !(revenueChangePercent === 0 && firstRevenue === 0 && latestRevenue === 0);
+  }
+
+  // Moment 1 check: 3+ entries, not dismissed, starter
+  const showMoment1 = !hasFullAccess && entries.length >= 3 &&
+    localStorage.getItem("upgrade_moment_third-entry_dismissed") !== "true";
+
+  // Moment 3 check: all 5 core actions + audit retaken with improved score
+  const showMoment3 = !hasFullAccess &&
+    coreActionsCompleted === 5 &&
+    latestInvisibility &&
+    firstInvisScore > 0 &&
+    latestInvisScore > firstInvisScore &&
+    localStorage.getItem("upgrade_moment_stealth-leveled-up_dismissed") !== "true";
 
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Morning Briefing (hero section) */}
       {briefing && (
         <MorningBriefing briefing={briefing} hasEntries={true} />
+      )}
+
+      {/* Moment 1: Third entry upgrade card (below briefing) */}
+      {showMoment1 && (
+        <ContextualUpgradeCard
+          momentId="third-entry"
+          dismissible={true}
+        />
       )}
 
       {/* Freedom Level progress */}
@@ -244,7 +421,7 @@ function ReturningOverview({
         monthsToNextLevel={monthsToNextLevel}
       />
 
-      {/* Quick Stats — 3 cards */}
+      {/* Quick Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <StatCard
           label="Current MRR"
@@ -263,6 +440,31 @@ function ReturningOverview({
         />
       </div>
 
+      {/* Trends single-insight teaser (Change 12) */}
+      {showTrendsTeaser && (
+        <div className="rounded-lg border border-border/50 bg-muted/20 p-4 flex items-center gap-4">
+          <TrendingUp className="h-8 w-8 text-blue-400 shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm">
+              <span className="font-medium">
+                Your revenue changed {revenueChangePercent}% since your first entry.
+              </span>
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Founding members see the full trend chart with dual-axis tracking.
+            </p>
+          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => onTabChange("upgrade")}
+            className="shrink-0 text-xs"
+          >
+            Learn more
+          </Button>
+        </div>
+      )}
+
       {/* Your Next Move */}
       <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm p-6">
         <p className="section-label mb-1">Recommended</p>
@@ -278,11 +480,28 @@ function ReturningOverview({
             <p className="text-sm font-semibold text-[#0B1D3A]">
               {nextMove.text}
             </p>
-            <p className="text-xs text-[#8A95A8]">{nextMove.time}</p>
+            {nextMove.description && (
+              <p className="text-xs text-[#8A95A8] mt-0.5">{nextMove.description}</p>
+            )}
+            {nextMove.time && (
+              <p className="text-xs text-[#8A95A8]">{nextMove.time}</p>
+            )}
           </div>
           <ChevronRight className="h-5 w-5 text-[#60A5FA] group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
+
+      {/* Moment 3: Stealth leveled up (below Next Move) */}
+      {showMoment3 && (
+        <ContextualUpgradeCard
+          momentId="stealth-leveled-up"
+          dismissible={true}
+          dynamicValues={{
+            firstScore: firstInvisScore,
+            latestScore: latestInvisScore,
+          }}
+        />
+      )}
     </div>
   );
 }

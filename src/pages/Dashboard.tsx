@@ -10,6 +10,7 @@ import ReactivationScreen from "@/components/ReactivationScreen";
 import FeatureGate from "@/components/FeatureGate";
 import OnboardingWizard from "@/components/fym/OnboardingWizard";
 import CoreStealthActions from "@/components/fym/CoreStealthActions";
+import UpgradePage from "@/components/fym/UpgradePage";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFymEntries } from "@/hooks/useFymEntries";
@@ -46,7 +47,7 @@ interface Profile {
 const VALID_TABS = [
   "overview", "calculator", "history", "trends", "invisibility",
   "stealth-core", "ideas", "pipeline", "brand", "launch",
-  "stealth-full", "scenarios", "reverse-calc",
+  "stealth-full", "scenarios", "reverse-calc", "upgrade",
 ] as const;
 
 function DashboardContent() {
@@ -179,7 +180,10 @@ function DashboardContent() {
   }, [entries.length, latestInvisibility, pipelineHistory.length, userId]);
 
   // Pipeline gating: 1 free validation for starters
-  const pipelineValidationCount = pipelineHistory.length;
+  const completedValidations = pipelineHistory.filter(
+    (entry) => entry.verdict !== null
+  ).length;
+  const pipelineValidationsRemaining = Math.max(0, 1 - completedValidations);
 
   const handleSaved = useCallback(() => {
     refetchEntries();
@@ -307,6 +311,8 @@ function DashboardContent() {
       email={email}
       freedomPct={freedomPct}
       isStarter={!!isStarter}
+      phaseCompletion={phaseCompletion}
+      pipelineValidationsRemaining={pipelineValidationsRemaining}
     >
       {getNudgeBanner()}
 
@@ -322,7 +328,10 @@ function DashboardContent() {
           progressToNext={progressToNext}
           monthsToNextLevel={monthsToNextLevel}
           isStarter={!!isStarter}
+          hasFullAccess={!!hasFullAccess}
           briefing={briefing}
+          pipelineHistory={pipelineHistory}
+          userId={userId}
         />
       )}
 
@@ -334,6 +343,7 @@ function DashboardContent() {
           latestEntry={latestEntry}
           latestInvisibility={latestInvisibility}
           onSwitchTab={setActiveTab}
+          hasFullAccess={!!hasFullAccess}
         />
       )}
 
@@ -343,12 +353,12 @@ function DashboardContent() {
 
       {activeTab === "invisibility" && (
         <Suspense fallback={tabFallback}>
-          <InvisibilityScore userId={userId} />
+          <InvisibilityScore userId={userId} hasFullAccess={!!hasFullAccess} />
         </Suspense>
       )}
 
       {activeTab === "stealth-core" && (
-        <CoreStealthActions userId={userId} />
+        <CoreStealthActions userId={userId} onSwitchTab={setActiveTab} />
       )}
 
       {activeTab === "ideas" && (
@@ -369,6 +379,7 @@ function DashboardContent() {
                 setActiveTab("pipeline");
               }}
               onSwitchTab={setActiveTab}
+              hasFullAccess={!!hasFullAccess}
             />
           )}
           {ideasView === "directory" && (
@@ -385,33 +396,15 @@ function DashboardContent() {
       )}
 
       {activeTab === "pipeline" && (
-        <>
-          {/* Starter users get 1 free validation, then gated */}
-          {isStarter && pipelineValidationCount >= 1 ? (
-            <FeatureGate
-              hasFullAccess={false}
-              featureId="pipeline-unlimited"
-            >
-              <Suspense fallback={tabFallback}>
-                <IdeaPipeline
-                  userId={userId}
-                  onSwitchTab={setActiveTab}
-                  pendingIdea={pendingPipelineIdea}
-                  onClearPendingIdea={() => setPendingPipelineIdea(null)}
-                />
-              </Suspense>
-            </FeatureGate>
-          ) : (
-            <Suspense fallback={tabFallback}>
-              <IdeaPipeline
-                userId={userId}
-                onSwitchTab={setActiveTab}
-                pendingIdea={pendingPipelineIdea}
-                onClearPendingIdea={() => setPendingPipelineIdea(null)}
-              />
-            </Suspense>
-          )}
-        </>
+        <Suspense fallback={tabFallback}>
+          <IdeaPipeline
+            userId={userId}
+            onSwitchTab={setActiveTab}
+            pendingIdea={pendingPipelineIdea}
+            onClearPendingIdea={() => setPendingPipelineIdea(null)}
+            hasFullAccess={!!hasFullAccess}
+          />
+        </Suspense>
       )}
 
       {activeTab === "brand" && (
@@ -456,7 +449,6 @@ function DashboardContent() {
             <StealthScoreView
               userId={userId}
               onOpenSubTab={(subTab) => {
-                // Navigate to the sub-tab within StealthOpsHub
                 setActiveTab("stealth-full");
               }}
             />
@@ -484,6 +476,10 @@ function DashboardContent() {
             <ReverseCalculator inputs={expandedInputs} />
           </Suspense>
         </FeatureGate>
+      )}
+
+      {activeTab === "upgrade" && (
+        <UpgradePage userId={userId} />
       )}
     </DashboardLayout>
   );
