@@ -145,11 +145,11 @@ function DashboardContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+      <div className="min-h-screen bg-[#1B2A4A]">
         <div className="max-w-5xl mx-auto p-6 space-y-4 pt-20">
-          <Skeleton className="h-10 w-48" />
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-64 w-full" />
+          <Skeleton className="h-10 w-48 bg-white/10" />
+          <Skeleton className="h-20 w-full bg-white/10" />
+          <Skeleton className="h-64 w-full bg-white/10" />
         </div>
       </div>
     );
@@ -326,7 +326,7 @@ function DashboardContent() {
           lockedMessage="Entity separation, compliance audit, and digital footprint cleanup."
         >
           <Suspense fallback={tabFallback}>
-            <StealthOpsHub />
+            <StealthOpsHub userId={userId} />
           </Suspense>
         </FeatureGate>
       )}

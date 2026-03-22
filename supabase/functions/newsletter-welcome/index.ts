@@ -34,7 +34,7 @@ const NEWSLETTER_EMAIL_HTML = `
 
   <div style="background: #F0F4FF; border-radius: 8px; padding: 20px; margin-bottom: 28px;">
     <p style="font-size: 14px; line-height: 1.6; color: #4A5568; margin: 0 0 12px 0;">If you don't want to wait for the first email, you can access all 5 tools right now for $0.97/month. Calculate your runway. See how close you really are.</p>
-    <a href="https://invisibleexit.com" style="display: inline-block; padding: 12px 24px; background: #3B82F6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">Start for $0.97/month</a>
+    <a href="https://invisibleexit.com/?checkout=starter" style="display: inline-block; padding: 12px 24px; background: #3B82F6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">Start for $0.97/month</a>
   </div>
 
   <p style="font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 4px;">Talk soon,</p>
