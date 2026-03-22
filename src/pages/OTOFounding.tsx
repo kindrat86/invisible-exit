@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { getFoundingSpotsLeft, getFoundingMemberNumber } from "@/lib/foundingCountdown";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -20,17 +21,12 @@ const OTOFounding = () => {
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [foundingCount, setFoundingCount] = useState<number | null>(null);
 
-  const foundingSpotsLeft =
-    foundingCount !== null ? Math.max(0, 100 - foundingCount) : 54;
+  const foundingSpotsLeft = getFoundingSpotsLeft();
+  const memberNumber = getFoundingMemberNumber();
 
   useEffect(() => {
     document.title = "Founding Member Invitation | Invisible Exit";
-
-    supabase.rpc("get_founding_member_count").then(({ data }) => {
-      if (data !== null) setFoundingCount(data);
-    });
 
     if (sessionId) {
       supabase.functions
@@ -65,7 +61,7 @@ const OTOFounding = () => {
 
   const ctaLabel = checkoutLoading
     ? "Loading..."
-    : "Become Founding Member #47 — $17.99/mo Locked for Life";
+    : `Become Founding Member #${memberNumber} — $17.99/mo Locked for Life`;
 
   return (
     <div className="min-h-screen bg-white">
