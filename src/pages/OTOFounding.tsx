@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { getFoundingSpotsLeft, getFoundingMemberNumber } from "@/lib/foundingCountdown";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -21,9 +20,6 @@ const OTOFounding = () => {
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-
-  const foundingSpotsLeft = getFoundingSpotsLeft();
-  const memberNumber = getFoundingMemberNumber();
 
   useEffect(() => {
     document.title = "Founding Member Invitation | Invisible Exit";
@@ -61,7 +57,7 @@ const OTOFounding = () => {
 
   const ctaLabel = checkoutLoading
     ? "Loading..."
-    : `Become Founding Member #${memberNumber} — $17.99/mo Locked for Life`;
+    : "Become a Founding Member — $17.99/mo Locked for Life";
 
   return (
     <div className="min-h-screen bg-white">
@@ -314,15 +310,11 @@ const OTOFounding = () => {
       {/* Section 5: Scarcity */}
       <section className="bg-[#1B2A4A] py-16 px-6">
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-6xl md:text-8xl font-bold text-blue-400 mb-2">
-            {foundingSpotsLeft}
-          </p>
-          <p className="text-xl text-white/70 mb-3">
-            of 100 founding spots remaining
+          <p className="text-2xl md:text-3xl font-bold text-blue-400 mb-3">
+            Limited to the first 100 Founding Members.
           </p>
           <p className="text-white/50 text-sm max-w-md mx-auto">
-            When they're gone, this page disappears. The founding price is gone
-            permanently.
+            When founding closes, this offer and this price disappear permanently.
           </p>
         </div>
       </section>
