@@ -52,9 +52,10 @@ const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"
 interface IdeaDirectoryProps {
   onValidateIdea?: (idea: IdeaEntry) => void;
   onSwitchTab?: (tab: string) => void;
+  hasFullAccess?: boolean;
 }
 
-export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirectoryProps) {
+export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAccess = true }: IdeaDirectoryProps) {
   const [, setSearchParams] = useSearchParams();
   const [shuffledPool, setShuffledPool] = useState<IdeaEntry[]>(() =>
     shuffleArray(allIdeas)
@@ -80,7 +81,6 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirec
     setTimeout(() => {
       const nextIndex = batchIndex + 1;
       if (nextIndex >= totalBatches) {
-        // All ideas seen — reshuffle and restart
         setShuffledPool(shuffleArray(allIdeas));
         setBatchIndex(0);
         toast.success(
@@ -133,7 +133,6 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirec
     if (difficulty !== "all")
       result = result.filter((i) => i.technical_difficulty === difficulty);
 
-    // Featured first
     return result.sort((a, b) =>
       a.is_featured === b.is_featured ? 0 : a.is_featured ? -1 : 1
     );
@@ -228,7 +227,7 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirec
 
         <div className="flex items-center justify-between">
           <p className="text-sm text-[#8A95A8]">
-            Showing {filtered.length} of {BATCH_SIZE} ideas (#{startNum}–{endNum} of {shuffledPool.length.toLocaleString()})
+            Showing {filtered.length} of {BATCH_SIZE} ideas (#{startNum}-{endNum} of {shuffledPool.length.toLocaleString()})
           </p>
           <Button
             variant="outline"
@@ -371,23 +370,62 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirec
                 </p>
               </div>
 
-              <div>
-                <p className="text-xs text-[#8A95A8] uppercase mb-1">
-                  Tools You'll Need
-                </p>
-                <p className="text-sm text-[#0B1D3A]">
-                  {selectedIdea.example_tools}
-                </p>
-              </div>
+              {/* Tools You'll Need - gated for starters */}
+              {!hasFullAccess ? (
+                <div className="rounded-lg bg-muted/50 p-4">
+                  <p className="text-sm font-medium text-muted-foreground">
+                    Tools Needed
+                  </p>
+                  <div className="mt-2 filter blur-[5px] pointer-events-none select-none">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline">Claude AI</Badge>
+                      <Badge variant="outline">Vercel</Badge>
+                      <Badge variant="outline">Stripe</Badge>
+                      <Badge variant="outline">+ 2 more</Badge>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    The exact tool stack to build this. Available to founding members.
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="text-xs text-[#8A95A8] uppercase mb-1">
+                    Tools You'll Need
+                  </p>
+                  <p className="text-sm text-[#0B1D3A]">
+                    {selectedIdea.example_tools}
+                  </p>
+                </div>
+              )}
 
-              <div>
-                <p className="text-xs text-[#8A95A8] uppercase mb-1">
-                  How to Validate in 48 Hours
-                </p>
-                <p className="text-sm text-[#0B1D3A]">
-                  {selectedIdea.validation_method}
-                </p>
-              </div>
+              {/* 48-Hour Validation Method - gated for starters */}
+              {!hasFullAccess ? (
+                <div className="rounded-lg bg-muted/50 p-4">
+                  <p className="text-sm font-medium text-muted-foreground">
+                    48-Hour Validation Method
+                  </p>
+                  <div className="mt-2 filter blur-[5px] pointer-events-none select-none text-sm leading-relaxed">
+                    Step 1: Identify 3 target communities where your audience gathers.
+                    Step 2: Create a minimal landing page with your value proposition.
+                    Step 3: Post a problem-awareness thread and measure response.
+                    Step 4: Run a micro-test with a $0.97 entry point.
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    The step-by-step validation script to test this idea in one weekend.
+                    Available to founding members.
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="text-xs text-[#8A95A8] uppercase mb-1">
+                    How to Validate in 48 Hours
+                  </p>
+                  <p className="text-sm text-[#0B1D3A]">
+                    {selectedIdea.validation_method}
+                  </p>
+                </div>
+              )}
 
               <div>
                 <p className="text-xs text-[#8A95A8] uppercase mb-1">
@@ -423,7 +461,8 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab }: IdeaDirec
                 </Button>
               )}
 
-              {onSwitchTab && (
+              {/* Launch This Idea button - hidden for starters */}
+              {hasFullAccess && onSwitchTab && (
                 <Button
                   variant="outline"
                   onClick={() => {
