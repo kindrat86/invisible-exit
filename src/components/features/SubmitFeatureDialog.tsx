@@ -38,17 +38,17 @@ function SimilarRequests({
   if (matches.length === 0) return null;
 
   return (
-    <div className="rounded-lg bg-white/5 border border-white/10 p-3 space-y-2">
-      <p className="text-xs text-blue-200/70 font-medium">
+    <div className="rounded-lg bg-[#60A5FA]/5 border border-[#60A5FA]/15 p-3 space-y-2">
+      <p className="text-xs text-[#4A5568] font-medium">
         Similar requests already exist. Consider upvoting instead.
       </p>
       {matches.map((m) => (
         <div
           key={m.id}
-          className="flex items-center justify-between text-sm text-white/80"
+          className="flex items-center justify-between text-sm text-[#0B1D3A]"
         >
           <span className="truncate mr-2">{m.title}</span>
-          <span className="text-blue-200/50 text-xs whitespace-nowrap">
+          <span className="text-[#8A95A8] text-xs whitespace-nowrap">
             {m.vote_count} votes
           </span>
         </div>
@@ -118,12 +118,12 @@ export default function SubmitFeatureDialog({
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-lg bg-[#1B2A4A] border-white/10 text-white">
+      <DialogContent className="sm:max-w-lg bg-white border-gray-200 text-[#0B1D3A]">
         <DialogHeader>
-          <DialogTitle className="text-white">
+          <DialogTitle className="text-[#0B1D3A]">
             Submit a Feature Request
           </DialogTitle>
-          <DialogDescription className="text-blue-200/70">
+          <DialogDescription className="text-[#4A5568]">
             Describe the feature you would like to see. Your request will be
             reviewed before appearing on the board.
           </DialogDescription>
@@ -134,7 +134,7 @@ export default function SubmitFeatureDialog({
           <div>
             <label
               htmlFor="feature-title"
-              className="block text-sm font-medium text-blue-200 mb-1"
+              className="block text-sm font-medium text-[#0B1D3A] mb-1"
             >
               Title
             </label>
@@ -143,10 +143,10 @@ export default function SubmitFeatureDialog({
               placeholder="Short, descriptive title for your request"
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              className="bg-white/5 border-white/10 text-white placeholder:text-blue-200/30"
+              className="bg-white border-gray-200 text-[#0B1D3A] placeholder:text-[#9CA3AF]"
               maxLength={150}
             />
-            <p className="text-xs text-blue-200/50 mt-1 text-right">
+            <p className="text-xs text-[#8A95A8] mt-1 text-right">
               {title.length}/150
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function SubmitFeatureDialog({
           <div>
             <label
               htmlFor="feature-description"
-              className="block text-sm font-medium text-blue-200 mb-1"
+              className="block text-sm font-medium text-[#0B1D3A] mb-1"
             >
               Description
             </label>
@@ -167,16 +167,16 @@ export default function SubmitFeatureDialog({
               placeholder="Explain the feature, what problem it solves, and how you would use it"
               value={description}
               onChange={(e) => handleDescriptionChange(e.target.value)}
-              className="bg-white/5 border-white/10 text-white placeholder:text-blue-200/30 min-h-[100px]"
+              className="bg-white border-gray-200 text-[#0B1D3A] placeholder:text-[#9CA3AF] min-h-[100px]"
               maxLength={500}
             />
-            <p className="text-xs text-blue-200/50 mt-1 text-right">
+            <p className="text-xs text-[#8A95A8] mt-1 text-right">
               {description.length}/500
             </p>
           </div>
 
           {/* Rate limit info */}
-          <p className="text-xs text-blue-200/50">
+          <p className="text-xs text-[#8A95A8]">
             {atLimit
               ? "You have reached the monthly limit of 30 requests. Your limit resets next month."
               : `${remaining} of ${MAX_SUBMISSIONS_PER_MONTH} submissions remaining this month.`}
@@ -187,7 +187,7 @@ export default function SubmitFeatureDialog({
             <Button
               variant="ghost"
               onClick={() => handleOpenChange(false)}
-              className="text-blue-200 hover:text-white hover:bg-white/10"
+              className="text-[#4A5568] hover:text-[#0B1D3A] hover:bg-gray-100"
             >
               Cancel
             </Button>
