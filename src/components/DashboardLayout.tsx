@@ -8,6 +8,7 @@ interface DashboardLayoutProps {
   email: string;
   freedomPct: number;
   isStarter: boolean;
+  subscriptionTier?: string;
   phaseCompletion?: Record<number, boolean>;
   pipelineValidationsRemaining?: number;
   children: React.ReactNode;
@@ -19,6 +20,7 @@ export default function DashboardLayout({
   email,
   freedomPct,
   isStarter,
+  subscriptionTier,
   phaseCompletion,
   pipelineValidationsRemaining,
   children,
@@ -31,6 +33,7 @@ export default function DashboardLayout({
         email={email}
         freedomPct={freedomPct}
         isStarter={isStarter}
+        subscriptionTier={subscriptionTier}
         phaseCompletion={phaseCompletion}
         pipelineValidationsRemaining={pipelineValidationsRemaining}
       />

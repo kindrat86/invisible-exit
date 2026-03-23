@@ -263,6 +263,7 @@ function DashboardContent() {
         email={email}
         freedomPct={freedomPct}
         isStarter={false}
+        subscriptionTier={profile?.subscription_tier}
       >
         <ReactivationScreen onViewHistory={() => setActiveTab("history")} />
         {activeTab === "history" && (
@@ -311,6 +312,7 @@ function DashboardContent() {
       email={email}
       freedomPct={freedomPct}
       isStarter={!!isStarter}
+      subscriptionTier={profile?.subscription_tier}
       phaseCompletion={phaseCompletion}
       pipelineValidationsRemaining={pipelineValidationsRemaining}
     >

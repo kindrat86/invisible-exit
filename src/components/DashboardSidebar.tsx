@@ -35,6 +35,7 @@ import {
   Clock,
 } from "lucide-react";
 import SidebarProgressRing from "@/components/fym/SidebarProgressRing";
+import FoundingBadge from "@/components/FoundingBadge";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -44,6 +45,7 @@ interface DashboardSidebarProps {
   email: string;
   freedomPct: number;
   isStarter: boolean;
+  subscriptionTier?: string;
   phaseCompletion?: Record<number, boolean>;
   pipelineValidationsRemaining?: number;
 }
@@ -162,6 +164,7 @@ export default function DashboardSidebar({
   email,
   freedomPct,
   isStarter,
+  subscriptionTier,
   phaseCompletion,
   pipelineValidationsRemaining = 1,
 }: DashboardSidebarProps) {
@@ -342,6 +345,11 @@ export default function DashboardSidebar({
           </div>
           <div className="flex-1 min-w-0 group-data-[collapsible=icon]:hidden">
             <p className="text-xs text-[#4A5568] truncate">{email}</p>
+            {subscriptionTier === "founding" && (
+              <div className="mt-0.5">
+                <FoundingBadge compact />
+              </div>
+            )}
           </div>
           <button
             onClick={handleLogout}
