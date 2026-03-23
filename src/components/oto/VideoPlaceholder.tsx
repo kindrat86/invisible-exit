@@ -42,15 +42,6 @@ const VideoPlaceholder = ({ videoUrl, onPlayClick }: VideoPlaceholderProps) => {
           </div>
         </div>
       </div>
-      {/* Labels below video */}
-      <div className="text-center mt-4 space-y-1">
-        <p className="text-sm font-medium text-white/70">
-          I recorded this for you. 2 minutes.
-        </p>
-        <p className="text-xs text-white/50">
-          Adrian explains what Founding Members get
-        </p>
-      </div>
     </div>
   );
 };

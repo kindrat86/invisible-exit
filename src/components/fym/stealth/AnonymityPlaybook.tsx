@@ -42,12 +42,12 @@ function getDifficultyBadgeClasses(d: PlaybookDifficulty): string {
   }
 }
 
-export default function AnonymityPlaybook() {
+export default function AnonymityPlaybook({ userId }: { userId: string }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
   const [expandedMission, setExpandedMission] = useState<string | null>(null);
   const { isStepCompleted, toggleStep, getMissionProgress, resetMission } =
-    usePlaybookProgress();
+    usePlaybookProgress(userId);
 
   const filtered = useMemo(() => {
     let result = PLAYBOOK_MISSIONS;

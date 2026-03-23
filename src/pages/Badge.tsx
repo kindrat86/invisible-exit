@@ -39,7 +39,7 @@ export default function Badge() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0B1D3A] flex items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#D4A843] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#60A5FA] border-t-transparent" />
       </div>
     );
   }
@@ -53,7 +53,7 @@ export default function Badge() {
           </p>
           <Link
             to="/fym"
-            className="text-[#D4A843] hover:underline text-sm"
+            className="text-[#60A5FA] hover:underline text-sm"
           >
             Calculate your number
           </Link>
@@ -65,13 +65,13 @@ export default function Badge() {
   return (
     <div className="min-h-screen bg-[#0B1D3A] flex flex-col items-center justify-center px-4">
       <div className="text-center space-y-6">
-        <p className="text-5xl sm:text-7xl font-bold text-[#D4A843]">
+        <p className="text-5xl sm:text-7xl font-bold text-[#60A5FA]">
           {badgeValue !== null ? fmt.format(badgeValue) : ""}
         </p>
         <p className="text-[#8A95A8] text-lg">What's yours?</p>
         <Link
           to="/fym"
-          className="inline-block bg-[#D4A843] hover:bg-[#E0BC5E] text-[#0B1D3A] font-semibold px-8 py-3 rounded-lg transition-colors"
+          className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-[#0B1D3A] font-semibold px-8 py-3 rounded-lg transition-colors"
         >
           Calculate Your Number
         </Link>

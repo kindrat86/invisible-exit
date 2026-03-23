@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Check, LayoutDashboard } from "lucide-react";
 import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,25 +10,15 @@ import ValueStack from "@/components/oto/ValueStack";
 import PriceCard from "@/components/oto/PriceCard";
 import GuaranteeBox from "@/components/oto/GuaranteeBox";
 
-const DASHBOARD_URL = "https://app.invisibleexit.com/dashboard";
-
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [foundingCount, setFoundingCount] = useState<number | null>(null);
-
-  const foundingSpotsLeft =
-    foundingCount !== null ? Math.max(0, 100 - foundingCount) : 54;
 
   useEffect(() => {
     document.title = "Founding Member Invitation | Invisible Exit";
     trackEvent("oto_page_viewed");
-
-    supabase.rpc("get_founding_member_count").then(({ data }) => {
-      if (data !== null) setFoundingCount(data);
-    });
 
     if (sessionId) {
       supabase.functions
@@ -90,12 +80,12 @@ const OTOFounding = () => {
             </p>
             <p className="text-[#86efac] text-xs mt-1">
               Didn't get the welcome email? Check your spam folder, or{" "}
-              <a
-                href={DASHBOARD_URL}
+              <Link
+                to="/dashboard"
                 className="underline hover:text-white transition-colors"
               >
                 go directly to your dashboard
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -119,11 +109,6 @@ const OTOFounding = () => {
             Those Still Planning a Year Later.
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-[17px] text-white/70 max-w-[560px] mx-auto leading-relaxed">
-            I have something for the first {foundingSpotsLeft} members only.
-            Read this once. It won't appear again.
-          </p>
         </div>
       </section>
 
@@ -181,11 +166,6 @@ const OTOFounding = () => {
             </p>
           </div>
 
-          <p className="mt-8 text-base leading-[1.7] text-white/70">
-            That's why I built the complete toolkit. And that's why I'm offering
-            it to you right now, as one of the first {foundingSpotsLeft} people,
-            at a price I will never offer again.
-          </p>
         </div>
       </section>
 
@@ -264,13 +244,13 @@ const OTOFounding = () => {
 
             {/* Dashboard link */}
             <div className="border-t border-white/10 mt-6 pt-5">
-              <a
-                href={DASHBOARD_URL}
+              <Link
+                to="/dashboard"
                 className="inline-flex items-center gap-2 text-[#60A5FA] text-sm font-semibold hover:text-[#93c5fd] transition-colors"
               >
                 <LayoutDashboard className="w-4 h-4" />
                 Go to your dashboard now
-              </a>
+              </Link>
               <p className="text-[12px] text-white/40 mt-2">
                 Use this link if you didn't receive the welcome email.
               </p>
@@ -282,14 +262,14 @@ const OTOFounding = () => {
       {/* ─── 13. Decline Link ─── */}
       <section className="px-6 py-8">
         <div className="text-center">
-          <a
-            href={DASHBOARD_URL}
+          <Link
+            to="/dashboard"
             onClick={handleDecline}
             className="text-sm text-white/40 underline hover:text-white/60 transition-colors"
           >
             No thanks, I'll start with limited access and pay full price later
             if I change my mind.
-          </a>
+          </Link>
         </div>
       </section>
 

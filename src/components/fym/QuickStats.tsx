@@ -30,10 +30,10 @@ export default function QuickStats({
 
   const stats = [
     { label: "Current MRR", value: formatCurrency(currentMrr), accent: "#60A5FA" },
-    { label: "Invisibility", value: `${invisScore}/100`, accent: "#A78BFA" },
-    { label: "Days Tracked", value: String(daysTracked), accent: "#34D399" },
-    { label: "Freedom", value: `${freedomPct}%`, accent: "#FBBF24" },
-    { label: "Pipeline", value: getPipelineLabel(latestPipeline), accent: "#F472B6" },
+    { label: "Invisibility", value: `${invisScore}/100`, accent: "#93C5FD" },
+    { label: "Days Tracked", value: String(daysTracked), accent: "#3B82F6" },
+    { label: "Freedom", value: `${freedomPct}%`, accent: "#2563EB" },
+    { label: "Pipeline", value: getPipelineLabel(latestPipeline), accent: "#BFDBFE" },
   ];
 
   return (
@@ -41,15 +41,17 @@ export default function QuickStats({
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white/5 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
+          className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
         >
-          <div
-            className="h-1 transition-all duration-300 group-hover:h-1.5"
-            style={{ backgroundColor: stat.accent }}
-          />
           <div className="p-5">
-            <p className="text-[11px] uppercase tracking-wider text-blue-300/70 font-medium">{stat.label}</p>
-            <p className="text-2xl font-bold text-white mt-1.5 number-display">
+            <div className="flex items-center gap-3">
+              <div
+                className="w-2.5 h-2.5 rounded-full shrink-0"
+                style={{ backgroundColor: stat.accent }}
+              />
+              <p className="section-label">{stat.label}</p>
+            </div>
+            <p className="text-2xl font-bold text-[#0B1D3A] mt-2 number-display">
               {stat.value}
             </p>
           </div>

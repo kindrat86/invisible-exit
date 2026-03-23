@@ -11,6 +11,8 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
+    }).catch(() => {
+      setLoading(false);
     });
 
     const {
@@ -24,8 +26,8 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F4F7FB]">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#D4A843] border-t-transparent" />
+      <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A]">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-400 border-t-transparent" />
       </div>
     );
   }

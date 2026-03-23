@@ -38,21 +38,21 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 222.2 47.4% 20%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 213 94% 68%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 213 94% 97%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 214 32% 92%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 213 94% 68%;
   }
 
   .dark {
