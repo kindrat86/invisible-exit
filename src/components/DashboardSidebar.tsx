@@ -29,12 +29,14 @@ import {
   LogOut,
   BarChart3,
   ArrowDownRight,
+  Compass,
   Zap,
   CheckCircle2,
   CheckCircle,
   Clock,
 } from "lucide-react";
 import SidebarProgressRing from "@/components/fym/SidebarProgressRing";
+import FoundingBadge from "@/components/FoundingBadge";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -44,7 +46,7 @@ interface DashboardSidebarProps {
   email: string;
   freedomPct: number;
   isStarter: boolean;
-  tier?: string;
+  subscriptionTier?: string;
   phaseCompletion?: Record<number, boolean>;
   pipelineValidationsRemaining?: number;
 }
@@ -106,6 +108,7 @@ const FOUNDING_PHASE_GROUPS: PhaseGroup[] = [
       { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: false },
       { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: false },
       { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: false },
+      { value: "roadmap", label: "Shape the Roadmap", icon: Compass, gated: false },
     ],
   },
 ];
@@ -163,7 +166,7 @@ export default function DashboardSidebar({
   email,
   freedomPct,
   isStarter,
-  tier,
+  subscriptionTier,
   phaseCompletion,
   pipelineValidationsRemaining = 1,
 }: DashboardSidebarProps) {
@@ -208,7 +211,7 @@ export default function DashboardSidebar({
             <span className="text-[#0B1D3A] font-bold text-sm leading-tight truncate">
               Invisible Exit
             </span>
-            {tier === "founding" ? (
+            {subscriptionTier === "founding" ? (
               <span className="text-[10px] font-semibold text-[#60A5FA] leading-tight flex items-center gap-1">
                 Founding Member ✦
               </span>
@@ -350,6 +353,11 @@ export default function DashboardSidebar({
           </div>
           <div className="flex-1 min-w-0 group-data-[collapsible=icon]:hidden">
             <p className="text-xs text-[#4A5568] truncate">{email}</p>
+            {subscriptionTier === "founding" && (
+              <div className="mt-0.5">
+                <FoundingBadge compact />
+              </div>
+            )}
           </div>
           <button
             onClick={handleLogout}

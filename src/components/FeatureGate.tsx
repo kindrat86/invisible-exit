@@ -39,6 +39,11 @@ const GATE_MESSAGES: Record<string, { title: string; body: string; cta: string }
     body: "The Reverse Calculator tells you exactly what growth rate you need to hit your target revenue by your deadline. Plus a reality check on whether it's achievable.",
     cta: "Unlock Reverse Calculator",
   },
+  "roadmap": {
+    title: "Shape what gets built next.",
+    body: "Founding Members vote on features and submit requests that go to the top of the queue. You're not a user. You're a co-creator.",
+    cta: "Unlock Roadmap Voting",
+  },
 };
 
 interface FeatureGateProps {
