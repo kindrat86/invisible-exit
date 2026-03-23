@@ -25,7 +25,9 @@ import {
   RotateCcw,
 } from "lucide-react";
 import ProgressRing from "@/components/fym/ProgressRing";
-import UpgradeOverlay from "@/components/UpgradeOverlay";
+import { Lock, Rocket } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import { BRAND_PHASES } from "@/data/brand-playbook";
 import { useBrandManager } from "@/hooks/useBrandManager";
 import type { BrandPhase, BrandTask } from "@/types/fym";
@@ -50,6 +52,49 @@ function getScoreLabel(score: number) {
   if (score >= 50) return "ALMOST READY";
   if (score > 0) return "IN PROGRESS";
   return "NOT STARTED";
+}
+
+function LockedPhasesUpgradeBanner() {
+  const [loading, setLoading] = useState(false);
+
+  const handleUpgrade = async () => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: { tier: "founding", returnUrl: window.location.origin + "/dashboard" },
+      });
+      if (error) throw error;
+      if (data?.url) window.location.href = data.url;
+    } catch {
+      toast.error("Could not start checkout. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="bg-[#60A5FA]/5 border border-[#60A5FA]/20 rounded-xl p-6 text-center">
+      <div className="w-12 h-12 rounded-xl bg-[#60A5FA]/10 flex items-center justify-center mx-auto mb-3">
+        <Rocket className="w-6 h-6 text-[#60A5FA]" />
+      </div>
+      <h3 className="text-base font-semibold text-[#0B1D3A] mb-1">
+        Unlock the full brand toolkit
+      </h3>
+      <p className="text-sm text-[#4A5568] max-w-md mx-auto mb-4">
+        Complete your positioning, then build your visual identity, set up payments, find your voice, and grow organically.
+      </p>
+      <button
+        onClick={handleUpgrade}
+        disabled={loading}
+        className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-6 py-2.5 rounded-xl transition-colors disabled:opacity-50 text-sm"
+      >
+        {loading ? "Loading..." : "See Founding Toolkit — $17.99/mo"}
+      </button>
+      <p className="text-xs text-[#9CA3AF] mt-2">
+        Founding price, locked for life. Cancel anytime.
+      </p>
+    </div>
+  );
 }
 
 interface BrandManagerProps {
@@ -114,61 +159,60 @@ export default function BrandManager({ userId, hasFullAccess = true }: BrandMana
             const isComplete = counts.done === counts.total;
             const isLocked = !hasFullAccess && index > 0;
 
-            const phaseCard = (
+            return (
               <Card
                 key={phase.id}
-                className={`bg-white border ${isLocked ? "" : "cursor-pointer hover:translate-y-[-2px] hover:shadow-md"} transition-all duration-300 ${
-                  isComplete
-                    ? "border-green-300 ring-1 ring-green-200"
-                    : "border-gray-200"
+                className={`bg-white border transition-all duration-300 ${
+                  isLocked
+                    ? "opacity-50 border-gray-200"
+                    : isComplete
+                      ? "border-green-300 ring-1 ring-green-200 cursor-pointer hover:translate-y-[-2px] hover:shadow-md"
+                      : "border-gray-200 cursor-pointer hover:translate-y-[-2px] hover:shadow-md"
                 }`}
                 onClick={() => !isLocked && setActivePhaseIndex(index)}
               >
                 <CardContent className="p-5 flex items-center gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F4F7FB] flex items-center justify-center text-[#60A5FA]">
-                    {PHASE_ICONS[phase.icon]}
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
+                    isLocked ? "bg-gray-100 text-gray-400" : "bg-[#F4F7FB] text-[#60A5FA]"
+                  }`}>
+                    {isLocked ? <Lock className="h-5 w-5" /> : PHASE_ICONS[phase.icon]}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-[#0B1D3A] text-sm">
+                    <h3 className={`font-bold text-sm ${isLocked ? "text-gray-400" : "text-[#0B1D3A]"}`}>
                       {phase.title}
                     </h3>
                     <p className="text-xs text-[#8A95A8] truncate">
                       {phase.subtitle}
                     </p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Progress value={phasePct} className="h-1.5 flex-1" />
-                      <span className="text-xs text-[#8A95A8] flex-shrink-0">
-                        {counts.done}/{counts.total}
-                      </span>
+                    {!isLocked && (
+                      <div className="flex items-center gap-2 mt-2">
+                        <Progress value={phasePct} className="h-1.5 flex-1" />
+                        <span className="text-xs text-[#8A95A8] flex-shrink-0">
+                          {counts.done}/{counts.total}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  {!isLocked && (
+                    <div className="flex-shrink-0">
+                      <ProgressRing
+                        value={phasePct}
+                        size={48}
+                        strokeWidth={4}
+                        color={isComplete ? "#4ADE80" : "#60A5FA"}
+                      />
                     </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <ProgressRing
-                      value={phasePct}
-                      size={48}
-                      strokeWidth={4}
-                      color={isComplete ? "#4ADE80" : "#60A5FA"}
-                    />
-                  </div>
+                  )}
                 </CardContent>
               </Card>
             );
-
-            if (isLocked) {
-              return (
-                <UpgradeOverlay
-                  key={phase.id}
-                  title="Complete your positioning first"
-                  description="Then unlock the full brand toolkit with Founding Member. Build your visual identity, set up payments, find your voice, and grow organically."
-                >
-                  {phaseCard}
-                </UpgradeOverlay>
-              );
-            }
-
-            return phaseCard;
           })}
         </div>
+
+        {/* Single upgrade CTA for locked phases */}
+        {!hasFullAccess && (
+          <LockedPhasesUpgradeBanner />
+        )}
 
         {/* Reset */}
         <div className="flex justify-center pt-2">
