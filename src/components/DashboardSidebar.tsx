@@ -124,23 +124,42 @@ function getStarterPhaseGroups(pipelineValidationsRemaining: number): PhaseGroup
       title: "Know Your Number",
       items: [
         { value: "calculator", label: "Calculator", icon: Calculator, gated: false },
-        { value: "history", label: "History", icon: Clock, gated: false },
+        { value: "history", label: "History", icon: History, gated: false },
       ],
     },
     {
       phase: 2,
       title: "Protect Yourself",
       items: [
-        { value: "invisibility", label: "Invisibility Audit", icon: Shield, gated: false },
-        { value: "stealth-core", label: "Core Actions", icon: Lock, gated: false },
+        { value: "invisibility", label: "Invisibility Audit", icon: EyeOff, gated: false },
+        { value: "stealth-core", label: "Core Stealth Actions", icon: Shield, gated: false },
       ],
     },
     {
       phase: 3,
       title: "Pick Your Idea",
       items: [
-        { value: "ideas", label: "Idea Finder", icon: Lightbulb, gated: false },
-        { value: "pipeline", label: "Validate", icon: CheckCircle, gated: false, badge: badgeText, badgeVariant },
+        { value: "ideas", label: "Idea Recommender", icon: Lightbulb, gated: false },
+        { value: "pipeline", label: "Pipeline Validation", icon: GitBranch, gated: false, badge: badgeText, badgeVariant },
+      ],
+    },
+    {
+      phase: 4,
+      title: "Build It",
+      items: [
+        { value: "brand", label: "Brand Manager", icon: Palette, gated: false },
+        { value: "launch", label: "Launch Control", icon: Rocket, gated: false },
+      ],
+    },
+    {
+      phase: 5,
+      title: "Scale It",
+      items: [
+        { value: "trends", label: "Trends", icon: TrendingUp, gated: false },
+        { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: false },
+        { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: false },
+        { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: false },
+        { value: "roadmap", label: "Roadmap", icon: Compass, gated: false },
       ],
     },
   ];
@@ -177,8 +196,7 @@ export default function DashboardSidebar({
     ? getStarterPhaseGroups(pipelineValidationsRemaining)
     : FOUNDING_PHASE_GROUPS;
 
-  const maxPhase = isStarter ? 3 : 5;
-  const recommendedPhase = getRecommendedPhase(phaseCompletion, maxPhase);
+  const recommendedPhase = getRecommendedPhase(phaseCompletion, 5);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

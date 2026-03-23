@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import UpgradeOverlay from "@/components/UpgradeOverlay";
 import { RotateCcw } from "lucide-react";
 import {
   Dialog,
@@ -17,9 +18,10 @@ import { useLaunchState } from "@/hooks/useLaunchProgress";
 
 interface LaunchControlProps {
   userId: string;
+  hasFullAccess?: boolean;
 }
 
-export default function LaunchControl({ userId }: LaunchControlProps) {
+export default function LaunchControl({ userId, hasFullAccess = true }: LaunchControlProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const {
     completedTasks,
@@ -151,16 +153,38 @@ export default function LaunchControl({ userId }: LaunchControlProps) {
       />
 
       <div className="space-y-3">
-        {LAUNCH_PHASES.map((phase) => (
-          <LaunchPhaseCard
-            key={phase.id}
-            phase={phase}
-            completedTasks={completedTasks}
-            onToggleTask={handleToggleTask}
-            isExpanded={!!expandedPhases[phase.id]}
-            onToggleExpand={() => toggleExpand(phase.id)}
-          />
-        ))}
+        {LAUNCH_PHASES.map((phase) => {
+          const isLocked = !hasFullAccess && phase.id !== "validate";
+
+          if (isLocked) {
+            return (
+              <UpgradeOverlay
+                key={phase.id}
+                title="You've validated your idea. Ready to build?"
+                description="Founding members get the complete 41-step launch checklist to go from validated idea to first paying customer."
+              >
+                <LaunchPhaseCard
+                  phase={phase}
+                  completedTasks={completedTasks}
+                  onToggleTask={handleToggleTask}
+                  isExpanded={false}
+                  onToggleExpand={() => {}}
+                />
+              </UpgradeOverlay>
+            );
+          }
+
+          return (
+            <LaunchPhaseCard
+              key={phase.id}
+              phase={phase}
+              completedTasks={completedTasks}
+              onToggleTask={handleToggleTask}
+              isExpanded={!!expandedPhases[phase.id]}
+              onToggleExpand={() => toggleExpand(phase.id)}
+            />
+          );
+        })}
       </div>
 
       {/* Reset button */}

@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScenarioCard from "./ScenarioCard";
+import UpgradeOverlay from "@/components/UpgradeOverlay";
 import { formatCurrency } from "@/lib/fym-calculations";
 import type { CalculatorInputsExpanded } from "@/types/fym";
 
@@ -20,9 +21,10 @@ const COLORS = [
 
 interface ScenarioEngineProps {
   inputs: CalculatorInputsExpanded;
+  hasFullAccess?: boolean;
 }
 
-export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
+export default function ScenarioEngine({ inputs, hasFullAccess = true }: ScenarioEngineProps) {
   const [scenarios, setScenarios] = useState<LocalScenario[]>([]);
 
   const addScenario = () => {
@@ -104,12 +106,24 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
           <p className="section-label mb-1">What-If Scenarios</p>
           <h3 className="section-title">Compare Different Paths to Freedom</h3>
         </div>
-        {scenarios.length < 2 && (
+        {hasFullAccess && scenarios.length < 2 && (
           <Button
             variant="outline"
             size="sm"
             onClick={addScenario}
             className="text-sm border-dashed hover:border-[#60A5FA] hover:text-[#60A5FA] transition-colors duration-200"
+          >
+            <Plus className="h-4 w-4 mr-1" />
+            Add Scenario
+          </Button>
+        )}
+        {!hasFullAccess && (
+          <Button
+            variant="outline"
+            size="sm"
+            disabled
+            className="text-sm border-dashed opacity-50 cursor-not-allowed"
+            title="Compare growth paths with Founding Member"
           >
             <Plus className="h-4 w-4 mr-1" />
             Add Scenario
@@ -130,22 +144,33 @@ export default function ScenarioEngine({ inputs }: ScenarioEngineProps) {
           strokeColor="#60A5FA"
         />
 
-        {scenarios.map((s, idx) => (
-          <ScenarioCard
-            key={s.id}
-            name={s.name}
-            startingRevenue={s.startingRevenue}
-            monthlyGrowthRate={s.monthlyGrowthRate}
-            monthlyExpenses={s.monthlyExpenses}
-            targetMonthlyRevenue={inputs.targetMonthlyRevenue}
-            monthsToExit={inputs.monthsToExit}
-            isCurrentPath={false}
-            colorClass={COLORS[idx]?.class ?? "bg-gray-400"}
-            strokeColor={COLORS[idx]?.stroke ?? "#9CA3AF"}
-            onUpdate={(field, value) => updateScenario(s.id, field, value)}
-            onDelete={() => deleteScenario(s.id)}
-          />
-        ))}
+        {hasFullAccess ? (
+          scenarios.map((s, idx) => (
+            <ScenarioCard
+              key={s.id}
+              name={s.name}
+              startingRevenue={s.startingRevenue}
+              monthlyGrowthRate={s.monthlyGrowthRate}
+              monthlyExpenses={s.monthlyExpenses}
+              targetMonthlyRevenue={inputs.targetMonthlyRevenue}
+              monthsToExit={inputs.monthsToExit}
+              isCurrentPath={false}
+              colorClass={COLORS[idx]?.class ?? "bg-gray-400"}
+              strokeColor={COLORS[idx]?.stroke ?? "#9CA3AF"}
+              onUpdate={(field, value) => updateScenario(s.id, field, value)}
+              onDelete={() => deleteScenario(s.id)}
+            />
+          ))
+        ) : (
+          <UpgradeOverlay
+            title="Compare different paths to freedom"
+            description="Founding members compare up to 3 growth scenarios side by side. Find which combination gets you to freedom fastest."
+          >
+            <div className="min-w-[280px] h-[240px] bg-gray-50 rounded-xl border border-gray-200/50 flex items-center justify-center">
+              <p className="text-sm text-gray-400">Scenario A</p>
+            </div>
+          </UpgradeOverlay>
+        )}
       </div>
 
       {summary && (

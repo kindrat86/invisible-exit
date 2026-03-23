@@ -3,12 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FileText, Shield, AlertTriangle, Clock, ChevronRight } from "lucide-react";
 import ProgressRing from "@/components/fym/ProgressRing";
+import UpgradeOverlay from "@/components/UpgradeOverlay";
 import { PLAYBOOK_MISSIONS } from "@/data/anonymity-playbook";
 import { usePlaybookProgress } from "@/hooks/usePlaybookProgress";
 
 interface StealthScoreViewProps {
   userId: string;
   onOpenSubTab: (tab: string) => void;
+  hasFullAccess?: boolean;
 }
 
 function getScoreLabel(score: number): { label: string; color: string } {
@@ -21,6 +23,7 @@ function getScoreLabel(score: number): { label: string; color: string } {
 export default function StealthScoreView({
   userId,
   onOpenSubTab,
+  hasFullAccess = true,
 }: StealthScoreViewProps) {
   const { isStepCompleted, toggleStep, getMissionProgress } =
     usePlaybookProgress(userId);
@@ -164,29 +167,59 @@ export default function StealthScoreView({
       )}
 
       {/* Sub-tab links */}
-      <div>
-        <h3 className="text-sm font-semibold text-[#0B1D3A] mb-3">
-          Deep Dive
-        </h3>
-        <div className="grid gap-3 sm:grid-cols-3">
-          {subTabs.map((tab) => {
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => onOpenSubTab(tab.id)}
-                className="bg-white rounded-xl border border-gray-200 p-4 text-left hover:shadow-md hover:border-[#60A5FA]/30 transition-all group"
-              >
-                <Icon className="h-5 w-5 text-[#60A5FA] mb-2" />
-                <h4 className="text-sm font-semibold text-[#0B1D3A] mb-1 group-hover:text-[#60A5FA] transition-colors">
-                  {tab.title}
-                </h4>
-                <p className="text-xs text-[#4A5568]">{tab.description}</p>
-              </button>
-            );
-          })}
+      {!hasFullAccess ? (
+        <UpgradeOverlay
+          title="Your Stealth Score is showing. Go deeper."
+          description="Founding members get the full anonymity toolkit: legal templates, step-by-step playbook, and compliance database for your industry."
+        >
+          <div>
+            <h3 className="text-sm font-semibold text-[#0B1D3A] mb-3">
+              Deep Dive
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {subTabs.map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <div
+                    key={tab.id}
+                    className="bg-white rounded-xl border border-gray-200 p-4 text-left"
+                  >
+                    <Icon className="h-5 w-5 text-[#60A5FA] mb-2" />
+                    <h4 className="text-sm font-semibold text-[#0B1D3A] mb-1">
+                      {tab.title}
+                    </h4>
+                    <p className="text-xs text-[#4A5568]">{tab.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </UpgradeOverlay>
+      ) : (
+        <div>
+          <h3 className="text-sm font-semibold text-[#0B1D3A] mb-3">
+            Deep Dive
+          </h3>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {subTabs.map((tab) => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => onOpenSubTab(tab.id)}
+                  className="bg-white rounded-xl border border-gray-200 p-4 text-left hover:shadow-md hover:border-[#60A5FA]/30 transition-all group"
+                >
+                  <Icon className="h-5 w-5 text-[#60A5FA] mb-2" />
+                  <h4 className="text-sm font-semibold text-[#0B1D3A] mb-1 group-hover:text-[#60A5FA] transition-colors">
+                    {tab.title}
+                  </h4>
+                  <p className="text-xs text-[#4A5568]">{tab.description}</p>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

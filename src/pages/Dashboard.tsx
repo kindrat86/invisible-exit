@@ -51,6 +51,9 @@ interface Profile {
   email: string;
   subscription_status: string;
   subscription_tier: string;
+  monthly_validations_used?: number;
+  validations_reset_at?: string;
+  ideas_browsed_total?: number;
 }
 
 const VALID_TABS = [
@@ -108,7 +111,7 @@ function DashboardContent() {
 
         const { data, error } = await supabase
           .from("profiles")
-          .select("id, email, subscription_status, subscription_tier")
+          .select("id, email, subscription_status, subscription_tier, monthly_validations_used, validations_reset_at, ideas_browsed_total")
           .eq("id", user.id)
           .single();
 
@@ -198,11 +201,12 @@ function DashboardContent() {
     return completion;
   }, [entries.length, latestInvisibility, pipelineHistory.length, userId]);
 
-  // Pipeline gating: 1 free validation for starters
+  // Pipeline gating: 3 free validations/month for starters
   const completedValidations = pipelineHistory.filter(
     (entry) => entry.verdict !== null
   ).length;
-  const pipelineValidationsRemaining = Math.max(0, 1 - completedValidations);
+  const starterValidationLimit = 3;
+  const pipelineValidationsRemaining = Math.max(0, starterValidationLimit - completedValidations);
 
   const handleSaved = useCallback(() => {
     refetchEntries();
@@ -449,6 +453,7 @@ function DashboardContent() {
               }}
               onSwitchTab={setActiveTab}
               hasFullAccess={!!hasFullAccess}
+              userId={userId}
             />
           )}
           {ideasView === "directory" && (
@@ -477,69 +482,39 @@ function DashboardContent() {
       )}
 
       {activeTab === "brand" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="brand"
-        >
-          <Suspense fallback={tabFallback}>
-            <BrandManager userId={userId} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <BrandManager userId={userId} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
       )}
 
       {activeTab === "launch" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="launch"
-        >
-          <Suspense fallback={tabFallback}>
-            <LaunchControl userId={userId} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <LaunchControl userId={userId} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
       )}
 
       {activeTab === "trends" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="trends"
-        >
-          <Suspense fallback={tabFallback}>
-            <FymTrends userId={userId} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <FymTrends userId={userId} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
       )}
 
       {activeTab === "stealth-full" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="stealth-full"
-        >
-          <Suspense fallback={tabFallback}>
-            <StealthOpsHub userId={userId} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <StealthOpsHub userId={userId} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
       )}
 
       {activeTab === "scenarios" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="scenarios"
-        >
-          <Suspense fallback={tabFallback}>
-            <ScenarioEngine inputs={expandedInputs} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <ScenarioEngine inputs={expandedInputs} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
       )}
 
       {activeTab === "reverse-calc" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="reverse-calc"
-        >
-          <Suspense fallback={tabFallback}>
-            <ReverseCalculator inputs={expandedInputs} />
-          </Suspense>
-        </FeatureGate>
+        <Suspense fallback={tabFallback}>
+          <ReverseCalculator inputs={expandedInputs} />
+        </Suspense>
       )}
 
       {activeTab === "upgrade" && (

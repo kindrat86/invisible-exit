@@ -110,7 +110,7 @@ export default function InvisibilityScore({ userId, hasFullAccess = true }: Invi
   const currentCategory = categoryQuestions[currentStep];
 
   // Determine visible fixes based on tier
-  const visibleFixes = hasFullAccess ? fixes : fixes.slice(0, 3);
+  const visibleFixes = hasFullAccess ? fixes : fixes.slice(0, 5);
   const remainingFixesCount = fixes.length - visibleFixes.length;
 
   // Results view
