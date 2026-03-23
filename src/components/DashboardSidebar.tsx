@@ -36,7 +36,6 @@ import {
   Clock,
 } from "lucide-react";
 import SidebarProgressRing from "@/components/fym/SidebarProgressRing";
-import FoundingBadge from "@/components/FoundingBadge";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -211,15 +210,9 @@ export default function DashboardSidebar({
             <span className="text-[#0B1D3A] font-bold text-sm leading-tight truncate">
               Invisible Exit
             </span>
-            {subscriptionTier === "founding" ? (
-              <span className="text-[10px] font-semibold text-[#60A5FA] leading-tight flex items-center gap-1">
-                Founding Member ✦
-              </span>
-            ) : (
-              <span className="text-[10px] text-[#9CA3AF] leading-tight">
-                FYM Dashboard
-              </span>
-            )}
+            <span className="text-[10px] text-[#9CA3AF] leading-tight">
+              FYM Dashboard
+            </span>
           </div>
         </div>
       </SidebarHeader>
@@ -353,11 +346,6 @@ export default function DashboardSidebar({
           </div>
           <div className="flex-1 min-w-0 group-data-[collapsible=icon]:hidden">
             <p className="text-xs text-[#4A5568] truncate">{email}</p>
-            {subscriptionTier === "founding" && (
-              <div className="mt-0.5">
-                <FoundingBadge compact />
-              </div>
-            )}
           </div>
           <button
             onClick={handleLogout}
