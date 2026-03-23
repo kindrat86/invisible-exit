@@ -33,7 +33,6 @@ const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
 const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
-const StealthScoreView = lazy(() => import("@/components/fym/StealthScoreView"));
 const ScenarioEngine = lazy(() => import("@/components/fym/ScenarioEngine"));
 const ReverseCalculator = lazy(() => import("@/components/fym/ReverseCalculator"));
 
@@ -446,12 +445,7 @@ function DashboardContent() {
           featureId="stealth-full"
         >
           <Suspense fallback={tabFallback}>
-            <StealthScoreView
-              userId={userId}
-              onOpenSubTab={(subTab) => {
-                setActiveTab("stealth-full");
-              }}
-            />
+            <StealthOpsHub userId={userId} />
           </Suspense>
         </FeatureGate>
       )}
