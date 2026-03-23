@@ -36,10 +36,10 @@ const ValueStack = () => {
       <div className="max-w-[720px] mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
-          <h2 className="text-[28px] font-bold text-white mb-3">
+          <h2 className="text-[30px] font-bold text-white mb-3">
             What Founding Members Get
           </h2>
-          <p className="text-base text-[#8A95A8]">
+          <p className="text-base text-white/70">
             These are not available to anyone else. Ever.
           </p>
         </div>
@@ -51,13 +51,13 @@ const ValueStack = () => {
               key={i}
               className={`relative rounded-xl p-8 ${
                 item.featured
-                  ? "border-2 border-[#60A5FA] bg-gradient-to-br from-[rgba(96,165,250,0.08)] to-[rgba(96,165,250,0.02)]"
-                  : "border border-[rgba(96,165,250,0.15)] bg-[#0f1a2e]"
+                  ? "border-2 border-[#60A5FA] bg-white/5"
+                  : "border border-white/10 bg-white/5"
               }`}
             >
               {/* Featured badge */}
               {item.badge && (
-                <span className="absolute -top-[10px] right-5 inline-block bg-[#60A5FA] text-[#0B1D3A] text-[11px] font-bold uppercase tracking-[1.5px] px-3 py-1 rounded-full">
+                <span className="absolute -top-[10px] right-5 inline-block bg-[#60A5FA] text-white text-[11px] font-bold uppercase tracking-[1.5px] px-3 py-1 rounded-full">
                   {item.badge}
                 </span>
               )}
@@ -73,13 +73,13 @@ const ValueStack = () => {
               </h3>
 
               {/* Body */}
-              <p className="text-base leading-[1.7] text-[#8A95A8]">
+              <p className="text-base leading-[1.7] text-white/70">
                 {item.body}
               </p>
 
               {/* Anchor text */}
               {item.anchor && (
-                <p className="mt-3 text-sm italic text-[#4A5568]">
+                <p className="mt-3 text-sm italic text-white/50">
                   {item.anchor}
                 </p>
               )}

@@ -8,7 +8,7 @@ const VideoPlaceholder = ({ videoUrl, onPlayClick }: VideoPlaceholderProps) => {
     return (
       <div className="max-w-3xl mx-auto">
         <div
-          className="relative overflow-hidden rounded-xl border border-[rgba(96,165,250,0.15)]"
+          className="relative overflow-hidden rounded-xl border border-white/10"
           style={{ paddingBottom: "56.25%" }}
         >
           <iframe
@@ -25,7 +25,7 @@ const VideoPlaceholder = ({ videoUrl, onPlayClick }: VideoPlaceholderProps) => {
   return (
     <div className="max-w-3xl mx-auto">
       <div
-        className="relative overflow-hidden rounded-xl border border-[rgba(96,165,250,0.15)] bg-[#0f1a2e] cursor-pointer group"
+        className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 cursor-pointer group"
         style={{ paddingBottom: "56.25%" }}
         onClick={onPlayClick}
       >
