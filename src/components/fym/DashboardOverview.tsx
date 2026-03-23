@@ -51,6 +51,7 @@ export default function DashboardOverview({
   monthsToNextLevel,
   isStarter,
   hasFullAccess = false,
+  tier,
   briefing,
   pipelineHistory = [],
   userId = "",
