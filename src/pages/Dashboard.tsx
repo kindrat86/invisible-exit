@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, lazy, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import AuthGuard from "@/components/AuthGuard";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import DashboardNav from "@/components/DashboardNav";
 import FYMCalculator from "@/components/FYMCalculator";
 import FYMHistory from "@/components/FYMHistory";
@@ -72,29 +73,37 @@ function DashboardContent() {
 
   useEffect(() => {
     const load = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) return;
-
-      setEmail(user.email ?? "");
-      setUserId(user.id);
-
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("id, email, subscription_status, subscription_tier")
-        .eq("id", user.id)
-        .single();
-
-      if (error || !data) {
-        setNoProfile(true);
-      } else {
-        setProfile(data as Profile);
-        const onboardingKey = `fym_onboarded_${user.id}`;
-        if (!localStorage.getItem(onboardingKey)) {
-          setShowOnboarding(true);
-          localStorage.setItem(onboardingKey, "true");
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) {
+          setLoading(false);
+          return;
         }
+
+        setEmail(user.email ?? "");
+        setUserId(user.id);
+
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("id, email, subscription_status, subscription_tier")
+          .eq("id", user.id)
+          .single();
+
+        if (error || !data) {
+          setNoProfile(true);
+        } else {
+          setProfile(data as Profile);
+          const onboardingKey = `fym_onboarded_${user.id}`;
+          if (!localStorage.getItem(onboardingKey)) {
+            setShowOnboarding(true);
+            localStorage.setItem(onboardingKey, "true");
+          }
+        }
+      } catch (err) {
+        console.error("Dashboard load failed:", err);
+        setNoProfile(true);
       }
       setLoading(false);
     };
@@ -317,7 +326,9 @@ function DashboardContent() {
 export default function Dashboard() {
   return (
     <AuthGuard>
-      <DashboardContent />
+      <ErrorBoundary>
+        <DashboardContent />
+      </ErrorBoundary>
     </AuthGuard>
   );
 }
