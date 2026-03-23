@@ -10,6 +10,7 @@ import QuickStats from "@/components/fym/QuickStats";
 import ReactivationScreen from "@/components/ReactivationScreen";
 import UpgradeBanner from "@/components/UpgradeBanner";
 import FeatureGate from "@/components/FeatureGate";
+import ReportBadgeShareModal from "@/components/ReportBadgeShareModal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
@@ -20,10 +21,19 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Share2 } from "lucide-react";
 import { useFymEntries } from "@/hooks/useFymEntries";
 import { useLatestFymEntry } from "@/hooks/useLatestFymEntry";
 import { useLatestInvisibilityScore } from "@/hooks/useInvisibilityScore";
 import { useLatestPipelineEntry } from "@/hooks/useIdeaPipeline";
+import {
+  calculateFymScore,
+  calculateFreedomPercentage,
+  calculateFinancialScore,
+  calculateCombinedReadinessScore,
+  FREEDOM_LEVELS,
+} from "@/lib/fym-calculations";
+import type { ReportBadgeData } from "@/lib/generateReportBadge";
 import type { CalculatorInputs, IdeaEntry } from "@/types/fym";
 
 const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
@@ -57,6 +67,8 @@ function DashboardContent() {
   const [userId, setUserId] = useState("");
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
+  const [reportBadgeOpen, setReportBadgeOpen] = useState(false);
+  const [reportBadgeData, setReportBadgeData] = useState<ReportBadgeData | null>(null);
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
   const { data: latestEntry, refetch: refetchLatest } = useLatestFymEntry(userId);
@@ -112,6 +124,37 @@ function DashboardContent() {
     },
     [setActiveTab]
   );
+
+  const handleShareReport = useCallback(() => {
+    if (!latestEntry) return;
+    const level = latestEntry.freedom_level ?? 0;
+    const levelName = level > 0 ? FREEDOM_LEVELS[level - 1]?.name : "Pre-Launch";
+    const burn = Number(latestEntry.monthly_burn);
+    const revenue = Number(latestEntry.monthly_revenue);
+    const fymScore = calculateFymScore(burn, revenue);
+    const freedomPct = calculateFreedomPercentage(revenue, burn);
+    const financialScore = calculateFinancialScore(revenue, burn);
+    const exitReadiness = calculateCombinedReadinessScore(
+      financialScore,
+      latestInvisibility?.total_score ?? null
+    );
+    const tier: ReportBadgeData["tier"] =
+      profile?.subscription_tier === "founding" || profile?.subscription_tier === "standard"
+        ? (profile.subscription_tier as "founding" | "standard")
+        : "starter";
+    const now = new Date();
+
+    setReportBadgeData({
+      tier,
+      freedomLevel: level,
+      levelName: levelName ?? "Pre-Launch",
+      fymScore,
+      freedomPercentage: freedomPct,
+      exitReadiness,
+      generatedDate: now.toLocaleDateString("en-US", { month: "short", year: "numeric" }),
+    });
+    setReportBadgeOpen(true);
+  }, [latestEntry, latestInvisibility, profile?.subscription_tier]);
 
   if (loading) {
     return (
@@ -196,6 +239,19 @@ function DashboardContent() {
               latestInvisibility={latestInvisibility}
               latestPipeline={latestPipeline}
             />
+            {latestEntry && (
+              <div className="flex justify-end -mt-4 mb-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleShareReport}
+                  className="text-xs text-blue-300/70 hover:text-blue-200"
+                >
+                  <Share2 className="h-3 w-3 mr-1" />
+                  Share Report
+                </Button>
+              </div>
+            )}
 
             <Tabs value={activeTab} onValueChange={setActiveTab}>
               <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
@@ -218,6 +274,7 @@ function DashboardContent() {
                   latestEntry={latestEntry}
                   latestInvisibility={latestInvisibility}
                   onSwitchTab={setActiveTab}
+                  subscriptionTier={profile?.subscription_tier}
                 />
               </TabsContent>
 
@@ -294,6 +351,14 @@ function DashboardContent() {
         ) : (
           <ReactivationScreen
             onViewHistory={() => setActiveTab("history")}
+          />
+        )}
+
+        {reportBadgeData && (
+          <ReportBadgeShareModal
+            open={reportBadgeOpen}
+            onOpenChange={setReportBadgeOpen}
+            badgeData={reportBadgeData}
           />
         )}
 
