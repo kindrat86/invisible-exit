@@ -34,6 +34,7 @@ const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
 const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
+const RoadmapVoting = lazy(() => import("@/components/fym/RoadmapVoting"));
 
 interface Profile {
   id: string;
@@ -42,7 +43,7 @@ interface Profile {
   subscription_tier: string;
 }
 
-const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth"] as const;
+const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth", "roadmap"] as const;
 type TabValue = (typeof VALID_TABS)[number];
 
 function DashboardContent() {
@@ -208,6 +209,7 @@ function DashboardContent() {
                 <TabsTrigger value="brand" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
                 <TabsTrigger value="launch" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
                 <TabsTrigger value="stealth" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
+                <TabsTrigger value="roadmap" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Roadmap</TabsTrigger>
               </TabsList>
 
               <TabsContent value="calculator">
@@ -286,6 +288,14 @@ function DashboardContent() {
                 <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access the full compliance playbook and fixes">
                   <Suspense fallback={tabFallback}>
                     <StealthOpsHub />
+                  </Suspense>
+                </FeatureGate>
+              </TabsContent>
+
+              <TabsContent value="roadmap">
+                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to shape the product roadmap">
+                  <Suspense fallback={tabFallback}>
+                    <RoadmapVoting />
                   </Suspense>
                 </FeatureGate>
               </TabsContent>
