@@ -33,7 +33,7 @@ export default function ResetPassword() {
       toast.error(error.message);
     } else {
       toast.success("Password updated successfully.");
-      navigate("/fym/dashboard");
+      navigate("/dashboard");
     }
   };
 
