@@ -15,6 +15,7 @@ import Badge from "./pages/Badge.tsx";
 import Confirmation from "./pages/Confirmation.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
+import ErrorBoundary from "./components/ErrorBoundary.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -55,6 +57,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

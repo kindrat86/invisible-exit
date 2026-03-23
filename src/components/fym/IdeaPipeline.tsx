@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import ProgressRing from "@/components/fym/ProgressRing";
+import ContextualUpgradeCard from "@/components/fym/ContextualUpgradeCard";
 import {
   PIPELINE_QUESTIONS,
   PIPELINE_CATEGORIES,
@@ -48,11 +49,12 @@ interface IdeaPipelineProps {
   onSwitchTab?: (tab: string) => void;
   pendingIdea?: IdeaEntry | null;
   onClearPendingIdea?: () => void;
+  hasFullAccess?: boolean;
 }
 
 type View = "history" | "wizard" | "results";
 
-// ── Scoring ──
+// -- Scoring --
 
 function computeScores(answers: Record<string, boolean>) {
   const categoryScores: Record<string, number> = {};
@@ -79,7 +81,6 @@ function computeVerdict(
   const nodes: DecisionNode[] = [];
   let dominated = false;
 
-  // Gate 1: Critical Questions
   const criticalQs = PIPELINE_QUESTIONS.filter((q) => q.impact === "Critical");
   const criticalYes = criticalQs.filter((q) => answers[q.id]).length;
   const gate1Pass = criticalYes / criticalQs.length >= 0.5;
@@ -88,11 +89,10 @@ function computeVerdict(
     passed: gate1Pass,
     reason: gate1Pass
       ? `${criticalYes}/${criticalQs.length} critical signals confirmed`
-      : `Only ${criticalYes}/${criticalQs.length} critical signals — too many unknowns`,
+      : `Only ${criticalYes}/${criticalQs.length} critical signals -- too many unknowns`,
   });
   if (!gate1Pass) dominated = true;
 
-  // Gate 2: Category Balance
   const weakCategories: string[] = [];
   for (const cat of PIPELINE_CATEGORIES) {
     if (categoryScores[cat.key] / cat.maxScore < 0.25) {
@@ -104,40 +104,37 @@ function computeVerdict(
     label: "Category Balance",
     passed: gate2Pass,
     reason: gate2Pass
-      ? "No critically weak category — balanced opportunity"
+      ? "No critically weak category -- balanced opportunity"
       : `Dangerously weak in: ${weakCategories.join(", ")}`,
   });
   if (!gate2Pass) dominated = true;
 
-  // Gate 3: Demand Validation
   const demandScore = (categoryScores.market ?? 0) + (categoryScores.revenue ?? 0);
   const gate3Pass = demandScore >= 20;
   nodes.push({
     label: "Demand Validation",
     passed: gate3Pass,
     reason: gate3Pass
-      ? `Market + Revenue score ${demandScore}/40 — strong demand signal`
-      : `Market + Revenue score ${demandScore}/40 — demand not proven`,
+      ? `Market + Revenue score ${demandScore}/40 -- strong demand signal`
+      : `Market + Revenue score ${demandScore}/40 -- demand not proven`,
   });
 
-  // Gate 4: Weekend Buildable
   const gate4Pass = (categoryScores.build ?? 0) >= 10;
   nodes.push({
     label: "Weekend Buildable",
     passed: gate4Pass,
     reason: gate4Pass
-      ? `Build score ${categoryScores.build}/20 — feasible as a side project`
-      : `Build score ${categoryScores.build}/20 — too complex for a weekend build`,
+      ? `Build score ${categoryScores.build}/20 -- feasible as a side project`
+      : `Build score ${categoryScores.build}/20 -- too complex for a weekend build`,
   });
 
-  // Gate 5: Invisibility Safe
   const gate5Pass = (categoryScores.invisibility ?? 0) >= 10;
   nodes.push({
     label: "Invisibility Safe",
     passed: gate5Pass,
     reason: gate5Pass
-      ? `Invisibility score ${categoryScores.invisibility}/20 — can run stealth`
-      : `Invisibility score ${categoryScores.invisibility}/20 — exposure risk too high`,
+      ? `Invisibility score ${categoryScores.invisibility}/20 -- can run stealth`
+      : `Invisibility score ${categoryScores.invisibility}/20 -- exposure risk too high`,
   });
 
   const passedGates = nodes.filter((n) => n.passed).length;
@@ -171,7 +168,7 @@ function generateInsights(answers: Record<string, boolean>) {
   return { strengths: strengths.slice(0, 8), redFlags: redFlags.slice(0, 6) };
 }
 
-// ── Helpers ──
+// -- Helpers --
 
 function getVerdictColor(verdict: PipelineVerdict) {
   if (verdict === "GO") return "#4ADE80";
@@ -187,7 +184,7 @@ function getVerdictLabel(verdict: PipelineVerdict) {
 
 function getVerdictSummary(verdict: PipelineVerdict) {
   if (verdict === "GO")
-    return "This idea passes all critical gates. Commit your weekend — build it.";
+    return "This idea passes all critical gates. Commit your weekend -- build it.";
   if (verdict === "CONDITIONAL_GO")
     return "Promising but with gaps. Address the red flags below before committing.";
   return "Too many critical gaps. Save your weekend and pick a stronger idea.";
@@ -199,16 +196,23 @@ function getScoreColor(score: number) {
   return "#F87171";
 }
 
-// ── Component ──
+// -- Component --
 
 export default function IdeaPipeline({
   userId,
   pendingIdea,
   onClearPendingIdea,
+  onSwitchTab,
+  hasFullAccess = true,
 }: IdeaPipelineProps) {
   const { data: history = [], isLoading } = usePipelineHistory(userId);
   const saveMutation = useSavePipelineEntry(userId);
   const updateActionPlan = useUpdateActionPlan(userId);
+
+  const completedValidations = history.filter(
+    (entry) => entry.verdict !== null
+  ).length;
+  const canValidate = hasFullAccess || completedValidations < 1;
 
   const [view, setView] = useState<View>(() => (pendingIdea ? "wizard" : "history"));
   const [viewingEntry, setViewingEntry] = useState<PipelineEntry | null>(null);
@@ -222,7 +226,7 @@ export default function IdeaPipeline({
     () => pendingIdea?.id ?? null
   );
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
-  const [currentStep, setCurrentStep] = useState(0); // 0 = input, 1-5 = categories
+  const [currentStep, setCurrentStep] = useState(0);
   const [showIdeaPicker, setShowIdeaPicker] = useState(false);
   const [ideaSearch, setIdeaSearch] = useState("");
 
@@ -244,6 +248,12 @@ export default function IdeaPipeline({
 
   const startNewValidation = useCallback(
     (idea?: IdeaEntry) => {
+      // Check if starter can validate
+      if (!canValidate) {
+        // Show Moment 5 instead
+        setView("history");
+        return;
+      }
       setIdeaName(idea?.title ?? "");
       setIdeaDescription(idea?.description ?? "");
       setSourceIdeaId(idea?.id ?? null);
@@ -253,7 +263,7 @@ export default function IdeaPipeline({
       setViewingEntry(null);
       setView("wizard");
     },
-    []
+    [canValidate]
   );
 
   // Auto-start if pending idea
@@ -335,8 +345,14 @@ export default function IdeaPipeline({
       .slice(0, 20);
   }, [ideaSearch]);
 
-  // ── HISTORY VIEW ──
+  // Get latest completed validation for Moment 5
+  const latestCompleted = history.find((e) => e.verdict !== null);
+
+  // -- HISTORY VIEW --
   if (view === "history") {
+    // If starter can't validate and tries to start new: show Moment 5
+    const showLimitCard = !canValidate;
+
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
@@ -347,13 +363,31 @@ export default function IdeaPipeline({
             </p>
           </div>
           <Button
-            onClick={() => startNewValidation()}
+            onClick={() => {
+              if (!canValidate) {
+                // Will show moment 5 card below
+                return;
+              }
+              startNewValidation();
+            }}
             className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white"
+            disabled={showLimitCard}
           >
             <Plus className="h-4 w-4 mr-2" />
             New Validation
           </Button>
         </div>
+
+        {/* Moment 5: Pipeline limit reached */}
+        {showLimitCard && latestCompleted && (
+          <ContextualUpgradeCard
+            momentId="pipeline-limit"
+            dynamicValues={{
+              previousIdeaName: latestCompleted.idea_name,
+              previousScore: latestCompleted.total_score,
+            }}
+          />
+        )}
 
         {isLoading ? (
           <div className="space-y-3">
@@ -398,7 +432,7 @@ export default function IdeaPipeline({
                       {entry.idea_name}
                     </h3>
                     <p className="text-xs text-[#8A95A8] mt-1">
-                      {new Date(entry.created_at).toLocaleDateString()} — Score:{" "}
+                      {new Date(entry.created_at).toLocaleDateString()} -- Score:{" "}
                       {entry.total_score}/100
                     </p>
                   </div>
@@ -421,11 +455,11 @@ export default function IdeaPipeline({
     );
   }
 
-  // ── WIZARD VIEW ──
+  // -- WIZARD VIEW --
   if (view === "wizard") {
     const isInputStep = currentStep === 0;
     const currentCategory = !isInputStep ? categoryQuestions[currentStep - 1] : null;
-    const totalSteps = PIPELINE_CATEGORIES.length + 1; // input + 5 categories
+    const totalSteps = PIPELINE_CATEGORIES.length + 1;
 
     return (
       <div className="space-y-6">
@@ -446,8 +480,8 @@ export default function IdeaPipeline({
             </Button>
             <span className="text-[#8A95A8]">
               {isInputStep
-                ? "Step 1 — Describe Your Idea"
-                : `Step ${currentStep + 1} of ${totalSteps} — ${currentCategory?.label}`}
+                ? "Step 1 -- Describe Your Idea"
+                : `Step ${currentStep + 1} of ${totalSteps} -- ${currentCategory?.label}`}
             </span>
           </div>
           <Progress
@@ -516,7 +550,7 @@ export default function IdeaPipeline({
                 {currentCategory.label}
               </CardTitle>
               <p className="text-sm text-[#8A95A8]">
-                Max {currentCategory.maxScore} points — Score so far:{" "}
+                Max {currentCategory.maxScore} points -- Score so far:{" "}
                 {scores.categoryScores[currentCategory.key] ?? 0}/
                 {currentCategory.maxScore}
               </p>
@@ -629,7 +663,7 @@ export default function IdeaPipeline({
     );
   }
 
-  // ── RESULTS VIEW ──
+  // -- RESULTS VIEW --
   const entry = viewingEntry;
   if (!entry) return null;
 
@@ -637,6 +671,8 @@ export default function IdeaPipeline({
   const checkedCount = ACTION_PLAN_TASKS.filter(
     (t) => actionChecked[t.id]
   ).length;
+
+  const isGoVerdict = entry.verdict === "GO" || entry.verdict === "CONDITIONAL_GO";
 
   return (
     <div className="space-y-6">
@@ -686,26 +722,29 @@ export default function IdeaPipeline({
               Validated {new Date(entry.created_at).toLocaleDateString()}
             </p>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-4"
-            onClick={() => {
-              const idea = sourceIdeaId
-                ? allIdeas.find((i) => i.id === entry.source_idea_id)
-                : undefined;
-              startNewValidation(
-                idea ?? ({
-                  id: "",
-                  title: entry.idea_name,
-                  description: entry.idea_description,
-                } as IdeaEntry)
-              );
-            }}
-          >
-            <RotateCcw className="h-4 w-4 mr-1" />
-            Retake
-          </Button>
+          {/* Retake button: hidden for starters */}
+          {hasFullAccess && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              onClick={() => {
+                const idea = sourceIdeaId
+                  ? allIdeas.find((i) => i.id === entry.source_idea_id)
+                  : undefined;
+                startNewValidation(
+                  idea ?? ({
+                    id: "",
+                    title: entry.idea_name,
+                    description: entry.idea_description,
+                  } as IdeaEntry)
+                );
+              }}
+            >
+              <RotateCcw className="h-4 w-4 mr-1" />
+              Retake
+            </Button>
+          )}
         </CardContent>
       </Card>
 
@@ -823,63 +862,107 @@ export default function IdeaPipeline({
         </Card>
       )}
 
-      {/* 48-Hour Action Plan */}
-      {entry.verdict !== "NO_GO" && (
-        <Card className="bg-white border border-gray-200">
-          <CardHeader>
-            <CardTitle className="text-sm text-[#8A95A8] font-medium uppercase tracking-wide">
-              48-Hour Action Plan ({checkedCount}/{ACTION_PLAN_TASKS.length}{" "}
-              completed)
-            </CardTitle>
-            <Progress
-              value={(checkedCount / ACTION_PLAN_TASKS.length) * 100}
-              className="h-2 mt-2"
-            />
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {ACTION_PLAN_PHASES.map((phase) => {
-              const phaseTasks = ACTION_PLAN_TASKS.filter(
-                (t) => t.phase === phase.key
-              );
-              return (
-                <Collapsible key={phase.key} defaultOpen>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-                    <span className="text-sm font-medium text-[#0B1D3A]">
-                      {phase.label}
-                    </span>
-                    <ChevronDown className="h-4 w-4 text-[#8A95A8]" />
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 space-y-2">
-                    {phaseTasks.map((task) => (
-                      <div
-                        key={task.id}
-                        className="flex items-start gap-3 p-2"
-                      >
-                        <Checkbox
-                          id={task.id}
-                          checked={actionChecked[task.id] ?? false}
-                          onCheckedChange={(checked) =>
-                            handleActionToggle(task.id, checked === true)
-                          }
-                        />
-                        <label
-                          htmlFor={task.id}
-                          className={`text-sm cursor-pointer ${
-                            actionChecked[task.id]
-                              ? "text-[#8A95A8] line-through"
-                              : "text-[#4A5568]"
-                          }`}
+      {/* 48-Hour Action Plan: Full for founding, contextual upgrade for starters */}
+      {!hasFullAccess ? (
+        <>
+          {/* Moment 4: Contextual upgrade for starters after validation */}
+          <ContextualUpgradeCard
+            momentId={isGoVerdict ? "pipeline-go" : "pipeline-nogo"}
+            dynamicValues={{
+              score: entry.total_score,
+              verdict: getVerdictLabel(entry.verdict),
+            }}
+          />
+
+          {/* Blurred action plan preview for GO/CONDITIONAL GO */}
+          {isGoVerdict && (
+            <div className="relative rounded-lg border overflow-hidden">
+              <div className="filter blur-[6px] pointer-events-none select-none opacity-60 p-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 rounded border" />
+                    <span className="text-sm">Research 3 competitor products in your niche</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 rounded border bg-green-500" />
+                    <span className="text-sm line-through text-muted-foreground">Set up landing page with value proposition</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 rounded border" />
+                    <span className="text-sm">Write 3 Reddit posts for target subreddits</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 rounded border" />
+                    <span className="text-sm">Configure Stripe for $0.97 test pricing</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 rounded border" />
+                    <span className="text-sm">Launch micro-test and collect 10 signups</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        // Full action plan for founding users
+        entry.verdict !== "NO_GO" && (
+          <Card className="bg-white border border-gray-200">
+            <CardHeader>
+              <CardTitle className="text-sm text-[#8A95A8] font-medium uppercase tracking-wide">
+                48-Hour Action Plan ({checkedCount}/{ACTION_PLAN_TASKS.length}{" "}
+                completed)
+              </CardTitle>
+              <Progress
+                value={(checkedCount / ACTION_PLAN_TASKS.length) * 100}
+                className="h-2 mt-2"
+              />
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {ACTION_PLAN_PHASES.map((phase) => {
+                const phaseTasks = ACTION_PLAN_TASKS.filter(
+                  (t) => t.phase === phase.key
+                );
+                return (
+                  <Collapsible key={phase.key} defaultOpen>
+                    <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
+                      <span className="text-sm font-medium text-[#0B1D3A]">
+                        {phase.label}
+                      </span>
+                      <ChevronDown className="h-4 w-4 text-[#8A95A8]" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-2 space-y-2">
+                      {phaseTasks.map((task) => (
+                        <div
+                          key={task.id}
+                          className="flex items-start gap-3 p-2"
                         >
-                          {task.text}
-                        </label>
-                      </div>
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              );
-            })}
-          </CardContent>
-        </Card>
+                          <Checkbox
+                            id={task.id}
+                            checked={actionChecked[task.id] ?? false}
+                            onCheckedChange={(checked) =>
+                              handleActionToggle(task.id, checked === true)
+                            }
+                          />
+                          <label
+                            htmlFor={task.id}
+                            className={`text-sm cursor-pointer ${
+                              actionChecked[task.id]
+                                ? "text-[#8A95A8] line-through"
+                                : "text-[#4A5568]"
+                            }`}
+                          >
+                            {task.text}
+                          </label>
+                        </div>
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                );
+              })}
+            </CardContent>
+          </Card>
+        )
       )}
     </div>
   );

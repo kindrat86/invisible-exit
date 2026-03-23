@@ -30,7 +30,7 @@ serve(async (req) => {
       apiVersion: "2023-10-16",
     });
 
-    const { tier, returnUrl } = await req.json();
+    const { tier, returnUrl, cancelUrl } = await req.json();
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://invisibleexit.com";
 
     // Map tier names to Stripe price IDs
@@ -65,7 +65,9 @@ serve(async (req) => {
       mode: "subscription",
       line_items: [{ price: tierConfig.priceId, quantity: 1 }],
       success_url: successUrl,
-      cancel_url: `${siteUrl}/`,
+      cancel_url: cancelUrl
+        ? `${cancelUrl.startsWith("http") ? "" : siteUrl}${cancelUrl}`
+        : `${siteUrl}/`,
       allow_promotion_codes: false,
       metadata: { product: tierConfig.product },
     });

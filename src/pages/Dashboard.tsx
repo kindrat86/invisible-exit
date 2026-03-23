@@ -1,39 +1,50 @@
-import { useEffect, useState, useCallback, lazy, Suspense } from "react";
+import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import AuthGuard from "@/components/AuthGuard";
-import DashboardNav from "@/components/DashboardNav";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import DashboardLayout from "@/components/DashboardLayout";
 import FYMCalculator from "@/components/FYMCalculator";
 import FYMHistory from "@/components/FYMHistory";
-import WelcomeHeader from "@/components/fym/WelcomeHeader";
-import QuickStats from "@/components/fym/QuickStats";
+import DashboardOverview from "@/components/fym/DashboardOverview";
 import ReactivationScreen from "@/components/ReactivationScreen";
-import UpgradeBanner from "@/components/UpgradeBanner";
 import FeatureGate from "@/components/FeatureGate";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import ReportBadgeShareModal from "@/components/ReportBadgeShareModal";
+import OnboardingWizard from "@/components/fym/OnboardingWizard";
+import CoreStealthActions from "@/components/fym/CoreStealthActions";
+import UpgradePage from "@/components/fym/UpgradePage";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Share2 } from "lucide-react";
 import { useFymEntries } from "@/hooks/useFymEntries";
 import { useLatestFymEntry } from "@/hooks/useLatestFymEntry";
 import { useLatestInvisibilityScore } from "@/hooks/useInvisibilityScore";
-import { useLatestPipelineEntry } from "@/hooks/useIdeaPipeline";
-import type { CalculatorInputs, IdeaEntry } from "@/types/fym";
+import { useLatestPipelineEntry, usePipelineHistory } from "@/hooks/useIdeaPipeline";
+import { useMorningBriefing } from "@/hooks/useMorningBriefing";
+import {
+  evaluateFreedomLevel,
+  calculateProgressToNextLevel,
+  calculateMonthsToLevel,
+  calculateFymScore,
+  calculateFreedomPercentage,
+  calculateFinancialScore,
+  calculateCombinedReadinessScore,
+  FREEDOM_LEVELS,
+} from "@/lib/fym-calculations";
+import type { ReportBadgeData } from "@/lib/generateReportBadge";
+import type { CalculatorInputs, CalculatorInputsExpanded, IdeaEntry } from "@/types/fym";
 
 const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
 const InvisibilityScore = lazy(() => import("@/components/fym/InvisibilityScore"));
-const ExitTimeline = lazy(() => import("@/components/fym/ExitTimeline"));
+const IdeaQuiz = lazy(() => import("@/components/fym/IdeaQuiz"));
 const IdeaDirectory = lazy(() => import("@/components/fym/IdeaDirectory"));
 const IdeaPipeline = lazy(() => import("@/components/fym/IdeaPipeline"));
 const BrandManager = lazy(() => import("@/components/fym/BrandManager"));
 const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
+const ScenarioEngine = lazy(() => import("@/components/fym/ScenarioEngine"));
+const ReverseCalculator = lazy(() => import("@/components/fym/ReverseCalculator"));
+const RoadmapVoting = lazy(() => import("@/components/fym/RoadmapVoting"));
 const FeatureRequestBoard = lazy(() => import("@/components/features/FeatureRequestBoard"));
 
 interface Profile {
@@ -43,64 +54,156 @@ interface Profile {
   subscription_tier: string;
 }
 
-const VALID_TABS = ["calculator", "history", "trends", "invisibility", "ideas", "pipeline", "brand", "launch", "stealth", "features"] as const;
-type TabValue = (typeof VALID_TABS)[number];
+const VALID_TABS = [
+  "overview", "calculator", "history", "trends", "invisibility",
+  "stealth-core", "ideas", "pipeline", "brand", "launch",
+  "stealth-full", "scenarios", "reverse-calc", "upgrade", "roadmap", "features",
+] as const;
 
 function DashboardContent() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const tabParam = searchParams.get("tab") as TabValue | null;
-  const activeTab = tabParam && VALID_TABS.includes(tabParam) ? tabParam : "calculator";
+  const tabParam = searchParams.get("tab");
+  const activeTab = tabParam && (VALID_TABS as readonly string[]).includes(tabParam) ? tabParam : "overview";
 
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
   const [noProfile, setNoProfile] = useState(false);
   const [email, setEmail] = useState("");
   const [userId, setUserId] = useState("");
-  const [showOnboarding, setShowOnboarding] = useState(false);
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [ideasView, setIdeasView] = useState<"quiz" | "directory">("quiz");
+  const [reportBadgeOpen, setReportBadgeOpen] = useState(false);
+  const [reportBadgeData, setReportBadgeData] = useState<ReportBadgeData | null>(null);
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
   const { data: latestEntry, refetch: refetchLatest } = useLatestFymEntry(userId);
   const { data: latestInvisibility } = useLatestInvisibilityScore(userId);
   const { data: latestPipeline } = useLatestPipelineEntry(userId);
+  const { data: pipelineHistory = [] } = usePipelineHistory(userId);
 
   const setActiveTab = useCallback(
     (tab: string) => {
-      setSearchParams({ tab }, { replace: true });
+      if (tab === "overview") {
+        setSearchParams({}, { replace: true });
+      } else {
+        setSearchParams({ tab }, { replace: true });
+      }
     },
     [setSearchParams]
   );
 
   useEffect(() => {
     const load = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) return;
-
-      setEmail(user.email ?? "");
-      setUserId(user.id);
-
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("id, email, subscription_status, subscription_tier")
-        .eq("id", user.id)
-        .single();
-
-      if (error || !data) {
-        setNoProfile(true);
-      } else {
-        setProfile(data as Profile);
-        const onboardingKey = `fym_onboarded_${user.id}`;
-        if (!localStorage.getItem(onboardingKey)) {
-          setShowOnboarding(true);
-          localStorage.setItem(onboardingKey, "true");
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!user) {
+          setLoading(false);
+          return;
         }
+
+        setEmail(user.email ?? "");
+        setUserId(user.id);
+
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("id, email, subscription_status, subscription_tier")
+          .eq("id", user.id)
+          .single();
+
+        if (error || !data) {
+          setNoProfile(true);
+        } else {
+          setProfile(data as Profile);
+        }
+      } catch (err) {
+        console.error("Dashboard load failed:", err);
+        setNoProfile(true);
       }
       setLoading(false);
     };
     load();
   }, []);
+
+  // Check if onboarding should show
+  useEffect(() => {
+    if (userId && entries.length === 0 && !loading) {
+      const completed = localStorage.getItem(`onboarding_completed_${userId}`);
+      if (!completed) {
+        setShowOnboarding(true);
+      }
+    }
+  }, [userId, entries.length, loading]);
+
+  // Freedom level calculations for overview + sidebar ring
+  const expandedInputs = useMemo<CalculatorInputsExpanded>(() => {
+    if (!latestEntry) {
+      return {
+        monthsToExit: 24,
+        monthlyExpenses: 0,
+        monthlySideRevenue: 0,
+        monthlyGrowthRate: 0,
+        corporateSalary: 0,
+        targetMonthlyRevenue: 0,
+      };
+    }
+    return {
+      monthsToExit: Number(latestEntry.runway_months) || 24,
+      monthlyExpenses: Number(latestEntry.monthly_burn) || 0,
+      monthlySideRevenue: Number(latestEntry.monthly_revenue) || 0,
+      monthlyGrowthRate: Number(latestEntry.monthly_growth_rate) || 0,
+      corporateSalary: Number(latestEntry.corporate_salary) || 0,
+      targetMonthlyRevenue: Number(latestEntry.target_monthly_revenue) || 0,
+    };
+  }, [latestEntry]);
+
+  const freedomLevel = useMemo(() => evaluateFreedomLevel(expandedInputs), [expandedInputs]);
+  const progressToNext = useMemo(
+    () => calculateProgressToNextLevel(expandedInputs, freedomLevel),
+    [expandedInputs, freedomLevel]
+  );
+  const monthsToNextLevel = useMemo(
+    () => (freedomLevel < 5 ? calculateMonthsToLevel(expandedInputs, freedomLevel + 1) : null),
+    [expandedInputs, freedomLevel]
+  );
+
+  const burn = latestEntry ? Number(latestEntry.monthly_burn) : 0;
+  const revenue = latestEntry ? Number(latestEntry.monthly_revenue) : 0;
+  const freedomPct = burn > 0 ? Math.min(Math.round((revenue / burn) * 100), 100) : 0;
+
+  // Morning briefing for overview
+  const briefing = useMorningBriefing(entries, latestEntry, latestInvisibility);
+
+  // Phase completion tracking
+  const phaseCompletion = useMemo(() => {
+    const completion: Record<number, boolean> = {};
+
+    // Phase 1: Has at least one entry
+    completion[1] = entries.length > 0;
+
+    // Phase 2: Has invisibility score
+    completion[2] = !!latestInvisibility;
+
+    // Phase 3: Has at least one pipeline entry
+    completion[3] = pipelineHistory.length > 0;
+
+    // Phase 4: Check brand/launch progress (localStorage)
+    const brandState = localStorage.getItem(`brand_manager_state_${userId}`);
+    completion[4] = !!brandState;
+
+    // Phase 5: Check if stealth ops have been accessed
+    completion[5] = false; // Advanced features, rarely "complete"
+
+    return completion;
+  }, [entries.length, latestInvisibility, pipelineHistory.length, userId]);
+
+  // Pipeline gating: 1 free validation for starters
+  const completedValidations = pipelineHistory.filter(
+    (entry) => entry.verdict !== null
+  ).length;
+  const pipelineValidationsRemaining = Math.max(0, 1 - completedValidations);
 
   const handleSaved = useCallback(() => {
     refetchEntries();
@@ -113,6 +216,43 @@ function DashboardContent() {
     },
     [setActiveTab]
   );
+
+  const handleShareReport = useCallback(() => {
+    if (!latestEntry) return;
+    const level = latestEntry.freedom_level ?? 0;
+    const levelName = level > 0 ? FREEDOM_LEVELS[level - 1]?.name : "Pre-Launch";
+    const entryBurn = Number(latestEntry.monthly_burn);
+    const entryRevenue = Number(latestEntry.monthly_revenue);
+    const fymScore = calculateFymScore(entryBurn, entryRevenue);
+    const entryFreedomPct = calculateFreedomPercentage(entryRevenue, entryBurn);
+    const financialScore = calculateFinancialScore(entryRevenue, entryBurn);
+    const exitReadiness = calculateCombinedReadinessScore(
+      financialScore,
+      latestInvisibility?.total_score ?? null
+    );
+    const tier: ReportBadgeData["tier"] =
+      profile?.subscription_tier === "founding" || profile?.subscription_tier === "standard"
+        ? (profile.subscription_tier as "founding" | "standard")
+        : "starter";
+    const now = new Date();
+
+    setReportBadgeData({
+      tier,
+      freedomLevel: level,
+      levelName: levelName ?? "Pre-Launch",
+      fymScore,
+      freedomPercentage: entryFreedomPct,
+      exitReadiness,
+      generatedDate: now.toLocaleDateString("en-US", { month: "short", year: "numeric" }),
+    });
+    setReportBadgeOpen(true);
+  }, [latestEntry, latestInvisibility, profile?.subscription_tier]);
+
+  const handleOnboardingComplete = useCallback(() => {
+    setShowOnboarding(false);
+    refetchEntries();
+    refetchLatest();
+  }, [refetchEntries, refetchLatest]);
 
   if (loading) {
     return (
@@ -128,21 +268,16 @@ function DashboardContent() {
 
   if (noProfile) {
     return (
-      <div className="min-h-screen bg-[#1B2A4A]">
-        <DashboardNav email={email} />
-        <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="min-h-screen bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
+        <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-4">
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-[#0B1D3A]">
               Your account is being set up.
             </h2>
-            <p className="text-blue-200">
-              Check your email for login details, or refresh this page in a
-              moment.
+            <p className="text-[#4A5568]">
+              Check your email for login details, or refresh this page in a moment.
             </p>
-            <Button
-              variant="outline"
-              onClick={() => window.location.reload()}
-            >
+            <Button variant="outline" onClick={() => window.location.reload()}>
               Refresh
             </Button>
           </div>
@@ -164,173 +299,293 @@ function DashboardContent() {
     </div>
   );
 
-  return (
-    <div className="min-h-screen bg-[#1B2A4A]">
-      <DashboardNav email={email} />
+  // Onboarding wizard overlay
+  if (showOnboarding && isActive) {
+    return (
+      <OnboardingWizard userId={userId} onComplete={handleOnboardingComplete} />
+    );
+  }
 
-      <Dialog open={showOnboarding} onOpenChange={setShowOnboarding}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Welcome to your FYM Dashboard</DialogTitle>
-            <DialogDescription>
-              Enter your numbers below to calculate your Founder Yield Monthly.
-              Check in every morning. Watch your exit take shape.
-            </DialogDescription>
-          </DialogHeader>
-          <Button
-            onClick={() => setShowOnboarding(false)}
-            className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
-          >
-            Get Started
-          </Button>
-        </DialogContent>
-      </Dialog>
-
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {isActive ? (
-          <>
-            {isStarter && <UpgradeBanner />}
-            <WelcomeHeader email={email} latestEntry={latestEntry} />
-            <QuickStats
-              entries={entries}
-              latestEntry={latestEntry}
-              latestInvisibility={latestInvisibility}
-              latestPipeline={latestPipeline}
-            />
-
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="mb-8 flex overflow-x-auto w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
-                <TabsTrigger value="calculator" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Calculator</TabsTrigger>
-                <TabsTrigger value="history" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">History</TabsTrigger>
-                <TabsTrigger value="trends" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Trends</TabsTrigger>
-                <TabsTrigger value="invisibility" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Invisibility</TabsTrigger>
-                <TabsTrigger value="ideas" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Ideas</TabsTrigger>
-                <TabsTrigger value="pipeline" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Pipeline</TabsTrigger>
-                <TabsTrigger value="brand" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Brand</TabsTrigger>
-                <TabsTrigger value="launch" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Launch</TabsTrigger>
-                <TabsTrigger value="stealth" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Stealth Ops</TabsTrigger>
-                <TabsTrigger value="features" className="flex-shrink-0 text-blue-200 data-[state=active]:bg-white/10 data-[state=active]:text-white rounded-md transition-all duration-200 text-sm font-medium">Features</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="calculator">
-                <FYMCalculator
-                  userId={userId}
-                  onSaved={handleSaved}
-                  entries={entries}
-                  latestEntry={latestEntry}
-                  latestInvisibility={latestInvisibility}
-                  onSwitchTab={setActiveTab}
-                />
-              </TabsContent>
-
-              <TabsContent value="history">
-                <FYMHistory
-                  userId={userId}
-                  refreshKey={0}
-                  onLoadEntry={handleLoadEntry}
-                />
-              </TabsContent>
-
-              <TabsContent value="trends">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to see your FYM trends and projections">
-                  <Suspense fallback={tabFallback}>
-                    <FymTrends userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="invisibility">
-                <Suspense fallback={tabFallback}>
-                  <InvisibilityScore userId={userId} />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="ideas">
-                <Suspense fallback={tabFallback}>
-                  <IdeaDirectory
-                    onValidateIdea={(idea) => {
-                      setPendingPipelineIdea(idea);
-                      setActiveTab("pipeline");
-                    }}
-                    onSwitchTab={setActiveTab}
-                  />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="pipeline">
-                <Suspense fallback={tabFallback}>
-                  <IdeaPipeline
-                    userId={userId}
-                    onSwitchTab={setActiveTab}
-                    pendingIdea={pendingPipelineIdea}
-                    onClearPendingIdea={() => setPendingPipelineIdea(null)}
-                  />
-                </Suspense>
-              </TabsContent>
-
-              <TabsContent value="brand">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access content calendar, YouTube scripts, and Reddit playbooks">
-                  <Suspense fallback={tabFallback}>
-                    <BrandManager userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="launch">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access launch automation and tracking">
-                  <Suspense fallback={tabFallback}>
-                    <LaunchControl userId={userId} />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="stealth">
-                <FeatureGate hasFullAccess={hasFullAccess} lockedMessage="Upgrade to Full Toolkit to access the full compliance playbook and fixes">
-                  <Suspense fallback={tabFallback}>
-                    <StealthOpsHub />
-                  </Suspense>
-                </FeatureGate>
-              </TabsContent>
-
-              <TabsContent value="features">
-                <Suspense fallback={tabFallback}>
-                  <FeatureRequestBoard
-                    userId={userId}
-                    email={email}
-                    hasFullAccess={hasFullAccess ?? false}
-                    isStarter={isStarter ?? false}
-                  />
-                </Suspense>
-              </TabsContent>
-            </Tabs>
-          </>
-        ) : (
-          <ReactivationScreen
-            onViewHistory={() => setActiveTab("history")}
-          />
-        )}
-
-        {!isActive && activeTab === "history" && (
+  if (!isActive) {
+    return (
+      <DashboardLayout
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        email={email}
+        freedomPct={freedomPct}
+        isStarter={false}
+        subscriptionTier={profile?.subscription_tier}
+      >
+        <ReactivationScreen onViewHistory={() => setActiveTab("history")} />
+        {activeTab === "history" && (
           <div className="mt-6">
             <FYMHistory userId={userId} refreshKey={0} />
-            <Button
-              variant="outline"
-              className="mt-4"
-              onClick={() => setActiveTab("calculator")}
-            >
+            <Button variant="outline" className="mt-4" onClick={() => setActiveTab("overview")}>
               Back
             </Button>
           </div>
         )}
-      </main>
-    </div>
+      </DashboardLayout>
+    );
+  }
+
+  // Nudge banner for incomplete prior phases
+  const getNudgeBanner = () => {
+    const tabToPhase: Record<string, number> = {
+      calculator: 1, history: 1,
+      invisibility: 2, "stealth-core": 2,
+      ideas: 3, pipeline: 3,
+      brand: 4, launch: 4,
+      trends: 5, "stealth-full": 5, scenarios: 5, "reverse-calc": 5,
+    };
+    const currentPhase = tabToPhase[activeTab];
+    if (!currentPhase || currentPhase <= 1) return null;
+
+    // Check if prior phases are incomplete
+    for (let i = 1; i < currentPhase; i++) {
+      if (!phaseCompletion[i]) {
+        return (
+          <div className="bg-[#60A5FA]/5 border border-[#60A5FA]/10 rounded-lg px-4 py-3 mb-4">
+            <p className="text-xs text-[#60A5FA]">
+              Tip: Most members complete Phase {i} first. Your freedom number drives everything else.
+            </p>
+          </div>
+        );
+      }
+    }
+    return null;
+  };
+
+  return (
+    <DashboardLayout
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+      email={email}
+      freedomPct={freedomPct}
+      isStarter={!!isStarter}
+      subscriptionTier={profile?.subscription_tier}
+      phaseCompletion={phaseCompletion}
+      pipelineValidationsRemaining={pipelineValidationsRemaining}
+    >
+      {getNudgeBanner()}
+
+      {activeTab === "overview" && (
+        <>
+          <DashboardOverview
+            email={email}
+            entries={entries}
+            latestEntry={latestEntry}
+            latestInvisibility={latestInvisibility}
+            latestPipeline={latestPipeline}
+            onTabChange={setActiveTab}
+            freedomLevel={freedomLevel}
+            progressToNext={progressToNext}
+            monthsToNextLevel={monthsToNextLevel}
+            isStarter={!!isStarter}
+            hasFullAccess={!!hasFullAccess}
+            tier={profile?.subscription_tier}
+            briefing={briefing}
+            pipelineHistory={pipelineHistory}
+            userId={userId}
+          />
+          {latestEntry && (
+            <div className="flex justify-end mt-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleShareReport}
+                className="text-xs text-[#8A95A8] hover:text-[#0B1D3A]"
+              >
+                <Share2 className="h-3 w-3 mr-1" />
+                Share Report
+              </Button>
+            </div>
+          )}
+        </>
+      )}
+
+      {activeTab === "calculator" && (
+        <FYMCalculator
+          userId={userId}
+          onSaved={handleSaved}
+          entries={entries}
+          latestEntry={latestEntry}
+          latestInvisibility={latestInvisibility}
+          onSwitchTab={setActiveTab}
+          hasFullAccess={!!hasFullAccess}
+          subscriptionTier={profile?.subscription_tier}
+        />
+      )}
+
+      {activeTab === "history" && (
+        <FYMHistory userId={userId} refreshKey={0} onLoadEntry={handleLoadEntry} />
+      )}
+
+      {activeTab === "invisibility" && (
+        <Suspense fallback={tabFallback}>
+          <InvisibilityScore userId={userId} hasFullAccess={!!hasFullAccess} />
+        </Suspense>
+      )}
+
+      {activeTab === "stealth-core" && (
+        <CoreStealthActions userId={userId} onSwitchTab={setActiveTab} />
+      )}
+
+      {activeTab === "ideas" && (
+        <Suspense fallback={tabFallback}>
+          {ideasView === "quiz" ? (
+            <IdeaQuiz
+              onValidateIdea={(idea) => {
+                setPendingPipelineIdea(idea);
+                setActiveTab("pipeline");
+              }}
+              onSwitchTab={setActiveTab}
+              onBrowseAll={() => setIdeasView("directory")}
+            />
+          ) : (
+            <IdeaDirectory
+              onValidateIdea={(idea) => {
+                setPendingPipelineIdea(idea);
+                setActiveTab("pipeline");
+              }}
+              onSwitchTab={setActiveTab}
+              hasFullAccess={!!hasFullAccess}
+            />
+          )}
+          {ideasView === "directory" && (
+            <div className="mt-4">
+              <button
+                onClick={() => setIdeasView("quiz")}
+                className="text-xs text-[#60A5FA] hover:underline"
+              >
+                Back to Idea Quiz
+              </button>
+            </div>
+          )}
+        </Suspense>
+      )}
+
+      {activeTab === "pipeline" && (
+        <Suspense fallback={tabFallback}>
+          <IdeaPipeline
+            userId={userId}
+            onSwitchTab={setActiveTab}
+            pendingIdea={pendingPipelineIdea}
+            onClearPendingIdea={() => setPendingPipelineIdea(null)}
+            hasFullAccess={!!hasFullAccess}
+          />
+        </Suspense>
+      )}
+
+      {activeTab === "brand" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="brand"
+        >
+          <Suspense fallback={tabFallback}>
+            <BrandManager userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "launch" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="launch"
+        >
+          <Suspense fallback={tabFallback}>
+            <LaunchControl userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "trends" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="trends"
+        >
+          <Suspense fallback={tabFallback}>
+            <FymTrends userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "stealth-full" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="stealth-full"
+        >
+          <Suspense fallback={tabFallback}>
+            <StealthOpsHub userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "scenarios" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="scenarios"
+        >
+          <Suspense fallback={tabFallback}>
+            <ScenarioEngine inputs={expandedInputs} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "reverse-calc" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="reverse-calc"
+        >
+          <Suspense fallback={tabFallback}>
+            <ReverseCalculator inputs={expandedInputs} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "upgrade" && (
+        <UpgradePage userId={userId} />
+      )}
+
+      {activeTab === "roadmap" && (
+        <FeatureGate
+          hasFullAccess={!!hasFullAccess}
+          featureId="roadmap"
+        >
+          <Suspense fallback={tabFallback}>
+            <RoadmapVoting userId={userId} />
+          </Suspense>
+        </FeatureGate>
+      )}
+
+      {activeTab === "features" && (
+        <Suspense fallback={tabFallback}>
+          <FeatureRequestBoard
+            userId={userId}
+            email={email}
+            hasFullAccess={!!hasFullAccess}
+            isStarter={!!isStarter}
+          />
+        </Suspense>
+      )}
+
+      {reportBadgeData && (
+        <ReportBadgeShareModal
+          open={reportBadgeOpen}
+          onOpenChange={setReportBadgeOpen}
+          badgeData={reportBadgeData}
+        />
+      )}
+    </DashboardLayout>
   );
 }
 
 export default function Dashboard() {
   return (
     <AuthGuard>
-      <DashboardContent />
+      <ErrorBoundary>
+        <DashboardContent />
+      </ErrorBoundary>
     </AuthGuard>
   );
 }
