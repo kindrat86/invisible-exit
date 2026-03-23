@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard.tsx";
 import Badge from "./pages/Badge.tsx";
 import Confirmation from "./pages/Confirmation.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
+import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/admin/feature-requests" element={<AdminFeatureRequests />} />
           <Route path="/fym/badge/:shareId" element={<Badge />} />
           {/* Redirects from old URLs */}
           <Route path="/fym" element={<Navigate to="/" replace />} />
