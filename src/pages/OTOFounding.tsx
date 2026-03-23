@@ -16,18 +16,10 @@ const OTOFounding = () => {
   const sessionId = searchParams.get("session_id");
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [foundingCount, setFoundingCount] = useState<number | null>(null);
-
-  const foundingSpotsLeft =
-    foundingCount !== null ? Math.max(0, 100 - foundingCount) : 54;
 
   useEffect(() => {
     document.title = "Founding Member Invitation | Invisible Exit";
     trackEvent("oto_page_viewed");
-
-    supabase.rpc("get_founding_member_count").then(({ data }) => {
-      if (data !== null) setFoundingCount(data);
-    });
 
     if (sessionId) {
       supabase.functions
@@ -118,11 +110,6 @@ const OTOFounding = () => {
             Those Still Planning a Year Later.
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-[17px] text-[#8A95A8] max-w-[560px] mx-auto leading-relaxed">
-            I have something for the first {foundingSpotsLeft} members only.
-            Read this once. It won't appear again.
-          </p>
         </div>
       </section>
 
@@ -180,11 +167,6 @@ const OTOFounding = () => {
             </p>
           </div>
 
-          <p className="mt-8 text-base leading-[1.7] text-[#8A95A8]">
-            That's why I built the complete toolkit. And that's why I'm offering
-            it to you right now, as one of the first {foundingSpotsLeft} people,
-            at a price I will never offer again.
-          </p>
         </div>
       </section>
 
