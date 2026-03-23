@@ -543,7 +543,7 @@ function DashboardContent() {
           featureId="roadmap"
         >
           <Suspense fallback={tabFallback}>
-            <RoadmapVoting />
+            <RoadmapVoting userId={userId} />
           </Suspense>
         </FeatureGate>
       )}
