@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import { Check, LayoutDashboard } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { ArrowRight, Check, LayoutDashboard } from "lucide-react";
+import Footer from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -71,7 +72,7 @@ const OTOFounding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1D3A]">
+    <div className="min-h-screen bg-[#1B2A4A]">
       {/* ─── 1. Confirmation Banner (sticky) ─── */}
       {paymentConfirmed && (
         <div
@@ -112,14 +113,14 @@ const OTOFounding = () => {
           </span>
 
           {/* Headline */}
-          <h1 className="text-[clamp(26px,5vw,40px)] font-bold text-white leading-tight mb-6 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-white leading-tight mb-6 max-w-2xl mx-auto">
             You Just Got the Map. Here's What Separates Those Who{" "}
             <span className="text-[#60A5FA]">Escape in 90 Days</span> from
             Those Still Planning a Year Later.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[17px] text-[#8A95A8] max-w-[560px] mx-auto leading-relaxed">
+          <p className="text-[17px] text-white/70 max-w-[560px] mx-auto leading-relaxed">
             I have something for the first {foundingSpotsLeft} members only.
             Read this once. It won't appear again.
           </p>
@@ -133,21 +134,21 @@ const OTOFounding = () => {
 
       {/* ─── 4. Divider ─── */}
       <div className="flex justify-center my-11">
-        <div className="w-12 h-[2px] bg-[rgba(96,165,250,0.15)]" />
+        <div className="w-12 h-[2px] bg-white/20" />
       </div>
 
       {/* ─── 5. Adrian's Story ─── */}
       <section className="px-6 py-8">
         <div className="max-w-[720px] mx-auto">
-          <p className="text-[11px] uppercase tracking-[2px] text-[#60A5FA] font-medium mb-6">
+          <p className="text-xs uppercase tracking-[2px] text-[#60A5FA] font-semibold mb-6">
             A MESSAGE FROM ME
           </p>
 
-          <h2 className="text-[24px] font-bold text-white mb-8">
+          <h2 className="text-[30px] font-bold text-white mb-8">
             The Wall I Hit at Day 60
           </h2>
 
-          <div className="space-y-6 text-base leading-[1.7] text-[#8A95A8]">
+          <div className="space-y-6 text-base leading-[1.7] text-white/70">
             <p>
               My first two months, I used the dashboard religiously. I validated
               one idea. I even picked a market. I felt like I was making
@@ -180,7 +181,7 @@ const OTOFounding = () => {
             </p>
           </div>
 
-          <p className="mt-8 text-base leading-[1.7] text-[#8A95A8]">
+          <p className="mt-8 text-base leading-[1.7] text-white/70">
             That's why I built the complete toolkit. And that's why I'm offering
             it to you right now, as one of the first {foundingSpotsLeft} people,
             at a price I will never offer again.
@@ -190,7 +191,7 @@ const OTOFounding = () => {
 
       {/* ─── 6. Divider ─── */}
       <div className="flex justify-center my-11">
-        <div className="w-12 h-[2px] bg-[rgba(96,165,250,0.15)]" />
+        <div className="w-12 h-[2px] bg-white/20" />
       </div>
 
       {/* ─── 7. Value Stack ─── */}
@@ -205,7 +206,7 @@ const OTOFounding = () => {
           <p className="text-base font-bold text-[#60A5FA]">
             Limited to the first 100 Founding Members.
           </p>
-          <p className="text-base text-[#8A95A8] mt-2">
+          <p className="text-base text-white/70 mt-2">
             When founding closes, this page and this price disappear
             permanently.
           </p>
@@ -221,13 +222,14 @@ const OTOFounding = () => {
           <button
             onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="w-full bg-[#60A5FA] hover:bg-[#93c5fd] text-[#0B1D3A] font-bold text-[17px] py-[18px] px-12 rounded-[10px] shadow-[0_4px_24px_rgba(96,165,250,0.25)] hover:shadow-[0_4px_32px_rgba(96,165,250,0.35)] hover:-translate-y-[1px] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#60A5FA] hover:bg-[#93c5fd] text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-[0_4px_24px_rgba(96,165,250,0.25)] hover:shadow-[0_4px_32px_rgba(96,165,250,0.35)] hover:-translate-y-[1px] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
           >
             {checkoutLoading
               ? "Loading..."
               : "Become a Founding Member — $17.99/mo"}
+            {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
           </button>
-          <p className="text-[13px] text-[#4A5568] mt-4">
+          <p className="text-[13px] text-white/40 mt-4">
             30-day money-back guarantee. Locked for life.
           </p>
         </div>
@@ -236,16 +238,16 @@ const OTOFounding = () => {
       {/* ─── 12. Email Notice + Dashboard Link ─── */}
       <section className="px-6 py-8">
         <div className="max-w-[720px] mx-auto">
-          <div className="bg-[rgba(96,165,250,0.06)] border border-[rgba(96,165,250,0.15)] rounded-xl p-6 text-center">
+          <div className="bg-[rgba(96,165,250,0.06)] border border-white/10 rounded-xl p-6 text-center">
             <h4 className="text-base font-semibold text-white mb-3">
               Important: Make Sure You Get My Emails
             </h4>
-            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+            <p className="text-sm text-white/70 mb-4 leading-relaxed">
               I just sent you a welcome email with your login details and next
               steps. If you don't see it in the next few minutes, check your spam
               or promotions folder.
             </p>
-            <p className="text-sm text-[#8A95A8] mb-4 leading-relaxed">
+            <p className="text-sm text-white/70 mb-4 leading-relaxed">
               To make sure nothing gets lost, add this address to your contacts
               or favorites:
             </p>
@@ -255,13 +257,13 @@ const OTOFounding = () => {
               escape@invisibleexit.com
             </span>
 
-            <p className="text-[13px] text-[#4A5568] leading-relaxed">
+            <p className="text-[13px] text-white/40 leading-relaxed">
               Gmail users: drag the email from Promotions to Primary. Outlook
               users: right-click and select "Always move to Inbox."
             </p>
 
             {/* Dashboard link */}
-            <div className="border-t border-[rgba(96,165,250,0.15)] mt-6 pt-5">
+            <div className="border-t border-white/10 mt-6 pt-5">
               <a
                 href={DASHBOARD_URL}
                 className="inline-flex items-center gap-2 text-[#60A5FA] text-sm font-semibold hover:text-[#93c5fd] transition-colors"
@@ -269,7 +271,7 @@ const OTOFounding = () => {
                 <LayoutDashboard className="w-4 h-4" />
                 Go to your dashboard now
               </a>
-              <p className="text-[12px] text-[#4A5568] mt-2">
+              <p className="text-[12px] text-white/40 mt-2">
                 Use this link if you didn't receive the welcome email.
               </p>
             </div>
@@ -283,7 +285,7 @@ const OTOFounding = () => {
           <a
             href={DASHBOARD_URL}
             onClick={handleDecline}
-            className="text-sm text-[#4A5568] underline hover:text-[#8A95A8] transition-colors"
+            className="text-sm text-white/40 underline hover:text-white/60 transition-colors"
           >
             No thanks, I'll start with limited access and pay full price later
             if I change my mind.
@@ -292,31 +294,7 @@ const OTOFounding = () => {
       </section>
 
       {/* ─── 14. Footer ─── */}
-      <footer className="border-t border-[rgba(96,165,250,0.15)] px-6 py-8">
-        <div className="max-w-[720px] mx-auto text-center">
-          <p className="text-base font-semibold text-[#8A95A8] mb-3">
-            Invisible Exit
-          </p>
-          <div className="flex items-center justify-center gap-4 mb-3">
-            <Link
-              to="/privacy"
-              className="text-[13px] text-[#4A5568] hover:text-[#8A95A8] transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-[#4A5568]">|</span>
-            <Link
-              to="/terms"
-              className="text-[13px] text-[#4A5568] hover:text-[#8A95A8] transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
-          <p className="text-[12px] text-[#4A5568]">
-            &copy; {new Date().getFullYear()} Invisible Exit
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
