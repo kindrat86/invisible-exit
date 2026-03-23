@@ -331,6 +331,7 @@ function DashboardContent() {
           monthsToNextLevel={monthsToNextLevel}
           isStarter={!!isStarter}
           hasFullAccess={!!hasFullAccess}
+          tier={profile?.subscription_tier}
           briefing={briefing}
           pipelineHistory={pipelineHistory}
           userId={userId}

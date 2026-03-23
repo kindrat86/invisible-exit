@@ -5,6 +5,7 @@ import { Calculator } from "lucide-react";
 interface DashboardTopBarProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
+  tier?: string;
 }
 
 const TAB_LABELS: Record<string, { phase: string; label: string }> = {
@@ -26,6 +27,7 @@ const TAB_LABELS: Record<string, { phase: string; label: string }> = {
 export default function DashboardTopBar({
   activeTab,
   onTabChange,
+  tier,
 }: DashboardTopBarProps) {
   const tab = TAB_LABELS[activeTab] ?? { phase: "", label: "Dashboard" };
 
@@ -47,6 +49,13 @@ export default function DashboardTopBar({
       </nav>
 
       <div className="flex-1" />
+
+      {/* Founding Member pill */}
+      {tier === "founding" && (
+        <span className="bg-[#60A5FA]/10 text-[#60A5FA] text-[10px] font-semibold px-2.5 py-1 rounded-full hidden sm:inline-flex items-center gap-1">
+          ✦ Founding Member
+        </span>
+      )}
 
       {/* Quick action */}
       {activeTab !== "calculator" && (

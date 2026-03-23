@@ -211,9 +211,15 @@ export default function DashboardSidebar({
             <span className="text-[#0B1D3A] font-bold text-sm leading-tight truncate">
               Invisible Exit
             </span>
-            <span className="text-[10px] text-[#9CA3AF] leading-tight">
-              FYM Dashboard
-            </span>
+            {subscriptionTier === "founding" ? (
+              <span className="text-[10px] font-semibold text-[#60A5FA] leading-tight flex items-center gap-1">
+                Founding Member ✦
+              </span>
+            ) : (
+              <span className="text-[10px] text-[#9CA3AF] leading-tight">
+                FYM Dashboard
+              </span>
+            )}
           </div>
         </div>
       </SidebarHeader>
