@@ -3,32 +3,32 @@ import { useCallback, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { LaunchProgress } from "@/types/fym";
 
-const STORAGE_KEY = "fym_launch_progress";
+const STORAGE_PREFIX = "fym_launch_progress_";
 
-function readLocalProgress(): Record<string, boolean> {
+function readLocalProgress(userId: string): Record<string, boolean> {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_PREFIX + userId);
     return raw ? JSON.parse(raw) : {};
   } catch {
     return {};
   }
 }
 
-function writeLocalProgress(tasks: Record<string, boolean>) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+function writeLocalProgress(userId: string, tasks: Record<string, boolean>) {
+  localStorage.setItem(STORAGE_PREFIX + userId, JSON.stringify(tasks));
 }
 
-function readLocalIdea(): { id: string | null; title: string | null } {
+function readLocalIdea(userId: string): { id: string | null; title: string | null } {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY + "_idea");
+    const raw = localStorage.getItem(STORAGE_PREFIX + userId + "_idea");
     return raw ? JSON.parse(raw) : { id: null, title: null };
   } catch {
     return { id: null, title: null };
   }
 }
 
-function writeLocalIdea(id: string | null, title: string | null) {
-  localStorage.setItem(STORAGE_KEY + "_idea", JSON.stringify({ id, title }));
+function writeLocalIdea(userId: string, id: string | null, title: string | null) {
+  localStorage.setItem(STORAGE_PREFIX + userId + "_idea", JSON.stringify({ id, title }));
 }
 
 export function useLatestLaunchProgress(userId: string) {
@@ -67,9 +67,9 @@ export function useSaveLaunchProgress(userId: string) {
       >
     ) => {
       // Always persist to localStorage as fallback
-      writeLocalProgress(progress.completed_tasks);
+      writeLocalProgress(userId, progress.completed_tasks);
       if (progress.selected_idea_id) {
-        writeLocalIdea(progress.selected_idea_id, progress.selected_idea_title);
+        writeLocalIdea(userId, progress.selected_idea_id, progress.selected_idea_title);
       }
 
       const { data: existing } = await supabase
@@ -129,8 +129,8 @@ export function useLaunchState(userId: string) {
   const saveMutation = useSaveLaunchProgress(userId);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const localTasks = readLocalProgress();
-  const localIdea = readLocalIdea();
+  const localTasks = readLocalProgress(userId);
+  const localIdea = readLocalIdea(userId);
 
   const initialTasks =
     dbProgress?.completed_tasks && Object.keys(dbProgress.completed_tasks).length > 0
@@ -159,7 +159,7 @@ export function useLaunchState(userId: string) {
 
   const debouncedSave = useCallback(
     (tasks: Record<string, boolean>) => {
-      writeLocalProgress(tasks);
+      writeLocalProgress(userId, tasks);
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
         saveMutation.mutate({
@@ -190,7 +190,7 @@ export function useLaunchState(userId: string) {
     (id: string, title: string) => {
       setIdeaId(id);
       setIdeaTitle(title);
-      writeLocalIdea(id, title);
+      writeLocalIdea(userId, id, title);
       saveMutation.mutate({
         completed_tasks: completedTasks,
         selected_idea_id: id,

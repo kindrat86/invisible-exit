@@ -27,7 +27,7 @@ function FreedomLevelStepperInner({
                   <div
                     className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                       isCompleted
-                        ? "bg-green-400 text-white"
+                        ? "bg-[#2563EB] text-white"
                         : isCurrent
                           ? "bg-[#60A5FA] text-white ring-4 ring-blue-200/60 animate-pulse-ring"
                           : "bg-gray-200 text-gray-400"
@@ -38,7 +38,7 @@ function FreedomLevelStepperInner({
                   <p
                     className={`text-[11px] mt-1.5 text-center leading-tight max-w-[90px] ${
                       isCompleted
-                        ? "text-green-600 font-medium"
+                        ? "text-[#2563EB] font-medium"
                         : isCurrent
                           ? "text-[#60A5FA] font-medium"
                           : "text-gray-400"
@@ -52,7 +52,7 @@ function FreedomLevelStepperInner({
                   <div className="flex-1 h-0.5 mx-1.5 relative">
                     <div className="absolute inset-0 bg-gray-200 rounded" />
                     {isCompleted && (
-                      <div className="absolute inset-0 bg-green-400 rounded transition-all duration-500" />
+                      <div className="absolute inset-0 bg-[#2563EB] rounded transition-all duration-500" />
                     )}
                     {isCurrent && (
                       <div
@@ -119,7 +119,7 @@ function FreedomLevelStepperInner({
                   <div
                     className={`h-full rounded-full transition-all duration-500 ease-out ${
                       isCompleted
-                        ? "bg-green-400"
+                        ? "bg-[#2563EB]"
                         : isCurrent
                           ? "bg-[#60A5FA]"
                           : "bg-transparent"
