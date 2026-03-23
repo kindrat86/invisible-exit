@@ -17,6 +17,7 @@ interface SmartInputPanelProps {
     value: CalculatorInputsExpanded[K]
   ) => void;
   onReset: () => void;
+  isFirstTime?: boolean;
 }
 
 const GROWTH_PRESETS = [
@@ -128,6 +129,7 @@ export default function SmartInputPanel({
   inputs,
   onUpdate,
   onReset,
+  isFirstTime = false,
 }: SmartInputPanelProps) {
   return (
     <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-all duration-300 p-6">
@@ -233,7 +235,9 @@ export default function SmartInputPanel({
         </div>
       </div>
 
-      {/* Row 2: Your Exit Trajectory */}
+      {/* Row 2: Your Exit Trajectory (hidden for first-time users) */}
+      {!isFirstTime && (
+      <>
       <p className="section-label mb-3 pb-2 border-b border-gray-100">
         Your Exit Trajectory
       </p>
@@ -335,6 +339,8 @@ export default function SmartInputPanel({
           </div>
         </div>
       </div>
+      </>
+      )}
     </div>
   );
 }
