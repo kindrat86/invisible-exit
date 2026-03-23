@@ -310,6 +310,7 @@ function DashboardContent() {
       email={email}
       freedomPct={freedomPct}
       isStarter={!!isStarter}
+      tier={profile?.subscription_tier}
       phaseCompletion={phaseCompletion}
       pipelineValidationsRemaining={pipelineValidationsRemaining}
     >
@@ -328,6 +329,7 @@ function DashboardContent() {
           monthsToNextLevel={monthsToNextLevel}
           isStarter={!!isStarter}
           hasFullAccess={!!hasFullAccess}
+          tier={profile?.subscription_tier}
           briefing={briefing}
           pipelineHistory={pipelineHistory}
           userId={userId}

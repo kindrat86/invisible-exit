@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { formatCurrency, calculateFreedomNumber, projectRevenue } from "@/lib/fym-calculations";
 import ProgressRing from "@/components/fym/ProgressRing";
 import FreedomLevels from "@/components/fym/FreedomLevels";
@@ -13,6 +13,10 @@ import {
   ChevronRight,
   Flame,
   TrendingUp,
+  Copy,
+  Check,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -29,6 +33,7 @@ interface DashboardOverviewProps {
   monthsToNextLevel: number | null;
   isStarter: boolean;
   hasFullAccess?: boolean;
+  tier?: string;
   briefing?: MorningBriefingData | null;
   pipelineHistory?: PipelineEntry[];
   userId?: string;
@@ -73,6 +78,7 @@ export default function DashboardOverview({
       monthsToNextLevel={monthsToNextLevel}
       isStarter={isStarter}
       hasFullAccess={hasFullAccess}
+      tier={tier}
       briefing={briefing}
       pipelineHistory={pipelineHistory}
       userId={userId}
@@ -208,6 +214,7 @@ function ReturningOverview({
   monthsToNextLevel,
   isStarter,
   hasFullAccess,
+  tier,
   briefing,
   pipelineHistory,
   userId,
@@ -406,6 +413,11 @@ function ReturningOverview({
         <MorningBriefing briefing={briefing} hasEntries={true} />
       )}
 
+      {/* Founding Member share card */}
+      {tier === "founding" && (
+        <FoundingMemberCard />
+      )}
+
       {/* Moment 1: Third entry upgrade card (below briefing) */}
       {showMoment1 && (
         <ContextualUpgradeCard
@@ -529,6 +541,105 @@ function StatCard({
       <p className="text-2xl font-bold text-[#0B1D3A] mt-2 number-display">
         {value}
       </p>
+    </div>
+  );
+}
+
+// --- Founding Member Share Card ---
+
+function FoundingMemberCard() {
+  const [copied, setCopied] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const siteUrl = "https://invisibleexit.com";
+  const shareUrl = `${siteUrl}/oto/founding`;
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(
+      `I'm a Founding Member of Invisible Exit — building my exit plan in stealth. ${shareUrl}`
+    );
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleReddit = () => {
+    const title = encodeURIComponent(
+      "Just became a Founding Member of Invisible Exit. Building my exit plan in stealth."
+    );
+    const url = encodeURIComponent(shareUrl);
+    window.open(
+      `https://www.reddit.com/submit?url=${url}&title=${title}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handleDownload = async () => {
+    if (!cardRef.current) return;
+    setDownloading(true);
+    try {
+      const html2canvas = (await import("html2canvas")).default;
+      const canvas = await html2canvas(cardRef.current, {
+        backgroundColor: "#0B1D3A",
+        scale: 2,
+      });
+      const link = document.createElement("a");
+      link.download = "founding-member-badge.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    } catch {
+      await handleCopy();
+    }
+    setDownloading(false);
+  };
+
+  return (
+    <div className="rounded-xl overflow-hidden border border-[#60A5FA]/20">
+      {/* Badge card (captured for PNG) */}
+      <div
+        ref={cardRef}
+        className="p-8 text-center"
+        style={{
+          background: "linear-gradient(135deg, #1B2A4A 0%, #0F1D36 60%, #0A1628 100%)",
+        }}
+      >
+        <p className="text-[10px] uppercase tracking-[0.25em] text-[#60A5FA]/60 mb-3">
+          Invisible Exit
+        </p>
+        <p className="text-2xl sm:text-3xl font-bold text-white mb-1">
+          Founding Member ✦
+        </p>
+        <p className="text-xs text-white/40 mt-2">
+          One of 100 · Price locked for life
+        </p>
+      </div>
+
+      {/* Action buttons */}
+      <div className="bg-white p-3 flex flex-wrap gap-2">
+        <button
+          onClick={handleReddit}
+          className="flex-1 min-w-[120px] flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-[#FF4500] hover:bg-[#E03D00] rounded-lg px-3 py-2 transition-colors"
+        >
+          <ExternalLink className="h-3.5 w-3.5" />
+          Share to Reddit
+        </button>
+        <button
+          onClick={handleCopy}
+          className="flex-1 min-w-[100px] flex items-center justify-center gap-1.5 text-xs font-medium text-[#4A5568] bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-2 transition-colors"
+        >
+          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? "Copied!" : "Copy Link"}
+        </button>
+        <button
+          onClick={handleDownload}
+          disabled={downloading}
+          className="flex-1 min-w-[100px] flex items-center justify-center gap-1.5 text-xs font-medium text-[#4A5568] bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-2 transition-colors disabled:opacity-50"
+        >
+          <Download className="h-3.5 w-3.5" />
+          {downloading ? "Saving..." : "Download"}
+        </button>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ interface DashboardLayoutProps {
   email: string;
   freedomPct: number;
   isStarter: boolean;
+  tier?: string;
   phaseCompletion?: Record<number, boolean>;
   pipelineValidationsRemaining?: number;
   children: React.ReactNode;
@@ -19,6 +20,7 @@ export default function DashboardLayout({
   email,
   freedomPct,
   isStarter,
+  tier,
   phaseCompletion,
   pipelineValidationsRemaining,
   children,
@@ -31,11 +33,12 @@ export default function DashboardLayout({
         email={email}
         freedomPct={freedomPct}
         isStarter={isStarter}
+        tier={tier}
         phaseCompletion={phaseCompletion}
         pipelineValidationsRemaining={pipelineValidationsRemaining}
       />
       <SidebarInset className="bg-gradient-to-b from-[#F4F7FB] to-[#EDF2F7]">
-        <DashboardTopBar activeTab={activeTab} onTabChange={onTabChange} />
+        <DashboardTopBar activeTab={activeTab} onTabChange={onTabChange} tier={tier} />
         <div className="flex-1 overflow-auto">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
             {children}
