@@ -273,28 +273,37 @@ export type Database = {
           created_at: string
           email: string
           id: string
+          ideas_browsed_total: number
+          monthly_validations_used: number
           stripe_customer_id: string | null
           subscription_status: string
           subscription_tier: string
           updated_at: string
+          validations_reset_at: string
         }
         Insert: {
           created_at?: string
           email: string
           id: string
+          ideas_browsed_total?: number
+          monthly_validations_used?: number
           stripe_customer_id?: string | null
           subscription_status?: string
           subscription_tier?: string
           updated_at?: string
+          validations_reset_at?: string
         }
         Update: {
           created_at?: string
           email?: string
           id?: string
+          ideas_browsed_total?: number
+          monthly_validations_used?: number
           stripe_customer_id?: string | null
           subscription_status?: string
           subscription_tier?: string
           updated_at?: string
+          validations_reset_at?: string
         }
         Relationships: []
       }
@@ -308,6 +317,18 @@ export type Database = {
         Returns: {
           badge_value: number
         }[]
+      }
+      get_starter_validations_remaining: {
+        Args: { p_user_id: string }
+        Returns: number
+      }
+      increment_ideas_browsed: {
+        Args: { p_user_id: string; p_count?: number }
+        Returns: number
+      }
+      increment_validation_count: {
+        Args: { p_user_id: string }
+        Returns: undefined
       }
       is_subscription_active: { Args: never; Returns: boolean }
     }

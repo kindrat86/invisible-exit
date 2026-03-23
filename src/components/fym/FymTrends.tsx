@@ -19,9 +19,10 @@ type TimeRange = "7d" | "30d" | "90d" | "all";
 
 interface FymTrendsProps {
   userId: string;
+  hasFullAccess?: boolean;
 }
 
-export default function FymTrends({ userId }: FymTrendsProps) {
+export default function FymTrends({ userId, hasFullAccess = true }: FymTrendsProps) {
   const [timeRange, setTimeRange] = useState<TimeRange>("all");
   const { data: entries = [], isLoading } = useFymEntries(userId, timeRange);
 

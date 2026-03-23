@@ -25,6 +25,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import ProgressRing from "@/components/fym/ProgressRing";
+import UpgradeOverlay from "@/components/UpgradeOverlay";
 import { BRAND_PHASES } from "@/data/brand-playbook";
 import { useBrandManager } from "@/hooks/useBrandManager";
 import type { BrandPhase, BrandTask } from "@/types/fym";
@@ -53,9 +54,10 @@ function getScoreLabel(score: number) {
 
 interface BrandManagerProps {
   userId: string;
+  hasFullAccess?: boolean;
 }
 
-export default function BrandManager({ userId }: BrandManagerProps) {
+export default function BrandManager({ userId, hasFullAccess = true }: BrandManagerProps) {
   const {
     state,
     updateTask,
@@ -110,16 +112,17 @@ export default function BrandManager({ userId }: BrandManagerProps) {
                 ? Math.round((counts.done / counts.total) * 100)
                 : 0;
             const isComplete = counts.done === counts.total;
+            const isLocked = !hasFullAccess && index > 0;
 
-            return (
+            const phaseCard = (
               <Card
                 key={phase.id}
-                className={`bg-white border cursor-pointer hover:translate-y-[-2px] hover:shadow-md transition-all duration-300 ${
+                className={`bg-white border ${isLocked ? "" : "cursor-pointer hover:translate-y-[-2px] hover:shadow-md"} transition-all duration-300 ${
                   isComplete
                     ? "border-green-300 ring-1 ring-green-200"
                     : "border-gray-200"
                 }`}
-                onClick={() => setActivePhaseIndex(index)}
+                onClick={() => !isLocked && setActivePhaseIndex(index)}
               >
                 <CardContent className="p-5 flex items-center gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#F4F7FB] flex items-center justify-center text-[#60A5FA]">
@@ -150,6 +153,20 @@ export default function BrandManager({ userId }: BrandManagerProps) {
                 </CardContent>
               </Card>
             );
+
+            if (isLocked) {
+              return (
+                <UpgradeOverlay
+                  key={phase.id}
+                  title="Complete your positioning first"
+                  description="Then unlock the full brand toolkit with Founding Member. Build your visual identity, set up payments, find your voice, and grow organically."
+                >
+                  {phaseCard}
+                </UpgradeOverlay>
+              );
+            }
+
+            return phaseCard;
           })}
         </div>
 

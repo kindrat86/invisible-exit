@@ -298,7 +298,7 @@ export default function FYMCalculator({
             </CollapsibleContent>
           </Collapsible>
         ) : (
-          /* Starter users: static blurred previews */
+          /* Starter users: blurred Scenario Engine + Reverse Calculator, unlocked Exit Readiness */
           <div className="space-y-6">
             <div className="bg-white rounded-xl border border-gray-200/80 shadow-sm p-4">
               <span className="text-sm font-semibold text-[#0B1D3A]">
@@ -306,7 +306,15 @@ export default function FYMCalculator({
               </span>
             </div>
 
-            {/* Teaser 1: Scenario Engine */}
+            {/* Exit Readiness Score — UNLOCKED for Starter (read-only) */}
+            <RiskFreedomScore
+              inputs={inputs}
+              freedomLevel={freedomLevel}
+              riskAssessment={risk}
+              onSwitchToInvisibility={() => onSwitchTab("invisibility")}
+            />
+
+            {/* Teaser 1: Scenario Engine — BLURRED */}
             <div className="relative rounded-xl border border-border/50 overflow-hidden">
               <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
                 <ScenarioEngine inputs={mockScenarioInputs} />
@@ -324,14 +332,17 @@ export default function FYMCalculator({
                 </p>
                 <Button
                   onClick={() => onSwitchTab("upgrade")}
-                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
+                  className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
                 >
-                  See Founding Toolkit
+                  See Founding Toolkit — $17.99/mo
                 </Button>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Founding price, locked for life.
+                </p>
               </div>
             </div>
 
-            {/* Teaser 2: Reverse Calculator */}
+            {/* Teaser 2: Reverse Calculator — BLURRED */}
             <div className="relative rounded-xl border border-border/50 overflow-hidden">
               <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
                 <ReverseCalculator inputs={mockReverseInputs} />
@@ -344,36 +355,13 @@ export default function FYMCalculator({
                 </p>
                 <Button
                   onClick={() => onSwitchTab("upgrade")}
-                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
+                  className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
                 >
-                  See Founding Toolkit
+                  See Founding Toolkit — $17.99/mo
                 </Button>
-              </div>
-            </div>
-
-            {/* Teaser 3: Risk-Adjusted Freedom Score (split rendering) */}
-            <div className="relative rounded-xl border border-border/50 overflow-hidden">
-              <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
-                <RiskFreedomScore
-                  inputs={inputs}
-                  freedomLevel={freedomLevel}
-                  riskAssessment={risk}
-                  onSwitchToInvisibility={() => onSwitchTab("invisibility")}
-                />
-              </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/60 backdrop-blur-[2px] p-6 text-center">
-                <h3 className="text-lg font-semibold mb-2">Exit Readiness Score</h3>
-                <p className="text-sm text-muted-foreground max-w-md mb-4">
-                  Your exit readiness combines financial progress (60%) and
-                  invisibility score (40%) into a single number.
-                  How ready are you to walk away?
+                <p className="text-xs text-muted-foreground mt-2">
+                  Founding price, locked for life.
                 </p>
-                <Button
-                  onClick={() => onSwitchTab("upgrade")}
-                  className="bg-[#D4A843] hover:bg-[#C49A3A] text-[#0B1D3A] font-semibold"
-                >
-                  See Founding Toolkit
-                </Button>
               </div>
             </div>
           </div>

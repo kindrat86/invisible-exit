@@ -5,15 +5,36 @@ import StealthScoreView from "@/components/fym/StealthScoreView";
 import LegalTemplates from "@/components/fym/stealth/LegalTemplates";
 import AnonymityPlaybook from "@/components/fym/stealth/AnonymityPlaybook";
 import ComplianceDatabase from "@/components/fym/stealth/ComplianceDatabase";
+import UpgradeOverlay from "@/components/UpgradeOverlay";
 
-export default function StealthOpsHub({ userId }: { userId: string }) {
+interface StealthOpsHubProps {
+  userId: string;
+  hasFullAccess?: boolean;
+}
+
+export default function StealthOpsHub({ userId, hasFullAccess = true }: StealthOpsHubProps) {
   const [view, setView] = useState<"score" | "templates" | "playbook" | "compliance">("score");
 
   if (view === "score") {
     return (
       <StealthScoreView
         userId={userId}
-        onOpenSubTab={(tab) => setView(tab as typeof view)}
+        onOpenSubTab={(tab) => {
+          if (!hasFullAccess) return; // Prevent navigation to deep dive for starters
+          setView(tab as typeof view);
+        }}
+        hasFullAccess={hasFullAccess}
+      />
+    );
+  }
+
+  // Starters should not reach this view, but guard just in case
+  if (!hasFullAccess) {
+    return (
+      <StealthScoreView
+        userId={userId}
+        onOpenSubTab={() => {}}
+        hasFullAccess={hasFullAccess}
       />
     );
   }

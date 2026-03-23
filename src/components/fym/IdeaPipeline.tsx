@@ -212,7 +212,8 @@ export default function IdeaPipeline({
   const completedValidations = history.filter(
     (entry) => entry.verdict !== null
   ).length;
-  const canValidate = hasFullAccess || completedValidations < 1;
+  const starterValidationLimit = 3;
+  const canValidate = hasFullAccess || completedValidations < starterValidationLimit;
 
   const [view, setView] = useState<View>(() => (pendingIdea ? "wizard" : "history"));
   const [viewingEntry, setViewingEntry] = useState<PipelineEntry | null>(null);

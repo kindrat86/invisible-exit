@@ -59,8 +59,8 @@ const MOMENT_CONFIG: Record<
   },
   "pipeline-limit": {
     icon: Zap,
-    title: "You've used your free validation.",
-    body: 'You validated "{previousIdeaName}" and scored {previousScore}/100. Want to compare against alternatives?\n\nFounding members get unlimited validations, full 48-Hour Action Plans, and the complete Build + Launch toolkit.',
+    title: "You've used all 3 validations this month.",
+    body: 'You validated "{previousIdeaName}" and scored {previousScore}/100. Want to compare against more alternatives?\n\nFounding members get unlimited validations, full 48-Hour Action Plans, and the complete Build + Launch toolkit. Your validations reset on the 1st.',
     cta: "Unlock Unlimited Validations",
   },
 };

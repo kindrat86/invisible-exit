@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Search, Shield, X, RefreshCw, Rocket } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import { allIdeas } from "@/data/idea-generator";
 import type { IdeaEntry } from "@/types/fym";
 
@@ -49,13 +50,16 @@ const TIME_INVESTMENTS = [
 ];
 const DIFFICULTIES = ["No-Code", "Low-Code", "Some Coding", "Developer Required"];
 
+const STARTER_IDEA_LIMIT = 30;
+
 interface IdeaDirectoryProps {
   onValidateIdea?: (idea: IdeaEntry) => void;
   onSwitchTab?: (tab: string) => void;
   hasFullAccess?: boolean;
+  userId?: string;
 }
 
-export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAccess = true }: IdeaDirectoryProps) {
+export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAccess = true, userId }: IdeaDirectoryProps) {
   const [, setSearchParams] = useSearchParams();
   const [shuffledPool, setShuffledPool] = useState<IdeaEntry[]>(() =>
     shuffleArray(allIdeas)
@@ -68,6 +72,35 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
   const [difficulty, setDifficulty] = useState("all");
   const [selectedIdea, setSelectedIdea] = useState<IdeaEntry | null>(null);
   const [regenerating, setRegenerating] = useState(false);
+  const [ideasBrowsed, setIdeasBrowsed] = useState(0);
+  const [limitReached, setLimitReached] = useState(false);
+
+  // Fetch ideas_browsed_total on mount for Starter users
+  useEffect(() => {
+    if (hasFullAccess || !userId) return;
+    supabase
+      .from("profiles")
+      .select("ideas_browsed_total")
+      .eq("id", userId)
+      .single()
+      .then(({ data }) => {
+        const total = data?.ideas_browsed_total ?? 0;
+        setIdeasBrowsed(total);
+        if (total >= STARTER_IDEA_LIMIT) setLimitReached(true);
+      });
+  }, [hasFullAccess, userId]);
+
+  // Track initial batch load for starters
+  useEffect(() => {
+    if (hasFullAccess || !userId || ideasBrowsed > 0) return;
+    // Count the first batch as browsed
+    supabase.rpc("increment_ideas_browsed", { p_user_id: userId, p_count: BATCH_SIZE }).then(({ data }) => {
+      if (data !== null) {
+        setIdeasBrowsed(data);
+        if (data >= STARTER_IDEA_LIMIT) setLimitReached(true);
+      }
+    });
+  }, [hasFullAccess, userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const totalBatches = Math.ceil(shuffledPool.length / BATCH_SIZE);
 
@@ -78,7 +111,23 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
 
   const handleRegenerate = useCallback(() => {
     setRegenerating(true);
-    setTimeout(() => {
+    setTimeout(async () => {
+      // Track browsing for starters
+      if (!hasFullAccess && userId) {
+        const { data } = await supabase.rpc("increment_ideas_browsed", {
+          p_user_id: userId,
+          p_count: BATCH_SIZE,
+        });
+        if (data !== null) {
+          setIdeasBrowsed(data);
+          if (data >= STARTER_IDEA_LIMIT) {
+            setLimitReached(true);
+            setRegenerating(false);
+            return;
+          }
+        }
+      }
+
       const nextIndex = batchIndex + 1;
       if (nextIndex >= totalBatches) {
         setShuffledPool(shuffleArray(allIdeas));
@@ -94,7 +143,7 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
       }
       setRegenerating(false);
     }, 800);
-  }, [batchIndex, totalBatches]);
+  }, [batchIndex, totalBatches, hasFullAccess, userId]);
 
   const hasFilters =
     search ||
@@ -227,13 +276,18 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
 
         <div className="flex items-center justify-between">
           <p className="text-sm text-[#8A95A8]">
-            Showing {filtered.length} of {BATCH_SIZE} ideas (#{startNum}-{endNum} of {shuffledPool.length.toLocaleString()})
+            Showing {filtered.length} of {BATCH_SIZE} ideas (#{startNum}-{endNum} of {hasFullAccess ? shuffledPool.length.toLocaleString() : `${STARTER_IDEA_LIMIT}`})
+            {!hasFullAccess && ideasBrowsed > 0 && (
+              <span className="ml-2 text-[#60A5FA]">
+                ({ideasBrowsed}/{STARTER_IDEA_LIMIT} browsed)
+              </span>
+            )}
           </p>
           <Button
             variant="outline"
             size="sm"
             onClick={handleRegenerate}
-            disabled={regenerating}
+            disabled={regenerating || limitReached}
             className="border-gray-200 bg-white hover:bg-gray-50 rounded-lg px-4 py-2 text-sm font-medium text-gray-600 flex items-center gap-2"
           >
             <RefreshCw
@@ -243,6 +297,28 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
           </Button>
         </div>
       </div>
+
+      {/* Limit reached banner */}
+      {limitReached && !hasFullAccess && (
+        <div className="bg-[#60A5FA]/5 border border-[#60A5FA]/20 rounded-xl p-6 text-center">
+          <Rocket className="h-8 w-8 text-[#60A5FA] mx-auto mb-3" />
+          <h3 className="text-lg font-semibold text-[#0B1D3A] mb-2">
+            You've explored {STARTER_IDEA_LIMIT} ideas
+          </h3>
+          <p className="text-sm text-[#4A5568] max-w-md mx-auto mb-4">
+            Founding members browse the full directory of 1,000+ validated ideas with unlimited regeneration. Find the perfect fit for your skills and schedule.
+          </p>
+          <button
+            onClick={() => onSwitchTab?.("upgrade")}
+            className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+          >
+            See Founding Toolkit — $17.99/mo
+          </button>
+          <p className="text-xs text-[#9CA3AF] mt-2">
+            Founding price, locked for life. Cancel anytime.
+          </p>
+        </div>
+      )}
 
       {/* Grid */}
       <div className="grid gap-4 md:grid-cols-2">
