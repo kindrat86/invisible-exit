@@ -8,11 +8,13 @@ import FYMHistory from "@/components/FYMHistory";
 import DashboardOverview from "@/components/fym/DashboardOverview";
 import ReactivationScreen from "@/components/ReactivationScreen";
 import FeatureGate from "@/components/FeatureGate";
+import ReportBadgeShareModal from "@/components/ReportBadgeShareModal";
 import OnboardingWizard from "@/components/fym/OnboardingWizard";
 import CoreStealthActions from "@/components/fym/CoreStealthActions";
 import UpgradePage from "@/components/fym/UpgradePage";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Share2 } from "lucide-react";
 import { useFymEntries } from "@/hooks/useFymEntries";
 import { useLatestFymEntry } from "@/hooks/useLatestFymEntry";
 import { useLatestInvisibilityScore } from "@/hooks/useInvisibilityScore";
@@ -22,7 +24,13 @@ import {
   evaluateFreedomLevel,
   calculateProgressToNextLevel,
   calculateMonthsToLevel,
+  calculateFymScore,
+  calculateFreedomPercentage,
+  calculateFinancialScore,
+  calculateCombinedReadinessScore,
+  FREEDOM_LEVELS,
 } from "@/lib/fym-calculations";
+import type { ReportBadgeData } from "@/lib/generateReportBadge";
 import type { CalculatorInputs, CalculatorInputsExpanded, IdeaEntry } from "@/types/fym";
 
 const FymTrends = lazy(() => import("@/components/fym/FymTrends"));
@@ -63,6 +71,8 @@ function DashboardContent() {
   const [pendingPipelineIdea, setPendingPipelineIdea] = useState<IdeaEntry | null>(null);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [ideasView, setIdeasView] = useState<"quiz" | "directory">("quiz");
+  const [reportBadgeOpen, setReportBadgeOpen] = useState(false);
+  const [reportBadgeData, setReportBadgeData] = useState<ReportBadgeData | null>(null);
 
   const { data: entries = [], refetch: refetchEntries } = useFymEntries(userId);
   const { data: latestEntry, refetch: refetchLatest } = useLatestFymEntry(userId);
@@ -197,6 +207,37 @@ function DashboardContent() {
     [setActiveTab]
   );
 
+  const handleShareReport = useCallback(() => {
+    if (!latestEntry) return;
+    const level = latestEntry.freedom_level ?? 0;
+    const levelName = level > 0 ? FREEDOM_LEVELS[level - 1]?.name : "Pre-Launch";
+    const entryBurn = Number(latestEntry.monthly_burn);
+    const entryRevenue = Number(latestEntry.monthly_revenue);
+    const fymScore = calculateFymScore(entryBurn, entryRevenue);
+    const entryFreedomPct = calculateFreedomPercentage(entryRevenue, entryBurn);
+    const financialScore = calculateFinancialScore(entryRevenue, entryBurn);
+    const exitReadiness = calculateCombinedReadinessScore(
+      financialScore,
+      latestInvisibility?.total_score ?? null
+    );
+    const tier: ReportBadgeData["tier"] =
+      profile?.subscription_tier === "founding" || profile?.subscription_tier === "standard"
+        ? (profile.subscription_tier as "founding" | "standard")
+        : "starter";
+    const now = new Date();
+
+    setReportBadgeData({
+      tier,
+      freedomLevel: level,
+      levelName: levelName ?? "Pre-Launch",
+      fymScore,
+      freedomPercentage: entryFreedomPct,
+      exitReadiness,
+      generatedDate: now.toLocaleDateString("en-US", { month: "short", year: "numeric" }),
+    });
+    setReportBadgeOpen(true);
+  }, [latestEntry, latestInvisibility, profile?.subscription_tier]);
+
   const handleOnboardingComplete = useCallback(() => {
     setShowOnboarding(false);
     refetchEntries();
@@ -319,23 +360,38 @@ function DashboardContent() {
       {getNudgeBanner()}
 
       {activeTab === "overview" && (
-        <DashboardOverview
-          email={email}
-          entries={entries}
-          latestEntry={latestEntry}
-          latestInvisibility={latestInvisibility}
-          latestPipeline={latestPipeline}
-          onTabChange={setActiveTab}
-          freedomLevel={freedomLevel}
-          progressToNext={progressToNext}
-          monthsToNextLevel={monthsToNextLevel}
-          isStarter={!!isStarter}
-          hasFullAccess={!!hasFullAccess}
-          tier={profile?.subscription_tier}
-          briefing={briefing}
-          pipelineHistory={pipelineHistory}
-          userId={userId}
-        />
+        <>
+          <DashboardOverview
+            email={email}
+            entries={entries}
+            latestEntry={latestEntry}
+            latestInvisibility={latestInvisibility}
+            latestPipeline={latestPipeline}
+            onTabChange={setActiveTab}
+            freedomLevel={freedomLevel}
+            progressToNext={progressToNext}
+            monthsToNextLevel={monthsToNextLevel}
+            isStarter={!!isStarter}
+            hasFullAccess={!!hasFullAccess}
+            tier={profile?.subscription_tier}
+            briefing={briefing}
+            pipelineHistory={pipelineHistory}
+            userId={userId}
+          />
+          {latestEntry && (
+            <div className="flex justify-end mt-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleShareReport}
+                className="text-xs text-[#8A95A8] hover:text-[#0B1D3A]"
+              >
+                <Share2 className="h-3 w-3 mr-1" />
+                Share Report
+              </Button>
+            </div>
+          )}
+        </>
       )}
 
       {activeTab === "calculator" && (
@@ -347,6 +403,7 @@ function DashboardContent() {
           latestInvisibility={latestInvisibility}
           onSwitchTab={setActiveTab}
           hasFullAccess={!!hasFullAccess}
+          subscriptionTier={profile?.subscription_tier}
         />
       )}
 
@@ -489,6 +546,14 @@ function DashboardContent() {
             <RoadmapVoting />
           </Suspense>
         </FeatureGate>
+      )}
+
+      {reportBadgeData && (
+        <ReportBadgeShareModal
+          open={reportBadgeOpen}
+          onOpenChange={setReportBadgeOpen}
+          badgeData={reportBadgeData}
+        />
       )}
     </DashboardLayout>
   );

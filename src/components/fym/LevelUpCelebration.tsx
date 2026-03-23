@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { FREEDOM_LEVELS, formatCurrency } from "@/lib/fym-calculations";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import { FREEDOM_LEVELS } from "@/lib/fym-calculations";
 import confetti from "canvas-confetti";
 
 interface LevelUpCelebrationProps {
@@ -11,6 +9,7 @@ interface LevelUpCelebrationProps {
   freedomPct: number;
   onDismiss: () => void;
   hasFullAccess?: boolean;
+  onShareBadge?: () => void;
 }
 
 const LEVEL_MESSAGES: Record<string, string> = {
@@ -38,6 +37,7 @@ export default function LevelUpCelebration({
   freedomPct,
   onDismiss,
   hasFullAccess = true,
+  onShareBadge,
 }: LevelUpCelebrationProps) {
   const levelDef = newLevel > 0 ? FREEDOM_LEVELS[newLevel - 1] : null;
   const levelName = levelDef?.name ?? "Pre-Launch";
@@ -68,27 +68,9 @@ export default function LevelUpCelebration({
     return () => clearTimeout(timer);
   }, []);
 
-  const handleShare = async () => {
-    try {
-      const { data, error } = await supabase.functions.invoke("create-badge", {
-        body: {
-          badge_value: freedomPct,
-          badge_type: "level",
-          level: newLevel,
-          level_name: levelName,
-        },
-      });
-
-      if (error || !data?.share_url) {
-        toast.error("Failed to create badge.");
-        return;
-      }
-
-      // Copy share URL to clipboard
-      await navigator.clipboard.writeText(data.share_url);
-      toast.success("Share link copied to clipboard.");
-    } catch {
-      toast.error("Failed to create badge.");
+  const handleShare = () => {
+    if (onShareBadge) {
+      onShareBadge();
     }
   };
 

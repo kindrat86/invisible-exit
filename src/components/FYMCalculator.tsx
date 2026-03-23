@@ -9,7 +9,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
-import ShareModal from "./ShareModal";
+import ReportBadgeShareModal from "./ReportBadgeShareModal";
 import SmartInputPanel from "./fym/SmartInputPanel";
 import FreedomLevels from "./fym/FreedomLevels";
 import ScenarioEngine from "./fym/ScenarioEngine";
@@ -24,6 +24,7 @@ import {
   calculateFreedomNumber,
   FREEDOM_LEVELS,
 } from "@/lib/fym-calculations";
+import type { ReportBadgeData } from "@/lib/generateReportBadge";
 import type { FymEntry, InvisibilityScore } from "@/types/fym";
 
 interface FYMCalculatorProps {
@@ -34,6 +35,7 @@ interface FYMCalculatorProps {
   latestInvisibility: InvisibilityScore | null | undefined;
   onSwitchTab: (tab: string) => void;
   hasFullAccess?: boolean;
+  subscriptionTier?: string;
 }
 
 export default function FYMCalculator({
@@ -44,6 +46,7 @@ export default function FYMCalculator({
   latestInvisibility,
   onSwitchTab,
   hasFullAccess = true,
+  subscriptionTier,
 }: FYMCalculatorProps) {
   const {
     inputs,
@@ -62,9 +65,8 @@ export default function FYMCalculator({
   const isFirstTime = !hasEntries;
 
   const [saving, setSaving] = useState(false);
-  const [sharing, setSharing] = useState(false);
-  const [shareOpen, setShareOpen] = useState(false);
-  const [shareData, setShareData] = useState({ freedomNumber: "", shareUrl: "" });
+  const [badgeShareOpen, setBadgeShareOpen] = useState(false);
+  const [badgeData, setBadgeData] = useState<ReportBadgeData | null>(null);
   const [savedToday, setSavedToday] = useState(false);
   const [deepAnalysisOpen, setDeepAnalysisOpen] = useState(false);
   const [deepAnalysisEverOpened, setDeepAnalysisEverOpened] = useState(() => {
@@ -189,23 +191,26 @@ export default function FYMCalculator({
     latestEntry,
   ]);
 
-  const handleShare = useCallback(async () => {
-    setSharing(true);
-    const fymFreedomNumber = calculateFreedomNumber(inputs.monthlyExpenses);
-    const { data, error } = await supabase.functions.invoke("create-badge", {
-      body: { badge_value: fymFreedomNumber },
+  const handleShare = useCallback(() => {
+    const levelName =
+      freedomLevel > 0 ? FREEDOM_LEVELS[freedomLevel - 1]?.name : "Pre-Launch";
+    const tier: ReportBadgeData["tier"] =
+      subscriptionTier === "founding" || subscriptionTier === "standard"
+        ? (subscriptionTier as "founding" | "standard")
+        : "starter";
+    const now = new Date();
+
+    setBadgeData({
+      tier,
+      freedomLevel,
+      levelName: levelName ?? "Pre-Launch",
+      fymScore: coreResults.fymMonthly,
+      freedomPercentage: coreResults.freedomPercentage,
+      exitReadiness: risk.combinedScore,
+      generatedDate: now.toLocaleDateString("en-US", { month: "short", year: "numeric" }),
     });
-    setSharing(false);
-    if (error || !data?.share_url) {
-      toast.error("Failed to create badge.");
-      return;
-    }
-    setShareData({
-      freedomNumber: formatCurrency(fymFreedomNumber),
-      shareUrl: data.share_url,
-    });
-    setShareOpen(true);
-  }, [inputs.monthlyExpenses]);
+    setBadgeShareOpen(true);
+  }, [freedomLevel, subscriptionTier, coreResults.fymMonthly, coreResults.freedomPercentage, risk.combinedScore]);
 
   // Mock data for blurred previews
   const mockScenarioInputs = {
@@ -236,6 +241,7 @@ export default function FYMCalculator({
           freedomPct={celebration.freedomPct}
           onDismiss={() => setCelebration(null)}
           hasFullAccess={hasFullAccess}
+          onShareBadge={handleShare}
         />
       )}
 
@@ -394,21 +400,21 @@ export default function FYMCalculator({
           </Button>
           <Button
             onClick={handleShare}
-            disabled={sharing}
             variant="outline"
             className="transition-all duration-200 hover:shadow-sm"
           >
-            {sharing ? "Creating badge..." : "Share"}
+            Share Report
           </Button>
         </div>
       </div>
 
-      <ShareModal
-        open={shareOpen}
-        onOpenChange={setShareOpen}
-        freedomNumber={shareData.freedomNumber}
-        shareUrl={shareData.shareUrl}
-      />
+      {badgeData && (
+        <ReportBadgeShareModal
+          open={badgeShareOpen}
+          onOpenChange={setBadgeShareOpen}
+          badgeData={badgeData}
+        />
+      )}
     </div>
   );
 }
