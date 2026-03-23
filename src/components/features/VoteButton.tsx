@@ -16,13 +16,13 @@ export default function VoteButton({
   const Icon = direction === "up" ? ChevronUp : ChevronDown;
 
   const activeColor =
-    direction === "up" ? "text-[#60A5FA]" : "text-red-400";
-  const inactiveColor = "text-blue-200/50";
+    direction === "up" ? "text-[#60A5FA]" : "text-red-500";
+  const inactiveColor = "text-[#9CA3AF]";
   const hoverColor = disabled
     ? ""
     : direction === "up"
       ? "hover:text-[#60A5FA]"
-      : "hover:text-red-400";
+      : "hover:text-red-500";
 
   return (
     <button
@@ -33,7 +33,7 @@ export default function VoteButton({
         flex items-center justify-center w-8 h-8 rounded-md transition-colors
         ${active ? activeColor : inactiveColor}
         ${hoverColor}
-        ${disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:bg-white/5"}
+        ${disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:bg-gray-100"}
       `}
       aria-label={`Vote ${direction}`}
     >
