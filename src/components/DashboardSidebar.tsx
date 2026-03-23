@@ -108,7 +108,7 @@ const FOUNDING_PHASE_GROUPS: PhaseGroup[] = [
       { value: "stealth-full", label: "Full Stealth Ops", icon: Shield, gated: false },
       { value: "scenarios", label: "Scenario Engine", icon: BarChart3, gated: false },
       { value: "reverse-calc", label: "Reverse Calculator", icon: ArrowDownRight, gated: false },
-      { value: "roadmap", label: "Shape the Roadmap", icon: Compass, gated: false },
+      { value: "roadmap", label: "Roadmap", icon: Compass, gated: false },
     ],
   },
 ];

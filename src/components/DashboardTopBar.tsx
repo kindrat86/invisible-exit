@@ -22,6 +22,7 @@ const TAB_LABELS: Record<string, { phase: string; label: string }> = {
   "stealth-full": { phase: "Phase 5", label: "Full Stealth Ops" },
   scenarios: { phase: "Phase 5", label: "Scenario Engine" },
   "reverse-calc": { phase: "Phase 5", label: "Reverse Calculator" },
+  roadmap: { phase: "Phase 5", label: "Roadmap" },
 };
 
 export default function DashboardTopBar({

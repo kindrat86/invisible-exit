@@ -44,7 +44,6 @@ const LaunchControl = lazy(() => import("@/components/fym/LaunchControl"));
 const StealthOpsHub = lazy(() => import("@/components/fym/StealthOpsHub"));
 const ScenarioEngine = lazy(() => import("@/components/fym/ScenarioEngine"));
 const ReverseCalculator = lazy(() => import("@/components/fym/ReverseCalculator"));
-const RoadmapVoting = lazy(() => import("@/components/fym/RoadmapVoting"));
 const FeatureRequestBoard = lazy(() => import("@/components/features/FeatureRequestBoard"));
 
 interface Profile {
@@ -57,7 +56,7 @@ interface Profile {
 const VALID_TABS = [
   "overview", "calculator", "history", "trends", "invisibility",
   "stealth-core", "ideas", "pipeline", "brand", "launch",
-  "stealth-full", "scenarios", "reverse-calc", "upgrade", "roadmap", "features",
+  "stealth-full", "scenarios", "reverse-calc", "upgrade", "roadmap",
 ] as const;
 
 function DashboardContent() {
@@ -548,17 +547,6 @@ function DashboardContent() {
       )}
 
       {activeTab === "roadmap" && (
-        <FeatureGate
-          hasFullAccess={!!hasFullAccess}
-          featureId="roadmap"
-        >
-          <Suspense fallback={tabFallback}>
-            <RoadmapVoting userId={userId} />
-          </Suspense>
-        </FeatureGate>
-      )}
-
-      {activeTab === "features" && (
         <Suspense fallback={tabFallback}>
           <FeatureRequestBoard
             userId={userId}
