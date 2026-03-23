@@ -51,12 +51,6 @@ export default function DashboardTopBar({
 
       <div className="flex-1" />
 
-      {/* Founding Member pill */}
-      {tier === "founding" && (
-        <span className="bg-[#60A5FA]/10 text-[#60A5FA] text-[10px] font-semibold px-2.5 py-1 rounded-full hidden sm:inline-flex items-center gap-1">
-          ✦ Founding Member
-        </span>
-      )}
 
       {/* Quick action */}
       {activeTab !== "calculator" && (
