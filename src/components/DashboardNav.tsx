@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import FoundingBadge from "@/components/FoundingBadge";
 import { LogOut } from "lucide-react";
 
 interface DashboardNavProps {
   email: string;
+  subscriptionTier?: string;
 }
 
-export default function DashboardNav({ email }: DashboardNavProps) {
+export default function DashboardNav({ email, subscriptionTier }: DashboardNavProps) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -20,6 +22,7 @@ export default function DashboardNav({ email }: DashboardNavProps) {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <span className="text-white font-bold text-lg tracking-tight">Invisible Exit Dashboard</span>
         <div className="flex items-center gap-3">
+          {subscriptionTier === "founding" && <FoundingBadge compact />}
           <span className="text-sm text-blue-200 hidden sm:inline">
             {email}
           </span>

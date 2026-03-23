@@ -1,12 +1,14 @@
 import { formatCurrency } from "@/lib/fym-calculations";
+import FoundingBadge from "@/components/FoundingBadge";
 import type { FymEntry } from "@/types/fym";
 
 interface WelcomeHeaderProps {
   email: string;
   latestEntry: FymEntry | null | undefined;
+  subscriptionTier?: string;
 }
 
-export default function WelcomeHeader({ email, latestEntry }: WelcomeHeaderProps) {
+export default function WelcomeHeader({ email, latestEntry, subscriptionTier }: WelcomeHeaderProps) {
   const name = email.split("@")[0];
 
   let subtitle = "Let's see where you stand on your exit.";
@@ -24,9 +26,12 @@ export default function WelcomeHeader({ email, latestEntry }: WelcomeHeaderProps
 
   return (
     <div className="mb-8 animate-fade-in">
-      <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-        Welcome back, {name}.
-      </h1>
+      <div className="flex items-center gap-3 flex-wrap">
+        <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
+          Welcome back, {name}.
+        </h1>
+        {subscriptionTier === "founding" && <FoundingBadge />}
+      </div>
       <p className="text-blue-200 mt-1.5 text-base">{subtitle}</p>
     </div>
   );

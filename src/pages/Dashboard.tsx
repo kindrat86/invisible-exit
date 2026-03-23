@@ -128,7 +128,7 @@ function DashboardContent() {
   if (noProfile) {
     return (
       <div className="min-h-screen bg-[#1B2A4A]">
-        <DashboardNav email={email} />
+        <DashboardNav email={email} subscriptionTier={profile?.subscription_tier} />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center space-y-4">
             <h2 className="text-xl font-bold text-white">
@@ -165,7 +165,7 @@ function DashboardContent() {
 
   return (
     <div className="min-h-screen bg-[#1B2A4A]">
-      <DashboardNav email={email} />
+      <DashboardNav email={email} subscriptionTier={profile?.subscription_tier} />
 
       <Dialog open={showOnboarding} onOpenChange={setShowOnboarding}>
         <DialogContent className="sm:max-w-md">
@@ -189,7 +189,7 @@ function DashboardContent() {
         {isActive ? (
           <>
             {isStarter && <UpgradeBanner />}
-            <WelcomeHeader email={email} latestEntry={latestEntry} />
+            <WelcomeHeader email={email} latestEntry={latestEntry} subscriptionTier={profile?.subscription_tier} />
             <QuickStats
               entries={entries}
               latestEntry={latestEntry}
