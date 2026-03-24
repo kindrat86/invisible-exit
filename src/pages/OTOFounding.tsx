@@ -56,10 +56,6 @@ const OTOFounding = () => {
     trackEvent("oto_declined");
   };
 
-  const handleVideoClick = () => {
-    trackEvent("oto_video_clicked");
-    toast.info("Video coming soon.");
-  };
 
   return (
     <div className="min-h-screen bg-[#1B2A4A]">
@@ -114,7 +110,7 @@ const OTOFounding = () => {
 
       {/* ─── 3. Video Placeholder ─── */}
       <section className="px-6 pb-12">
-        <VideoPlaceholder onPlayClick={handleVideoClick} />
+        <VideoPlaceholder />
       </section>
 
       {/* ─── 4. Divider ─── */}
