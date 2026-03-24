@@ -15,7 +15,6 @@ import {
   Megaphone,
   ArrowRight,
   Check,
-  Play,
   Lock,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -191,16 +190,22 @@ const Index = () => {
             that's mine. Here's the system.
           </p>
 
-          {/* Video placeholder */}
+          {/* Video */}
           <div
             id="video-slot"
             className="mx-auto max-w-3xl rounded-xl overflow-hidden"
           >
-            <div className="aspect-video bg-[#1e293b] flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-blue-400 flex items-center justify-center">
-                <Play className="w-7 h-7 text-slate-900 ml-1" fill="currentColor" />
-              </div>
-            </div>
+            <video
+              className="w-full aspect-video bg-[#1e293b]"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source
+                src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/Avatar_Video.mp4"
+                type="video/mp4"
+              />
+            </video>
           </div>
           {/* CTA directly below video */}
           <div className="mt-4">
