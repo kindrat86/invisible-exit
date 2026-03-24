@@ -34,7 +34,7 @@ export default function UpgradeOverlay({
   };
 
   return (
-    <div className="relative rounded-xl border border-gray-200/50 overflow-hidden">
+    <div className="relative rounded-xl border border-gray-200/50 overflow-hidden min-h-[340px]">
       <div className="filter blur-[6px] pointer-events-none select-none opacity-60">
         {children}
       </div>
