@@ -202,11 +202,16 @@ const OTOFounding = () => {
           <button
             onClick={handleUpgrade}
             disabled={checkoutLoading}
-            className="w-full bg-[#60A5FA] hover:bg-[#93c5fd] text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-[0_4px_24px_rgba(96,165,250,0.25)] hover:shadow-[0_4px_32px_rgba(96,165,250,0.35)] hover:-translate-y-[1px] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
+            className="w-full bg-[#60A5FA] hover:bg-[#93c5fd] text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-[0_4px_24px_rgba(96,165,250,0.25)] hover:shadow-[0_4px_32px_rgba(96,165,250,0.35)] hover:-translate-y-[1px] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            {checkoutLoading
-              ? "Loading..."
-              : "Become a Founding Member — $17.99/mo"}
+            {checkoutLoading ? (
+              "Loading..."
+            ) : (
+              <span className="flex flex-col items-center leading-tight">
+                <span>Become a Founding Member</span>
+                <span className="text-sm font-normal opacity-80">$17.99/mo</span>
+              </span>
+            )}
             {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
           </button>
           <p className="text-[13px] text-white/40 mt-4">
