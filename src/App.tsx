@@ -16,6 +16,7 @@ import Confirmation from "./pages/Confirmation.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
+import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PostHogPageviewTracker />
         <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Index />} />
