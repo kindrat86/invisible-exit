@@ -777,6 +777,353 @@ For corporate managers who need to build income invisibly while employed, the ma
     ],
     relatedSlugs: ["how-much-money-to-never-work-again", "zero-to-4000-invisible-exit-timeline"],
   },
+  {
+    slug: "5-hour-weekend-micro-saas-family-time",
+    title:
+      "The 5-Hour Weekend: How to Build a Micro-SaaS Without Sacrificing Family Time",
+    excerpt:
+      "You don't need 40 hours a week to build a business. Here's the exact weekly schedule corporate managers use to ship products in 5 focused hours.",
+    category: "Time Management",
+    readTime: "9 min read",
+    publishedAt: "2026-03-28",
+    content: `The biggest lie in entrepreneurship content is that you need to "hustle" every waking hour. If you're a corporate manager with a family, that advice isn't just wrong — it's destructive.
+
+You don't need 40 hours. You don't even need 20. You need **5 focused hours per weekend**, deployed strategically.
+
+Here's how.
+
+## Why 5 Hours Is Enough
+
+Most solo founders waste enormous amounts of time on activities that feel productive but don't move the needle:
+
+- Redesigning their landing page for the fourth time
+- Researching tools instead of using them
+- Reading startup content instead of building
+- Perfecting features nobody asked for
+
+When you only have 5 hours, you can't afford waste. **The constraint becomes your advantage.** You're forced to focus on the one thing that matters most this week.
+
+## The Weekly 5-Hour Blueprint
+
+Here's how to structure your weekend building sessions:
+
+### Saturday Morning: 3-Hour Deep Work Block (6 AM – 9 AM)
+
+This is your primary building block. Before the family wakes up, before distractions hit.
+
+**Rules for the deep work block:**
+- Phone in another room
+- No email, no Slack, no social media
+- One pre-defined task from your weekly plan
+- Work on the hardest, most important thing first
+
+What to do during this block depends on your phase:
+
+**Validation phase**: Customer interviews, landing page creation, outreach messages
+**Building phase**: Core feature development with AI tools
+**Growth phase**: Content creation, email sequences, partnership outreach
+
+### Sunday Evening: 2-Hour Execution Block (8 PM – 10 PM)
+
+After the kids are in bed, you get your second block. This one is for:
+
+- Responding to customer emails and feedback
+- Publishing content (blog posts, social media)
+- Quick bug fixes or improvements
+- Planning next Saturday's deep work task
+
+**The Sunday block is about momentum, not creation.** Handle the smaller tasks that keep the business moving forward.
+
+## The Weekly Planning System
+
+Every Friday evening, spend 15 minutes (not counted in your 5 hours) answering one question:
+
+**"What is the single most important thing I can do this weekend to move the business forward?"**
+
+Write it on a sticky note. Put it on your laptop. That's your Saturday task.
+
+Examples by phase:
+
+- **Week 1**: Talk to 3 potential customers about their pain points
+- **Week 5**: Build the core feature MVP with Lovable
+- **Week 10**: Write and publish 2 SEO blog posts
+- **Week 15**: Set up automated onboarding email sequence
+
+## The Family-First Framework
+
+Building a business means nothing if it costs you your family. Here are the non-negotiable rules:
+
+### 1. Scheduled, Not Stolen Time
+
+Never sneak business work during family time. Your partner and kids can tell when you're mentally elsewhere. Instead:
+
+- Communicate your schedule openly with your partner
+- Trade time fairly ("I'll build from 6-9 Saturday morning, and you get Sunday morning free")
+- Keep your commitments — if you said 5 hours, stick to 5 hours
+
+### 2. No Weeknight Work
+
+Weeknights are for family, rest, and recovery. The temptation to "just check one thing" leads to a slippery slope of resentment.
+
+Exception: 15 minutes of customer email responses during lunch break at your day job is fine. Set a timer.
+
+### 3. Monthly Family Check-In
+
+Once a month, ask your partner: "How is this working for us?" If the answer is "it's not," adjust immediately. No business is worth your marriage.
+
+## How 5 Hours Compounds
+
+Skeptical that 5 hours per week is enough? Let's do the math.
+
+**5 hours × 52 weeks = 260 hours per year**
+
+That's equivalent to **6.5 full-time work weeks**. In that time, at a focused pace, you can:
+
+- Month 1-2 (40 hours): Validate your idea and talk to 20+ potential customers
+- Month 3-4 (40 hours): Build and launch your MVP
+- Month 5-8 (80 hours): Get your first 20 paying customers
+- Month 9-12 (80 hours): Grow to 50-80 customers through content and referrals
+
+Compare that to someone "hustling" 20 hours per week but spending 15 of those hours on unfocused, low-value work. Your 5 focused hours beat their 20 scattered ones.
+
+## Tools That Maximize Your 5 Hours
+
+The right tools compress what used to take days into hours:
+
+**For building**: Lovable generates full applications from descriptions. What took a developer a week takes you a Saturday morning.
+
+**For content**: Claude drafts blog posts and email sequences. You edit and add your perspective. A 2,000-word post goes from 4 hours to 45 minutes.
+
+**For operations**: Stripe handles payments automatically. Supabase manages your database. Vercel deploys your app. Zero operations work needed.
+
+**For communication**: Set up canned responses for common customer questions. Use Zapier to automate onboarding emails. Minimize reactive work.
+
+## The Invisible Advantage of Part-Time Building
+
+Here's something counterintuitive: building part-time has advantages over building full-time.
+
+**Patience**: You're not burning savings, so you can be patient about growth. Patient founders make better product decisions.
+
+**Perspective**: Your day job gives you fresh eyes. Some of your best ideas will come during Monday meetings, not Saturday coding sessions.
+
+**Sustainability**: 5 hours per week is maintainable for years. 60-hour weeks burn you out in months.
+
+**Lower stakes**: If this week's feature doesn't work, you still have a salary. That psychological safety lets you take smarter risks.
+
+## Common Objections
+
+### "5 hours isn't enough to build anything real"
+
+Basecamp was famously built as a side project. Many successful SaaS products started with founders working evenings and weekends. The 5-hour constraint forces you to build smaller, which often means building better.
+
+### "My weekends are already packed"
+
+Audit your weekend time for one week. Most people have 3-5 hours of low-value screen time (social media, streaming) they could redirect. You're not adding hours — you're replacing passive consumption with active creation.
+
+### "I'll fall behind competitors who work full-time"
+
+Your competitors aren't your concern. Your micro-niche is small enough that execution speed matters less than customer understanding. And your corporate experience gives you customer empathy that full-time indie hackers often lack.
+
+## Your Next Step
+
+This weekend, try the Saturday morning deep work block just once. Set your alarm for 6 AM. Pick one task. Work for 3 hours. See what you accomplish.
+
+You'll be surprised. And you'll still make it to your kid's soccer game by 10.`,
+  },
+  {
+    slug: "first-10-customers-corporate-manager-outreach",
+    title:
+      "Your First 10 Customers: The Corporate Manager's Outreach Playbook",
+    excerpt:
+      "Forget cold outreach templates. Your corporate network and domain expertise are the unfair advantage most founders would kill for.",
+    category: "Growth",
+    readTime: "11 min read",
+    publishedAt: "2026-03-31",
+    content: `Getting your first 10 paying customers is the hardest part of building a micro-SaaS. It's also the most important. Those first 10 customers validate your idea, shape your product, and give you the confidence to keep going.
+
+For corporate managers, the path to 10 customers looks different than the standard startup playbook. You have assets most founders don't: a professional network, domain expertise, and credibility. Here's how to use them.
+
+## Why the First 10 Matter More Than You Think
+
+Your first 10 customers aren't just revenue. They're:
+
+- **Validation**: Proof that real people will pay for your solution
+- **Feedback**: The insights that shape your product roadmap
+- **Testimonials**: Social proof for your landing page
+- **Referral sources**: Each happy customer knows others with the same problem
+- **Confidence**: The psychological fuel to keep building
+
+Skip this phase or rush through it, and you'll build features nobody wants for an audience that doesn't exist.
+
+## The Corporate Manager's Unfair Advantages
+
+### 1. Domain Expertise
+
+You've spent years in your industry. You know the pain points because you've lived them. This means:
+
+- You can describe the problem in your customers' language
+- You understand the buying process and decision-makers
+- You know which problems are annoying vs. which ones cost money
+- You can build solutions that actually fit real workflows
+
+Most indie hackers spend months doing customer research that you already have in your head.
+
+### 2. Professional Network
+
+Your LinkedIn has hundreds of connections. Your phone has contacts from conferences, past projects, and industry events. These aren't cold leads — they're warm relationships.
+
+A message from a former colleague carries 10x more weight than a cold email from a stranger.
+
+### 3. Credibility
+
+Your title, your experience, your track record — these all signal competence. When you say "I built a tool that solves X," people believe you because you've been in the trenches.
+
+## The 4-Week Outreach Plan
+
+### Week 1: Map Your Network
+
+Before you send a single message, build your prospect list.
+
+**Step 1**: Open a spreadsheet. Create columns for: Name, Company, Role, Relationship, Pain Point Relevance (1-5), Last Contact.
+
+**Step 2**: Go through these sources:
+- LinkedIn connections in your target industry
+- Email contacts from the last 3 years
+- Conference attendees you've met
+- Former colleagues who moved to target companies
+- Industry Slack or Discord communities you belong to
+
+**Step 3**: Score each person on Pain Point Relevance. Focus on people who:
+- Work in roles that experience the problem your tool solves
+- Have complained about the problem in conversations
+- Work at companies the right size for your solution (usually 10-200 employees)
+
+**Target**: 50 names with a relevance score of 3+.
+
+### Week 2: The Warm Outreach Campaign
+
+Now reach out — but not to sell. To learn.
+
+**The Message Framework:**
+
+Subject: Quick question about [specific workflow]
+
+Hey [Name],
+
+Hope things are going well at [Company]. I've been thinking a lot about [specific problem] lately — I know it was something we dealt with at [shared context].
+
+I'm exploring building a tool to help with this. Would you have 15 minutes this week to share how your team currently handles [specific task]? Not selling anything — genuinely trying to understand the problem better.
+
+[Your name]
+
+**Why this works:**
+- It's personal, not templated
+- It references shared experience
+- It asks for help, not a purchase
+- 15 minutes is a low commitment
+
+**Send 10-15 messages per day.** Expect a 30-40% response rate from warm contacts.
+
+### Week 3: The Discovery Conversations
+
+On these calls, your goal is to understand, not to pitch. Ask:
+
+1. "Walk me through how you currently handle [workflow]."
+2. "What's the most frustrating part of that process?"
+3. "How much time does your team spend on this each week?"
+4. "Have you tried any tools to solve this? What worked and what didn't?"
+5. "If a tool could solve this perfectly, what would it need to do?"
+
+**Listen for:**
+- Emotional language ("I hate this," "it drives me crazy," "we waste so much time")
+- Quantifiable pain ("we spend 10 hours a week on this")
+- Failed alternatives ("we tried X but it didn't work because...")
+
+At the end of each call, say: **"I'm building something to solve exactly this. Would you be interested in trying an early version?"**
+
+Most will say yes. Some will ask to pay immediately. Let them.
+
+### Week 4: Close Your First 10
+
+You've had 15-20 conversations. You have 10-15 people who expressed interest. Now close them.
+
+**The Closing Message:**
+
+Hey [Name],
+
+Thanks again for chatting last week. Based on our conversation and feedback from others in [industry], I've built an early version of [Product Name] that [one sentence description of core value].
+
+I'm offering founding member access at [price — 50% off your planned price] for the first 10 users. You'll get:
+- Lifetime access at this rate
+- Direct input on the roadmap
+- Priority support (my personal email)
+
+Would you like to try it? I can set you up today.
+
+**Why "founding member" works:**
+- It creates exclusivity (only 10 spots)
+- The discount rewards early adopters
+- "Lifetime access at this rate" eliminates price objection
+- Direct input on roadmap makes them feel invested
+
+## Channels Beyond Your Network
+
+If your network doesn't yield 10 customers, supplement with these channels:
+
+### Reddit and Online Communities
+
+Find 3-5 subreddits or forums where your target users hang out. Don't spam. Instead:
+
+1. Answer questions related to your problem space for 2 weeks
+2. Share genuinely useful insights (not links to your product)
+3. When someone posts about the exact problem you solve, DM them
+4. After building credibility, post a "Show HN" or "I built this" post
+
+### Cold Email (Warm Style)
+
+If you must cold email, make it feel warm:
+
+- Reference something specific about their company or role
+- Lead with the problem, not your product
+- Keep it under 100 words
+- Include a specific, relevant insight they'd find valuable
+- Ask for a conversation, not a sale
+
+### LinkedIn Content
+
+Post about the problem you're solving (not your product). Share insights from your customer conversations (anonymized). This attracts inbound interest from people in your network who recognize the pain.
+
+## Pricing Your First 10
+
+Don't overthink pricing at this stage. Guidelines:
+
+- **Charge something**: Free users don't give real feedback
+- **Discount for early adopters**: 50% off your target price signals value while reducing risk
+- **Monthly, not annual**: Lower commitment makes saying yes easier
+- **Sweet spot**: $15-$49/month for your founding tier
+
+You can always raise prices later. Your first 10 customers are buying validation, not just software.
+
+## What to Do After You Hit 10
+
+Congratulations — you have product-market fit signal. Now:
+
+1. **Ask for testimonials**: "Would you mind sharing a sentence about how [Product] has helped your team?"
+2. **Ask for referrals**: "Do you know anyone else who deals with [problem]?"
+3. **Identify your best channel**: Which outreach method converted best? Double down on it.
+4. **Start content marketing**: Write about the problem and solution. SEO compounds over time.
+5. **Raise your price**: New customers pay full price. Your founding members keep their rate.
+
+## The Mindset Shift
+
+Most corporate managers feel uncomfortable with outreach because it feels like "selling." Reframe it:
+
+**You're not selling. You're solving a problem you understand deeply, for people you genuinely want to help.**
+
+Your corporate career gave you the expertise to see the problem. Your micro-SaaS gives them the solution. The outreach is just connecting the two.
+
+Your first 10 customers are out there. Most of them are already in your phone.`,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

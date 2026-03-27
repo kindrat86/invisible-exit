@@ -23,7 +23,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [post]);
+  }, [slug]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -105,6 +105,7 @@ const BlogPost = () => {
         url={`/blog/${post.slug}`}
         type="article"
         publishedDate={post.publishedAt}
+        modifiedDate={post.publishedAt}
       />
       {/* JSON-LD rendered in body for prerender compatibility (Google supports body JSON-LD) */}
       {jsonLdArray.map((ld, i) => (
@@ -329,7 +330,7 @@ const BlogPost = () => {
             Dashboard.
           </p>
           <Link
-            to="/"
+            to="/?checkout=starter"
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
           >
             Get Started for $0.97/month
