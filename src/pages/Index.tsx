@@ -160,7 +160,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit — Build a Side Business While Employed"
+        title="Invisible Exit | Build a Side Business While Employed"
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo."
         url="/"
       />

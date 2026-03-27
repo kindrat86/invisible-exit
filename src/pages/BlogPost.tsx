@@ -11,7 +11,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [post]);
+  }, [slug]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -25,6 +25,7 @@ const BlogPost = () => {
         url={`/blog/${post.slug}`}
         type="article"
         publishedDate={post.publishedAt}
+        modifiedDate={post.publishedAt}
       />
       <Navbar />
 
