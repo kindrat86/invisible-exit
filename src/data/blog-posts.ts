@@ -1,3 +1,13 @@
+export interface BlogPostFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -6,6 +16,14 @@ export interface BlogPost {
   readTime: string;
   publishedAt: string;
   content: string;
+  faqs?: BlogPostFAQ[];
+  howTo?: {
+    name: string;
+    description: string;
+    totalTime: string;
+    steps: HowToStep[];
+  };
+  relatedSlugs?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -81,6 +99,21 @@ The trick is building without your employer noticing, which is exactly what the 
 ## Your Next Step
 
 Stop waiting for the "perfect number." Start building toward $4,000/month in recurring revenue. The math works. The timeline is realistic. The only variable is whether you start.`,
+    faqs: [
+      {
+        question: "What is the 4% rule for financial independence?",
+        answer: "The 4% rule states you need 25 times your annual expenses saved to retire safely. However, for corporate managers, building $4,000/month in recurring micro-SaaS revenue is a faster, more practical path to financial independence than traditional retirement savings.",
+      },
+      {
+        question: "How much money does a corporate manager need to never work again?",
+        answer: "Rather than the traditional millions in savings, a corporate manager earning $120K-$200K typically needs $4,000/month in net recurring revenue from a micro-SaaS business. This covers core expenses, provides runway to grow full-time, and eliminates the fear of financial free-fall.",
+      },
+      {
+        question: "How does micro-SaaS income compare to traditional retirement savings?",
+        answer: "A micro-SaaS charging $29/month needs just 138 customers to generate $4,000/month. This is achievable in 12-18 months, compared to decades of traditional saving. Plus, recurring revenue compounds — every customer added this month still pays next month.",
+      },
+    ],
+    relatedSlugs: ["real-estate-vs-micro-saas-freedom-math", "zero-to-4000-invisible-exit-timeline"],
   },
   {
     slug: "why-managing-directors-building-micro-saas",
@@ -171,6 +204,21 @@ The real risk isn't building a micro-SaaS on the side. It's spending another dec
 You don't need to quit your job. You don't need a technical co-founder. You don't need venture capital.
 
 You need a niche problem, 5-7 hours per week, and a systematic approach to building invisible recurring revenue. That's what Invisible Exit provides.`,
+    faqs: [
+      {
+        question: "What is micro-SaaS?",
+        answer: "Micro-SaaS is a small software-as-a-service business typically run by one person or a small team, targeting a specific niche. It generates recurring monthly revenue through subscriptions, usually ranging from $20-$100/month per customer, and can be built and operated in 5-7 hours per week.",
+      },
+      {
+        question: "Why are corporate executives building side businesses?",
+        answer: "Corporate executives are building side businesses because golden handcuffs (RSUs, bonuses, benefits) create an endless 'just one more year' cycle. AI tools have eliminated the technical barrier to building software, and micro-niches are more profitable than ever. Executives have unique advantages: capital, network, pattern recognition, and discipline.",
+      },
+      {
+        question: "Can you build a SaaS while working full-time?",
+        answer: "Yes. The Invisible Exit framework is designed for full-time corporate managers with 5-7 hours per week. Using AI tools for development and content, stealth operations for invisibility, and a systematic 18-month timeline, executives can build a micro-SaaS to $4,000/month MRR without quitting their day job.",
+      },
+    ],
+    relatedSlugs: ["invisible-business-model", "ai-tools-replace-startup-team"],
   },
   {
     slug: "invisible-business-model",
@@ -295,6 +343,21 @@ Before launching, verify:
 Invisibility isn't forever. It's a strategy for the 12-18 months while you build your runway. Once you've hit your MRR target and given notice, you can step into the light.
 
 The goal isn't to hide. It's to protect your transition period so you can leave on your terms, with your income intact, and your new business already profitable.`,
+    faqs: [
+      {
+        question: "What is the invisible business model?",
+        answer: "The invisible business model is a strategy for building a profitable side business while employed, using entity separation (LLCs in privacy-friendly states), digital footprint management, and operational protocols that prevent your employer from discovering your venture. It's designed for the 12-18 month transition period.",
+      },
+      {
+        question: "How do you build a business that does not conflict with your employer?",
+        answer: "The key is choosing a micro-SaaS that serves a different industry than your employer, using separate devices and networks, forming an LLC (potentially in your spouse's name), and never using company time or resources. Most employment agreements are more permissive than people assume, especially for non-competing ventures.",
+      },
+      {
+        question: "What makes a micro-SaaS business invisible?",
+        answer: "A micro-SaaS is invisible when it operates through a privacy-protected LLC, uses separate digital identities (domain, email, social accounts), markets under a brand name rather than your personal name, and generates revenue through SEO and content marketing rather than personal brand building.",
+      },
+    ],
+    relatedSlugs: ["why-managing-directors-building-micro-saas", "zero-to-4000-invisible-exit-timeline"],
   },
   {
     slug: "zero-to-4000-invisible-exit-timeline",
@@ -432,6 +495,32 @@ Some people hit $4,000/month in 9 months. Others take 24. The timeline depends o
 What matters is the sequence: validate, build, grow, exit. Skip a step and you'll waste months backtracking.
 
 The clock starts when you start. Not when you feel ready.`,
+    faqs: [
+      {
+        question: "How long does it take to build a micro-SaaS to $4,000 MRR?",
+        answer: "Following the Invisible Exit timeline, it takes 12-18 months to reach $4,000/month in recurring revenue. The first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on hitting target MRR and preparing your exit.",
+      },
+      {
+        question: "What are the first steps to building a micro-SaaS?",
+        answer: "Start by listing 10 industries you understand from corporate experience, identifying pain points in each. Interview 5 people in your top niches, then validate by creating a landing page and getting 5 pre-sales. Only then build your MVP, focusing on the single core feature that solves the main pain point.",
+      },
+      {
+        question: "How much does it cost to start a micro-SaaS?",
+        answer: "With AI tools, starting a micro-SaaS costs $60-$260/month — covering AI code generators ($50-$100), hosting ($0-$50), and marketing tools ($0-$50). This is a 99% reduction from the $22,000-$43,000/month a traditional 5-person startup team would cost.",
+      },
+    ],
+    howTo: {
+      name: "How to Build a Micro-SaaS to $4,000 MRR in 18 Months",
+      description: "A step-by-step guide to building $4,000/month in recurring revenue while keeping your corporate job.",
+      totalTime: "P18M",
+      steps: [
+        { name: "Foundation (Months 1-3)", text: "Choose your niche by listing 10 industries you understand, interview potential customers, validate with a landing page and 5 pre-sales, then build your MVP focusing on one core feature." },
+        { name: "First Customers (Months 4-6)", text: "Get to 10 paying customers through direct outreach and community posts. Fix top bugs, add the most requested feature, write SEO content, and set up a referral program. Target: 20-30 customers, $600-$900 MRR." },
+        { name: "Growth (Months 7-12)", text: "Run a content marketing machine publishing 2-3 pieces per week. Optimize for churn reduction below 5%, introduce higher pricing tiers, and automate onboarding and support. Target: 80-120 customers, $2,400-$3,600 MRR." },
+        { name: "The Exit (Months 13-18)", text: "Close the gap to $4,000/month with targeted outreach and small paid ads. Build 6 months of personal savings, document all processes, research health insurance, and give notice on your terms." },
+      ],
+    },
+    relatedSlugs: ["ai-tools-replace-startup-team", "invisible-business-model"],
   },
   {
     slug: "ai-tools-replace-startup-team",
@@ -536,6 +625,21 @@ You don't need to master every tool on this list. Start with:
 3. **Stripe** for payments
 
 Everything else can be added as you grow. The point is: the barrier to entry has never been lower. The question isn't whether you can build a SaaS product. It's whether you will.`,
+    faqs: [
+      {
+        question: "What AI tools can replace a startup team?",
+        answer: "Key AI tools include: Lovable and Cursor for development ($50-$100/month), v0 by Vercel and Midjourney for design ($10-$30/month), Claude for content and copywriting ($0-$50/month), and Stripe/Supabase/Vercel for operations ($0-$50/month). Total: $60-$260/month vs. $22,000-$43,000/month for a traditional team.",
+      },
+      {
+        question: "Can one person build a SaaS using AI?",
+        answer: "Yes. In 2026, AI tools can generate production-ready applications from natural language descriptions, create professional UI designs, write marketing content, and handle operational infrastructure. A solo founder needs domain expertise, customer empathy, and strategic thinking — skills corporate managers already have.",
+      },
+      {
+        question: "How much money does AI save for solo founders?",
+        answer: "AI reduces the cost of building and running a SaaS from $22,000-$43,000/month (traditional 5-person team) to $60-$260/month — a 99% cost reduction. This makes it possible for corporate managers to build profitable businesses on a side-project budget without venture capital.",
+      },
+    ],
+    relatedSlugs: ["invisible-business-model", "why-managing-directors-building-micro-saas"],
   },
   {
     slug: "real-estate-vs-micro-saas-freedom-math",
@@ -657,6 +761,21 @@ Real estate is a proven path to wealth, but it's slow, capital-intensive, and ha
 Micro-SaaS is faster, cheaper, more invisible, and provides the cash flow to fund any other investment you want — including real estate.
 
 For corporate managers who need to build income invisibly while employed, the math is clear: **start with micro-SaaS**.`,
+    faqs: [
+      {
+        question: "Is micro-SaaS more profitable than real estate?",
+        answer: "For the first few years, yes. A micro-SaaS can reach $4,000/month net cash flow in 12-18 months with $200 upfront. A rental property requires $80,000+ upfront and may only cash flow $150/month initially. It takes 8-12 rental properties ($600K-$900K capital) to match what one micro-SaaS can generate.",
+      },
+      {
+        question: "What is freedom math for corporate managers?",
+        answer: "Freedom math calculates the fastest path from corporate employment to financial independence. It compares investment paths (real estate vs. micro-SaaS) by upfront capital, time to $4,000/month cash flow, hours per week required, invisibility from employers, and scalability.",
+      },
+      {
+        question: "How do recurring SaaS revenues compare to rental income?",
+        answer: "SaaS margins improve as you scale (70% at 10 customers to 95% at 1,000), while real estate margins often worsen due to management complexity. SaaS has near-zero marginal cost per customer, while each rental property requires significant capital. SaaS also offers complete location independence and invisibility.",
+      },
+    ],
+    relatedSlugs: ["how-much-money-to-never-work-again", "zero-to-4000-invisible-exit-timeline"],
   },
 ];
 
