@@ -188,7 +188,7 @@ const BlogPost = () => {
             Dashboard.
           </p>
           <Link
-            to="/"
+            to="/?checkout=starter"
             className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
           >
             Get Started for $0.97/month
