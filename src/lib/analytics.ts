@@ -1,3 +1,5 @@
+import posthog from "@/integrations/posthog";
+
 type AnalyticsEvent =
   | "oto_page_viewed"
   | "oto_video_clicked"
@@ -11,6 +13,8 @@ export function trackEvent(
   if (import.meta.env.DEV) {
     console.log(`[analytics] ${event}`, properties ?? "");
   }
+
+  posthog.capture(event, properties);
 
   window.dispatchEvent(
     new CustomEvent("ie:analytics", {
