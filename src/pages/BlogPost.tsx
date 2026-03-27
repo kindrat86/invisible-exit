@@ -3,7 +3,19 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { getBlogPostBySlug } from "@/data/blog-posts";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { getBlogPostBySlug, blogPosts } from "@/data/blog-posts";
+
+function renderInlineMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "<a href='$2' class='text-[#3B82F6] hover:underline'>$1</a>");
+}
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -17,6 +29,74 @@ const BlogPost = () => {
     return <Navigate to="/blog" replace />;
   }
 
+  // Build JSON-LD array
+  const jsonLdArray: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: post.excerpt,
+      url: `https://invisibleexit.com/blog/${post.slug}`,
+      datePublished: post.publishedAt,
+      author: {
+        "@type": "Person",
+        name: "Adrian",
+        url: "https://invisibleexit.com",
+        jobTitle: "Founder, Invisible Exit",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Invisible Exit",
+        url: "https://invisibleexit.com",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://invisibleexit.com/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://invisibleexit.com/blog" },
+        { "@type": "ListItem", position: 3, name: post.title },
+      ],
+    },
+  ];
+
+  if (post.faqs && post.faqs.length > 0) {
+    jsonLdArray.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: post.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  if (post.howTo) {
+    jsonLdArray.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: post.howTo.name,
+      description: post.howTo.description,
+      totalTime: post.howTo.totalTime,
+      step: post.howTo.steps.map((step, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    });
+  }
+
+  // Resolve related posts
+  const relatedPosts = (post.relatedSlugs || [])
+    .map((s) => blogPosts.find((p) => p.slug === s))
+    .filter(Boolean);
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -27,17 +107,26 @@ const BlogPost = () => {
         publishedDate={post.publishedAt}
         modifiedDate={post.publishedAt}
       />
+      {/* JSON-LD rendered in body for prerender compatibility (Google supports body JSON-LD) */}
+      {jsonLdArray.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
       <Navbar />
 
       {/* Header */}
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-3xl">
-          <Link
-            to="/blog"
-            className="text-white/50 hover:text-white/80 text-sm mb-6 inline-flex items-center gap-1 transition-colors"
-          >
-            &larr; Back to Blog
-          </Link>
+          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
+            <Link to="/" className="hover:text-white/70 transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/blog" className="hover:text-white/70 transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-white/60 truncate max-w-[200px]">{post.title}</span>
+          </nav>
           <span className="block text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-4">
             {post.category}
           </span>
@@ -45,6 +134,8 @@ const BlogPost = () => {
             {post.title}
           </h1>
           <div className="flex items-center gap-4 text-white/50 text-sm">
+            <span>By Adrian</span>
+            <span>&middot;</span>
             <span>{post.readTime}</span>
             <span>&middot;</span>
             <span>
@@ -62,7 +153,6 @@ const BlogPost = () => {
       <section className="bg-white py-16 px-6">
         <article className="mx-auto max-w-3xl prose prose-lg prose-gray prose-headings:text-gray-900 prose-a:text-[#3B82F6] prose-strong:text-gray-900">
           {post.content.split("\n\n").flatMap((block, i) => {
-            // Split mixed blocks: text followed by list items
             const lines = block.split("\n");
             const listStart = lines.findIndex((l) => l.match(/^[-\d]/) || l.startsWith("- ["));
             if (listStart > 0 && !block.startsWith("|") && !block.startsWith("#")) {
@@ -148,7 +238,7 @@ const BlogPost = () => {
                     const text = item.replace(/^-\s+/, "");
                     return (
                       <li key={j} className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: text.replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>"),
+                        __html: renderInlineMarkdown(text),
                       }} />
                     );
                   })}
@@ -163,7 +253,7 @@ const BlogPost = () => {
                     const text = item.replace(/^\d+\.\s+/, "");
                     return (
                       <li key={j} className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{
-                        __html: text.replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>"),
+                        __html: renderInlineMarkdown(text),
                       }} />
                     );
                   })}
@@ -172,12 +262,62 @@ const BlogPost = () => {
             }
             return (
               <p key={k} className="text-gray-600 leading-relaxed my-4" dangerouslySetInnerHTML={{
-                __html: block.replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>"),
+                __html: renderInlineMarkdown(block),
               }} />
             );
           })}
         </article>
       </section>
+
+      {/* FAQ Section */}
+      {post.faqs && post.faqs.length > 0 && (
+        <section className="bg-white pb-16 px-6">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <Accordion type="single" collapsible className="w-full">
+              {post.faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`}>
+                  <AccordionTrigger className="text-left text-gray-900 font-medium">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+      )}
+
+      {/* Related Articles */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-gray-50 py-16 px-6">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related!.slug}
+                  to={`/blog/${related!.slug}`}
+                  className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col hover:shadow-md transition-shadow group"
+                >
+                  <span className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
+                    {related!.category}
+                  </span>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3B82F6] transition-colors">
+                    {related!.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1">
+                    {related!.excerpt}
+                  </p>
+                  <span className="text-gray-400 text-xs mt-4">{related!.readTime}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="bg-gray-50 py-16 px-6">

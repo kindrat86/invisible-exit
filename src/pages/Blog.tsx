@@ -12,10 +12,39 @@ const Blog = () => {
         description="Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives."
         url="/blog"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Invisible Exit Blog",
+          description: "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers.",
+          url: "https://invisibleexit.com/blog",
+          publisher: { "@type": "Organization", name: "Invisible Exit", url: "https://invisibleexit.com" },
+        }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://invisibleexit.com/" },
+            { "@type": "ListItem", position: 2, name: "Blog" },
+          ],
+        }) }}
+      />
       <Navbar />
 
       {/* Hero */}
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
+        <div className="mx-auto max-w-4xl">
+          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
+            <Link to="/" className="hover:text-white/70 transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white/60">Blog</span>
+          </nav>
+        </div>
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             The Invisible Exit Blog
