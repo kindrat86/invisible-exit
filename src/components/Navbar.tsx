@@ -7,12 +7,20 @@ const Navbar = () => {
         <Link to="/" className="text-white text-xl font-bold tracking-tight">
           Invisible Exit
         </Link>
-        <Link
-          to="/login"
-          className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 transition-colors"
-        >
-          Login
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            to="/blog"
+            className="text-white/70 hover:text-white text-sm font-medium transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
+            to="/login"
+            className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 transition-colors"
+          >
+            Login
+          </Link>
+        </div>
       </div>
     </nav>
   );

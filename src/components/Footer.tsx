@@ -7,6 +7,9 @@ const Footer = () => {
         <span className="text-white font-bold text-lg">Invisible Exit</span>
 
         <div className="flex items-center gap-6">
+          <Link to="/blog" className="text-white/50 hover:text-white/80 text-sm transition-colors">
+            Blog
+          </Link>
           <Link to="/privacy" className="text-white/50 hover:text-white/80 text-sm transition-colors">
             Privacy Policy
           </Link>
