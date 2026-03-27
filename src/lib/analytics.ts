@@ -18,3 +18,25 @@ export function trackEvent(
     })
   );
 }
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    rdt?: (...args: unknown[]) => void;
+  }
+}
+
+export function trackGoogleConversion(value?: number, currency = "USD") {
+  window.gtag?.("event", "conversion", {
+    send_to: "AW-18046014876/p7N-CLi97JAcEJyrgZ1D",
+    value,
+    currency,
+  });
+}
+
+export function trackRedditConversion(value?: number, currency = "USD") {
+  window.rdt?.("track", "Purchase", {
+    value,
+    currency,
+  });
+}
