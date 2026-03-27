@@ -1,16 +1,18 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Terms = () => {
-  useEffect(() => {
-    document.title = "Terms of Service | Invisible Exit";
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Terms of Service | Invisible Exit"
+        description="Terms and conditions for using the Invisible Exit platform. Read before signing up."
+        url="/terms"
+      />
       <Navbar />
 
+      <main>
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Terms of Service</h1>
@@ -118,6 +120,7 @@ const Terms = () => {
           </p>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

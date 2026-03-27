@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import SEOHead from "@/components/SEOHead";
 
 export default function ResetPassword() {
   const navigate = useNavigate();
@@ -39,6 +40,12 @@ export default function ResetPassword() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A] px-4">
+      <SEOHead
+        title="Reset Password | Invisible Exit"
+        description="Reset your Invisible Exit password."
+        url="/reset-password"
+        noindex
+      />
       <Card className="w-full max-w-md border-white/10 bg-[#1B2A4A]">
         <CardHeader className="text-center">
           <p className="text-blue-400 text-xs tracking-widest uppercase font-semibold mb-2">
