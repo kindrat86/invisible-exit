@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import {
   Accordion,
   AccordionContent,
@@ -104,15 +105,6 @@ const Index = () => {
   const [subscribeEmail, setSubscribeEmail] = useState("");
 
   useEffect(() => {
-    document.title =
-      "Invisible Exit: Build Invisible Recurring Revenue While Employed";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. $0.97/month."
-      );
-    }
 
     // Auto-trigger checkout when arriving from email CTA
     const params = new URLSearchParams(window.location.search);
@@ -167,8 +159,37 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Invisible Exit — Build a Side Business While Employed"
+        description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo."
+        url="/"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Invisible Exit",
+            url: "https://invisibleexit.com",
+            description:
+              "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
+            sameAs: ["https://www.youtube.com/@InvisibleExit"],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Invisible Exit",
+            url: "https://invisibleexit.com",
+            potentialAction: {
+              "@type": "SearchAction",
+              target:
+                "https://invisibleexit.com/blog?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          },
+        ]}
+      />
       <Navbar />
 
+      <main>
       {/* ── 1. Hero ── */}
       <section className="bg-[#1B2A4A] pt-32 pb-12 px-6">
         <div className="mx-auto max-w-4xl text-center">
@@ -516,6 +537,7 @@ const Index = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

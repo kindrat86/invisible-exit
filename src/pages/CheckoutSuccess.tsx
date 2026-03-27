@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
 
 const CheckoutSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -10,7 +11,7 @@ const CheckoutSuccess = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    document.title = "Setting up your dashboard... | Invisible Exit";
+    document.title = "Setting up your dashboard... | Invisible Exit"; // kept for loading state
 
     if (!sessionId) {
       setError(true);
@@ -49,9 +50,19 @@ const CheckoutSuccess = () => {
     };
   }, [sessionId]);
 
+  const seoHead = (
+    <SEOHead
+      title="Checkout | Invisible Exit"
+      description="Setting up your Invisible Exit dashboard."
+      url="/checkout/success"
+      noindex
+    />
+  );
+
   if (error) {
     return (
       <div className="min-h-screen bg-white">
+        {seoHead}
         <Navbar />
         <div className="pt-32 pb-20 px-6 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
@@ -73,6 +84,7 @@ const CheckoutSuccess = () => {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
+      {seoHead}
       <div className="text-center">
         <Loader2 className="h-10 w-10 text-blue-500 animate-spin mx-auto mb-4" />
         <p className="text-gray-600 text-lg font-medium">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Check, LayoutDashboard } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -17,7 +18,6 @@ const OTOFounding = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   useEffect(() => {
-    document.title = "Founding Member Invitation | Invisible Exit";
     trackEvent("oto_page_viewed");
 
     if (sessionId) {
@@ -59,6 +59,12 @@ const OTOFounding = () => {
 
   return (
     <div className="min-h-screen bg-[#1B2A4A]">
+      <SEOHead
+        title="Founding Member Invitation | Invisible Exit"
+        description="Join Invisible Exit as a founding member and lock in lifetime pricing."
+        url="/oto/founding"
+        noindex
+      />
       {/* ─── 1. Confirmation Banner (sticky) ─── */}
       {paymentConfirmed && (
         <div

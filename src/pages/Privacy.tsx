@@ -1,16 +1,18 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Privacy = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy | Invisible Exit";
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Privacy Policy | Invisible Exit"
+        description="How Invisible Exit collects, uses, and protects your personal information. Read our privacy policy."
+        url="/privacy"
+      />
       <Navbar />
 
+      <main>
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Privacy Policy</h1>
@@ -99,6 +101,7 @@ const Privacy = () => {
           </p>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

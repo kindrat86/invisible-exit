@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const TOOL_META: Record<
   string,
@@ -66,6 +67,12 @@ const Confirmation = () => {
   if (tier === "founding") {
     return (
       <div className="min-h-screen bg-white">
+        <SEOHead
+          title="Welcome, Founding Member | Invisible Exit"
+          description="Your founding membership is confirmed."
+          url="/confirmation"
+          noindex
+        />
         <Navbar />
 
         {/* Section 1: Emotional Validation */}
@@ -209,6 +216,12 @@ const Confirmation = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Welcome | Invisible Exit"
+        description="Your purchase is confirmed."
+        url="/confirmation"
+        noindex
+      />
       <Navbar />
 
       {/* Section 1: Purchase Confirmation */}
