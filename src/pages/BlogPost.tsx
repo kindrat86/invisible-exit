@@ -33,7 +33,10 @@ const BlogPost = () => {
           description: post.excerpt,
           datePublished: post.publishedAt,
           dateModified: post.publishedAt,
-          author: { "@type": "Person", name: "Invisible Exit" },
+          author: {
+            "@type": "Person",
+            name: "Invisible Exit",
+          },
           publisher: {
             "@type": "Organization",
             name: "Invisible Exit",
