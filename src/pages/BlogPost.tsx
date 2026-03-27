@@ -26,27 +26,6 @@ const BlogPost = () => {
         type="article"
         publishedDate={post.publishedAt}
         modifiedDate={post.publishedAt}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: post.title,
-          description: post.excerpt,
-          datePublished: post.publishedAt,
-          dateModified: post.publishedAt,
-          author: {
-            "@type": "Person",
-            name: "Invisible Exit",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Invisible Exit",
-            url: "https://invisibleexit.com",
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `https://invisibleexit.com/blog/${post.slug}`,
-          },
-        }}
       />
       <Navbar />
 

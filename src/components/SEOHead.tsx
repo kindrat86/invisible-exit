@@ -9,31 +9,29 @@ interface SEOHeadProps {
   publishedDate?: string;
   modifiedDate?: string;
   noindex?: boolean;
-  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const SITE_NAME = "Invisible Exit";
 const DEFAULT_IMAGE = "https://invisibleexit.com/og-image.png";
-const DATA_ATTR = "data-seo-head";
 
-function setMeta(attr: "name" | "property", key: string, content: string) {
-  let el = document.querySelector<HTMLMetaElement>(
-    `meta[${attr}="${key}"]`
-  );
+function setMeta(attr: string, key: string, value: string) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
   if (!el) {
     el = document.createElement("meta");
     el.setAttribute(attr, key);
-    el.setAttribute(DATA_ATTR, "true");
     document.head.appendChild(el);
   }
-  el.setAttribute("content", content);
-  el.setAttribute(DATA_ATTR, "true");
+  el.content = value;
 }
 
-function removeSeoTags() {
-  document
-    .querySelectorAll(`[${DATA_ATTR}]`)
-    .forEach((el) => el.remove());
+function setLink(rel: string, href: string) {
+  let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = rel;
+    document.head.appendChild(el);
+  }
+  el.href = href;
 }
 
 export default function SEOHead({
@@ -45,42 +43,17 @@ export default function SEOHead({
   publishedDate,
   modifiedDate,
   noindex = false,
-  jsonLd,
 }: SEOHeadProps) {
   const fullUrl = url.startsWith("http")
     ? url
     : `https://invisibleexit.com${url}`;
 
-  const jsonLdScripts = jsonLd
-    ? Array.isArray(jsonLd)
-      ? jsonLd
-      : [jsonLd]
-    : [];
-
   useEffect(() => {
-    // Clean previous SEO tags
-    removeSeoTags();
-
-    // Title
     document.title = title;
 
-    // Meta description
     setMeta("name", "description", description);
-
-    // Robots
     setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
-
-    // Canonical
-    let canonical = document.querySelector<HTMLLinkElement>(
-      'link[rel="canonical"]'
-    );
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", fullUrl);
-    canonical.setAttribute(DATA_ATTR, "true");
+    setLink("canonical", fullUrl);
 
     // Open Graph
     setMeta("property", "og:type", type);
@@ -103,20 +76,7 @@ export default function SEOHead({
     if (type === "article" && modifiedDate) {
       setMeta("property", "article:modified_time", modifiedDate);
     }
-
-    // JSON-LD
-    jsonLdScripts.forEach((ld) => {
-      const script = document.createElement("script");
-      script.setAttribute("type", "application/ld+json");
-      script.setAttribute(DATA_ATTR, "true");
-      script.textContent = JSON.stringify(ld);
-      document.head.appendChild(script);
-    });
-
-    return () => {
-      removeSeoTags();
-    };
-  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex, jsonLdScripts]);
+  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex]);
 
   return null;
 }

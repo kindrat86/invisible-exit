@@ -11,14 +11,6 @@ const Blog = () => {
         title="Blog: Invisible Exit Strategies for Corporate Managers | Invisible Exit"
         description="Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives."
         url="/blog"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Invisible Exit Blog",
-          description:
-            "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives.",
-          url: "https://invisibleexit.com/blog",
-        }}
       />
       <Navbar />
 
