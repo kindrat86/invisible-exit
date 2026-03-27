@@ -15,7 +15,10 @@ import Badge from "./pages/Badge.tsx";
 import Confirmation from "./pages/Confirmation.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
+import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PostHogPageviewTracker />
         <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -48,7 +52,8 @@ const App = () => (
           <Route path="/founding-member" element={<Navigate to="/" replace />} />
           <Route path="/training" element={<Navigate to="/" replace />} />
           <Route path="/thank-you" element={<Navigate to="/" replace />} />
-          <Route path="/blog" element={<Navigate to="/" replace />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
