@@ -59,17 +59,30 @@ const BlogPost = () => {
       {/* Content */}
       <section className="bg-white py-16 px-6">
         <article className="mx-auto max-w-3xl prose prose-lg prose-gray prose-headings:text-gray-900 prose-a:text-[#3B82F6] prose-strong:text-gray-900">
-          {post.content.split("\n\n").map((block, i) => {
+          {post.content.split("\n\n").flatMap((block, i) => {
+            // Split mixed blocks: text followed by list items
+            const lines = block.split("\n");
+            const listStart = lines.findIndex((l) => l.match(/^[-\d]/) || l.startsWith("- ["));
+            if (listStart > 0 && !block.startsWith("|") && !block.startsWith("#")) {
+              const textPart = lines.slice(0, listStart).join("\n");
+              const listPart = lines.slice(listStart).join("\n");
+              return [
+                { key: `${i}a`, block: textPart },
+                { key: `${i}b`, block: listPart },
+              ];
+            }
+            return [{ key: String(i), block }];
+          }).map(({ key: k, block }) => {
             if (block.startsWith("## ")) {
               return (
-                <h2 key={i} className="text-2xl font-bold mt-10 mb-4">
+                <h2 key={k} className="text-2xl font-bold mt-10 mb-4">
                   {block.replace("## ", "")}
                 </h2>
               );
             }
             if (block.startsWith("### ")) {
               return (
-                <h3 key={i} className="text-xl font-semibold mt-8 mb-3">
+                <h3 key={k} className="text-xl font-semibold mt-8 mb-3">
                   {block.replace("### ", "")}
                 </h3>
               );
@@ -82,7 +95,7 @@ const BlogPost = () => {
                 r.split("|").filter(Boolean).map((c) => c.trim())
               );
               return (
-                <div key={i} className="overflow-x-auto my-6">
+                <div key={k} className="overflow-x-auto my-6">
                   <table className="min-w-full text-sm border border-gray-200 rounded-lg">
                     <thead>
                       <tr className="bg-gray-50">
@@ -108,10 +121,27 @@ const BlogPost = () => {
                 </div>
               );
             }
+            if (block.startsWith("- [ ]") || block.startsWith("- [x]")) {
+              const items = block.split("\n").filter(Boolean);
+              return (
+                <ul key={k} className="space-y-2 my-4 pl-2">
+                  {items.map((item, j) => {
+                    const checked = item.startsWith("- [x]");
+                    const text = item.replace(/^- \[.\]\s*/, "");
+                    return (
+                      <li key={j} className="flex items-start gap-2 text-gray-600">
+                        <input type="checkbox" checked={checked} readOnly className="mt-1.5" />
+                        <span>{text}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              );
+            }
             if (block.startsWith("- ")) {
               const items = block.split("\n").filter(Boolean);
               return (
-                <ul key={i} className="list-disc pl-6 space-y-2 my-4">
+                <ul key={k} className="list-disc pl-6 space-y-2 my-4">
                   {items.map((item, j) => {
                     const text = item.replace(/^-\s+/, "");
                     return (
@@ -126,7 +156,7 @@ const BlogPost = () => {
             if (block.match(/^\d+\.\s/)) {
               const items = block.split("\n").filter(Boolean);
               return (
-                <ol key={i} className="list-decimal pl-6 space-y-2 my-4">
+                <ol key={k} className="list-decimal pl-6 space-y-2 my-4">
                   {items.map((item, j) => {
                     const text = item.replace(/^\d+\.\s+/, "");
                     return (
@@ -138,25 +168,8 @@ const BlogPost = () => {
                 </ol>
               );
             }
-            if (block.startsWith("- [ ]") || block.startsWith("- [x]")) {
-              const items = block.split("\n").filter(Boolean);
-              return (
-                <ul key={i} className="space-y-2 my-4 pl-2">
-                  {items.map((item, j) => {
-                    const checked = item.startsWith("- [x]");
-                    const text = item.replace(/^- \[.\]\s*/, "");
-                    return (
-                      <li key={j} className="flex items-start gap-2 text-gray-600">
-                        <input type="checkbox" checked={checked} readOnly className="mt-1.5" />
-                        <span>{text}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              );
-            }
             return (
-              <p key={i} className="text-gray-600 leading-relaxed my-4" dangerouslySetInnerHTML={{
+              <p key={k} className="text-gray-600 leading-relaxed my-4" dangerouslySetInnerHTML={{
                 __html: block.replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>"),
               }} />
             );
