@@ -1,4 +1,4 @@
-import { posthog } from "@/lib/posthog";
+import posthog from "@/integrations/posthog";
 
 type AnalyticsEvent =
   | "oto_page_viewed"

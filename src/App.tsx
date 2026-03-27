@@ -18,6 +18,7 @@ import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
+import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PostHogPageviewTracker />
         <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Index />} />
