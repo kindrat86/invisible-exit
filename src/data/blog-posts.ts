@@ -1124,8 +1124,124 @@ Your corporate career gave you the expertise to see the problem. Your micro-SaaS
 
 Your first 10 customers are out there. Most of them are already in your phone.`,
   },
+  {
+    slug: "non-compete-clauses-micro-saas-what-you-need-to-know",
+    title:
+      "Non-Compete Clauses and Micro-SaaS: What Corporate Managers Need to Know",
+    excerpt:
+      "Your employment agreement probably isn't as restrictive as you think. Here's how to evaluate your non-compete before building.",
+    category: "Stealth Operations",
+    readTime: "9 min read",
+    publishedAt: "2026-03-27",
+    content: `Non-compete clauses are the boogeyman of side projects. Every corporate manager considering a micro-SaaS business has the same fear: "My non-compete will crush me."
+
+But here's what most people don't realize: **the vast majority of non-competes don't apply to micro-SaaS businesses in unrelated industries.** And even when they do apply, they're often unenforceable.
+
+Let's break down what you actually need to worry about — and what you don't.
+
+## What Non-Competes Actually Say
+
+Most non-compete agreements restrict you from:
+- Working for a direct competitor
+- Soliciting your employer's clients
+- Using proprietary information or trade secrets
+
+What they typically **don't** restrict:
+- Building software for an unrelated industry
+- Having passive income from a business you don't actively manage
+- Owning equity in a company operated by your spouse
+
+**The key distinction**: non-competes are designed to prevent you from taking your employer's competitive advantage to a rival. They're not designed to prevent you from building a tool for dentists if you work in fintech.
+
+## The Four Questions to Ask
+
+Before you panic about your non-compete, answer these:
+
+### 1. Does Your Product Compete With Your Employer?
+
+If you work at a marketing agency and you're building a CRM for veterinarians, there's no competition. Your employer has no legitimate interest in preventing you from serving a completely different market.
+
+If there's **any** overlap, you need to be more careful — but overlap doesn't automatically mean you're blocked.
+
+### 2. Are You Using Employer Resources?
+
+This is where most people accidentally cross the line:
+- Don't use your work laptop
+- Don't use your corporate email
+- Don't work during business hours
+- Don't use proprietary data or methodologies
+
+If you're building on your own time, with your own equipment, using publicly available information, you're in the clear on this front.
+
+### 3. Is Your Non-Compete Enforceable?
+
+Many non-competes are written broadly to intimidate, not to hold up in court. Courts typically evaluate:
+- **Reasonableness of scope**: Does it cover too broad a geography or industry?
+- **Duration**: Anything beyond 1-2 years is often struck down
+- **Legitimate business interest**: Does your employer have a real reason to restrict you?
+- **State law**: California, Oklahoma, North Dakota, and Minnesota largely ban non-competes. Many other states severely limit them.
+
+### 4. Would Your Employer Even Care?
+
+Most companies only enforce non-competes when:
+- You join a direct competitor and take clients or IP
+- Your side business directly undermines their revenue
+- They want leverage during a messy departure
+
+A managing director quietly building a $3,000/month SaaS for a completely different industry? Most legal departments wouldn't even bother.
+
+## The FTC Factor
+
+In 2024, the FTC attempted to ban most non-competes nationwide. While the rule faced legal challenges, the trend is clear: **non-competes are becoming harder to enforce**, not easier.
+
+Several states have passed laws limiting non-competes since 2023:
+- Colorado requires employers to notify employees about non-competes
+- Illinois banned non-competes for employees earning under $75K
+- Washington state requires independent consideration for non-competes
+- Oregon limits non-compete duration to 12 months
+
+The legal landscape is shifting in your favor.
+
+## Practical Steps to Protect Yourself
+
+Even if your non-compete is unlikely to be an issue, smart operators take precautions:
+
+**Entity separation**: Form your LLC in your spouse's name or through a trust. Your name doesn't appear on any business filings.
+
+**Industry separation**: Choose a micro-SaaS niche that has zero overlap with your employer's business.
+
+**Resource separation**: Dedicated laptop, dedicated internet connection for business work, dedicated phone number.
+
+**Time separation**: Never work on your business during company hours. Keep a simple log of when you work on your side project.
+
+**Documentation**: Save a copy of your employment agreement. Note the specific restrictions. If you're concerned, get a 30-minute consultation with an employment attorney ($150-300, well worth it).
+
+## The Real Risk Assessment
+
+Here's the truth most lawyers won't tell you: **the risk of your non-compete being enforced against an unrelated micro-SaaS is extremely low.** The risk of spending another 5 years in a job you want to leave because you were afraid of a clause that doesn't apply? That's the real danger.
+
+Do your due diligence. Read your agreement. Consult an attorney if needed. But don't let a boilerplate legal clause stop you from building your exit.
+
+## Disclaimer
+
+This article is for educational purposes only and does not constitute legal advice. Employment law varies by state and individual agreement. Consult with a qualified attorney about your specific situation before making decisions based on this information.`,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+// Validate no blog posts have future publish dates.
+// Posts are hardcoded — there is no admin UI. This guard catches mistakes at dev time.
+if (import.meta.env.DEV) {
+  const today = new Date().toISOString().split("T")[0];
+  blogPosts.forEach((post) => {
+    if (post.publishedAt > today) {
+      console.warn(
+        `[blog-posts] "${post.title}" has a future publishedAt date (${post.publishedAt}). ` +
+          `Dates must not exceed today (${today}).`
+      );
+    }
+  });
 }

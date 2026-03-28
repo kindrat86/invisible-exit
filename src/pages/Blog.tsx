@@ -60,7 +60,7 @@ const Blog = () => {
       <section className="bg-white py-16 px-6">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((article) => (
+            {[...blogPosts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
