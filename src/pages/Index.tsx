@@ -160,32 +160,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit — Build a Side Business While Employed"
+        title="Invisible Exit | Build a Side Business While Employed"
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo."
         url="/"
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Invisible Exit",
-            url: "https://invisibleexit.com",
-            description:
-              "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
-            sameAs: ["https://www.youtube.com/@InvisibleExit"],
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Invisible Exit",
-            url: "https://invisibleexit.com",
-            potentialAction: {
-              "@type": "SearchAction",
-              target:
-                "https://invisibleexit.com/blog?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
-          },
-        ]}
       />
       <Navbar />
 

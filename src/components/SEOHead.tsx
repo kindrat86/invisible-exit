@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface SEOHeadProps {
   title: string;
@@ -9,11 +9,30 @@ interface SEOHeadProps {
   publishedDate?: string;
   modifiedDate?: string;
   noindex?: boolean;
-  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const SITE_NAME = "Invisible Exit";
-const DEFAULT_IMAGE = "https://invisibleexit.com/og-image.png"; // TODO: Create and upload an OG image (1200x630px)
+const DEFAULT_IMAGE = "https://invisibleexit.com/og-image.png";
+
+function setMeta(attr: string, key: string, value: string) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.content = value;
+}
+
+function setLink(rel: string, href: string) {
+  let el = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = rel;
+    document.head.appendChild(el);
+  }
+  el.href = href;
+}
 
 export default function SEOHead({
   title,
@@ -24,56 +43,40 @@ export default function SEOHead({
   publishedDate,
   modifiedDate,
   noindex = false,
-  jsonLd,
 }: SEOHeadProps) {
   const fullUrl = url.startsWith("http")
     ? url
     : `https://invisibleexit.com${url}`;
 
-  const jsonLdScripts = jsonLd
-    ? Array.isArray(jsonLd)
-      ? jsonLd
-      : [jsonLd]
-    : [];
+  useEffect(() => {
+    document.title = title;
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta
-        name="robots"
-        content={noindex ? "noindex, nofollow" : "index, follow"}
-      />
-      <link rel="canonical" href={fullUrl} />
+    setMeta("name", "description", description);
+    setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    setLink("canonical", fullUrl);
 
-      {/* Open Graph */}
-      <meta property="og:type" content={type} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={SITE_NAME} />
+    // Open Graph
+    setMeta("property", "og:type", type);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
+    setMeta("property", "og:url", fullUrl);
+    setMeta("property", "og:image", image);
+    setMeta("property", "og:site_name", SITE_NAME);
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+    // Twitter Card
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", title);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:image", image);
 
-      {/* Article-specific */}
-      {type === "article" && publishedDate && (
-        <meta property="article:published_time" content={publishedDate} />
-      )}
-      {type === "article" && modifiedDate && (
-        <meta property="article:modified_time" content={modifiedDate} />
-      )}
+    // Article-specific
+    if (type === "article" && publishedDate) {
+      setMeta("property", "article:published_time", publishedDate);
+    }
+    if (type === "article" && modifiedDate) {
+      setMeta("property", "article:modified_time", modifiedDate);
+    }
+  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex]);
 
-      {/* JSON-LD Structured Data */}
-      {jsonLdScripts.map((ld, i) => (
-        <script key={i} type="application/ld+json">
-          {JSON.stringify(ld)}
-        </script>
-      ))}
-    </Helmet>
-  );
+  return null;
 }
