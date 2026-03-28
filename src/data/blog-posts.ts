@@ -938,7 +938,7 @@ You'll be surprised. And you'll still make it to your kid's soccer game by 10.`,
       "Forget cold outreach templates. Your corporate network and domain expertise are the unfair advantage most founders would kill for.",
     category: "Growth",
     readTime: "11 min read",
-    publishedAt: "2026-03-31",
+    publishedAt: "2026-03-27",
     content: `Getting your first 10 paying customers is the hardest part of building a micro-SaaS. It's also the most important. Those first 10 customers validate your idea, shape your product, and give you the confidence to keep going.
 
 For corporate managers, the path to 10 customers looks different than the standard startup playbook. You have assets most founders don't: a professional network, domain expertise, and credibility. Here's how to use them.
@@ -1234,7 +1234,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | undefined {
 
 // Validate no blog posts have future publish dates.
 // Posts are hardcoded — there is no admin UI. This guard catches mistakes at dev time.
-if (import.meta.env.DEV) {
+if (import.meta.env?.DEV) {
   const today = new Date().toISOString().split("T")[0];
   blogPosts.forEach((post) => {
     if (post.publishedAt > today) {
