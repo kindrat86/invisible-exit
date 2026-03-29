@@ -106,15 +106,8 @@ const BlogPost = () => {
         type="article"
         publishedDate={post.publishedAt}
         modifiedDate={post.publishedAt}
+        jsonLd={jsonLdArray}
       />
-      {/* JSON-LD rendered in body for prerender compatibility (Google supports body JSON-LD) */}
-      {jsonLdArray.map((ld, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
-        />
-      ))}
       <Navbar />
 
       {/* Header */}

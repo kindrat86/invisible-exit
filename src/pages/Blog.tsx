@@ -8,31 +8,37 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Blog: Invisible Exit Strategies for Corporate Managers | Invisible Exit"
-        description="Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives."
+        title="Blog: Invisible Exit Strategies | Invisible Exit"
+        description="Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence. Frameworks, case studies, and actionable guides."
         url="/blog"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Invisible Exit Blog",
-          description: "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers.",
-          url: "https://invisibleexit.com/blog",
-          publisher: { "@type": "Organization", name: "Invisible Exit", url: "https://invisibleexit.com" },
-        }) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://invisibleexit.com/" },
-            { "@type": "ListItem", position: 2, name: "Blog" },
-          ],
-        }) }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Invisible Exit Blog",
+            description:
+              "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence.",
+            url: "https://invisibleexit.com/blog",
+            publisher: {
+              "@type": "Organization",
+              name: "Invisible Exit",
+              url: "https://invisibleexit.com",
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://invisibleexit.com/",
+              },
+              { "@type": "ListItem", position: 2, name: "Blog" },
+            ],
+          },
+        ]}
       />
       <Navbar />
 
