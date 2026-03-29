@@ -21,3 +21,6 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://invisibleexit.com/sitemap.xml
+
+# LLM context page
+# https://invisibleexit.com/llms.txt

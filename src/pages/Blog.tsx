@@ -1,24 +1,30 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blog-posts";
 
 const Blog = () => {
-  useEffect(() => {
-    document.title =
-      "Blog: Invisible Exit Strategies for Corporate Managers | Invisible Exit";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives."
-      );
-    }
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Blog: Invisible Exit Strategies | Invisible Exit"
+        description="Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence. Frameworks, case studies, and actionable guides."
+        url="/blog"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "The Invisible Exit Blog",
+          description:
+            "Strategies, frameworks, and case studies for building invisible recurring revenue.",
+          url: "https://invisibleexit.com/blog",
+          publisher: {
+            "@type": "Organization",
+            name: "Invisible Exit",
+            url: "https://invisibleexit.com",
+          },
+        }}
+      />
       <Navbar />
 
       {/* Hero */}

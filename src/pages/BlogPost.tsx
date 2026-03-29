@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { getBlogPostBySlug } from "@/data/blog-posts";
 
 const BlogPost = () => {
@@ -9,13 +10,6 @@ const BlogPost = () => {
   const post = slug ? getBlogPostBySlug(slug) : undefined;
 
   useEffect(() => {
-    if (post) {
-      document.title = `${post.title} | Invisible Exit Blog`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute("content", post.excerpt);
-      }
-    }
     window.scrollTo(0, 0);
   }, [post]);
 
@@ -25,6 +19,34 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={`${post.title} | Invisible Exit Blog`}
+        description={post.excerpt}
+        url={`/blog/${post.slug}`}
+        type="article"
+        publishedDate={post.publishedAt}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.publishedAt,
+          author: {
+            "@type": "Organization",
+            name: "Invisible Exit",
+            url: "https://invisibleexit.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Invisible Exit",
+            url: "https://invisibleexit.com",
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://invisibleexit.com/blog/${post.slug}`,
+          },
+        }}
+      />
       <Navbar />
 
       {/* Header */}
