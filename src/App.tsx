@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,18 +8,20 @@ import Index from "./pages/Index.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import OTOFounding from "./pages/OTOFounding.tsx";
-import Login from "./pages/Login.tsx";
-import ResetPassword from "./pages/ResetPassword.tsx";
-import Dashboard from "./pages/Dashboard.tsx";
-import Badge from "./pages/Badge.tsx";
-import Confirmation from "./pages/Confirmation.tsx";
-import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
-import AdminFeatureRequests from "./pages/AdminFeatureRequests.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
+
+// Lazy-loaded routes (not SEO-critical)
+const OTOFounding = lazy(() => import("./pages/OTOFounding.tsx"));
+const Login = lazy(() => import("./pages/Login.tsx"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword.tsx"));
+const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
+const Badge = lazy(() => import("./pages/Badge.tsx"));
+const Confirmation = lazy(() => import("./pages/Confirmation.tsx"));
+const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess.tsx"));
+const AdminFeatureRequests = lazy(() => import("./pages/AdminFeatureRequests.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,7 @@ const App = () => (
       <BrowserRouter>
         <PostHogPageviewTracker />
         <ErrorBoundary>
+        <Suspense fallback={<div className="min-h-screen" />}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -62,6 +66,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
         </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>

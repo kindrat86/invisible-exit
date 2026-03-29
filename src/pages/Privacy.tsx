@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -10,11 +11,27 @@ const Privacy = () => {
         description="How Invisible Exit collects, uses, and protects your personal information. Read our privacy policy."
         url="/privacy"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://invisibleexit.com/" },
+            { "@type": "ListItem", position: 2, name: "Privacy Policy" },
+          ],
+        }) }}
+      />
       <Navbar />
 
       <main>
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-3xl">
+          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
+            <Link to="/" className="hover:text-white/70 transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white/60">Privacy Policy</span>
+          </nav>
           <h1 className="text-4xl md:text-5xl font-bold text-white">Privacy Policy</h1>
           <p className="text-white/50 text-sm mt-4">Last updated: March 21, 2026</p>
         </div>

@@ -1,3 +1,13 @@
+export interface BlogPostFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -6,6 +16,14 @@ export interface BlogPost {
   readTime: string;
   publishedAt: string;
   content: string;
+  faqs?: BlogPostFAQ[];
+  howTo?: {
+    name: string;
+    description: string;
+    totalTime: string;
+    steps: HowToStep[];
+  };
+  relatedSlugs?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -81,6 +99,21 @@ The trick is building without your employer noticing, which is exactly what the 
 ## Your Next Step
 
 Stop waiting for the "perfect number." Start building toward $4,000/month in recurring revenue. The math works. The timeline is realistic. The only variable is whether you start.`,
+    faqs: [
+      {
+        question: "What is the 4% rule for financial independence?",
+        answer: "The 4% rule states you need 25 times your annual expenses saved to retire safely. However, for corporate managers, building $4,000/month in recurring micro-SaaS revenue is a faster, more practical path to financial independence than traditional retirement savings.",
+      },
+      {
+        question: "How much money does a corporate manager need to never work again?",
+        answer: "Rather than the traditional millions in savings, a corporate manager earning $120K-$200K typically needs $4,000/month in net recurring revenue from a micro-SaaS business. This covers core expenses, provides runway to grow full-time, and eliminates the fear of financial free-fall.",
+      },
+      {
+        question: "How does micro-SaaS income compare to traditional retirement savings?",
+        answer: "A micro-SaaS charging $29/month needs just 138 customers to generate $4,000/month. This is achievable in 12-18 months, compared to decades of traditional saving. Plus, recurring revenue compounds — every customer added this month still pays next month.",
+      },
+    ],
+    relatedSlugs: ["real-estate-vs-micro-saas-freedom-math", "zero-to-4000-invisible-exit-timeline"],
   },
   {
     slug: "why-managing-directors-building-micro-saas",
@@ -171,6 +204,21 @@ The real risk isn't building a micro-SaaS on the side. It's spending another dec
 You don't need to quit your job. You don't need a technical co-founder. You don't need venture capital.
 
 You need a niche problem, 5-7 hours per week, and a systematic approach to building invisible recurring revenue. That's what Invisible Exit provides.`,
+    faqs: [
+      {
+        question: "What is micro-SaaS?",
+        answer: "Micro-SaaS is a small software-as-a-service business typically run by one person or a small team, targeting a specific niche. It generates recurring monthly revenue through subscriptions, usually ranging from $20-$100/month per customer, and can be built and operated in 5-7 hours per week.",
+      },
+      {
+        question: "Why are corporate executives building side businesses?",
+        answer: "Corporate executives are building side businesses because golden handcuffs (RSUs, bonuses, benefits) create an endless 'just one more year' cycle. AI tools have eliminated the technical barrier to building software, and micro-niches are more profitable than ever. Executives have unique advantages: capital, network, pattern recognition, and discipline.",
+      },
+      {
+        question: "Can you build a SaaS while working full-time?",
+        answer: "Yes. The Invisible Exit framework is designed for full-time corporate managers with 5-7 hours per week. Using AI tools for development and content, stealth operations for invisibility, and a systematic 18-month timeline, executives can build a micro-SaaS to $4,000/month MRR without quitting their day job.",
+      },
+    ],
+    relatedSlugs: ["invisible-business-model", "ai-tools-replace-startup-team"],
   },
   {
     slug: "invisible-business-model",
@@ -295,6 +343,21 @@ Before launching, verify:
 Invisibility isn't forever. It's a strategy for the 12-18 months while you build your runway. Once you've hit your MRR target and given notice, you can step into the light.
 
 The goal isn't to hide. It's to protect your transition period so you can leave on your terms, with your income intact, and your new business already profitable.`,
+    faqs: [
+      {
+        question: "What is the invisible business model?",
+        answer: "The invisible business model is a strategy for building a profitable side business while employed, using entity separation (LLCs in privacy-friendly states), digital footprint management, and operational protocols that prevent your employer from discovering your venture. It's designed for the 12-18 month transition period.",
+      },
+      {
+        question: "How do you build a business that does not conflict with your employer?",
+        answer: "The key is choosing a micro-SaaS that serves a different industry than your employer, using separate devices and networks, forming an LLC (potentially in your spouse's name), and never using company time or resources. Most employment agreements are more permissive than people assume, especially for non-competing ventures.",
+      },
+      {
+        question: "What makes a micro-SaaS business invisible?",
+        answer: "A micro-SaaS is invisible when it operates through a privacy-protected LLC, uses separate digital identities (domain, email, social accounts), markets under a brand name rather than your personal name, and generates revenue through SEO and content marketing rather than personal brand building.",
+      },
+    ],
+    relatedSlugs: ["why-managing-directors-building-micro-saas", "zero-to-4000-invisible-exit-timeline"],
   },
   {
     slug: "zero-to-4000-invisible-exit-timeline",
@@ -432,6 +495,32 @@ Some people hit $4,000/month in 9 months. Others take 24. The timeline depends o
 What matters is the sequence: validate, build, grow, exit. Skip a step and you'll waste months backtracking.
 
 The clock starts when you start. Not when you feel ready.`,
+    faqs: [
+      {
+        question: "How long does it take to build a micro-SaaS to $4,000 MRR?",
+        answer: "Following the Invisible Exit timeline, it takes 12-18 months to reach $4,000/month in recurring revenue. The first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on hitting target MRR and preparing your exit.",
+      },
+      {
+        question: "What are the first steps to building a micro-SaaS?",
+        answer: "Start by listing 10 industries you understand from corporate experience, identifying pain points in each. Interview 5 people in your top niches, then validate by creating a landing page and getting 5 pre-sales. Only then build your MVP, focusing on the single core feature that solves the main pain point.",
+      },
+      {
+        question: "How much does it cost to start a micro-SaaS?",
+        answer: "With AI tools, starting a micro-SaaS costs $60-$260/month — covering AI code generators ($50-$100), hosting ($0-$50), and marketing tools ($0-$50). This is a 99% reduction from the $22,000-$43,000/month a traditional 5-person startup team would cost.",
+      },
+    ],
+    howTo: {
+      name: "How to Build a Micro-SaaS to $4,000 MRR in 18 Months",
+      description: "A step-by-step guide to building $4,000/month in recurring revenue while keeping your corporate job.",
+      totalTime: "P18M",
+      steps: [
+        { name: "Foundation (Months 1-3)", text: "Choose your niche by listing 10 industries you understand, interview potential customers, validate with a landing page and 5 pre-sales, then build your MVP focusing on one core feature." },
+        { name: "First Customers (Months 4-6)", text: "Get to 10 paying customers through direct outreach and community posts. Fix top bugs, add the most requested feature, write SEO content, and set up a referral program. Target: 20-30 customers, $600-$900 MRR." },
+        { name: "Growth (Months 7-12)", text: "Run a content marketing machine publishing 2-3 pieces per week. Optimize for churn reduction below 5%, introduce higher pricing tiers, and automate onboarding and support. Target: 80-120 customers, $2,400-$3,600 MRR." },
+        { name: "The Exit (Months 13-18)", text: "Close the gap to $4,000/month with targeted outreach and small paid ads. Build 6 months of personal savings, document all processes, research health insurance, and give notice on your terms." },
+      ],
+    },
+    relatedSlugs: ["ai-tools-replace-startup-team", "invisible-business-model"],
   },
   {
     slug: "ai-tools-replace-startup-team",
@@ -536,6 +625,21 @@ You don't need to master every tool on this list. Start with:
 3. **Stripe** for payments
 
 Everything else can be added as you grow. The point is: the barrier to entry has never been lower. The question isn't whether you can build a SaaS product. It's whether you will.`,
+    faqs: [
+      {
+        question: "What AI tools can replace a startup team?",
+        answer: "Key AI tools include: Lovable and Cursor for development ($50-$100/month), v0 by Vercel and Midjourney for design ($10-$30/month), Claude for content and copywriting ($0-$50/month), and Stripe/Supabase/Vercel for operations ($0-$50/month). Total: $60-$260/month vs. $22,000-$43,000/month for a traditional team.",
+      },
+      {
+        question: "Can one person build a SaaS using AI?",
+        answer: "Yes. In 2026, AI tools can generate production-ready applications from natural language descriptions, create professional UI designs, write marketing content, and handle operational infrastructure. A solo founder needs domain expertise, customer empathy, and strategic thinking — skills corporate managers already have.",
+      },
+      {
+        question: "How much money does AI save for solo founders?",
+        answer: "AI reduces the cost of building and running a SaaS from $22,000-$43,000/month (traditional 5-person team) to $60-$260/month — a 99% cost reduction. This makes it possible for corporate managers to build profitable businesses on a side-project budget without venture capital.",
+      },
+    ],
+    relatedSlugs: ["invisible-business-model", "why-managing-directors-building-micro-saas"],
   },
   {
     slug: "real-estate-vs-micro-saas-freedom-math",
@@ -657,9 +761,487 @@ Real estate is a proven path to wealth, but it's slow, capital-intensive, and ha
 Micro-SaaS is faster, cheaper, more invisible, and provides the cash flow to fund any other investment you want — including real estate.
 
 For corporate managers who need to build income invisibly while employed, the math is clear: **start with micro-SaaS**.`,
+    faqs: [
+      {
+        question: "Is micro-SaaS more profitable than real estate?",
+        answer: "For the first few years, yes. A micro-SaaS can reach $4,000/month net cash flow in 12-18 months with $200 upfront. A rental property requires $80,000+ upfront and may only cash flow $150/month initially. It takes 8-12 rental properties ($600K-$900K capital) to match what one micro-SaaS can generate.",
+      },
+      {
+        question: "What is freedom math for corporate managers?",
+        answer: "Freedom math calculates the fastest path from corporate employment to financial independence. It compares investment paths (real estate vs. micro-SaaS) by upfront capital, time to $4,000/month cash flow, hours per week required, invisibility from employers, and scalability.",
+      },
+      {
+        question: "How do recurring SaaS revenues compare to rental income?",
+        answer: "SaaS margins improve as you scale (70% at 10 customers to 95% at 1,000), while real estate margins often worsen due to management complexity. SaaS has near-zero marginal cost per customer, while each rental property requires significant capital. SaaS also offers complete location independence and invisibility.",
+      },
+    ],
+    relatedSlugs: ["how-much-money-to-never-work-again", "zero-to-4000-invisible-exit-timeline"],
+  },
+  {
+    slug: "5-hour-weekend-micro-saas-family-time",
+    title:
+      "The 5-Hour Weekend: How to Build a Micro-SaaS Without Sacrificing Family Time",
+    excerpt:
+      "You don't need 40 hours a week to build a business. Here's the exact weekly schedule corporate managers use to ship products in 5 focused hours.",
+    category: "Time Management",
+    readTime: "9 min read",
+    publishedAt: "2026-03-28",
+    content: `The biggest lie in entrepreneurship content is that you need to "hustle" every waking hour. If you're a corporate manager with a family, that advice isn't just wrong — it's destructive.
+
+You don't need 40 hours. You don't even need 20. You need **5 focused hours per weekend**, deployed strategically.
+
+Here's how.
+
+## Why 5 Hours Is Enough
+
+Most solo founders waste enormous amounts of time on activities that feel productive but don't move the needle:
+
+- Redesigning their landing page for the fourth time
+- Researching tools instead of using them
+- Reading startup content instead of building
+- Perfecting features nobody asked for
+
+When you only have 5 hours, you can't afford waste. **The constraint becomes your advantage.** You're forced to focus on the one thing that matters most this week.
+
+## The Weekly 5-Hour Blueprint
+
+Here's how to structure your weekend building sessions:
+
+### Saturday Morning: 3-Hour Deep Work Block (6 AM – 9 AM)
+
+This is your primary building block. Before the family wakes up, before distractions hit.
+
+**Rules for the deep work block:**
+- Phone in another room
+- No email, no Slack, no social media
+- One pre-defined task from your weekly plan
+- Work on the hardest, most important thing first
+
+What to do during this block depends on your phase:
+
+**Validation phase**: Customer interviews, landing page creation, outreach messages
+**Building phase**: Core feature development with AI tools
+**Growth phase**: Content creation, email sequences, partnership outreach
+
+### Sunday Evening: 2-Hour Execution Block (8 PM – 10 PM)
+
+After the kids are in bed, you get your second block. This one is for:
+
+- Responding to customer emails and feedback
+- Publishing content (blog posts, social media)
+- Quick bug fixes or improvements
+- Planning next Saturday's deep work task
+
+**The Sunday block is about momentum, not creation.** Handle the smaller tasks that keep the business moving forward.
+
+## The Weekly Planning System
+
+Every Friday evening, spend 15 minutes (not counted in your 5 hours) answering one question:
+
+**"What is the single most important thing I can do this weekend to move the business forward?"**
+
+Write it on a sticky note. Put it on your laptop. That's your Saturday task.
+
+Examples by phase:
+
+- **Week 1**: Talk to 3 potential customers about their pain points
+- **Week 5**: Build the core feature MVP with Lovable
+- **Week 10**: Write and publish 2 SEO blog posts
+- **Week 15**: Set up automated onboarding email sequence
+
+## The Family-First Framework
+
+Building a business means nothing if it costs you your family. Here are the non-negotiable rules:
+
+### 1. Scheduled, Not Stolen Time
+
+Never sneak business work during family time. Your partner and kids can tell when you're mentally elsewhere. Instead:
+
+- Communicate your schedule openly with your partner
+- Trade time fairly ("I'll build from 6-9 Saturday morning, and you get Sunday morning free")
+- Keep your commitments — if you said 5 hours, stick to 5 hours
+
+### 2. No Weeknight Work
+
+Weeknights are for family, rest, and recovery. The temptation to "just check one thing" leads to a slippery slope of resentment.
+
+Exception: 15 minutes of customer email responses during lunch break at your day job is fine. Set a timer.
+
+### 3. Monthly Family Check-In
+
+Once a month, ask your partner: "How is this working for us?" If the answer is "it's not," adjust immediately. No business is worth your marriage.
+
+## How 5 Hours Compounds
+
+Skeptical that 5 hours per week is enough? Let's do the math.
+
+**5 hours × 52 weeks = 260 hours per year**
+
+That's equivalent to **6.5 full-time work weeks**. In that time, at a focused pace, you can:
+
+- Month 1-2 (40 hours): Validate your idea and talk to 20+ potential customers
+- Month 3-4 (40 hours): Build and launch your MVP
+- Month 5-8 (80 hours): Get your first 20 paying customers
+- Month 9-12 (80 hours): Grow to 50-80 customers through content and referrals
+
+Compare that to someone "hustling" 20 hours per week but spending 15 of those hours on unfocused, low-value work. Your 5 focused hours beat their 20 scattered ones.
+
+## Tools That Maximize Your 5 Hours
+
+The right tools compress what used to take days into hours:
+
+**For building**: Lovable generates full applications from descriptions. What took a developer a week takes you a Saturday morning.
+
+**For content**: Claude drafts blog posts and email sequences. You edit and add your perspective. A 2,000-word post goes from 4 hours to 45 minutes.
+
+**For operations**: Stripe handles payments automatically. Supabase manages your database. Vercel deploys your app. Zero operations work needed.
+
+**For communication**: Set up canned responses for common customer questions. Use Zapier to automate onboarding emails. Minimize reactive work.
+
+## The Invisible Advantage of Part-Time Building
+
+Here's something counterintuitive: building part-time has advantages over building full-time.
+
+**Patience**: You're not burning savings, so you can be patient about growth. Patient founders make better product decisions.
+
+**Perspective**: Your day job gives you fresh eyes. Some of your best ideas will come during Monday meetings, not Saturday coding sessions.
+
+**Sustainability**: 5 hours per week is maintainable for years. 60-hour weeks burn you out in months.
+
+**Lower stakes**: If this week's feature doesn't work, you still have a salary. That psychological safety lets you take smarter risks.
+
+## Common Objections
+
+### "5 hours isn't enough to build anything real"
+
+Basecamp was famously built as a side project. Many successful SaaS products started with founders working evenings and weekends. The 5-hour constraint forces you to build smaller, which often means building better.
+
+### "My weekends are already packed"
+
+Audit your weekend time for one week. Most people have 3-5 hours of low-value screen time (social media, streaming) they could redirect. You're not adding hours — you're replacing passive consumption with active creation.
+
+### "I'll fall behind competitors who work full-time"
+
+Your competitors aren't your concern. Your micro-niche is small enough that execution speed matters less than customer understanding. And your corporate experience gives you customer empathy that full-time indie hackers often lack.
+
+## Your Next Step
+
+This weekend, try the Saturday morning deep work block just once. Set your alarm for 6 AM. Pick one task. Work for 3 hours. See what you accomplish.
+
+You'll be surprised. And you'll still make it to your kid's soccer game by 10.`,
+  },
+  {
+    slug: "first-10-customers-corporate-manager-outreach",
+    title:
+      "Your First 10 Customers: The Corporate Manager's Outreach Playbook",
+    excerpt:
+      "Forget cold outreach templates. Your corporate network and domain expertise are the unfair advantage most founders would kill for.",
+    category: "Growth",
+    readTime: "11 min read",
+    publishedAt: "2026-03-26",
+    content: `Getting your first 10 paying customers is the hardest part of building a micro-SaaS. It's also the most important. Those first 10 customers validate your idea, shape your product, and give you the confidence to keep going.
+
+For corporate managers, the path to 10 customers looks different than the standard startup playbook. You have assets most founders don't: a professional network, domain expertise, and credibility. Here's how to use them.
+
+## Why the First 10 Matter More Than You Think
+
+Your first 10 customers aren't just revenue. They're:
+
+- **Validation**: Proof that real people will pay for your solution
+- **Feedback**: The insights that shape your product roadmap
+- **Testimonials**: Social proof for your landing page
+- **Referral sources**: Each happy customer knows others with the same problem
+- **Confidence**: The psychological fuel to keep building
+
+Skip this phase or rush through it, and you'll build features nobody wants for an audience that doesn't exist.
+
+## The Corporate Manager's Unfair Advantages
+
+### 1. Domain Expertise
+
+You've spent years in your industry. You know the pain points because you've lived them. This means:
+
+- You can describe the problem in your customers' language
+- You understand the buying process and decision-makers
+- You know which problems are annoying vs. which ones cost money
+- You can build solutions that actually fit real workflows
+
+Most indie hackers spend months doing customer research that you already have in your head.
+
+### 2. Professional Network
+
+Your LinkedIn has hundreds of connections. Your phone has contacts from conferences, past projects, and industry events. These aren't cold leads — they're warm relationships.
+
+A message from a former colleague carries 10x more weight than a cold email from a stranger.
+
+### 3. Credibility
+
+Your title, your experience, your track record — these all signal competence. When you say "I built a tool that solves X," people believe you because you've been in the trenches.
+
+## The 4-Week Outreach Plan
+
+### Week 1: Map Your Network
+
+Before you send a single message, build your prospect list.
+
+**Step 1**: Open a spreadsheet. Create columns for: Name, Company, Role, Relationship, Pain Point Relevance (1-5), Last Contact.
+
+**Step 2**: Go through these sources:
+- LinkedIn connections in your target industry
+- Email contacts from the last 3 years
+- Conference attendees you've met
+- Former colleagues who moved to target companies
+- Industry Slack or Discord communities you belong to
+
+**Step 3**: Score each person on Pain Point Relevance. Focus on people who:
+- Work in roles that experience the problem your tool solves
+- Have complained about the problem in conversations
+- Work at companies the right size for your solution (usually 10-200 employees)
+
+**Target**: 50 names with a relevance score of 3+.
+
+### Week 2: The Warm Outreach Campaign
+
+Now reach out — but not to sell. To learn.
+
+**The Message Framework:**
+
+Subject: Quick question about [specific workflow]
+
+Hey [Name],
+
+Hope things are going well at [Company]. I've been thinking a lot about [specific problem] lately — I know it was something we dealt with at [shared context].
+
+I'm exploring building a tool to help with this. Would you have 15 minutes this week to share how your team currently handles [specific task]? Not selling anything — genuinely trying to understand the problem better.
+
+[Your name]
+
+**Why this works:**
+- It's personal, not templated
+- It references shared experience
+- It asks for help, not a purchase
+- 15 minutes is a low commitment
+
+**Send 10-15 messages per day.** Expect a 30-40% response rate from warm contacts.
+
+### Week 3: The Discovery Conversations
+
+On these calls, your goal is to understand, not to pitch. Ask:
+
+1. "Walk me through how you currently handle [workflow]."
+2. "What's the most frustrating part of that process?"
+3. "How much time does your team spend on this each week?"
+4. "Have you tried any tools to solve this? What worked and what didn't?"
+5. "If a tool could solve this perfectly, what would it need to do?"
+
+**Listen for:**
+- Emotional language ("I hate this," "it drives me crazy," "we waste so much time")
+- Quantifiable pain ("we spend 10 hours a week on this")
+- Failed alternatives ("we tried X but it didn't work because...")
+
+At the end of each call, say: **"I'm building something to solve exactly this. Would you be interested in trying an early version?"**
+
+Most will say yes. Some will ask to pay immediately. Let them.
+
+### Week 4: Close Your First 10
+
+You've had 15-20 conversations. You have 10-15 people who expressed interest. Now close them.
+
+**The Closing Message:**
+
+Hey [Name],
+
+Thanks again for chatting last week. Based on our conversation and feedback from others in [industry], I've built an early version of [Product Name] that [one sentence description of core value].
+
+I'm offering founding member access at [price — 50% off your planned price] for the first 10 users. You'll get:
+- Lifetime access at this rate
+- Direct input on the roadmap
+- Priority support (my personal email)
+
+Would you like to try it? I can set you up today.
+
+**Why "founding member" works:**
+- It creates exclusivity (only 10 spots)
+- The discount rewards early adopters
+- "Lifetime access at this rate" eliminates price objection
+- Direct input on roadmap makes them feel invested
+
+## Channels Beyond Your Network
+
+If your network doesn't yield 10 customers, supplement with these channels:
+
+### Reddit and Online Communities
+
+Find 3-5 subreddits or forums where your target users hang out. Don't spam. Instead:
+
+1. Answer questions related to your problem space for 2 weeks
+2. Share genuinely useful insights (not links to your product)
+3. When someone posts about the exact problem you solve, DM them
+4. After building credibility, post a "Show HN" or "I built this" post
+
+### Cold Email (Warm Style)
+
+If you must cold email, make it feel warm:
+
+- Reference something specific about their company or role
+- Lead with the problem, not your product
+- Keep it under 100 words
+- Include a specific, relevant insight they'd find valuable
+- Ask for a conversation, not a sale
+
+### LinkedIn Content
+
+Post about the problem you're solving (not your product). Share insights from your customer conversations (anonymized). This attracts inbound interest from people in your network who recognize the pain.
+
+## Pricing Your First 10
+
+Don't overthink pricing at this stage. Guidelines:
+
+- **Charge something**: Free users don't give real feedback
+- **Discount for early adopters**: 50% off your target price signals value while reducing risk
+- **Monthly, not annual**: Lower commitment makes saying yes easier
+- **Sweet spot**: $15-$49/month for your founding tier
+
+You can always raise prices later. Your first 10 customers are buying validation, not just software.
+
+## What to Do After You Hit 10
+
+Congratulations — you have product-market fit signal. Now:
+
+1. **Ask for testimonials**: "Would you mind sharing a sentence about how [Product] has helped your team?"
+2. **Ask for referrals**: "Do you know anyone else who deals with [problem]?"
+3. **Identify your best channel**: Which outreach method converted best? Double down on it.
+4. **Start content marketing**: Write about the problem and solution. SEO compounds over time.
+5. **Raise your price**: New customers pay full price. Your founding members keep their rate.
+
+## The Mindset Shift
+
+Most corporate managers feel uncomfortable with outreach because it feels like "selling." Reframe it:
+
+**You're not selling. You're solving a problem you understand deeply, for people you genuinely want to help.**
+
+Your corporate career gave you the expertise to see the problem. Your micro-SaaS gives them the solution. The outreach is just connecting the two.
+
+Your first 10 customers are out there. Most of them are already in your phone.`,
+  },
+  {
+    slug: "non-compete-clauses-micro-saas-what-you-need-to-know",
+    title:
+      "Non-Compete Clauses and Micro-SaaS: What Corporate Managers Need to Know",
+    excerpt:
+      "Your employment agreement probably isn't as restrictive as you think. Here's how to evaluate your non-compete before building.",
+    category: "Stealth Operations",
+    readTime: "9 min read",
+    publishedAt: "2026-03-27",
+    content: `Non-compete clauses are the boogeyman of side projects. Every corporate manager considering a micro-SaaS business has the same fear: "My non-compete will crush me."
+
+But here's what most people don't realize: **the vast majority of non-competes don't apply to micro-SaaS businesses in unrelated industries.** And even when they do apply, they're often unenforceable.
+
+Let's break down what you actually need to worry about — and what you don't.
+
+## What Non-Competes Actually Say
+
+Most non-compete agreements restrict you from:
+- Working for a direct competitor
+- Soliciting your employer's clients
+- Using proprietary information or trade secrets
+
+What they typically **don't** restrict:
+- Building software for an unrelated industry
+- Having passive income from a business you don't actively manage
+- Owning equity in a company operated by your spouse
+
+**The key distinction**: non-competes are designed to prevent you from taking your employer's competitive advantage to a rival. They're not designed to prevent you from building a tool for dentists if you work in fintech.
+
+## The Four Questions to Ask
+
+Before you panic about your non-compete, answer these:
+
+### 1. Does Your Product Compete With Your Employer?
+
+If you work at a marketing agency and you're building a CRM for veterinarians, there's no competition. Your employer has no legitimate interest in preventing you from serving a completely different market.
+
+If there's **any** overlap, you need to be more careful — but overlap doesn't automatically mean you're blocked.
+
+### 2. Are You Using Employer Resources?
+
+This is where most people accidentally cross the line:
+- Don't use your work laptop
+- Don't use your corporate email
+- Don't work during business hours
+- Don't use proprietary data or methodologies
+
+If you're building on your own time, with your own equipment, using publicly available information, you're in the clear on this front.
+
+### 3. Is Your Non-Compete Enforceable?
+
+Many non-competes are written broadly to intimidate, not to hold up in court. Courts typically evaluate:
+- **Reasonableness of scope**: Does it cover too broad a geography or industry?
+- **Duration**: Anything beyond 1-2 years is often struck down
+- **Legitimate business interest**: Does your employer have a real reason to restrict you?
+- **State law**: California, Oklahoma, North Dakota, and Minnesota largely ban non-competes. Many other states severely limit them.
+
+### 4. Would Your Employer Even Care?
+
+Most companies only enforce non-competes when:
+- You join a direct competitor and take clients or IP
+- Your side business directly undermines their revenue
+- They want leverage during a messy departure
+
+A managing director quietly building a $3,000/month SaaS for a completely different industry? Most legal departments wouldn't even bother.
+
+## The FTC Factor
+
+In 2024, the FTC attempted to ban most non-competes nationwide. While the rule faced legal challenges, the trend is clear: **non-competes are becoming harder to enforce**, not easier.
+
+Several states have passed laws limiting non-competes since 2023:
+- Colorado requires employers to notify employees about non-competes
+- Illinois banned non-competes for employees earning under $75K
+- Washington state requires independent consideration for non-competes
+- Oregon limits non-compete duration to 12 months
+
+The legal landscape is shifting in your favor.
+
+## Practical Steps to Protect Yourself
+
+Even if your non-compete is unlikely to be an issue, smart operators take precautions:
+
+**Entity separation**: Form your LLC in your spouse's name or through a trust. Your name doesn't appear on any business filings.
+
+**Industry separation**: Choose a micro-SaaS niche that has zero overlap with your employer's business.
+
+**Resource separation**: Dedicated laptop, dedicated internet connection for business work, dedicated phone number.
+
+**Time separation**: Never work on your business during company hours. Keep a simple log of when you work on your side project.
+
+**Documentation**: Save a copy of your employment agreement. Note the specific restrictions. If you're concerned, get a 30-minute consultation with an employment attorney ($150-300, well worth it).
+
+## The Real Risk Assessment
+
+Here's the truth most lawyers won't tell you: **the risk of your non-compete being enforced against an unrelated micro-SaaS is extremely low.** The risk of spending another 5 years in a job you want to leave because you were afraid of a clause that doesn't apply? That's the real danger.
+
+Do your due diligence. Read your agreement. Consult an attorney if needed. But don't let a boilerplate legal clause stop you from building your exit.
+
+## Disclaimer
+
+This article is for educational purposes only and does not constitute legal advice. Employment law varies by state and individual agreement. Consult with a qualified attorney about your specific situation before making decisions based on this information.`,
   },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+// Validate no blog posts have future publish dates.
+// Posts are hardcoded — there is no admin UI. This guard catches mistakes at dev time.
+if (import.meta.env?.DEV) {
+  const today = new Date().toISOString().split("T")[0];
+  blogPosts.forEach((post) => {
+    if (post.publishedAt > today) {
+      console.warn(
+        `[blog-posts] "${post.title}" has a future publishedAt date (${post.publishedAt}). ` +
+          `Dates must not exceed today (${today}).`
+      );
+    }
+  });
 }
