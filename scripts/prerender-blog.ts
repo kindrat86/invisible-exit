@@ -1,14 +1,18 @@
-import { readFileSync, writeFileSync, mkdirSync } from "fs";
+/**
+ * Post-build script: injects blog body content into pre-rendered HTML files.
+ *
+ * Runs AFTER prerender-meta.mjs (which handles <head> meta tags).
+ * Reads each blog HTML file from dist/ and replaces the empty <div id="root"></div>
+ * with full article content so search engine crawlers can index it.
+ */
+import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
-const DIST = resolve(ROOT, "dist");
-const SITE = "https://invisibleexit.com";
+const DIST = resolve(__dirname, "..", "dist");
 
-// ---------- Import blog data ----------
-// We import the TS source directly (tsx handles it)
+// Import blog data directly (tsx handles TS imports)
 import { blogPosts } from "../src/data/blog-posts.js";
 
 // ---------- Markdown-like content → HTML ----------
@@ -26,11 +30,7 @@ function contentToHtml(content: string): string {
     const listStart = lines.findIndex(
       (l) => /^[-\d]/.test(l) || l.startsWith("- [")
     );
-    if (
-      listStart > 0 &&
-      !block.startsWith("|") &&
-      !block.startsWith("#")
-    ) {
+    if (listStart > 0 && !block.startsWith("|") && !block.startsWith("#")) {
       expanded.push({ block: lines.slice(0, listStart).join("\n") });
       expanded.push({ block: lines.slice(listStart).join("\n") });
     } else {
@@ -40,65 +40,35 @@ function contentToHtml(content: string): string {
 
   return expanded
     .map(({ block }) => {
-      if (block.startsWith("## ")) {
+      if (block.startsWith("## "))
         return `<h2>${block.replace("## ", "")}</h2>`;
-      }
-      if (block.startsWith("### ")) {
+      if (block.startsWith("### "))
         return `<h3>${block.replace("### ", "")}</h3>`;
-      }
-      // Table
       if (block.startsWith("| ")) {
-        const rows = block
-          .split("\n")
-          .filter((r) => !/^\|\s*[-|]+\s*\|$/.test(r));
+        const rows = block.split("\n").filter((r) => !/^\|\s*[-|]+\s*\|$/.test(r));
         if (rows.length === 0) return "";
-        const header = rows[0]
-          .split("|")
-          .filter(Boolean)
-          .map((c) => c.trim());
-        const body = rows.slice(1).map((r) =>
-          r
-            .split("|")
-            .filter(Boolean)
-            .map((c) => c.trim())
-        );
-        const headerHtml = header.map((h) => `<th>${h}</th>`).join("");
-        const bodyHtml = body
-          .map((row) => `<tr>${row.map((c) => `<td>${bold(c)}</td>`).join("")}</tr>`)
-          .join("");
-        return `<table><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>`;
+        const header = rows[0].split("|").filter(Boolean).map((c) => c.trim());
+        const body = rows.slice(1).map((r) => r.split("|").filter(Boolean).map((c) => c.trim()));
+        return `<table><thead><tr>${header.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${body.map((row) => `<tr>${row.map((c) => `<td>${bold(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
       }
-      // Checklist
       if (block.startsWith("- [ ]") || block.startsWith("- [x]")) {
         const items = block.split("\n").filter(Boolean);
-        return `<ul>${items
-          .map((item) => {
-            const text = item.replace(/^- \[.\]\s*/, "");
-            return `<li>${bold(text)}</li>`;
-          })
-          .join("")}</ul>`;
+        return `<ul>${items.map((item) => `<li>${bold(item.replace(/^- \[.\]\s*/, ""))}</li>`).join("")}</ul>`;
       }
-      // Unordered list
       if (block.startsWith("- ")) {
         const items = block.split("\n").filter(Boolean);
-        return `<ul>${items
-          .map((item) => `<li>${bold(item.replace(/^-\s+/, ""))}</li>`)
-          .join("")}</ul>`;
+        return `<ul>${items.map((item) => `<li>${bold(item.replace(/^-\s+/, ""))}</li>`).join("")}</ul>`;
       }
-      // Ordered list
       if (/^\d+\.\s/.test(block)) {
         const items = block.split("\n").filter(Boolean);
-        return `<ol>${items
-          .map((item) => `<li>${bold(item.replace(/^\d+\.\s+/, ""))}</li>`)
-          .join("")}</ol>`;
+        return `<ol>${items.map((item) => `<li>${bold(item.replace(/^\d+\.\s+/, ""))}</li>`).join("")}</ol>`;
       }
-      // Paragraph
       return `<p>${bold(block)}</p>`;
     })
     .join("\n");
 }
 
-// ---------- Generate HTML for a blog post page ----------
+// ---------- Body HTML generators ----------
 
 function blogPostBodyHtml(post: (typeof blogPosts)[0]): string {
   const date = new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -106,13 +76,12 @@ function blogPostBodyHtml(post: (typeof blogPosts)[0]): string {
     day: "numeric",
     year: "numeric",
   });
-
   return `<div class="min-h-screen">
 <section style="padding-top:8rem;padding-bottom:4rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <span>${post.category}</span>
 <h1>${post.title}</h1>
-<div><span>${post.readTime}</span> · <span>${date}</span></div>
+<div><span>${post.readTime}</span> &middot; <span>${date}</span></div>
 </div>
 </section>
 <section style="padding:4rem 1.5rem">
@@ -122,8 +91,6 @@ ${contentToHtml(post.content)}
 </section>
 </div>`;
 }
-
-// ---------- Generate HTML for the blog listing page ----------
 
 function blogListingBodyHtml(): string {
   const cards = blogPosts
@@ -157,160 +124,40 @@ ${cards}
 </div>`;
 }
 
-// ---------- Head tag injection ----------
+// ---------- Inject body into existing HTML file ----------
 
-function injectHead(
-  html: string,
-  opts: {
-    title: string;
-    description: string;
-    url: string;
-    type: string;
-    publishedDate?: string;
-    jsonLd?: Record<string, unknown>;
+function injectBody(filePath: string, bodyHtml: string): boolean {
+  if (!existsSync(filePath)) {
+    return false;
   }
-): string {
-  const fullUrl = `${SITE}${opts.url}`;
-
-  // Replace <title>
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${opts.title}</title>`);
-
-  // Replace meta description
-  html = html.replace(
-    /<meta name="description" content="[^"]*"/,
-    `<meta name="description" content="${opts.description}"`
-  );
-
-  // Replace canonical
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*"/,
-    `<link rel="canonical" href="${fullUrl}"`
-  );
-
-  // Replace OG tags
-  html = html.replace(
-    /<meta property="og:type" content="[^"]*"/,
-    `<meta property="og:type" content="${opts.type}"`
-  );
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*"/,
-    `<meta property="og:title" content="${opts.title}"`
-  );
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*"/,
-    `<meta property="og:description" content="${opts.description}"`
-  );
-  html = html.replace(
-    /<meta property="og:url" content="[^"]*"/,
-    `<meta property="og:url" content="${fullUrl}"`
-  );
-
-  // Replace Twitter tags
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*"/,
-    `<meta name="twitter:title" content="${opts.title}"`
-  );
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*"/,
-    `<meta name="twitter:description" content="${opts.description}"`
-  );
-
-  // Inject JSON-LD before </head>
-  if (opts.jsonLd) {
-    const jsonLdScript = `<script type="application/ld+json">${JSON.stringify(opts.jsonLd)}</script>`;
-    html = html.replace("</head>", `${jsonLdScript}\n</head>`);
-  }
-
-  // Inject article:published_time for articles
-  if (opts.type === "article" && opts.publishedDate) {
-    const articleMeta = `<meta property="article:published_time" content="${opts.publishedDate}" />`;
-    html = html.replace("</head>", `${articleMeta}\n</head>`);
-  }
-
-  return html;
+  let html = readFileSync(filePath, "utf-8");
+  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
+  writeFileSync(filePath, html, "utf-8");
+  return true;
 }
 
 // ---------- Main ----------
 
 function main() {
-  const template = readFileSync(resolve(DIST, "index.html"), "utf-8");
+  console.log("Injecting blog body content into pre-rendered HTML...");
 
-  console.log("Pre-rendering blog pages...");
+  let count = 0;
 
-  // 1. Blog listing page
-  {
-    let html = template.replace(
-      '<div id="root"></div>',
-      `<div id="root">${blogListingBodyHtml()}</div>`
-    );
-    html = injectHead(html, {
-      title:
-        "Blog: Invisible Exit Strategies for Corporate Managers | Invisible Exit",
-      description:
-        "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives.",
-      url: "/blog",
-      type: "website",
-      jsonLd: {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        name: "The Invisible Exit Blog",
-        description:
-          "Strategies, frameworks, and case studies for corporate managers building invisible recurring revenue.",
-        url: `${SITE}/blog`,
-        publisher: {
-          "@type": "Organization",
-          name: "Invisible Exit",
-          url: SITE,
-        },
-      },
-    });
-
-    const dir = resolve(DIST, "blog");
-    mkdirSync(dir, { recursive: true });
-    writeFileSync(resolve(dir, "index.html"), html);
+  // Blog listing page
+  if (injectBody(resolve(DIST, "blog", "index.html"), blogListingBodyHtml())) {
     console.log("  /blog");
+    count++;
   }
 
-  // 2. Individual blog post pages
+  // Individual blog post pages
   for (const post of blogPosts) {
-    let html = template.replace(
-      '<div id="root"></div>',
-      `<div id="root">${blogPostBodyHtml(post)}</div>`
-    );
-
-    const postUrl = `/blog/${post.slug}`;
-    html = injectHead(html, {
-      title: `${post.title} | Invisible Exit Blog`,
-      description: post.excerpt,
-      url: postUrl,
-      type: "article",
-      publishedDate: post.publishedAt,
-      jsonLd: {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: post.title,
-        description: post.excerpt,
-        datePublished: post.publishedAt,
-        url: `${SITE}${postUrl}`,
-        publisher: {
-          "@type": "Organization",
-          name: "Invisible Exit",
-          url: SITE,
-        },
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `${SITE}${postUrl}`,
-        },
-      },
-    });
-
-    const dir = resolve(DIST, "blog", post.slug);
-    mkdirSync(dir, { recursive: true });
-    writeFileSync(resolve(dir, "index.html"), html);
-    console.log(`  ${postUrl}`);
+    if (injectBody(resolve(DIST, "blog", post.slug, "index.html"), blogPostBodyHtml(post))) {
+      console.log(`  /blog/${post.slug}`);
+      count++;
+    }
   }
 
-  console.log(`Done. Pre-rendered ${blogPosts.length + 1} blog pages.`);
+  console.log(`Done. Injected body content into ${count} blog pages.`);
 }
 
 main();

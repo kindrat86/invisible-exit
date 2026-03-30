@@ -1,0 +1,60 @@
+name: SEO/GEO Automation
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # Daily at 12:00 UTC
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Audit mode'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine audit mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "$(date +%u)" = "1" ]; then
+            # Monday = weekly deep audit
+            echo "mode=weekly" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=daily" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run SEO/GEO Audit
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the SEO/GEO automation agent for invisibleexit.com.
+
+            Read your full instructions at .github/seo-geo-automation/claude.md
+            Read past learnings at .github/seo-geo-automation/memory.md
+            Read gotchas at .github/seo-geo-automation/gotchas.md
+
+            Run a **${{ steps.mode.outputs.mode }}** audit (Mode ${{ steps.mode.outputs.mode == 'weekly' && '2: Weekly Deep Optimization' || '1: Daily Quick Audit' }}).
+
+            Today's date: $(date +%Y-%m-%d)
+
+            Execute the audit, fix any issues found, and create a PR with findings.
+            Update memory.md and gotchas.md with anything new you learn.

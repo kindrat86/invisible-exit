@@ -1,0 +1,33 @@
+SEO/GEO Automation — Quick Start
+==================================
+
+PREREQUISITES:
+1. ANTHROPIC_API_KEY must be set in GitHub repo secrets
+   (Settings > Secrets and variables > Actions > New repository secret)
+
+2. Claude Code GitHub App must be installed
+   (Run /install-github-app in Claude Code terminal)
+
+HOW IT RUNS:
+- Automatically: Every day at 12:00 UTC (Mode 1: Daily Quick Audit)
+- Manually: Go to Actions > SEO/GEO Automation > Run workflow
+  - Choose "daily" for quick audit or "weekly" for deep optimization
+
+WHAT IT DOES:
+- Checks sitemap, meta tags, JSON-LD, robots.txt, llms.txt
+- Validates heading hierarchy and content structure
+- In weekly mode: competitor analysis, SERP checks, GEO readiness
+- Creates a PR with fixes if issues are found
+- Updates memory.md and gotchas.md with findings
+
+KEY FILES:
+- .github/seo-geo-automation/claude.md   — Full instructions for the agent
+- .github/seo-geo-automation/memory.md   — Learnings tracker
+- .github/seo-geo-automation/gotchas.md  — Mistakes to avoid
+- .github/workflows/seo-geo-audit.yml    — GitHub Actions workflow
+- SEO_CHANGELOG.md                       — Change log in repo root
+
+TROUBLESHOOTING:
+- If workflow fails: Check that ANTHROPIC_API_KEY secret is set
+- If no PR created: The audit found no issues (check Actions logs)
+- To force a run: Actions > SEO/GEO Automation > Run workflow
