@@ -1,5 +1,30 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/dashboard", "destination": "/index.html" },
+    { "source": "/oto/founding", "destination": "/index.html" },
+    { "source": "/confirmation", "destination": "/index.html" },
+    { "source": "/checkout/success", "destination": "/index.html" },
+    { "source": "/login", "destination": "/index.html" },
+    { "source": "/reset-password", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/admin/feature-requests", "destination": "/index.html" },
+    { "source": "/fym/badge/:shareId", "destination": "/index.html" },
+    { "source": "/fym", "destination": "/index.html" },
+    { "source": "/idea-pipeline", "destination": "/index.html" },
+    { "source": "/ideas", "destination": "/index.html" },
+    { "source": "/stealth-ops", "destination": "/index.html" },
+    { "source": "/launch-control", "destination": "/index.html" },
+    { "source": "/brand-manager", "destination": "/index.html" },
+    { "source": "/founding-member", "destination": "/index.html" },
+    { "source": "/training", "destination": "/index.html" },
+    { "source": "/thank-you", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/:slug", "destination": "/index.html" },
+    { "source": "/oto/second-tool", "destination": "/index.html" },
+    { "source": "/fym/oto/founding", "destination": "/index.html" },
+    { "source": "/fym/oto/second-tool", "destination": "/index.html" },
+    { "source": "/fym/dashboard", "destination": "/index.html" }
   ]
 }
