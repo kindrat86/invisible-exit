@@ -658,6 +658,259 @@ Micro-SaaS is faster, cheaper, more invisible, and provides the cash flow to fun
 
 For corporate managers who need to build income invisibly while employed, the math is clear: **start with micro-SaaS**.`,
   },
+  {
+    slug: "ai-tools-that-replace-a-full-time-employee",
+    title: "The AI Stack That Replaces a Full-Time Employee",
+    excerpt:
+      "A solo founder's breakdown of the exact tools doing the work of a developer, marketer, and support rep — for under $200/month.",
+    category: "AI Tools",
+    readTime: "8 min read",
+    publishedAt: "2026-03-27",
+    content: `Running a micro-SaaS alone used to mean choosing: build slow, hire fast, or burn out. The calculus has changed. In 2026, a solo founder with the right AI stack can run a product that would have needed a three-person team two years ago — and do it invisibly, without a single job posting or payroll entry.
+
+This is the exact stack I use, what each tool costs, what it replaces, and where it still falls short.
+
+## The Developer Slot: $20–$40/month
+
+The biggest cost for most early SaaS companies is engineering. You either spend time or money. AI shifts that equation hard.
+
+**Claude / GPT-4o** for code generation, debugging, and architecture decisions. If you give these models enough context — your schema, your existing code, your constraints — they can ship working features. Not always on the first try, but the iteration loop is 10x faster than learning a new framework from scratch.
+
+**Cursor or Windsurf** as your IDE layer. These aren't just autocomplete — they can read your entire codebase, suggest refactors, and catch bugs before you run the code. The difference between using one of these and a plain editor is roughly the difference between a junior dev and a senior one reviewing your PR.
+
+What it doesn't replace: system design intuition built from years of running production systems. You still need to know enough to review what the model produces. Ship blindly and you'll have security holes and scaling problems you won't notice until they hurt.
+
+## The Marketing Slot: $50–$100/month
+
+Content, SEO, and copywriting used to require either a freelancer or significant personal time. The tools now:
+
+**Perplexity** for research — real-time, cited, faster than Google for anything that needs synthesis. Use it to understand a customer segment, a competitor's positioning, or a regulatory landscape before writing anything.
+
+**Claude for long-form content.** Blog posts, landing page copy, email sequences, documentation. The key is a detailed prompt: your brand voice, your customer's specific pain, the outcome you want. Vague prompts produce generic content. Specific prompts produce drafts you only need to edit by 20%.
+
+**Fathom or Tella** for turning recorded demos into edited video without hiring an editor. Record once, get a polished output.
+
+What it doesn't replace: distribution. No AI tool will build you an audience. It can produce the content; you still have to get it in front of people consistently.
+
+## The Support Slot: $30–$60/month
+
+Customer support is the silent time drain of every SaaS. It's also the one most founders neglect until they're drowning in tickets.
+
+**Intercom or Plain** with AI-assisted responses. These tools draft replies based on your knowledge base and past tickets. You review, edit if needed, send. A 10-minute response becomes a 90-second one.
+
+**A well-maintained FAQ + docs site** (Mintlify, Gitbook) trained as context for the AI. This is the leverage point. Every hour you spend writing clear documentation reduces your support volume by more than an hour over time.
+
+**Loom for async support.** When something is too complex for text, a 2-minute screen recording beats a 10-email thread. Customers prefer it. You spend less time.
+
+What it doesn't replace: the relationship with a customer who's about to churn. That still requires a real conversation — at minimum a short call. AI can flag the at-risk account; it can't save it.
+
+## The Operations Slot: Free–$20/month
+
+Scheduling, invoicing, bookkeeping, and basic project management can all run nearly autonomously with the right setup.
+
+**Zapier or Make** for workflow automation. When a new customer signs up, they get an onboarding email, a Slack notification, and a row in your CRM — automatically. Build this once and it runs forever.
+
+**Mercury or Relay** for banking with built-in automation. Auto-sweep to savings, auto-pay recurring vendors, easy export for taxes.
+
+**Notion AI or Linear** for project management. Your backlog, roadmap, and release notes can be drafted, organized, and summarized with AI. This isn't glamorous, but it eliminates the weekly "what are we doing" overhead that eats hours.
+
+## Total Stack Cost: $100–$220/month
+
+Compare that to a single full-time hire at $60,000–$120,000/year in salary plus benefits. The AI stack isn't as capable — it's not trying to be. It's trying to get you from zero to $5K–$10K MRR without hiring, and to stay lean past that point as long as possible.
+
+## Where the Stack Breaks Down
+
+Be honest with yourself about the limits:
+
+**Complex integrations and legacy systems.** AI models produce plausible-looking code for obscure APIs, but they hallucinate. If you're integrating with something niche, budget extra debugging time.
+
+**Design.** AI image tools are useful for mockups and marketing assets. They are not a replacement for a UI designer on a product where the interface is the product.
+
+**Sales.** No AI closes a $10K enterprise deal. If you're moving upmarket, you need human relationships.
+
+**Legal and compliance.** AI can explain concepts. It cannot give you legal advice. Don't let it.
+
+## The Mindset Shift
+
+The founders who use this stack well aren't using it to avoid thinking — they're using it to compress execution. They still make the decisions: what to build, who to target, how to position. The AI does the labor-intensive middle part.
+
+Think of it as having a fast, tireless assistant who is very good at following instructions and very bad at knowing which instructions matter. Your job is the judgment. Their job is the throughput.
+
+Get that division right and a two-person company feels like a ten-person one.`,
+  },
+  {
+    slug: "stealth-exit-how-to-sell-without-anyone-knowing",
+    title: "The Stealth Exit: How to Sell Your Business Without Anyone Knowing",
+    excerpt:
+      "Running a quiet acquisition process is harder than it sounds. Here's what founders get wrong — and how to do it without tipping off your employer, customers, or competitors.",
+    category: "Stealth Operations",
+    readTime: "10 min read",
+    publishedAt: "2026-03-30",
+    content: `Selling a business is supposed to be a milestone. Most founders imagine announcing it, celebrating, maybe a press release. But for corporate managers building on the side, or founders who've signed non-competes, or anyone whose employer doesn't know they own a software company — the exit has to be invisible until it's done.
+
+This is not an edge case. It's increasingly common. And it's navigable if you know what you're doing.
+
+## Why Most Stealth Exits Fail
+
+The failure mode isn't legal — it's operational. Founders talk too early, use too many channels, or don't think through who has visibility into what.
+
+**The biggest mistake:** reaching out to potential buyers using your real name and a Google search. Any buyer who looks you up will find your LinkedIn — which lists your day job. Your employer may have Google Alerts. Competitors definitely might. You've just disclosed before you intended to.
+
+The second biggest mistake: listing on a public marketplace like Flippa or MicroAcquire (now Acquire.com) with identifying details in the listing. Even with a generic description, your product's traffic patterns, tech stack, and niche can narrow it down to one company. Competitors will find it.
+
+## Build a Separation Layer First
+
+Before any buyer conversation, you need operational separation between your identity and your business.
+
+**A holding entity.** Your business should be owned by an LLC or similar structure, not by you personally. If you're selling, you're selling the LLC or its assets — not something tied directly to your name. This is standard practice for any acquisition but it's also your privacy layer.
+
+**A non-identifying email domain.** Not your personal Gmail. A domain that doesn't trace back to your product or your name. Use it exclusively for M&A conversations.
+
+**A broker or advisor.** This is the most underused tool in a stealth exit. A good M&A advisor (even for small deals) runs the process without disclosing your identity until a buyer has signed an NDA and shown genuine interest. They present the business by metrics, not by founder.
+
+## Running the Process Quietly
+
+Once you have separation in place:
+
+**Qualify buyers before they qualify you.** In a stealth process, you don't send a CIM (confidential information memorandum) to anyone who asks. You screen first. Who is the buyer? What have they acquired before? Do they have legitimate capital? Are they strategic or financial? Only after basic qualification do you share details — and only under NDA.
+
+**Keep the NDA tight.** Standard NDAs for acquisitions cover non-disclosure of financials and business details. Make sure yours also covers the fact that a sale process is happening at all. This prevents a buyer from casually mentioning it to someone in your network.
+
+**Limit the data room.** Early in the process, share revenue and growth metrics — nothing that identifies you or exposes your tech stack unnecessarily. A serious buyer will ask for more. That's the right time to go deeper, not before.
+
+**Stage your disclosures.** The sequence should be: metrics → business overview → tech details → customer references → full financials. Each stage happens only after the buyer has demonstrated commitment (signed NDA, submitted LOI, or both).
+
+## The Employee and Customer Problem
+
+Two groups can blow up a stealth exit even when you've managed the buyer side perfectly.
+
+**Customers** notice when due diligence starts. If a buyer wants to interview customers, that's a signal. Manage this carefully. Some deals can close without customer interviews; push for that if you can. If interviews are required, frame them to the customer as a "partnership evaluation" or "advisory conversation" — something true but less alarming than "we're being acquired."
+
+**Team members (if you have any)** are an even bigger risk. They'll know something is happening when lawyers start asking for contracts and IP assignments. If you have contractors or part-time help, you need to decide early: bring them in under NDA, or keep them out and manage the documentation yourself. Most small acquisitions lean toward the latter.
+
+## What to Do When Your Employer Finds Out
+
+Sometimes they do find out — before the deal closes. Plan for this.
+
+If your employment contract has a moonlighting clause or IP assignment provision, you should have reviewed it before building the business. If you haven't, review it now. Understand exactly what you signed.
+
+If your employer asks directly, you have a decision to make: disclose or deny. Neither is without risk. Denial can become a termination-for-cause issue if discovered later. Disclosure may violate your exit strategy.
+
+The cleanest version: close the deal fast enough that your employment status becomes irrelevant. Many founders accelerate timelines for exactly this reason.
+
+## Timing the Close
+
+The best stealth exits close in 60–90 days from first buyer conversation. That's aggressive but achievable for asset sales under $1M and for founders who have their documentation clean.
+
+What slows it down: missing financial records, unclear IP ownership, no operating agreement for your LLC, customer contracts that require consent to assign.
+
+Clean these up now, before you start the process. A data room that's ready to go lets you move at the buyer's pace, not spend three weeks pulling together documents while momentum dies.
+
+## After the Close
+
+You'll sign a transition agreement. This typically includes 30–90 days of support for the buyer. During this period, you're still operationally involved — be thoughtful about how that interacts with your day job.
+
+After the transition period ends, the exit is complete. At that point, what and when you disclose to your employer is your choice. Most founders say nothing unless directly asked. It's over; it's not relevant to your employment relationship unless you used company resources, which you shouldn't have.
+
+## The Short Version
+
+A stealth exit requires: a holding entity, a non-identifying contact channel, a qualified advisor or broker, staged disclosures under NDA, and fast execution. None of these are complicated. Most founders just don't set them up in advance — and then scramble when a buyer shows real interest.
+
+Do the setup before you need it. The best exits are the ones where everything was already in place when the right buyer appeared.`,
+  },
+  {
+    slug: "time-audit-the-90-minute-rule-for-side-project-founders",
+    title: "The 90-Minute Rule: How to Make Real Progress on a Side Project",
+    excerpt:
+      "Most side project advice assumes you have free time. You don't. Here's a system built for people with a full-time job, a family, and under two hours a day.",
+    category: "Time Management",
+    readTime: "7 min read",
+    publishedAt: "2026-04-02",
+    content: `Every side project book assumes you have mornings. Or evenings. Or weekends. It assumes you have a block of time you can reliably protect. Most people don't — not in any consistent, predictable way.
+
+This is for everyone else. The people with demanding jobs, families, commutes, and calendars that explode without warning. The ones who manage to build anyway.
+
+## Why "Find the Time" Advice Fails
+
+The standard advice: wake up at 5am, work before the house wakes up, protect your mornings like a ritual. It works — for some people, in some seasons of life.
+
+For most corporate managers with kids under 10, it's a fantasy. The 5am alarm means a 5am kid. The protected morning becomes a breakfast negotiation. The "sacred block" gets interrupted by a school drop-off you forgot was on your schedule.
+
+The advice to "find the time" fails because it assumes time is something you find. It's not. It's something you manufacture, in small quantities, from chaos.
+
+## The 90-Minute Rule
+
+One rule: you need 90 uninterrupted minutes, somewhere in your week, to make meaningful progress.
+
+Not every day. Not every morning. Ninety minutes, somewhere, consistently.
+
+That might be:
+- Tuesday and Thursday evenings after the kids are asleep (two 45-minute blocks that you treat as one)
+- Saturday morning before anyone else wakes up
+- Lunch breaks twice a week, calendar-blocked, no exceptions
+- Sunday afternoons during nap time
+
+The point is not the specific time. The point is that 90 minutes of focused work produces more than 4 hours of fragmented work. Research on deep work bears this out. Your own experience probably confirms it.
+
+## The Task Structure That Makes 90 Minutes Work
+
+Ninety minutes is only useful if you don't spend 20 of them figuring out what to do. The task structure matters as much as the time.
+
+**End each session by writing the first task for the next session.** Not a list — one specific task. "Add the Stripe webhook handler" or "Write the onboarding email sequence" or "Fix the broken pagination on the dashboard." Something you can start immediately, without thinking.
+
+This is the most underrated productivity practice for side project founders. The cognitive overhead of deciding what to do next is enormous when you're tired and context-switching from your day job. Eliminate it.
+
+**Keep a "15-minute task" list.** These are small, self-contained pieces of work you can do in a stolen moment — on a commute, during a slow meeting, while waiting for a build to finish. Responding to a support ticket. Updating a landing page headline. Fixing a typo in docs. They don't replace your 90-minute sessions; they supplement them.
+
+**One goal per week, not per day.** Daily goals for side projects create daily opportunities to fail and feel behind. A weekly goal is more forgiving and more honest about how unpredictable life is. Define what "a good week" looks like on Monday. Measure it on Sunday.
+
+## The Energy Problem
+
+Time isn't the only constraint. Energy is.
+
+You can have 90 minutes and no ability to think clearly — especially on weekday evenings after a hard day. This is normal. It doesn't mean you've failed at time management.
+
+Two things help:
+
+**Match task type to energy level.** High-energy sessions are for building: writing code, making architectural decisions, creating content. Low-energy sessions are for maintenance: answering emails, reviewing analytics, updating documentation, cleaning up the backlog. Don't try to write a new feature at 10pm after a brutal Tuesday. Do triage instead.
+
+**Protect one high-energy session per week as sacred.** Everything else can flex. That one session — your best 90 minutes of the week — should be non-negotiable. Guard it the way you'd guard a board meeting.
+
+## What You Can Build in 90 Minutes a Week
+
+Let's be honest about the math.
+
+90 minutes × 52 weeks = 78 hours per year. That's roughly two full-time work weeks.
+
+In 78 focused hours, you can:
+- Build and launch a simple SaaS product (if scoped correctly)
+- Write 20,000–30,000 words of content
+- Grow a newsletter from 0 to a few hundred subscribers
+- Learn a new technical skill to a working level
+- Run a small acquisition process from LOI to close
+
+It's not a lot. It's enough, if you're disciplined about what you're building and you don't rebuild it three times.
+
+## The Compounding Problem
+
+The real challenge with 90 minutes a week isn't any single week. It's the accumulated context loss.
+
+Every time you step away from a project for a week, you lose some context. You come back and spend 15 minutes remembering where you were. Over time this adds up — especially on complex technical projects.
+
+Two mitigations:
+
+**Write a "resume here" note at the end of every session.** Two or three sentences: what you just did, what's next, and any open questions. Keep it in a notes file in the repo. Future you will be grateful.
+
+**Keep your project scope small enough to hold in your head.** The larger a project gets, the more expensive context-switching becomes. This is a feature argument for micro-SaaS: a small, focused product with one customer type and one core workflow is much easier to re-enter after a week away than a sprawling application.
+
+## The Permission You Don't Need
+
+You don't need permission to start small. You don't need a perfect time slot before you begin. You don't need to wait until your schedule clears up — it won't.
+
+Ninety minutes a week, with clear tasks and honest goals, is enough to build something real. Not fast. Not without frustration. But real.
+
+Start with whatever 90 minutes you have this week. Not the ideal 90 minutes. The actual ones.`,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
