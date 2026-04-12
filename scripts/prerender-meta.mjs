@@ -185,6 +185,34 @@ const blogPosts = [
       "You do not need to become a visible creator to use YouTube well. You need a repeatable message, a useful point of view, and a format you can sustain while employed.",
     publishedAt: "2026-04-12",
   },
+  {
+    slug: "the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side",
+    title: "The 5-Hour Weekly Operating System for Building a Micro-SaaS on the Side",
+    excerpt:
+      "You do not need more time. You need a stricter operating system. Here is the simplest weekly structure for employed founders who want real progress without chaos.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "how-to-choose-between-one-big-startup-idea-and-three-small-micro-saas-bets",
+    title: "How to Choose Between One Big Startup Idea and Three Small Micro-SaaS Bets",
+    excerpt:
+      "Employed founders often waste months trying to pick the perfect big idea. A better question is whether the idea fits the life you actually have.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do",
+    title: "Can AI Really Replace a Co-Founder? What It Can and Cannot Do",
+    excerpt:
+      "AI can replace a surprising amount of early-stage execution. It cannot replace judgment, ownership, and accountability. That distinction matters.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
+    title: "The Invisible Exit Roadmap: What to Do in Your First 90 Days",
+    excerpt:
+      "The first 90 days matter more than most people think. Not because they create the whole business, but because they create the direction of it.",
+    publishedAt: "2026-04-12",
+  },
 ];
 
 // ---------------------------------------------------------------------------
