@@ -115,6 +115,48 @@ const blogPosts = [
       "You don't need 40 hours a week to build a business. Here's the exact weekly schedule corporate managers use to ship products in 5 focused hours.",
     publishedAt: "2026-03-28",
   },
+  {
+    slug: "first-10-customers-corporate-manager-outreach",
+    title: "Your First 10 Customers: The Corporate Manager's Outreach Playbook",
+    excerpt:
+      "Forget cold outreach templates. Your corporate network and domain expertise are the unfair advantage most founders would kill for.",
+    publishedAt: "2026-03-26",
+  },
+  {
+    slug: "non-compete-clauses-micro-saas-what-you-need-to-know",
+    title: "Non-Compete Clauses and Micro-SaaS: What Corporate Managers Need to Know",
+    excerpt:
+      "Your employment agreement probably isn't as restrictive as you think. Here's how to evaluate your non-compete before building.",
+    publishedAt: "2026-03-27",
+  },
+  {
+    slug: "how-to-build-a-business-while-employed-without-using-your-real-name",
+    title: "How to Build a Business While Employed Without Using Your Real Name",
+    excerpt:
+      "You do not need to attach your LinkedIn profile to your side business. Here is the practical anonymity stack corporate managers can use to build quietly.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "validate-micro-saas-idea-in-48-hours-without-coding",
+    title: "How to Validate a Micro-SaaS Idea in 48 Hours Without Writing Code",
+    excerpt:
+      "Before you build, prove demand. This is the fastest practical way for a time-constrained corporate manager to test whether an idea deserves a weekend.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "best-micro-saas-ideas-for-corporate-managers",
+    title: "The Best Micro-SaaS Ideas for Corporate Managers in 2026",
+    excerpt:
+      "The best ideas are not sexy. They are painful, narrow, and easy to explain. Here are the kinds of micro-SaaS ideas corporate operators are uniquely positioned to spot.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "do-you-need-a-personal-brand-to-build-a-side-business",
+    title: "Do You Need a Personal Brand to Build a Side Business? No.",
+    excerpt:
+      "A public face can help some founders. For corporate managers, it can also create unnecessary risk. Here is the better question to ask.",
+    publishedAt: "2026-04-12",
+  },
 ];
 
 // ---------------------------------------------------------------------------

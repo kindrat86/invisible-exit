@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://invisibleexit.com/</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://invisibleexit.com/blog</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,6 +63,30 @@
   <url>
     <loc>https://invisibleexit.com/blog/non-compete-clauses-micro-saas-what-you-need-to-know</loc>
     <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blog/how-to-build-a-business-while-employed-without-using-your-real-name</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blog/validate-micro-saas-idea-in-48-hours-without-coding</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blog/best-micro-saas-ideas-for-corporate-managers</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blog/do-you-need-a-personal-brand-to-build-a-side-business</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
