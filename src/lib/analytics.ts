@@ -4,7 +4,15 @@ type AnalyticsEvent =
   | "oto_page_viewed"
   | "oto_video_clicked"
   | "oto_cta_clicked"
-  | "oto_declined";
+  | "oto_declined"
+  | "homepage_cta_clicked"
+  | "homepage_subscribe_submitted"
+  | "blog_archive_viewed"
+  | "blog_start_here_clicked"
+  | "blog_featured_clicked"
+  | "blog_article_cta_clicked"
+  | "blog_related_clicked"
+  | "blog_back_to_hub_clicked";
 
 export function trackEvent(
   event: AnalyticsEvent,

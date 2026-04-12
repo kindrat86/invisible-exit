@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { trackEvent } from "@/lib/analytics";
 
 const TOOLS = [
   {
@@ -115,6 +116,7 @@ const Index = () => {
   }, []);
 
   const handleCheckout = async () => {
+    trackEvent("homepage_cta_clicked", { source: "landing_page" });
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke(
@@ -143,6 +145,7 @@ const Index = () => {
           { onConflict: "email" }
         );
       if (error) throw error;
+      trackEvent("homepage_subscribe_submitted", { source: "landing_page" });
       toast.success("You're in! We'll send you weekly insights.");
       // Send welcome email (fire-and-forget)
       supabase.functions

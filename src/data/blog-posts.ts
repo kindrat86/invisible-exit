@@ -3389,6 +3389,548 @@ Through three disciplined months that make the next three obvious.`,
     ],
     relatedSlugs: ["validate-micro-saas-idea-in-48-hours-without-coding", "the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side", "zero-to-4000-invisible-exit-timeline"],
   },
+
+  {
+    slug: "how-to-keep-your-linkedin-clean-while-building-a-side-business",
+    title: "How to Keep Your LinkedIn Clean While Building a Side Business",
+    excerpt:
+      "For employed founders, LinkedIn is often the loudest accidental leak. Here is how to keep it professionally useful without turning it into a breadcrumb trail to your side project.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `If you are still employed, LinkedIn is not just another social network.
+
+It is often the most direct bridge between your corporate identity and your private experiments.
+
+That is why sloppy LinkedIn behavior causes more accidental exposure than most founders realize.
+
+## The goal is not to disappear
+
+You do not need to delete LinkedIn, become strange, or abandon your professional profile.
+
+You need to stop using it in ways that make your side business trivially discoverable.
+
+That means keeping LinkedIn useful for your career while removing unnecessary crossover.
+
+## What usually creates the leak
+
+The common mistakes are predictable:
+- posting about the side project under your real name
+- linking your website in your bio too early
+- using the same founder language across LinkedIn and your business channels
+- engaging publicly with your side-business brand from your real account
+- updating your headline in ways that hint at what you are building
+
+None of those are fatal alone.
+
+Together, they create a trail.
+
+## A cleaner LinkedIn posture
+
+A cleaner posture is simple:
+- keep LinkedIn focused on your current professional role
+- avoid public references to your side business while it is still experimental
+- avoid cross-linking identities
+- do not use LinkedIn as your early distribution channel if anonymity matters
+
+LinkedIn is where colleagues, recruiters, investors, and competitors already know how to find you.
+
+Treat it accordingly.
+
+## What to keep
+
+Keep:
+- your current role
+- your experience history
+- normal professional activity if you already do it
+- a stable and non-suspicious presence
+
+You are not trying to look hidden.
+
+You are trying to look normal.
+
+## What to avoid
+
+Avoid:
+- “building in public” from your real account
+- liking and amplifying your anonymous brand content from your real identity
+- adding your side-business domain to your contact info too early
+- posting hot takes that mirror your anonymous founder voice too closely
+
+The cleaner your separation, the less effort you need later.
+
+## The useful rule
+
+If someone from work clicks through your LinkedIn, they should learn about your job history, not your stealth project.
+
+That is the standard.
+
+## The Invisible Exit answer
+
+A clean LinkedIn is not secrecy theatre.
+
+It is simply good boundary management.
+
+Leave LinkedIn to do its job.
+Let your side business grow somewhere else first.`,
+    faqs: [
+      {
+        question: "Should I post my side business on LinkedIn if I am still employed?",
+        answer: "Usually not if anonymity matters. LinkedIn is often the easiest place for colleagues and employers to connect your real identity to your side project.",
+      },
+      {
+        question: "Do I need to delete LinkedIn to stay invisible?",
+        answer: "No. You usually just need a cleaner boundary: keep LinkedIn focused on your professional identity and avoid cross-linking it with your side business.",
+      },
+    ],
+    relatedSlugs: ["how-to-build-a-business-while-employed-without-using-your-real-name", "what-if-your-employer-finds-out-about-your-side-business", "invisible-business-model"],
+  },
+  {
+    slug: "moonlighting-clauses-what-employed-founders-actually-need-to-check",
+    title: "Moonlighting Clauses: What Employed Founders Actually Need to Check",
+    excerpt:
+      "Most employed founders fear the phrase more than they understand it. Here is the practical review process before you build in circles around imaginary restrictions.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `Moonlighting clauses sound scary because they are designed to sound broad.
+
+But broad language and practical risk are not the same thing.
+
+## What you are actually checking
+
+When you review a moonlighting clause, you are not asking:
+“Can I ever do anything outside work?”
+
+You are asking:
+- does this require disclosure?
+- does this prohibit competing work?
+- does this prohibit all paid outside work?
+- how does it define conflict?
+
+Those details matter.
+
+## The common mistake
+
+Many founders read one vague sentence, feel nervous, and stop thinking clearly.
+
+That is not a legal review. That is an emotional reaction.
+
+## A better checklist
+
+Read the agreement and pull out the exact language around:
+- outside business activity
+- prior approval requirements
+- conflict of interest
+- inventions and IP assignment
+- non-solicit obligations
+
+Then ask:
+- Is my idea unrelated to my employer's market?
+- Am I using only personal resources?
+- Am I doing this outside work hours?
+- Does the clause require approval even for unrelated work?
+
+## Where the real danger sits
+
+The real danger is usually not the existence of the clause.
+
+It is behaving carelessly in a way that activates it.
+
+Examples:
+- working in the same market
+- using company equipment
+- involving coworkers
+- creating actual competitive overlap
+
+## When to get legal advice
+
+If the clause is unusually broad or the industry overlap is meaningful, a short employment-law consultation is worth it.
+
+A focused 30-minute review can remove months of hesitation.
+
+## The Invisible Exit answer
+
+Moonlighting language should be reviewed, not worshipped.
+
+Read it carefully. Remove overlap. Keep your operations clean. Escalate to a lawyer when the facts justify it.
+
+Do not let a sentence you have not properly analyzed decide the next five years of your life.`,
+    faqs: [
+      {
+        question: "What is a moonlighting clause?",
+        answer: "A moonlighting clause is contract language that limits or regulates outside work, side businesses, or secondary paid activity while you are employed.",
+      },
+      {
+        question: "Do moonlighting clauses ban all side businesses?",
+        answer: "Not always. Many clauses focus on conflict of interest, competing work, or approval requirements rather than banning every unrelated side activity outright.",
+      },
+    ],
+    relatedSlugs: ["non-compete-clauses-micro-saas-what-you-need-to-know", "what-if-your-employer-finds-out-about-your-side-business", "invisible-business-model"],
+  },
+  {
+    slug: "should-you-form-an-llc-before-your-first-customer",
+    title: "Should You Form an LLC Before Your First Customer?",
+    excerpt:
+      "Some founders set up the company too early. Others wait too long. Here is the cleaner decision rule for employed operators building quietly.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `A lot of founders over-index on entity setup because it feels serious.
+
+But seriousness and timing are not the same thing.
+
+## The wrong default
+
+The wrong default is:
+- spend weeks setting up structure
+- buy legal templates
+- obsess over state choice
+- delay validation
+
+All before a single real signal exists.
+
+## The other wrong default
+
+The opposite mistake is to ignore structure entirely even after money, risk, or visibility begin to increase.
+
+That creates a mess later.
+
+## A better decision rule
+
+Ask:
+- Am I still testing whether the problem matters?
+- Am I about to collect money?
+- Does anonymity matter operationally now, or only eventually?
+- Does the project create legal or tax reasons to formalize sooner?
+
+If you are still only validating the message, you often do not need the full entity yet.
+
+If you are about to take payments, sign agreements, or increase exposure, the decision becomes more urgent.
+
+## Why employed founders care earlier
+
+For employed founders, an entity is not only about taxes or liability.
+
+It can also support:
+- cleaner separation
+- more professional operations
+- less obvious identity overlap
+
+That is why the answer is not purely financial.
+
+## The Invisible Exit answer
+
+Do not form an LLC just to feel like a founder.
+
+Form it when the business has earned structure through real validation, incoming money, or rising operational risk.
+
+Structure should support signal, not replace it.`,
+    faqs: [
+      {
+        question: "Do I need an LLC before validating my idea?",
+        answer: "Usually not. If you are still only testing message and demand, you often do not need a formal entity yet. The urgency increases once you are collecting money or increasing exposure.",
+      },
+      {
+        question: "Why might employed founders care about an LLC earlier?",
+        answer: "Because an entity can support cleaner operational separation, more professional payments, and less identity overlap once the project becomes real enough to justify it.",
+      },
+    ],
+    relatedSlugs: ["invisible-business-model", "how-to-build-a-business-while-employed-without-using-your-real-name", "what-if-your-employer-finds-out-about-your-side-business"],
+  },
+  {
+    slug: "how-to-choose-a-side-business-niche-that-does-not-conflict-with-your-employer",
+    title: "How to Choose a Side-Business Niche That Does Not Conflict With Your Employer",
+    excerpt:
+      "The safest side-business niche is not just profitable. It is clearly separate. Here is how to find that line before you create avoidable tension.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `A side business becomes riskier when the overlap with your employer becomes fuzzy.
+
+So one of the smartest early decisions is niche selection.
+
+## The standard
+
+You want a niche that is:
+- clearly useful
+- commercially real
+- operationally separate from your employer
+
+That third factor matters more than many founders admit.
+
+## The easiest test
+
+Ask:
+- same buyer?
+- same product type?
+- same market language?
+- same strategic problem?
+
+The more “yes” answers you get, the more careful you need to be.
+
+## Better sources of niches
+
+Look at adjacent worlds you understand indirectly:
+- industries friends or family work in
+- service businesses with obvious manual pain
+- boring operational workflows in small companies
+- categories that are far from your employer but close to your pattern-recognition ability
+
+## The Invisible Exit answer
+
+The best niche is not just where you see opportunity.
+
+It is where opportunity and separation meet.
+
+That is what lets you build with a cleaner mind and a stronger risk posture.`,
+    faqs: [
+      {
+        question: "How do I know if a side-business niche conflicts with my employer?",
+        answer: "Check for overlap in buyer, product type, market language, and underlying business problem. The more overlap exists, the more likely the niche creates conflict or unnecessary risk.",
+      },
+      {
+        question: "What kinds of niches are safer for employed founders?",
+        answer: "Niches that are commercially real but clearly separate from your employer's market are usually safer. Adjacent industries, boring service-business workflows, and non-overlapping operational pain points are often strong candidates.",
+      },
+    ],
+    relatedSlugs: ["best-micro-saas-ideas-for-corporate-managers", "what-if-your-employer-finds-out-about-your-side-business", "non-compete-clauses-micro-saas-what-you-need-to-know"],
+  },
+  {
+    slug: "digital-separation-for-employed-founders-email-devices-accounts-and-domains",
+    title: "Digital Separation for Employed Founders: Email, Devices, Accounts, and Domains",
+    excerpt:
+      "Most anonymity problems are not strategic. They are operational. Here is the digital separation checklist that keeps a side project from bleeding into your work identity.",
+    category: "Stealth Operations",
+    readTime: "9 min read",
+    publishedAt: "2026-04-12",
+    content: `Digital separation sounds complicated until you define it clearly.
+
+It simply means that your side business should not piggyback on the digital infrastructure of your work identity.
+
+## The minimum separation stack
+
+At a minimum, separate:
+- email
+- browser sessions
+- domains
+- hosting accounts
+- payment accounts
+- work devices from business work
+
+## Why this matters
+
+Because accidental overlap creates accidental traceability.
+
+Most discovery problems do not come from sophisticated forensics.
+
+They come from obvious crossover.
+
+## The simple operating rule
+
+If a future dispute forced you to explain how the side business was run, your answer should be clear:
+
+personal time, personal tools, personal accounts, separate brand.
+
+## Where people get lazy
+
+They use:
+- their work laptop because it is open already
+- personal inboxes with years of mixed identity history
+- shared browser profiles
+- domains and tools connected to public personal details
+
+Convenience is expensive when it leaves a trail.
+
+## The Invisible Exit answer
+
+Digital separation is not paranoia.
+
+It is administrative discipline.
+
+The cleaner the boundary, the less stress you carry while building.`,
+    faqs: [
+      {
+        question: "What is digital separation for a side business?",
+        answer: "Digital separation means running your side project through separate accounts, inboxes, devices, brands, and infrastructure rather than mixing it with your work identity or employer-linked tools.",
+      },
+      {
+        question: "Why do employed founders need separate email and browser sessions?",
+        answer: "Because mixed sessions and shared accounts create unnecessary identity overlap and increase the chance that the side project becomes easy to trace back to your work-facing identity.",
+      },
+    ],
+    relatedSlugs: ["how-to-build-a-business-while-employed-without-using-your-real-name", "invisible-business-model", "how-to-keep-your-linkedin-clean-while-building-a-side-business"],
+  },
+  {
+    slug: "how-anonymous-does-your-business-really-need-to-be",
+    title: "How Anonymous Does Your Business Really Need to Be?",
+    excerpt:
+      "Not every founder needs maximum invisibility. The smarter question is how much anonymity your actual risk profile justifies right now.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `Many founders think anonymity is binary.
+
+Either full stealth or full public.
+
+That is usually the wrong frame.
+
+## A better frame
+
+Ask:
+- what would happen if this project became easy to connect to me today?
+- what is the downside in my actual job?
+- what stage is the business in?
+
+A tiny experiment does not always require maximum invisibility.
+
+A sensitive employment context may.
+
+## Match anonymity to risk
+
+Low-risk situation:
+- unrelated niche
+- low visibility
+- no employer sensitivity
+- early testing only
+
+Higher-risk situation:
+- public professional profile
+- contract sensitivity
+- politically exposed role
+- stronger need for boundary protection
+
+## The mistake
+
+Over-anonymizing too early can create drag.
+
+Under-protecting too early can create regret.
+
+The goal is proportion.
+
+## The Invisible Exit answer
+
+Your business should be as anonymous as your current risk profile requires, not as anonymous as internet mythology suggests.
+
+Protect what matters. Avoid theatre. Increase separation as the business becomes more real.`,
+    faqs: [
+      {
+        question: "Do I need full anonymity to start a side business?",
+        answer: "Not always. The right level of anonymity depends on your employment context, the business stage, and the downside if the project becomes easy to connect to you.",
+      },
+      {
+        question: "Can too much anonymity slow a founder down?",
+        answer: "Yes. Overcomplicating identity protection too early can create drag. The smarter path is proportional anonymity based on real risk, not fear alone.",
+      },
+    ],
+    relatedSlugs: ["how-to-build-a-business-while-employed-without-using-your-real-name", "what-if-your-employer-finds-out-about-your-side-business", "digital-separation-for-employed-founders-email-devices-accounts-and-domains"],
+  },
+  {
+    slug: "the-stealth-launch-checklist-for-corporate-managers",
+    title: "The Stealth Launch Checklist for Corporate Managers",
+    excerpt:
+      "Before you launch anything publicly, run this checklist. It is easier to fix visibility mistakes before attention arrives than after.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `Launch creates exposure.
+
+That is why a stealth founder needs a different checklist than a normal creator business.
+
+## Before launch, confirm these basics
+
+- the niche is clearly separate from your employer
+- the email/domain setup is separate
+- the public brand does not point back to your real identity unnecessarily
+- your LinkedIn profile is clean
+- no company devices or resources touched the project
+- your messaging does not accidentally reveal more than intended
+
+## Why this matters
+
+You can fix many things in private.
+
+You cannot easily unpublish identity breadcrumbs after attention starts arriving.
+
+## The Invisible Exit answer
+
+A stealth launch is still a launch.
+
+It should feel clean, boring, and defensible. If the setup still feels messy, delay the launch by a week and fix the boundary problems first.`,
+    faqs: [
+      {
+        question: "What should I check before launching a side business while employed?",
+        answer: "Check separation of niche, brand, email, domains, LinkedIn, devices, and company-resource usage. The goal is to remove obvious identity and policy problems before visibility increases.",
+      },
+      {
+        question: "Why is a stealth launch checklist important?",
+        answer: "Because it is easier to fix preventable visibility mistakes before attention arrives than after your project starts being indexed, shared, and discussed publicly.",
+      },
+    ],
+    relatedSlugs: ["what-if-your-employer-finds-out-about-your-side-business", "digital-separation-for-employed-founders-email-devices-accounts-and-domains", "invisible-business-model"],
+  },
+  {
+    slug: "what-not-to-share-online-when-you-are-building-an-invisible-exit",
+    title: "What Not to Share Online When You Are Building an Invisible Exit",
+    excerpt:
+      "A surprising amount of risk comes from oversharing details that feel harmless in the moment. Here is where employed founders accidentally create visibility they never intended.",
+    category: "Stealth Operations",
+    readTime: "8 min read",
+    publishedAt: "2026-04-12",
+    content: `Oversharing rarely feels dangerous while you are doing it.
+
+It feels casual, transparent, or useful.
+
+Then six months later you realize you left a trail of clues across half the internet.
+
+## The risky categories
+
+Be careful with:
+- your real employer details
+- timelines that map too neatly to your real life
+- exact tools and accounts linked to your identity
+- screenshots with metadata or account names
+- public cross-linking between personal and business profiles
+- emotionally honest posts that reveal too much situational context
+
+## Why founders do this
+
+Because internet culture rewards openness.
+
+But employed founders are not playing the same game as public creators.
+
+Your first responsibility is not transparency as performance.
+
+It is operational prudence.
+
+## The useful filter
+
+Before posting, ask:
+- does this help the audience without increasing traceability?
+- would I still be comfortable with this post if it were read by someone at work?
+- is there a lower-risk version of this point I can share instead?
+
+## The Invisible Exit answer
+
+Share the lesson.
+Share the framework.
+Share the pattern.
+
+Be slower to share the identifying detail.
+
+That is the difference between useful publishing and accidental exposure.`,
+    faqs: [
+      {
+        question: "What details should employed founders avoid sharing online?",
+        answer: "Avoid employer-specific details, identifying timelines, screenshots with account names, cross-links between personal and business profiles, and any context that makes the project too easy to trace back to you.",
+      },
+      {
+        question: "How can I still publish usefully without oversharing?",
+        answer: "Share the lesson, framework, pattern, or insight while stripping out unnecessary identifying details. Useful publishing does not require maximum personal disclosure.",
+      },
+    ],
+    relatedSlugs: ["how-to-build-a-business-while-employed-without-using-your-real-name", "how-to-keep-your-linkedin-clean-while-building-a-side-business", "how-anonymous-does-your-business-really-need-to-be"],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
