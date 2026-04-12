@@ -157,6 +157,34 @@ const blogPosts = [
       "A public face can help some founders. For corporate managers, it can also create unnecessary risk. Here is the better question to ask.",
     publishedAt: "2026-04-12",
   },
+  {
+    slug: "what-if-your-employer-finds-out-about-your-side-business",
+    title: "What If Your Employer Finds Out About Your Side Business?",
+    excerpt:
+      "For corporate managers, this is the fear underneath every side project. Here is how to think about the real risks, the avoidable mistakes, and the smarter operating posture.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "how-corporate-managers-can-get-their-first-paying-customers-without-ads",
+    title: "How Corporate Managers Can Get Their First Paying Customers Without Ads",
+    excerpt:
+      "If your first distribution plan depends on paid ads, you are probably trying to buy clarity you have not earned yet. Here is the smarter path.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "reddit-for-anonymous-founders-how-to-get-attention-without-looking-like-a-marketer",
+    title: "Reddit for Anonymous Founders: How to Get Attention Without Looking Like a Marketer",
+    excerpt:
+      "Reddit can be one of the best early distribution channels for a low-profile founder, but only if you behave like a contributor instead of a campaign.",
+    publishedAt: "2026-04-12",
+  },
+  {
+    slug: "youtube-without-showing-your-face-the-corporate-managers-content-strategy",
+    title: "YouTube Without Showing Your Face: The Corporate Manager's Content Strategy",
+    excerpt:
+      "You do not need to become a visible creator to use YouTube well. You need a repeatable message, a useful point of view, and a format you can sustain while employed.",
+    publishedAt: "2026-04-12",
+  },
 ];
 
 // ---------------------------------------------------------------------------
