@@ -58,13 +58,82 @@ const FEATURED_SLUGS = [
   "can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do",
 ];
 
+const CATEGORY_ORDER = [
+  "Stealth Operations",
+  "Audience Building",
+  "Financial Independence",
+  "Growth",
+  "Micro-SaaS",
+  "Exit Planning",
+  "Validation",
+  "Strategy",
+  "Time Management",
+  "AI Tools",
+];
+
+const CATEGORY_SUMMARIES: Record<string, { summary: string; ctaLabel: string }> = {
+  "Stealth Operations": {
+    summary:
+      "Everything about anonymity, separation, compliance boundaries, and building without accidental exposure.",
+    ctaLabel: "Explore stealth guides",
+  },
+  "Audience Building": {
+    summary:
+      "Low-profile distribution systems: blog, Reddit, YouTube, search, and faceless content that still earns trust.",
+    ctaLabel: "Explore audience guides",
+  },
+  "Financial Independence": {
+    summary:
+      "Freedom math, salary traps, recurring revenue psychology, and what optionality actually looks like in real life.",
+    ctaLabel: "Explore freedom math",
+  },
+  Growth: {
+    summary:
+      "How to get early customers, learn from real conversations, and avoid paying for clarity before you have earned it.",
+    ctaLabel: "Explore growth guides",
+  },
+  "Micro-SaaS": {
+    summary:
+      "Idea selection, boring business advantages, and the kinds of products that fit a 5-hour-per-week founder.",
+    ctaLabel: "Explore micro-SaaS guides",
+  },
+  "Exit Planning": {
+    summary:
+      "Roadmaps, timelines, IPO skepticism, and how to build toward optionality instead of waiting for rescue.",
+    ctaLabel: "Explore exit planning",
+  },
+  Validation: {
+    summary:
+      "Fast market tests, message checks, and how to stop using coding as a substitute for demand evidence.",
+    ctaLabel: "Explore validation guides",
+  },
+  Strategy: {
+    summary:
+      "Decision frameworks for employed founders choosing where to focus, what to ignore, and how to narrow faster.",
+    ctaLabel: "Explore strategy guides",
+  },
+  "Time Management": {
+    summary:
+      "Operating systems for constrained founders who need structured progress rather than motivational hacks.",
+    ctaLabel: "Explore time systems",
+  },
+  "AI Tools": {
+    summary:
+      "Where AI meaningfully replaces labor, where it does not, and how to use it without outsourcing judgment.",
+    ctaLabel: "Explore AI guides",
+  },
+};
+
 const ArchiveCard = ({
   article,
   event,
   section,
 }: {
   article: (typeof blogPosts)[number];
-  event: "blog_start_here_clicked" | "blog_featured_clicked";
+  event:
+    | "blog_start_here_clicked"
+    | "blog_featured_clicked"
+    | "blog_related_clicked";
   section: string;
 }) => (
   <Link
@@ -109,12 +178,38 @@ const Blog = () => {
       .filter(Boolean) as typeof blogPosts,
   }));
 
+  const categorySections = useMemo(() => {
+    const groups = new Map<string, typeof blogPosts>();
+    sortedPosts.forEach((post) => {
+      const current = groups.get(post.category) ?? [];
+      groups.set(post.category, [...current, post]);
+    });
+
+    const ordered = Array.from(groups.entries()).sort((a, b) => {
+      const aIndex = CATEGORY_ORDER.indexOf(a[0]);
+      const bIndex = CATEGORY_ORDER.indexOf(b[0]);
+      const safeA = aIndex === -1 ? 999 : aIndex;
+      const safeB = bIndex === -1 ? 999 : bIndex;
+      if (safeA !== safeB) return safeA - safeB;
+      return a[0].localeCompare(b[0]);
+    });
+
+    return ordered.map(([category, posts]) => ({
+      category,
+      posts,
+      summary: CATEGORY_SUMMARIES[category]?.summary ??
+        "Guides and frameworks for this part of the Invisible Exit system.",
+      ctaLabel: CATEGORY_SUMMARIES[category]?.ctaLabel ?? "Browse this category",
+    }));
+  }, [sortedPosts]);
+
   useEffect(() => {
     trackEvent("blog_archive_viewed", {
       post_count: blogPosts.length,
       featured_count: featuredPosts.length,
+      category_count: categorySections.length,
     });
-  }, [featuredPosts.length]);
+  }, [featuredPosts.length, categorySections.length]);
 
   return (
     <div className="min-h-screen">
@@ -179,9 +274,9 @@ const Blog = () => {
                 The Invisible Exit Blog
               </h1>
               <p className="text-white/70 text-lg max-w-3xl">
-                Use this archive like a playbook, not a timeline. Start with the
-                roadmap, pick the problem that matches your current bottleneck,
-                and move through the guides in order.
+                Use this archive like a playbook, not a timeline. Start with the roadmap,
+                pick the problem that matches your current bottleneck, and move through
+                the guides in order.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-white/80">
@@ -192,9 +287,8 @@ const Blog = () => {
                 The Invisible Exit Roadmap
               </h2>
               <p className="text-sm leading-relaxed mb-5">
-                If you only read one article first, read the 90-day roadmap. It
-                will orient the rest of the blog around action instead of random
-                browsing.
+                If you only read one article first, read the 90-day roadmap. It will
+                orient the rest of the blog around action instead of random browsing.
               </p>
               <Link
                 to="/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days"
@@ -223,8 +317,7 @@ const Blog = () => {
               Four reading paths for corporate managers
             </h2>
             <p className="text-gray-600 max-w-3xl">
-              Do not read this like a normal company blog. Read the track that
-              matches your current constraint.
+              Do not read this like a normal company blog. Read the track that matches your current constraint.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -250,6 +343,68 @@ const Blog = () => {
         </div>
       </section>
 
+      <section className="bg-white py-16 px-6 border-t border-gray-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
+                Browse by category
+              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                Pick the part of the system you need right now
+              </h2>
+              <p className="text-gray-600 max-w-3xl">
+                Each category below is a mini-pathway. Use the summaries to choose what
+                to read next instead of browsing aimlessly.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {categorySections.map((section) => (
+              <div key={section.category} className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <h3 className="text-xl font-bold text-gray-900">{section.category}</h3>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                    {section.posts.length} posts
+                  </span>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{section.summary}</p>
+                <div className="space-y-3 mb-5">
+                  {section.posts.slice(0, 3).map((post) => (
+                    <Link
+                      key={post.slug}
+                      to={`/blog/${post.slug}`}
+                      onClick={() =>
+                        trackEvent("blog_featured_clicked", {
+                          slug: post.slug,
+                          section: `category_${section.category}`,
+                        })
+                      }
+                      className="block rounded-xl bg-white border border-gray-200 p-4 hover:border-gray-300 transition-colors"
+                    >
+                      <p className="text-sm font-semibold text-gray-900 mb-1">{post.title}</p>
+                      <p className="text-xs text-gray-500">{post.readTime}</p>
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  to={`/blog/${section.posts[0].slug}`}
+                  onClick={() =>
+                    trackEvent("blog_featured_clicked", {
+                      slug: section.posts[0].slug,
+                      section: `category_cta_${section.category}`,
+                    })
+                  }
+                  className="text-sm font-semibold text-[#3B82F6] hover:underline"
+                >
+                  {section.ctaLabel}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-16 px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -261,8 +416,8 @@ const Blog = () => {
                 The articles that explain the entire system
               </h2>
               <p className="text-gray-600 max-w-3xl">
-                These are the highest-leverage pieces in the archive. If they do
-                not resonate, Invisible Exit is probably not for you.
+                These are the highest-leverage pieces in the archive. If they do not resonate,
+                Invisible Exit is probably not for you.
               </p>
             </div>
           </div>
