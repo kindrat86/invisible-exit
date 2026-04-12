@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -209,7 +210,7 @@ const Index = () => {
             </video>
           </div>
           {/* CTA directly below video */}
-          <div className="mt-4">
+          <div className="mt-4 flex flex-col items-center gap-4">
             <button
               onClick={handleCheckout}
               disabled={checkoutLoading}
@@ -218,7 +219,19 @@ const Index = () => {
               {checkoutLoading ? "Loading..." : "Start Your Invisible Exit, $0.97/month"}
               {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
             </button>
-            <p className="text-sm text-white/40 mt-3">
+            <Link
+              to="/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days"
+              onClick={() =>
+                trackEvent("homepage_blog_clicked", {
+                  source: "hero_secondary_cta",
+                  slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
+                })
+              }
+              className="text-white/70 hover:text-white text-sm font-medium underline underline-offset-4"
+            >
+              Prefer to read first? Start with the 90-day roadmap.
+            </Link>
+            <p className="text-sm text-white/40 mt-1">
               Cancel anytime. No contracts. No sales calls. 30-day money-back
               guarantee.
             </p>
@@ -282,7 +295,71 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 3. The 5 Tools ── */}
+      {/* ── 3. Start Here Reading Path ── */}
+      <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl mb-10">
+            <p className="text-blue-500 text-sm tracking-widest uppercase mb-4">
+              NOT READY TO BUY?
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Read these 3 guides first.
+            </h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              If the pitch resonates but you need more proof, start with the roadmap,
+              the stealth guide, and the no-ads customer guide. They explain how the
+              whole system works without forcing you into a checkout immediately.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
+                category: "Exit Planning",
+                title: "The Invisible Exit Roadmap",
+                excerpt:
+                  "The first 90 days matter because they create direction, not just motion.",
+              },
+              {
+                slug: "invisible-business-model",
+                category: "Stealth Operations",
+                title: "The Invisible Business Model",
+                excerpt:
+                  "How to build revenue your employer cannot easily see.",
+              },
+              {
+                slug: "how-corporate-managers-can-get-their-first-paying-customers-without-ads",
+                category: "Growth",
+                title: "First Paying Customers Without Ads",
+                excerpt:
+                  "How to get early customers through clarity, trust, and direct conversations.",
+              },
+            ].map((guide) => (
+              <Link
+                key={guide.slug}
+                to={`/blog/${guide.slug}`}
+                onClick={() =>
+                  trackEvent("homepage_blog_clicked", {
+                    source: "homepage_start_here_section",
+                    slug: guide.slug,
+                  })
+                }
+                className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-md transition-shadow group"
+              >
+                <span className="text-blue-500 text-xs font-semibold uppercase tracking-wide mb-3 block">
+                  {guide.category}
+                </span>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#3B82F6] transition-colors">
+                  {guide.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{guide.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. The 5 Tools ── */}
       <section className="bg-[#1B2A4A] py-20 px-6">
         <div className="mx-auto max-w-6xl">
           <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
