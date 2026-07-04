@@ -44,6 +44,18 @@ const WeekendWorkshopPage = () => {
     setLoading(true);
     trackEvent("weekend_workshop_applied", { source: "workshop_page" });
     try {
+      // Try checkout directly — if Stripe price not configured, fall back to application
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: {
+          tier: "workshop",
+          returnUrl: window.location.origin + "/checkout/success?sku=weekend-workshop",
+        },
+      });
+      if (!error && data?.url) {
+        window.location.href = data.url;
+        return;
+      }
+      // Fallback: save as application
       await supabase.from("subscribers").upsert(
         {
           email,
@@ -55,7 +67,17 @@ const WeekendWorkshopPage = () => {
       setApplied(true);
       toast.success("Application received! Check your email.");
     } catch (err) {
-      toast.error("Something went wrong. Please try again.");
+      // Fallback: save as application
+      await supabase.from("subscribers").upsert(
+        {
+          email,
+          source: "weekend_workshop_application",
+          metadata: { product: "weekend_workshop", price: 97 },
+        },
+        { onConflict: "email" }
+      ).catch(() => {});
+      setApplied(true);
+      toast.success("Application received! Check your email.");
       console.error(err);
     } finally {
       setLoading(false);

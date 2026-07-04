@@ -12,6 +12,7 @@ const FOOTER_SECTIONS = [
       { label: "Why Not Something Else?", to: "/compare" },
       { label: "Who Is Adrian?", to: "/adrian" },
       { label: "Free Freedom Calculator", to: "/freedom" },
+      { label: "Ask Adrian Anything", to: "/ask" },
       { label: "Free Masterclass", to: "/masterclass" },
       { label: "The Inner Circle", to: "/inner-circle" },
     ],

@@ -98,6 +98,7 @@
     { "source": "/funnel-metrics", "destination": "/index.html" },
     { "source": "/tripwire", "destination": "/index.html" },
     { "source": "/weekend-workshop", "destination": "/index.html" },
+    { "source": "/ask", "destination": "/index.html" },
     { "source": "/checkout/success", "destination": "/index.html" },
     { "source": "/login", "destination": "/index.html" },
     { "source": "/reset-password", "destination": "/index.html" },

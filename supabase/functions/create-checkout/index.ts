@@ -34,7 +34,9 @@ serve(async (req) => {
     const siteUrl = Deno.env.get("SITE_URL") ?? "https://invisibleexit.com";
 
     // Map tier names to Stripe price IDs
-    const TIER_MAP: Record<string, { priceId: string; product: string }> = {
+    // Subscriptions: starter, founding, standard
+    // One-time: tripwire ($7 Stealth Ops Blueprint), workshop ($97 Weekend Workshop)
+    const SUBSCRIPTION_TIERS: Record<string, { priceId: string; product: string }> = {
       starter: {
         priceId: Deno.env.get("STRIPE_STARTER_PRICE_ID")!,
         product: "starter",
@@ -49,7 +51,22 @@ serve(async (req) => {
       },
     };
 
-    const tierConfig = TIER_MAP[tier];
+    const ONETIME_TIERS: Record<string, { priceId: string; product: string }> = {
+      tripwire: {
+        priceId: Deno.env.get("STRIPE_TRIPWIRE_PRICE_ID") ?? "price_tripwire_stealth_blueprint",
+        product: "tripwire",
+      },
+      workshop: {
+        priceId: Deno.env.get("STRIPE_WORKSHOP_PRICE_ID") ?? "price_weekend_workshop",
+        product: "weekend_workshop",
+      },
+    };
+
+    const isOneTime = tier in ONETIME_TIERS;
+    const tierConfig = isOneTime
+      ? ONETIME_TIERS[tier as keyof typeof ONETIME_TIERS]
+      : SUBSCRIPTION_TIERS[tier];
+
     if (!tierConfig) {
       return new Response(JSON.stringify({ error: "Invalid tier" }), {
         status: 400,
@@ -62,7 +79,7 @@ serve(async (req) => {
       : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
 
     const session = await stripe.checkout.sessions.create({
-      mode: "subscription",
+      mode: isOneTime ? "payment" : "subscription",
       line_items: [{ price: tierConfig.priceId, quantity: 1 }],
       success_url: successUrl,
       cancel_url: cancelUrl

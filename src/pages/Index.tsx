@@ -834,6 +834,28 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 8b. "Who Else" Pattern + Ask Campaign CTA ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary mb-4">Who Else?</p>
+          <h2 className="text-h1 text-foreground mb-4">
+            Who Else Wants to Join 127 Managers Already Building?
+          </h2>
+          <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-8">
+            Every one of them started with the same question you have right now.
+            What's yours? Ask it — and I'll answer it personally.
+          </p>
+          <Link
+            to="/ask"
+            onClick={() => trackEvent("homepage_ask_cta_clicked")}
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-3 rounded-xl transition-all"
+          >
+            Ask Adrian Your #1 Question
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       {/* ── 9. Social Proof ── */}
       <section className="bg-white pb-20 section">
         <div className="container-narrow">
