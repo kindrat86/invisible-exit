@@ -10,57 +10,66 @@ import { trackEvent } from "@/lib/analytics";
 const SLIDES = [
   {
     title: "Welcome",
-    eyebrow: "Invisible Exit Masterclass",
-    body: "For the next 45 minutes, I'll show you exactly how corporate managers are building $4,000/month side businesses — without quitting, without coding, and without their employer finding out.",
+    eyebrow: "From Adrian — Your Host",
+    hook: "For the next 45 minutes, I'll show you exactly how corporate managers are building $4,000/month side businesses.",
+    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. And over the next 45 minutes, I'm going to show you the system that took me from trapped to $4,100/month — without quitting, without coding, and without my employer finding out. This isn't theory. This is the exact framework, step by step.",
     stat: "By Adrian, Managing Director",
   },
   {
-    title: "The Problem",
+    title: "The Hook",
     eyebrow: "Why You're Here",
-    body: "You earn $120K-$200K. You have less than 0.5% equity. Your company is 18 months from IPO. And you just realized: even a $1B exit won't buy your freedom.",
+    hook: "You earn $120K-$200K. You have less than 0.5% equity. And you just realized something uncomfortable.",
+    body: "You did the math. Even if your company IPOs at a billion dollars — your 0.5% becomes $5M. After dilution and taxes: $2.4M. Invested at 5%: $120K/year. That's your salary. Even a billion-dollar exit doesn't buy your freedom. It buys you a longer leash. You're here because you felt that truth in your gut before I put numbers on it.",
     stat: "$120K salary ≠ freedom",
   },
   {
-    title: "The Math",
-    eyebrow: "The Freedom Number",
-    body: "$1B exit → your 0.5% = $5M. After taxes (~40%) = $3M. Invested at 5% = $150K/year. Minus your lifestyle: you still need to work. That's not an exit. That's a longer leash.",
-    stat: "$150K/yr passive — still employed",
-  },
-  {
-    title: "The Amsterdam Moment",
-    eyebrow: "My Epiphany",
-    body: "6 AM. Taxi in Amsterdam. Two notifications: corporate email (someone else's emergency) and Stripe ($0.97 from a stranger). I screamed. My wife understood. The cage has a door.",
+    title: "The Story — Amsterdam",
+    eyebrow: "My Epiphany Bridge",
+    hook: "6 AM. Taxi in Amsterdam. Two notifications that changed everything.",
+    body: "I'd just landed on a KLM flight with my wife and 8-year-old. First morning of vacation. My phone buzzed. Two notifications sat side by side. The first: corporate escalation emails — colleagues fighting over responsibilities at 6 AM on my vacation. The second: a Stripe notification — \"$0.97 received\" from a stranger who bought a landing page I built while I slept. I screamed in the taxi. The driver thought I was insane. My wife understood. The cage has a door.",
     stat: "First $0.97 = identity shift",
   },
   {
     title: "Secret #1: The Vehicle",
     eyebrow: "Your Job Is the Launchpad",
-    body: "Your salary is runway funding. Your corporate skills (managing teams, P&Ls, execution) are what solo founders lack. 5 hours/week forces ruthless focus. Full-time founders burn out. You build sustainably.",
+    hook: "Everyone says quit your job to build a startup. They're wrong.",
+    body: "Here's the story: I almost quit. I had my resignation letter drafted. Then I realized — my salary is runway funding that doesn't cost me equity. My corporate skills (managing teams, P&Ls, execution) are exactly what solo founders lack. My 5 hours/week forces ruthless focus that full-time founders with 60 hours can never replicate. The vehicle isn't a startup. The vehicle is YOUR JOB. It funds you, constrains you, and gives you the skills to win.",
     stat: "Employment = unfair advantage",
   },
   {
     title: "Secret #2: The Stealth",
     eyebrow: "Anonymity Is Your Asset",
-    body: "Separate entity. Separate name. Separate payment processor. Separate hosting. When someone finds your website, there's zero connection to you. The Stealth Ops Hub makes this systematic.",
+    hook: "Week 3. My colleague found a website that looked like my side project. On a team call.",
+    body: "My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different payment processor, different hosting. Zero connection to me. The call moved on. Those 3 seconds of panic were the best $25/month I ever spent. Anonymity means you can experiment without fear, fail without consequences, and build in any market — all while your employer, your LinkedIn network, and your competitors have no idea. The Stealth Ops Hub makes this systematic.",
     stat: "Zero detection in 14 months",
   },
   {
     title: "Secret #3: The System",
     eyebrow: "5 Tools, One Pipeline",
-    body: "FYM Dashboard (freedom number) → Idea Pipeline (500+ ideas, 48h validation) → Stealth Ops (entity + compliance) → Launch Control (go-live automation) → Brand Manager (faceless content).",
+    hook: "I spent 3 months choosing the 'right' idea. Then I launched the wrong one and it made $9/month.",
+    body: "The lesson: stop obsessing over the idea. Build the SYSTEM first. FYM Dashboard (freedom number) → Idea Pipeline (500+ ideas, 48h validation) → Stealth Ops (entity + compliance) → Launch Control (go-live automation) → Brand Manager (faceless content). Once you have the system, you can swap ideas in and out like cartridges. The system doesn't care which idea you pick. The system cares that you HAVE a system.",
     stat: "5 tools, $0.97/month",
   },
   {
     title: "The Results",
     eyebrow: "12-Month Timeline",
-    body: "Month 1-3: Built, launched, zero customers. Month 4: First customer. Month 6: $850 MRR. Month 9: $2,100 MRR. Month 12: $4,100 MRR across 3 products. Still employed. Still invisible.",
+    hook: "Here's the honest timeline. Not the highlight reel.",
+    body: "Month 1–3: Built, launched, zero customers. Almost quit twice. Month 4: First customer ($9/mo). Screamed in the car. Month 6: $850 MRR. Still employed. Employer clueless. Month 9: $2,100 MRR. Turned down a promotion. Month 12: $4,100 MRR across 3 products. The boring product (a PDF generator for electricians) pays most of the mortgage. I didn't get rich. I got free. There's a difference.",
     stat: "$4,100 MRR in 12 months",
   },
   {
+    title: "The Stack",
+    eyebrow: "What You Get",
+    hook: "5 tools worth $97/month. 3 bonuses worth $101. Total value: $328/month.",
+    body: "All 5 tools (FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager) + 3 bonuses (Employment Contract Audit Checklist, 25 Micro-SaaS Idea Swipes, Faceless Founder Content Calendar). Total value $328/month. Your price as a founding member: $0.97/month. That's 99.7% off. Not because the tools are cheap — because I want this in the hands of people who act.",
+    stat: "$328/month → $0.97/month",
+  },
+  {
     title: "Your Next Step",
-    eyebrow: "The Offer",
-    body: "All 5 tools. $0.97/month. Cancel anytime. 30-day money-back guarantee. Calculate your freedom number today and see exactly how close you are.",
-    stat: "Get started for $0.97",
+    eyebrow: "The Offer — Act Now",
+    hook: "Every month you wait costs you $4,000 in unrealized MRR.",
+    body: "All 5 tools. $0.97/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members — after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
+    stat: "Start for $0.97 — before founding closes",
   },
 ];
 
@@ -144,6 +153,9 @@ const MasterclassPage = () => {
               <div key={slideIdx} className="text-center animate-fade-in">
                 <p className="text-eyebrow text-primary-light mb-3">{slide.eyebrow}</p>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{slide.title}</h3>
+                <p className="text-sm sm:text-base font-semibold text-primary-light/90 leading-relaxed mb-3 max-w-md mx-auto">
+                  {slide.hook}
+                </p>
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4 max-w-md mx-auto">{slide.body}</p>
                 <p className="text-lg font-bold text-primary-light">{slide.stat}</p>
               </div>
@@ -214,7 +226,7 @@ const MasterclassPage = () => {
       <section className="bg-white section-normal">
         <div className="container-narrow">
           <p className="text-eyebrow text-primary mb-4 text-center">What You'll Learn</p>
-          <h2 className="text-h1 text-foreground mb-12 text-center">9 Slides. 45 Minutes. Zero Fluff.</h2>
+          <h2 className="text-h1 text-foreground mb-12 text-center">10 Slides. 45 Minutes. Zero Fluff.</h2>
           <div className="space-y-3">
             {SLIDES.map((s, i) => (
               <div key={i} className="card-base p-4 flex items-center gap-4">

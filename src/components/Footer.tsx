@@ -5,9 +5,11 @@ const FOOTER_SECTIONS = [
     title: "Playbook",
     links: [
       { label: "Blog", to: "/blog" },
-      { label: "Start Here", to: "/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days" },
+      { label: "My Story", to: "/story" },
+      { label: "Who Is Adrian?", to: "/adrian" },
       { label: "Free Freedom Calculator", to: "/freedom" },
       { label: "Free Masterclass", to: "/masterclass" },
+      { label: "The Inner Circle", to: "/inner-circle" },
     ],
   },
   {
@@ -28,6 +30,7 @@ const FOOTER_SECTIONS = [
       { label: "Comparisons", to: "/compare" },
       { label: "About", to: "/about" },
       { label: "Affiliates (30%)", to: "/affiliates" },
+      { label: "Dream 100", to: "/dream-100" },
       { label: "Intensive ($2K)", to: "/intensive" },
       { label: "RSS Feed", to: "/blog/rss.xml" },
     ],

@@ -7,6 +7,10 @@ type AnalyticsEvent =
   | "oto_declined"
   | "homepage_cta_clicked"
   | "homepage_subscribe_submitted"
+  | "homepage_hero_cta_clicked"
+  | "homepage_mid_cta_clicked"
+  | "homepage_final_cta_clicked"
+  | "homepage_blog_clicked"
   | "blog_archive_viewed"
   | "blog_start_here_clicked"
   | "blog_featured_clicked"
@@ -14,7 +18,14 @@ type AnalyticsEvent =
   | "blog_related_clicked"
   | "blog_back_to_hub_clicked"
   | "blog_category_post_clicked"
-  | "homepage_blog_clicked";
+  | "story_page_viewed"
+  | "story_email_submitted"
+  | "masterclass_registered"
+  | "masterclass_registered_v2"
+  | "intensive_applied"
+  | "squeeze_page_submitted"
+  | "inner_circle_cta_clicked"
+  | "adrian_story_clicked";
 
 export function trackEvent(
   event: AnalyticsEvent,

@@ -125,8 +125,6 @@ const FAQS = [
 
 const Index = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [emailLoading, setEmailLoading] = useState(false);
-  const [subscribeEmail, setSubscribeEmail] = useState("");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -151,32 +149,6 @@ const Index = () => {
       console.error(err);
     } finally {
       setCheckoutLoading(false);
-    }
-  };
-
-  const handleEmailSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!subscribeEmail) return;
-    setEmailLoading(true);
-    try {
-      const { error } = await supabase
-        .from("subscribers")
-        .upsert(
-          { email: subscribeEmail, source: "landing_page" },
-          { onConflict: "email" }
-        );
-      if (error) throw error;
-      trackEvent("homepage_subscribe_submitted", { source: "landing_page" });
-      toast.success("You're in! We'll send you weekly insights.");
-      supabase.functions
-        .invoke("newsletter-welcome", { body: { email: subscribeEmail } })
-        .catch((err) => console.error("Welcome email error:", err));
-      setSubscribeEmail("");
-    } catch (err) {
-      toast.error("Something went wrong. Please try again.");
-      console.error(err);
-    } finally {
-      setEmailLoading(false);
     }
   };
 
@@ -208,24 +180,18 @@ const Index = () => {
             to real recurring revenue — in 12 months, working 5 hours a week.
           </p>
 
-          {/* CTA */}
+          {/* CTA — ONE THING: Calculate Freedom Number → squeeze page */}
           <div className="flex flex-col items-center gap-4 mb-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <button
-              onClick={handleCheckout}
-              disabled={checkoutLoading}
-              className="btn-primary w-full sm:w-auto text-lg px-8"
-            >
-              {checkoutLoading ? "Loading..." : "Get All 5 Tools — $0.97/month"}
-              {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
-            </button>
             <Link
               to="/freedom"
-              className="text-white/60 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors"
+              onClick={() => trackEvent("homepage_hero_cta_clicked", { target: "freedom_calculator" })}
+              className="btn-primary w-full sm:w-auto text-lg px-8 inline-flex items-center justify-center gap-2"
             >
-              Not ready yet? Calculate your Freedom Number free →
+              Calculate Your Freedom Number (Free)
+              <ArrowRight className="w-5 h-5" />
             </Link>
             <p className="text-sm text-white/40 mt-1">
-              Cancel anytime. No contracts. 30-day money-back guarantee.
+              Free calculator. Takes 90 seconds. No credit card.
             </p>
           </div>
 
@@ -243,6 +209,47 @@ const Index = () => {
                 {item}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 1c. Death of the Old Vehicle ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-muted-foreground mb-4 text-center">The Funeral</p>
+          <h2 className="text-h2 text-foreground mb-8 text-center">
+            Let's kill the dream of equity freedom.
+          </h2>
+          <div className="max-w-2xl mx-auto text-body text-muted-foreground space-y-5">
+            <p>
+              You have <strong className="text-foreground">0.5% equity</strong>. Your company
+              is 18 months from IPO. You've been telling yourself the same story I told myself:
+              when we go public, this changes everything.
+            </p>
+            <p>
+              Here's the math.
+            </p>
+            <div className="bg-white rounded-xl p-6 border border-border my-6 font-mono text-sm">
+              <p className="text-muted-foreground">$1B exit (best case)</p>
+              <p className="text-muted-foreground">× 0.5% equity = <span className="text-foreground">$5,000,000</span></p>
+              <p className="text-muted-foreground">− dilution (~20%) = $4,000,000</p>
+              <p className="text-muted-foreground">− taxes (~40%) = <span className="text-foreground">$2,400,000</span></p>
+              <p className="text-muted-foreground">invested at 5% = <span className="text-foreground font-bold">$120,000/year</span></p>
+              <p className="text-muted-foreground">your current salary: <span className="text-foreground">$120,000/year</span></p>
+            </div>
+            <p>
+              <strong className="text-primary">Even a billion-dollar exit doesn't buy your freedom.</strong>
+              It buys you a longer leash. The same leash, with more steps.
+            </p>
+            <p>
+              The old vehicle — salary, equity, promotion ladder — was never designed to
+              take you to freedom. It was designed to keep you productive for someone else's
+              exit. The faster we bury that dream, the faster we build something real.
+            </p>
+            <p className="text-foreground font-medium text-lg pt-4">
+              The new vehicle is simpler: $4,000/month in recurring revenue from products
+              you own. Not equity in someone else's company. Revenue from your own.
+            </p>
           </div>
         </div>
       </section>
@@ -576,24 +583,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 7. Mid-Page CTA ── */}
+      {/* ── 7. Mid-Page CTA → Story (not checkout) ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
-          <h2 className="text-h1 text-white mb-4">5 Tools. $0.97/month. Cancel Anytime.</h2>
+          <h2 className="text-h1 text-white mb-4">Want the full story first?</h2>
           <p className="text-body text-white/50 mb-10">
-            Secure payment via Stripe. No sales calls. No spam.
+            Read how I went from trapped to $4,100 MRR in 12 months. 10 chapters. 15 minutes.
           </p>
-          <button
-            onClick={handleCheckout}
-            disabled={checkoutLoading}
-            className="btn-primary text-lg px-8 w-full sm:w-auto"
+          <Link
+            to="/story"
+            onClick={() => trackEvent("homepage_mid_cta_clicked", { target: "story_page" })}
+            className="btn-primary text-lg px-8 inline-flex items-center gap-2"
           >
-            {checkoutLoading ? "Loading..." : "Start Your Invisible Exit — $0.97/month"}
-            {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
-          </button>
-          <p className="text-sm text-white/40 text-center mt-4">
-            30-day money-back guarantee. If you don't validate at least one idea in 30 days, full refund.
-          </p>
+            Read My Full Story
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 
@@ -668,56 +672,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 11. Final CTA ── */}
+      {/* ── 11. Final CTA — ONE THING ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
           <h2 className="text-h1 text-white mb-4">The Cage Has a Door.</h2>
           <p className="text-body text-white/60 mb-10">
-            $0.97/month. 5 tools. 5 hours a week. Start building your exit.
+            Find out how close you are to walking through it. Free calculator. 90 seconds.
           </p>
-          <button
-            onClick={handleCheckout}
-            disabled={checkoutLoading}
-            className="btn-primary text-lg px-8 w-full sm:w-auto"
+          <Link
+            to="/freedom"
+            onClick={() => trackEvent("homepage_final_cta_clicked", { target: "freedom_calculator" })}
+            className="btn-primary text-lg px-8 inline-flex items-center gap-2"
           >
-            {checkoutLoading ? "Loading..." : "Start for $0.97/month"}
-            {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
-          </button>
-        </div>
-      </section>
-
-      {/* ── 12. Email Capture ── */}
-      <section className="hero-dark section pb-8">
-        <div className="container-narrow pt-16">
-          <div className="border-t border-white/10 mb-12" />
-          <p className="text-white/50 text-center text-sm mb-2">Not ready yet? No pressure.</p>
-          <p className="text-white/40 text-center text-sm mb-6">
-            Get Adrian's weekly insights on building invisible income. No spam. Unsubscribe anytime.
+            Calculate Your Freedom Number
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+          <p className="text-sm text-white/40 mt-4">
+            No credit card. No spam. Just the number that changes how you see your salary.
           </p>
-          <form
-            onSubmit={handleEmailSubscribe}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              required
-              value={subscribeEmail}
-              onChange={(e) => setSubscribeEmail(e.target.value)}
-              placeholder="Your email"
-              className="flex-1 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/40 py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors min-h-[48px]"
-            />
-            <button
-              type="submit"
-              disabled={emailLoading}
-              className="bg-white/10 hover:bg-white/20 text-white/80 rounded-xl py-3.5 px-6 text-sm font-medium transition-colors disabled:opacity-50 min-h-[48px] whitespace-nowrap"
-            >
-              {emailLoading ? "..." : "Subscribe"}
-            </button>
-          </form>
-          <div className="flex items-center justify-center gap-1.5 mt-4">
-            <Lock className="w-3 h-3 text-white/30" />
-            <span className="text-white/30 text-xs">We respect your privacy.</span>
-          </div>
         </div>
       </section>
 

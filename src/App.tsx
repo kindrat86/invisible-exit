@@ -26,6 +26,10 @@ import DownsellPage from "./pages/DownsellPage.tsx";
 import MasterclassPage from "./pages/MasterclassPage.tsx";
 import AffiliatesPage from "./pages/AffiliatesPage.tsx";
 import IntensivePage from "./pages/IntensivePage.tsx";
+import StoryPage from "./pages/StoryPage.tsx";
+import AdrianPage from "./pages/AdrianPage.tsx";
+import InnerCirclePage from "./pages/InnerCirclePage.tsx";
+import Dream100Page from "./pages/Dream100Page.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -103,6 +107,10 @@ const App = () => (
           <Route path="/masterclass" element={<MasterclassPage />} />
           <Route path="/affiliates" element={<AffiliatesPage />} />
           <Route path="/intensive" element={<IntensivePage />} />
+          <Route path="/story" element={<StoryPage />} />
+          <Route path="/adrian" element={<AdrianPage />} />
+          <Route path="/inner-circle" element={<InnerCirclePage />} />
+          <Route path="/dream-100" element={<Dream100Page />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
