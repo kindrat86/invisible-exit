@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -23,7 +23,7 @@ import { trackEvent } from "@/lib/analytics";
  *   1. Acknowledge the objection ("I understand")
  *   2. Reframe — remove something to lower the price (not just discount)
  *   3. NEW anchor — show what they DON'T get vs what they DO get
- *   4. Fresh urgency — this page is also one-time
+ *   4. Fresh urgency — this page is also one-time (countdown timer)
  *   5. Clean exit — if they decline here, send them somewhere useful
  *
  * The key insight: a downsell removes value to justify the lower price.
@@ -31,6 +31,34 @@ import { trackEvent } from "@/lib/analytics";
  */
 const DownsellPage = () => {
   const [loading, setLoading] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({ mins: 9, secs: 59 });
+
+  // ── Countdown: 10 minutes from page load (Dotcom Secrets Ch 18) ──
+  useEffect(() => {
+    trackEvent("downsell_page_viewed");
+
+    const STORAGE_KEY = "downsell_deadline";
+    let deadline = localStorage.getItem(STORAGE_KEY);
+    if (!deadline) {
+      deadline = (Date.now() + 10 * 60 * 1000).toString();
+      localStorage.setItem(STORAGE_KEY, deadline);
+    }
+
+    const tick = () => {
+      const remaining = parseInt(deadline!) - Date.now();
+      if (remaining <= 0) {
+        setTimeLeft({ mins: 0, secs: 0 });
+        return;
+      }
+      setTimeLeft({
+        mins: Math.floor(remaining / (1000 * 60)),
+        secs: Math.floor((remaining % (1000 * 60)) / 1000),
+      });
+    };
+    tick();
+    const interval = setInterval(tick, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleCheckout = async () => {
     trackEvent("downsell_purchased", { price: "9.99" });
@@ -75,12 +103,15 @@ const DownsellPage = () => {
         noindex
       />
 
-      {/* Urgency bar */}
+      {/* Urgency bar with live countdown */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-sm border-b border-primary/30 px-4 py-2.5">
         <div className="max-w-3xl mx-auto flex items-center justify-center gap-3">
           <Clock className="w-4 h-4 text-white shrink-0" />
           <p className="text-white text-sm font-semibold">
-            This page expires when you close this tab.
+            This offer expires in{" "}
+            <span className="tabular-nums font-bold text-amber-300">
+              {String(timeLeft.mins).padStart(2, "0")}:{String(timeLeft.secs).padStart(2, "0")}
+            </span>
           </p>
         </div>
       </div>

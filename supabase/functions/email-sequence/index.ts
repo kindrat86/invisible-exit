@@ -305,6 +305,64 @@ function ascension4() {
   );
 }
 
+// ═══ POST-PURCHASE SEQUENCE — Buyer onboarding (5 days) ═══
+const POST_PURCHASE = [
+  {
+    day: 1,
+    subject: "Your tools are live. Here's what to do first.",
+    html: postPurchase1(),
+  },
+  {
+    day: 2,
+    subject: "The 90-second habit that makes or breaks your exit timeline",
+    html: postPurchase2(),
+  },
+  {
+    day: 3,
+    subject: "I spent $2,400 on this mistake. You don't have to.",
+    html: postPurchase3(),
+  },
+  {
+    day: 5,
+    subject: "Your first product: the 48-hour validation sprint",
+    html: postPurchase4(),
+  },
+];
+
+function postPurchase1() {
+  return wrap("DAY 1 · ONBOARDING", "Welcome to the 3%. Let's get to work.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">You did something 97% of managers never do: you took action. Your dashboard is live. Your tools are ready. Here's what to do in the next 10 minutes.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 1:</strong> Open the FYM Dashboard. Enter your salary and expenses. See your Freedom Number.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 2:</strong> Open the Idea Pipeline. Browse 3 ideas that match your industry.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 3:</strong> Check the Stealth Ops Hub. Score your current invisibility level.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's it. 10 minutes. You're already ahead of everyone who bookmarked this and said "tomorrow."</p>`);
+}
+
+function postPurchase2() {
+  return wrap("DAY 2 · ONBOARDING", "The 90-second habit",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Every morning, I open one dashboard. Not Slack. Not email. My FYM Dashboard.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">90 seconds. I check my MRR, my invisibility score, and my exit timeline. Then I close it and go to work.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This habit does something psychological: it makes the exit feel real. Every morning, you see the number moving. Even when it's $0, the dashboard reminds you that the system is running. You're not just dreaming about starting. You're tracking it.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Start tomorrow. 90 seconds. Then go build.</p>`);
+}
+
+function postPurchase3() {
+  return wrap("DAY 3 · ONBOARDING", "The $2,400 mistake",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I spent three weekends researching LLC formations. Wyoming vs. Delaware vs. Estonia. Three weekends I should have spent building. That was $2,400 in lost building time.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Don't make this mistake. The Stealth Ops Hub has the answer in 5 minutes. Choose your state, file the forms, move on. The point is to BUILD, not to research building.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you catch yourself spending more than one evening on any setup task, stop. You're overthinking. The system has the answer. Use it. Move on.</p>`);
+}
+
+function postPurchase4() {
+  return wrap("DAY 5 · ONBOARDING", "The 48-hour validation sprint",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This weekend, do one thing: validate one idea. Not build. Not launch. Validate.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Open the Idea Pipeline. Pick the idea that scored highest for your industry. Run the 48-hour validation framework: who's the customer, what's the pain, what's the pricing, does anyone search for it?</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If it passes validation, you have your first product. If it doesn't, you saved yourself 3 months of building the wrong thing. Either way, you win.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The system beats the idea. Pick one. Validate. Move on.</p>`);
+}
+
+    const allEmails = sequence === "seinfeld" ? SEINFELD : sequence === "winback" ? WINBACK : sequence === "ascension" ? ASCENSION : sequence === "post_purchase" ? POST_PURCHASE : SOAP;
+
 // ═══ HANDLER ═══
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -327,7 +385,7 @@ serve(async (req) => {
       });
     }
 
-    const allEmails = sequence === "seinfeld" ? SEINFELD : sequence === "winback" ? WINBACK : sequence === "ascension" ? ASCENSION : SOAP;
+
 
     // If day specified, send that specific email
     if (day !== undefined && day !== null) {
