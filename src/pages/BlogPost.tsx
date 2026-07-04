@@ -118,7 +118,7 @@ const BlogPost = () => {
       wordCount: post.content.split(/\s+/).length,
       image: {
         "@type": "ImageObject",
-        url: `https://invisibleexit.com/api/og/${post.slug}`,
+        url: `https://invisibleexit.com/og/${post.slug}.svg`,
         width: 1200,
         height: 630,
       },
@@ -210,7 +210,7 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`/blog/${post.slug}`}
         type="article"
-        image={`https://invisibleexit.com/api/og/${post.slug}`}
+        image={`https://invisibleexit.com/og/${post.slug}.svg`}
         publishedDate={post.publishedAt}
         modifiedDate={post.publishedAt}
       />

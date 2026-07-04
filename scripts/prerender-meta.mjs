@@ -223,7 +223,7 @@ function getRoutes() {
         wordCount: post.content.split(/\s+/).length,
         image: {
           "@type": "ImageObject",
-          url: `${SITE}/api/og/${post.slug}`,
+          url: `${SITE}/og/${post.slug}.svg`,
           width: 1200,
           height: 630,
         },
@@ -290,7 +290,7 @@ function getRoutes() {
         description: post.excerpt,
         url: postUrl,
         type: "article",
-        image: `${SITE}/api/og/${post.slug}`,
+        image: `${SITE}/og/${post.slug}.svg`,
         jsonLd: postJsonLd,
       },
     });
