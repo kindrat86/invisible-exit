@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import {
   TrendingDown,
   Users,
@@ -138,6 +139,67 @@ const TRACKING_PLATFORMS = [
 ];
 
 const FunnelMetricsPage = () => {
+  const calcRef = useRef<HTMLDivElement>(null);
+
+  // Interactive funnel calculator logic
+  useEffect(() => {
+    const trafficSlider = document.getElementById("traffic-slider") as HTMLInputElement;
+    const blogCvrSlider = document.getElementById("blog-cvr-slider") as HTMLInputElement;
+    const emailCvrSlider = document.getElementById("email-cvr-slider") as HTMLInputElement;
+    if (!trafficSlider || !blogCvrSlider || !emailCvrSlider) return;
+
+    const calculate = () => {
+      const traffic = parseInt(trafficSlider.value);
+      const blogCvr = parseInt(blogCvrSlider.value) / 100;
+      const emailCvr = parseInt(emailCvrSlider.value) / 100;
+
+      // Russell's benchmark rates
+      const emailOpenRate = 0.50;
+      const checkoutCompletion = 0.40;
+      const otoUpgradeRate = 0.20;
+      const proUpgradeRate = 0.10;
+
+      const emails = Math.round(traffic * blogCvr);
+      const emailClicks = Math.round(emails * emailOpenRate * emailCvr);
+      const buyers = Math.round(emailClicks * checkoutCompletion);
+      const otoBuyers = Math.round(buyers * otoUpgradeRate);
+      const proBuyers = Math.round(otoBuyers * proUpgradeRate);
+
+      const mrr = (buyers * 0.97) + (otoBuyers * 17.99) + (proBuyers * 47);
+      const monthsTo4k = mrr > 0 ? Math.ceil(4000 / mrr) : Infinity;
+      const cac = buyers > 0 ? 0 / buyers : 0; // $0 ad spend
+
+      const fmt = (n: number) => n.toLocaleString();
+      const fmtMoney = (n: number) => `$${Math.round(n).toLocaleString()}`;
+
+      const update = (id: string, val: string) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      update("traffic-display", fmt(traffic));
+      update("blog-cvr-display", `${parseInt(blogCvrSlider.value)}%`);
+      update("email-cvr-display", `${parseInt(emailCvrSlider.value)}%`);
+      update("calc-emails", fmt(emails));
+      update("calc-buyers", fmt(buyers));
+      update("calc-oto", fmt(otoBuyers));
+      update("calc-mrr", fmtMoney(mrr));
+      update("calc-timeline", monthsTo4k === Infinity ? "∞" : `${monthsTo4k}`);
+      update("calc-cac", `Customer acquisition cost: <strong>$${cac.toFixed(2)}</strong> (at $0 ad spend)`);
+    };
+
+    calculate();
+    trafficSlider.addEventListener("input", calculate);
+    blogCvrSlider.addEventListener("input", calculate);
+    emailCvrSlider.addEventListener("input", calculate);
+
+    return () => {
+      trafficSlider.removeEventListener("input", calculate);
+      blogCvrSlider.removeEventListener("input", calculate);
+      emailCvrSlider.removeEventListener("input", calculate);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -273,6 +335,111 @@ const FunnelMetricsPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Interactive Funnel Calculator (Ch 7: Funnel Math) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-primary mb-4 text-center">Interactive Funnel Calculator</p>
+          <h2 className="text-h1 text-foreground mb-4 text-center">Know Your Numbers</h2>
+          <p className="text-body text-muted-foreground max-w-2xl mx-auto text-center mb-10">
+            Russell Brunson says: "The person who knows their funnel math wins."
+            Drag the sliders to see your projected revenue at any traffic level.
+          </p>
+
+          <div className="max-w-2xl mx-auto card-base p-6 sm:p-8">
+            {/* Traffic Slider */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Monthly Traffic: <span className="text-primary" id="traffic-display">1,000</span> visitors
+              </label>
+              <input
+                type="range"
+                min="100"
+                max="50000"
+                step="100"
+                defaultValue="1000"
+                id="traffic-slider"
+                className="w-full accent-primary"
+              />
+              <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                <span>100</span>
+                <span>10K</span>
+                <span>25K</span>
+                <span>50K</span>
+              </div>
+            </div>
+
+            {/* Blog Conversion Slider */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Blog → Squeeze Conversion: <span className="text-primary" id="blog-cvr-display">5%</span>
+              </label>
+              <input
+                type="range"
+                min="1"
+                max="20"
+                step="1"
+                defaultValue="5"
+                id="blog-cvr-slider"
+                className="w-full accent-primary"
+              />
+            </div>
+
+            {/* Email Conversion Slider */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Email → Checkout CTR: <span className="text-primary" id="email-cvr-display">3%</span>
+              </label>
+              <input
+                type="range"
+                min="1"
+                max="15"
+                step="1"
+                defaultValue="3"
+                id="email-cvr-slider"
+                className="w-full accent-primary"
+              />
+            </div>
+
+            {/* Results */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t-2 border-border">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-primary tabular-nums" id="calc-emails">50</p>
+                <p className="text-xs text-muted-foreground">Emails Captured</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-foreground tabular-nums" id="calc-buyers">1</p>
+                <p className="text-xs text-muted-foreground">$0.97 Buyers</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-amber-500 tabular-nums" id="calc-oto">0</p>
+                <p className="text-xs text-muted-foreground">$17.99 OTO</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-success tabular-nums" id="calc-mrr">$0</p>
+                <p className="text-xs text-muted-foreground">Projected MRR</p>
+              </div>
+            </div>
+
+            {/* Break-even Analysis */}
+            <div className="mt-6 bg-primary/5 border border-primary/15 rounded-xl p-4 text-center">
+              <p className="text-sm text-muted-foreground">
+                At this rate, you'd hit <strong className="text-foreground">$4,000/month MRR</strong> in{" "}
+                <strong className="text-primary" id="calc-timeline">— months</strong>.
+              </p>
+              <p className="text-xs text-muted-foreground mt-1" id="calc-cac">
+                Customer acquisition cost: <strong>$—</strong> (at $0 ad spend)
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center text-xs text-muted-foreground mt-4 max-w-lg mx-auto">
+            Assumptions: 50% of squeeze optins open emails. 40% of checkout starts complete.
+            20% of $0.97 buyers upgrade to OTO. 10% of OTO buyers go Pro ($47).
+            These are Russell's benchmark conversion rates from Dotcom Secrets.
+          </p>
         </div>
       </section>
 

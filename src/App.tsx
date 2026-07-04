@@ -11,6 +11,7 @@ import BackToTop from "./components/BackToTop.tsx";
 import ReadingProgress from "./components/ReadingProgress.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
+import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
 
 // ── Eager: only the homepage (LCP-critical, highest-traffic) ──
 import Index from "./pages/Index.tsx";
@@ -231,6 +232,7 @@ const App = () => (
         </ErrorBoundary>
         <BackToTop />
         <MobileCTABar />
+        <ExitIntentPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

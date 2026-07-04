@@ -18,7 +18,6 @@ import {
   ArrowRight,
   Check,
   Lock,
-  Quote,
 } from "lucide-react";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import { supabase } from "@/integrations/supabase/client";
@@ -65,27 +64,6 @@ const TOOLS = [
     description:
       "Content calendar, YouTube scripts, Reddit playbooks. Everything you need to grow an anonymous brand.",
     value: "$27/month",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "I validated my first micro-SaaS idea in 3 weeks using the framework. The stealth ops checklist alone was worth 100x the price.",
-    name: "Director of Ops",
-    role: "Fortune 500 → $4K MRR side business",
-  },
-  {
-    quote:
-      "The freedom number calculator changed how I think about my equity. I realized I was building someone else's dream, not mine.",
-    name: "Senior PM",
-    role: "$145K salary → First SaaS revenue in 60 days",
-  },
-  {
-    quote:
-      "I spent two years thinking about starting something. Invisible Exit gave me a system I could actually follow with 5 hours a week.",
-    name: "Engineering Manager",
-    role: "Built first product while employed",
   },
 ];
 
