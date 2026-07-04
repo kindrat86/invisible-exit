@@ -1,66 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found | Invisible Exit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- SEO: 404 page must not be indexed, but links should be followed -->
+    <title>Page Not Found | Invisible Exit</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Explore Invisible Exit's tools for building a side business while employed." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://invisibleexit.com/404" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Invisible Exit" />
+    <meta property="og:title" content="Page Not Found | Invisible Exit" />
+    <meta property="og:description" content="The page you're looking for doesn't exist. Explore Invisible Exit's tools for building a side business while employed." />
+    <meta property="og:url" content="https://invisibleexit.com/404" />
+    <meta property="og:image" content="https://invisibleexit.com/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Page Not Found | Invisible Exit" />
+    <meta name="twitter:description" content="The page you're looking for doesn't exist. Explore Invisible Exit's tools for building a side business while employed." />
+    <meta name="twitter:image" content="https://invisibleexit.com/og-image.png" />
+
+    <meta name="theme-color" content="#1B2A4A" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background: #0f172a;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: #0f172a;
         color: #e2e8f0;
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        line-height: 1.6;
       }
-      .container { max-width: 480px; }
-      .code {
-        font-size: 6rem;
-        font-weight: 700;
-        color: #3b82f6;
+      .container {
+        max-width: 36rem;
+        width: 100%;
+        text-align: center;
+      }
+      .error-code {
+        font-size: clamp(5rem, 20vw, 9rem);
+        font-weight: 800;
         line-height: 1;
+        background: linear-gradient(135deg, #3B82F6, #818cf8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 1rem;
       }
       h1 {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.75rem;
+        font-weight: 700;
         margin-bottom: 0.75rem;
+        color: #f1f5f9;
       }
-      p {
+      .subtitle {
+        font-size: 1.0625rem;
         color: #94a3b8;
+        margin-bottom: 2.5rem;
+      }
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 1rem;
         margin-bottom: 2rem;
-        line-height: 1.6;
       }
-      a {
-        display: inline-block;
-        background: #3b82f6;
-        color: #fff;
+      .link-card {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 0.75rem;
         text-decoration: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        font-size: 0.875rem;
-        transition: background 0.2s;
+        color: #e2e8f0;
+        transition: border-color 0.2s, background-color 0.2s, transform 0.1s;
       }
-      a:hover { background: #2563eb; }
+      .link-card:hover {
+        border-color: #3B82F6;
+        background-color: #233449;
+        transform: translateY(-2px);
+      }
+      .link-card:active {
+        transform: translateY(0);
+      }
+      .link-card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #f1f5f9;
+      }
+      .link-card-desc {
+        font-size: 0.8125rem;
+        color: #94a3b8;
+      }
+      .home-button {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.875rem 2rem;
+        background: linear-gradient(135deg, #3B82F6, #6366f1);
+        color: white;
+        border-radius: 0.625rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: opacity 0.2s, transform 0.1s;
+      }
+      .home-button:hover { opacity: 0.9; }
+      .home-button:active { transform: scale(0.98); }
+      .brand {
+        display: inline-block;
+        margin-top: 2.5rem;
+        font-size: 0.875rem;
+        color: #64748b;
+      }
+      .brand a { color: #3B82F6; text-decoration: none; }
+      .brand a:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="code">404</div>
-      <h1>Page Not Found</h1>
-      <p>The page you're looking for doesn't exist or has been moved.</p>
-      <a href="/">Back to Home</a>
+      <div class="error-code">404</div>
+      <h1>This page doesn't exist</h1>
+      <p class="subtitle">
+        The page you're looking for may have been moved, deleted, or never existed.
+        Here's where you can go from here:
+      </p>
+
+      <div class="links-grid">
+        <a href="/" class="link-card">
+          <div class="link-card-title">Homepage</div>
+          <div class="link-card-desc">5 AI tools for building a side business while employed</div>
+        </a>
+        <a href="/blog" class="link-card">
+          <div class="link-card-title">Blog</div>
+          <div class="link-card-desc">Strategies for invisible recurring revenue</div>
+        </a>
+        <a href="/fym" class="link-card">
+          <div class="link-card-title">Freedom Calculator</div>
+          <div class="link-card-desc">Calculate how much you need to quit your job</div>
+        </a>
+        <a href="/glossary" class="link-card">
+          <div class="link-card-title">Glossary</div>
+          <div class="link-card-desc">Key terms for employed founders</div>
+        </a>
+        <a href="/guides" class="link-card">
+          <div class="link-card-title">State Guides</div>
+          <div class="link-card-desc">LLC formation and anonymity by state</div>
+        </a>
+        <a href="/ideas" class="link-card">
+          <div class="link-card-title">Micro-SaaS Ideas</div>
+          <div class="link-card-desc">500+ ideas scored by industry fit</div>
+        </a>
+      </div>
+
+      <a href="/" class="home-button">Return to Homepage</a>
+
+      <div class="brand">
+        <a href="/">Invisible Exit</a> &mdash; Build a side business while employed, invisibly.
+      </div>
     </div>
   </body>
 </html>

@@ -22,11 +22,43 @@ import { bestToolsLists } from "../src/data/best-tools.js";
 import { calculators } from "../src/data/calculators.js";
 import { dataReports } from "../src/data/data-reports.js";
 import { resources } from "../src/data/resources.js";
+import { alternatives } from "../src/data/alternatives.js";
+import { salaries } from "../src/data/salaries.js";
+import { revenueMilestones } from "../src/data/revenue-milestones.js";
+import { timelines } from "../src/data/timelines.js";
+import { professionStacks } from "../src/data/profession-stacks.js";
+import { costOfWaitingPages } from "../src/data/cost-of-waiting.js";
+import { professionStatePages } from "../src/data/profession-states.js";
+import { nonCompeteMatrix } from "../src/data/non-compete-matrix.js";
 
 // ---------- Markdown-like content → HTML ----------
 
 function bold(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+// Auto-link key terms to relevant pages for internal linking (first occurrence only)
+function autoLinkContent(html: string): string {
+  const linkMap: { pattern: RegExp; href: string; text: string }[] = [
+    { pattern: /\bfreedom number\b/i, href: "/freedom", text: "freedom number" },
+    { pattern: /\bmicro-SaaS\b/i, href: "/glossary/micro-saas", text: "micro-SaaS" },
+    { pattern: /\bnon-compete clause\b/i, href: "/glossary/non-compete", text: "non-compete clause" },
+    { pattern: /\banonymous LLC\b/i, href: "/guides/wyoming", text: "anonymous LLC" },
+    { pattern: /\bidea validation\b/i, href: "/calculators/idea-validator", text: "idea validation" },
+    { pattern: /\bfinancial independence\b/i, href: "/blog/category/financial-independence", text: "financial independence" },
+    { pattern: /\bstealth ops\b/i, href: "/blog/category/stealth-operations", text: "stealth ops" },
+  ];
+
+  let result = html;
+  for (const { pattern, href, text: linkText } of linkMap) {
+    // Only link the first occurrence, and only if the exact text isn't already in an <a> tag
+    const match = result.match(pattern);
+    if (match && !result.includes(`href="${href}"`)) {
+      const matchedText = match[0];
+      result = result.replace(matchedText, `<a href="${href}" style="color:#3B82F6;text-decoration:none">${matchedText}</a>`);
+    }
+  }
+  return result;
 }
 
 function contentToHtml(content: string): string {
@@ -171,7 +203,7 @@ ${cards}
 <div style="max-width:48rem;margin:0 auto">
 <span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">${post.category}</span>
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${post.title}</h1>
-<div style="color:#6b7280;font-size:0.875rem"><span>${post.readTime}</span> &middot; <span>${date}</span></div>
+<div style="color:#6b7280;font-size:0.875rem"><span>${post.readTime}</span> &middot; <span>${date}</span> &middot; By <a href="/adrian" style="color:#3B82F6;text-decoration:none">Adrian</a>, Founder</div>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem 1.5rem;margin-bottom:2rem">
@@ -182,13 +214,18 @@ ${cards}
 </section>
 <section style="padding:2rem 1.5rem">
 <article style="max-width:48rem;margin:0 auto">
-${contentToHtml(post.content)}
+${autoLinkContent(contentToHtml(post.content))}
 </article>
 </section>
 ${howToHtml}
 ${faqHtml}
 ${categoryLinkHtml}
 ${relatedHtml}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af;line-height:1.5"><strong>Disclaimer:</strong> This article is for informational and educational purposes only and does not constitute legal, financial, or tax advice. The author is a pseudonymous business writer, not a licensed attorney, CPA, or financial advisor. Laws vary by jurisdiction and change frequently. Consult a qualified professional before making legal, financial, or business decisions. Invisible Exit is a set of software tools, not a law firm or financial advisory service.</p>
+</div>
+</section>
 </div>`;
 }
 
@@ -809,7 +846,231 @@ ${faqs}
 </div>`;
 }
 
-// ---------- Main ----------
+// ---------- pSEO body generators ----------
+
+function alternativesBodyHtml(item: typeof alternatives[0]): string {
+  const altList = item.alternatives
+    .map((a: { name: string; why: string }) => `<li><strong>${a.name}</strong> — ${a.why}</li>`)
+    .join("\n");
+  const faqs = (item.faqs || [])
+    .map((f: { question: string; answer: string }) => `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`)
+    .join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Alternatives</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why Switch From ${item.product}?</h2>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.whySwitch}</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Top Alternatives</h2>
+<ul style="display:flex;flex-direction:column;gap:1rem">${altList}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Verdict</h2>
+<p style="color:#4b5563">${item.verdict}</p>
+</div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice. Consult a professional.</p>
+</div></section>
+</div>`;
+}
+
+function salaryBodyHtml(item: typeof salaries[0]): string {
+  const freedomUrl = `/cost-of-waiting/${item.slug}`;
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Salaries</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">Average salary: <strong>${item.avgSalary}</strong> (range: ${item.salaryRange})</p>
+<p style="color:#4b5563">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1.125rem;font-weight:700;color:#1e40af;margin-bottom:0.5rem">What Could ${item.avgSalary} Look Like as Passive Income?</p>
+<p style="color:#4b5563;margin-bottom:1rem">See how much money you're leaving on the table by not starting your micro-SaaS today.</p>
+<a href="${freedomUrl}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Cost of Waiting &rarr;</a>
+</div></section>
+${item.tips ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Tips for ${item.role}</h2><ul>${(item.tips || []).map((t: string) => `<li>${t}</li>`).join("")}</ul></div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Salary estimates are general ranges. Individual compensation varies. Not financial advice.</p>
+</div></section>
+</div>`;
+}
+
+function milestoneBodyHtml(item: typeof revenueMilestones[0]): string {
+  const tactics = item.tactics.map((t: { tactic: string; description: string; effort: string }) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem"><h3 style="font-weight:600;margin-bottom:0.25rem">${t.tactic}</h3><p style="font-size:0.875rem;color:#4b5563">${t.description}</p><span style="font-size:0.75rem;color:#6b7280">Effort: ${t.effort}</span></div>`
+  ).join("\n");
+  const mistakes = (item.commonMistakes || []).map((m: string) => `<li>${m}</li>`).join("");
+  const faqs = (item.faqs || []).map((f: {question:string; answer:string}) =>
+    `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1rem">${item.intro}</p>
+<p style="font-size:0.875rem;color:#6b7280">Time estimate: ${item.timeEstimate}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem">What This Stage Means</h2>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.whatThisMeans}</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Key Tactics for Stage: ${item.stage} (${item.mrrRange})</h2>
+<div style="display:flex;flex-direction:column;gap:1rem">${tactics}</div>
+</div></section>${item.commonMistakes && item.commonMistakes.length ? `<section style="padding:2rem 1.5rem;background-color:#fef2f2"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;color:#dc2626;margin-bottom:0.5rem">Common Mistakes</h2><ul>${mistakes}</ul></div></section>` : ""}${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Revenue milestones are illustrative projections, not guarantees. Individual results vary based on market, product, and execution.</p>
+</div></section>
+</div>`;
+}
+
+function timelineBodyHtml(item: typeof timelines[0]): string {
+  const checks = (item.metricsToCheck || []).map((m:string) => `<li>${m}</li>`).join("");
+  const common = (item.commonAtThisStage || []).map((m:string) => `<li>${m}</li>`).join("");
+  const mistakes = (item.mistakes || []).map((m:string) => `<li>${m}</li>`).join("");
+  const faqs = (item.faqs || []).map((f:{question:string;answer:string}) =>
+    `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Milestones This Month</h2>
+<ul style="display:flex;flex-direction:column;gap:0.75rem">${item.milestones.map((m:{milestone:string;completed:boolean}) =>
+    `<li style="display:flex;align-items:flex-start;gap:0.5rem"><span style="color:${m.completed ? '#22c55e' : '#9ca3af'};font-weight:700">${m.completed ? '✓' : '○'}</span><span>${m.milestone}</span></li>`
+  ).join("")}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+${checks ? `<div><h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem">Metrics to Check</h2><ul>${checks}</ul></div>` : ""}
+${common ? `<div style="margin-top:1.5rem"><h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem">What's Normal at This Stage</h2><ul>${common}</ul></div>` : ""}
+${mistakes ? `<div style="margin-top:1.5rem"><h2 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#dc2626">Mistakes to Avoid</h2><ul>${mistakes}</ul></div>` : ""}
+<p style="margin-top:1.5rem;font-weight:600">Next up: ${item.whatsNext}</p>
+</div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+function toolStackBodyHtml(item: typeof professionStacks[0]): string {
+  const rows = item.stack.map((s: {category:string; tool:string; why:string; cost:string}) =>
+    `<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb"><strong>${s.tool}</strong></td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${s.category}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${s.why}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${s.cost}</td></tr>`
+  ).join("\n");
+  const faqs = (item.faqs || []).map((f:{question:string;answer:string}) =>
+    `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:64rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/best" style="color:#3B82F6;text-decoration:none">Tools</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:64rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1rem">${item.intro}</p>
+<p style="font-size:0.875rem;color:#6b7280">Total monthly cost: ${item.totalMonthlyCost} | Replaces: ${item.replaces} | Weekly commitment: ${item.weeklyTimeCommitment}</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:64rem;margin:0 auto">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Tool</th><th style="padding:0.5rem;text-align:left">Category</th><th style="padding:0.5rem;text-align:left">Why</th><th style="padding:0.5rem;text-align:left">Cost</th></tr></thead><tbody>${rows}</tbody></table>
+</div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+function costOfWaitingBodyHtml(item: typeof costOfWaitingPages[0]): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1rem">
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Salary Earned</p><p style="font-size:1.5rem;font-weight:700">${item.salaryEarned}</p></div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Potential Micro-SaaS Revenue</p><p style="font-size:1.5rem;font-weight:700;color:#22c55e">${item.microSaasRevenue}</p></div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Opportunity Cost</p><p style="font-size:1.5rem;font-weight:700;color:#ef4444">${item.opportunityCost}</p></div>
+${item.equityVested ? `<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Equity Vested</p><p style="font-size:1.5rem;font-weight:700">${item.equityVested}</p></div>` : ""}
+</div>
+</div></section>
+<section style="padding:2rem 1.5rem;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Cost-of-waiting projections are illustrative. Actual returns depend on product, market, and execution.</p>
+</div></section>
+</div>`;
+}
+
+function nonCompeteBodyHtml(item: typeof nonCompeteMatrix[0]): string {
+  const faqs = (item.faqs || []).map((f:{question:string;answer:string}) =>
+    `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Verdict</h2>
+<p>${item.verdict}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Key Considerations for ${item.profession} in ${item.state}</h2>
+<p>${item.analysis}</p>
+</div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/guides/${item.state.toLowerCase()}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Read the ${item.state} State Guide &rarr;</a>
+</div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Legal Disclaimer:</strong> Non-compete information reflects general enforcement patterns. Non-compete law is rapidly evolving. This is NOT legal advice. Consult a licensed employment attorney for your specific situation.</p>
+</div></section>
+</div>`;
+}
+
+function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">The Opportunity</h2>
+<p>${item.opportunity}</p>
+</div></section>
+${item.challenges ? `<section style="padding:2rem 1.5rem;background-color:#fef2f2"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Challenges</h2><p>${item.challenges}</p></div></section>` : ""}
+${item.executionAdvice ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Execution Advice</h2><p>${item.executionAdvice}</p></div></section>` : ""}
+${item.faqs && item.faqs.length ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${item.faqs.map((f:{question:string;answer:string}) => `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n")}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice. State regulations and non-compete laws change frequently.</p>
+</div></section>
+</div>`;
+}
 
 function main() {
   console.log("Injecting body content into pre-rendered HTML...");
@@ -907,6 +1168,78 @@ function main() {
   for (const resource of resources) {
     if (injectBody(resolve(DIST, "resources", resource.slug, "index.html"), resourceBodyHtml(resource))) {
       count++;
+    }
+  }
+
+  // ── pSEO page types (Greg Isenberg expansion) ──
+
+  // Alternatives
+  for (const item of alternatives) {
+    if (injectBody(resolve(DIST, "alternatives", item.slug, "index.html"), alternativesBodyHtml(item))) {
+      console.log(`  /alternatives/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Salaries
+  for (const item of salaries) {
+    if (injectBody(resolve(DIST, "salaries", item.slug, "index.html"), salaryBodyHtml(item))) {
+      console.log(`  /salaries/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Revenue Milestones
+  for (const item of revenueMilestones) {
+    if (injectBody(resolve(DIST, "milestones", item.slug, "index.html"), milestoneBodyHtml(item))) {
+      console.log(`  /milestones/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Timelines
+  for (const item of timelines) {
+    if (injectBody(resolve(DIST, "timeline", item.slug, "index.html"), timelineBodyHtml(item))) {
+      console.log(`  /timeline/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Profession Tool Stacks
+  for (const item of professionStacks) {
+    if (injectBody(resolve(DIST, "stack", item.slug, "index.html"), toolStackBodyHtml(item))) {
+      console.log(`  /stack/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Cost of Waiting
+  for (const item of costOfWaitingPages) {
+    if (injectBody(resolve(DIST, "cost-of-waiting", item.slug, "index.html"), costOfWaitingBodyHtml(item))) {
+      console.log(`  /cost-of-waiting/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Non-Compete Matrix
+  for (const item of nonCompeteMatrix) {
+    if (injectBody(resolve(DIST, "non-compete", item.slug, "index.html"), nonCompeteBodyHtml(item))) {
+      console.log(`  /non-compete/${item.slug}`);
+      count++;
+    }
+  }
+
+  // Profession × State pages (/ideas/:profession/in/:state)
+  for (const item of professionStatePages) {
+    // Slug is like "for-accountants-in-texas" — need to extract profession+state
+    const parts = item.slug.replace("for-", "").split("-in-");
+    if (parts.length === 2) {
+      const profSlug = `for-${parts[0]}`;
+      const stateSlug = parts[1];
+      if (injectBody(resolve(DIST, "ideas", profSlug, "in", stateSlug, "index.html"), professionStateBodyHtml(item))) {
+        console.log(`  /ideas/${profSlug}/in/${stateSlug}`);
+        count++;
+      }
     }
   }
 

@@ -1,6 +1,6 @@
 /**
  * Generates llms.txt and llms-full.txt from ALL site data.
- * llms.txt = concise index with all 235+ pages
+ * llms.txt = concise index with all 465 pages (blog + pSEO expansion)
  * llms-full.txt = extended summaries for deeper AI crawler context
  *
  * Run: npx tsx scripts/generate-llms-txt.ts
@@ -18,6 +18,15 @@ import { bestToolsLists } from "../src/data/best-tools.js";
 import { calculators } from "../src/data/calculators.js";
 import { dataReports } from "../src/data/data-reports.js";
 import { resources } from "../src/data/resources.js";
+// pSEO page types (Greg Isenberg sprint)
+import { alternatives } from "../src/data/alternatives.js";
+import { salaries } from "../src/data/salaries.js";
+import { revenueMilestones } from "../src/data/revenue-milestones.js";
+import { timelines } from "../src/data/timelines.js";
+import { professionStacks } from "../src/data/profession-stacks.js";
+import { costOfWaitingPages } from "../src/data/cost-of-waiting.js";
+import { professionStatePages } from "../src/data/profession-states.js";
+import { nonCompeteMatrix } from "../src/data/non-compete-matrix.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -41,12 +50,36 @@ function generateLlmsTxt(): string {
   lines.push(`- [Home](https://invisibleexit.com/): Main landing page — value proposition, 5 tools, pricing, and FAQ`);
   lines.push(`- [About](https://invisibleexit.com/about): About the founder and the Invisible Exit methodology`);
   lines.push(`- [Blog](https://invisibleexit.com/blog): ${blogPosts.length} articles on financial independence, micro-SaaS, stealth operations, and audience building for employed founders`);
+
+  // Blog category landing pages (dynamic from blog data)
+  const blogCats = [...new Set(
+    blogPosts.map((p) =>
+      p.category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+    )
+  )].sort();
+  for (const cat of blogCats) {
+    lines.push(`- [Blog: ${cat.replace(/-/g, " ")}](https://invisibleexit.com/blog/category/${cat}): Category landing page`);
+  }
   lines.push(`- [Glossary](https://invisibleexit.com/glossary): Plain-English definitions of micro-SaaS, recurring revenue, and stealth operations terms`);
   lines.push(`- [Story](https://invisibleexit.com/story): The complete origin story — how a corporate manager built $4K/month invisibly`);
   lines.push(`- [Adrian](https://invisibleexit.com/adrian): The anonymous founder's identity page`);
   lines.push(`- [Masterclass](https://invisibleexit.com/masterclass): Free 45-minute masterclass for corporate managers`);
   lines.push(`- [Privacy Policy](https://invisibleexit.com/privacy): Privacy policy`);
   lines.push(`- [Terms of Service](https://invisibleexit.com/terms): Terms of service`);
+  lines.push("");
+  lines.push("## Funnel & Framework Pages");
+  lines.push("");
+  lines.push(`- [Pro Membership](https://invisibleexit.com/pro): Pro tier — full access to all 5 AI tools`);
+  lines.push(`- [Freedom Number Calculator](https://invisibleexit.com/freedom): Calculate your freedom number and MRR target`);
+  lines.push(`- [Inner Circle](https://invisibleexit.com/inner-circle): Private community of employed founders building invisible revenue`);
+  lines.push(`- [Affiliate Program](https://invisibleexit.com/affiliates): Earn recurring commissions referring Invisible Exit`);
+  lines.push(`- [Dream 100](https://invisibleexit.com/dream-100): Dream 100 audience-building framework`);
+  lines.push(`- [Intensive](https://invisibleexit.com/intensive): 1-on-1 intensive coaching program`);
+  lines.push(`- [Traffic Blueprint](https://invisibleexit.com/traffic-blueprint): Full traffic generation blueprint for micro-SaaS`);
+  lines.push(`- [Content Calendar](https://invisibleexit.com/content-calendar): 90-day content calendar for faceless founders`);
+  lines.push(`- [Affiliate Assets](https://invisibleexit.com/affiliate-assets): Swipe copy and creative assets for affiliates`);
+  lines.push(`- [Podcast Pitch Kit](https://invisibleexit.com/podcast-pitch): Pitch templates for anonymous podcast outreach`);
+  lines.push(`- [Backlink Strategy](https://invisibleexit.com/backlink-strategy): Step-by-step backlink acquisition playbook`);
   lines.push("");
 
   // ── Blog Posts by Category ──
@@ -124,6 +157,77 @@ function generateLlmsTxt(): string {
   lines.push("");
   for (const r of resources) {
     lines.push(`- [${r.title}](${SITE}/resources/${r.slug}): ${r.intro.slice(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Alternatives ──
+  lines.push(`## Product Alternatives (${alternatives.length})`);
+  lines.push("");
+  lines.push(`- [All Alternatives](${SITE}/alternatives): Index of product alternatives for solo founders`);
+  for (const a of alternatives) {
+    lines.push(`- [${a.h1}](${SITE}/alternatives/${a.slug}): ${a.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Salaries ──
+  lines.push(`## Salary → Freedom Number (${salaries.length})`);
+  lines.push("");
+  lines.push(`- [All Salary Guides](${SITE}/salaries): Index of role salary-to-MRR conversions`);
+  for (const s of salaries) {
+    lines.push(`- [${s.h1}](${SITE}/salaries/${s.slug}): ${s.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Revenue Milestones ──
+  lines.push(`## Revenue Milestones (${revenueMilestones.length})`);
+  lines.push("");
+  lines.push(`- [All Milestones](${SITE}/milestones): Index of MRR stage guides`);
+  for (const m of revenueMilestones) {
+    lines.push(`- [${m.h1}](${SITE}/milestones/${m.slug}): ${m.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Timeline ──
+  lines.push(`## Builder Timeline (${timelines.length})`);
+  lines.push("");
+  lines.push(`- [Full Timeline](${SITE}/timeline): Month-by-month micro-SaaS roadmap`);
+  for (const t of timelines) {
+    lines.push(`- [${t.h1}](${SITE}/timeline/${t.slug}): ${t.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Profession Stacks ──
+  lines.push(`## Profession Tool Stacks (${professionStacks.length})`);
+  lines.push("");
+  lines.push(`- [All Stacks](${SITE}/stack): Index of tool stacks by profession`);
+  for (const s of professionStacks) {
+    lines.push(`- [${s.h1}](${SITE}/stack/${s.slug}): ${s.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Cost of Waiting ──
+  lines.push(`## Cost of Waiting (${costOfWaitingPages.length})`);
+  lines.push("");
+  lines.push(`- [All Cost-of-Waiting Scenarios](${SITE}/cost-of-waiting): Index of opportunity cost calculators`);
+  for (const c of costOfWaitingPages) {
+    lines.push(`- [${c.h1}](${SITE}/cost-of-waiting/${c.slug}): ${c.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Profession × State ──
+  lines.push(`## Micro-SaaS Ideas by Profession × State (${professionStatePages.length})`);
+  lines.push("");
+  for (const p of professionStatePages) {
+    lines.push(`- [${p.h1}](${SITE}/ideas/${p.professionSlug}/in/${p.stateSlug}): ${p.metaDescription}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Non-Compete Matrix ──
+  lines.push(`## Non-Compete Risk Matrix (${nonCompeteMatrix.length})`);
+  lines.push("");
+  lines.push(`- [Full Non-Compete Matrix](${SITE}/non-compete): Profession × state enforceability cross-reference`);
+  for (const n of nonCompeteMatrix) {
+    lines.push(`- [${n.h1}](${SITE}/non-compete/${n.slug}): ${n.metaDescription}`);
   }
   lines.push("");
 
@@ -298,6 +402,190 @@ function generateLlmsFullTxt(): string {
     lines.push("");
   }
 
+  // ── pSEO: Alternatives ──
+  lines.push("## Product Alternatives (X Alternative Pages)");
+  lines.push("");
+  for (const a of alternatives) {
+    lines.push(`### ${a.h1}`);
+    lines.push(`- **URL:** ${SITE}/alternatives/${a.slug}`);
+    lines.push(`- **Product:** ${a.product} (${a.category})`);
+    lines.push(`- **Summary:** ${a.intro}`);
+    lines.push(`- **Why switch:** ${(a.whySwitch || []).join("; ")}`);
+    lines.push(`- **Alternatives:**`);
+    for (const alt of a.alternatives) {
+      lines.push(`  - ${alt.name}: ${alt.pricing}. Best for ${alt.bestFor}.`);
+    }
+    lines.push(`- **Verdict:** ${a.verdict}`);
+    if (a.faqs && a.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of a.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Salaries ──
+  lines.push("## Salary → Freedom Number Pages");
+  lines.push("");
+  for (const s of salaries) {
+    lines.push(`### ${s.h1}`);
+    lines.push(`- **URL:** ${SITE}/salaries/${s.slug}`);
+    lines.push(`- **Role:** ${s.role}`);
+    lines.push(`- **Avg Salary:** ${s.avgSalary} (${s.salaryRange})`);
+    lines.push(`- **Freedom Number:** ${s.freedomNumber}`);
+    lines.push(`- **Timeline:** ${s.timeline}`);
+    lines.push(`- **Transferable Skills:** ${s.transferableSkills.join(", ")}`);
+    lines.push(`- **Best Micro-SaaS Ideas:** ${s.bestMicroSaaSIdeas.join("; ")}`);
+    if (s.faqs && s.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of s.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Revenue Milestones ──
+  lines.push("## Revenue Milestone Pages");
+  lines.push("");
+  for (const m of revenueMilestones) {
+    lines.push(`### ${m.h1}`);
+    lines.push(`- **URL:** ${SITE}/milestones/${m.slug}`);
+    lines.push(`- **Stage:** ${m.stage} (${m.mrrRange})`);
+    lines.push(`- **Summary:** ${m.intro}`);
+    lines.push(`- **Key Metrics:**`);
+    for (const km of m.keyMetrics) {
+      lines.push(`  - ${km.metric}: ${km.target}`);
+    }
+    lines.push(`- **Tactics:**`);
+    for (const tac of m.tactics) {
+      lines.push(`  - ${tac.tactic} (${tac.effort} effort): ${tac.description}`);
+    }
+    lines.push(`- **Common Mistakes:** ${(m.commonMistakes || []).join("; ")}`);
+    lines.push(`- **Time Estimate:** ${m.timeEstimate}`);
+    if (m.faqs && m.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of m.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Timeline ──
+  lines.push("## Builder Timeline Pages");
+  lines.push("");
+  for (const t of timelines) {
+    lines.push(`### ${t.h1}`);
+    lines.push(`- **URL:** ${SITE}/timeline/${t.slug}`);
+    lines.push(`- **Month:** ${t.month}`);
+    lines.push(`- **Summary:** ${t.intro}`);
+    lines.push(`- **Milestones:**`);
+    for (const ms of t.milestones) {
+      lines.push(`  - [${ms.completed ? "✓" : "○"}] ${ms.milestone}: ${ms.description}`);
+    }
+    lines.push(`- **Metrics to Check:** ${(t.metricsToCheck || []).join("; ")}`);
+    lines.push(`- **Common Mistakes:** ${(t.mistakes || []).join("; ")}`);
+    lines.push(`- **What's Next:** ${t.whatsNext}`);
+    if (t.faqs && t.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of t.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Profession Stacks ──
+  lines.push("## Profession Tool Stack Pages");
+  lines.push("");
+  for (const s of professionStacks) {
+    lines.push(`### ${s.h1}`);
+    lines.push(`- **URL:** ${SITE}/stack/${s.slug}`);
+    lines.push(`- **Profession:** ${s.profession}`);
+    lines.push(`- **Total Monthly Cost:** ${s.totalMonthlyCost} (replaces ${s.replaces})`);
+    lines.push(`- **Summary:** ${s.intro}`);
+    lines.push(`- **Stack:**`);
+    for (const item of s.stack) {
+      lines.push(`  - ${item.category}: ${item.tool} — ${item.why} (${item.cost})`);
+    }
+    lines.push(`- **Weekly Time:** ${s.weeklyTimeCommitment}`);
+    if (s.faqs && s.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of s.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Cost of Waiting ──
+  lines.push("## Cost of Waiting Pages");
+  lines.push("");
+  for (const c of costOfWaitingPages) {
+    lines.push(`### ${c.h1}`);
+    lines.push(`- **URL:** ${SITE}/cost-of-waiting/${c.slug}`);
+    lines.push(`- **Salary:** ${c.salaryLabel} | **Horizon:** ${c.yearsLabel}`);
+    lines.push(`- **Salary Earned:** $${c.salaryEarned.toLocaleString()}`);
+    lines.push(`- **Micro-SaaS Revenue (if started):** $${c.microSaasRevenue.toLocaleString()}`);
+    lines.push(`- **Opportunity Cost:** $${c.opportunityCost.toLocaleString()}`);
+    lines.push(`- **Compounded Loss:** $${c.compoundedLoss.toLocaleString()}`);
+    lines.push(`- **Summary:** ${c.intro}`);
+    if (c.faqs && c.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of c.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Profession × State ──
+  lines.push("## Micro-SaaS Ideas by Profession × State");
+  lines.push("");
+  for (const p of professionStatePages) {
+    lines.push(`### ${p.h1}`);
+    lines.push(`- **URL:** ${SITE}/ideas/${p.professionSlug}/in/${p.stateSlug}`);
+    lines.push(`- **Profession:** ${p.profession} | **State:** ${p.state}`);
+    lines.push(`- **Summary:** ${p.intro}`);
+    if (p.faqs && p.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of p.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
+  // ── pSEO: Non-Compete Matrix ──
+  lines.push("## Non-Compete Risk Matrix");
+  lines.push("");
+  for (const n of nonCompeteMatrix) {
+    lines.push(`### ${n.h1}`);
+    lines.push(`- **URL:** ${SITE}/non-compete/${n.slug}`);
+    lines.push(`- **Profession:** ${n.profession} | **State:** ${n.state}`);
+    lines.push(`- **Can Build:** ${n.canBuild ? "Yes" : "No (high risk)"}`);
+    lines.push(`- **Enforceability:** ${n.enforceabilityStatus}`);
+    lines.push(`- **Key Risks:** ${(n.keyRisks || []).join("; ")}`);
+    lines.push(`- **Safe Harbors:** ${(n.safeHarbors || []).join("; ")}`);
+    if (n.faqs && n.faqs.length > 0) {
+      lines.push("- **FAQs:**");
+      for (const faq of n.faqs) {
+        lines.push(`  - Q: ${faq.question}`);
+        lines.push(`    A: ${faq.answer}`);
+      }
+    }
+    lines.push("");
+  }
+
   return lines.join("\n");
 }
 
@@ -307,6 +595,23 @@ mkdirSync(PUBLIC, { recursive: true });
 writeFileSync(resolve(PUBLIC, "llms.txt"), generateLlmsTxt(), "utf-8");
 writeFileSync(resolve(PUBLIC, "llms-full.txt"), generateLlmsFullTxt(), "utf-8");
 
-const totalPages = blogPosts.length + glossaryTerms.length + comparisons.length + stateGuides.length + industryIdeas.length + bestToolsLists.length + calculators.length + dataReports.length + resources.length;
+const totalPages =
+  blogPosts.length +
+  glossaryTerms.length +
+  comparisons.length +
+  stateGuides.length +
+  industryIdeas.length +
+  bestToolsLists.length +
+  calculators.length +
+  dataReports.length +
+  resources.length +
+  alternatives.length +
+  salaries.length +
+  revenueMilestones.length +
+  timelines.length +
+  professionStacks.length +
+  costOfWaitingPages.length +
+  professionStatePages.length +
+  nonCompeteMatrix.length;
 console.log(`✓ Generated llms.txt (${totalPages} pages across all content types)`);
 console.log(`✓ Generated llms-full.txt (extended summaries + FAQs + data points)`);

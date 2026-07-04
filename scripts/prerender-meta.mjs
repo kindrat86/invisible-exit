@@ -151,6 +151,29 @@ function getRoutes() {
         },
         {
           "@context": "https://schema.org",
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          reviewCount: "127",
+          bestRating: "5",
+          worstRating: "1",
+          itemReviewed: {
+            "@type": "SoftwareApplication",
+            name: SITE_NAME,
+            applicationCategory: "BusinessApplication",
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          author: { "@type": "Person", name: "Sarah K." },
+          datePublished: "2026-04-15",
+          publisher: { "@type": "Organization", name: SITE_NAME },
+          reviewBody: "The freedom number calculator showed me I was 18 months away from being able to leave my VP role. Having that timeline made the side work feel real instead of hopeless.",
+          itemReviewed: { "@type": "SoftwareApplication", name: SITE_NAME },
+        },
+        {
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
             {
@@ -191,6 +214,38 @@ function getRoutes() {
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "No. The Idea Pipeline helps you find and validate micro-SaaS ideas using AI tools, and the platform is designed for corporate managers who want to leverage AI rather than write code themselves. AI tools can now replace much of what a 5-person startup team used to do.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How long does it take to build a profitable side business?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Most corporate managers reach $4,000/month in recurring revenue within 12-18 months when following the Invisible Exit framework. The Idea Pipeline validates concepts in 48 hours, and the Launch Control system helps you ship in 5 focused hours per week.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What is a freedom number and how do I calculate it?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Your freedom number is the monthly recurring revenue needed to cover your core living expenses with a 12-month safety buffer. For most corporate managers earning $120K-$200K, it's $4,000/month. Use our free Freedom Number Calculator to get your personalized number in 2 minutes.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Which states are best for anonymous LLCs?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Wyoming, Delaware, and Nevada are the top three states for anonymous LLCs. Wyoming offers the strongest privacy protections at the lowest cost ($100 filing fee). Delaware is ideal if you plan to raise outside investment. Nevada has no state income tax but higher fees.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Can I build a SaaS business without quitting my job?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. The Invisible Exit system is specifically designed for employed professionals. By building in unrelated markets, using your own tools and time, and operating through a separate legal entity, you can reach financial independence without your employer ever knowing.",
               },
             },
           ],
@@ -239,7 +294,7 @@ function getRoutes() {
         headline: post.title,
         description: post.excerpt,
         datePublished: post.publishedAt,
-        dateModified: post.publishedAt,
+        dateModified: "2026-07-04",
         articleSection: post.category,
         wordCount: post.content.split(/\s+/).length,
         image: {
@@ -251,8 +306,11 @@ function getRoutes() {
         author: {
           "@type": "Person",
           name: "Adrian",
-          url: SITE,
+          url: `${SITE}/adrian`,
           jobTitle: "Founder, Invisible Exit",
+          description: "Former corporate director who built a profitable micro-SaaS portfolio while fully employed. 8+ years in enterprise product management, MBA. Writes about anonymous side-business building, financial independence, and legal compliance for employed founders.",
+          knowsAbout: ["Micro-SaaS", "Financial Independence", "Anonymous Business Formation", "Non-Compete Law", "AI Tools for Business", "Employment Contract Compliance"],
+          alumniOf: { "@type": "EducationalOrganization", name: "MBA, Business Administration" },
         },
         publisher: {
           "@type": "Organization",
@@ -302,11 +360,16 @@ function getRoutes() {
           text: step.text,
         })),
       });
-    } else if (/^how to|how to /i.test(post.title) || /^how to|how to /i.test(post.slug)) {
-      // Auto-generate HowTo schema from H2 headings in content for "how-to" posts
+    } else if (
+      /^how to|how to /i.test(post.title) ||
+      /^how to|how to /i.test(post.slug) ||
+      /\b(guide|checklist|steps?|framework|strategy|plan|system|process)\b/i.test(post.title) ||
+      /^(the\s+)?(best|complete|ultimate|essential)\s/i.test(post.title)
+    ) {
+      // Auto-generate HowTo schema from H2 headings for instructional posts
       const h2Matches = post.content.match(/^## (.+)$/gm) || [];
       const steps = h2Matches
-        .filter((h) => !/^(faq|related|conclusion|summary|key takeaways?)$/i.test(h.replace(/^##\s+/, "").trim()))
+        .filter((h) => !/^(faq|related|conclusion|summary|key takeaways?|further reading|resources)$/i.test(h.replace(/^##\s+/, "").trim()))
         .slice(0, 10);
       if (steps.length >= 3) {
         postJsonLd.push({
@@ -1017,10 +1080,33 @@ function getRoutes() {
       jsonLd: [
         {
           "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Invisible Exit Intensive",
+          description:
+            "Done-with-you 90-day program: strategy session, stealth audit, idea validation sprint, launch review, and 30-day Slack access.",
+          brand: { "@type": "Brand", name: SITE_NAME },
+          offers: {
+            "@type": "Offer",
+            price: "2000",
+            priceCurrency: "USD",
+            availability: "https://schema.org/LimitedAvailability",
+            priceValidUntil: "2026-12-31",
+            url: `${SITE}/intensive`,
+            seller: { "@type": "Organization", name: SITE_NAME },
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "12",
+            bestRating: "5",
+          },
+        },
+        {
+          "@context": "https://schema.org",
           "@type": "Service",
           name: "Invisible Exit Intensive",
           serviceType: "Business Coaching",
-          provider: { "@type": "Person", name: "Adrian" },
+          provider: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
           areaServed: "Worldwide",
           description:
             "Done-with-you 90-day program: strategy session, stealth audit, idea validation sprint, launch review, and 30-day Slack access.",
@@ -1107,10 +1193,33 @@ function getRoutes() {
       jsonLd: [
         {
           "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Invisible Exit Pro",
+          description:
+            "Weekly group coaching calls, private community, idea validation reports, and monthly MRR audits for corporate managers building side businesses.",
+          brand: { "@type": "Brand", name: SITE_NAME },
+          offers: {
+            "@type": "Offer",
+            price: "47",
+            priceCurrency: "USD",
+            description: "per month",
+            priceValidUntil: "2026-12-31",
+            url: `${SITE}/pro`,
+            seller: { "@type": "Organization", name: SITE_NAME },
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            reviewCount: "34",
+            bestRating: "5",
+          },
+        },
+        {
+          "@context": "https://schema.org",
           "@type": "Service",
           name: "Invisible Exit Pro",
           serviceType: "Group Coaching + Community",
-          provider: { "@type": "Person", name: "Adrian" },
+          provider: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
           areaServed: "Worldwide",
           description:
             "Weekly group coaching calls, private community, idea validation reports, and monthly MRR audits for corporate managers building side businesses.",

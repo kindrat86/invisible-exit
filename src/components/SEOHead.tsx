@@ -52,7 +52,7 @@ export default function SEOHead({
     document.title = title;
 
     setMeta("name", "description", description);
-    setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    setMeta("name", "robots", noindex ? "noindex, follow" : "index, follow");
     setLink("canonical", fullUrl);
 
     // Open Graph
