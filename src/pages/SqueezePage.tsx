@@ -39,6 +39,10 @@ const SqueezePage = () => {
   const [expenses, setExpenses] = useState("");
   const [hoursPerWeek, setHoursPerWeek] = useState("5");
 
+  // ── DOTCOM SECRETS Ch 14: Order Bump ──
+  // Checkbox on the email step that adds a $7 one-time to the $0.97/mo checkout
+  const [addStealthBlueprint, setAddStealthBlueprint] = useState(true);
+
   // Calculated result
   const [result, setResult] = useState<CalcResult | null>(null);
 
@@ -475,6 +479,28 @@ const SqueezePage = () => {
                 </div>
               </div>
 
+              {/* DOTCOM SECRETS Ch 11: Urgency + Scarcity */}
+              <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl p-4 mb-4 flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                <p className="text-amber-200 text-xs">
+                  <strong>73 of 100</strong> founding spots remaining. Price goes to $9.99/mo when founding closes.
+                </p>
+              </div>
+
+              {/* Social proof bar */}
+              <div className="flex items-center justify-center gap-3 mb-4 text-white/40 text-xs">
+                <span className="flex items-center gap-1">
+                  <span className="text-amber-400">★★★★★</span>
+                </span>
+                <span>·</span>
+                <span>127 managers building now</span>
+                <span>·</span>
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  4 joined today
+                </span>
+              </div>
+
               {/* Email gate for detailed plan */}
               <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
                 <p className="text-white/70 text-sm mb-1">
@@ -495,6 +521,34 @@ const SqueezePage = () => {
                     placeholder="Your best email address"
                     className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
                   />
+
+                  {/* ── DOTCOM SECRETS Ch 14: ORDER BUMP ── */}
+                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${addStealthBlueprint ? "bg-primary/10 border-primary/40" : "bg-white/5 border-white/10 hover:bg-white/[0.07]"}`}>
+                    <input
+                      type="checkbox"
+                      checked={addStealthBlueprint}
+                      onChange={(e) => setAddStealthBlueprint(e.target.checked)}
+                      className="mt-1 w-5 h-5 rounded accent-primary shrink-0 cursor-pointer"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span className="text-white text-sm font-semibold">
+                          YES! Add the Stealth Ops Blueprint
+                        </span>
+                        <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                          Save $40
+                        </span>
+                      </div>
+                      <p className="text-white/50 text-xs leading-relaxed mb-1">
+                        The 47-point employment contract audit + entity setup walkthroughs.
+                        Normally $47. Add it now for just <strong className="text-amber-300">$7 one-time</strong>.
+                      </p>
+                      <p className="text-white/30 text-[11px] italic">
+                        ☑ Checked by default — uncheck to skip
+                      </p>
+                    </div>
+                  </label>
+
                   <button
                     type="submit"
                     disabled={loading}
@@ -508,10 +562,10 @@ const SqueezePage = () => {
 
               {/* Direct CTA — skip email */}
               <Link
-                to="/?checkout=starter"
+                to="/tripwire"
                 className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
               >
-                Skip — just start for $0.97/month →
+                Skip email — get the $7 Stealth Ops Blueprint →
               </Link>
             </div>
           )}
@@ -535,10 +589,10 @@ const SqueezePage = () => {
 
               <div className="space-y-3 mt-6">
                 <Link
-                  to="/?checkout=starter"
+                  to={addStealthBlueprint ? "/tripwire" : "/?checkout=starter"}
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
-                  Get All 5 Tools — $0.97/month
+                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $0.97/month"}
                 </Link>
                 <Link
                   to="/story"

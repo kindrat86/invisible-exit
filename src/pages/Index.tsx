@@ -476,6 +476,123 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 2c. The 3 False Beliefs (Russell's Epiphany Bridge Framework) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The 3 Lies You've Been Told</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              3 Beliefs Keeping You Trapped
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Russell Brunson teaches that every person has 3 false beliefs before they buy.
+              Let me break each one.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Vehicle Belief */}
+            <div className="card-base p-6 sm:p-8 border-l-4 border-red-400/50">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="bg-red-100 text-red-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                  Lie #1: The Vehicle
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-3">
+                "I need to quit my job to build something real."
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground">The truth:</strong> Your job IS the vehicle.
+                Your salary is non-dilutive runway. Your corporate skills are exactly what solo
+                founders lack. Your 5-hour constraint forces a focus that 60-hour founders can't replicate.
+              </p>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-3">
+                <p className="text-xs text-red-700">
+                  <strong>False belief:</strong> "Employment and entrepreneurship are mutually exclusive."
+                </p>
+              </div>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                <p className="text-xs text-green-700">
+                  <strong>New belief:</strong> "My job funds my build. I don't quit until the MRR replaces my salary."
+                </p>
+              </div>
+            </div>
+
+            {/* Internal Belief */}
+            <div className="card-base p-6 sm:p-8 border-l-4 border-amber-400/50">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="bg-amber-100 text-amber-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                  Lie #2: Internal
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-3">
+                "I don't have the skills to build a product."
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground">The truth:</strong> You manage teams, run P&Ls,
+                execute roadmaps, navigate stakeholders. Those ARE founder skills. The technical
+                part is the smallest piece — AI and no-code handle that. Your unfair advantage is
+                operational excellence, not code.
+              </p>
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3">
+                <p className="text-xs text-amber-700">
+                  <strong>False belief:</strong> "I'm not technical enough to build software."
+                </p>
+              </div>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                <p className="text-xs text-green-700">
+                  <strong>New belief:</strong> "My 15 years of management is the skill. Code is a commodity now."
+                </p>
+              </div>
+            </div>
+
+            {/* External Belief */}
+            <div className="card-base p-6 sm:p-8 border-l-4 border-blue-400/50">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="bg-blue-100 text-blue-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                  Lie #3: External
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground mb-3">
+                "If I build something, my employer will find out."
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground">The truth:</strong> With proper entity
+                separation — different name, different LLC, different Stripe, different hosting —
+                the connection is mathematically zero. I built for 14 months with zero detection.
+                A colleague even found a similar site on a call. Nothing traced back.
+              </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
+                <p className="text-xs text-blue-700">
+                  <strong>False belief:</strong> "Anything I build online is traceable to me."
+                </p>
+              </div>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                <p className="text-xs text-green-700">
+                  <strong>New belief:</strong> "With the Stealth Ops system, my employer cannot find out."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* The Epiphany */}
+          <div className="text-center mt-12 max-w-2xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
+              <p className="text-eyebrow text-primary mb-3">The Epiphany</p>
+              <p className="text-h3 text-foreground font-bold leading-tight">
+                When all 3 beliefs shift, you don't need motivation.
+                <br />
+                You just need a system.
+              </p>
+              <p className="text-sm text-muted-foreground mt-4">
+                That's what the 5 tools are. Not courses. Not motivation. A system that works
+                within the constraints you already have.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 3. Start Here Reading Path ── */}
       <section className="bg-surface section-normal border-y border-border">
         <div className="container-standard">

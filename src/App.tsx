@@ -74,6 +74,8 @@ const PodcastPitchPage = lazy(() => import("./pages/PodcastPitchPage.tsx"));
 const BacklinkStrategyPage = lazy(() => import("./pages/BacklinkStrategyPage.tsx"));
 const ProPage = lazy(() => import("./pages/ProPage.tsx"));
 const FunnelMetricsPage = lazy(() => import("./pages/FunnelMetricsPage.tsx"));
+const TripwirePage = lazy(() => import("./pages/TripwirePage.tsx"));
+const WeekendWorkshopPage = lazy(() => import("./pages/WeekendWorkshopPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -213,6 +215,8 @@ const App = () => (
           <Route path="/backlink-strategy" element={<BacklinkStrategyPage />} />
           <Route path="/pro" element={<ProPage />} />
           <Route path="/funnel-metrics" element={<FunnelMetricsPage />} />
+          <Route path="/tripwire" element={<TripwirePage />} />
+          <Route path="/weekend-workshop" element={<WeekendWorkshopPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

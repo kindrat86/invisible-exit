@@ -23,6 +23,13 @@ const SLIDES = [
     stat: "A new category, not a better version",
   },
   {
+    title: "The One Thing",
+    eyebrow: "If You Remember Nothing Else...",
+    hook: "Build the system first. Ideas are cartridges you swap in and out.",
+    body: "If you get nothing else from this masterclass, get this: the system matters more than the idea. I spent 3 months choosing the 'right' idea and launched the wrong one. It made $9/month. But the system was built — so I pivoted. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. Build the pipeline once. Swap ideas like cartridges. This is the one thing that separates builders from thinkers.",
+    stat: "The One Thing: System > Idea",
+  },
+  {
     title: "The Hook",
     eyebrow: "Why You're Here",
     hook: "You earn $120K-$200K. You have less than 0.5% equity. And you just realized something uncomfortable.",
@@ -56,6 +63,27 @@ const SLIDES = [
     hook: "I spent 3 months choosing the 'right' idea. Then I launched the wrong one and it made $9/month.",
     body: "The lesson: stop obsessing over the idea. Build the SYSTEM first. FYM Dashboard (freedom number) → Idea Pipeline (500+ ideas, 48h validation) → Stealth Ops (entity + compliance) → Launch Control (go-live automation) → Brand Manager (faceless content). Once you have the system, you can swap ideas in and out like cartridges. The system doesn't care which idea you pick. The system cares that you HAVE a system.",
     stat: "5 tools, $0.97/month",
+  },
+  {
+    title: "False Belief #1: The Vehicle",
+    eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
+    hook: "Let me ask you a question. Do you believe you need to quit your job to build something real?",
+    body: "That's the #1 false belief I see. The 'I can't start until I leave' myth. Here's the truth: the most successful builders I know are STILL EMPLOYED. Their salary is their runway. Their constraints (5 hours, limited budget) force them to be resourceful. Full-time founders with $500K and 60 hours? They waste it. Because they have no deadline, no constraint, no skin in the game. Your job IS the unfair advantage. Don't give it up until your MRR replaces it.",
+    stat: "New belief: Don't quit — build",
+  },
+  {
+    title: "False Belief #2: The Internal",
+    eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
+    hook: "Do you believe you're not 'technical enough' to build software?",
+    body: "This is the internal belief that kills more potential founders than anything else. You think you need to know how to code. You don't. In 2025, code is a commodity. AI writes it. No-code tools assemble it. What you bring — the ability to manage teams, read P&Ls, execute under pressure, communicate clearly — those are 10x rarer than knowing React. The world has enough coders. It's desperately short on operators. You ARE the operator.",
+    stat: "New belief: Your skills > code",
+  },
+  {
+    title: "False Belief #3: The External",
+    eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
+    hook: "Do you believe if you build something, your employer will find out?",
+    body: "This is the external belief — the fear. I get it. I had it too. Then I built the Stealth Ops system: separate Wyoming LLC, anonymous domain, different Stripe account, different hosting provider. Zero digital connection to my name. I've been building for 14 months. A colleague even FOUND a similar website during a team call. Nothing. Not a trace. When the system is right, detection isn't a risk — it's an impossibility.",
+    stat: "New belief: Invisible by design",
   },
   {
     title: "The Results",
@@ -251,7 +279,7 @@ const MasterclassPage = () => {
       <section className="bg-white section-normal">
         <div className="container-narrow">
           <p className="text-eyebrow text-primary mb-4 text-center">What You'll Learn</p>
-          <h2 className="text-h1 text-foreground mb-12 text-center">10 Slides. 45 Minutes. Zero Fluff.</h2>
+          <h2 className="text-h1 text-foreground mb-12 text-center">14 Slides. 45 Minutes. Zero Fluff.</h2>
           <div className="space-y-3">
             {SLIDES.map((s, i) => (
               <div key={i} className="card-base p-4 flex items-center gap-4">

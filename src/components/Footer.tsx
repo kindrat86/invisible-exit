@@ -51,6 +51,7 @@ const FOOTER_SECTIONS = [
       { label: "About", to: "/about" },
       { label: "Affiliates (30%)", to: "/affiliates" },
       { label: "Pro ($47/mo)", to: "/pro" },
+      { label: "Weekend Workshop ($97)", to: "/weekend-workshop" },
       { label: "Intensive ($2K)", to: "/intensive" },
       { label: "RSS Feed", to: "/blog/rss.xml" },
     ],
