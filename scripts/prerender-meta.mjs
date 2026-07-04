@@ -930,6 +930,74 @@ function getRoutes() {
   });
 
   routes.push({
+    path: "/guides/freedom-number",
+    meta: {
+      title: "The Complete Freedom Number Guide (2026) | Invisible Exit",
+      description:
+        "The definitive guide to calculating your freedom number — the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and framework.",
+      url: `${SITE}/guides/freedom-number`,
+      type: "article",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "The Complete Freedom Number Guide (2026)",
+          description:
+            "How to calculate the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and the 5-tool framework.",
+          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          datePublished: "2026-07-04",
+          articleSection: "Financial Independence",
+          wordCount: "3500",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: "How to Calculate Your Freedom Number",
+          description:
+            "Step-by-step guide to calculating the monthly recurring revenue you need to replace your employment income.",
+          step: [
+            { "@type": "HowToStep", position: 1, name: "Determine annual salary", text: "Use total compensation including bonuses." },
+            { "@type": "HowToStep", position: 2, name: "Calculate monthly expenses", text: "Include all living expenses: housing, food, transportation, childcare." },
+            { "@type": "HowToStep", position: 3, name: "Add 30% buffer", text: "Cover taxes, healthcare, and benefits you're leaving behind." },
+            { "@type": "HowToStep", position: 4, name: "Round up", text: "Round to nearest $100 for margin." },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What exactly is a freedom number?",
+              acceptedAnswer: { "@type": "Answer", text: "Your freedom number is the monthly recurring revenue you need from products you own to fully replace your employment income and living expenses." },
+            },
+            {
+              "@type": "Question",
+              name: "How is this different from the 4% rule in FIRE?",
+              acceptedAnswer: { "@type": "Answer", text: "The FIRE 4% rule requires a lump sum invested. The freedom number approach uses recurring revenue from products you own — a renewable stream that doesn't deplete." },
+            },
+            {
+              "@type": "Question",
+              name: "Do I need to quit my job to hit my freedom number?",
+              acceptedAnswer: { "@type": "Answer", text: "No. The Invisible Exit system is designed for employed managers who build in 5 hours per week. Most members hit $1,000 MRR within 6-8 months while employed." },
+            },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Guides" },
+            { "@type": "ListItem", position: 3, name: "Freedom Number Guide" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
     path: "/adrian",
     meta: {
       title: "Who Is Adrian? — The Anonymous Founder Behind Invisible Exit",

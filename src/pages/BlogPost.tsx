@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { RelatedContent, getRelatedPosts, getRelevantCalculators } from "@/components/RelatedContent";
+import ShareButtons from "@/components/ShareButtons";
+import ContentUpgrade from "@/components/ContentUpgrade";
 import {
   Accordion,
   AccordionContent,
@@ -269,6 +271,10 @@ const BlogPost = () => {
                 year: "numeric",
               })}
             </span>
+          </div>
+          {/* Share buttons */}
+          <div className="mt-6">
+            <ShareButtons title={post.title} />
           </div>
         </div>
       </section>
@@ -569,6 +575,18 @@ const BlogPost = () => {
           </section>
         );
       })()}
+
+      {/* Content Upgrade — inline lead magnet */}
+      <section className="bg-white py-8">
+        <div className="container-narrow">
+          <ContentUpgrade
+            title="Get the Freedom Number Checklist (Free PDF)"
+            description="The 27-point checklist for calculating your exact freedom number, planning your exit timeline, and tracking your progress. Sent to your inbox."
+            source="blog_content_upgrade"
+            slug={post.slug}
+          />
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="hero-dark section-wide">

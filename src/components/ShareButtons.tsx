@@ -1,0 +1,90 @@
+import { useState } from "react";
+import { Twitter, Linkedin, Link2, Check, MessageCircle } from "lucide-react";
+
+interface ShareButtonsProps {
+  title: string;
+  url?: string;
+  className?: string;
+}
+
+export function ShareButtons({ title, url, className = "" }: ShareButtonsProps) {
+  const [copied, setCopied] = useState(false);
+  const shareUrl = url || (typeof window !== "undefined" ? window.location.href : "");
+
+  const shareText = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(shareUrl);
+
+  const handleTwitter = () => {
+    window.open(
+      `https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}&via=InvisibleExit`,
+      "_blank",
+      "noopener,noreferrer,width=600,height=400"
+    );
+  };
+
+  const handleLinkedIn = () => {
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+      "_blank",
+      "noopener,noreferrer,width=600,height=400"
+    );
+  };
+
+  const handleReddit = () => {
+    window.open(
+      `https://www.reddit.com/submit?url=${encodedUrl}&title=${shareText}`,
+      "_blank",
+      "noopener,noreferrer,width=600,height=600"
+    );
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className={`flex items-center gap-2 ${className}`}>
+      <span className="text-xs text-muted-foreground font-medium mr-1">Share:</span>
+      <button
+        onClick={handleTwitter}
+        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        aria-label="Share on Twitter/X"
+        title="Share on Twitter/X"
+      >
+        <Twitter className="w-4 h-4" />
+      </button>
+      <button
+        onClick={handleLinkedIn}
+        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        aria-label="Share on LinkedIn"
+        title="Share on LinkedIn"
+      >
+        <Linkedin className="w-4 h-4" />
+      </button>
+      <button
+        onClick={handleReddit}
+        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        aria-label="Share on Reddit"
+        title="Share on Reddit"
+      >
+        <MessageCircle className="w-4 h-4" />
+      </button>
+      <button
+        onClick={handleCopy}
+        className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
+          copied
+            ? "bg-success/15 text-success"
+            : "bg-muted hover:bg-primary hover:text-white text-muted-foreground"
+        }`}
+        aria-label="Copy link"
+        title="Copy link"
+      >
+        {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
+      </button>
+    </div>
+  );
+}
+
+export default ShareButtons;
