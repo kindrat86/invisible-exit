@@ -119,22 +119,42 @@ const SqueezePage = () => {
               <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
                 <span className="text-success text-2xl">✓</span>
               </div>
-              <h2 className="text-2xl font-bold text-white mb-3">Check your inbox!</h2>
-              <p className="text-white/70 mb-6">
-                I just sent your Freedom Number access link to{" "}
-                <strong className="text-white">{email}</strong>. Click the link in the email
-                to access the calculator.
+              <h2 className="text-2xl font-bold text-white mb-3">Here's Your Freedom Number</h2>
+              <p className="text-white/70 mb-2">
+                Based on a $120K salary and standard living expenses:
               </p>
-              <p className="text-white/50 text-sm mb-6">
-                Over the next 5 days, I'll send you the full Invisible Exit story —
-                including the Amsterdam taxi moment that started everything.
+
+              {/* Instant result — not email-gated */}
+              <div className="bg-white/10 rounded-xl p-6 mb-6 border border-white/15">
+                <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Your Freedom Number</p>
+                <p className="text-4xl font-bold text-primary-light mb-2">$4,000<span className="text-lg text-white/50">/month MRR</span></p>
+                <div className="space-y-1 text-left mt-4">
+                  <p className="text-sm text-white/60">At $29/month pricing: <span className="text-white font-semibold">138 customers</span></p>
+                  <p className="text-sm text-white/60">At $9/month pricing: <span className="text-white font-semibold">445 customers</span></p>
+                  <p className="text-sm text-white/60">Timeline (5 hrs/week): <span className="text-white font-semibold">12-18 months</span></p>
+                </div>
+              </div>
+
+              <p className="text-white/50 text-sm mb-4">
+                I just sent a detailed breakdown to <strong className="text-white">{email}</strong> —
+                including your personalized exit timeline, the Amsterdam moment that started everything,
+                and the 5-tool system that gets you to $4,000/month.
               </p>
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 text-primary-light hover:text-white transition-colors text-sm font-medium"
-              >
-                ← Back to homepage
-              </Link>
+
+              <div className="space-y-3">
+                <a
+                  href="/?checkout=starter"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
+                >
+                  Get All 5 Tools — $0.97/month
+                </a>
+                <Link
+                  to="/story"
+                  className="w-full inline-flex items-center justify-center gap-2 text-primary-light hover:text-white transition-colors text-sm font-medium"
+                >
+                  Read my full story first →
+                </Link>
+              </div>
             </div>
           )}
         </div>

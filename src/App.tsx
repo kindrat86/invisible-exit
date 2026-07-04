@@ -30,6 +30,11 @@ import StoryPage from "./pages/StoryPage.tsx";
 import AdrianPage from "./pages/AdrianPage.tsx";
 import InnerCirclePage from "./pages/InnerCirclePage.tsx";
 import Dream100Page from "./pages/Dream100Page.tsx";
+import TrafficBlueprintPage from "./pages/TrafficBlueprintPage.tsx";
+import ContentCalendarPage from "./pages/ContentCalendarPage.tsx";
+import AffiliateAssetsPage from "./pages/AffiliateAssetsPage.tsx";
+import PodcastPitchPage from "./pages/PodcastPitchPage.tsx";
+import BacklinkStrategyPage from "./pages/BacklinkStrategyPage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -111,6 +116,11 @@ const App = () => (
           <Route path="/adrian" element={<AdrianPage />} />
           <Route path="/inner-circle" element={<InnerCirclePage />} />
           <Route path="/dream-100" element={<Dream100Page />} />
+          <Route path="/traffic-blueprint" element={<TrafficBlueprintPage />} />
+          <Route path="/content-calendar" element={<ContentCalendarPage />} />
+          <Route path="/affiliate-assets" element={<AffiliateAssetsPage />} />
+          <Route path="/podcast-pitch" element={<PodcastPitchPage />} />
+          <Route path="/backlink-strategy" element={<BacklinkStrategyPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

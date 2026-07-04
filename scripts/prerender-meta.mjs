@@ -1029,6 +1029,44 @@ function getRoutes() {
     },
   });
 
+  // --- Traffic Secrets Pages ---
+  const trafficPages = [
+    { path: "/traffic-blueprint", title: "Traffic Blueprint — The Complete Distribution Plan | Invisible Exit", desc: "The full Traffic Secrets execution plan: social content engine, Dream 100 outreach, podcast pitches, pillar content, affiliate assets, and the 90-day publishing cadence.", type: "website" },
+    { path: "/content-calendar", title: "90-Day Social Content Calendar — Ready-to-Post Stories | Invisible Exit", desc: "17 email stories converted into ready-to-deploy social content: Twitter threads, Reddit posts, LinkedIn articles, and YouTube scripts. Copy, paste, post.", type: "website" },
+    { path: "/affiliate-assets", title: "Affiliate Assets — Swipe Copy, Emails, Banners | Invisible Exit", desc: "Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring.", type: "website" },
+    { path: "/podcast-pitch", title: "Podcast Pitch Kit — Story Formats & Outreach Templates | Invisible Exit", desc: "The Amsterdam taxi story in 5/15/45-minute formats plus cold pitch templates for podcast outreach. Everything you need to get on shows.", type: "website" },
+    { path: "/backlink-strategy", title: "Backlink Strategy — Guest Posts, HARO & Link Building Framework | Invisible Exit", desc: "The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy.", type: "website" },
+  ];
+
+  for (const page of trafficPages) {
+    routes.push({
+      path: page.path,
+      meta: {
+        title: page.title,
+        description: page.desc,
+        url: `${SITE}${page.path}`,
+        type: page.type,
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: page.title.split(" — ")[0],
+            description: page.desc,
+            url: `${SITE}${page.path}`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: page.title.split(" — ")[0] },
+            ],
+          },
+        ],
+      },
+    });
+  }
+
   // --- State Guides ---
   for (const guide of stateGuides) {
     const nonCompeteText = guide.nonCompeteEnforceable === "not_enforced" ? "banned" :

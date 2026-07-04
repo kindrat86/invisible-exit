@@ -25,7 +25,11 @@ type AnalyticsEvent =
   | "intensive_applied"
   | "squeeze_page_submitted"
   | "inner_circle_cta_clicked"
-  | "adrian_story_clicked";
+  | "adrian_story_clicked"
+  | "traffic_blueprint_viewed"
+  | "content_calendar_copied"
+  | "affiliate_asset_copied"
+  | "podcast_pitch_copied";
 
 export function trackEvent(
   event: AnalyticsEvent,
