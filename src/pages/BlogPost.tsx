@@ -118,7 +118,7 @@ const BlogPost = () => {
       wordCount: post.content.split(/\s+/).length,
       image: {
         "@type": "ImageObject",
-        url: "https://invisibleexit.com/og-image.png",
+        url: `https://invisibleexit.com/api/og/${post.slug}`,
         width: 1200,
         height: 630,
       },
@@ -210,6 +210,7 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`/blog/${post.slug}`}
         type="article"
+        image={`https://invisibleexit.com/api/og/${post.slug}`}
         publishedDate={post.publishedAt}
         modifiedDate={post.publishedAt}
       />
@@ -264,6 +265,18 @@ const BlogPost = () => {
               })}
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* TL;DR / Quick Answer box — optimized for featured snippets */}
+      <section className="bg-blue-50 border-l-4 border-[#3B82F6] py-6 px-6">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-sm font-bold text-[#3B82F6] uppercase tracking-wide mb-2">
+            Quick Answer
+          </p>
+          <p className="text-gray-900 text-lg leading-relaxed font-medium">
+            {post.excerpt}
+          </p>
         </div>
       </section>
 

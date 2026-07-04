@@ -84,6 +84,12 @@ function blogPostBodyHtml(post: (typeof blogPosts)[0]): string {
 <div><span>${post.readTime}</span> &middot; <span>${date}</span></div>
 </div>
 </section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1.125rem;line-height:1.6;color:#111827;font-weight:500">${post.excerpt}</p>
+</div>
+</section>
 <section style="padding:4rem 1.5rem">
 <article style="max-width:48rem;margin:0 auto">
 ${contentToHtml(post.content)}
