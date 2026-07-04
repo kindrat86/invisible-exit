@@ -706,3 +706,156 @@ summary::-webkit-details-marker { display: none; }
     background: white;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WORLD-CLASS MOBILE UX ADDITIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Mobile bottom padding to prevent CTA bar overlap ── */
+@media (max-width: 767px) {
+  article, .min-h-screen > section, .min-h-screen > main {
+    padding-bottom: 80px;
+  }
+  /* But not on funnel/dashboard pages */
+  .min-h-screen:has(.mobile-cta-bar:not(.visible)) article {
+    padding-bottom: 0;
+  }
+}
+
+/* ── Better mobile typography for small screens ── */
+@media (max-width: 380px) {
+  html {
+    font-size: 14px;
+  }
+  h1 { font-size: 1.75rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.375rem !important; line-height: 1.25 !important; }
+}
+
+/* ── Horizontal scroll indicator for tables ── */
+.table-wrap, .overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.table-wrap::-webkit-scrollbar, .overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+.table-wrap::-webkit-scrollbar-thumb, .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+/* ── Mobile gradient scrollbar (hint to swipe) ── */
+@media (max-width: 768px) {
+  .table-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    background: linear-gradient(to right, transparent, hsl(var(--background)));
+    pointer-events: none;
+  }
+}
+
+/* ── Active state for touch (no hover needed) ── */
+@media (hover: none) {
+  .card-hover:hover,
+  .card-premium:hover,
+  .gradient-border:hover::before {
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+  /* Show active state instead */
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: scale(0.97);
+  }
+  .card-base:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* ── Smooth content reveal on lazy-loaded routes ── */
+.route-enter {
+  animation: routeEnter 0.2s ease-out;
+}
+@keyframes routeEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Truncate helper for mobile breadcrumbs ── */
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Mobile-only: increase line height for readability ── */
+@media (max-width: 640px) {
+  p { line-height: 1.7; }
+  .text-body, .prose-content { line-height: 1.75; }
+}
+
+/* ── Prevent layout shift from images ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Better focus indicators for mobile (thicker ring) ── */
+@media (max-width: 768px) {
+  :focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+}
+
+/* ── Smooth scroll for sticky TOC on mobile ── */
+@media (max-width: 768px) {
+  [id] {
+    scroll-margin-top: 72px;
+  }
+}
+
+/* ── Bottom safe area for CTA bar ── */
+.mobile-cta-bar {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* ── Grid auto-fill for cards on mobile ── */
+.grid-mobile-1 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .grid-mobile-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Make details/summary feel native on mobile ── */
+@media (max-width: 768px) {
+  details summary {
+    min-height: 48px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  details[open] summary {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+}
+
+/* ── Reduced data mode support ── */
+@media (prefers-reduced-data: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

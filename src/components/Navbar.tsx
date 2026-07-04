@@ -8,6 +8,9 @@ const NAV_GROUPS = [
     links: [
       { label: "Blog", to: "/blog" },
       { label: "Micro-SaaS Ideas", to: "/ideas" },
+      { label: "AI Tool Ideas", to: "/ideas/for-accountants/with/chatgpt" },
+      { label: "Budget Stacks", to: "/budget/0-dollars" },
+      { label: "Time Strategy", to: "/hours/5-hours-per-week" },
       { label: "State Guides", to: "/guides" },
       { label: "Tool Stacks", to: "/stack" },
       { label: "First Year Roadmaps", to: "/first-year" },

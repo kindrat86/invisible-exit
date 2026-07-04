@@ -20,6 +20,9 @@ const FOOTER_SECTIONS = [
     title: "Explore",
     links: [
       { label: "Ideas by Profession", to: "/ideas" },
+      { label: "AI Tool Ideas", to: "/ideas/for-accountants/with/chatgpt" },
+      { label: "Budget Stacks", to: "/budget/0-dollars" },
+      { label: "Time Strategy", to: "/hours/5-hours-per-week" },
       { label: "First Year Roadmaps", to: "/first-year" },
       { label: "State Guides", to: "/guides" },
       { label: "Best Tools", to: "/best" },
