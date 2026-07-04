@@ -208,6 +208,95 @@ const OTOFounding = () => {
       {/* ─── 7. Value Stack ─── */}
       <ValueStack />
 
+      {/* ─── 7b. Social Proof ─── */}
+      <section className="px-6 py-12">
+        <div className="max-w-[720px] mx-auto">
+          <h2 className="text-[24px] font-bold text-white mb-8 text-center">
+            What Early Members Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              {
+                quote: "I validated my first micro-SaaS idea in 3 weeks. The stealth ops checklist alone was worth 100x the price.",
+                name: "Director of Ops",
+                detail: "Fortune 500 → $4K MRR",
+                initials: "DO",
+              },
+              {
+                quote: "The freedom number calculator changed how I see my equity. I realized I was building someone else's dream.",
+                name: "Senior PM",
+                detail: "$145K → First SaaS revenue in 60 days",
+                initials: "SP",
+              },
+              {
+                quote: "I spent two years thinking about starting. This gave me a system I could follow with 5 hours a week.",
+                name: "Eng Manager",
+                detail: "Built first product while employed",
+                initials: "EM",
+              },
+            ].map((t, i) => (
+              <div key={i} className="bg-white/[0.03] border border-white/10 rounded-xl p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-[#60A5FA]/20 flex items-center justify-center text-[#60A5FA] text-xs font-bold">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-semibold">{t.name}</p>
+                    <p className="text-white/40 text-[10px]">{t.detail}</p>
+                  </div>
+                </div>
+                <p className="text-white/60 text-sm italic leading-relaxed">"{t.quote}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 7c. FAQ Objection Crushing ─── */}
+      <section className="px-6 py-12">
+        <div className="max-w-[720px] mx-auto">
+          <h2 className="text-[24px] font-bold text-white mb-3 text-center">
+            Questions Every Manager Asks Before Joining
+          </h2>
+          <p className="text-white/50 text-sm text-center mb-10">
+            These are the same objections I had. Here's what changed my mind.
+          </p>
+          <div className="space-y-4">
+            {[
+              {
+                q: "\"I don't have time. I already work 50+ hours.\"",
+                a: "That's exactly why the system exists. I built it for people with 5 hours a week — not 50. The Launch Control tool specifically automates the repetitive tasks that eat your evenings. You're not adding hours to your week. You're redirecting 5 of them from anxiety to action.",
+              },
+              {
+                q: "\"$17.99/month feels like a lot right now.\"",
+                a: "I spent $2,400 in wasted time researching LLC formations because I didn't have the Stealth Ops Hub. $17.99/month is $215/year. The price lock saves you $960/year versus what future members pay. You're not spending $17.99 — you're investing $215 to avoid losing $2,400.",
+              },
+              {
+                q: "\"What if my employer finds out?\"",
+                a: "This is the #1 fear. It's also why the Stealth Ops Hub exists. Different entity. Different name. Different Stripe. Different hosting. Zero connection to your identity. I've been building for 14 months. Zero detection. The system works.",
+              },
+              {
+                q: "\"I don't know how to code.\"",
+                a: "Neither did I when I started. The Idea Pipeline filters specifically for no-code and AI-assisted builds. If you can manage a team and read a P&L, you have more than enough skill to build a micro-SaaS. Technical skills are the smallest part of this.",
+              },
+              {
+                q: "\"What if I join and it doesn't work?\"",
+                a: "Email 'refund' within 30 days. You get every cent back. No questions. No forms. No friction. You keep the basic $0.97 membership either way. The risk is entirely on me.",
+              },
+              {
+                q: "\"Can't I just figure this out myself for free?\"",
+                a: "Yes. I did. It took me 4 months of frustration, $2,400 in wasted time, and a near-miss with a competitor. You can absolutely do it the hard way. Founding Membership is for people who'd rather skip the 4-month detour.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="bg-white/[0.03] border border-white/10 rounded-xl p-6">
+                <h3 className="text-white font-semibold text-sm mb-3 leading-snug">{faq.q}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── 8. Price Card ─── */}
       <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
 

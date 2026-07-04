@@ -284,6 +284,88 @@ const MasterclassPage = () => {
         </div>
       </section>
 
+      {/* ── THE STACK & CLOSE (Perfect Webinar) ── */}
+      <section className="hero-dark section-wide">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary-light mb-4">The Stack</p>
+          <h2 className="text-h1 text-white mb-4">Here's Everything You Get Today</h2>
+          <p className="text-body text-white/60 mb-12 max-w-xl mx-auto">
+            If you've watched this far, you're in the 3%. Here's what the 3% get.
+          </p>
+
+          {/* Value Stack Items */}
+          <div className="max-w-lg mx-auto space-y-3 text-left mb-8">
+            {[
+              { name: "FYM Dashboard — Your exact freedom number", value: "$12/mo" },
+              { name: "Idea Pipeline — 500+ validated ideas + AI scoring", value: "$15/mo" },
+              { name: "Stealth Ops Hub — Entity, compliance, invisibility", value: "$25/mo" },
+              { name: "Launch Control — Ship products in 5 hrs/week", value: "$18/mo" },
+              { name: "Brand Manager — Faceless content + calendar", value: "$27/mo" },
+              { name: "🎁 Bonus: Employment Contract Audit Checklist", value: "$27" },
+              { name: "🎁 Bonus: 25 Micro-SaaS Idea Swipes", value: "$47" },
+              { name: "🎁 Bonus: Faceless Founder Content Calendar", value: "$27" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between bg-white/5 rounded-lg p-3.5 border border-white/10 animate-fade-up"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <Check className="w-4 h-4 text-success shrink-0" />
+                  <span className="text-white/80 text-sm">{item.name}</span>
+                </div>
+                <span className="text-white/40 text-xs font-mono">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Price Reveal */}
+          <div className="max-w-lg mx-auto">
+            <div className="flex items-center justify-between py-3 border-b border-white/10">
+              <span className="text-white/60">Total Value:</span>
+              <span className="text-white/60 line-through">$328/month</span>
+            </div>
+            <div className="flex items-center justify-between py-3 border-b border-white/10">
+              <span className="text-white/60">Founding Discount:</span>
+              <span className="text-success font-semibold">−99.7%</span>
+            </div>
+            <div className="py-6">
+              <p className="text-white/50 text-sm mb-2">Your Price Today:</p>
+              <p className="text-5xl sm:text-6xl font-bold text-primary-light">
+                $0.97
+                <span className="text-lg text-white/50 font-normal">/mo</span>
+              </p>
+              <p className="text-white/40 text-xs mt-2">
+                $11.64/year. Less than a single lunch.
+              </p>
+            </div>
+          </div>
+
+          {/* Urgency */}
+          <div className="max-w-lg mx-auto bg-primary/10 border border-primary/30 rounded-xl p-5 mb-8">
+            <p className="text-primary-light font-semibold text-sm mb-1">
+              ⚡ Founding Member Spots: 73 of 100 Remaining
+            </p>
+            <p className="text-white/50 text-xs">
+              After 100 founding members, price goes to $9.99/month. Your $0.97 is locked for life.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <Link
+            to="/freedom"
+            onClick={() => trackEvent("masterclass_stack_cta_clicked")}
+            className="btn-primary text-lg px-8 inline-flex items-center gap-2 mb-4"
+          >
+            Calculate Your Freedom Number & Start
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+          <p className="text-white/40 text-xs">
+            30-day money-back guarantee. Cancel anytime. No risk.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

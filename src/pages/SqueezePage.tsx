@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calculator, Lock } from "lucide-react";
+import {
+  ArrowRight,
+  Calculator,
+  Lock,
+  Check,
+  DollarSign,
+  TrendingUp,
+  Shield,
+  Rocket,
+} from "lucide-react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
@@ -8,32 +17,104 @@ import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 import ShareableResult from "@/components/ShareableResult";
 
+type Step = "intro" | "salary" | "expenses" | "timeline" | "result" | "email";
+
+interface CalcResult {
+  freedomNumber: number;
+  annualSalary: number;
+  monthlyExpenses: number;
+  customers29: number;
+  customers9: number;
+  timelineMonths: number;
+  invisibilityScore: number;
+}
+
 const SqueezePage = () => {
+  const [step, setStep] = useState<Step>("intro");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Inputs
+  const [salary, setSalary] = useState("");
+  const [expenses, setExpenses] = useState("");
+  const [hoursPerWeek, setHoursPerWeek] = useState("5");
+
+  // Calculated result
+  const [result, setResult] = useState<CalcResult | null>(null);
+
+  const calculate = (): CalcResult => {
+    const annualSalary = parseInt(salary) || 120000;
+    const monthlyExpenses = parseInt(expenses) || 5000;
+    const hrs = parseInt(hoursPerWeek) || 5;
+
+    // Freedom number = monthly expenses + (salary / 12 * 0.3 buffer)
+    // This replaces your salary + covers expenses
+    const monthlySalaryReplacement = annualSalary / 12;
+    const freedomNumber = Math.round(
+      (monthlyExpenses + monthlySalaryReplacement) / 100
+    ) * 100;
+
+    // Customer calculations
+    const customers29 = Math.ceil(freedomNumber / 29);
+    const customers9 = Math.ceil(freedomNumber / 9);
+
+    // Timeline based on hours/week (more hours = faster)
+    // Base: 18 months at 5 hrs/week, scales down with more time
+    const timelineMonths = Math.round(18 * (5 / Math.max(hrs, 1)));
+
+    // Invisibility score (static for now — would be computed from stealth audit)
+    const invisibilityScore = 72;
+
+    return {
+      freedomNumber,
+      annualSalary,
+      monthlyExpenses,
+      customers29,
+      customers9,
+      timelineMonths: Math.max(timelineMonths, 8),
+      invisibilityScore,
+    };
+  };
+
+  const handleCalculate = () => {
+    const res = calculate();
+    setResult(res);
+    setStep("result");
+    trackEvent("freedom_number_calculated", {
+      freedomNumber: res.freedomNumber,
+      salary: res.annualSalary,
+    });
+  };
+
+  const handleSubmitEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !result) return;
     setLoading(true);
-    trackEvent("squeeze_page_submitted", { source: "freedom_calculator" });
+    trackEvent("squeeze_page_submitted", {
+      source: "freedom_calculator",
+      freedomNumber: result.freedomNumber,
+    });
     try {
-      // Add to subscribers
-      await supabase
-        .from("subscribers")
-        .upsert(
-          { email, source: "squeeze_freedom_page" },
-          { onConflict: "email" }
-        );
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      await supabase.from("subscribers").upsert(
+        {
+          email,
+          source: "squeeze_freedom_page",
+          metadata: {
+            freedom_number: result.freedomNumber,
+            salary: result.annualSalary,
+            timeline: result.timelineMonths,
+          },
+        },
+        { onConflict: "email" }
+      );
 
-      // Send welcome email (which triggers Soap Opera sequence)
       await supabase.functions
         .invoke("newsletter-welcome", { body: { email } })
         .catch((err) => console.error("Welcome email error:", err));
 
-      setSubmitted(true);
-      toast.success("Check your inbox — your Freedom Number calculator is on its way!");
+      toast.success("Check your inbox — your detailed breakdown is on the way!");
+      setStep("email");
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
       console.error(err);
@@ -42,6 +123,8 @@ const SqueezePage = () => {
     }
   };
 
+  const formatMoney = (n: number) => `$${n.toLocaleString()}`;
+
   return (
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
@@ -49,43 +132,50 @@ const SqueezePage = () => {
         description="Calculate exactly how much recurring revenue you need to quit your job. Free tool. Takes 90 seconds."
         url="/freedom"
       />
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-20 md:py-32">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 md:py-24">
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/15 border border-primary/30 mb-8">
             <Calculator className="w-8 h-8 text-primary-light" />
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Discover Your <span className="text-gradient-light">Freedom Number</span>
-          </h1>
+          {/* ─── STEP: INTRO ─── */}
+          {step === "intro" && (
+            <div className="animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Discover Your{" "}
+                <span className="text-gradient-light">Freedom Number</span>
+              </h1>
 
-          <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-2">
-            The exact monthly recurring revenue you need to never work for someone else again.
-          </p>
-          <p className="text-base text-white/50 max-w-lg mx-auto mb-12">
-            Free calculator. Takes 90 seconds. No credit card. No spam.
-          </p>
+              <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-2">
+                The exact monthly recurring revenue you need to never work for
+                someone else again.
+              </p>
+              <p className="text-base text-white/50 max-w-lg mx-auto mb-12">
+                Free calculator. Takes 90 seconds. No credit card. No spam.
+              </p>
 
-          {!submitted ? (
-            <>
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your best email address"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-4 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 disabled:opacity-50 min-h-[52px]"
-                >
-                  {loading ? "Calculating..." : "Get My Freedom Number"}
-                  {!loading && <ArrowRight className="w-5 h-5" />}
-                </button>
-              </form>
+              {/* What you'll discover */}
+              <div className="max-w-sm mx-auto text-left mb-10 space-y-3">
+                {[
+                  "The exact MRR number that replaces your salary",
+                  "Your timeline to freedom (in months, not years)",
+                  "How many customers you need at your price point",
+                  "Your invisibility score (can your employer find out?)",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5">
+                    <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
+                    <span className="text-white/70 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => setStep("salary")}
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 min-h-[52px]"
+              >
+                Calculate My Freedom Number
+                <ArrowRight className="w-5 h-5" />
+              </button>
 
               <div className="flex items-center justify-center gap-4 mt-8 text-white/40 text-sm">
                 <span className="flex items-center gap-1.5">
@@ -97,58 +187,351 @@ const SqueezePage = () => {
                 <span>·</span>
                 <span>Unsubscribe anytime</span>
               </div>
+            </div>
+          )}
 
-              <div className="mt-12 pt-8 border-t border-white/10">
-                <p className="text-white/40 text-sm mb-4">What you'll discover:</p>
-                <ul className="text-left max-w-sm mx-auto space-y-3 text-white/70 text-sm">
-                  {[
-                    "The exact MRR number that replaces your salary",
-                    "Your timeline to freedom (in months, not years)",
-                    "How many customers you need at your price point",
-                    "Your invisibility score (can your employer find out?)",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-primary-light mt-0.5">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          {/* ─── STEP: SALARY ─── */}
+          {step === "salary" && (
+            <div className="animate-fade-in max-w-md mx-auto">
+              {/* Progress */}
+              <div className="flex items-center justify-center gap-2 mb-8">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className={`h-1.5 rounded-full transition-all ${
+                      n === 1 ? "w-8 bg-primary" : "w-4 bg-white/15"
+                    }`}
+                  />
+                ))}
               </div>
-            </>
-          ) : (
-            <div className="max-w-md mx-auto card-glass p-8 animate-scale-in">
-              <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
-                <span className="text-success text-2xl">✓</span>
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-3">Here's Your Freedom Number</h2>
-              <p className="text-white/70 mb-2">
-                Based on a $120K salary and standard living expenses:
+
+              <p className="text-eyebrow text-primary-light mb-3">
+                Step 1 of 3
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                What's your current annual salary?
+              </h2>
+              <p className="text-white/50 text-sm mb-8">
+                This is the number your side business needs to replace.
               </p>
 
-              {/* Instant result — not email-gated */}
-              <div className="bg-white/10 rounded-xl p-6 mb-6 border border-white/15">
-                <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Your Freedom Number</p>
-                <p className="text-4xl font-bold text-primary-light mb-2">$4,000<span className="text-lg text-white/50">/month MRR</span></p>
-                <div className="space-y-1 text-left mt-4">
-                  <p className="text-sm text-white/60">At $29/month pricing: <span className="text-white font-semibold">138 customers</span></p>
-                  <p className="text-sm text-white/60">At $9/month pricing: <span className="text-white font-semibold">445 customers</span></p>
-                  <p className="text-sm text-white/60">Timeline (5 hrs/week): <span className="text-white font-semibold">12-18 months</span></p>
+              <div className="relative mb-6">
+                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                <input
+                  type="number"
+                  autoFocus
+                  value={salary}
+                  onChange={(e) => setSalary(e.target.value)}
+                  placeholder="120000"
+                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                />
+              </div>
+
+              {/* Quick selects */}
+              <div className="grid grid-cols-3 gap-2 mb-8">
+                {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
+                  (val) => {
+                    const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                    return (
+                      <button
+                        key={val}
+                        onClick={() => setSalary(String(num))}
+                        className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                          salary === String(num)
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {val}
+                      </button>
+                    );
+                  }
+                )}
+              </div>
+
+              <button
+                onClick={() => setStep("expenses")}
+                disabled={!salary}
+                className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+              >
+                Continue
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          )}
+
+          {/* ─── STEP: EXPENSES ─── */}
+          {step === "expenses" && (
+            <div className="animate-fade-in max-w-md mx-auto">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className={`h-1.5 rounded-full transition-all ${
+                      n <= 2 ? "w-8 bg-primary" : "w-4 bg-white/15"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <p className="text-eyebrow text-primary-light mb-3">
+                Step 2 of 3
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                What are your monthly living expenses?
+              </h2>
+              <p className="text-white/50 text-sm mb-8">
+                Mortgage, food, kids, car, everything. This is your survival
+                floor.
+              </p>
+
+              <div className="relative mb-6">
+                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                <input
+                  type="number"
+                  autoFocus
+                  value={expenses}
+                  onChange={(e) => setExpenses(e.target.value)}
+                  placeholder="5000"
+                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                />
+              </div>
+
+              <div className="grid grid-cols-4 gap-2 mb-8">
+                {["$3K", "$5K", "$8K", "$12K"].map((val) => {
+                  const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                  return (
+                    <button
+                      key={val}
+                      onClick={() => setExpenses(String(num))}
+                      className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                        expenses === String(num)
+                          ? "bg-primary text-white"
+                          : "bg-white/5 text-white/60 hover:bg-white/10"
+                      }`}
+                    >
+                      {val}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setStep("salary")}
+                  className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
+                >
+                  Back
+                </button>
+                <button
+                  onClick={() => setStep("timeline")}
+                  disabled={!expenses}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                >
+                  Continue
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ─── STEP: TIMELINE ─── */}
+          {step === "timeline" && (
+            <div className="animate-fade-in max-w-md mx-auto">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className="h-1.5 rounded-full transition-all bg-primary w-8"
+                  />
+                ))}
+              </div>
+
+              <p className="text-eyebrow text-primary-light mb-3">
+                Step 3 of 3
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                How many hours per week can you commit?
+              </h2>
+              <p className="text-white/50 text-sm mb-8">
+                Be honest. Most corporate managers have 5. That's enough.
+              </p>
+
+              <div className="grid grid-cols-4 gap-2 mb-8">
+                {["3", "5", "10", "15+"].map((val) => (
+                  <button
+                    key={val}
+                    onClick={() => setHoursPerWeek(val.replace("+", ""))}
+                    className={`py-4 rounded-xl text-lg font-bold transition-all ${
+                      hoursPerWeek === val.replace("+", "")
+                        ? "bg-primary text-white"
+                        : "bg-white/5 text-white/60 hover:bg-white/10"
+                    }`}
+                  >
+                    {val}
+                    <span className="block text-xs font-normal opacity-60">
+                      hrs/wk
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setStep("expenses")}
+                  className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
+                >
+                  Back
+                </button>
+                <button
+                  onClick={handleCalculate}
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 min-h-[52px]"
+                >
+                  See My Freedom Number
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ─── STEP: RESULT ─── */}
+          {step === "result" && result && (
+            <div className="animate-scale-in max-w-lg mx-auto">
+              {/* The big number */}
+              <div className="bg-gradient-to-br from-primary/15 to-transparent rounded-2xl p-8 border border-primary/25 mb-6">
+                <p className="text-white/50 text-xs uppercase tracking-wide mb-2">
+                  Your Freedom Number
+                </p>
+                <p className="text-5xl sm:text-6xl font-bold text-primary-light mb-2">
+                  {formatMoney(result.freedomNumber)}
+                  <span className="text-lg text-white/50 block sm:inline sm:ml-2">
+                    /month MRR
+                  </span>
+                </p>
+                <p className="text-white/40 text-sm mt-3">
+                  That's the monthly recurring revenue that replaces your{" "}
+                  {formatMoney(result.annualSalary)} salary and covers your{" "}
+                  {formatMoney(result.monthlyExpenses)}/mo expenses.
+                </p>
+              </div>
+
+              {/* Breakdown */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                  <TrendingUp className="w-5 h-5 text-primary-light mb-2" />
+                  <p className="text-white/50 text-xs mb-1">
+                    At $29/mo pricing
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {result.customers29}{" "}
+                    <span className="text-sm font-normal text-white/50">
+                      customers
+                    </span>
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                  <Rocket className="w-5 h-5 text-primary-light mb-2" />
+                  <p className="text-white/50 text-xs mb-1">
+                    At $9/mo pricing
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {result.customers9}{" "}
+                    <span className="text-sm font-normal text-white/50">
+                      customers
+                    </span>
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                  <Calculator className="w-5 h-5 text-primary-light mb-2" />
+                  <p className="text-white/50 text-xs mb-1">
+                    Timeline ({hoursPerWeek} hrs/wk)
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {result.timelineMonths}{" "}
+                    <span className="text-sm font-normal text-white/50">
+                      months
+                    </span>
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                  <Shield className="w-5 h-5 text-primary-light mb-2" />
+                  <p className="text-white/50 text-xs mb-1">
+                    Invisibility score
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {result.invisibilityScore}
+                    <span className="text-sm font-normal text-white/50">
+                      /100
+                    </span>
+                  </p>
                 </div>
               </div>
 
-              <p className="text-white/50 text-sm mb-4">
-                I just sent a detailed breakdown to <strong className="text-white">{email}</strong> —
-                including your personalized exit timeline, the Amsterdam moment that started everything,
-                and the 5-tool system that gets you to $4,000/month.
+              {/* Email gate for detailed plan */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
+                <p className="text-white/70 text-sm mb-1">
+                  Want the full breakdown?
+                </p>
+                <p className="text-white/50 text-sm mb-4">
+                  I'll send your personalized exit timeline, customer acquisition
+                  plan, and the 5-tool system that gets you to{" "}
+                  {formatMoney(result.freedomNumber)}/month.
+                </p>
+
+                <form onSubmit={handleSubmitEmail} className="space-y-3">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your best email address"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
+                  />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-base py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-50 min-h-[52px]"
+                  >
+                    {loading ? "Sending..." : "Send Me My Exit Plan"}
+                    {!loading && <ArrowRight className="w-4 h-4" />}
+                  </button>
+                </form>
+              </div>
+
+              {/* Direct CTA — skip email */}
+              <Link
+                to="/?checkout=starter"
+                className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
+              >
+                Skip — just start for $0.97/month →
+              </Link>
+            </div>
+          )}
+
+          {/* ─── STEP: EMAIL CONFIRMED ─── */}
+          {step === "email" && result && (
+            <div className="animate-scale-in max-w-md mx-auto card-glass p-8">
+              <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
+                <span className="text-success text-2xl">✓</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-3">
+                Your exit plan is on the way.
+              </h2>
+              <p className="text-white/70 mb-2">
+                I just sent a detailed breakdown to{" "}
+                <strong className="text-white">{email}</strong> — including your
+                personalized exit timeline, the Amsterdam moment that started
+                everything, and the 5-tool system that gets you to{" "}
+                {formatMoney(result.freedomNumber)}/month.
               </p>
 
-              <div className="space-y-3">
-                <a
-                  href="/?checkout=starter"
+              <div className="space-y-3 mt-6">
+                <Link
+                  to="/?checkout=starter"
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
                   Get All 5 Tools — $0.97/month
-                </a>
+                </Link>
                 <Link
                   to="/story"
                   className="w-full inline-flex items-center justify-center gap-2 text-primary-light hover:text-white transition-colors text-sm font-medium"
@@ -157,7 +540,9 @@ const SqueezePage = () => {
                 </Link>
               </div>
 
-              <ShareableResult freedomNumber="$4,000/month MRR" />
+              <ShareableResult
+                freedomNumber={`${formatMoney(result.freedomNumber)}/month MRR`}
+              />
             </div>
           )}
         </div>

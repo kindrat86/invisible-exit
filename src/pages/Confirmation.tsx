@@ -292,26 +292,62 @@ const Confirmation = () => {
         </div>
       </section>
 
-      {/* Section 4: Upgrade Nudge */}
-      <section className="py-16 px-6">
-        <div className="mx-auto max-w-xl">
-          <div className="rounded-xl border border-gray-200 p-6">
-            <p className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-2">
-              Upgrade Available
+      {/* Section 4: Upgrade Nudge — One-Time Offer */}
+      <section className="py-16 px-6 bg-gradient-to-b from-white to-blue-50">
+        <div className="mx-auto max-w-2xl">
+          <div className="relative rounded-2xl border-2 border-[#60A5FA] bg-white p-8 shadow-lg">
+            {/* Badge */}
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#60A5FA] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap">
+              ⚡ One-Time Offer — Only Available Now
+            </span>
+
+            <p className="text-xs uppercase tracking-wide text-[#60A5FA] font-semibold mb-2 mt-2 text-center">
+              Wait — Before You Start
             </p>
-            <h3 className="text-gray-900 font-semibold mb-2">
-              Want all 5 tools plus the community?
+            <h3 className="text-gray-900 text-xl font-bold mb-3 text-center">
+              Want Lifetime Price Lock + Shape the Roadmap?
             </h3>
-            <p className="text-gray-500 text-sm mb-3">
-              Founding Members get every tool, monthly masterclasses, beta
-              access, and an annual strategy call. $17.99/month, locked for life.
+            <p className="text-gray-500 text-sm mb-5 text-center leading-relaxed">
+              Founding Members lock in <strong className="text-gray-700">$17.99/month for life</strong> (goes to
+              $97.99 after 100 members), vote on features, get beta access, and have their
+              name on the founding wall.
             </p>
+
+            {/* Mini value stack */}
+            <div className="bg-gray-50 rounded-xl p-4 mb-5 space-y-2">
+              {[
+                "Lifetime price lock at $17.99/mo (saves $960/year vs public)",
+                "Vote on the roadmap — your feature requests go first",
+                "Beta access to every new tool before public release",
+                "Your name permanently on the founding wall",
+                "Unlimited usage on all tools (no caps)",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-green-500 shrink-0" />
+                  <span className="text-gray-600 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Price anchor */}
+            <div className="text-center mb-4">
+              <p className="text-gray-400 text-sm">
+                <span className="line-through">$97.99/mo</span> →{" "}
+                <span className="text-2xl font-bold text-[#60A5FA]">$17.99/mo</span>
+                <span className="text-gray-400 text-sm"> locked for life</span>
+              </p>
+            </div>
+
+            {/* CTA */}
             <Link
-              to="/founding-member"
-              className="text-[#60A5FA] hover:underline text-sm font-medium"
+              to="/oto/founding"
+              className="block w-full text-center bg-[#60A5FA] hover:bg-[#3b82f6] text-white font-semibold py-3.5 px-6 rounded-xl transition-colors mb-2"
             >
-              Learn more about Founding Member
+              See the Founding Member Offer →
             </Link>
+            <p className="text-gray-400 text-xs text-center">
+              Available right now. After you leave this page, the price is $97.99/mo.
+            </p>
           </div>
         </div>
       </section>

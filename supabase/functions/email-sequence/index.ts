@@ -226,16 +226,83 @@ function winback2() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you've been thinking about starting for more than 30 days, you're already overthinking it. The system is ready. The ideas are validated. The stealth setup is documented. All that's missing is you pressing start.</p>`);
 }
 
-function winback3() {
-  return wrap("WIN-BACK", "This is my last email to you.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I'm not going to keep filling your inbox if you're not interested. That's not how I operate.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But before I go, I want to leave you with the one thing that actually matters:</p>
-<p style="font-size:18px;font-weight:600;color:#3B82F6;margin-bottom:20px;">The cage has a door. Most people never look for it.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If this resonated — if something in these emails made you think "maybe I could" — then don't let this be the end. Calculate your freedom number. Try the $0.97 plan. If it doesn't work, refund. No risk.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If this didn't resonate, I wish you the best. Maybe the timing isn't right. Maybe the golden handcuffs are comfortable enough. That's okay too.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Either way, thanks for reading. — Adrian</p>
-<p style="font-size:14px;color:#8A95A8;margin-top:32px;">P.S. If you want to stay on the list, you don't need to do anything. I'll keep sending weekly stories. This is just the end of the structured sequence.</p>`,
-    false);
+// ═══ ASCENSION SEQUENCE — Buyer upsell to Pro/Founding (7 days) ═══
+const ASCENSION = [
+  {
+    day: 1,
+    subject: "Your Freedom Number is [$X]. Here's how to hit it in 90 days.",
+    html: ascension1(),
+  },
+  {
+    day: 3,
+    subject: "The one thing most $0.97 members miss (and why it matters)",
+    html: ascension2(),
+  },
+  {
+    day: 5,
+    subject: "🔓 One-Time Offer: Unlock everything — inside",
+    html: ascension3(),
+  },
+  {
+    day: 7,
+    subject: "Your 7-day trial of Pro starts tomorrow. Here's how it works.",
+    html: ascension4(),
+  },
+];
+
+function ascension1() {
+  return wrap(
+    "DAY 1",
+    "You Know Your Number. Now Let's Make It Real.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Welcome to the 3% — people who didn't just calculate their freedom number, but actually took the first step.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's something nobody tells you about the $0.97 plan: it's the map, not the journey. The 5 tools show you where the door is and give you the skeleton key. But to actually walk through it — to hit your number in months instead of years — most members do one thing differently.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>They go from DIY to done-with-others.</strong></p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow I'll show you what Pro members get that $0.97 members don't. Hint: it's not just more tools.</p>`,
+    false,
+  );
+}
+
+function ascension2() {
+  return wrap(
+    "DAY 3",
+    "The Idea Pipeline Won't Validate Itself.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">How's your first week going? If you're like most $0.97 members, you've probably opened the FYM Dashboard, clicked around the Idea Pipeline, and started reading about Stealth Ops.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">And now you're stuck on the same question: <strong>"Which idea do I actually pick?"</strong></p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $0.97 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong> — market sizing, pricing research, and a clear go/no-go recommendation.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">A single validated idea is worth $4,000/month. The validation reports alone cost more than Pro membership.</p>`,
+    false,
+  );
+}
+
+function ascension3() {
+  return wrap(
+    "DAY 5",
+    "🔥 Today Only: Unlock Everything at 93% Off",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I don't normally do this, but you've been reading my emails and I want to give you the full toolkit to see what happens.</p>
+<p style="font-size:18px;font-weight:600;color:#3B82F6;margin-bottom:20px;">Here's the offer: Upgrade to Pro today and get everything.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>What you get:</strong></p>
+<ul style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">
+<li>Weekly group coaching with Adrian (value: $199/mo)</li>
+<li>Private community of corporate managers (value: $49/mo)</li>
+<li>Idea validation reports — 3/month (value: $150/mo)</li>
+<li>Priority Slack access — 12-hour response (value: $99/mo)</li>
+<li>Monthly MRR audit — personalized review (value: $199/mo)</li>
+<li>All 5 core tools included (value: $12/mo)</li>
+</ul>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Total value: $708/month. Your price: $47/month.</strong> That's 93% off. Cancel anytime. 30-day guarantee.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $0.97 plan stays active no matter what — this is a complement, not a replacement.</p>`,
+  );
+}
+
+function ascension4() {
+  return wrap(
+    "DAY 7",
+    "Your First Week Is Covered. Here's What's Next.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you upgraded to Pro this week — welcome. Your first coaching call is Tuesday at 7 PM CET. Submit your ideas in the Slack channel before then so we can review them on the call.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $0.97, that's okay. You have the tools. The only difference between you and the $4,000/month members is: they found someone to hold them accountable and validate their decisions faster.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands — $47/month, cancel anytime. The door is open.</p>`,
+    false,
+  );
 }
 
 // ═══ HANDLER ═══
@@ -260,7 +327,7 @@ serve(async (req) => {
       });
     }
 
-    const allEmails = sequence === "seinfeld" ? SEINFELD : sequence === "winback" ? WINBACK : SOAP;
+    const allEmails = sequence === "seinfeld" ? SEINFELD : sequence === "winback" ? WINBACK : sequence === "ascension" ? ASCENSION : SOAP;
 
     // If day specified, send that specific email
     if (day !== undefined && day !== null) {

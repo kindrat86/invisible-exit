@@ -213,6 +213,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 1b. Social Proof Bar ── */}
+      <section className="bg-primary py-3 sm:py-4 border-b border-primary-dark">
+        <div className="container-standard">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
+            <span className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-medium">
+              <span className="flex -space-x-2">
+                {["bg-blue-400", "bg-green-400", "bg-purple-400", "bg-orange-400"].map((c, i) => (
+                  <span key={i} className={`w-6 h-6 rounded-full ${c} border-2 border-primary flex items-center justify-center text-[10px] font-bold text-white`}>
+                    {["S", "M", "J", "A"][i]}
+                  </span>
+                ))}
+              </span>
+              127 managers building now
+            </span>
+            <span className="flex items-center gap-1.5 text-white/90 text-xs sm:text-sm">
+              <span className="text-amber-300">★★★★★</span>
+              <span className="font-medium">4.8/5 rating</span>
+            </span>
+            <span className="flex items-center gap-1.5 text-white/90 text-xs sm:text-sm">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="font-medium">73 founding spots left</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* ── 1c. Death of the Old Vehicle ── */}
       <section className="bg-surface section-normal border-y border-border">
         <div className="container-narrow">
@@ -529,9 +555,17 @@ const Index = () => {
         <div className="container-narrow text-center">
           <p className="text-eyebrow text-primary mb-4">The Full Stack</p>
           <h2 className="text-h1 text-foreground mb-2">What You Get for $0.97/Month</h2>
-          <p className="text-body text-muted-foreground mb-12">
+          <p className="text-body text-muted-foreground mb-8">
             5 tools + 3 bonuses. Total value $328/month. Your price: less than a coffee.
           </p>
+
+          {/* Guarantee Badge */}
+          <div className="inline-flex items-center gap-3 bg-success/10 border border-success/20 rounded-full px-6 py-3 mb-8">
+            <Shield className="w-5 h-5 text-success" />
+            <span className="text-sm font-semibold text-success">
+              30-Day Money-Back Guarantee. Zero Risk.
+            </span>
+          </div>
         </div>
 
         <div className="container-narrow space-y-3">
