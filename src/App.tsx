@@ -25,6 +25,7 @@ import SqueezePage from "./pages/SqueezePage.tsx";
 import DownsellPage from "./pages/DownsellPage.tsx";
 import MasterclassPage from "./pages/MasterclassPage.tsx";
 import AffiliatesPage from "./pages/AffiliatesPage.tsx";
+import IntensivePage from "./pages/IntensivePage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -101,6 +102,7 @@ const App = () => (
           <Route path="/oto/downsell" element={<DownsellPage />} />
           <Route path="/masterclass" element={<MasterclassPage />} />
           <Route path="/affiliates" element={<AffiliatesPage />} />
+          <Route path="/intensive" element={<IntensivePage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

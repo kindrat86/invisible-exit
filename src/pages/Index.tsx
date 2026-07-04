@@ -285,10 +285,39 @@ const Index = () => {
               </div>
             ))}
           </div>
+
+          {/* Case studies / Proof stories */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                secret: "Vehicle",
+                story: "Sarah K., Finance Director",
+                quote: "I used my salary as runway. Validated my idea in 3 weeks. First paying customer in 60 days. My corporate skills gave me an unfair advantage that full-time founders don't have.",
+                result: "$3,200 MRR in 8 months",
+              },
+              {
+                secret: "Stealth",
+                story: "Marcus T., Product Manager",
+                quote: "A colleague literally found a website that looked like my side project during a team call. Different name, different entity, different hosting. The Stealth Ops audit saved my career.",
+                result: "Zero detection in 14 months",
+              },
+              {
+                secret: "System",
+                story: "Jennifer L., Operations Manager",
+                quote: "I stopped obsessing over the 'perfect' idea and started working the system. Pivoted twice using the Idea Pipeline. Third product hit $2,300/month in 7 months.",
+                result: "$2,300 MRR with 5 hrs/week",
+              },
+            ].map((cs) => (
+              <div key={cs.secret} className="card-base p-5 border-l-4 border-primary/40">
+                <p className="text-eyebrow text-primary text-xs mb-2">{cs.secret}</p>
+                <p className="text-sm font-semibold text-foreground mb-2">{cs.story}</p>
+                <p className="text-caption text-sm italic mb-3">"{cs.quote}"</p>
+                <p className="text-success text-sm font-semibold">{cs.result}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      {/* ── 2. Belief Shift / Manifesto ── */}
       <section className="bg-white section-wide">
         <div className="container-standard">
           <p className="text-eyebrow text-primary mb-12 text-center">What I Believe</p>
@@ -337,6 +366,36 @@ const Index = () => {
             The cage has a door.<br />
             <span className="text-gradient">Most people never look for it.</span>
           </p>
+        </div>
+      </section>
+
+      {/* ── 2b. The Conflict (failure story) ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-muted-foreground mb-4">The Conflict</p>
+          <h2 className="text-h2 text-foreground mb-6">Month 4: The Wall</h2>
+          <div className="text-body text-muted-foreground space-y-5">
+            <p>
+              I'd been building for 4 months. One product live. <strong className="text-foreground">Zero customers.</strong> My
+              5 hours a week felt pointless. I was seriously considering shutting it down and
+              accepting the golden handcuffs.
+            </p>
+            <p>
+              Then I spent <strong className="text-foreground">three weekends</strong> researching LLC
+              formations — Wyoming vs. Delaware vs. Estonia — instead of building. That was roughly
+              <strong className="text-foreground"> $2,400 in lost building time</strong> (at my hourly rate)
+              gone to Googling things I could have had answered in minutes.
+            </p>
+            <p>
+              The launch took 6 weeks. It should have taken 10 days. By the time I shipped, a
+              competitor had launched something similar. I almost quit.
+            </p>
+            <p>
+              <strong className="text-primary">That's why Invisible Exit exists.</strong> Not to sell you
+              motivation. To hand you the exact system that would have saved me 4 months of
+              frustration, $2,400 in wasted time, and a near-miss with a competitor.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -444,16 +503,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. Value Stack ── */}
+      {/* ── 6. Value Stack + Bonuses ── */}
       <section className="bg-surface section-normal">
         <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary mb-4">The Full Stack</p>
           <h2 className="text-h1 text-foreground mb-2">What You Get for $0.97/Month</h2>
           <p className="text-body text-muted-foreground mb-12">
-            Each tool priced individually would cost $97/month. Get all 5 for less than a coffee.
+            5 tools + 3 bonuses. Total value $328/month. Your price: less than a coffee.
           </p>
         </div>
 
         <div className="container-narrow space-y-3">
+          {/* Core Tools */}
+          <p className="text-eyebrow text-muted-foreground mb-2">Core Tools (5)</p>
           {TOOLS.map((tool) => (
             <div
               key={tool.name}
@@ -469,17 +531,46 @@ const Index = () => {
             </div>
           ))}
 
+          {/* Bonuses */}
+          <p className="text-eyebrow text-primary mt-6 mb-2">🎁 Fast-Action Bonuses (3)</p>
+          {[
+            { name: "The Employment Contract Audit Checklist", value: "$27" },
+            { name: "25 Done-For-You Micro-SaaS Idea Swipes", value: "$47" },
+            { name: "The Faceless Founder Content Calendar", value: "$27" },
+          ].map((bonus) => (
+            <div
+              key={bonus.name}
+              className="flex items-center justify-between py-3.5 border-b border-border"
+            >
+              <div className="flex items-center gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0 text-primary text-xs">
+                  🎁
+                </span>
+                <span className="text-foreground font-medium">{bonus.name}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-muted-foreground/50 text-xs line-through">{bonus.value}</span>
+                <span className="text-success text-sm font-semibold">FREE</span>
+              </div>
+            </div>
+          ))}
+
+          {/* Total */}
           <div className="pt-6 mt-4 border-t-2 border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-muted-foreground">Total individual value:</span>
-              <span className="text-muted-foreground line-through">$97/month</span>
+              <span className="text-muted-foreground">Total value:</span>
+              <span className="text-muted-foreground line-through">$328/month</span>
+            </div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-muted-foreground">Founding member discount:</span>
+              <span className="text-success font-semibold">−99.7%</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-foreground font-semibold">Your price:</span>
-              <span className="text-3xl sm:text-4xl font-bold text-primary">$0.97/month</span>
+              <span className="text-foreground font-semibold text-lg">Your price:</span>
+              <span className="text-4xl sm:text-5xl font-bold text-primary">$0.97<span className="text-lg font-normal text-muted-foreground">/mo</span></span>
             </div>
             <p className="text-caption text-center mt-4">
-              That's 99% off. For founding members who start now.
+              That's $3,924/year in value for $11.64/year. 99.7% off. For founding members who start now.
             </p>
           </div>
         </div>

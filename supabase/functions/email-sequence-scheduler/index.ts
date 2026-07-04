@@ -58,7 +58,7 @@ serve(async (req) => {
 
       // Determine which sequence to use
       const sequence = schedule.sequence || "soap_opera";
-      const maxDays = sequence === "soap_opera" ? 4 : 28;
+      const maxDays = sequence === "soap_opera" ? 4 : 84;
 
       // Find the next email to send
       for (let day = 1; day <= maxDays; day++) {

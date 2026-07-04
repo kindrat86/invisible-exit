@@ -41,6 +41,14 @@ const SEINFELD = [
   { day: 14, subject: "The $0.97 that changed how I see my salary", html: seinfeld2() },
   { day: 21, subject: "What my wife said when I told her I wanted to quit", html: seinfeld3() },
   { day: 28, subject: "The month I almost gave up (and what saved me)", html: seinfeld4() },
+  { day: 35, subject: "Why I deleted my personal Twitter (and built a faceless one)", html: seinfeld5() },
+  { day: 42, subject: "The number that made my boss's bonus irrelevant", html: seinfeld6() },
+  { day: 49, subject: "I turned down a promotion last week. Here's why.", html: seinfeld7() },
+  { day: 56, subject: "The boring product that pays my mortgage", html: seinfeld8() },
+  { day: 63, subject: "A competitor copied my product. I wasn't mad.", html: seinfeld9() },
+  { day: 70, subject: "The 7-minute morning routine that replaced my commute energy", html: seinfeld10() },
+  { day: 77, subject: "Year-end review: $0.97 → $4,000 MRR (the full timeline)", html: seinfeld11() },
+  { day: 84, subject: "What I'd do differently if I started over tomorrow", html: seinfeld12() },
 ];
 
 function wrap(day: string, title: string, bodyHtml: string, cta = true) {
@@ -133,6 +141,64 @@ function seinfeld4() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I'd been building for 4 months. One product live. Zero customers. I was seriously considering shutting it down.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Then I opened the FYM Dashboard. My freedom number hadn't changed. The math was still the math. I was just impatient. I pivoted using the Idea Pipeline, and within 2 weeks I had my first paying customer.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>The system doesn't care about your feelings.</strong> Your freedom number doesn't change because you had a bad week. It changes when you adjust your inputs.</p>`);
+}
+
+function seinfeld5() {
+  return wrap("FROM THE TRENCHES", "Why I went faceless.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Last month I deleted my personal Twitter. 2,000 followers. 5 years of posts. Gone.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Instead, I created an anonymous account for my side business. No photo. No real name. Just the content. In 3 weeks it passed my personal account in engagement. Nobody knows it's me.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The Brand Manager tool gave me the content calendar, the scripts, and the playbook. <strong>Anonymity isn't a limitation — it's a strategy.</strong></p>`);
+}
+
+function seinfeld6() {
+  return wrap("FROM THE TRENCHES", "The number that changed everything.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My boss got his annual bonus last week. €15,000. He was thrilled.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My side business generated <strong>$4,100 MRR</strong> this month. That's $49,200/year. Growing 8% monthly. No boss. No board. No equity dilution.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">His bonus is capped. My MRR compounds. The FYM Dashboard showed me this math 14 months ago. Today the math speaks for itself.</p>`);
+}
+
+function seinfeld7() {
+  return wrap("FROM THE TRENCHES", "I said no.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My company offered me a promotion last week. Director → VP. 15% raise. More equity. More responsibility.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I turned it down.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Not because I'm brave. Because the FYM Dashboard showed me exactly what the promotion would cost: 10+ extra hours/week, more visibility, more stress, less time to build. The raise would have been €18K/year. My side business grew by $600 MRR last month alone — $7,200/year, and it compounds.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>The freedom number isn't about quitting.</strong> It's about having the option to say no.</p>`);
+}
+
+function seinfeld8() {
+  return wrap("FROM THE TRENCHES", "The boring product.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Want to know what my best-performing product is? It's not an AI tool. It's not a SaaS platform. It's a <strong>PDF generator for electricians</strong>.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Electricians fill out a form. They get a branded PDF invoice. $9/month. 447 customers. That's $4,023/month.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The Idea Pipeline found this idea. It scored it low on "excitement" but high on "revenue probability." It was right. <strong>Boring products pay mortgages.</strong></p>`);
+}
+
+function seinfeld9() {
+  return wrap("FROM THE TRENCHES", "Competition is a signal.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Someone copied my product last month. Same UI. Same pricing. Even copied my landing page copy.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I wasn't mad. I was validated.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's what I did: I launched version 2.0 the next week. Added 3 features they didn't have. Email my customers personally. Lost 2 customers to the copycat. Gained 14 from the attention the competition created.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Competition means you found a real market.</strong> Copycats are free market research.</p>`);
+}
+
+function seinfeld10() {
+  return wrap("FROM THE TRENCHES", "The 7-minute morning.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">People ask how I build a side business with a full-time job and a family. The answer isn't time management. It's energy management.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Every morning, before Slack, before email, before my daughter wakes up, I spend 7 minutes on my side business. 5 days a week. That's 35 minutes of deep work before most people check their phone.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The Launch Control tool tells me exactly what to do in those 7 minutes. No decision fatigue. No wasted energy. Just execution.</p>`);
+}
+
+function seinfeld11() {
+  return wrap("FROM THE TRENCHES", "The full timeline.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">It's been 12 months since I started. Here's the honest timeline:</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Month 1-3: Built, launched, zero customers. Questioned everything.<br>Month 4: First customer ($9/mo). Screamed in the car.<br>Month 6: $850 MRR. Still employed. Employer clueless.<br>Month 9: $2,100 MRR. Turned down a promotion.<br>Month 12: $4,100 MRR across 3 products.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">It wasn't fast. It wasn't easy. But the system worked exactly as designed. The FYM Dashboard kept me on track when motivation failed.</p>`);
+}
+
+function seinfeld12() {
+  return wrap("FROM THE TRENCHES", "If I started over.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If I had to start from zero tomorrow, here's what I'd do differently:</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">1. I'd calculate my freedom number <strong>first</strong>, not after choosing an idea.<br>2. I'd set up entity separation <strong>before</strong> launching, not after.<br>3. I'd pick the most boring idea, not the most exciting one.<br>4. I'd charge from day one. No free tier. No "exposure."<br>5. I'd spend 80% of my time on distribution, 20% on building.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">These are the exact steps the Invisible Exit system walks you through. I learned them the hard way so you don't have to.</p>`);
 }
 
 // ═══ HANDLER ═══

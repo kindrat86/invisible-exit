@@ -72,6 +72,7 @@
     { "source": "/oto/downsell", "destination": "/index.html" },
     { "source": "/masterclass", "destination": "/index.html" },
     { "source": "/affiliates", "destination": "/index.html" },
+    { "source": "/intensive", "destination": "/index.html" },
     { "source": "/checkout/success", "destination": "/index.html" },
     { "source": "/login", "destination": "/index.html" },
     { "source": "/reset-password", "destination": "/index.html" },

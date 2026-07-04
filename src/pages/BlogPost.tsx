@@ -578,6 +578,19 @@ const BlogPost = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
+              to="/freedom"
+              onClick={() =>
+                trackEvent("blog_article_cta_clicked", {
+                  slug: post.slug,
+                  source: "article_footer_freedom_calc",
+                  category: post.category,
+                })
+              }
+              className="btn-primary text-lg"
+            >
+              Calculate Your Freedom Number (Free)
+            </Link>
+            <Link
               to="/?checkout=starter"
               onClick={() =>
                 trackEvent("blog_article_cta_clicked", {
@@ -586,9 +599,9 @@ const BlogPost = () => {
                   category: post.category,
                 })
               }
-              className="btn-primary text-lg"
+              className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10"
             >
-              Get Started for $0.97/month
+              Get All 5 Tools — $0.97/mo
             </Link>
             <Link
               to="/blog"

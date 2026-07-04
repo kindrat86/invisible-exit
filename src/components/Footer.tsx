@@ -28,6 +28,7 @@ const FOOTER_SECTIONS = [
       { label: "Comparisons", to: "/compare" },
       { label: "About", to: "/about" },
       { label: "Affiliates (30%)", to: "/affiliates" },
+      { label: "Intensive ($2K)", to: "/intensive" },
       { label: "RSS Feed", to: "/blog/rss.xml" },
     ],
   },
