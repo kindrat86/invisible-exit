@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import {
   Accordion,
   AccordionContent,
@@ -620,6 +621,7 @@ const BlogPost = () => {
       </section>
 
       <Footer />
+      <ExitIntentPopup />
     </div>
   );
 };

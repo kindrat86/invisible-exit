@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
+import ShareableResult from "@/components/ShareableResult";
 
 const SqueezePage = () => {
   const [email, setEmail] = useState("");
@@ -155,6 +156,8 @@ const SqueezePage = () => {
                   Read my full story first →
                 </Link>
               </div>
+
+              <ShareableResult freedomNumber="$4,000/month MRR" />
             </div>
           )}
         </div>

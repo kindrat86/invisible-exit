@@ -35,6 +35,8 @@ import ContentCalendarPage from "./pages/ContentCalendarPage.tsx";
 import AffiliateAssetsPage from "./pages/AffiliateAssetsPage.tsx";
 import PodcastPitchPage from "./pages/PodcastPitchPage.tsx";
 import BacklinkStrategyPage from "./pages/BacklinkStrategyPage.tsx";
+import ProPage from "./pages/ProPage.tsx";
+import FunnelMetricsPage from "./pages/FunnelMetricsPage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -121,6 +123,8 @@ const App = () => (
           <Route path="/affiliate-assets" element={<AffiliateAssetsPage />} />
           <Route path="/podcast-pitch" element={<PodcastPitchPage />} />
           <Route path="/backlink-strategy" element={<BacklinkStrategyPage />} />
+          <Route path="/pro" element={<ProPage />} />
+          <Route path="/funnel-metrics" element={<FunnelMetricsPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

@@ -58,7 +58,58 @@ serve(async (req) => {
 
       // Determine which sequence to use
       const sequence = schedule.sequence || "soap_opera";
-      const maxDays = sequence === "soap_opera" ? 4 : 84;
+      const maxDays = sequence === "soap_opera" ? 4 : sequence === "seinfeld" ? 84 : 100;
+
+      // ── BUYER SUPPRESSION ──
+      // If the subscriber has already purchased, skip purchase-focused emails.
+      // Check if they're in the profiles table with an active subscription.
+      let isBuyer = false;
+      if (schedule.user_id) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("subscription_tier, subscription_status")
+          .eq("id", schedule.user_id)
+          .single();
+        if (profile?.subscription_status === "active" && profile?.subscription_tier) {
+          isBuyer = true;
+        }
+      }
+      // Also check by email if no user_id linked yet
+      if (!isBuyer && schedule.email) {
+        const { data: subCheck } = await supabase
+          .from("subscribers")
+          .select("is_buyer")
+          .eq("email", schedule.email)
+          .single();
+        if (subCheck?.is_buyer) {
+          isBuyer = true;
+        }
+      }
+
+      // If buyer, switch to post-purchase sequence (welcome + onboarding)
+      // instead of continuing the sales-focused Soap Opera / Seinfeld emails
+      if (isBuyer && sequence !== "post_purchase") {
+        // Mark current sequence as complete (buyer moved to post-purchase flow)
+        await supabase
+          .from("email_sequence_schedule")
+          .update({
+            completed_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", schedule.id);
+
+        // Create post-purchase sequence schedule
+        await supabase
+          .from("email_sequence_schedule")
+          .insert({
+            email: schedule.email,
+            user_id: schedule.user_id,
+            sequence: "post_purchase",
+            started_at: new Date().toISOString(),
+          });
+
+        continue; // Skip this schedule, buyer has been handled
+      }
 
       // Find the next email to send
       for (let day = 1; day <= maxDays; day++) {

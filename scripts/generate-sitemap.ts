@@ -226,6 +226,13 @@ async function main() {
       changefreq: "monthly",
       priority: "0.6",
     },
+    // Value Ladder tiers
+    {
+      loc: "https://invisibleexit.com/pro",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

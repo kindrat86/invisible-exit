@@ -82,6 +82,8 @@
     { "source": "/affiliate-assets", "destination": "/index.html" },
     { "source": "/podcast-pitch", "destination": "/index.html" },
     { "source": "/backlink-strategy", "destination": "/index.html" },
+    { "source": "/pro", "destination": "/index.html" },
+    { "source": "/funnel-metrics", "destination": "/index.html" },
     { "source": "/checkout/success", "destination": "/index.html" },
     { "source": "/login", "destination": "/index.html" },
     { "source": "/reset-password", "destination": "/index.html" },

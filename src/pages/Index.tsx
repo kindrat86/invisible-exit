@@ -536,11 +536,12 @@ const Index = () => {
 
         <div className="container-narrow space-y-3">
           {/* Core Tools */}
-          <p className="text-eyebrow text-muted-foreground mb-2">Core Tools (5)</p>
-          {TOOLS.map((tool) => (
+          <p className="text-eyebrow text-muted-foreground mb-2 animate-fade-up">Core Tools (5)</p>
+          {TOOLS.map((tool, i) => (
             <div
               key={tool.name}
-              className="flex items-center justify-between py-3.5 border-b border-border"
+              className="flex items-center justify-between py-3.5 border-b border-border animate-fade-up"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-success/15 flex items-center justify-center shrink-0">

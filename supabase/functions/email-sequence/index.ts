@@ -201,6 +201,43 @@ function seinfeld12() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">These are the exact steps the Invisible Exit system walks you through. I learned them the hard way so you don't have to.</p>`);
 }
 
+// ═══ WIN-BACK SEQUENCE — Days 90, 95, 100 ═══
+const WINBACK = [
+  { day: 90, subject: "Are you still interested in building your exit?", html: winback1() },
+  { day: 95, subject: "I'm closing this chapter (one last thing)", html: winback2() },
+  { day: 100, subject: "Final email: the one thing that actually matters", html: winback3() },
+];
+
+function winback1() {
+  return wrap("WIN-BACK", "It's been a while.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you haven't opened my last few emails. No hard feelings — I get it. Your inbox is a war zone.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But I want to check: are you still thinking about building something on the side? Or did you file this under "someday"?</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still interested, here's what I'd do today: <strong>calculate your freedom number.</strong> Not next week. Not after the IPO. Today.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Because every month you wait is $4,000 in unrealized MRR. That's $48,000/year of delay.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're done, no worries — just ignore this email and I'll stop sending. But if there's still a spark, <strong>reply with the word "still in"</strong> and I'll send you something special.</p>`);
+}
+
+function winback2() {
+  return wrap("WIN-BACK", "The one thing I'd do differently.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If I could go back 14 months and tell myself one thing, it would be this:</p>
+<p style="font-size:20px;font-weight:600;color:#3B82F6;margin-bottom:20px;">Stop researching. Start building. Even the wrong thing.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I wasted 3 months on spreadsheets. Market sizing. Competitor analysis. LLC formation research. Zero products launched. Zero revenue. Just anxiety disguised as productivity.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The first product I launched was wrong. It made $9/month. But building it taught me more than 3 months of research ever did.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you've been thinking about starting for more than 30 days, you're already overthinking it. The system is ready. The ideas are validated. The stealth setup is documented. All that's missing is you pressing start.</p>`);
+}
+
+function winback3() {
+  return wrap("WIN-BACK", "This is my last email to you.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I'm not going to keep filling your inbox if you're not interested. That's not how I operate.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But before I go, I want to leave you with the one thing that actually matters:</p>
+<p style="font-size:18px;font-weight:600;color:#3B82F6;margin-bottom:20px;">The cage has a door. Most people never look for it.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If this resonated — if something in these emails made you think "maybe I could" — then don't let this be the end. Calculate your freedom number. Try the $0.97 plan. If it doesn't work, refund. No risk.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If this didn't resonate, I wish you the best. Maybe the timing isn't right. Maybe the golden handcuffs are comfortable enough. That's okay too.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Either way, thanks for reading. — Adrian</p>
+<p style="font-size:14px;color:#8A95A8;margin-top:32px;">P.S. If you want to stay on the list, you don't need to do anything. I'll keep sending weekly stories. This is just the end of the structured sequence.</p>`,
+    false);
+}
+
 // ═══ HANDLER ═══
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -223,7 +260,7 @@ serve(async (req) => {
       });
     }
 
-    const allEmails = sequence === "seinfeld" ? SEINFELD : SOAP;
+    const allEmails = sequence === "seinfeld" ? SEINFELD : sequence === "winback" ? WINBACK : SOAP;
 
     // If day specified, send that specific email
     if (day !== undefined && day !== null) {

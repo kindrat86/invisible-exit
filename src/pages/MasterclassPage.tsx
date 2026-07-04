@@ -213,10 +213,28 @@ const MasterclassPage = () => {
                 <Check className="w-5 h-5 text-success" />
               </div>
               <h2 className="text-xl font-bold text-white mb-2">You're registered!</h2>
-              <p className="text-white/70 text-sm">
+              <p className="text-white/70 text-sm mb-6">
                 Check <strong className="text-white">{email}</strong> for the replay link.
                 The masterclass takes 45 minutes — watch it on your lunch break.
               </p>
+
+              {/* Clear next steps */}
+              <div className="space-y-3 border-t border-white/10 pt-4">
+                <p className="text-white/50 text-xs uppercase tracking-wide font-semibold mb-2">While you wait:</p>
+                <Link
+                  to="/freedom"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3 px-4 rounded-xl transition-all text-sm"
+                >
+                  Calculate Your Freedom Number (Free)
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/story"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white/70 font-medium py-3 px-4 rounded-xl transition-all text-sm border border-white/10"
+                >
+                  Read the Full Origin Story
+                </Link>
+              </div>
             </div>
           )}
         </div>

@@ -33,6 +33,7 @@ const FOOTER_SECTIONS = [
       { label: "Affiliate Assets", to: "/affiliate-assets" },
       { label: "Dream 100", to: "/dream-100" },
       { label: "Traffic Blueprint", to: "/traffic-blueprint" },
+      { label: "Pro ($47/mo)", to: "/pro" },
       { label: "Intensive ($2K)", to: "/intensive" },
       { label: "RSS Feed", to: "/blog/rss.xml" },
     ],

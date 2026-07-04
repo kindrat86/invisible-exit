@@ -1067,6 +1067,44 @@ function getRoutes() {
     });
   }
 
+  // --- Pro Tier ---
+  routes.push({
+    path: "/pro",
+    meta: {
+      title: "Invisible Exit Pro — Group Coaching + Community ($47/month)",
+      description:
+        "Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support.",
+      url: `${SITE}/pro`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Invisible Exit Pro",
+          serviceType: "Group Coaching + Community",
+          provider: { "@type": "Person", name: "Adrian" },
+          areaServed: "Worldwide",
+          description:
+            "Weekly group coaching calls, private community, idea validation reports, and monthly MRR audits for corporate managers building side businesses.",
+          offers: {
+            "@type": "Offer",
+            price: "47",
+            priceCurrency: "USD",
+            description: "per month",
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Pro" },
+          ],
+        },
+      ],
+    },
+  });
+
   // --- State Guides ---
   for (const guide of stateGuides) {
     const nonCompeteText = guide.nonCompeteEnforceable === "not_enforced" ? "banned" :
