@@ -24,6 +24,14 @@ async function main() {
   const { calculators } = await import("../src/data/calculators.js");
   const { dataReports } = await import("../src/data/data-reports.js");
   const { resources } = await import("../src/data/resources.js");
+  const { alternatives } = await import("../src/data/alternatives.js");
+  const { salaries } = await import("../src/data/salaries.js");
+  const { revenueMilestones } = await import("../src/data/revenue-milestones.js");
+  const { timelines } = await import("../src/data/timelines.js");
+  const { professionStacks } = await import("../src/data/profession-stacks.js");
+  const { costOfWaitingPages } = await import("../src/data/cost-of-waiting.js");
+  const { professionStatePages } = await import("../src/data/profession-states.js");
+  const { nonCompeteMatrix } = await import("../src/data/non-compete-matrix.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -233,6 +241,63 @@ async function main() {
       changefreq: "monthly",
       priority: "0.8",
     },
+    // ── pSEO Expansion Pages (Greg Isenberg) ──
+    // Alternatives (X Alternative)
+    ...alternatives.map((a: { slug: string }) => ({
+      loc: `https://invisibleexit.com/alternatives/${a.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Salary pages
+    ...salaries.map((s: { slug: string }) => ({
+      loc: `https://invisibleexit.com/salaries/${s.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Revenue milestones
+    ...revenueMilestones.map((m: { slug: string }) => ({
+      loc: `https://invisibleexit.com/milestones/${m.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Timeline pages
+    ...timelines.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/timeline/${t.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Profession tool stacks
+    ...professionStacks.map((s: { slug: string }) => ({
+      loc: `https://invisibleexit.com/stack/${s.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Cost of waiting
+    ...costOfWaitingPages.map((c: { slug: string }) => ({
+      loc: `https://invisibleexit.com/cost-of-waiting/${c.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.6" as const,
+    })),
+    // Profession × State cross pages
+    ...professionStatePages.map((p: { professionSlug: string; stateSlug: string }) => ({
+      loc: `https://invisibleexit.com/ideas/${p.professionSlug}/in/${p.stateSlug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Non-compete matrix
+    ...nonCompeteMatrix.map((n: { slug: string }) => ({
+      loc: `https://invisibleexit.com/non-compete/${n.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

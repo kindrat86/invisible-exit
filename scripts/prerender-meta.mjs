@@ -19,6 +19,14 @@ import { bestToolsLists } from "../src/data/best-tools.ts";
 import { calculators } from "../src/data/calculators.ts";
 import { dataReports } from "../src/data/data-reports.ts";
 import { resources } from "../src/data/resources.ts";
+import { alternatives } from "../src/data/alternatives.ts";
+import { salaries } from "../src/data/salaries.ts";
+import { revenueMilestones } from "../src/data/revenue-milestones.ts";
+import { timelines } from "../src/data/timelines.ts";
+import { professionStacks } from "../src/data/profession-stacks.ts";
+import { costOfWaitingPages } from "../src/data/cost-of-waiting.ts";
+import { professionStatePages } from "../src/data/profession-states.ts";
+import { nonCompeteMatrix } from "../src/data/non-compete-matrix.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1386,6 +1394,361 @@ function getRoutes() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: resource.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ── pSEO Expansion Pages (Greg Isenberg) ──
+
+  // --- Alternatives (X Alternative) ---
+  for (const alt of alternatives) {
+    const altUrl = `${SITE}/alternatives/${alt.slug}`;
+    routes.push({
+      path: `/alternatives/${alt.slug}`,
+      meta: {
+        title: alt.metaTitle,
+        description: alt.metaDescription,
+        url: altUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: alt.h1,
+            description: alt.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Product Alternatives",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Alternatives" },
+              { "@type": "ListItem", position: 3, name: alt.product },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: alt.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Salaries (Role → Side Business) ---
+  for (const sal of salaries) {
+    const salUrl = `${SITE}/salaries/${sal.slug}`;
+    routes.push({
+      path: `/salaries/${sal.slug}`,
+      meta: {
+        title: sal.metaTitle,
+        description: sal.metaDescription,
+        url: salUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: sal.h1,
+            description: sal.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Salary to SaaS",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Salaries" },
+              { "@type": "ListItem", position: 3, name: sal.role },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: sal.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Revenue Milestones ---
+  for (const milestone of revenueMilestones) {
+    const mUrl = `${SITE}/milestones/${milestone.slug}`;
+    routes.push({
+      path: `/milestones/${milestone.slug}`,
+      meta: {
+        title: milestone.metaTitle,
+        description: milestone.metaDescription,
+        url: mUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: milestone.h1,
+            description: milestone.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Revenue Milestones",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Milestones" },
+              { "@type": "ListItem", position: 3, name: milestone.mrrRange },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: milestone.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Timelines ---
+  for (const tl of timelines) {
+    const tlUrl = `${SITE}/timeline/${tl.slug}`;
+    routes.push({
+      path: `/timeline/${tl.slug}`,
+      meta: {
+        title: tl.metaTitle,
+        description: tl.metaDescription,
+        url: tlUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: tl.h1,
+            description: tl.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Timeline",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Timeline" },
+              { "@type": "ListItem", position: 3, name: `Month ${tl.month}` },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: tl.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Profession Stacks ---
+  for (const stack of professionStacks) {
+    const sUrl = `${SITE}/stack/${stack.slug}`;
+    routes.push({
+      path: `/stack/${stack.slug}`,
+      meta: {
+        title: stack.metaTitle,
+        description: stack.metaDescription,
+        url: sUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: stack.h1,
+            description: stack.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Tool Stack",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Tool Stacks" },
+              { "@type": "ListItem", position: 3, name: stack.profession },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: stack.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Cost of Waiting ---
+  for (const cow of costOfWaitingPages) {
+    const cUrl = `${SITE}/cost-of-waiting/${cow.slug}`;
+    routes.push({
+      path: `/cost-of-waiting/${cow.slug}`,
+      meta: {
+        title: cow.metaTitle,
+        description: cow.metaDescription,
+        url: cUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: cow.h1,
+            description: cow.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Cost of Waiting",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Cost of Waiting" },
+              { "@type": "ListItem", position: 3, name: `${cow.yearsLabel} at ${cow.salaryLabel}` },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: cow.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Profession × State Cross Pages ---
+  for (const ps of professionStatePages) {
+    const psUrl = `${SITE}/ideas/${ps.professionSlug}/in/${ps.stateSlug}`;
+    routes.push({
+      path: `/ideas/${ps.professionSlug}/in/${ps.stateSlug}`,
+      meta: {
+        title: ps.metaTitle,
+        description: ps.metaDescription,
+        url: psUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: ps.h1,
+            description: ps.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: `${ps.profession} in ${ps.state}`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Ideas", item: `${SITE}/ideas` },
+              { "@type": "ListItem", position: 3, name: ps.profession, item: `${SITE}/ideas/${ps.professionSlug}` },
+              { "@type": "ListItem", position: 4, name: ps.state },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ps.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Non-Compete Matrix ---
+  for (const nc of nonCompeteMatrix) {
+    const ncUrl = `${SITE}/non-compete/${nc.slug}`;
+    routes.push({
+      path: `/non-compete/${nc.slug}`,
+      meta: {
+        title: nc.metaTitle,
+        description: nc.metaDescription,
+        url: ncUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: nc.h1,
+            description: nc.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-07-04",
+            articleSection: "Non-Compete Guide",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Non-Compete Guide" },
+              { "@type": "ListItem", position: 3, name: `${nc.profession} in ${nc.state}` },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: nc.faqs.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

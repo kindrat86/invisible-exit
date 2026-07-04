@@ -30,6 +30,16 @@ const CalculatorPage = lazy(() => import("./pages/CalculatorPage.tsx"));
 const DataReportPage = lazy(() => import("./pages/DataReportPage.tsx"));
 const ResourcePage = lazy(() => import("./pages/ResourcePage.tsx"));
 
+// pSEO expansion pages (Greg Isenberg)
+const AlternativesPage = lazy(() => import("./pages/AlternativesPage.tsx"));
+const SalaryPage = lazy(() => import("./pages/SalaryPage.tsx"));
+const RevenueMilestonePage = lazy(() => import("./pages/RevenueMilestonePage.tsx"));
+const TimelinePage = lazy(() => import("./pages/TimelinePage.tsx"));
+const ProfessionStackPage = lazy(() => import("./pages/ProfessionStackPage.tsx"));
+const CostOfWaitingPage = lazy(() => import("./pages/CostOfWaitingPage.tsx"));
+const ProfessionStatePage = lazy(() => import("./pages/ProfessionStatePage.tsx"));
+const NonCompeteMatrixPage = lazy(() => import("./pages/NonCompeteMatrixPage.tsx"));
+
 // Funnel & marketing pages
 const SqueezePage = lazy(() => import("./pages/SqueezePage.tsx"));
 const DownsellPage = lazy(() => import("./pages/DownsellPage.tsx"));
@@ -116,6 +126,22 @@ const App = () => (
           <Route path="/resources" element={<ResourcePage />} />
           <Route path="/resources/:slug" element={<ResourcePage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          {/* ── pSEO Expansion (Greg Isenberg) ── */}
+          <Route path="/alternatives/:slug" element={<AlternativesPage />} />
+          <Route path="/alternatives" element={<Navigate to="/blog" replace />} />
+          <Route path="/salaries/:slug" element={<SalaryPage />} />
+          <Route path="/salaries" element={<Navigate to="/blog" replace />} />
+          <Route path="/milestones/:slug" element={<RevenueMilestonePage />} />
+          <Route path="/milestones" element={<Navigate to="/blog" replace />} />
+          <Route path="/timeline/:slug" element={<TimelinePage />} />
+          <Route path="/timeline" element={<Navigate to="/blog" replace />} />
+          <Route path="/stack/:slug" element={<ProfessionStackPage />} />
+          <Route path="/stack" element={<Navigate to="/blog" replace />} />
+          <Route path="/cost-of-waiting/:slug" element={<CostOfWaitingPage />} />
+          <Route path="/cost-of-waiting" element={<Navigate to="/blog" replace />} />
+          <Route path="/ideas/:profession/in/:state" element={<ProfessionStatePage />} />
+          <Route path="/non-compete/:slug" element={<NonCompeteMatrixPage />} />
+          <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}
           <Route path="/freedom" element={<SqueezePage />} />
           <Route path="/oto/downsell" element={<DownsellPage />} />
