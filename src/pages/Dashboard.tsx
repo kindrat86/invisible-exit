@@ -10,6 +10,7 @@ import DashboardOverview from "@/components/fym/DashboardOverview";
 import ReactivationScreen from "@/components/ReactivationScreen";
 import FeatureGate from "@/components/FeatureGate";
 import ReportBadgeShareModal from "@/components/ReportBadgeShareModal";
+import ReferralWidget from "@/components/ReferralWidget";
 import OnboardingWizard from "@/components/fym/OnboardingWizard";
 import CoreStealthActions from "@/components/fym/CoreStealthActions";
 import UpgradePage from "@/components/fym/UpgradePage";
@@ -405,6 +406,12 @@ function DashboardContent() {
             </div>
           )}
         </>
+      )}
+
+      {activeTab === "overview" && (
+        <div className="mt-6">
+          <ReferralWidget />
+        </div>
       )}
 
       {activeTab === "calculator" && (
