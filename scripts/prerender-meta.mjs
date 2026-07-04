@@ -61,8 +61,10 @@ function injectMeta(template, { title, description, url, type, image, jsonLd }) 
 
     ${jsonLdHtml}`;
 
+  // Replace from <!-- Default SEO --> up to the <link rel="preconnect" line
+  // (which is the stable anchor in the post-analytics-deferral HTML)
   return template.replace(
-    /<!-- Default SEO[\s\S]*?(?=\n\s*<!-- Google tag)/,
+    /<!-- Default SEO[\s\S]*?(?=\n\s*<link rel="preconnect")/,
     metaBlock + "\n\n    "
   );
 }

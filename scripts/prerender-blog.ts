@@ -398,12 +398,113 @@ function injectBody(filePath: string, bodyHtml: string): boolean {
   return true;
 }
 
+// ---------- Homepage body ----------
+
+function homepageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center">
+<div style="max-width:56rem;margin:0 auto">
+<h1 style="font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem">Build a Side Business While Employed — Invisibly</h1>
+<p style="font-size:1.25rem;color:#4b5563;margin-bottom:2rem">5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible.</p>
+<p style="font-size:0.875rem;color:#6b7280">From $0.97/month. No code required. Cancel anytime.</p>
+</div>
+</section>
+<section style="padding:3rem 1.5rem">
+<div style="max-width:56rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Five Tools, One Subscription</h2>
+<div style="display:grid;gap:1.5rem">
+<div><h3 style="font-weight:700;font-size:1.125rem">FYM Dashboard</h3><p>Tracks your recurring revenue, churn, growth rate, and exit timeline across all your projects. Know exactly how much you need to quit.</p></div>
+<div><h3 style="font-weight:700;font-size:1.125rem">Idea Pipeline</h3><p>500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential. AI-powered validation in 48 hours.</p></div>
+<div><h3 style="font-weight:700;font-size:1.125rem">Stealth Ops Hub</h3><p>Entity separation, invisibility scoring, and compliance audit against common contract clauses including non-compete and IP assignment.</p></div>
+<div><h3 style="font-weight:700;font-size:1.125rem">Launch Control</h3><p>Go-live automation designed for 5-hour weekends. Stripe integration, landing page generation, and launch sequence builder.</p></div>
+<div><h3 style="font-weight:700;font-size:1.125rem">Brand Manager</h3><p>Faceless audience building with YouTube scripts, Reddit playbooks, and SEO content — all without using your real name.</p></div>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+<div style="display:grid;gap:1.5rem">
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">What do I get for $0.97/month?</h3><p>Five AI-powered tools: FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager. All five tools, one price.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">Does this violate my employment contract?</h3><p>Most contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. The Stealth Ops Hub runs a compliance audit against common contract clauses.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">Can my employer find out?</h3><p>The Stealth Ops Hub includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content — all without coding.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;text-align:center">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">Ready to Build Your Invisible Exit?</h2>
+<p style="color:#4b5563;margin-bottom:2rem">Start with the Freedom Number calculator. See exactly how close you are.</p>
+<a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $0.97</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- About page body ----------
+
+function aboutPageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">About Invisible Exit</h1>
+<p style="font-size:1.125rem;color:#4b5563">Built by a corporate manager, for corporate managers who want to build something of their own — without risking their day job.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Who Built This</h2>
+<p style="line-height:1.7;color:#1f2937">Invisible Exit was created by Adrian, a corporate managing director who spent years building micro-SaaS businesses on the side. After reaching the point where recurring revenue covered his living expenses, he documented the entire process — the tools, the frameworks, the legal considerations, and the psychology of managing two careers simultaneously.</p>
+<p style="line-height:1.7;color:#1f2937;margin-top:1rem">The platform codifies everything learned through trial and error: how to validate ideas without quitting your job, how to operate anonymously, how to manage legal risks, and how to know when your side income is sufficient to make the jump.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">The Methodology</h2>
+<p style="line-height:1.7;color:#1f2937">Every tool in Invisible Exit is grounded in real-world experience:</p>
+<ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem;margin-top:0.5rem">
+<li><strong>Freedom Number Calculator:</strong> Based on the 4% safe withdrawal rate, adjusted for recurring revenue compounding.</li>
+<li><strong>Idea Validation:</strong> Uses a scoring framework tested across 50+ micro-SaaS launches.</li>
+<li><strong>Stealth Operations:</strong> Built around actual employment contract analysis and entity separation strategies.</li>
+<li><strong>Launch Automation:</strong> Designed for the constraint of 5-10 hours per week — not full-time startup hours.</li>
+</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">What We Believe</h2>
+<ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem">
+<li>You should not have to quit your job to start building.</li>
+<li>Recurring revenue changes how you think about work permanently.</li>
+<li>Anonymity is a feature, not a limitation — it protects you while you build.</li>
+<li>AI tools make it possible for one person to do what took a team five years ago.</li>
+<li>The best time to start was three years ago. The second best time is this weekend.</li>
+</ul>
+</div>
+</section>
+</div>`;
+}
+
 // ---------- Main ----------
 
 function main() {
   console.log("Injecting body content into pre-rendered HTML...");
 
   let count = 0;
+
+  // Homepage
+  if (injectBody(resolve(DIST, "index.html"), homepageBodyHtml())) {
+    console.log("  /");
+    count++;
+  }
+
+  // About page
+  if (injectBody(resolve(DIST, "about", "index.html"), aboutPageBodyHtml())) {
+    console.log("  /about");
+    count++;
+  }
 
   // Blog listing page
   if (injectBody(resolve(DIST, "blog", "index.html"), blogListingBodyHtml())) {
