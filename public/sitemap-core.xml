@@ -85,6 +85,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://invisibleexit.com/feeling-stuck</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/partners/embed</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/dream-100</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>

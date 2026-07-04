@@ -2210,6 +2210,50 @@ function getRoutes() {
     });
   }
 
+  // Traffic Secrets: Cold Traffic Bridge (Secret #19)
+  routes.push({
+    path: "/feeling-stuck",
+    meta: {
+      title: "Do You Feel Stuck in Your Career? (You're Not Crazy) | Invisible Exit",
+      description:
+        "If you've ever felt trapped by a good job — salary too comfortable to leave, equity that never materializes, Sunday dread you can't explain — this is for you.",
+      url: `${SITE}/feeling-stuck`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Feeling Stuck? The Career Trap Explained",
+          description:
+            "Understanding why you feel stuck in your career — and the first step toward building your exit.",
+          url: `${SITE}/feeling-stuck`,
+        },
+      ],
+    },
+  });
+
+  // Traffic Secrets: Integration Marketing (Secret #17)
+  routes.push({
+    path: "/partners/embed",
+    meta: {
+      title: "Integration Marketing — Partner With Invisible Exit",
+      description:
+        "Embed our Freedom Calculator, add us to your email sequence, or co-create content. 30% recurring commission, 60-day cookies, ready-made assets.",
+      url: `${SITE}/partners/embed`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Integration Marketing — Partner Program",
+          description:
+            "Embeddable widgets, email swipe copy, and thank-you page blocks for Invisible Exit affiliates and partners.",
+          url: `${SITE}/partners/embed`,
+        },
+      ],
+    },
+  });
+
   return routes;
 }
 

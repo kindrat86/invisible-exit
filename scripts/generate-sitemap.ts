@@ -224,6 +224,18 @@ async function main() {
       priority: "0.6",
     },
     {
+      loc: "https://invisibleexit.com/feeling-stuck",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/partners/embed",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
       loc: "https://invisibleexit.com/dream-100",
       lastmod: today,
       changefreq: "monthly",
