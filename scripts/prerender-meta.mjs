@@ -12,6 +12,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { blogPosts } from "../src/data/blog-posts.ts";
 import { comparisons } from "../src/data/comparisons.ts";
+import { glossaryTerms } from "../src/data/glossary.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -549,6 +550,113 @@ function getRoutes() {
             })),
           },
         ],
+      },
+    });
+  }
+
+  // ---------- Glossary pages (AEO) ----------
+
+  // Glossary index
+  routes.push({
+    path: "/glossary",
+    meta: {
+      title:
+        "Glossary: Side Business, Micro-SaaS & Invisible Exit Terms | Invisible Exit",
+      description:
+        "Plain-English definitions of micro-SaaS, recurring revenue, stealth operations, non-compete clauses, freedom numbers, and more. A reference for employed founders.",
+      url: `${SITE}/glossary`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "DefinedTermSet",
+          name: "Invisible Exit Glossary",
+          description:
+            "Definitions of key terms for building anonymous side businesses, micro-SaaS, and invisible exits.",
+          url: `${SITE}/glossary`,
+          hasDefinedTerm: glossaryTerms.map((t) => ({
+            "@type": "DefinedTerm",
+            name: t.term,
+            url: `${SITE}/glossary/${t.slug}`,
+          })),
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Glossary" },
+          ],
+        },
+      ],
+    },
+  });
+
+  // Individual glossary term pages
+  for (const term of glossaryTerms) {
+    const termUrl = `${SITE}/glossary/${term.slug}`;
+    const termJsonLd = [
+      {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        name: term.term,
+        description: term.definition,
+        url: termUrl,
+        inDefinedTermSet: {
+          "@type": "DefinedTermSet",
+          name: "Invisible Exit Glossary",
+          url: `${SITE}/glossary`,
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: `What Is ${term.term}?`,
+        description: term.definition,
+        url: termUrl,
+        author: {
+          "@type": "Person",
+          name: "Adrian",
+          url: SITE,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE,
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": termUrl },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: "Glossary", item: `${SITE}/glossary` },
+          { "@type": "ListItem", position: 3, name: term.term },
+        ],
+      },
+    ];
+
+    if (term.faqs && term.faqs.length > 0) {
+      termJsonLd.push({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: term.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      });
+    }
+
+    routes.push({
+      path: `/glossary/${term.slug}`,
+      meta: {
+        title: `What Is ${term.term}? Definition & Guide | Invisible Exit`,
+        description: term.definition.slice(0, 155),
+        url: termUrl,
+        type: "article",
+        jsonLd: termJsonLd,
       },
     });
   }

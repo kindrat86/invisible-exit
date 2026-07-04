@@ -12,6 +12,8 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import BlogCategory from "./pages/BlogCategory.tsx";
 import ComparePage from "./pages/ComparePage.tsx";
+import GlossaryIndex from "./pages/GlossaryIndex.tsx";
+import GlossaryTermPage from "./pages/GlossaryTermPage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
@@ -62,6 +64,8 @@ const App = () => (
           <Route path="/blog/category/:category" element={<BlogCategory />} />
           <Route path="/compare" element={<Blog />} />
           <Route path="/compare/:vs" element={<ComparePage />} />
+          <Route path="/glossary" element={<GlossaryIndex />} />
+          <Route path="/glossary/:slug" element={<GlossaryTermPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}

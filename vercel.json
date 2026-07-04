@@ -61,6 +61,8 @@
     { "source": "/blog/category", "destination": "/index.html" },
     { "source": "/compare", "destination": "/index.html" },
     { "source": "/compare/:vs", "destination": "/index.html" },
+    { "source": "/glossary", "destination": "/index.html" },
+    { "source": "/glossary/:slug", "destination": "/index.html" },
     { "source": "/blog/:slug", "destination": "/index.html" },
     { "source": "/oto/second-tool", "destination": "/index.html" },
     { "source": "/fym/oto/founding", "destination": "/index.html" },

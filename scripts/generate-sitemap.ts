@@ -69,6 +69,32 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
+    // Glossary index + term pages (AEO)
+    {
+      loc: "https://invisibleexit.com/glossary",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    },
+    ...[
+      "what-is-micro-saas",
+      "what-is-recurring-revenue",
+      "what-is-freedom-number",
+      "what-is-mrr",
+      "what-is-churn-rate",
+      "what-is-stealth-operations",
+      "what-is-invisible-exit",
+      "what-is-entity-separation",
+      "what-is-golden-handcuffs",
+      "what-is-non-compete-clause",
+      "what-is-moonlighting-clause",
+      "what-is-faceless-content",
+    ].map((term) => ({
+      loc: `https://invisibleexit.com/glossary/${term}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
     ...blogPosts.map((post: { slug: string; publishedAt: string }) => ({
       loc: `https://invisibleexit.com/blog/${post.slug}`,
       lastmod: post.publishedAt,

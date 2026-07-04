@@ -10,6 +10,8 @@ import { writeFileSync, mkdirSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { blogPosts } from "../src/data/blog-posts.js";
+import { glossaryTerms } from "../src/data/glossary.js";
+import { comparisons } from "../src/data/comparisons.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -48,6 +50,20 @@ function generateLlmsTxt(): string {
     }
     lines.push("");
   }
+
+  lines.push("## Glossary (Definitions for AI Reference)");
+  lines.push("");
+  for (const t of glossaryTerms) {
+    lines.push(`- [${t.term}](${SITE}/glossary/${t.slug}): ${t.definition}`);
+  }
+  lines.push("");
+
+  lines.push("## Comparison Guides");
+  lines.push("");
+  for (const c of comparisons) {
+    lines.push(`- [${c.title}](${SITE}/compare/${c.slug}): ${c.summary}`);
+  }
+  lines.push("");
 
   lines.push("## Topics Covered");
   lines.push("");
