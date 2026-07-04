@@ -270,17 +270,20 @@ const Index = () => {
               {
                 num: "1",
                 title: "Your Job Is the Perfect Launchpad",
-                body: "Your salary is runway funding. Your corporate skills (managing teams, reading P&Ls, executing projects) are exactly what solo founders lack. Your 5 hours/week forces ruthless focus.",
+                story: "I almost quit. Resignation letter drafted. Then I did the math: my salary funds my build without dilution. Full-time founders raise $500K and give up 20%. I give up nothing. My P&L skills? Solo founders don't have them. My 5 hours/week constraint? It forces focus that 60-hour founders can't replicate.",
+                epiphany: "The vehicle isn't a startup. The vehicle is YOUR JOB.",
               },
               {
                 num: "2",
                 title: "Anonymity Is Your Greatest Asset",
-                body: "When you're anonymous, you can experiment without fear. Build in unrelated markets. Fail publicly without your employer or professional network ever knowing. Your business operates under a separate entity.",
+                story: "Week 3. Team call. Colleague says: 'This website looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent.",
+                epiphany: "Anonymity isn't hiding. It's freedom to fail without consequences.",
               },
               {
                 num: "3",
                 title: "The System Beats the Idea",
-                body: "Stop obsessing over the 'right' idea. Build the system first: freedom number → idea pipeline → stealth ops → launch → brand. Once you have the system, you can swap ideas in and out.",
+                story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one. It made $9/month. So I pivoted. Second product: $47/month. Third: $850. Fourth: $4,100. The system didn't care which idea I picked.",
+                epiphany: "Build the system first. Swap ideas like cartridges.",
               },
             ].map((secret) => (
               <div key={secret.num} className="card-base p-6 sm:p-8 card-hover">
@@ -288,7 +291,10 @@ const Index = () => {
                   {secret.num}
                 </span>
                 <h3 className="text-h3 text-foreground mb-3">{secret.title}</h3>
-                <p className="text-caption">{secret.body}</p>
+                <p className="text-caption text-muted-foreground italic mb-4 leading-relaxed border-l-2 border-primary/30 pl-4">
+                  "{secret.story}"
+                </p>
+                <p className="text-sm font-semibold text-primary">{secret.epiphany}</p>
               </div>
             ))}
           </div>
@@ -299,27 +305,35 @@ const Index = () => {
               {
                 secret: "Vehicle",
                 story: "Sarah K., Finance Director",
-                quote: "I used my salary as runway. Validated my idea in 3 weeks. First paying customer in 60 days. My corporate skills gave me an unfair advantage that full-time founders don't have.",
+                before: "Spent 6 months researching startup ideas. Analysis paralysis. Had the skills but no system.",
+                action: "Used salary as runway. Picked a boring fintech tool for SMBs. Validated in 2 weeks. Launched in 6.",
                 result: "$3,200 MRR in 8 months",
+                quote: "My corporate skills gave me an unfair advantage that full-time founders don't have.",
               },
               {
                 secret: "Stealth",
                 story: "Marcus T., Product Manager",
-                quote: "A colleague literally found a website that looked like my side project during a team call. Different name, different entity, different hosting. The Stealth Ops audit saved my career.",
+                before: "Worried his employer would discover his side project. Nearly didn't start.",
+                action: "Set up separate LLC, anonymous domain, different Stripe account. Colleague found a similar site on a team call. Zero connection traced.",
                 result: "Zero detection in 14 months",
+                quote: "Those 3 seconds of panic were the best $25/month I've ever spent.",
               },
               {
                 secret: "System",
                 story: "Jennifer L., Operations Manager",
-                quote: "I stopped obsessing over the 'perfect' idea and started working the system. Pivoted twice using the Idea Pipeline. Third product hit $2,300/month in 7 months.",
+                before: "Obsessed over finding the 'perfect' idea for 5 months. Built nothing.",
+                action: "Stopped choosing ideas. Started working the system. Pivoted twice using the Idea Pipeline. Third product was a PDF generator for logistics companies.",
                 result: "$2,300 MRR with 5 hrs/week",
+                quote: "I stopped obsessing over the perfect idea and started working the system.",
               },
             ].map((cs) => (
               <div key={cs.secret} className="card-base p-5 border-l-4 border-primary/40">
                 <p className="text-eyebrow text-primary text-xs mb-2">{cs.secret}</p>
-                <p className="text-sm font-semibold text-foreground mb-2">{cs.story}</p>
+                <p className="text-sm font-semibold text-foreground mb-3">{cs.story}</p>
+                <p className="text-xs text-muted-foreground mb-2"><span className="font-semibold text-foreground">Before:</span> {cs.before}</p>
+                <p className="text-xs text-muted-foreground mb-3"><span className="font-semibold text-foreground">After:</span> {cs.action}</p>
                 <p className="text-caption text-sm italic mb-3">"{cs.quote}"</p>
-                <p className="text-success text-sm font-semibold">{cs.result}</p>
+                <p className="text-success text-sm font-bold">{cs.result}</p>
               </div>
             ))}
           </div>
@@ -539,7 +553,7 @@ const Index = () => {
           ))}
 
           {/* Bonuses */}
-          <p className="text-eyebrow text-primary mt-6 mb-2">🎁 Fast-Action Bonuses (3)</p>
+          <p className="text-eyebrow text-primary mt-6 mb-2">🎁 Fast-Action Bonuses (3) — Included when you start today</p>
           {[
             { name: "The Employment Contract Audit Checklist", value: "$27" },
             { name: "25 Done-For-You Micro-SaaS Idea Swipes", value: "$47" },
@@ -562,8 +576,11 @@ const Index = () => {
             </div>
           ))}
 
-          {/* Total */}
+          {/* Total with dramatic "All this for" moment */}
           <div className="pt-6 mt-4 border-t-2 border-border">
+            <p className="text-center text-h2 text-foreground font-bold mb-6 mt-2">
+              So... how much for all of this?
+            </p>
             <div className="flex items-center justify-between mb-2">
               <span className="text-muted-foreground">Total value:</span>
               <span className="text-muted-foreground line-through">$328/month</span>

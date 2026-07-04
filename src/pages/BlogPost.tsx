@@ -591,17 +591,17 @@ const BlogPost = () => {
               Calculate Your Freedom Number (Free)
             </Link>
             <Link
-              to="/?checkout=starter"
+              to="/story"
               onClick={() =>
                 trackEvent("blog_article_cta_clicked", {
                   slug: post.slug,
-                  source: "article_footer_checkout",
+                  source: "article_footer_story",
                   category: post.category,
                 })
               }
               className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10"
             >
-              Get All 5 Tools — $0.97/mo
+              Read My Full Story First
             </Link>
             <Link
               to="/blog"

@@ -766,6 +766,269 @@ function getRoutes() {
     },
   });
 
+  // --- Expert Secrets Funnel Pages ---
+  routes.push({
+    path: "/story",
+    meta: {
+      title: "My Story — How I Built $4K/Month While Employed | Invisible Exit",
+      description:
+        "The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15 minutes.",
+      url: `${SITE}/story`,
+      type: "article",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "How I Built a $4,000/Month Side Business While Employed — Without Anyone Knowing",
+          description:
+            "The complete story: Amsterdam taxi moment, Month 4 wall, the competitor who almost killed me, and the system that made all of it possible.",
+          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          datePublished: "2026-07-04",
+          articleSection: "Origin Story",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "My Story" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/adrian",
+    meta: {
+      title: "Who Is Adrian? — The Anonymous Founder Behind Invisible Exit",
+      description:
+        "37-year-old Managing Director. $120K salary. <0.5% equity. Building $4K/month on the side. Identity protected by design. Read the full backstory.",
+      url: `${SITE}/adrian`,
+      type: "profile",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          name: "Who Is Adrian?",
+          description:
+            "The anonymous founder behind Invisible Exit. A 37-year-old Managing Director building invisible recurring revenue while employed.",
+          url: `${SITE}/adrian`,
+          about: {
+            "@type": "Person",
+            name: "Adrian",
+            jobTitle: "Managing Director & Founder",
+            description:
+              "Anonymous corporate manager who built $4,100 MRR in side businesses while employed. Founder of Invisible Exit.",
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Adrian" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/masterclass",
+    meta: {
+      title: "Free Masterclass: Build a $4K/Month Side Business While Employed | Invisible Exit",
+      description:
+        "45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job.",
+      url: `${SITE}/masterclass`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "Invisible Exit Masterclass",
+          description:
+            "Free 45-minute masterclass: How corporate managers are building $4,000/month side businesses in 12 months.",
+          organizer: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          eventStatus: "https://schema.org/EventScheduled",
+          eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+          isAccessibleForFree: true,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Masterclass" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/freedom",
+    meta: {
+      title: "Free Freedom Number Calculator | Invisible Exit",
+      description:
+        "Calculate exactly how much recurring revenue you need to quit your job. Free tool. Takes 90 seconds. No credit card.",
+      url: `${SITE}/freedom`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Freedom Number Calculator",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description:
+            "Calculate the exact monthly recurring revenue you need to never work for someone else again.",
+          url: `${SITE}/freedom`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Freedom Number Calculator" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/inner-circle",
+    meta: {
+      title: "The Invisible Exit Inner Circle — Private Community for Corporate Builders",
+      description:
+        "A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture.",
+      url: `${SITE}/inner-circle`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "The Inner Circle",
+          description:
+            "Private community of corporate managers building invisible recurring revenue. Anonymous. Accountable. Relentless.",
+          url: `${SITE}/inner-circle`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Inner Circle" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/dream-100",
+    meta: {
+      title: "Dream 100 — Strategic Partner Framework | Invisible Exit",
+      description:
+        "How we identify, research, and build relationships with the 100 people who already have our audience. The Russell Brunson Dream 100 strategy.",
+      url: `${SITE}/dream-100`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Dream 100 Framework",
+          description:
+            "Strategic partner identification and outreach framework for Invisible Exit.",
+          url: `${SITE}/dream-100`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Dream 100" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/affiliates",
+    meta: {
+      title: "Affiliate Program — 30% Recurring | Invisible Exit",
+      description:
+        "Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts.",
+      url: `${SITE}/affiliates`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Affiliate Program — 30% Recurring",
+          description:
+            "Earn 30% recurring commission referring corporate managers to Invisible Exit.",
+          url: `${SITE}/affiliates`,
+        },
+      ],
+    },
+  });
+
+  routes.push({
+    path: "/intensive",
+    meta: {
+      title: "The Invisible Exit Intensive — Done-With-You 90-Day Program ($2,000)",
+      description:
+        "Private 1-on-1 coaching with Adrian. Freedom number, stealth audit, idea validation, launch review, and 30 days of direct access. Limited to 5 managers per month.",
+      url: `${SITE}/intensive`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Invisible Exit Intensive",
+          serviceType: "Business Coaching",
+          provider: { "@type": "Person", name: "Adrian" },
+          areaServed: "Worldwide",
+          description:
+            "Done-with-you 90-day program: strategy session, stealth audit, idea validation sprint, launch review, and 30-day Slack access.",
+          offers: {
+            "@type": "Offer",
+            price: "2000",
+            priceCurrency: "USD",
+            availability: "https://schema.org/LimitedAvailability",
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "How is this different from the $0.97/month or $17.99/month plans?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Those are DIY tools. The Intensive is done-with-you. I personally review your situation, validate your ideas, audit your stealth setup, and build your roadmap.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Is this worth $2,000?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "If the Intensive saves you 3 months of trial and error, and your time is worth $100+/hour, the ROI is immediate. Most members recover the cost in their first 3 months of MRR.",
+              },
+            },
+          ],
+        },
+      ],
+    },
+  });
+
   // --- State Guides ---
   for (const guide of stateGuides) {
     const nonCompeteText = guide.nonCompeteEnforceable === "not_enforced" ? "banned" :

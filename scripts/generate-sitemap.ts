@@ -146,6 +146,55 @@ async function main() {
       changefreq: "monthly",
       priority: "0.8",
     },
+    // Funnel + Expert Secrets pages
+    {
+      loc: "https://invisibleexit.com/story",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
+    {
+      loc: "https://invisibleexit.com/adrian",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/masterclass",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/freedom",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/inner-circle",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/affiliates",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
+      loc: "https://invisibleexit.com/dream-100",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
+      loc: "https://invisibleexit.com/intensive",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -145,6 +145,70 @@ const AdrianPage = () => {
         </div>
       </section>
 
+      {/* Before the Before — false peace */}
+      <section className="bg-surface section-normal">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-primary mb-4 text-center">Before the Before</p>
+          <h2 className="text-h1 text-foreground mb-6 text-center">I was happy. That was the problem.</h2>
+          <div className="max-w-2xl mx-auto text-body text-muted-foreground space-y-5">
+            <p>
+              Before Amsterdam, before the math, before any of this — I was content. Genuinely content.
+              I liked my job. I respected my colleagues. I believed in the mission. The promotion ladder
+              felt like a path, not a trap.
+            </p>
+            <p>
+              Every year, I'd get a raise. Every two years, more equity. The IPO was "coming." I'd look at
+              my stock options spreadsheet and feel a warm glow of future wealth. I'd read startup
+              failure stories and feel grateful I had a "real" job.
+            </p>
+            <p>
+              That false peace was the most dangerous part. Not because I was unhappy — unhappy people
+              change things. Because I was <em className="text-foreground">comfortable</em>. Comfortable
+              people don't look for doors. They don't even see the cage.
+            </p>
+            <p className="text-foreground font-medium">
+              The cage didn't feel like a cage. It felt like a corner office with a nice chair and a
+              good dental plan. That's what made it so effective.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Dark Night — dramatized "All is Lost" */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-muted-foreground mb-4 text-center">The Dark Night</p>
+          <h2 className="text-h1 text-foreground mb-6 text-center">The Tuesday I Almost Deleted Everything</h2>
+          <div className="max-w-2xl mx-auto text-body text-muted-foreground space-y-5">
+            <p>
+              Month 4. A Tuesday in November. 11 PM. My daughter was asleep. My wife was reading
+              in the other room. I sat at my desk staring at a Stripe dashboard that read <strong className="text-foreground">$0.00</strong>.
+            </p>
+            <p>
+              I'd launched 6 weeks ago. I'd told 200 people on an email list. I'd posted in 3 Reddit
+              communities. I'd optimized the landing page 12 times. Zero customers. Not even a free trial sign-up
+              in 9 days.
+            </p>
+            <p>
+              The voice in my head was loud and specific: <em className="text-foreground">"You're not a founder. You're a manager. Go back to managing. This isn't for you. Delete the domain, cancel the hosting, stop pretending."</em>
+            </p>
+            <p>
+              I had my cursor over the "Cancel Subscription" button on the hosting dashboard. My hand was on
+              the mouse. I could feel the relief of giving up — the comfort of going back to just being an employee.
+            </p>
+            <p className="text-foreground font-medium">
+              Then I opened my Freedom Number calculation. <strong>$4,000/month MRR = optionality.</strong>
+              The math hadn't changed because I had a bad week. The math doesn't care about feelings.
+              I closed the hosting tab. I opened the Idea Pipeline. I pivoted.
+            </p>
+            <p>
+              Two weeks later: first paying customer. $9/month. A stranger in Ohio. I didn't scream this time.
+              I just sat quietly and thought: <em className="text-primary">the door is still there.</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="bg-surface section-normal">
         <div className="container-narrow">
