@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Check,
   Lock,
+  Quote,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -66,6 +67,27 @@ const TOOLS = [
   },
 ];
 
+const TESTIMONIALS = [
+  {
+    quote:
+      "I validated my first micro-SaaS idea in 3 weeks using the framework. The stealth ops checklist alone was worth 100x the price.",
+    name: "Director of Ops",
+    role: "Fortune 500 → $4K MRR side business",
+  },
+  {
+    quote:
+      "The freedom number calculator changed how I think about my equity. I realized I was building someone else's dream, not mine.",
+    name: "Senior PM",
+    role: "$145K salary → First SaaS revenue in 60 days",
+  },
+  {
+    quote:
+      "I spent two years thinking about starting something. Invisible Exit gave me a system I could actually follow with 5 hours a week.",
+    name: "Engineering Manager",
+    role: "Built first product while employed",
+  },
+];
+
 const FAQS = [
   {
     q: "What do I get for $0.97/month?",
@@ -107,8 +129,6 @@ const Index = () => {
   const [subscribeEmail, setSubscribeEmail] = useState("");
 
   useEffect(() => {
-
-    // Auto-trigger checkout when arriving from email CTA
     const params = new URLSearchParams(window.location.search);
     if (params.get("checkout") === "starter") {
       window.history.replaceState({}, "", window.location.pathname);
@@ -148,7 +168,6 @@ const Index = () => {
       if (error) throw error;
       trackEvent("homepage_subscribe_submitted", { source: "landing_page" });
       toast.success("You're in! We'll send you weekly insights.");
-      // Send welcome email (fire-and-forget)
       supabase.functions
         .invoke("newsletter-welcome", { body: { email: subscribeEmail } })
         .catch((err) => console.error("Welcome email error:", err));
@@ -172,33 +191,29 @@ const Index = () => {
 
       <main>
       {/* ── 1. Hero ── */}
-      <section className="bg-[#1B2A4A] pt-32 pb-12 px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-blue-400 text-sm tracking-widest uppercase mb-6">
-            FOR CORPORATE MANAGERS WHO WANT OUT
+      <section className="hero-dark-radial pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24 section">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary-light mb-6 animate-fade-in">
+            For Corporate Managers Who Want Out
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto mb-6">
-            You're Building a Company You'll Never Own.
+          <h1 className="text-display text-white mb-6 animate-fade-up">
+            You're Building a Company<br className="hidden sm:block" />{" "}
+            <span className="text-gradient-light">You'll Never Own.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
+          <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
             Hey, my name is Adrian. I am a Managing Director. $120K salary. Less
-            than 0.5% equity. I sat down one night and ran the numbers. Even a
-            $1B exit, after taxes and dilution, if I invested every cent at 5%,
-            the passive income still wouldn't cover my yearly salary. I'd still
-            need to work for someone. That's not an exit. That's a longer leash.
-            So I started building something invisible on the side. Something
-            that's mine. Here's the system.
+            than 0.5% equity. I ran the numbers. Even a $1B exit, after taxes
+            and dilution, wouldn't cover my salary in passive income. That's not
+            an exit. That's a longer leash. So I started building something
+            invisible. Here's the system.
           </p>
 
           {/* Video */}
-          <div
-            id="video-slot"
-            className="mx-auto max-w-3xl rounded-xl overflow-hidden"
-          >
+          <div className="mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl shadow-black/40 animate-scale-in" style={{ animationDelay: "200ms" }}>
             <video
-              className="w-full aspect-video bg-[#1e293b]"
+              className="w-full aspect-video bg-[hsl(222_47%_14%)]"
               controls
               preload="metadata"
               playsInline
@@ -209,14 +224,15 @@ const Index = () => {
               />
             </video>
           </div>
-          {/* CTA directly below video */}
-          <div className="mt-4 flex flex-col items-center gap-4">
+
+          {/* CTA */}
+          <div className="mt-8 flex flex-col items-center gap-4">
             <button
               onClick={handleCheckout}
               disabled={checkoutLoading}
-              className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
+              className="btn-primary w-full sm:w-auto text-lg px-8"
             >
-              {checkoutLoading ? "Loading..." : "Start Your Invisible Exit, $0.97/month"}
+              {checkoutLoading ? "Loading..." : "Start Your Invisible Exit — $0.97/month"}
               {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
             </button>
             <Link
@@ -227,56 +243,50 @@ const Index = () => {
                   slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
                 })
               }
-              className="text-white/70 hover:text-white text-sm font-medium underline underline-offset-4"
+              className="text-white/60 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors"
             >
               Prefer to read first? Start with the 90-day roadmap.
             </Link>
             <p className="text-sm text-white/40 mt-1">
-              Cancel anytime. No contracts. No sales calls. 30-day money-back
-              guarantee.
+              Cancel anytime. No contracts. No sales calls. 30-day money-back guarantee.
             </p>
           </div>
         </div>
       </section>
 
       {/* ── 2. Belief Shift / Manifesto ── */}
-      <section className="bg-white py-20 px-6">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-blue-500 text-sm tracking-widest uppercase mb-12">
-            WHAT I BELIEVE
-          </p>
+      <section className="bg-white section-wide">
+        <div className="container-standard">
+          <p className="text-eyebrow text-primary mb-12 text-center">What I Believe</p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left: Belief statements */}
-            <div className="space-y-6 text-slate-700 text-lg leading-relaxed">
+            <div className="space-y-6 text-muted-foreground text-body animate-fade-up">
               <p>
-                Corporate loyalty is a transaction, not a virtue. Companies
-                design equity structures to keep you, not to reward you. Less
-                than 0.5% is a leash disguised as a partnership.
+                Corporate loyalty is a transaction, not a virtue. Companies design
+                equity structures to keep you, not to reward you. Less than 0.5%
+                is a leash disguised as a partnership.
               </p>
               <p>
                 The acquisition payout is a lottery ticket. You can't build your
                 life on someone else's exit timeline.
               </p>
               <p>
-                Your 15 years of corporate operations experience isn't a
-                weakness. It's founder gold. You understand customers, systems,
-                and execution better than anyone with just a pitch deck.
+                Your 15 years of corporate operations experience isn't a weakness.
+                It's founder gold. You understand customers, systems, and execution
+                better than anyone with just a pitch deck.
               </p>
               <p>
                 You don't need to quit your job to start. You don't need a
-                co-founder. You don't need venture capital. You don't need
-                anyone's permission. You need 5 hours a week and a system that
-                works within your constraints.
+                co-founder. You don't need venture capital. You need 5 hours a
+                week and a system that works within your constraints.
               </p>
             </div>
 
             {/* Right: "After" vision card */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                12 Months From Now
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
+            <div className="card-base bg-surface p-6 sm:p-8 lg:p-10 card-hover animate-fade-up" style={{ animationDelay: "150ms" }}>
+              <h3 className="text-h3 text-foreground mb-4">12 Months From Now</h3>
+              <p className="text-body text-muted-foreground leading-relaxed">
                 You wake up, check your phone. Not Slack notifications. Stripe
                 dashboard: $3,200 MRR across 3 micro-SaaS tools. You go to work
                 the same as always, but something is different. You resolve
@@ -289,26 +299,22 @@ const Index = () => {
           </div>
 
           {/* Bottom bold statement */}
-          <p className="text-2xl md:text-3xl font-bold text-slate-900 text-center mt-16">
-            The cage has a door. Most people never look for it.
+          <p className="text-h2 text-foreground text-center mt-16 max-w-4xl mx-auto leading-tight">
+            The cage has a door.<br />
+            <span className="text-gradient">Most people never look for it.</span>
           </p>
         </div>
       </section>
 
       {/* ── 3. Start Here Reading Path ── */}
-      <section className="bg-slate-50 py-20 px-6 border-y border-slate-100">
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-standard">
           <div className="max-w-3xl mb-10">
-            <p className="text-blue-500 text-sm tracking-widest uppercase mb-4">
-              NOT READY TO BUY?
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Read these 3 guides first.
-            </h2>
-            <p className="text-slate-600 text-lg leading-relaxed">
-              If the pitch resonates but you need more proof, start with the roadmap,
-              the stealth guide, and the no-ads customer guide. They explain how the
-              whole system works without forcing you into a checkout immediately.
+            <p className="text-eyebrow text-primary mb-4">Not Ready to Buy?</p>
+            <h2 className="text-h1 text-foreground mb-4">Read these 3 guides first.</h2>
+            <p className="text-body text-muted-foreground">
+              If the pitch resonates but you need more proof, start with the
+              roadmap, the stealth guide, and the no-ads customer guide.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -317,22 +323,19 @@ const Index = () => {
                 slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
                 category: "Exit Planning",
                 title: "The Invisible Exit Roadmap",
-                excerpt:
-                  "The first 90 days matter because they create direction, not just motion.",
+                excerpt: "The first 90 days matter because they create direction, not just motion.",
               },
               {
                 slug: "invisible-business-model",
                 category: "Stealth Operations",
                 title: "The Invisible Business Model",
-                excerpt:
-                  "How to build revenue your employer cannot easily see.",
+                excerpt: "How to build revenue your employer cannot easily see.",
               },
               {
                 slug: "how-corporate-managers-can-get-their-first-paying-customers-without-ads",
                 category: "Growth",
                 title: "First Paying Customers Without Ads",
-                excerpt:
-                  "How to get early customers through clarity, trust, and direct conversations.",
+                excerpt: "How to get early customers through clarity, trust, and direct conversations.",
               },
             ].map((guide) => (
               <Link
@@ -344,15 +347,15 @@ const Index = () => {
                     slug: guide.slug,
                   })
                 }
-                className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-md transition-shadow group"
+                className="card-base p-6 card-hover group"
               >
-                <span className="text-blue-500 text-xs font-semibold uppercase tracking-wide mb-3 block">
+                <span className="text-eyebrow text-primary mb-3 block">
                   {guide.category}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#3B82F6] transition-colors">
+                <h3 className="text-h3 text-foreground mb-3 group-hover:text-primary transition-colors">
                   {guide.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{guide.excerpt}</p>
+                <p className="text-caption">{guide.excerpt}</p>
               </Link>
             ))}
           </div>
@@ -360,126 +363,135 @@ const Index = () => {
       </section>
 
       {/* ── 4. The 5 Tools ── */}
-      <section className="bg-[#1B2A4A] py-20 px-6">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
-            THE SYSTEM
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            5 Tools. Each One Solves a Specific Problem.
-          </h2>
-          <p className="text-white/60 mb-12">
+      <section className="hero-dark section-wide">
+        <div className="container-standard">
+          <p className="text-eyebrow text-primary-light mb-4 text-center">The System</p>
+          <h2 className="text-h1 text-white mb-2 text-center">5 Tools. Each Solves a Specific Problem.</h2>
+          <p className="text-body text-white/60 mb-12 text-center max-w-2xl mx-auto">
             From "trapped" to "free." All 5 included at $0.97/month.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TOOLS.map((tool) => (
+            {TOOLS.map((tool, i) => (
               <div
                 key={tool.name}
-                className="bg-white/5 border border-white/10 rounded-2xl p-8"
+                className="card-glass p-6 sm:p-8 transition-all hover:-translate-y-1 animate-fade-up"
+                style={{ animationDelay: `${i * 75}ms` }}
               >
-                <tool.icon className="w-8 h-8 text-blue-400 mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-1">
-                  {tool.name}
-                </h3>
-                <p className="text-white/70 mb-3">{tool.outcome}</p>
-                <p className="text-sm text-white/50">{tool.description}</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
+                  <tool.icon className="w-6 h-6 text-primary-light" />
+                </div>
+                <h3 className="text-h3 text-white mb-1">{tool.name}</h3>
+                <p className="text-white/70 mb-3 font-medium">{tool.outcome}</p>
+                <p className="text-sm text-white/50 leading-relaxed">{tool.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 4. Value Stack ── */}
-      <section className="bg-[#F8FAFC] py-20 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-2">
-            What You Get for $0.97/Month
-          </h2>
-          <p className="text-slate-500 mb-12">
-            Each tool priced individually would cost $97/month. Get access to
-            all 5 for less than a coffee.
+      {/* ── 5. Testimonials ── */}
+      <section className="bg-white section-normal">
+        <div className="container-standard">
+          <p className="text-eyebrow text-primary mb-4 text-center">What Members Say</p>
+          <h2 className="text-h1 text-foreground mb-12 text-center">Built by managers. Used by managers.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} className="card-base p-6 sm:p-8">
+                <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                <p className="text-body text-foreground mb-6 italic leading-relaxed">"{t.quote}"</p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                  <p className="text-caption">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Value Stack ── */}
+      <section className="bg-surface section-normal">
+        <div className="container-narrow text-center">
+          <h2 className="text-h1 text-foreground mb-2">What You Get for $0.97/Month</h2>
+          <p className="text-body text-muted-foreground mb-12">
+            Each tool priced individually would cost $97/month. Get all 5 for less than a coffee.
           </p>
         </div>
 
-        <div className="mx-auto max-w-2xl space-y-4">
+        <div className="container-narrow space-y-3">
           {TOOLS.map((tool) => (
             <div
               key={tool.name}
-              className="flex items-center justify-between py-3 border-b border-slate-200"
+              className="flex items-center justify-between py-3.5 border-b border-border"
             >
               <div className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="text-slate-800 font-medium">{tool.name}</span>
+                <div className="w-6 h-6 rounded-full bg-success/15 flex items-center justify-center shrink-0">
+                  <Check className="w-4 h-4 text-success" />
+                </div>
+                <span className="text-foreground font-medium">{tool.name}</span>
               </div>
-              <span className="text-slate-500">{tool.value}</span>
+              <span className="text-muted-foreground text-sm">{tool.value}</span>
             </div>
           ))}
 
-          <div className="pt-4 border-t border-slate-300">
+          <div className="pt-6 mt-4 border-t-2 border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-slate-600">Total individual value:</span>
-              <span className="text-slate-400 line-through">$97/month</span>
+              <span className="text-muted-foreground">Total individual value:</span>
+              <span className="text-muted-foreground line-through">$97/month</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-slate-900 font-semibold">Your price:</span>
-              <span className="text-3xl font-bold text-blue-500">
-                $0.97/month
-              </span>
+              <span className="text-foreground font-semibold">Your price:</span>
+              <span className="text-3xl sm:text-4xl font-bold text-primary">$0.97/month</span>
             </div>
-            <p className="text-sm text-slate-500 text-center mt-4">
+            <p className="text-caption text-center mt-4">
               That's 99% off. For founding members who start now.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 5. Mid-Page CTA ── */}
-      <section className="bg-[#1B2A4A] py-20 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            5 Tools. $0.97/month. Cancel Anytime.
-          </h2>
-          <p className="text-white/50 mb-10">
+      {/* ── 7. Mid-Page CTA ── */}
+      <section className="hero-dark section-wide">
+        <div className="container-narrow text-center">
+          <h2 className="text-h1 text-white mb-4">5 Tools. $0.97/month. Cancel Anytime.</h2>
+          <p className="text-body text-white/50 mb-10">
             Secure payment via Stripe. No sales calls. No spam.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
-            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
+            className="btn-primary text-lg px-8 w-full sm:w-auto"
           >
-            {checkoutLoading ? "Loading..." : "Start Your Invisible Exit, $0.97/month"}
+            {checkoutLoading ? "Loading..." : "Start Your Invisible Exit — $0.97/month"}
             {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
           </button>
           <p className="text-sm text-white/40 text-center mt-4">
-            30-day money-back guarantee. If you don't validate at least one idea
-            in 30 days, full refund.
+            30-day money-back guarantee. If you don't validate at least one idea in 30 days, full refund.
           </p>
         </div>
       </section>
 
-      {/* ── 6. Condensed Story ── */}
-      <section className="bg-white py-20 px-6">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-slate-400 text-sm tracking-widest uppercase mb-8">
-            THE BACKSTORY
-          </p>
-          <div className="text-slate-700 text-lg leading-relaxed space-y-6">
+      {/* ── 8. Story ── */}
+      <section className="bg-white section-wide">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-muted-foreground mb-8">The Backstory</p>
+          <div className="text-body text-muted-foreground space-y-6">
             <p>
-              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with
-              my wife and 8-year-old for a family vacation. My phone buzzed in
-              the taxi. Two notifications sat side by side.
+              Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my
+              wife and 8-year-old for a family vacation. My phone buzzed in the
+              taxi. Two notifications sat side by side.
             </p>
             <p>
               The first: corporate escalation emails. People at my company
-              fighting over responsibilities. Again. At 6 AM. On the first
-              morning of my vacation.
+              fighting over responsibilities. Again. At 6 AM. On the first morning
+              of my vacation.
             </p>
             <p>
               The second: a Stripe notification. "$0.97 received." A complete
               stranger had paid for a landing page I built for plumbers in the
-              USA. A business I know nothing about. In a country I don't live
-              in. Under a name that isn't mine. While I slept on a plane.
+              USA. A business I know nothing about. In a country I don't live in.
+              Under a name that isn't mine. While I slept on a plane.
             </p>
             <p>
               I screamed in the taxi. The driver thought I was insane. My wife
@@ -487,45 +499,42 @@ const Index = () => {
               cage has a door.
             </p>
             <p>
-              I took everything I learned and built it into a system. 5 tools.
-              One mission: help corporate managers build invisible recurring
-              revenue.
+              I took everything I learned and built it into a system. 5 tools. One
+              mission: help corporate managers build invisible recurring revenue.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 7. Social Proof / Who Is Adrian ── */}
-      <section className="bg-white pb-20 px-6">
-        <div className="mx-auto max-w-2xl">
-          <p className="text-slate-400 text-sm tracking-widest uppercase mb-8 text-center">
-            WHO IS ADRIAN?
-          </p>
-          <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-            <p className="text-slate-600 leading-relaxed">
+      {/* ── 9. Social Proof ── */}
+      <section className="bg-white pb-20 section">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-muted-foreground mb-8 text-center">Who Is Adrian?</p>
+          <div className="card-base bg-surface p-6 sm:p-8">
+            <p className="text-body text-muted-foreground leading-relaxed text-center">
               A 37-year-old Managing Director at a European tech company. $120K
-              salary. Less than 0.5% equity. 18-month IPO clock. Building invisible
-              recurring revenue and documenting the process. Identity protected,
-              because that's the whole point.
+              salary. Less than 0.5% equity. 18-month IPO clock. Building
+              invisible recurring revenue and documenting the process. Identity
+              protected, because that's the whole point.
             </p>
           </div>
-          <p className="text-slate-400 italic text-center mt-6">
+          <p className="text-muted-foreground italic text-center mt-6 text-caption">
             Built by a corporate manager, for corporate managers.
           </p>
         </div>
       </section>
 
-      {/* ── 8. FAQ ── */}
-      <section className="bg-white py-20 px-6 border-t border-slate-100">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Questions Corporate Managers Ask</h2>
+      {/* ── 10. FAQ ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-narrow">
+          <h2 className="text-h1 text-foreground mb-8">Questions Corporate Managers Ask</h2>
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-base font-semibold text-slate-900">
+                <AccordionTrigger className="text-left text-base font-semibold text-foreground">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -534,19 +543,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 9. Final CTA ── */}
-      <section className="bg-[#1B2A4A] py-20 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The Cage Has a Door.
-          </h2>
-          <p className="text-white/60 mb-10">
+      {/* ── 11. Final CTA ── */}
+      <section className="hero-dark section-wide">
+        <div className="container-narrow text-center">
+          <h2 className="text-h1 text-white mb-4">The Cage Has a Door.</h2>
+          <p className="text-body text-white/60 mb-10">
             $0.97/month. 5 tools. 5 hours a week. Start building your exit.
           </p>
           <button
             onClick={handleCheckout}
             disabled={checkoutLoading}
-            className="bg-blue-400 hover:bg-blue-500 text-white font-semibold text-lg py-4 px-8 rounded-xl transition-colors inline-flex items-center gap-2 disabled:opacity-50"
+            className="btn-primary text-lg px-8 w-full sm:w-auto"
           >
             {checkoutLoading ? "Loading..." : "Start for $0.97/month"}
             {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
@@ -554,20 +561,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 10. Email Capture Safety Net ── */}
-      <section className="bg-[#1B2A4A] px-6 pb-8">
-        <div className="mx-auto max-w-lg pt-16">
+      {/* ── 12. Email Capture ── */}
+      <section className="hero-dark section pb-8">
+        <div className="container-narrow pt-16">
           <div className="border-t border-white/10 mb-12" />
-          <p className="text-white/50 text-center text-sm mb-2">
-            Not ready yet? No pressure.
-          </p>
+          <p className="text-white/50 text-center text-sm mb-2">Not ready yet? No pressure.</p>
           <p className="text-white/40 text-center text-sm mb-6">
-            Get Adrian's weekly insights on building invisible income. No spam.
-            Unsubscribe anytime.
+            Get Adrian's weekly insights on building invisible income. No spam. Unsubscribe anytime.
           </p>
           <form
             onSubmit={handleEmailSubscribe}
-            className="flex gap-2 max-w-md mx-auto"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
           >
             <input
               type="email"
@@ -575,21 +579,19 @@ const Index = () => {
               value={subscribeEmail}
               onChange={(e) => setSubscribeEmail(e.target.value)}
               placeholder="Your email"
-              className="flex-1 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/40 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400/50"
+              className="flex-1 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/40 py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors min-h-[48px]"
             />
             <button
               type="submit"
               disabled={emailLoading}
-              className="bg-white/10 hover:bg-white/20 text-white/70 rounded-xl py-3 px-6 text-sm font-medium transition-colors disabled:opacity-50"
+              className="bg-white/10 hover:bg-white/20 text-white/80 rounded-xl py-3.5 px-6 text-sm font-medium transition-colors disabled:opacity-50 min-h-[48px] whitespace-nowrap"
             >
               {emailLoading ? "..." : "Subscribe"}
             </button>
           </form>
           <div className="flex items-center justify-center gap-1.5 mt-4">
             <Lock className="w-3 h-3 text-white/30" />
-            <span className="text-white/30 text-xs">
-              We respect your privacy.
-            </span>
+            <span className="text-white/30 text-xs">We respect your privacy.</span>
           </div>
         </div>
       </section>

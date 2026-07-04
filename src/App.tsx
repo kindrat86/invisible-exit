@@ -23,6 +23,9 @@ import DataReportPage from "./pages/DataReportPage.tsx";
 import ResourcePage from "./pages/ResourcePage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
+import BackToTop from "./components/BackToTop.tsx";
+import ReadingProgress from "./components/ReadingProgress.tsx";
 
 // Lazy-loaded routes (not SEO-critical)
 const OTOFounding = lazy(() => import("./pages/OTOFounding.tsx"));
@@ -42,6 +45,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
+        <ReadingProgress />
         <PostHogPageviewTracker />
         <ErrorBoundary>
         <Suspense fallback={<div className="min-h-screen" />}>
@@ -97,6 +102,7 @@ const App = () => (
         </Routes>
         </Suspense>
         </ErrorBoundary>
+        <BackToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

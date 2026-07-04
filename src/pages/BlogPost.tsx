@@ -9,19 +9,19 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getBlogPostBySlug, blogPosts } from "@/data/blog-posts";
-import { comparisons } from "@/data/comparisons";
-import { trackEvent } from "@/lib/analytics";
+import { getBlogPostBySlug, blogPosts } from "@//data/blog-posts";
+import { comparisons } from "@//data/comparisons";
+import { trackEvent } from "@//lib/analytics";
 
 const slugifyCat = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function renderInlineMarkdown(text: string): string {
   return text
-    .replace(/\*\*(.+?)\*\*/g, "<strong class='text-gray-900'>$1</strong>")
+    .replace(/\*\*(.+?)\*\*/g, "<strong class='text-foreground font-semibold'>$1</strong>")
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      "<a href='$2' class='text-[#3B82F6] hover:underline'>$1</a>"
+      "<a href='$2' class='text-primary hover:underline'>$1</a>"
     );
 }
 
@@ -223,16 +223,18 @@ const BlogPost = () => {
       ))}
       <Navbar />
 
-      <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
-        <div className="mx-auto max-w-3xl">
-          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
-            <Link to="/" className="hover:text-white/70 transition-colors">
+      {/* Hero */}
+      <section className="hero-dark-radial pt-28 pb-12 sm:pt-32 sm:pb-16 section">
+        <div className="container-narrow">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6 overflow-hidden">
+            <Link to="/" className="hover:text-white/70 transition-colors shrink-0">
               Home
             </Link>
-            <span>/</span>
+            <span className="shrink-0">/</span>
             <Link
               to="/blog"
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-white/70 transition-colors shrink-0"
               onClick={() =>
                 trackEvent("blog_back_to_hub_clicked", {
                   slug: post.slug,
@@ -242,21 +244,22 @@ const BlogPost = () => {
             >
               Blog
             </Link>
-            <span>/</span>
-            <span className="text-white/60 truncate max-w-[200px]">{post.title}</span>
+            <span className="shrink-0">/</span>
+            <span className="text-white/60 truncate">{post.title}</span>
           </nav>
-          <span className="block text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-4">
+
+          <span className="block text-eyebrow text-primary-light mb-4">
             {post.category}
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-h1 text-white mb-4 leading-tight">
             {post.title}
           </h1>
-          <p className="text-white/70 text-lg leading-relaxed mb-6">{post.excerpt}</p>
-          <div className="flex items-center gap-4 text-white/50 text-sm">
+          <p className="text-body-lg text-white/70 leading-relaxed mb-6">{post.excerpt}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/50 text-sm">
             <span>By Adrian</span>
-            <span>&middot;</span>
+            <span aria-hidden>·</span>
             <span>{post.readTime}</span>
-            <span>&middot;</span>
+            <span aria-hidden>·</span>
             <span>
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
@@ -268,20 +271,19 @@ const BlogPost = () => {
         </div>
       </section>
 
-      {/* TL;DR / Quick Answer box — optimized for featured snippets */}
-      <section className="bg-blue-50 border-l-4 border-[#3B82F6] py-6 px-6">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-sm font-bold text-[#3B82F6] uppercase tracking-wide mb-2">
-            Quick Answer
-          </p>
-          <p className="text-gray-900 text-lg leading-relaxed font-medium">
+      {/* Quick Answer / TL;DR */}
+      <section className="bg-primary/5 border-l-4 border-primary py-5 sm:py-6 section">
+        <div className="container-narrow">
+          <p className="text-eyebrow text-primary mb-2">Quick Answer</p>
+          <p className="text-lg text-foreground leading-relaxed font-medium">
             {post.excerpt}
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-16 px-6">
-        <article className="mx-auto max-w-3xl prose prose-lg prose-gray prose-headings:text-gray-900 prose-a:text-[#3B82F6] prose-strong:text-gray-900">
+      {/* Article body */}
+      <section className="bg-white section-normal">
+        <article className="container-narrow prose-content">
           {post.content
             .split("\n\n")
             .flatMap((block, i) => {
@@ -302,14 +304,14 @@ const BlogPost = () => {
             .map(({ key: k, block }) => {
               if (block.startsWith("## ")) {
                 return (
-                  <h2 key={k} className="text-2xl font-bold mt-10 mb-4">
+                  <h2 key={k}>
                     {block.replace("## ", "")}
                   </h2>
                 );
               }
               if (block.startsWith("### ")) {
                 return (
-                  <h3 key={k} className="text-xl font-semibold mt-8 mb-3">
+                  <h3 key={k}>
                     {block.replace("### ", "")}
                   </h3>
                 );
@@ -324,27 +326,20 @@ const BlogPost = () => {
                   .slice(1)
                   .map((r) => r.split("|").filter(Boolean).map((c) => c.trim()));
                 return (
-                  <div key={k} className="overflow-x-auto my-6">
-                    <table className="min-w-full text-sm border border-gray-200 rounded-lg">
+                  <div key={k} className="table-wrap">
+                    <table>
                       <thead>
-                        <tr className="bg-gray-50">
+                        <tr>
                           {header.map((h, j) => (
-                            <th
-                              key={j}
-                              className="px-4 py-3 text-left font-semibold text-gray-700 border-b"
-                            >
-                              {h}
-                            </th>
+                            <th key={j}>{h}</th>
                           ))}
                         </tr>
                       </thead>
                       <tbody>
                         {body.map((row, ri) => (
-                          <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <tr key={ri}>
                             {row.map((cell, ci) => (
-                              <td key={ci} className="px-4 py-3 text-gray-600 border-b border-gray-100">
-                                {cell}
-                              </td>
+                              <td key={ci}>{cell}</td>
                             ))}
                           </tr>
                         ))}
@@ -356,13 +351,13 @@ const BlogPost = () => {
               if (block.startsWith("- [ ]") || block.startsWith("- [x]")) {
                 const items = block.split("\n").filter(Boolean);
                 return (
-                  <ul key={k} className="space-y-2 my-4 pl-2">
+                  <ul key={k} className="space-y-2 my-4 pl-2 list-none">
                     {items.map((item, j) => {
                       const checked = item.startsWith("- [x]");
                       const text = item.replace(/^- \[.\]\s*/, "");
                       return (
-                        <li key={j} className="flex items-start gap-2 text-gray-600">
-                          <input type="checkbox" checked={checked} readOnly className="mt-1.5" />
+                        <li key={j} className="flex items-start gap-2.5">
+                          <input type="checkbox" checked={checked} readOnly className="mt-1.5 accent-primary" />
                           <span>{text}</span>
                         </li>
                       );
@@ -373,13 +368,12 @@ const BlogPost = () => {
               if (block.startsWith("- ")) {
                 const items = block.split("\n").filter(Boolean);
                 return (
-                  <ul key={k} className="list-disc pl-6 space-y-2 my-4">
+                  <ul key={k}>
                     {items.map((item, j) => {
                       const text = item.replace(/^-\s+/, "");
                       return (
                         <li
                           key={j}
-                          className="text-gray-600 leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: renderInlineMarkdown(text) }}
                         />
                       );
@@ -390,13 +384,12 @@ const BlogPost = () => {
               if (block.match(/^\d+\.\s/)) {
                 const items = block.split("\n").filter(Boolean);
                 return (
-                  <ol key={k} className="list-decimal pl-6 space-y-2 my-4">
+                  <ol key={k}>
                     {items.map((item, j) => {
                       const text = item.replace(/^\d+\.\s+/, "");
                       return (
                         <li
                           key={j}
-                          className="text-gray-600 leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: renderInlineMarkdown(text) }}
                         />
                       );
@@ -407,7 +400,6 @@ const BlogPost = () => {
               return (
                 <p
                   key={k}
-                  className="text-gray-600 leading-relaxed my-4"
                   dangerouslySetInnerHTML={{ __html: renderInlineMarkdown(block) }}
                 />
               );
@@ -415,16 +407,15 @@ const BlogPost = () => {
         </article>
       </section>
 
+      {/* Next steps: Category guide + Start here */}
       {(categoryGuide && categoryGuidePost) || startHerePost ? (
-        <section className="bg-gray-50 py-12 px-6 border-y border-gray-100">
-          <div className="mx-auto max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="bg-surface section-tight border-y border-border">
+          <div className="container-narrow grid grid-cols-1 md:grid-cols-2 gap-6">
             {categoryGuide && categoryGuidePost && (
-              <div className="bg-white rounded-2xl border border-gray-200 p-6">
-                <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
-                  Read this next
-                </p>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">{categoryGuide.title}</h2>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">{categoryGuide.body}</p>
+              <div className="card-base p-6">
+                <p className="text-eyebrow text-primary mb-3">Read this next</p>
+                <h2 className="text-h3 text-foreground mb-3">{categoryGuide.title}</h2>
+                <p className="text-caption mb-5">{categoryGuide.body}</p>
                 <Link
                   to={`/blog/${categoryGuidePost.slug}`}
                   onClick={() =>
@@ -434,19 +425,17 @@ const BlogPost = () => {
                       source: "category_guide",
                     })
                   }
-                  className="inline-flex items-center gap-2 bg-[#1B2A4A] hover:bg-[#243a65] text-white font-semibold px-5 py-3 rounded-xl transition-colors"
+                  className="btn-primary"
                 >
                   {categoryGuide.cta}
                 </Link>
               </div>
             )}
             {startHerePost && startHerePost.slug !== post.slug && (
-              <div className="bg-white rounded-2xl border border-gray-200 p-6">
-                <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
-                  New to Invisible Exit?
-                </p>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">Start with the roadmap</h2>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+              <div className="card-base p-6">
+                <p className="text-eyebrow text-primary mb-3">New to Invisible Exit?</p>
+                <h2 className="text-h3 text-foreground mb-3">Start with the roadmap</h2>
+                <p className="text-caption mb-5">
                   If this article resonates, use the 90-day roadmap to see how all the pieces fit together in sequence.
                 </p>
                 <Link
@@ -458,7 +447,7 @@ const BlogPost = () => {
                       source: "start_here_guide",
                     })
                   }
-                  className="inline-flex items-center gap-2 border border-gray-300 hover:border-gray-400 text-gray-900 font-semibold px-5 py-3 rounded-xl transition-colors"
+                  className="btn-secondary"
                 >
                   Read the roadmap
                 </Link>
@@ -468,17 +457,18 @@ const BlogPost = () => {
         </section>
       ) : null}
 
+      {/* FAQs */}
       {post.faqs && post.faqs.length > 0 && (
-        <section className="bg-white pb-16 px-6">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+        <section className="bg-white pb-16 section">
+          <div className="container-narrow">
+            <h2 className="text-h2 text-foreground mb-6">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="w-full">
               {post.faqs.map((faq, i) => (
                 <AccordionItem key={i} value={`faq-${i}`}>
-                  <AccordionTrigger className="text-left text-gray-900 font-medium">
+                  <AccordionTrigger className="text-left text-foreground font-medium">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed">
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -488,15 +478,14 @@ const BlogPost = () => {
         </section>
       )}
 
+      {/* Related articles */}
       {relatedPosts.length > 0 && (
-        <section className="bg-gray-50 py-16 px-6">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex items-end justify-between gap-4 mb-8">
+        <section className="bg-surface section-normal border-t border-border">
+          <div className="container-narrow">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
               <div>
-                <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-2">
-                  Keep moving
-                </p>
-                <h2 className="text-2xl font-bold text-gray-900">Related Articles</h2>
+                <p className="text-eyebrow text-primary mb-2">Keep moving</p>
+                <h2 className="text-h2 text-foreground">Related Articles</h2>
               </div>
               <Link
                 to={`/blog/category/${slugifyCat(post.category)}`}
@@ -506,7 +495,7 @@ const BlogPost = () => {
                     source: "related_articles_category_link",
                   })
                 }
-                className="text-sm font-medium text-[#3B82F6] hover:underline"
+                className="text-sm font-medium text-primary hover:underline"
               >
                 More in {post.category}
               </Link>
@@ -523,18 +512,16 @@ const BlogPost = () => {
                       source: "related_articles",
                     })
                   }
-                  className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col hover:shadow-md transition-shadow group"
+                  className="card-base p-6 flex flex-col card-hover group"
                 >
-                  <span className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
+                  <span className="text-eyebrow text-primary mb-3">
                     {related.category}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3B82F6] transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {related.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed flex-1">
-                    {related.excerpt}
-                  </p>
-                  <span className="text-gray-400 text-xs mt-4">{related.readTime}</span>
+                  <p className="text-caption flex-1">{related.excerpt}</p>
+                  <span className="text-xs text-muted-foreground mt-4">{related.readTime}</span>
                 </Link>
               ))}
             </div>
@@ -556,23 +543,21 @@ const BlogPost = () => {
           .slice(0, 2);
         if (relevant.length === 0) return null;
         return (
-          <section className="bg-white py-12 px-6 border-t border-gray-100">
-            <div className="mx-auto max-w-3xl">
-              <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-2">
-                Related comparisons
-              </p>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Side-by-side guides</h2>
+          <section className="bg-white section-tight border-t border-border">
+            <div className="container-narrow">
+              <p className="text-eyebrow text-primary mb-2">Related comparisons</p>
+              <h2 className="text-h2 text-foreground mb-6">Side-by-side guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {relevant.map((c) => (
                   <Link
                     key={c.slug}
                     to={`/compare/${c.slug}`}
-                    className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow group"
+                    className="card-base bg-surface p-6 card-hover group"
                   >
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3B82F6] transition-colors">
+                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {c.optionA} vs. {c.optionB}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-caption">
                       {c.summary.slice(0, 140)}…
                     </p>
                   </Link>
@@ -583,15 +568,12 @@ const BlogPost = () => {
         );
       })()}
 
-      <section className="bg-[#1B2A4A] py-16 px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-blue-300 text-xs font-semibold uppercase tracking-wide mb-3">
-            Turn theory into a number
-          </p>
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Ready to Start Your Invisible Exit?
-          </h2>
-          <p className="text-white/70 mb-8">
+      {/* CTA */}
+      <section className="hero-dark section-wide">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary-light mb-3">Turn theory into a number</p>
+          <h2 className="text-h2 text-white mb-4">Ready to Start Your Invisible Exit?</h2>
+          <p className="text-body text-white/70 mb-8 max-w-xl mx-auto">
             Use the FYM Dashboard to work backwards from your freedom number, pressure-test your path, and stop guessing what your exit actually requires.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -604,7 +586,7 @@ const BlogPost = () => {
                   category: post.category,
                 })
               }
-              className="inline-block bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
+              className="btn-primary text-lg"
             >
               Get Started for $0.97/month
             </Link>
@@ -616,7 +598,7 @@ const BlogPost = () => {
                   source: "article_footer_back_to_hub",
                 })
               }
-              className="inline-block border border-white/20 hover:border-white/40 text-white font-semibold text-lg px-10 py-4 rounded-xl transition-colors"
+              className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10"
             >
               Back to the blog hub
             </Link>
