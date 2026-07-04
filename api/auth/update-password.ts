@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "../_lib/types";
 import bcrypt from "bcryptjs";
-import { execute } from "../../_lib/db";
+import { execute } from "../_lib/db";
 import { requirePost, verifyBearer } from "../_lib/auth";
 
 interface UpdatePasswordBody {

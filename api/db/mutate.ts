@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "../_lib/types";
-import { query, execute } from "../../_lib/db";
+import { query, execute } from "../_lib/db";
 import { requirePost, verifyBearer } from "../_lib/auth";
 
 const ALLOWED_TABLES = new Set([

@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "../_lib/types";
-import { query } from "../../_lib/db";
+import { query } from "../_lib/db";
 import { requirePost, generateToken } from "../_lib/auth";
 
 interface ResetBody {
