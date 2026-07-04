@@ -9,6 +9,8 @@ import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import BackToTop from "./components/BackToTop.tsx";
 import ReadingProgress from "./components/ReadingProgress.tsx";
+import { ScrollReveal } from "./components/ScrollReveal.tsx";
+import { MobileCTABar } from "./components/MobileCTABar.tsx";
 
 // ── Eager: only the homepage (LCP-critical, highest-traffic) ──
 import Index from "./pages/Index.tsx";
@@ -82,6 +84,7 @@ const App = () => (
         <ScrollToTop />
         <ReadingProgress />
         <PostHogPageviewTracker />
+        <ScrollReveal />
         <ErrorBoundary>
         <Suspense fallback={<div className="min-h-screen" />}>
         <Routes>
@@ -170,6 +173,7 @@ const App = () => (
         </Suspense>
         </ErrorBoundary>
         <BackToTop />
+        <MobileCTABar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
