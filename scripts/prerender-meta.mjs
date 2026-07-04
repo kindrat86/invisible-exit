@@ -1313,6 +1313,10 @@ function getRoutes() {
     { path: "/ad-library", title: "Ad Creative Library — 8 Ready-to-Launch Campaigns | Invisible Exit", desc: "8 Facebook, Instagram, LinkedIn, and Reddit ad concepts with full targeting presets, copy, and budget recommendations.", type: "website" },
     { path: "/hso", title: "Hook, Story, Offer Matrix — 8 Content Frameworks | Invisible Exit", desc: "Russell Brunson's Hook-Story-Offer framework applied to 8 content channels: Twitter, Reddit, LinkedIn, YouTube, email, podcast, blog, and Quora.", type: "website" },
     { path: "/traffic-roadmap", title: "0 → 100,000 Visitors Roadmap — Phased Traffic Plan | Invisible Exit", desc: "The complete 12-month roadmap from 0 to 100,000 monthly visitors. 5 phases with specific tasks, milestones, and projections.", type: "website" },
+    { path: "/testing", title: "The Growing Grid — A/B Testing Dashboard | Invisible Exit", desc: "8 planned A/B tests across the Invisible Exit funnel: hero headline, squeeze page, tripwire pricing, CTA buttons, exit popups, email subjects, and pricing anchors.", type: "website" },
+    { path: "/youtube-strategy", title: "YouTube Strategy — 6 Video Scripts + Channel Plan | Invisible Exit", desc: "Complete YouTube strategy for faceless channel: 6 priority video scripts with hooks, thumbnails, SEO keywords, and a 4-phase channel growth plan.", type: "website" },
+    { path: "/dream-100-tracker", title: "Dream 100 Tracker — 26 Named Targets & Outreach Pipeline | Invisible Exit", desc: "The actual Dream 100 list with 26 named targets across 3 tiers, outreach status tracking, and a weekly cadence for building relationships.", type: "website" },
+    { path: "/pillar-hub", title: "Pillar Content Hub — 5 Definitive Guides to Write | Invisible Exit", desc: "The pillar content strategy: 5 definitive guides (3,500-5,000 words each) targeting high-volume keywords, designed as linkable assets to transform domain authority.", type: "website" },
   ];
 
   for (const page of trafficPages) {

@@ -377,6 +377,30 @@ async function main() {
       changefreq: "monthly",
       priority: "0.8",
     },
+    {
+      loc: "https://invisibleexit.com/testing",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/youtube-strategy",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/dream-100-tracker",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/pillar-hub",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
     // Value Ladder tiers
     {
       loc: "https://invisibleexit.com/pro",

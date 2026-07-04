@@ -92,6 +92,10 @@ const WhereTheyHidePage = lazy(() => import("./pages/WhereTheyHidePage.tsx"));
 const AdLibraryPage = lazy(() => import("./pages/AdLibraryPage.tsx"));
 const HSOMatrixPage = lazy(() => import("./pages/HSOMatrixPage.tsx"));
 const First100kPage = lazy(() => import("./pages/First100kPage.tsx"));
+const GrowingGridPage = lazy(() => import("./pages/GrowingGridPage.tsx"));
+const YouTubeStrategyPage = lazy(() => import("./pages/YouTubeStrategyPage.tsx"));
+const Dream100TrackerPage = lazy(() => import("./pages/Dream100TrackerPage.tsx"));
+const PillarHubPage = lazy(() => import("./pages/PillarHubPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -248,6 +252,10 @@ const App = () => (
           <Route path="/ad-library" element={<AdLibraryPage />} />
           <Route path="/hso" element={<HSOMatrixPage />} />
           <Route path="/traffic-roadmap" element={<First100kPage />} />
+          <Route path="/testing" element={<GrowingGridPage />} />
+          <Route path="/youtube-strategy" element={<YouTubeStrategyPage />} />
+          <Route path="/dream-100-tracker" element={<Dream100TrackerPage />} />
+          <Route path="/pillar-hub" element={<PillarHubPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

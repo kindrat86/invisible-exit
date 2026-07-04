@@ -1531,6 +1531,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://invisibleexit.com/testing</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/youtube-strategy</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/dream-100-tracker</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/pillar-hub</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/pro</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
