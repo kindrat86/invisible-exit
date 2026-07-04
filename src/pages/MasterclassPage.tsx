@@ -9,11 +9,18 @@ import { trackEvent } from "@/lib/analytics";
 
 const SLIDES = [
   {
-    title: "Welcome",
-    eyebrow: "From Adrian — Your Host",
-    hook: "For the next 45 minutes, I'll show you exactly how corporate managers are building $4,000/month side businesses.",
-    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. And over the next 45 minutes, I'm going to show you the system that took me from trapped to $4,100/month — without quitting, without coding, and without my employer finding out. This isn't theory. This is the exact framework, step by step.",
-    stat: "By Adrian, Managing Director",
+    title: "Introduction",
+    eyebrow: "From Adrian — Why This Matters",
+    hook: "Over the next 45 minutes, I'm going to show you a fundamentally different vehicle for financial freedom — one that doesn't require quitting your job, raising capital, or revealing your identity.",
+    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. I'm not a guru. I'm not a serial entrepreneur. I'm a corporate manager who figured out that the cage has a door — and spent 14 months building the key. Over the next 45 minutes, I'll show you the 3 frameworks that took me from trapped to $4,100/month in invisible recurring revenue. This isn't theory. This is the exact system, step by step. By the end, you'll know your freedom number, your timeline, and the framework to get there.",
+    stat: "By Adrian — 14 months from $0 to $4,100 MRR",
+  },
+  {
+    title: "The Big Promise",
+    eyebrow: "What You'll Walk Away With",
+    hook: "Three things: your freedom number, a 5-tool system to hit it, and the stealth protocol to build it without your employer ever knowing.",
+    body: "Most courses teach you to build a 'better' side business. That's improvement — and it puts you in competition with 10,000 other courses. What I'm showing you is a NEW opportunity: the Invisible Exit System. It's the world's first anonymity-native, stealth-first framework for building recurring revenue while employed. Nobody else teaches this because nobody else built it. I built it because I needed it. Now I'm sharing it.",
+    stat: "A new category, not a better version",
   },
   {
     title: "The Hook",

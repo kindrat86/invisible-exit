@@ -20,6 +20,17 @@ const CHAPTERS = [
     ],
   },
   {
+    num: "01b",
+    eyebrow: "The Desire",
+    title: "I didn't want to quit. I wanted to matter.",
+    body: [
+      "Here's what nobody tells you about the golden handcuffs: they don't feel like handcuffs. They feel like belonging. Like purpose. Like being part of something bigger than yourself.",
+      "I wanted to build something that was mine. Not a line item on someone else's cap table. Not a product that could be killed in a reorganization I'd never attend. Something I owned. Something that couldn't be taken away in a board meeting.",
+      "But I didn't want to quit. I liked my team. I liked the paycheck. I liked the stability that let me sleep at night. I just wanted... more. I wanted to know that if the company disappeared tomorrow, my family would be fine. That's all I wanted: optionality. The freedom to choose.",
+      "I didn't know it yet, but that desire — for optionality, not escape — was the seed of everything that followed.",
+    ],
+  },
+  {
     num: "02",
     eyebrow: "The Hook",
     title: "0.5% equity. 18 months to IPO.",
@@ -88,13 +99,14 @@ const CHAPTERS = [
   },
   {
     num: "08",
-    eyebrow: "Internal Conflict",
-    title: "Month 4. Zero customers. The wall.",
+    eyebrow: "The Wall — Breaking the False Belief",
+    title: "Month 4. Zero customers. The false belief shattered.",
     body: [
       "I'd been building for 4 months. One product was live. Nobody cared. Zero customers. I checked Stripe 40 times a day. Nothing.",
-      "I sat in my car after work one Tuesday and thought: maybe I'm not cut out for this. Maybe the golden handcuffs are the best I'll get. Maybe I should just be grateful and stop pretending I can build something.",
-      "That was the darkest moment. Not because the product failed — because I almost believed the voice that said I couldn't do it.",
-      "Then I opened my freedom number calculation. The math hadn't changed. $4,000/month MRR = optionality. The math doesn't care about your feelings. I pivoted using the Idea Pipeline. Two weeks later: first paying customer. $9/month. The cage door cracked open.",
+      "Here's the false belief that almost killed me: I believed that if I picked the RIGHT idea, success would be inevitable. That the idea was the bottleneck. That choosing correctly was 80% of the work.",
+      "I sat in my car after work one Tuesday and thought: maybe I'm not cut out for this. Maybe the golden handcuffs are the best I'll get. Maybe I should just be grateful and stop pretending I can build something. That voice — the one that says 'you chose wrong, give up' — was loud and specific.",
+      "Then I opened my freedom number calculation. The math hadn't changed. $4,000/month MRR = optionality. The math doesn't care about your feelings. And then it hit me: the idea wasn't the problem. The SYSTEM was the problem. I had no pipeline. No validation process. No way to test and pivot quickly. I was treating a system problem as an idea problem.",
+      "That's when I started building the framework. Two weeks later: first paying customer. $9/month. The cage door cracked open — not because I found the right idea, but because I stopped believing ideas mattered more than systems.",
     ],
   },
   {

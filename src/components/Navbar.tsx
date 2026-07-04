@@ -44,6 +44,7 @@ const NAV_GROUPS = [
     label: "Story",
     links: [
       { label: "My Origin Story", to: "/story" },
+      { label: "The Manifesto", to: "/manifesto" },
       { label: "Who Is Adrian?", to: "/adrian" },
       { label: "Inner Circle", to: "/inner-circle" },
       { label: "Affiliates (30%)", to: "/affiliates" },

@@ -285,44 +285,74 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Framework</p>
-            <h2 className="text-h1 text-foreground mb-4">The 3 Secrets Nobody Tells Corporate Managers</h2>
+            <h2 className="text-h1 text-foreground mb-4">The 3 Frameworks Nobody Teaches Corporate Managers</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              Everything in Invisible Exit is built on these 3 principles.
-              If you understand them, the system works.
+              These aren't tips or motivation. Each is a proprietary framework
+              with a name, a process, and a specific output. They took me 14
+              months of failure to discover.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 num: "1",
+                framework: "The Salary-Runway Method",
                 title: "Your Job Is the Perfect Launchpad",
                 story: "I almost quit. Resignation letter drafted. Then I did the math: my salary funds my build without dilution. Full-time founders raise $500K and give up 20%. I give up nothing. My P&L skills? Solo founders don't have them. My 5 hours/week constraint? It forces focus that 60-hour founders can't replicate.",
                 epiphany: "The vehicle isn't a startup. The vehicle is YOUR JOB.",
+                steps: ["Calculate your effective hourly rate", "Identify 5 hours of weekly dead time", "Map corporate skills → founder skills"],
               },
               {
                 num: "2",
+                framework: "The Triple-Separation Protocol",
                 title: "Anonymity Is Your Greatest Asset",
                 story: "Week 3. Team call. Colleague says: 'This website looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent.",
                 epiphany: "Anonymity isn't hiding. It's freedom to fail without consequences.",
+                steps: ["Separate the legal entity (Wyoming LLC)", "Separate the digital footprint (hosting, Stripe, domain)", "Separate the identity (no name, no LinkedIn, no cross-link)"],
               },
               {
                 num: "3",
+                framework: "The Cartridge System",
                 title: "The System Beats the Idea",
                 story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one. It made $9/month. So I pivoted. Second product: $47/month. Third: $850. Fourth: $4,100. The system didn't care which idea I picked.",
                 epiphany: "Build the system first. Swap ideas like cartridges.",
+                steps: ["Build the 5-tool pipeline first", "Launch the 'wrong' idea to test the system", "Pivot ideas without rebuilding infrastructure"],
               },
             ].map((secret) => (
               <div key={secret.num} className="card-base p-6 sm:p-8 card-hover">
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary font-bold text-lg mb-4">
                   {secret.num}
                 </span>
+                <p className="text-xs uppercase tracking-wide text-primary font-bold mb-1">
+                  Framework: {secret.framework}
+                </p>
                 <h3 className="text-h3 text-foreground mb-3">{secret.title}</h3>
-                <p className="text-caption text-muted-foreground italic mb-4 leading-relaxed border-l-2 border-primary/30 pl-4">
+                <p className="text-caption text-muted-foreground italic mb-3 leading-relaxed border-l-2 border-primary/30 pl-4">
                   "{secret.story}"
                 </p>
+                <div className="bg-surface rounded-lg p-3 mb-3 space-y-1.5">
+                  {secret.steps.map((step, si) => (
+                    <div key={si} className="flex items-start gap-2">
+                      <span className="text-primary text-xs font-bold mt-0.5">{si + 1}.</span>
+                      <span className="text-xs text-muted-foreground">{step}</span>
+                    </div>
+                  ))}
+                </div>
                 <p className="text-sm font-semibold text-primary">{secret.epiphany}</p>
               </div>
             ))}
+          </div>
+
+          {/* Manifesto link */}
+          <div className="text-center mt-12">
+            <Link
+              to="/manifesto"
+              onClick={() => trackEvent("homepage_manifesto_clicked")}
+              className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors"
+            >
+              Read the full manifesto — the 6 principles of the Invisible Builder
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Case studies / Proof stories */}
