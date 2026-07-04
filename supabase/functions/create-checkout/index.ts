@@ -56,9 +56,21 @@ serve(async (req) => {
         priceId: Deno.env.get("STRIPE_TRIPWIRE_PRICE_ID") ?? "price_tripwire_stealth_blueprint",
         product: "tripwire",
       },
+      tripwire_bump: {
+        priceId: Deno.env.get("STRIPE_TRIPWIRE_BUMP_PRICE_ID") ?? "price_tripwire_bump",
+        product: "tripwire_bump",
+      },
       workshop: {
         priceId: Deno.env.get("STRIPE_WORKSHOP_PRICE_ID") ?? "price_weekend_workshop",
         product: "weekend_workshop",
+      },
+      book: {
+        priceId: Deno.env.get("STRIPE_BOOK_PRICE_ID") ?? "price_free_book_shipping",
+        product: "book",
+      },
+      book_audiobook: {
+        priceId: Deno.env.get("STRIPE_BOOK_AUDIOBOOK_PRICE_ID") ?? "price_book_audiobook",
+        product: "book_audiobook",
       },
     };
 

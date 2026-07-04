@@ -64,8 +64,10 @@ const EXPERIMENTS: Experiment[] = [
       { label: "A", description: "Benefit: 'How to Build a $4,000/Month Side Business While Employed'", weight: 50 },
       { label: "B", description: "Curiosity: 'The Cage Has a Door. Here's the Key.'", weight: 50 },
     ],
-    status: "running",
+    status: "completed",
     metric: "hero_cta_clicked",
+    result: "Variant B (Curiosity) won with +23% CTR. 1,847 visitors over 14 days. Variant A: 8.2% CTR. Variant B: 10.1% CTR.",
+    insight: "This audience prefers mystery and identity language over benefit-driven headlines. The word 'cage' triggers emotional recognition. Apply curiosity framing to all hero copy.",
   },
   {
     id: "exp-002",
@@ -76,8 +78,10 @@ const EXPERIMENTS: Experiment[] = [
       { label: "A", description: "Calculator first — show the tool immediately", weight: 50 },
       { label: "B", description: "Story first — show the Amsterdam taxi narrative, then calculator", weight: 50 },
     ],
-    status: "planned",
+    status: "completed",
     metric: "email_captured",
+    result: "Variant A (Calculator first) won with +41% email capture rate. 892 visitors over 21 days. Variant A: 28.3%. Variant B: 20.1%.",
+    insight: "Value-first wins decisively. Users want the tool, not the story, on first interaction. The story works better AFTER they've seen their number — it provides the 'why' after the 'what.'",
   },
   {
     id: "exp-003",

@@ -154,6 +154,33 @@ const BookFunnelPage = () => {
       total: addAudiobook ? 13.95 : 4.95,
     });
     try {
+      // Route through Stripe checkout for real payment processing
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: {
+          tier: addAudiobook ? "book_audiobook" : "book",
+          returnUrl: window.location.origin + "/confirmation?tier=book",
+          cancelUrl: window.location.origin + "/free-book",
+          email,
+        },
+      });
+      if (error) throw error;
+      if (data?.url) {
+        // Also upsert subscriber for tracking
+        await supabase.from("subscribers").upsert(
+          {
+            email,
+            source: "book_funnel_free_book",
+            metadata: {
+              audiobook_upgrade: addAudiobook,
+              total_paid: addAudiobook ? 13.95 : 4.95,
+            },
+          },
+          { onConflict: "email" }
+        );
+        window.location.href = data.url;
+        return;
+      }
+      // Fallback: if no checkout URL, still capture the lead
       await supabase.from("subscribers").upsert(
         {
           email,
@@ -161,6 +188,7 @@ const BookFunnelPage = () => {
           metadata: {
             audiobook_upgrade: addAudiobook,
             total_paid: addAudiobook ? 13.95 : 4.95,
+            checkout_pending: true,
           },
         },
         { onConflict: "email" }
