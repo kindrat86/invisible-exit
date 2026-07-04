@@ -38,6 +38,37 @@ async function main() {
       changefreq: "daily",
       priority: "0.9",
     },
+    // Category landing pages (pSEO)
+    ...[
+      "stealth-operations",
+      "financial-independence",
+      "micro-saas",
+      "audience-building",
+      "exit-planning",
+      "strategy",
+      "time-management",
+      "growth",
+      "ai-tools",
+      "validation",
+    ].map((cat) => ({
+      loc: `https://invisibleexit.com/blog/category/${cat}`,
+      lastmod: today,
+      changefreq: "weekly" as const,
+      priority: "0.7" as const,
+    })),
+    // Comparison pages (pSEO)
+    ...[
+      "micro-saas-vs-real-estate",
+      "llc-vs-s-corp-side-business",
+      "side-business-vs-full-time-startup",
+      "personal-brand-vs-anonymous-business",
+      "youtube-vs-blog-for-founders",
+    ].map((cmp) => ({
+      loc: `https://invisibleexit.com/compare/${cmp}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
     ...blogPosts.map((post: { slug: string; publishedAt: string }) => ({
       loc: `https://invisibleexit.com/blog/${post.slug}`,
       lastmod: post.publishedAt,

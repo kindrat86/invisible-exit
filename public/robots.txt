@@ -14,13 +14,50 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
 Sitemap: https://invisibleexit.com/sitemap.xml
 
-# LLM context page
+# LLM context pages
 # https://invisibleexit.com/llms.txt
+# https://invisibleexit.com/llms-full.txt

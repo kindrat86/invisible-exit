@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "generate:sitemap": "npx tsx scripts/generate-sitemap.ts",
-    "build": "npm run generate:sitemap && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts",
+    "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
+    "build": "npm run generate:sitemap && npm run generate:llms && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

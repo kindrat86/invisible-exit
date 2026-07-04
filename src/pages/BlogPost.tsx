@@ -109,6 +109,15 @@ const BlogPost = () => {
       description: post.excerpt,
       url: `https://invisibleexit.com/blog/${post.slug}`,
       datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      articleSection: post.category,
+      wordCount: post.content.split(/\s+/).length,
+      image: {
+        "@type": "ImageObject",
+        url: "https://invisibleexit.com/og-image.png",
+        width: 1200,
+        height: 630,
+      },
       author: {
         "@type": "Person",
         name: "Adrian",
@@ -119,6 +128,10 @@ const BlogPost = () => {
         "@type": "Organization",
         name: "Invisible Exit",
         url: "https://invisibleexit.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://invisibleexit.com/og-image.png",
+        },
       },
     },
     {

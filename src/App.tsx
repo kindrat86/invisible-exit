@@ -10,6 +10,8 @@ import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import BlogCategory from "./pages/BlogCategory.tsx";
+import ComparePage from "./pages/ComparePage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
@@ -57,6 +59,9 @@ const App = () => (
           <Route path="/training" element={<Navigate to="/" replace />} />
           <Route path="/thank-you" element={<Navigate to="/" replace />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/category/:category" element={<BlogCategory />} />
+          <Route path="/compare" element={<Blog />} />
+          <Route path="/compare/:vs" element={<ComparePage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}

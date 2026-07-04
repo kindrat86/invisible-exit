@@ -13,6 +13,7 @@ type AnalyticsEvent =
   | "blog_article_cta_clicked"
   | "blog_related_clicked"
   | "blog_back_to_hub_clicked"
+  | "blog_category_post_clicked"
   | "homepage_blog_clicked";
 
 export function trackEvent(

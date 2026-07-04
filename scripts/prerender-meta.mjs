@@ -11,6 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { blogPosts } from "../src/data/blog-posts.ts";
+import { comparisons } from "../src/data/comparisons.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -94,6 +95,7 @@ function getRoutes() {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE,
+          logo: `${SITE}/og-image.png`,
           description:
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: ["https://www.youtube.com/@InvisibleExit"],
@@ -108,6 +110,68 @@ function getRoutes() {
             target: `${SITE}/blog?q={search_term_string}`,
             "query-input": "required name=search_term_string",
           },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: SITE_NAME,
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          offers: {
+            "@type": "Offer",
+            price: "0.97",
+            priceCurrency: "USD",
+          },
+          description:
+            "5 AI-powered tools for building anonymous micro-SaaS businesses: freedom number calculator, idea validator, stealth ops hub, launch automation, and anonymous brand builder.",
+          url: SITE,
+          screenshot: `${SITE}/og-image.png`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What do I get for $0.97/month?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Five AI-powered tools: FYM Dashboard (tracks recurring revenue and exit timeline), Idea Pipeline (validates micro-SaaS ideas in 48 hours), Stealth Ops Hub (entity separation and invisibility scoring), Launch Control (go-live automation for 5-hour weeks), and Brand Manager (faceless audience building with YouTube scripts and Reddit playbooks). All five tools, one price.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Does Invisible Exit violate my employment contract?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Most employment contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints — you build in unrelated markets, on your own time, with your own tools. The Stealth Ops Hub runs a compliance audit against common contract clauses including non-compete, IP assignment, and moonlighting. Always review your specific contract with a legal professional.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Can my employer find out about my side business?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "The Stealth Ops Hub is specifically designed to prevent that. It includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure with no connection to your name.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How much money do I need to never work again?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and eliminates the fear of financial free-fall. A micro-SaaS charging $29/month needs 138 paying customers to reach this threshold — achievable in 12-18 months.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do I need to know how to code to use Invisible Exit?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. The Idea Pipeline helps you find and validate micro-SaaS ideas using AI tools, and the platform is designed for corporate managers who want to leverage AI rather than write code themselves. AI tools can now replace much of what a 5-person startup team used to do.",
+              },
+            },
+          ],
         },
       ],
     },
@@ -154,6 +218,14 @@ function getRoutes() {
         description: post.excerpt,
         datePublished: post.publishedAt,
         dateModified: post.publishedAt,
+        articleSection: post.category,
+        wordCount: post.content.split(/\s+/).length,
+        image: {
+          "@type": "ImageObject",
+          url: `${SITE}/og-image.png`,
+          width: 1200,
+          height: 630,
+        },
         author: {
           "@type": "Person",
           name: "Adrian",
@@ -164,6 +236,10 @@ function getRoutes() {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE,
+          logo: {
+            "@type": "ImageObject",
+            url: `${SITE}/og-image.png`,
+          },
         },
         mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
       },
@@ -214,6 +290,265 @@ function getRoutes() {
         url: postUrl,
         type: "article",
         jsonLd: postJsonLd,
+      },
+    });
+  }
+
+  // ---------- Category pages (pSEO) ----------
+  const categoryMeta = {
+    "Stealth Operations": {
+      title: "Stealth Operations for Employed Founders | Invisible Exit",
+      description:
+        "Complete guide to building a side business invisibly: entity separation, non-compete clauses, moonlighting rules, digital separation, and employer-proof operations.",
+      intro:
+        "Everything you need to build a side business without your employer finding out. Entity structures, compliance checklists, digital separation, and operational security for corporate managers building invisible recurring revenue.",
+      faqs: [
+        {
+          question: "What is stealth operations for a side business?",
+          answer:
+            "Stealth operations is the practice of building and running a side business while employed, using entity separation, digital compartmentalization, and compliance management to ensure your employer cannot discover or connect your business activity to your professional identity.",
+        },
+        {
+          question: "Can my employer legally find out about my side business?",
+          answer:
+            "Your employer can discover a side business through public records, social media, or accidental digital footprints. Stealth operations minimizes this risk through separate legal entities, anonymized digital accounts, and careful footprint management. Most employment contracts restrict competing businesses and company resource use, not general entrepreneurship.",
+        },
+      ],
+    },
+    "Financial Independence": {
+      title: "Financial Independence for Corporate Managers | Invisible Exit",
+      description:
+        "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. The $4,000/month freedom threshold.",
+      intro:
+        "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything — and how to get there faster than traditional saving.",
+      faqs: [
+        {
+          question: "How much money do I need to never work again?",
+          answer:
+            "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and makes leaving your job feel like a lateral move. A micro-SaaS at $29/month needs 138 customers.",
+        },
+      ],
+    },
+    "Micro-SaaS": {
+      title: "Micro-SaaS for Corporate Managers | Invisible Exit",
+      description:
+        "How to build, launch, and grow micro-SaaS businesses while employed. Idea selection, validation, pricing, and the economics of small recurring-revenue products.",
+      intro:
+        "Practical frameworks for building small, profitable software products on the side. From idea selection to your first 138 customers.",
+      faqs: [
+        {
+          question: "What is a micro-SaaS?",
+          answer:
+            "A micro-SaaS is a small software-as-a-service business targeting a narrow niche, typically run by one person. It charges $10-$100/month and needs 50-500 customers to generate meaningful income. The low overhead and focused scope make it ideal for employed founders.",
+        },
+      ],
+    },
+    "Audience Building": {
+      title: "Faceless Audience Building for Employed Founders | Invisible Exit",
+      description:
+        "How to build distribution and audience without showing your face or using your real name. YouTube, Reddit, SEO, and content strategies for anonymous founders.",
+      intro:
+        "Distribution channels that work for low-profile founders. YouTube without showing your face, Reddit strategies, and SEO-driven content for employed founders who want attention without visibility.",
+      faqs: [
+        {
+          question: "Can I build an audience without showing my face?",
+          answer:
+            "Yes. Faceless YouTube channels, Reddit contribution strategies, SEO-driven blogs, and newsletter-first approaches all build distribution without requiring personal visibility. The key is routing attention through useful assets rather than your personal identity.",
+        },
+      ],
+    },
+    "Exit Planning": {
+      title: "Exit Planning for Employed Founders | Invisible Exit",
+      description:
+        "Roadmaps, timelines, and strategies for planning your invisible exit from employment to entrepreneurship.",
+      intro:
+        "Step-by-step frameworks for transitioning from employment to entrepreneurship. The 90-day roadmap and the 18-month timeline to $4,000/month.",
+      faqs: [
+        {
+          question: "What is an invisible exit?",
+          answer:
+            "An invisible exit is the transition from employment to entrepreneurship achieved by building a side business invisibly until your recurring revenue replaces enough of your salary to make leaving feel safe.",
+        },
+      ],
+    },
+    Strategy: {
+      title: "Strategy for Employed Founders | Invisible Exit",
+      description:
+        "Decision frameworks, mental models, and strategic thinking for corporate managers building side businesses.",
+      intro:
+        "Decision frameworks and mental models for choosing what to build and managing the identity split between employee and founder.",
+      faqs: [
+        {
+          question: "Should I build one big startup or several small micro-SaaS businesses?",
+          answer:
+            "For most employed founders, several small micro-SaaS bets are safer and more realistic than one big startup. Small bets fit constrained schedules and diversify risk.",
+        },
+      ],
+    },
+    "Time Management": {
+      title: "Time Management for Side Business Founders | Invisible Exit",
+      description:
+        "How to build a side business in 5 hours per week. Operating systems and time-blocking strategies for employed founders.",
+      intro:
+        "You don't need 40 hours a week to build a business. The operating systems and weekly rhythms that let corporate managers ship real products in 5 focused hours.",
+      faqs: [
+        {
+          question: "Can I build a micro-SaaS working only 5 hours per week?",
+          answer:
+            "Yes. The 5-hour weekly operating system dedicates 2 hours to building, 2 hours to distribution, and 1 hour to planning. Over 18 months, you can reach $4,000/month.",
+        },
+      ],
+    },
+    Growth: {
+      title: "Growth Strategies for Micro-SaaS | Invisible Exit",
+      description:
+        "How to get your first 10 customers without ads. Outreach playbooks and organic growth strategies for employed founders.",
+      intro:
+        "Customer acquisition strategies that work without paid ads or a public profile. The corporate manager's outreach playbook.",
+      faqs: [
+        {
+          question: "How do I get my first 10 micro-SaaS customers without ads?",
+          answer:
+            "Your first 10 customers come from your professional network. Use targeted outreach to people who have the problem you solve. Charge from day one to qualify seriousness.",
+        },
+      ],
+    },
+    "AI Tools": {
+      title: "AI Tools for Solo Founders | Invisible Exit",
+      description:
+        "How AI tools let solo founders compete with funded startups. Tool stacks, workflow automation, and what AI can and cannot do.",
+      intro:
+        "The AI tool stacks and workflows that let one person do the work of a 5-person startup team.",
+      faqs: [
+        {
+          question: "Can AI really replace a startup team?",
+          answer:
+            "AI can replace much of early-stage execution — coding, copywriting, design. It cannot replace founder judgment and accountability. A solo founder with AI can compete with a funded 5-person team on execution speed.",
+        },
+      ],
+    },
+    Validation: {
+      title: "Idea Validation for Micro-SaaS | Invisible Exit",
+      description:
+        "How to validate a micro-SaaS idea in 48 hours without writing code.",
+      intro:
+        "Fast validation frameworks that prove demand before you build.",
+      faqs: [
+        {
+          question: "How do I validate a micro-SaaS idea without coding?",
+          answer:
+            "Validate in 48 hours by creating a landing page, driving 100 targeted visitors, and measuring email signups or pre-orders. If you cannot get 5-10 expressions of interest, reframe the idea.",
+        },
+      ],
+    },
+  };
+
+  function slugifyCat(s) {
+    return s
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  for (const [catName, catData] of Object.entries(categoryMeta)) {
+    const catSlug = slugifyCat(catName);
+    const catUrl = `${SITE}/blog/category/${catSlug}`;
+    const catPosts = blogPosts.filter((p) => p.category === catName);
+
+    routes.push({
+      path: `/blog/category/${catSlug}`,
+      meta: {
+        title: catData.title,
+        description: catData.description,
+        url: catUrl,
+        type: "website",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: catData.title.replace(" | Invisible Exit", ""),
+            description: catData.description,
+            url: catUrl,
+            isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE },
+            hasPart: catPosts.map((p) => ({
+              "@type": "Article",
+              headline: p.title,
+              url: `${SITE}/blog/${p.slug}`,
+              datePublished: p.publishedAt,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+              { "@type": "ListItem", position: 3, name: catName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: catData.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Comparison pages (pSEO) ----------
+
+  for (const cmp of comparisons) {
+    const cmpUrl = `${SITE}/compare/${cmp.slug}`;
+    routes.push({
+      path: `/compare/${cmp.slug}`,
+      meta: {
+        title: cmp.metaTitle,
+        description: cmp.metaDescription,
+        url: cmpUrl,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: cmp.h1,
+            description: cmp.metaDescription,
+            url: cmpUrl,
+            author: {
+              "@type": "Person",
+              name: "Adrian",
+              url: SITE,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: SITE_NAME,
+              url: SITE,
+            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": cmpUrl },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE}/compare` },
+              { "@type": "ListItem", position: 3, name: cmp.h1 },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: cmp.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+          },
+        ],
       },
     });
   }
