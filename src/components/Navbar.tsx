@@ -104,7 +104,7 @@ const Navbar = () => {
         }`}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-18">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link
               to="/"
@@ -114,7 +114,7 @@ const Navbar = () => {
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/20 border border-primary/30">
                 <span className="block w-3 h-3 rounded-sm bg-primary animate-pulse" />
               </span>
-              <span className="hidden xs:inline sm:inline">Invisible Exit</span>
+              <span className="inline">Invisible Exit</span>
             </Link>
 
             {/* Desktop nav */}

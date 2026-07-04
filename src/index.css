@@ -586,13 +586,25 @@ p {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  /* Larger tap targets on mobile */
-  a, button, [role="button"], input[type="submit"] {
+  /* Larger tap targets on mobile — only intentional interactive elements */
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  nav a,
+  [role="button"],
+  [data-touch-target],
+  input,
+  select,
+  textarea {
     min-height: 44px;
     min-width: 44px;
   }
-  /* But not for inline links in text */
-  .prose-content a, .prose-content button {
+  /* Inline text links in content should stay small */
+  .prose-content a,
+  .prose-content button,
+  .text-sm a,
+  p > a,
+  li > a {
     min-height: 0;
     min-width: 0;
   }
@@ -713,12 +725,10 @@ summary::-webkit-details-marker { display: none; }
 
 /* ── Mobile bottom padding to prevent CTA bar overlap ── */
 @media (max-width: 767px) {
-  article, .min-h-screen > section, .min-h-screen > main {
+  /* Apply to all page root containers that have min-h-screen */
+  .min-h-screen > article,
+  .min-h-screen > section:not(.hero-dark-radial):not(.hero-dark):not(.hero-mesh) {
     padding-bottom: 80px;
-  }
-  /* But not on funnel/dashboard pages */
-  .min-h-screen:has(.mobile-cta-bar:not(.visible)) article {
-    padding-bottom: 0;
   }
 }
 

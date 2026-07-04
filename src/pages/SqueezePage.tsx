@@ -218,10 +218,14 @@ const SqueezePage = () => {
               <div className="relative mb-6">
                 <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoComplete="off"
+                  aria-label="Annual salary"
                   autoFocus
                   value={salary}
-                  onChange={(e) => setSalary(e.target.value)}
+                  onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
                   placeholder="120000"
                   className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
                 />
@@ -288,10 +292,14 @@ const SqueezePage = () => {
               <div className="relative mb-6">
                 <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  autoComplete="off"
+                  aria-label="Monthly living expenses"
                   autoFocus
                   value={expenses}
-                  onChange={(e) => setExpenses(e.target.value)}
+                  onChange={(e) => setExpenses(e.target.value.replace(/[^0-9]/g, ''))}
                   placeholder="5000"
                   className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
                 />
