@@ -1,0 +1,21 @@
+{
+  "name": "Invisible Exit — Build a Side Business While Employed",
+  "short_name": "Invisible Exit",
+  "description": "AI-powered tools that help corporate managers build anonymous micro-SaaS businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
