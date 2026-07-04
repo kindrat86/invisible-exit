@@ -294,6 +294,26 @@ function getRoutes() {
           text: step.text,
         })),
       });
+    } else if (/^how to|how to /i.test(post.title) || /^how to|how to /i.test(post.slug)) {
+      // Auto-generate HowTo schema from H2 headings in content for "how-to" posts
+      const h2Matches = post.content.match(/^## (.+)$/gm) || [];
+      const steps = h2Matches
+        .filter((h) => !/^(faq|related|conclusion|summary|key takeaways?)$/i.test(h.replace(/^##\s+/, "").trim()))
+        .slice(0, 10);
+      if (steps.length >= 3) {
+        postJsonLd.push({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: post.title,
+          description: post.excerpt,
+          step: steps.map((h, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: h.replace(/^##\s+/, "").trim(),
+            text: h.replace(/^##\s+/, "").trim(),
+          })),
+        });
+      }
     }
 
     routes.push({

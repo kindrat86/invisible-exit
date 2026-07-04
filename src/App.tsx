@@ -4,46 +4,54 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import Privacy from "./pages/Privacy.tsx";
-import Terms from "./pages/Terms.tsx";
-import About from "./pages/About.tsx";
-import NotFound from "./pages/NotFound.tsx";
-import Blog from "./pages/Blog.tsx";
-import BlogPost from "./pages/BlogPost.tsx";
-import BlogCategory from "./pages/BlogCategory.tsx";
-import ComparePage from "./pages/ComparePage.tsx";
-import GlossaryIndex from "./pages/GlossaryIndex.tsx";
-import GlossaryTermPage from "./pages/GlossaryTermPage.tsx";
-import StateGuidePage from "./pages/StateGuidePage.tsx";
-import IndustryIdeasPage from "./pages/IndustryIdeasPage.tsx";
-import BestToolsPage from "./pages/BestToolsPage.tsx";
-import CalculatorPage from "./pages/CalculatorPage.tsx";
-import DataReportPage from "./pages/DataReportPage.tsx";
-import ResourcePage from "./pages/ResourcePage.tsx";
-import SqueezePage from "./pages/SqueezePage.tsx";
-import DownsellPage from "./pages/DownsellPage.tsx";
-import MasterclassPage from "./pages/MasterclassPage.tsx";
-import AffiliatesPage from "./pages/AffiliatesPage.tsx";
-import IntensivePage from "./pages/IntensivePage.tsx";
-import StoryPage from "./pages/StoryPage.tsx";
-import AdrianPage from "./pages/AdrianPage.tsx";
-import InnerCirclePage from "./pages/InnerCirclePage.tsx";
-import Dream100Page from "./pages/Dream100Page.tsx";
-import TrafficBlueprintPage from "./pages/TrafficBlueprintPage.tsx";
-import ContentCalendarPage from "./pages/ContentCalendarPage.tsx";
-import AffiliateAssetsPage from "./pages/AffiliateAssetsPage.tsx";
-import PodcastPitchPage from "./pages/PodcastPitchPage.tsx";
-import BacklinkStrategyPage from "./pages/BacklinkStrategyPage.tsx";
-import ProPage from "./pages/ProPage.tsx";
-import FunnelMetricsPage from "./pages/FunnelMetricsPage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import BackToTop from "./components/BackToTop.tsx";
 import ReadingProgress from "./components/ReadingProgress.tsx";
 
-// Lazy-loaded routes (not SEO-critical)
+// ── Eager: only the homepage (LCP-critical, highest-traffic) ──
+import Index from "./pages/Index.tsx";
+
+// ── Lazy: all other routes (code-splitting for smaller initial bundle) ──
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
+
+// SEO content pages — lazy-loaded but pre-rendered by prerender-meta.mjs
+const Blog = lazy(() => import("./pages/Blog.tsx"));
+const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
+const BlogCategory = lazy(() => import("./pages/BlogCategory.tsx"));
+const ComparePage = lazy(() => import("./pages/ComparePage.tsx"));
+const GlossaryIndex = lazy(() => import("./pages/GlossaryIndex.tsx"));
+const GlossaryTermPage = lazy(() => import("./pages/GlossaryTermPage.tsx"));
+const StateGuidePage = lazy(() => import("./pages/StateGuidePage.tsx"));
+const IndustryIdeasPage = lazy(() => import("./pages/IndustryIdeasPage.tsx"));
+const BestToolsPage = lazy(() => import("./pages/BestToolsPage.tsx"));
+const CalculatorPage = lazy(() => import("./pages/CalculatorPage.tsx"));
+const DataReportPage = lazy(() => import("./pages/DataReportPage.tsx"));
+const ResourcePage = lazy(() => import("./pages/ResourcePage.tsx"));
+
+// Funnel & marketing pages
+const SqueezePage = lazy(() => import("./pages/SqueezePage.tsx"));
+const DownsellPage = lazy(() => import("./pages/DownsellPage.tsx"));
+const MasterclassPage = lazy(() => import("./pages/MasterclassPage.tsx"));
+const AffiliatesPage = lazy(() => import("./pages/AffiliatesPage.tsx"));
+const IntensivePage = lazy(() => import("./pages/IntensivePage.tsx"));
+const StoryPage = lazy(() => import("./pages/StoryPage.tsx"));
+const AdrianPage = lazy(() => import("./pages/AdrianPage.tsx"));
+const InnerCirclePage = lazy(() => import("./pages/InnerCirclePage.tsx"));
+const Dream100Page = lazy(() => import("./pages/Dream100Page.tsx"));
+const TrafficBlueprintPage = lazy(() => import("./pages/TrafficBlueprintPage.tsx"));
+const ContentCalendarPage = lazy(() => import("./pages/ContentCalendarPage.tsx"));
+const AffiliateAssetsPage = lazy(() => import("./pages/AffiliateAssetsPage.tsx"));
+const PodcastPitchPage = lazy(() => import("./pages/PodcastPitchPage.tsx"));
+const BacklinkStrategyPage = lazy(() => import("./pages/BacklinkStrategyPage.tsx"));
+const ProPage = lazy(() => import("./pages/ProPage.tsx"));
+const FunnelMetricsPage = lazy(() => import("./pages/FunnelMetricsPage.tsx"));
+const About = lazy(() => import("./pages/About.tsx"));
+const Privacy = lazy(() => import("./pages/Privacy.tsx"));
+const Terms = lazy(() => import("./pages/Terms.tsx"));
+
+// App pages (authenticated, never crawled)
 const OTOFounding = lazy(() => import("./pages/OTOFounding.tsx"));
 const Login = lazy(() => import("./pages/Login.tsx"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword.tsx"));

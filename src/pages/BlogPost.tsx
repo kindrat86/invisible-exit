@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import { RelatedContent, getRelatedPosts, getRelevantCalculators } from "@/components/RelatedContent";
 import {
   Accordion,
   AccordionContent,
@@ -618,6 +619,17 @@ const BlogPost = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Internal links: related posts + calculators */}
+      <section className="mx-auto max-w-3xl px-4 pb-8">
+        <RelatedContent
+          links={[
+            ...getRelatedPosts(post.slug, post.category, blogPosts, 4),
+            ...getRelevantCalculators(post.category),
+          ]}
+          title="Keep Reading"
+        />
       </section>
 
       <Footer />

@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { stateGuides, type StateGuide } from "@/data/state-guides";
+import { glossaryTerms } from "@/data/glossary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { RelatedContent } from "@/components/RelatedContent";
 import { slugifyCategory } from "@/lib/utils";
 
 export default function StateGuidePage() {
@@ -147,6 +149,17 @@ export default function StateGuidePage() {
             ))}
           </div>
         </section>
+
+        {/* Cross-links: glossary terms + calculators */}
+        <RelatedContent
+          links={[
+            { to: "/glossary/non-compete-clause", title: "What Is a Non-Compete Clause?", description: "Definition and enforcement rules" },
+            { to: "/glossary/what-is-an-llc", title: "What Is an LLC?", description: "Limited Liability Company explained" },
+            { to: "/calculators/freedom-number", title: "Freedom Number Calculator", description: "Calculate your exit number" },
+            { to: "/resources/micro-saas-launch-checklist", title: "30-Step Launch Checklist", description: "Go from idea to launched" },
+          ]}
+          title="Related Resources"
+        />
       </div>
       <Footer />
     </div>

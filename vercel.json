@@ -61,6 +61,15 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/california-anonymous-llc-guide", "destination": "/guides/california", "permanent": true },
+    { "source": "/texas-anonymous-llc-guide", "destination": "/guides/texas", "permanent": true },
+    { "source": "/new-york-anonymous-llc-guide", "destination": "/guides/new-york", "permanent": true },
+    { "source": "/florida-anonymous-llc-guide", "destination": "/guides/florida", "permanent": true },
+    { "source": "/nevada-anonymous-llc-guide", "destination": "/guides/nevada", "permanent": true },
+    { "source": "/delaware-anonymous-llc-guide", "destination": "/guides/delaware", "permanent": true },
+    { "source": "/wyoming-anonymous-llc-guide", "destination": "/guides/wyoming", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog/rss", "destination": "/blog/rss.xml" },
     { "source": "/blog/rss.xml", "destination": "/blog/rss.xml" },

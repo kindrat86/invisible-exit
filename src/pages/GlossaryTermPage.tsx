@@ -3,7 +3,9 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { RelatedContent } from "@/components/RelatedContent";
 import { glossaryTerms } from "@/data/glossary";
+import { blogPosts } from "@/data/blog-posts";
 
 const GlossaryTermPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -171,6 +173,21 @@ const GlossaryTermPage = () => {
             </div>
           )}
         </div>
+      </section>
+
+      {/* Cross-links: related blog posts */}
+      <section className="mx-auto max-w-3xl px-4 pb-8">
+        <RelatedContent
+          links={blogPosts
+            .filter((p) => {
+              const termLower = term!.term.toLowerCase();
+              return p.title.toLowerCase().includes(termLower.slice(0, 8)) ||
+                p.excerpt.toLowerCase().includes(termLower.slice(0, 8));
+            })
+            .slice(0, 4)
+            .map((p) => ({ to: `/blog/${p.slug}`, title: p.title, description: p.excerpt }))}
+          title="Articles Mentioning This Term"
+        />
       </section>
 
       <Footer />
