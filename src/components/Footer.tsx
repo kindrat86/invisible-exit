@@ -6,8 +6,8 @@ const FOOTER_SECTIONS = [
     links: [
       { label: "Blog", to: "/blog" },
       { label: "Start Here", to: "/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days" },
-      { label: "90-Day Roadmap", to: "/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days" },
-      { label: "Freedom Math", to: "/blog/how-much-money-to-never-work-again" },
+      { label: "Free Freedom Calculator", to: "/freedom" },
+      { label: "Free Masterclass", to: "/masterclass" },
     ],
   },
   {
@@ -27,6 +27,7 @@ const FOOTER_SECTIONS = [
       { label: "Glossary", to: "/glossary" },
       { label: "Comparisons", to: "/compare" },
       { label: "About", to: "/about" },
+      { label: "Affiliates (30%)", to: "/affiliates" },
       { label: "RSS Feed", to: "/blog/rss.xml" },
     ],
   },

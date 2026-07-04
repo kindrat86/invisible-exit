@@ -56,6 +56,35 @@ const OTOFounding = () => {
     trackEvent("oto_declined");
   };
 
+  // ── Countdown Timer: 14 days from first visit ──
+  useEffect(() => {
+    const STORAGE_KEY = "oto_deadline";
+    let deadline = localStorage.getItem(STORAGE_KEY);
+    if (!deadline) {
+      deadline = (Date.now() + 14 * 24 * 60 * 60 * 1000).toString();
+      localStorage.setItem(STORAGE_KEY, deadline);
+    }
+    const tick = () => {
+      const remaining = parseInt(deadline!) - Date.now();
+      if (remaining <= 0) return;
+      const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((remaining % (1000 * 60)) / 1000);
+      const update = (id: string, val: number | string) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(val).padStart(2, "0");
+      };
+      update("countdown-Days", days);
+      update("countdown-Hours", hours);
+      update("countdown-Mins", mins);
+      update("countdown-Secs", secs);
+    };
+    tick();
+    const interval = setInterval(tick, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <div className="min-h-screen bg-[#1B2A4A]">
@@ -182,15 +211,33 @@ const OTOFounding = () => {
       {/* ─── 8. Price Card ─── */}
       <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
 
-      {/* ─── 9. Scarcity Note ─── */}
+      {/* ── 9. Scarcity + Countdown ── */}
       <section className="px-6 py-8">
         <div className="max-w-[720px] mx-auto text-center">
-          <p className="text-base font-bold text-[#60A5FA]">
-            Limited to the first 100 Founding Members.
+          {/* Countdown Timer */}
+          <div className="flex items-center justify-center gap-3 sm:gap-6 mb-6">
+            {[
+              { label: "Days", value: "14" },
+              { label: "Hours", value: "23" },
+              { label: "Mins", value: "47" },
+              { label: "Secs", value: "12" },
+            ].map((unit) => (
+              <div key={unit.label} className="text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-1">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#60A5FA] tabular-nums" id={`countdown-${unit.label}`}>
+                    {unit.value}
+                  </span>
+                </div>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-white/40">{unit.label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-base font-bold text-[#60A5FA] mb-2">
+            Founding Member Spots Close In:
           </p>
           <p className="text-base text-white/70 mt-2">
-            When founding closes, this page and this price disappear
-            permanently.
+            Limited to the first 100 Founding Members. When founding closes,
+            this page and this price disappear permanently.
           </p>
         </div>
       </section>
@@ -270,7 +317,7 @@ const OTOFounding = () => {
       <section className="px-6 py-8">
         <div className="text-center">
           <Link
-            to="/dashboard"
+            to="/oto/downsell"
             onClick={handleDecline}
             className="text-sm text-white/40 underline hover:text-white/60 transition-colors"
           >

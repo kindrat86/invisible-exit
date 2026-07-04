@@ -91,6 +91,35 @@ serve(async (req) => {
       );
     }
 
+    // ── Trigger Soap Opera Sequence (Day 0 = immediate, Days 1-4 = scheduled) ──
+    // Fire-and-forget: schedule the 5-day follow-up sequence
+    try {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL");
+      const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+      if (supabaseUrl && supabaseKey) {
+        // Insert subscriber into email_sequence_schedule for the cron-style follow-up
+        const scheduleRes = await fetch(`${supabaseUrl}/rest/v1/email_sequence_schedule`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: supabaseKey,
+            Authorization: `Bearer ${supabaseKey}`,
+          },
+          body: JSON.stringify({
+            email,
+            sequence: "soap_opera",
+            started_at: new Date().toISOString(),
+            days_sent: [0],
+          }),
+        });
+        if (!scheduleRes.ok) {
+          console.error("Failed to schedule email sequence:", scheduleRes.status);
+        }
+      }
+    } catch (scheduleErr) {
+      console.error("Email sequence schedule error:", scheduleErr);
+    }
+
     return new Response(
       JSON.stringify({ success: true }),
       { status: 200, headers: { ...CORS_HEADERS, "Content-Type": "application/json" } }

@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Tools", to: "/best" },
   { label: "Calculators", to: "/calculators" },
   { label: "Glossary", to: "/glossary" },
+  { label: "Affiliates", to: "/affiliates" },
 ];
 
 const Navbar = () => {

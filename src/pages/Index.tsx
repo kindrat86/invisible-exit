@@ -197,59 +197,93 @@ const Index = () => {
             For Corporate Managers Who Want Out
           </p>
 
-          <h1 className="text-display text-white mb-6 animate-fade-up">
-            You're Building a Company<br className="hidden sm:block" />{" "}
-            <span className="text-gradient-light">You'll Never Own.</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] animate-fade-up">
+            How to Build a{" "}
+            <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
+            Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out
           </h1>
 
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            Hey, my name is Adrian. I am a Managing Director. $120K salary. Less
-            than 0.5% equity. I ran the numbers. Even a $1B exit, after taxes
-            and dilution, wouldn't cover my salary in passive income. That's not
-            an exit. That's a longer leash. So I started building something
-            invisible. Here's the system.
+            5 AI-powered tools that take you from "trapped in the golden handcuffs"
+            to real recurring revenue — in 12 months, working 5 hours a week.
           </p>
 
-          {/* Video */}
-          <div className="mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl shadow-black/40 animate-scale-in" style={{ animationDelay: "200ms" }}>
-            <video
-              className="w-full aspect-video bg-[hsl(222_47%_14%)]"
-              controls
-              preload="metadata"
-              playsInline
-            >
-              <source
-                src="https://maybpahtbbcxnucposjy.supabase.co/storage/v1/object/public/videos/Avatar_Video.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-
           {/* CTA */}
-          <div className="mt-8 flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 mb-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
             <button
               onClick={handleCheckout}
               disabled={checkoutLoading}
               className="btn-primary w-full sm:w-auto text-lg px-8"
             >
-              {checkoutLoading ? "Loading..." : "Start Your Invisible Exit — $0.97/month"}
+              {checkoutLoading ? "Loading..." : "Get All 5 Tools — $0.97/month"}
               {!checkoutLoading && <ArrowRight className="w-5 h-5" />}
             </button>
             <Link
-              to="/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days"
-              onClick={() =>
-                trackEvent("homepage_blog_clicked", {
-                  source: "hero_secondary_cta",
-                  slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
-                })
-              }
+              to="/freedom"
               className="text-white/60 hover:text-white text-sm font-medium underline underline-offset-4 transition-colors"
             >
-              Prefer to read first? Start with the 90-day roadmap.
+              Not ready yet? Calculate your Freedom Number free →
             </Link>
             <p className="text-sm text-white/40 mt-1">
-              Cancel anytime. No contracts. No sales calls. 30-day money-back guarantee.
+              Cancel anytime. No contracts. 30-day money-back guarantee.
             </p>
+          </div>
+
+          {/* Value bullets */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/50 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "300ms" }}>
+            {[
+              "Freedom number calculator",
+              "500+ validated micro-SaaS ideas",
+              "Stealth ops & compliance audit",
+              "Launch automation",
+              "Faceless brand builder",
+            ].map((item) => (
+              <span key={item} className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-success" />
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 1b. The 3 Secrets (Russell's framework) ── */}
+      <section className="bg-white section-normal">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The Framework</p>
+            <h2 className="text-h1 text-foreground mb-4">The 3 Secrets Nobody Tells Corporate Managers</h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Everything in Invisible Exit is built on these 3 principles.
+              If you understand them, the system works.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                num: "1",
+                title: "Your Job Is the Perfect Launchpad",
+                body: "Your salary is runway funding. Your corporate skills (managing teams, reading P&Ls, executing projects) are exactly what solo founders lack. Your 5 hours/week forces ruthless focus.",
+              },
+              {
+                num: "2",
+                title: "Anonymity Is Your Greatest Asset",
+                body: "When you're anonymous, you can experiment without fear. Build in unrelated markets. Fail publicly without your employer or professional network ever knowing. Your business operates under a separate entity.",
+              },
+              {
+                num: "3",
+                title: "The System Beats the Idea",
+                body: "Stop obsessing over the 'right' idea. Build the system first: freedom number → idea pipeline → stealth ops → launch → brand. Once you have the system, you can swap ideas in and out.",
+              },
+            ].map((secret) => (
+              <div key={secret.num} className="card-base p-6 sm:p-8 card-hover">
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary font-bold text-lg mb-4">
+                  {secret.num}
+                </span>
+                <h3 className="text-h3 text-foreground mb-3">{secret.title}</h3>
+                <p className="text-caption">{secret.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
