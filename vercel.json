@@ -533,10 +533,5 @@
       "path": "/api/email-sequence-scheduler",
       "schedule": "0 9 * * *"
     }
-  ],
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "@vercel/node@5"
-    }
-  }
+  ]
 }
