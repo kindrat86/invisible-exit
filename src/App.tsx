@@ -50,6 +50,9 @@ const BreakEvenPage = lazy(() => import("./pages/BreakEvenPage.tsx"));
 const ProfessionVsCareerPage = lazy(() => import("./pages/ProfessionVsCareerPage.tsx"));
 const FirstYearPage = lazy(() => import("./pages/FirstYearPage.tsx"));
 const ToolCrossReferencePage = lazy(() => import("./pages/ToolCrossReferencePage.tsx"));
+const AiToolProfessionPage = lazy(() => import("./pages/AiToolProfessionPage.tsx"));
+const BudgetPage = lazy(() => import("./pages/BudgetPage.tsx"));
+const HoursPage = lazy(() => import("./pages/HoursPage.tsx"));
 
 // Funnel & marketing pages
 const SqueezePage = lazy(() => import("./pages/SqueezePage.tsx"));
@@ -171,6 +174,17 @@ const App = () => (
           <Route path="/first-year" element={<Navigate to="/blog" replace />} />
           <Route path="/tools/:slug" element={<ToolCrossReferencePage />} />
           <Route path="/tools" element={<Navigate to="/best" replace />} />
+
+          {/* AI Tool × Profession cross pages */}
+          <Route path="/ideas/:profession/with/:tool" element={<AiToolProfessionPage />} />
+
+          {/* Budget pages */}
+          <Route path="/budget/:amount" element={<BudgetPage />} />
+          <Route path="/budget" element={<Navigate to="/blog" replace />} />
+
+          {/* Hours pages */}
+          <Route path="/hours/:slug" element={<HoursPage />} />
+          <Route path="/hours" element={<Navigate to="/blog" replace />} />
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}
           <Route path="/freedom" element={<SqueezePage />} />

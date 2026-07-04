@@ -135,6 +135,8 @@
     { "source": "/vs", "destination": "/index.html" },
     { "source": "/first-year", "destination": "/index.html" },
     { "source": "/tools", "destination": "/index.html" },
+    { "source": "/budget", "destination": "/index.html" },
+    { "source": "/hours", "destination": "/index.html" },
     { "source": "/oto/second-tool", "destination": "/index.html" },
     { "source": "/fym/badge/:shareId", "destination": "/index.html" },
     { "source": "/fym/oto/founding", "destination": "/index.html" },

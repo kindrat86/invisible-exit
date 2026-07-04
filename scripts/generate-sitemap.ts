@@ -42,6 +42,11 @@ async function main() {
   const { firstYearEntries } = await import("../src/data/first-year.js");
   const { toolCrossReference } = await import("../src/data/tool-cross-reference.js");
 
+  // Greg Isenberg pSEO Round 3
+  const { aiToolProfessionPages } = await import("../src/data/ai-tool-professions.js");
+  const { budgetPages } = await import("../src/data/budget-pages.js");
+  const { hoursPages } = await import("../src/data/hours-pages.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -368,6 +373,27 @@ async function main() {
       lastmod: today,
       changefreq: "monthly" as const,
       priority: "0.7" as const,
+    })),
+    // Greg Isenberg pSEO Round 3: AI Tool × Profession
+    ...aiToolProfessionPages.map((p: { professionSlug: string; toolSlug: string }) => ({
+      loc: `https://invisibleexit.com/ideas/${p.professionSlug}/with/${p.toolSlug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Budget pages
+    ...budgetPages.map((b: { slug: string }) => ({
+      loc: `https://invisibleexit.com/budget/${b.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Hours pages
+    ...hoursPages.map((h: { slug: string }) => ({
+      loc: `https://invisibleexit.com/hours/${h.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
     })),
   ];
 
