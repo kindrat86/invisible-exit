@@ -18,6 +18,12 @@ async function main() {
   const { blogPosts } = await import("../src/data/blog-posts.js");
   const { comparisons } = await import("../src/data/comparisons.js");
   const { glossaryTerms } = await import("../src/data/glossary.js");
+  const { stateGuides } = await import("../src/data/state-guides.js");
+  const { industryIdeas } = await import("../src/data/industry-ideas.js");
+  const { bestToolsLists } = await import("../src/data/best-tools.js");
+  const { calculators } = await import("../src/data/calculators.js");
+  const { dataReports } = await import("../src/data/data-reports.js");
+  const { resources } = await import("../src/data/resources.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -79,6 +85,48 @@ async function main() {
       changefreq: "weekly",
       priority: "0.8",
     })),
+    // State guides (pSEO)
+    ...stateGuides.map((s: { slug: string }) => ({
+      loc: `https://invisibleexit.com/guides/${s.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Industry ideas (pSEO)
+    ...industryIdeas.map((p: { slug: string }) => ({
+      loc: `https://invisibleexit.com/ideas/${p.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Best tools lists (pSEO)
+    ...bestToolsLists.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/best/${t.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Calculators
+    ...calculators.map((c: { slug: string }) => ({
+      loc: `https://invisibleexit.com/calculators/${c.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Data reports
+    ...dataReports.map((d: { slug: string }) => ({
+      loc: `https://invisibleexit.com/data/${d.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Resources
+    ...resources.map((r: { slug: string }) => ({
+      loc: `https://invisibleexit.com/resources/${r.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
     // Legal pages
     {
       loc: "https://invisibleexit.com/privacy",
@@ -123,6 +171,12 @@ ${entries
   console.log(`  Categories: ${categorySlugs.length}`);
   console.log(`  Comparisons: ${comparisons.length}`);
   console.log(`  Glossary terms: ${glossaryTerms.length}`);
+  console.log(`  State guides: ${stateGuides.length}`);
+  console.log(`  Industry ideas: ${industryIdeas.length}`);
+  console.log(`  Best tools lists: ${bestToolsLists.length}`);
+  console.log(`  Calculators: ${calculators.length}`);
+  console.log(`  Data reports: ${dataReports.length}`);
+  console.log(`  Resources: ${resources.length}`);
 }
 
 main().catch((err) => {

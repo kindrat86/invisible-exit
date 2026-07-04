@@ -13,6 +13,12 @@ import { fileURLToPath } from "node:url";
 import { blogPosts } from "../src/data/blog-posts.ts";
 import { comparisons } from "../src/data/comparisons.ts";
 import { glossaryTerms } from "../src/data/glossary.ts";
+import { stateGuides } from "../src/data/state-guides.ts";
+import { industryIdeas } from "../src/data/industry-ideas.ts";
+import { bestToolsLists } from "../src/data/best-tools.ts";
+import { calculators } from "../src/data/calculators.ts";
+import { dataReports } from "../src/data/data-reports.ts";
+import { resources } from "../src/data/resources.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -759,6 +765,277 @@ function getRoutes() {
       ],
     },
   });
+
+  // --- State Guides ---
+  for (const guide of stateGuides) {
+    const nonCompeteText = guide.nonCompeteEnforceable === "not_enforced" ? "banned" :
+      guide.nonCompeteEnforceable === "limited" ? "limited" : "enforced";
+    routes.push({
+      path: `/guides/${guide.slug}`,
+      meta: {
+        title: `${guide.state} Side Business Guide: LLC, Non-Competes & Taxes | Invisible Exit`,
+        description: `Start a side business in ${guide.state}. LLC filing: $${guide.llcFilingFee}. Non-compete: ${nonCompeteText}. Annual report: $${guide.annualReportFee}. Income tax: ${guide.stateIncomeTaxRate}.`,
+        url: `${SITE}/guides/${guide.slug}`,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Starting a Side Business in ${guide.state} (2026 Guide)`,
+            description: guide.bestFor,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-04-20",
+            articleSection: "Legal Guide",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "State Guides", item: `${SITE}/guides` },
+              { "@type": "ListItem", position: 3, name: guide.state },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: guide.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Industry Ideas ---
+  for (const idea of industryIdeas) {
+    routes.push({
+      path: `/ideas/${idea.slug}`,
+      meta: {
+        title: `Micro-SaaS Ideas for ${idea.profession} (2026) | Invisible Exit`,
+        description: `${idea.ideas.length} micro-SaaS ideas specifically for ${idea.profession.toLowerCase()}. Real revenue math, pricing, difficulty ratings, and employer conflict warnings.`,
+        url: `${SITE}/ideas/${idea.slug}`,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Micro-SaaS Ideas for ${idea.profession} (2026)`,
+            description: idea.unfairAdvantage,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-04-20",
+            articleSection: idea.profession,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Ideas", item: `${SITE}/ideas` },
+              { "@type": "ListItem", position: 3, name: idea.profession },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: idea.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Best Tools ---
+  for (const list of bestToolsLists) {
+    routes.push({
+      path: `/best/${list.slug}`,
+      meta: {
+        title: list.metaTitle,
+        description: list.metaDescription,
+        url: `${SITE}/best/${list.slug}`,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: list.h1,
+            description: list.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-04-20",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Best Tools", item: `${SITE}/best` },
+              { "@type": "ListItem", position: 3, name: list.title },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: list.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Calculators ---
+  for (const calc of calculators) {
+    routes.push({
+      path: `/calculators/${calc.slug}`,
+      meta: {
+        title: calc.metaTitle,
+        description: calc.metaDescription,
+        url: `${SITE}/calculators/${calc.slug}`,
+        type: "website",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: calc.h1,
+            description: calc.intro,
+            applicationCategory: "CalculatorApplication",
+            operatingSystem: "Web",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            url: `${SITE}/calculators/${calc.slug}`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Calculators", item: `${SITE}/calculators` },
+              { "@type": "ListItem", position: 3, name: calc.h1 },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: calc.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Data Reports ---
+  for (const report of dataReports) {
+    routes.push({
+      path: `/data/${report.slug}`,
+      meta: {
+        title: report.metaTitle,
+        description: report.metaDescription,
+        url: `${SITE}/data/${report.slug}`,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            name: report.h1,
+            description: report.intro,
+            creator: { "@type": "Organization", name: SITE_NAME },
+            datePublished: "2026-04-20",
+            keywords: "micro-saas, benchmarks, statistics, 2026",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: report.h1,
+            description: report.intro,
+            author: { "@type": "Person", name: "Adrian", url: SITE },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            datePublished: "2026-04-20",
+            articleSection: "Research Report",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Data & Research", item: `${SITE}/data` },
+              { "@type": "ListItem", position: 3, name: report.title },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: report.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // --- Resources ---
+  for (const resource of resources) {
+    routes.push({
+      path: `/resources/${resource.slug}`,
+      meta: {
+        title: resource.metaTitle,
+        description: resource.metaDescription,
+        url: `${SITE}/resources/${resource.slug}`,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: resource.h1,
+            description: resource.intro,
+            totalTime: "P30D",
+            step: resource.steps.map((step, i) => ({
+              "@type": "HowToStep",
+              position: i + 1,
+              name: step.title,
+              text: step.description,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Resources", item: `${SITE}/resources` },
+              { "@type": "ListItem", position: 3, name: resource.title },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: resource.faqs.map(f => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
 
   return routes;
 }

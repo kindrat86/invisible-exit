@@ -16,6 +16,12 @@ const DIST = resolve(__dirname, "..", "dist");
 import { blogPosts } from "../src/data/blog-posts.js";
 import { glossaryTerms } from "../src/data/glossary.js";
 import { comparisons } from "../src/data/comparisons.js";
+import { stateGuides } from "../src/data/state-guides.js";
+import { industryIdeas } from "../src/data/industry-ideas.js";
+import { bestToolsLists } from "../src/data/best-tools.js";
+import { calculators } from "../src/data/calculators.js";
+import { dataReports } from "../src/data/data-reports.js";
+import { resources } from "../src/data/resources.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -511,6 +517,298 @@ function aboutPageBodyHtml(): string {
 </div>`;
 }
 
+// ---------- State guide body ----------
+
+function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
+  const tips = g.tips.map((t: string, i: number) => `<li>${t}</li>`).join("\n");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/guides" style="color:#3B82F6;text-decoration:none">State Guides</a> › <span>${g.state}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Starting a Side Business in ${g.state}</h1>
+<p style="font-size:1.125rem;color:#4b5563">${g.bestFor}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">LLC Filing Fee</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">$${g.llcFilingFee}</td></tr>
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Annual Report Fee</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">$${g.annualReportFee}</td></tr>
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Non-Compete Status</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.nonCompeteNotes}</td></tr>
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">State Income Tax</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.stateIncomeTaxRate}</td></tr>
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Anonymous LLC</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.anonymousLlcAllowed ? "Yes" : "No"}</td></tr>
+<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Processing Time</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.processingTime}</td></tr>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Tips for ${g.state} Founders</h2>
+<ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem">${tips}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Industry ideas body ----------
+
+function industryIdeasBodyHtml(d: typeof industryIdeas[0]): string {
+  const ideas = d.ideas.map((idea: any) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:700">${idea.name} <span style="font-size:0.75rem;color:#6b7280">(${idea.difficulty})</span></h3>
+<p style="color:#4b5563;font-size:0.875rem">${idea.description}</p>
+<p style="font-size:0.75rem;color:#6b7280">Target: ${idea.targetCustomer} | Pricing: ${idea.pricing} | Potential: ${idea.revenuePotential}</p>
+</div>`).join("\n");
+  const skills = d.transferableSkills.map((s: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#e0e7ff;color:#3730a3;border-radius:9999px;font-size:0.75rem;margin:0.25rem">${s}</span>`).join(" ");
+  const faqs = d.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/ideas" style="color:#3B82F6;text-decoration:none">Ideas</a> › <span>${d.profession}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800">Micro-SaaS Ideas for ${d.profession}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-top:0.5rem">${d.unfairAdvantage}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">Skills You Already Have</h2>
+<div>${skills}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">${d.ideas.length} Micro-SaaS Ideas</h2>
+${ideas}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#fef2f2">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;color:#dc2626;margin-bottom:0.5rem">What to Avoid</h2>
+<p>${d.whatToAvoid}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Best tools body ----------
+
+function bestToolsBodyHtml(list: typeof bestToolsLists[0]): string {
+  const tools = list.tools.map((t: any) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:700">${t.name} <span style="color:#f59e0b">${"★".repeat(Math.round(t.rating))}</span></h3>
+<p style="color:#6b7280;font-size:0.875rem">${t.bestFor}</p>
+<p style="font-size:0.75rem;font-weight:600;color:#059669">Pricing: ${t.pricing}</p>
+<p style="font-size:0.75rem;color:#059669">Pros: ${t.pros.join(", ")}</p>
+<p style="font-size:0.75rem;color:#dc2626">Cons: ${t.cons.join(", ")}</p>
+</div>`).join("\n");
+  const faqs = list.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/best" style="color:#3B82F6;text-decoration:none">Best Tools</a> › <span>${list.title}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800">${list.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-top:0.5rem">${list.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+${tools}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">How to Choose</h2>
+<p>${list.buyingGuide}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Calculator body ----------
+
+function calculatorBodyHtml(calc: typeof calculators[0]): string {
+  const faqs = calc.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/calculators" style="color:#3B82F6;text-decoration:none">Calculators</a> › <span>${calc.h1}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800">${calc.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-top:0.5rem">${calc.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">The Formula</h2>
+<p style="font-family:monospace;background:#0f172a;color:#4ade80;padding:1rem;border-radius:0.5rem">${calc.formula}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Example</h2>
+<p>${calc.example.scenario}</p>
+<p style="font-weight:600">${calc.example.result}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">How This Works</h2>
+<p style="line-height:1.7">${calc.explanation}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Data report body ----------
+
+function dataReportBodyHtml(report: typeof dataReports[0]): string {
+  const stats = report.dataPoints.map((dp: any) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem">
+<p style="font-size:0.75rem;color:#6b7280">${dp.metric}</p>
+<p style="font-size:1.5rem;font-weight:700;color:#2563eb">${dp.value}</p>
+<p style="font-size:0.75rem;color:#6b7280">${dp.context}</p>
+</div>`).join("\n");
+  const findings = report.keyFindings.map((f: string, i: number) =>
+    `<li style="margin-bottom:0.5rem">${i + 1}. ${f}</li>`).join("\n");
+  const tables = report.tables.map((table: any) => {
+    const headers = table.headers.map((h: string) => `<th style="padding:0.5rem;text-align:left;background:#0f172a;color:white">${h}</th>`).join("");
+    const rows = table.rows.map((row: string[]) =>
+      `<tr>${row.map((c: string) => `<td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${c}</td>`).join("")}</tr>`).join("\n");
+    return `<h3 style="font-weight:700;margin:1.5rem 0 0.5rem">${table.title}</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
+  }).join("\n");
+  const takeaways = report.takeaways.map((t: string) => `<li style="color:#059669;margin-bottom:0.25rem">✓ ${t}</li>`).join("\n");
+  const faqs = report.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/data" style="color:#3B82F6;text-decoration:none">Research</a> › <span>${report.title}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800">${report.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-top:0.5rem">${report.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">Key Statistics</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">${stats}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Key Findings</h2>
+<ul>${findings}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">${tables}</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Actionable Takeaways</h2>
+<ul>${takeaways}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Resource body ----------
+
+function resourceBodyHtml(resource: typeof resources[0]): string {
+  const steps = resource.steps.map((step: any, i: number) =>
+    `<div style="margin-bottom:1rem;border-left:3px solid #3B82F6;padding-left:1rem">
+<h3 style="font-weight:600">${i + 1}. ${step.title}</h3>
+<p style="color:#4b5563;font-size:0.875rem">${step.description}</p>
+<p style="font-size:0.75rem;color:#6b7280">Time: ${step.timeRequired} | Category: ${step.category}</p>
+</div>`).join("\n");
+  const tools = resource.tools.map((t: any) =>
+    `<tr><td style="padding:0.5rem;font-weight:600">${t.name}</td><td style="padding:0.5rem">${t.purpose}</td><td style="padding:0.5rem">${t.cost}</td></tr>`).join("\n");
+  const mistakes = resource.commonMistakes.map((m: string) => `<li style="color:#dc2626;margin-bottom:0.25rem">✗ ${m}</li>`).join("\n");
+  const faqs = resource.faqs.map((f: { question: string; answer: string }) =>
+    `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/resources" style="color:#3B82F6;text-decoration:none">Resources</a> › <span>${resource.title}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800">${resource.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-top:0.5rem">${resource.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">The ${resource.steps.length}-Step Process</h2>
+${steps}
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Recommended Tools</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+<thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Tool</th><th style="padding:0.5rem;text-align:left">Purpose</th><th style="padding:0.5rem;text-align:left">Cost</th></tr></thead>
+<tbody>${tools}</tbody></table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#fef2f2">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;color:#dc2626;margin-bottom:0.5rem">Common Mistakes</h2>
+<ul>${mistakes}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+</div>`;
+}
+
 // ---------- Main ----------
 
 function main() {
@@ -566,6 +864,48 @@ function main() {
   for (const comp of comparisons) {
     if (injectBody(resolve(DIST, "compare", comp.slug, "index.html"), comparisonPageBodyHtml(comp))) {
       console.log(`  /compare/${comp.slug}`);
+      count++;
+    }
+  }
+
+  // State guide pages
+  for (const guide of stateGuides) {
+    if (injectBody(resolve(DIST, "guides", guide.slug, "index.html"), stateGuideBodyHtml(guide))) {
+      count++;
+    }
+  }
+
+  // Industry ideas pages
+  for (const idea of industryIdeas) {
+    if (injectBody(resolve(DIST, "ideas", idea.slug, "index.html"), industryIdeasBodyHtml(idea))) {
+      count++;
+    }
+  }
+
+  // Best tools pages
+  for (const list of bestToolsLists) {
+    if (injectBody(resolve(DIST, "best", list.slug, "index.html"), bestToolsBodyHtml(list))) {
+      count++;
+    }
+  }
+
+  // Calculator pages
+  for (const calc of calculators) {
+    if (injectBody(resolve(DIST, "calculators", calc.slug, "index.html"), calculatorBodyHtml(calc))) {
+      count++;
+    }
+  }
+
+  // Data report pages
+  for (const report of dataReports) {
+    if (injectBody(resolve(DIST, "data", report.slug, "index.html"), dataReportBodyHtml(report))) {
+      count++;
+    }
+  }
+
+  // Resource pages
+  for (const resource of resources) {
+    if (injectBody(resolve(DIST, "resources", resource.slug, "index.html"), resourceBodyHtml(resource))) {
       count++;
     }
   }

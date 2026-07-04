@@ -15,6 +15,12 @@ import BlogCategory from "./pages/BlogCategory.tsx";
 import ComparePage from "./pages/ComparePage.tsx";
 import GlossaryIndex from "./pages/GlossaryIndex.tsx";
 import GlossaryTermPage from "./pages/GlossaryTermPage.tsx";
+import StateGuidePage from "./pages/StateGuidePage.tsx";
+import IndustryIdeasPage from "./pages/IndustryIdeasPage.tsx";
+import BestToolsPage from "./pages/BestToolsPage.tsx";
+import CalculatorPage from "./pages/CalculatorPage.tsx";
+import DataReportPage from "./pages/DataReportPage.tsx";
+import ResourcePage from "./pages/ResourcePage.tsx";
 import ErrorBoundary from "./components/ErrorBoundary.tsx";
 import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 
@@ -68,6 +74,18 @@ const App = () => (
           <Route path="/compare/:vs" element={<ComparePage />} />
           <Route path="/glossary" element={<GlossaryIndex />} />
           <Route path="/glossary/:slug" element={<GlossaryTermPage />} />
+          <Route path="/guides" element={<StateGuidePage />} />
+          <Route path="/guides/:state" element={<StateGuidePage />} />
+          <Route path="/ideas" element={<IndustryIdeasPage />} />
+          <Route path="/ideas/:profession" element={<IndustryIdeasPage />} />
+          <Route path="/best" element={<BestToolsPage />} />
+          <Route path="/best/:category" element={<BestToolsPage />} />
+          <Route path="/calculators" element={<CalculatorPage />} />
+          <Route path="/calculators/:name" element={<CalculatorPage />} />
+          <Route path="/data" element={<DataReportPage />} />
+          <Route path="/data/:report" element={<DataReportPage />} />
+          <Route path="/resources" element={<ResourcePage />} />
+          <Route path="/resources/:slug" element={<ResourcePage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
