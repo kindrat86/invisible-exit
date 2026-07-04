@@ -280,6 +280,27 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 1a. Who-What-Why-How Positioning (Dotcom Secrets Ch 9) ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary mb-4">The Positioning</p>
+          <div className="max-w-3xl mx-auto space-y-1 text-left sm:text-center">
+            <p className="text-body text-muted-foreground">
+              <strong className="text-foreground">WHO</strong> this is for: Corporate managers earning $120K–$200K who feel trapped by golden handcuffs but can't (or won't) quit.
+            </p>
+            <p className="text-body text-muted-foreground">
+              <strong className="text-foreground">WHAT</strong> it is: 5 AI-powered tools that help you build anonymous micro-SaaS revenue while employed — in 5 hours per week.
+            </p>
+            <p className="text-body text-muted-foreground">
+              <strong className="text-foreground">WHY</strong> it works: Because your salary isn't your worth — it's one income stream. The system, not the idea, produces $4,000/month MRR in 12–18 months.
+            </p>
+            <p className="text-body text-muted-foreground">
+              <strong className="text-foreground">HOW</strong>: Calculate your Freedom Number → validate an idea in 48 hours → build under a separate entity → ship in 5 focused hours/week → track MRR until it replaces your salary.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── 1b. The 3 Secrets (Russell's framework) ── */}
       <section className="bg-white section-normal">
         <div className="container-standard">
@@ -604,6 +625,28 @@ const Index = () => {
       {/* ── 2b. The Conflict (failure story) ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-narrow">
+          {/* Epiphany Bridge: The Desire (Expert Secrets Ch 5-6) */}
+          <p className="text-eyebrow text-muted-foreground mb-4">The Desire</p>
+          <h2 className="text-h2 text-foreground mb-6">I Didn't Want Escape. I Wanted Optionality.</h2>
+          <div className="text-body text-muted-foreground space-y-5">
+            <p>
+              People assume I wanted to quit. I didn't. I loved parts of my job — the team, the
+              strategy, the wins. What I wanted was something simpler and more dangerous:
+              <strong className="text-foreground"> optionality.</strong> The ability to stay
+              because I chose to, not because I had to. The freedom to disagree in a meeting
+              without calculating the financial consequences. I wanted to build something that
+              was <em>mine</em> — not a line item in someone else's cap table.
+            </p>
+            <p>
+              For 8 years, I told myself the IPO was coming. That my 0.5% would become real.
+              The golden handcuffs felt like a partnership. I wasn't unhappy. I was
+              <strong className="text-foreground"> comfortably trapped</strong> — and that's the
+              most dangerous kind of trapped, because nothing forces you to move.
+            </p>
+          </div>
+
+          <div className="my-12" />
+
           <p className="text-eyebrow text-muted-foreground mb-4">The Conflict</p>
           <h2 className="text-h2 text-foreground mb-6">Month 4: The Wall</h2>
           <div className="text-body text-muted-foreground space-y-5">
@@ -1185,6 +1228,70 @@ const Index = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* ── 10.5. Continuous Loop: Why Members Stay (Dotcom Secrets Ch 12) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The Continuous Loop</p>
+            <h2 className="text-h1 text-foreground mb-4">Why Members Stay Month After Month</h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              A subscription is a promise. Russell Brunson's Chapter 12 teaches that the
+              continuous loop — the thing that makes people stay — must compound value every
+              month. Here's what keeps Invisible Exit members engaged long after the first week.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                week: "Week 1",
+                title: "Your Freedom Number",
+                detail: "Calculate your exact exit number. The dashboard tracks your MRR progress toward it in real-time. Every dollar earned moves the needle.",
+                retention: "The number becomes a daily obsession.",
+              },
+              {
+                week: "Week 2-4",
+                title: "Idea Pipeline Momentum",
+                detail: "Validate 3 micro-SaaS ideas in 48 hours each. The AI scoring system ranks them by revenue potential, time investment, and stealth feasibility.",
+                retention: "New validated ideas every month.",
+              },
+              {
+                week: "Month 2-3",
+                title: "Launch & First Revenue",
+                detail: "Ship your first product using Launch Control. Track every customer in the FYM Dashboard. Watch your invisibility score improve as your MRR grows.",
+                retention: "Real numbers on the dashboard = skin in the game.",
+              },
+              {
+                week: "Month 3+",
+                title: "Compound Growth",
+                detail: "Monthly MRR audits identify churn risks. New tool releases every quarter. Community leaderboard shows your rank among anonymous builders.",
+                retention: "The gap between you and the leaderboard shrinks every week.",
+              },
+            ].map((phase, i) => (
+              <div
+                key={i}
+                className="card-base p-6 border-t-4 border-primary/30"
+              >
+                <p className="text-xs uppercase tracking-wide text-primary font-semibold mb-2">{phase.week}</p>
+                <h3 className="font-bold text-foreground text-sm mb-2">{phase.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">{phase.detail}</p>
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-2">
+                  <p className="text-xs text-primary italic">{phase.retention}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              The loop compounds: more MRR → higher invisibility score → more confidence →
+              more products → more MRR. The system feeds itself. That's why members who start
+              at $0.97/month upgrade to Founding — the loop is worth more than any single tool.
+            </p>
+          </div>
         </div>
       </section>
 

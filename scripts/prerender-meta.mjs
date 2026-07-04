@@ -2210,6 +2210,59 @@ function getRoutes() {
     });
   }
 
+  // SEO Ghost Fix: Index pages that were missing prerendered meta
+  const SEO_INDEX_PAGES = [
+    { path: "/best", title: "Best AI Tools for Building Micro-SaaS | Invisible Exit", desc: "The complete directory of AI tools that let corporate managers build, launch, and grow micro-SaaS businesses without coding. Curated by use case." },
+    { path: "/guides", title: "State-by-State Anonymous LLC Guide | Invisible Exit", desc: "Complete guides to forming anonymous LLCs in all 50 states. Filing fees, privacy protections, and non-compete analysis for employed founders." },
+    { path: "/ideas", title: "Micro-SaaS Ideas by Profession | Invisible Exit", desc: "500+ micro-SaaS ideas organized by profession. Find ideas tailored to your industry expertise, validated by AI for revenue potential." },
+    { path: "/calculators", title: "Free Calculators for Employed Founders | Invisible Exit", desc: "Freedom number, break-even, timeline, and invisibility calculators for corporate managers building side businesses." },
+    { path: "/data", title: "Data Reports for Side Business Founders | Invisible Exit", desc: "Revenue benchmarks, salary comparisons, and market data for corporate managers building micro-SaaS businesses on the side." },
+    { path: "/vs", title: "Career vs SaaS: Profession Comparisons | Invisible Exit", desc: "Detailed comparisons of staying in your career versus building a micro-SaaS side business. Salary math, equity analysis, and MRR timelines." },
+    { path: "/alternatives", title: "Invisible Exit Alternatives Compared | Invisible Exit", desc: "How Invisible Exit compares to courses, FIRE communities, bootcamps, and career coaching. Feature-by-feature comparison." },
+    { path: "/salaries", title: "Salary to MRR Conversion by Profession | Invisible Exit", desc: "How many micro-SaaS customers you need to replace your salary. Profession-by-profession breakdown with pricing models." },
+    { path: "/milestones", title: "Revenue Milestones for Micro-SaaS | Invisible Exit", desc: "From $0 to $4,000 MRR: month-by-month revenue milestones, what to expect at each stage, and how to accelerate." },
+    { path: "/timeline", title: "Side Business Timeline Calculator | Invisible Exit", desc: "How long does it take to build a profitable side business? Real timelines based on profession, budget, and weekly hours." },
+    { path: "/stack", title: "Tool Stacks for Employed Founders | Invisible Exit", desc: "Recommended tool stacks for building micro-SaaS while employed. Budget configurations from $0 to $500/month." },
+    { path: "/cost-of-waiting", title: "The Cost of Waiting to Start | Invisible Exit", desc: "Every month you wait to start your side business costs you in runway, compound growth, and identity shift. Calculate your cost." },
+    { path: "/non-compete", title: "Non-Compete Guide for Side Business Founders | Invisible Exit", desc: "State-by-state non-compete analysis. Which states enforce non-competes, how to navigate them, and legal strategies for employed founders." },
+    { path: "/mistakes", title: "Common Mistakes Side Business Founders Make | Invisible Exit", desc: "The most expensive mistakes corporate managers make when building side businesses — and how to avoid each one." },
+    { path: "/reddit", title: "Reddit Strategy for Anonymous Founders | Invisible Exit", desc: "How to build an audience on Reddit without revealing your identity. Subreddit analysis, posting strategies, and engagement playbooks." },
+    { path: "/pricing-models", title: "Micro-SaaS Pricing Models Compared | Invisible Exit", desc: "Subscription, one-time, freemium, usage-based: which pricing model works best for your micro-SaaS? Data-backed analysis." },
+    { path: "/break-even", title: "Break-Even Calculator for Micro-SaaS | Invisible Exit", desc: "Calculate how many customers you need to break even on your micro-SaaS. Includes hosting, tools, and time costs." },
+    { path: "/first-year", title: "First Year Roadmap for Side Businesses | Invisible Exit", desc: "Month-by-month roadmap for your first year building a micro-SaaS while employed. What to do, what to expect, what to avoid." },
+    { path: "/hours", title: "How Many Hours Per Week to Build a SaaS? | Invisible Exit", desc: "Time investment analysis: how many weekly hours you need to build a profitable micro-SaaS. Spoiler: less than you think." },
+    { path: "/budget", title: "Side Business Budget Guide | Invisible Exit", desc: "How much does it cost to start a micro-SaaS? Budget breakdowns from $0 to $500/month with recommended tool combinations." },
+  ];
+
+  for (const p of SEO_INDEX_PAGES) {
+    routes.push({
+      path: p.path,
+      meta: {
+        title: p.title,
+        description: p.desc,
+        url: `${SITE}${p.path}`,
+        type: "website",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: p.title.split("|")[0].trim(),
+            description: p.desc,
+            url: `${SITE}${p.path}`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: p.title.split("|")[0].trim(), item: `${SITE}${p.path}` },
+            ],
+          },
+        ],
+      },
+    });
+  }
+
   // Traffic Secrets: Cold Traffic Bridge (Secret #19)
   routes.push({
     path: "/feeling-stuck",
