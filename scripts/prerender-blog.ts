@@ -30,6 +30,13 @@ import { professionStacks } from "../src/data/profession-stacks.js";
 import { costOfWaitingPages } from "../src/data/cost-of-waiting.js";
 import { professionStatePages } from "../src/data/profession-states.js";
 import { nonCompeteMatrix } from "../src/data/non-compete-matrix.js";
+import { professionMistakes } from "../src/data/profession-mistakes.js";
+import { redditStrategies } from "../src/data/reddit-strategies.js";
+import { pricingModels } from "../src/data/pricing-models.js";
+import { breakEvenPages } from "../src/data/break-even.js";
+import { professionVsCareer } from "../src/data/profession-vs-career.js";
+import { firstYearEntries } from "../src/data/first-year.js";
+import { toolCrossReference } from "../src/data/tool-cross-reference.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -1056,19 +1063,146 @@ function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
 <p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
 </div></section>
-<section style="padding:2rem 1.5rem;background-color:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
-<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">The Opportunity</h2>
-<p>${item.opportunity}</p>
-</div></section>
-${item.challenges ? `<section style="padding:2rem 1.5rem;background-color:#fef2f2"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Challenges</h2><p>${item.challenges}</p></div></section>` : ""}
-${item.executionAdvice ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Execution Advice</h2><p>${item.executionAdvice}</p></div></section>` : ""}
-${item.faqs && item.faqs.length ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${item.faqs.map((f:{question:string;answer:string}) => `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n")}</div></section>` : ""}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
 </div></section>
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
-<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice. State regulations and non-compete laws change frequently.</p>
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice.</p>
 </div></section>
+</div>`;
+}
+
+// ---------- pSEO Round 2 body generators ----------
+
+function professionMistakesBodyHtml(item: typeof professionMistakes[0]): string {
+  const mistakes = item.mistakes.map((m: any, i: number) =>
+    `<div style="padding:1rem;border:1px solid #fecaca;background:#fef2f2;border-radius:0.5rem;margin-bottom:1rem"><h3 style="font-weight:600;color:#991b1b">${i+1}. ${m.mistake}</h3><p style="font-size:0.875rem;color:#4b5563;margin-top:0.25rem"><strong>Why:</strong> ${m.why}</p><p style="font-size:0.875rem;color:#166534;margin-top:0.25rem"><strong>Fix:</strong> ${m.fix}</p></div>`
+  ).join("\n");
+  const signs = (item.positiveSigns || []).map((s: string) => `<li>${s}</li>`).join("");
+  const faqs = (item.faqs || []).map((f:any) => `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">${mistakes}</div></section>
+${signs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem;color:#166534">Signs You're on the Right Track</h2><ul>${signs}</ul></div></section>` : ""}
+${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice.</p></div></section>
+</div>`;
+}
+
+function redditStrategyBodyHtml(item: typeof redditStrategies[0]): string {
+  const subs = item.bestSubreddits.map((s:any) => `<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;font-weight:600;color:#ea580c">r/${s.name}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#6b7280">${s.subscribers}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${s.why}</td></tr>`).join("\n");
+  const ideas = (item.contentIdeas||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const errs = (item.commonMistakes||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Best Subreddits for ${item.profession}</h2><table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Subreddit</th><th style="padding:0.5rem;text-align:left">Size</th><th style="padding:0.5rem;text-align:left">Why</th></tr></thead><tbody>${subs}</tbody></table></div></section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Posting Strategy</h2><p style="color:#4b5563">${item.postingStrategy}</p></div></section>
+${ideas?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Content Ideas</h2><ul>${ideas}</ul></div></section>`:""}
+${errs?`<section style="padding:2rem 1.5rem;background-color:#fef2f2"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem;color:#dc2626">Mistakes That Get You Banned</h2><ul>${errs}</ul></div></section>`:""}
+${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function pricingModelBodyHtml(item: typeof pricingModels[0]): string {
+  const pros = (item.pros||[]).map((p:string)=>`<li>${p}</li>`).join("");
+  const cons = (item.cons||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const examples = (item.realExamples||[]).map((e:any)=>`<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;font-weight:600">${e.product}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#6b7280">${e.pricing}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#166534;font-weight:600">${e.revenue}</td></tr>`).join("\n");
+  const benchmarks = (item.benchmarks||[]).map((b:any)=>`<div><dt style="font-size:0.75rem;color:#6b7280">${b.metric}</dt><dd style="font-weight:700">${b.value}</dd></div>`).join("\n");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.model} Pricing</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">How It Works</h2><p style="color:#4b5563">${item.howItWorks}</p></div></section>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
+<div style="padding:1.5rem;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:0.5rem"><h3 style="font-weight:700;color:#166534">Pros</h3><ul style="margin-top:0.5rem">${pros}</ul></div>
+<div style="padding:1.5rem;border:1px solid #fecaca;background:#fef2f2;border-radius:0.5rem"><h3 style="font-weight:700;color:#991b1b">Cons</h3><ul style="margin-top:0.5rem">${cons}</ul></div>
+</div>
+${examples?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Real Examples</h2><table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Product</th><th style="padding:0.5rem;text-align:left">Pricing</th><th style="padding:0.5rem;text-align:left">Revenue</th></tr></thead><tbody>${examples}</tbody></table></div></section>`:""}
+${benchmarks?`<section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Benchmarks</h2><dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1rem">${benchmarks}</dl></div></section>`:""}
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">Implementation</h2><p style="color:#4b5563">${item.implementation}</p></div></section>
+${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function breakEvenBodyHtml(item: typeof breakEvenPages[0]): string {
+  const milestones = item.milestones.map((m:any)=>`<div style="display:flex;gap:0.5rem;padding:0.75rem;border:1px solid #e5e7eb;border-radius:0.375rem;margin-bottom:0.5rem"><span style="background:#dbeafe;color:#1e40af;padding:0.25rem 0.5rem;border-radius:0.25rem;font-size:0.75rem;font-weight:700">${m.month}</span><div><p style="font-weight:600">${m.status}</p><p style="font-size:0.875rem;color:#6b7280">${m.description}</p></div></div>`).join("\n");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:1rem">
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Monthly Revenue</p><p style="font-size:1.5rem;font-weight:700">$${item.monthlyRevenue.toLocaleString()}</p></div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Monthly Costs</p><p style="font-size:1.5rem;font-weight:700;color:#ef4444">$${item.monthlyCosts.toLocaleString()}</p></div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Break-Even</p><p style="font-size:1.5rem;font-weight:700;color:#22c55e">${item.breakEvenMonths} months</p></div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;text-align:center"><p style="font-size:0.75rem;color:#6b7280">Total Investment</p><p style="font-size:1.5rem;font-weight:700">$${item.totalInvestment.toLocaleString()}</p></div>
+</div></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">The Scenario</h2><p style="color:#4b5563">${item.scenario}</p></div></section>
+${milestones?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Month-by-Month Breakdown</h2>${milestones}</div></section>`:""}
+${faqs?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Break-even projections are illustrative.</p></div></section>
+</div>`;
+}
+
+function professionVsCareerBodyHtml(item: typeof professionVsCareer[0]): string {
+  const careerPros = (item.careerPath.pros||[]).map((p:string)=>`<li>${p}</li>`).join("");
+  const careerCons = (item.careerPath.cons||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const saasPros = (item.saasPath.pros||[]).map((p:string)=>`<li>${p}</li>`).join("");
+  const saasCons = (item.saasPath.cons||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const comparison = (item.comparison||[]).map((c:any)=>`<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;font-weight:600">${c.factor}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.career}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.saas}</td></tr>`).join("\n");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
+<div style="padding:1.5rem;border:1px solid #bfdbfe;background:#eff6ff;border-radius:0.5rem"><h2 style="font-weight:700;color:#1e3a8a">The ${item.profession} Career</h2><p style="font-size:0.875rem;margin-top:0.5rem">Salary: ${item.careerPath.salaryRange}</p><div style="margin-top:1rem"><h4 style="font-size:0.75rem;font-weight:700;color:#166534">Pros</h4><ul style="font-size:0.875rem">${careerPros}</ul></div><div style="margin-top:0.5rem"><h4 style="font-size:0.75rem;font-weight:700;color:#991b1b">Cons</h4><ul style="font-size:0.875rem">${careerCons}</ul></div></div>
+<div style="padding:1.5rem;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:0.5rem"><h2 style="font-weight:700;color:#14532d">Micro-SaaS Path</h2><p style="font-size:0.875rem;margin-top:0.5rem">Revenue: ${item.saasPath.potentialRevenue}</p><div style="margin-top:1rem"><h4 style="font-size:0.75rem;font-weight:700;color:#166534">Pros</h4><ul style="font-size:0.875rem">${saasPros}</ul></div><div style="margin-top:0.5rem"><h4 style="font-size:0.75rem;font-weight:700;color:#991b1b">Cons</h4><ul style="font-size:0.875rem">${saasCons}</ul></div></div>
+</div>
+${comparison?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Head-to-Head</h2><table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Factor</th><th style="padding:0.5rem;text-align:left">Career</th><th style="padding:0.5rem;text-align:left">Micro-SaaS</th></tr></thead><tbody>${comparison}</tbody></table></div></section>`:""}
+<section style="padding:2rem 1.5rem;background-color:#0f172a"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;color:white">The Verdict</h2><p style="color:#cbd5e1;margin-top:0.5rem">${item.verdict}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">The Hybrid Approach</h2><p style="color:#4b5563">${item.hybridApproach}</p></div></section>
+${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function firstYearBodyHtml(item: typeof firstYearEntries[0]): string {
+  const months = item.monthlyPlan.map((m:any)=>`<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem"><div style="display:flex;gap:0.5rem;align-items:center"><span style="background:#dbeafe;color:#1e40af;padding:0.25rem 0.5rem;border-radius:0.25rem;font-size:0.75rem;font-weight:700">Month ${m.month}</span><strong>${m.focus}</strong></div><p style="font-size:0.875rem;margin-top:0.25rem"><strong>Goal:</strong> ${m.goal}</p><p style="font-size:0.875rem;color:#6b7280"><strong>Deliverable:</strong> ${m.deliverable}</p><p style="font-size:0.875rem;color:#d97706"><strong>Reality check:</strong> ${m.realityCheck}</p></div>`).join("\n");
+  const advantages = (item.advantages||[]).map((a:string)=>`<li>${a}</li>`).join("");
+  const challenges = (item.challenges||[]).map((c:string)=>`<li>${c}</li>`).join("");
+  const lessons = (item.lessonsLearned||[]).map((l:string)=>`<li>${l}</li>`).join("");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
+<div style="padding:1.5rem;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:0.5rem"><h2 style="font-weight:700;color:#166534">Your Advantages</h2><ul style="margin-top:0.5rem;font-size:0.875rem">${advantages}</ul></div>
+<div style="padding:1.5rem;border:1px solid #fde68a;background:#fffbeb;border-radius:0.5rem"><h2 style="font-weight:700;color:#92400e">Your Challenges</h2><ul style="margin-top:0.5rem;font-size:0.875rem">${challenges}</ul></div>
+</div>
+${months?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">12-Month Roadmap</h2>${months}</div></section>`:""}
+${lessons?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Lessons Learned</h2><ul>${lessons}</ul></div></section>`:""}
+${faqs?`<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Projections are illustrative. Results vary.</p></div></section>
+</div>`;
+}
+
+function toolCrossRefBodyHtml(item: typeof toolCrossReference[0]): string {
+  const tools = item.tools.map((t:any)=>`<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem"><div style="display:flex;justify-content:space-between"><strong>${t.name}</strong><span style="background:#eff6ff;color:#1e40af;padding:0.25rem 0.5rem;border-radius:0.25rem;font-size:0.75rem;font-weight:600">${t.pricing}</span></div><p style="font-size:0.875rem;color:#6b7280;margin-top:0.25rem">${t.best}</p><p style="font-size:0.875rem;margin-top:0.25rem">${t.why}</p></div>`).join("\n");
+  const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/best" style="color:#3B82F6;text-decoration:none">Tools</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">${tools}</div></section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">Why ${item.profession} Need Different Tools</h2><p style="color:#4b5563">${item.professionSpecificNeeds}</p></div></section>
+${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>`:""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }
 
@@ -1231,7 +1365,6 @@ function main() {
 
   // Profession × State pages (/ideas/:profession/in/:state)
   for (const item of professionStatePages) {
-    // Slug is like "for-accountants-in-texas" — need to extract profession+state
     const parts = item.slug.replace("for-", "").split("-in-");
     if (parts.length === 2) {
       const profSlug = `for-${parts[0]}`;
@@ -1241,6 +1374,29 @@ function main() {
         count++;
       }
     }
+  }
+
+  // ── pSEO Round 2 body injection ──
+  for (const item of professionMistakes) {
+    if (injectBody(resolve(DIST, "mistakes", item.slug, "index.html"), professionMistakesBodyHtml(item))) { count++; }
+  }
+  for (const item of redditStrategies) {
+    if (injectBody(resolve(DIST, "reddit", item.slug, "index.html"), redditStrategyBodyHtml(item))) { count++; }
+  }
+  for (const item of pricingModels) {
+    if (injectBody(resolve(DIST, "pricing-models", item.slug, "index.html"), pricingModelBodyHtml(item))) { count++; }
+  }
+  for (const item of breakEvenPages) {
+    if (injectBody(resolve(DIST, "break-even", item.slug, "index.html"), breakEvenBodyHtml(item))) { count++; }
+  }
+  for (const item of professionVsCareer) {
+    if (injectBody(resolve(DIST, "vs", item.slug, "index.html"), professionVsCareerBodyHtml(item))) { count++; }
+  }
+  for (const item of firstYearEntries) {
+    if (injectBody(resolve(DIST, "first-year", item.slug, "index.html"), firstYearBodyHtml(item))) { count++; }
+  }
+  for (const item of toolCrossReference) {
+    if (injectBody(resolve(DIST, "tools", item.slug, "index.html"), toolCrossRefBodyHtml(item))) { count++; }
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);

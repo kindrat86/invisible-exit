@@ -33,6 +33,15 @@ async function main() {
   const { professionStatePages } = await import("../src/data/profession-states.js");
   const { nonCompeteMatrix } = await import("../src/data/non-compete-matrix.js");
 
+  // pSEO Round 2
+  const { professionMistakes } = await import("../src/data/profession-mistakes.js");
+  const { redditStrategies } = await import("../src/data/reddit-strategies.js");
+  const { pricingModels } = await import("../src/data/pricing-models.js");
+  const { breakEvenPages } = await import("../src/data/break-even.js");
+  const { professionVsCareer } = await import("../src/data/profession-vs-career.js");
+  const { firstYearEntries } = await import("../src/data/first-year.js");
+  const { toolCrossReference } = await import("../src/data/tool-cross-reference.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -294,6 +303,50 @@ async function main() {
     // Non-compete matrix
     ...nonCompeteMatrix.map((n: { slug: string }) => ({
       loc: `https://invisibleexit.com/non-compete/${n.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+
+    // pSEO Round 2 — Greg Isenberg expansion
+    ...professionMistakes.map((m: { slug: string }) => ({
+      loc: `https://invisibleexit.com/mistakes/${m.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    ...redditStrategies.map((r: { slug: string }) => ({
+      loc: `https://invisibleexit.com/reddit/${r.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    ...pricingModels.map((p: { slug: string }) => ({
+      loc: `https://invisibleexit.com/pricing-models/${p.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    ...breakEvenPages.map((b: { slug: string }) => ({
+      loc: `https://invisibleexit.com/break-even/${b.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    ...professionVsCareer.map((v: { slug: string }) => ({
+      loc: `https://invisibleexit.com/vs/${v.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    ...firstYearEntries.map((f: { slug: string }) => ({
+      loc: `https://invisibleexit.com/first-year/${f.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    ...toolCrossReference.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/tools/${t.slug}`,
       lastmod: today,
       changefreq: "monthly" as const,
       priority: "0.7" as const,

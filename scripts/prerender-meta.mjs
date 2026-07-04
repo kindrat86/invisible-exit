@@ -27,6 +27,13 @@ import { professionStacks } from "../src/data/profession-stacks.ts";
 import { costOfWaitingPages } from "../src/data/cost-of-waiting.ts";
 import { professionStatePages } from "../src/data/profession-states.ts";
 import { nonCompeteMatrix } from "../src/data/non-compete-matrix.ts";
+import { professionMistakes } from "../src/data/profession-mistakes.ts";
+import { redditStrategies } from "../src/data/reddit-strategies.ts";
+import { pricingModels } from "../src/data/pricing-models.ts";
+import { breakEvenPages } from "../src/data/break-even.ts";
+import { professionVsCareer } from "../src/data/profession-vs-career.ts";
+import { firstYearEntries } from "../src/data/first-year.ts";
+import { toolCrossReference } from "../src/data/tool-cross-reference.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1863,6 +1870,127 @@ function getRoutes() {
               acceptedAnswer: { "@type": "Answer", text: f.answer },
             })),
           },
+        ],
+      },
+    });
+  }
+
+  // ── pSEO Round 2 (Greg Isenberg expansion) ──
+
+  for (const m of professionMistakes) {
+    routes.push({
+      path: `/mistakes/${m.slug}`,
+      meta: {
+        title: m.metaTitle,
+        description: m.metaDescription,
+        url: `${SITE}/mistakes/${m.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: m.h1, description: m.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Mistakes", item: `${SITE}/mistakes` }, { "@type": "ListItem", position: 3, name: m.h1 }] },
+          ...(m.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: m.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const r of redditStrategies) {
+    routes.push({
+      path: `/reddit/${r.slug}`,
+      meta: {
+        title: r.metaTitle,
+        description: r.metaDescription,
+        url: `${SITE}/reddit/${r.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: r.h1, description: r.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Reddit Strategy", item: `${SITE}/reddit` }, { "@type": "ListItem", position: 3, name: r.h1 }] },
+          ...(r.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: r.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const p of pricingModels) {
+    routes.push({
+      path: `/pricing-models/${p.slug}`,
+      meta: {
+        title: p.metaTitle,
+        description: p.metaDescription,
+        url: `${SITE}/pricing-models/${p.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: p.h1, description: p.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Pricing Models", item: `${SITE}/pricing-models` }, { "@type": "ListItem", position: 3, name: p.h1 }] },
+          ...(p.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: p.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const b of breakEvenPages) {
+    routes.push({
+      path: `/break-even/${b.slug}`,
+      meta: {
+        title: b.metaTitle,
+        description: b.metaDescription,
+        url: `${SITE}/break-even/${b.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: b.h1, description: b.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Break-Even Calculator", item: `${SITE}/break-even` }, { "@type": "ListItem", position: 3, name: b.h1 }] },
+          ...(b.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: b.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const v of professionVsCareer) {
+    routes.push({
+      path: `/vs/${v.slug}`,
+      meta: {
+        title: v.metaTitle,
+        description: v.metaDescription,
+        url: `${SITE}/vs/${v.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: v.h1, description: v.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Career vs SaaS", item: `${SITE}/vs` }, { "@type": "ListItem", position: 3, name: v.h1 }] },
+          ...(v.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: v.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const f of firstYearEntries) {
+    routes.push({
+      path: `/first-year/${f.slug}`,
+      meta: {
+        title: f.metaTitle,
+        description: f.metaDescription,
+        url: `${SITE}/first-year/${f.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "First Year", item: `${SITE}/first-year` }, { "@type": "ListItem", position: 3, name: f.h1 }] },
+          ...(f.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: f.faqs.map(faq => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }] : []),
+        ],
+      },
+    });
+  }
+
+  for (const t of toolCrossReference) {
+    routes.push({
+      path: `/tools/${t.slug}`,
+      meta: {
+        title: t.metaTitle,
+        description: t.metaDescription,
+        url: `${SITE}/tools/${t.slug}`,
+        type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: t.h1, description: t.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Best Tools", item: `${SITE}/best` }, { "@type": "ListItem", position: 3, name: t.h1 }] },
+          ...(t.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: t.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
       },
     });
