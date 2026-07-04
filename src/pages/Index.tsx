@@ -20,6 +20,7 @@ import {
   Lock,
   Quote,
 } from "lucide-react";
+import TestimonialGrid from "@/components/TestimonialGrid";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -677,23 +678,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 5. Testimonials ── */}
+      {/* ── 5. Testimonials (Structured Social Proof System) ── */}
       <section className="bg-white section-normal">
         <div className="container-standard">
-          <p className="text-eyebrow text-primary mb-4 text-center">What Members Say</p>
-          <h2 className="text-h1 text-foreground mb-12 text-center">Built by managers. Used by managers.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="card-base p-6 sm:p-8">
-                <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                <p className="text-body text-foreground mb-6 italic leading-relaxed">"{t.quote}"</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-caption">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialGrid
+            title="Built by Managers. Used by Managers."
+            subtitle="Real results from corporate managers using the Invisible Exit system. Results, transformations, objection-crushers, and specific details."
+          />
         </div>
       </section>
 
@@ -778,6 +769,91 @@ const Index = () => {
             <p className="text-caption text-center mt-4">
               That's $3,924/year in value for $11.64/year. 99.7% off. For founding members who start now.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6b. The Path Forward (Ch 2: Continuity/Frequency) ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-standard">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">The Path Forward</p>
+            <h2 className="text-h1 text-foreground mb-4">From $0.97 to Freedom</h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              This isn't a one-time purchase. It's a progression. Each step builds on the last.
+              You're not buying tools — you're buying a path.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            {[
+              {
+                step: "Step 1",
+                title: "Calculate your freedom number (Free)",
+                desc: "Know exactly how much recurring revenue you need to replace your salary.",
+                price: "$0",
+                cta: "/freedom",
+                ctaText: "Calculate Free →",
+              },
+              {
+                step: "Step 2",
+                title: "Get the Stealth Ops Blueprint ($7)",
+                desc: "The 47-point checklist that keeps your employer from finding out. One-time.",
+                price: "$7",
+                cta: "/tripwire",
+                ctaText: "Get the Blueprint →",
+              },
+              {
+                step: "Step 3",
+                title: "Start the 5-tool system ($0.97/mo)",
+                desc: "All 5 tools. Freedom number, idea pipeline, stealth ops, launch, brand.",
+                price: "$0.97/mo",
+                cta: "/freedom",
+                ctaText: "Start for $0.97/mo →",
+              },
+              {
+                step: "Step 4",
+                title: "Build your product live ($97 workshop)",
+                desc: "2-day weekend workshop. Build + launch your first product with Adrian.",
+                price: "$97",
+                cta: "/weekend-workshop",
+                ctaText: "Join the Workshop →",
+              },
+              {
+                step: "Step 5",
+                title: "Scale with 1-on-1 coaching ($2K intensive)",
+                desc: "90 days. Private coaching. Adrian becomes your co-founder.",
+                price: "$2,000",
+                cta: "/intensive",
+                ctaText: "Apply for Intensive →",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 py-4 border-b border-border last:border-0 animate-fade-up"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
+                    {i + 1}
+                  </div>
+                  {i < 4 && <div className="w-px h-8 bg-border mt-1" />}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">{item.step}</p>
+                  <h3 className="font-semibold text-foreground text-sm">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <p className="text-sm font-bold text-primary">{item.price}</p>
+                  <Link
+                    to={item.cta}
+                    className="text-xs text-primary hover:text-primary-hover font-medium"
+                  >
+                    {item.ctaText}
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -893,24 +969,77 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 11. Final CTA — ONE THING ── */}
+      {/* ── 11. Final CTA — Continuous Loop + Multi-CTA ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
+          {/* Qualifier */}
+          <p className="text-eyebrow text-primary-light mb-4">
+            If you've read this far, you're in the 3%.
+          </p>
+
           <h2 className="text-h1 text-white mb-4">The Cage Has a Door.</h2>
-          <p className="text-body text-white/60 mb-10">
-            Find out how close you are to walking through it. Free calculator. 90 seconds.
+          <p className="text-body text-white/60 mb-2">
+            The 97% would have left by now. The fact that you're still here means something.
           </p>
-          <Link
-            to="/freedom"
-            onClick={() => trackEvent("homepage_final_cta_clicked", { target: "freedom_calculator" })}
-            className="btn-primary text-lg px-8 inline-flex items-center gap-2"
-          >
-            Calculate Your Freedom Number
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <p className="text-sm text-white/40 mt-4">
-            No credit card. No spam. Just the number that changes how you see your salary.
+          <p className="text-body text-white/60 mb-10 max-w-xl mx-auto">
+            You have two choices. Keep scrolling. Or find out how close you are to walking through it.
           </p>
+
+          {/* Primary CTA */}
+          <div className="mb-6">
+            <Link
+              to="/freedom"
+              onClick={() => trackEvent("homepage_final_cta_clicked", { target: "freedom_calculator" })}
+              className="btn-primary text-lg px-8 inline-flex items-center gap-2"
+            >
+              Calculate Your Freedom Number (Free)
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <p className="text-sm text-white/40 mt-3">
+              No credit card. No spam. 90 seconds. Just the number that changes how you see your salary.
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center gap-4 max-w-md mx-auto my-8">
+            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-white/30 text-xs uppercase tracking-wide">or</span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Secondary CTAs */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <Link
+              to="/story"
+              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
+            >
+              <p className="text-white/80 font-semibold text-sm mb-1">Read My Story</p>
+              <p className="text-white/40 text-xs">The full Amsterdam moment. 10 chapters.</p>
+            </Link>
+            <Link
+              to="/masterclass"
+              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
+            >
+              <p className="text-white/80 font-semibold text-sm mb-1">Watch the Masterclass</p>
+              <p className="text-white/40 text-xs">14 slides. 45 minutes. Zero fluff.</p>
+            </Link>
+            <Link
+              to="/ask"
+              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
+            >
+              <p className="text-white/80 font-semibold text-sm mb-1">Ask Me Anything</p>
+              <p className="text-white/40 text-xs">Your #1 question, answered personally.</p>
+            </Link>
+          </div>
+
+          {/* Final urgency */}
+          <div className="mt-12 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
+            <p className="text-white/50 text-xs">
+              <strong className="text-white/70">73 of 100</strong> founding spots remaining ·{" "}
+              <strong className="text-white/70">127</strong> managers building now
+            </p>
+          </div>
         </div>
       </section>
 

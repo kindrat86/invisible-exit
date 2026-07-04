@@ -19,6 +19,7 @@ import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
+import GuaranteeBox from "@/components/GuaranteeBox";
 
 /**
  * DOTCOM SECRETS: Chapter 1 — Value Ladder
@@ -381,6 +382,17 @@ const WeekendWorkshopPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Guarantee ── */}
+      <section className="bg-white section-normal">
+        <div className="container-narrow max-w-lg">
+          <GuaranteeBox
+            days={30}
+            title="My 30-Day Workshop Guarantee"
+            keepText="all the recordings, templates, and the private Slack access"
+          />
         </div>
       </section>
 

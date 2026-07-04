@@ -119,6 +119,77 @@ const AffiliatesPage = () => {
         </div>
       </section>
 
+      {/* ── Affiliate Assets (Russell's swipe file pattern) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-standard">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">Affiliate Assets</p>
+            <h2 className="text-h1 text-foreground mb-4">Everything You Need to Start Promoting</h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Done-for-you marketing materials. Just copy, paste, and add your referral link.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "5 Email Swipe Files", desc: "Ready-to-send email sequences: story-driven, objection-crushing, and scarcity-driven. Just add your link.", icon: "📧" },
+              { title: "Social Media Kit", desc: "10 LinkedIn posts, 5 Twitter threads, 3 Reddit templates. Written for corporate manager audiences.", icon: "📱" },
+              { title: "Banner Ads (6 sizes)", desc: "Professionally designed banners in 300×250, 728×90, 160×600, 320×50, 970×250, and 1200×628.", icon: "🎨" },
+              { title: "Product Demo Video Script", desc: "The exact 3-minute video script that converts managers. Record it yourself or use our pre-made version.", icon: "🎬" },
+              { title: "Landing Page Templates", desc: "2 high-converting landing page templates optimized for the corporate manager audience.", icon: "📄" },
+              { title: "Dream 100 Outreach Kit", desc: "The exact templates for podcast pitches, newsletter sponsorships, and community partnerships.", icon: "🎯" },
+            ].map((asset) => (
+              <div key={asset.title} className="card-base p-5 card-hover">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl shrink-0">{asset.icon}</span>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm mb-1">{asset.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{asset.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/affiliate-assets"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm"
+            >
+              View all affiliate assets
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Who Should Promote This ── */}
+      <section className="bg-white section-normal">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">Best Fit Affiliates</p>
+            <h2 className="text-h1 text-foreground mb-4">Who Earns the Most</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {[
+              { audience: "Career & business bloggers", desc: "Your readers are managers looking for escape routes. This is the vehicle.", commission: "Highest converting" },
+              { audience: "YouTubers in finance/career", desc: "Your viewers trust your recommendations. $0.97 is an impulse buy after a 10-min video.", commission: "Best for video demos" },
+              { audience: "Newsletter writers (business)", desc: "A single mention to 5,000 subscribers can generate 50+ referrals.", commission: "Best ROI per send" },
+              { audience: "Community leaders (Slack/Discord)", desc: "Your community of managers, founders, or career-switchers is the perfect fit.", commission: "Highest LTV referrals" },
+              { audience: "Podcasters (career/entrepreneurship)", desc: "Audio listeners convert well on story-driven offers. Promo code included.", commission: "Best for storytelling" },
+              { audience: "Reddit/community moderators", desc: "Authentic recommendations in r/cscareerquestions, r/financialindependence, etc.", commission: "Highest intent traffic" },
+            ].map((fit) => (
+              <div key={fit.audience} className="card-base p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <Check className="w-4 h-4 text-success shrink-0" />
+                  <h3 className="font-semibold text-foreground text-sm">{fit.audience}</h3>
+                </div>
+                <p className="text-xs text-muted-foreground mb-2">{fit.desc}</p>
+                <span className="text-xs text-primary font-medium">{fit.commission}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">

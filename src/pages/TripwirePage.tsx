@@ -16,6 +16,7 @@ import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
+import GuaranteeBox from "@/components/GuaranteeBox";
 
 /**
  * DOTCOM SECRETS: Chapter 12 — Reverse Self-Liquidating Offer
@@ -309,6 +310,15 @@ const TripwirePage = () => {
               <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
             </div>
           ))}
+        </div>
+
+        {/* ── Guarantee (Risk Reversal) ── */}
+        <div className="max-w-lg mx-auto mb-8">
+          <GuaranteeBox
+            days={14}
+            title='My 14-Day "Better Than Risk-Free" Guarantee'
+            keepText="the 47-point checklist, all the walkthroughs, and every template"
+          />
         </div>
 
         {/* ── Decline Link ── */}

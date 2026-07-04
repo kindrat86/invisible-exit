@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
+import ValueStackTotal from "@/components/ValueStackTotal";
 
 const SLIDES = [
   {
@@ -328,53 +329,23 @@ const MasterclassPage = () => {
             If you've watched this far, you're in the 3%. Here's what the 3% get.
           </p>
 
-          {/* Value Stack Items */}
-          <div className="max-w-lg mx-auto space-y-3 text-left mb-8">
-            {[
+          {/* Value Stack — Animated with running total */}
+          <ValueStackTotal
+            items={[
               { name: "FYM Dashboard — Your exact freedom number", value: "$12/mo" },
               { name: "Idea Pipeline — 500+ validated ideas + AI scoring", value: "$15/mo" },
               { name: "Stealth Ops Hub — Entity, compliance, invisibility", value: "$25/mo" },
               { name: "Launch Control — Ship products in 5 hrs/week", value: "$18/mo" },
               { name: "Brand Manager — Faceless content + calendar", value: "$27/mo" },
-              { name: "🎁 Bonus: Employment Contract Audit Checklist", value: "$27" },
-              { name: "🎁 Bonus: 25 Micro-SaaS Idea Swipes", value: "$47" },
-              { name: "🎁 Bonus: Faceless Founder Content Calendar", value: "$27" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between bg-white/5 rounded-lg p-3.5 border border-white/10 animate-fade-up"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-success shrink-0" />
-                  <span className="text-white/80 text-sm">{item.name}</span>
-                </div>
-                <span className="text-white/40 text-xs font-mono">{item.value}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Price Reveal */}
-          <div className="max-w-lg mx-auto">
-            <div className="flex items-center justify-between py-3 border-b border-white/10">
-              <span className="text-white/60">Total Value:</span>
-              <span className="text-white/60 line-through">$328/month</span>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-white/10">
-              <span className="text-white/60">Founding Discount:</span>
-              <span className="text-success font-semibold">−99.7%</span>
-            </div>
-            <div className="py-6">
-              <p className="text-white/50 text-sm mb-2">Your Price Today:</p>
-              <p className="text-5xl sm:text-6xl font-bold text-primary-light">
-                $0.97
-                <span className="text-lg text-white/50 font-normal">/mo</span>
-              </p>
-              <p className="text-white/40 text-xs mt-2">
-                $11.64/year. Less than a single lunch.
-              </p>
-            </div>
-          </div>
+            ]}
+            bonuses={[
+              { name: "Bonus: Employment Contract Audit Checklist", value: "$27" },
+              { name: "Bonus: 25 Micro-SaaS Idea Swipes", value: "$47" },
+              { name: "Bonus: Faceless Founder Content Calendar", value: "$27" },
+            ]}
+            finalPrice="$0.97/mo"
+            priceLabel="Your Price Today"
+          />
 
           {/* Urgency */}
           <div className="max-w-lg mx-auto bg-primary/10 border border-primary/30 rounded-xl p-5 mb-8">
