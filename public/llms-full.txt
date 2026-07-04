@@ -8,7 +8,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 
 ## Blog Articles
 
-### How Much Money Do You Actually Need to Never Work Again?
+### The Freedom Number Formula Nobody Teaches Corporate Managers (Do This Math Before You Quit)
 
 - **URL:** https://invisibleexit.com/blog/how-much-money-to-never-work-again
 - **Category:** Financial Independence
@@ -25,7 +25,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: How does micro-SaaS income compare to traditional retirement savings?
   A: A micro-SaaS charging $29/month needs just 138 customers to generate $4,000/month. This is achievable in 12-18 months, compared to decades of traditional saving. Plus, recurring revenue compounds — every customer added this month still pays next month.
 
-### Why Managing Directors Are Building Micro-SaaS Businesses in 2026
+### Why Managing Directors Are Quietly Building Micro-SaaS (And Not Telling Their Employers)
 
 - **URL:** https://invisibleexit.com/blog/why-managing-directors-building-micro-saas
 - **Category:** Micro-SaaS
@@ -59,7 +59,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: What makes a micro-SaaS business invisible?
   A: A micro-SaaS is invisible when it operates through a privacy-protected LLC, uses separate digital identities (domain, email, social accounts), markets under a brand name rather than your personal name, and generates revenue through SEO and content marketing rather than personal brand building.
 
-### From $0 to $4,000/Month: The 18-Month Invisible Exit Timeline
+### The Month-By-Month Timeline From $0 to $4,000 MRR (No Luck Required)
 
 - **URL:** https://invisibleexit.com/blog/zero-to-4000-invisible-exit-timeline
 - **Category:** Exit Planning
@@ -76,7 +76,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: How much does it cost to start a micro-SaaS?
   A: With AI tools, starting a micro-SaaS costs $60-$260/month — covering AI code generators ($50-$100), hosting ($0-$50), and marketing tools ($0-$50). This is a 99% reduction from the $22,000-$43,000/month a traditional 5-person startup team would cost.
 
-### AI Tools That Replace a 5-Person Startup Team
+### 7 AI Tools That Let One Corporate Manager Out-Ship a 5-Person Startup
 
 - **URL:** https://invisibleexit.com/blog/ai-tools-replace-startup-team
 - **Category:** AI Tools
@@ -134,7 +134,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - **Published:** 2026-03-27
 - **Summary:** Your employment agreement probably isn't as restrictive as you think. Here's how to evaluate your non-compete before building.
 
-### How to Build a Business While Employed Without Using Your Real Name
+### How I Built a Profitable Business Without Using My Real Name (And Why You Should Too)
 
 - **URL:** https://invisibleexit.com/blog/how-to-build-a-business-while-employed-without-using-your-real-name
 - **Category:** Stealth Operations
@@ -151,7 +151,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: Do customers care if I use a brand instead of my real name?
   A: Usually no. Customers care more about whether the offer is clear and the product solves a painful problem. For many low-profile SaaS and information businesses, the brand matters more than the founder identity.
 
-### How to Validate a Micro-SaaS Idea in 48 Hours Without Writing Code
+### The 48-Hour Idea Validation Framework (Test Before You Build)
 
 - **URL:** https://invisibleexit.com/blog/validate-micro-saas-idea-in-48-hours-without-coding
 - **Category:** Validation
@@ -185,7 +185,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: How do I know if an idea is too big?
   A: If the idea needs a marketplace, many user types, heavy education, or dozens of features to feel useful, it is probably too big for a first micro-SaaS. A good first idea solves one repeated job for one narrow buyer.
 
-### Do You Need a Personal Brand to Build a Side Business? No.
+### I Deleted My Personal Twitter and Built an Anonymous Brand — Here's What Happened
 
 - **URL:** https://invisibleexit.com/blog/do-you-need-a-personal-brand-to-build-a-side-business
 - **Category:** Audience Building
@@ -202,7 +202,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: What is better than a personal brand for a micro-SaaS founder?
   A: For many micro-SaaS founders, brand-first positioning, useful content, clear market understanding, and a professional product experience create enough trust without requiring the founder to become the public face of the business.
 
-### What If Your Employer Finds Out About Your Side Business?
+### The #1 Mistake That Keeps Corporate Managers Trapped (And the System That Fixes It)
 
 - **URL:** https://invisibleexit.com/blog/what-if-your-employer-finds-out-about-your-side-business
 - **Category:** Stealth Operations
@@ -219,7 +219,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: How do side projects usually get discovered at work?
   A: Usually through operational mistakes: public posting under your real name, digital overlap between identities, talking too much too early, or using company devices and accounts. Clean separation reduces discovery risk substantially.
 
-### How Corporate Managers Can Get Their First Paying Customers Without Ads
+### The Stealth Acquisition Playbook: First 10 Customers Without Ads, Without Your Name
 
 - **URL:** https://invisibleexit.com/blog/how-corporate-managers-can-get-their-first-paying-customers-without-ads
 - **Category:** Growth
@@ -270,7 +270,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: Is YouTube worth it if I am still employed full-time?
   A: Yes, if you keep the format sustainable. Batch scripts, use one or two repeatable formats, and repurpose each video into blog and community content so one asset creates multiple outputs.
 
-### The 5-Hour Weekly Operating System for Building a Micro-SaaS on the Side
+### The 5-Hour Weekly System That Outperforms 60-Hour Founders (Here's the Schedule)
 
 - **URL:** https://invisibleexit.com/blog/the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side
 - **Category:** Time Management
@@ -287,7 +287,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: Why do side projects stall even when people are motivated?
   A: Usually because effort is random. Without a repeatable weekly system, founders spend too much time switching contexts, researching tools, and hiding in private work instead of publishing and learning from the market.
 
-### How to Choose Between One Big Startup Idea and Three Small Micro-SaaS Bets
+### Why I Turned Down a VP Promotion (The MRR Math That Made It an Easy No)
 
 - **URL:** https://invisibleexit.com/blog/how-to-choose-between-one-big-startup-idea-and-three-small-micro-saas-bets
 - **Category:** Strategy
@@ -304,7 +304,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: What is the best strategy for a founder with limited time?
   A: Use serial narrowing: test multiple ideas at the message level, identify the strongest signal, validate one more deeply, and only then commit more serious build time.
 
-### Can AI Really Replace a Co-Founder? What It Can and Cannot Do
+### Can AI Really Replace a Co-Founder? What I Learned After 14 Months Solo
 
 - **URL:** https://invisibleexit.com/blog/can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do
 - **Category:** AI Tools
@@ -321,7 +321,7 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
 - Q: Do founders still need co-founders in the AI era?
   A: Sometimes, but often later than before. AI makes it easier to validate and launch without splitting equity too early. A co-founder makes more sense when the business has already earned added complexity and shared responsibility.
 
-### The Invisible Exit Roadmap: What to Do in Your First 90 Days
+### The First 90 Days: A Step-by-Step Roadmap From 'Maybe I Should Start' to First Revenue
 
 - **URL:** https://invisibleexit.com/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days
 - **Category:** Exit Planning

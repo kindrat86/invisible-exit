@@ -168,6 +168,46 @@ const IntensivePage = () => {
         </div>
       </section>
 
+      {/* ── Sales Letter: The "Why Me, Why Now" ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-narrow">
+          <div className="max-w-2xl mx-auto text-body text-muted-foreground space-y-5 leading-[1.8]">
+            <p className="text-eyebrow text-primary mb-2 text-center">A Note From Adrian</p>
+            <h2 className="text-h2 text-foreground mb-6 text-center">If You're Serious About Exiting in 90 Days, Read This.</h2>
+            <p>
+              I'm going to be direct with you. If you're the kind of person who reads
+              the blog, calculates their freedom number, and then... does nothing...
+              this page isn't for you. The $0.97 plan is. It's perfect for that.
+            </p>
+            <p>
+              The Intensive is for the manager who's already decided. You know the
+              golden handcuffs are real. You've done the equity math. You know 5 hours
+              a week is enough — if you use them right. What you don't have is a
+              proven system, a second set of eyes on your employment contract, and
+              someone who's done it before sitting next to you.
+            </p>
+            <p>
+              That's what the Intensive is. For 90 days, I become your co-founder.
+              Not your coach. Not your cheerleader. Your co-founder. I review your
+              ideas personally. I audit your stealth setup personally. I review your
+              launch personally. If something's wrong, I tell you before it costs you
+              $2,400 in wasted time — because I already made that mistake.
+            </p>
+            <p className="text-foreground font-medium">
+              I take 5 managers per month. No more. Because I personally work with
+              each one. When the 5 spots are filled, this page changes to a waitlist.
+            </p>
+            <p>
+              If that resonates, apply below. If it doesn't, the $0.97 plan is still
+              the best $12/year you'll spend. No hard feelings either way.
+            </p>
+            <p className="text-sm">
+              — Adrian
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* What's Included */}
       <section className="bg-white section-normal">
         <div className="container-standard">

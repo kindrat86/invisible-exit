@@ -9,6 +9,7 @@ const FOOTER_SECTIONS = [
       { label: "Blog", to: "/blog" },
       { label: "My Story", to: "/story" },
       { label: "Manifesto", to: "/manifesto" },
+      { label: "Why Not Something Else?", to: "/compare" },
       { label: "Who Is Adrian?", to: "/adrian" },
       { label: "Free Freedom Calculator", to: "/freedom" },
       { label: "Free Masterclass", to: "/masterclass" },

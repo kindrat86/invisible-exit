@@ -998,6 +998,38 @@ function getRoutes() {
   });
 
   routes.push({
+    path: "/compare",
+    meta: {
+      title: "Invisible Exit vs Every Alternative — The Honest Comparison",
+      description:
+        "Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest comparison.",
+      url: `${SITE}/compare`,
+      type: "article",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Invisible Exit vs Every Alternative — The Honest Comparison",
+          description:
+            "Comparing Invisible Exit to side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus.",
+          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          datePublished: "2026-07-04",
+          articleSection: "Comparison",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Compare" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
     path: "/adrian",
     meta: {
       title: "Who Is Adrian? — The Anonymous Founder Behind Invisible Exit",

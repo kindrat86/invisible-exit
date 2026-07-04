@@ -183,6 +183,12 @@ async function main() {
       priority: "0.9",
     },
     {
+      loc: "https://invisibleexit.com/compare",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    {
       loc: "https://invisibleexit.com/adrian",
       lastmod: today,
       changefreq: "monthly",

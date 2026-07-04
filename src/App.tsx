@@ -60,6 +60,7 @@ const IntensivePage = lazy(() => import("./pages/IntensivePage.tsx"));
 const StoryPage = lazy(() => import("./pages/StoryPage.tsx"));
 const ManifestoPage = lazy(() => import("./pages/ManifestoPage.tsx"));
 const PillarFreedomNumberPage = lazy(() => import("./pages/PillarFreedomNumberPage.tsx"));
+const AlternativesComparePage = lazy(() => import("./pages/AlternativesComparePage.tsx"));
 const AdrianPage = lazy(() => import("./pages/AdrianPage.tsx"));
 const InnerCirclePage = lazy(() => import("./pages/InnerCirclePage.tsx"));
 const Dream100Page = lazy(() => import("./pages/Dream100Page.tsx"));
@@ -180,6 +181,7 @@ const App = () => (
           <Route path="/story" element={<StoryPage />} />
           <Route path="/manifesto" element={<ManifestoPage />} />
           <Route path="/guides/freedom-number" element={<PillarFreedomNumberPage />} />
+          <Route path="/compare" element={<ComparePage />} />
           <Route path="/adrian" element={<AdrianPage />} />
           <Route path="/inner-circle" element={<InnerCirclePage />} />
           <Route path="/dream-100" element={<Dream100Page />} />

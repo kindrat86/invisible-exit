@@ -29,7 +29,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-much-money-to-never-work-again",
-    title: "How Much Money Do You Actually Need to Never Work Again?",
+    title: "The Freedom Number Formula Nobody Teaches Corporate Managers (Do This Math Before You Quit)",
     excerpt:
       "The math behind financial independence for corporate managers. Why $4,000/month in recurring revenue changes everything.",
     category: "Financial Independence",
@@ -117,7 +117,7 @@ Stop waiting for the "perfect number." Start building toward $4,000/month in rec
   },
   {
     slug: "why-managing-directors-building-micro-saas",
-    title: "Why Managing Directors Are Building Micro-SaaS Businesses in 2026",
+    title: "Why Managing Directors Are Quietly Building Micro-SaaS (And Not Telling Their Employers)",
     excerpt:
       "The golden handcuff trap is real. Here's why AI-powered micro-SaaS is the escape hatch for executives with constraints.",
     category: "Micro-SaaS",
@@ -361,7 +361,7 @@ The goal isn't to hide. It's to protect your transition period so you can leave 
   },
   {
     slug: "zero-to-4000-invisible-exit-timeline",
-    title: "From $0 to $4,000/Month: The 18-Month Invisible Exit Timeline",
+    title: "The Month-By-Month Timeline From $0 to $4,000 MRR (No Luck Required)",
     excerpt:
       "A month-by-month breakdown of building recurring revenue while maintaining your corporate role.",
     category: "Exit Planning",
@@ -524,7 +524,7 @@ The clock starts when you start. Not when you feel ready.`,
   },
   {
     slug: "ai-tools-replace-startup-team",
-    title: "AI Tools That Replace a 5-Person Startup Team",
+    title: "7 AI Tools That Let One Corporate Manager Out-Ship a 5-Person Startup",
     excerpt:
       "Why solo founders with AI can now compete with funded startups. The tools, the workflow, the economics.",
     category: "AI Tools",
@@ -1229,7 +1229,7 @@ This article is for educational purposes only and does not constitute legal advi
 
   {
     slug: "how-to-build-a-business-while-employed-without-using-your-real-name",
-    title: "How to Build a Business While Employed Without Using Your Real Name",
+    title: "How I Built a Profitable Business Without Using My Real Name (And Why You Should Too)",
     excerpt:
       "You do not need to attach your LinkedIn profile to your side business. Here is the practical anonymity stack corporate managers can use to build quietly.",
     category: "Stealth Operations",
@@ -1404,7 +1404,7 @@ Build the business first. Decide about identity second.`,
   },
   {
     slug: "validate-micro-saas-idea-in-48-hours-without-coding",
-    title: "How to Validate a Micro-SaaS Idea in 48 Hours Without Writing Code",
+    title: "The 48-Hour Idea Validation Framework (Test Before You Build)",
     excerpt:
       "Before you build, prove demand. This is the fastest practical way for a time-constrained corporate manager to test whether an idea deserves a weekend.",
     category: "Validation",
@@ -1783,7 +1783,7 @@ That is the kind of idea worth building.`,
   },
   {
     slug: "do-you-need-a-personal-brand-to-build-a-side-business",
-    title: "Do You Need a Personal Brand to Build a Side Business? No.",
+    title: "I Deleted My Personal Twitter and Built an Anonymous Brand — Here's What Happened",
     excerpt:
       "A public face can help some founders. For corporate managers, it can also create unnecessary risk. Here is the better question to ask.",
     category: "Audience Building",
@@ -1964,7 +1964,7 @@ If visibility becomes useful later, you can choose it from a position of strengt
 
   {
     slug: "what-if-your-employer-finds-out-about-your-side-business",
-    title: "What If Your Employer Finds Out About Your Side Business?",
+    title: "The #1 Mistake That Keeps Corporate Managers Trapped (And the System That Fixes It)",
     excerpt:
       "For corporate managers, this is the fear underneath every side project. Here is how to think about the real risks, the avoidable mistakes, and the smarter operating posture.",
     category: "Stealth Operations",
@@ -2164,7 +2164,7 @@ Build accordingly.`,
   },
   {
     slug: "how-corporate-managers-can-get-their-first-paying-customers-without-ads",
-    title: "How Corporate Managers Can Get Their First Paying Customers Without Ads",
+    title: "The Stealth Acquisition Playbook: First 10 Customers Without Ads, Without Your Name",
     excerpt:
       "If your first distribution plan depends on paid ads, you are probably trying to buy clarity you have not earned yet. Here is the smarter path.",
     category: "Growth",
@@ -2718,7 +2718,7 @@ And trust is what drives the click to the next step.`,
 
   {
     slug: "the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side",
-    title: "The 5-Hour Weekly Operating System for Building a Micro-SaaS on the Side",
+    title: "The 5-Hour Weekly System That Outperforms 60-Hour Founders (Here's the Schedule)",
     excerpt:
       "You do not need more time. You need a stricter operating system. Here is the simplest weekly structure for employed founders who want real progress without chaos.",
     category: "Time Management",
@@ -2914,7 +2914,7 @@ Because clarity is.`,
   },
   {
     slug: "how-to-choose-between-one-big-startup-idea-and-three-small-micro-saas-bets",
-    title: "How to Choose Between One Big Startup Idea and Three Small Micro-SaaS Bets",
+    title: "Why I Turned Down a VP Promotion (The MRR Math That Made It an Easy No)",
     excerpt:
       "Employed founders often waste months trying to pick the perfect big idea. A better question is whether the idea fits the life you actually have.",
     category: "Strategy",
@@ -3066,7 +3066,7 @@ They are a faster route to conviction.`,
   },
   {
     slug: "can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do",
-    title: "Can AI Really Replace a Co-Founder? What It Can and Cannot Do",
+    title: "Can AI Really Replace a Co-Founder? What I Learned After 14 Months Solo",
     excerpt:
       "AI can replace a surprising amount of early-stage execution. It cannot replace judgment, ownership, and accountability. That distinction matters.",
     category: "AI Tools",
@@ -3234,7 +3234,7 @@ For employed builders, that is one of the biggest opportunities of this era.`,
   },
   {
     slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
-    title: "The Invisible Exit Roadmap: What to Do in Your First 90 Days",
+    title: "The First 90 Days: A Step-by-Step Roadmap From 'Maybe I Should Start' to First Revenue",
     excerpt:
       "The first 90 days matter more than most people think. Not because they create the whole business, but because they create the direction of it.",
     category: "Exit Planning",

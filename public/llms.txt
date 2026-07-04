@@ -42,12 +42,12 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 ## Blog: AI Tools
 
-- [AI Tools That Replace a 5-Person Startup Team](https://invisibleexit.com/blog/ai-tools-replace-startup-team): Why solo founders with AI can now compete with funded startups. The tools, the workflow, the economics.
-- [Can AI Really Replace a Co-Founder? What It Can and Cannot Do](https://invisibleexit.com/blog/can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do): AI can replace a surprising amount of early-stage execution. It cannot replace judgment, ownership, and accountability. That distinction matters.
+- [7 AI Tools That Let One Corporate Manager Out-Ship a 5-Person Startup](https://invisibleexit.com/blog/ai-tools-replace-startup-team): Why solo founders with AI can now compete with funded startups. The tools, the workflow, the economics.
+- [Can AI Really Replace a Co-Founder? What I Learned After 14 Months Solo](https://invisibleexit.com/blog/can-ai-really-replace-a-co-founder-what-it-can-and-cannot-do): AI can replace a surprising amount of early-stage execution. It cannot replace judgment, ownership, and accountability. That distinction matters.
 
 ## Blog: Audience Building
 
-- [Do You Need a Personal Brand to Build a Side Business? No.](https://invisibleexit.com/blog/do-you-need-a-personal-brand-to-build-a-side-business): A public face can help some founders. For corporate managers, it can also create unnecessary risk. Here is the better question to ask.
+- [I Deleted My Personal Twitter and Built an Anonymous Brand — Here's What Happened](https://invisibleexit.com/blog/do-you-need-a-personal-brand-to-build-a-side-business): A public face can help some founders. For corporate managers, it can also create unnecessary risk. Here is the better question to ask.
 - [Reddit for Anonymous Founders: How to Get Attention Without Looking Like a Marketer](https://invisibleexit.com/blog/reddit-for-anonymous-founders-how-to-get-attention-without-looking-like-a-marketer): Reddit can be one of the best early distribution channels for a low-profile founder, but only if you behave like a contributor instead of a campaign.
 - [YouTube Without Showing Your Face: The Corporate Manager's Content Strategy](https://invisibleexit.com/blog/youtube-without-showing-your-face-the-corporate-managers-content-strategy): You do not need to become a visible creator to use YouTube well. You need a repeatable message, a useful point of view, and a format you can sustain while employed.
 - [How to Turn One YouTube Video Into a Week of Distribution](https://invisibleexit.com/blog/how-to-turn-one-youtube-video-into-a-week-of-distribution): If one content asset stays one asset, you are wasting effort. Here is the simpler repurposing model that fits an employed founder's schedule.
@@ -61,14 +61,14 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 ## Blog: Exit Planning
 
-- [From $0 to $4,000/Month: The 18-Month Invisible Exit Timeline](https://invisibleexit.com/blog/zero-to-4000-invisible-exit-timeline): A month-by-month breakdown of building recurring revenue while maintaining your corporate role.
-- [The Invisible Exit Roadmap: What to Do in Your First 90 Days](https://invisibleexit.com/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days): The first 90 days matter more than most people think. Not because they create the whole business, but because they create the direction of it.
+- [The Month-By-Month Timeline From $0 to $4,000 MRR (No Luck Required)](https://invisibleexit.com/blog/zero-to-4000-invisible-exit-timeline): A month-by-month breakdown of building recurring revenue while maintaining your corporate role.
+- [The First 90 Days: A Step-by-Step Roadmap From 'Maybe I Should Start' to First Revenue](https://invisibleexit.com/blog/the-invisible-exit-roadmap-what-to-do-in-your-first-90-days): The first 90 days matter more than most people think. Not because they create the whole business, but because they create the direction of it.
 - [The Hidden Cost of Waiting for the IPO](https://invisibleexit.com/blog/the-hidden-cost-of-waiting-for-the-ipo): Waiting feels prudent when the upside story is still alive. But every year you delay has a cost, and most of that cost never shows up on a cap table.
 - [What Makes a Micro-SaaS a Sellable Asset](https://invisibleexit.com/blog/what-makes-a-micro-saas-a-sellable-asset): A business becomes more valuable when it depends less on the founder. If you want an exit, you have to build for transferability, not just income.
 
 ## Blog: Financial Independence
 
-- [How Much Money Do You Actually Need to Never Work Again?](https://invisibleexit.com/blog/how-much-money-to-never-work-again): The math behind financial independence for corporate managers. Why $4,000/month in recurring revenue changes everything.
+- [The Freedom Number Formula Nobody Teaches Corporate Managers (Do This Math Before You Quit)](https://invisibleexit.com/blog/how-much-money-to-never-work-again): The math behind financial independence for corporate managers. Why $4,000/month in recurring revenue changes everything.
 - [Real Estate vs. Micro-SaaS: Freedom Math for Corporate Managers](https://invisibleexit.com/blog/real-estate-vs-micro-saas-freedom-math): Which path to financial independence is faster, cheaper, and more invisible? The numbers might surprise you.
 - [Why Comfortable Salaries Keep Smart People Stuck](https://invisibleexit.com/blog/why-comfortable-salaries-keep-smart-people-stuck): Low salaries create urgency. Very high salaries can create leverage. The truly dangerous zone is the comfortable middle where your lifestyle expands faster than your freedom.
 - [Why You Do Not Need to Replace Your Full Salary to Become Free](https://invisibleexit.com/blog/why-you-do-not-need-to-replace-your-full-salary-to-become-free): A lot of corporate managers delay action because they think freedom means replacing every euro of salary first. Usually it does not.
@@ -81,11 +81,11 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 ## Blog: Growth
 
 - [Your First 10 Customers: The Corporate Manager's Outreach Playbook](https://invisibleexit.com/blog/first-10-customers-corporate-manager-outreach): Forget cold outreach templates. Your corporate network and domain expertise are the unfair advantage most founders would kill for.
-- [How Corporate Managers Can Get Their First Paying Customers Without Ads](https://invisibleexit.com/blog/how-corporate-managers-can-get-their-first-paying-customers-without-ads): If your first distribution plan depends on paid ads, you are probably trying to buy clarity you have not earned yet. Here is the smarter path.
+- [The Stealth Acquisition Playbook: First 10 Customers Without Ads, Without Your Name](https://invisibleexit.com/blog/how-corporate-managers-can-get-their-first-paying-customers-without-ads): If your first distribution plan depends on paid ads, you are probably trying to buy clarity you have not earned yet. Here is the smarter path.
 
 ## Blog: Micro-SaaS
 
-- [Why Managing Directors Are Building Micro-SaaS Businesses in 2026](https://invisibleexit.com/blog/why-managing-directors-building-micro-saas): The golden handcuff trap is real. Here's why AI-powered micro-SaaS is the escape hatch for executives with constraints.
+- [Why Managing Directors Are Quietly Building Micro-SaaS (And Not Telling Their Employers)](https://invisibleexit.com/blog/why-managing-directors-building-micro-saas): The golden handcuff trap is real. Here's why AI-powered micro-SaaS is the escape hatch for executives with constraints.
 - [The Best Micro-SaaS Ideas for Corporate Managers in 2026](https://invisibleexit.com/blog/best-micro-saas-ideas-for-corporate-managers): The best ideas are not sexy. They are painful, narrow, and easy to explain. Here are the kinds of micro-SaaS ideas corporate operators are uniquely positioned to spot.
 - [Why Boring Businesses Beat Exciting Startups for Employed Founders](https://invisibleexit.com/blog/why-boring-businesses-beat-exciting-startups-for-employed-founders): Exciting ideas attract ego and complexity. Boring businesses often win because they fit time constraints, buyer clarity, and sellable economics better.
 
@@ -93,8 +93,8 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 - [The Invisible Business Model: How to Build Revenue Your Employer Can't See](https://invisibleexit.com/blog/invisible-business-model): Entity separation, compliance, digital footprint management. A complete guide to invisible operations.
 - [Non-Compete Clauses and Micro-SaaS: What Corporate Managers Need to Know](https://invisibleexit.com/blog/non-compete-clauses-micro-saas-what-you-need-to-know): Your employment agreement probably isn't as restrictive as you think. Here's how to evaluate your non-compete before building.
-- [How to Build a Business While Employed Without Using Your Real Name](https://invisibleexit.com/blog/how-to-build-a-business-while-employed-without-using-your-real-name): You do not need to attach your LinkedIn profile to your side business. Here is the practical anonymity stack corporate managers can use to build quietly.
-- [What If Your Employer Finds Out About Your Side Business?](https://invisibleexit.com/blog/what-if-your-employer-finds-out-about-your-side-business): For corporate managers, this is the fear underneath every side project. Here is how to think about the real risks, the avoidable mistakes, and the smarter operating posture.
+- [How I Built a Profitable Business Without Using My Real Name (And Why You Should Too)](https://invisibleexit.com/blog/how-to-build-a-business-while-employed-without-using-your-real-name): You do not need to attach your LinkedIn profile to your side business. Here is the practical anonymity stack corporate managers can use to build quietly.
+- [The #1 Mistake That Keeps Corporate Managers Trapped (And the System That Fixes It)](https://invisibleexit.com/blog/what-if-your-employer-finds-out-about-your-side-business): For corporate managers, this is the fear underneath every side project. Here is how to think about the real risks, the avoidable mistakes, and the smarter operating posture.
 - [How to Keep Your LinkedIn Clean While Building a Side Business](https://invisibleexit.com/blog/how-to-keep-your-linkedin-clean-while-building-a-side-business): For employed founders, LinkedIn is often the loudest accidental leak. Here is how to keep it professionally useful without turning it into a breadcrumb trail to your side project.
 - [Moonlighting Clauses: What Employed Founders Actually Need to Check](https://invisibleexit.com/blog/moonlighting-clauses-what-employed-founders-actually-need-to-check): Most employed founders fear the phrase more than they understand it. Here is the practical review process before you build in circles around imaginary restrictions.
 - [Should You Form an LLC Before Your First Customer?](https://invisibleexit.com/blog/should-you-form-an-llc-before-your-first-customer): Some founders set up the company too early. Others wait too long. Here is the cleaner decision rule for employed operators building quietly.
@@ -106,7 +106,7 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 ## Blog: Strategy
 
-- [How to Choose Between One Big Startup Idea and Three Small Micro-SaaS Bets](https://invisibleexit.com/blog/how-to-choose-between-one-big-startup-idea-and-three-small-micro-saas-bets): Employed founders often waste months trying to pick the perfect big idea. A better question is whether the idea fits the life you actually have.
+- [Why I Turned Down a VP Promotion (The MRR Math That Made It an Easy No)](https://invisibleexit.com/blog/how-to-choose-between-one-big-startup-idea-and-three-small-micro-saas-bets): Employed founders often waste months trying to pick the perfect big idea. A better question is whether the idea fits the life you actually have.
 - [The Identity Shift From Employee to Owner](https://invisibleexit.com/blog/the-identity-shift-from-employee-to-owner): The first real transition is not legal or financial. It is psychological. Until your identity changes, your decisions keep serving the old role.
 - [Why Corporate Competence Transfers Better Than Most People Think](https://invisibleexit.com/blog/why-corporate-competence-transfers-better-than-most-people-think): A lot of operators underestimate how much founder capability they already have because they confuse entrepreneurship with personality instead of execution.
 - [How to Stop Asking for Permission When You Want an Invisible Exit](https://invisibleexit.com/blog/how-to-stop-asking-for-permission-invisible-exit): A lot of capable people delay because they are still waiting for invisible approval. The business stays hypothetical until that pattern breaks.
@@ -117,11 +117,11 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 ## Blog: Time Management
 
 - [The 5-Hour Weekend: How to Build a Micro-SaaS Without Sacrificing Family Time](https://invisibleexit.com/blog/5-hour-weekend-micro-saas-family-time): You don't need 40 hours a week to build a business. Here's the exact weekly schedule corporate managers use to ship products in 5 focused hours.
-- [The 5-Hour Weekly Operating System for Building a Micro-SaaS on the Side](https://invisibleexit.com/blog/the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side): You do not need more time. You need a stricter operating system. Here is the simplest weekly structure for employed founders who want real progress without chaos.
+- [The 5-Hour Weekly System That Outperforms 60-Hour Founders (Here's the Schedule)](https://invisibleexit.com/blog/the-5-hour-weekly-operating-system-for-building-a-micro-saas-on-the-side): You do not need more time. You need a stricter operating system. Here is the simplest weekly structure for employed founders who want real progress without chaos.
 
 ## Blog: Validation
 
-- [How to Validate a Micro-SaaS Idea in 48 Hours Without Writing Code](https://invisibleexit.com/blog/validate-micro-saas-idea-in-48-hours-without-coding): Before you build, prove demand. This is the fastest practical way for a time-constrained corporate manager to test whether an idea deserves a weekend.
+- [The 48-Hour Idea Validation Framework (Test Before You Build)](https://invisibleexit.com/blog/validate-micro-saas-idea-in-48-hours-without-coding): Before you build, prove demand. This is the fastest practical way for a time-constrained corporate manager to test whether an idea deserves a weekend.
 
 ## Glossary (30 Terms)
 
