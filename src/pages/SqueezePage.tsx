@@ -577,14 +577,32 @@ const SqueezePage = () => {
                 <span className="text-success text-2xl">✓</span>
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">
-                Your exit plan is on the way.
+                Your Freedom Number: {formatMoney(result.freedomNumber)}/month
               </h2>
+
+              {/* INSTANT DELIVERY: show the result again (Dotcom Secrets Ch 6) */}
+              <div className="bg-primary/10 border border-primary/25 rounded-xl p-4 mb-4">
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  <div>
+                    <p className="text-white/40 text-xs">At $29/mo</p>
+                    <p className="text-white font-bold text-lg">{result.customers29} customers</p>
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-xs">Timeline</p>
+                    <p className="text-white font-bold text-lg">{result.timelineMonths} months</p>
+                  </div>
+                </div>
+              </div>
+
               <p className="text-white/70 mb-2">
                 I just sent a detailed breakdown to{" "}
                 <strong className="text-white">{email}</strong> — including your
                 personalized exit timeline, the Amsterdam moment that started
                 everything, and the 5-tool system that gets you to{" "}
                 {formatMoney(result.freedomNumber)}/month.
+              </p>
+              <p className="text-white/40 text-xs mb-4">
+                But you don't need to wait. Here's your next step right now:
               </p>
 
               <div className="space-y-3 mt-6">

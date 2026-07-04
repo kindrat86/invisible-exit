@@ -33,6 +33,9 @@ const TripwirePage = () => {
   const [loading, setLoading] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ mins: 14, secs: 59 });
 
+  // ── ORDER BUMP: Founder's Toolkit (Dotcom Secrets Ch 14) ──
+  const [addToolkit, setAddToolkit] = useState(true);
+
   // ── Countdown: 15 minutes from page load ──
   useEffect(() => {
     trackEvent("tripwire_page_viewed");
@@ -61,14 +64,14 @@ const TripwirePage = () => {
   }, []);
 
   const handlePurchase = async () => {
-    trackEvent("tripwire_purchased", { price: 7 });
+    trackEvent("tripwire_purchased", { price: 7, founders_toolkit: addToolkit });
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke(
         "create-checkout",
         {
           body: {
-            tier: "tripwire",
+            tier: addToolkit ? "tripwire_bump" : "tripwire",
             returnUrl: window.location.origin + "/checkout/success?sku=stealth-blueprint",
           },
         }
@@ -253,7 +256,7 @@ const TripwirePage = () => {
             ) : (
               <>
                 <Lock className="w-5 h-5" />
-                Yes — Give Me the Blueprint for $7
+                Yes — Give Me the Blueprint{addToolkit ? " + Toolkit" : ""} — {addToolkit ? "$44" : "$7"}
               </>
             )}
             {!loading && <ArrowRight className="w-5 h-5" />}
@@ -267,6 +270,47 @@ const TripwirePage = () => {
             <span>·</span>
             <span>14-day refund</span>
           </div>
+        </div>
+
+        {/* ── ORDER BUMP (Dotcom Secrets Ch 14) ── */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <label
+            className={`flex items-start gap-4 p-5 rounded-xl border-2 cursor-pointer transition-all ${
+              addToolkit
+                ? "bg-amber-500/10 border-amber-500/40"
+                : "bg-white/[0.03] border-white/10 hover:bg-white/[0.05]"
+            }`}
+          >
+            <input
+              type="checkbox"
+              checked={addToolkit}
+              onChange={(e) => setAddToolkit(e.target.checked)}
+              className="mt-1.5 w-5 h-5 rounded accent-amber-500 shrink-0 cursor-pointer"
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-white text-base font-bold">
+                  WAIT — Add the Founder's Toolkit
+                </span>
+                <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  Save $60
+                </span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mb-3">
+                47 email templates, 12 landing page frameworks, 25 micro-SaaS idea
+                blueprints, and the full Launch Control checklist. Everything you
+                need to ship your first product in 5 hours/week.
+              </p>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-white/40 line-through">$97</span>
+                <span className="text-amber-400 font-bold">just $37 one-time</span>
+                <span className="text-white/30 text-xs">(added to your $7 payment = $44 total)</span>
+              </div>
+              <p className="text-white/30 text-[11px] italic mt-2">
+                ☑ Checked by default — uncheck to skip
+              </p>
+            </div>
+          </label>
         </div>
 
         {/* ── Social Proof ── */}
