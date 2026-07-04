@@ -7,7 +7,9 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 ## Core Pages
 
 - [Home](https://invisibleexit.com/): Main landing page — value proposition, 5 tools, pricing, and FAQ
+- [About](https://invisibleexit.com/about): About the founder and the Invisible Exit methodology
 - [Blog](https://invisibleexit.com/blog): 53 articles on financial independence, micro-SaaS, stealth operations, and audience building for employed founders
+- [Glossary](https://invisibleexit.com/glossary): Plain-English definitions of micro-SaaS, recurring revenue, and stealth operations terms
 - [Privacy Policy](https://invisibleexit.com/privacy): Privacy policy
 - [Terms of Service](https://invisibleexit.com/terms): Terms of service
 

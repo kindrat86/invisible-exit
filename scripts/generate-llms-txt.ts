@@ -31,7 +31,9 @@ function generateLlmsTxt(): string {
   lines.push("## Core Pages");
   lines.push("");
   lines.push(`- [Home](https://invisibleexit.com/): Main landing page — value proposition, 5 tools, pricing, and FAQ`);
+  lines.push(`- [About](https://invisibleexit.com/about): About the founder and the Invisible Exit methodology`);
   lines.push(`- [Blog](https://invisibleexit.com/blog): ${blogPosts.length} articles on financial independence, micro-SaaS, stealth operations, and audience building for employed founders`);
+  lines.push(`- [Glossary](https://invisibleexit.com/glossary): Plain-English definitions of micro-SaaS, recurring revenue, and stealth operations terms`);
   lines.push(`- [Privacy Policy](https://invisibleexit.com/privacy): Privacy policy`);
   lines.push(`- [Terms of Service](https://invisibleexit.com/terms): Terms of service`);
   lines.push("");

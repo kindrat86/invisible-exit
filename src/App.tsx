@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
+import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/about" element={<About />} />
           <Route path="/admin/feature-requests" element={<AdminFeatureRequests />} />
           <Route path="/fym/badge/:shareId" element={<Badge />} />
           {/* Redirects from old URLs */}

@@ -113,6 +113,12 @@ async function main() {
       changefreq: "monthly",
       priority: "0.3",
     },
+    {
+      loc: "https://invisibleexit.com/about",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

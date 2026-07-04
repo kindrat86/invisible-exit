@@ -699,6 +699,54 @@ function getRoutes() {
     },
   });
 
+  routes.push({
+    path: "/about",
+    meta: {
+      title: "About Invisible Exit | Built by a Corporate Manager, for Corporate Managers",
+      description:
+        "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The platform shares the exact frameworks that worked.",
+      url: `${SITE}/about`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Invisible Exit",
+          description:
+            "Invisible Exit is a membership platform with 5 AI-powered tools for corporate managers building anonymous micro-SaaS businesses.",
+          url: `${SITE}/about`,
+          publisher: {
+            "@type": "Organization",
+            name: SITE_NAME,
+            url: SITE,
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Adrian",
+          jobTitle: "Founder, Invisible Exit",
+          url: `${SITE}/about`,
+          description:
+            "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
+          sameAs: ["https://www.youtube.com/@InvisibleExit"],
+          worksFor: {
+            "@type": "Organization",
+            name: SITE_NAME,
+          },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "About" },
+          ],
+        },
+      ],
+    },
+  });
+
   return routes;
 }
 

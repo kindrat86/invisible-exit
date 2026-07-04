@@ -10,7 +10,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { getBlogPostBySlug, blogPosts } from "@/data/blog-posts";
+import { comparisons } from "@/data/comparisons";
 import { trackEvent } from "@/lib/analytics";
+
+const slugifyCat = (s: string) =>
+  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function renderInlineMarkdown(text: string): string {
   return text
@@ -482,16 +486,16 @@ const BlogPost = () => {
                 <h2 className="text-2xl font-bold text-gray-900">Related Articles</h2>
               </div>
               <Link
-                to="/blog"
+                to={`/blog/category/${slugifyCat(post.category)}`}
                 onClick={() =>
                   trackEvent("blog_back_to_hub_clicked", {
                     slug: post.slug,
-                    source: "related_articles_header",
+                    source: "related_articles_category_link",
                   })
                 }
                 className="text-sm font-medium text-[#3B82F6] hover:underline"
               >
-                View full archive
+                More in {post.category}
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -524,6 +528,47 @@ const BlogPost = () => {
           </div>
         </section>
       )}
+
+      {/* Related comparisons */}
+      {(() => {
+        const relevant = comparisons
+          .filter((c) => {
+            const titleLower = post.title.toLowerCase();
+            const contentLower = post.content.toLowerCase();
+            const cmpLower = (c.optionA + " " + c.optionB + " " + c.title).toLowerCase();
+            return (
+              cmpLower.split(" ").some((w) => w.length > 4 && (titleLower.includes(w) || contentLower.includes(w)))
+            );
+          })
+          .slice(0, 2);
+        if (relevant.length === 0) return null;
+        return (
+          <section className="bg-white py-12 px-6 border-t border-gray-100">
+            <div className="mx-auto max-w-3xl">
+              <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-2">
+                Related comparisons
+              </p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Side-by-side guides</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {relevant.map((c) => (
+                  <Link
+                    key={c.slug}
+                    to={`/compare/${c.slug}`}
+                    className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow group"
+                  >
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3B82F6] transition-colors">
+                      {c.optionA} vs. {c.optionB}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {c.summary.slice(0, 140)}…
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       <section className="bg-[#1B2A4A] py-16 px-6">
         <div className="mx-auto max-w-2xl text-center">

@@ -71,6 +71,9 @@ const CATEGORY_ORDER = [
   "AI Tools",
 ];
 
+const slugifyCategory = (s: string) =>
+  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 const CATEGORY_SUMMARIES: Record<string, { summary: string; ctaLabel: string }> = {
   "Stealth Operations": {
     summary:
@@ -388,7 +391,7 @@ const Blog = () => {
                   ))}
                 </div>
                 <Link
-                  to={`/blog/${section.posts[0].slug}`}
+                  to={`/blog/category/${slugifyCategory(section.category)}`}
                   onClick={() =>
                     trackEvent("blog_featured_clicked", {
                       slug: section.posts[0].slug,
@@ -481,6 +484,52 @@ const Blog = () => {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 px-6 border-t border-gray-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8">
+            <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-2">
+              Reference
+            </p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              Glossary & comparison guides
+            </h2>
+            <p className="text-gray-600">
+              Plain-English definitions and side-by-side comparisons for the decisions employed founders face.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              to="/glossary"
+              className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow group"
+            >
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3B82F6] transition-colors">
+                Glossary
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Definitions of micro-SaaS, recurring revenue, stealth operations, non-compete clauses, freedom numbers, and more.
+              </p>
+            </Link>
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Comparison guides</h3>
+              <div className="space-y-2">
+                <Link to="/compare/micro-saas-vs-real-estate" className="block text-sm text-[#3B82F6] hover:underline">
+                  Micro-SaaS vs. Real Estate
+                </Link>
+                <Link to="/compare/llc-vs-s-corp-side-business" className="block text-sm text-[#3B82F6] hover:underline">
+                  LLC vs. S-Corp
+                </Link>
+                <Link to="/compare/side-business-vs-full-time-startup" className="block text-sm text-[#3B82F6] hover:underline">
+                  Side Business vs. Full-Time Startup
+                </Link>
+                <Link to="/compare/youtube-vs-blog-for-founders" className="block text-sm text-[#3B82F6] hover:underline">
+                  YouTube vs. Blog
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

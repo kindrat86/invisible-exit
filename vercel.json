@@ -45,6 +45,7 @@
     { "source": "/reset-password", "destination": "/index.html" },
     { "source": "/privacy", "destination": "/index.html" },
     { "source": "/terms", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
     { "source": "/admin/feature-requests", "destination": "/index.html" },
     { "source": "/fym/badge/:shareId", "destination": "/index.html" },
     { "source": "/fym", "destination": "/index.html" },
