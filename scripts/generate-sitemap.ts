@@ -371,35 +371,87 @@ async function main() {
     })),
   ];
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${entries
-  .map(
-    (e) => `  <url>
-    <loc>${e.loc}</loc>
-    <lastmod>${e.lastmod}</lastmod>
-    <changefreq>${e.changefreq}</changefreq>
-    <priority>${e.priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>
-`;
-
   const __dirname = dirname(fileURLToPath(import.meta.url));
-  const outPath = resolve(__dirname, "../public/sitemap.xml");
-  writeFileSync(outPath, xml, "utf-8");
-  console.log(`Sitemap written to ${outPath} (${entries.length} entries)`);
-  console.log(`  Blog posts: ${blogPosts.length}`);
-  console.log(`  Categories: ${categorySlugs.length}`);
-  console.log(`  Comparisons: ${comparisons.length}`);
-  console.log(`  Glossary terms: ${glossaryTerms.length}`);
-  console.log(`  State guides: ${stateGuides.length}`);
-  console.log(`  Industry ideas: ${industryIdeas.length}`);
-  console.log(`  Best tools lists: ${bestToolsLists.length}`);
-  console.log(`  Calculators: ${calculators.length}`);
-  console.log(`  Data reports: ${dataReports.length}`);
-  console.log(`  Resources: ${resources.length}`);
+  const publicDir = resolve(__dirname, "../public");
+
+  // ── Split sitemap into sub-sitemaps by type for better crawl efficiency ──
+// Google recommends max ~500 URLs per sitemap. We have 704, so we split.
+const submaps: Record<string, SitemapEntry[]> = {
+  "core": entries.filter(e =>
+    !e.loc.includes("/blog/") &&
+    !e.loc.includes("/guides/") &&
+    !e.loc.includes("/ideas/") &&
+    !e.loc.includes("/best/") &&
+    !e.loc.includes("/glossary/") &&
+    !e.loc.includes("/compare/") &&
+    !e.loc.includes("/alternatives/") &&
+    !e.loc.includes("/salaries/") &&
+    !e.loc.includes("/milestones/") &&
+    !e.loc.includes("/timeline/") &&
+    !e.loc.includes("/stack/") &&
+    !e.loc.includes("/cost-of-waiting/") &&
+    !e.loc.includes("/non-compete/") &&
+    !e.loc.includes("/mistakes/") &&
+    !e.loc.includes("/reddit/") &&
+    !e.loc.includes("/pricing-models/") &&
+    !e.loc.includes("/break-even/") &&
+    !e.loc.includes("/vs/") &&
+    !e.loc.includes("/first-year/") &&
+    !e.loc.includes("/tools/") &&
+    !e.loc.includes("/calculators/") &&
+    !e.loc.includes("/data/") &&
+    !e.loc.includes("/resources/")
+  ),
+  "blog": entries.filter(e => e.loc.includes("/blog/")),
+  "guides": entries.filter(e => e.loc.includes("/guides/")),
+  "ideas": entries.filter(e => e.loc.includes("/ideas/")),
+  "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/")),
+  "glossary": entries.filter(e => e.loc.includes("/glossary/")),
+  "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
+  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/")),
+  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/")),
+};
+
+// Write each sub-sitemap
+const submapFiles: string[] = [];
+for (const [name, subs] of Object.entries(submaps)) {
+  if (subs.length === 0) continue;
+  const subXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    subs.map(e => '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n  </url>').join('\n') +
+    '\n</urlset>\n';
+  const fileName = 'sitemap-' + name + '.xml';
+  writeFileSync(resolve(publicDir, fileName), subXml, "utf-8");
+  submapFiles.push(fileName);
+  console.log('  ' + fileName + ': ' + subs.length + ' URLs');
+}
+
+// Write sitemap index
+const indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  submapFiles.map(f => '  <sitemap>\n    <loc>https://invisibleexit.com/' + f + '</loc>\n    <lastmod>' + today + '</lastmod>\n  </sitemap>').join('\n') +
+  '\n</sitemapindex>\n';
+writeFileSync(resolve(publicDir, "sitemap.xml"), indexXml, "utf-8");
+
+// Also write the full sitemap for backwards compatibility
+const fullXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  entries.map(e => '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n  </url>').join('\n') +
+  '\n</urlset>\n';
+writeFileSync(resolve(publicDir, "sitemap-full.xml"), fullXml, "utf-8");
+
+console.log(`\nSitemap index written (${entries.length} total URLs across ${submapFiles.length} sub-sitemaps)`);
+console.log(`Full sitemap also available at /sitemap-full.xml`);
+console.log(`  Blog posts: ${blogPosts.length}`);
+console.log(`  Categories: ${categorySlugs.length}`);
+console.log(`  Comparisons: ${comparisons.length}`);
+console.log(`  Glossary terms: ${glossaryTerms.length}`);
+console.log(`  State guides: ${stateGuides.length}`);
+console.log(`  Industry ideas: ${industryIdeas.length}`);
+console.log(`  Best tools lists: ${bestToolsLists.length}`);
+console.log(`  Calculators: ${calculators.length}`);
+console.log(`  Data reports: ${dataReports.length}`);
+console.log(`  Resources: ${resources.length}`);
 }
 
 main().catch((err) => {

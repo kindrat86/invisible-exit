@@ -511,7 +511,7 @@ function homepageBodyHtml(): string {
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
 <div style="max-width:48rem;margin:0 auto">
-<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. $0.97/month. Cancel anytime. No credit card required to start.</p>
+<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. <a href="/pro" style="color:#3B82F6">$0.97/month</a>. <a href="/freedom" style="color:#3B82F6">Calculate your freedom number</a>. <a href="/blog" style="color:#3B82F6">Read the blog</a>. <a href="/manifesto" style="color:#3B82F6">Read the manifesto</a>. <a href="/guides/freedom-number" style="color:#3B82F6">Freedom Number Guide</a>. <a href="/compare" style="color:#3B82F6">Compare alternatives</a>. Cancel anytime. No credit card required to start.</p>
 </div>
 </section>
 </div>`;
@@ -1206,6 +1206,317 @@ ${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style
 </div>`;
 }
 
+// ---------- Flagship page bodies (SEO-critical) ----------
+
+function manifestoBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Manifesto</span></nav>
+<section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
+<div style="max-width:48rem;margin:0 auto">
+<p style="color:#60a5fa;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1.5rem">The Manifesto</p>
+<h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">This Isn't a Side-Hustle Course. It's a New Vehicle.</h1>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1.5rem">Every other program teaches you to improve — to build a better business, to hustle harder, to optimize your side project. We don't teach improvement. We offer a fundamentally different path to financial freedom.</p>
+<p style="color:rgba(255,255,255,0.5);max-width:32rem;margin:0 auto 2rem">If you're a corporate manager earning $120K-$200K with golden handcuffs and less than 0.5% equity — this is your declaration of independence.</p>
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+<section style="padding:3rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Distinction</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Improvement vs. A New Opportunity</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1rem"><strong>Improvement</strong> is: "How to build a better side business." It competes with 10,000 other courses, books, and YouTube channels. It positions you as just another person learning to hustle.</p>
+<p style="margin-bottom:1rem"><strong style="color:#3b82f6">A New Opportunity</strong> is: "A fundamentally different vehicle for financial freedom — one designed specifically for employed managers who need to stay invisible." It creates a category that didn't exist before. A category we own.</p>
+<p style="font-weight:500;font-size:1.125rem;color:#0f172a">We don't teach you to build a side business. We hand you the Invisible Exit System — the world's first anonymity-native, stealth-first framework for building recurring revenue while employed.</p>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;background-color:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+<div style="max-width:56rem;margin:0 auto">
+<div style="text-align:center;margin-bottom:3rem">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">Two Paths</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">The Old Way vs. The Invisible Way</h2>
+<p style="color:#4b5563;max-width:36rem;margin:0 auto">You've been sold one path your entire career. Here's why it was never designed to take you where you want to go.</p>
+</div>
+<div style="max-width:48rem;margin:0 auto">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Vehicle — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Climb the corporate ladder. Wait for equity to vest. Hope the IPO delivers.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Build invisible recurring revenue. Own products, not promises.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Timeline — Old Way</p><p style="font-size:0.875rem;color:#6b7280">5-8 years to a liquidity event you don't control.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">12-18 months to $4,000/month MRR you own today.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Visibility — Old Way</p><p style="font-size:0.875rem;color:#6b7280">LinkedIn brand. Conference talks. Your name on everything.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Anonymous entities. Separate identities. Zero exposure.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Skill Set — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Learn to pitch investors. Build a deck. Network at events.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Use your existing P&L, team management, and execution skills.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Risk — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Quit your job. Burn the bridge. Sink or swim.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Keep your salary. Build in 5 hours/week. The job funds the exit.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem">
+<div style="max-width:56rem;margin:0 auto">
+<div style="text-align:center;margin-bottom:3rem">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Declaration</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">The 6 Principles of the Invisible Builder</h2>
+<p style="color:#4b5563;max-width:36rem;margin:0 auto">These aren't tips. They're the foundational beliefs of a movement. If you agree with all six, you're one of us.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:48rem;margin:0 auto">
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">01</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Revenue beats equity.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today — not in 5 years when an IPO 'might' happen.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">02</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Anonymity is the advantage.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">The faceless founder can experiment without fear, fail without consequence, and build in any market — all while the employer, the LinkedIn network, and the competitors have no idea. The mask IS the moat.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">03</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Constraints produce focus.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">5 hours a week isn't a limitation. It's a forcing function. Full-time founders with 60 hours dilute their effort across a dozen priorities. The 5-hour builder does one thing that matters — every single week.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">04</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">The system beats the idea.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Stop obsessing over finding the 'right' idea. Build the framework first — freedom number, idea pipeline, stealth ops, launch control, brand. Once the system exists, you can swap ideas in and out like cartridges.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">05</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Boring products pay mortgages.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">A PDF generator for electricians beats a sexy AI tool. Boring markets have less competition, higher willingness to pay, and lower churn. The Idea Pipeline scores for revenue probability, not excitement.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">06</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Your job is the launchpad, not the trap.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Your salary is runway funding that costs zero equity. Your corporate skills (managing teams, reading P&Ls, executing under pressure) are exactly what solo founders lack. The job isn't what you escape — it's what funds the escape.</p></div>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;background-color:#0f172a">
+<div style="max-width:48rem;margin:0 auto">
+<div style="text-align:center;margin-bottom:2rem">
+<p style="color:#60a5fa;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Vision</p>
+<h2 style="font-size:1.875rem;font-weight:700;color:white;margin-bottom:1.5rem">A Future Where 10,000 Managers Own Their Exit</h2>
+</div>
+<div style="color:rgba(255,255,255,0.6);line-height:1.8">
+<p style="margin-bottom:1.25rem">Imagine a world where corporate managers don't wait 8 years for an IPO that may never deliver freedom. Where they don't gamble their family's future on a 0.5% equity lottery ticket.</p>
+<p style="margin-bottom:1.25rem">Imagine if 10,000 managers — each building quietly, each earning $4,000/month from products they own — walked into their annual review knowing the golden handcuffs were already off.</p>
+<p style="margin-bottom:1.25rem">Not because they quit. Not because they burned a bridge. But because they built an invisible exit — a door only they could see and only they could open.</p>
+<p style="color:white;font-weight:500;font-size:1.125rem;margin-top:1rem">That's the future we're building. One manager at a time.</p>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;text-align:center;border-top:1px solid #e2e8f0">
+<div style="max-width:36rem;margin:0 auto">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">Your Move</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">If You've Read This Far, You're Already Different</h2>
+<p style="color:#4b5563;margin-bottom:2rem">97% of managers will read this and go back to their spreadsheet. 3% will calculate their freedom number. That 3% is who this is for.</p>
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number — Free</a>
+<p style="font-size:0.875rem;color:#6b7280;margin-top:1rem">90 seconds. No credit card. The first step of the invisible exit.</p>
+</div>
+</section>
+</div>`;
+}
+
+function pillarFreedomNumberBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Blog</a> &rsaquo; <span>Freedom Number Guide</span></nav>
+<section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
+<div style="max-width:48rem;margin:0 auto">
+<p style="display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#60a5fa;font-size:0.875rem;font-weight:600;padding:0.5rem 1rem;border-radius:9999px;margin-bottom:2rem">Definitive Guide · 3,500+ words</p>
+<h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">The Complete Freedom Number Guide</h1>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1rem">How to calculate the exact monthly recurring revenue you need to never work for someone else again — with real numbers, timelines, and the framework to hit it.</p>
+<p style="color:rgba(255,255,255,0.5)">Updated July 2026 · 12 min read</p>
+</div>
+</section>
+<article style="padding:3rem 1.5rem;max-width:44rem;margin:0 auto">
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">What Is a Freedom Number?</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">Your <strong>freedom number</strong> is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses.</p>
+<p style="margin-bottom:1.25rem">It's the number that makes the golden handcuffs irrelevant. When your side business generates this much per month, consistently, you have optionality — the freedom to choose whether you keep working for someone else or not.</p>
+<p style="margin-bottom:1.25rem">Most corporate managers have never calculated this number. They operate on a vague feeling that "someday" they'll have enough. That vagueness is what keeps them trapped. A specific number changes everything. It turns an abstract dream into a math problem. And math problems have solutions.</p>
+<div style="background:rgba(59,130,246,0.05);border-left:4px solid #3b82f6;border-radius:0 0.5rem 0.5rem 0;padding:1.25rem;margin:1.5rem 0">
+<p style="color:#0f172a;font-weight:500">The average freedom number for a corporate manager earning $120K-$200K is <strong style="color:#3b82f6">$12,000-$20,000/month in MRR</strong>. That sounds like a lot — until you realize it's 138-450 customers at $29-$97/month. Boring products for boring industries.</p>
+</div>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">The Freedom Number Formula</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">The formula has three components:</p>
+<div style="background:#f8fafc;border-radius:0.75rem;padding:1.5rem;border:1px solid #e2e8f0;font-family:monospace;font-size:0.875rem">
+<p style="color:#0f172a;font-weight:700;margin-bottom:0.75rem">Freedom Number =</p>
+<p style="color:#6b7280">Monthly Living Expenses</p>
+<p style="color:#6b7280">+ Monthly Salary Replacement (Annual Salary ÷ 12)</p>
+<p style="color:#6b7280">+ Tax &amp; Benefits Buffer (+30%)</p>
+<p style="color:#0f172a;font-weight:700;margin-top:0.75rem;border-top:1px solid #e2e8f0;padding-top:0.75rem">= Your Monthly MRR Target</p>
+</div>
+<p style="margin-top:1.25rem"><strong>Why the 30% buffer?</strong> Your employer covers more than just salary — there's healthcare, retirement match, paid time off, and other benefits worth $15,000-$30,000/year. Plus, self-employment tax is ~15.3% in the US (or equivalent elsewhere). The buffer ensures your freedom number actually replaces your total compensation, not just your base pay.</p>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">How to Calculate Yours (Step by Step)</h2>
+<div style="display:grid;gap:1.5rem">
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Determine your annual salary (including bonuses)</h3><p style="font-size:0.875rem;color:#6b7280">Use your total compensation — base salary plus any expected bonus, not just your base pay. If you earn $120K base + $15K bonus, your number is $135,000.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Calculate monthly living expenses</h3><p style="font-size:0.875rem;color:#6b7280">Include everything: mortgage/rent, food, transportation, childcare, debt payments, subscriptions, healthcare premiums, and discretionary spending. Be honest — underestimating here is the #1 mistake.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Add the 30% tax and benefits buffer</h3><p style="font-size:0.875rem;color:#6b7280">Take your monthly salary replacement + expenses and multiply by 1.30. This covers self-employment taxes, healthcare, retirement contributions, and the benefits you're leaving behind.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Round up to the nearest $100</h3><p style="font-size:0.875rem;color:#6b7280">Round to give yourself a small margin. This is your freedom number — the monthly MRR target that replaces your employment.</p></div></div>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Freedom Number Examples by Salary</h2>
+<table style="width:100%;font-size:0.875rem;border:1px solid #e2e8f0;border-radius:0.5rem;overflow:hidden;border-collapse:collapse">
+<thead><tr style="background:#f8fafc"><th style="text-align:left;padding:0.75rem;font-weight:600">Salary</th><th style="text-align:left;padding:0.75rem;font-weight:600">Monthly Expenses</th><th style="text-align:left;padding:0.75rem;font-weight:600;color:#3b82f6">Freedom Number</th><th style="text-align:center;padding:0.75rem;font-weight:600;color:#6b7280">@ $29/mo</th><th style="text-align:center;padding:0.75rem;font-weight:600;color:#6b7280">@ $9/mo</th></tr></thead>
+<tbody>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$80,000</td><td style="padding:0.75rem">$4,000/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$10,700/mo</td><td style="padding:0.75rem;text-align:center">370</td><td style="padding:0.75rem;text-align:center">1,189</td></tr>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$100,000</td><td style="padding:0.75rem">$4,500/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$12,800/mo</td><td style="padding:0.75rem;text-align:center">442</td><td style="padding:0.75rem;text-align:center">1,422</td></tr>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$120,000</td><td style="padding:0.75rem">$5,000/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$15,000/mo</td><td style="padding:0.75rem;text-align:center">518</td><td style="padding:0.75rem;text-align:center">1,667</td></tr>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$150,000</td><td style="padding:0.75rem">$6,000/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$18,500/mo</td><td style="padding:0.75rem;text-align:center">638</td><td style="padding:0.75rem;text-align:center">2,056</td></tr>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$200,000</td><td style="padding:0.75rem">$8,000/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$24,700/mo</td><td style="padding:0.75rem;text-align:center">852</td><td style="padding:0.75rem;text-align:center">2,745</td></tr>
+<tr style="border-top:1px solid #e2e8f0"><td style="padding:0.75rem;font-weight:500">$250,000</td><td style="padding:0.75rem">$10,000/mo</td><td style="padding:0.75rem;color:#3b82f6;font-weight:700">$30,800/mo</td><td style="padding:0.75rem;text-align:center">1,063</td><td style="padding:0.75rem;text-align:center">3,422</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.75rem;color:#6b7280;margin-top:0.75rem">Freedom number = (monthly expenses + monthly salary equivalent) × 1.30 buffer. Customer counts assume 100% of revenue goes toward freedom number (in practice, expect 70-80% margin).</p>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">How Many Customers You Need</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">The beauty of the freedom number is that it reframes the problem. You're not trying to "build a business" — you're trying to acquire a specific number of customers at a specific price point.</p>
+<p style="margin-bottom:1.25rem">Higher pricing = fewer customers needed = faster path to freedom. A $97/month product serving a boring industry (electricians, plumbers, accountants) needs just 155 customers. That's achievable in 12-18 months with consistent distribution.</p>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">How Long It Takes to Hit</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">Based on Invisible Exit member data, here's the honest timeline for hitting your freedom number at 5 hours per week:</p>
+<div style="display:grid;gap:0.75rem">
+<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Months 1-3</p></div><p style="font-size:0.875rem;flex:1">Build and launch first product</p><p style="font-size:0.875rem;font-weight:700">$0</p></div>
+<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 4</p></div><p style="font-size:0.875rem;flex:1">First paying customer</p><p style="font-size:0.875rem;font-weight:700">$9-50/mo</p></div>
+<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 6</p></div><p style="font-size:0.875rem;flex:1">Early traction, pricing validated</p><p style="font-size:0.875rem;font-weight:700">$500-1,000/mo</p></div>
+<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 9</p></div><p style="font-size:0.875rem;flex:1">Growth phase, second product</p><p style="font-size:0.875rem;font-weight:700">$1,500-2,500/mo</p></div>
+<div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 12-18</p></div><p style="font-size:0.875rem;flex:1">Approaching or hitting freedom number</p><p style="font-size:0.875rem;font-weight:700">$3,000-5,000+/mo</p></div>
+</div>
+<p style="margin-top:1.25rem"><strong>Important:</strong> These are averages, not guarantees. Some members hit $2,000 MRR in 4 months. Others take 18 months to reach $1,000. The variable is execution consistency — how reliably you show up for your 5 hours each week.</p>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">The 5-Tool Framework to Reach It</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">Calculating your freedom number is step one. Building the system to hit it is everything else. The Invisible Exit System uses 5 connected tools: FYM Dashboard (calculates and tracks your freedom number), Idea Pipeline (finds and validates the product that hits it), Stealth Ops Hub (keeps your employer from finding out), Launch Control (ships products in your 5 hours/week), and Brand Manager (gets customers without showing your face).</p>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">5 Mistakes That Delay Freedom</h2>
+<div style="display:grid;gap:1rem">
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="display:flex;align-items:flex-start;gap:0.75rem"><span style="width:1.75rem;height:1.75rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#ef4444;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span><div><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Not accounting for taxes on your side income</h3><p style="font-size:0.875rem;color:#6b7280">Your $4,000/month MRR isn't $4,000 in your pocket. After self-employment taxes (~15.3%), income taxes, and business expenses, you net roughly 65-70%. Calculate your gross freedom number, then multiply by 1.35 to get the MRR you actually need.</p></div></div></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="display:flex;align-items:flex-start;gap:0.75rem"><span style="width:1.75rem;height:1.75rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#ef4444;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span><div><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Forgetting healthcare and benefits</h3><p style="font-size:0.875rem;color:#6b7280">Your employer covers health insurance, retirement match, and other benefits worth $15,000-$30,000/year. Your freedom number must replace ALL compensation, not just salary. Add $1,500-$2,500/month to your target.</p></div></div></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="display:flex;align-items:flex-start;gap:0.75rem"><span style="width:1.75rem;height:1.75rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#ef4444;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span><div><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Using churn-ignoring math</h3><p style="font-size:0.875rem;color:#6b7280">If your monthly churn is 5%, you need to add ~5% new customers every month just to break even. At 138 customers and 5% churn, you lose 7 customers/month. Your acquisition rate must exceed that. Always model churn into your timeline.</p></div></div></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="display:flex;align-items:flex-start;gap:0.75rem"><span style="width:1.75rem;height:1.75rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#ef4444;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</span><div><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Picking a price point that's too low</h3><p style="font-size:0.875rem;color:#6b7280">At $9/month, you need 445 customers for $4,000 MRR. At $29/month, you need 138. At $97/month, you need 41. Higher prices mean fewer customers, less support burden, and faster freedom. Don't race to the bottom.</p></div></div></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="display:flex;align-items:flex-start;gap:0.75rem"><span style="width:1.75rem;height:1.75rem;border-radius:50%;background:rgba(239,68,68,0.1);color:#ef4444;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</span><div><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Not building the system before the idea</h3><p style="font-size:0.875rem;color:#6b7280">Most people spend 3 months choosing the 'right' idea and zero months building the system that validates, launches, and distributes it. Build the pipeline first. Then ideas become interchangeable cartridges.</p></div></div></div>
+</div>
+</section>
+<section style="margin-bottom:3rem">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+<div style="display:grid;gap:1rem">
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What exactly is a freedom number?</h3><p style="font-size:0.875rem;color:#6b7280">Your freedom number is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses. It's not about quitting your job — it's about having the option to. Once your MRR hits your freedom number, the golden handcuffs are off. You stay because you choose to, not because you have to.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">How is this different from the 4% rule in FIRE?</h3><p style="font-size:0.875rem;color:#6b7280">The FIRE 4% rule requires you to accumulate a large lump sum (typically $1M-$3M) invested in index funds, then withdraw 4% annually. The freedom number approach replaces that with recurring revenue from products you own. Instead of drawing down a finite pool, you're building a renewable income stream that doesn't deplete. Both paths lead to freedom; the MRR path gets there faster because you don't need to accumulate the full lump sum first.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Do I need to quit my job to hit my freedom number?</h3><p style="font-size:0.875rem;color:#6b7280">No. That's the entire point of the Invisible Exit system. You build in 5 hours per week while employed. Your salary funds the build. Your corporate skills give you an advantage solo founders lack. Most members hit their first $1,000 MRR within 6-8 months while still fully employed.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What if my expenses are higher than the examples?</h3><p style="font-size:0.875rem;color:#6b7280">The formula works at any expense level. Higher expenses mean a higher freedom number, which means either more customers or higher pricing. The math doesn't change — it scales. If your freedom number feels unreachable at $9/month pricing, raise your price. At $97/month, a $15,000 freedom number needs just 155 customers.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">How accurate is the freedom number calculator?</h3><p style="font-size:0.875rem;color:#6b7280">The calculator uses standard financial modeling: salary replacement + expense coverage + a 30% buffer for taxes and benefits. It's directionally accurate — it tells you the order of magnitude you're targeting. For exact planning, use the detailed breakdown in your dashboard after calculating.</p></div>
+</div>
+</section>
+<section style="padding:2rem;background:#f8fafc;border-radius:1rem;text-align:center;border:1px solid #e2e8f0">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:0.75rem">Know your number yet?</h2>
+<p style="color:#4b5563;margin-bottom:1.5rem">Stop guessing. Calculate your exact freedom number in 90 seconds.</p>
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate My Freedom Number</a>
+</section>
+</article>
+</div>`;
+}
+
+function comparePageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Honest Comparison</span></nav>
+<section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
+<div style="max-width:48rem;margin:0 auto">
+<p style="display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#60a5fa;font-size:0.875rem;font-weight:600;padding:0.5rem 1rem;border-radius:9999px;margin-bottom:2rem">The Honest Comparison</p>
+<h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">Why Not Just Something Else?</h1>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto">Every alternative teaches improvement. We offer a new opportunity. Here's the honest comparison — including where each alternative is actually better.</p>
+</div>
+</section>
+<section style="padding:3rem 1.5rem">
+<div style="max-width:56rem;margin:0 auto">
+<div style="text-align:center;margin-bottom:3rem">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Alternatives</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">6 Paths to Freedom — Compared</h2>
+<p style="color:#4b5563;max-width:36rem;margin:0 auto">We're not going to pretend every alternative is bad. Some are good for different goals. Here's where each one wins — and where it falls apart for corporate managers.</p>
+</div>
+<div style="max-width:48rem;margin:0 auto;display:grid;gap:1.5rem">
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">Side-Hustle Courses ($97-$497)</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Teach you to build a 'better' side business</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Just start! Pick an idea and go!"</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">No stealth framework. No anonymity system. No employment-contract compliance. If your employer finds out, you lose everything.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">We don't teach improvement. We give you a new vehicle — the Invisible Exit System — designed from day one for employed managers who can't be discovered.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Good for motivation. Dangerous for corporate managers who need to stay invisible.</p>
+</div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">FIRE Movement (Financial Independence)</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Save 70% of income. Invest in index funds. Retire in 20-30 years.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Live below your means and let compounding do the work."</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Requires decades of frugality. Depends on market returns you don't control. Doesn't create anything you own. You're still dependent — just on the market instead of an employer.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">The freedom number approach uses recurring revenue from products you own. It's renewable — it doesn't deplete. And it takes 12-18 months, not 20-30 years.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Valid path, but slow. We offer a faster vehicle that doesn't require decades of sacrifice.</p>
+</div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">Quit-Your-Job Advice (Founders)</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Burn the boats. Full commitment. Sink or swim.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"If you have a backup plan, you'll never go all in."</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Ignores the reality that most people have families, mortgages, and healthcare tied to employment. 'Burning the boats' is advice from people who raised $500K before quitting.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Your job is the launchpad, not the trap. Your salary is runway funding that costs zero equity. Your 5 hours/week forces focus. You don't need to quit — you need a system that works within your constraints.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Inspiring for 23-year-olds with no responsibilities. Dangerous for managers with families.</p>
+</div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">MBA / Executive Coaching ($50K-$120K)</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Climb higher. Get the credential. Network with other climbers.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Invest in yourself and the promotions will follow."</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">An MBA gives you a credential for someone else's ladder. It doesn't create revenue you own. It doesn't give you optionality. It deepens the golden handcuffs.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Instead of spending $100K on a credential that makes you more valuable to employers, spend $0.97/month on a system that makes you less dependent on them.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Valuable for career advancement. Useless for financial freedom.</p>
+</div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">No-Code Bootcamps ($500-$2,000)</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Learn to build apps without code.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Anyone can build a SaaS with Bubble and Airtable!"</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Teaches the tool, not the system. You learn to build — but not what to build, how to validate it, how to launch it stealthily, or how to get customers without ads.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Tools are commodities. The system is the asset. The Idea Pipeline tells you what to build. Launch Control tells you how to ship. Brand Manager tells you how to get customers. The tools are just the medium.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Good for learning a skill. Insufficient as a path to freedom.</p>
+</div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem">Passive Income Gurus</h3>
+<p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Buy rental properties. Dividend invest. Build a blog and wait.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+<div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Passive income is the dream!"</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Rental properties require capital and active management. Dividends require $1M+ invested. Blogs take 2-3 years to monetize. None are truly passive. None work for someone with 5 hours/week.</p></div>
+</div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Micro-SaaS is as close to passive as recurring revenue gets. Build once, sell infinitely. The Launch Control tool automates the repetitive work. Your 5 hours go to growth, not maintenance.</p></div>
+<p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> The dream is real. The gurus selling it usually aren't.</p>
+</div>
+</div>
+</div>
+</section>
+<section style="padding:3rem 1.5rem;text-align:center">
+<div style="max-width:36rem;margin:0 auto">
+<p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Core Difference</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Everything Else Teaches Improvement. We Offer a New Opportunity.</h2>
+<div style="color:#4b5563;line-height:1.8">
+<p style="margin-bottom:1.25rem">Side-hustle courses teach you to build a better business. FIRE teaches you to save more money. Quit-your-job advice teaches you to be braver. MBAs teach you to climb higher. All of these are improvement — incremental progress on a path you're already on.</p>
+<p style="font-weight:500;font-size:1.125rem;color:#0f172a;margin-top:1rem">Invisible Exit doesn't improve your current path. It hands you a different vehicle entirely — one designed from the ground up for corporate managers who need to stay invisible, work in 5 hours/week, and reach $4,000/month in 12-18 months.</p>
+</div>
+<a href="/freedom" style="display:inline-block;margin-top:2rem;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
 function main() {
   console.log("Injecting body content into pre-rendered HTML...");
 
@@ -1397,6 +1708,20 @@ function main() {
   }
   for (const item of toolCrossReference) {
     if (injectBody(resolve(DIST, "tools", item.slug, "index.html"), toolCrossRefBodyHtml(item))) { count++; }
+  }
+
+  // ── Flagship pages (SEO-critical — were rendering client-side only) ──
+  if (injectBody(resolve(DIST, "manifesto", "index.html"), manifestoBodyHtml())) {
+    console.log("  /manifesto");
+    count++;
+  }
+  if (injectBody(resolve(DIST, "guides", "freedom-number", "index.html"), pillarFreedomNumberBodyHtml())) {
+    console.log("  /guides/freedom-number");
+    count++;
+  }
+  if (injectBody(resolve(DIST, "compare", "index.html"), comparePageBodyHtml())) {
+    console.log("  /compare");
+    count++;
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);
