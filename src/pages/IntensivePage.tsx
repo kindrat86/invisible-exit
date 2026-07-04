@@ -100,16 +100,40 @@ const IntensivePage = () => {
   const [loading, setLoading] = useState(false);
   const [applied, setApplied] = useState(false);
 
+  // ── Multi-step application (Dotcom Secrets Ch 8: Qualify Backend Buyers) ──
+  const [appStep, setAppStep] = useState(0);
+  const [salary, setSalary] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [commitment, setCommitment] = useState("");
+
+  // ── Payment plan toggle (Dotcom Secrets Ch 16: Offer Construction) ──
+  const [paymentPlan, setPaymentPlan] = useState<"full" | "monthly">("full");
+
   const handleApply = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    trackEvent("intensive_applied", { source: "intensive_page" });
+    trackEvent("intensive_applied", {
+      source: "intensive_page",
+      salary_range: salary,
+      timeline,
+      commitment,
+      payment_plan: paymentPlan,
+    });
     try {
       await supabase
         .from("subscribers")
         .upsert(
-          { email, source: "intensive_application" },
+          {
+            email,
+            source: "intensive_application",
+            metadata: {
+              salary_range: salary,
+              timeline,
+              commitment,
+              payment_plan: paymentPlan,
+            },
+          },
           { onConflict: "email" }
         );
       setApplied(true);
@@ -316,7 +340,7 @@ const IntensivePage = () => {
         </div>
       </section>
 
-      {/* Application CTA */}
+      {/* Application CTA — Multi-Step Qualification Form */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
           <h2 className="text-h1 text-white mb-4">Apply for the Intensive</h2>
@@ -325,26 +349,187 @@ const IntensivePage = () => {
             If accepted, you'll receive a payment link within 48 hours.
           </p>
 
+          {/* ── Payment Plan Toggle (Ch 16) ── */}
+          {!applied && (
+            <div className="max-w-md mx-auto mb-8">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex gap-2">
+                <button
+                  onClick={() => setPaymentPlan("full")}
+                  className={`flex-1 py-3 px-4 rounded-lg font-semibold text-sm transition-all ${
+                    paymentPlan === "full"
+                      ? "bg-primary text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  Pay in Full: $2,000
+                  <span className="block text-xs font-normal opacity-80">Save $200</span>
+                </button>
+                <button
+                  onClick={() => setPaymentPlan("monthly")}
+                  className={`flex-1 py-3 px-4 rounded-lg font-semibold text-sm transition-all ${
+                    paymentPlan === "monthly"
+                      ? "bg-primary text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  3× $733/month
+                  <span className="block text-xs font-normal opacity-80">Flexibility</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {!applied ? (
-            <form onSubmit={handleApply} className="max-w-md mx-auto">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email to start the application"
-                className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-4 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 mb-4 min-h-[52px]"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="btn-primary w-full text-lg"
-              >
-                {loading ? "Submitting..." : "Start Application"}
-                {!loading && <ArrowRight className="w-5 h-5" />}
-              </button>
-              <p className="text-white/40 text-xs mt-4">
-                No payment required to apply. Full details sent by email.
+            <form onSubmit={handleApply} className="max-w-md mx-auto text-left">
+              {/* Progress indicator */}
+              <div className="flex items-center justify-center gap-2 mb-6">
+                {[0, 1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className={`h-1.5 rounded-full transition-all ${
+                      n <= appStep ? "w-8 bg-primary" : "w-4 bg-white/15"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Step 0: Email */}
+              {appStep === 0 && (
+                <div className="animate-fade-in">
+                  <p className="text-eyebrow text-primary-light mb-3 text-center">Step 1 of 4</p>
+                  <h3 className="text-lg font-bold text-white mb-3 text-center">What's your email?</h3>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 mb-4 min-h-[52px]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => email && setAppStep(1)}
+                    disabled={!email}
+                    className="w-full btn-primary text-lg disabled:opacity-40"
+                  >
+                    Continue →
+                  </button>
+                </div>
+              )}
+
+              {/* Step 1: Salary qualification */}
+              {appStep === 1 && (
+                <div className="animate-fade-in">
+                  <p className="text-eyebrow text-primary-light mb-3 text-center">Step 2 of 4</p>
+                  <h3 className="text-lg font-bold text-white mb-3 text-center">What's your salary range?</h3>
+                  <p className="text-white/40 text-sm text-center mb-4">This helps me understand your starting point.</p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {["$80K-$120K", "$120K-$160K", "$160K-$200K", "$200K+"].map((val) => (
+                      <button
+                        key={val}
+                        type="button"
+                        onClick={() => { setSalary(val); setAppStep(2); }}
+                        className={`py-3 rounded-lg text-sm font-medium transition-all ${
+                          salary === val
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {val}
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setAppStep(0)}
+                    className="w-full text-white/40 hover:text-white/60 text-sm py-2"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
+
+              {/* Step 2: Timeline qualification */}
+              {appStep === 2 && (
+                <div className="animate-fade-in">
+                  <p className="text-eyebrow text-primary-light mb-3 text-center">Step 3 of 4</p>
+                  <h3 className="text-lg font-bold text-white mb-3 text-center">When do you want to exit?</h3>
+                  <p className="text-white/40 text-sm text-center mb-4">Be honest. There's no wrong answer.</p>
+                  <div className="space-y-2 mb-4">
+                    {[
+                      { val: "3-6 months", desc: "I'm ready to move fast" },
+                      { val: "6-12 months", desc: "I have a realistic timeline" },
+                      { val: "12-18 months", desc: "I'm building patiently" },
+                      { val: "Just exploring", desc: "Not sure yet, but curious" },
+                    ].map((opt) => (
+                      <button
+                        key={opt.val}
+                        type="button"
+                        onClick={() => { setTimeline(opt.val); setAppStep(3); }}
+                        className={`w-full py-3 px-4 rounded-lg text-left transition-all ${
+                          timeline === opt.val
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        <span className="font-semibold text-sm">{opt.val}</span>
+                        <span className="block text-xs opacity-70">{opt.desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setAppStep(1)}
+                    className="w-full text-white/40 hover:text-white/60 text-sm py-2"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
+
+              {/* Step 3: Commitment */}
+              {appStep === 3 && (
+                <div className="animate-fade-in">
+                  <p className="text-eyebrow text-primary-light mb-3 text-center">Step 4 of 4</p>
+                  <h3 className="text-lg font-bold text-white mb-3 text-center">How many hours per week?</h3>
+                  <p className="text-white/40 text-sm text-center mb-4">The Intensive requires at least 5.</p>
+                  <div className="grid grid-cols-4 gap-2 mb-4">
+                    {["5", "8", "10", "15+"].map((val) => (
+                      <button
+                        key={val}
+                        type="button"
+                        onClick={() => setCommitment(val)}
+                        className={`py-4 rounded-lg text-center transition-all ${
+                          commitment === val
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        <span className="block font-bold">{val}</span>
+                        <span className="block text-[10px] opacity-70">hrs/wk</span>
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={loading || !commitment}
+                    className="w-full btn-primary text-lg disabled:opacity-40"
+                  >
+                    {loading ? "Submitting..." : "Submit Application"}
+                    {!loading && <ArrowRight className="w-5 h-5" />}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAppStep(2)}
+                    className="w-full text-white/40 hover:text-white/60 text-sm py-2 mt-2"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
+
+              <p className="text-white/40 text-xs mt-4 text-center">
+                No payment required to apply. {paymentPlan === "full" ? "$2,000" : "3× $733"} due only if accepted.
               </p>
             </form>
           ) : (
@@ -355,7 +540,7 @@ const IntensivePage = () => {
               <h3 className="text-xl font-bold text-white mb-3">Application Received</h3>
               <p className="text-white/70 text-sm mb-4">
                 I'll review your application personally. If there's a fit, you'll receive
-                a payment link and scheduling details within 48 hours.
+                a payment link ({paymentPlan === "full" ? "$2,000 pay-in-full" : "3× $733/month"}) and scheduling details within 48 hours.
               </p>
               <Link to="/" className="text-primary-light hover:text-white text-sm transition-colors">
                 ← Back to homepage

@@ -134,6 +134,18 @@ const CHAPTERS = [
       "I didn't get rich. I got free. There's a difference. Rich is a number. Free is an option. I bought the option to say no — to the promotion, to the next reorganization, to the 0.5% that will never buy my life.",
     ],
   },
+  {
+    num: "11",
+    eyebrow: "Return with the Elixir",
+    title: "I didn't want to build this. I built it because I had to.",
+    body: [
+      "After Month 12, something unexpected happened. Colleagues started noticing I was different. Calmer. Less anxious. More willing to push back. A friend in Finance pulled me aside: 'Something changed. What happened?'",
+      "I couldn't tell him the truth. So I told him a version of it: 'I found something that makes the corporate game feel less important.' He said: 'Can you show me?'",
+      "That's when I realized: the system I built for myself — the frameworks, the checklists, the tools — wasn't just for me. It was the elixir. The thing the hero brings back from the journey. And there were thousands of managers trapped in the same cage, waiting for someone to hand them the key.",
+      "I didn't want to build Invisible Exit. I wanted to keep building micro-SaaS products in peace. But every time I explained the system to someone, they got the same look I had in that Amsterdam taxi. The look of someone who just realized the cage has a door.",
+      "So here it is. Not a course. Not motivation. The actual system. The frameworks named, the tools built, the checklists written. Everything I wish someone had handed me on Day 1. Take it. Use it. And when you hit your freedom number — when you scream in your own car — come tell me about it. That's the only payment I need.",
+    ],
+  },
 ];
 
 const StoryPage = () => {

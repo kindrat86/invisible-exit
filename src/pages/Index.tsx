@@ -20,9 +20,11 @@ import {
   Lock,
 } from "lucide-react";
 import TestimonialGrid from "@/components/TestimonialGrid";
+import FrameworkDiagram from "@/components/FrameworkDiagram";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
+import { useABTest, trackABConversion } from "@/hooks/useABTest";
 
 const TOOLS = [
   {
@@ -105,6 +107,11 @@ const FAQS = [
 const Index = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
+  // ── A/B TEST: Hero headline (Dotcom Secrets Ch 3b) ──
+  // Variant A: "How to Build a $4,000/Month Side Business..." (benefit-focused)
+  // Variant B: "The Cage Has a Door. Here's the Key." (curiosity/pattern-interrupt)
+  const heroVariant = useABTest("hero_headline_v1", ["benefit", "curiosity"], [50, 50]);
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("checkout") === "starter") {
@@ -149,21 +156,35 @@ const Index = () => {
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] animate-fade-up">
-            How to Build a{" "}
-            <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
-            Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out
+            {heroVariant === "benefit" ? (
+              <>
+                How to Build a{" "}
+                <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
+                Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out
+              </>
+            ) : (
+              <>
+                The Cage Has a{" "}
+                <span className="text-gradient-light">Door.</span>{" "}
+                Here's the Key Nobody Told You About.
+              </>
+            )}
           </h1>
 
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            5 AI-powered tools that take you from "trapped in the golden handcuffs"
-            to real recurring revenue — in 12 months, working 5 hours a week.
+            {heroVariant === "benefit"
+              ? `5 AI-powered tools that take you from "trapped in the golden handcuffs" to real recurring revenue — in 12 months, working 5 hours a week.`
+              : `Most corporate managers will spend 15 years climbing a ladder that leads to someone else's exit. I found a different door. I'll show you the key.`}
           </p>
 
           {/* CTA — ONE THING: Calculate Freedom Number → squeeze page */}
           <div className="flex flex-col items-center gap-4 mb-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
             <Link
               to="/freedom"
-              onClick={() => trackEvent("homepage_hero_cta_clicked", { target: "freedom_calculator" })}
+              onClick={() => {
+                trackEvent("homepage_hero_cta_clicked", { target: "freedom_calculator" });
+                trackABConversion("hero_headline_v1", "hero_cta_clicked", { variant: heroVariant });
+              }}
               className="btn-primary w-full sm:w-auto text-lg px-8 inline-flex items-center justify-center gap-2"
             >
               Calculate Your Freedom Number (Free)
@@ -374,6 +395,90 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ── New Category / New Opportunity (Expert Secrets Ch 3) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">A New Category — Not a Better Tool</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              What Is <span className="text-gradient">The Invisible Exit System?</span>
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              This isn't a course. It's not a community. It's not a SaaS tool.
+              It's a new category — the world's first anonymity-native framework
+              for building recurring revenue while employed.
+            </p>
+          </div>
+
+          {/* Old vs New Category */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Old */}
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-xl p-6">
+              <p className="text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wide mb-4">
+                The Old Opportunity
+              </p>
+              <h3 className="font-bold text-foreground mb-3 text-sm">"Side Hustle" Courses</h3>
+              <div className="space-y-2">
+                {[
+                  "Teach you to improve — build a better side business",
+                  "Require you to build publicly (personal brand, LinkedIn)",
+                  "Compete with 10,000 other courses teaching the same thing",
+                  "Put you in competition with your employer's market",
+                  "Assume you'll quit your job to succeed",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                    <p className="text-red-700/70 dark:text-red-300/70 text-xs">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* New */}
+            <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 rounded-xl p-6">
+              <p className="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wide mb-4">
+                The New Opportunity
+              </p>
+              <h3 className="font-bold text-foreground mb-3 text-sm">The Invisible Exit System</h3>
+              <div className="space-y-2">
+                {[
+                  "Teaches you to build invisible — your employer never knows",
+                  "Operates under a pseudonym with separate entities",
+                  "Uses proprietary frameworks no one else teaches",
+                  "Builds in markets unrelated to your employer",
+                  "Uses your job as runway — no quitting required",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="text-emerald-500 text-xs shrink-0 mt-0.5">✓</span>
+                    <p className="text-emerald-700 dark:text-emerald-300 text-xs font-medium">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Category statement */}
+          <div className="text-center mt-8 max-w-2xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
+              <p className="text-sm text-foreground font-medium leading-relaxed">
+                The 5 tools are the <strong className="text-primary">implementation</strong> of 3 proprietary frameworks:{" "}
+                <Link to="/frameworks" className="text-primary hover:text-primary-hover underline">The Salary-Runway Method</Link>,{" "}
+                <Link to="/frameworks" className="text-primary hover:text-primary-hover underline">The Triple-Separation Protocol</Link>, and{" "}
+                <Link to="/frameworks" className="text-primary hover:text-primary-hover underline">The Cartridge System</Link>.
+                You're not buying tools. You're buying a new vehicle.
+              </p>
+            </div>
+            <Link
+              to="/frameworks"
+              onClick={() => trackEvent("homepage_frameworks_link_clicked")}
+              className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors mt-4"
+            >
+              Learn the 3 frameworks →
+            </Link>
+          </div>
+        </div>
+      </section>
       <section className="bg-white section-wide">
         <div className="container-standard">
           <p className="text-eyebrow text-primary mb-12 text-center">What I Believe</p>
@@ -405,6 +510,19 @@ const Index = () => {
             {/* Right: "After" vision card */}
             <div className="card-base bg-surface p-6 sm:p-8 lg:p-10 card-hover animate-fade-up" style={{ animationDelay: "150ms" }}>
               <h3 className="text-h3 text-foreground mb-4">12 Months From Now</h3>
+
+              {/* Reader-insert: "Imagine This" (Expert Secrets Ch 4) */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
+                <p className="text-eyebrow text-primary text-xs mb-2">Imagine This</p>
+                <p className="text-sm text-foreground/80 italic leading-relaxed">
+                  It's a Saturday morning. Your phone buzzes. You pick it up —
+                  not to check Slack, but to check Stripe. <strong className="text-primary not-italic">$127 overnight.</strong>{" "}
+                  From 4 customers you've never met, in a country you've never
+                  visited, for a product you built in your lunch breaks. Your
+                  spouse brings you coffee. She knows. Your employer doesn't.
+                </p>
+              </div>
+
               <p className="text-body text-muted-foreground leading-relaxed">
                 You wake up, check your phone. Not Slack notifications. Stripe
                 dashboard: $3,200 MRR across 3 micro-SaaS tools. You go to work
@@ -422,6 +540,64 @@ const Index = () => {
             The cage has a door.<br />
             <span className="text-gradient">Most people never look for it.</span>
           </p>
+        </div>
+      </section>
+
+      {/* ── Uncomfortable Truths (Expert Secrets Ch 1 — Polarizing Leader) ── */}
+      <section className="bg-red-50 dark:bg-red-950/10 section-normal border-y border-red-200 dark:border-red-900/20">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-red-600 dark:text-red-400 mb-4">Uncomfortable Truths</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              If This Offends You, This Isn't for You.
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              I'm going to say some things that will make 30% of you close this
+              page. Good. The remaining 70% are my people. Let's find out which
+              group you're in.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto space-y-4">
+            {[
+              {
+                truth: "Your 0.5% equity is worthless.",
+                detail: "After dilution, taxes, and a 5-year lockup, your 'life-changing' equity buys you a longer leash, not a way out. I ran the math. So should you.",
+              },
+              {
+                truth: "Your employer doesn't care about you.",
+                detail: "Not maliciously. They can't. A company is a legal entity optimized for shareholder value. You are a line item. Loyalty to a line item is a category error.",
+              },
+              {
+                truth: "'Someday' is the most expensive word you own.",
+                detail: "Every month you wait is another month of unrealized MRR. At $4,000/month, one year of 'someday' costs you $48,000. That's real money you'll never get back.",
+              },
+              {
+                truth: "Your personal brand is a liability.",
+                detail: "Building publicly means your employer can see everything. Your competitors can copy everything. Your failures are permanent. Anonymity isn't hiding — it's strategy.",
+              },
+              {
+                truth: "You don't need more motivation. You need math.",
+                detail: "Motiation fades by Thursday. Math is forever. Your freedom number — the exact monthly revenue that replaces your salary — is the only number that matters. Everything else is noise.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white dark:bg-surface border border-red-200 dark:border-red-900/30 rounded-xl p-5 flex items-start gap-4">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-red-100 dark:bg-red-950/30 text-red-600 dark:text-red-400 font-bold text-sm shrink-0">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-bold text-foreground text-sm mb-1">{item.truth}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground italic">
+              If you're still reading, you're in the 70%. Welcome.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -653,6 +829,71 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── 4b. The Framework (Expert Secrets Ch 10) ── */}
+      <section className="bg-white section-normal border-t border-border">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The System</p>
+            <h2 className="text-h1 text-foreground mb-4">5 Steps. From Trapped to Building.</h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Each step answers one question and produces one output. No theory.
+              No motivation. Just a system that works within your constraints.
+            </p>
+          </div>
+          <FrameworkDiagram />
+        </div>
+      </section>
+
+      {/* ── 4c. Movement Tracker (Expert Secrets Ch 2) ── */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary mb-4">The Movement</p>
+          <h2 className="text-h1 text-foreground mb-4">
+            Our Mission: 1,000 Managers Building Invisible Freedom
+          </h2>
+          <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-10">
+            We're building a movement of 1,000 corporate managers who stopped
+            waiting for an IPO and started building real recurring revenue.
+            Here's where we are.
+          </p>
+
+          {/* Big progress bar */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="flex items-end justify-between mb-3">
+              <div className="text-left">
+                <p className="text-3xl font-bold text-primary">127</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">builders</p>
+              </div>
+              <div className="text-right">
+                <p className="text-3xl font-bold text-muted-foreground">1,000</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">goal</p>
+              </div>
+            </div>
+            <div className="h-4 bg-border rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-primary via-primary-light to-success rounded-full"
+                style={{ width: "12.7%" }}
+              />
+            </div>
+            <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
+              <span>12.7% of the way there</span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                4 joined this week
+              </span>
+            </div>
+          </div>
+
+          <Link
+            to="/founding-wall"
+            onClick={() => trackEvent("homepage_movement_tracker_clicked")}
+            className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors"
+          >
+            See who's already building →
+          </Link>
         </div>
       </section>
 

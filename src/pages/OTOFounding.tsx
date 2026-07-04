@@ -17,6 +17,9 @@ const OTOFounding = () => {
   const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
+  // ── ORDER BUMP: Founder's Toolkit (Dotcom Secrets Ch 14) ──
+  const [addToolkit, setAddToolkit] = useState(true);
+
   useEffect(() => {
     trackEvent("oto_page_viewed");
 
@@ -30,7 +33,7 @@ const OTOFounding = () => {
   }, [sessionId]);
 
   const handleUpgrade = async () => {
-    trackEvent("oto_cta_clicked");
+    trackEvent("oto_cta_clicked", { founders_toolkit: addToolkit });
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke(
@@ -299,6 +302,49 @@ const OTOFounding = () => {
 
       {/* ─── 8. Price Card ─── */}
       <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
+
+      {/* ─── 8b. ORDER BUMP: Founder's Toolkit (Dotcom Secrets Ch 14) ─── */}
+      <section className="px-6 py-6">
+        <div className="max-w-[720px] mx-auto">
+          <label
+            className={`flex items-start gap-4 p-5 rounded-xl border-2 cursor-pointer transition-all ${
+              addToolkit
+                ? "bg-[rgba(96,165,250,0.08)] border-[#60A5FA]/40"
+                : "bg-white/[0.03] border-white/10 hover:bg-white/[0.05]"
+            }`}
+          >
+            <input
+              type="checkbox"
+              checked={addToolkit}
+              onChange={(e) => setAddToolkit(e.target.checked)}
+              className="mt-1.5 w-5 h-5 rounded accent-[#60A5FA] shrink-0 cursor-pointer"
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-white text-base font-bold">
+                  WAIT — Add the Founder's Toolkit
+                </span>
+                <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  Save $60
+                </span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mb-3">
+                The complete swipe file: 47 email templates, 12 landing page frameworks,
+                25 micro-SaaS idea blueprints, the legal entity setup guide, and the
+                full Launch Control checklist. Everything I wish I had on Day 1.
+              </p>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-white/40 line-through">$97</span>
+                <span className="text-[#60A5FA] font-bold">just $37 one-time</span>
+                <span className="text-white/30 text-xs">(added to your first payment)</span>
+              </div>
+              <p className="text-white/30 text-[11px] italic mt-2">
+                ☑ Checked by default — uncheck to skip
+              </p>
+            </div>
+          </label>
+        </div>
+      </section>
 
       {/* ── 9. Scarcity + Countdown ── */}
       <section className="px-6 py-8">

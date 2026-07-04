@@ -12,6 +12,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import BuilderBadge from "@/components/BuilderBadge";
 
 const TOOL_META: Record<
   string,
@@ -108,6 +109,34 @@ const Confirmation = () => {
                 ))}
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Section 2b: Founding Member Badge (Expert Secrets Ch 14) */}
+        <section className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 px-6 border-y border-amber-200/50">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-eyebrow text-amber-600 mb-4">Your Identity Marker</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              You're Officially on the Wall.
+            </h2>
+            <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto">
+              This is your Founding Builder badge. Screenshot it. Share it.
+              You earned it by being in the first 100.
+            </p>
+            <div className="flex justify-center mb-6">
+              <BuilderBadge
+                tier="founding"
+                memberName="Your Name Here"
+                joinDate="2026"
+                size="lg"
+              />
+            </div>
+            <Link
+              to="/founding-wall"
+              className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold text-sm transition-colors"
+            >
+              See the full Founding Wall →
+            </Link>
           </div>
         </section>
 

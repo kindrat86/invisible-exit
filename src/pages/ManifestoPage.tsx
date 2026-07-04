@@ -287,6 +287,52 @@ const ManifestoPage = () => {
         </div>
       </section>
 
+      {/* ── The Rallying Cry + Reluctant Hero (Expert Secrets Ch 2 + 15) ── */}
+      <section className="bg-gradient-to-br from-primary to-primary-dark section-wide">
+        <div className="container-narrow text-center">
+          {/* Reluctant Hero vulnerability */}
+          <p className="text-eyebrow text-primary-light mb-4">Why I Built This (The Truth)</p>
+          <div className="max-w-2xl mx-auto text-white/70 text-body space-y-4 mb-12 text-left">
+            <p>
+              I need to be honest with you. I didn't want to build Invisible Exit.
+            </p>
+            <p>
+              I wanted to keep building micro-SaaS products in peace. I wanted to
+              collect my $4,100/month, walk into work calm, and go home. I didn't
+              want to be a guru, a coach, or a movement leader. That's not my
+              personality. I'm an introvert who manages 40 people and hides behind
+              a pseudonym.
+            </p>
+            <p>
+              But then a colleague pulled me aside and said: <em>"Something changed. What happened?"</em>
+              And I realized: if I kept this to myself, I'd be no better than the
+              company holding my 0.5% equity. Hoarding something valuable. Hoping
+              nobody notices.
+            </p>
+            <p className="text-white font-medium">
+              So I'm sharing it. Reluctantly. Imperfectly. But completely. Because
+              the cage has a door, and I found the key. The least I can do is leave
+              it unlocked for the next person.
+            </p>
+          </div>
+
+          {/* The Rallying Cry */}
+          <div className="border-t border-white/10 pt-12">
+            <p className="text-eyebrow text-primary-light mb-4">Our Rallying Cry</p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-12 max-w-2xl mx-auto">
+              <p className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+                "We don't wait for exits.
+                <br />
+                <span className="text-gradient-light">We build our own."</span>
+              </p>
+              <p className="text-white/50 text-sm">
+                Say it. Mean it. Build it. This is what separates the 3% from the 97%.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Call to Adventure ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-narrow text-center">

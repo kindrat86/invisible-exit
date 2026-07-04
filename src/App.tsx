@@ -78,6 +78,20 @@ const FunnelMetricsPage = lazy(() => import("./pages/FunnelMetricsPage.tsx"));
 const TripwirePage = lazy(() => import("./pages/TripwirePage.tsx"));
 const WeekendWorkshopPage = lazy(() => import("./pages/WeekendWorkshopPage.tsx"));
 const AskCampaignPage = lazy(() => import("./pages/AskCampaignPage.tsx"));
+const BookFunnelPage = lazy(() => import("./pages/BookFunnelPage.tsx"));
+const FoundingWallPage = lazy(() => import("./pages/FoundingWallPage.tsx"));
+const FrameworkOriginsPage = lazy(() => import("./pages/FrameworkOriginsPage.tsx"));
+const ProofPage = lazy(() => import("./pages/ProofPage.tsx"));
+const BeliefCrusherPage = lazy(() => import("./pages/BeliefCrusherPage.tsx"));
+const LexiconPage = lazy(() => import("./pages/LexiconPage.tsx"));
+const OneThingPage = lazy(() => import("./pages/OneThingPage.tsx"));
+const JoinMovementPage = lazy(() => import("./pages/JoinMovementPage.tsx"));
+const IsThisYouPage = lazy(() => import("./pages/IsThisYouPage.tsx"));
+const DreamCustomerPage = lazy(() => import("./pages/DreamCustomerPage.tsx"));
+const WhereTheyHidePage = lazy(() => import("./pages/WhereTheyHidePage.tsx"));
+const AdLibraryPage = lazy(() => import("./pages/AdLibraryPage.tsx"));
+const HSOMatrixPage = lazy(() => import("./pages/HSOMatrixPage.tsx"));
+const First100kPage = lazy(() => import("./pages/First100kPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -220,6 +234,20 @@ const App = () => (
           <Route path="/tripwire" element={<TripwirePage />} />
           <Route path="/weekend-workshop" element={<WeekendWorkshopPage />} />
           <Route path="/ask" element={<AskCampaignPage />} />
+          <Route path="/free-book" element={<BookFunnelPage />} />
+          <Route path="/founding-wall" element={<FoundingWallPage />} />
+          <Route path="/frameworks" element={<FrameworkOriginsPage />} />
+          <Route path="/proof" element={<ProofPage />} />
+          <Route path="/beliefs" element={<BeliefCrusherPage />} />
+          <Route path="/lexicon" element={<LexiconPage />} />
+          <Route path="/one-thing" element={<OneThingPage />} />
+          <Route path="/join" element={<JoinMovementPage />} />
+          <Route path="/is-this-you" element={<IsThisYouPage />} />
+          <Route path="/who" element={<DreamCustomerPage />} />
+          <Route path="/where" element={<WhereTheyHidePage />} />
+          <Route path="/ad-library" element={<AdLibraryPage />} />
+          <Route path="/hso" element={<HSOMatrixPage />} />
+          <Route path="/traffic-roadmap" element={<First100kPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
