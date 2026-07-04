@@ -1,7 +1,7 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
 import { Resend } from "resend";
-import { queryOne } from "../src/lib/neon/server";
+import { queryOne } from "./_lib/db";
 
 interface JwtPayload {
   sub: string;

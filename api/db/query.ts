@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query } from "../../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
+import { query } from "../../_lib/db";
 import { requirePost, verifyBearer } from "../_lib/auth";
 
 /**

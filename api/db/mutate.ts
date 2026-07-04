@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query, execute } from "../../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
+import { query, execute } from "../../_lib/db";
 import { requirePost, verifyBearer } from "../_lib/auth";
 
 const ALLOWED_TABLES = new Set([
@@ -68,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         const placeholders = cols.map((_, i) => `$${i + 1}`).join(", ");
         const insertParams = cols.map((c) => data[c]);
-        sql = `INSERT INTO "${table}" (${cols
+        const sql = `INSERT INTO "${table}" (${cols
           .map((c) => `"${c}"`)
           .join(", ")}) VALUES (${placeholders})`;
         const insResult = await execute(sql, insertParams);
@@ -106,7 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         } else {
           conflictSql = `ON CONFLICT ("${conflictCol}") DO NOTHING`;
         }
-        sql = `INSERT INTO "${table}" (${cols
+        const sql = `INSERT INTO "${table}" (${cols
           .map((c) => `"${c}"`)
           .join(", ")}) VALUES (${placeholders}) ${conflictSql}`;
         const upResult = await execute(sql, insertParams);

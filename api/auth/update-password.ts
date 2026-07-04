@@ -1,6 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
 import bcrypt from "bcryptjs";
-import { execute } from "../../src/lib/neon/server";
+import { execute } from "../../_lib/db";
 import { requirePost, verifyBearer } from "../_lib/auth";
 
 interface UpdatePasswordBody {

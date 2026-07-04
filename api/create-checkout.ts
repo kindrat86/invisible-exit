@@ -1,4 +1,4 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import Stripe from "stripe";
 
 interface TierConfig {

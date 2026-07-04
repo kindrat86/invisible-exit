@@ -1,6 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
-import { query, queryOne, execute } from "../src/lib/neon/server";
+import { query, queryOne, execute } from "./_lib/db";
 
 interface BadgeRow {
   id: string;

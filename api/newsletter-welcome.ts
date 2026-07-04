@@ -10,8 +10,8 @@
  *  3. Creates email_sequence_schedule entry for soap_opera sequence
  *  4. Returns { success: true }
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query } from "../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { query } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 
 const NEWSLETTER_EMAIL_HTML = `
@@ -68,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `INSERT INTO subscribers (email, source)
        VALUES ($1, $2)
        ON CONFLICT (email) DO UPDATE
-       SET source = EXCLUDED.source, created_at = subscribers.created_at`,
+       SET source = excluded.source, created_at = subscribers.created_at`,
       [email, source ?? "newsletter"],
     );
 
@@ -90,7 +90,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const ts = new Date().toISOString();
       await query(
         `INSERT INTO email_sequence_schedule (email, sequence, started_at, days_sent)
-         VALUES ($1, 'soap_opera', $2, '{0}')`,
+         VALUES ($1, 'soap_opera', $2, '[0]')`,
         [email, ts],
       );
     } catch (scheduleErr) {

@@ -12,8 +12,8 @@
  *  3. Send via sendEmail (imported from ./email-sequence)
  *  4. Update days_sent array
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query, queryOne } from "../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { query, queryOne } from "./_lib/db";
 import { sendEmail, getSequence } from "./email-sequence";
 
 const MAX_DAYS: Record<string, number> = {

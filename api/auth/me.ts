@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { queryOne } from "../../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
+import { queryOne } from "../../_lib/db";
 import { requireGet, verifyBearer } from "../_lib/auth";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

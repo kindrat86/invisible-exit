@@ -1,6 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
 import Stripe from "stripe";
-import { query, queryOne } from "../../src/lib/neon/server";
+import { query, queryOne } from "../../_lib/db";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;

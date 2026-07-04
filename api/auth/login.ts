@@ -1,6 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
 import bcrypt from "bcryptjs";
-import { queryOne } from "../../src/lib/neon/server";
+import { queryOne } from "../../_lib/db";
 import { requirePost, signAccessToken, signRefreshToken } from "../_lib/auth";
 
 interface LoginBody {

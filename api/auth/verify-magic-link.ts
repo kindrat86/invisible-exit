@@ -1,5 +1,5 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { queryOne, query } from "../../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "../_lib/types";
+import { queryOne, query } from "../../_lib/db";
 import { requirePost, signAccessToken, signRefreshToken } from "../_lib/auth";
 
 interface VerifyBody {

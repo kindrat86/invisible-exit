@@ -3,165 +3,535 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-DNS-Prefetch-Control", "value": "on" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co; frame-src 'self' https://www.googletagmanager.com; object-src 'none'; base-uri 'self'" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co; frame-src 'self' https://www.googletagmanager.com; object-src 'none'; base-uri 'self'"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/blog/rss.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/llms-full.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/og/(.*)",
       "headers": [
-        { "key": "Content-Type", "value": "image/svg+xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=86400" }
+        {
+          "key": "Content-Type",
+          "value": "image/svg+xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/california-anonymous-llc-guide", "destination": "/guides/california", "permanent": true },
-    { "source": "/texas-anonymous-llc-guide", "destination": "/guides/texas", "permanent": true },
-    { "source": "/new-york-anonymous-llc-guide", "destination": "/guides/new-york", "permanent": true },
-    { "source": "/florida-anonymous-llc-guide", "destination": "/guides/florida", "permanent": true },
-    { "source": "/nevada-anonymous-llc-guide", "destination": "/guides/nevada", "permanent": true },
-    { "source": "/delaware-anonymous-llc-guide", "destination": "/guides/delaware", "permanent": true },
-    { "source": "/wyoming-anonymous-llc-guide", "destination": "/guides/wyoming", "permanent": true }
+    {
+      "source": "/california-anonymous-llc-guide",
+      "destination": "/guides/california",
+      "permanent": true
+    },
+    {
+      "source": "/texas-anonymous-llc-guide",
+      "destination": "/guides/texas",
+      "permanent": true
+    },
+    {
+      "source": "/new-york-anonymous-llc-guide",
+      "destination": "/guides/new-york",
+      "permanent": true
+    },
+    {
+      "source": "/florida-anonymous-llc-guide",
+      "destination": "/guides/florida",
+      "permanent": true
+    },
+    {
+      "source": "/nevada-anonymous-llc-guide",
+      "destination": "/guides/nevada",
+      "permanent": true
+    },
+    {
+      "source": "/delaware-anonymous-llc-guide",
+      "destination": "/guides/delaware",
+      "permanent": true
+    },
+    {
+      "source": "/wyoming-anonymous-llc-guide",
+      "destination": "/guides/wyoming",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/blog/rss", "destination": "/blog/rss.xml" },
-    { "source": "/blog/rss.xml", "destination": "/blog/rss.xml" },
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/dashboard", "destination": "/index.html" },
-    { "source": "/oto/founding", "destination": "/index.html" },
-    { "source": "/confirmation", "destination": "/index.html" },
-    { "source": "/freedom", "destination": "/index.html" },
-    { "source": "/oto/downsell", "destination": "/index.html" },
-    { "source": "/masterclass", "destination": "/index.html" },
-    { "source": "/affiliates", "destination": "/index.html" },
-    { "source": "/intensive", "destination": "/index.html" },
-    { "source": "/story", "destination": "/index.html" },
-    { "source": "/manifesto", "destination": "/index.html" },
-    { "source": "/guides/freedom-number", "destination": "/index.html" },
-    { "source": "/compare", "destination": "/index.html" },
-    { "source": "/adrian", "destination": "/index.html" },
-    { "source": "/inner-circle", "destination": "/index.html" },
-    { "source": "/dream-100", "destination": "/index.html" },
-    { "source": "/traffic-blueprint", "destination": "/index.html" },
-    { "source": "/content-calendar", "destination": "/index.html" },
-    { "source": "/affiliate-assets", "destination": "/index.html" },
-    { "source": "/podcast-pitch", "destination": "/index.html" },
-    { "source": "/backlink-strategy", "destination": "/index.html" },
-    { "source": "/pro", "destination": "/index.html" },
-    { "source": "/funnel-metrics", "destination": "/index.html" },
-    { "source": "/tripwire", "destination": "/index.html" },
-    { "source": "/weekend-workshop", "destination": "/index.html" },
-    { "source": "/ask", "destination": "/index.html" },
-    { "source": "/free-book", "destination": "/index.html" },
-    { "source": "/founding-wall", "destination": "/index.html" },
-    { "source": "/frameworks", "destination": "/index.html" },
-    { "source": "/proof", "destination": "/index.html" },
-    { "source": "/beliefs", "destination": "/index.html" },
-    { "source": "/lexicon", "destination": "/index.html" },
-    { "source": "/one-thing", "destination": "/index.html" },
-    { "source": "/join", "destination": "/index.html" },
-    { "source": "/is-this-you", "destination": "/index.html" },
-    { "source": "/who", "destination": "/index.html" },
-    { "source": "/where", "destination": "/index.html" },
-    { "source": "/ad-library", "destination": "/index.html" },
-    { "source": "/hso", "destination": "/index.html" },
-    { "source": "/traffic-roadmap", "destination": "/index.html" },
-    { "source": "/testing", "destination": "/index.html" },
-    { "source": "/youtube-strategy", "destination": "/index.html" },
-    { "source": "/dream-100-tracker", "destination": "/index.html" },
-    { "source": "/pillar-hub", "destination": "/index.html" },
-    { "source": "/checkout/success", "destination": "/index.html" },
-    { "source": "/login", "destination": "/index.html" },
-    { "source": "/reset-password", "destination": "/index.html" },
-    { "source": "/privacy", "destination": "/index.html" },
-    { "source": "/terms", "destination": "/index.html" },
-    { "source": "/about", "destination": "/index.html" },
-    { "source": "/admin/feature-requests", "destination": "/index.html" },
-    { "source": "/fym", "destination": "/index.html" },
-    { "source": "/idea-pipeline", "destination": "/index.html" },
-    { "source": "/ideas", "destination": "/index.html" },
-    { "source": "/stealth-ops", "destination": "/index.html" },
-    { "source": "/launch-control", "destination": "/index.html" },
-    { "source": "/brand-manager", "destination": "/index.html" },
-    { "source": "/founding-member", "destination": "/index.html" },
-    { "source": "/training", "destination": "/index.html" },
-    { "source": "/thank-you", "destination": "/index.html" },
-    { "source": "/blog", "destination": "/index.html" },
-    { "source": "/blog/category", "destination": "/index.html" },
-    { "source": "/compare", "destination": "/index.html" },
-    { "source": "/glossary", "destination": "/index.html" },
-    { "source": "/guides", "destination": "/index.html" },
-    { "source": "/best", "destination": "/index.html" },
-    { "source": "/calculators", "destination": "/index.html" },
-    { "source": "/data", "destination": "/index.html" },
-    { "source": "/resources", "destination": "/index.html" },
-    { "source": "/alternatives", "destination": "/index.html" },
-    { "source": "/salaries", "destination": "/index.html" },
-    { "source": "/milestones", "destination": "/index.html" },
-    { "source": "/timeline", "destination": "/index.html" },
-    { "source": "/stack", "destination": "/index.html" },
-    { "source": "/cost-of-waiting", "destination": "/index.html" },
-    { "source": "/non-compete", "destination": "/index.html" },
-    { "source": "/mistakes", "destination": "/index.html" },
-    { "source": "/reddit", "destination": "/index.html" },
-    { "source": "/pricing-models", "destination": "/index.html" },
-    { "source": "/break-even", "destination": "/index.html" },
-    { "source": "/vs", "destination": "/index.html" },
-    { "source": "/first-year", "destination": "/index.html" },
-    { "source": "/tools", "destination": "/index.html" },
-    { "source": "/budget", "destination": "/index.html" },
-    { "source": "/hours", "destination": "/index.html" },
-    { "source": "/oto/second-tool", "destination": "/index.html" },
-    { "source": "/fym/badge/:shareId", "destination": "/index.html" },
-    { "source": "/fym/oto/founding", "destination": "/index.html" },
-    { "source": "/fym/oto/second-tool", "destination": "/index.html" },
-    { "source": "/fym/dashboard", "destination": "/index.html" }
+    {
+      "source": "/blog/rss",
+      "destination": "/blog/rss.xml"
+    },
+    {
+      "source": "/blog/rss.xml",
+      "destination": "/blog/rss.xml"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/oto/founding",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/confirmation",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/freedom",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/oto/downsell",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/masterclass",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliates",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/intensive",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/story",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/manifesto",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/guides/freedom-number",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/compare",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/adrian",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/inner-circle",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dream-100",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/traffic-blueprint",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/content-calendar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/affiliate-assets",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/podcast-pitch",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/backlink-strategy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pro",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/funnel-metrics",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tripwire",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/weekend-workshop",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ask",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/free-book",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/founding-wall",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/frameworks",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/proof",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/beliefs",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/lexicon",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/one-thing",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/join",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/is-this-you",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/who",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/where",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ad-library",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hso",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/traffic-roadmap",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/testing",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/youtube-strategy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dream-100-tracker",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pillar-hub",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkout/success",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin/feature-requests",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fym",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/idea-pipeline",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ideas",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/stealth-ops",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/launch-control",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/brand-manager",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/founding-member",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/training",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/category",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/compare",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/glossary",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/best",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/calculators",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/data",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/resources",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/alternatives",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/salaries",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/milestones",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/timeline",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/stack",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cost-of-waiting",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/non-compete",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/mistakes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/reddit",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pricing-models",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/break-even",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/vs",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/first-year",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tools",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/budget",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hours",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/oto/second-tool",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fym/badge/:shareId",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fym/oto/founding",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fym/oto/second-tool",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fym/dashboard",
+      "destination": "/index.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/email-sequence-scheduler",
+      "schedule": "0 9 * * *"
+    }
   ]
 }

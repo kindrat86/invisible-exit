@@ -2,7 +2,7 @@
  * Shared JWT auth helpers for /api/ routes.
  * Not a route itself — imported by auth + db handlers.
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
 
 export const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me";

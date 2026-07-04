@@ -10,7 +10,7 @@
  * POST { email, day, sequence } → sends a specific email via Resend.
  * (No `day` → returns the schedule for the sequence.)
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 
 const FROM = "Adrian <escape@invisibleexit.com>";
 

@@ -1,8 +1,8 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import Stripe from "stripe";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { execute, queryOne } from "../src/lib/neon/server";
+import { execute, queryOne } from "./_lib/db";
 
 interface AppUser {
   id: string;

@@ -12,10 +12,10 @@
  *
  * Uses the `stripe` npm package and Neon Postgres (no Supabase).
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
 import Stripe from "stripe";
 import crypto from "crypto";
-import { query, queryOne, execute } from "../src/lib/neon/server";
+import { query, queryOne, execute } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 import { triggerWinback } from "./winback-sequence";
 
@@ -152,13 +152,13 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
       [stripeCustomerId, tier, now, userId],
     );
   } else {
-    const newUser = await queryOne<{ id: string }>(
-      `INSERT INTO app_users (email, stripe_customer_id, subscription_status, subscription_tier)
-       VALUES ($1, $2, 'active', $3)
-       RETURNING id`,
-      [email, stripeCustomerId, tier],
+    // Generate UUID in JS (SQLite has no uuid_generate_v4()); no RETURNING.
+    userId = crypto.randomUUID();
+    await query(
+      `INSERT INTO app_users (id, email, stripe_customer_id, subscription_status, subscription_tier)
+       VALUES ($1, $2, $3, 'active', $4)`,
+      [userId, email, stripeCustomerId, tier],
     );
-    userId = newUser?.id ?? crypto.randomUUID();
   }
 
   // ── Upsert profile (mirrors app_users) ──
@@ -166,10 +166,10 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     `INSERT INTO profiles (id, email, stripe_customer_id, subscription_status, subscription_tier)
      VALUES ($1, $2, $3, 'active', $4)
      ON CONFLICT (id) DO UPDATE
-     SET email = EXCLUDED.email,
-         stripe_customer_id = EXCLUDED.stripe_customer_id,
+     SET email = excluded.email,
+         stripe_customer_id = excluded.stripe_customer_id,
          subscription_status = 'active',
-         subscription_tier = EXCLUDED.subscription_tier`,
+         subscription_tier = excluded.subscription_tier`,
     [userId, email, stripeCustomerId, tier],
   );
 

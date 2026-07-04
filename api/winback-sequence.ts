@@ -12,8 +12,8 @@
  * Also exports triggerWinback() so /api/stripe-webhook can call it directly
  * without an HTTP round-trip to itself.
  */
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { query } from "../src/lib/neon/server";
+import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { query } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 
 // ═══ WIN-BACK SEQUENCE — 3 emails over 7 days ═══
