@@ -440,6 +440,30 @@ function homepageBodyHtml(): string {
 <a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $0.97</a>
 </div>
 </section>
+<section style="padding:3rem 1.5rem;background-color:#f0f9ff">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem;text-align:center">What Members Say</h2>
+<div style="display:grid;gap:1.5rem">
+<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
+<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"The freedom number calculator showed me I was 18 months away from being able to leave my VP role. Having that timeline made the side work feel real instead of hopeless."</p>
+<p style="font-weight:600;font-size:0.875rem">— Sarah K., Finance Director</p>
+</div>
+<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
+<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"I validated my micro-SaaS idea in 48 hours and had my first paying customer within 3 weeks. The stealth ops hub gave me confidence that my employer would never find out."</p>
+<p style="font-weight:600;font-size:0.875rem">— Marcus T., Product Manager</p>
+</div>
+<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
+<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"As someone with zero coding background, the AI-powered tools let me build something real. I went from idea to $2,300/month recurring revenue in 7 months."</p>
+<p style="font-weight:600;font-size:0.875rem">— Jennifer L., Operations Manager</p>
+</div>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. $0.97/month. Cancel anytime. No credit card required to start.</p>
+</div>
+</section>
 </div>`;
 }
 

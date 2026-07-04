@@ -101,7 +101,12 @@ function getRoutes() {
           logo: `${SITE}/og-image.png`,
           description:
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
-          sameAs: ["https://www.youtube.com/@InvisibleExit"],
+          sameAs: [
+            "https://www.youtube.com/@InvisibleExit",
+            "https://www.linkedin.com/company/invisible-exit",
+            "https://twitter.com/InvisibleExit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
         },
         {
           "@context": "https://schema.org",
@@ -732,7 +737,12 @@ function getRoutes() {
           url: `${SITE}/about`,
           description:
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
-          sameAs: ["https://www.youtube.com/@InvisibleExit"],
+          sameAs: [
+            "https://www.youtube.com/@InvisibleExit",
+            "https://www.linkedin.com/company/invisible-exit",
+            "https://twitter.com/InvisibleExit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
           worksFor: {
             "@type": "Organization",
             name: SITE_NAME,
