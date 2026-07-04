@@ -1,8 +1,6 @@
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
+import { ContentPage, CTABox, SectionHeading, FAQAccordion } from "@/components/ContentPage";
 import { toolCrossReference } from "@/data/tool-cross-reference";
 
 export default function ToolCrossReferencePage() {
@@ -14,60 +12,47 @@ export default function ToolCrossReferencePage() {
   if (!entry) return <Navigate to="/blog" replace />;
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <SEOHead title={entry.metaTitle} description={entry.metaDescription} url={`/tools/${entry.slug}`} />
-      <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav className="mb-6 text-sm text-slate-500">
-          <Link to="/" className="hover:text-blue-600">Home</Link><span className="mx-2">›</span>
-          <Link to="/best" className="hover:text-blue-600">Best Tools</Link><span className="mx-2">›</span>
-          <span className="text-slate-700">{entry.profession} — {entry.category}</span>
-        </nav>
+    <ContentPage
+      title={entry.metaTitle}
+      description={entry.metaDescription}
+      url={`/tools/${entry.slug}`}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Best Tools", href: "/best" }, { label: `${entry.profession} — ${entry.category}` }]}
+    >
+      <div className="page-fade">
+        <span className="content-tag content-tag-blue mb-3">🛠 Tool Stack</span>
+        <h1 className="text-h1 text-foreground">{entry.h1}</h1>
+        <p className="mt-4 text-body-lg text-muted-foreground">{entry.intro}</p>
 
-        <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">{entry.h1}</h1>
-        <p className="mt-4 text-lg text-slate-600">{entry.intro}</p>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold text-slate-900">Recommended Tools</h2>
-          <div className="mt-6 space-y-4">
-            {entry.tools.map((tool, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900">{tool.name}</h3>
-                    <p className="text-sm text-slate-600">{tool.best}</p>
-                  </div>
-                  <span className="whitespace-nowrap rounded-lg bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">{tool.pricing}</span>
+        <SectionHeading>Recommended Tools</SectionHeading>
+        <div className="mt-6 space-y-4">
+          {entry.tools.map((tool, i) => (
+            <div key={i} className="rounded-xl border border-border bg-card p-5 transition-all hover:border-border-hover hover:shadow-sm card-premium">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-foreground">{tool.name}</h3>
+                  <p className="text-sm text-muted-foreground mt-0.5">{tool.best}</p>
                 </div>
-                <p className="mt-3 text-sm text-slate-700">{tool.why}</p>
-                <p className="mt-2 text-xs text-slate-500">Alternative: {tool.alternative}</p>
+                <span className="content-tag content-tag-blue flex-shrink-0">{tool.pricing}</span>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-8 rounded-xl border border-indigo-200 bg-indigo-50 p-6">
-          <h2 className="text-xl font-bold text-indigo-900">Why {entry.profession} Need Different Tools</h2>
-          <p className="mt-3 text-slate-700">{entry.professionSpecificNeeds}</p>
-        </section>
-
-        <section className="mt-6 rounded-xl border border-green-200 bg-green-50 p-6">
-          <h2 className="text-xl font-bold text-green-900">Budget-Friendly Approach</h2>
-          <p className="mt-3 text-slate-700">{entry.budgetFriendly}</p>
-        </section>
-
-        {entry.faqs.length > 0 && (
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-slate-900">FAQs</h2>
-            <div className="mt-4 space-y-4">{entry.faqs.map((f, i) => (<div key={i}><h3 className="font-bold text-slate-900">{f.question}</h3><p className="mt-1 text-slate-600">{f.answer}</p></div>))}</div>
-          </section>
-        )}
-
-        <div className="mt-10 rounded-xl bg-slate-900 p-6 text-center">
-          <Link to="/freedom" className="text-white font-semibold underline">Calculate Your Freedom Number →</Link>
+              <p className="mt-3 text-sm text-foreground">{tool.why}</p>
+              <p className="mt-2 text-xs text-muted-foreground">Alternative: <span className="text-primary font-medium">{tool.alternative}</span></p>
+            </div>
+          ))}
         </div>
-      </article>
-      <Footer />
-    </div>
+
+        <section className="mt-8 rounded-xl border border-primary/20 bg-primary/5 p-6">
+          <h2 className="text-xl font-bold text-foreground">Why {entry.profession} Need Different Tools</h2>
+          <p className="mt-3 text-muted-foreground">{entry.professionSpecificNeeds}</p>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-green-200 bg-green-50 p-6 dark:border-green-900/50 dark:bg-green-950/20">
+          <h2 className="text-xl font-bold text-green-900 dark:text-green-400">Budget-Friendly Approach</h2>
+          <p className="mt-3 text-foreground">{entry.budgetFriendly}</p>
+        </section>
+
+        <FAQAccordion faqs={entry.faqs} />
+        <CTABox title="Found the right tools?" description="Now calculate your freedom number." />
+      </div>
+    </ContentPage>
   );
 }

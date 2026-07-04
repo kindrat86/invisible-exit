@@ -10,6 +10,7 @@ const NAV_GROUPS = [
       { label: "Micro-SaaS Ideas", to: "/ideas" },
       { label: "State Guides", to: "/guides" },
       { label: "Tool Stacks", to: "/stack" },
+      { label: "First Year Roadmaps", to: "/first-year" },
     ],
   },
   {
@@ -17,19 +18,25 @@ const NAV_GROUPS = [
     links: [
       { label: "Calculators", to: "/calculators" },
       { label: "Best Tools", to: "/best" },
+      { label: "Tool Cross-Reference", to: "/tools" },
       { label: "Data Reports", to: "/data" },
       { label: "Glossary", to: "/glossary" },
       { label: "Resources", to: "/resources" },
       { label: "Timeline", to: "/timeline" },
       { label: "Revenue Milestones", to: "/milestones" },
+      { label: "Pricing Models", to: "/pricing-models" },
+      { label: "Break-Even Calculator", to: "/break-even" },
     ],
   },
   {
     label: "Decide",
     links: [
       { label: "Comparisons", to: "/compare" },
+      { label: "Career vs SaaS", to: "/vs" },
       { label: "Alternatives", to: "/alternatives" },
       { label: "Salaries → SaaS", to: "/salaries" },
+      { label: "Common Mistakes", to: "/mistakes" },
+      { label: "Reddit Strategy", to: "/reddit" },
       { label: "Non-Compete Guide", to: "/non-compete" },
     ],
   },

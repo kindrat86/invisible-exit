@@ -1,9 +1,6 @@
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
-import { RelatedContent } from "@/components/RelatedContent";
+import { ContentPage, CTABox, Disclaimer, SectionHeading, FAQAccordion } from "@/components/ContentPage";
 import { professionMistakes } from "@/data/profession-mistakes";
 
 export default function ProfessionMistakesPage() {
@@ -15,70 +12,54 @@ export default function ProfessionMistakesPage() {
   if (!entry) return <Navigate to="/blog" replace />;
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <SEOHead title={entry.metaTitle} description={entry.metaDescription} url={`/mistakes/${entry.slug}`} />
-      <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav className="mb-6 text-sm text-slate-500">
-          <Link to="/" className="hover:text-blue-600">Home</Link>
-          <span className="mx-2">›</span>
-          <span>Mistakes</span>
-          <span className="mx-2">›</span>
-          <span className="text-slate-700">{entry.profession}</span>
-        </nav>
+    <ContentPage
+      title={entry.metaTitle}
+      description={entry.metaDescription}
+      url={`/mistakes/${entry.slug}`}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Mistakes" }, { label: entry.profession }]}
+    >
+      <div className="page-fade">
+        <span className="content-tag content-tag-red mb-3">⚠ Common Pitfalls</span>
+        <h1 className="text-h1 text-foreground">{entry.h1}</h1>
+        <p className="mt-4 text-body-lg text-muted-foreground">{entry.intro}</p>
 
-        <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">{entry.h1}</h1>
-        <p className="mt-4 text-lg text-slate-600">{entry.intro}</p>
-
-        <section className="mt-10">
-          <h2 className="text-2xl font-bold text-slate-900">The Mistakes That Kill Most {entry.profession}</h2>
-          <div className="mt-6 space-y-6">
-            {entry.mistakes.map((m, i) => (
-              <div key={i} className="rounded-xl border border-red-200 bg-red-50 p-6">
-                <h3 className="text-lg font-bold text-red-900">{i + 1}. {m.mistake}</h3>
-                <p className="mt-2 text-slate-700"><strong>Why it happens:</strong> {m.why}</p>
-                <p className="mt-2 text-green-700"><strong>The fix:</strong> {m.fix}</p>
+        <SectionHeading>The Mistakes That Derail {entry.profession}</SectionHeading>
+        <div className="mt-6 space-y-4">
+          {entry.mistakes.map((m, i) => (
+            <div key={i} className="rounded-xl border border-border bg-card p-6 transition-all hover:border-border-hover hover:shadow-sm">
+              <div className="flex items-start gap-4">
+                <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-red-100 text-red-700 text-sm font-bold dark:bg-red-950/40 dark:text-red-400">
+                  {i + 1}
+                </span>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-foreground">{m.mistake}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground"><strong className="text-foreground">Why it happens:</strong> {m.why}</p>
+                  <p className="mt-2 text-sm text-green-700 dark:text-green-400"><strong>The fix:</strong> {m.fix}</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          ))}
+        </div>
 
-        <section className="mt-10 rounded-xl border border-green-200 bg-green-50 p-6">
-          <h2 className="text-2xl font-bold text-green-900">Signs You're on the Right Track</h2>
+        <section className="mt-12 rounded-xl border border-green-200 bg-green-50 p-6 dark:border-green-900/50 dark:bg-green-950/20">
+          <h2 className="text-xl font-bold text-green-900 dark:text-green-400">Signs You're on the Right Track</h2>
           <ul className="mt-4 space-y-2">
             {entry.positiveSigns.map((sign, i) => (
-              <li key={i} className="flex gap-3"><span className="text-green-600 font-bold">✓</span><span className="text-slate-700">{sign}</span></li>
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-green-600 font-bold mt-0.5">✓</span>
+                <span className="text-foreground">{sign}</span>
+              </li>
             ))}
           </ul>
         </section>
 
-        {entry.faqs.length > 0 && (
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-slate-900">FAQs</h2>
-            <div className="mt-4 space-y-4">
-              {entry.faqs.map((f, i) => (
-                <div key={i}><h3 className="font-bold text-slate-900">{f.question}</h3><p className="mt-1 text-slate-600">{f.answer}</p></div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <div className="mt-10 rounded-xl bg-slate-900 p-6 text-center">
-          <Link to="/freedom" className="text-white font-semibold underline">Calculate Your Freedom Number →</Link>
-        </div>
-        <p className="mt-6 text-xs text-slate-400">Disclaimer: For informational purposes only. Not legal, financial, or tax advice. Consult a professional for your specific situation.</p>
-      </article>
-      <div className="border-t border-slate-200 bg-slate-50 py-8">
-        <div className="mx-auto max-w-3xl px-4">
-          <h3 className="mb-4 text-lg font-bold text-slate-900">Related Articles</h3>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Link to="/blog" className="text-sm text-blue-600 hover:underline">← All Articles</Link>
-            <Link to="/ideas" className="text-sm text-blue-600 hover:underline">Browse Ideas</Link>
-            <Link to="/glossary" className="text-sm text-blue-600 hover:underline">Glossary</Link>
-          </div>
-        </div>
+        <FAQAccordion faqs={entry.faqs} />
+        <CTABox
+          title="Avoiding these mistakes?"
+          description="Calculate your freedom number and see how close you are."
+        />
+        <Disclaimer />
       </div>
-      <Footer />
-    </div>
+    </ContentPage>
   );
 }

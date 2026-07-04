@@ -633,10 +633,70 @@ p {
   }
 }
 
+/* ── Page transition ── */
+.page-fade {
+  animation: pageFadeIn 0.25s ease-out both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-fade { animation: none; opacity: 1; transform: none; }
+}
+
+/* ── Content page utilities ── */
+.scroll-margin-top { scroll-margin-top: 100px; }
+
+/* ── Summary marker styling (FAQ accordion) ── */
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+
+/* ── Stat card ── */
+.stat-card {
+  @apply rounded-xl border border-border bg-card p-4 text-center transition-all;
+  transition-duration: var(--duration-base);
+}
+.stat-card:hover {
+  @apply border-border-hover shadow-md;
+}
+.stat-label {
+  @apply text-xs uppercase tracking-wide text-muted-foreground font-medium;
+}
+.stat-value {
+  @apply mt-1 text-xl font-bold text-foreground;
+}
+
+/* ── Tag / Badge ── */
+.content-tag {
+  @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+}
+.content-tag-blue { @apply bg-primary/10 text-primary; }
+.content-tag-green { @apply bg-green-50 text-green-700 dark:bg-green-950/40 dark:text-green-400; }
+.content-tag-red { @apply bg-red-50 text-red-700 dark:bg-red-950/40 dark:text-red-400; }
+.content-tag-amber { @apply bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400; }
+
+/* ── Pros/Cons grid ── */
+.pros-cons-grid {
+  @apply mt-6 grid gap-4 sm:grid-cols-2;
+}
+.pros-card {
+  @apply rounded-xl border border-green-200 bg-green-50 p-6 dark:border-green-900/50 dark:bg-green-950/20;
+}
+.pros-card h3 { @apply font-bold text-green-900 dark:text-green-400; }
+.pros-card ul { @apply mt-3 space-y-1.5; }
+.pros-card li { @apply text-sm text-foreground; }
+.cons-card {
+  @apply rounded-xl border border-red-200 bg-red-50 p-6 dark:border-red-900/50 dark:bg-red-950/20;
+}
+.cons-card h3 { @apply font-bold text-red-900 dark:text-red-400; }
+.cons-card ul { @apply mt-3 space-y-1.5; }
+.cons-card li { @apply text-sm text-foreground; }
+
 /* ── Print optimization ── */
 @media print {
   .navbar, .footer, .back-to-top, .reading-progress, .mobile-cta-bar,
-  .exit-intent-popup, [aria-label="Related content"] {
+  .exit-intent-popup, [aria-label="Related content"], details > summary {
     display: none !important;
   }
   body {
