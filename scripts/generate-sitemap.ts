@@ -266,6 +266,117 @@ async function main() {
       changefreq: "monthly",
       priority: "0.6",
     },
+    // Expert Secrets pages
+    {
+      loc: "https://invisibleexit.com/founding-wall",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/frameworks",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/proof",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/beliefs",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/lexicon",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
+      loc: "https://invisibleexit.com/one-thing",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/join",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/is-this-you",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    // Dotcom Secrets pages
+    {
+      loc: "https://invisibleexit.com/funnel-metrics",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/tripwire",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/weekend-workshop",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/ask",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
+      loc: "https://invisibleexit.com/free-book",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    // Traffic Secrets pages
+    {
+      loc: "https://invisibleexit.com/who",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/where",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/ad-library",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/hso",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/traffic-roadmap",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
     // Value Ladder tiers
     {
       loc: "https://invisibleexit.com/pro",

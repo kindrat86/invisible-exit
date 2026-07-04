@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {
-  Hook,
+  Anchor,
   BookOpen,
   Gift,
   ArrowRight,
@@ -102,7 +102,7 @@ const HSO_MATRIX: HSOEntry[] = [
 
 const HSO_FRAMEWORK = [
   {
-    icon: Hook,
+    icon: Anchor,
     name: "Hook",
     color: "text-rose-500",
     bg: "bg-rose-500/10",

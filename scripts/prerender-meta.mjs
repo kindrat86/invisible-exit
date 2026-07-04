@@ -1292,6 +1292,27 @@ function getRoutes() {
     { path: "/affiliate-assets", title: "Affiliate Assets — Swipe Copy, Emails, Banners | Invisible Exit", desc: "Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring.", type: "website" },
     { path: "/podcast-pitch", title: "Podcast Pitch Kit — Story Formats & Outreach Templates | Invisible Exit", desc: "The Amsterdam taxi story in 5/15/45-minute formats plus cold pitch templates for podcast outreach. Everything you need to get on shows.", type: "website" },
     { path: "/backlink-strategy", title: "Backlink Strategy — Guest Posts, HARO & Link Building Framework | Invisible Exit", desc: "The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy.", type: "website" },
+    // Expert Secrets pages
+    { path: "/founding-wall", title: "The Founding Wall — Meet the First 27 Builders | Invisible Exit", desc: "The first 27 Invisible Exit members. Their freedom numbers, their products, their stories. 73 spots remaining.", type: "website" },
+    { path: "/frameworks", title: "The 3 Proprietary Frameworks — Origin Stories | Invisible Exit", desc: "The Salary-Runway Method, Triple-Separation Protocol, and Cartridge System. Each framework's origin story and methodology.", type: "website" },
+    { path: "/proof", title: "Proof & Results — Member Case Studies | Invisible Exit", desc: "Aggregate stats, detailed case studies, 12-month results timeline, and trust signals from the Invisible Exit community.", type: "website" },
+    { path: "/beliefs", title: "Belief Crusher — Break the 3 False Beliefs | Invisible Exit", desc: "Interactive 4-step experience that identifies and shatters the 3 false beliefs keeping you trapped in your corporate job.", type: "website" },
+    { path: "/lexicon", title: "Movement Lexicon — 14 Terms That Define Us | Invisible Exit", desc: "The shared vocabulary of the Invisible Exit movement: Freedom Number, Golden Handcuffs, Cartridge System, The 3%, and more.", type: "website" },
+    { path: "/one-thing", title: "The One Thing — Build the System First | Invisible Exit", desc: "If you could only learn one thing, it would be this: the system beats the idea. One message, zero distractions.", type: "website" },
+    { path: "/join", title: "Join the Movement — 5 Declarations | Invisible Exit", desc: "Before you sign up, declare your commitment. 5 beliefs. 5 principles. The code of the Invisible Builder.", type: "website" },
+    { path: "/is-this-you", title: "Is This You? — Self-Qualification Quiz | Invisible Exit", desc: "5 questions to determine if Invisible Exit is the right fit for you. Find out if you're exactly who we built this for.", type: "website" },
+    // Dotcom Secrets pages
+    { path: "/funnel-metrics", title: "Funnel Metrics Calculator — Interactive | Invisible Exit", desc: "Model your entire funnel with live sliders: traffic, conversion rates, and projected revenue based on Russell Brunson's benchmark rates.", type: "website" },
+    { path: "/tripwire", title: "Stealth Blueprint Tripwire — $7 | Invisible Exit", desc: "The $7 tripwire offer: Stealth Blueprint. Converts browsers into buyers. First paid touchpoint in the value ladder.", type: "website" },
+    { path: "/weekend-workshop", title: "Weekend Workshop — $97 | Invisible Exit", desc: "A live weekend workshop that takes you from idea to first customer in 48 hours. Mid-ticket offer in the value ladder.", type: "website" },
+    { path: "/ask", title: "Ask Campaign — What Should We Build Next? | Invisible Exit", desc: "Tell us what you need. Your answers shape the next tools, features, and content we build.", type: "website" },
+    { path: "/free-book", title: "FREE Book — Just Pay Shipping | Invisible Exit", desc: "Get the Invisible Exit book for free. Just pay shipping. 7 chapters, 3 digital bonuses, 30-day guarantee.", type: "website" },
+    // Traffic Secrets pages
+    { path: "/who", title: "Dream Customer Avatar — Who We Build For | Invisible Exit", desc: "The complete psychographic profile of the Invisible Exit dream customer: demographics, desires, fears, and awareness levels.", type: "website" },
+    { path: "/where", title: "Where Your Dream Customer Hides — Community Atlas | Invisible Exit", desc: "31 communities, subreddits, podcasts, newsletters, and platforms where corporate managers trapped by golden handcuffs congregate online.", type: "website" },
+    { path: "/ad-library", title: "Ad Creative Library — 8 Ready-to-Launch Campaigns | Invisible Exit", desc: "8 Facebook, Instagram, LinkedIn, and Reddit ad concepts with full targeting presets, copy, and budget recommendations.", type: "website" },
+    { path: "/hso", title: "Hook, Story, Offer Matrix — 8 Content Frameworks | Invisible Exit", desc: "Russell Brunson's Hook-Story-Offer framework applied to 8 content channels: Twitter, Reddit, LinkedIn, YouTube, email, podcast, blog, and Quora.", type: "website" },
+    { path: "/traffic-roadmap", title: "0 → 100,000 Visitors Roadmap — Phased Traffic Plan | Invisible Exit", desc: "The complete 12-month roadmap from 0 to 100,000 monthly visitors. 5 phases with specific tasks, milestones, and projections.", type: "website" },
   ];
 
   for (const page of trafficPages) {
