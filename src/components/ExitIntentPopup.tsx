@@ -113,6 +113,16 @@ export default function ExitIntentPopup() {
         },
         { onConflict: "email" }
       );
+      // Trigger the newsletter welcome + Soap Opera sequence (Ch 7)
+      // Without this, the email is captured but the subscriber never
+      // receives any emails — the entire follow-up funnel is dead.
+      try {
+        await supabase.functions.invoke("newsletter-welcome", {
+          body: { email },
+        });
+      } catch (fnErr) {
+        console.error("newsletter-welcome failed:", fnErr);
+      }
       localStorage.setItem("ie_subscribed", "true");
       setSubmitted(true);
       toast.success("Check your inbox!");

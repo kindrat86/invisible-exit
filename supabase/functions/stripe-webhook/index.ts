@@ -237,6 +237,33 @@ serve(async (req) => {
       case "customer.subscription.deleted": {
         const sub = event.data.object as Stripe.Subscription;
         await updateSubscriptionStatus(sub.customer as string, "inactive");
+
+        // TRIGGER WIN-BACK SEQUENCE (Dotcom Secrets Ch 12)
+        // The winback-sequence function sends 3 emails over 7 days:
+        // Day 0: "Why did you leave?" survey
+        // Day 3: "Month 4, I almost quit too" story
+        // Day 7: 50% off comeback offer
+        try {
+          // Get the customer's email from Stripe
+          const customer = await stripe.customers.retrieve(sub.customer as string);
+          if (customer && !("deleted" in customer) && customer.email) {
+            await fetch(
+              `${Deno.env.get("SUPABASE_URL")}/functions/v1/winback-sequence`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`,
+                },
+                body: JSON.stringify({ email: customer.email }),
+              }
+            );
+            console.log(`Win-back sequence triggered for ${customer.email}`);
+          }
+        } catch (winbackErr) {
+          console.error("Win-back trigger failed:", winbackErr);
+          // Don't fail the webhook if win-back fails
+        }
         break;
       }
       case "invoice.payment_failed": {
