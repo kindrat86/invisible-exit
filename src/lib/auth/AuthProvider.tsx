@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import type { Session, User } from "@supabase/supabase-js";
+import type { Session, User } from "@/lib/auth/types";
 import { supabase } from "@/integrations/supabase/client";
 
 export type SubscriptionTier = "free" | "starter" | "pro";

@@ -1,20 +1,11 @@
-import { createClient } from "@supabase/supabase-js";
-import type { Database } from "@/integrations/supabase/types";
+// ═══════════════════════════════════════════════════════════════
+// DEPRECATED: Server-side Supabase client.
+// The backend now uses Neon Postgres via /api/ routes with pg Pool.
+// This file exists only to prevent import errors during the transition.
+// ═══════════════════════════════════════════════════════════════
 
-/**
- * Server-side Supabase client for use in Vercel serverless API routes.
- * Uses the service role key for elevated access (e.g., Stripe webhooks).
- * NEVER expose this client to the browser.
- */
 export function createServerClient() {
-    const url = process.env.VITE_SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
-
-  if (!url || !serviceKey) {
-        throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY or VITE_SUPABASE_URL env vars");
-  }
-
-  return createClient<Database>(url, serviceKey, {
-        auth: { persistSession: false, autoRefreshToken: false },
-  });
+  throw new Error(
+    "createServerClient is deprecated. All server-side DB operations now go through /api/ routes."
+  );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { ADMIN_EMAIL } from "@/lib/constants";
-import type { Session } from "@supabase/supabase-js";
+import type { Session } from "@/lib/auth/types";
 
 export default function AdminGuard({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
