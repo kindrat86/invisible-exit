@@ -83,6 +83,7 @@
     { "source": "/affiliates", "destination": "/index.html" },
     { "source": "/intensive", "destination": "/index.html" },
     { "source": "/story", "destination": "/index.html" },
+    { "source": "/manifesto", "destination": "/index.html" },
     { "source": "/adrian", "destination": "/index.html" },
     { "source": "/inner-circle", "destination": "/index.html" },
     { "source": "/dream-100", "destination": "/index.html" },

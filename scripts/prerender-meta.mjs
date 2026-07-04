@@ -898,6 +898,38 @@ function getRoutes() {
   });
 
   routes.push({
+    path: "/manifesto",
+    meta: {
+      title: "The Invisible Exit Manifesto — A Movement for Trapped Managers",
+      description:
+        "This isn't a side-hustle course. It's a new vehicle for financial freedom. Read the 6 principles of the Invisible Builder movement.",
+      url: `${SITE}/manifesto`,
+      type: "article",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "The Invisible Exit Manifesto — A New Vehicle for Financial Freedom",
+          description:
+            "Not improvement. A new opportunity. The 6 principles of the Invisible Builder movement for corporate managers.",
+          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          datePublished: "2026-07-04",
+          articleSection: "Manifesto",
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Manifesto" },
+          ],
+        },
+      ],
+    },
+  });
+
+  routes.push({
     path: "/adrian",
     meta: {
       title: "Who Is Adrian? — The Anonymous Founder Behind Invisible Exit",
