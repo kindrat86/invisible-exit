@@ -15,6 +15,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blog" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blog.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/glossary</loc>
@@ -23,6 +26,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/glossary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/glossary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/glossary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/privacy</loc>
@@ -31,6 +37,9 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/privacy" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/privacy.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/terms</loc>
@@ -39,6 +48,9 @@
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/terms" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/terms.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/about</loc>
@@ -47,6 +59,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/about" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/about.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/story</loc>
@@ -55,6 +70,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/story" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/story" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/story.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/manifesto</loc>
@@ -63,6 +81,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/manifesto" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/manifesto" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/manifesto.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/compare</loc>
@@ -71,6 +92,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/compare" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/compare" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/compare.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/adrian</loc>
@@ -79,6 +103,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/adrian" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/adrian" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/adrian.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/masterclass</loc>
@@ -87,6 +114,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/masterclass" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/masterclass" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/masterclass.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/freedom</loc>
@@ -95,6 +125,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/freedom" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/freedom" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/freedom.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/inner-circle</loc>
@@ -103,6 +136,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/inner-circle" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/inner-circle" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/inner-circle.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/affiliates</loc>
@@ -111,6 +147,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/affiliates" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/affiliates" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/affiliates.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/feeling-stuck</loc>
@@ -119,6 +158,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/feeling-stuck" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/feeling-stuck" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/feeling-stuck.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/partners/embed</loc>
@@ -127,6 +169,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/partners/embed" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/partners/embed" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/partners-embed.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/best</loc>
@@ -135,6 +180,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/best" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/best" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/best.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides</loc>
@@ -143,6 +191,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/ideas</loc>
@@ -151,6 +202,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ideas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ideas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/ideas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators</loc>
@@ -159,6 +213,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data</loc>
@@ -167,6 +224,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/vs</loc>
@@ -175,6 +235,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/vs" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/vs" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/vs.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/alternatives</loc>
@@ -183,6 +246,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/alternatives" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/alternatives" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/alternatives.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries</loc>
@@ -191,6 +257,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones</loc>
@@ -199,6 +268,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline</loc>
@@ -207,6 +279,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/stack</loc>
@@ -215,6 +290,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/stack" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/stack" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/stack.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting</loc>
@@ -223,6 +301,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/non-compete</loc>
@@ -231,6 +312,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/non-compete" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/non-compete" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/non-compete.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/mistakes</loc>
@@ -239,6 +323,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/mistakes" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/mistakes" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/mistakes.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/reddit</loc>
@@ -247,6 +334,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reddit" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reddit" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/reddit.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/pricing-models</loc>
@@ -255,6 +345,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pricing-models" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pricing-models" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/pricing-models.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/break-even</loc>
@@ -263,6 +356,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/break-even" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/break-even" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/break-even.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/first-year</loc>
@@ -271,6 +367,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/first-year" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/first-year" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/first-year.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours</loc>
@@ -279,6 +378,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget</loc>
@@ -287,6 +389,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/dream-100</loc>
@@ -295,6 +400,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/dream-100" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/dream-100" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/dream-100.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/intensive</loc>
@@ -303,6 +411,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/intensive" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/intensive" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/intensive.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/traffic-blueprint</loc>
@@ -311,6 +422,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/traffic-blueprint" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/traffic-blueprint" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/traffic-blueprint.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/content-calendar</loc>
@@ -319,6 +433,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/content-calendar" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/content-calendar" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/content-calendar.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/affiliate-assets</loc>
@@ -327,6 +444,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/affiliate-assets" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/affiliate-assets" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/affiliate-assets.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/podcast-pitch</loc>
@@ -335,6 +455,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/podcast-pitch" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/podcast-pitch" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/podcast-pitch.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/backlink-strategy</loc>
@@ -343,6 +466,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/backlink-strategy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/backlink-strategy" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/backlink-strategy.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/founding-wall</loc>
@@ -351,6 +477,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/founding-wall" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/founding-wall" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/founding-wall.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/frameworks</loc>
@@ -359,6 +488,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/frameworks" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/frameworks" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/frameworks.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/proof</loc>
@@ -367,6 +499,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/proof" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/proof" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/proof.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/beliefs</loc>
@@ -375,6 +510,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/beliefs" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/beliefs" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/beliefs.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/lexicon</loc>
@@ -383,6 +521,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/lexicon" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/lexicon" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/lexicon.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/one-thing</loc>
@@ -391,6 +532,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/one-thing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/one-thing" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/one-thing.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/join</loc>
@@ -399,6 +543,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/join" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/join" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/join.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-this-you</loc>
@@ -407,6 +554,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-this-you" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-this-you" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-this-you.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/funnel-metrics</loc>
@@ -415,6 +565,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/funnel-metrics" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/funnel-metrics" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/funnel-metrics.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/tripwire</loc>
@@ -423,6 +576,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/tripwire" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/tripwire" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/tripwire.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-workshop</loc>
@@ -431,6 +587,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-workshop" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-workshop" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-workshop.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/ask</loc>
@@ -439,6 +598,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ask" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ask" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/ask.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/free-book</loc>
@@ -447,6 +609,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/free-book" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/free-book" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/free-book.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/who</loc>
@@ -455,6 +620,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/who" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/who" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/who.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/where</loc>
@@ -463,6 +631,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/where" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/where" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/where.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/ad-library</loc>
@@ -471,6 +642,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ad-library" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ad-library" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/ad-library.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hso</loc>
@@ -479,6 +653,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hso" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hso" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hso.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/traffic-roadmap</loc>
@@ -487,6 +664,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/traffic-roadmap" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/traffic-roadmap" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/traffic-roadmap.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/testing</loc>
@@ -495,6 +675,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/testing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/testing" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/testing.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/youtube-strategy</loc>
@@ -503,6 +686,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/youtube-strategy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/youtube-strategy" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/youtube-strategy.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/dream-100-tracker</loc>
@@ -511,6 +697,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/dream-100-tracker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/dream-100-tracker" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/dream-100-tracker.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/pillar-hub</loc>
@@ -519,6 +708,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pillar-hub" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pillar-hub" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/pillar-hub.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/explore</loc>
@@ -527,6 +719,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/explore" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/explore" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/explore.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis</loc>
@@ -535,6 +730,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/how-to</loc>
@@ -543,6 +741,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/how-to" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/how-to" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/how-to.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal</loc>
@@ -551,6 +752,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/pro</loc>
@@ -559,6 +763,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pro" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pro" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/pro.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/0-dollars</loc>
@@ -567,6 +774,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/0-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/0-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-0-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/100-dollars</loc>
@@ -575,6 +785,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/100-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/100-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-100-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/500-dollars</loc>
@@ -583,6 +796,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/500-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/500-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-500-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/1000-dollars</loc>
@@ -591,6 +807,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/1000-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/1000-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-1000-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/5000-dollars</loc>
@@ -599,6 +818,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/5000-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/5000-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-5000-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/20000-dollars</loc>
@@ -607,6 +829,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/20000-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/20000-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/budget-20000-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/2-hours-per-week</loc>
@@ -615,6 +840,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/2-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/2-hours-per-week" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours-2-hours-per-week.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/5-hours-per-week</loc>
@@ -623,6 +851,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/5-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/5-hours-per-week" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours-5-hours-per-week.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/10-hours-per-week</loc>
@@ -631,6 +862,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/10-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/10-hours-per-week" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours-10-hours-per-week.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/15-hours-per-week</loc>
@@ -639,6 +873,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/15-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/15-hours-per-week" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours-15-hours-per-week.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/20-hours-per-week</loc>
@@ -647,6 +884,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/20-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/20-hours-per-week" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/hours-20-hours-per-week.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/ai-wrapper</loc>
@@ -655,6 +895,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/ai-wrapper" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/ai-wrapper" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-ai-wrapper.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/directory-site</loc>
@@ -663,6 +906,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/directory-site" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/directory-site" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-directory-site.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/saas-calculator</loc>
@@ -671,6 +917,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/saas-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/saas-calculator" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-saas-calculator.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/saas-directory</loc>
@@ -679,6 +928,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/saas-directory" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/saas-directory" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-saas-directory.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/chrome-extension</loc>
@@ -687,6 +939,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/chrome-extension" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/chrome-extension" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-chrome-extension.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/api-as-a-service</loc>
@@ -695,6 +950,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/api-as-a-service" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/api-as-a-service" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-api-as-a-service.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/newsletter-tool</loc>
@@ -703,6 +961,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/newsletter-tool" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/newsletter-tool" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-newsletter-tool.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/blueprint/micro-saas-dashboard</loc>
@@ -711,6 +972,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/micro-saas-dashboard" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/micro-saas-dashboard" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/blueprint-micro-saas-dashboard.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-500</loc>
@@ -719,6 +983,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-500" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-500" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-500.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-1000</loc>
@@ -727,6 +994,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-1000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-1000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-1000.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-2000</loc>
@@ -735,6 +1005,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-2000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-2000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-2000.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-4000</loc>
@@ -743,6 +1016,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-4000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-4000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-4000.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-10000</loc>
@@ -751,6 +1027,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-10000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-10000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-10000.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-100</loc>
@@ -759,6 +1038,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-100" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-100" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-100.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-50000</loc>
@@ -767,6 +1049,9 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-50000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-50000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-50000.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/roadmap/to-5000</loc>
@@ -775,5 +1060,8 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-5000" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-5000" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/roadmap-to-5000.svg</image:loc>
+    </image:image>
   </url>
 </urlset>

@@ -7,6 +7,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/alabama" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/alabama" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-alabama.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/alaska</loc>
@@ -15,6 +18,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/alaska" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/alaska" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-alaska.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/arizona</loc>
@@ -23,6 +29,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/arizona" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/arizona" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-arizona.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/arkansas</loc>
@@ -31,6 +40,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/arkansas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/arkansas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-arkansas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/california</loc>
@@ -39,6 +51,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/california" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/california" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-california.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/colorado</loc>
@@ -47,6 +62,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/colorado" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/colorado" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-colorado.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/connecticut</loc>
@@ -55,6 +73,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/connecticut" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/connecticut" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-connecticut.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/delaware</loc>
@@ -63,6 +84,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/delaware" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/delaware" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-delaware.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/district-of-columbia</loc>
@@ -71,6 +95,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/district-of-columbia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/district-of-columbia" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-district-of-columbia.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/florida</loc>
@@ -79,6 +106,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/florida" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/florida" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-florida.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/georgia</loc>
@@ -87,6 +117,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/georgia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/georgia" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-georgia.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/hawaii</loc>
@@ -95,6 +128,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/hawaii" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/hawaii" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-hawaii.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/idaho</loc>
@@ -103,6 +139,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/idaho" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/idaho" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-idaho.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/illinois</loc>
@@ -111,6 +150,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/illinois" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/illinois" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-illinois.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/indiana</loc>
@@ -119,6 +161,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/indiana" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/indiana" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-indiana.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/iowa</loc>
@@ -127,6 +172,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/iowa" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/iowa" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-iowa.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/kansas</loc>
@@ -135,6 +183,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/kansas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/kansas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-kansas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/kentucky</loc>
@@ -143,6 +194,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/kentucky" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/kentucky" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-kentucky.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/louisiana</loc>
@@ -151,6 +205,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/louisiana" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/louisiana" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-louisiana.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/maine</loc>
@@ -159,6 +216,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/maine" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/maine" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-maine.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/maryland</loc>
@@ -167,6 +227,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/maryland" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/maryland" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-maryland.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/massachusetts</loc>
@@ -175,6 +238,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/massachusetts" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/massachusetts" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-massachusetts.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/michigan</loc>
@@ -183,6 +249,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/michigan" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/michigan" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-michigan.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/minnesota</loc>
@@ -191,6 +260,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/minnesota" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/minnesota" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-minnesota.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/mississippi</loc>
@@ -199,6 +271,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/mississippi" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/mississippi" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-mississippi.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/missouri</loc>
@@ -207,6 +282,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/missouri" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/missouri" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-missouri.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/montana</loc>
@@ -215,6 +293,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/montana" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/montana" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-montana.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/nebraska</loc>
@@ -223,6 +304,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/nebraska" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/nebraska" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-nebraska.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/nevada</loc>
@@ -231,6 +315,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/nevada" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/nevada" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-nevada.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/new-hampshire</loc>
@@ -239,6 +326,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/new-hampshire" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/new-hampshire" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-new-hampshire.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/new-jersey</loc>
@@ -247,6 +337,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/new-jersey" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/new-jersey" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-new-jersey.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/new-mexico</loc>
@@ -255,6 +348,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/new-mexico" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/new-mexico" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-new-mexico.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/new-york</loc>
@@ -263,6 +359,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/new-york" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/new-york" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-new-york.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/north-carolina</loc>
@@ -271,6 +370,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/north-carolina" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/north-carolina" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-north-carolina.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/north-dakota</loc>
@@ -279,6 +381,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/north-dakota" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/north-dakota" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-north-dakota.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/ohio</loc>
@@ -287,6 +392,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/ohio" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/ohio" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-ohio.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/oklahoma</loc>
@@ -295,6 +403,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/oklahoma" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/oklahoma" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-oklahoma.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/oregon</loc>
@@ -303,6 +414,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/oregon" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/oregon" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-oregon.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/pennsylvania</loc>
@@ -311,6 +425,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/pennsylvania" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/pennsylvania" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-pennsylvania.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/rhode-island</loc>
@@ -319,6 +436,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/rhode-island" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/rhode-island" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-rhode-island.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/south-carolina</loc>
@@ -327,6 +447,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/south-carolina" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/south-carolina" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-south-carolina.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/south-dakota</loc>
@@ -335,6 +458,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/south-dakota" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/south-dakota" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-south-dakota.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/tennessee</loc>
@@ -343,6 +469,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/tennessee" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/tennessee" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-tennessee.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/texas</loc>
@@ -351,6 +480,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/texas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/texas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-texas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/utah</loc>
@@ -359,6 +491,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/utah" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/utah" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-utah.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/vermont</loc>
@@ -367,6 +502,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/vermont" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/vermont" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-vermont.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/virginia</loc>
@@ -375,6 +513,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/virginia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/virginia" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-virginia.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/washington</loc>
@@ -383,6 +524,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/washington" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/washington" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-washington.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/west-virginia</loc>
@@ -391,6 +535,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/west-virginia" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/west-virginia" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-west-virginia.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/wisconsin</loc>
@@ -399,6 +546,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/wisconsin" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/wisconsin" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-wisconsin.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/wyoming</loc>
@@ -407,6 +557,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/wyoming" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/wyoming" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-wyoming.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/guides/freedom-number</loc>
@@ -415,5 +568,8 @@
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides/freedom-number" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides/freedom-number" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/guides-freedom-number.svg</image:loc>
+    </image:image>
   </url>
 </urlset>

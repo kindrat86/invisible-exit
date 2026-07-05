@@ -7,6 +7,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/ai-automation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/ai-automation" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-ai-automation.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/developer-tools</loc>
@@ -15,6 +18,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/developer-tools" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/developer-tools" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-developer-tools.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/fintech</loc>
@@ -23,6 +29,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/fintech" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/fintech" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-fintech.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/health-wellness</loc>
@@ -31,6 +40,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/health-wellness" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/health-wellness" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-health-wellness.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/remote-work</loc>
@@ -39,6 +51,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/remote-work" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/remote-work" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-remote-work.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/creator-economy</loc>
@@ -47,6 +62,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/creator-economy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/creator-economy" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-creator-economy.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/ai-wrapper-saas</loc>
@@ -55,6 +73,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/ai-wrapper-saas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/ai-wrapper-saas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-ai-wrapper-saas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/directory-site</loc>
@@ -63,6 +84,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/directory-site" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/directory-site" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-directory-site.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/chrome-extension</loc>
@@ -71,6 +95,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/chrome-extension" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/chrome-extension" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-chrome-extension.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/newsletter</loc>
@@ -79,6 +106,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/newsletter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/newsletter" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-newsletter.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/api-as-a-service</loc>
@@ -87,6 +117,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/api-as-a-service" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/api-as-a-service" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-api-as-a-service.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/notion-template</loc>
@@ -95,6 +128,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/notion-template" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/notion-template" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-notion-template.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-builds/job-board</loc>
@@ -103,6 +139,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-builds/job-board" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-builds/job-board" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/weekend-builds-job-board.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/built-for-nobody</loc>
@@ -111,6 +150,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/built-for-nobody" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/built-for-nobody" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-built-for-nobody.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/premature-scaling</loc>
@@ -119,6 +161,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/premature-scaling" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/premature-scaling" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-premature-scaling.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/single-founder-burnout</loc>
@@ -127,6 +172,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/single-founder-burnout" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/single-founder-burnout" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-single-founder-burnout.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/wrong-customer</loc>
@@ -135,6 +183,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/wrong-customer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/wrong-customer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-wrong-customer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/technical-debt-explosion</loc>
@@ -143,6 +194,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/technical-debt-explosion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/technical-debt-explosion" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-technical-debt-explosion.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/failure-stories/co-founder-conflict</loc>
@@ -151,6 +205,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/co-founder-conflict" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/co-founder-conflict" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/failure-stories-co-founder-conflict.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/typefully</loc>
@@ -159,6 +216,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/typefully" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/typefully" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-typefully.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/bannerbear</loc>
@@ -167,6 +227,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/bannerbear" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/bannerbear" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-bannerbear.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/senja</loc>
@@ -175,6 +238,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/senja" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/senja" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-senja.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/tinybloom</loc>
@@ -183,6 +249,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/tinybloom" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/tinybloom" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-tinybloom.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/screenshotone</loc>
@@ -191,6 +260,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/screenshotone" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/screenshotone" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-screenshotone.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/case-studies/peerlist</loc>
@@ -199,5 +271,8 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/peerlist" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/peerlist" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/case-studies-peerlist.svg</image:loc>
+    </image:image>
   </url>
 </urlset>

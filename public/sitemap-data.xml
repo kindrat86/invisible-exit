@@ -7,6 +7,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators/freedom-number" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators/freedom-number" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators-freedom-number.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators/micro-saas-pricing</loc>
@@ -15,6 +18,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators/micro-saas-pricing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators/micro-saas-pricing" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators-micro-saas-pricing.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators/churn-impact</loc>
@@ -23,6 +29,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators/churn-impact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators/churn-impact" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators-churn-impact.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators/runway-calculator</loc>
@@ -31,6 +40,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators/runway-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators/runway-calculator" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators-runway-calculator.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators/equity-vs-saas</loc>
@@ -39,6 +51,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators/equity-vs-saas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators/equity-vs-saas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/calculators-equity-vs-saas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026</loc>
@@ -47,6 +62,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-micro-saas-revenue-benchmarks-2026.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data/side-business-statistics-2026</loc>
@@ -55,6 +73,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data/side-business-statistics-2026" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data/side-business-statistics-2026" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-side-business-statistics-2026.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data/non-compete-enforcement-by-state</loc>
@@ -63,6 +84,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data/non-compete-enforcement-by-state" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data/non-compete-enforcement-by-state" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-non-compete-enforcement-by-state.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data/micro-saas-pricing-benchmarks</loc>
@@ -71,6 +95,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data/micro-saas-pricing-benchmarks" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data/micro-saas-pricing-benchmarks" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-micro-saas-pricing-benchmarks.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/data/churn-benchmarks-by-niche</loc>
@@ -79,6 +106,9 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data/churn-benchmarks-by-niche" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data/churn-benchmarks-by-niche" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-churn-benchmarks-by-niche.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/product-manager</loc>
@@ -87,6 +117,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/product-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/product-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-product-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/software-engineer</loc>
@@ -95,6 +128,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/software-engineer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/software-engineer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-software-engineer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/marketing-manager</loc>
@@ -103,6 +139,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/marketing-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/marketing-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-marketing-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/data-analyst</loc>
@@ -111,6 +150,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/data-analyst" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/data-analyst" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-data-analyst.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/accountant</loc>
@@ -119,6 +161,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/accountant" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/accountant" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-accountant.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/lawyer</loc>
@@ -127,6 +172,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/lawyer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/lawyer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-lawyer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/teacher</loc>
@@ -135,6 +183,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/teacher" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/teacher" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-teacher.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/nurse</loc>
@@ -143,6 +194,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/nurse" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/nurse" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-nurse.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/hr-manager</loc>
@@ -151,6 +205,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/hr-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/hr-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-hr-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/consultant</loc>
@@ -159,6 +216,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/consultant" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/consultant" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-consultant.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/designer</loc>
@@ -167,6 +227,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/designer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/designer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-designer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/financial-analyst</loc>
@@ -175,6 +238,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/financial-analyst" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/financial-analyst" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-financial-analyst.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/sales-manager</loc>
@@ -183,6 +249,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/sales-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/sales-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-sales-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/doctor</loc>
@@ -191,6 +260,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/doctor" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/doctor" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-doctor.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/real-estate-agent</loc>
@@ -199,6 +271,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/real-estate-agent" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/real-estate-agent" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-real-estate-agent.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/recruiter</loc>
@@ -207,6 +282,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/recruiter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/recruiter" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-recruiter.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/project-manager</loc>
@@ -215,6 +293,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/project-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/project-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-project-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/customer-success-manager</loc>
@@ -223,6 +304,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/customer-success-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/customer-success-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-customer-success-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/operations-manager</loc>
@@ -231,6 +315,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/operations-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/operations-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-operations-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/executive-assistant</loc>
@@ -239,6 +326,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/executive-assistant" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/executive-assistant" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-executive-assistant.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/virtual-assistant</loc>
@@ -247,6 +337,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/virtual-assistant" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/virtual-assistant" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-virtual-assistant.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/photographer</loc>
@@ -255,6 +348,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/photographer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/photographer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-photographer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/writer</loc>
@@ -263,6 +359,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/writer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/writer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-writer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/corporate-trainer</loc>
@@ -271,6 +370,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/corporate-trainer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/corporate-trainer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-corporate-trainer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries/supply-chain-manager</loc>
@@ -279,6 +381,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries/supply-chain-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries/supply-chain-manager" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/salaries-supply-chain-manager.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/0-to-100</loc>
@@ -287,6 +392,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/0-to-100" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/0-to-100" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-0-to-100.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/100-to-500</loc>
@@ -295,6 +403,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/100-to-500" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/100-to-500" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-100-to-500.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/500-to-1k</loc>
@@ -303,6 +414,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/500-to-1k" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/500-to-1k" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-500-to-1k.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/1k-to-4k</loc>
@@ -311,6 +425,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/1k-to-4k" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/1k-to-4k" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-1k-to-4k.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/4k-to-10k</loc>
@@ -319,6 +436,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/4k-to-10k" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/4k-to-10k" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-4k-to-10k.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/10k-to-25k</loc>
@@ -327,6 +447,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/10k-to-25k" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/10k-to-25k" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-10k-to-25k.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/25k-to-50k</loc>
@@ -335,6 +458,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/25k-to-50k" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/25k-to-50k" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-25k-to-50k.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones/50k-plus</loc>
@@ -343,6 +469,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones/50k-plus" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones/50k-plus" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/milestones-50k-plus.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline/month-1</loc>
@@ -351,6 +480,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline/month-1" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline/month-1" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline-month-1.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline/month-3</loc>
@@ -359,6 +491,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline/month-3" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline/month-3" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline-month-3.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline/month-6</loc>
@@ -367,6 +502,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline/month-6" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline/month-6" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline-month-6.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline/month-12</loc>
@@ -375,6 +513,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline/month-12" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline/month-12" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline-month-12.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline/month-18</loc>
@@ -383,6 +524,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline/month-18" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline/month-18" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/timeline-month-18.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$80k-salary</loc>
@@ -391,6 +535,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$100k-salary</loc>
@@ -399,6 +546,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$120k-salary</loc>
@@ -407,6 +557,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$150k-salary</loc>
@@ -415,6 +568,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$180k-salary</loc>
@@ -423,6 +579,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$200k-salary</loc>
@@ -431,6 +590,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$250k-salary</loc>
@@ -439,6 +601,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/1-years-$300k-salary</loc>
@@ -447,6 +612,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/1-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/1-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-1-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$80k-salary</loc>
@@ -455,6 +623,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$100k-salary</loc>
@@ -463,6 +634,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$120k-salary</loc>
@@ -471,6 +645,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$150k-salary</loc>
@@ -479,6 +656,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$180k-salary</loc>
@@ -487,6 +667,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$200k-salary</loc>
@@ -495,6 +678,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$250k-salary</loc>
@@ -503,6 +689,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/3-years-$300k-salary</loc>
@@ -511,6 +700,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/3-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/3-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-3-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$80k-salary</loc>
@@ -519,6 +711,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$100k-salary</loc>
@@ -527,6 +722,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$120k-salary</loc>
@@ -535,6 +733,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$150k-salary</loc>
@@ -543,6 +744,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$180k-salary</loc>
@@ -551,6 +755,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$200k-salary</loc>
@@ -559,6 +766,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$250k-salary</loc>
@@ -567,6 +777,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/5-years-$300k-salary</loc>
@@ -575,6 +788,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/5-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/5-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-5-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$80k-salary</loc>
@@ -583,6 +799,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$100k-salary</loc>
@@ -591,6 +810,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$120k-salary</loc>
@@ -599,6 +821,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$150k-salary</loc>
@@ -607,6 +832,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$180k-salary</loc>
@@ -615,6 +843,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$200k-salary</loc>
@@ -623,6 +854,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$250k-salary</loc>
@@ -631,6 +865,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/10-years-$300k-salary</loc>
@@ -639,6 +876,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/10-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/10-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-10-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$80k-salary</loc>
@@ -647,6 +887,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$100k-salary</loc>
@@ -655,6 +898,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$120k-salary</loc>
@@ -663,6 +909,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$150k-salary</loc>
@@ -671,6 +920,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$180k-salary</loc>
@@ -679,6 +931,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$200k-salary</loc>
@@ -687,6 +942,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$250k-salary</loc>
@@ -695,6 +953,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/15-years-$300k-salary</loc>
@@ -703,6 +964,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/15-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/15-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-15-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$80k-salary</loc>
@@ -711,6 +975,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$80k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$80k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$80k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$100k-salary</loc>
@@ -719,6 +986,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$100k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$100k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$100k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$120k-salary</loc>
@@ -727,6 +997,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$120k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$120k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$120k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$150k-salary</loc>
@@ -735,6 +1008,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$150k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$150k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$150k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$180k-salary</loc>
@@ -743,6 +1019,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$180k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$180k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$180k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$200k-salary</loc>
@@ -751,6 +1030,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$200k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$200k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$200k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$250k-salary</loc>
@@ -759,6 +1041,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$250k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$250k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$250k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting/20-years-$300k-salary</loc>
@@ -767,6 +1052,9 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting/20-years-$300k-salary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting/20-years-$300k-salary" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-of-waiting-20-years-$300k-salary.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/starting-a-micro-saas</loc>
@@ -775,6 +1063,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/starting-a-micro-saas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/starting-a-micro-saas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-starting-a-micro-saas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/forming-an-anonymous-llc</loc>
@@ -783,6 +1074,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/forming-an-anonymous-llc" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/forming-an-anonymous-llc" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-forming-an-anonymous-llc.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/using-ai-tools-as-a-solo-founder</loc>
@@ -791,6 +1085,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/using-ai-tools-as-a-solo-founder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/using-ai-tools-as-a-solo-founder" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-using-ai-tools-as-a-solo-founder.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/running-a-micro-saas-monthly-operating-costs</loc>
@@ -799,6 +1096,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/running-a-micro-saas-monthly-operating-costs" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/running-a-micro-saas-monthly-operating-costs" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-running-a-micro-saas-monthly-operating-costs.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/hiring-a-registered-agent</loc>
@@ -807,6 +1107,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/hiring-a-registered-agent" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/hiring-a-registered-agent" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-hiring-a-registered-agent.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/hosting-a-micro-saas</loc>
@@ -815,6 +1118,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/hosting-a-micro-saas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/hosting-a-micro-saas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-hosting-a-micro-saas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/starting-a-faceless-youtube-channel</loc>
@@ -823,6 +1129,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/starting-a-faceless-youtube-channel" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/starting-a-faceless-youtube-channel" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-starting-a-faceless-youtube-channel.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/business-insurance-for-solo-founders</loc>
@@ -831,6 +1140,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/business-insurance-for-solo-founders" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/business-insurance-for-solo-founders" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-business-insurance-for-solo-founders.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/starting-an-llc-on-a-budget</loc>
@@ -839,6 +1151,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/starting-an-llc-on-a-budget" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/starting-an-llc-on-a-budget" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-starting-an-llc-on-a-budget.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-analysis/marketing-your-micro-saas</loc>
@@ -847,6 +1162,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis/marketing-your-micro-saas" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis/marketing-your-micro-saas" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/cost-analysis-marketing-your-micro-saas.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/start-a-business-while-employed</loc>
@@ -855,6 +1173,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/start-a-business-while-employed" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/start-a-business-while-employed" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-start-a-business-while-employed.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/use-my-personal-laptop-for-side-business</loc>
@@ -863,6 +1184,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/use-my-personal-laptop-for-side-business" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/use-my-personal-laptop-for-side-business" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-use-my-personal-laptop-for-side-business.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/use-a-work-laptop-for-side-business</loc>
@@ -871,6 +1195,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/use-a-work-laptop-for-side-business" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/use-a-work-laptop-for-side-business" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-use-a-work-laptop-for-side-business.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/have-two-jobs-at-once-employees</loc>
@@ -879,6 +1206,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/have-two-jobs-at-once-employees" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/have-two-jobs-at-once-employees" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-have-two-jobs-at-once-employees.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/keep-side-business-anonymous-from-employer</loc>
@@ -887,6 +1217,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/keep-side-business-anonymous-from-employer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/keep-side-business-anonymous-from-employer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-keep-side-business-anonymous-from-employer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/start-business-without-llc</loc>
@@ -895,6 +1228,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/start-business-without-llc" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/start-business-without-llc" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-start-business-without-llc.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/use-family-name-for-business</loc>
@@ -903,6 +1239,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/use-family-name-for-business" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/use-family-name-for-business" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-use-family-name-for-business.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/accept-payments-under-business-name</loc>
@@ -911,6 +1250,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/accept-payments-under-business-name" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/accept-payments-under-business-name" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-accept-payments-under-business-name.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/open-a-business-bank-account-anonymous</loc>
@@ -919,6 +1261,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/open-a-business-bank-account-anonymous" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/open-a-business-bank-account-anonymous" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-open-a-business-bank-account-anonymous.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/hide-business-income-from-employer</loc>
@@ -927,6 +1272,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/hide-business-income-from-employer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/hide-business-income-from-employer" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-hide-business-income-from-employer.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/start-tiktok-channel-while-employed</loc>
@@ -935,6 +1283,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/start-tiktok-channel-while-employed" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/start-tiktok-channel-while-employed" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-start-tiktok-channel-while-employed.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/is-it-legal/use-ai-to-replace-my-job</loc>
@@ -943,6 +1294,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal/use-ai-to-replace-my-job" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal/use-ai-to-replace-my-job" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/is-it-legal-use-ai-to-replace-my-job.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/by-budget/0-dollars</loc>
@@ -951,6 +1305,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/by-budget/0-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/by-budget/0-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/by-budget-0-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/by-budget/500-dollars</loc>
@@ -959,6 +1316,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/by-budget/500-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/by-budget/500-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/by-budget-500-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/by-budget/5000-dollars</loc>
@@ -967,6 +1327,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/by-budget/5000-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/by-budget/5000-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/by-budget-5000-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/by-budget/10000-dollars</loc>
@@ -975,6 +1338,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/by-budget/10000-dollars" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/by-budget/10000-dollars" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/by-budget-10000-dollars.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/ai-automation</loc>
@@ -983,6 +1349,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/ai-automation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/ai-automation" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-ai-automation.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/developer-tools</loc>
@@ -991,6 +1360,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/developer-tools" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/developer-tools" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-developer-tools.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/fintech</loc>
@@ -999,6 +1371,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/fintech" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/fintech" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-fintech.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/health-wellness</loc>
@@ -1007,6 +1382,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/health-wellness" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/health-wellness" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-health-wellness.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/remote-work</loc>
@@ -1015,6 +1393,9 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/remote-work" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/remote-work" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-remote-work.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://invisibleexit.com/niches/creator-economy</loc>
@@ -1023,5 +1404,8 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/niches/creator-economy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/niches/creator-economy" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/niches-creator-economy.svg</image:loc>
+    </image:image>
   </url>
 </urlset>

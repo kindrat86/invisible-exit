@@ -1194,6 +1194,14 @@ ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom nu
 <a href="${freedomUrl}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Cost of Waiting &rarr;</a>
 </div></section>
 ${item.tips ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Tips for ${item.role}</h2><ul>${(item.tips || []).map((t: string) => `<li>${t}</li>`).join("")}</ul></div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas/for-${item.slug}s`, text: `← Micro-SaaS Ideas for ${item.role}s` },
+  { href: `/side-hustles/for-${item.slug}s`, text: `Best Side Hustles for ${item.role}s` },
+  { href: `/mistakes/mistakes-${item.slug}s-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` },
+  { href: `/cost-of-waiting/${item.slug}`, text: `Cost of Waiting for ${item.role}s — How Much You're Losing` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Salary estimates are general ranges. Individual compensation varies. Not financial advice.</p>
 </div></section>
@@ -1341,6 +1349,14 @@ ${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete cla
 <h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Key Considerations for ${item.profession} in ${item.state}</h2>
 <p>${item.analysis}</p>
 </div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/guides/${item.state.toLowerCase()}`, text: `← Anonymous LLC Guide for ${item.state}` },
+  { href: `/ideas/for-${item.profession.toLowerCase().replace(/ /g, "-")}s/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession}s in ${item.state}` },
+  { href: `/side-hustles/for-${item.profession.toLowerCase().replace(/ /g, "-")}s`, text: `Best Side Hustles for ${item.profession}s` },
+  { href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}s` },
+  { href: `/glossary/non-compete`, text: `Non-Compete Clause — Definition & Explanation` },
+  { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/guides/${item.state.toLowerCase()}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Read the ${item.state} State Guide &rarr;</a>
 </div></section>
@@ -1351,15 +1367,28 @@ ${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete cla
 }
 
 function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
+  const profSlug = item.professionSlug;
+  const stateSlug = item.stateSlug;
+  const related = relatedLinksSection([
+    { href: `/ideas/${profSlug}`, text: `← All Micro-SaaS Ideas for ${item.profession}` },
+    { href: `/side-hustles/${profSlug}`, text: `Best Side Hustles for ${item.profession}` },
+    { href: `/salaries/${profSlug.replace(/^for-/, "").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
+    { href: `/mistakes/mistakes-${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make When Starting a Side Business` },
+    { href: `/non-compete/${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-${stateSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` },
+    { href: `/guides/${stateSlug}`, text: `Anonymous LLC Guide for ${item.state}` },
+    { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
+    { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  ]);
   return `<div class="min-h-screen">
 ${hubSvgFigure("Profession × State", "Ideas by location", "Micro-SaaS ideas for your profession in your specific state — local considerations and opportunities")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
-<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/ideas/${profSlug}" style="color:#3B82F6;text-decoration:none">${item.profession}</a> &rsaquo; <span>${item.state}</span>
 </nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
 <p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
 </div></section>
+${related}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
 </div></section>
@@ -1384,6 +1413,14 @@ ${hubSvgFigure("Common Mistakes", "Profession-specific pitfalls", "Mistakes that
 <section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">${mistakes}</div></section>
 ${signs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem;color:#166534">Signs You're on the Right Track</h2><ul>${signs}</ul></div></section>` : ""}
 ${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
+  { href: `/failure-stories`, text: `Micro-SaaS Failure Stories — Learn From Real Mistakes` },
+  { href: `/salaries`, text: `Salary to Freedom Number Calculator` },
+  { href: `/case-studies`, text: `Successful Micro-SaaS Case Studies` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice.</p></div></section>
 </div>`;

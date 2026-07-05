@@ -33,6 +33,25 @@ import { revenueRoadmaps } from "../src/data/revenue-roadmaps.js";
 import { costAnalysisPages } from "../src/data/cost-analysis.js";
 import { howToGuides } from "../src/data/how-to-guides.js";
 import { isItLegalPages } from "../src/data/is-it-legal.js";
+// Greg Isenberg pSEO Rounds 2-7
+import { professionMistakes } from "../src/data/profession-mistakes.js";
+import { redditStrategies } from "../src/data/reddit-strategies.js";
+import { pricingModels } from "../src/data/pricing-models.js";
+import { breakEvenPages } from "../src/data/break-even.js";
+import { professionVsCareer } from "../src/data/profession-vs-career.js";
+import { firstYearEntries } from "../src/data/first-year.js";
+import { toolCrossReference } from "../src/data/tool-cross-reference.js";
+import { aiToolProfessionPages } from "../src/data/ai-tool-professions.js";
+import { budgetPages } from "../src/data/budget-pages.js";
+import { hoursPages } from "../src/data/hours-pages.js";
+import { sideHustles } from "../src/data/side-hustles.js";
+import { budgetStartPages } from "../src/data/budget-start.js";
+import { niches } from "../src/data/niches.js";
+import { quitJobPages } from "../src/data/quit-job.js";
+import { weekendBuilds } from "../src/data/weekend-builds.js";
+import { failureStories } from "../src/data/failure-stories.js";
+import { toolReviews } from "../src/data/tool-reviews.js";
+import { caseStudies } from "../src/data/case-studies.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -337,6 +356,101 @@ function generateLlmsTxt(): string {
   lines.push(`- [All Legal Guides](${SITE}/is-it-legal): Browse all legal concern pages`);
   for (const il of isItLegalPages) {
     lines.push(`- [${il.topic}](${SITE}/is-it-legal/${il.slug}): ${il.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO Round 4-7: Side Hustles, Budget, Niches, Quit-Your-Job, Weekend Builds, Failure Stories, Reviews, Case Studies ──
+  lines.push("## Side Hustles by Profession");
+  lines.push("");
+  for (const s of sideHustles) {
+    lines.push(`- [${s.h1}](${SITE}/side-hustles/${s.slug}): ${s.intro?.substring(0, 120) || "Top side hustles for this profession"}`);
+  }
+  lines.push("");
+
+  lines.push("## Start a Business by Budget");
+  lines.push("");
+  for (const b of budgetStartPages) {
+    lines.push(`- [${b.h1}](${SITE}/by-budget/${b.slug}): ${b.intro?.substring(0, 120) || "Start a business with a specific budget"}`);
+  }
+  lines.push("");
+
+  lines.push("## Best Micro-SaaS Niches");
+  lines.push("");
+  for (const n of niches) {
+    lines.push(`- [${n.h1}](${SITE}/niches/${n.slug}): ${n.intro?.substring(0, 120) || "Profitable micro-SaaS niche analysis"}`);
+  }
+  lines.push("");
+
+  lines.push("## When to Quit Your Job");
+  lines.push("");
+  for (const q of quitJobPages) {
+    lines.push(`- [${q.h1}](${SITE}/quit-your-job/${q.slug}): ${q.intro?.substring(0, 120) || "Honest framework for quitting your job"}`);
+  }
+  lines.push("");
+
+  lines.push("## Weekend Build Ideas");
+  lines.push("");
+  for (const w of weekendBuilds) {
+    lines.push(`- [${w.h1}](${SITE}/weekend-builds/${w.slug}): ${w.intro?.substring(0, 120) || "Launch a side business in one weekend"}`);
+  }
+  lines.push("");
+
+  lines.push("## Micro-SaaS Failure Stories");
+  lines.push("");
+  for (const f of failureStories) {
+    lines.push(`- [${f.h1}](${SITE}/mistakes/${f.slug}): ${f.intro?.substring(0, 120) || "Real failure patterns and lessons"}`);
+  }
+  lines.push("");
+
+  lines.push("## Tool Reviews");
+  lines.push("");
+  for (const r of toolReviews) {
+    lines.push(`- [${r.h1 || r.name}](${SITE}/reviews/${r.slug}): ${r.tagline || r.intro?.substring(0, 120) || "Honest tool review for solo founders"}`);
+  }
+  lines.push("");
+
+  lines.push("## Micro-SaaS Case Studies");
+  lines.push("");
+  for (const c of caseStudies) {
+    lines.push(`- [${c.h1 || c.name}](${SITE}/case-studies/${c.slug}): ${c.tagline || c.intro?.substring(0, 120) || "Real revenue numbers and growth strategies"}`);
+  }
+  lines.push("");
+
+  lines.push("## Profession Mistakes");
+  lines.push("");
+  for (const m of professionMistakes) {
+    lines.push(`- [${m.h1}](${SITE}/mistakes/${m.slug}): ${m.intro?.substring(0, 120) || "Common mistakes professionals make"}`);
+  }
+  lines.push("");
+
+  lines.push("## Additional pSEO Pages");
+  lines.push("");
+  for (const r of redditStrategies) {
+    lines.push(`- [${r.h1}](${SITE}/reddit/${r.slug}): Reddit growth strategies for employed founders`);
+  }
+  for (const p of pricingModels) {
+    lines.push(`- [${p.h1}](${SITE}/pricing/${p.slug}): Pricing model analysis for micro-SaaS`);
+  }
+  for (const b of breakEvenPages) {
+    lines.push(`- [${b.h1}](${SITE}/break-even/${b.slug}): Break-even analysis for your profession`);
+  }
+  for (const p of professionVsCareer) {
+    lines.push(`- [${p.h1}](${SITE}/vs-career/${p.slug}): Profession vs career entrepreneurship comparison`);
+  }
+  for (const f of firstYearEntries) {
+    lines.push(`- [${f.h1}](${SITE}/first-year/${f.slug}): First year of side business — what to expect`);
+  }
+  for (const t of toolCrossReference) {
+    lines.push(`- [${t.h1}](${SITE}/tools/${t.slug}): Tool comparison and cross-reference`);
+  }
+  for (const a of aiToolProfessionPages) {
+    lines.push(`- [${a.h1}](${SITE}/ai-tools/${a.slug}): AI tools for specific professions`);
+  }
+  for (const b of budgetPages) {
+    lines.push(`- [${b.h1}](${SITE}/budget/${b.slug}): Budget-based micro-SaaS planning`);
+  }
+  for (const h of hoursPages) {
+    lines.push(`- [${h.h1}](${SITE}/hours/${h.slug}): Side business based on available hours per week`);
   }
   lines.push("");
 

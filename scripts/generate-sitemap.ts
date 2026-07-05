@@ -768,6 +768,13 @@ for (const [name, subs] of Object.entries(submaps)) {
         const slug = e.loc.split('/blog/')[1];
         url += '    <image:image>\n      <image:loc>https://invisibleexit.com/og/' + slug + '.svg</image:loc>\n      <image:title>' + (blogPosts.find((p: any) => p.slug === slug)?.title || slug) + '</image:title>\n    </image:image>\n';
       }
+      // Image annotation for pSEO pages with OG images
+      if (!e.loc.includes('/blog/') && !e.loc.includes('/category/') && !e.loc.endsWith('invisibleexit.com/')) {
+        const pseoSlug = e.loc.replace('https://invisibleexit.com/', '').replace(/\//g, '-');
+        if (pseoSlug && pseoSlug.length > 0) {
+          url += '    <image:image>\n      <image:loc>https://invisibleexit.com/og/' + pseoSlug + '.svg</image:loc>\n    </image:image>\n';
+        }
+      }
       url += '  </url>';
       return url;
     }).join('\n') +
