@@ -3,17 +3,80 @@ import { industryIdeas } from "@/data/industry-ideas";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { ArrowRight } from "lucide-react";
 
 export default function IndustryIdeasPage() {
   const { profession } = useParams<{ profession: string }>();
+
+  // No profession = show directory index
+  if (!profession) {
+    return (
+      <div className="min-h-screen bg-white">
+        <SEOHead
+          title="Micro-SaaS Ideas by Profession (2026) | Invisible Exit"
+          description="Browse micro-SaaS ideas tailored to your specific profession. Each guide includes revenue math, pricing, and difficulty ratings for corporate managers."
+          url="https://invisibleexit.com/ideas"
+          image="https://invisibleexit.com/og-image.png"
+        />
+        <Navbar />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+          <nav className="text-sm text-gray-500 mb-8">
+            <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+            {" › "}
+            <span>Ideas by Profession</span>
+          </nav>
+
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Micro-SaaS Ideas by Profession
+          </h1>
+          <p className="text-lg text-gray-600 mb-12">
+            Profession-specific micro-SaaS ideas that leverage your domain expertise. Each guide includes revenue math, pricing models, and difficulty ratings.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {industryIdeas.map((item) => (
+              <Link
+                key={item.slug}
+                to={`/ideas/${item.slug}`}
+                className="group block border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-blue-300 transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <h2 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {item.profession}
+                    </h2>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.unfairAdvantage}</p>
+                <div className="mt-4 flex items-center gap-2 text-sm">
+                  <span className="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">
+                    {item.ideas.length} ideas
+                  </span>
+                  <span className="text-gray-500 text-xs">Avg salary: {item.avgSalary}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   const data = industryIdeas.find((p) => p.slug === profession);
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Profession not found</h1>
-          <Link to="/ideas" className="text-blue-600 hover:underline">← Browse all professions</Link>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Navbar />
+        <div className="text-center px-4">
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">Profession not found</h1>
+          <p className="text-gray-600 mb-6">This profession guide doesn't exist yet.</p>
+          <Link to="/ideas" className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium">
+            ← Browse all professions
+          </Link>
         </div>
       </div>
     );
