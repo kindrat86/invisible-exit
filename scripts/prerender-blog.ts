@@ -1956,6 +1956,19 @@ function main() {
   if (injectBody(resolve(DIST, "data", "index.html"), dataHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "explore", "index.html"), exploreHubBodyHtml())) { count++; }
 
+  // ── Missing pSEO hub pages (were 0 words for crawlers) ──
+  if (injectBody(resolve(DIST, "non-compete", "index.html"), nonCompeteHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "stack", "index.html"), stackHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "milestones", "index.html"), milestonesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "timeline", "index.html"), timelineHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "pricing-models", "index.html"), pricingModelsHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "reddit", "index.html"), redditHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "cost-of-waiting", "index.html"), costOfWaitingHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "break-even", "index.html"), breakEvenHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "budget", "index.html"), budgetHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "hours", "index.html"), hoursHubBodyHtml())) { count++; }
+
   // ── Critical funnel pages (0 body words) ──
   if (injectBody(resolve(DIST, "freedom", "index.html"), freedomPageBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "story", "index.html"), storyPageBodyHtml())) { count++; }
@@ -2880,6 +2893,377 @@ function storyPageBodyHtml(): string {
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">Over 18 months, I built a system: (1) Calculate the freedom number, (2) Find ideas in my professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get first 10 customers, (6) Stay anonymous through entity separation and compliance. The result: $4,000/month in recurring revenue from products nobody knew I owned.</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">Why Invisible Exit?</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">After hitting $4K/month, I realized there were millions of corporate managers in the same position — wanting financial independence but unable to risk their career. I built Invisible Exit to share the exact system, tools, and methodology. Five AI-powered tools that handle the hard parts: calculating your freedom number, validating ideas, ensuring compliance, automating launch, and building an audience without showing your face.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Watch the Free Masterclass →</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Missing pSEO hub bodies ----------
+
+function nonCompeteHubBodyHtml(): string {
+  const professions = ["software-engineers", "product-managers", "lawyers", "doctors", "financial-analysts", "marketers", "consultants", "designers", "sales-managers", "accountants"];
+  const links = professions.map(p =>
+    `<a href="/non-compete/${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${p.replace(/-/g," ")} Non-Compete Guide</h3></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Non-Compete Analysis</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Non-Compete Clause Analysis by Profession & State</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed analysis of non-compete enforceability for employed founders. Cross-reference your profession with your state to understand your specific risk level, key legal considerations, and how to build safely. Non-compete clauses are governed by state law and enforced differently across professions — knowing where you stand is the first step to building your invisible exit.</p>
+</div>
+</section>
+<section style="background-color:#fef2f2;border-left:4px solid #ef4444;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.875rem;color:#991b1b"><strong>Not legal advice.</strong> Non-compete law is rapidly evolving. Always consult a licensed employment attorney for your situation.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse by Profession (100+ state-specific pages)</h2>
+<p style="font-size:1rem;color:#4b5563;margin-bottom:1.5rem">Each profession has a detailed guide for each of the top 10 states. Select your profession below to find your state's specific analysis.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">${links}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">What You'll Find in Each Guide</h2>
+<ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
+<li>Whether your state enforces non-compete agreements</li>
+<li>How enforceability varies by profession and job role</li>
+<li>Key risks to watch for — including boilerplate clauses in your contract</li>
+<li>Safe harbors — what you can do without triggering enforcement</li>
+<li>Legal disclaimer tailored to your specific jurisdiction</li>
+</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get the Compliance Blueprint →</a>
+</div>
+</section>
+</div>`;
+}
+
+function stackHubBodyHtml(): string {
+  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
+  const links = entries.map(e =>
+    `<a href="/stack/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Tool Stack</h3></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Tool Stacks</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Recommended Tool Stacks by Profession</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated tool stacks for building micro-SaaS products. Each stack is tailored to a profession's existing skills — tools that complement what you already know so you can build faster, cheaper, and with less friction. No generic lists, just targeted recommendations.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Tool Stacks (${entries.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">${links}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why Profession-Specific Stacks?</h2>
+<p style="font-size:1rem;color:#4b5563;line-height:1.7">A designer needs different tools than a software engineer to build a micro-SaaS. Designers excel at frontend and UX, so their stack emphasizes no-code builders and visual tools. Engineers can leverage existing coding skills for faster backends. Each stack assumes you're starting from your current skill set and fills the gaps with the minimum viable toolchain — no over-engineering, no unnecessary complexity.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/best" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse All Tool Lists →</a>
+</div>
+</section>
+</div>`;
+}
+
+function milestonesHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Revenue Milestones</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Revenue Milestones</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Stage-by-stage guides for every MRR milestone. From $0 to $50K+ MRR, know what to expect at each level — pricing, team needs, distribution channels, and common mistakes. Each milestone includes a month-by-month playbook, key metrics to track, and the specific actions you need to reach the next tier.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>The 6 key milestones:</strong> $0 (validation complete) → $500 (first revenue) → $1K (consistent) → $2K (growing) → $4K (freedom number) → $10K+ (scaling). Each stage requires different strategies, pricing, and distribution channels.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Milestones</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+<a href="/milestones/reaching-0-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">Your first paying customers and validation</p></a>
+<a href="/milestones/reaching-500-to-1000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 to $1K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Consistency and market fit</p></a>
+<a href="/milestones/reaching-1000-to-2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$1K to $2K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Growth and optimization</p></a>
+<a href="/milestones/reaching-2000-to-4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K to $4K MRR</h3><p style="font-size:0.875rem;color:#6b7280">The freedom number zone</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div>
+</section>
+</div>`;
+}
+
+function timelineHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Timelines</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Month-by-Month Micro-SaaS Timelines</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Actionable month-by-month timelines for building a micro-SaaS while employed. Each timeline shows exactly what to do each month, what to expect at every stage, and which mistakes to avoid. Designed for founders with 5-10 hours per week.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick Answer:</strong> Most employed founders can go from idea → first paying customer in 60-90 days with 5-10 hours per week. The first 30 days should be validation-only — no code until someone signals willingness to pay.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Timelines</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+<a href="/timeline/zero-to-first-customer" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to First Customer</h3><p style="font-size:0.875rem;color:#6b7280">90-day timeline from idea to paying user</p></a>
+<a href="/timeline/zero-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">6-month timeline to consistent revenue</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/story" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Read the Origin Story →</a>
+</div>
+</section>
+</div>`;
+}
+
+function pricingModelsHubBodyHtml(): string {
+  const models = ["flat-rate", "usage-based", "tiered", "freemium", "per-seat", "per-feature", "outcome-based", "flat-rate-plus-overage", "two-sided-marketplace", "community-plus-premium", "equity-deferred", "agency-model", "donation-plus", "revenue-share"];
+  const links = models.map(m =>
+    `<a href="/pricing-models/${m}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${m.replace(/-/g," ")} Model</h3></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Pricing Models</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Pricing Models Compared</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Compare the most effective pricing models for micro-SaaS. Flat-rate, usage-based, tiered, freemium, and more — with real revenue examples, benchmarks, and pros/cons for each. Choose the model that maximizes revenue with minimal complexity for your solo operation.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Pricing Models (${models.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem">${links}</div>
+</div>
+</section>
+</div>`;
+}
+
+function redditHubBodyHtml(): string {
+  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
+  const links = entries.map(e =>
+    `<a href="/reddit/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Reddit Strategy</h3></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Reddit Strategy</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Reddit Strategy for Employed Founders</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How to build an audience and get customers on Reddit without revealing your identity. Profession-specific strategies with best subreddits, posting schedules, content templates, and common mistakes that get founders banned. Reddit is the #1 acquisition channel for anonymous founders — if you know how to use it right.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Key insight:</strong> The most successful anonymous founders on Reddit never post links to their products. They contribute genuine value in industry-specific subreddits, build reputation over 3-6 months, and let interested users find their product through their profile.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Strategies (${entries.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">${links}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">What Each Guide Includes</h2>
+<ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
+<li>Best subreddits for your profession — subscriber counts and why they work</li>
+<li>Posting strategy tailored to your industry's culture and rules</li>
+<li>Content ideas that attract your ideal customers without self-promotion</li>
+<li>Common mistakes that get your account suspended</li>
+<li>FAQ section answering the specific questions your profession asks</li>
+</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Micro-SaaS Ideas →</a>
+</div>
+</section>
+</div>`;
+}
+
+function costOfWaitingHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Cost of Waiting</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">The Cost of Waiting to Start Your Micro-SaaS</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Calculate the true cost of delaying your micro-SaaS business. See exactly how much salary-equivalent revenue you leave on the table by waiting another year, three years, or five years. The opportunity cost of inaction is higher than most employed founders realize.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick math:</strong> At $4K/month MRR (the freedom number), waiting 3 years costs you $144,000 in lost revenue — plus the compounding effect of reinvestment and the equity-building that happens as your business matures. Every month you wait is a month of recurring revenue you'll never get back.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">See the Cost for Your Salary</h2>
+<p style="font-size:1rem;color:#4b5563;margin-bottom:1.5rem">Cost-of-waiting projections for different salary brackets and time horizons:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
+<a href="/cost-of-waiting/1-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 1 year</h3><p style="font-size:0.875rem;color:#6b7280">See what 1 year of delay costs at $100K salary</p></a>
+<a href="/cost-of-waiting/3-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 3 years</h3><p style="font-size:0.875rem;color:#6b7280">3-year delay cost at $100K salary</p></a>
+<a href="/cost-of-waiting/5-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 5 years</h3><p style="font-size:0.875rem;color:#6b7280">5-year delay cost at $100K salary</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why the Cost Is Higher Than You Think</h2>
+<ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
+<li><strong>Compound revenue:</strong> MRR compounds as you add customers, raise prices, and launch new products</li>
+<li><strong>Asset value:</strong> A micro-SaaS at $4K MRR is worth 24-36× monthly revenue ($96K-$144K)</li>
+<li><strong>Skill building:</strong> Every month of building teaches you distribution, pricing, and customer psychology</li>
+<li><strong>Data advantage:</strong> Starting earlier means you have more data to optimize from — and more time to iterate</li>
+</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div>
+</section>
+</div>`;
+}
+
+function breakEvenHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Break-Even Analysis</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Break-Even Analysis for Micro-SaaS</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How long until your micro-SaaS breaks even? Detailed month-by-month projections based on revenue tiers, costs, and growth rates. See exactly when your initial investment is recovered and your business becomes self-sustaining — with realistic timelines for employed founders building on the side.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick Answer:</strong> Most micro-SaaS products break even in 3-6 months on a $500-$2K initial investment. With AI tools reducing development costs, you can launch an MVP for under $100 in hosting and domain fees.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Break-Even Scenarios</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
+<a href="/break-even/500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $500/month micro-SaaS</p></a>
+<a href="/break-even/2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $2K/month micro-SaaS</p></a>
+<a href="/break-even/4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$4K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $4K/month micro-SaaS (freedom number)</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div>
+</section>
+</div>`;
+}
+
+function budgetHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Budget Levels</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Start Your Micro-SaaS on Any Budget</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">You can start a micro-SaaS on any budget. From $0 using free tiers (Vercel, Supabase, Resend, GitHub) to $500/month for a premium stack — we break down exactly what you get at each spending level so you can make an informed decision based on your current resources.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>The $0 truth:</strong> You can validate, build, and launch a micro-SaaS MVP for $0 using free tiers. Vercel, Supabase, Resend, and GitHub cover everything you need for an MVP. Upgrade only when you have paying customers.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Budget Levels</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+<a href="/budget/0-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 Budget</h3><p style="font-size:0.875rem;color:#6b7280">Everything you need is free</p></a>
+<a href="/budget/50-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$50/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Basic pro tools</p></a>
+<a href="/budget/100-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Comfortable stack</p></a>
+<a href="/budget/500-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Premium everything</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/cost-analysis" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">View Cost Analysis Guides →</a>
+</div>
+</section>
+</div>`;
+}
+
+function hoursHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Hours Per Week</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Build a Micro-SaaS with Limited Time</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Realistic roadmaps for building a micro-SaaS when you only have 1-10 hours per week. See what's achievable at each time commitment level with AI-powered tools and efficient workflows. Your time constraint is NOT a deal-breaker — it's a forcing function for better decisions.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick math:</strong> With 5 hours per week and AI tools, you can go from idea → MVP in 6-8 weeks. The key is ruthless prioritization: build only what's necessary for validation and the core value proposition.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Time Commitments</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+<a href="/hours/5-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">5 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">The sweet spot for employed founders</p></a>
+<a href="/hours/10-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">10 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Accelerated timeline</p></a>
+<a href="/hours/3-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">3 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Minimum viable commitment</p></a>
+</div>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
