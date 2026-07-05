@@ -65,6 +65,8 @@ import { caseStudies } from "../src/data/case-studies.js";
 import { revenueTargets } from "../src/data/revenue-targets.js";
 import { cities } from "../src/data/cities.js";
 import { skills } from "../src/data/skills.js";
+import { audienceIdeas } from "../src/data/audience-ideas.js";
+import { cityProfessionPages } from "../src/data/city-profession.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -2243,6 +2245,20 @@ function main() {
     if (injectBody(resolve(DIST, "skills", s.slug, "index.html"), skillBodyHtml(s))) { count++; }
   }
 
+  // ── Greg Isenberg pSEO Round 9: Audience/Demographic pages ──
+  for (const a of audienceIdeas) {
+    if (injectBody(resolve(DIST, "audience", a.slug, "index.html"), audienceBodyHtml(a))) { count++; }
+  }
+  if (audienceIdeas.length > 0) {
+    if (injectBody(resolve(DIST, "audience", "index.html"), audienceHubBodyHtml())) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 9: City × Profession cross pages ──
+  for (const cp of cityProfessionPages) {
+    const filePath = resolve(DIST, "cities", cp.citySlug, "for", cp.professionSlug, "index.html");
+    if (injectBody(filePath, cityProfessionBodyHtml(cp))) { count++; }
+  }
+
   console.log(`Done. Injected body content into ${count} pages.`);
 }
 
@@ -4045,6 +4061,151 @@ ${relatedLinksSection([
   { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
   { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
   { href: `/quit-your-job`, text: `When to Quit Your Job` },
+])}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 9: Audience/Demographic body ----------
+
+function audienceBodyHtml(item: typeof audienceIdeas[0]): string {
+  const ideas = item.bestIdeas.map((idea: { name: string; description: string; whyFit: string; pricing: string; timeToRevenue: string }, i: number) =>
+    `<div style="margin-bottom:1.5rem;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.5rem;color:#111827">${i + 1}. ${idea.name}</h3>
+<p style="color:#4b5563;margin-bottom:0.75rem">${idea.description}</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.875rem">
+<div><span style="color:#6b7280">Why it fits:</span> <strong style="color:#374151">${idea.whyFit}</strong></div>
+<div><span style="color:#6b7280">Pricing:</span> <strong style="color:#374151">${idea.pricing}</strong></div>
+<div><span style="color:#6b7280">Time to revenue:</span> <strong style="color:#374151">${idea.timeToRevenue}</strong></div>
+</div>
+</div>`
+  ).join("\n");
+  const skillsList = item.skills.map((s: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f3f4f6;border-radius:0.375rem;font-size:0.875rem;margin:0.25rem;color:#374151">${s}</span>`).join("");
+  const tips = item.tips.map((t: string) => `<li style="margin-bottom:0.5rem;color:#374151">${t}</li>`).join("\n");
+  const faqs = item.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure(item.audience, "Side Business Guide", `Best micro-SaaS and side business ideas for ${item.audience.toLowerCase()}`)}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/audience" style="color:#3B82F6;text-decoration:none">Audience</a> &rsaquo; <span>${item.audience}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:1.5rem;max-width:48rem;margin:0 auto"><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+<div style="padding:1.25rem;background:#f0fdf4;border-radius:0.75rem"><div style="font-size:0.75rem;color:#16a34a;font-weight:600;margin-bottom:0.25rem">ADVANTAGES</div><p style="font-size:0.875rem;color:#374151">${item.advantages}</p></div>
+<div style="padding:1.25rem;background:#fff7ed;border-radius:0.75rem"><div style="font-size:0.75rem;color:#ea580c;font-weight:600;margin-bottom:0.25rem">CHALLENGES</div><p style="font-size:0.875rem;color:#374151">${item.challenges}</p></div>
+<div style="padding:1.25rem;background:#eff6ff;border-radius:0.75rem;text-align:center"><div style="font-size:1.25rem;font-weight:700;color:#2563eb">${item.timeCommitment}</div><div style="font-size:0.75rem;color:#6b7280">Time Commitment</div></div>
+<div style="padding:1.25rem;background:#faf5ff;border-radius:0.75rem;text-align:center"><div style="font-size:1.25rem;font-weight:700;color:#9333ea">${item.budgetRange}</div><div style="font-size:0.75rem;color:#6b7280">Startup Budget</div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Best Micro-SaaS Ideas for ${item.audience}</h2>
+${ideas}
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Transferable Skills</h2>
+<div>${skillsList}</div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Pro Tips</h2>
+<ul style="padding-left:1.5rem">${tips}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div></section>
+${relatedLinksSection([
+  { href: `/audience`, text: `All Audience Guides` },
+  { href: `/ideas`, text: `Micro-SaaS Ideas by Profession` },
+  { href: `/niches`, text: `Best Micro-SaaS Niches for 2025` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/budget`, text: `Side Business Budget Guide` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps` },
+])}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+function audienceHubBodyHtml(): string {
+  const cards = audienceIdeas.map((a: typeof audienceIdeas[0]) =>
+    `<a href="/audience/${a.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit">
+<h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${a.audience}</h3>
+<p style="font-size:0.875rem;color:#6b7280">${a.metaDescription.slice(0, 120)}...</p>
+</a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Side Business by Audience", "15 demographic guides", "Side business and micro-SaaS ideas tailored to your life situation")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Audience</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Side Business Ideas by Audience</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">Side business and micro-SaaS ideas tailored to your life situation. Whether you're a college student, stay-at-home parent, military veteran, retiree, or digital nomad — find ideas that fit your schedule, budget, and skills.</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem">
+${cards}
+</div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 9: City × Profession cross body ----------
+
+function cityProfessionBodyHtml(item: typeof cityProfessionPages[0]): string {
+  const ideas = item.bestIdeas.map((idea: string, i: number) =>
+    `<li style="margin-bottom:0.75rem;color:#374151"><strong>${i + 1}.</strong> ${idea}</li>`
+  ).join("\n");
+  const networking = item.networkingOps.map((n: string) =>
+    `<li style="margin-bottom:0.5rem;color:#374151">${n}</li>`
+  ).join("\n");
+  const advantages = item.advantages.map((a: string) =>
+    `<li style="margin-bottom:0.5rem;color:#374151">${a}</li>`
+  ).join("\n");
+  const faqs = item.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure(`${item.profession} in ${item.city}`, item.city, `Best micro-SaaS ideas for ${item.profession.toLowerCase()} in ${item.city}`)}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/cities/${item.citySlug}" style="color:#3B82F6;text-decoration:none">${item.city}</a> &rsaquo; <span>${item.profession}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:1.5rem;max-width:48rem;margin:0 auto"><div style="padding:1.5rem;background:#eff6ff;border-radius:0.75rem">
+<h2 style="font-size:1.125rem;font-weight:700;margin-bottom:0.5rem">The Local Scene</h2>
+<p style="color:#374151;margin-bottom:0.75rem">${item.localScene}</p>
+<div style="padding:0.75rem;background:white;border-radius:0.5rem"><p style="font-size:0.875rem;font-weight:600;color:#374151">${item.costProfile}</p></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Networking &amp; Community</h2>
+<ul style="padding-left:1.5rem">${networking}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why ${item.city} Works for ${item.profession}</h2>
+<ul style="padding-left:1.5rem;list-style:none">${advantages}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Micro-SaaS Ideas for ${item.profession} in ${item.city}</h2>
+<ol style="padding-left:1.5rem">${ideas}</ol>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div></section>
+${relatedLinksSection([
+  { href: `/cities/${item.citySlug}`, text: `Side Business in ${item.city} — Full Guide` },
+  { href: `/cities`, text: `All City Guides` },
+  { href: `/ideas`, text: `Micro-SaaS Ideas by Profession` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies` },
+  { href: `/budget`, text: `Side Business Budget Guide` },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
