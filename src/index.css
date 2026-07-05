@@ -150,6 +150,31 @@
     @apply bg-background text-foreground;
     font-feature-settings: "cv11", "ss01", "ss03";
     overflow-x: hidden;
+    /* Prevent long strings from overflowing containers/borders on any device */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  /* Ensure all elements respect their borders — critical for iOS Safari */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Flex and grid children must be able to shrink below their content size.
+     Without this, long text in a flex/grid card overflows its border on mobile. */
+  main p, main li, main h1, main h2, main h3, main h4, main h5, main h6,
+  main span, main a, main div {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Grid/flex items: allow shrinking so content never bursts out of cards */
+  main [class*="grid"] > *,
+  main [class*="flex"] > * {
+    min-width: 0;
   }
 
   /* Safe area for notch phones */
@@ -292,9 +317,9 @@
   .section-normal { @apply py-16 sm:py-20 md:py-24; }
   .section-wide { @apply py-20 sm:py-24 md:py-32; }
 
-  .container-narrow { @apply mx-auto max-w-3xl; }
-  .container-standard { @apply mx-auto max-w-6xl; }
-  .container-wide { @apply mx-auto max-w-7xl; }
+  .container-narrow { @apply mx-auto max-w-3xl px-4 sm:px-6; }
+  .container-standard { @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .container-wide { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
 
   /* ── Hero backgrounds ── */
   .hero-dark {
