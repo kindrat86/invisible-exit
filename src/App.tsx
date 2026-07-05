@@ -96,6 +96,7 @@ const GrowingGridPage = lazy(() => import("./pages/GrowingGridPage.tsx"));
 const YouTubeStrategyPage = lazy(() => import("./pages/YouTubeStrategyPage.tsx"));
 const Dream100TrackerPage = lazy(() => import("./pages/Dream100TrackerPage.tsx"));
 const PillarHubPage = lazy(() => import("./pages/PillarHubPage.tsx"));
+const ExploreHubPage = lazy(() => import("./pages/ExploreHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
@@ -258,6 +259,7 @@ const App = () => (
           <Route path="/youtube-strategy" element={<YouTubeStrategyPage />} />
           <Route path="/dream-100-tracker" element={<Dream100TrackerPage />} />
           <Route path="/pillar-hub" element={<PillarHubPage />} />
+          <Route path="/explore" element={<ExploreHubPage />} />
           <Route path="/feeling-stuck" element={<ColdTrafficBridgePage />} />
           <Route path="/partners/embed" element={<IntegrationMarketingPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />

@@ -31,6 +31,7 @@ const FOOTER_SECTIONS = [
       { label: "YouTube Strategy", to: "/youtube-strategy" },
       { label: "Dream 100 Tracker", to: "/dream-100-tracker" },
       { label: "Pillar Content Hub", to: "/pillar-hub" },
+      { label: "Explore Everything", to: "/explore" },
       { label: "Integration Marketing", to: "/partners/embed" },
       { label: "Cold Traffic Bridge", to: "/feeling-stuck" },
       { label: "Free Masterclass", to: "/masterclass" },

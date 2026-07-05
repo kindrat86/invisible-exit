@@ -344,6 +344,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/explore",
+      "destination": "/index.html"
+    },
+    {
       "source": "/checkout/success",
       "destination": "/index.html"
     },

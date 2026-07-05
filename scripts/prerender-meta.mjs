@@ -68,6 +68,10 @@ function injectMeta(template, { title, description, url, type, image, jsonLd }) 
     <meta name="author" content="${SITE_NAME}" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="${url}" />
+    <link rel="alternate" hreflang="en" href="${url}" />
+    <link rel="alternate" hreflang="x-default" href="${url}" />
+    <link rel="alternate" type="application/rss+xml" title="${SITE_NAME} Blog" href="${SITE}/blog/rss.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="${SITE}/sitemap.xml" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="${type}" />
@@ -1317,6 +1321,7 @@ function getRoutes() {
     { path: "/youtube-strategy", title: "YouTube Strategy — 6 Video Scripts + Channel Plan | Invisible Exit", desc: "Complete YouTube strategy for faceless channel: 6 priority video scripts with hooks, thumbnails, SEO keywords, and a 4-phase channel growth plan.", type: "website" },
     { path: "/dream-100-tracker", title: "Dream 100 Tracker — 26 Named Targets & Outreach Pipeline | Invisible Exit", desc: "The actual Dream 100 list with 26 named targets across 3 tiers, outreach status tracking, and a weekly cadence for building relationships.", type: "website" },
     { path: "/pillar-hub", title: "Pillar Content Hub — 5 Definitive Guides to Write | Invisible Exit", desc: "The pillar content strategy: 5 definitive guides (3,500-5,000 words each) targeting high-volume keywords, designed as linkable assets to transform domain authority.", type: "website" },
+    { path: "/explore", title: "Explore All Resources — Complete Site Index | Invisible Exit", desc: "Browse all 800+ pages: micro-SaaS ideas by profession, state guides, calculators, comparison pages, glossary terms, data reports, and blog articles.", type: "website" },
   ];
 
   for (const page of trafficPages) {
