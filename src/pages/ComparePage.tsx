@@ -9,40 +9,68 @@ import { trackEvent } from "@/lib/analytics";
 
 function ComparisonTable({ data }: { data: ComparisonData }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full border-collapse">
-        <thead>
-          <tr className="border-b-2 border-gray-200">
-            <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide">
-              Criteria
-            </th>
-            <th className="text-left py-4 px-4 text-base font-bold text-gray-900">
-              {data.optionA}
-            </th>
-            <th className="text-left py-4 px-4 text-base font-bold text-gray-900">
-              {data.optionB}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.table.map((row, i) => (
-            <tr
-              key={i}
-              className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
-            >
-              <td className="py-3 px-4 text-sm font-medium text-gray-700">
-                {row.criteria}
-              </td>
-              <td className="py-3 px-4 text-sm text-gray-600">
-                {row.optionA}
-              </td>
-              <td className="py-3 px-4 text-sm text-gray-600">
-                {row.optionB}
-              </td>
+    <div className="comp-table-wrap">
+      {/* Desktop: traditional table */}
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="border-b-2 border-gray-200">
+              <th className="text-left py-4 px-4 text-sm font-semibold text-gray-500 uppercase tracking-wide">
+                Criteria
+              </th>
+              <th className="text-left py-4 px-4 text-base font-bold text-gray-900">
+                {data.optionA}
+              </th>
+              <th className="text-left py-4 px-4 text-base font-bold text-gray-900">
+                {data.optionB}
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.table.map((row, i) => (
+              <tr
+                key={i}
+                className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              >
+                <td className="py-3 px-4 text-sm font-medium text-gray-700">
+                  {row.criteria}
+                </td>
+                <td className="py-3 px-4 text-sm text-gray-600">
+                  {row.optionA}
+                </td>
+                <td className="py-3 px-4 text-sm text-gray-600">
+                  {row.optionB}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile: stacked card layout */}
+      <div className="sm:hidden space-y-3">
+        {data.table.map((row, i) => (
+          <div key={i} className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+            <div className="bg-gray-50 px-4 py-2.5 border-b border-gray-200">
+              <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">{row.criteria}</p>
+            </div>
+            <div className="divide-y divide-gray-100">
+              <div className="flex items-start gap-3 px-4 py-3">
+                <span className="flex-shrink-0 text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-md min-w-[70px] text-center">
+                  {data.optionA}
+                </span>
+                <p className="text-sm text-gray-700 leading-relaxed pt-0.5">{row.optionA}</p>
+              </div>
+              <div className="flex items-start gap-3 px-4 py-3">
+                <span className="flex-shrink-0 text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-md min-w-[70px] text-center">
+                  {data.optionB}
+                </span>
+                <p className="text-sm text-gray-700 leading-relaxed pt-0.5">{row.optionB}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -122,12 +150,12 @@ const ComparePage = () => {
 
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
-            <Link to="/" className="hover:text-white/70 transition-colors">
+          <nav className="flex items-center gap-2 text-sm text-white/60 mb-6">
+            <Link to="/" className="hover:text-white/90 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <span className="text-white/60">{data.h1}</span>
+            <span className="text-white/80">{data.h1}</span>
           </nav>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             {data.h1}

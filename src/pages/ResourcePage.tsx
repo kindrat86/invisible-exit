@@ -3,17 +3,74 @@ import { resources } from "@/data/resources";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { ArrowRight } from "lucide-react";
 
 export default function ResourcePage() {
   const { slug } = useParams<{ slug: string }>();
+
+  // No slug = show directory index
+  if (!slug) {
+    return (
+      <div className="min-h-screen bg-white">
+        <SEOHead
+          title="Resources for Side Business Founders | Invisible Exit"
+          description="Step-by-step guides and resource lists for building a side business while employed. Tools, processes, and frameworks for employed founders."
+          url="https://invisibleexit.com/resources"
+          image="https://invisibleexit.com/og-image.png"
+        />
+        <Navbar />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+          <nav className="text-sm text-gray-500 mb-8">
+            <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+            {" › "}
+            <span>Resources</span>
+          </nav>
+
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Resources for Side Business Founders
+          </h1>
+          <p className="text-lg text-gray-600 mb-12">
+            Step-by-step guides for every phase of building a side business while employed.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {resources.map((r) => (
+              <Link
+                key={r.slug}
+                to={`/resources/${r.slug}`}
+                className="group block border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-blue-300 transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h2 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {r.title}
+                  </h2>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{r.intro}</p>
+                <div className="mt-4 text-sm text-blue-600 font-medium">
+                  {r.steps.length} steps · {r.tools.length} tools
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   const resource = resources.find((r) => r.slug === slug);
 
   if (!resource) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Resource not found</h1>
-          <Link to="/resources" className="text-blue-600 hover:underline">← Browse all resources</Link>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Navbar />
+        <div className="text-center px-4">
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">Resource not found</h1>
+          <p className="text-gray-600 mb-6">This guide doesn't exist or may have moved.</p>
+          <Link to="/resources" className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium">
+            ← Browse all resources
+          </Link>
         </div>
       </div>
     );
@@ -24,8 +81,8 @@ export default function ResourcePage() {
       <SEOHead
         title={resource.metaTitle}
         description={resource.metaDescription}
-        canonical={`https://invisibleexit.com/resources/${resource.slug}`}
-        ogImage={`https://invisibleexit.com/og-image.png`}
+        url={`https://invisibleexit.com/resources/${resource.slug}`}
+        image={`https://invisibleexit.com/og-image.png`}
       />
       <Navbar />
 

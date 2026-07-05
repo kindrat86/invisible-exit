@@ -127,6 +127,7 @@ const Terms = lazy(() => import("./pages/Terms.tsx"));
 // App pages (authenticated, never crawled)
 const OTOFounding = lazy(() => import("./pages/OTOFounding.tsx"));
 const Login = lazy(() => import("./pages/Login.tsx"));
+const Signup = lazy(() => import("./pages/Signup.tsx"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword.tsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
 const Badge = lazy(() => import("./pages/Badge.tsx"));
@@ -162,6 +163,7 @@ const App = () => (
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/checkout/success" element={<CheckoutSuccess />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
