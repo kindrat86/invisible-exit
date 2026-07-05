@@ -141,9 +141,9 @@ const queryClient = new QueryClient();
 
 /**
  * Handles /:lang/* URLs for localization.
- * When a user visits /es/blog, this strips /es, sets the i18next language,
+ * When a user visits /es/blog, this sets the i18next language to Spanish
  * and navigates to /blog (so the actual page renders).
- * The LanguageSwitcher component handles adding the prefix back when switching.
+ * The language is persisted to localStorage so it sticks across navigation.
  */
 function LangRedirectWrapper() {
   const { lang } = useParams<{ lang: string }>();
@@ -153,9 +153,18 @@ function LangRedirectWrapper() {
 
   useEffect(() => {
     if (lang && LANGUAGE_MAP[lang]) {
-      // Set the language
-      if (i18n.language !== lang) {
-        i18n.changeLanguage(lang);
+      // Set and persist the language BEFORE navigating
+      i18n.changeLanguage(lang);
+      try {
+        localStorage.setItem("i18n_lang", lang);
+      } catch {
+        // ignore
+      }
+      // Set a flag so the i18n init code knows not to override from URL
+      try {
+        sessionStorage.setItem("i18n_lang_set", "1");
+      } catch {
+        // ignore
       }
       // Navigate to the path without the lang prefix
       const segments = location.pathname.split("/").filter(Boolean);

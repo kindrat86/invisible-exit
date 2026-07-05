@@ -11,9 +11,22 @@ import { initReactI18next } from "react-i18next";
 import { en } from "./locales/en";
 import { DEFAULT_LANGUAGE, LANGUAGE_MAP } from "./languages";
 
-// ── Detect language from URL path ──
+// ── Detect language from URL path or localStorage ──
 function detectLanguageFromPath(): string {
   if (typeof window === "undefined") return DEFAULT_LANGUAGE;
+
+  // Priority 1: If localStorage has a language set by LangRedirect, use it
+  // (the redirect strips /es from URL, so we need to remember the choice)
+  try {
+    const stored = localStorage.getItem("i18n_lang");
+    if (stored && LANGUAGE_MAP[stored]) {
+      return stored;
+    }
+  } catch {
+    // ignore
+  }
+
+  // Priority 2: Check URL path for /:lang prefix
   const path = window.location.pathname;
   const segments = path.split("/").filter(Boolean);
   if (segments.length > 0) {
