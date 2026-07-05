@@ -12,9 +12,7 @@ import ReadingProgress from "./components/ReadingProgress.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
-
-// ── Eager: only the homepage (LCP-critical, highest-traffic) ──
-import Index from "./pages/Index.tsx";
+const Index = lazy(() => import("./pages/Index.tsx"));
 
 // ── Lazy: all other routes (code-splitting for smaller initial bundle) ──
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));

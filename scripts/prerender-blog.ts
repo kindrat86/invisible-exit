@@ -299,6 +299,7 @@ function blogListingBodyHtml(): string {
     .join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Blog", "53 articles for employed founders", "Invisible Exit blog — articles on financial independence, micro-SaaS, stealth operations, and audience building")}
 <section style="padding-top:8rem;padding-bottom:4rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:56rem;margin:0 auto;text-align:center">
 <h1>The Invisible Exit Blog</h1>
@@ -329,6 +330,7 @@ function categoryPageBodyHtml(categoryName: string, slug: string): string {
     .join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Blog Category", "Articles by topic", "Blog category page with curated articles for employed founders building micro-SaaS businesses")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Blog</a> &rsaquo; <span>${categoryName}</span>
 </nav>
@@ -481,6 +483,7 @@ ${items}
   }
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Comparisons", "Side-by-side analysis", "Detailed comparison of micro-SaaS alternatives and frameworks for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Blog</a> &rsaquo; <span>${comp.optionA} vs ${comp.optionB}</span>
 </nav>
@@ -686,6 +689,7 @@ function homepageBodyHtml(): string {
 
 function aboutPageBodyHtml(): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("About Invisible Exit", "Built by a corporate manager", "About the founder and methodology behind Invisible Exit — 5 AI tools for building anonymous recurring revenue")}
 <section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">About Invisible Exit</h1>
@@ -866,6 +870,7 @@ function industryIdeasBodyHtml(d: typeof industryIdeas[0]): string {
   const faqs = d.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Micro-SaaS Ideas", "Validated by profession", "Curated micro-SaaS ideas with market analysis, competitive landscape, and revenue potential")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/ideas" style="color:#3B82F6;text-decoration:none">Ideas</a> › <span>${d.profession}</span>
 </nav>
@@ -916,6 +921,7 @@ function bestToolsBodyHtml(list: typeof bestToolsLists[0]): string {
   const faqs = list.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Best AI Tools", "Reviewed for micro-SaaS", "Curated list of the best AI tools, no-code platforms, and services for building micro-SaaS products")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/best" style="color:#3B82F6;text-decoration:none">Best Tools</a> › <span>${list.title}</span>
 </nav>
@@ -951,6 +957,7 @@ function calculatorBodyHtml(calc: typeof calculators[0]): string {
   const faqs = calc.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Calculators", "Financial tools for founders", "Interactive calculators for freedom number, break-even, and pricing — financial planning for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/calculators" style="color:#3B82F6;text-decoration:none">Calculators</a> › <span>${calc.h1}</span>
 </nav>
@@ -1010,6 +1017,7 @@ function dataReportBodyHtml(report: typeof dataReports[0]): string {
   const faqs = report.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Data Reports", "Original statistics", "Original data and benchmark reports on micro-SaaS economics, designed for citation and reference")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/data" style="color:#3B82F6;text-decoration:none">Research</a> › <span>${report.title}</span>
 </nav>
@@ -1064,6 +1072,7 @@ function resourceBodyHtml(resource: typeof resources[0]): string {
   const faqs = resource.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Resources", "Step-by-step playbooks", "Multi-step resource playbooks for building, launching, and growing a micro-SaaS while employed")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/resources" style="color:#3B82F6;text-decoration:none">Resources</a> › <span>${resource.title}</span>
 </nav>
@@ -1112,6 +1121,7 @@ function alternativesBodyHtml(item: typeof alternatives[0]): string {
     .map((f: { question: string; answer: string }) => `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`)
     .join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Alternatives", "Product comparison", "Detailed comparison of product alternatives with pros, cons, pricing, and recommendations")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Alternatives</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1138,6 +1148,7 @@ function alternativesBodyHtml(item: typeof alternatives[0]): string {
 function salaryBodyHtml(item: typeof salaries[0]): string {
   const freedomUrl = `/cost-of-waiting/${item.slug}`;
   return `<div class="min-h-screen">
+${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom number conversion showing how much micro-SaaS revenue replaces your income")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Salaries</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1167,6 +1178,7 @@ function milestoneBodyHtml(item: typeof revenueMilestones[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Revenue Milestones", "Stage-by-stage guide", "Micro-SaaS revenue milestone guide — what to expect and do at each MRR tier")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1198,6 +1210,7 @@ function timelineBodyHtml(item: typeof timelines[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Timeline", "Month-by-month roadmap", "Month-by-month timeline for building a micro-SaaS while employed — actionable steps at each stage")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1231,6 +1244,7 @@ function toolStackBodyHtml(item: typeof professionStacks[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Tool Stack", "Profession-specific recommendations", "Recommended tool stack tailored to your profession and existing skills")}
 <nav style="padding:1rem 1.5rem;max-width:64rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/best" style="color:#3B82F6;text-decoration:none">Tools</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1250,6 +1264,7 @@ function toolStackBodyHtml(item: typeof professionStacks[0]): string {
 
 function costOfWaitingBodyHtml(item: typeof costOfWaitingPages[0]): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("Cost of Waiting", "Opportunity cost calculator", "The true financial cost of delaying your micro-SaaS business — lost revenue and compound growth")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1279,6 +1294,7 @@ function nonCompeteBodyHtml(item: typeof nonCompeteMatrix[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete clause analysis — enforceability, key risks, and safe harbors for your profession and state")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1305,6 +1321,7 @@ function nonCompeteBodyHtml(item: typeof nonCompeteMatrix[0]): string {
 
 function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("Profession × State", "Ideas by location", "Micro-SaaS ideas for your profession in your specific state — local considerations and opportunities")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1330,6 +1347,7 @@ function professionMistakesBodyHtml(item: typeof professionMistakes[0]): string 
   const signs = (item.positiveSigns || []).map((s: string) => `<li>${s}</li>`).join("");
   const faqs = (item.faqs || []).map((f:any) => `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Common Mistakes", "Profession-specific pitfalls", "Mistakes that professionals make when starting a side business — and how to avoid them")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">${mistakes}</div></section>
@@ -1346,6 +1364,7 @@ function redditStrategyBodyHtml(item: typeof redditStrategies[0]): string {
   const errs = (item.commonMistakes||[]).map((c:string)=>`<li>${c}</li>`).join("");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Reddit Strategy", "Anonymous audience building", "Reddit marketing strategy with best subreddits, posting schedule, and content templates")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">Best Subreddits for ${item.profession}</h2><table style="width:100%;border-collapse:collapse;font-size:0.875rem"><thead><tr style="background:#0f172a;color:white"><th style="padding:0.5rem;text-align:left">Subreddit</th><th style="padding:0.5rem;text-align:left">Size</th><th style="padding:0.5rem;text-align:left">Why</th></tr></thead><tbody>${subs}</tbody></table></div></section>
@@ -1364,6 +1383,7 @@ function pricingModelBodyHtml(item: typeof pricingModels[0]): string {
   const benchmarks = (item.benchmarks||[]).map((b:any)=>`<div><dt style="font-size:0.75rem;color:#6b7280">${b.metric}</dt><dd style="font-weight:700">${b.value}</dd></div>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Pricing Model", "Revenue comparison", "Micro-SaaS pricing model analysis — how it works, pros, cons, and real revenue examples")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.model} Pricing</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">How It Works</h2><p style="color:#4b5563">${item.howItWorks}</p></div></section>
@@ -1383,6 +1403,7 @@ function breakEvenBodyHtml(item: typeof breakEvenPages[0]): string {
   const milestones = item.milestones.map((m:any)=>`<div style="display:flex;gap:0.5rem;padding:0.75rem;border:1px solid #e5e7eb;border-radius:0.375rem;margin-bottom:0.5rem"><span style="background:#dbeafe;color:#1e40af;padding:0.25rem 0.5rem;border-radius:0.25rem;font-size:0.75rem;font-weight:700">${m.month}</span><div><p style="font-weight:600">${m.status}</p><p style="font-size:0.875rem;color:#6b7280">${m.description}</p></div></div>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Break-Even", "Financial projection", "Break-even analysis with month-by-month milestones showing when your micro-SaaS becomes profitable")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem;background-color:#eff6ff"><div style="max-width:48rem;margin:0 auto"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:1rem">
@@ -1407,6 +1428,7 @@ function professionVsCareerBodyHtml(item: typeof professionVsCareer[0]): string 
   const comparison = (item.comparison||[]).map((c:any)=>`<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;font-weight:600">${c.factor}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.career}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.saas}</td></tr>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Career vs SaaS", "Honest comparison", "Comparing staying in your career versus building a micro-SaaS — salary, equity, risk, and freedom")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
@@ -1428,6 +1450,7 @@ function firstYearBodyHtml(item: typeof firstYearEntries[0]): string {
   const lessons = (item.lessonsLearned||[]).map((l:string)=>`<li>${l}</li>`).join("");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("First Year", "12-month roadmap", "Month-by-month first-year roadmap for building a micro-SaaS — goals, deliverables, and reality checks")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
@@ -1446,6 +1469,7 @@ function toolCrossRefBodyHtml(item: typeof toolCrossReference[0]): string {
   const tools = item.tools.map((t:any)=>`<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem"><div style="display:flex;justify-content:space-between"><strong>${t.name}</strong><span style="background:#eff6ff;color:#1e40af;padding:0.25rem 0.5rem;border-radius:0.25rem;font-size:0.75rem;font-weight:600">${t.pricing}</span></div><p style="font-size:0.875rem;color:#6b7280;margin-top:0.25rem">${t.best}</p><p style="font-size:0.875rem;margin-top:0.25rem">${t.why}</p></div>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
+${hubSvgFigure("Tool Cross-Reference", "Best tools for your profession", "Recommended tools cross-referenced by profession and use case")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/best" style="color:#3B82F6;text-decoration:none">Tools</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">${tools}</div></section>
@@ -1459,6 +1483,7 @@ ${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style
 
 function manifestoBodyHtml(): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisible Exit manifesto — why building anonymous recurring revenue is the path to freedom")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Manifesto</span></nav>
 <section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
 <div style="max-width:48rem;margin:0 auto">
@@ -1556,6 +1581,7 @@ function manifestoBodyHtml(): string {
 
 function pillarFreedomNumberBodyHtml(): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate your freedom number and build a system to reach it")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/blog" style="color:#3B82F6;text-decoration:none">Blog</a> &rsaquo; <span>Freedom Number Guide</span></nav>
 <section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
 <div style="max-width:48rem;margin:0 auto">
@@ -1673,6 +1699,7 @@ function pillarFreedomNumberBodyHtml(): string {
 
 function comparePageBodyHtml(): string {
   return `<div class="min-h-screen">
+${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invisible Exit compares to every alternative — features, pricing, and honest tradeoffs")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Honest Comparison</span></nav>
 <section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
 <div style="max-width:48rem;margin:0 auto">
@@ -2095,6 +2122,7 @@ function toolAlternativeBodyHtml(ta: typeof toolAlternatives[0]): string {
     `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Tool Alternatives", "Compared with pros and cons", "Alternatives to popular tools with detailed pros, cons, pricing, and best-use-case analysis")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/alternatives" style="color:#3B82F6;text-decoration:none">Alternatives</a> &rsaquo; <span>${ta.tool} Alternatives</span>
 </nav>
@@ -2144,6 +2172,7 @@ function blueprintBodyHtml(bp: typeof saasBlueprints[0]): string {
     `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("SaaS Blueprint", "How to build this type", "Step-by-step blueprint for building a specific type of micro-SaaS product")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Blueprints</span> &rsaquo; <span>${bp.type}</span>
 </nav>
@@ -2223,6 +2252,7 @@ function revenueRoadmapBodyHtml(rr: typeof revenueRoadmaps[0]): string {
     `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Revenue Roadmap", "Path to your target income", "Revenue roadmap showing how to reach a specific monthly income target through micro-SaaS")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/roadmap" style="color:#3B82F6;text-decoration:none">Revenue Roadmaps</a> &rsaquo; <span>${rr.target}</span>
 </nav>
@@ -2286,6 +2316,7 @@ function costAnalysisBodyHtml(ca: typeof costAnalysisPages[0]): string {
   ).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Cost Analysis", "Detailed financial breakdown", "Detailed cost analysis for starting and running a micro-SaaS — every expense category explained")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${ca.topic}</span>
 </nav>
@@ -2379,6 +2410,7 @@ function howToBodyHtml(hg: typeof howToGuides[0]): string {
   ).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("How-To Guide", "Step-by-step instructions", "Detailed how-to guide with numbered steps, tools, and timeline for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${hg.topic}</span>
 </nav>
@@ -2456,6 +2488,7 @@ function isItLegalBodyHtml(il: typeof isItLegalPages[0]): string {
   ).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Is It Legal?", "Legal analysis for your situation", "Legal analysis of employment contract clauses, IP ownership, and side business regulations")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${il.topic}</span>
 </nav>
