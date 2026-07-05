@@ -43,6 +43,9 @@ import { hoursPages } from "../src/data/hours-pages.js";
 import { toolAlternatives } from "../src/data/tool-alternatives.js";
 import { saasBlueprints } from "../src/data/saas-blueprints.js";
 import { revenueRoadmaps } from "../src/data/revenue-roadmaps.js";
+import { costAnalysisPages } from "../src/data/cost-analysis.js";
+import { howToGuides } from "../src/data/how-to-guides.js";
+import { isItLegalPages } from "../src/data/is-it-legal.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -1969,6 +1972,21 @@ function main() {
     if (injectBody(resolve(DIST, "roadmap", rr.slug, "index.html"), revenueRoadmapBodyHtml(rr))) { count++; }
   }
 
+  // ── Greg Isenberg pSEO: Cost Analysis pages ──
+  for (const ca of costAnalysisPages) {
+    if (injectBody(resolve(DIST, "cost-analysis", ca.slug, "index.html"), costAnalysisBodyHtml(ca))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO: How-To guides ──
+  for (const hg of howToGuides) {
+    if (injectBody(resolve(DIST, "how-to", hg.slug, "index.html"), howToBodyHtml(hg))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO: Is It Legal pages ──
+  for (const il of isItLegalPages) {
+    if (injectBody(resolve(DIST, "is-it-legal", il.slug, "index.html"), isItLegalBodyHtml(il))) { count++; }
+  }
+
   console.log(`Done. Injected body content into ${count} pages.`);
 }
 
@@ -2157,6 +2175,253 @@ ${faqs}
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
 </div>
 </section>
+</div>`;
+}
+
+// ---------- Cost Analysis body ----------
+
+function costAnalysisBodyHtml(ca: typeof costAnalysisPages[0]): string {
+  const breakdownRows = ca.breakdown.map((b) =>
+    `<tr style="border-bottom:1px solid #e5e7eb">
+      <td style="padding:0.75rem 0.75rem;font-weight:600">${b.item}</td>
+      <td style="padding:0.75rem 0.75rem;color:#4b5563">${b.range}</td>
+      <td style="padding:0.75rem 0.75rem;color:#4b5563">${b.typical}</td>
+      <td style="padding:0.75rem 0.75rem;color:#6b7280;font-size:0.875rem">${b.note}</td>
+    </tr>`
+  ).join("\n");
+
+  const tips = ca.savingTips.map((t) =>
+    `<li style="margin-bottom:0.5rem"><span style="color:#22c55e;font-weight:700;margin-right:0.5rem">✓</span>${t}</li>`
+  ).join("\n");
+
+  const faqs = ca.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem;color:#111827">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`
+  ).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${ca.topic}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${ca.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${ca.intro}</p>
+<div style="display:flex;gap:1rem;flex-wrap:wrap">
+<span style="padding:0.5rem 1rem;background:#f0fdf4;color:#15803d;border-radius:9999px;font-size:0.875rem;font-weight:600">Total Range: ${ca.totalRange}</span>
+<span style="padding:0.5rem 1rem;background:#eff6ff;color:#1d4ed8;border-radius:9999px;font-size:0.875rem;font-weight:600">Typical: ${ca.typicalTotal}</span>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Cost Breakdown</h2>
+<table style="width:100%;border-collapse:collapse">
+<thead><tr style="border-bottom:2px solid #e5e7eb">
+<th style="text-align:left;padding:0.75rem;font-size:0.75rem;font-weight:600;color:#6b7280;text-transform:uppercase">Item</th>
+<th style="text-align:left;padding:0.75rem;font-size:0.75rem;font-weight:600;color:#6b7280;text-transform:uppercase">Range</th>
+<th style="text-align:left;padding:0.75rem;font-size:0.75rem;font-weight:600;color:#6b7280;text-transform:uppercase">Typical</th>
+<th style="text-align:left;padding:0.75rem;font-size:0.75rem;font-weight:600;color:#6b7280;text-transform:uppercase">Note</th>
+</tr></thead>
+<tbody>${breakdownRows}</tbody>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">One-Time vs. Recurring Costs</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+<div style="padding:1rem;background:white;border-radius:0.5rem;border:1px solid #e5e7eb">
+<h3 style="font-weight:600;margin-bottom:0.5rem">One-Time</h3>
+<p style="color:#4b5563">${ca.oneTimeVsRecurring.oneTime}</p>
+</div>
+<div style="padding:1rem;background:white;border-radius:0.5rem;border:1px solid #e5e7eb">
+<h3 style="font-weight:600;margin-bottom:0.5rem">Recurring</h3>
+<p style="color:#4b5563">${ca.oneTimeVsRecurring.recurring}</p>
+</div>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">How to Save Money</h2>
+<ul style="list-style:none;padding:0">${tips}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get the Blueprint →</a>
+</div>
+</section>
+<section style="padding:1rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Costs are estimates based on 2025-2026 data. Prices may vary.</p>
+</div></section>
+</div>`;
+}
+
+// ---------- How-To guide body ----------
+
+function howToBodyHtml(hg: typeof howToGuides[0]): string {
+  const steps = hg.steps.map((s, i) =>
+    `<div style="display:flex;gap:1rem;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;margin-bottom:1.5rem">
+      <div style="flex-shrink:0;width:2rem;height:2rem;background:#2563eb;color:white;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem">${i + 1}</div>
+      <div style="flex:1">
+        <h3 style="font-weight:700;margin-bottom:0.5rem;color:#111827">${s.name}</h3>
+        <p style="color:#4b5563;line-height:1.7;margin-bottom:0.75rem">${s.description}</p>
+        ${s.tools && s.tools.length > 0 ? '<div style="display:flex;flex-wrap:wrap;gap:0.5rem"><span style="font-size:0.75rem;color:#9ca3af;font-weight:600">Tools:</span>' + s.tools.map(t => '<span style="padding:0.25rem 0.75rem;background:#f3f4f6;color:#4b5563;border-radius:9999px;font-size:0.75rem">' + t + '</span>').join("") + '</div>' : ''}
+        ${s.timeEstimate ? '<p style="margin-top:0.5rem;font-size:0.875rem;color:#9ca3af;font-weight:500">⏱ ' + s.timeEstimate + '</p>' : ''}
+      </div>
+    </div>`
+  ).join("\n");
+
+  const proTips = hg.proTips.map((t) =>
+    `<li style="margin-bottom:0.5rem"><span style="color:#2563eb;font-weight:700;margin-right:0.5rem">→</span>${t}</li>`
+  ).join("\n");
+
+  const mistakes = hg.commonMistakes.map((m) =>
+    `<li style="margin-bottom:0.5rem"><span style="color:#ef4444;font-weight:700;margin-right:0.5rem">✗</span>${m}</li>`
+  ).join("\n");
+
+  const faqs = hg.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem;color:#111827">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`
+  ).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${hg.topic}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${hg.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${hg.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background:#fffbeb;border-left:4px solid #f59e0b">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Why This Matters</h2>
+<p style="color:#4b5563">${hg.whyThisMatters}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Step-by-Step Guide</h2>
+${steps}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background:#eff6ff">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Pro Tips</h2>
+<ul style="list-style:none;padding:0">${proTips}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background:#fef2f2">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Common Mistakes to Avoid</h2>
+<ul style="list-style:none;padding:0">${mistakes}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get the Blueprint →</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Is It Legal body ----------
+
+function isItLegalBodyHtml(il: typeof isItLegalPages[0]): string {
+  const details = il.details.map((d) =>
+    `<p style="color:#4b5563;line-height:1.7;padding-left:1rem;border-left:2px solid #e5e7eb;margin-bottom:1rem">${d}</p>`
+  ).join("\n");
+
+  const considerations = il.keyConsiderations.map((kc) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
+      <h3 style="font-weight:700;margin-bottom:0.5rem;color:#111827">${kc.item}</h3>
+      <p style="color:#4b5563;line-height:1.7">${kc.explanation}</p>
+    </div>`
+  ).join("\n");
+
+  const stateVariations = il.stateVariations.map((sv) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem">
+      <h3 style="font-weight:700;margin-bottom:0.25rem">${sv.state}</h3>
+      <p style="color:#4b5563;font-size:0.875rem;line-height:1.7">${sv.rule}</p>
+    </div>`
+  ).join("\n");
+
+  const whatToDo = il.whatToDo.map((a) =>
+    `<li style="margin-bottom:0.5rem"><span style="color:#2563eb;font-weight:700;margin-right:0.5rem">→</span>${a}</li>`
+  ).join("\n");
+
+  const faqs = il.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem;color:#111827">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`
+  ).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${il.topic}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${il.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${il.intro}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background:#f0fdf4;border-left:4px solid #22c55e">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:0.5rem">Short Answer</h2>
+<p style="color:#4b5563;line-height:1.7">${il.shortAnswer}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">In Detail</h2>
+${details}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem">Key Considerations</h2>
+${considerations}
+</div>
+</section>
+${il.stateVariations.length > 0 ? `<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem">State-by-State Variations</h2>
+${stateVariations}
+</div>
+</section>` : ""}
+<section style="padding:2rem 1.5rem;background:#eff6ff">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">What You Should Do</h2>
+<ul style="list-style:none;padding:0">${whatToDo}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">FAQs</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get the Compliance Blueprint →</a>
+</div>
+</section>
+<section style="padding:1rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Legal Disclaimer:</strong> For informational purposes only. Not legal advice. Consult a licensed attorney for your situation.</p>
+</div></section>
 </div>`;
 }
 

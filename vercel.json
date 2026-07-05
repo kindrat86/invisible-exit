@@ -513,6 +513,18 @@
       "destination": "/index.html"
     },
     {
+      "source": "/cost-analysis",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/how-to",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/is-it-legal",
+      "destination": "/index.html"
+    },
+    {
       "source": "/oto/second-tool",
       "destination": "/index.html"
     },

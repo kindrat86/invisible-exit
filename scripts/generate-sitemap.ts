@@ -49,6 +49,9 @@ async function main() {
   const { toolAlternatives } = await import("../src/data/tool-alternatives.js");
   const { saasBlueprints } = await import("../src/data/saas-blueprints.js");
   const { revenueRoadmaps } = await import("../src/data/revenue-roadmaps.js");
+  const { costAnalysisPages } = await import("../src/data/cost-analysis.js");
+  const { howToGuides } = await import("../src/data/how-to-guides.js");
+  const { isItLegalPages } = await import("../src/data/is-it-legal.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -443,6 +446,10 @@ async function main() {
       changefreq: "weekly",
       priority: "0.8",
     },
+    // Hub pages for new pSEO categories
+    { loc: "https://invisibleexit.com/cost-analysis", lastmod: today, changefreq: "weekly", priority: "0.8" },
+    { loc: "https://invisibleexit.com/how-to", lastmod: today, changefreq: "weekly", priority: "0.8" },
+    { loc: "https://invisibleexit.com/is-it-legal", lastmod: today, changefreq: "weekly", priority: "0.8" },
     // Value Ladder tiers
     {
       loc: "https://invisibleexit.com/pro",
@@ -593,6 +600,27 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.9" as const,
     })),
+    // Cost Analysis pages
+    ...costAnalysisPages.map((ca: { slug: string }) => ({
+      loc: `https://invisibleexit.com/cost-analysis/${ca.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // How-To guides
+    ...howToGuides.map((hg: { slug: string }) => ({
+      loc: `https://invisibleexit.com/how-to/${hg.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Is It Legal pages
+    ...isItLegalPages.map((il: { slug: string }) => ({
+      loc: `https://invisibleexit.com/is-it-legal/${il.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -624,7 +652,10 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/tools/") &&
     !e.loc.includes("/calculators/") &&
     !e.loc.includes("/data/") &&
-    !e.loc.includes("/resources/")
+    !e.loc.includes("/resources/") &&
+    !e.loc.includes("/cost-analysis/") &&
+    !e.loc.includes("/how-to/") &&
+    !e.loc.includes("/is-it-legal/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -632,8 +663,8 @@ const submaps: Record<string, SitemapEntry[]> = {
   "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/")),
   "glossary": entries.filter(e => e.loc.includes("/glossary/")),
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
-  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/")),
-  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/")),
+  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/")),
+  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
@@ -688,6 +719,9 @@ console.log(`  Best tools lists: ${bestToolsLists.length}`);
 console.log(`  Calculators: ${calculators.length}`);
 console.log(`  Data reports: ${dataReports.length}`);
 console.log(`  Resources: ${resources.length}`);
+console.log(`  Cost analysis: ${costAnalysisPages.length}`);
+console.log(`  How-to guides: ${howToGuides.length}`);
+console.log(`  Is-it-legal: ${isItLegalPages.length}`);
 }
 
 main().catch((err) => {

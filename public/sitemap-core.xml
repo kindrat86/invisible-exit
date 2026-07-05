@@ -529,6 +529,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/explore" />
   </url>
   <url>
+    <loc>https://invisibleexit.com/cost-analysis</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-analysis" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-analysis" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/how-to</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/how-to" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/how-to" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/is-it-legal</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-it-legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-it-legal" />
+  </url>
+  <url>
     <loc>https://invisibleexit.com/pro</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>

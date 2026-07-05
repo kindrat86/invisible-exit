@@ -40,6 +40,9 @@ import { hoursPages } from "../src/data/hours-pages.ts";
 import { toolAlternatives } from "../src/data/tool-alternatives.ts";
 import { saasBlueprints } from "../src/data/saas-blueprints.ts";
 import { revenueRoadmaps } from "../src/data/revenue-roadmaps.ts";
+import { costAnalysisPages } from "../src/data/cost-analysis.ts";
+import { howToGuides } from "../src/data/how-to-guides.ts";
+import { isItLegalPages } from "../src/data/is-it-legal.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1420,6 +1423,9 @@ function getRoutes() {
     { path: "/dream-100-tracker", title: "Dream 100 Tracker — 26 Named Targets & Outreach Pipeline | Invisible Exit", desc: "The actual Dream 100 list with 26 named targets across 3 tiers, outreach status tracking, and a weekly cadence for building relationships.", type: "website" },
     { path: "/pillar-hub", title: "Pillar Content Hub — 5 Definitive Guides to Write | Invisible Exit", desc: "The pillar content strategy: 5 definitive guides (3,500-5,000 words each) targeting high-volume keywords, designed as linkable assets to transform domain authority.", type: "website" },
     { path: "/explore", title: "Explore All Resources — Complete Site Index | Invisible Exit", desc: "Browse all 800+ pages: micro-SaaS ideas by profession, state guides, calculators, comparison pages, glossary terms, data reports, and blog articles.", type: "website" },
+    { path: "/cost-analysis", title: "Cost Analysis — How Much Does It Cost? | Invisible Exit", desc: "Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500 — see exactly where every dollar goes.", type: "website" },
+    { path: "/how-to", title: "How-To Guides — Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
+    { path: "/is-it-legal", title: "Is It Legal? — Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
   ];
 
   for (const page of trafficPages) {
@@ -2549,6 +2555,147 @@ function getRoutes() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: rr.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Cost Analysis pages ----------
+  for (const ca of costAnalysisPages) {
+    const url = `${SITE}/cost-analysis/${ca.slug}`;
+    routes.push({
+      path: `/cost-analysis/${ca.slug}`,
+      meta: {
+        title: ca.metaTitle,
+        description: ca.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: ca.h1,
+            description: ca.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Cost Analysis" },
+              { "@type": "ListItem", position: 3, name: ca.topic },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ca.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- How-To guide pages ----------
+  for (const hg of howToGuides) {
+    const url = `${SITE}/how-to/${hg.slug}`;
+    routes.push({
+      path: `/how-to/${hg.slug}`,
+      meta: {
+        title: hg.metaTitle,
+        description: hg.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: hg.h1,
+            description: hg.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: hg.h1,
+            description: hg.intro,
+            step: hg.steps.map((s, i) => ({
+              "@type": "HowToStep",
+              position: i + 1,
+              name: s.name,
+              text: s.description,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "How-To Guides" },
+              { "@type": "ListItem", position: 3, name: hg.topic },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: hg.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Is It Legal pages ----------
+  for (const il of isItLegalPages) {
+    const url = `${SITE}/is-it-legal/${il.slug}`;
+    routes.push({
+      path: `/is-it-legal/${il.slug}`,
+      meta: {
+        title: il.metaTitle,
+        description: il.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: il.h1,
+            description: il.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Legal Concerns" },
+              { "@type": "ListItem", position: 3, name: il.topic },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: il.faqs.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

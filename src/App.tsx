@@ -97,6 +97,12 @@ const YouTubeStrategyPage = lazy(() => import("./pages/YouTubeStrategyPage.tsx")
 const Dream100TrackerPage = lazy(() => import("./pages/Dream100TrackerPage.tsx"));
 const PillarHubPage = lazy(() => import("./pages/PillarHubPage.tsx"));
 const ExploreHubPage = lazy(() => import("./pages/ExploreHubPage.tsx"));
+const CostAnalysisPage = lazy(() => import("./pages/CostAnalysisPage.tsx"));
+const HowToGuidePage = lazy(() => import("./pages/HowToGuidePage.tsx"));
+const IsItLegalPage = lazy(() => import("./pages/IsItLegalPage.tsx"));
+const CostAnalysisHubPage = lazy(() => import("./pages/CostAnalysisHubPage.tsx"));
+const HowToHubPage = lazy(() => import("./pages/HowToHubPage.tsx"));
+const IsItLegalHubPage = lazy(() => import("./pages/IsItLegalHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
@@ -217,6 +223,19 @@ const App = () => (
           {/* Hours pages */}
           <Route path="/hours/:slug" element={<HoursPage />} />
           <Route path="/hours" element={<Navigate to="/blog" replace />} />
+
+          {/* ── Greg Isenberg pSEO - Cost Analysis pages ── */}
+          <Route path="/cost-analysis/:slug" element={<CostAnalysisPage />} />
+          <Route path="/cost-analysis" element={<CostAnalysisHubPage />} />
+
+          {/* ── Greg Isenberg pSEO - How-To guides ── */}
+          <Route path="/how-to/:slug" element={<HowToGuidePage />} />
+          <Route path="/how-to" element={<HowToHubPage />} />
+
+          {/* ── Greg Isenberg pSEO - Is It Legal pages ── */}
+          <Route path="/is-it-legal/:slug" element={<IsItLegalPage />} />
+          <Route path="/is-it-legal" element={<IsItLegalHubPage />} />
+
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}
           <Route path="/freedom" element={<SqueezePage />} />

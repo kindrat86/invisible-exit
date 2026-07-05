@@ -30,6 +30,9 @@ import { nonCompeteMatrix } from "../src/data/non-compete-matrix.js";
 import { toolAlternatives } from "../src/data/tool-alternatives.js";
 import { saasBlueprints } from "../src/data/saas-blueprints.js";
 import { revenueRoadmaps } from "../src/data/revenue-roadmaps.js";
+import { costAnalysisPages } from "../src/data/cost-analysis.js";
+import { howToGuides } from "../src/data/how-to-guides.js";
+import { isItLegalPages } from "../src/data/is-it-legal.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -307,6 +310,33 @@ function generateLlmsTxt(): string {
   lines.push(`- [All Revenue Roadmaps](${SITE}/roadmap): Browse all MRR targets`);
   for (const rr of revenueRoadmaps) {
     lines.push(`- [Roadmap to ${rr.target}](${SITE}/roadmap/${rr.slug}): ${rr.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Cost Analysis ──
+  lines.push(`## Cost Analysis (${costAnalysisPages.length})`);
+  lines.push("");
+  lines.push(`- [All Cost Analyses](${SITE}/cost-analysis): Browse all cost breakdowns`);
+  for (const ca of costAnalysisPages) {
+    lines.push(`- [${ca.topic}](${SITE}/cost-analysis/${ca.slug}): ${ca.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: How-To Guides ──
+  lines.push(`## How-To Guides (${howToGuides.length})`);
+  lines.push("");
+  lines.push(`- [All How-To Guides](${SITE}/how-to): Browse all step-by-step guides`);
+  for (const hg of howToGuides) {
+    lines.push(`- [${hg.topic}](${SITE}/how-to/${hg.slug}): ${hg.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Is It Legal ──
+  lines.push(`## Legal Concerns (${isItLegalPages.length})`);
+  lines.push("");
+  lines.push(`- [All Legal Guides](${SITE}/is-it-legal): Browse all legal concern pages`);
+  for (const il of isItLegalPages) {
+    lines.push(`- [${il.topic}](${SITE}/is-it-legal/${il.slug}): ${il.metaDescription.substring(0, 120)}`);
   }
   lines.push("");
 

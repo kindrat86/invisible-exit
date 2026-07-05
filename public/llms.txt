@@ -644,6 +644,51 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Roadmap to $50,000/month](https://invisibleexit.com/roadmap/to-50000): The path from $10K to $50K MRR. Building a team, enterprise sales, platform expansion, and the transition from founder t
 - [Roadmap to $5,000/month](https://invisibleexit.com/roadmap/to-5000): The path from $2K to $5K MRR — the point where most corporate managers can consider quitting. Customer math, timeline, a
 
+## Cost Analysis (10)
+
+- [All Cost Analyses](https://invisibleexit.com/cost-analysis): Browse all cost breakdowns
+- [Starting a Micro-SaaS](https://invisibleexit.com/cost-analysis/starting-a-micro-saas): Complete cost breakdown for starting a micro-SaaS. From $0 (free tier MVP) to $2,500 (full setup). Includes hosting, too
+- [Forming an Anonymous LLC](https://invisibleexit.com/cost-analysis/forming-an-anonymous-llc): Complete cost breakdown for forming an anonymous LLC. State fees, registered agent, and ongoing costs. Wyoming vs New Me
+- [Using AI Tools as a Solo Founder](https://invisibleexit.com/cost-analysis/using-ai-tools-as-a-solo-founder): Complete AI tool stack costs for solo founders. From $20 to $120/month covers coding, writing, design, research, and aut
+- [Running a Micro-SaaS Monthly Operating Costs](https://invisibleexit.com/cost-analysis/running-a-micro-saas-monthly-operating-costs): Real monthly operating costs for a micro-SaaS at every stage. From $0 pre-revenue to $500/month at $10K MRR. Servers, to
+- [Hiring a Registered Agent](https://invisibleexit.com/cost-analysis/hiring-a-registered-agent): Registered agent costs compared. Cheap ($39/year) to premium ($300/year). What you get at each price point and whether y
+- [Hosting a Micro-SaaS](https://invisibleexit.com/cost-analysis/hosting-a-micro-saas): Complete micro-SaaS hosting cost comparison. Vercel vs Railway vs Supabase. Free tiers, scaling costs, and what each opt
+- [Starting a Faceless YouTube Channel](https://invisibleexit.com/cost-analysis/starting-a-faceless-youtube-channel): Complete faceless YouTube channel startup costs. From $0 (phone + free apps) to $200 (pro setup). Equipment, software, a
+- [Business Insurance for Solo Founders](https://invisibleexit.com/cost-analysis/business-insurance-for-solo-founders): Business insurance costs for micro-SaaS founders. General liability ($25-50/month), professional liability ($30-80/month
+- [Starting an LLC on a Budget](https://invisibleexit.com/cost-analysis/starting-an-llc-on-a-budget): The cheapest way to form an LLC. DIY options under $100, state-by-state costs, and when you can skip the LLC entirely. B
+- [Marketing Your Micro-SaaS](https://invisibleexit.com/cost-analysis/marketing-your-micro-saas): Micro-SaaS marketing costs at every stage. From $0 (organic/content marketing) to $500/month (paid ads). What to spend a
+
+## How-To Guides (11)
+
+- [All How-To Guides](https://invisibleexit.com/how-to): Browse all step-by-step guides
+- [Start a Micro-SaaS with No Money](https://invisibleexit.com/how-to/start-a-micro-saas-with-no-money): Step-by-step guide to starting a micro-SaaS with no money. Free tools, zero-cost validation, and how to launch without s
+- [Find Your First 10 Customers](https://invisibleexit.com/how-to/find-your-first-10-customers): Actionable playbook for getting your first 10 paying customers. Step-by-step outreach, positioning, and conversion tacti
+- [Choose a Profitable Niche for Micro-SaaS](https://invisibleexit.com/how-to/choose-a-profitable-niche-for-micro-saas): The exact framework for picking a micro-SaaS niche that actually makes money. Painful problems, willing buyers, and smal
+- [Set Up Anonymous Banking for Your Side Business](https://invisibleexit.com/how-to/set-up-an-anonymous-banking-setup): Step-by-step guide to privacy-first banking for your invisible business. LLC setup, registered agents, online banks, and
+- [Validate a Micro-SaaS Idea in a Weekend](https://invisibleexit.com/how-to/validate-a-micro-saas-idea-in-a-weekend): The weekend validation framework: Friday research, Saturday landing page, Sunday first signups. Validate demand for your
+- [Hide Your Side Business from Coworkers](https://invisibleexit.com/how-to/hide-your-side-business-from-coworkers): Complete guide to operating a side business without coworkers finding out. Social media isolation, public record privacy
+- [Go from $0 to $4,000 MRR](https://invisibleexit.com/how-to/go-from-0-to-4000-dollars-mrr): The exact playbook for taking a micro-SaaS from zero to $4,000/month recurring revenue. Pricing, customer acquisition, r
+- [Build a Faceless Content Channel](https://invisibleexit.com/how-to/build-a-faceless-content-channel): Step-by-step guide to building a faceless content channel. No camera, no voice, no personal brand. AI tools, content str
+- [Read and Understand Your Non-Compete Clause](https://invisibleexit.com/how-to/read-and-understand-your-non-compete): The complete guide to decoding non-compete clauses. What language to look for, what is enforceable, and what you can saf
+- [Automate Customer Support as a Solo Founder](https://invisibleexit.com/how-to/automate-customer-support-as-a-solo-founder): The solo founder's guide to zero-support customer service. AI chatbots, self-serve knowledge bases, automated email resp
+- [Price Your Micro-SaaS](https://invisibleexit.com/how-to/price-your-micro-saas): The complete micro-SaaS pricing playbook. How to find your ideal price point, when to raise prices, three-tier pricing s
+
+## Legal Concerns (12)
+
+- [All Legal Guides](https://invisibleexit.com/is-it-legal): Browse all legal concern pages
+- [Starting a Business While Employed](https://invisibleexit.com/is-it-legal/start-a-business-while-employed): Yes, in most cases. Learn when your employer can restrict side businesses, how non-competes work, and how to stay legal 
+- [Using Your Personal Laptop for Side Business](https://invisibleexit.com/is-it-legal/use-my-personal-laptop-for-side-business): The safest way to use your personal laptop for a side business. How to avoid IP contamination, keep your data separate, 
+- [Using Your Work Laptop for Side Business](https://invisibleexit.com/is-it-legal/use-a-work-laptop-for-side-business): Why using your work laptop for side business is risky. Tracking software, IP claims, and what your employer can actually
+- [Having Two Jobs at Once](https://invisibleexit.com/is-it-legal/have-two-jobs-at-once-employees): The legal reality of working two jobs simultaneously. When overemployment is legal vs. grounds for termination. State la
+- [Keeping Your Business Anonymous from Your Employer](https://invisibleexit.com/is-it-legal/keep-side-business-anonymous-from-employer): Yes. You have no legal obligation to disclose a side business to your employer. Learn how to operate anonymously with LL
+- [Starting a Business Without an LLC](https://invisibleexit.com/is-it-legal/start-business-without-llc): Yes, you can start a micro-SaaS or side business without an LLC. But you take on personal liability. When a sole proprie
+- [Using a Family Name for Your Business](https://invisibleexit.com/is-it-legal/use-family-name-for-business): Yes, you can use a DBA (Doing Business As) name, a business name, or an LLC name different from your personal name. How 
+- [Accepting Payments Under a Business Name](https://invisibleexit.com/is-it-legal/accept-payments-under-business-name): How to accept payments under your business name as a solo founder. Stripe, Lemon Squeezy, PayPal business accounts. Requ
+- [Opening an Anonymous Business Bank Account](https://invisibleexit.com/is-it-legal/open-a-business-bank-account-anonymous): How to open a business bank account with privacy. LLC name only, registered agent setup, and what banks require. The leg
+- [Hiding Business Income from Your Employer](https://invisibleexit.com/is-it-legal/hide-business-income-from-employer): Your income is private information. Your employer has no right to see your tax returns or side business earnings. How to
+- [Starting a TikTok Channel While Employed](https://invisibleexit.com/is-it-legal/start-tiktok-channel-while-employed): Legal risks of faceless TikTok, YouTube, or Instagram channels while employed. Non-compete issues, IP claims, and how to
+- [Using AI to Automate Your Job](https://invisibleexit.com/is-it-legal/use-ai-to-replace-my-job): Legal and employment risks of using AI to automate your job functions. When it is a breach of contract, when it is time 
+
 ## Topics Covered
 
 - Building anonymous side income while employed (stealth operations, entity separation, digital footprint management)
