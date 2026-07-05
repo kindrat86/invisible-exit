@@ -3,7 +3,7 @@ import { useEffect } from "react";
 interface SEOHeadProps {
   title: string;
   description: string;
-  url: string;
+  url?: string;
   image?: string;
   type?: "website" | "article";
   publishedDate?: string;
@@ -44,9 +44,9 @@ export default function SEOHead({
   modifiedDate,
   noindex = false,
 }: SEOHeadProps) {
-  const fullUrl = url.startsWith("http")
-    ? url
-    : `https://invisibleexit.com${url}`;
+  const fullUrl = url
+    ? (url.startsWith("http") ? url : `https://invisibleexit.com${url}`)
+    : typeof window !== "undefined" ? window.location.href : "https://invisibleexit.com";
 
   useEffect(() => {
     document.title = title;
