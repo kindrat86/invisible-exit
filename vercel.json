@@ -379,6 +379,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/signup",
+      "destination": "/index.html"
+    },
+    {
       "source": "/reset-password",
       "destination": "/index.html"
     },
