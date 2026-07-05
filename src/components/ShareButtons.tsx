@@ -46,10 +46,10 @@ export function ShareButtons({ title, url, className = "" }: ShareButtonsProps) 
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <span className="text-xs text-muted-foreground font-medium mr-1">Share:</span>
+      <span className="text-xs text-white/70 font-medium mr-1">Share:</span>
       <button
         onClick={handleTwitter}
-        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        className="w-10 h-10 rounded-lg bg-white/10 hover:bg-primary hover:text-white text-white/80 flex items-center justify-center transition-all"
         aria-label="Share on Twitter/X"
         title="Share on Twitter/X"
       >
@@ -57,7 +57,7 @@ export function ShareButtons({ title, url, className = "" }: ShareButtonsProps) 
       </button>
       <button
         onClick={handleLinkedIn}
-        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        className="w-10 h-10 rounded-lg bg-white/10 hover:bg-primary hover:text-white text-white/80 flex items-center justify-center transition-all"
         aria-label="Share on LinkedIn"
         title="Share on LinkedIn"
       >
@@ -65,7 +65,7 @@ export function ShareButtons({ title, url, className = "" }: ShareButtonsProps) 
       </button>
       <button
         onClick={handleReddit}
-        className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white text-muted-foreground flex items-center justify-center transition-all"
+        className="w-10 h-10 rounded-lg bg-white/10 hover:bg-primary hover:text-white text-white/80 flex items-center justify-center transition-all"
         aria-label="Share on Reddit"
         title="Share on Reddit"
       >
@@ -73,10 +73,10 @@ export function ShareButtons({ title, url, className = "" }: ShareButtonsProps) 
       </button>
       <button
         onClick={handleCopy}
-        className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
+        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
           copied
-            ? "bg-success/15 text-success"
-            : "bg-muted hover:bg-primary hover:text-white text-muted-foreground"
+            ? "bg-green-500/20 text-green-400"
+            : "bg-white/10 hover:bg-primary hover:text-white text-white/80"
         }`}
         aria-label="Copy link"
         title="Copy link"
