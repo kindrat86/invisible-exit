@@ -359,6 +359,24 @@ ${items}
 </section>`;
   }
 
+  // Contextual content blocks to add depth for AEO/SEO
+  const contextualHtml = `
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why ${term.term} Matters for Employed Founders</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">For corporate managers and employed professionals building a side business, understanding ${term.term.toLowerCase()} is essential. It directly affects how you structure your operations, manage legal risk, and plan your transition from employment to entrepreneurship. ${term.detailed}</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">The concept of ${term.term.toLowerCase()} is particularly relevant in the context of micro-SaaS businesses and invisible exits — where employed founders need to navigate employment contracts, non-compete clauses, and entity separation while building recurring revenue streams on the side.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Key Considerations</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.5rem"><strong>Legal compliance:</strong> ${term.term} intersects with employment law, tax regulations, and business formation requirements. Always consult a qualified attorney or CPA before making decisions based on this definition.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.5rem"><strong>Practical application:</strong> When building a micro-SaaS while employed, ${term.term.toLowerCase()} affects your entity structure, tax filings, and operational decisions. Understanding it early prevents costly mistakes.</p>
+<p style="line-height:1.7;color:#1f2937"><strong>Related concepts:</strong> ${term.term} works alongside other key concepts like entity separation, stealth operations, and recurring revenue compounding. Explore related terms below to build a complete understanding.</p>
+</div>
+</section>`;
+
   let relatedHtml = "";
   if (term.relatedTerms && term.relatedTerms.length > 0) {
     const links = term.relatedTerms
@@ -397,6 +415,7 @@ ${items}
 <p style="font-size:1rem;line-height:1.7;color:#1f2937">${term.detailed}</p>
 </article>
 </section>
+${contextualHtml}
 ${faqHtml}
 ${relatedHtml}
 </div>`;
@@ -621,6 +640,27 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
   const tips = g.tips.map((t: string, i: number) => `<li>${t}</li>`).join("\n");
   const faqs = g.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
+
+  const nonCompeteRisk = g.nonCompeteEnforceable === "enforced"
+    ? "high"
+    : g.nonCompeteEnforceable === "limited"
+    ? "moderate"
+    : "low";
+
+  const nonCompeteGuidance = g.nonCompeteEnforceable === "enforced"
+    ? `${g.state} enforces non-compete agreements, which means employed founders need to be especially careful. Build in a different industry than your employer, use your own equipment, work outside business hours, and operate through a separate LLC. Consider consulting an employment attorney before launching.`
+    : g.nonCompeteEnforceable === "limited"
+    ? `${g.state} has limited non-compete enforcement, which provides some flexibility for employed founders. However, you should still avoid directly competing with your employer and never use company resources. The limited enforcement typically applies to specific scenarios like sale-of-business agreements.`
+    : `${g.state} does not enforce non-compete agreements for most workers, making it one of the more founder-friendly states for side businesses. You still need to respect IP assignment clauses, confidentiality agreements, and moonlighting policies in your employment contract.`;
+
+  const taxGuidance = g.stateIncomeTaxRate.includes("0%")
+    ? `With no state income tax, ${g.state} offers a significant advantage for side-business income. You keep more of every dollar earned.`
+    : `The ${g.stateIncomeTaxRate} state income tax rate affects your net business income. Factor this into your pricing and revenue projections.`;
+
+  const anonGuidance = g.anonymousLlcAllowed
+    ? `${g.state} allows anonymous LLCs, meaning your name does not appear in public state records. This is critical for employed founders who want to keep their side business completely invisible to their employer.`
+    : `${g.state} does not allow anonymous LLCs. Your name will appear in state filings. If employer discretion is critical, consider forming your LLC in Wyoming or Delaware (which allow anonymity) and registering it as a foreign LLC in ${g.state}.`;
+
   return `<div class="min-h-screen">
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/guides" style="color:#3B82F6;text-decoration:none">State Guides</a> › <span>${g.state}</span>
@@ -628,19 +668,50 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Starting a Side Business in ${g.state}</h1>
-<p style="font-size:1.125rem;color:#4b5563">${g.bestFor}</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${g.bestFor}</p>
+<p style="line-height:1.7;color:#1f2937">This guide covers everything a corporate manager or employed professional in ${g.state} needs to know about forming an LLC for a side business. From filing fees and annual report requirements to non-compete enforceability and anonymous LLC options, we break down the specific rules, costs, and strategies that matter when building a micro-SaaS or invisible side business while keeping your day job.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1.125rem;line-height:1.6;color:#111827;font-weight:500">In ${g.state}, LLC filing costs $${g.llcFilingFee}${g.annualReportRequired ? ` plus $${g.annualReportFee}/year annual report` : ", no annual report required"}. Non-compete enforcement is ${nonCompeteRisk}. ${g.anonymousLlcAllowed ? "Anonymous LLCs are allowed." : "Anonymous LLCs are not available."} Processing time: ${g.processingTime}.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">${g.state} LLC Formation Costs & Requirements</h2>
 <table style="width:100%;border-collapse:collapse;font-size:0.875rem">
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">LLC Filing Fee</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">$${g.llcFilingFee}</td></tr>
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Annual Report Fee</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">$${g.annualReportFee}</td></tr>
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Non-Compete Status</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.nonCompeteNotes}</td></tr>
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">State Income Tax</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.stateIncomeTaxRate}</td></tr>
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Anonymous LLC</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.anonymousLlcAllowed ? "Yes" : "No"}</td></tr>
-<tr><td style="padding:0.5rem;font-weight:600;border-bottom:1px solid #e5e7eb">Processing Time</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb">${g.processingTime}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">LLC Filing Fee</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">$${g.llcFilingFee}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Annual Report Fee</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.annualReportRequired ? `$${g.annualReportFee}` : "No annual report required"}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Non-Compete Status</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.nonCompeteNotes}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">State Income Tax</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.stateIncomeTaxRate}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Self-Employment Tax</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.selfEmploymentNote}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Anonymous LLC</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.anonymousLlcAllowed ? "Yes" : "No"}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Processing Time</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.processingTime}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Expedited Filing</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${g.expeditedAvailable ? "Available" : "Not available"}</td></tr>
 </table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Non-Compete Risk for Employed Founders in ${g.state}</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">${nonCompeteGuidance}</p>
+<p style="line-height:1.7;color:#1f2937">Read our comprehensive <a href="/non-compete/${g.slug}" style="color:#3B82F6">non-compete risk analysis for ${g.state}</a> for a detailed breakdown of court precedents and enforcement patterns.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Anonymous LLC Options in ${g.state}</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">${anonGuidance}</p>
+<p style="line-height:1.7;color:#1f2937">If employer discretion is your top priority, read our <a href="/glossary/what-is-entity-separation" style="color:#3B82F6">entity separation guide</a> to understand how to structure multiple layers of protection.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Tax Implications for ${g.state} Side Businesses</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">${taxGuidance}</p>
+<p style="line-height:1.7;color:#1f2937">For LLCs taxed as pass-through entities, your business income appears on your personal tax return. In ${g.state}, this means your side business revenue is taxed at ${g.stateIncomeTaxRate} in addition to the ${g.selfEmploymentNote.toLowerCase()}.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -651,8 +722,13 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
 </section>
 <section style="padding:2rem 1.5rem;background-color:#f9fafb">
 <div style="max-width:48rem;margin:0 auto">
-<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">FAQs</h2>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
 ${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
 </div>
 </section>
 </div>`;

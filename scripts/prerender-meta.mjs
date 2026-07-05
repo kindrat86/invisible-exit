@@ -52,11 +52,31 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
+/**
+ * Shorten title for Google SERP (max 60 chars).
+ * Uses the post title as-is if it fits; otherwise truncates at word boundary.
+ */
+function blogTitle(title) {
+  if (title.length <= 60) return title;
+  // Try to find a natural break point near 57 chars
+  const cut = title.lastIndexOf(" ", 57);
+  return title.substring(0, cut > 30 ? cut : 57).trim() + "...";
+}
+
+/**
+ * Truncate meta description to maxLen chars at word boundary.
+ */
+function truncate(text, maxLen) {
+  if (text.length <= maxLen) return text;
+  const cut = text.lastIndexOf(" ", maxLen - 1);
+  return text.substring(0, cut > 40 ? cut : maxLen - 3).trim() + "...";
+}
+
 function jsonLdScript(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 }
 
-function injectMeta(template, { title, description, url, type, image, jsonLd }) {
+function injectMeta(template, { title, description, url, type, image, jsonLd }, routePath = "") {
   const escapedTitle = escapeHtml(title);
   const escapedDesc = escapeHtml(description);
   const img = image || DEFAULT_IMAGE;
@@ -89,16 +109,26 @@ function injectMeta(template, { title, description, url, type, image, jsonLd }) 
 
     ${jsonLdHtml}`;
 
+  // Remove vendor-charts modulepreload from all pages except dashboard
+  // (418K of recharts that's not needed on content/blog pages)
+  let finalTemplate = template;
+  if (!routePath.includes("/dashboard")) {
+    finalTemplate = finalTemplate.replace(
+      /<link rel="modulepreload"[^>]*vendor-charts[^>]*>\n?/g,
+      ""
+    );
+  }
+
   // Replace from <!-- Default SEO --> up to the <link rel="preconnect" line
   // (which is the stable anchor in the post-analytics-deferral HTML)
-  return template.replace(
+  return finalTemplate.replace(
     /<!-- Default SEO[\s\S]*?(?=\n\s*<link rel="preconnect")/,
     metaBlock + "\n\n    "
   );
 }
 
 function writePage(template, routePath, meta) {
-  const html = injectMeta(template, meta);
+  const html = injectMeta(template, meta, routePath);
   const filePath =
     routePath === "/"
       ? join(DIST, "index.html")
@@ -404,8 +434,8 @@ function getRoutes() {
     routes.push({
       path: `/blog/${post.slug}`,
       meta: {
-        title: `${post.title} | Invisible Exit Blog`,
-        description: post.excerpt,
+        title: blogTitle(post.title),
+        description: truncate(post.excerpt, 155),
         url: postUrl,
         type: "article",
         image: `${SITE}/og/${post.slug}.svg`,
