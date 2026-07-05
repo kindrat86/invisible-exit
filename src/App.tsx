@@ -114,6 +114,9 @@ const FailureStoryPage = lazy(() => import("./pages/FailureStoryPage.tsx"));
 // ── Greg Isenberg pSEO Round 6 ──
 const ToolReviewPage = lazy(() => import("./pages/ToolReviewPage.tsx"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage.tsx"));
+const RevenueTargetPage = lazy(() => import("./pages/RevenueTargetPage.tsx"));
+const CityPage = lazy(() => import("./pages/CityPage.tsx"));
+const SkillMonetizationPage = lazy(() => import("./pages/SkillMonetizationPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -266,6 +269,12 @@ const App = () => (
           <Route path="/reviews" element={<Navigate to="/blog" replace />} />
           <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
           <Route path="/case-studies" element={<Navigate to="/blog" replace />} />
+          <Route path="/revenue/:slug" element={<RevenueTargetPage />} />
+          <Route path="/revenue" element={<Navigate to="/blog" replace />} />
+          <Route path="/cities/:slug" element={<CityPage />} />
+          <Route path="/cities" element={<Navigate to="/blog" replace />} />
+          <Route path="/skills/:slug" element={<SkillMonetizationPage />} />
+          <Route path="/skills" element={<Navigate to="/blog" replace />} />
 
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}

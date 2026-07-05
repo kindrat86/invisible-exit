@@ -62,6 +62,9 @@ import { toolReviews } from "../src/data/tool-reviews.js";
 
 // ── Greg Isenberg pSEO Round 7 ──
 import { caseStudies } from "../src/data/case-studies.js";
+import { revenueTargets } from "../src/data/revenue-targets.js";
+import { cities } from "../src/data/cities.js";
+import { skills } from "../src/data/skills.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -2225,6 +2228,21 @@ function main() {
     if (injectBody(resolve(DIST, "case-studies", c.slug, "index.html"), caseStudyBodyHtml(c))) { count++; }
   }
 
+  // ── Greg Isenberg pSEO Round 8: Revenue Target pages ──
+  for (const r of revenueTargets) {
+    if (injectBody(resolve(DIST, "revenue", r.slug, "index.html"), revenueTargetBodyHtml(r))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 8: City pages ──
+  for (const c of cities) {
+    if (injectBody(resolve(DIST, "cities", c.slug, "index.html"), cityBodyHtml(c))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 8: Skill Monetization pages ──
+  for (const s of skills) {
+    if (injectBody(resolve(DIST, "skills", s.slug, "index.html"), skillBodyHtml(s))) { count++; }
+  }
+
   console.log(`Done. Injected body content into ${count} pages.`);
 }
 
@@ -3856,3 +3874,147 @@ ${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies 
 }
 
 main();
+
+// ---------- Greg Isenberg pSEO Round 8: Revenue Target body ----------
+
+function revenueTargetBodyHtml(item: typeof revenueTargets[0]): string {
+  const ideas = item.bestIdeas.map((idea: string, i: number) =>
+    `<li style="margin-bottom:0.5rem;color:#374151">${i + 1}. <strong>${idea}</strong></li>`
+  ).join("\n");
+  const faqs = item.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Revenue Target", item.tier, `How to reach ${item.monthlyRevenue} in recurring revenue — realistic math, pricing, and timeline`)}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/revenue" style="color:#3B82F6;text-decoration:none">Revenue Targets</a> &rsaquo; <span>${item.tier} for ${item.profession}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">The Revenue Math</h2>
+<p style="margin-bottom:0.5rem"><strong>Monthly Target:</strong> ${item.monthlyRevenue}</p>
+<p style="margin-bottom:0.5rem"><strong>Customer Count:</strong> ${item.customerMath}</p>
+<p style="margin-bottom:0.5rem"><strong>Pricing Strategy:</strong> ${item.pricingStrategy}</p>
+<p><strong>Timeline:</strong> ${item.timeline}</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Best Micro-SaaS Ideas for ${item.profession}</h2>
+<ol style="padding-left:1.5rem">${ideas}</ol>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div></section>
+${relatedLinksSection([
+  { href: `/ideas/for-${item.professionSlug}`, text: `← Micro-SaaS Ideas for ${item.profession}` },
+  { href: `/salaries/${item.professionSlug.replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
+  { href: `/side-hustles/for-${item.professionSlug}`, text: `Best Side Hustles for ${item.profession}` },
+  { href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+])}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 8: City body ----------
+
+function cityBodyHtml(item: typeof cities[0]): string {
+  const faqs = item.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure(item.city, item.state, `Side business ecosystem in ${item.city}, ${item.state} — legal context, startup scene, and opportunities`)}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/cities" style="color:#3B82F6;text-decoration:none">Cities</a> &rsaquo; <span>${item.city}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem"><div style="font-size:0.75rem;color:#6b7280">Avg Salary</div><div style="font-weight:700">${item.avgSalary}</div></div>
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem"><div style="font-size:0.75rem;color:#6b7280">Cost of Living</div><div style="font-weight:700">${item.costOfLiving}</div></div>
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem"><div style="font-size:0.75rem;color:#6b7280">Population</div><div style="font-weight:700">${item.population}</div></div>
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem"><div style="font-size:0.75rem;color:#6b7280">Startup Scene</div><div style="font-weight:700">${item.startupEcosystem}</div></div>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#eff6ff"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Legal Context</h2>
+<p style="color:#4b5563">${item.legalContext}</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Local Advantage</h2>
+<p style="color:#4b5563">${item.localAdvantage}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div></section>
+${relatedLinksSection([
+  { href: `/guides/${item.stateSlug}`, text: `← Anonymous LLC Guide for ${item.state}` },
+  { href: `/ideas`, text: `All Micro-SaaS Ideas` },
+  { href: `/non-compete`, text: `Non-Compete Guide by State` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job` },
+])}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 8: Skill Monetization body ----------
+
+function skillBodyHtml(item: typeof skills[0]): string {
+  const paths = item.monetizationPaths.map((p: string) => `<li style="margin-bottom:0.5rem;color:#374151">${p}</li>`).join("\n");
+  const ideas = item.microSaaSIdeas.map((idea: string, i: number) => `<li style="margin-bottom:0.5rem;color:#374151">${i + 1}. <strong>${idea}</strong></li>`).join("\n");
+  const faqs = item.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure(item.skill, item.category, `How to monetize ${item.skill} skills — freelance rates, SaaS ideas, and revenue paths`)}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/skills" style="color:#3B82F6;text-decoration:none">Skills</a> &rsaquo; <span>${item.skill}</span>
+</nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;text-align:center"><div style="font-size:0.75rem;color:#6b7280">Category</div><div style="font-weight:700">${item.category}</div></div>
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;text-align:center"><div style="font-size:0.75rem;color:#6b7280">Demand</div><div style="font-weight:700">${item.demandLevel}</div></div>
+<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;text-align:center"><div style="font-size:0.75rem;color:#6b7280">Freelance Rate</div><div style="font-weight:700">${item.avgFreelanceRate}</div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Monetization Paths</h2>
+<ul style="padding-left:1.5rem">${paths}</ul>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f0fdf4"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem">Micro-SaaS Ideas Using ${item.skill}</h2>
+<ol style="padding-left:1.5rem">${ideas}</ol>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Time to Revenue</h2>
+<p style="color:#4b5563">${item.timeToRevenue}</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
+${faqs}
+</div></section>
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job` },
+])}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
+</div></section>
+</div>`;
+}

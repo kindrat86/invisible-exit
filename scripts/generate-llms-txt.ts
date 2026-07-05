@@ -52,6 +52,9 @@ import { weekendBuilds } from "../src/data/weekend-builds.js";
 import { failureStories } from "../src/data/failure-stories.js";
 import { toolReviews } from "../src/data/tool-reviews.js";
 import { caseStudies } from "../src/data/case-studies.js";
+import { revenueTargets } from "../src/data/revenue-targets.js";
+import { cities } from "../src/data/cities.js";
+import { skills } from "../src/data/skills.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -451,6 +454,28 @@ function generateLlmsTxt(): string {
   }
   for (const h of hoursPages) {
     lines.push(`- [${h.h1}](${SITE}/hours/${h.slug}): Side business based on available hours per week`);
+  }
+  lines.push("");
+
+  // ── Greg Isenberg pSEO Round 8 ──
+  lines.push("## Revenue Target Roadmaps");
+  lines.push("");
+  for (const r of revenueTargets) {
+    lines.push(`- [${r.h1}](${SITE}/revenue/${r.slug}): ${r.intro?.substring(0, 120) || "Realistic path to " + r.tier}`);
+  }
+  lines.push("");
+
+  lines.push("## Side Business by City");
+  lines.push("");
+  for (const c of cities) {
+    lines.push(`- [${c.h1}](${SITE}/cities/${c.slug}): ${c.intro?.substring(0, 120) || "Side business in " + c.city}`);
+  }
+  lines.push("");
+
+  lines.push("## Skill Monetization Guides");
+  lines.push("");
+  for (const s of skills) {
+    lines.push(`- [${s.h1}](${SITE}/skills/${s.slug}): ${s.intro?.substring(0, 120) || "Monetize " + s.skill}`);
   }
   lines.push("");
 

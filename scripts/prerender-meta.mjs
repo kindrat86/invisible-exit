@@ -51,6 +51,9 @@ import { weekendBuilds } from "../src/data/weekend-builds.ts";
 import { failureStories } from "../src/data/failure-stories.ts";
 import { toolReviews } from "../src/data/tool-reviews.ts";
 import { caseStudies } from "../src/data/case-studies.ts";
+import { revenueTargets } from "../src/data/revenue-targets.ts";
+import { cities } from "../src/data/cities.ts";
+import { skills } from "../src/data/skills.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -2971,6 +2974,65 @@ function getRoutes() {
       },
     });
   }
+
+  // ---------- Greg Isenberg pSEO Round 8: Revenue Target × Profession pages ----------
+  for (const r of revenueTargets) {
+    const url = `${SITE}/revenue/${r.slug}`;
+    routes.push({
+      path: `/revenue/${r.slug}`,
+      meta: {
+        title: r.metaTitle,
+        description: r.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: r.h1, description: r.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Revenue Targets for ${r.profession}` },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Revenue Targets" }, { "@type": "ListItem", position: 3, name: `${r.tier} for ${r.profession}` } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: r.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 8: City pages ----------
+  for (const c of cities) {
+    const url = `${SITE}/cities/${c.slug}`;
+    routes.push({
+      path: `/cities/${c.slug}`,
+      meta: {
+        title: c.metaTitle,
+        description: c.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: c.h1, description: c.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Side Business in ${c.city}` },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities" }, { "@type": "ListItem", position: 3, name: c.city } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 8: Skill Monetization pages ----------
+  for (const s of skills) {
+    const url = `${SITE}/skills/${s.slug}`;
+    routes.push({
+      path: `/skills/${s.slug}`,
+      meta: {
+        title: s.metaTitle,
+        description: s.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: s.h1, description: s.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Monetizing ${s.skill} Skills` },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Skills" }, { "@type": "ListItem", position: 3, name: s.skill } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // Hub pages for new content types
+  routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession — Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Revenue Targets by Profession", description: "Realistic paths to recurring revenue targets for 25 professions" }] } });
+  routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City — Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Side Business by City", description: "City-level guides for building a side business across the US" }] } });
+  routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills — 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Skill Monetization Guides", description: "How to turn your professional skills into recurring revenue" }] } });
 
   return routes;
 }
