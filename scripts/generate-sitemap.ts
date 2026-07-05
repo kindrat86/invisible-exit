@@ -612,13 +612,25 @@ const submaps: Record<string, SitemapEntry[]> = {
   "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/")),
 };
 
-// Write each sub-sitemap
+// Write each sub-sitemap (with hreflang + image annotations)
 const submapFiles: string[] = [];
 for (const [name, subs] of Object.entries(submaps)) {
   if (subs.length === 0) continue;
   const subXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    subs.map(e => '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n  </url>').join('\n') +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
+    subs.map(e => {
+      let url = '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n';
+      // hreflang annotations
+      url += '    <xhtml:link rel="alternate" hreflang="en" href="' + e.loc + '" />\n';
+      url += '    <xhtml:link rel="alternate" hreflang="x-default" href="' + e.loc + '" />\n';
+      // Image annotation for blog posts
+      if (e.loc.includes('/blog/') && !e.loc.includes('/category/')) {
+        const slug = e.loc.split('/blog/')[1];
+        url += '    <image:image>\n      <image:loc>https://invisibleexit.com/og/' + slug + '.svg</image:loc>\n      <image:title>' + (blogPosts.find((p: any) => p.slug === slug)?.title || slug) + '</image:title>\n    </image:image>\n';
+      }
+      url += '  </url>';
+      return url;
+    }).join('\n') +
     '\n</urlset>\n';
   const fileName = 'sitemap-' + name + '.xml';
   writeFileSync(resolve(publicDir, fileName), subXml, "utf-8");

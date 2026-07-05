@@ -1,471 +1,627 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://invisibleexit.com/</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/" />
   </url>
   <url>
     <loc>https://invisibleexit.com/blog</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blog" />
   </url>
   <url>
     <loc>https://invisibleexit.com/glossary</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/glossary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/glossary" />
   </url>
   <url>
     <loc>https://invisibleexit.com/privacy</loc>
     <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/privacy" />
   </url>
   <url>
     <loc>https://invisibleexit.com/terms</loc>
     <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/terms" />
   </url>
   <url>
     <loc>https://invisibleexit.com/about</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/about" />
   </url>
   <url>
     <loc>https://invisibleexit.com/story</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/story" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/story" />
   </url>
   <url>
     <loc>https://invisibleexit.com/manifesto</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/manifesto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/manifesto" />
   </url>
   <url>
     <loc>https://invisibleexit.com/compare</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/compare" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/compare" />
   </url>
   <url>
     <loc>https://invisibleexit.com/adrian</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/adrian" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/adrian" />
   </url>
   <url>
     <loc>https://invisibleexit.com/masterclass</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/masterclass" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/masterclass" />
   </url>
   <url>
     <loc>https://invisibleexit.com/freedom</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/freedom" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/freedom" />
   </url>
   <url>
     <loc>https://invisibleexit.com/inner-circle</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/inner-circle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/inner-circle" />
   </url>
   <url>
     <loc>https://invisibleexit.com/affiliates</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/affiliates" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/affiliates" />
   </url>
   <url>
     <loc>https://invisibleexit.com/feeling-stuck</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/feeling-stuck" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/feeling-stuck" />
   </url>
   <url>
     <loc>https://invisibleexit.com/partners/embed</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/partners/embed" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/partners/embed" />
   </url>
   <url>
     <loc>https://invisibleexit.com/best</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/best" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/best" />
   </url>
   <url>
     <loc>https://invisibleexit.com/guides</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/guides" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/guides" />
   </url>
   <url>
     <loc>https://invisibleexit.com/ideas</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ideas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ideas" />
   </url>
   <url>
     <loc>https://invisibleexit.com/calculators</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/calculators" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/calculators" />
   </url>
   <url>
     <loc>https://invisibleexit.com/data</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/data" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/data" />
   </url>
   <url>
     <loc>https://invisibleexit.com/vs</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/vs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/vs" />
   </url>
   <url>
     <loc>https://invisibleexit.com/alternatives</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/alternatives" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/alternatives" />
   </url>
   <url>
     <loc>https://invisibleexit.com/salaries</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/salaries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/salaries" />
   </url>
   <url>
     <loc>https://invisibleexit.com/milestones</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/milestones" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/milestones" />
   </url>
   <url>
     <loc>https://invisibleexit.com/timeline</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/timeline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/timeline" />
   </url>
   <url>
     <loc>https://invisibleexit.com/stack</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/stack" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/stack" />
   </url>
   <url>
     <loc>https://invisibleexit.com/cost-of-waiting</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/cost-of-waiting" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/cost-of-waiting" />
   </url>
   <url>
     <loc>https://invisibleexit.com/non-compete</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/non-compete" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/non-compete" />
   </url>
   <url>
     <loc>https://invisibleexit.com/mistakes</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/mistakes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/mistakes" />
   </url>
   <url>
     <loc>https://invisibleexit.com/reddit</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reddit" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reddit" />
   </url>
   <url>
     <loc>https://invisibleexit.com/pricing-models</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pricing-models" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pricing-models" />
   </url>
   <url>
     <loc>https://invisibleexit.com/break-even</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/break-even" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/break-even" />
   </url>
   <url>
     <loc>https://invisibleexit.com/first-year</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/first-year" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/first-year" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget" />
   </url>
   <url>
     <loc>https://invisibleexit.com/dream-100</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/dream-100" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/dream-100" />
   </url>
   <url>
     <loc>https://invisibleexit.com/intensive</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/intensive" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/intensive" />
   </url>
   <url>
     <loc>https://invisibleexit.com/traffic-blueprint</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/traffic-blueprint" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/traffic-blueprint" />
   </url>
   <url>
     <loc>https://invisibleexit.com/content-calendar</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/content-calendar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/content-calendar" />
   </url>
   <url>
     <loc>https://invisibleexit.com/affiliate-assets</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/affiliate-assets" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/affiliate-assets" />
   </url>
   <url>
     <loc>https://invisibleexit.com/podcast-pitch</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/podcast-pitch" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/podcast-pitch" />
   </url>
   <url>
     <loc>https://invisibleexit.com/backlink-strategy</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/backlink-strategy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/backlink-strategy" />
   </url>
   <url>
     <loc>https://invisibleexit.com/founding-wall</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/founding-wall" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/founding-wall" />
   </url>
   <url>
     <loc>https://invisibleexit.com/frameworks</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/frameworks" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/frameworks" />
   </url>
   <url>
     <loc>https://invisibleexit.com/proof</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/proof" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/proof" />
   </url>
   <url>
     <loc>https://invisibleexit.com/beliefs</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/beliefs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/beliefs" />
   </url>
   <url>
     <loc>https://invisibleexit.com/lexicon</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/lexicon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/lexicon" />
   </url>
   <url>
     <loc>https://invisibleexit.com/one-thing</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/one-thing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/one-thing" />
   </url>
   <url>
     <loc>https://invisibleexit.com/join</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/join" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/join" />
   </url>
   <url>
     <loc>https://invisibleexit.com/is-this-you</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/is-this-you" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/is-this-you" />
   </url>
   <url>
     <loc>https://invisibleexit.com/funnel-metrics</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/funnel-metrics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/funnel-metrics" />
   </url>
   <url>
     <loc>https://invisibleexit.com/tripwire</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/tripwire" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/tripwire" />
   </url>
   <url>
     <loc>https://invisibleexit.com/weekend-workshop</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/weekend-workshop" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/weekend-workshop" />
   </url>
   <url>
     <loc>https://invisibleexit.com/ask</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ask" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ask" />
   </url>
   <url>
     <loc>https://invisibleexit.com/free-book</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/free-book" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/free-book" />
   </url>
   <url>
     <loc>https://invisibleexit.com/who</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/who" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/who" />
   </url>
   <url>
     <loc>https://invisibleexit.com/where</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/where" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/where" />
   </url>
   <url>
     <loc>https://invisibleexit.com/ad-library</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/ad-library" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/ad-library" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hso</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hso" />
   </url>
   <url>
     <loc>https://invisibleexit.com/traffic-roadmap</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/traffic-roadmap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/traffic-roadmap" />
   </url>
   <url>
     <loc>https://invisibleexit.com/testing</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/testing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/testing" />
   </url>
   <url>
     <loc>https://invisibleexit.com/youtube-strategy</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/youtube-strategy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/youtube-strategy" />
   </url>
   <url>
     <loc>https://invisibleexit.com/dream-100-tracker</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/dream-100-tracker" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/dream-100-tracker" />
   </url>
   <url>
     <loc>https://invisibleexit.com/pillar-hub</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pillar-hub" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pillar-hub" />
   </url>
   <url>
     <loc>https://invisibleexit.com/explore</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/explore" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/explore" />
   </url>
   <url>
     <loc>https://invisibleexit.com/pro</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/pro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/pro" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/0-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/0-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/0-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/100-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/100-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/100-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/500-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/500-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/500-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/1000-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/1000-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/1000-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/5000-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/5000-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/5000-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/budget/20000-dollars</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/budget/20000-dollars" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/budget/20000-dollars" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/2-hours-per-week</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/2-hours-per-week" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/2-hours-per-week" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/5-hours-per-week</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/5-hours-per-week" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/5-hours-per-week" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/10-hours-per-week</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/10-hours-per-week" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/10-hours-per-week" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/15-hours-per-week</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/15-hours-per-week" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/15-hours-per-week" />
   </url>
   <url>
     <loc>https://invisibleexit.com/hours/20-hours-per-week</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/20-hours-per-week" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/20-hours-per-week" />
   </url>
 </urlset>

@@ -409,7 +409,23 @@ function getRoutes() {
         url: postUrl,
         type: "article",
         image: `${SITE}/og/${post.slug}.svg`,
-        jsonLd: postJsonLd,
+        jsonLd: [
+          ...postJsonLd,
+          // Speakable schema for voice search / AEO
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: postUrl,
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".quick-answer", "figcaption"],
+            },
+            mainContentOfPage: {
+              "@type": "WebPageElement",
+              cssSelector: ["article", "figure"],
+            },
+          },
+        ],
       },
     });
   }
@@ -666,6 +682,20 @@ function getRoutes() {
               "@type": "Question",
               name: faq.question,
               acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: cmp.h1,
+            description: cmp.metaDescription,
+            url: cmpUrl,
+            numberOfItems: cmp.table.length,
+            itemListElement: cmp.table.map((row, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: row.criteria,
+              description: `${row.optionA} vs ${row.optionB}`,
             })),
           },
         ],

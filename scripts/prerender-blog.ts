@@ -179,6 +179,41 @@ ${steps}
 
   // Related posts section
   let relatedHtml = "";
+
+  // Content image (SEO-critical: inline SVG diagram with descriptive alt text)
+  const altText = `${post.title} — visual summary diagram from Invisible Exit`;
+  const categoryColors: Record<string, { bg: string; accent: string; text: string }> = {
+    "Financial Independence": { bg: "#eff6ff", accent: "#3b82f6", text: "#1e40af" },
+    "Stealth Operations": { bg: "#f0fdf4", accent: "#22c55e", text: "#15803d" },
+    "Micro-SaaS": { bg: "#faf5ff", accent: "#a855f7", text: "#7e22ce" },
+    "Audience Building": { bg: "#fff7ed", accent: "#f97316", text: "#c2410c" },
+    "AI Tools": { bg: "#ecfdf5", accent: "#10b981", text: "#047857" },
+    "Exit Planning": { bg: "#fef2f2", accent: "#ef4444", text: "#b91c1c" },
+    "Strategy": { bg: "#f0f9ff", accent: "#0ea5e9", text: "#0369a1" },
+    "Time Management": { bg: "#fffbeb", accent: "#f59e0b", text: "#b45309" },
+    "Validation": { bg: "#fdf4ff", accent: "#d946ef", text: "#a21caf" },
+    "Growth": { bg: "#f0fdf4", accent: "#16a34a", text: "#15803d" },
+  };
+  const colors = categoryColors[post.category] || { bg: "#eff6ff", accent: "#3b82f6", text: "#1e40af" };
+  const shortTitle = post.title.length > 60 ? post.title.substring(0, 57) + "..." : post.title;
+  const contentImageHtml = `
+<figure style="margin:0;padding:0 1.5rem 2rem;max-width:48rem;margin-left:auto;margin-right:auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="${altText}" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
+<rect width="800" height="300" fill="${colors.bg}"/>
+<rect x="0" y="0" width="800" height="6" fill="${colors.accent}"/>
+<text x="40" y="50" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="${colors.accent}" letter-spacing="1">${post.category.toUpperCase()}</text>
+<text x="40" y="100" font-family="Inter,sans-serif" font-size="24" font-weight="800" fill="#111827">${shortTitle.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</text>
+<line x1="40" y1="130" x2="760" y2="130" stroke="${colors.accent}" stroke-width="2" opacity="0.2"/>
+<text x="40" y="170" font-family="Inter,sans-serif" font-size="15" fill="#4b5563" font-weight="500">${post.excerpt.substring(0, 100).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}${post.excerpt.length > 100 ? "..." : ""}</text>
+<circle cx="60" cy="230" r="20" fill="${colors.accent}" opacity="0.1"/>
+<text x="60" y="236" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="${colors.accent}" text-anchor="middle">IE</text>
+<text x="95" y="226" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#111827">Invisible Exit</text>
+<text x="95" y="244" font-family="Inter,sans-serif" font-size="12" fill="#6b7280">${post.readTime} read</text>
+<text x="760" y="270" font-family="Inter,sans-serif" font-size="11" fill="#9ca3af" text-anchor="end">invisibleexit.com/blog/${post.slug}</text>
+</svg>
+<figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center;line-height:1.5">${altText}. Key concepts from this article: ${post.excerpt.substring(0, 120).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}.</figcaption>
+</figure>`;
+
   if (related.length > 0) {
     const cards = related
       .map(
@@ -217,7 +252,7 @@ ${cards}
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem 1.5rem;margin-bottom:2rem">
-<div style="max-width:48rem;margin:0 auto">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
 <p style="font-size:1.125rem;line-height:1.6;color:#111827;font-weight:500">${post.excerpt}</p>
 </div>
@@ -227,6 +262,7 @@ ${cards}
 ${autoLinkContent(contentToHtml(post.content))}
 </article>
 </section>
+${contentImageHtml}
 ${howToHtml}
 ${faqHtml}
 ${categoryLinkHtml}
@@ -474,6 +510,21 @@ function homepageBodyHtml(): string {
 </div>
 </div>
 </section>
+<section style="padding:3rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:56rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem;text-align:center">Explore Resources</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem">
+<a href="/ideas" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Micro-SaaS Ideas</h3><p style="font-size:0.75rem;color:#6b7280">155 ideas by profession</p></a>
+<a href="/best" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Best AI Tools</h3><p style="font-size:0.75rem;color:#6b7280">120 tool guides</p></a>
+<a href="/glossary" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Glossary</h3><p style="font-size:0.75rem;color:#6b7280">30 key terms defined</p></a>
+<a href="/guides" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">State Guides</h3><p style="font-size:0.75rem;color:#6b7280">52 state business guides</p></a>
+<a href="/data" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Data Reports</h3><p style="font-size:0.75rem;color:#6b7280">75 benchmarks & reports</p></a>
+<a href="/compare" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Comparisons</h3><p style="font-size:0.75rem;color:#6b7280">50 side-by-side guides</p></a>
+<a href="/calculators" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Calculators</h3><p style="font-size:0.75rem;color:#6b7280">Free financial tools</p></a>
+<a href="/explore" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Explore All</h3><p style="font-size:0.75rem;color:#6b7280">Complete resource index</p></a>
+</div>
+</div>
+</section>
 <section style="padding:3rem 1.5rem;background-color:#f9fafb">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -514,7 +565,7 @@ function homepageBodyHtml(): string {
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
 <div style="max-width:48rem;margin:0 auto">
-<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. <a href="/pro" style="color:#3B82F6">$0.97/month</a>. <a href="/freedom" style="color:#3B82F6">Calculate your freedom number</a>. <a href="/blog" style="color:#3B82F6">Read the blog</a>. <a href="/manifesto" style="color:#3B82F6">Read the manifesto</a>. <a href="/guides/freedom-number" style="color:#3B82F6">Freedom Number Guide</a>. <a href="/compare" style="color:#3B82F6">Compare alternatives</a>. Cancel anytime. No credit card required to start.</p>
+<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. <a href="/pro" style="color:#3B82F6">$0.97/month</a>. <a href="/freedom" style="color:#3B82F6">Calculate your freedom number</a>. <a href="/blog" style="color:#3B82F6">Read the blog</a>. <a href="/manifesto" style="color:#3B82F6">Read the manifesto</a>. <a href="/guides/freedom-number" style="color:#3B82F6">Freedom Number Guide</a>. <a href="/compare" style="color:#3B82F6">Compare alternatives</a>. <a href="/ideas" style="color:#3B82F6">Micro-SaaS ideas</a>. <a href="/glossary" style="color:#3B82F6">Glossary</a>. <a href="/best" style="color:#3B82F6">Best AI tools</a>. <a href="/guides" style="color:#3B82F6">State guides</a>. <a href="/data" style="color:#3B82F6">Data reports</a>. <a href="/explore" style="color:#3B82F6">Explore all resources</a>. Cancel anytime. No credit card required to start.</p>
 </div>
 </section>
 </div>`;
