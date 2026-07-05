@@ -560,6 +560,45 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Non-Compete Guide for Designers in Colorado](https://invisibleexit.com/non-compete/designers-colorado): Can designers in Colorado start a side business? Non-compete enforceability, CO-specific risks, and safe harbors for building micro-SaaS.
 - [Non-Compete Guide for Designers in North Carolina](https://invisibleexit.com/non-compete/designers-north-carolina): Can designers in North Carolina start a side business? Non-compete enforceability, NC-specific risks, and safe harbors for building micro-SaaS.
 
+## Profession × Career Comparisons
+
+- [Career vs Micro-SaaS Overview](https://invisibleexit.com/vs): All profession comparisons
+- [Customer Success Manager vs Micro-SaaS](https://invisibleexit.com/vs/customer-succes-vs-micro-saas-founder): Salary, risk, and freedom math
+- [Product Manager vs Micro-SaaS](https://invisibleexit.com/vs/product-manager-vs-micro-saas-founder): Which path wins for long-term freedom
+- [Software Engineer vs Micro-SaaS](https://invisibleexit.com/vs/software-engineer-vs-micro-saas-founder): Comparing two paths to independence
+- [Marketing Manager vs Micro-SaaS](https://invisibleexit.com/vs/marketing-manager-vs-micro-saas-founder): Career trajectory comparison
+
+## First Year Roadmaps
+
+- [First Year Overview](https://invisibleexit.com/first-year): Month-by-month guides for every profession
+- [First Year as Software Engineer](https://invisibleexit.com/first-year/first-year-as-software-engineer): What to expect in your first year
+- [First Year as Product Manager](https://invisibleexit.com/first-year/first-year-as-product-manager): Month-by-month roadmap for PMs
+- [First Year as Financial Analyst](https://invisibleexit.com/first-year/first-year-as-financial-analyst): Side business timeline for analysts
+- [First Year as Operations Manager](https://invisibleexit.com/first-year/first-year-as-operations-manager): First 12 months roadmap
+
+## Budget Guides
+
+- [Budget Overview](https://invisibleexit.com/budget): All budget configurations
+- [$0/Month Budget](https://invisibleexit.com/budget/0-dollars): Free tool stack for zero-budget founders
+- [$50/Month Budget](https://invisibleexit.com/budget/50-dollars): Starter budget configuration
+- [$100/Month Budget](https://invisibleexit.com/budget/100-dollars): Growth budget for employed founders
+- [$500/Month Budget](https://invisibleexit.com/budget/500-dollars): Scale budget for serious builders
+
+## Hours Per Week Guides
+
+- [Hours Overview](https://invisibleexit.com/hours): All time investment guides
+- [5 Hours Per Week](https://invisibleexit.com/hours/5-hours-per-week): Minimum viable time investment
+- [10 Hours Per Week](https://invisibleexit.com/hours/10-hours-per-week): Balanced side-business schedule
+- [15 Hours Per Week](https://invisibleexit.com/hours/15-hours-per-week): Accelerated growth timeline
+- [20 Hours Per Week](https://invisibleexit.com/hours/20-hours-per-week): Maximum sustainable hours while employed
+
+## Tool Cross-Reference Guides
+
+- [Tool Cross-Reference Index](https://invisibleexit.com/tools): All AI tool comparisons
+- [Best Analytics Tools](https://invisibleexit.com/tools/best-analytics-tools-for-product-managers): Analytics tools for PMs
+- [Best Development Tools](https://invisibleexit.com/tools/best-development-tools-for-software-engineers): Dev tools for engineers
+- [Best Marketing Tools](https://invisibleexit.com/tools/best-marketing-tools-for-marketing-managers): Marketing stacks for side businesses
+
 ## Topics Covered
 
 - Building anonymous side income while employed (stealth operations, entity separation, digital footprint management)

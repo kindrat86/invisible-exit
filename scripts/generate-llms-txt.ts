@@ -231,6 +231,55 @@ function generateLlmsTxt(): string {
   }
   lines.push("");
 
+  // ── pSEO: Career vs SaaS Comparisons ──
+  lines.push(`## Profession × Career Comparisons`);
+  lines.push("");
+  lines.push(`- [Career vs Micro-SaaS Overview](${SITE}/vs): All profession comparisons`);
+  lines.push(`- [Customer Success Manager vs Micro-SaaS](${SITE}/vs/customer-succes-vs-micro-saas-founder): Salary, risk, and freedom math`);
+  lines.push(`- [Product Manager vs Micro-SaaS](${SITE}/vs/product-manager-vs-micro-saas-founder): Which path wins for long-term freedom`);
+  lines.push(`- [Software Engineer vs Micro-SaaS](${SITE}/vs/software-engineer-vs-micro-saas-founder): Comparing two paths to independence`);
+  lines.push(`- [Marketing Manager vs Micro-SaaS](${SITE}/vs/marketing-manager-vs-micro-saas-founder): Career trajectory comparison`);
+  lines.push("");
+
+  // ── pSEO: First Year Roadmaps ──
+  lines.push(`## First Year Roadmaps`);
+  lines.push("");
+  lines.push(`- [First Year Overview](${SITE}/first-year): Month-by-month guides for every profession`);
+  lines.push(`- [First Year as Software Engineer](${SITE}/first-year/first-year-as-software-engineer): What to expect in your first year`);
+  lines.push(`- [First Year as Product Manager](${SITE}/first-year/first-year-as-product-manager): Month-by-month roadmap for PMs`);
+  lines.push(`- [First Year as Financial Analyst](${SITE}/first-year/first-year-as-financial-analyst): Side business timeline for analysts`);
+  lines.push(`- [First Year as Operations Manager](${SITE}/first-year/first-year-as-operations-manager): First 12 months roadmap`);
+  lines.push("");
+
+  // ── pSEO: Budget Guides ──
+  lines.push(`## Budget Guides`);
+  lines.push("");
+  lines.push(`- [Budget Overview](${SITE}/budget): All budget configurations`);
+  lines.push(`- [$0/Month Budget](${SITE}/budget/0-dollars): Free tool stack for zero-budget founders`);
+  lines.push(`- [$50/Month Budget](${SITE}/budget/50-dollars): Starter budget configuration`);
+  lines.push(`- [$100/Month Budget](${SITE}/budget/100-dollars): Growth budget for employed founders`);
+  lines.push(`- [$500/Month Budget](${SITE}/budget/500-dollars): Scale budget for serious builders`);
+  lines.push("");
+
+  // ── pSEO: Hours Per Week Guides ──
+  lines.push(`## Hours Per Week Guides`);
+  lines.push("");
+  lines.push(`- [Hours Overview](${SITE}/hours): All time investment guides`);
+  lines.push(`- [5 Hours Per Week](${SITE}/hours/5-hours-per-week): Minimum viable time investment`);
+  lines.push(`- [10 Hours Per Week](${SITE}/hours/10-hours-per-week): Balanced side-business schedule`);
+  lines.push(`- [15 Hours Per Week](${SITE}/hours/15-hours-per-week): Accelerated growth timeline`);
+  lines.push(`- [20 Hours Per Week](${SITE}/hours/20-hours-per-week): Maximum sustainable hours while employed`);
+  lines.push("");
+
+  // ── pSEO: Tool Cross-Reference ──
+  lines.push(`## Tool Cross-Reference Guides`);
+  lines.push("");
+  lines.push(`- [Tool Cross-Reference Index](${SITE}/tools): All AI tool comparisons`);
+  lines.push(`- [Best Analytics Tools](${SITE}/tools/best-analytics-tools-for-product-managers): Analytics tools for PMs`);
+  lines.push(`- [Best Development Tools](${SITE}/tools/best-development-tools-for-software-engineers): Dev tools for engineers`);
+  lines.push(`- [Best Marketing Tools](${SITE}/tools/best-marketing-tools-for-marketing-managers): Marketing stacks for side businesses`);
+  lines.push("");
+
   // ── Topics Covered ──
   lines.push("## Topics Covered");
   lines.push("");

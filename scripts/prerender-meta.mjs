@@ -77,13 +77,15 @@ function jsonLdScript(obj) {
 }
 
 function injectMeta(template, { title, description, url, type, image, jsonLd }, routePath = "") {
-  const escapedTitle = escapeHtml(title);
-  const escapedDesc = escapeHtml(description);
+  // Enforce 60-char title limit across ALL pages (not just blog)
+  const optimizedTitle = blogTitle(title);
+  const escapedTitle = escapeHtml(optimizedTitle);
+  const escapedDesc = escapeHtml(truncate(description, 155));
   const img = image || DEFAULT_IMAGE;
   const jsonLdHtml = (jsonLd || []).map(jsonLdScript).join("\n    ");
 
   const metaBlock = `<!-- SEO (pre-rendered) -->
-    <title>${title}</title>
+    <title>${optimizedTitle}</title>
     <meta name="description" content="${escapedDesc}" />
     <meta name="author" content="${SITE_NAME}" />
     <meta name="robots" content="index, follow" />
@@ -1151,6 +1153,39 @@ function getRoutes() {
           eventStatus: "https://schema.org/EventScheduled",
           eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
           isAccessibleForFree: true,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Course",
+          name: "Invisible Exit Masterclass",
+          description:
+            "Free 45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job.",
+          provider: {
+            "@type": "Organization",
+            name: SITE_NAME,
+            url: SITE,
+            sameAs: SITE,
+          },
+          inLanguage: "en",
+          educationalLevel: "Beginner",
+          teaches: [
+            "How to calculate your freedom number",
+            "How to validate micro-SaaS ideas in 48 hours",
+            "Entity separation and stealth operations",
+            "Faceless audience building with AI tools",
+          ],
+          hasCourseInstance: {
+            "@type": "CourseInstance",
+            courseMode: "Online",
+            courseWorkload: "PT45M",
+          },
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url: `${SITE}/masterclass`,
+          },
         },
         {
           "@context": "https://schema.org",

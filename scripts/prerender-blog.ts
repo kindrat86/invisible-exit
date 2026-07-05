@@ -360,20 +360,33 @@ ${items}
   }
 
   // Contextual content blocks to add depth for AEO/SEO
+  const termLower = term.term.toLowerCase();
   const contextualHtml = `
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why ${term.term} Matters for Employed Founders</h2>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">For corporate managers and employed professionals building a side business, understanding ${term.term.toLowerCase()} is essential. It directly affects how you structure your operations, manage legal risk, and plan your transition from employment to entrepreneurship. ${term.detailed}</p>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">The concept of ${term.term.toLowerCase()} is particularly relevant in the context of micro-SaaS businesses and invisible exits — where employed founders need to navigate employment contracts, non-compete clauses, and entity separation while building recurring revenue streams on the side.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">For corporate managers and employed professionals building a side business, understanding ${termLower} is essential. It directly affects how you structure your operations, manage legal risk, and plan your transition from employment to entrepreneurship. ${term.detailed}</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">The concept of ${termLower} is particularly relevant in the context of micro-SaaS businesses and invisible exits — where employed founders need to navigate employment contracts, non-compete clauses, and entity separation while building recurring revenue streams on the side.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
-<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Key Considerations</h2>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:0.5rem"><strong>Legal compliance:</strong> ${term.term} intersects with employment law, tax regulations, and business formation requirements. Always consult a qualified attorney or CPA before making decisions based on this definition.</p>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:0.5rem"><strong>Practical application:</strong> When building a micro-SaaS while employed, ${term.term.toLowerCase()} affects your entity structure, tax filings, and operational decisions. Understanding it early prevents costly mistakes.</p>
-<p style="line-height:1.7;color:#1f2937"><strong>Related concepts:</strong> ${term.term} works alongside other key concepts like entity separation, stealth operations, and recurring revenue compounding. Explore related terms below to build a complete understanding.</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">How to Apply This to Your Side Business</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 1 — Understand the legal context:</strong> ${term.term} interacts with your employment contract, tax obligations, and business formation requirements. Before making any decisions, review how this concept applies to your specific situation. If you are unsure, consult a qualified attorney or CPA.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 2 — Evaluate the impact on your stealth strategy:</strong> If you are building a micro-SaaS while employed, ${termLower} may affect your entity choice, your tax filings, or how visible your business is to your employer. Factor this into your operational planning.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 3 — Use the right tools:</strong> The Invisible Exit platform includes tools designed to help you navigate ${termLower} and related concepts. The Stealth Ops Hub runs compliance checks, the FYM Dashboard tracks financial implications, and the Idea Pipeline validates whether your idea aligns with your constraints.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Common Mistakes to Avoid</h2>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.5rem">Many employed founders misunderstand ${termLower} and make avoidable mistakes:</p>
+<ul style="line-height:1.8;color:#1f2937;padding-left:1.5rem;margin-bottom:1rem">
+<li><strong>Ignoring the legal implications:</strong> ${term.term} has specific legal consequences. Do not assume it does not apply to your situation.</li>
+<li><strong>Waiting too long to address it:</strong> The best time to understand ${termLower} is before you launch. Fixing mistakes after the fact is expensive.</li>
+<li><strong>Confusing it with related concepts:</strong> ${term.term} is often confused with adjacent concepts. Read the related terms below to understand the distinctions.</li>
+</ul>
+<p style="line-height:1.7;color:#1f2937">If you want a structured approach to building a side business while employed, <a href="/freedom" style="color:#3B82F6">calculate your freedom number first</a> — it will clarify which concepts matter most for your specific timeline.</p>
 </div>
 </section>`;
 
@@ -410,6 +423,22 @@ ${items}
 <p style="font-size:1.125rem;line-height:1.6;color:#111827">${term.definition}</p>
 </div>
 </section>
+<figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:48rem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" role="img" aria-label="${term.term} definition diagram — key concept from Invisible Exit" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
+<rect width="800" height="250" fill="#f8fafc"/>
+<rect x="0" y="0" width="800" height="6" fill="#3b82f6"/>
+<text x="40" y="45" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#3b82f6" letter-spacing="1">DEFINITION</text>
+<text x="40" y="90" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#111827">${(term.term.length > 40 ? term.term.substring(0, 37) + "..." : term.term).replace(/&/g, "&amp;").replace(/</g, "&lt;")}</text>
+<line x1="40" y1="115" x2="760" y2="115" stroke="#3b82f6" stroke-width="2" opacity="0.2"/>
+<text x="40" y="150" font-family="Inter,sans-serif" font-size="14" fill="#4b5563">${term.definition.substring(0, 95).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}${term.definition.length > 95 ? "..." : ""}</text>
+<circle cx="60" cy="200" r="16" fill="#3b82f6" opacity="0.1"/>
+<text x="60" y="205" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#3b82f6" text-anchor="middle">IE</text>
+<text x="88" y="197" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#111827">Invisible Exit Glossary</text>
+<text x="88" y="213" font-family="Inter,sans-serif" font-size="11" fill="#6b7280">${term.category}</text>
+<text x="760" y="230" font-family="Inter,sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">invisibleexit.com/glossary/${term.slug}</text>
+</svg>
+<figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center">${term.term}: ${term.definition.substring(0, 110).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}.</figcaption>
+</figure>
 <section style="padding:2rem 1.5rem">
 <article style="max-width:48rem;margin:0 auto">
 <p style="font-size:1rem;line-height:1.7;color:#1f2937">${term.detailed}</p>
@@ -672,6 +701,33 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
 <p style="line-height:1.7;color:#1f2937">This guide covers everything a corporate manager or employed professional in ${g.state} needs to know about forming an LLC for a side business. From filing fees and annual report requirements to non-compete enforceability and anonymous LLC options, we break down the specific rules, costs, and strategies that matter when building a micro-SaaS or invisible side business while keeping your day job.</p>
 </div>
 </section>
+<figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:48rem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" role="img" aria-label="${g.state} side business guide: LLC formation costs, non-compete status, and anonymous LLC options" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
+<rect width="800" height="280" fill="#f8fafc"/>
+<rect x="0" y="0" width="800" height="6" fill="#3b82f6"/>
+<text x="40" y="45" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#3b82f6" letter-spacing="1">STATE GUIDE</text>
+<text x="40" y="85" font-family="Inter,sans-serif" font-size="26" font-weight="800" fill="#111827">Starting a Side Business in ${g.state}</text>
+<line x1="40" y1="110" x2="760" y2="110" stroke="#3b82f6" stroke-width="2" opacity="0.2"/>
+<rect x="40" y="130" width="160" height="50" rx="8" fill="#eff6ff"/>
+<text x="120" y="155" font-family="Inter,sans-serif" font-size="20" font-weight="800" fill="#1e40af" text-anchor="middle">$${g.llcFilingFee}</text>
+<text x="120" y="170" font-family="Inter,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">LLC FILING FEE</text>
+<rect x="220" y="130" width="160" height="50" rx="8" fill="#f0fdf4"/>
+<text x="300" y="155" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#15803d" text-anchor="middle">${g.stateIncomeTaxRate.length > 14 ? g.stateIncomeTaxRate.substring(0, 12) + ".." : g.stateIncomeTaxRate}</text>
+<text x="300" y="170" font-family="Inter,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">INCOME TAX</text>
+<rect x="400" y="130" width="160" height="50" rx="8" fill="${g.nonCompeteEnforceable === "enforced" ? "#fef2f2" : g.nonCompeteEnforceable === "limited" ? "#fffbeb" : "#f0fdf4"}"/>
+<text x="480" y="155" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="${g.nonCompeteEnforceable === "enforced" ? "#b91c1c" : g.nonCompeteEnforceable === "limited" ? "#b45309" : "#15803d"}" text-anchor="middle">${nonCompeteRisk.toUpperCase()}</text>
+<text x="480" y="170" font-family="Inter,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">NON-COMPETE RISK</text>
+<rect x="580" y="130" width="180" height="50" rx="8" fill="${g.anonymousLlcAllowed ? "#eff6ff" : "#f3f4f6"}"/>
+<text x="670" y="155" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="${g.anonymousLlcAllowed ? "#1e40af" : "#6b7280"}" text-anchor="middle">${g.anonymousLlcAllowed ? "YES" : "NO"}</text>
+<text x="670" y="170" font-family="Inter,sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">ANONYMOUS LLC</text>
+<circle cx="60" cy="230" r="16" fill="#3b82f6" opacity="0.1"/>
+<text x="60" y="235" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#3b82f6" text-anchor="middle">IE</text>
+<text x="88" y="227" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#111827">${g.state} Side Business Guide</text>
+<text x="88" y="243" font-family="Inter,sans-serif" font-size="11" fill="#6b7280">${g.abbreviation} · Processing: ${g.processingTime}</text>
+<text x="760" y="260" font-family="Inter,sans-serif" font-size="10" fill="#9ca3af" text-anchor="end">invisibleexit.com/guides/${g.slug}</text>
+</svg>
+<figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center">${g.state} LLC formation guide: $${g.llcFilingFee} filing fee, ${g.stateIncomeTaxRate} income tax, non-compete enforcement is ${nonCompeteRisk}, anonymous LLCs ${g.anonymousLlcAllowed ? "allowed" : "not available"}.</figcaption>
+</figure>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
