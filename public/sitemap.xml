@@ -36,4 +36,8 @@
     <loc>https://invisibleexit.com/sitemap-professions.xml</loc>
     <lastmod>2026-07-05</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-ideas-builds.xml</loc>
+    <lastmod>2026-07-05</lastmod>
+  </sitemap>
 </sitemapindex>

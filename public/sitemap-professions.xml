@@ -1824,4 +1824,68 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/side-hustles/for-writers" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/side-hustles/for-writers" />
   </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/software-engineer</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/software-engineer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/software-engineer" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/product-manager</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/product-manager" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/product-manager" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/marketer</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/marketer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/marketer" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/designer</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/designer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/designer" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/consultant</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/consultant" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/consultant" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/accountant</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/accountant" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/accountant" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/teacher</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/teacher" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/teacher" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/quit-your-job/general</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/quit-your-job/general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/quit-your-job/general" />
+  </url>
 </urlset>

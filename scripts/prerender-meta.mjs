@@ -46,6 +46,9 @@ import { isItLegalPages } from "../src/data/is-it-legal.ts";
 import { sideHustles } from "../src/data/side-hustles.ts";
 import { budgetStartPages } from "../src/data/budget-start.ts";
 import { niches } from "../src/data/niches.ts";
+import { quitJobPages } from "../src/data/quit-job.ts";
+import { weekendBuilds } from "../src/data/weekend-builds.ts";
+import { failureStories } from "../src/data/failure-stories.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1432,6 +1435,9 @@ function getRoutes() {
     { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession — ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
     { path: "/by-budget", title: "Start a Business by Budget — $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
     { path: "/niches", title: "Best Micro-SaaS Niches for 2025 | Invisible Exit", desc: "The most profitable micro-SaaS niches analyzed by market size, growth rate, and competition. Specific product ideas with pricing and monetization.", type: "website" },
+    { path: "/quit-your-job", title: "When to Quit Your Job to Start a Business (Honest Guide) | Invisible Exit", desc: "The honest framework for deciding when to quit your job. Financial milestones, readiness signs, and the math — no toxic hustle advice.", type: "website" },
+    { path: "/weekend-builds", title: "Weekend Build Ideas — Launch in 48 Hours | Invisible Exit", desc: "Step-by-step guides for building and launching a profitable side business in one weekend. AI wrappers, directories, Chrome extensions, and more.", type: "website" },
+    { path: "/failure-stories", title: "Micro-SaaS Failure Stories — Learn From Real Mistakes | Invisible Exit", desc: "Honest analysis of why startups fail. Real failure patterns, warning signs, and lessons to avoid the same mistakes.", type: "website" },
   ];
 
   for (const page of trafficPages) {
@@ -2836,6 +2842,61 @@ function getRoutes() {
               acceptedAnswer: { "@type": "Answer", text: f.answer },
             })),
           },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 5: Quit Your Job pages ----------
+  for (const q of quitJobPages) {
+    const url = `${SITE}/quit-your-job/${q.slug}`;
+    routes.push({
+      path: `/quit-your-job/${q.slug}`,
+      meta: {
+        title: q.metaTitle,
+        description: q.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: q.h1, description: q.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Quit Your Job" }, { "@type": "ListItem", position: 3, name: q.profession } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: q.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 5: Weekend Build pages ----------
+  for (const w of weekendBuilds) {
+    const url = `${SITE}/weekend-builds/${w.slug}`;
+    routes.push({
+      path: `/weekend-builds/${w.slug}`,
+      meta: {
+        title: w.metaTitle,
+        description: w.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: w.h1, description: w.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Weekend Builds" }, { "@type": "ListItem", position: 3, name: w.category } ] },
+          { "@context": "https://schema.org", "@type": "HowTo", name: w.h1, description: w.intro, totalTime: w.totalHours, step: w.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.task, text: s.outcome })) },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: w.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 5: Failure Story pages ----------
+  for (const f of failureStories) {
+    const url = `${SITE}/failure-stories/${f.slug}`;
+    routes.push({
+      path: `/failure-stories/${f.slug}`,
+      meta: {
+        title: f.metaTitle,
+        description: f.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Failure Stories" }, { "@type": "ListItem", position: 3, name: f.failureType } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: f.faqs.map((fa) => ({ "@type": "Question", name: fa.question, acceptedAnswer: { "@type": "Answer", text: fa.answer } })) },
         ],
       },
     });

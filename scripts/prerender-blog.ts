@@ -52,6 +52,11 @@ import { sideHustles } from "../src/data/side-hustles.js";
 import { budgetStartPages } from "../src/data/budget-start.js";
 import { niches } from "../src/data/niches.js";
 
+// ── Greg Isenberg pSEO Round 5 ──
+import { quitJobPages } from "../src/data/quit-job.js";
+import { weekendBuilds } from "../src/data/weekend-builds.js";
+import { failureStories } from "../src/data/failure-stories.js";
+
 // ---------- Markdown-like content → HTML ----------
 
 function bold(text: string): string {
@@ -2050,6 +2055,11 @@ function main() {
   if (injectBody(resolve(DIST, "by-budget", "index.html"), byBudgetHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "niches", "index.html"), nichesHubBodyHtml())) { count++; }
 
+  // ── Greg Isenberg pSEO Round 5 — hub landing pages ──
+  if (injectBody(resolve(DIST, "quit-your-job", "index.html"), quitJobHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "weekend-builds", "index.html"), weekendBuildsHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "failure-stories", "index.html"), failureStoriesHubBodyHtml())) { count++; }
+
   // ── Missing pSEO hub pages (were 0 words for crawlers) ──
   if (injectBody(resolve(DIST, "non-compete", "index.html"), nonCompeteHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
@@ -2124,6 +2134,21 @@ function main() {
   // ── Greg Isenberg pSEO Round 4: Niche pages ──
   for (const n of niches) {
     if (injectBody(resolve(DIST, "niches", n.slug, "index.html"), nicheBodyHtml(n))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 5: Quit Your Job pages ──
+  for (const q of quitJobPages) {
+    if (injectBody(resolve(DIST, "quit-your-job", q.slug, "index.html"), quitJobBodyHtml(q))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 5: Weekend Build pages ──
+  for (const w of weekendBuilds) {
+    if (injectBody(resolve(DIST, "weekend-builds", w.slug, "index.html"), weekendBuildBodyHtml(w))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 5: Failure Story pages ──
+  for (const f of failureStories) {
+    if (injectBody(resolve(DIST, "failure-stories", f.slug, "index.html"), failureStoryBodyHtml(f))) { count++; }
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);
@@ -3545,6 +3570,107 @@ ${links}
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
 </div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 5 — Body generators ----------
+
+function quitJobBodyHtml(item: typeof quitJobPages[0]): string {
+  const ready = item.signsYouAreReady.map((s: string) => `<li style="color:#374151;margin-bottom:0.25rem">✅ ${s}</li>`).join("");
+  const notReady = item.signsYouAreNot.map((s: string) => `<li style="color:#374151;margin-bottom:0.25rem">⚠️ ${s}</li>`).join("");
+  const checklist = item.financialChecklist.map((f: any) => `<div style="display:flex;align-items:center;gap:1rem;padding:0.75rem;background:#f9fafb;border-radius:0.5rem;margin-bottom:0.5rem;font-size:0.875rem"><span style="flex:1;font-weight:600;color:#374151">${f.item}</span><span style="color:#2563eb">${f.target}</span></div>`).join("\n");
+  const framework = item.theFramework.map((f: any, i: number) => `<div style="display:flex;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.75rem"><div style="flex-shrink:0;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:#2563eb;color:white;font-weight:700;font-size:0.875rem">${i+1}</div><div style="flex:1"><div style="font-weight:600;color:#0f172a">${f.milestone}</div><div style="font-size:0.8rem;color:#6b7280;margin-top:0.25rem">📊 ${f.criteria}</div><div style="font-size:0.8rem;color:#2563eb;margin-top:0.25rem">→ ${f.action}</div></div></div>`).join("\n");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Quit Your Job", "The decision framework", "When is the right time to quit your job to start a business? Honest, numbers-based framework.")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #2563eb;background:#eff6ff;padding:1.5rem;border-radius:0.5rem"><h2 style="font-weight:700;color:#1e3a8a">The Honest Answer</h2><p style="color:#1e40af;margin-top:0.5rem">${item.theHonestAnswer}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div><h3 style="font-weight:700;color:#166534">Signs You're Ready</h3><ul style="margin-top:0.75rem">${ready}</ul></div><div><h3 style="font-weight:700;color:#dc2626">Signs You're NOT Ready</h3><ul style="margin-top:0.75rem">${notReady}</ul></div></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Financial Checklist</h2>${checklist}</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">The Framework</h2>${framework}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div style="background:#fef2f2;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#991b1b">If You Quit Too Early</h3><p style="color:#374151;margin-top:0.5rem;font-size:0.875rem">${item.whatHappensIfYouQuitTooEarly}</p></div><div style="background:#fffbeb;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#92400e">If You Wait Too Long</h3><p style="color:#374151;margin-top:0.5rem;font-size:0.875rem">${item.whatHappensIfYouWaitTooLong}</p></div></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;background:#0f172a;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:white">Real Timeline</h3><p style="color:#cbd5e1;margin-top:0.5rem">${item.realTimeline}</p></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function weekendBuildBodyHtml(item: typeof weekendBuilds[0]): string {
+  const steps = item.steps.map((s: any, i: number) => `<div style="display:flex;gap:1rem;padding:0.75rem;background:#f9fafb;border-radius:0.5rem;margin-bottom:0.5rem"><div style="flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:#2563eb;color:white;font-weight:700">${i+1}</div><div style="flex:1"><div style="font-size:0.8rem;font-weight:600;color:#6b7280">${s.hour}</div><div style="font-weight:600;color:#0f172a">${s.task}</div><div style="font-size:0.8rem;color:#166534;margin-top:0.25rem">🎯 ${s.outcome}</div></div></div>`).join("\n");
+  const stack = item.techStack.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Weekend Builds", "48-hour launch plan", "Build and launch a profitable side business in one weekend — hour-by-hour plan with tech stack and monetization")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem"><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#1d4ed8">${item.difficulty}</div><div style="font-size:0.7rem;color:#6b7280">Difficulty</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#166534">${item.totalHours}</div><div style="font-size:0.7rem;color:#6b7280">Total Time</div></div><div style="background:#faf5ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#7e22ce">${item.cost}</div><div style="font-size:0.7rem;color:#6b7280">Cost</div></div><div style="background:#fff7ed;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#c2410c">${item.revenuePotential}</div><div style="font-size:0.7rem;color:#6b7280">Revenue</div></div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Hour-by-Hour Plan</h2>${steps}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Tech Stack</h2><div>${stack}</div></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #7e22ce;background:#faf5ff;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#581c87">The Honest Take</h3><p style="color:#6b21a8;margin-top:0.5rem">${item.monologue}</p></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;background:#0f172a;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:white">What to Do After the Weekend</h3><p style="color:#cbd5e1;margin-top:0.5rem">${item.whatToDoAfter}</p></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function failureStoryBodyHtml(item: typeof failureStories[0]): string {
+  const wrong = item.whatWentWrong.map((w: any) => `<div style="padding:1rem;border:1px solid #fecaca;background:#fef2f2;border-radius:0.5rem;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#991b1b">❌ ${w.mistake}</h3><p style="font-size:0.875rem;color:#4b5563;margin-top:0.25rem"><strong>Impact:</strong> ${w.impact}</p><p style="font-size:0.875rem;color:#166534;margin-top:0.25rem"><strong>Lesson:</strong> ${w.lesson}</p></div>`).join("\n");
+  const nums = item.theNumbers.map((n: any) => `<div style="display:flex;align-items:center;justify-content:space-between;background:#0f172a;padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:0.5rem"><span style="font-size:0.8rem;color:#cbd5e1">${n.metric}</span><span style="font-weight:700;color:white">${n.value}</span></div>`).join("\n");
+  const warnings = item.warningSigns.map((w: string) => `<li style="color:#374151;margin-bottom:0.25rem">🚨 ${w}</li>`).join("");
+  const avoids = item.howToAvoid.map((h: string) => `<li style="color:#374151;margin-bottom:0.25rem">✅ ${h}</li>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail — honest analysis of common failure patterns and how to avoid them")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><span style="display:inline-block;background:#fee2e2;color:#b91c1c;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem;font-weight:600">${item.failureType}</span><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin:0.75rem 0 1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">The Story</h2><p style="color:#374151">${item.theStory}</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem;color:#dc2626">What Went Wrong</h2>${wrong}</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">The Numbers</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">${nums}</div></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #16a34a;background:#f0fdf4;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#14532d">What Would Have Worked</h3><p style="color:#166534;margin-top:0.5rem">${item.whatWouldHaveWorked}</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div><h3 style="font-weight:700;color:#b45309">Warning Signs</h3><ul style="margin-top:0.75rem">${warnings}</ul></div><div><h3 style="font-weight:700;color:#166534">How to Avoid</h3><ul style="margin-top:0.75rem">${avoids}</ul></div></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/mistakes" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Mistake Guides &rarr;</a></div></section>
+</div>`;
+}
+
+function quitJobHubBodyHtml(): string {
+  const links = quitJobPages.map((q) =>
+    `<a href="/quit-your-job/${q.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${q.profession}</h3><p style="font-size:0.875rem;color:#6b7280">${q.theHonestAnswer.substring(0, 120)}...</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Quit Your Job", "The decision framework", "When to quit your job to start a business — honest, numbers-based framework for every profession")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>When to Quit Your Job</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">When Should You Quit Your Job?</h1><p style="color:#4b5563;margin-bottom:1.5rem">The most common question we get. The answer isn't 'just do it' or 'never take risk.' It's a calculation. Browse profession-specific frameworks below — each with financial milestones, readiness signs, and honest timelines.</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Profession</h2>${links}</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a></div></section>
+</div>`;
+}
+
+function weekendBuildsHubBodyHtml(): string {
+  const links = weekendBuilds.map((w) =>
+    `<a href="/weekend-builds/${w.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${w.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${w.category} · ${w.totalHours} · ${w.revenuePotential}</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Weekend Builds", "48-hour launch ideas", "Build and launch a profitable side business in one weekend — step-by-step plans with tech stacks and monetization")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Weekend Builds</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Weekend Build Ideas</h1><p style="color:#4b5563;margin-bottom:1.5rem">What can you build in 48 hours that could generate $500-$5K/month? Here are step-by-step plans with hour-by-hour schedules, tech stacks, and honest revenue potential. No fluff — just actionable builds you can start Friday night.</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Weekend Builds</h2>${links}</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse All Ideas →</a></div></section>
+</div>`;
+}
+
+function failureStoriesHubBodyHtml(): string {
+  const links = failureStories.map((f) =>
+    `<a href="/failure-stories/${f.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><span style="display:inline-block;background:#fee2e2;color:#b91c1c;padding:0.15rem 0.5rem;border-radius:9999px;font-size:0.7rem;font-weight:600">${f.failureType}</span><h3 style="font-weight:700;color:#111827;margin:0.5rem 0 0.25rem">${f.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${f.intro.substring(0, 120)}...</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail — honest analysis of common failure patterns, warning signs, and lessons")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Failure Stories</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Failure Stories</h1><p style="color:#4b5563;margin-bottom:1.5rem">Success stories teach you what worked. Failure stories teach you what to avoid — and they're more useful. Here are the most common ways micro-SaaS startups die, with real patterns, numbers, and lessons. Learn from others' mistakes.</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Failure Stories</h2>${links}</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/mistakes" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Mistake Guides →</a></div></section>
 </div>`;
 }
 

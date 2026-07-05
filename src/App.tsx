@@ -107,6 +107,10 @@ const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketing
 const SideHustlePage = lazy(() => import("./pages/SideHustlePage.tsx"));
 const BudgetStartPage = lazy(() => import("./pages/BudgetStartPage.tsx"));
 const NichePage = lazy(() => import("./pages/NichePage.tsx"));
+// ── Greg Isenberg pSEO Round 5 ──
+const QuitJobPage = lazy(() => import("./pages/QuitJobPage.tsx"));
+const WeekendBuildPage = lazy(() => import("./pages/WeekendBuildPage.tsx"));
+const FailureStoryPage = lazy(() => import("./pages/FailureStoryPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -245,6 +249,14 @@ const App = () => (
           <Route path="/by-budget" element={<Navigate to="/blog" replace />} />
           <Route path="/niches/:slug" element={<NichePage />} />
           <Route path="/niches" element={<Navigate to="/blog" replace />} />
+
+          {/* ── Greg Isenberg pSEO Round 5 ── */}
+          <Route path="/quit-your-job/:slug" element={<QuitJobPage />} />
+          <Route path="/quit-your-job" element={<Navigate to="/blog" replace />} />
+          <Route path="/weekend-builds/:slug" element={<WeekendBuildPage />} />
+          <Route path="/weekend-builds" element={<Navigate to="/blog" replace />} />
+          <Route path="/failure-stories/:slug" element={<FailureStoryPage />} />
+          <Route path="/failure-stories" element={<Navigate to="/blog" replace />} />
 
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}

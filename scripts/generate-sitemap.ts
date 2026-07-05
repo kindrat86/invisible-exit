@@ -58,6 +58,11 @@ async function main() {
   const { budgetStartPages } = await import("../src/data/budget-start.js");
   const { niches } = await import("../src/data/niches.js");
 
+  // Greg Isenberg pSEO Round 5
+  const { quitJobPages } = await import("../src/data/quit-job.js");
+  const { weekendBuilds } = await import("../src/data/weekend-builds.js");
+  const { failureStories } = await import("../src/data/failure-stories.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -648,6 +653,28 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
+    // ── Greg Isenberg pSEO Round 5 ──
+    // Quit Your Job pages
+    ...quitJobPages.map((q: { slug: string }) => ({
+      loc: `https://invisibleexit.com/quit-your-job/${q.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Weekend Build pages
+    ...weekendBuilds.map((w: { slug: string }) => ({
+      loc: `https://invisibleexit.com/weekend-builds/${w.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Failure Story pages
+    ...failureStories.map((f: { slug: string }) => ({
+      loc: `https://invisibleexit.com/failure-stories/${f.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -685,7 +712,10 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/is-it-legal/") &&
     !e.loc.includes("/side-hustles/") &&
     !e.loc.includes("/by-budget/") &&
-    !e.loc.includes("/niches/")
+    !e.loc.includes("/niches/") &&
+    !e.loc.includes("/quit-your-job/") &&
+    !e.loc.includes("/weekend-builds/") &&
+    !e.loc.includes("/failure-stories/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -694,7 +724,8 @@ const submaps: Record<string, SitemapEntry[]> = {
   "glossary": entries.filter(e => e.loc.includes("/glossary/")),
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
   "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
-  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/")),
+  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
+  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
