@@ -1,6 +1,8 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { LANGUAGE_MAP } from "@/i18n/languages";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -136,6 +138,38 @@ const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess.tsx"));
 const AdminFeatureRequests = lazy(() => import("./pages/AdminFeatureRequests.tsx"));
 
 const queryClient = new QueryClient();
+
+/**
+ * Handles /:lang/* URLs for localization.
+ * When a user visits /es/blog, this strips /es, sets the i18next language,
+ * and navigates to /blog (so the actual page renders).
+ * The LanguageSwitcher component handles adding the prefix back when switching.
+ */
+function LangRedirectWrapper() {
+  const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lang && LANGUAGE_MAP[lang]) {
+      // Set the language
+      if (i18n.language !== lang) {
+        i18n.changeLanguage(lang);
+      }
+      // Navigate to the path without the lang prefix
+      const segments = location.pathname.split("/").filter(Boolean);
+      const rest = "/" + segments.slice(1).join("/");
+      navigate(rest, { replace: true });
+    }
+  }, [lang, location.pathname]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="w-10 h-10 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+    </div>
+  );
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -334,8 +368,14 @@ const App = () => (
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
           <Route path="/fym/oto/second-tool" element={<Navigate to="/" replace />} />
-          <Route path="/fym/dashboard" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/fym/dashboard" element={<Navigate to="/dashboard" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+          {/* ── i18n: Language-prefixed routes (/:lang/*) ── */}
+          {/* Handles /es, /ar, /ja, etc. — strips lang prefix, sets i18next, redirects */}
+          <Route path="/:lang" element={<LangRedirectWrapper />} />
+          <Route path="/:lang/*" element={<LangRedirectWrapper />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
