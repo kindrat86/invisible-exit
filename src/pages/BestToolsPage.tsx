@@ -3,17 +3,75 @@ import { bestToolsLists } from "@/data/best-tools";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { ArrowRight, Star } from "lucide-react";
 
 export default function BestToolsPage() {
   const { category } = useParams<{ category: string }>();
+
+  // No category = show directory index of all tool lists
+  if (!category) {
+    return (
+      <div className="min-h-screen bg-white">
+        <SEOHead
+          title="Best AI Tools for Building Micro-SaaS | Invisible Exit"
+          description="Curated tool guides for solo founders building micro-SaaS businesses. Compare the best no-code, AI, and automation tools."
+          url="https://invisibleexit.com/best"
+          image="https://invisibleexit.com/og-image.png"
+        />
+        <Navbar />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+          <nav className="text-sm text-gray-500 mb-8">
+            <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+            {" › "}
+            <span>Best Tools</span>
+          </nav>
+
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Best Tools for Building Micro-SaaS
+          </h1>
+          <p className="text-lg text-gray-600 mb-12">
+            Curated guides comparing the best tools for solo founders and side-business builders. Each guide includes pricing, pros, cons, and recommendations.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {bestToolsLists.map((list) => (
+              <Link
+                key={list.slug}
+                to={`/best/${list.slug}`}
+                className="group block border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-blue-300 transition-all"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h2 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {list.title}
+                  </h2>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{list.intro}</p>
+                <div className="mt-4 flex items-center gap-2 text-sm">
+                  <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  <span className="text-gray-500">{list.tools.length} tools reviewed</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   const list = bestToolsLists.find((l) => l.slug === category);
 
   if (!list) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Tool list not found</h1>
-          <Link to="/best" className="text-blue-600 hover:underline">← Browse all tool lists</Link>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Navbar />
+        <div className="text-center px-4">
+          <h1 className="text-2xl font-bold mb-4 text-gray-900">Tool list not found</h1>
+          <p className="text-gray-600 mb-6">This guide doesn't exist or may have moved.</p>
+          <Link to="/best" className="inline-flex items-center gap-2 text-blue-600 hover:underline font-medium">
+            ← Browse all tool guides
+          </Link>
         </div>
       </div>
     );
@@ -24,8 +82,8 @@ export default function BestToolsPage() {
       <SEOHead
         title={list.metaTitle}
         description={list.metaDescription}
-        canonical={`https://invisibleexit.com/best/${list.slug}`}
-        ogImage={`https://invisibleexit.com/og-image.png`}
+        url={`https://invisibleexit.com/best/${list.slug}`}
+        image={`https://invisibleexit.com/og-image.png`}
       />
       <Navbar />
 

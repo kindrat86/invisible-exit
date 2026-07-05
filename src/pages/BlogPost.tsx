@@ -231,14 +231,14 @@ const BlogPost = () => {
       <section className="hero-dark-radial pt-28 pb-12 sm:pt-32 sm:pb-16 section">
         <div className="container-narrow">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6 overflow-hidden">
-            <Link to="/" className="hover:text-white/70 transition-colors shrink-0">
+          <nav className="flex items-center gap-2 text-sm text-white/60 mb-6 overflow-hidden">
+            <Link to="/" className="hover:text-white/90 transition-colors shrink-0">
               Home
             </Link>
             <span className="shrink-0">/</span>
             <Link
               to="/blog"
-              className="hover:text-white/70 transition-colors shrink-0"
+              className="hover:text-white/90 transition-colors shrink-0"
               onClick={() =>
                 trackEvent("blog_back_to_hub_clicked", {
                   slug: post.slug,
@@ -249,7 +249,7 @@ const BlogPost = () => {
               Blog
             </Link>
             <span className="shrink-0">/</span>
-            <span className="text-white/60 truncate">{post.title}</span>
+            <span className="text-white/80 truncate">{post.title}</span>
           </nav>
 
           <span className="block text-eyebrow text-primary-light mb-4">
@@ -259,7 +259,7 @@ const BlogPost = () => {
             {post.title}
           </h1>
           <p className="text-body-lg text-white/70 leading-relaxed mb-6">{post.excerpt}</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/50 text-sm">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/70 text-sm">
             <span>By Adrian</span>
             <span aria-hidden>·</span>
             <span>{post.readTime}</span>

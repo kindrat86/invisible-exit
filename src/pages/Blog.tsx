@@ -142,7 +142,7 @@ const ArchiveCard = ({
   <Link
     to={`/blog/${article.slug}`}
     onClick={() => trackEvent(event, { slug: article.slug, section })}
-    className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col hover:shadow-md transition-shadow group"
+    className="relative bg-white rounded-xl border border-gray-200 p-6 flex flex-col hover:shadow-lg hover:border-blue-200 hover:-translate-y-0.5 transition-all group overflow-hidden"
   >
     <span className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
       {article.category}
@@ -151,7 +151,7 @@ const ArchiveCard = ({
       {article.title}
     </h3>
     <p className="text-gray-600 text-sm leading-relaxed flex-1">{article.excerpt}</p>
-    <div className="flex items-center justify-between mt-4 text-xs text-gray-400">
+    <div className="flex items-center justify-between mt-4 text-xs text-gray-500">
       <span>{article.readTime}</span>
       <span>
         {new Date(article.publishedAt).toLocaleDateString("en-US", {
@@ -161,6 +161,7 @@ const ArchiveCard = ({
         })}
       </span>
     </div>
+    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#60A5FA] to-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity" />
   </Link>
 );
 
@@ -261,12 +262,12 @@ const Blog = () => {
 
       <section className="bg-[#1B2A4A] pt-32 pb-16 px-6">
         <div className="mx-auto max-w-5xl">
-          <nav className="flex items-center gap-2 text-sm text-white/40 mb-6">
-            <Link to="/" className="hover:text-white/70 transition-colors">
+          <nav className="flex items-center gap-2 text-sm text-white/60 mb-6">
+            <Link to="/" className="hover:text-white/90 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <span className="text-white/60">Blog</span>
+            <span className="text-white/80">Blog</span>
           </nav>
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] gap-10 items-end">
             <div>
@@ -367,7 +368,7 @@ const Blog = () => {
               <div key={section.category} className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
                 <div className="flex items-center justify-between gap-4 mb-3">
                   <h3 className="text-xl font-bold text-gray-900">{section.category}</h3>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">
                     {section.posts.length} posts
                   </span>
                 </div>
@@ -383,7 +384,7 @@ const Blog = () => {
                           section: `category_${section.category}`,
                         })
                       }
-                      className="block rounded-xl bg-white border border-gray-200 p-4 hover:border-gray-300 transition-colors"
+                      className="block rounded-xl bg-white border border-gray-200 p-4 hover:border-blue-300 hover:shadow-sm transition-all"
                     >
                       <p className="text-sm font-semibold text-gray-900 mb-1">{post.title}</p>
                       <p className="text-xs text-gray-500">{post.readTime}</p>
