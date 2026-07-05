@@ -960,4 +960,52 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/tools/best-analytics-tools-for-supply-chain-managers" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/tools/best-analytics-tools-for-supply-chain-managers" />
   </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/cursor</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/cursor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/cursor" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/vercel</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/vercel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/vercel" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/supabase</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/supabase" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/supabase" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/stripe</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/stripe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/stripe" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/linear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/linear" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/linear" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/reviews/claude</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/reviews/claude" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/reviews/claude" />
+  </url>
 </urlset>

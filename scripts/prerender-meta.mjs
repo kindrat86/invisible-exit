@@ -49,6 +49,7 @@ import { niches } from "../src/data/niches.ts";
 import { quitJobPages } from "../src/data/quit-job.ts";
 import { weekendBuilds } from "../src/data/weekend-builds.ts";
 import { failureStories } from "../src/data/failure-stories.ts";
+import { toolReviews } from "../src/data/tool-reviews.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1438,6 +1439,7 @@ function getRoutes() {
     { path: "/quit-your-job", title: "When to Quit Your Job to Start a Business (Honest Guide) | Invisible Exit", desc: "The honest framework for deciding when to quit your job. Financial milestones, readiness signs, and the math — no toxic hustle advice.", type: "website" },
     { path: "/weekend-builds", title: "Weekend Build Ideas — Launch in 48 Hours | Invisible Exit", desc: "Step-by-step guides for building and launching a profitable side business in one weekend. AI wrappers, directories, Chrome extensions, and more.", type: "website" },
     { path: "/failure-stories", title: "Micro-SaaS Failure Stories — Learn From Real Mistakes | Invisible Exit", desc: "Honest analysis of why startups fail. Real failure patterns, warning signs, and lessons to avoid the same mistakes.", type: "website" },
+    { path: "/reviews", title: "Tool Reviews for Solo Founders (2025) | Invisible Exit", desc: "Honest reviews of the tools solo founders actually use — Cursor, Vercel, Supabase, Stripe, Linear, Claude. Real verdicts, not affiliate fluff.", type: "website" },
   ];
 
   for (const page of trafficPages) {
@@ -2897,6 +2899,33 @@ function getRoutes() {
           { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Failure Stories" }, { "@type": "ListItem", position: 3, name: f.failureType } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: f.faqs.map((fa) => ({ "@type": "Question", name: fa.question, acceptedAnswer: { "@type": "Answer", text: fa.answer } })) },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 6: Tool Review pages ----------
+  for (const t of toolReviews) {
+    const url = `${SITE}/reviews/${t.slug}`;
+    routes.push({
+      path: `/reviews/${t.slug}`,
+      meta: {
+        title: t.metaTitle,
+        description: t.metaDescription,
+        url, type: "review",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            itemReviewed: { "@type": "SoftwareApplication", name: t.toolName, applicationCategory: "SoftwareApplication", operatingSystem: "Web" },
+            reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            headline: t.h1,
+            description: t.intro,
+          },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Reviews" }, { "@type": "ListItem", position: 3, name: t.toolName } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: t.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
         ],
       },
     });

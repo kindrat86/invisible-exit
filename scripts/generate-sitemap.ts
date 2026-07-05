@@ -63,6 +63,9 @@ async function main() {
   const { weekendBuilds } = await import("../src/data/weekend-builds.js");
   const { failureStories } = await import("../src/data/failure-stories.js");
 
+  // Greg Isenberg pSEO Round 6
+  const { toolReviews } = await import("../src/data/tool-reviews.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -675,6 +678,14 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
+    // ── Greg Isenberg pSEO Round 6 ──
+    // Tool Review pages
+    ...toolReviews.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/reviews/${t.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -715,12 +726,13 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/niches/") &&
     !e.loc.includes("/quit-your-job/") &&
     !e.loc.includes("/weekend-builds/") &&
-    !e.loc.includes("/failure-stories/")
+    !e.loc.includes("/failure-stories/") &&
+    !e.loc.includes("/reviews/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
   "ideas": entries.filter(e => e.loc.includes("/ideas/")),
-  "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/")),
+  "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/") || e.loc.includes("/reviews/")),
   "glossary": entries.filter(e => e.loc.includes("/glossary/")),
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
   "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
@@ -786,6 +798,7 @@ console.log(`  Is-it-legal: ${isItLegalPages.length}`);
 console.log(`  Side hustles: ${sideHustles.length}`);
 console.log(`  Budget start: ${budgetStartPages.length}`);
 console.log(`  Niches: ${niches.length}`);
+console.log(`  Tool reviews: ${toolReviews.length}`);
 }
 
 main().catch((err) => {

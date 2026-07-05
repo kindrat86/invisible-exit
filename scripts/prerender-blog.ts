@@ -57,6 +57,9 @@ import { quitJobPages } from "../src/data/quit-job.js";
 import { weekendBuilds } from "../src/data/weekend-builds.js";
 import { failureStories } from "../src/data/failure-stories.js";
 
+// ── Greg Isenberg pSEO Round 6 ──
+import { toolReviews } from "../src/data/tool-reviews.js";
+
 // ---------- Markdown-like content → HTML ----------
 
 function bold(text: string): string {
@@ -2060,6 +2063,9 @@ function main() {
   if (injectBody(resolve(DIST, "weekend-builds", "index.html"), weekendBuildsHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "failure-stories", "index.html"), failureStoriesHubBodyHtml())) { count++; }
 
+  // ── Greg Isenberg pSEO Round 6 — hub landing pages ──
+  if (injectBody(resolve(DIST, "reviews", "index.html"), reviewsHubBodyHtml())) { count++; }
+
   // ── Missing pSEO hub pages (were 0 words for crawlers) ──
   if (injectBody(resolve(DIST, "non-compete", "index.html"), nonCompeteHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
@@ -2149,6 +2155,11 @@ function main() {
   // ── Greg Isenberg pSEO Round 5: Failure Story pages ──
   for (const f of failureStories) {
     if (injectBody(resolve(DIST, "failure-stories", f.slug, "index.html"), failureStoryBodyHtml(f))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 6: Tool Review pages ──
+  for (const t of toolReviews) {
+    if (injectBody(resolve(DIST, "reviews", t.slug, "index.html"), toolReviewBodyHtml(t))) { count++; }
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);
@@ -3671,6 +3682,47 @@ ${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Failure Stories</h1><p style="color:#4b5563;margin-bottom:1.5rem">Success stories teach you what worked. Failure stories teach you what to avoid — and they're more useful. Here are the most common ways micro-SaaS startups die, with real patterns, numbers, and lessons. Learn from others' mistakes.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Failure Stories</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/mistakes" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Mistake Guides →</a></div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 6 — Body generator ----------
+
+function toolReviewBodyHtml(item: typeof toolReviews[0]): string {
+  const pros = item.pros.map((p: string) => `<li style="color:#374151;font-size:0.875rem;margin-bottom:0.25rem">${p}</li>`).join("");
+  const cons = item.cons.map((c: string) => `<li style="color:#374151;font-size:0.875rem;margin-bottom:0.25rem">${c}</li>`).join("");
+  const features = item.features.map((f: any) =>
+    `<div style="padding:1rem;border:1px solid ${f.isStandout ? '#bfdbfe' : '#e2e8f0'};background:${f.isStandout ? '#eff6ff' : 'white'};border-radius:0.5rem;margin-bottom:0.5rem"><div style="display:flex;align-items:center;gap:0.5rem"><h3 style="font-weight:700;color:#0f172a;font-size:0.95rem">${f.name}</h3>${f.isStandout ? '<span style="display:inline-block;background:#dbeafe;color:#1e40af;padding:0.1rem 0.5rem;border-radius:9999px;font-size:0.7rem;font-weight:600">Standout</span>' : ''}</div><p style="color:#6b7280;font-size:0.85rem;margin-top:0.25rem">${f.description}</p></div>`
+  ).join("\n");
+  const comparisons = item.comparisonTable.map((c: any) => `<div style="display:flex;align-items:flex-start;gap:1rem;padding:0.75rem 1rem;border-bottom:1px solid #e5e7eb;font-size:0.875rem"><div style="font-weight:600;color:#374151;min-width:10rem">${c.feature}</div><div style="color:#4b5563">${c.verdict}</div></div>`).join("\n");
+  const alts = item.alternatives.map((a: any) => `<div style="padding:0.75rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.5rem;font-size:0.875rem"><div style="font-weight:600;color:#0f172a">${a.name}</div><div style="color:#6b7280;margin-top:0.2rem">${a.why}</div></div>`).join("\n");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Tool Reviews", "Honest software reviews", "In-depth reviews of the tools solo founders actually use — honest verdicts, not affiliate fluff")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><div style="display:flex;align-items:flex-start;gap:1rem"><div style="flex-shrink:0;width:3rem;height:3rem;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:0.75rem;font-size:1.5rem;font-weight:700;color:#475569">${item.toolName[0]}</div><div><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2">${item.h1}</h1><p style="font-size:0.875rem;color:#6b7280;margin-top:0.25rem">${item.tagline}</p></div></div><p style="color:#4b5563;margin-top:1rem">${item.intro}</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.5rem"><div style="background:#fffbeb;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#d97706">${item.rating}/5</div><div style="font-size:0.7rem;color:#6b7280">Rating</div></div><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#1d4ed8">${item.pricing}</div><div style="font-size:0.7rem;color:#6b7280">Pricing</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#166534">${item.freeTier}</div><div style="font-size:0.7rem;color:#6b7280">Free Tier</div></div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Best For</h2><div style="display:flex;flex-wrap:wrap;gap:0.5rem">${item.bestFor.map((b: string) => `<span style="display:inline-block;padding:0.35rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.85rem;color:#475569">✅ ${b}</span>`).join("")}</div></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div style="background:#f0fdf4;padding:1.25rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#166534">👍 Pros</h3><ul style="margin-top:0.75rem">${pros}</ul></div><div style="background:#fef2f2;padding:1.25rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#dc2626">👎 Cons</h3><ul style="margin-top:0.75rem">${cons}</ul></div></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Key Features</h2>${features}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">How It Compares</h2><div style="border:1px solid #e2e8f0;border-radius:0.75rem">${comparisons}</div></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #2563eb;background:#eff6ff;padding:1.5rem;border-radius:0.5rem"><h2 style="font-weight:700;color:#1e3a8a">Our Verdict</h2><p style="color:#1e40af;margin-top:0.5rem">${item.verdict}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Alternatives</h2>${alts}</div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
+</div>`;
+}
+
+function reviewsHubBodyHtml(): string {
+  const links = toolReviews.map((t) =>
+    `<a href="/reviews/${t.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><div style="display:flex;align-items:center;gap:1rem"><div style="flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:0.5rem;font-weight:700">${t.toolName[0]}</div><div style="flex:1"><h3 style="font-weight:700;color:#111827">${t.toolName} — ${t.h1}</h3><p style="font-size:0.875rem;color:#6b7280;margin-top:0.15rem">${t.tagline} · ⭐ ${t.rating}/5 · ${t.pricing}</p></div></div></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Tool Reviews", "Honest software reviews", "Real talk: what solo founders should actually pay for and what's not worth it")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Tool Reviews</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Tool Reviews for Solo Founders</h1><p style="color:#4b5563;margin-bottom:1.5rem">Everyone recommends tools. We actually use them. These are honest reviews of the software I rely on to build invisible-exit.com — Cursor, Vercel, Supabase, Stripe, Linear, Claude. No affiliate fluff, no sponsored tiers. Just real verdicts from daily use.</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Reviews</h2>${links}</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
 }
 

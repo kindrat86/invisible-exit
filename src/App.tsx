@@ -111,6 +111,8 @@ const NichePage = lazy(() => import("./pages/NichePage.tsx"));
 const QuitJobPage = lazy(() => import("./pages/QuitJobPage.tsx"));
 const WeekendBuildPage = lazy(() => import("./pages/WeekendBuildPage.tsx"));
 const FailureStoryPage = lazy(() => import("./pages/FailureStoryPage.tsx"));
+// ── Greg Isenberg pSEO Round 6 ──
+const ToolReviewPage = lazy(() => import("./pages/ToolReviewPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -257,6 +259,10 @@ const App = () => (
           <Route path="/weekend-builds" element={<Navigate to="/blog" replace />} />
           <Route path="/failure-stories/:slug" element={<FailureStoryPage />} />
           <Route path="/failure-stories" element={<Navigate to="/blog" replace />} />
+
+          {/* ── Greg Isenberg pSEO Round 6 ── */}
+          <Route path="/reviews/:slug" element={<ToolReviewPage />} />
+          <Route path="/reviews" element={<Navigate to="/blog" replace />} />
 
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}
