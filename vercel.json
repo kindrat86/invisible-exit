@@ -581,6 +581,14 @@
     {
       "source": "/fym/dashboard",
       "destination": "/index.html"
+    },
+    {
+      "source": "/:lang((?:zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|pcm|mr|te|tr|ta|vi|yue|pa|ko|fa|it|th|gu|kn|ml|or|pl|uk|nl|ro|el|cs|hu|sv|fi|no|da|he|sw|am|so|ha|yo|ig|zu|xh|af|ms|my|km|lo|ne|si|ps|kk|uz|az|ka|hy|mn|bo|ug|tl|ceb|ilo|jv|su|mad|nan|wuu|hak|hmn|ku|bal|tg|tk|sq|sr|hr|bs|sk|sl|lt|lv|et|be|bg|mk|ca|eu|gl|cy|ga|gd|br|is|lb|mt))",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:lang((?:zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|pcm|mr|te|tr|ta|vi|yue|pa|ko|fa|it|th|gu|kn|ml|or|pl|uk|nl|ro|el|cs|hu|sv|fi|no|da|he|sw|am|so|ha|yo|ig|zu|xh|af|ms|my|km|lo|ne|si|ps|kk|uz|az|ka|hy|mn|bo|ug|tl|ceb|ilo|jv|su|mad|nan|wuu|hak|hmn|ku|bal|tg|tk|sq|sr|hr|bs|sk|sl|lt|lv|et|be|bg|mk|ca|eu|gl|cy|ga|gd|br|is|lb|mt))/:path*",
+      "destination": "/index.html"
     }
   ],
   "crons": [

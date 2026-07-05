@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getHreflangAlternates } from "@/i18n/languages";
 
 interface SEOHeadProps {
   title: string;
@@ -29,6 +30,17 @@ function setLink(rel: string, href: string) {
   if (!el) {
     el = document.createElement("link");
     el.rel = rel;
+    document.head.appendChild(el);
+  }
+  el.href = href;
+}
+
+function setLinkWithHreflang(rel: string, hreflang: string, href: string) {
+  let el = document.querySelector(`link[rel="${rel}"][hreflang="${hreflang}"]`) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = rel;
+    el.hreflang = hreflang;
     document.head.appendChild(el);
   }
   el.href = href;
@@ -76,7 +88,17 @@ export default function SEOHead({
     if (type === "article" && modifiedDate) {
       setMeta("property", "article:modified_time", modifiedDate);
     }
-  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex]);
+
+    // ── hreflang alternate tags for all 100 languages (SEO) ──
+    // Extract the path without any existing language prefix
+    const pathFromUrl = url || (typeof window !== "undefined" ? window.location.pathname : "/");
+    const cleanPath = pathFromUrl.replace(/^\/(en|zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|pcm|mr|te|tr|ta|vi|yue|pa|ko|fa|it|th|gu|kn|ml|or|pl|uk|nl|ro|el|cs|hu|sv|fi|no|da|he|sw|am|so|ha|yo|ig|zu|xh|af|ms|my|km|lo|ne|si|ps|kk|uz|az|ka|hy|mn|bo|ug|tl|ceb|ilo|jv|su|mad|nan|wuu|hak|hmn|ku|bal|tg|tk|sq|sr|hr|bs|sk|sl|lt|lv|et|be|bg|mk|ca|eu|gl|cy|ga|gd|br|is|lb|mt)(\/|$)/, "/");
+
+    const alternates = getHreflangAlternates(cleanPath);
+    for (const alt of alternates) {
+      setLinkWithHreflang("alternate", alt.hreflang, alt.href);
+    }
+  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex, url]);
 
   return null;
 }

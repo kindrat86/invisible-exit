@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const FOOTER_SECTIONS = [
   {
@@ -133,6 +135,7 @@ function CollapsibleSection({
 }
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[hsl(222_47%_9%)] border-t border-white/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -144,10 +147,10 @@ const Footer = () => {
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/20 border border-primary/30">
                 <span className="block w-3 h-3 rounded-sm bg-primary" />
               </span>
-              <span>Invisible Exit</span>
+              <span>{t("nav.brand")}</span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Build a side business while employed. Stay invisible. Calculate your exit.
+              {t("footer.tagline")}
             </p>
             <div className="mt-4 flex items-center gap-3">
               <a
@@ -200,11 +203,14 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-white/5">
           <p className="text-white/50 text-xs sm:text-sm order-2 sm:order-1">
-            © {new Date().getFullYear()} Invisible Exit. All rights reserved.
+            © {new Date().getFullYear()} {t("nav.brand")}. {t("footer.allRightsReserved")}
           </p>
-          <p className="text-white/50 text-xs sm:text-sm order-1 sm:order-2">
-            Built by a corporate manager, for corporate managers.
-          </p>
+          <div className="flex items-center gap-4 order-1 sm:order-2">
+            <LanguageSwitcher variant="compact" className="text-white/70" />
+            <p className="hidden sm:block text-white/50 text-xs sm:text-sm">
+              Built by a corporate manager, for corporate managers.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

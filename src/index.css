@@ -1148,3 +1148,107 @@ article.mx-auto.max-w-3xl li {
     padding: 0;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   RTL (Right-to-Left) SUPPORT — Arabic, Hebrew, Persian, Urdu, etc.
+   ═══════════════════════════════════════════════════════════ */
+
+/* When document is RTL, mirror layouts */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Flip flexbox directions for RTL */
+[dir="rtl"] .flex,
+[dir="rtl"] .inline-flex {
+  flex-direction: row-reverse;
+}
+
+/* But keep these LTR even in RTL mode (icons, code, numbers) */
+[dir="rtl"] .ltr-force,
+[dir="rtl"] .ltr-force * {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Flip margins */
+[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
+[dir="rtl"] .mr-auto { margin-left: auto; margin-right: 0; }
+[dir="rtl"] .ml-2 { margin-right: 0.5rem; margin-left: 0; }
+[dir="rtl"] .ml-3 { margin-right: 0.75rem; margin-left: 0; }
+[dir="rtl"] .ml-4 { margin-right: 1rem; margin-left: 0; }
+[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+[dir="rtl"] .mr-3 { margin-left: 0.75rem; margin-right: 0; }
+[dir="rtl"] .mr-4 { margin-left: 1rem; margin-right: 0; }
+
+/* Flip padding */
+[dir="rtl"] .pl-4 { padding-right: 1rem; padding-left: 0; }
+[dir="rtl"] .pl-6 { padding-right: 1.5rem; padding-left: 0; }
+[dir="rtl"] .pr-4 { padding-left: 1rem; padding-right: 0; }
+[dir="rtl"] .pr-6 { padding-left: 1.5rem; padding-right: 0; }
+
+/* Flip absolute positioning */
+[dir="rtl"] .left-0 { right: 0; left: auto; }
+[dir="rtl"] .right-0 { left: 0; right: auto; }
+
+/* Flip border-left/right */
+[dir="rtl"] .border-l-4 {
+  border-right-width: 4px;
+  border-left-width: 0;
+}
+
+/* Navbar drawer: slide from left in RTL */
+[dir="rtl"] .absolute.top-0.right-0 {
+  right: auto;
+  left: 0;
+}
+
+/* Better Arabic/Persian/Urdu font rendering */
+[dir="rtl"] {
+  font-family: "Inter", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.8; /* Arabic scripts need more line height */
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3 {
+  line-height: 1.4;
+}
+
+/* Keep code blocks and numbers LTR */
+[dir="rtl"] code,
+[dir="rtl"] pre,
+[dir="rtl"] .font-mono {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Rotate arrow icons for RTL */
+[dir="rtl"] .lucide-arrow-right {
+  transform: scaleX(-1);
+}
+
+/* ── Language switcher globe animation ── */
+@keyframes globe-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Translation loading indicator ── */
+.translation-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.translation-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.05), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

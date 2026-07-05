@@ -1,71 +1,74 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const NAV_GROUPS = [
   {
-    label: "Build",
+    labelKey: "nav.build",
     links: [
-      { label: "Blog", to: "/blog" },
-      { label: "Micro-SaaS Ideas", to: "/ideas" },
-      { label: "AI Tool Ideas", to: "/ideas/for-accountants/with/chatgpt" },
-      { label: "Budget Stacks", to: "/budget/0-dollars" },
-      { label: "Time Strategy", to: "/hours/5-hours-per-week" },
-      { label: "State Guides", to: "/guides" },
-      { label: "Tool Stacks", to: "/stack" },
-      { label: "First Year Roadmaps", to: "/first-year" },
+      { labelKey: "nav.blog", to: "/blog" },
+      { labelKey: "nav.microSaaSIdeas", to: "/ideas" },
+      { labelKey: "nav.aiToolIdeas", to: "/ideas/for-accountants/with/chatgpt" },
+      { labelKey: "nav.budgetStacks", to: "/budget/0-dollars" },
+      { labelKey: "nav.timeStrategy", to: "/hours/5-hours-per-week" },
+      { labelKey: "nav.stateGuides", to: "/guides" },
+      { labelKey: "nav.toolStacks", to: "/stack" },
+      { labelKey: "nav.firstYearRoadmaps", to: "/first-year" },
     ],
   },
   {
-    label: "Learn",
+    labelKey: "nav.learn",
     links: [
-      { label: "Calculators", to: "/calculators" },
-      { label: "Best Tools", to: "/best" },
-      { label: "Tool Cross-Reference", to: "/tools" },
-      { label: "Data Reports", to: "/data" },
-      { label: "Glossary", to: "/glossary" },
-      { label: "Resources", to: "/resources" },
-      { label: "Timeline", to: "/timeline" },
-      { label: "Revenue Milestones", to: "/milestones" },
-      { label: "Pricing Models", to: "/pricing-models" },
-      { label: "Break-Even Calculator", to: "/break-even" },
+      { labelKey: "nav.calculators", to: "/calculators" },
+      { labelKey: "nav.bestTools", to: "/best" },
+      { labelKey: "nav.toolCrossReference", to: "/tools" },
+      { labelKey: "nav.dataReports", to: "/data" },
+      { labelKey: "nav.glossary", to: "/glossary" },
+      { labelKey: "nav.resources", to: "/resources" },
+      { labelKey: "nav.timeline", to: "/timeline" },
+      { labelKey: "nav.revenueMilestones", to: "/milestones" },
+      { labelKey: "nav.pricingModels", to: "/pricing-models" },
+      { labelKey: "nav.breakEvenCalculator", to: "/break-even" },
     ],
   },
   {
-    label: "Decide",
+    labelKey: "nav.decide",
     links: [
-      { label: "Comparisons", to: "/compare" },
-      { label: "Career vs SaaS", to: "/vs" },
-      { label: "Alternatives", to: "/alternatives" },
-      { label: "Salaries → SaaS", to: "/salaries" },
-      { label: "Common Mistakes", to: "/mistakes" },
-      { label: "Reddit Strategy", to: "/reddit" },
-      { label: "Non-Compete Guide", to: "/non-compete" },
+      { labelKey: "nav.comparisons", to: "/compare" },
+      { labelKey: "nav.careerVsSaaS", to: "/vs" },
+      { labelKey: "nav.alternatives", to: "/alternatives" },
+      { labelKey: "nav.salariesToSaaS", to: "/salaries" },
+      { labelKey: "nav.commonMistakes", to: "/mistakes" },
+      { labelKey: "nav.redditStrategy", to: "/reddit" },
+      { labelKey: "nav.nonCompeteGuide", to: "/non-compete" },
     ],
   },
   {
-    label: "Story",
+    labelKey: "nav.story",
     links: [
-      { label: "My Origin Story", to: "/story" },
-      { label: "The Manifesto", to: "/manifesto" },
-      { label: "Who Is Adrian?", to: "/adrian" },
-      { label: "Inner Circle", to: "/inner-circle" },
-      { label: "Affiliates (30%)", to: "/affiliates" },
+      { labelKey: "nav.myOriginStory", to: "/story" },
+      { labelKey: "nav.theManifesto", to: "/manifesto" },
+      { labelKey: "nav.whoIsAdrian", to: "/adrian" },
+      { labelKey: "nav.innerCircle", to: "/inner-circle" },
+      { labelKey: "nav.affiliates", to: "/affiliates" },
     ],
   },
 ];
 
 // Flatten for desktop
 const DESKTOP_LINKS = [
-  { label: "Blog", to: "/blog" },
-  { label: "Ideas", to: "/ideas" },
-  { label: "Guides", to: "/guides" },
-  { label: "Tools", to: "/best" },
-  { label: "Calculators", to: "/calculators" },
-  { label: "Glossary", to: "/glossary" },
+  { labelKey: "nav.blog", to: "/blog" },
+  { labelKey: "nav.ideas", to: "/ideas" },
+  { labelKey: "nav.guides", to: "/guides" },
+  { labelKey: "nav.tools", to: "/best" },
+  { labelKey: "nav.calculators", to: "/calculators" },
+  { labelKey: "nav.glossary", to: "/glossary" },
 ];
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -129,37 +132,41 @@ const Navbar = () => {
                       : "text-white/60 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ))}
             </div>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA + Language */}
             <div className="hidden lg:flex items-center gap-3">
+              <LanguageSwitcher variant="compact" className="text-white/80" />
               <Link
                 to="/freedom"
                 className="text-white/60 hover:text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
               >
-                Free Calculator
+                {t("nav.freeCalculator")}
               </Link>
               <Link
                 to="/oto/founding"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
               >
-                Get Started
+                {t("nav.getStarted")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile: language + hamburger */}
+            <div className="flex lg:hidden items-center gap-1">
+              <LanguageSwitcher variant="compact" className="text-white/80" />
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </nav>
       </header>
@@ -187,11 +194,11 @@ const Navbar = () => {
 
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 sticky top-0 bg-[hsl(222_47%_11%)]/95 backdrop-blur-xl z-10">
-              <span className="text-white font-bold text-lg">Menu</span>
+              <span className="text-white font-bold text-lg">{t("nav.menu")}</span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
-                aria-label="Close menu"
+                aria-label={t("nav.closeMenu")}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -200,9 +207,9 @@ const Navbar = () => {
             {/* Grouped navigation */}
             <div className="px-3 py-4">
               {NAV_GROUPS.map((group, gi) => (
-                <div key={group.label} className={gi > 0 ? "mt-6" : ""}>
+                <div key={group.labelKey} className={gi > 0 ? "mt-6" : ""}>
                   <h3 className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-white/40">
-                    {group.label}
+                    {t(group.labelKey)}
                   </h3>
                   <div className="space-y-0.5">
                     {group.links.map((link) => (
@@ -215,7 +222,7 @@ const Navbar = () => {
                             : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
                       >
-                        {link.label}
+                        {t(link.labelKey)}
                         <ArrowRight className="w-4 h-4 opacity-30" />
                       </Link>
                     ))}
@@ -232,7 +239,7 @@ const Navbar = () => {
                   className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors"
                   style={{ minHeight: "48px" }}
                 >
-                  Calculate Freedom Number (Free)
+                  {t("cta.calculateFreedomNumber")}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
@@ -240,7 +247,7 @@ const Navbar = () => {
                   className="flex items-center justify-center px-4 py-3 rounded-xl text-sm font-medium text-white/80 border border-white/15 hover:bg-white/5 transition-colors"
                   style={{ minHeight: "44px" }}
                 >
-                  Get Started — $0.97/month
+                  {t("cta.getStartedPrice")}
                 </Link>
               </div>
             </div>
