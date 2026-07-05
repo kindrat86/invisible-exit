@@ -31,28 +31,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://invisibleexit.com/privacy</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/privacy" />
-    <image:image>
-      <image:loc>https://invisibleexit.com/og/privacy.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://invisibleexit.com/terms</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/terms" />
-    <image:image>
-      <image:loc>https://invisibleexit.com/og/terms.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://invisibleexit.com/about</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>

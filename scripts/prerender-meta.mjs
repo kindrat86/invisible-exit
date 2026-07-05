@@ -111,19 +111,20 @@ function jsonLdScript(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 }
 
-function injectMeta(template, { title, description, url, type, image, jsonLd }, routePath = "") {
+function injectMeta(template, { title, description, url, type, image, jsonLd, noindex }, routePath = "") {
   // Enforce 60-char title limit across ALL pages (not just blog)
   const optimizedTitle = blogTitle(title);
   const escapedTitle = escapeHtml(optimizedTitle);
   const escapedDesc = escapeHtml(truncate(description, 155));
   const img = image || DEFAULT_IMAGE;
   const jsonLdHtml = (jsonLd || []).map(jsonLdScript).join("\n    ");
+  const robotsContent = noindex ? "noindex, follow" : "index, follow";
 
   const metaBlock = `<!-- SEO (pre-rendered) -->
     <title>${optimizedTitle}</title>
     <meta name="description" content="${escapedDesc}" />
     <meta name="author" content="${SITE_NAME}" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="${robotsContent}" />
     <link rel="canonical" href="${url}" />
     <link rel="alternate" hreflang="en" href="${url}" />
     <link rel="alternate" hreflang="x-default" href="${url}" />
@@ -918,6 +919,7 @@ function getRoutes() {
         "Invisible Exit privacy policy. How we collect, use, and protect your data.",
       url: `${SITE}/privacy`,
       type: "website",
+      noindex: true,
       jsonLd: [{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -937,6 +939,7 @@ function getRoutes() {
         "Invisible Exit terms of service. Rules and guidelines for using our platform.",
       url: `${SITE}/terms`,
       type: "website",
+      noindex: true,
       jsonLd: [{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -3098,6 +3101,7 @@ function getRoutes() {
           { "@context": "https://schema.org", "@type": "Article", headline: cp.h1, description: cp.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `${cp.profession} in ${cp.city}` },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities", item: `${SITE}/cities` }, { "@type": "ListItem", position: 3, name: cp.city, item: `${SITE}/cities/${cp.citySlug}` }, { "@type": "ListItem", position: 4, name: cp.profession } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: cp.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+          { "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", "section:nth-of-type(2) p"], xpath: ["/html/body/div/section[1]/div/h1", "/html/body/div/section[2]/div/p"] },
         ],
       },
     });

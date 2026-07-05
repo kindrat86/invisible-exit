@@ -176,19 +176,9 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
-    // Legal pages
-    {
-      loc: "https://invisibleexit.com/privacy",
-      lastmod: "2026-03-21",
-      changefreq: "monthly",
-      priority: "0.3",
-    },
-    {
-      loc: "https://invisibleexit.com/terms",
-      lastmod: "2026-03-21",
-      changefreq: "monthly",
-      priority: "0.3",
-    },
+    // Legal pages (removed from sitemap — they are noindex)
+    // /privacy and /terms are legal pages with no SEO value
+    // Keeping them in the sitemap signals to Google they're important when they're not
     {
       loc: "https://invisibleexit.com/about",
       lastmod: today,
