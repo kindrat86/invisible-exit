@@ -2782,6 +2782,7 @@ function alternativesHubBodyHtml(): string {
     `<a href="/alternatives/${a.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${a.product} Alternatives</h3><p style="font-size:0.8rem;color:#6b7280">${a.category} — ${a.alternatives.length} alternatives compared</p></a>`).join("\n");
 
   return `<div class="min-h-screen">
+${hubSvgFigure("Alternatives", "Honest product comparisons", "Comparisons of Invisible Exit against other tools and platforms for building micro-SaaS businesses")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Alternatives</span>
 </nav>
