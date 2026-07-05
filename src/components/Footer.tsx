@@ -120,7 +120,7 @@ function CollapsibleSection({
             <li key={link.to}>
               <Link
                 to={link.to}
-                className="text-white/50 hover:text-primary-light text-sm transition-colors block py-1 md:py-0"
+                className="text-white/50 hover:text-primary-light text-sm transition-colors block py-2 md:py-1"
               >
                 {link.label}
               </Link>
@@ -154,7 +154,7 @@ const Footer = () => {
                 href="https://www.youtube.com/@InvisibleExit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="YouTube"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -165,7 +165,7 @@ const Footer = () => {
                 href="https://twitter.com/InvisibleExit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -176,7 +176,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/invisible-exit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
