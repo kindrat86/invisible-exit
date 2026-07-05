@@ -10,7 +10,7 @@ const PriceCard = ({ onUpgrade, loading }: PriceCardProps) => {
   const [bumpChecked, setBumpChecked] = useState(true);
 
   return (
-    <section className="px-6 py-16">
+    <section id="price-card" className="px-6 py-16 scroll-mt-20">
       <div className="max-w-[720px] mx-auto">
         <div className="relative bg-white/5 border-2 border-[#60A5FA] rounded-2xl p-10 text-center shadow-[0_0_48px_rgba(96,165,250,0.1)]">
           {/* Badge */}

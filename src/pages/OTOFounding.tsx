@@ -137,11 +137,35 @@ const OTOFounding = () => {
           </span>
 
           {/* Headline */}
-          <h1 className="text-4xl font-bold text-white leading-tight mb-6 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl mx-auto">
             You Just Got the Map. Here's What Separates Those Who{" "}
             <span className="text-[#60A5FA]">Escape in 90 Days</span> from
             Those Still Planning a Year Later.
           </h1>
+
+          {/* Price preview — visible above the fold on mobile */}
+          <div className="mb-6">
+            <p className="text-white/50 text-sm mb-1">
+              <span className="line-through text-red-400/70">$97.99/month</span> — Founding price locks at:
+            </p>
+            <div className="flex items-baseline justify-center gap-1">
+              <span className="text-4xl font-extrabold text-white">$17.99</span>
+              <span className="text-lg text-white/60">/month</span>
+            </div>
+            <p className="text-[#60A5FA] text-sm mt-1">Locked for life. Never increases.</p>
+          </div>
+
+          {/* Quick CTA — jump to full price card */}
+          <a
+            href="#price-card"
+            className="inline-flex items-center gap-2 bg-[#60A5FA] hover:bg-[#93c5fd] text-white font-semibold text-base px-8 py-3.5 rounded-xl shadow-[0_4px_24px_rgba(96,165,250,0.25)] transition-all hover:-translate-y-0.5"
+          >
+            Become a Founding Member
+            <ArrowRight className="w-5 h-5" />
+          </a>
+          <p className="text-[13px] text-white/40 mt-3">
+            30-day money-back guarantee · Secure Stripe checkout
+          </p>
 
         </div>
       </section>

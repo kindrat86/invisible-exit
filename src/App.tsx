@@ -170,12 +170,11 @@ const App = () => (
           <Route path="/fym/badge/:shareId" element={<Badge />} />
           {/* Redirects from old URLs */}
           <Route path="/fym" element={<Navigate to="/" replace />} />
-          <Route path="/idea-pipeline" element={<Navigate to="/" replace />} />
-          <Route path="/ideas" element={<Navigate to="/" replace />} />
+          <Route path="/idea-pipeline" element={<Navigate to="/ideas" replace />} />
           <Route path="/stealth-ops" element={<Navigate to="/" replace />} />
           <Route path="/launch-control" element={<Navigate to="/" replace />} />
           <Route path="/brand-manager" element={<Navigate to="/" replace />} />
-          <Route path="/founding-member" element={<Navigate to="/" replace />} />
+          <Route path="/founding-member" element={<Navigate to="/oto/founding" replace />} />
           <Route path="/training" element={<Navigate to="/" replace />} />
           <Route path="/thank-you" element={<Navigate to="/" replace />} />
           <Route path="/blog" element={<Blog />} />
