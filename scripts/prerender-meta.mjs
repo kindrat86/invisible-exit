@@ -37,6 +37,9 @@ import { toolCrossReference } from "../src/data/tool-cross-reference.ts";
 import { aiToolProfessionPages } from "../src/data/ai-tool-professions.ts";
 import { budgetPages } from "../src/data/budget-pages.ts";
 import { hoursPages } from "../src/data/hours-pages.ts";
+import { toolAlternatives } from "../src/data/tool-alternatives.ts";
+import { saasBlueprints } from "../src/data/saas-blueprints.ts";
+import { revenueRoadmaps } from "../src/data/revenue-roadmaps.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -2406,6 +2409,155 @@ function getRoutes() {
       ],
     },
   });
+
+  // ---------- Tool Alternatives pages ----------
+  for (const ta of toolAlternatives) {
+    const url = `${SITE}/alternatives/to/${ta.slug}`;
+    routes.push({
+      path: `/alternatives/to/${ta.slug}`,
+      meta: {
+        title: ta.metaTitle,
+        description: ta.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: ta.h1,
+            description: ta.metaDescription,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+            about: { "@type": "SoftwareApplication", name: ta.tool, category: ta.category },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Alternatives", item: `${SITE}/alternatives` },
+              { "@type": "ListItem", position: 3, name: `${ta.tool} Alternatives` },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: `${ta.tool} Alternatives`,
+            numberOfItems: ta.alternatives.length,
+            itemListElement: ta.alternatives.map((alt, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: alt.name,
+              url: alt.url,
+              description: `${alt.bestFor}. Pricing: ${alt.pricing}`,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ta.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- SaaS Blueprint pages ----------
+  for (const bp of saasBlueprints) {
+    const url = `${SITE}/blueprint/${bp.slug}`;
+    routes.push({
+      path: `/blueprint/${bp.slug}`,
+      meta: {
+        title: bp.metaTitle,
+        description: bp.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: bp.h1,
+            description: bp.metaDescription,
+            step: bp.steps.map((s, i) => ({
+              "@type": "HowToStep",
+              position: i + 1,
+              name: s.name,
+              text: s.description,
+              tool: s.tools.join(", "),
+            })),
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            totalTime: "P30D",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Blueprints" },
+              { "@type": "ListItem", position: 3, name: bp.type },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: bp.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Revenue Roadmap pages ----------
+  for (const rr of revenueRoadmaps) {
+    const url = `${SITE}/roadmap/${rr.slug}`;
+    routes.push({
+      path: `/roadmap/${rr.slug}`,
+      meta: {
+        title: rr.metaTitle,
+        description: rr.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: rr.h1,
+            description: rr.metaDescription,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Revenue Roadmaps" },
+              { "@type": "ListItem", position: 3, name: rr.target },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: rr.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
 
   return routes;
 }

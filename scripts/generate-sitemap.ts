@@ -46,6 +46,9 @@ async function main() {
   const { aiToolProfessionPages } = await import("../src/data/ai-tool-professions.js");
   const { budgetPages } = await import("../src/data/budget-pages.js");
   const { hoursPages } = await import("../src/data/hours-pages.js");
+  const { toolAlternatives } = await import("../src/data/tool-alternatives.js");
+  const { saasBlueprints } = await import("../src/data/saas-blueprints.js");
+  const { revenueRoadmaps } = await import("../src/data/revenue-roadmaps.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -568,6 +571,27 @@ async function main() {
       lastmod: today,
       changefreq: "monthly" as const,
       priority: "0.8" as const,
+    })),
+    // Tool Alternatives pages
+    ...toolAlternatives.map((ta: { slug: string }) => ({
+      loc: `https://invisibleexit.com/alternatives/to/${ta.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.9" as const,
+    })),
+    // SaaS Blueprint pages
+    ...saasBlueprints.map((bp: { slug: string }) => ({
+      loc: `https://invisibleexit.com/blueprint/${bp.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Revenue Roadmap pages
+    ...revenueRoadmaps.map((rr: { slug: string }) => ({
+      loc: `https://invisibleexit.com/roadmap/${rr.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.9" as const,
     })),
   ];
 

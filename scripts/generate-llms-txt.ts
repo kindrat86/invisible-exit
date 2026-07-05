@@ -27,6 +27,9 @@ import { professionStacks } from "../src/data/profession-stacks.js";
 import { costOfWaitingPages } from "../src/data/cost-of-waiting.js";
 import { professionStatePages } from "../src/data/profession-states.js";
 import { nonCompeteMatrix } from "../src/data/non-compete-matrix.js";
+import { toolAlternatives } from "../src/data/tool-alternatives.js";
+import { saasBlueprints } from "../src/data/saas-blueprints.js";
+import { revenueRoadmaps } from "../src/data/revenue-roadmaps.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -278,6 +281,33 @@ function generateLlmsTxt(): string {
   lines.push(`- [Best Analytics Tools](${SITE}/tools/best-analytics-tools-for-product-managers): Analytics tools for PMs`);
   lines.push(`- [Best Development Tools](${SITE}/tools/best-development-tools-for-software-engineers): Dev tools for engineers`);
   lines.push(`- [Best Marketing Tools](${SITE}/tools/best-marketing-tools-for-marketing-managers): Marketing stacks for side businesses`);
+  lines.push("");
+
+  // ── pSEO: Tool Alternatives (Greg Isenberg) ──
+  lines.push(`## Tool Alternatives (${toolAlternatives.length})`);
+  lines.push("");
+  lines.push(`- [All Tool Alternatives](${SITE}/alternatives): Browse all alternatives`);
+  for (const ta of toolAlternatives) {
+    lines.push(`- [${ta.tool} Alternatives](${SITE}/alternatives/to/${ta.slug}): ${ta.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: SaaS Blueprints ──
+  lines.push(`## SaaS Build Blueprints (${saasBlueprints.length})`);
+  lines.push("");
+  lines.push(`- [All Blueprints](${SITE}/blueprint): Browse all build guides`);
+  for (const bp of saasBlueprints) {
+    lines.push(`- [${bp.type} Blueprint](${SITE}/blueprint/${bp.slug}): ${bp.metaDescription.substring(0, 120)}`);
+  }
+  lines.push("");
+
+  // ── pSEO: Revenue Roadmaps ──
+  lines.push(`## Revenue Roadmaps (${revenueRoadmaps.length})`);
+  lines.push("");
+  lines.push(`- [All Revenue Roadmaps](${SITE}/roadmap): Browse all MRR targets`);
+  for (const rr of revenueRoadmaps) {
+    lines.push(`- [Roadmap to ${rr.target}](${SITE}/roadmap/${rr.slug}): ${rr.metaDescription.substring(0, 120)}`);
+  }
   lines.push("");
 
   // ── Topics Covered ──

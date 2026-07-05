@@ -624,4 +624,132 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/hours/20-hours-per-week" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/hours/20-hours-per-week" />
   </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/ai-wrapper</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/ai-wrapper" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/ai-wrapper" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/directory-site</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/directory-site" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/directory-site" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/saas-calculator</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/saas-calculator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/saas-calculator" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/saas-directory</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/saas-directory" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/saas-directory" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/chrome-extension</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/chrome-extension" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/chrome-extension" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/api-as-a-service</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/api-as-a-service" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/api-as-a-service" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/newsletter-tool</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/newsletter-tool" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/newsletter-tool" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/blueprint/micro-saas-dashboard</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/blueprint/micro-saas-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/blueprint/micro-saas-dashboard" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-500</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-500" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-500" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-1000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-1000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-1000" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-2000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-2000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-2000" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-4000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-4000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-4000" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-10000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-10000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-10000" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-100</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-100" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-100" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-50000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-50000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-50000" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/roadmap/to-5000</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/roadmap/to-5000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/roadmap/to-5000" />
+  </url>
 </urlset>

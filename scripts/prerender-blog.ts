@@ -40,6 +40,9 @@ import { toolCrossReference } from "../src/data/tool-cross-reference.js";
 import { aiToolProfessionPages } from "../src/data/ai-tool-professions.js";
 import { budgetPages } from "../src/data/budget-pages.js";
 import { hoursPages } from "../src/data/hours-pages.js";
+import { toolAlternatives } from "../src/data/tool-alternatives.js";
+import { saasBlueprints } from "../src/data/saas-blueprints.js";
+import { revenueRoadmaps } from "../src/data/revenue-roadmaps.js";
 
 // ---------- Markdown-like content → HTML ----------
 
@@ -1951,7 +1954,210 @@ function main() {
     if (injectBody(filePath, aiToolProfessionBodyHtml(p))) { count++; }
   }
 
+  // Tool Alternatives pages
+  for (const ta of toolAlternatives) {
+    if (injectBody(resolve(DIST, "alternatives", "to", ta.slug, "index.html"), toolAlternativeBodyHtml(ta))) { count++; }
+  }
+
+  // SaaS Blueprint pages
+  for (const bp of saasBlueprints) {
+    if (injectBody(resolve(DIST, "blueprint", bp.slug, "index.html"), blueprintBodyHtml(bp))) { count++; }
+  }
+
+  // Revenue Roadmap pages
+  for (const rr of revenueRoadmaps) {
+    if (injectBody(resolve(DIST, "roadmap", rr.slug, "index.html"), revenueRoadmapBodyHtml(rr))) { count++; }
+  }
+
   console.log(`Done. Injected body content into ${count} pages.`);
+}
+
+// ---------- Tool Alternatives body ----------
+
+function toolAlternativeBodyHtml(ta: typeof toolAlternatives[0]): string {
+  const altCards = ta.alternatives.map((alt) =>
+    `<div style="padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;margin-bottom:1.5rem">
+<h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem">${alt.name}</h3>
+<p style="color:#3B82F6;font-size:0.875rem;font-weight:600;margin-bottom:0.5rem">${alt.bestFor}</p>
+<p style="font-size:0.875rem;color:#6b7280;margin-bottom:1rem"><strong>Pricing:</strong> ${alt.pricing}</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+<div><p style="font-size:0.75rem;font-weight:700;color:#15803d;text-transform:uppercase;margin-bottom:0.5rem">Pros</p><ul style="font-size:0.875rem;color:#1f2937;padding-left:1.25rem;line-height:1.6">${alt.pros.map((p) => `<li>${p}</li>`).join("")}</ul></div>
+<div><p style="font-size:0.75rem;font-weight:700;color:#b91c1c;text-transform:uppercase;margin-bottom:0.5rem">Cons</p><ul style="font-size:0.875rem;color:#1f2937;padding-left:1.25rem;line-height:1.6">${alt.cons.map((c) => `<li>${c}</li>`).join("")}</ul></div>
+</div>
+</div>`).join("\n");
+
+  const faqs = ta.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/alternatives" style="color:#3B82F6;text-decoration:none">Alternatives</a> &rsaquo; <span>${ta.tool} Alternatives</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">${ta.category}</span>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${ta.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${ta.intro}</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Why Look Beyond ${ta.tool}?</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">${ta.why}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">${ta.alternatives.length} ${ta.tool} Alternatives</h2>
+${altCards}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- SaaS Blueprint body ----------
+
+function blueprintBodyHtml(bp: typeof saasBlueprints[0]): string {
+  const steps = bp.steps.map((s, i) =>
+    `<li style="margin-bottom:1.5rem"><strong>${i + 1}. ${s.name}</strong><p style="color:#4b5563;margin-top:0.25rem;font-size:0.875rem">${s.description}</p><p style="font-size:0.75rem;color:#6b7280;margin-top:0.25rem"><strong>Tools:</strong> ${s.tools.join(", ")} · <strong>Time:</strong> ${s.timeEstimate}</p></li>`).join("\n");
+
+  const timeline = bp.timeline.map((t) =>
+    `<tr><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb;font-weight:600">${t.phase}</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${t.duration}</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${t.goal}</td></tr>`).join("\n");
+
+  const faqs = bp.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Blueprints</span> &rsaquo; <span>${bp.type}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">${bp.category}</span>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${bp.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${bp.intro}</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Market Opportunity</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">${bp.marketOpportunity}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Recommended Tech Stack</h2>
+<div style="display:flex;flex-wrap:wrap;gap:0.5rem">${bp.techStack.map((t) => `<span style="display:inline-block;padding:0.375rem 0.875rem;background:#f3f4f6;border-radius:0.5rem;font-size:0.875rem;font-weight:500">${t}</span>`).join("")}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Step-by-Step Build Guide</h2>
+<ol style="list-style:none;padding:0">${steps}</ol>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Pricing & Monetization</h2>
+<table style="width:100%;font-size:0.875rem;border-collapse:collapse">
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Model</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${bp.pricing.model}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Range</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${bp.pricing.range}</td></tr>
+<tr><td style="padding:0.75rem;font-weight:600;border-bottom:1px solid #e5e7eb">Example</td><td style="padding:0.75rem;border-bottom:1px solid #e5e7eb">${bp.pricing.example}</td></tr>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Realistic Timeline</h2>
+<table style="width:100%;font-size:0.875rem;border-collapse:collapse">
+<thead><tr style="background:#f8fafc"><th style="text-align:left;padding:0.75rem">Phase</th><th style="text-align:left;padding:0.75rem">Duration</th><th style="text-align:left;padding:0.75rem">Goal</th></tr></thead>
+<tbody>${timeline}</tbody>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Revenue Roadmap body ----------
+
+function revenueRoadmapBodyHtml(rr: typeof revenueRoadmaps[0]): string {
+  const stages = rr.stages.map((s) =>
+    `<div style="padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;margin-bottom:1.5rem">
+<h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.25rem">${s.mrr}</h3>
+<p style="font-size:0.875rem;color:#3B82F6;font-weight:600;margin-bottom:0.5rem">${s.customers} · ${s.focus}</p>
+<p style="font-size:0.75rem;color:#6b7280;margin-bottom:0.75rem">Timeline: ${s.timeToReach}</p>
+<ul style="font-size:0.875rem;color:#1f2937;padding-left:1.25rem;line-height:1.8">${s.keyActions.map((a) => `<li>${a}</li>`).join("")}</ul>
+</div>`).join("\n");
+
+  const channels = rr.channelStrategy.map((c) =>
+    `<div style="padding:1rem;border-left:3px solid #3B82F6;margin-bottom:1rem"><strong>${c.phase}:</strong> ${c.channel}<p style="font-size:0.875rem;color:#6b7280;margin-top:0.25rem">${c.why}</p></div>`).join("\n");
+
+  const faqs = rr.faqs.map((f) =>
+    `<div style="margin-bottom:1.5rem"><h3 style="font-weight:700;margin-bottom:0.5rem">${f.question}</h3><p style="color:#4b5563;line-height:1.7">${f.answer}</p></div>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/roadmap" style="color:#3B82F6;text-decoration:none">Revenue Roadmaps</a> &rsaquo; <span>${rr.target}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${rr.h1}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${rr.intro}</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">The Customer Math</p>
+<p style="font-size:1.125rem;line-height:1.6;color:#111827;font-weight:500">At <strong>${rr.customerMath.pricing}</strong>, you need <strong>${rr.customerMath.customersNeeded} customers</strong> to reach <strong>${rr.customerMath.monthlyRevenue}</strong>.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">The Path to ${rr.target}</h2>
+${stages}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Channel Strategy</h2>
+${channels}
+<p style="margin-top:1.5rem;padding:1rem;background:#fffbeb;border-radius:0.5rem;font-size:0.875rem;color:#92400e"><strong>Realistic timeline:</strong> ${rr.realisticTimeline}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
 }
 
 main();

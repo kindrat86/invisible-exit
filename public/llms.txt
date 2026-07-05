@@ -599,6 +599,51 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Best Development Tools](https://invisibleexit.com/tools/best-development-tools-for-software-engineers): Dev tools for engineers
 - [Best Marketing Tools](https://invisibleexit.com/tools/best-marketing-tools-for-marketing-managers): Marketing stacks for side businesses
 
+## Tool Alternatives (17)
+
+- [All Tool Alternatives](https://invisibleexit.com/alternatives): Browse all alternatives
+- [Stripe Alternatives](https://invisibleexit.com/alternatives/to/stripe): The best Stripe alternatives for micro-SaaS founders. Compare pricing, features, ease of setup, and international availa
+- [Mailchimp Alternatives](https://invisibleexit.com/alternatives/to/mailchimp): Cheaper Mailchimp alternatives for micro-SaaS and side businesses. Compare pricing, automation, deliverability, and ease
+- [Notion Alternatives](https://invisibleexit.com/alternatives/to/notion): Notion alternatives for founders who need databases, docs, and project management. Compare features, pricing, speed, and
+- [Supabase Alternatives](https://invisibleexit.com/alternatives/to/supabase): Supabase alternatives: Firebase, Convex, Pocketbase, Xano, and more. Compare real-time, auth, storage, and pricing for m
+- [Vercel Alternatives](https://invisibleexit.com/alternatives/to/vercel): Vercel alternatives that do not charge per-visitor. Compare Cloudflare Pages, Railway, Render, Netlify, and self-hosted 
+- [ChatGPT Alternatives](https://invisibleexit.com/alternatives/to/chatgpt): ChatGPT alternatives for coding, writing, and business tasks: Claude, Gemini, Cursor, Copilot, and more. Compare context
+- [Shopify Alternatives](https://invisibleexit.com/alternatives/to/shopify): Shopify alternatives for selling digital products, SaaS subscriptions, and online courses. Compare features and pricing 
+- [Webflow Alternatives](https://invisibleexit.com/alternatives/to/webflow): Cheaper Webflow alternatives for building landing pages and marketing sites. Compare pricing, CMS features, and learning
+- [Airtable Alternatives](https://invisibleexit.com/alternatives/to/airtable): Airtable alternatives: NocoDB, Baserow, SeaTable, SmartSuite, and more. Compare pricing, API access, and self-hosting.
+- [Slack Alternatives](https://invisibleexit.com/alternatives/to/slack): Cheaper Slack alternatives with longer message history. Compare Mattermost, Discord, Rocket.Chat, and more for startups.
+- [Zendesk Alternatives](https://invisibleexit.com/alternatives/to/zendesk): Affordable Zendesk alternatives for solo founders and micro-SaaS. Compare Crisp, Intercom, Plain, and self-hosted help d
+- [Calendly Alternatives](https://invisibleexit.com/alternatives/to/calendly): Free and open-source Calendly alternatives: Cal.com, TidyCal, SavvyCal, and more. Compare features and pricing.
+- [Intercom Alternatives](https://invisibleexit.com/alternatives/to/intercom): Affordable Intercom alternatives: Crisp, Chatwoot, Plain, Help Scout. Compare pricing, features, and open-source options
+- [Linear Alternatives](https://invisibleexit.com/alternatives/to/linear): Linear alternatives for solo founders and small teams. Compare Shortcut, Height, GitHub Projects, and self-hosted option
+- [Figma Alternatives](https://invisibleexit.com/alternatives/to/figma): Figma alternatives for founders: Penpot, Penoodle, Sketch, Framer, and more. Compare features, pricing, and collaboratio
+- [Mixpanel Alternatives](https://invisibleexit.com/alternatives/to/mixpanel): Cheaper and self-hosted Mixpanel alternatives: PostHog, Plausible, Umami, and more for product analytics.
+- [Sentry Alternatives](https://invisibleexit.com/alternatives/to/sentry): Cheaper Sentry alternatives for micro-SaaS: GlitchTip, Bugsnag, Rollbar, and self-hosted error monitoring.
+
+## SaaS Build Blueprints (8)
+
+- [All Blueprints](https://invisibleexit.com/blueprint): Browse all build guides
+- [AI Wrapper Blueprint](https://invisibleexit.com/blueprint/ai-wrapper): Complete blueprint for building an AI wrapper micro-SaaS. Tech stack, pricing model, API costs, and a step-by-step build
+- [Directory Site Blueprint](https://invisibleexit.com/blueprint/directory-site): Step-by-step guide to building a profitable directory website. Tech stack, monetization strategies, SEO playbook, and gr
+- [SaaS Calculator Blueprint](https://invisibleexit.com/blueprint/saas-calculator): Complete guide to building a profitable calculator or estimator tool as a micro-SaaS. ROI calculators, pricing estimator
+- [SaaS Directory Blueprint](https://invisibleexit.com/blueprint/saas-directory): Blueprint for building a SaaS directory that ranks and makes money. Monetization, SEO strategy, and tech stack for emplo
+- [Chrome Extension Blueprint](https://invisibleexit.com/blueprint/chrome-extension): Complete guide to building and monetizing a Chrome extension. Tech stack, pricing, Chrome Web Store optimization, and gr
+- [API as a Service Blueprint](https://invisibleexit.com/blueprint/api-as-a-service): Blueprint for building and selling an API as a micro-SaaS. Tech stack, pricing per call, documentation, and developer ma
+- [Newsletter Tool Blueprint](https://invisibleexit.com/blueprint/newsletter-tool): Complete guide to building a profitable newsletter. Growth strategies, monetization, sponsorship rates, and tech stack.
+- [Micro-SaaS Dashboard Blueprint](https://invisibleexit.com/blueprint/micro-saas-dashboard): Blueprint for building a dashboard or analytics micro-SaaS. Connect to existing data sources, visualize, and charge for 
+
+## Revenue Roadmaps (8)
+
+- [All Revenue Roadmaps](https://invisibleexit.com/roadmap): Browse all MRR targets
+- [Roadmap to $500/month](https://invisibleexit.com/roadmap/to-500): The realistic path from $0 to $500/month in recurring revenue. Customer math, timeline, channels, and the exact steps to
+- [Roadmap to $1,000/month](https://invisibleexit.com/roadmap/to-1000): The path from $0 to $1,000/month recurring revenue. Customer math, pricing strategies, and the channels that work at thi
+- [Roadmap to $2,000/month](https://invisibleexit.com/roadmap/to-2000): The realistic path from $0 to $2,000/month in recurring revenue. Customer math, pricing tiers, channels, and timeline fo
+- [Roadmap to $4,000/month](https://invisibleexit.com/roadmap/to-4000): The path from $0 to $4,000/month — the freedom number for most corporate managers. Customer math, channels, and exit pla
+- [Roadmap to $10,000/month](https://invisibleexit.com/roadmap/to-10000): The path from $4K to $10K MRR. Scaling channels, adding team members, pricing optimization, and the transition from solo
+- [Roadmap to $100/month](https://invisibleexit.com/roadmap/to-100): The fastest path to your first $100/month in recurring revenue. The psychological importance of the first paying custome
+- [Roadmap to $50,000/month](https://invisibleexit.com/roadmap/to-50000): The path from $10K to $50K MRR. Building a team, enterprise sales, platform expansion, and the transition from founder t
+- [Roadmap to $5,000/month](https://invisibleexit.com/roadmap/to-5000): The path from $2K to $5K MRR — the point where most corporate managers can consider quitting. Customer math, timeline, a
+
 ## Topics Covered
 
 - Building anonymous side income while employed (stealth operations, entity separation, digital footprint management)
