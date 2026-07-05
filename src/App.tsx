@@ -117,6 +117,9 @@ const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage.tsx"));
 const RevenueTargetPage = lazy(() => import("./pages/RevenueTargetPage.tsx"));
 const CityPage = lazy(() => import("./pages/CityPage.tsx"));
 const SkillMonetizationPage = lazy(() => import("./pages/SkillMonetizationPage.tsx"));
+// ── Greg Isenberg pSEO Round 7 ──
+const AudiencePage = lazy(() => import("./pages/AudiencePage.tsx"));
+const CityProfessionPage = lazy(() => import("./pages/CityProfessionPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -275,6 +278,11 @@ const App = () => (
           <Route path="/cities" element={<Navigate to="/blog" replace />} />
           <Route path="/skills/:slug" element={<SkillMonetizationPage />} />
           <Route path="/skills" element={<Navigate to="/blog" replace />} />
+
+          {/* ── Greg Isenberg pSEO Round 7 ── */}
+          <Route path="/audience/:slug" element={<AudiencePage />} />
+          <Route path="/audience" element={<Navigate to="/blog" replace />} />
+          <Route path="/cities/:citySlug/for/:professionSlug" element={<CityProfessionPage />} />
 
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}

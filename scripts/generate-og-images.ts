@@ -121,6 +121,8 @@ const { caseStudies } = await import("../src/data/case-studies.js");
 const { toolReviews } = await import("../src/data/tool-reviews.js");
 const { sideHustles } = await import("../src/data/side-hustles.js");
 const { niches } = await import("../src/data/niches.js");
+const { audienceIdeas } = await import("../src/data/audience-ideas.js");
+const { cityProfessionPages } = await import("../src/data/city-profession.js");
 const { quitJobPages } = await import("../src/data/quit-job.js");
 const { weekendBuilds } = await import("../src/data/weekend-builds.js");
 const { failureStories } = await import("../src/data/failure-stories.js");
@@ -178,6 +180,14 @@ for (const s of salaries) {
 }
 for (const m of professionMistakes) {
   writeFileSync(resolve(OUT, `mistakes-${m.slug}.svg`), generatePseoSvg(m.h1, "Common Mistakes"), "utf-8");
+  count++;
+}
+for (const a of audienceIdeas) {
+  writeFileSync(resolve(OUT, `audience-${a.slug}.svg`), generatePseoSvg(a.h1, "Side Business Ideas"), "utf-8");
+  count++;
+}
+for (const cp of cityProfessionPages) {
+  writeFileSync(resolve(OUT, `${cp.slug}.svg`), generatePseoSvg(cp.h1, cp.city), "utf-8");
   count++;
 }
 

@@ -54,6 +54,8 @@ import { caseStudies } from "../src/data/case-studies.ts";
 import { revenueTargets } from "../src/data/revenue-targets.ts";
 import { cities } from "../src/data/cities.ts";
 import { skills } from "../src/data/skills.ts";
+import { audienceIdeas } from "../src/data/audience-ideas.ts";
+import { cityProfessionPages } from "../src/data/city-profession.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -3062,10 +3064,50 @@ function getRoutes() {
     });
   }
 
+  // ---------- Greg Isenberg pSEO Round 7: Audience/Demographic pages ----------
+  for (const a of audienceIdeas) {
+    const url = `${SITE}/audience/${a.slug}`;
+    const image = `${SITE}/og/audience-${a.slug}.svg`;
+    routes.push({
+      path: `/audience/${a.slug}`,
+      meta: {
+        title: a.metaTitle,
+        description: a.metaDescription,
+        url, type: "article", image,
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: a.h1, description: a.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Side Business Ideas for ${a.audience}` },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Audience" }, { "@type": "ListItem", position: 3, name: a.audience } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: a.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+          { "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", "section:nth-of-type(2) p"], xpath: ["/html/body/div/section[1]/div/h1", "/html/body/div/section[2]/div/p"] },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 7: City × Profession cross pages ----------
+  for (const cp of cityProfessionPages) {
+    const url = `${SITE}/cities/${cp.citySlug}/for/${cp.professionSlug}`;
+    const image = `${SITE}/og/${cp.slug}.svg`;
+    routes.push({
+      path: `/cities/${cp.citySlug}/for/${cp.professionSlug}`,
+      meta: {
+        title: cp.metaTitle,
+        description: cp.metaDescription,
+        url, type: "article", image,
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: cp.h1, description: cp.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `${cp.profession} in ${cp.city}` },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities", item: `${SITE}/cities` }, { "@type": "ListItem", position: 3, name: cp.city, item: `${SITE}/cities/${cp.citySlug}` }, { "@type": "ListItem", position: 4, name: cp.profession } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: cp.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+
   // Hub pages for new content types
   routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession — Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Revenue Targets by Profession", description: "Realistic paths to recurring revenue targets for 25 professions" }] } });
   routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City — Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Side Business by City", description: "City-level guides for building a side business across the US" }] } });
   routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills — 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Skill Monetization Guides", description: "How to turn your professional skills into recurring revenue" }] } });
+  routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience — 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Side Business Ideas by Audience", description: "Demographic-specific micro-SaaS and side business guides" }] } });
 
   return routes;
 }

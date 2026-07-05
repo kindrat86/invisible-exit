@@ -71,6 +71,8 @@ async function main() {
   const { revenueTargets } = await import("../src/data/revenue-targets.js");
   const { cities } = await import("../src/data/cities.js");
   const { skills } = await import("../src/data/skills.js");
+  const { audienceIdeas } = await import("../src/data/audience-ideas.js");
+  const { cityProfessionPages } = await import("../src/data/city-profession.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -722,6 +724,21 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.8" as const,
     })),
+    // Audience/Demographic pages (Greg Isenberg Round 7)
+    ...audienceIdeas.map((a: { slug: string }) => ({
+      loc: `https://invisibleexit.com/audience/${a.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    ...audienceIdeas.length > 0 ? [{ loc: "https://invisibleexit.com/audience", lastmod: today, changefreq: "monthly" as const, priority: "0.7" as const }] : [],
+    // City × Profession cross pages (Greg Isenberg Round 7)
+    ...cityProfessionPages.map((cp: { citySlug: string; professionSlug: string }) => ({
+      loc: `https://invisibleexit.com/cities/${cp.citySlug}/for/${cp.professionSlug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -767,7 +784,8 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/case-studies/") &&
     !e.loc.includes("/revenue/") &&
     !e.loc.includes("/cities/") &&
-    !e.loc.includes("/skills/")
+    !e.loc.includes("/skills/") &&
+    !e.loc.includes("/audience/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -777,7 +795,7 @@ const submaps: Record<string, SitemapEntry[]> = {
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
   "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
   "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
-  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/") || e.loc.includes("/revenue/") || e.loc.includes("/cities/") || e.loc.includes("/skills/")),
+  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/") || e.loc.includes("/revenue/") || e.loc.includes("/cities/") || e.loc.includes("/skills/") || e.loc.includes("/audience/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)

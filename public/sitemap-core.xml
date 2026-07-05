@@ -1064,4 +1064,15 @@
       <image:loc>https://invisibleexit.com/og/roadmap-to-5000.svg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://invisibleexit.com/audience</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/audience" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/audience" />
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/audience.svg</image:loc>
+    </image:image>
+  </url>
 </urlset>

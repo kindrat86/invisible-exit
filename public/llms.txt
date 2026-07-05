@@ -1059,6 +1059,25 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Best Health & Wellness Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/health-wellness): Health tech is booming, but the opportunity for micro-SaaS founders isn't building medical devices or clinical software 
 - [Best Remote Work Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/remote-work): Remote work has created an entirely new category of software needs. The biggest opportunities are in tools that solve pr
 - [Best Creator Economy Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/creator-economy): The creator economy has matured beyond social media scheduling tools. The biggest opportunities now are in monetization 
+- [Best EdTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/edtech): Education technology is undergoing a massive shift as AI reshapes how people learn. The opportunity for micro-SaaS found
+- [Best LegalTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/legaltech): Legal tech is notoriously underserved by modern software. Most law firms run on tools built in the 1990s. The opportunit
+- [Best HR Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/hr-tech): HR departments are overwhelmed with administrative work, and most enterprise tools are too expensive for small and mid-s
+- [Best Cybersecurity Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/cybersecurity): Cybersecurity spending is at an all-time high, but most micro-SaaS founders overlook it because they think it requires d
+- [Best E-Commerce Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/ecommerce-tools): E-commerce is a $6T market, and Shopify alone has millions of merchants. Every one of them needs better analytics, marke
+- [Best MarTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/martech): The martech landscape has 11,000+ tools, but the market is still full of gaps. Most tools are general-purpose, leaving r
+- [Best PropTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/proptech): Real estate is one of the last industries to adopt modern software. Most property managers, agents, and landlords still 
+- [Best InsurTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/insurtech): Insurance is a $5T industry running on legacy technology. The micro-SaaS opportunity isn't becoming an insurance carrier
+- [Best Climate Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/climate-tech): Climate tech is attracting massive investment, but most funding goes to hardware and infrastructure. The micro-SaaS oppo
+- [Best AgTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/agtech): Agriculture is being transformed by data, but most farm software is either enterprise-level (too expensive) or poorly de
+- [Best Construction Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/construction-tech): Construction is one of the least digitized industries in the world. Most contractors run their businesses on paper, spre
+- [Best Nonprofit Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/nonprofit-tech): Nonprofits run on tight budgets and outdated tools. Most CRMs are too expensive, and the free tools lack essential featu
+- [Best GovTech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/govtech): Local governments run on 1990s software. Most city halls, county offices, and small municipalities have minimal IT budge
+- [Best Restaurant Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/restaurant-tech): Restaurants run on razor-thin margins but surprisingly old software. Most independent restaurants use a combination of c
+- [Best Fitness Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/fitness-tech): The fitness industry has shifted dramatically from gym memberships to digital and hybrid offerings. Independent personal
+- [Best Pet Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/pet-tech): Americans spent $150B+ on their pets in 2025. Pet businesses — from grooming salons to dog walking services to pet-sitti
+- [Best DevOps & Analytics Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/devops-analytics): DevOps is one of the most lucrative micro-SaaS categories because developers have high willingness to pay and discover t
+- [Best Music Tech Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/music-tech): The music industry has been transformed by streaming, but the tools that musicians, producers, and labels use haven't ke
+- [Best Gaming & Game Dev Micro-SaaS Niches for 2025](https://invisibleexit.com/niches/gaming-tech): The gaming industry is larger than movies and music combined. Indie game developers and gaming communities need affordab
 
 ## When to Quit Your Job
 
