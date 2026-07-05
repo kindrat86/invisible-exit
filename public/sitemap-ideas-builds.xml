@@ -152,4 +152,52 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/failure-stories/co-founder-conflict" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/failure-stories/co-founder-conflict" />
   </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/typefully</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/typefully" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/typefully" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/bannerbear</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/bannerbear" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/bannerbear" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/senja</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/senja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/senja" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/tinybloom</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/tinybloom" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/tinybloom" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/screenshotone</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/screenshotone" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/screenshotone" />
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/case-studies/peerlist</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invisibleexit.com/case-studies/peerlist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invisibleexit.com/case-studies/peerlist" />
+  </url>
 </urlset>

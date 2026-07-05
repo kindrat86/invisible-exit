@@ -2354,6 +2354,300 @@ Invisible Exit is a membership platform offering 5 AI-powered tools for building
   - Q: What's the easiest micro-SaaS for data analysts?
     A: Build a reporting tool for a niche industry. Small businesses and agencies pay $19-$49/month for automated reports they'd otherwise build manually in Excel.
 
+### Accountant Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/accountant
+- **Role:** Accountant
+- **Avg Salary:** $75K ($55K-$120K)
+- **Freedom Number:** $2,800/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Financial modeling, Compliance frameworks, Reconciliation, Tax preparation, Spreadsheet automation
+- **Best Micro-SaaS Ideas:** Automated invoice reconciliation tool; Tax deadline tracker for CPA firms; Bookkeeping error detector for QuickBooks/Xero
+- **FAQs:**
+  - Q: Can accountants build SaaS while working at a firm?
+    A: Yes, if you target a different client segment than your firm serves and don't use firm resources. Build tools for small businesses, not your firm's enterprise clients.
+  - Q: Do I need a CPA to build accounting software?
+    A: No. Bookkeeping tools don't require a CPA. QuickBooks ProAdvisor certification ($200) is sufficient for credibility. A CPA is only needed for audit/attestation.
+
+### Lawyer Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/lawyer
+- **Role:** Lawyer
+- **Avg Salary:** $165K ($80K-$250K+)
+- **Freedom Number:** $5,000/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** Contract analysis, Legal research, Compliance frameworks, Document automation, Client intake workflows
+- **Best Micro-SaaS Ideas:** Contract clause risk scanner for businesses; Automated NDA generator by state; Legal deadline calculator for solo practitioners
+- **FAQs:**
+  - Q: Can lawyers build legal tech SaaS?
+    A: Yes. Lawyers have a unique advantage in legal tech. Build tools that assist rather than replace legal advice — document automation, compliance tracking, and workflow tools.
+  - Q: What about unauthorized practice of law?
+    A: Don't practice law through your SaaS. Build tools that assist non-lawyers or streamline firm operations. Never provide individualized legal advice through software.
+
+### Teacher Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/teacher
+- **Role:** Teacher
+- **Avg Salary:** $65K ($45K-$85K)
+- **Freedom Number:** $2,500/month
+- **Timeline:** 14-20 months
+- **Transferable Skills:** Curriculum design, Content creation, Student engagement, Assessment creation, Learning analytics
+- **Best Micro-SaaS Ideas:** AI worksheet generator for K-12 teachers; Homeschool curriculum planner; Spaced repetition flashcard app by subject
+- **FAQs:**
+  - Q: Can teachers sell educational content online?
+    A: Generally yes, if you create it on your own time and it's not derived from your school's curriculum. Check your district's IP policy — some claim ownership of teacher-created materials.
+  - Q: What's the best EdTech micro-SaaS for teachers?
+    A: Tools that reduce teacher workload: automated grading, lesson plan generation, and parent communication. Teachers pay $9-$29/month for tools that save 2+ hours/week.
+
+### Nurse Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/nurse
+- **Role:** Nurse
+- **Avg Salary:** $85K ($65K-$120K)
+- **Freedom Number:** $3,000/month
+- **Timeline:** 14-20 months
+- **Transferable Skills:** Process optimization, Patient communication, Scheduling systems, Care coordination, Compliance awareness
+- **Best Micro-SaaS Ideas:** Shift scheduling optimizer for small clinics; Patient education content manager; Medication interaction checker for caregivers
+- **FAQs:**
+  - Q: Can nurses build healthcare SaaS?
+    A: Yes, if you build tools that don't provide medical advice. Workflow tools (scheduling, education, tracking) are fair game. Avoid anything that diagnoses or prescribes — that requires clinical validation and liability coverage.
+  - Q: Do I need to worry about HIPAA?
+    A: Only if you're storing Protected Health Information (PHI). If users self-input data (symptoms, schedules) and you don't connect to clinical systems, HIPAA typically doesn't apply. Consult a healthcare attorney.
+
+### HR Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/hr-manager
+- **Role:** HR Manager
+- **Avg Salary:** $95K ($65K-$135K)
+- **Freedom Number:** $3,300/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Workflow design, Compliance management, Communication tools, Onboarding processes, Employee feedback systems
+- **Best Micro-SaaS Ideas:** Automated onboarding checklist SaaS; Employee feedback aggregator with AI sentiment analysis; Compliance deadline tracker for small companies
+- **FAQs:**
+  - Q: Can HR managers build HR tech without conflicts?
+    A: Yes — target smaller companies than your employer serves. If you work at a large enterprise, build tools for companies with 10-100 employees. Different market, no conflict.
+  - Q: What's the best HR micro-SaaS opportunity?
+    A: Onboarding automation for remote teams. Companies struggle with consistent remote onboarding. A tool that creates customized onboarding flows, tracks progress, and collects feedback is worth $49-$99/month to companies hiring 5+ people/quarter.
+
+### Management Consultant Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/consultant
+- **Role:** Management Consultant
+- **Avg Salary:** $175K ($90K-$250K+)
+- **Freedom Number:** $5,200/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** Problem decomposition, Framework design, Client management, Data analysis, Executive presentations
+- **Best Micro-SaaS Ideas:** Strategy framework visualizer (Porter's 5 Forces, SWOT, etc.); Competitive intelligence tracker for specific industries; Board meeting prep tool with AI slide generation
+- **FAQs:**
+  - Q: Can consultants build SaaS while at a firm?
+    A: Check your firm's IP and outside employment policies carefully. Most top firms (McKinsey, BCG, Bain) prohibit serving same-industry clients independently. Build in a completely different niche.
+  - Q: What's the advantage consultants have in SaaS?
+    A: Framework thinking. Consultants build mental models for everything. Those models can become SaaS products — dashboards, analyzers, and planners that codify the consulting methodology at $99/month instead of $500/hour.
+
+### Designer Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/designer
+- **Role:** Designer
+- **Avg Salary:** $85K ($55K-$140K)
+- **Freedom Number:** $3,000/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** UI/UX design, Prototyping, Brand identity, Design systems, User research
+- **Best Micro-SaaS Ideas:** UI kit marketplace for niche industries; Design system documentation tool; Brand asset manager for small agencies
+- **FAQs:**
+  - Q: Can designers sell work created at their job?
+    A: No — work created for an employer belongs to them. Create new, original work on your own time. Never use employer assets, fonts, or stock subscriptions for side projects.
+  - Q: What's the best path for designers: products or services?
+    A: Start with productized services (unlimited design for $3K-$5K/month retainer) for immediate cash flow. Use that runway to build digital products (UI kits, templates) that scale passively.
+
+### Financial Analyst Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/financial-analyst
+- **Role:** Financial Analyst
+- **Avg Salary:** $95K ($70K-$150K)
+- **Freedom Number:** $3,300/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Financial modeling, Forecasting, Data analysis, Reporting automation, Risk assessment
+- **Best Micro-SaaS Ideas:** SaaS revenue forecasting tool; Small business cash flow dashboard; Real estate investment analyzer with ROI projections
+- **FAQs:**
+  - Q: Can financial analysts build fintech SaaS?
+    A: Yes — tools about finance (budgeting, forecasting, analytics) don't require licenses. Only financial services (holding money, lending, investing advice) need regulatory approval. Build financial tools, not financial services.
+  - Q: What's the best fintech micro-SaaS for analysts?
+    A: Revenue forecasting for B2B SaaS companies. Most founders use spreadsheets for MRR/churn projections. A purpose-built tool at $99-$299/month serves the exact market you understand.
+
+### Sales Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/sales-manager
+- **Role:** Sales Manager
+- **Avg Salary:** $125K ($80K-$200K+)
+- **Freedom Number:** $4,000/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** Pipeline management, CRM workflows, Outreach automation, Closing techniques, Sales analytics
+- **Best Micro-SaaS Ideas:** Cold email personalization tool with AI; Sales call analyzer that extracts action items; CRM data quality monitor for Salesforce/HubSpot
+- **FAQs:**
+  - Q: What's the best sales-tech micro-SaaS?
+    A: Tools that reduce manual data entry for sales teams. Reps spend 4+ hours/week updating CRM records. A tool that auto-populates activities from email/calendar, priced at $39/seat/month, is an easy sell.
+  - Q: Should I build for my own sales methodology?
+    A: Yes — codify your winning sales process into software. If you've developed a framework that works, other sales teams will pay for a tool that implements it. Your methodology is the moat.
+
+### Physician Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/doctor
+- **Role:** Physician
+- **Avg Salary:** $313K ($200K-$500K+)
+- **Freedom Number:** $8,500/month
+- **Timeline:** 18-30 months
+- **Transferable Skills:** Evidence-based reasoning, Clinical workflows, Patient communication, Compliance knowledge, Diagnostic frameworks
+- **Best Micro-SaaS Ideas:** Clinical documentation assistant for specialties; Patient education content manager by condition; Prior authorization automation tool
+- **FAQs:**
+  - Q: Can physicians build healthcare SaaS?
+    A: Yes — build workflow tools, not medical devices or clinical decision support that requires FDA approval. Documentation, scheduling, education, and billing tools are fair game and highly monetizable.
+  - Q: Is the freedom number too high for doctors?
+    A: At $8,500/month MRR, it's achievable but takes longer. The advantage: healthcare SaaS commands premium pricing ($199-$999/month). 20 customers at $425/month = $8,500. That's very achievable with the right niche.
+
+### Real Estate Agent Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/real-estate-agent
+- **Role:** Real Estate Agent
+- **Avg Salary:** $65K ($40K-$200K+)
+- **Freedom Number:** $2,500/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** CRM management, Lead nurturing, Market analysis, Transaction coordination, Client communication
+- **Best Micro-SaaS Ideas:** Listing description generator from bullet points; Open house lead capture and follow-up tool; Comparative market analysis (CMA) automator
+- **FAQs:**
+  - Q: What's the best PropTech micro-SaaS?
+    A: Tools that save agents time on listings and lead follow-up. Agents pay $29-$79/month for tools that help them close one extra deal per year. Listing description generators and CMA tools are high-value.
+  - Q: Should I build for agents or buyers?
+    A: Agents. They have budget and clear ROI. Buyers are consumers who expect free tools. A B2B tool for agents at $49/month with 100 customers = $4,900/month.
+
+### Recruiter Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/recruiter
+- **Role:** Recruiter
+- **Avg Salary:** $75K ($45K-$120K)
+- **Freedom Number:** $2,800/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Candidate sourcing, Boolean search, Outreach automation, Interview coordination, Applicant tracking
+- **Best Micro-SaaS Ideas:** Boolean search builder for LinkedIn Recruiter; Automated interview scheduling with timezone handling; Candidate scoring rubric tool for hiring teams
+- **FAQs:**
+  - Q: Can recruiters build SaaS while at an agency?
+    A: Yes — build tools for in-house recruiters or small companies, not competing agencies. Your agency's candidates and clients are off-limits. Build tools that help the recruiting process generally.
+  - Q: What's the best recruiting micro-SaaS?
+    A: Tools that reduce coordination overhead. Interview scheduling alone costs recruiters 5+ hours/week. A tool that handles timezone matching, calendar integration, and automated reminders is worth $39-$99/month per recruiter.
+
+### Project Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/project-manager
+- **Role:** Project Manager
+- **Avg Salary:** $95K ($70K-$150K)
+- **Freedom Number:** $3,300/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Planning tools, Workflow automation, Stakeholder management, Risk management, Reporting dashboards
+- **Best Micro-SaaS Ideas:** Stakeholder update automator (status reports from task data); Project risk predictor using historical data; Meeting action item tracker with auto-assignment
+- **FAQs:**
+  - Q: What's the best PM micro-SaaS?
+    A: Status reporting automation. PMs spend 3-5 hours/week writing status reports. A tool that pulls data from Jira/Asana/Linear and generates stakeholder-ready reports is worth $49-$99/month per PM.
+  - Q: Should I build a general PM tool?
+    A: No — the market is saturated (Asana, Monday, ClickUp). Build for a specific niche: construction PM, event planning, creative agency workflows. Niche-specific tools win against general tools.
+
+### Customer Success Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/customer-success-manager
+- **Role:** Customer Success Manager
+- **Avg Salary:** $85K ($55K-$120K)
+- **Freedom Number:** $3,000/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Onboarding flows, Health scoring, Feedback loops, Churn prevention, Customer journey mapping
+- **Best Micro-SaaS Ideas:** Customer health score calculator for small SaaS; Onboarding checklist SaaS with progress tracking; Churn prediction tool using product usage data
+- **FAQs:**
+  - Q: What's the best CS micro-SaaS?
+    A: Onboarding automation for SaaS companies with 100-1,000 customers. A tool that creates personalized onboarding flows, tracks completion, and triggers interventions is worth $99-$299/month.
+  - Q: Can CSMs build SaaS at a SaaS company?
+    A: Yes, in a different vertical. If you work at a B2B SaaS, build CS tools for e-commerce, agencies, or a different segment. Never compete with your employer's target market.
+
+### Operations Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/operations-manager
+- **Role:** Operations Manager
+- **Avg Salary:** $95K ($70K-$160K)
+- **Freedom Number:** $3,300/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Process optimization, Workflow automation, Vendor management, Supply chain logistics, Performance reporting
+- **Best Micro-SaaS Ideas:** Vendor management dashboard for mid-size companies; SOP documentation tool with version control; Process mining tool that finds bottlenecks from event logs
+- **FAQs:**
+  - Q: What's the best ops-tech micro-SaaS?
+    A: SOP (Standard Operating Procedure) documentation. Every company has tribal knowledge that walks out the door when employees leave. A tool that makes SOPs easy to create, update, and search is worth $49-$149/month.
+  - Q: Should I build for my industry?
+    A: Yes. Operations vary wildly by industry. If you work in logistics ops, build ops tools for logistics companies. Your domain knowledge is the moat that general tools can't replicate.
+
+### Executive Assistant Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/executive-assistant
+- **Role:** Executive Assistant
+- **Avg Salary:** $70K ($50K-$100K)
+- **Freedom Number:** $2,700/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Calendar optimization, Meeting prep, Travel planning, Inbox management, Document preparation
+- **Best Micro-SaaS Ideas:** Meeting prep brief generator from calendar invites; Executive travel optimizer with policy compliance; Inbox triage tool with AI categorization
+- **FAQs:**
+  - Q: What's the best productivity micro-SaaS for EAs?
+    A: Meeting preparation tools. Executives attend 20+ meetings/week and show up unprepared. A tool that pulls relevant docs, prior notes, and attendee context into a brief is worth $15-$29/month per executive.
+  - Q: Can EAs build SaaS?
+    A: Absolutely. EAs understand productivity at a deep level. The best productivity tools were built by people who live the problem. Start with no-code tools (Bubble, Glide) if you can't code.
+
+### Virtual Assistant Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/virtual-assistant
+- **Role:** Virtual Assistant
+- **Avg Salary:** $50K ($30K-$80K)
+- **Freedom Number:** $2,200/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** Remote collaboration, Multi-client management, Tool integration (Zapier, Make), Content scheduling, Inbox and calendar management
+- **Best Micro-SaaS Ideas:** Client portal for freelance VAs (onboarding, tasks, invoicing); Social media scheduler for specific niches; Email template manager with AI personalization
+- **FAQs:**
+  - Q: VAs have the lowest freedom number — what does that mean?
+    A: You need the least MRR to replace your salary. At $2,200/month, that's 44 customers at $49/month or 110 customers at $19/month. This is achievable faster than any other profession.
+  - Q: What's the best SaaS for a VA to build?
+    A: Tools that systematize what you already do. If you manage social media for clients, build a scheduler. If you do inbox management, build an AI triage tool. Your existing clients are your first beta testers.
+
+### Photographer Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/photographer
+- **Role:** Photographer
+- **Avg Salary:** $55K ($30K-$100K+)
+- **Freedom Number:** $2,400/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** Visual content creation, Asset management, Client gallery delivery, Editing workflows, E-commerce (prints, licenses)
+- **Best Micro-SaaS Ideas:** Client gallery platform for niche photographers; AI photo culling tool (picks the best shots); Photography contract and invoice generator
+- **FAQs:**
+  - Q: Can photographers build SaaS?
+    A: Yes — start with tools you wish existed. Photographers struggle with culling, gallery delivery, and client communication. Each is a SaaS opportunity. Use no-code tools if you can't code.
+  - Q: Should I build products or SaaS?
+    A: Both. Digital products (presets, templates) generate passive income. SaaS (client management tools) generates recurring revenue. Start with products (faster to market), build SaaS with the revenue.
+
+### Writer Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/writer
+- **Role:** Writer
+- **Avg Salary:** $70K ($40K-$120K)
+- **Freedom Number:** $2,700/month
+- **Timeline:** 10-16 months
+- **Transferable Skills:** SEO writing, Copywriting, Content strategy, Research, Editing
+- **Best Micro-SaaS Ideas:** SEO content brief generator for specific niches; Brand voice analyzer for content teams; Newsletter monetization tracker (sponsorships, revenue)
+- **FAQs:**
+  - Q: Is writing still a viable skill with AI?
+    A: Yes — AI makes average writing worthless but makes distinctive writing more valuable. The opportunity is in specialized B2B content (legal, medical, technical) where accuracy and domain knowledge matter.
+  - Q: Should writers build SaaS or content businesses?
+    A: Content businesses (newsletters, blogs) are faster to revenue but cap out. SaaS scales infinitely. The ideal: build a newsletter for distribution, then a SaaS that serves that audience.
+
+### Corporate Trainer Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/corporate-trainer
+- **Role:** Corporate Trainer
+- **Avg Salary:** $65K ($45K-$90K)
+- **Freedom Number:** $2,500/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Instructional design, Course creation, LMS administration, Assessment design, Learner engagement
+- **Best Micro-SaaS Ideas:** Training compliance tracker for regulated industries; Course creation tool for subject matter experts; Learner engagement analytics dashboard
+- **FAQs:**
+  - Q: What's the best training-tech micro-SaaS?
+    A: Compliance training trackers for regulated industries (healthcare, finance, aviation). Companies pay $99-$499/month to track mandatory training completion, send reminders, and generate audit reports.
+  - Q: Should trainers build courses or SaaS?
+    A: Courses first (faster revenue), SaaS second (recurring revenue). A $499 course that sells 20 copies/month = $10K/month. A $99/month SaaS with 50 customers = $5K/month. Do both.
+
+### Supply Chain Manager Salary: Your Freedom Number Math
+- **URL:** https://invisibleexit.com/salaries/supply-chain-manager
+- **Role:** Supply Chain Manager
+- **Avg Salary:** $95K ($70K-$160K)
+- **Freedom Number:** $3,300/month
+- **Timeline:** 12-18 months
+- **Transferable Skills:** Inventory management, Vendor management, Logistics optimization, Demand forecasting, ERP integration
+- **Best Micro-SaaS Ideas:** Inventory reorder point calculator for SMBs; Vendor performance dashboard; Demand forecasting tool for specific product categories
+- **FAQs:**
+  - Q: What's the best logistics-tech micro-SaaS?
+    A: Inventory management for small e-commerce businesses. Shopify/WooCommerce merchants with 100-500 SKUs struggle with reorder points and stockouts. A tool that calculates optimal reorder points from sales data is worth $49-$99/month.
+  - Q: Is supply chain SaaS too complex for a solo founder?
+    A: Not if you niche down. Don't build a full ERP. Build one specific tool (reorder calculator, vendor scorecard, shipping comparator) that integrates with existing systems. Point solutions beat platforms for solo founders.
+
 ## Revenue Milestone Pages
 
 ### From $0 to $100 MRR: Your First Micro-SaaS Customers

@@ -60,6 +60,9 @@ import { failureStories } from "../src/data/failure-stories.js";
 // ── Greg Isenberg pSEO Round 6 ──
 import { toolReviews } from "../src/data/tool-reviews.js";
 
+// ── Greg Isenberg pSEO Round 7 ──
+import { caseStudies } from "../src/data/case-studies.js";
+
 // ---------- Markdown-like content → HTML ----------
 
 function bold(text: string): string {
@@ -2066,6 +2069,9 @@ function main() {
   // ── Greg Isenberg pSEO Round 6 — hub landing pages ──
   if (injectBody(resolve(DIST, "reviews", "index.html"), reviewsHubBodyHtml())) { count++; }
 
+  // ── Greg Isenberg pSEO Round 7 — hub landing pages ──
+  if (injectBody(resolve(DIST, "case-studies", "index.html"), caseStudiesHubBodyHtml())) { count++; }
+
   // ── Missing pSEO hub pages (were 0 words for crawlers) ──
   if (injectBody(resolve(DIST, "non-compete", "index.html"), nonCompeteHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
@@ -2160,6 +2166,11 @@ function main() {
   // ── Greg Isenberg pSEO Round 6: Tool Review pages ──
   for (const t of toolReviews) {
     if (injectBody(resolve(DIST, "reviews", t.slug, "index.html"), toolReviewBodyHtml(t))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 7: Case Study pages ──
+  for (const c of caseStudies) {
+    if (injectBody(resolve(DIST, "case-studies", c.slug, "index.html"), caseStudyBodyHtml(c))) { count++; }
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);
@@ -3722,6 +3733,44 @@ ${hubSvgFigure("Tool Reviews", "Honest software reviews", "Real talk: what solo 
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Tool Reviews</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Tool Reviews for Solo Founders</h1><p style="color:#4b5563;margin-bottom:1.5rem">Everyone recommends tools. We actually use them. These are honest reviews of the software I rely on to build invisible-exit.com — Cursor, Vercel, Supabase, Stripe, Linear, Claude. No affiliate fluff, no sponsored tiers. Just real verdicts from daily use.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Reviews</h2>${links}</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 7 — Body generator ----------
+
+function caseStudyBodyHtml(item: typeof caseStudies[0]): string {
+  const worked = item.whatWorked.map((w: any) => `<div style="padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.5rem"><h3 style="font-weight:700;color:#0f172a;font-size:0.95rem">✅ ${w.strategy}</h3><p style="color:#6b7280;font-size:0.85rem;margin-top:0.25rem">${w.detail}</p></div>`).join("\n");
+  const nums = item.keyNumbers.map((n: any) => `<div style="display:flex;align-items:center;justify-content:space-between;background:#0f172a;padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:0.5rem"><span style="font-size:0.8rem;color:#cbd5e1">${n.metric}</span><span style="font-weight:700;color:white;font-size:0.875rem">${n.value}</span></div>`).join("\n");
+  const lessons = item.lessonsLearned.map((l: string) => `<li style="display:flex;align-items:flex-start;gap:0.5rem;color:#374151;margin-bottom:0.5rem;font-size:0.875rem"><span style="color:#2563eb;flex-shrink:0">💡</span><span>${l}</span></li>`).join("");
+  const stack = item.techStack.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies — learn from real founders")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><span style="display:inline-block;background:#dbeafe;color:#1d4ed8;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem;font-weight:600">${item.niche}</span><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin:0.75rem 0 1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem"><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.85rem;font-weight:700;color:#166534">${item.revenue}</div><div style="font-size:0.7rem;color:#6b7280">Revenue</div></div><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#1d4ed8">${item.pricing}</div><div style="font-size:0.7rem;color:#6b7280">Pricing</div></div><div style="background:#faf5ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#7e22ce">${item.timeToRevenue}</div><div style="font-size:0.7rem;color:#6b7280">Timeline</div></div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">The Story</h2><p style="color:#374151">${item.theStory}</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">What Worked</h2>${worked}</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Key Numbers</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">${nums}</div></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Lessons Learned</h2><ul>${lessons}</ul></div></section>
+<section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #7e22ce;background:#faf5ff;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#581c87">What They Did Differently</h3><p style="color:#6b21a8;margin-top:0.5rem">${item.whatTheyDidDifferently}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Tech Stack</h2><div>${stack}</div></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
+</div>`;
+}
+
+function caseStudiesHubBodyHtml(): string {
+  const links = caseStudies.map((c) =>
+    `<a href="/case-studies/${c.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><span style="display:inline-block;background:#dbeafe;color:#1d4ed8;padding:0.15rem 0.5rem;border-radius:9999px;font-size:0.7rem;font-weight:600">${c.niche}</span><h3 style="font-weight:700;color:#111827;margin:0.5rem 0 0.25rem">${c.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${c.revenue} · ${c.pricing}</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies — learn from real founders")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Case Studies</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Case Studies</h1><p style="color:#4b5563;margin-bottom:1.5rem">Real micro-SaaS companies with real revenue numbers, growth timelines, and strategies. No vanity metrics — just honest breakdowns of what worked, what didn't, and what you can learn. These are the case studies I wish I had when starting.</p></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Case Studies</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
 }

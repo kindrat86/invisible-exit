@@ -66,6 +66,9 @@ async function main() {
   // Greg Isenberg pSEO Round 6
   const { toolReviews } = await import("../src/data/tool-reviews.js");
 
+  // Greg Isenberg pSEO Round 7
+  const { caseStudies } = await import("../src/data/case-studies.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -686,6 +689,14 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.8" as const,
     })),
+    // ── Greg Isenberg pSEO Round 7 ──
+    // Case Study pages
+    ...caseStudies.map((c: { slug: string }) => ({
+      loc: `https://invisibleexit.com/case-studies/${c.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -727,7 +738,8 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/quit-your-job/") &&
     !e.loc.includes("/weekend-builds/") &&
     !e.loc.includes("/failure-stories/") &&
-    !e.loc.includes("/reviews/")
+    !e.loc.includes("/reviews/") &&
+    !e.loc.includes("/case-studies/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -737,7 +749,7 @@ const submaps: Record<string, SitemapEntry[]> = {
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
   "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
   "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
-  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/")),
+  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
@@ -799,6 +811,7 @@ console.log(`  Side hustles: ${sideHustles.length}`);
 console.log(`  Budget start: ${budgetStartPages.length}`);
 console.log(`  Niches: ${niches.length}`);
 console.log(`  Tool reviews: ${toolReviews.length}`);
+console.log(`  Case studies: ${caseStudies.length}`);
 }
 
 main().catch((err) => {

@@ -308,13 +308,34 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Best Gumroad Alternatives for Micro-SaaS](https://invisibleexit.com/alternatives/gumroad-alternative): The best Gumroad alternatives for solo founders selling SaaS subscriptions and digital products. Stripe, Paddle, Lemon Squeezy compared.
 - [Best WordPress Alternatives for Solo Founders](https://invisibleexit.com/alternatives/wordpress-alternative): The best WordPress alternatives for solo founders who need a blog + content site without the maintenance burden of WordPress.
 
-## Salary → Freedom Number (4)
+## Salary → Freedom Number (25)
 
 - [All Salary Guides](https://invisibleexit.com/salaries): Index of role salary-to-MRR conversions
 - [Product Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/product-manager): Product managers earn $147K/year on average. See exactly how much MRR you need to replace your salary and the best micro-SaaS ideas for PMs.
 - [Software Engineer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/software-engineer): Software engineers earn $155K/year on average. See the exact MRR needed to replace your salary and the best micro-SaaS ideas for engineers.
 - [Marketing Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/marketing-manager): Marketing managers earn $112K/year. See how much MRR replaces your salary and the best micro-SaaS ideas for marketers.
 - [Data Analyst Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/data-analyst): Data analysts earn $98K/year. See how much MRR replaces your salary and the best micro-SaaS ideas for analysts.
+- [Accountant Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/accountant): Accountants earn $75K/year on average. See exactly how much MRR you need to replace your salary and the best micro-SaaS ideas for accountants.
+- [Lawyer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/lawyer): Lawyers earn $165K/year on average. See exactly how much MRR you need to replace your salary and the best legal tech micro-SaaS ideas.
+- [Teacher Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/teacher): Teachers earn $65K/year on average. See how much MRR replaces your salary and the best EdTech micro-SaaS ideas for educators.
+- [Nurse Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/nurse): Nurses earn $85K/year on average. See how much MRR replaces your salary and the best healthcare-adjacent micro-SaaS ideas.
+- [HR Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/hr-manager): HR managers earn $95K/year on average. See how much MRR replaces your salary and the best HR tech micro-SaaS ideas.
+- [Management Consultant Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/consultant): Management consultants earn $175K/year. See how much MRR replaces your salary and how to turn consulting frameworks into SaaS.
+- [Designer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/designer): Designers earn $85K/year on average. See how much MRR replaces your salary and the best design-adjacent micro-SaaS ideas.
+- [Financial Analyst Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/financial-analyst): Financial analysts earn $95K/year. See how much MRR replaces your salary and the best fintech micro-SaaS ideas.
+- [Sales Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/sales-manager): Sales managers earn $125K/year. See how much MRR replaces your salary and the best sales-tech micro-SaaS ideas.
+- [Physician Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/doctor): Physicians earn $313K/year on average. See how much MRR replaces your salary and the best healthcare-adjacent micro-SaaS ideas.
+- [Real Estate Agent Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/real-estate-agent): Real estate agents earn $65K/year. See how much MRR replaces your income and the best PropTech micro-SaaS ideas.
+- [Recruiter Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/recruiter): Recruiters earn $75K/year on average. See how much MRR replaces your salary and the best HR/recruiting tech micro-SaaS ideas.
+- [Project Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/project-manager): Project managers earn $95K/year. See how much MRR replaces your salary and the best project management micro-SaaS ideas.
+- [Customer Success Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/customer-success-manager): Customer success managers earn $85K/year. See how much MRR replaces your salary and the best CS-tech micro-SaaS ideas.
+- [Operations Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/operations-manager): Operations managers earn $95K/year. See how much MRR replaces your salary and the best ops-tech micro-SaaS ideas.
+- [Executive Assistant Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/executive-assistant): Executive assistants earn $70K/year. See how much MRR replaces your salary and the best productivity micro-SaaS ideas.
+- [Virtual Assistant Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/virtual-assistant): Virtual assistants earn $50K/year. See how much MRR replaces your salary and the best productivity micro-SaaS ideas for VAs.
+- [Photographer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/photographer): Photographers earn $55K/year. See how much MRR replaces your income and the best photography business micro-SaaS ideas.
+- [Writer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/writer): Writers earn $70K/year on average. See how much MRR replaces your salary and the best content-tech micro-SaaS ideas.
+- [Corporate Trainer Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/corporate-trainer): Corporate trainers earn $65K/year. See how much MRR replaces your salary and the best EdTech/training micro-SaaS ideas.
+- [Supply Chain Manager Salary: Your Freedom Number Math](https://invisibleexit.com/salaries/supply-chain-manager): Supply chain managers earn $95K/year. See how much MRR replaces your salary and the best logistics-tech micro-SaaS ideas.
 
 ## Revenue Milestones (8)
 
