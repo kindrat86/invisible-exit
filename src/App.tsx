@@ -103,6 +103,10 @@ const HowToHubPage = lazy(() => import("./pages/HowToHubPage.tsx"));
 const IsItLegalHubPage = lazy(() => import("./pages/IsItLegalHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
+// ── Greg Isenberg pSEO Round 4 ──
+const SideHustlePage = lazy(() => import("./pages/SideHustlePage.tsx"));
+const BudgetStartPage = lazy(() => import("./pages/BudgetStartPage.tsx"));
+const NichePage = lazy(() => import("./pages/NichePage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -233,6 +237,14 @@ const App = () => (
           {/* ── Greg Isenberg pSEO - Is It Legal pages ── */}
           <Route path="/is-it-legal/:slug" element={<IsItLegalPage />} />
           <Route path="/is-it-legal" element={<IsItLegalHubPage />} />
+
+          {/* ── Greg Isenberg pSEO Round 4 ── */}
+          <Route path="/side-hustles/:slug" element={<SideHustlePage />} />
+          <Route path="/side-hustles" element={<Navigate to="/blog" replace />} />
+          <Route path="/by-budget/:slug" element={<BudgetStartPage />} />
+          <Route path="/by-budget" element={<Navigate to="/blog" replace />} />
+          <Route path="/niches/:slug" element={<NichePage />} />
+          <Route path="/niches" element={<Navigate to="/blog" replace />} />
 
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}

@@ -43,6 +43,9 @@ import { revenueRoadmaps } from "../src/data/revenue-roadmaps.ts";
 import { costAnalysisPages } from "../src/data/cost-analysis.ts";
 import { howToGuides } from "../src/data/how-to-guides.ts";
 import { isItLegalPages } from "../src/data/is-it-legal.ts";
+import { sideHustles } from "../src/data/side-hustles.ts";
+import { budgetStartPages } from "../src/data/budget-start.ts";
+import { niches } from "../src/data/niches.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -1426,6 +1429,9 @@ function getRoutes() {
     { path: "/cost-analysis", title: "Cost Analysis — How Much Does It Cost? | Invisible Exit", desc: "Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500 — see exactly where every dollar goes.", type: "website" },
     { path: "/how-to", title: "How-To Guides — Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
     { path: "/is-it-legal", title: "Is It Legal? — Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
+    { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession — ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
+    { path: "/by-budget", title: "Start a Business by Budget — $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
+    { path: "/niches", title: "Best Micro-SaaS Niches for 2025 | Invisible Exit", desc: "The most profitable micro-SaaS niches analyzed by market size, growth rate, and competition. Specific product ideas with pricing and monetization.", type: "website" },
   ];
 
   for (const page of trafficPages) {
@@ -2696,6 +2702,135 @@ function getRoutes() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: il.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 4: Side Hustle pages ----------
+  for (const sh of sideHustles) {
+    const url = `${SITE}/side-hustles/${sh.slug}`;
+    routes.push({
+      path: `/side-hustles/${sh.slug}`,
+      meta: {
+        title: sh.metaTitle,
+        description: sh.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: sh.h1,
+            description: sh.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Side Hustles" },
+              { "@type": "ListItem", position: 3, name: sh.profession },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: sh.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 4: Budget Start pages ----------
+  for (const bs of budgetStartPages) {
+    const url = `${SITE}/by-budget/${bs.slug}`;
+    routes.push({
+      path: `/by-budget/${bs.slug}`,
+      meta: {
+        title: bs.metaTitle,
+        description: bs.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: bs.h1,
+            description: bs.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "By Budget" },
+              { "@type": "ListItem", position: 3, name: bs.budgetTier },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: bs.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Greg Isenberg pSEO Round 4: Niche pages ----------
+  for (const n of niches) {
+    const url = `${SITE}/niches/${n.slug}`;
+    routes.push({
+      path: `/niches/${n.slug}`,
+      meta: {
+        title: n.metaTitle,
+        description: n.metaDescription,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: n.h1,
+            description: n.intro,
+            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Niches" },
+              { "@type": "ListItem", position: 3, name: n.niche },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: n.faqs.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

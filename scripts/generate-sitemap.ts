@@ -53,6 +53,11 @@ async function main() {
   const { howToGuides } = await import("../src/data/how-to-guides.js");
   const { isItLegalPages } = await import("../src/data/is-it-legal.js");
 
+  // Greg Isenberg pSEO Round 4
+  const { sideHustles } = await import("../src/data/side-hustles.js");
+  const { budgetStartPages } = await import("../src/data/budget-start.js");
+  const { niches } = await import("../src/data/niches.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -621,6 +626,28 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
+    // ── Greg Isenberg pSEO Round 4 ──
+    // Side Hustle pages
+    ...sideHustles.map((sh: { slug: string }) => ({
+      loc: `https://invisibleexit.com/side-hustles/${sh.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Budget Start pages
+    ...budgetStartPages.map((bs: { slug: string }) => ({
+      loc: `https://invisibleexit.com/by-budget/${bs.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // Niche pages
+    ...niches.map((n: { slug: string }) => ({
+      loc: `https://invisibleexit.com/niches/${n.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -655,7 +682,10 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/resources/") &&
     !e.loc.includes("/cost-analysis/") &&
     !e.loc.includes("/how-to/") &&
-    !e.loc.includes("/is-it-legal/")
+    !e.loc.includes("/is-it-legal/") &&
+    !e.loc.includes("/side-hustles/") &&
+    !e.loc.includes("/by-budget/") &&
+    !e.loc.includes("/niches/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -663,8 +693,8 @@ const submaps: Record<string, SitemapEntry[]> = {
   "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/")),
   "glossary": entries.filter(e => e.loc.includes("/glossary/")),
   "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
-  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/")),
-  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/")),
+  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
+  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
@@ -722,6 +752,9 @@ console.log(`  Resources: ${resources.length}`);
 console.log(`  Cost analysis: ${costAnalysisPages.length}`);
 console.log(`  How-to guides: ${howToGuides.length}`);
 console.log(`  Is-it-legal: ${isItLegalPages.length}`);
+console.log(`  Side hustles: ${sideHustles.length}`);
+console.log(`  Budget start: ${budgetStartPages.length}`);
+console.log(`  Niches: ${niches.length}`);
 }
 
 main().catch((err) => {

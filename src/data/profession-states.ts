@@ -38,9 +38,11 @@ export interface ProfessionStatePage {
 
 // ---------------------------------------------------------------------------
 // Curated subset configuration
-// ---------------------------------------------------------------------------
-
-/** Top 10 professions most relevant to InvisibleExit's corporate-manager audience. */
+/**
+ * All 25 professions — full matrix expansion (Greg Isenberg pSEO Round 4).
+ * Previously capped at 10 professions × 5 states = 50 pages.
+ * Now: 25 professions × 15 states = 375 pages (7.5x increase).
+ */
 const CURATED_PROFESSION_SLUGS = [
   "for-software-engineers",
   "for-product-managers",
@@ -52,15 +54,40 @@ const CURATED_PROFESSION_SLUGS = [
   "for-accountants",
   "for-lawyers",
   "for-data-analysts",
+  "for-nurses",
+  "for-hr-managers",
+  "for-teachers",
+  "for-real-estate-agents",
+  "for-recruiters",
+  "for-project-managers",
+  "for-customer-success",
+  "for-operations-managers",
+  "for-executive-assistants",
+  "for-virtual-assistants",
+  "for-photographers",
+  "for-writers",
+  "for-trainers",
+  "for-supply-chain",
+  "for-doctors",
 ] as const;
 
-/** 5 biggest US states by population. */
+/** Top 15 US states by population + business density. */
 const CURATED_STATE_SLUGS = [
   "california",
   "texas",
   "new-york",
   "florida",
   "illinois",
+  "pennsylvania",
+  "ohio",
+  "georgia",
+  "north-carolina",
+  "michigan",
+  "new-jersey",
+  "virginia",
+  "washington",
+  "arizona",
+  "massachusetts",
 ] as const;
 
 // ---------------------------------------------------------------------------

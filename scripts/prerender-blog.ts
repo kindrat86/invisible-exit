@@ -47,6 +47,11 @@ import { costAnalysisPages } from "../src/data/cost-analysis.js";
 import { howToGuides } from "../src/data/how-to-guides.js";
 import { isItLegalPages } from "../src/data/is-it-legal.js";
 
+// ── Greg Isenberg pSEO Round 4 ──
+import { sideHustles } from "../src/data/side-hustles.js";
+import { budgetStartPages } from "../src/data/budget-start.js";
+import { niches } from "../src/data/niches.js";
+
 // ---------- Markdown-like content → HTML ----------
 
 function bold(text: string): string {
@@ -2040,6 +2045,11 @@ function main() {
   if (injectBody(resolve(DIST, "data", "index.html"), dataHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "explore", "index.html"), exploreHubBodyHtml())) { count++; }
 
+  // ── Greg Isenberg pSEO Round 4 — hub landing pages ──
+  if (injectBody(resolve(DIST, "side-hustles", "index.html"), sideHustlesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "by-budget", "index.html"), byBudgetHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "niches", "index.html"), nichesHubBodyHtml())) { count++; }
+
   // ── Missing pSEO hub pages (were 0 words for crawlers) ──
   if (injectBody(resolve(DIST, "non-compete", "index.html"), nonCompeteHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
@@ -2101,10 +2111,95 @@ function main() {
     if (injectBody(resolve(DIST, "is-it-legal", il.slug, "index.html"), isItLegalBodyHtml(il))) { count++; }
   }
 
+  // ── Greg Isenberg pSEO Round 4: Side Hustle pages ──
+  for (const sh of sideHustles) {
+    if (injectBody(resolve(DIST, "side-hustles", sh.slug, "index.html"), sideHustleBodyHtml(sh))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 4: Budget Start pages ──
+  for (const bs of budgetStartPages) {
+    if (injectBody(resolve(DIST, "by-budget", bs.slug, "index.html"), budgetStartBodyHtml(bs))) { count++; }
+  }
+
+  // ── Greg Isenberg pSEO Round 4: Niche pages ──
+  for (const n of niches) {
+    if (injectBody(resolve(DIST, "niches", n.slug, "index.html"), nicheBodyHtml(n))) { count++; }
+  }
+
   console.log(`Done. Injected body content into ${count} pages.`);
 }
 
-// ---------- Tool Alternatives body ----------
+function sideHustleBodyHtml(item: typeof sideHustles[0]): string {
+  const hustles = item.bestHustles.map((h: any, i: number) =>
+    `<div style="padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.75rem"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">${i+1}. ${h.name}</h3><p style="font-size:0.875rem;color:#4b5563">${h.description}</p><div style="margin-top:0.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.8rem"><span style="color:#6b7280">Earning: <strong style="color:#166534">${h.earningPotential}</strong></span><span style="color:#6b7280">Cost: <strong>${h.startupCost}</strong></span><span style="color:#6b7280">Skills: <strong>${h.skillsNeeded}</strong></span></div></div>`
+  ).join("\n");
+  const schedule = item.weeklySchedule.map((s: any) =>
+    `<div style="display:flex;align-items:center;gap:1rem;padding:0.75rem;background:#f9fafb;border-radius:0.5rem;margin-bottom:0.5rem;font-size:0.875rem"><span style="font-weight:600;color:#374151;min-width:8rem">${s.day}</span><span style="flex:1;color:#6b7280">${s.task}</span><span style="font-weight:600;color:#2563eb">${s.hours}</span></div>`
+  ).join("\n");
+  const tools = item.tools.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
+  const pros = item.pros.map((p: string) => `<li style="color:#374151;margin-bottom:0.25rem">✅ ${p}</li>`).join("");
+  const cons = item.cons.map((c: string) => `<li style="color:#374151;margin-bottom:0.25rem">⚠️ ${c}</li>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Side Hustles", "Profession-specific opportunities", "Best side hustles for professionals looking to build additional income streams")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem"><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#1d4ed8">${item.hustleType}</div><div style="font-size:0.7rem;color:#6b7280">Type</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#166534">${item.startupCost}</div><div style="font-size:0.7rem;color:#6b7280">Startup Cost</div></div><div style="background:#faf5ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#7e22ce">${item.timeToFirstDollar}</div><div style="font-size:0.7rem;color:#6b7280">Time to First \$</div></div><div style="background:#fff7ed;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#c2410c">${item.weeklyTimeCommitment}</div><div style="font-size:0.7rem;color:#6b7280">Weekly Time</div></div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Top 5 Side Hustles Ranked</h2>${hustles}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Weekly Schedule</h2>${schedule}</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tools</h2><div>${tools}</div></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div><h3 style="font-weight:700;color:#166534">Pros</h3><ul style="margin-top:0.75rem">${pros}</ul></div><div><h3 style="font-weight:700;color:#dc2626">Cons</h3><ul style="margin-top:0.75rem">${cons}</ul></div></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function budgetStartBodyHtml(item: typeof budgetStartPages[0]): string {
+  const options = item.bestOptions.map((o: any, i: number) =>
+    `<div style="padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.75rem"><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem"><h3 style="font-weight:700;font-size:1rem">${o.name}</h3><span style="flex-shrink:0;border-radius:9999px;background:#dbeafe;padding:0.25rem 0.75rem;font-size:0.75rem;font-weight:600;color:#1d4ed8">${o.type}</span></div><p style="font-size:0.875rem;color:#4b5563;margin-top:0.25rem">${o.description}</p><div style="margin-top:0.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;font-size:0.8rem"><span style="color:#6b7280">Revenue: <strong style="color:#166534">${o.revenuePotential}</strong></span><span style="color:#6b7280">Cost: <strong>${o.monthlyCost}</strong></span><span style="color:#6b7280">Time to \$: <strong>${o.timeToRevenue}</strong></span></div></div>`
+  ).join("\n");
+  const plan = item.first30DaysPlan.map((w: any, i: number) =>
+    `<div style="display:flex;gap:1rem;padding:0.75rem;background:#f9fafb;border-radius:0.5rem;margin-bottom:0.5rem"><div style="flex-shrink:0;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:#2563eb;color:white;font-weight:700;font-size:0.875rem">${i+1}</div><div style="flex:1"><div style="font-weight:600;color:#0f172a">${w.week}: ${w.focus}</div><div style="font-size:0.8rem;color:#6b7280;margin-top:0.25rem">🎯 ${w.outcome}</div></div></div>`
+  ).join("\n");
+  const stack = item.stack.map((s: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${s}</span>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("By Budget", "Business startup costs", "Best business ideas based on available capital — from \$0 to \$10,000")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Best Options with ${item.budgetTier}</h2>${options}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Your First 30 Days</h2>${plan}</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tool Stack</h2><div>${stack}</div></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
+
+function nicheBodyHtml(item: typeof niches[0]): string {
+  const ideas = item.bestIdeas.map((idea: any, i: number) =>
+    `<div style="padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.75rem"><h3 style="font-weight:700;font-size:1rem">${idea.name}</h3><p style="font-size:0.875rem;color:#4b5563;margin-top:0.25rem">${idea.description}</p><div style="margin-top:0.5rem;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.8rem"><span style="color:#6b7280">Customer: <strong>${idea.targetCustomer}</strong></span><span style="color:#6b7280">Pricing: <strong style="color:#166534">${idea.pricing}</strong></span><span style="color:#6b7280">Competition: <strong>${idea.competition}</strong></span></div><div style="margin-top:0.5rem;padding:0.5rem;background:#eff6ff;border-radius:0.375rem;font-size:0.8rem;color:#1d4ed8"><strong>Why now:</strong> ${idea.whyNow}</div></div>`
+  ).join("\n");
+  const trends = item.trends.map((t: string) => `<li style="display:flex;align-items:flex-start;gap:0.5rem;color:#374151;margin-bottom:0.5rem;font-size:0.875rem"><span style="color:#2563eb;flex-shrink:0">📈</span><span>${t}</span></li>`).join("");
+  const monets = item.monetization.map((m: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#dcfce7;border-radius:0.375rem;font-size:0.8rem;color:#166534;margin:0.15rem">${m}</span>`).join("");
+  const tools = item.tools.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
+  const mistakes = item.mistakes.map((m: string) => `<li style="display:flex;align-items:flex-start;gap:0.5rem;color:#374151;margin-bottom:0.5rem;font-size:0.875rem"><span style="color:#dc2626;flex-shrink:0">⚠️</span><span>${m}</span></li>`).join("");
+  const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Micro-SaaS Niches", "Trending opportunities", "Best micro-SaaS niches to build in 2025 — market analysis and specific product ideas")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem"><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1rem;font-weight:700;color:#1d4ed8">${item.marketSize}</div><div style="font-size:0.7rem;color:#6b7280">Market Size</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1rem;font-weight:700;color:#166534">${item.growthRate}</div><div style="font-size:0.7rem;color:#6b7280">Growth Rate</div></div><div style="background:#fff7ed;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#c2410c">${item.difficulty}</div><div style="font-size:0.7rem;color:#6b7280">Difficulty</div></div></div>
+</div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Best Micro-SaaS Ideas in ${item.niche}</h2>${ideas}</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Key Trends</h2><ul>${trends}</ul></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Monetization Strategies</h2><div>${monets}</div></div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tools</h2><div>${tools}</div></div></section>
+<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem;color:#dc2626">Common Mistakes to Avoid</h2><ul>${mistakes}</ul></div></section>
+${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+<section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
+</div>`;
+}
 
 function toolAlternativeBodyHtml(ta: typeof toolAlternatives[0]): string {
   const altCards = ta.alternatives.map((alt) =>
@@ -3385,6 +3480,71 @@ ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmap
 <a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Watch the Free Masterclass →</a>
 </div>
 </section>
+</div>`;
+}
+
+// ---------- Greg Isenberg pSEO Round 4 — Hub landing page bodies ----------
+
+function sideHustlesHubBodyHtml(): string {
+  const links = sideHustles.map((s) =>
+    `<a href="/side-hustles/${s.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${s.profession}</h3><p style="font-size:0.875rem;color:#6b7280">${s.hustleType} · ${s.startupCost} startup · ${s.timeToFirstDollar} to first dollar</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Side Hustles", "Profession-specific income ideas", "Best side hustles for every profession — compare startup costs, earning potential, and time commitments")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Side Hustles by Profession</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Best Side Hustles by Profession</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">Not all side hustles are created equal. Your profession gives you unique advantages — leverage them. Browse side hustle ideas tailored to your career, ranked by earning potential, startup cost, and time to first dollar.</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Profession</h2>
+${links}
+</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div></section>
+</div>`;
+}
+
+function byBudgetHubBodyHtml(): string {
+  const links = budgetStartPages.map((b) =>
+    `<a href="/by-budget/${b.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${b.h1}</h3><p style="font-size:0.875rem;color:#6b7280">Start with ${b.budgetTier} · ${b.bestOptions.length} business options analyzed</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("By Budget", "Starting capital guide", "Business ideas ranked by startup cost — from zero dollars to serious capital")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Build by Budget</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">What You Can Build With Your Budget</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">How much money do you actually need to start a business? Less than you think. Browse business options by budget tier — from $0 to $10,000 — with realistic earning potential, tool stacks, and 30-day action plans.</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Budget Tier</h2>
+${links}
+</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div></section>
+</div>`;
+}
+
+function nichesHubBodyHtml(): string {
+  const links = niches.map((n) =>
+    `<a href="/niches/${n.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${n.niche}</h3><p style="font-size:0.875rem;color:#6b7280">${n.marketSize} · ${n.growthRate} · ${n.difficulty}</p></a>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+${hubSvgFigure("Niche Micro-SaaS", "Market analysis", "The best niches for building micro-SaaS products — analyzed by market size, competition, and growth potential")}
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Micro-SaaS Niches</span></nav>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Best Micro-SaaS Niches for 2025</h1>
+<p style="color:#4b5563;margin-bottom:1.5rem">The best way to pick a micro-SaaS niche is to go where the market is growing, competition is manageable, and you have a unique angle. Here are the most promising niches analyzed with specific product ideas, monetization strategies, and key trends.</p>
+</div></section>
+<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Niches</h2>
+${links}
+</div></section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div></section>
 </div>`;
 }
 
