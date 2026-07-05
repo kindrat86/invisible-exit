@@ -155,7 +155,7 @@ function getRoutes() {
     meta: {
       title: "Invisible Exit | Build a Side Business While Employed",
       description:
-        "5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo.",
+        "AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [

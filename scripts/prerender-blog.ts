@@ -1943,7 +1943,24 @@ function main() {
     count++;
   }
 
-  // ── Greg Isenberg pSEO Round 3: Budget + Hours pages ──
+  // ── Hub page bodies (were 0 words for crawlers) ──
+  if (injectBody(resolve(DIST, "cost-analysis", "index.html"), costAnalysisHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "how-to", "index.html"), howToHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "is-it-legal", "index.html"), isItLegalHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "ideas", "index.html"), ideasHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "glossary", "index.html"), glossaryHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "guides", "index.html"), guidesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "best", "index.html"), bestHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "alternatives", "index.html"), alternativesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "salaries", "index.html"), salariesHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "data", "index.html"), dataHubBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "explore", "index.html"), exploreHubBodyHtml())) { count++; }
+
+  // ── Critical funnel pages (0 body words) ──
+  if (injectBody(resolve(DIST, "freedom", "index.html"), freedomPageBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "story", "index.html"), storyPageBodyHtml())) { count++; }
+  if (injectBody(resolve(DIST, "masterclass", "index.html"), masterclassPageBodyHtml())) { count++; }
+
   for (const b of budgetPages) {
     if (injectBody(resolve(DIST, "budget", b.slug, "index.html"), budgetPageBodyHtml(b))) { count++; }
   }
@@ -2422,6 +2439,454 @@ ${faqs}
 <section style="padding:1rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <p style="font-size:0.75rem;color:#9ca3af"><strong>Legal Disclaimer:</strong> For informational purposes only. Not legal advice. Consult a licensed attorney for your situation.</p>
 </div></section>
+</div>`;
+}
+
+// ---------- Hub page bodies ----------
+
+function costAnalysisHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Cost Analysis</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Cost Analysis — How Much Does It Cost?</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed breakdowns of every cost involved in starting, running, and scaling a micro-SaaS business while employed. From $0 to $10,000 — know exactly what you'll spend before you start.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">You can start a micro-SaaS for as little as $0 using free tiers, but a realistic budget is $50-$200/month for hosting, domains, and tools. The biggest hidden cost is your time — most employed founders invest 5-15 hours/week.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Cost Analysis Guides</h2>
+<div style="display:grid;gap:1rem">
+<a href="/cost-analysis/starting-from-zero" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;transition:border-color 0.2s"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How Much Does It Cost to Start a Micro-SaaS from $0?</h3><p style="font-size:0.875rem;color:#6b7280">The complete $0 starter guide — free tiers, free tools, and what you actually need to pay for.</p></a>
+<a href="/cost-analysis/monthly-operating-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Monthly Operating Costs for a Micro-SaaS</h3><p style="font-size:0.875rem;color:#6b7280">Hosting, domains, email, analytics — the real monthly stack costs broken down by stage.</p></a>
+<a href="/cost-analysis/llc-formation-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">LLC Formation Costs by State</h3><p style="font-size:0.875rem;color:#6b7280">Filing fees, registered agent, annual reports — what it costs to form an anonymous LLC.</p></a>
+<a href="/cost-analysis/tools-stack-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">AI Tools Stack: What You Actually Need to Pay For</h3><p style="font-size:0.875rem;color:#6b7280">ChatGPT, Claude, Midjourney, coding tools — which AI tools are essential vs nice-to-have.</p></a>
+<a href="/cost-analysis/first-year-budget" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">First-Year Budget: $0 to $4K/month MRR</h3><p style="font-size:0.875rem;color:#6b7280">Month-by-month spending plan from idea validation to $4K recurring revenue.</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a>
+</div>
+</section>
+</div>`;
+}
+
+function howToHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>How-To Guides</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">How-To Guides — Step-by-Step for Employed Founders</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Actionable, step-by-step guides for every stage of building a micro-SaaS business while employed. No fluff — just the exact steps, tools, and timeline you need.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The fastest path from idea to first paying customer: validate in 48 hours, build an MVP in 2-4 weeks, and get your first 10 customers through direct outreach — all while working full-time.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All How-To Guides</h2>
+<div style="display:grid;gap:1rem">
+<a href="/how-to/validate-idea-in-48-hours" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Validate a Micro-SaaS Idea in 48 Hours</h3><p style="font-size:0.875rem;color:#6b7280">The exact validation framework — landing page, traffic test, pre-sell, go/no-go decision.</p></a>
+<a href="/how-to/start-without-coding" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Start a SaaS Without Knowing How to Code</h3><p style="font-size:0.875rem;color:#6b7280">No-code tools, AI-assisted coding, and when to hire help — the non-technical founder's guide.</p></a>
+<a href="/how-to/get-first-10-customers" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Get Your First 10 Paying Customers</h3><p style="font-size:0.875rem;color:#6b7280">Direct outreach templates, community mining, and the pre-sell playbook for zero-audience founders.</p></a>
+<a href="/how-to/build-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Build a Business While Employed (Without Getting Caught)</h3><p style="font-size:0.875rem;color:#6b7280">Time management, device separation, entity structuring, and compliance for employed founders.</p></a>
+<a href="/how-to/stay-anonymous" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Stay Anonymous Online as a Founder</h3><p style="font-size:0.875rem;color:#6b7280">Anonymous LLC, pseudonymous brands, digital footprint cleanup, and operational security.</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Micro-SaaS Ideas →</a>
+</div>
+</section>
+</div>`;
+}
+
+function isItLegalHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Is It Legal?</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Is It Legal? — Side Business Legal Concerns</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Clear, practical answers to the legal questions every employed founder asks. Non-compete clauses, IP ownership, moonlighting policies, anonymous businesses — know your rights and risks.</p>
+</div>
+</section>
+<section style="background-color:#fef2f2;border-left:4px solid #ef4444;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto">
+<p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal advice. Consult a licensed attorney for your specific situation.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Legal Guides</h2>
+<div style="display:grid;gap:1rem">
+<a href="/is-it-legal/non-compete-enforceable" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is Your Non-Compete Actually Enforceable?</h3><p style="font-size:0.875rem;color:#6b7280">State-by-state enforceability, reasonable scope tests, and the 2024 FTC non-compete ban explained.</p></a>
+<a href="/is-it-legal/work-on-side-project" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Work on a Side Project While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">Moonlighting policies, duty of loyalty, and when your employer can claim your side work.</p></a>
+<a href="/is-it-legal/anonymous-llc" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Form an Anonymous LLC?</h3><p style="font-size:0.875rem;color:#6b7280">Which states allow anonymous LLCs, what information is public, and how privacy actually works.</p></a>
+<a href="/is-it-legal/use-ai-at-work" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Use AI Tools Built at Work for Your Side Business?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment clauses, work-for-hire doctrine, and the danger of using employer resources.</p></a>
+<a href="/is-it-legal/own-ip-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Who Owns the IP You Create While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment agreements, outside-hours clauses, and how to protect your side project IP.</p></a>
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get the Compliance Blueprint →</a>
+</div>
+</section>
+</div>`;
+}
+
+function ideasHubBodyHtml(): string {
+  const professions = ["accountants", "lawyers", "data-analysts", "marketers", "product-managers", "software-engineers", "sales-managers", "consultants", "hr-managers", "designers", "project-managers", "financial-analysts", "operations-managers", "teachers", "nurses", "engineers", "recruiters", "real-estate-agents", "customer-success-managers", "account-managers", "developers", "analysts", "managers", "executives", "directors"];
+  const cards = professions.slice(0, 25).map((p) =>
+    `<a href="/ideas/for-${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827;text-transform:capitalize">Micro-SaaS Ideas for ${p.replace(/-/g, " ")}</h3><p style="font-size:0.8rem;color:#6b7280">5 validated ideas with market analysis</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Ideas</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Ideas by Profession</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated micro-SaaS ideas tailored to your professional expertise. Each profession has 5 validated ideas with market analysis, competitive landscape, and revenue potential — designed to be built while employed.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The best micro-SaaS ideas come from your professional domain — problems you understand deeply because you live them daily. Browse ideas for your profession, validate in 48 hours, and start building.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Browse Ideas by Profession (${professions.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${cards}
+</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/how-to/validate-idea-in-48-hours" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Learn the 48-Hour Validation Method →</a>
+</div>
+</section>
+</div>`;
+}
+
+function glossaryHubBodyHtml(): string {
+  const terms = glossaryTerms.map((t) =>
+    `<a href="/glossary/${t.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${t.term}</h3><p style="font-size:0.8rem;color:#6b7280">${t.definition.substring(0, 100)}...</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Glossary</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Glossary</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Plain-English definitions of every term you need to understand micro-SaaS, recurring revenue, stealth operations, and financial independence. Written for employed founders, not venture capitalists.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Terms (${glossaryTerms.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${terms}
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function guidesHubBodyHtml(): string {
+  const guides = stateGuides.slice(0, 20).map((g) =>
+    `<a href="/guides/${g.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${g.state} Side Business Guide</h3><p style="font-size:0.8rem;color:#6b7280">LLC costs, non-compete status, tax rates</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>State Guides</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">State-by-State Side Business Guides</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Complete guides for all 50 US states + DC. Each guide covers LLC filing fees, annual report costs, non-compete enforceability, state income tax, and anonymous LLC availability — everything an employed founder needs before forming an entity.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Browse State Guides (${stateGuides.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${guides}
+</div>
+<p style="margin-top:1.5rem"><a href="/guides/california" style="color:#3B82F6;text-decoration:none;font-size:0.875rem">View all ${stateGuides.length} state guides →</a></p>
+</div>
+</section>
+</div>`;
+}
+
+function bestHubBodyHtml(): string {
+  const lists = bestToolsLists.map((l) =>
+    `<a href="/best/${l.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${l.title}</h3><p style="font-size:0.8rem;color:#6b7280">${l.tools?.length || l.items?.length || "N/A"} tools reviewed</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Best Tools</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Best AI Tools for Building Micro-SaaS</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated directories of the best AI tools, no-code platforms, and SaaS services for building, launching, and growing a micro-SaaS business. Each tool is reviewed for cost, learning curve, and suitability for employed founders with limited time.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Tool Lists (${bestToolsLists.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${lists}
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function alternativesHubBodyHtml(): string {
+  const items = alternatives.map((a) =>
+    `<a href="/alternatives/${a.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${a.product} Alternatives</h3><p style="font-size:0.8rem;color:#6b7280">${a.category} — ${a.alternatives.length} alternatives compared</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Alternatives</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Invisible Exit Alternatives Compared</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Honest comparisons of Invisible Exit against other tools and platforms. We break down what each alternative does well, where it falls short, and who it's best for — including when Invisible Exit is NOT the right choice.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Comparisons (${alternatives.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${items}
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function salariesHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Salary → Freedom</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Salary to Freedom Number Converter</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How many months of micro-SaaS revenue would it take to replace your salary? These pages intercept salary search traffic and convert it into freedom math — showing exactly how recurring revenue replaces employment income.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Salary Guides</h2>
+<p>Browse salary-to-freedom calculations for common professions. Each page shows the freedom number, monthly MRR target, and timeline to replace the salary.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-top:1.5rem">
+<a href="/freedom" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">Calculate Your Own Freedom Number</h3><p style="font-size:0.8rem;color:#6b7280">Enter your salary to get a personalized freedom number</p></a>
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function dataHubBodyHtml(): string {
+  const reports = dataReports.map((r) =>
+    `<a href="/data/${r.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${r.title}</h3><p style="font-size:0.8rem;color:#6b7280">${r.excerpt?.substring(0, 80) || "Original data report"}</p></a>`).join("\n");
+
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Data Reports</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Original Data & Benchmark Reports</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Original statistics, benchmarks, and data-driven analysis on micro-SaaS economics, employed founder behavior, and recurring revenue benchmarks. Designed to be cited by journalists, bloggers, and researchers.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Data Reports (${dataReports.length})</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem">
+${reports}
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function exploreHubBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Explore</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:56rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Explore All Resources</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete index of Invisible Exit resources — 900+ pages of ideas, guides, tools, calculators, comparisons, and data reports for employed founders building micro-SaaS businesses.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:56rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Content Categories</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem">
+<a href="/ideas" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">💡 Micro-SaaS Ideas</h3><p style="font-size:0.875rem;color:#6b7280">25 professions × 5 ideas each = 125+ validated micro-SaaS ideas with market analysis</p></a>
+<a href="/guides" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🏛️ State Guides</h3><p style="font-size:0.875rem;color:#6b7280">50 states + DC — LLC costs, non-compete status, tax rates, anonymous LLC availability</p></a>
+<a href="/best" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🛠️ Best Tools</h3><p style="font-size:0.875rem;color:#6b7280">Curated AI tool lists for building, launching, and growing micro-SaaS</p></a>
+<a href="/glossary" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">📖 Glossary</h3><p style="font-size:0.875rem;color:#6b7280">30+ plain-English definitions of micro-SaaS and financial independence terms</p></a>
+<a href="/compare" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">⚖️ Comparisons</h3><p style="font-size:0.875rem;color:#6b7280">Honest comparisons of Invisible Exit vs alternatives</p></a>
+<a href="/calculators" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🧮 Calculators</h3><p style="font-size:0.875rem;color:#6b7280">Freedom number, break-even, cost-of-waiting, and pricing calculators</p></a>
+<a href="/data" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">📊 Data Reports</h3><p style="font-size:0.875rem;color:#6b7280">Original statistics and benchmark reports for citation</p></a>
+<a href="/cost-analysis" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">💰 Cost Analysis</h3><p style="font-size:0.875rem;color:#6b7280">How much it costs to start, run, and scale a micro-SaaS</p></a>
+<a href="/how-to" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">📋 How-To Guides</h3><p style="font-size:0.875rem;color:#6b7280">Step-by-step guides for every stage of building while employed</p></a>
+<a href="/is-it-legal" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">⚖️ Is It Legal?</h3><p style="font-size:0.875rem;color:#6b7280">Legal guides on non-competes, IP, moonlighting, anonymous LLCs</p></a>
+<a href="/alternatives" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🔄 Alternatives</h3><p style="font-size:0.875rem;color:#6b7280">Notion, Substack, Stripe alternatives for micro-SaaS founders</p></a>
+<a href="/blog" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">📝 Blog</h3><p style="font-size:0.875rem;color:#6b7280">53 articles on financial independence, micro-SaaS, and stealth operations</p></a>
+</div>
+</div>
+</section>
+</div>`;
+}
+
+function masterclassPageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Free Masterclass</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">Free 45-Minute Masterclass</span>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Build a $4K/Month Side Business While Employed — Without Your Boss Finding Out</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">A free 45-minute masterclass for corporate managers and employed professionals who want to build anonymous recurring revenue streams. Learn the exact system used to build a $4K/month micro-SaaS portfolio while working full-time.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">What You'll Learn</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The 5-step system for building a micro-SaaS while employed: (1) Calculate your freedom number, (2) Find ideas in your professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get your first 10 customers — all while maintaining complete anonymity and compliance with your employment contract.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">In This Masterclass</h2>
+<ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
+<li>How to calculate your "freedom number" — the exact monthly recurring revenue that replaces your salary</li>
+<li>The 5 most profitable micro-SaaS models for employed founders (with real revenue examples)</li>
+<li>How to validate any idea in 48 hours without writing a single line of code</li>
+<li>Anonymous LLC formation — which states protect your identity, how much it costs, and how to set it up</li>
+<li>Compliance audit — how to check your employment contract for non-compete, IP assignment, and moonlighting clauses</li>
+<li>The "5-Hour Weekend" method — how to find time to build even with a demanding full-time job and family</li>
+<li>Faceless audience building — getting customers without showing your face or using your real name</li>
+</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Who This Is For</h2>
+<p style="font-size:1rem;color:#4b5563;line-height:1.7">Corporate managers, directors, and employed professionals who want to build a side business but can't risk their career. If you have 5+ hours a week, want recurring revenue, and need to stay anonymous — this masterclass is for you.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/join" style="display:inline-block;padding:0.875rem 2rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;font-size:1.125rem">Watch the Free Masterclass →</a>
+<p style="margin-top:1rem;font-size:0.875rem;color:#6b7280">45 minutes · Free · No credit card required</p>
+</div>
+</section>
+</div>`;
+}
+
+function freedomPageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Freedom Number</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">What's Your Freedom Number?</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Your Freedom Number is the monthly recurring revenue that replaces your salary and gives you the choice to keep working — or not. It's the single most important number for any employed founder. Calculate yours below and see how close you are to financial independence.</p>
+</div>
+</section>
+<section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
+<div style="max-width:48rem;margin:0 auto" class="quick-answer">
+<p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">Freedom Number = (Your Annual Salary + Taxes + Benefits) ÷ 12. For a $100K salary, your Freedom Number is approximately $8,000-$10,000/month in recurring revenue. At $4K/month MRR, you're 40-50% of the way there.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">How to Calculate Your Freedom Number</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.7;margin-bottom:1rem">Your Freedom Number isn't just your salary divided by 12. You need to account for:</p>
+<ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
+<li><strong>Base salary</strong> — your gross annual income</li>
+<li><strong>Self-employment taxes</strong> — ~15.3% for Social Security + Medicare (employer portion)</li>
+<li><strong>Health insurance</strong> — what your employer pays (~$6K-$15K/year for a family)</li>
+<li><strong>Retirement contributions</strong> — employer match + any pension</li>
+<li><strong>Other benefits</strong> — life insurance, disability, gym, etc.</li>
+</ul>
+<p style="font-size:1rem;color:#4b5563;line-height:1.7;margin-top:1rem">A common rule of thumb: multiply your gross salary by 1.3-1.5x, then divide by 12. A $100K salary becomes a $11K-$12.5K Freedom Number.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/fym" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number Now →</a>
+</div>
+</section>
+</div>`;
+}
+
+function storyPageBodyHtml(): string {
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Story</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">Origin Story</span>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">How a Corporate Manager Built $4K/Month Invisibly</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete story of how a former corporate director built a profitable micro-SaaS portfolio while fully employed — without anyone finding out. No viral launch, no venture capital, no personal brand. Just quiet, systematic execution.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">The Beginning</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">It started with a simple question: "If I lost my job tomorrow, how long could I survive?" The answer was 3 months. That was the wake-up call. I was a corporate director with an MBA, a good salary, and zero financial independence. If the company decided to let me go, I'd have nothing to show for 8+ years of work.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to quit. I liked my job. But I wanted a safety net — recurring revenue that didn't depend on showing up at an office. The answer was micro-SaaS: small, focused software products with monthly subscriptions that could be built nights and weekends, run anonymously, and scaled without employees.</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The System</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">Over 18 months, I built a system: (1) Calculate the freedom number, (2) Find ideas in my professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get first 10 customers, (6) Stay anonymous through entity separation and compliance. The result: $4,000/month in recurring revenue from products nobody knew I owned.</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">Why Invisible Exit?</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">After hitting $4K/month, I realized there were millions of corporate managers in the same position — wanting financial independence but unable to risk their career. I built Invisible Exit to share the exact system, tools, and methodology. Five AI-powered tools that handle the hard parts: calculating your freedom number, validating ideas, ensuring compliance, automating launch, and building an audience without showing your face.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/masterclass" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Watch the Free Masterclass →</a>
+</div>
+</section>
 </div>`;
 }
 
