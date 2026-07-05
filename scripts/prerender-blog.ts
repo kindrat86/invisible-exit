@@ -69,6 +69,15 @@ function bold(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 }
 
+// Generate a "Related Resources" section for pSEO pages (improves internal linking)
+function relatedLinksSection(links: { href: string; text: string }[]): string {
+  if (!links.length) return "";
+  const items = links.map(l =>
+    `<a href="${l.href}" style="display:block;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;text-decoration:none;color:#374151;font-size:0.875rem;margin-bottom:0.5rem;transition:border-color 0.15s">${l.text}</a>`
+  ).join("\n");
+  return `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.25rem;margin-bottom:1rem;color:#0f172a">Related Resources</h2>${items}</div></section>`;
+}
+
 // Auto-link key terms to relevant pages for internal linking (first occurrence only)
 function autoLinkContent(html: string): string {
   const linkMap: { pattern: RegExp; href: string; text: string }[] = [
@@ -79,6 +88,12 @@ function autoLinkContent(html: string): string {
     { pattern: /\bidea validation\b/i, href: "/calculators/idea-validator", text: "idea validation" },
     { pattern: /\bfinancial independence\b/i, href: "/blog/category/financial-independence", text: "financial independence" },
     { pattern: /\bstealth ops\b/i, href: "/blog/category/stealth-operations", text: "stealth ops" },
+    { pattern: /\bside hustle\b/i, href: "/side-hustles", text: "side hustle" },
+    { pattern: /\bcase stud/i, href: "/case-studies", text: "case stud" },
+    { pattern: /\bfailure stor/i, href: "/failure-stories", text: "failure stor" },
+    { pattern: /\bquit your job\b/i, href: "/quit-your-job", text: "quit your job" },
+    { pattern: /\bweekend build\b/i, href: "/weekend-builds", text: "weekend build" },
+    { pattern: /\btool review\b/i, href: "/reviews", text: "tool review" },
   ];
 
   let result = html;
@@ -2198,6 +2213,13 @@ ${hubSvgFigure("Side Hustles", "Profession-specific opportunities", "Best side h
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tools</h2><div>${tools}</div></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div><h3 style="font-weight:700;color:#166534">Pros</h3><ul style="margin-top:0.75rem">${pros}</ul></div><div><h3 style="font-weight:700;color:#dc2626">Cons</h3><ul style="margin-top:0.75rem">${cons}</ul></div></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: "/ideas", text: "→ Browse all micro-SaaS ideas by profession" },
+  { href: "/quit-your-job", text: "→ When should you quit your job? Honest framework" },
+  { href: "/salaries", text: "→ Salary to freedom number calculator" },
+  { href: "/case-studies", text: "→ Real micro-SaaS case studies with revenue numbers" },
+  { href: "/niches", text: "→ Best micro-SaaS niches for 2025" },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }
@@ -3653,6 +3675,13 @@ ${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #16a34a;background:#f0fdf4;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#14532d">What Would Have Worked</h3><p style="color:#166534;margin-top:0.5rem">${item.whatWouldHaveWorked}</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div><h3 style="font-weight:700;color:#b45309">Warning Signs</h3><ul style="margin-top:0.75rem">${warnings}</ul></div><div><h3 style="font-weight:700;color:#166534">How to Avoid</h3><ul style="margin-top:0.75rem">${avoids}</ul></div></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: "/case-studies", text: "→ Success stories: real micro-SaaS revenue numbers" },
+  { href: "/quit-your-job", text: "→ When to quit your job — honest framework" },
+  { href: "/side-hustles", text: "→ Best side hustles by profession" },
+  { href: "/weekend-builds", text: "→ Weekend build ideas to start fast" },
+  { href: "/niches", text: "→ Best micro-SaaS niches for 2025" },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/mistakes" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Mistake Guides &rarr;</a></div></section>
 </div>`;
 }
@@ -3720,6 +3749,13 @@ ${hubSvgFigure("Tool Reviews", "Honest software reviews", "In-depth reviews of t
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #2563eb;background:#eff6ff;padding:1.5rem;border-radius:0.5rem"><h2 style="font-weight:700;color:#1e3a8a">Our Verdict</h2><p style="color:#1e40af;margin-top:0.5rem">${item.verdict}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Alternatives</h2>${alts}</div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: "/failure-stories", text: "→ Learn from micro-SaaS failure stories" },
+  { href: "/weekend-builds", text: "→ Weekend build ideas — launch in 48 hours" },
+  { href: "/reviews", text: "→ Tool reviews for solo founders" },
+  { href: "/side-hustles", text: "→ Best side hustles by profession" },
+  { href: "/niches", text: "→ Best micro-SaaS niches for 2025" },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
 }
@@ -3758,6 +3794,13 @@ ${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies 
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #7e22ce;background:#faf5ff;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#581c87">What They Did Differently</h3><p style="color:#6b21a8;margin-top:0.5rem">${item.whatTheyDidDifferently}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Tech Stack</h2><div>${stack}</div></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: "/reviews", text: "→ Tool reviews — Cursor, Vercel, Supabase, Stripe" },
+  { href: "/weekend-builds", text: "→ Build your own micro-SaaS in a weekend" },
+  { href: "/failure-stories", text: "→ Learn from micro-SaaS failure stories" },
+  { href: "/quit-your-job", text: "→ When to quit your job — honest framework" },
+  { href: "/side-hustles", text: "→ Best side hustles by profession" },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
 }

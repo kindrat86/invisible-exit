@@ -58,6 +58,22 @@ const SITE = "https://invisibleexit.com";
 const SITE_NAME = "Invisible Exit";
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
+// Rich author entity for E-E-A-T (Experience, Expertise, Authoritativeness, Trust)
+const ADRIAN_PERSON = {
+  "@type": "Person",
+  name: "Adrian",
+  url: `${SITE}/adrian`,
+  jobTitle: "Founder, Invisible Exit",
+  description: "Former corporate director who built a profitable micro-SaaS portfolio while fully employed. 8+ years in enterprise product management, MBA. Writes about anonymous side-business building, financial independence, and legal compliance for employed founders.",
+  knowsAbout: ["Micro-SaaS", "Financial Independence", "Anonymous Business Formation", "Non-Compete Law", "AI Tools for Business", "Employment Contract Compliance", "Bootstrapped Startups", "Recurring Revenue", "Solo Entrepreneurship"],
+  alumniOf: { "@type": "EducationalOrganization", name: "MBA, Business Administration" },
+  sameAs: [
+    "https://invisibleexit.com/adrian",
+    "https://invisibleexit.com/about",
+    "https://invisibleexit.com/blog",
+  ],
+};
+
 function escapeHtml(str) {
   return str
     .replace(/&/g, "&amp;")
@@ -369,8 +385,13 @@ function getRoutes() {
           url: `${SITE}/adrian`,
           jobTitle: "Founder, Invisible Exit",
           description: "Former corporate director who built a profitable micro-SaaS portfolio while fully employed. 8+ years in enterprise product management, MBA. Writes about anonymous side-business building, financial independence, and legal compliance for employed founders.",
-          knowsAbout: ["Micro-SaaS", "Financial Independence", "Anonymous Business Formation", "Non-Compete Law", "AI Tools for Business", "Employment Contract Compliance"],
+          knowsAbout: ["Micro-SaaS", "Financial Independence", "Anonymous Business Formation", "Non-Compete Law", "AI Tools for Business", "Employment Contract Compliance", "Bootstrapped Startups", "Recurring Revenue", "Solo Entrepreneurship"],
           alumniOf: { "@type": "EducationalOrganization", name: "MBA, Business Administration" },
+          sameAs: [
+            "https://invisibleexit.com/adrian",
+            "https://invisibleexit.com/about",
+            "https://invisibleexit.com/blog",
+          ],
         },
         publisher: {
           "@type": "Organization",
@@ -963,7 +984,7 @@ function getRoutes() {
           headline: "How I Built a $4,000/Month Side Business While Employed — Without Anyone Knowing",
           description:
             "The complete story: Amsterdam taxi moment, Month 4 wall, the competitor who almost killed me, and the system that made all of it possible.",
-          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          author: ADRIAN_PERSON,
           publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
           datePublished: "2026-07-04",
           articleSection: "Origin Story",
@@ -995,7 +1016,7 @@ function getRoutes() {
           headline: "The Invisible Exit Manifesto — A New Vehicle for Financial Freedom",
           description:
             "Not improvement. A new opportunity. The 6 principles of the Invisible Builder movement for corporate managers.",
-          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          author: ADRIAN_PERSON,
           publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
           datePublished: "2026-07-04",
           articleSection: "Manifesto",
@@ -1027,7 +1048,7 @@ function getRoutes() {
           headline: "The Complete Freedom Number Guide (2026)",
           description:
             "How to calculate the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and the 5-tool framework.",
-          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          author: ADRIAN_PERSON,
           publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
           datePublished: "2026-07-04",
           articleSection: "Financial Independence",
@@ -1095,7 +1116,7 @@ function getRoutes() {
           headline: "Invisible Exit vs Every Alternative — The Honest Comparison",
           description:
             "Comparing Invisible Exit to side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus.",
-          author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+          author: ADRIAN_PERSON,
           publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
           datePublished: "2026-07-04",
           articleSection: "Comparison",
@@ -2171,7 +2192,7 @@ function getRoutes() {
         url: `${SITE}/mistakes/${m.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: m.h1, description: m.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: m.h1, description: m.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Mistakes", item: `${SITE}/mistakes` }, { "@type": "ListItem", position: 3, name: m.h1 }] },
           ...(m.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: m.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2188,7 +2209,7 @@ function getRoutes() {
         url: `${SITE}/reddit/${r.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: r.h1, description: r.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: r.h1, description: r.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Reddit Strategy", item: `${SITE}/reddit` }, { "@type": "ListItem", position: 3, name: r.h1 }] },
           ...(r.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: r.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2205,7 +2226,7 @@ function getRoutes() {
         url: `${SITE}/pricing-models/${p.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: p.h1, description: p.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: p.h1, description: p.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Pricing Models", item: `${SITE}/pricing-models` }, { "@type": "ListItem", position: 3, name: p.h1 }] },
           ...(p.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: p.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2222,7 +2243,7 @@ function getRoutes() {
         url: `${SITE}/break-even/${b.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: b.h1, description: b.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: b.h1, description: b.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Break-Even Calculator", item: `${SITE}/break-even` }, { "@type": "ListItem", position: 3, name: b.h1 }] },
           ...(b.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: b.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2239,7 +2260,7 @@ function getRoutes() {
         url: `${SITE}/vs/${v.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: v.h1, description: v.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: v.h1, description: v.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Career vs SaaS", item: `${SITE}/vs` }, { "@type": "ListItem", position: 3, name: v.h1 }] },
           ...(v.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: v.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2256,7 +2277,7 @@ function getRoutes() {
         url: `${SITE}/first-year/${f.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "First Year", item: `${SITE}/first-year` }, { "@type": "ListItem", position: 3, name: f.h1 }] },
           ...(f.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: f.faqs.map(faq => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }] : []),
         ],
@@ -2273,7 +2294,7 @@ function getRoutes() {
         url: `${SITE}/tools/${t.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: t.h1, description: t.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: t.h1, description: t.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Best Tools", item: `${SITE}/best` }, { "@type": "ListItem", position: 3, name: t.h1 }] },
           ...(t.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: t.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2291,7 +2312,7 @@ function getRoutes() {
         url: `${SITE}/ideas/${p.professionSlug}/with/${p.toolSlug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: p.h1, description: p.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: p.h1, description: p.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Ideas", item: `${SITE}/ideas` }, { "@type": "ListItem", position: 3, name: `${p.profession} + ${p.tool}` }] },
           ...(p.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: p.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2309,7 +2330,7 @@ function getRoutes() {
         url: `${SITE}/budget/${b.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: b.h1, description: b.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: b.h1, description: b.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Budget", item: `${SITE}/budget` }, { "@type": "ListItem", position: 3, name: b.h1 }] },
           ...(b.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: b.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2327,7 +2348,7 @@ function getRoutes() {
         url: `${SITE}/hours/${h.slug}`,
         type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: h.h1, description: h.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
+          { "@context": "https://schema.org", "@type": "Article", headline: h.h1, description: h.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-04", dateModified: "2026-07-04" },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Hours", item: `${SITE}/hours` }, { "@type": "ListItem", position: 3, name: h.h1 }] },
           ...(h.faqs?.length ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: h.faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }] : []),
         ],
@@ -2448,7 +2469,7 @@ function getRoutes() {
             "@type": "Article",
             headline: ta.h1,
             description: ta.metaDescription,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             about: { "@type": "SoftwareApplication", name: ta.tool, category: ta.category },
@@ -2554,7 +2575,7 @@ function getRoutes() {
             "@type": "Article",
             headline: rr.h1,
             description: rr.metaDescription,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2597,17 +2618,17 @@ function getRoutes() {
             "@type": "Article",
             headline: ca.h1,
             description: ca.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
-            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
-            mainEntityOfPage: { "@type": "WebPage", "@id": url },
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-              { "@type": "ListItem", position: 2, name: "Cost Analysis" },
-              { "@type": "ListItem", position: 3, name: ca.topic },
+            author: ADRIAN_PERSON,
+                      publisher: { "@type": "Organization", name: SITE_NAME, url: SITE, logo: { "@type": "ImageObject", url: `${SITE}/og-image.png` } },
+                      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+                    },
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "BreadcrumbList",
+                      itemListElement: [
+                          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+                          { "@type": "ListItem", position: 2, name: "Cost Analysis" },
+                          { "@type": "ListItem", position: 3, name: ca.topic },
             ],
           },
           {
@@ -2640,7 +2661,7 @@ function getRoutes() {
             "@type": "Article",
             headline: hg.h1,
             description: hg.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2695,7 +2716,7 @@ function getRoutes() {
             "@type": "Article",
             headline: il.h1,
             description: il.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2738,7 +2759,7 @@ function getRoutes() {
             "@type": "Article",
             headline: sh.h1,
             description: sh.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2781,7 +2802,7 @@ function getRoutes() {
             "@type": "Article",
             headline: bs.h1,
             description: bs.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2824,7 +2845,7 @@ function getRoutes() {
             "@type": "Article",
             headline: n.h1,
             description: n.intro,
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           },
@@ -2861,7 +2882,7 @@ function getRoutes() {
         description: q.metaDescription,
         url, type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: q.h1, description: q.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "Article", headline: q.h1, description: q.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Quit Your Job" }, { "@type": "ListItem", position: 3, name: q.profession } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: q.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
         ],
@@ -2879,7 +2900,7 @@ function getRoutes() {
         description: w.metaDescription,
         url, type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: w.h1, description: w.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "Article", headline: w.h1, description: w.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Weekend Builds" }, { "@type": "ListItem", position: 3, name: w.category } ] },
           { "@context": "https://schema.org", "@type": "HowTo", name: w.h1, description: w.intro, totalTime: w.totalHours, step: w.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.task, text: s.outcome })) },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: w.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
@@ -2898,7 +2919,7 @@ function getRoutes() {
         description: f.metaDescription,
         url, type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "Article", headline: f.h1, description: f.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Failure Stories" }, { "@type": "ListItem", position: 3, name: f.failureType } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: f.faqs.map((fa) => ({ "@type": "Question", name: fa.question, acceptedAnswer: { "@type": "Answer", text: fa.answer } })) },
         ],
@@ -2921,7 +2942,7 @@ function getRoutes() {
             "@type": "Review",
             itemReviewed: { "@type": "SoftwareApplication", name: t.toolName, applicationCategory: "SoftwareApplication", operatingSystem: "Web" },
             reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
-            author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` },
+            author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             headline: t.h1,
             description: t.intro,
@@ -2943,7 +2964,7 @@ function getRoutes() {
         description: c.metaDescription,
         url, type: "article",
         jsonLd: [
-          { "@context": "https://schema.org", "@type": "Article", headline: c.h1, description: c.intro, author: { "@type": "Person", name: "Adrian", url: `${SITE}/adrian` }, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "Article", headline: c.h1, description: c.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Case Studies" }, { "@type": "ListItem", position: 3, name: c.productName } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
         ],
