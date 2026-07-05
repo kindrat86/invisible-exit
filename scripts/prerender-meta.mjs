@@ -154,6 +154,34 @@ function injectMeta(template, { title, description, url, type, image, jsonLd }, 
     );
   }
 
+  // Remove vendor-radix, vendor-data, vendor-icons modulepreloads from content pages
+  // These are interactive UI components not needed on static pSEO/blog content pages.
+  // The main index JS will still load them lazily when the SPA hydrates.
+  // This saves ~200KB of preload bandwidth on 1,400+ content pages.
+  // Only keep vendor-react preload (needed for hydration).
+  const isContentPage = !routePath.includes("/dashboard") &&
+    !routePath.includes("/fym") &&
+    !routePath.includes("/idea-pipeline") &&
+    !routePath.includes("/stealth-ops") &&
+    !routePath.includes("/launch-control") &&
+    !routePath.includes("/brand-manager") &&
+    routePath !== "/";
+
+  if (isContentPage) {
+    finalTemplate = finalTemplate.replace(
+      /<link rel="modulepreload"[^>]*vendor-radix[^>]*>\n?/g,
+      ""
+    );
+    finalTemplate = finalTemplate.replace(
+      /<link rel="modulepreload"[^>]*vendor-data[^>]*>\n?/g,
+      ""
+    );
+    finalTemplate = finalTemplate.replace(
+      /<link rel="modulepreload"[^>]*vendor-icons[^>]*>\n?/g,
+      ""
+    );
+  }
+
   // Replace from <!-- Default SEO --> up to the <link rel="preconnect" line
   // (which is the stable anchor in the post-analytics-deferral HTML)
   return finalTemplate.replace(

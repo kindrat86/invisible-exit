@@ -820,15 +820,11 @@ const indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '\n</sitemapindex>\n';
 writeFileSync(resolve(publicDir, "sitemap.xml"), indexXml, "utf-8");
 
-// Also write the full sitemap for backwards compatibility
-const fullXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  entries.map(e => '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n  </url>').join('\n') +
-  '\n</urlset>\n';
-writeFileSync(resolve(publicDir, "sitemap-full.xml"), fullXml, "utf-8");
+// Note: sitemap-full.xml is no longer generated.
+// The split sub-sitemap approach (sitemap-{type}.xml) is the canonical structure.
+// Keeping a 1,463-URL monolithic sitemap wastes disk and creates crawl-budget confusion.
 
 console.log(`\nSitemap index written (${entries.length} total URLs across ${submapFiles.length} sub-sitemaps)`);
-console.log(`Full sitemap also available at /sitemap-full.xml`);
 console.log(`  Blog posts: ${blogPosts.length}`);
 console.log(`  Categories: ${categorySlugs.length}`);
 console.log(`  Comparisons: ${comparisons.length}`);
