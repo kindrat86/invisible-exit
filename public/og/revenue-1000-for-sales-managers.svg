@@ -1,0 +1,15 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B2A4A"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="6" height="630" fill="#60A5FA"/>
+  <rect x="80" y="80" width="150" height="36" rx="18" fill="rgba(96,165,250,0.15)"/>
+  <text x="92" y="104" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#60A5FA" letter-spacing="0.05em">REVENUE TARGET</text>
+  <text x="80" y="200" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#FFFFFF">How to Make $1K/month as Sales Managers</text>
+  <text x="80" y="580" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#94A3B8">Invisible Exit</text>
+  <circle cx="1120" cy="586" r="5" fill="#60A5FA"/>
+</svg>

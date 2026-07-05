@@ -2296,6 +2296,14 @@ ${hubSvgFigure("By Budget", "Business startup costs", "Best business ideas based
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Your First 30 Days</h2>${plan}</div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tool Stack</h2><div>${stack}</div></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
+  { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/skills`, text: `How to Make Money with Your Skills` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }
@@ -2321,6 +2329,14 @@ ${hubSvgFigure("Micro-SaaS Niches", "Trending opportunities", "Best micro-SaaS n
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Recommended Tools</h2><div>${tools}</div></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem;color:#dc2626">Common Mistakes to Avoid</h2><ul>${mistakes}</ul></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
+  { href: `/failure-stories`, text: `Failure Stories — What NOT to Do` },
+  { href: `/skills`, text: `How to Make Money with Your Skills` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }
@@ -3691,6 +3707,15 @@ ${hubSvgFigure("Quit Your Job", "The decision framework", "When is the right tim
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem"><div style="background:#fef2f2;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#991b1b">If You Quit Too Early</h3><p style="color:#374151;margin-top:0.5rem;font-size:0.875rem">${item.whatHappensIfYouQuitTooEarly}</p></div><div style="background:#fffbeb;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:#92400e">If You Wait Too Long</h3><p style="color:#374151;margin-top:0.5rem;font-size:0.875rem">${item.whatHappensIfYouWaitTooLong}</p></div></div></section>
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;background:#0f172a;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:white">Real Timeline</h3><p style="color:#cbd5e1;margin-top:0.5rem">${item.realTimeline}</p></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
+  { href: `/salaries`, text: `Salary to Freedom Number Calculator` },
+  { href: `/cost-of-waiting`, text: `Cost of Waiting — How Much You're Losing` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+  { href: `/failure-stories`, text: `Failure Stories — Learn From Real Mistakes` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }
@@ -3710,6 +3735,14 @@ ${hubSvgFigure("Weekend Builds", "48-hour launch plan", "Build and launch a prof
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;border-left:4px solid #7e22ce;background:#faf5ff;padding:1.5rem;border-radius:0.5rem"><h3 style="font-weight:700;color:#581c87">The Honest Take</h3><p style="color:#6b21a8;margin-top:0.5rem">${item.monologue}</p></div></section>
 <section style="padding:1.5rem"><div style="max-width:48rem;margin:0 auto;background:#0f172a;padding:1.5rem;border-radius:0.75rem"><h3 style="font-weight:700;color:white">What to Do After the Weekend</h3><p style="color:#cbd5e1;margin-top:0.5rem">${item.whatToDoAfter}</p></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
+${relatedLinksSection([
+  { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies — Real Revenue Numbers` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
+  { href: `/skills`, text: `How to Make Money with Your Skills` },
+  { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
+])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 </div>`;
 }

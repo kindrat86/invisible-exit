@@ -2978,16 +2978,18 @@ function getRoutes() {
   // ---------- Greg Isenberg pSEO Round 8: Revenue Target × Profession pages ----------
   for (const r of revenueTargets) {
     const url = `${SITE}/revenue/${r.slug}`;
+    const image = `${SITE}/og/revenue-${r.slug}.svg`;
     routes.push({
       path: `/revenue/${r.slug}`,
       meta: {
         title: r.metaTitle,
         description: r.metaDescription,
-        url, type: "article",
+        url, type: "article", image,
         jsonLd: [
           { "@context": "https://schema.org", "@type": "Article", headline: r.h1, description: r.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Revenue Targets for ${r.profession}` },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Revenue Targets" }, { "@type": "ListItem", position: 3, name: `${r.tier} for ${r.profession}` } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: r.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+          { "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", "section:nth-of-type(2) p"], xpath: ["/html/body/div/section[1]/div/h1", "/html/body/div/section[2]/div/p"] },
         ],
       },
     });
@@ -2996,12 +2998,13 @@ function getRoutes() {
   // ---------- Greg Isenberg pSEO Round 8: City pages ----------
   for (const c of cities) {
     const url = `${SITE}/cities/${c.slug}`;
+    const image = `${SITE}/og/cities-${c.slug}.svg`;
     routes.push({
       path: `/cities/${c.slug}`,
       meta: {
         title: c.metaTitle,
         description: c.metaDescription,
-        url, type: "article",
+        url, type: "article", image,
         jsonLd: [
           { "@context": "https://schema.org", "@type": "Article", headline: c.h1, description: c.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Side Business in ${c.city}` },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities" }, { "@type": "ListItem", position: 3, name: c.city } ] },
@@ -3014,16 +3017,18 @@ function getRoutes() {
   // ---------- Greg Isenberg pSEO Round 8: Skill Monetization pages ----------
   for (const s of skills) {
     const url = `${SITE}/skills/${s.slug}`;
+    const image = `${SITE}/og/skills-${s.slug}.svg`;
     routes.push({
       path: `/skills/${s.slug}`,
       meta: {
         title: s.metaTitle,
         description: s.metaDescription,
-        url, type: "article",
+        url, type: "article", image,
         jsonLd: [
           { "@context": "https://schema.org", "@type": "Article", headline: s.h1, description: s.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, datePublished: "2026-07-05", dateModified: "2026-07-05", articleSection: `Monetizing ${s.skill} Skills` },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Skills" }, { "@type": "ListItem", position: 3, name: s.skill } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+          { "@context": "https://schema.org", "@type": "SpeakableSpecification", cssSelector: ["h1", "section:nth-of-type(2) p"], xpath: ["/html/body/div/section[1]/div/h1", "/html/body/div/section[2]/div/p"] },
         ],
       },
     });
