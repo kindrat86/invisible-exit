@@ -89,10 +89,10 @@ export default function SEOHead({
       setMeta("property", "article:modified_time", modifiedDate);
     }
 
-    // ── hreflang alternate tags for all 100 languages (SEO) ──
+    // ── hreflang alternate tags for all 97 languages (SEO) ──
     // Extract the path without any existing language prefix
     const pathFromUrl = url || (typeof window !== "undefined" ? window.location.pathname : "/");
-    const cleanPath = pathFromUrl.replace(/^\/(en|zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|pcm|mr|te|tr|ta|vi|yue|pa|ko|fa|it|th|gu|kn|ml|or|pl|uk|nl|ro|el|cs|hu|sv|fi|no|da|he|sw|am|so|ha|yo|ig|zu|xh|af|ms|my|km|lo|ne|si|ps|kk|uz|az|ka|hy|mn|bo|ug|tl|ceb|ilo|jv|su|mad|nan|wuu|hak|hmn|ku|bal|tg|tk|sq|sr|hr|bs|sk|sl|lt|lv|et|be|bg|mk|ca|eu|gl|cy|ga|gd|br|is|lb|mt)(\/|$)/, "/");
+    const cleanPath = pathFromUrl.replace(/^\/(en|af|sq|am|ar|hy|az|bal|eu|be|bn|bs|br|bg|my|ca|ceb|yue|cs|da|nl|et|fa|fi|fr|gl|ka|de|el|gu|cy|ha|he|hi|hmn|hu|is|ig|ilo|id|ga|it|ja|jv|kn|kk|km|ko|ku|lo|lv|lt|lb|mk|ms|ml|mt|mr|mad|mn|ne|no|or|ps|pa|pl|pt|ro|ru|gd|sr|si|sk|sl|so|es|su|sw|sv|tg|ta|te|th|bo|tl|tk|tr|ug|uk|ur|uz|vi|xh|yo|zh|zu)(\/|$)/, "/");
 
     const alternates = getHreflangAlternates(cleanPath);
     for (const alt of alternates) {

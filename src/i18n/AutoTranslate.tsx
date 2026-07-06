@@ -184,6 +184,68 @@ function collectTextNodes(root: HTMLElement): { node: Text; text: string }[] {
   return result;
 }
 
+// ── Translate SEO meta tags (title, description, OG, Twitter, html lang) ──
+// This is critical for pSEO: Google indexes the <title> and <meta description>
+// Without this, translated pages show English titles in search results.
+async function translateMetaTags(lang: string) {
+  if (lang === "en") {
+    document.documentElement.lang = "en";
+    return;
+  }
+
+  // 1. Set <html lang="xx"> for accessibility + SEO
+  document.documentElement.lang = lang;
+
+  // 2. Translate <title>
+  const titleEl = document.querySelector("title");
+  if (titleEl && titleEl.textContent && titleEl.textContent.trim().length > 3) {
+    const translated = await translateOne(titleEl.textContent.trim(), lang);
+    if (translated && translated !== titleEl.textContent) {
+      titleEl.textContent = translated;
+    }
+  }
+
+  // 3. Translate meta description + OG + Twitter description
+  const descSelectors = [
+    'meta[name="description"]',
+    'meta[property="og:description"]',
+    'meta[name="twitter:description"]',
+  ];
+  for (const sel of descSelectors) {
+    const el = document.querySelector(sel) as HTMLMetaElement | null;
+    if (el && el.content && el.content.trim().length > 3) {
+      const translated = await translateOne(el.content.trim(), lang);
+      if (translated && translated !== el.content) {
+        el.content = translated;
+      }
+    }
+  }
+
+  // 4. Translate OG + Twitter title (these appear in social shares — high SEO value)
+  const titleMetaSelectors = [
+    'meta[property="og:title"]',
+    'meta[name="twitter:title"]',
+  ];
+  for (const sel of titleMetaSelectors) {
+    const el = document.querySelector(sel) as HTMLMetaElement | null;
+    if (el && el.content && el.content.trim().length > 3) {
+      const translated = await translateOne(el.content.trim(), lang);
+      if (translated && translated !== el.content) {
+        el.content = translated;
+      }
+    }
+  }
+
+  // 5. Translate <h1> (primary on-page heading — strong SEO signal)
+  const h1 = document.querySelector("h1");
+  if (h1 && h1.textContent && h1.textContent.trim().length > 3) {
+    const translated = await translateOne(h1.textContent.trim(), lang);
+    if (translated && translated !== h1.textContent) {
+      h1.textContent = translated;
+    }
+  }
+}
+
 // ── Main component ──
 export function AutoTranslate({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
@@ -201,6 +263,10 @@ export function AutoTranslate({ children }: { children: ReactNode }) {
     let cancelled = false;
     const timer = setTimeout(() => {
       if (cancelled || !containerRef.current) return;
+
+      // ── SEO: translate title, meta description, OG tags, h1, html lang ──
+      // This runs BEFORE body translation so search-relevant tags are translated first.
+      translateMetaTags(lang).catch(() => {});
 
       const nodes = collectTextNodes(containerRef.current);
       if (nodes.length === 0) return;
