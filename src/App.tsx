@@ -104,6 +104,8 @@ const IsItLegalPage = lazy(() => import("./pages/IsItLegalPage.tsx"));
 const CostAnalysisHubPage = lazy(() => import("./pages/CostAnalysisHubPage.tsx"));
 const HowToHubPage = lazy(() => import("./pages/HowToHubPage.tsx"));
 const IsItLegalHubPage = lazy(() => import("./pages/IsItLegalHubPage.tsx"));
+const BankingPage = lazy(() => import("./pages/BankingPage.tsx"));
+const BankingHubPage = lazy(() => import("./pages/BankingHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
 const JVPage = lazy(() => import("./pages/JVPage.tsx"));
@@ -299,6 +301,10 @@ const App = () => (
           {/* ── Greg Isenberg pSEO - Is It Legal pages ── */}
           <Route path="/is-it-legal/:slug" element={<IsItLegalPage />} />
           <Route path="/is-it-legal" element={<IsItLegalHubPage />} />
+
+          {/* ── Banking guides ── */}
+          <Route path="/banking/:state" element={<BankingPage />} />
+          <Route path="/banking" element={<BankingHubPage />} />
 
           {/* ── Greg Isenberg pSEO Round 4 ── */}
           <Route path="/side-hustles/:slug" element={<SideHustlePage />} />

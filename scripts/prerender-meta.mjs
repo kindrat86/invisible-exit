@@ -43,6 +43,7 @@ import { revenueRoadmaps } from "../src/data/revenue-roadmaps.ts";
 import { costAnalysisPages } from "../src/data/cost-analysis.ts";
 import { howToGuides } from "../src/data/how-to-guides.ts";
 import { isItLegalPages } from "../src/data/is-it-legal.ts";
+import { bankingGuides } from "../src/data/banking.ts";
 import { sideHustles } from "../src/data/side-hustles.ts";
 import { budgetStartPages } from "../src/data/budget-start.ts";
 import { niches } from "../src/data/niches.ts";
@@ -1632,6 +1633,7 @@ function getRoutes() {
     { path: "/cost-analysis", title: "Cost Analysis — How Much Does It Cost? | Invisible Exit", desc: "Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500 — see exactly where every dollar goes.", type: "website" },
     { path: "/how-to", title: "How-To Guides — Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
     { path: "/is-it-legal", title: "Is It Legal? — Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
+    { path: "/banking", title: "Business Banking Guides — Best Banks for LLCs by State | Invisible Exit", desc: "State-by-state business banking guides for LLCs and side businesses. Compare local and online banks, fees, features, and business checking options for every state.", type: "website" },
     { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession — ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
     { path: "/by-budget", title: "Start a Business by Budget — $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
     { path: "/niches", title: "Best Micro-SaaS Niches for 2025 | Invisible Exit", desc: "The most profitable micro-SaaS niches analyzed by market size, growth rate, and competition. Specific product ideas with pricing and monetization.", type: "website" },
@@ -2926,6 +2928,50 @@ function getRoutes() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: il.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Banking guides (state by state) ----------
+  for (const bg of bankingGuides) {
+    const url = `${SITE}/banking/${bg.slug}`;
+    const recommendedBankCount = bg.recommendedBanks.length;
+    routes.push({
+      path: `/banking/${bg.slug}`,
+      meta: {
+        title: `Business Banking in ${bg.stateName} — Best Banks for LLCs & Side Businesses | Invisible Exit`,
+        description: `Best business banking options in ${bg.stateName}. Compare ${recommendedBankCount} recommended banks for your LLC. Fees, features, and online banking options for ${bg.stateName} founders.`,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Business Banking in ${bg.stateName}`,
+            description: `Best business banking options for LLCs and side businesses in ${bg.stateName}.`,
+            author: ADRIAN_PERSON,
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Banking Guides", item: `${SITE}/banking` },
+              { "@type": "ListItem", position: 3, name: bg.stateName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: bg.faqs.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

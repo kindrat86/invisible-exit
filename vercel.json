@@ -231,6 +231,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/banking",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/banking/:state",
+      "destination": "/index.html"
+    },
+    {
       "source": "/story",
       "destination": "/index.html"
     },
