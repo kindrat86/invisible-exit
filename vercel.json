@@ -239,6 +239,38 @@
       "destination": "/index.html"
     },
     {
+      "source": "/tax-guides",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tax-guides/:state",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/time-frameworks",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/time-frameworks/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nda-guides",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nda-guides/:state",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/insurance",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/insurance/:state",
+      "destination": "/index.html"
+    },
+    {
       "source": "/story",
       "destination": "/index.html"
     },

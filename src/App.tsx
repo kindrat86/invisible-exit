@@ -106,6 +106,14 @@ const HowToHubPage = lazy(() => import("./pages/HowToHubPage.tsx"));
 const IsItLegalHubPage = lazy(() => import("./pages/IsItLegalHubPage.tsx"));
 const BankingPage = lazy(() => import("./pages/BankingPage.tsx"));
 const BankingHubPage = lazy(() => import("./pages/BankingHubPage.tsx"));
+const TaxGuidePage = lazy(() => import("./pages/TaxGuidePage.tsx"));
+const TaxGuideHubPage = lazy(() => import("./pages/TaxGuideHubPage.tsx"));
+const TimeFrameworkPage = lazy(() => import("./pages/TimeFrameworkPage.tsx"));
+const TimeFrameworkHubPage = lazy(() => import("./pages/TimeFrameworkHubPage.tsx"));
+const NdaGuidePage = lazy(() => import("./pages/NdaGuidePage.tsx"));
+const NdaGuideHubPage = lazy(() => import("./pages/NdaGuideHubPage.tsx"));
+const InsurancePage = lazy(() => import("./pages/InsurancePage.tsx"));
+const InsuranceHubPage = lazy(() => import("./pages/InsuranceHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
 const JVPage = lazy(() => import("./pages/JVPage.tsx"));
@@ -305,6 +313,22 @@ const App = () => (
           {/* ── Banking guides ── */}
           <Route path="/banking/:state" element={<BankingPage />} />
           <Route path="/banking" element={<BankingHubPage />} />
+
+          {/* ── Tax guides (Greg Isenberg pSEO Round 8) ── */}
+          <Route path="/tax-guides/:state" element={<TaxGuidePage />} />
+          <Route path="/tax-guides" element={<TaxGuideHubPage />} />
+
+          {/* ── NDA guides ── */}
+          <Route path="/nda-guides/:state" element={<NdaGuidePage />} />
+          <Route path="/nda-guides" element={<NdaGuideHubPage />} />
+
+          {/* ── Insurance guides ── */}
+          <Route path="/insurance/:state" element={<InsurancePage />} />
+          <Route path="/insurance" element={<InsuranceHubPage />} />
+
+          {/* ── Time framework guides ── */}
+          <Route path="/time-frameworks/:slug" element={<TimeFrameworkPage />} />
+          <Route path="/time-frameworks" element={<TimeFrameworkHubPage />} />
 
           {/* ── Greg Isenberg pSEO Round 4 ── */}
           <Route path="/side-hustles/:slug" element={<SideHustlePage />} />

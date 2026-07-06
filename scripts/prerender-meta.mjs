@@ -44,6 +44,10 @@ import { costAnalysisPages } from "../src/data/cost-analysis.ts";
 import { howToGuides } from "../src/data/how-to-guides.ts";
 import { isItLegalPages } from "../src/data/is-it-legal.ts";
 import { bankingGuides } from "../src/data/banking.ts";
+import { taxGuides } from "../src/data/tax-guides.ts";
+import { ndaGuides } from "../src/data/nda-guides.ts";
+import { insuranceGuides } from "../src/data/insurance.ts";
+import { timeFrameworks } from "../src/data/time-frameworks.ts";
 import { sideHustles } from "../src/data/side-hustles.ts";
 import { budgetStartPages } from "../src/data/budget-start.ts";
 import { niches } from "../src/data/niches.ts";
@@ -1634,6 +1638,10 @@ function getRoutes() {
     { path: "/how-to", title: "How-To Guides — Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
     { path: "/is-it-legal", title: "Is It Legal? — Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
     { path: "/banking", title: "Business Banking Guides — Best Banks for LLCs by State | Invisible Exit", desc: "State-by-state business banking guides for LLCs and side businesses. Compare local and online banks, fees, features, and business checking options for every state.", type: "website" },
+    { path: "/tax-guides", title: "Tax Guides by State — LLC & Side Business Taxes | Invisible Exit", desc: "State-by-state tax guides for side businesses and LLCs. Compare income tax rates, self-employment tax, sales tax, credits, deductions, and filing requirements for every state.", type: "website" },
+    { path: "/time-frameworks", title: "Time Management Frameworks for Side Businesses | Invisible Exit", desc: "10 time management frameworks for building a side business while employed. Compare time commitments, steps, tools, and expected results for each system.", type: "website" },
+    { path: "/nda-guides", title: "NDA & Non-Compete Guides by State — Side Business Legal Guide | Invisible Exit", desc: "State-by-state NDA and non-compete guides for side businesses. Understand enforceability, what to check in your employment agreement, and how NDAs affect your side business.", type: "website" },
+    { path: "/insurance", title: "Business Insurance by State — Side Business & LLC Coverage | Invisible Exit", desc: "State-by-state business insurance guides for side businesses and LLCs. Compare requirements, recommended policies, costs, and workers' comp rules for every state.", type: "website" },
     { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession — ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
     { path: "/by-budget", title: "Start a Business by Budget — $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
     { path: "/niches", title: "Best Micro-SaaS Niches for 2025 | Invisible Exit", desc: "The most profitable micro-SaaS niches analyzed by market size, growth rate, and competition. Specific product ideas with pricing and monetization.", type: "website" },
@@ -2972,6 +2980,191 @@ function getRoutes() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: bg.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Tax guides (state by state) ----------
+  for (const tg of taxGuides) {
+    const url = `${SITE}/tax-guides/${tg.slug}`;
+    routes.push({
+      path: `/tax-guides/${tg.slug}`,
+      meta: {
+        title: `Tax Guide for ${tg.stateName} — LLC & Side Business Taxes | Invisible Exit`,
+        description: `Complete tax guide for side businesses and LLCs in ${tg.stateName}. Income tax rate: ${tg.incomeTaxRate}. Sales tax: ${tg.salesTaxNote}. Credits, deductions, filing deadlines.`,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Tax Guide for Side Businesses in ${tg.stateName}`,
+            description: `Complete tax guide for side businesses and LLCs in ${tg.stateName}.`,
+            author: ADRIAN_PERSON,
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Tax Guides", item: `${SITE}/tax-guides` },
+              { "@type": "ListItem", position: 3, name: tg.stateName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: tg.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Time Frameworks ----------
+  for (const tf of timeFrameworks) {
+    const url = `${SITE}/time-frameworks/${tf.slug}`;
+    routes.push({
+      path: `/time-frameworks/${tf.slug}`,
+      meta: {
+        title: `${tf.frameworkName} — Side Business Time Framework | Invisible Exit`,
+        description: `${tf.description} ${tf.bestFor}. Weekly time commitment: ${tf.weeklyTimeCommitment}.`,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: tf.frameworkName,
+            description: tf.description,
+            author: ADRIAN_PERSON,
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: tf.frameworkName,
+            description: tf.description,
+            totalTime: tf.weeklyTimeCommitment,
+            step: tf.steps.map((step, i) => ({
+              "@type": "HowToStep",
+              position: i + 1,
+              name: step.title,
+              text: step.description,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Time Frameworks", item: `${SITE}/time-frameworks` },
+              { "@type": "ListItem", position: 3, name: tf.frameworkName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: tf.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- NDA guides (state by state) ----------
+  for (const ng of ndaGuides) {
+    const url = `${SITE}/nda-guides/${ng.slug}`;
+    routes.push({
+      path: `/nda-guides/${ng.slug}`,
+      meta: {
+        title: `NDA Guide for ${ng.stateName} — Side Business & Non-Compete | Invisible Exit`,
+        description: `NDA and non-compete guide for side businesses in ${ng.stateName}. Enforceability: ${ng.ndaEnforceability}. What to check in your employment agreement.`,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `NDA Guide for ${ng.stateName}`,
+            description: `NDA and non-compete guide for side businesses in ${ng.stateName}.`,
+            author: ADRIAN_PERSON,
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "NDA Guides", item: `${SITE}/nda-guides` },
+              { "@type": "ListItem", position: 3, name: ng.stateName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ng.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          },
+        ],
+      },
+    });
+  }
+
+  // ---------- Insurance guides (state by state) ----------
+  for (const ig of insuranceGuides) {
+    const url = `${SITE}/insurance/${ig.slug}`;
+    routes.push({
+      path: `/insurance/${ig.slug}`,
+      meta: {
+        title: `Business Insurance in ${ig.stateName} — Side Business & LLC Coverage | Invisible Exit`,
+        description: `Business insurance guide for side businesses and LLCs in ${ig.stateName}. General liability, professional liability, cyber insurance, and workers' comp requirements.`,
+        url,
+        type: "article",
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Business Insurance for Side Businesses in ${ig.stateName}`,
+            description: `Business insurance guide for side businesses and LLCs in ${ig.stateName}.`,
+            author: ADRIAN_PERSON,
+            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Insurance Guides", item: `${SITE}/insurance` },
+              { "@type": "ListItem", position: 3, name: ig.stateName },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ig.faqs.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

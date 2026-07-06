@@ -74,6 +74,12 @@ async function main() {
   const { audienceIdeas } = await import("../src/data/audience-ideas.js");
   const { cityProfessionPages } = await import("../src/data/city-profession.js");
 
+  // Greg Isenberg pSEO Round 8
+  const { taxGuides } = await import("../src/data/tax-guides.js");
+  const { ndaGuides } = await import("../src/data/nda-guides.js");
+  const { insuranceGuides } = await import("../src/data/insurance.js");
+  const { timeFrameworks } = await import("../src/data/time-frameworks.js");
+
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
@@ -725,6 +731,35 @@ async function main() {
     // City × Profession cross pages (Greg Isenberg Round 7)
     ...cityProfessionPages.map((cp: { citySlug: string; professionSlug: string }) => ({
       loc: `https://invisibleexit.com/cities/${cp.citySlug}/for/${cp.professionSlug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    // ── Greg Isenberg pSEO Round 8: Tax, NDA, Insurance, Time Frameworks ──
+    { loc: "https://invisibleexit.com/tax-guides", lastmod: today, changefreq: "weekly" as const, priority: "0.8" as const },
+    ...taxGuides.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/tax-guides/${t.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    { loc: "https://invisibleexit.com/nda-guides", lastmod: today, changefreq: "weekly" as const, priority: "0.8" as const },
+    ...ndaGuides.map((n: { slug: string }) => ({
+      loc: `https://invisibleexit.com/nda-guides/${n.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    { loc: "https://invisibleexit.com/insurance", lastmod: today, changefreq: "weekly" as const, priority: "0.8" as const },
+    ...insuranceGuides.map((i: { slug: string }) => ({
+      loc: `https://invisibleexit.com/insurance/${i.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
+    { loc: "https://invisibleexit.com/time-frameworks", lastmod: today, changefreq: "weekly" as const, priority: "0.8" as const },
+    ...timeFrameworks.map((t: { slug: string }) => ({
+      loc: `https://invisibleexit.com/time-frameworks/${t.slug}`,
       lastmod: today,
       changefreq: "monthly" as const,
       priority: "0.7" as const,
