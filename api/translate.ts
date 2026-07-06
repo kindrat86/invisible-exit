@@ -23,6 +23,8 @@ const VALID_LANGS = new Set([
   "kk","uz","az","ka","hy","mn","ceb","ilo","jv","su","mad","hmn","ku","bal",
   "tg","tk","sr","hr","bs","sk","sl","lt","lv","et","be","bg","mk","ca","eu",
   "gl","cy","ga","is","gd","br","lb","mt","fil","bo","ug","nan","wuu","hak","pcm",
+  // ── Round 2: full coverage of every language in languages.ts ──
+  "cs","da","el","fi","hu","no","ro","so","sq","sv","tl","ur","yue",
 ]);
 
 export default async function handler(req: Request): Promise<Response> {
