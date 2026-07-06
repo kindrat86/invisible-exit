@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import { Resend } from "resend";
+import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 
 function adminNotificationHtml(
   title: string,
@@ -40,15 +41,40 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  // ── Rate limiting: 5/hour per IP (prevent email abuse) ──
+  const ip = getClientIP(req);
+  const rl = checkRateLimit(`feature-req:${ip}`, { max: 5, windowMs: 3600000 });
+  if (!rl.allowed) {
+    return res.status(429).json({ error: "Too many requests. Please try again later." });
+  }
+
   try {
     const { feature_title, feature_description, user_email } = req.body;
 
+    // ── Input validation ──
     if (!feature_title || !feature_description || !user_email) {
       return res.status(400).json({
-        error:
-          "feature_title, feature_description, and user_email are required",
+        error: "feature_title, feature_description, and user_email are required",
       });
     }
+    if (typeof feature_title !== "string" || feature_title.length > 200) {
+      return res.status(400).json({ error: "feature_title must be under 200 chars" });
+    }
+    if (typeof feature_description !== "string" || feature_description.length > 5000) {
+      return res.status(400).json({ error: "feature_description must be under 5000 chars" });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (typeof user_email !== "string" || !emailRegex.test(user_email) || user_email.length > 254) {
+      return res.status(400).json({ error: "Invalid user_email" });
+    }
+
+    // ── HTML-escape user input to prevent email injection ──
+    const safeTitle = feature_title.replace(/[<>&"']/g, (c: string) => ({
+      "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#x27;"
+    })[c] || c);
+    const safeDesc = feature_description.replace(/[<>&"']/g, (c: string) => ({
+      "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#x27;"
+    })[c] || c);
 
     const resendKey = process.env.RESEND_API_KEY;
     if (!resendKey) {
@@ -64,10 +90,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       await resend.emails.send({
         from: "Invisible Exit <escape@invisibleexit.com>",
         to: ["escape@invisibleexit.com"],
-        subject: `New Feature Request: ${feature_title}`,
+        subject: `New Feature Request: ${safeTitle}`,
         html: adminNotificationHtml(
-          feature_title,
-          feature_description,
+          safeTitle,
+          safeDesc,
           user_email,
           timestamp
         ),
@@ -83,7 +109,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         to: [user_email],
         replyTo: "escape@invisibleexit.com",
         subject: "Your feature request has been received",
-        html: userConfirmationHtml(feature_title),
+        html: userConfirmationHtml(safeTitle),
       });
     } catch (userErr) {
       console.error("Resend user email error:", userErr);

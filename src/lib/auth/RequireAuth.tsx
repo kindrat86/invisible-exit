@@ -1,4 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
+import type { ReactNode } from "react";
 import { useAuth } from "./AuthProvider";
 
 /**
@@ -8,17 +9,17 @@ import { useAuth } from "./AuthProvider";
  * Usage:
  *   <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
  */
-export function RequireAuth({ children }: { children: React.ReactNode }) {
-    const { user, loading } = useAuth();
-    const location = useLocation();
+export function RequireAuth({ children }: { children: ReactNode }) {
+  const { user, loading } = useAuth();
+  const location = useLocation();
 
   if (loading) {
-        return <div className="min-h-screen" />;
+    return <div className="min-h-screen" />;
   }
 
   if (!user) {
-        return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  return <>{children}</>>;
-}</>
+  return <>{children}</>;
+}

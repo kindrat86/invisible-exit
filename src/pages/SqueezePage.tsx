@@ -9,6 +9,7 @@ import {
   TrendingUp,
   Shield,
   Rocket,
+  ChevronDown,
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -99,7 +100,7 @@ const SqueezePage = () => {
       freedomNumber: result.freedomNumber,
     });
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+       
       await supabase.from("subscribers").upsert(
         {
           email,
@@ -145,32 +146,43 @@ const SqueezePage = () => {
           {/* ─── STEP: INTRO ─── */}
           {step === "intro" && (
             <div className="animate-fade-in">
+              {/* PATTERN INTERRUPT — Brunson Ch 3-4: Curiosity gap */}
+              <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span className="text-amber-200 text-xs font-semibold uppercase tracking-wider">
+                  WARNING: This Calculator Will Tell You Something Uncomfortable
+                </span>
+              </div>
+
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Discover Your{" "}
-                <span className="text-gradient-light">Freedom Number</span>
+                How Much Recurring Revenue Do You Actually Need to{" "}
+                <span className="text-gradient-light">Walk Away?</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-2">
-                The exact monthly recurring revenue you need to never work for
-                someone else again.
-              </p>
-              <p className="text-base text-white/50 max-w-lg mx-auto mb-12">
-                Free calculator. Takes 90 seconds. No credit card. No spam.
+                Not how much you <em>want</em>. What your specific salary, expenses, and hours-per-week{" "}
+                <strong className="text-white">require</strong>. Takes 30 seconds.
               </p>
 
-              {/* What you'll discover */}
-              <div className="max-w-sm mx-auto text-left mb-10 space-y-3">
+              {/* Hook bullets — 4 specific pains (Brunson Ch 3) */}
+              <div className="max-w-sm mx-auto text-left mb-8 space-y-2.5">
                 {[
-                  "The exact MRR number that replaces your salary",
-                  "Your timeline to freedom (in months, not years)",
-                  "How many customers you need at your price point",
-                  "Your invisibility score (can your employer find out?)",
+                  "The exact MRR that replaces <strong>your</strong> salary",
+                  "How many customers you need (at any price point)",
+                  "Your timeline based on <strong>your</strong> hours/week",
+                  "The invisibility score — can your employer find out?",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
-                    <span className="text-white/70 text-sm">{item}</span>
+                    <span className="text-white/70 text-sm" dangerouslySetInnerHTML={{ __html: item }} />
                   </div>
                 ))}
+              </div>
+
+              {/* URGENCY — "73 of 100 founding spots" visible from first screen */}
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-xs text-white/60">127 managers already found their number</span>
               </div>
 
               <button
@@ -479,6 +491,21 @@ const SqueezePage = () => {
                 </div>
               </div>
 
+              {/* ── WHAT HAPPENS IF YOU DO NOTHING (Brunson Ch 21) ── */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-4 text-center">
+                <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-2">
+                  What Happens If You Do Nothing?
+                </p>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Nothing changes. You keep your job. You keep waiting for the IPO.{" "}
+                  <strong className="text-white">6 months from now</strong>, you'll
+                  still have the same salary, the same 0.5% equity, and{" "}
+                  <strong className="text-amber-300">$0 in recurring revenue.</strong>{" "}
+                  Except the founding price will be gone, and you'll wish you'd
+                  locked it in today.
+                </p>
+              </div>
+
               {/* DOTCOM SECRETS Ch 11: Urgency + Scarcity */}
               <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl p-4 mb-4 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
@@ -499,6 +526,29 @@ const SqueezePage = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                   4 joined today
                 </span>
+              </div>
+
+              {/* EXPERT SECRETS Ch 11: Pre-Frame Objection Crusher — right before email capture */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-4">
+                <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-3 text-center">
+                  Questions Before You Enter Your Email?
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { q: "Is this really free?", a: "Yes. The calculator is 100% free. No credit card. No trial. You get your Freedom Number instantly. The email is optional — but if you want the detailed breakdown sent to you, that's free too." },
+                    { q: "What if I don't have a business idea?", a: "The calculator doesn't require one. It just needs your salary, expenses, and hours. The Freedom Number works whether you have an idea or not — it tells you the target, not the path." },
+                    { q: "Will this work for my situation?", a: "The math is the math. Salary, expenses, hours — these are universal inputs. The formula applies whether you're at $80K or $250K." },
+                    { q: "What if I'm not technical?", a: "The calculator doesn't require technical skills. It asks 3 questions in 30 seconds. The system that follows is designed for non-technical managers." },
+                  ].map((item) => (
+                    <details key={item.q} className="group">
+                      <summary className="flex items-center justify-between text-sm text-white/70 cursor-pointer list-none select-none py-1.5">
+                        {item.q}
+                        <ChevronDown className="w-3.5 h-3.5 text-white/30 transition-transform group-open:rotate-180 shrink-0" />
+                      </summary>
+                      <p className="text-xs text-white/50 leading-relaxed mt-1 pl-0">{item.a}</p>
+                    </details>
+                  ))}
+                </div>
               </div>
 
               {/* Email gate for detailed plan */}

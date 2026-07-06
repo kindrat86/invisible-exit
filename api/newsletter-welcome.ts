@@ -13,6 +13,7 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import { query } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
+import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 
 const NEWSLETTER_EMAIL_HTML = `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0B1D3A;">
@@ -57,11 +58,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { email, source } = req.body ?? {};
+    const { email, source, hp_name, hp_ts } = req.body ?? {};
+
+    // ── Honeypot bot detection ──
+    if (typeof hp_name === "string" && hp_name.length > 0) {
+      return res.status(200).json({ success: true }); // Silently accept to not tip off bots
+    }
+    const ts = Number(hp_ts);
+    if (!isNaN(ts) && Date.now() - ts < 2000) {
+      return res.status(200).json({ success: true }); // Too fast = bot
+    }
+
+    // ── Rate limiting: 5 per hour per IP (prevent email abuse) ──
+    const ip = getClientIP(req);
+    const rl = checkRateLimit(`newsletter:${ip}`, { max: 5, windowMs: 3600000 });
+    if (!rl.allowed) {
+      return res.status(429).json({ error: "Too many requests. Please try again later." });
+    }
 
     if (!email || typeof email !== "string") {
       return res.status(400).json({ error: "Email is required" });
     }
+
+    // ── Email validation ──
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 254) {
+      return res.status(400).json({ error: "Invalid email address" });
+    }
+
+    // ── Source validation ──
+    const validSources = ["newsletter", "squeeze", "exit-intent", "blog", "footer", "lead-magnet"];
+    const safeSource = typeof source === "string" && validSources.includes(source) ? source : "newsletter";
 
     // ── 1. Upsert into subscribers ──
     await query(
@@ -69,7 +96,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
        VALUES ($1, $2)
        ON CONFLICT (email) DO UPDATE
        SET source = excluded.source, created_at = subscribers.created_at`,
-      [email, source ?? "newsletter"],
+      [email, safeSource],
     );
 
     // ── 2. Send welcome email via Resend ──

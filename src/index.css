@@ -671,15 +671,33 @@ p {
 }
 
 /* ── Page transition ── */
-.page-fade {
-  animation: pageFadeIn 0.25s ease-out both;
+.page-enter {
+  animation: pageFadeSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
-@keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes pageFadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Smoother loading shimmer for lazy routes */
+.loading-skeleton-page {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--surface-2)) 25%,
+    hsl(var(--surface)) 50%,
+    hsl(var(--surface-2)) 75%
+  );
+  background-size: 200% 100%;
+}
+@keyframes loadingPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-fade { animation: none; opacity: 1; transform: none; }
+  .page-enter { animation: none; opacity: 1; transform: none; }
+  .loading-skeleton-page { animation: none; opacity: 0.5; }
 }
 
 /* ── Content page utilities ── */
@@ -748,6 +766,52 @@ summary::-webkit-details-marker { display: none; }
    WORLD-CLASS MOBILE UX ADDITIONS
    ═══════════════════════════════════════════════════════════ */
 
+/* ── Touch ripple effect for buttons & interactive cards ── */
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Dark-mode ripple */
+.dark .ripple-effect {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ripple on primary buttons */
+.btn-primary .ripple-effect,
+[class*="btn-"] .ripple-effect {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Auto-ripple for all interactive elements on touch devices ── */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary, .btn-secondary, .btn-ghost,
+  nav a, [role="button"], .card-hover,
+  details summary, button, .footer a {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
 /* ── Mobile bottom padding to prevent CTA bar overlap ── */
 @media (max-width: 767px) {
   /* Add padding to main content containers so sticky CTA bar never covers content */
@@ -803,6 +867,41 @@ summary::-webkit-details-marker { display: none; }
     background: linear-gradient(to right, transparent, hsl(var(--background)));
     pointer-events: none;
   }
+}
+
+/* ── Mobile CTA bar with data-visible attribute ── */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mobile-cta-bar[data-visible="true"] {
+  transform: translateY(0);
+}
+.mobile-cta-bar[data-visible="false"] {
+  transform: translateY(100%);
+}
+@media (min-width: 768px) {
+  .mobile-cta-bar { display: none; }
+}
+
+/* ── Dismiss swipe animation ── */
+@keyframes dismissDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(120%); }
+}
+.mobile-cta-bar.dismissing {
+  animation: dismissDown 0.3s ease-in forwards;
 }
 
 /* ── Active state for touch (no hover needed) ── */

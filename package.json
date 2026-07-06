@@ -9,7 +9,7 @@
     "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
     "generate:og": "npx tsx scripts/generate-og-images.ts",
     "generate:rss": "npx tsx scripts/generate-rss.ts",
-    "build": "npm run generate:sitemap && npm run generate:llms && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts",
+    "build": "npm run generate:sitemap && npm run generate:llms && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts && node scripts/prerender-i18n.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -80,8 +80,6 @@
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@playwright/test": "^1.57.0",
-    "@prerenderer/renderer-puppeteer": "^1.2.4",
-    "@prerenderer/rollup-plugin": "^0.3.12",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.6.0",
     "@testing-library/react": "^16.0.0",

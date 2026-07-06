@@ -13,6 +13,7 @@
  * without an HTTP round-trip to itself.
  */
 import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 import { query } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 
@@ -133,12 +134,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  // ── Rate limiting: 3/hour per IP ──
+  const ip = getClientIP(req);
+  const rl = checkRateLimit(`winback:${ip}`, { max: 3, windowMs: 3600000 });
+  if (!rl.allowed) {
+    return res.status(429).json({ error: "Too many requests" });
+  }
 
   try {
     const { email } = req.body ?? {};
 
     if (!email || typeof email !== "string") {
       return res.status(400).json({ error: "Email is required" });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 254) {
+      return res.status(400).json({ error: "Invalid email address" });
     }
 
     const result = await triggerWinback(email);

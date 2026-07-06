@@ -11,6 +11,7 @@
  * (No `day` → returns the schedule for the sequence.)
  */
 import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 
 const FROM = "Adrian <escape@invisibleexit.com>";
 
@@ -375,27 +376,53 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  // ── Rate limiting: 10/min per IP ──
+  const ip = getClientIP(req);
+  const rl = checkRateLimit(`email-seq:${ip}`, { max: 10, windowMs: 60000 });
+  if (!rl.allowed) {
+    return res.status(429).json({ error: "Too many requests" });
+  }
 
   try {
     const { email, day, sequence = "soap_opera" } = req.body ?? {};
     const allEmails = getSequence(sequence);
 
-    if (!email) {
+    // ── Email validation ──
+    if (!email || typeof email !== "string") {
       return res.status(400).json({ error: "Email is required" });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 254) {
+      return res.status(400).json({ error: "Invalid email address" });
+    }
+
+    // ── Sequence validation ──
+    const validSequences = ["soap_opera", "winback", " launch"];
+    if (!validSequences.includes(sequence)) {
+      return res.status(400).json({ error: "Invalid sequence" });
     }
 
     // Send a specific email by day
     if (day !== undefined && day !== null) {
-      const emailData = allEmails.find((e) => e.day === day);
+      // ── Day validation ──
+      const dayNum = Number(day);
+      if (!Number.isInteger(dayNum) || dayNum < 1 || dayNum > 30) {
+        return res.status(400).json({ error: "Invalid day" });
+      }
+      const emailData = allEmails.find((e) => e.day === dayNum);
       if (!emailData) {
-        return res.status(400).json({ error: `No email at day ${day}` });
+        return res.status(400).json({ error: `No email at day ${dayNum}` });
       }
 
       const result = await sendEmail(email, emailData.subject, emailData.html);
       if (!result.success) {
         return res.status(500).json({ error: result.error });
       }
-      return res.status(200).json({ success: true, id: result.id, day });
+      return res.status(200).json({ success: true, id: result.id, day: dayNum });
     }
 
     // Otherwise return the schedule

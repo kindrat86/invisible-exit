@@ -357,6 +357,19 @@ const MasterclassPage = () => {
             </p>
           </div>
 
+          {/* DOTCOM SECRETS Ch 21: What Happens If You Do Nothing */}
+          <div className="max-w-lg mx-auto bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-8">
+            <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-2 text-center">
+              What Happens If You Do Nothing?
+            </p>
+            <p className="text-white/60 text-sm leading-relaxed text-center">
+              Nothing. You go back to your spreadsheet. You keep waiting for the IPO.{" "}
+              <strong className="text-white">6 months from now</strong>, you'll be in the
+              same spot — except the founding price will be gone, and you'll wish you'd
+              acted today.
+            </p>
+          </div>
+
           {/* CTA */}
           <Link
             to="/freedom"

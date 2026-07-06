@@ -151,7 +151,15 @@ const Index = () => {
       {/* ── 1. Hero ── */}
       <section className="hero-dark-radial pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24 section">
         <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary-light mb-6 animate-fade-in">
+          {/* EXPERT SECRETS Ch 1: Polarizing Leader — "If this offends you, leave" */}
+          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+            <span className="text-xs text-red-300 font-semibold uppercase tracking-wider">
+              ⚠️ WARNING: If This Offends You, This Isn't for You.
+            </span>
+          </div>
+
+          <p className="text-eyebrow text-primary-light mb-6 animate-fade-in" style={{ animationDelay: "50ms" }}>
             For Corporate Managers Who Want Out
           </p>
 
@@ -171,6 +179,14 @@ const Index = () => {
             )}
           </h1>
 
+          {/* DOTCOM SECRETS Ch 2: Category Creation — right below the headline */}
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs text-primary-light font-medium">
+              Not a course · Not a community · The world's first anonymity-native business system
+            </span>
+          </div>
+
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
             {heroVariant === "benefit"
               ? `5 AI-powered tools that take you from "trapped in the golden handcuffs" to real recurring revenue — in 12 months, working 5 hours a week.`
@@ -178,7 +194,7 @@ const Index = () => {
           </p>
 
           {/* CTA — ONE THING: Calculate Freedom Number → squeeze page */}
-          <div className="flex flex-col items-center gap-4 mb-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
+          <div className="flex flex-col items-center gap-4 mb-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
             <Link
               to="/freedom"
               onClick={() => {
@@ -195,6 +211,42 @@ const Index = () => {
             </p>
           </div>
 
+          {/* EXPERT SECRETS Ch 15: Rallying Cry + Ch 14: Reluctant Hero (below CTA) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 animate-fade-up" style={{ animationDelay: "250ms" }}>
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+              <span className="text-primary text-sm font-bold">\"</span>
+              <span className="text-white/50 text-xs italic">
+                I didn't want to build this. I wanted to build in peace. But I had to leave the key.
+              </span>
+              <span className="text-primary text-sm font-bold">\"</span>
+              <span className="text-white/30 text-[10px]">— Adrian</span>
+            </div>
+          </div>
+
+          {/* EXPERT SECRETS Ch 16: Cost of Delay — live counter */}
+          <div className="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
+            <span className="text-amber-200 text-xs font-medium">
+              Every month you wait costs you ~$4,000 in unrealized MRR. That's <strong className="text-amber-100">$48,000/year of delay</strong>.
+            </span>
+          </div>
+
+          {/* EXPERT SECRETS Ch 17: 3-Step Action Path */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-white/50 max-w-2xl mx-auto mb-6 animate-fade-up" style={{ animationDelay: "300ms" }}>
+            <span className="flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-[10px] font-bold">1</span>
+              Calculate your Freedom Number (90s)
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-[10px] font-bold">2</span>
+              Validate one micro-SaaS idea (48h)
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-[10px] font-bold">3</span>
+              Build invisible revenue (5h/week)
+            </span>
+          </div>
+
           {/* Value bullets */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/50 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "300ms" }}>
             {[
@@ -209,6 +261,20 @@ const Index = () => {
                 {item}
               </span>
             ))}
+          </div>
+
+          {/* Social proof — real-time count */}
+          <div className="flex items-center justify-center gap-4 mt-4 text-xs text-white/40 animate-fade-up" style={{ animationDelay: "350ms" }}>
+            <span className="flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              127 building now
+            </span>
+            <span>·</span>
+            <span>★★★★★ 4.8/5</span>
+            <span>·</span>
+            <span>73 founding spots left</span>
+            <span>·</span>
+            <span className="text-primary-light font-semibold">\"We don't wait for exits. We build our own.\"</span>
           </div>
         </div>
       </section>

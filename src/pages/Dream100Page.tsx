@@ -189,6 +189,10 @@ const Dream100Page = () => {
               See Affiliate Program
               <ArrowRight className="w-5 h-5" />
             </Link>
+            <Link to="/partners/jv" className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10">
+              JV Partnership (50%)
+              <ArrowRight className="w-5 h-5" />
+            </Link>
             <Link
               to="mailto:escape@invisibleexit.com?subject=Dream%20100%20Partnership"
               className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium"

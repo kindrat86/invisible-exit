@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, Search, LayoutDashboard } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const NAV_GROUPS = [
@@ -71,10 +71,18 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [compact, setCompact] = useState(false);
   const location = useLocation();
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 20);
+      // Compact mode: shrink after 100px scroll, restore immediately when near top
+      setCompact(currentY > 100);
+      lastScrollY.current = currentY;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -97,6 +105,25 @@ const Navbar = () => {
     };
   }, [mobileOpen]);
 
+  // Touch ripple helper
+  const handleRipple = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const target = e.currentTarget;
+    const ripple = document.createElement("span");
+    ripple.className = "ripple-effect";
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    target.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  }, []);
+
+  const navbarHeight = compact ? "h-14" : "h-16 lg:h-20";
+  const logoSize = compact ? "w-7 h-7" : "w-8 h-8";
+  const pulseBlock = compact ? "w-2.5 h-2.5" : "w-3 h-3";
+  const brandFontSize = compact ? "text-base" : "text-lg";
+
   return (
     <>
       <header
@@ -107,17 +134,17 @@ const Navbar = () => {
         }`}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className={`flex items-center justify-between transition-all duration-300 ${navbarHeight}`}>
             {/* Logo */}
             <Link
               to="/"
-              className="flex items-center gap-2 text-white font-bold text-lg tracking-tight transition-opacity hover:opacity-80"
+              className="flex items-center gap-2 text-white font-bold tracking-tight transition-opacity hover:opacity-80"
               aria-label="Invisible Exit home"
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/20 border border-primary/30">
-                <span className="block w-3 h-3 rounded-sm bg-primary animate-pulse" />
+              <span className={`inline-flex items-center justify-center rounded-lg bg-primary/20 border border-primary/30 transition-all duration-300 ${logoSize}`}>
+                <span className={`block rounded-sm bg-primary transition-all duration-300 ${pulseBlock}`} />
               </span>
-              <span className="inline">Invisible Exit</span>
+              <span className={`inline transition-all duration-300 ${brandFontSize}`}>Invisible Exit</span>
             </Link>
 
             {/* Desktop nav */}
@@ -126,6 +153,7 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
+                  onClick={handleRipple}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname.startsWith(link.to)
                       ? "text-white bg-white/10"
@@ -148,7 +176,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/oto/founding"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {t("nav.getStarted")}
                 <ArrowRight className="w-4 h-4" />
@@ -160,7 +188,7 @@ const Navbar = () => {
               <LanguageSwitcher variant="compact" className="text-white/80" />
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                className="flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
                 aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
                 aria-expanded={mobileOpen}
               >
@@ -169,6 +197,14 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
+
+        {/* Scroll progress indicator — thin line at bottom of navbar */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5">
+          <div
+            className="h-full bg-gradient-to-r from-primary to-primary-light transition-all duration-75"
+            id="navbar-scroll-progress"
+          />
+        </div>
       </header>
 
       {/* Mobile right-side drawer */}
@@ -197,7 +233,7 @@ const Navbar = () => {
               <span className="text-white font-bold text-lg">{t("nav.menu")}</span>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
+                className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
                 aria-label={t("nav.closeMenu")}
               >
                 <X className="w-5 h-5" />
@@ -216,7 +252,7 @@ const Navbar = () => {
                       <Link
                         key={link.to}
                         to={link.to}
-                        className={`flex items-center justify-between px-3 py-3 rounded-xl text-[15px] font-medium transition-colors ${
+                        className={`flex items-center justify-between px-3 py-3 rounded-xl text-[15px] font-medium transition-colors active:bg-white/15 ${
                           location.pathname.startsWith(link.to)
                             ? "text-white bg-white/10"
                             : "text-white/70 hover:text-white hover:bg-white/5"
@@ -236,7 +272,7 @@ const Navbar = () => {
               <div className="space-y-2.5">
                 <Link
                   to="/freedom"
-                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors"
+                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors active:scale-[0.97]"
                   style={{ minHeight: "48px" }}
                 >
                   {t("cta.calculateFreedomNumber")}
@@ -244,7 +280,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/oto/founding"
-                  className="flex items-center justify-center px-4 py-3 rounded-xl text-sm font-medium text-white/80 border border-white/15 hover:bg-white/5 transition-colors"
+                  className="flex items-center justify-center px-4 py-3 rounded-xl text-sm font-medium text-white/80 border border-white/15 hover:bg-white/5 transition-colors active:scale-[0.97]"
                   style={{ minHeight: "44px" }}
                 >
                   {t("cta.getStartedPrice")}

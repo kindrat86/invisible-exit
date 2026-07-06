@@ -5,7 +5,15 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
 
-export const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me";
+/**
+ * JWT secret — fails hard if not set in production (no insecure fallback).
+ * Generate one with: node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+ */
+const JWT_SECRET_RAW = process.env.JWT_SECRET;
+if (!JWT_SECRET_RAW && process.env.NODE_ENV === "production") {
+  console.error("FATAL: JWT_SECRET environment variable is not set. Authentication will fail.");
+}
+export const JWT_SECRET = JWT_SECRET_RAW || (process.env.NODE_ENV === "production" ? "" : "dev-secret-change-me");
 
 export interface JwtPayload {
   sub: string;

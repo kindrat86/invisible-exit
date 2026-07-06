@@ -242,7 +242,7 @@ function ReturningOverview({
   // Get invisibility score history for Moment 3
   // We approximate: if user has latest invisibility + core actions done, we check localStorage for first score
   let firstInvisScore = 0;
-  let latestInvisScore = invisScore;
+  const latestInvisScore = invisScore;
   try {
     const stored = localStorage.getItem(`first_invis_score_${userId}`);
     if (stored) {

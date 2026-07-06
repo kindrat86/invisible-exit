@@ -183,6 +183,10 @@
   ],
   "rewrites": [
     {
+      "source": "/manifest.json",
+      "destination": "/site.webmanifest"
+    },
+    {
       "source": "/blog/rss",
       "destination": "/blog/rss.xml"
     },

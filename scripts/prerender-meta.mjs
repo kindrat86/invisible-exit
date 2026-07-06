@@ -63,6 +63,111 @@ const SITE = "https://invisibleexit.com";
 const SITE_NAME = "Invisible Exit";
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
+// 101-language hreflang set (BCP47 tags for SEO internationalization)
+const LANGUAGES = [
+  {code:"en", hl:"en"},
+  {code:"zh", hl:"zh-CN"},
+  {code:"hi", hl:"hi"},
+  {code:"es", hl:"es"},
+  {code:"fr", hl:"fr"},
+  {code:"ar", hl:"ar"},
+  {code:"bn", hl:"bn"},
+  {code:"pt", hl:"pt"},
+  {code:"ru", hl:"ru"},
+  {code:"ur", hl:"ur"},
+  {code:"id", hl:"id"},
+  {code:"de", hl:"de"},
+  {code:"ja", hl:"ja"},
+  {code:"pcm", hl:"pcm"},
+  {code:"mr", hl:"mr"},
+  {code:"te", hl:"te"},
+  {code:"tr", hl:"tr"},
+  {code:"ta", hl:"ta"},
+  {code:"vi", hl:"vi"},
+  {code:"yue", hl:"yue"},
+  {code:"pa", hl:"pa"},
+  {code:"ko", hl:"ko"},
+  {code:"fa", hl:"fa"},
+  {code:"it", hl:"it"},
+  {code:"th", hl:"th"},
+  {code:"gu", hl:"gu"},
+  {code:"kn", hl:"kn"},
+  {code:"ml", hl:"ml"},
+  {code:"or", hl:"or"},
+  {code:"pl", hl:"pl"},
+  {code:"uk", hl:"uk"},
+  {code:"nl", hl:"nl"},
+  {code:"ro", hl:"ro"},
+  {code:"el", hl:"el"},
+  {code:"cs", hl:"cs"},
+  {code:"hu", hl:"hu"},
+  {code:"sv", hl:"sv"},
+  {code:"fi", hl:"fi"},
+  {code:"no", hl:"no"},
+  {code:"da", hl:"da"},
+  {code:"he", hl:"he"},
+  {code:"sw", hl:"sw"},
+  {code:"am", hl:"am"},
+  {code:"so", hl:"so"},
+  {code:"ha", hl:"ha"},
+  {code:"yo", hl:"yo"},
+  {code:"ig", hl:"ig"},
+  {code:"zu", hl:"zu"},
+  {code:"xh", hl:"xh"},
+  {code:"af", hl:"af"},
+  {code:"ms", hl:"ms"},
+  {code:"my", hl:"my"},
+  {code:"km", hl:"km"},
+  {code:"lo", hl:"lo"},
+  {code:"ne", hl:"ne"},
+  {code:"si", hl:"si"},
+  {code:"ps", hl:"ps"},
+  {code:"kk", hl:"kk"},
+  {code:"uz", hl:"uz"},
+  {code:"az", hl:"az"},
+  {code:"ka", hl:"ka"},
+  {code:"hy", hl:"hy"},
+  {code:"mn", hl:"mn"},
+  {code:"bo", hl:"bo"},
+  {code:"ug", hl:"ug"},
+  {code:"tl", hl:"tl"},
+  {code:"ceb", hl:"ceb"},
+  {code:"ilo", hl:"ilo"},
+  {code:"jv", hl:"jv"},
+  {code:"su", hl:"su"},
+  {code:"mad", hl:"mad"},
+  {code:"nan", hl:"nan"},
+  {code:"wuu", hl:"wuu"},
+  {code:"hak", hl:"hak"},
+  {code:"hmn", hl:"hmn"},
+  {code:"ku", hl:"ku"},
+  {code:"bal", hl:"bal"},
+  {code:"tg", hl:"tg"},
+  {code:"tk", hl:"tk"},
+  {code:"sq", hl:"sq"},
+  {code:"sr", hl:"sr"},
+  {code:"hr", hl:"hr"},
+  {code:"bs", hl:"bs"},
+  {code:"sk", hl:"sk"},
+  {code:"sl", hl:"sl"},
+  {code:"lt", hl:"lt"},
+  {code:"lv", hl:"lv"},
+  {code:"et", hl:"et"},
+  {code:"be", hl:"be"},
+  {code:"bg", hl:"bg"},
+  {code:"mk", hl:"mk"},
+  {code:"ca", hl:"ca"},
+  {code:"eu", hl:"eu"},
+  {code:"gl", hl:"gl"},
+  {code:"cy", hl:"cy"},
+  {code:"ga", hl:"ga"},
+  {code:"gd", hl:"gd"},
+  {code:"br", hl:"br"},
+  {code:"is", hl:"is"},
+  {code:"lb", hl:"lb"},
+  {code:"mt", hl:"mt"},
+];
+
 // Rich author entity for E-E-A-T (Experience, Expertise, Authoritativeness, Trust)
 const ADRIAN_PERSON = {
   "@type": "Person",
@@ -117,8 +222,32 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
   const escapedTitle = escapeHtml(optimizedTitle);
   const escapedDesc = escapeHtml(truncate(description, 155));
   const img = image || DEFAULT_IMAGE;
-  const jsonLdHtml = (jsonLd || []).map(jsonLdScript).join("\n    ");
   const robotsContent = noindex ? "noindex, follow" : "index, follow";
+
+  // Auto-append SpeakableSpecification schema for all article-type pages (AEO / Voice Search)
+  // This tells Google/Apple which parts of the page to read aloud
+  const hasSpeakable = (jsonLd || []).some(s =>
+    s["@type"] === "SpeakableSpecification" ||
+    (Array.isArray(s["@context"]) ? false : false)
+  );
+  const finalJsonLd = (jsonLd || []).slice();
+  if (!hasSpeakable && (type === "article" || type === "review")) {
+    finalJsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "section:nth-of-type(2) p", "section:nth-of-type(3) h2"],
+      xpath: ["/html/head/title", "/html/body/div/section[1]/div/h1"]
+    });
+  }
+  const jsonLdHtmlFinal = finalJsonLd.map(jsonLdScript).join("\n    ");
+
+  const hreflangLinks = LANGUAGES.map((lang) => {
+    if (lang.code === "en") {
+      return `    <link rel="alternate" hreflang="en" href="${url}" />`;
+    }
+    const langUrl = `${SITE}/${lang.code}/${routePath.replace(/^\//, "")}`;
+    return `    <link rel="alternate" hreflang="${lang.hl}" href="${langUrl}" />`;
+  }).join("\n");
 
   const metaBlock = `<!-- SEO (pre-rendered) -->
     <title>${optimizedTitle}</title>
@@ -126,7 +255,7 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
     <meta name="author" content="${SITE_NAME}" />
     <meta name="robots" content="${robotsContent}" />
     <link rel="canonical" href="${url}" />
-    <link rel="alternate" hreflang="en" href="${url}" />
+${hreflangLinks}
     <link rel="alternate" hreflang="x-default" href="${url}" />
     <link rel="alternate" type="application/rss+xml" title="${SITE_NAME} Blog" href="${SITE}/blog/rss.xml" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="${SITE}/sitemap.xml" />
@@ -145,14 +274,18 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
     <meta name="twitter:description" content="${escapedDesc}" />
     <meta name="twitter:image" content="${img}" />
 
-    ${jsonLdHtml}`;
+    ${jsonLdHtmlFinal}`;
 
-  // Remove vendor-charts modulepreload from all pages except dashboard
-  // (418K of recharts that's not needed on content/blog pages)
+  // Remove vendor-charts + vendor-capture modulepreload from all pages except dashboard
+  // (recharts is 407K, html2canvas is 198K — neither needed on content/blog pages)
   let finalTemplate = template;
   if (!routePath.includes("/dashboard")) {
     finalTemplate = finalTemplate.replace(
       /<link rel="modulepreload"[^>]*vendor-charts[^>]*>\n?/g,
+      ""
+    );
+    finalTemplate = finalTemplate.replace(
+      /<link rel="modulepreload"[^>]*vendor-capture[^>]*>\n?/g,
       ""
     );
   }
@@ -1377,6 +1510,14 @@ function getRoutes() {
             "Earn 30% recurring commission referring corporate managers to Invisible Exit.",
           url: `${SITE}/affiliates`,
         },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Affiliates" },
+          ],
+        },
       ],
     },
   });
@@ -2463,6 +2604,14 @@ function getRoutes() {
             "Understanding why you feel stuck in your career — and the first step toward building your exit.",
           url: `${SITE}/feeling-stuck`,
         },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Feeling Stuck" },
+          ],
+        },
       ],
     },
   });
@@ -2484,6 +2633,14 @@ function getRoutes() {
           description:
             "Embeddable widgets, email swipe copy, and thank-you page blocks for Invisible Exit affiliates and partners.",
           url: `${SITE}/partners/embed`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Partners" },
+          ],
         },
       ],
     },
@@ -3108,10 +3265,22 @@ function getRoutes() {
   }
 
   // Hub pages for new content types
-  routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession — Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Revenue Targets by Profession", description: "Realistic paths to recurring revenue targets for 25 professions" }] } });
-  routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City — Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Side Business by City", description: "City-level guides for building a side business across the US" }] } });
-  routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills — 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Skill Monetization Guides", description: "How to turn your professional skills into recurring revenue" }] } });
-  routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience — 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Side Business Ideas by Audience", description: "Demographic-specific micro-SaaS and side business guides" }] } });
+  routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession — Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "Revenue Targets by Profession", description: "Realistic paths to recurring revenue targets for 25 professions" },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Revenue Targets" } ] }
+  ] } });
+  routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City — Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "Side Business by City", description: "City-level guides for building a side business across the US" },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities" } ] }
+  ] } });
+  routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills — 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "Skill Monetization Guides", description: "How to turn your professional skills into recurring revenue" },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Skills" } ] }
+  ] } });
+  routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience — 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "Side Business Ideas by Audience", description: "Demographic-specific micro-SaaS and side business guides" },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Audience" } ] }
+  ] } });
 
   return routes;
 }

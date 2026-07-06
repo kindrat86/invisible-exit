@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowRight, Check, LayoutDashboard } from "lucide-react";
+import { ArrowRight, Check, LayoutDashboard, TrendingDown } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
 import VideoPlaceholder from "@/components/oto/VideoPlaceholder";
 import ValueStack from "@/components/oto/ValueStack";
 import PriceCard from "@/components/oto/PriceCard";
@@ -34,6 +34,7 @@ const OTOFounding = () => {
 
   const handleUpgrade = async () => {
     trackEvent("oto_cta_clicked", { founders_toolkit: addToolkit });
+    trackGoogleConversion(17.99); // Fire Google Ads retargeting pixel
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke(
@@ -87,6 +88,17 @@ const OTOFounding = () => {
     const interval = setInterval(tick, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // ── TOTAL VALUE STACK CALCULATION ──
+  const VALUE_ITEMS = [
+    { name: "FYM Dashboard", value: "$12/mo" },
+    { name: "Idea Pipeline (500+ ideas + validation)", value: "$15/mo" },
+    { name: "Stealth Ops Hub (entity + compliance)", value: "$25/mo" },
+    { name: "Launch Control (go-live automation)", value: "$18/mo" },
+    { name: "Brand Manager (faceless content)", value: "$27/mo" },
+    { name: "Founding Perks (lifetime lock + beta + community + wall)", value: "$47/mo" },
+  ];
+  const TOTAL_VALUE = 12 + 15 + 25 + 18 + 27 + 47;
 
 
   return (
@@ -327,6 +339,36 @@ const OTOFounding = () => {
       {/* ─── 8. Price Card ─── */}
       <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
 
+      {/* ─── 8a. TOTAL VALUE STACK (Brunson Ch 10 — show savings %) ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-[720px] mx-auto">
+          <div className="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+            <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-4">Value Breakdown</p>
+            <div className="space-y-2 max-w-md mx-auto mb-4">
+              {VALUE_ITEMS.map((item) => (
+                <div key={item.name} className="flex items-center justify-between text-sm">
+                  <span className="text-white/60">{item.name}</span>
+                  <span className="text-white/40">{item.value}</span>
+                </div>
+              ))}
+              <div className="border-t border-white/10 pt-2 mt-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/80 font-semibold">Total Value</span>
+                  <span className="text-white/50 line-through">${TOTAL_VALUE}/month</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-white font-bold">Your Founding Price</span>
+                  <span className="text-[#60A5FA] font-bold text-lg">$17.99/month</span>
+                </div>
+                <p className="text-success text-xs mt-2">
+                  You save ${(TOTAL_VALUE - 17.99).toFixed(2)}/month ({Math.round((1 - 17.99 / TOTAL_VALUE) * 100)}% discount)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 8b. ORDER BUMP: Founder's Toolkit (Dotcom Secrets Ch 14) ─── */}
       <section className="px-6 py-6">
         <div className="max-w-[720px] mx-auto">
@@ -403,6 +445,23 @@ const OTOFounding = () => {
 
       {/* ─── 10. Guarantee Box ─── */}
       <GuaranteeBox />
+
+      {/* ─── 10a. WHAT HAPPENS IF YOU DO NOTHING (Brunson Ch 21) ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-[720px] mx-auto text-center">
+          <div className="bg-white/[0.03] border border-white/10 rounded-xl p-6">
+            <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-3">
+              What Happens If You Do Nothing?
+            </p>
+            <p className="text-white/60 text-sm leading-relaxed max-w-md mx-auto">
+              Nothing changes. You keep your job. You keep your 0.5% equity.{" "}
+              <strong className="text-white">6 months from now</strong>, you'll
+              be in the same spot — except the founding price will be gone.
+              You'll wish you'd locked it in when you had the chance.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ─── 11. Second CTA ─── */}
       <section className="px-6 py-12">

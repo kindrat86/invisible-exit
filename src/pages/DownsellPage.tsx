@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackGoogleConversion, trackRedditConversion } from "@/lib/analytics";
 
 /**
  * DOTCOM SECRETS: Chapter 15 — The Downsell
@@ -62,6 +62,8 @@ const DownsellPage = () => {
 
   const handleCheckout = async () => {
     trackEvent("downsell_purchased", { price: "9.99" });
+    trackGoogleConversion(9.99);
+    trackRedditConversion(9.99);
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke("create-checkout", {

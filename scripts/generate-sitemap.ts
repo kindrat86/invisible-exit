@@ -789,6 +789,19 @@ const submaps: Record<string, SitemapEntry[]> = {
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
+// Top languages for hreflang annotations (full list in src/i18n/languages.ts)
+const HREFLANG_LANGS = [
+  "es", "zh", "hi", "ar", "fr", "pt", "ja", "de", "ru", "ko",
+  "it", "tr", "nl", "pl", "uk", "id", "vi", "th", "fa", "he",
+  "bn", "ta", "te", "mr", "gu", "kn", "ml", "pa", "or", "ms",
+  "sw", "am", "ha", "yo", "ig", "zu", "xh", "af", "my", "km",
+  "lo", "ne", "si", "ps", "kk", "uz", "az", "ka", "hy", "mn",
+  "ceb", "ilo", "jv", "su", "mad", "hmn", "ku", "bal", "tg",
+  "tk", "sr", "hr", "bs", "sk", "sl", "lt", "lv", "et", "be",
+  "bg", "mk", "ca", "eu", "gl", "cy", "ga", "is", "gd", "br",
+  "lb", "mt", "fil", "bo", "ug", "nan", "wuu", "hak", "pcm",
+];
+
 const submapFiles: string[] = [];
 for (const [name, subs] of Object.entries(submaps)) {
   if (subs.length === 0) continue;
@@ -796,9 +809,13 @@ for (const [name, subs] of Object.entries(submaps)) {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
     subs.map(e => {
       let url = '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n';
-      // hreflang annotations
+      // hreflang annotations — English + all supported languages
+      const path = e.loc.replace('https://invisibleexit.com', '');
       url += '    <xhtml:link rel="alternate" hreflang="en" href="' + e.loc + '" />\n';
       url += '    <xhtml:link rel="alternate" hreflang="x-default" href="' + e.loc + '" />\n';
+      for (const lang of HREFLANG_LANGS) {
+        url += '    <xhtml:link rel="alternate" hreflang="' + lang + '" href="https://invisibleexit.com/' + lang + path + '" />\n';
+      }
       // Image annotation for blog posts
       if (e.loc.includes('/blog/') && !e.loc.includes('/category/')) {
         const slug = e.loc.split('/blog/')[1];

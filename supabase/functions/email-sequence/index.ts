@@ -49,6 +49,8 @@ const SEINFELD = [
   { day: 70, subject: "The 7-minute morning routine that replaced my commute energy", html: seinfeld10() },
   { day: 77, subject: "Year-end review: $0.97 → $4,000 MRR (the full timeline)", html: seinfeld11() },
   { day: 84, subject: "What I'd do differently if I started over tomorrow", html: seinfeld12() },
+  // DOTCOM SECRETS Ch 18: Bridge Email — soft OTO preview (sent right before the OTO hard offer)
+  { day: 91, subject: "The thing I kept hidden from 97% of my subscribers", html: bridgeEmailOto() },
 ];
 
 function wrap(day: string, title: string, bodyHtml: string, cta = true) {
@@ -105,11 +107,12 @@ function soap4() {
 }
 
 function soap5() {
-  return wrap("DAY 5", "The IPO clock is ticking.",
+  return wrap("DAY 5", "The IPO clock is ticking. And there's something I haven't told you yet.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Let me tell you about the most expensive word I know. "Someday."</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Someday I'll start something. Someday after the IPO. Someday when the kids are older.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month of MRR you'll never earn. At $4,000/month target, that's <strong>$48,000 per year of delay</strong>.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $0.97/month.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But there's something I haven't told you in this series. The basic tools show you where the door is. But there's a <strong>second layer</strong> — the founding member system — that actually gets you through it before it closes. Watch for that in an upcoming email. It's not available to everyone.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence — the one designed to move you from "thinking about it" to "doing it" — ends now.</p>`);
 }
 
@@ -199,6 +202,20 @@ function seinfeld12() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If I had to start from zero tomorrow, here's what I'd do differently:</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">1. I'd calculate my freedom number <strong>first</strong>, not after choosing an idea.<br>2. I'd set up entity separation <strong>before</strong> launching, not after.<br>3. I'd pick the most boring idea, not the most exciting one.<br>4. I'd charge from day one. No free tier. No "exposure."<br>5. I'd spend 80% of my time on distribution, 20% on building.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">These are the exact steps the Invisible Exit system walks you through. I learned them the hard way so you don't have to.</p>`);
+}
+
+// ═══ DOTCOM SECRETS Ch 18: BRIDGE EMAIL — Soft OTO Preview ═══
+// This email warms up subscribers for the OTO offer WITHOUT a hard sell.
+// It creates curiosity about a "second layer" of the system that only
+// founding members get access to. The CTA is a soft curiosity link.
+function bridgeEmailOto() {
+  return wrap("FROM THE TRENCHES", "The second layer.",
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Over the last few months, I've shared a lot of stories with you. The Amsterdam taxi. The $0.97 notification. The month I almost quit.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">And you already know about the 5 tools — the FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But here's something I haven't told most people. There's a <strong>second layer</strong> to this system. It's not more tools. It's not more content. It's a different tier of access entirely.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The basic tools show you where the door is. The second layer — the Founding Member layer — is what actually gets you through it before it closes.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I've limited it to 100 people. <strong>73 spots left.</strong> The price locks for life. After founding closes, it's gone forever.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">In my next email, I'll show you what's inside. If you don't want to know, skip it. But if you've been reading this far, you owe it to yourself to at least see what I'm talking about.</p>`);
 }
 
 // ═══ WIN-BACK SEQUENCE — Days 90, 95, 100 ═══

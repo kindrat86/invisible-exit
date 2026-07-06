@@ -14,6 +14,7 @@ import ReadingProgress from "./components/ReadingProgress.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
+import { AutoTranslate } from "@/i18n/AutoTranslate.tsx";
 const Index = lazy(() => import("./pages/Index.tsx"));
 
 // ── Lazy: all other routes (code-splitting for smaller initial bundle) ──
@@ -105,6 +106,8 @@ const HowToHubPage = lazy(() => import("./pages/HowToHubPage.tsx"));
 const IsItLegalHubPage = lazy(() => import("./pages/IsItLegalHubPage.tsx"));
 const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.tsx"));
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
+const JVPage = lazy(() => import("./pages/JVPage.tsx"));
+const HubAndSpokePage = lazy(() => import("./pages/HubAndSpokePage.tsx"));
 // ── Greg Isenberg pSEO Round 4 ──
 const SideHustlePage = lazy(() => import("./pages/SideHustlePage.tsx"));
 const BudgetStartPage = lazy(() => import("./pages/BudgetStartPage.tsx"));
@@ -193,12 +196,14 @@ const App = () => (
         <ErrorBoundary>
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center bg-background">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-10 h-10 rounded-full border-3 border-primary border-t-transparent animate-spin" />
-              <p className="text-sm text-muted-foreground">Loading…</p>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-8 h-8 rounded-full border-3 border-primary border-t-transparent animate-spin" />
+              <p className="text-sm text-muted-foreground animate-pulse">Loading…</p>
             </div>
           </div>
         }>
+        <AutoTranslate>
+        <div className="page-enter">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -373,6 +378,8 @@ const App = () => (
           <Route path="/explore" element={<ExploreHubPage />} />
           <Route path="/feeling-stuck" element={<ColdTrafficBridgePage />} />
           <Route path="/partners/embed" element={<IntegrationMarketingPage />} />
+          <Route path="/partners/jv" element={<JVPage />} />
+          <Route path="/content-strategy" element={<HubAndSpokePage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
@@ -387,6 +394,8 @@ const App = () => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
+        </AutoTranslate>
         </Suspense>
         </ErrorBoundary>
         <BackToTop />

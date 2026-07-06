@@ -86,6 +86,9 @@ const ProPage = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [applied, setApplied] = useState(false);
+  const [appStep, setAppStep] = useState(0);
+  const [situation, setSituation] = useState("");
+  const [paymentPlan, setPaymentPlan] = useState<"monthly" | "annual">("monthly");
 
   const handleApply = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,11 +99,18 @@ const ProPage = () => {
       await supabase
         .from("subscribers")
         .upsert(
-          { email, source: "pro_page_application" },
+          {
+            email,
+            source: "pro_page_application",
+            metadata: {
+              situation,
+              payment_plan: paymentPlan,
+            },
+          },
           { onConflict: "email" }
         );
       setApplied(true);
-      toast.success("Application received! Check your email.");
+      toast.success("Application received! Check your email within 48 hours.");
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
       console.error(err);
@@ -276,32 +286,133 @@ const ProPage = () => {
       {/* CTA */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
-          <h2 className="text-h1 text-white mb-4">Join Pro</h2>
-          <p className="text-body text-white/60 mb-8 max-w-xl mx-auto">
-            $47/month. Cancel anytime. 30-day money-back guarantee.
+          <h2 className="text-h1 text-white mb-4">Apply for Pro</h2>
+          <p className="text-body text-white/60 mb-6 max-w-xl mx-auto">
             Limited to 50 Pro members to keep coaching calls personal.
+            Applications reviewed within 48 hours.
           </p>
+
+          {/* DOTCOM SECRETS Ch 16: Payment Plan Toggle */}
+          {!applied && (
+            <div className="max-w-md mx-auto mb-6">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-2 flex gap-2">
+                <button
+                  onClick={() => setPaymentPlan("monthly")}
+                  className={`flex-1 py-3 px-4 rounded-lg font-semibold text-sm transition-all ${
+                    paymentPlan === "monthly"
+                      ? "bg-primary text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  $47/month
+                  <span className="block text-xs font-normal opacity-80">Cancel anytime</span>
+                </button>
+                <button
+                  onClick={() => setPaymentPlan("annual")}
+                  className={`flex-1 py-3 px-4 rounded-lg font-semibold text-sm transition-all ${
+                    paymentPlan === "annual"
+                      ? "bg-primary text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  $470/year
+                  <span className="block text-xs font-normal opacity-80">Save $94/year</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {!applied ? (
             <form onSubmit={handleApply} className="max-w-md mx-auto">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email to get started"
-                className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-4 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 mb-4 min-h-[52px]"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="btn-primary w-full text-lg"
-              >
-                {loading ? "Submitting..." : "Apply for Pro — $47/month"}
-                {!loading && <ArrowRight className="w-5 h-5" />}
-              </button>
-              <p className="text-white/40 text-xs mt-4">
-                Application reviewed within 48 hours. Payment link sent by email.
-              </p>
+              {/* DOTCOM SECRETS Ch 8: Qualify Backend Buyers — multi-step form */}
+              {appStep === 0 && (
+                <div className="animate-fade-in">
+                  <p className="text-white/40 text-xs mb-2 text-center">Step 1 of 3</p>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your best email"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-4 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 mb-4 min-h-[52px]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => email && setAppStep(1)}
+                    disabled={!email}
+                    className="btn-primary w-full text-lg disabled:opacity-40"
+                  >
+                    Continue →
+                  </button>
+                </div>
+              )}
+
+              {appStep === 1 && (
+                <div className="animate-fade-in">
+                  <p className="text-white/40 text-xs mb-3 text-center">Step 2 of 3</p>
+                  <p className="text-white/60 text-sm font-medium mb-4">What's your current situation?</p>
+                  <div className="space-y-2 mb-4">
+                    {[
+                      { val: "employed", label: "Employed — building on the side" },
+                      { val: "thinking", label: "Thinking about starting — need a system" },
+                      { val: "started", label: "Already started — need help scaling" },
+                      { val: "other", label: "Something else" },
+                    ].map((opt) => (
+                      <button
+                        key={opt.val}
+                        type="button"
+                        onClick={() => { setSituation(opt.val); setAppStep(2); }}
+                        className={`w-full py-3 px-4 rounded-lg text-left text-sm transition-all ${
+                          situation === opt.val
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setAppStep(0)}
+                    className="text-white/40 hover:text-white/60 text-xs py-2"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
+
+              {appStep === 2 && (
+                <div className="animate-fade-in">
+                  <p className="text-white/40 text-xs mb-3 text-center">Step 3 of 3</p>
+                  <p className="text-white/60 text-sm font-medium mb-4">
+                    {paymentPlan === "annual" ? "Lock in $470/year — save $94" : "Confirm $47/month"}
+                  </p>
+                  <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-4 text-center">
+                    <p className="text-white/50 text-xs">Your plan</p>
+                    <p className="text-white font-bold text-lg">{paymentPlan === "annual" ? "$470/year" : "$47/month"}</p>
+                    {paymentPlan === "annual" && <p className="text-primary-light text-xs">You save $94 vs monthly</p>}
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-primary w-full text-lg"
+                  >
+                    {loading ? "Submitting..." : `Apply for Pro — ${paymentPlan === "annual" ? "$470/year" : "$47/month"}`}
+                    {!loading && <ArrowRight className="w-5 h-5" />}
+                  </button>
+                  <p className="text-white/40 text-xs mt-3">
+                    30-day money-back guarantee. Cancel anytime.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setAppStep(1)}
+                    className="text-white/40 hover:text-white/60 text-xs py-2"
+                  >
+                    ← Back
+                  </button>
+                </div>
+              )}
             </form>
           ) : (
             <div className="max-w-md mx-auto card-glass p-8 animate-scale-in">

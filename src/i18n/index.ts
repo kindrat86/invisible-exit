@@ -38,41 +38,69 @@ function detectLanguageFromPath(): string {
   return DEFAULT_LANGUAGE;
 }
 
-// ── Dynamically import all locale files ──
-// We use a bundler glob pattern to import all .ts files in the locales directory.
-// For Vite, we'll use import.meta.glob.
-const localeModules = import.meta.glob("./locales/*.ts", { eager: true });
+// ── Load locale files — eager for English (default), lazy for others ──
+// English is always bundled (it's the default). Other locales load on demand.
+import { en } from "./locales/en";
 
 const resources: Record<string, { translation: Record<string, string> }> = {
   en: { translation: en },
 };
 
-for (const [path, module] of Object.entries(localeModules)) {
-  const match = path.match(/\/locales\/(.+)\.ts$/);
-  if (match) {
-    const code = match[1];
-    if (code !== "en") {
-      const mod = module as Record<string, unknown>;
-      // The exported const name varies; grab the first exported object that's not "en"
-      const exportedKey = Object.keys(mod).find((k) => k !== "default");
-      if (exportedKey && typeof mod[exportedKey] === "object") {
-        resources[code] = { translation: mod[exportedKey] as Record<string, string> };
-      }
+// Lazy-load other locales on demand (saves ~400KB from initial bundle)
+const localeLoaders = import.meta.glob("./locales/*.ts");
+
+async function loadLocale(code: string): Promise<Record<string, string> | null> {
+  if (code === "en") return en;
+  const path = `./locales/${code}.ts`;
+  const loader = localeLoaders[path];
+  if (!loader) return null;
+  try {
+    const mod = (await loader()) as Record<string, unknown>;
+    const exportedKey = Object.keys(mod).find((k) => k !== "default");
+    if (exportedKey && typeof mod[exportedKey] === "object") {
+      return mod[exportedKey] as Record<string, string>;
     }
+  } catch {
+    // Locale file not found or failed to load
   }
+  return null;
 }
 
 const detectedLang = detectLanguageFromPath();
+
+// List of all supported language codes (for supportedLngs)
+const ALL_LANG_CODES = Object.keys(LANGUAGE_MAP);
 
 i18n.use(initReactI18next).init({
   resources,
   lng: detectedLang,
   fallbackLng: DEFAULT_LANGUAGE,
-  supportedLngs: Object.keys(resources),
+  supportedLngs: ALL_LANG_CODES,
+  partialBundledLanguages: true, // allows adding languages after init
   interpolation: {
     escapeValue: false, // React already escapes
   },
   returnNull: false,
+});
+
+// If detected language is not English, load its locale file
+if (detectedLang !== "en") {
+  loadLocale(detectedLang).then((translations) => {
+    if (translations) {
+      i18n.addResourceBundle(detectedLang, "translation", translations, true, true);
+      i18n.changeLanguage(detectedLang); // trigger re-render with loaded translations
+    }
+  });
+}
+
+// Preload locale when language changes (for LanguageSwitcher)
+i18n.on("languageChanged", async (lng) => {
+  if (lng !== "en" && !i18n.hasResourceBundle(lng, "translation")) {
+    const translations = await loadLocale(lng);
+    if (translations) {
+      i18n.addResourceBundle(lng, "translation", translations, true, true);
+    }
+  }
 });
 
 // ── Set document direction for RTL languages ──

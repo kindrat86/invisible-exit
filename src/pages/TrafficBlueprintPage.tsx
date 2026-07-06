@@ -112,8 +112,8 @@ const TRAFFIC_ENGINES = [
     score: "50",
     gap: "55 posts avg 724 words. No definitive 3000+ word guides.",
     plan: "Publish 3 pillar guides (5000+ words each) as linkable assets.",
-    link: "/blog",
-    linkLabel: "Browse Current Content",
+    link: "/content-strategy",
+    linkLabel: "Hub-and-Spoke Content Strategy",
   },
   {
     icon: MessageSquare,

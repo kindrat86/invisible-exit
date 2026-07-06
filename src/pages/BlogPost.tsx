@@ -21,11 +21,23 @@ const slugifyCat = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function renderInlineMarkdown(text: string): string {
-  return text
+  // Escape HTML to prevent XSS
+  const escaped = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+
+  return escaped
     .replace(/\*\*(.+?)\*\*/g, "<strong class='text-foreground font-semibold'>$1</strong>")
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      "<a href='$2' class='text-primary hover:underline'>$1</a>"
+      (match, label: string, url: string) => {
+        // Only allow http/https/relative URLs (block javascript:, data:, etc.)
+        const safeUrl = /^(https?:\/\/|\/|#)/.test(url) ? url : "#";
+        return `<a href='${safeUrl}' class='text-primary hover:underline' rel='noopener noreferrer'>${label}</a>`;
+      }
     );
 }
 
@@ -105,6 +117,25 @@ const BlogPost = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  // Compute relatedPosts BEFORE any early return (React Hooks rules)
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    const explicit = (post.relatedSlugs || [])
+      .map((s) => blogPosts.find((p) => p.slug === s))
+      .filter(Boolean) as typeof blogPosts;
+
+    const fallback = blogPosts
+      .filter((candidate) => candidate.slug !== post.slug)
+      .filter(
+        (candidate) =>
+          candidate.category === post.category &&
+          !explicit.some((selected) => selected.slug === candidate.slug)
+      )
+      .slice(0, Math.max(0, 3 - explicit.length));
+
+    return [...explicit, ...fallback].slice(0, 3);
+  }, [post]);
+
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
@@ -183,23 +214,6 @@ const BlogPost = () => {
       })),
     });
   }
-
-  const relatedPosts = useMemo(() => {
-    const explicit = (post.relatedSlugs || [])
-      .map((s) => blogPosts.find((p) => p.slug === s))
-      .filter(Boolean) as typeof blogPosts;
-
-    const fallback = blogPosts
-      .filter((candidate) => candidate.slug !== post.slug)
-      .filter(
-        (candidate) =>
-          candidate.category === post.category &&
-          !explicit.some((selected) => selected.slug === candidate.slug)
-      )
-      .slice(0, Math.max(0, 3 - explicit.length));
-
-    return [...explicit, ...fallback].slice(0, 3);
-  }, [post]);
 
   const categoryGuide = CATEGORY_GUIDES[post.category];
   const categoryGuidePost = categoryGuide

@@ -8,11 +8,18 @@ import {
   Shield,
   Rocket,
   Palette,
+  ShieldCheck,
+  ArrowRight,
+  Zap,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import BuilderBadge from "@/components/BuilderBadge";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const TOOL_META: Record<
   string,
@@ -57,6 +64,33 @@ const Confirmation = () => {
   const [searchParams] = useSearchParams();
   const tier = searchParams.get("tier") || "tool";
   const tools = (searchParams.get("tools") || "fym").split(",");
+
+  // ── ORDER BUMP STATE (Dotcom Secrets Ch 14) ──
+  const [addToolkit, setAddToolkit] = useState(true);
+  const [toolkitLoading, setToolkitLoading] = useState(false);
+
+  const handleToolkitPurchase = async () => {
+    if (!addToolkit) return;
+    setToolkitLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke(
+        "create-checkout",
+        {
+          body: {
+            tier: "founders_toolkit",
+            returnUrl: window.location.origin + "/checkout/success",
+          },
+        }
+      );
+      if (error) throw error;
+      if (data?.url) window.location.href = data.url;
+    } catch (err) {
+      toast.error("Could not start checkout. Please try again.");
+      console.error(err);
+    } finally {
+      setToolkitLoading(false);
+    }
+  };
 
   useEffect(() => {
     document.title =
@@ -378,6 +412,63 @@ const Confirmation = () => {
               Available right now. After you leave this page, the price is $97.99/mo.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* DOTCOM SECRETS Ch 14: ORDER BUMP on Confirmation — add Founders Toolkit */}
+      <section className="py-12 px-6 bg-gradient-to-br from-amber-50 to-white">
+        <div className="mx-auto max-w-2xl">
+          <label className={`flex items-start gap-4 p-6 rounded-2xl border-2 cursor-pointer transition-all ${
+            addToolkit
+              ? "bg-amber-50 border-amber-400/50 shadow-md"
+              : "bg-white border-gray-200 hover:border-gray-300"
+          }`}>
+            <input
+              type="checkbox"
+              checked={addToolkit}
+              onChange={(e) => setAddToolkit(e.target.checked)}
+              className="mt-1.5 w-5 h-5 rounded accent-amber-500 shrink-0 cursor-pointer"
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className="text-gray-900 text-base font-bold">
+                  ☑ YES — Add the Founder's Toolkit
+                </span>
+                <span className="bg-amber-500/20 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  Save $60
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                47 email templates, 12 landing page frameworks, 25 micro-SaaS idea
+                blueprints, and the full Launch Control checklist. Everything you need
+                to ship your first product in 5 hours/week. Normally $97.
+              </p>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-gray-400 line-through">$97</span>
+                <span className="text-amber-600 font-bold">just $37 one-time</span>
+                <span className="text-gray-400 text-xs">(added to your purchase)</span>
+              </div>
+              <p className="text-gray-400 text-[11px] italic mt-2">
+                ☑ Checked by default — uncheck to skip
+              </p>
+              <button
+                onClick={handleToolkitPurchase}
+                disabled={toolkitLoading}
+                className="mt-3 w-full bg-amber-500 hover:bg-amber-400 text-white font-bold text-base py-3 px-6 rounded-xl transition-all disabled:opacity-50 min-h-[48px]"
+              >
+                {toolkitLoading ? "Processing..." : `Complete My Order — $${addToolkit ? 37 : 0}`}
+              </button>
+              <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-400">
+                <span className="flex items-center gap-1">
+                  <ShieldCheck className="w-3 h-3" /> Instant download
+                </span>
+                <span>·</span>
+                <span>14-day refund</span>
+                <span>·</span>
+                <span>Added to your account</span>
+              </div>
+            </div>
+          </label>
         </div>
       </section>
 

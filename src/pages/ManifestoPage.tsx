@@ -9,6 +9,7 @@ import {
   Eye,
   TrendingUp,
   Lock,
+  Headphones,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -355,6 +356,46 @@ const ManifestoPage = () => {
           <p className="text-sm text-muted-foreground mt-4">
             90 seconds. No credit card. The first step of the invisible exit.
           </p>
+        </div>
+      </section>
+
+      {/* EXPERT SECRETS Ch 7: Video Section — The Story in 3 Minutes */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary mb-4">Watch The Story</p>
+          <h2 className="text-h1 text-foreground mb-4">The Moment That Changed Everything</h2>
+          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
+            If you prefer watching over reading, here's the Amsterdam taxi story in 3 minutes.
+            Same story. Same system. Less text.
+          </p>
+          <div className="max-w-xl mx-auto">
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-surface-dark border border-border">
+              {/* Video placeholder — replace src with actual video URL when recorded */}
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="/og-image.png"
+                preload="metadata"
+              >
+                <source src="" type="video/mp4" />
+                <p className="flex items-center justify-center h-full text-muted-foreground text-sm p-8">
+                  <Headphones className="w-6 h-6 mr-3 shrink-0" />
+                  Video coming soon. In the meantime,{' '}
+                  <Link to="/story" className="text-primary hover:underline mx-1">
+                    read the full story here
+                  </Link>
+                  .
+                </p>
+              </video>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">
+              Can't see the video?{' '}
+              <Link to="/story" className="text-primary hover:underline">
+                Read the 10-chapter story
+              </Link>
+              {' '}— it's the same content, just text.
+            </p>
+          </div>
         </div>
       </section>
 

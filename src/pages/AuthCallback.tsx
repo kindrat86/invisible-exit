@@ -24,8 +24,8 @@ export default function AuthCallback() {
   }, [navigate]);
 
   return (
-        <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A]">
-              <p className="text-white animate-pulse">Completing sign-in...</p>p>
-        </div>div>
-      );
-}</div>
+    <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A]">
+      <p className="text-white animate-pulse">Completing sign-in...</p>
+    </div>
+  );
+}

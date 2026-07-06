@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { Mic, ArrowRight, ArrowLeft, Headphones } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { AudioNarrator } from "@/components/AudioNarrator";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -205,13 +206,47 @@ const StoryPage = () => {
             <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
             While Employed — Without Anyone Knowing
           </h1>
-          <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-8">
+          <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-4">
             10 chapters. 15 minutes. The Amsterdam taxi moment, Month 4 wall, the competitor
             who almost killed me, and the system that made all of it possible.
           </p>
+          {/* EXPERT SECRETS Ch 7: Audio narrator — listen instead of read */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <AudioNarrator activeChapter={activeChapter} />
+            <span className="text-white/30 text-xs">Listen with browser audio. Works on mobile.</span>
+          </div>
+          {/* EXPERT SECRETS Ch 3: New Category badge */}
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs text-primary-light font-medium">
+              This isn't a side-hustle story. It's the origin of a new category of business.
+            </span>
+          </div>
           <p className="text-white/40 text-sm">
-            This is the full Epiphany Bridge — from trapped to free. Read it in one sitting.
+            Start at Chapter 1 or jump to any chapter below. Read in one sitting.
           </p>
+        </div>
+      </section>
+
+      {/* EXPERT SECRETS Ch 7-8: Chapter preview grid */}
+      <section className="bg-white/5 border-y border-white/10 py-6">
+        <div className="container-narrow">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            {CHAPTERS.map((ch, i) => (
+              <button
+                key={ch.num}
+                onClick={() => setActiveChapter(i)}
+                className={`text-left p-3 rounded-xl transition-all ${
+                  i === activeChapter
+                    ? "bg-primary/20 border border-primary/30"
+                    : "bg-white/[0.03] border border-white/5 hover:bg-white/[0.06]"
+                }`}
+              >
+                <span className="text-[10px] uppercase tracking-wider text-primary-light font-semibold block mb-1">{ch.eyebrow}</span>
+                <p className="text-xs text-white font-medium leading-tight truncate-2">{ch.title}</p>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -247,7 +282,7 @@ const StoryPage = () => {
       {/* Chapter content */}
       <section className="section-wide py-16 sm:py-20">
         <div className="container-narrow" style={{ maxWidth: "42rem" }}>
-          <div key={activeChapter} className="animate-fade-in">
+          <div key={activeChapter} className="animate-fade-in" data-story-chapter>
             <p className="text-eyebrow text-primary-light mb-4">{chapter.eyebrow}</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">
               {chapter.title}
@@ -288,6 +323,31 @@ const StoryPage = () => {
       {activeChapter === CHAPTERS.length - 1 && (
         <section className="hero-dark section-wide animate-fade-in">
           <div className="container-narrow text-center">
+            {/* EXPERT SECRETS Ch 2 + 14: Reluctant Hero — vulnerability before the offer */}
+            <div className="max-w-lg mx-auto mb-10">
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-left">
+                <p className="text-eyebrow text-primary-light mb-3 text-center">A Note From Adrian</p>
+                <div className="space-y-4 text-white/60 text-sm leading-relaxed">
+                  <p>
+                    <strong className="text-white">I didn't want to build this.</strong> I wanted to keep
+                    building micro-SaaS products in peace. I wanted to collect my $4,100/month,
+                    walk into work calm, and go home. I didn't want to be a guru, a coach, or a
+                    movement leader. That's not my personality.
+                  </p>
+                  <p>
+                    But then a colleague pulled me aside and said: <em>"Something changed. What happened?"</em>
+                    And I realized: if I kept this to myself, I'd be no better than the company
+                    holding my 0.5% equity.
+                  </p>
+                  <p className="text-white font-medium">
+                    So I'm sharing it. Reluctantly. Imperfectly. But completely. Because the cage
+                    has a door, and I found the key. The least I can do is leave it unlocked for
+                    the next person.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <p className="text-eyebrow text-primary-light mb-4">Your Turn</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               This is the system that saved me 4 months of frustration.
