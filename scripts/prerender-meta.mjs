@@ -3046,6 +3046,7 @@ function getRoutes() {
         title: `Business Banking in ${bg.stateName} — Best Banks for LLCs & Side Businesses | Invisible Exit`,
         description: `Best business banking options in ${bg.stateName}. Compare ${recommendedBankCount} recommended banks for your LLC. Fees, features, and online banking options for ${bg.stateName} founders.`,
         url,
+        image: `${SITE}/og/banking-${bg.slug}.svg`,
         type: "article",
         jsonLd: [
           {
@@ -3089,6 +3090,7 @@ function getRoutes() {
         title: `Tax Guide for ${tg.stateName} — LLC & Side Business Taxes | Invisible Exit`,
         description: `Complete tax guide for side businesses and LLCs in ${tg.stateName}. Income tax rate: ${tg.incomeTaxRate}. Sales tax: ${tg.salesTaxNote}. Credits, deductions, filing deadlines.`,
         url,
+        image: `${SITE}/og/tax-${tg.slug}.svg`,
         type: "article",
         jsonLd: [
           {
@@ -3132,6 +3134,7 @@ function getRoutes() {
         title: `${tf.frameworkName} — Side Business Time Framework | Invisible Exit`,
         description: `${tf.description} ${tf.bestFor}. Weekly time commitment: ${tf.weeklyTimeCommitment}.`,
         url,
+        image: `${SITE}/og/time-${tf.slug}.svg`,
         type: "article",
         jsonLd: [
           {
@@ -3188,6 +3191,7 @@ function getRoutes() {
         title: `NDA Guide for ${ng.stateName} — Side Business & Non-Compete | Invisible Exit`,
         description: `NDA and non-compete guide for side businesses in ${ng.stateName}. Enforceability: ${ng.ndaEnforceability}. What to check in your employment agreement.`,
         url,
+        image: `${SITE}/og/nda-${ng.slug}.svg`,
         type: "article",
         jsonLd: [
           {
@@ -3231,6 +3235,7 @@ function getRoutes() {
         title: `Business Insurance in ${ig.stateName} — Side Business & LLC Coverage | Invisible Exit`,
         description: `Business insurance guide for side businesses and LLCs in ${ig.stateName}. General liability, professional liability, cyber insurance, and workers' comp requirements.`,
         url,
+        image: `${SITE}/og/insurance-${ig.slug}.svg`,
         type: "article",
         jsonLd: [
           {

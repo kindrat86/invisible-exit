@@ -40,8 +40,6 @@ function detectLanguageFromPath(): string {
 
 // ── Load locale files — eager for English (default), lazy for others ──
 // English is always bundled (it's the default). Other locales load on demand.
-import { en } from "./locales/en";
-
 const resources: Record<string, { translation: Record<string, string> }> = {
   en: { translation: en },
 };

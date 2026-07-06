@@ -191,4 +191,32 @@ for (const cp of cityProfessionPages) {
   count++;
 }
 
+// ── OG images for new pSEO categories (tax, banking, nda, insurance, time) ──
+const { taxGuides } = await import("../src/data/tax-guides.js");
+const { bankingGuides } = await import("../src/data/banking.js");
+const { ndaGuides } = await import("../src/data/nda-guides.js");
+const { insuranceGuides } = await import("../src/data/insurance.js");
+const { timeFrameworks } = await import("../src/data/time-frameworks.js");
+
+for (const t of taxGuides) {
+  writeFileSync(resolve(OUT, `tax-${t.slug}.svg`), generatePseoSvg(`Tax Guide: ${t.stateName}`, "Tax Guide"), "utf-8");
+  count++;
+}
+for (const b of bankingGuides) {
+  writeFileSync(resolve(OUT, `banking-${b.slug}.svg`), generatePseoSvg(`Banking Guide: ${b.stateName}`, "Banking Guide"), "utf-8");
+  count++;
+}
+for (const n of ndaGuides) {
+  writeFileSync(resolve(OUT, `nda-${n.slug}.svg`), generatePseoSvg(`NDA Guide: ${n.stateName}`, "NDA Guide"), "utf-8");
+  count++;
+}
+for (const i of insuranceGuides) {
+  writeFileSync(resolve(OUT, `insurance-${i.slug}.svg`), generatePseoSvg(`Insurance Guide: ${i.stateName}`, "Insurance Guide"), "utf-8");
+  count++;
+}
+for (const tf of timeFrameworks) {
+  writeFileSync(resolve(OUT, `time-${tf.slug}.svg`), generatePseoSvg(tf.frameworkName, "Time Framework"), "utf-8");
+  count++;
+}
+
 console.log(`✓ Generated ${count} OG images in public/og/`);

@@ -262,6 +262,24 @@ async function main() {
       changefreq: "monthly",
       priority: "0.6",
     },
+    {
+      loc: "https://invisibleexit.com/partners/jv",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/content-strategy",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: "https://invisibleexit.com/resources",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.7",
+    },
     // SEO Ghost Fix: Index pages added to sitemap
     { loc: "https://invisibleexit.com/best", lastmod: today, changefreq: "weekly", priority: "0.7" },
     { loc: "https://invisibleexit.com/guides", lastmod: today, changefreq: "weekly", priority: "0.7" },
