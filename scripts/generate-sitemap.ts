@@ -74,11 +74,15 @@ async function main() {
   const { audienceIdeas } = await import("../src/data/audience-ideas.js");
   const { cityProfessionPages } = await import("../src/data/city-profession.js");
 
+  // Greg Isenberg pSEO: Exit Strategy pages
+  const { exitStrategyPages } = await import("../src/data/exit-strategies.js");
+
   // Greg Isenberg pSEO Round 8
   const { taxGuides } = await import("../src/data/tax-guides.js");
   const { ndaGuides } = await import("../src/data/nda-guides.js");
   const { insuranceGuides } = await import("../src/data/insurance.js");
   const { timeFrameworks } = await import("../src/data/time-frameworks.js");
+  const { bankingGuides } = await import("../src/data/banking.js");
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = blogPosts
@@ -294,6 +298,18 @@ async function main() {
     // Traffic Secrets pages
     {
       loc: "https://invisibleexit.com/traffic-blueprint",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/hooks",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.8",
+    },
+    {
+      loc: "https://invisibleexit.com/growth",
       lastmod: today,
       changefreq: "monthly",
       priority: "0.8",
@@ -728,6 +744,15 @@ async function main() {
       priority: "0.8" as const,
     })),
     ...audienceIdeas.length > 0 ? [{ loc: "https://invisibleexit.com/audience", lastmod: today, changefreq: "monthly" as const, priority: "0.7" as const }] : [],
+    // Exit Strategy pages (Greg Isenberg pSEO)
+    ...exitStrategyPages.map((e: { slug: string }) => ({
+      loc: `https://invisibleexit.com/exit-strategies/${e.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.8" as const,
+    })),
+    // Hub page for exit strategies
+    exitStrategyPages.length > 0 ? { loc: "https://invisibleexit.com/exit-strategies", lastmod: today, changefreq: "weekly" as const, priority: "0.7" as const } : [],
     // City × Profession cross pages (Greg Isenberg Round 7)
     ...cityProfessionPages.map((cp: { citySlug: string; professionSlug: string }) => ({
       loc: `https://invisibleexit.com/cities/${cp.citySlug}/for/${cp.professionSlug}`,
@@ -764,13 +789,21 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
+    // ── Banking guides ──
+    { loc: "https://invisibleexit.com/banking", lastmod: today, changefreq: "weekly" as const, priority: "0.8" as const },
+    ...bankingGuides.map((bg: { slug: string }) => ({
+      loc: `https://invisibleexit.com/banking/${bg.slug}`,
+      lastmod: today,
+      changefreq: "monthly" as const,
+      priority: "0.7" as const,
+    })),
   ];
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const publicDir = resolve(__dirname, "../public");
 
   // ── Split sitemap into sub-sitemaps by type for better crawl efficiency ──
-// Google recommends max ~500 URLs per sitemap. We have 704, so we split.
+// Google recommends max ~500 URLs per sitemap. We have ~1,800 URLs, so we split.
 const submaps: Record<string, SitemapEntry[]> = {
   "core": entries.filter(e =>
     !e.loc.includes("/blog/") &&
@@ -810,7 +843,12 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/revenue/") &&
     !e.loc.includes("/cities/") &&
     !e.loc.includes("/skills/") &&
-    !e.loc.includes("/audience/")
+    !e.loc.includes("/audience/") &&
+    !e.loc.includes("/banking/") &&
+    !e.loc.includes("/tax-guides/") &&
+    !e.loc.includes("/nda-guides/") &&
+    !e.loc.includes("/insurance/") &&
+    !e.loc.includes("/time-frameworks/")
   ),
   "blog": entries.filter(e => e.loc.includes("/blog/")),
   "guides": entries.filter(e => e.loc.includes("/guides/")),
@@ -821,6 +859,11 @@ const submaps: Record<string, SitemapEntry[]> = {
   "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
   "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
   "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/") || e.loc.includes("/revenue/") || e.loc.includes("/cities/") || e.loc.includes("/skills/") || e.loc.includes("/audience/")),
+  "banking": entries.filter(e => e.loc.includes("/banking/")),
+  "tax-guides": entries.filter(e => e.loc.includes("/tax-guides/")),
+  "nda-guides": entries.filter(e => e.loc.includes("/nda-guides/")),
+  "insurance": entries.filter(e => e.loc.includes("/insurance/")),
+  "time-frameworks": entries.filter(e => e.loc.includes("/time-frameworks/")),
 };
 
 // Write each sub-sitemap (with hreflang + image annotations)
@@ -903,6 +946,7 @@ console.log(`  Budget start: ${budgetStartPages.length}`);
 console.log(`  Niches: ${niches.length}`);
 console.log(`  Tool reviews: ${toolReviews.length}`);
 console.log(`  Case studies: ${caseStudies.length}`);
+console.log(`  Exit strategies: ${exitStrategyPages.length}`);
 }
 
 main().catch((err) => {

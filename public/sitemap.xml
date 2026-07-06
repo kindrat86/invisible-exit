@@ -40,4 +40,24 @@
     <loc>https://invisibleexit.com/sitemap-ideas-builds.xml</loc>
     <lastmod>2026-07-06</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-banking.xml</loc>
+    <lastmod>2026-07-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-tax-guides.xml</loc>
+    <lastmod>2026-07-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-nda-guides.xml</loc>
+    <lastmod>2026-07-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-insurance.xml</loc>
+    <lastmod>2026-07-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://invisibleexit.com/sitemap-time-frameworks.xml</loc>
+    <lastmod>2026-07-06</lastmod>
+  </sitemap>
 </sitemapindex>

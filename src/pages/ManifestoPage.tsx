@@ -341,10 +341,22 @@ const ManifestoPage = () => {
           <h2 className="text-h1 text-foreground mb-4">
             If You've Read This Far, You're Already Different
           </h2>
-          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
+          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-4">
             97% of managers will read this and go back to their spreadsheet.
             3% will calculate their freedom number. That 3% is who this is for.
           </p>
+
+          {/* EXPERT SECRETS Ch 15: 5-Year Close micro-version */}
+          <div className="bg-surface border border-border rounded-xl p-5 max-w-lg mx-auto mb-8 text-left">
+            <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold mb-3">The Fork in the Road</p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+              <strong className="text-foreground">Path A:</strong> You close this tab. Five years from now, you're in the same chair, with the same 0.5%, telling the same story.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              <strong className="text-primary">Path B:</strong> You spend 90 seconds on one calculator. Five years from now, you own $8,000/month in recurring revenue — and your employer still has no idea.
+            </p>
+          </div>
+
           <Link
             to="/freedom"
             onClick={() => trackEvent("manifesto_final_cta")}
@@ -355,6 +367,9 @@ const ManifestoPage = () => {
           </Link>
           <p className="text-sm text-muted-foreground mt-4">
             90 seconds. No credit card. The first step of the invisible exit.
+          </p>
+          <p className="text-xs text-muted-foreground/50 mt-2 italic">
+            Because 6 months from now, you'll either have the number — or you'll still be guessing.
           </p>
         </div>
       </section>

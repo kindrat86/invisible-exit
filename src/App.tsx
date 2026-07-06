@@ -118,6 +118,8 @@ const ColdTrafficBridgePage = lazy(() => import("./pages/ColdTrafficBridgePage.t
 const IntegrationMarketingPage = lazy(() => import("./pages/IntegrationMarketingPage.tsx"));
 const JVPage = lazy(() => import("./pages/JVPage.tsx"));
 const HubAndSpokePage = lazy(() => import("./pages/HubAndSpokePage.tsx"));
+const HooksLibraryPage = lazy(() => import("./pages/HooksLibraryPage.tsx"));
+const GrowthHackingPage = lazy(() => import("./pages/GrowthHackingPage.tsx"));
 // ── Greg Isenberg pSEO Round 4 ──
 const SideHustlePage = lazy(() => import("./pages/SideHustlePage.tsx"));
 const BudgetStartPage = lazy(() => import("./pages/BudgetStartPage.tsx"));
@@ -135,6 +137,7 @@ const SkillMonetizationPage = lazy(() => import("./pages/SkillMonetizationPage.t
 // ── Greg Isenberg pSEO Round 7 ──
 const AudiencePage = lazy(() => import("./pages/AudiencePage.tsx"));
 const CityProfessionPage = lazy(() => import("./pages/CityProfessionPage.tsx"));
+const ExitStrategyPage = lazy(() => import("./pages/ExitStrategyPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -363,6 +366,10 @@ const App = () => (
           <Route path="/audience" element={<Navigate to="/blog" replace />} />
           <Route path="/cities/:citySlug/for/:professionSlug" element={<CityProfessionPage />} />
 
+          {/* ── Greg Isenberg pSEO: Exit Strategy pages ── */}
+          <Route path="/exit-strategies/:slug" element={<ExitStrategyPage />} />
+          <Route path="/exit-strategies" element={<Navigate to="/blog" replace />} />
+
           <Route path="/non-compete" element={<Navigate to="/blog" replace />} />
           {/* ── Funnel Pages ── */}
           <Route path="/freedom" element={<SqueezePage />} />
@@ -410,6 +417,8 @@ const App = () => (
           <Route path="/partners/embed" element={<IntegrationMarketingPage />} />
           <Route path="/partners/jv" element={<JVPage />} />
           <Route path="/content-strategy" element={<HubAndSpokePage />} />
+          <Route path="/hooks" element={<HooksLibraryPage />} />
+          <Route path="/growth" element={<GrowthHackingPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />

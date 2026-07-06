@@ -47,6 +47,13 @@ import { costAnalysisPages } from "../src/data/cost-analysis.js";
 import { howToGuides } from "../src/data/how-to-guides.js";
 import { isItLegalPages } from "../src/data/is-it-legal.js";
 
+// ── Banking / Tax / NDA / Insurance / Time Framework data ──
+import { bankingGuides } from "../src/data/banking.js";
+import { taxGuides } from "../src/data/tax-guides.js";
+import { ndaGuides } from "../src/data/nda-guides.js";
+import { insuranceGuides } from "../src/data/insurance.js";
+import { timeFrameworks } from "../src/data/time-frameworks.js";
+
 // ── Greg Isenberg pSEO Round 4 ──
 import { sideHustles } from "../src/data/side-hustles.js";
 import { budgetStartPages } from "../src/data/budget-start.js";
@@ -568,6 +575,360 @@ ${faqHtml}
 </div>`;
 }
 
+// ---------- Banking guide body ----------
+
+function bankingGuideBodyHtml(g: typeof bankingGuides[0]): string {
+  const bankCards = g.recommendedBanks.map((b: { name: string; bestFor: string; minDeposit: number; monthlyFee: number; features: string[] }) =>
+    `<div style="padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.25rem">${b.name}</h3>
+<p style="font-size:0.875rem;color:#6b7280;margin-bottom:0.5rem"><strong>Best for:</strong> ${b.bestFor}</p>
+<p style="font-size:0.875rem;color:#4b5563;margin-bottom:0.5rem">Min deposit: <strong>$${b.minDeposit}</strong> | Monthly fee: <strong>$${b.monthlyFee}</strong></p>
+<ul style="font-size:0.875rem;color:#4b5563;padding-left:1.25rem;margin:0">${b.features.map(f => `<li>${f}</li>`).join("")}</ul>
+</div>`
+  ).join("\n");
+  const onlineCards = g.onlineBankingOptions.map((o: { name: string; bestFor: string; features: string[] }) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem">
+<h3 style="font-weight:600;font-size:1rem;margin-bottom:0.25rem">${o.name}</h3>
+<p style="font-size:0.875rem;color:#6b7280;margin-bottom:0.5rem"><strong>Best for:</strong> ${o.bestFor}</p>
+<ul style="font-size:0.875rem;color:#4b5563;padding-left:1.25rem;margin:0">${o.features.map(f => `<li>${f}</li>`).join("")}</ul>
+</div>`
+  ).join("\n");
+  const tips = g.tips.map((t: string, i: number) => `<li style="margin-bottom:0.5rem;color:#4b5563">${t}</li>`).join("\n");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">${f.question}</h3>
+<p style="font-size:0.875rem;color:#475569">${f.answer}</p>
+</div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> \u203a <a href="/banking" style="color:#3B82F6;text-decoration:none">Banking</a> \u203a <span>${g.stateName}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Best Business Banks in ${g.stateName}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Corporate managers building side businesses in ${g.stateName} need a business bank account that keeps their side income separate from personal finances. This guide covers recommended banks with branch access in ${g.stateName} as well as online-only options that work anywhere.</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Recommended Business Banks in ${g.stateName}</h2>
+${bankCards}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Online Banking Options</h2>
+<p style="font-size:0.875rem;color:#6b7280;margin-bottom:1rem">Online-only banks work in every state. These are ideal for side businesses that don't need physical branches.</p>
+${onlineCards}
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Tips for ${g.stateName} Side Business Banking</h2>
+<ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem">${tips}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Tax guide body ----------
+
+function taxGuideBodyHtml(g: typeof taxGuides[0]): string {
+  const creditsHtml = g.availableCredits.map((c: { name: string; description: string }) =>
+    `<div style="padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.25rem">${c.name}</h3>
+<p style="font-size:0.875rem;color:#4b5563;line-height:1.5">${c.description}</p>
+</div>`
+  ).join("\n");
+  const deductionsHtml = g.deductions.map((d: string) =>
+    `<li style="margin-bottom:0.5rem;color:#4b5563">${d}</li>`
+  ).join("\n");
+  const burdenHtml = g.estimatedTaxBurden.map((b: { revenue: string; totalRate: string; estimatedTax: string }) =>
+    `<tr style="border-top:1px solid #e5e7eb">
+<td style="padding:0.75rem;font-weight:500">${b.revenue}</td>
+<td style="padding:0.75rem;color:#4b5563">${b.totalRate}</td>
+<td style="padding:0.75rem;font-weight:600">${b.estimatedTax}</td>
+</tr>`
+  ).join("\n");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">${f.question}</h3>
+<p style="font-size:0.875rem;color:#475569">${f.answer}</p>
+</div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> \u203a <a href="/tax-guides" style="color:#3B82F6;text-decoration:none">Tax Guides</a> \u203a <span>${g.stateName}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Side Business Tax Guide for ${g.stateName}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">Income tax rate: <strong>${g.incomeTaxRate}</strong> | Self-employment: ${g.selfEmploymentTaxNote}</p>
+<p style="font-size:1rem;color:#4b5563;margin-bottom:1rem">Sales tax note: ${g.salesTaxNote}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4;border-left:4px solid #22c55e;margin:0 1.5rem 2rem;border-radius:0.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1rem;margin-bottom:0.5rem">Estimated Tax Burden</h2>
+<table style="width:100%;font-size:0.875rem;border-collapse:collapse">
+<thead>
+<tr><th style="text-align:left;padding:0.5rem;font-weight:600">Revenue</th><th style="text-align:left;padding:0.5rem;font-weight:600">Total Rate</th><th style="text-align:left;padding:0.5rem;font-weight:600">Estimated Tax</th></tr>
+</thead>
+<tbody>${burdenHtml}</tbody>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Available Tax Credits</h2>
+${creditsHtml}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Deductions for Side Businesses in ${g.stateName}</h2>
+<ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem">${deductionsHtml}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Key Deadlines</h2>
+<p style="line-height:1.7;color:#4b5563;margin-bottom:1rem"><strong>Filing deadline:</strong> ${g.filingDeadlines}</p>
+<p style="line-height:1.7;color:#4b5563"><strong>Quarterly payments:</strong> ${g.quarterlyPaymentInfo}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- NDA guide body ----------
+
+function ndaGuideBodyHtml(g: typeof ndaGuides[0]): string {
+  const enforceLabel = g.ndaEnforceability === "strong" ? "Strongly Enforced" : g.ndaEnforceability === "moderate" ? "Moderately Enforced" : g.ndaEnforceability === "weak" ? "Weak Enforcement" : "Varies by Circumstance";
+  const enforceColor = g.ndaEnforceability === "strong" ? "#dc2626" : g.ndaEnforceability === "moderate" ? "#d97706" : g.ndaEnforceability === "weak" ? "#16a34a" : "#6b7280";
+  const checkItems = g.whatToCheck.map((c: string) =>
+    `<li style="margin-bottom:0.75rem;padding:0.75rem;background:#f9fafb;border-radius:0.375rem;font-size:0.875rem;color:#4b5563">${c}</li>`
+  ).join("\n");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">${f.question}</h3>
+<p style="font-size:0.875rem;color:#475569">${f.answer}</p>
+</div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> \u203a <a href="/nda-guides" style="color:#3B82F6;text-decoration:none">NDA Guides</a> \u203a <span>${g.stateName}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">NDA Guide for Side Business Founders in ${g.stateName}</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">How non-disclosure agreements affect your ability to start a side business in ${g.stateName}.</p>
+<div style="display:inline-block;padding:0.5rem 1rem;background:${enforceColor}15;color:${enforceColor};border-radius:9999px;font-weight:700;font-size:0.875rem">${enforceLabel}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6;border-radius:0.5rem;margin:0 1.5rem 2rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1rem;margin-bottom:0.5rem">Key Rules in ${g.stateName}</h2>
+<p style="font-size:0.875rem;line-height:1.6;color:#1f2937">${g.ndaKeyRules}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Implications</h2>
+<p style="line-height:1.7;color:#4b5563">${g.sideBusinessImplications}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">What to Check in Your NDA</h2>
+<ul style="list-style:none;padding:0">${checkItems}</ul>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Insurance guide body ----------
+
+function insuranceGuideBodyHtml(g: typeof insuranceGuides[0]): string {
+  const policyCards = g.recommendedPolicies.map((p: { name: string; description: string; typicalCost: string; bestFor: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">${p.name}</h3>
+<p style="font-size:0.875rem;color:#4b5563;margin-bottom:0.5rem">${p.description}</p>
+<p style="font-size:0.875rem;color:#6b7280"><strong>Cost:</strong> ${p.typicalCost} | <strong>Best for:</strong> ${p.bestFor}</p>
+</div>`
+  ).join("\n");
+  const costRows = g.costEstimates.map((c: { revenueLevel: string; monthlyPremiumEstimate: string; notes: string }) =>
+    `<tr style="border-top:1px solid #e5e7eb">
+<td style="padding:0.75rem;font-weight:500;font-size:0.875rem">${c.revenueLevel}</td>
+<td style="padding:0.75rem;color:#4b5563;font-size:0.875rem">${c.monthlyPremiumEstimate}</td>
+<td style="padding:0.75rem;color:#6b7280;font-size:0.875rem">${c.notes}</td>
+</tr>`
+  ).join("\n");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">${f.question}</h3>
+<p style="font-size:0.875rem;color:#475569">${f.answer}</p>
+</div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> \u203a <a href="/insurance" style="color:#3B82F6;text-decoration:none">Insurance</a> \u203a <span>${g.stateName}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Business Insurance in ${g.stateName} for Side Business Founders</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">General liability required: <strong>${g.generalLiabilityRequired ? "Yes" : "No (but recommended)"}</strong> | Workers comp required: <strong>${g.workersCompRequired ? "Yes" : "No"}</strong></p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6;border-radius:0.5rem;margin:0 1.5rem 2rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1rem;margin-bottom:0.5rem">State-Specific Rules</h2>
+<p style="font-size:0.875rem;line-height:1.6;color:#1f2937">${g.stateSpecificRules}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Recommended Insurance Policies</h2>
+${policyCards}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Cost Estimates by Revenue Level</h2>
+<table style="width:100%;font-size:0.875rem;border-collapse:collapse;background:white;border-radius:0.5rem;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.05)">
+<thead>
+<tr style="background:#f1f5f9">
+<th style="text-align:left;padding:0.75rem;font-weight:600">Revenue Level</th>
+<th style="text-align:left;padding:0.75rem;font-weight:600">Monthly Premium</th>
+<th style="text-align:left;padding:0.75rem;font-weight:600">Notes</th>
+</tr>
+</thead>
+<tbody>${costRows}</tbody>
+</table>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Time framework body ----------
+
+function timeFrameworkBodyHtml(g: typeof timeFrameworks[0]): string {
+  const stepCards = g.steps.map((s: { title: string; description: string; duration: string }) =>
+    `<div style="display:flex;gap:1rem;padding:1rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:0.75rem">
+<div style="width:7rem;flex-shrink:0">
+<p style="font-size:0.75rem;font-weight:700;color:#3B82F6">${s.duration}</p>
+</div>
+<div>
+<h3 style="font-weight:600;font-size:1rem;margin-bottom:0.25rem">${s.title}</h3>
+<p style="font-size:0.875rem;color:#4b5563;line-height:1.5">${s.description}</p>
+</div>
+</div>`
+  ).join("\n");
+  const toolTags = (Array.isArray(g.toolsNeeded) ? g.toolsNeeded : [g.toolsNeeded]).map((t: string) =>
+    `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`
+  ).join("");
+  const faqs = g.faqs.map((f: { question: string; answer: string }) =>
+    `<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:1rem">
+<h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">${f.question}</h3>
+<p style="font-size:0.875rem;color:#475569">${f.answer}</p>
+</div>`
+  ).join("\n");
+  return `<div class="min-h-screen">
+<nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
+<a href="/" style="color:#3B82F6;text-decoration:none">Home</a> \u203a <a href="/time-frameworks" style="color:#3B82F6;text-decoration:none">Time Frameworks</a> \u203a <span>${g.frameworkName}</span>
+</nav>
+<section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">${g.frameworkName}</h1>
+<p style="font-size:1rem;color:#6b7280;margin-bottom:0.5rem">By <strong>${g.author}</strong></p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1rem">${g.description}</p>
+<p style="font-size:0.875rem;color:#6b7280;margin-bottom:0.5rem"><strong>Best for:</strong> ${g.bestFor}</p>
+<p style="font-size:0.875rem;color:#6b7280"><strong>Weekly commitment:</strong> ${g.weeklyTimeCommitment}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Steps</h2>
+${stepCards}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f8fafc">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Tools Needed</h2>
+<div>${toolTags}</div>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f0fdf4;border-left:4px solid #22c55e;border-radius:0.5rem;margin:0 1.5rem 2rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1rem;margin-bottom:0.5rem">Expected Results</h2>
+<p style="font-size:0.875rem;line-height:1.6;color:#1f2937">${g.results}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#fef2f2;border-left:4px solid #dc2626;border-radius:0.5rem;margin:0 1.5rem 2rem">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-weight:700;font-size:1rem;margin-bottom:0.5rem">Common Mistakes</h2>
+<p style="font-size:0.875rem;line-height:1.6;color:#1f2937">${g.commonMistakes}</p>
+</div>
+</section>
+<section style="padding:2rem 1.5rem;background-color:#f9fafb">
+<div style="max-width:48rem;margin:0 auto">
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Frequently Asked Questions</h2>
+${faqs}
+</div>
+</section>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto">
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
+</div>
+</section>
+</div>`;
+}
+
+// ---------- Inject body into existing HTML file ----------
 // ---------- Inject body into existing HTML file ----------
 
 function injectBody(filePath: string, bodyHtml: string): boolean {
@@ -2257,6 +2618,31 @@ function main() {
   for (const cp of cityProfessionPages) {
     const filePath = resolve(DIST, "cities", cp.citySlug, "for", cp.professionSlug, "index.html");
     if (injectBody(filePath, cityProfessionBodyHtml(cp))) { count++; }
+  }
+
+  // ── pSEO: Banking Guides ──
+  for (const bg of bankingGuides) {
+    if (injectBody(resolve(DIST, "banking", bg.slug, "index.html"), bankingGuideBodyHtml(bg))) { count++; }
+  }
+
+  // ── pSEO: Tax Guides ──
+  for (const tg of taxGuides) {
+    if (injectBody(resolve(DIST, "tax-guides", tg.slug, "index.html"), taxGuideBodyHtml(tg))) { count++; }
+  }
+
+  // ── pSEO: NDA Guides ──
+  for (const ng of ndaGuides) {
+    if (injectBody(resolve(DIST, "nda-guides", ng.slug, "index.html"), ndaGuideBodyHtml(ng))) { count++; }
+  }
+
+  // ── pSEO: Insurance Guides ──
+  for (const ig of insuranceGuides) {
+    if (injectBody(resolve(DIST, "insurance", ig.slug, "index.html"), insuranceGuideBodyHtml(ig))) { count++; }
+  }
+
+  // ── pSEO: Time Frameworks ──
+  for (const tf of timeFrameworks) {
+    if (injectBody(resolve(DIST, "time-frameworks", tf.slug, "index.html"), timeFrameworkBodyHtml(tf))) { count++; }
   }
 
   console.log(`Done. Injected body content into ${count} pages.`);
@@ -4212,3 +4598,4 @@ ${relatedLinksSection([
 </div></section>
 </div>`;
 }
+

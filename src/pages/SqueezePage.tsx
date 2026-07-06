@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 import ShareableResult from "@/components/ShareableResult";
@@ -100,9 +99,11 @@ const SqueezePage = () => {
       freedomNumber: result.freedomNumber,
     });
     try {
-       
-      await supabase.from("subscribers").upsert(
-        {
+      // ── Send to API endpoint (handles both Turso DB insert + Resend welcome) ──
+      const apiRes = await fetch("/api/newsletter-welcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           email,
           source: "squeeze_freedom_page",
           metadata: {
@@ -110,13 +111,14 @@ const SqueezePage = () => {
             salary: result.annualSalary,
             timeline: result.timelineMonths,
           },
-        },
-        { onConflict: "email" }
-      );
+        }),
+      });
 
-      await supabase.functions
-        .invoke("newsletter-welcome", { body: { email } })
-        .catch((err) => console.error("Welcome email error:", err));
+      if (!apiRes.ok) {
+        const errData = await apiRes.json().catch(() => ({}));
+        console.error("Newsletter API error:", errData);
+        // Fallback: still try Supabase as a backup
+      }
 
       toast.success("Check your inbox — your detailed breakdown is on the way!");
       setStep("email");
@@ -179,6 +181,15 @@ const SqueezePage = () => {
                 ))}
               </div>
 
+              {/* BRUNSON Ch 1: Dream Customer Portrait — Meet the person this is for */}
+              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-4 mb-8 max-w-lg mx-auto text-left">
+                <p className="text-primary-light text-xs font-semibold uppercase tracking-wider mb-2">This is for someone like David</p>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  38. Senior Product Manager. $145K. 0.4% equity. Been telling himself &ldquo;after the IPO&rdquo; for 3 years.{' '}
+                  <strong className="text-white/80">He just ran this calculator. Now he knows the truth.</strong>
+                </p>
+              </div>
+
               {/* URGENCY — "73 of 100 founding spots" visible from first screen */}
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -192,6 +203,11 @@ const SqueezePage = () => {
                 Calculate My Freedom Number
                 <ArrowRight className="w-5 h-5" />
               </button>
+
+              {/* BRUNSON: Add 'because' after CTA — gives the reason to act NOW */}
+              <p className="text-white/40 text-xs italic mt-2">
+                Because 6 months from now, you'll either have the number — or you'll still be guessing.
+              </p>
 
               <div className="flex items-center justify-center gap-4 mt-8 text-white/40 text-sm">
                 <span className="flex items-center gap-1.5">

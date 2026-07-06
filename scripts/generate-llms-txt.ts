@@ -55,6 +55,7 @@ import { caseStudies } from "../src/data/case-studies.js";
 import { revenueTargets } from "../src/data/revenue-targets.js";
 import { cities } from "../src/data/cities.js";
 import { skills } from "../src/data/skills.js";
+import { exitStrategyPages } from "../src/data/exit-strategies.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
@@ -108,6 +109,8 @@ function generateLlmsTxt(): string {
   lines.push(`- [Affiliate Assets](https://invisibleexit.com/affiliate-assets): Swipe copy and creative assets for affiliates`);
   lines.push(`- [Podcast Pitch Kit](https://invisibleexit.com/podcast-pitch): Pitch templates for anonymous podcast outreach`);
   lines.push(`- [Backlink Strategy](https://invisibleexit.com/backlink-strategy): Step-by-step backlink acquisition playbook`);
+  lines.push(`- [Hooks Library](https://invisibleexit.com/hooks): 50+ ready-to-deploy content hooks for social media`);
+  lines.push(`- [Growth Hacking](https://invisibleexit.com/growth): Viral loop engine and butterfly marketing framework`);
   lines.push("");
 
   // ── Blog Posts by Category ──
@@ -476,6 +479,13 @@ function generateLlmsTxt(): string {
   lines.push("");
   for (const s of skills) {
     lines.push(`- [${s.h1}](${SITE}/skills/${s.slug}): ${s.intro?.substring(0, 120) || "Monetize " + s.skill}`);
+  }
+  lines.push("");
+
+  lines.push("## Exit Strategy Guides");
+  lines.push("");
+  for (const e of exitStrategyPages) {
+    lines.push(`- [${e.h1}](${SITE}/exit-strategies/${e.slug}): ${e.intro.substring(0, 120)}`);
   }
   lines.push("");
 

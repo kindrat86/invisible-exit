@@ -22,6 +22,7 @@ import { resources } from "../src/data/resources.ts";
 import { alternatives } from "../src/data/alternatives.ts";
 import { salaries } from "../src/data/salaries.ts";
 import { revenueMilestones } from "../src/data/revenue-milestones.ts";
+import { exitStrategyPages } from "../src/data/exit-strategies.ts";
 import { timelines } from "../src/data/timelines.ts";
 import { professionStacks } from "../src/data/profession-stacks.ts";
 import { costOfWaitingPages } from "../src/data/cost-of-waiting.ts";
@@ -1604,6 +1605,8 @@ function getRoutes() {
     { path: "/affiliate-assets", title: "Affiliate Assets — Swipe Copy, Emails, Banners | Invisible Exit", desc: "Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring.", type: "website" },
     { path: "/podcast-pitch", title: "Podcast Pitch Kit — Story Formats & Outreach Templates | Invisible Exit", desc: "The Amsterdam taxi story in 5/15/45-minute formats plus cold pitch templates for podcast outreach. Everything you need to get on shows.", type: "website" },
     { path: "/backlink-strategy", title: "Backlink Strategy — Guest Posts, HARO & Link Building Framework | Invisible Exit", desc: "The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy.", type: "website" },
+    { path: "/hooks", title: "The Hooks Library — 50+ Ready-to-Deploy Content Hooks | Invisible Exit", desc: "The master swipe file of content hooks for corporate escape content. Categorized by the 6 Story Gaps, awareness level, and platform. Copy and deploy.", type: "website" },
+    { path: "/growth", title: "Growth Hacking Framework — The Viral Loop Engine | Invisible Exit", desc: "How Invisible Exit builds virality into every step of the funnel. 7 viral mechanics, the full viral loop diagram, and viral coefficient estimates for each.", type: "website" },
     // Expert Secrets pages
     { path: "/founding-wall", title: "The Founding Wall — Meet the First 27 Builders | Invisible Exit", desc: "The first 27 Invisible Exit members. Their freedom numbers, their products, their stories. 73 spots remaining.", type: "website" },
     { path: "/frameworks", title: "The 3 Proprietary Frameworks — Origin Stories | Invisible Exit", desc: "The Salary-Runway Method, Triple-Separation Protocol, and Cartridge System. Each framework's origin story and methodology.", type: "website" },
@@ -2652,6 +2655,97 @@ function getRoutes() {
     },
   });
 
+  // Traffic Secrets Ch 15-16: JV Partnership Page (Secret #15)
+  routes.push({
+    path: "/partners/jv",
+    meta: {
+      title: "JV Partnership — 50% Revenue Share for Creators | Invisible Exit",
+      description:
+        "Joint Venture partnership offer for creators with audiences of corporate professionals. 50% revenue share (not affiliate commission), co-branded landing pages, and custom offers for your audience.",
+      url: `${SITE}/partners/jv`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "JV Partnership — 50% Revenue Share",
+          description:
+            "Joint Venture partnership: 50% revenue share, co-branded pages, custom offers for creators with corporate professional audiences.",
+          url: `${SITE}/partners/jv`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Partners", item: `${SITE}/partners/embed` },
+            { "@type": "ListItem", position: 3, name: "JV Partnership" },
+          ],
+        },
+      ],
+    },
+  });
+
+  // Traffic Secrets Ch 11-12: Hub-and-Spoke Content Strategy (Secret #11)
+  routes.push({
+    path: "/content-strategy",
+    meta: {
+      title: "Hub-and-Spoke Content Strategy — The Pillar Framework | Invisible Exit",
+      description:
+        "The complete hub-and-spoke content strategy: 5 pillar guides (3,500-5,000 words each) with 10+ supporting spokes per hub, targeting high-volume keywords and building domain authority through linkable assets.",
+      url: `${SITE}/content-strategy`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Hub-and-Spoke Content Strategy",
+          description:
+            "The pillar content framework: 5 definitive guides with supporting spokes, targeting high-volume keywords for organic traffic growth.",
+          url: `${SITE}/content-strategy`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Content Strategy" },
+          ],
+        },
+      ],
+    },
+  });
+
+  // Traffic Secrets: Resources Hub (Secret #16 — Ballot Box / Ball-in-Play)
+  routes.push({
+    path: "/resources",
+    meta: {
+      title: "Free Resources — Calculators, Guides & Templates | Invisible Exit",
+      description:
+        "Free tools and resources for building an invisible side business: freedom number calculator, state guides, employment contract checklists, idea validation frameworks, and launch templates.",
+      url: `${SITE}/resources`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Free Resources — Calculators, Guides & Templates",
+          description:
+            "Free tools for building a side business while employed: calculators, state guides, checklists, and templates.",
+          url: `${SITE}/resources`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Resources" },
+          ],
+        },
+      ],
+    },
+  });
+
   // ---------- Tool Alternatives pages ----------
   for (const ta of toolAlternatives) {
     const url = `${SITE}/alternatives/to/${ta.slug}`;
@@ -3515,6 +3609,29 @@ function getRoutes() {
   routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience — 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [
     { "@context": "https://schema.org", "@type": "WebPage", name: "Side Business Ideas by Audience", description: "Demographic-specific micro-SaaS and side business guides" },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Audience" } ] }
+  ] } });
+
+  // ---------- Greg Isenberg pSEO: Exit Strategy pages ----------
+  for (const e of exitStrategyPages) {
+    const url = `${SITE}/exit-strategies/${e.slug}`;
+    routes.push({
+      path: `/exit-strategies/${e.slug}`,
+      meta: {
+        title: e.metaTitle,
+        description: e.metaDescription,
+        url, type: "article",
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Article", headline: e.h1, description: e.intro, author: ADRIAN_PERSON, publisher: { "@type": "Organization", name: SITE_NAME, url: SITE }, mainEntityOfPage: { "@type": "WebPage", "@id": url } },
+          { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Exit Strategies" }, { "@type": "ListItem", position: 3, name: e.h1 } ] },
+          { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: e.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+        ],
+      },
+    });
+  }
+  // Hub entry for exit-strategies
+  routes.push({ path: "/exit-strategies", meta: { title: "How to Sell a Micro SaaS: Complete Exit Strategy Guides | Invisible Exit", description: "Learn how to sell a micro-SaaS business: valuation multiples, buyer types, marketplace comparison, and 90-day prep checklist for a premium exit.", url: `${SITE}/exit-strategies`, type: "website", jsonLd: [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "Exit Strategy Guides", description: "Complete guides to selling your micro-SaaS business" },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Exit Strategies" } ] }
   ] } });
 
   return routes;

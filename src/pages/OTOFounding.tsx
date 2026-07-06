@@ -545,6 +545,24 @@ const OTOFounding = () => {
         </div>
       </section>
 
+      {/* ─── 13.5. What Happens If You Do Nothing (Brunson Ch 21) ─── */}
+      <section className="px-6 py-8">
+        <div className="max-w-xl mx-auto bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+          <p className="text-white/40 text-xs uppercase tracking-wide font-semibold mb-3">
+            What happens if you do nothing?
+          </p>
+          <p className="text-white/60 text-sm leading-relaxed">
+            Your $0.97/month tools will still work. Your dashboard will still run. But{' '}
+            <strong className="text-white/80">the founding price expires in {14 - Math.floor((Date.now() - new Date('2026-07-06').getTime()) / (1000 * 60 * 60 * 24)) > 0 ? 'a few' : '0'} days</strong>.
+            After that, it's $9.99/month forever. And the founding wall — your name on the list of
+            people who believed first — closes permanently.
+          </p>
+          <p className="text-primary-light text-sm font-semibold mt-3">
+            Every day you wait is another day of $9.99/month you'll never get back.
+          </p>
+        </div>
+      </section>
+
       {/* ─── 14. Footer ─── */}
       <Footer />
     </div>

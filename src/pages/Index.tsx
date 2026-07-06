@@ -387,6 +387,7 @@ const Index = () => {
                 title: "Your Job Is the Perfect Launchpad",
                 story: "I almost quit. Resignation letter drafted. Then I did the math: my salary funds my build without dilution. Full-time founders raise $500K and give up 20%. I give up nothing. My P&L skills? Solo founders don't have them. My 5 hours/week constraint? It forces focus that 60-hour founders can't replicate.",
                 epiphany: "The vehicle isn't a startup. The vehicle is YOUR JOB.",
+                microEpiphany: "My salary was funding 14 months of building without giving up a single share. A VC would have charged 20%. My job gave it to me for free.",
                 steps: ["Calculate your effective hourly rate", "Identify 5 hours of weekly dead time", "Map corporate skills → founder skills"],
               },
               {
@@ -395,6 +396,7 @@ const Index = () => {
                 title: "Anonymity Is Your Greatest Asset",
                 story: "Week 3. Team call. Colleague says: 'This website looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent.",
                 epiphany: "Anonymity isn't hiding. It's freedom to fail without consequences.",
+                microEpiphany: "Three seconds of panic proved the system worked. Not because I was lucky — because detection was mathematically impossible.",
                 steps: ["Separate the legal entity (Wyoming LLC)", "Separate the digital footprint (hosting, Stripe, domain)", "Separate the identity (no name, no LinkedIn, no cross-link)"],
               },
               {
@@ -403,6 +405,7 @@ const Index = () => {
                 title: "The System Beats the Idea",
                 story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one. It made $9/month. So I pivoted. Second product: $47/month. Third: $850. Fourth: $4,100. The system didn't care which idea I picked.",
                 epiphany: "Build the system first. Swap ideas like cartridges.",
+                microEpiphany: "The system didn't care which idea I picked. The wrong idea made $9/month — but the system was already built. So I pivoted and the system still worked.",
                 steps: ["Build the 5-tool pipeline first", "Launch the 'wrong' idea to test the system", "Pivot ideas without rebuilding infrastructure"],
               },
             ].map((secret) => (
@@ -417,6 +420,12 @@ const Index = () => {
                 <p className="text-caption text-muted-foreground italic mb-3 leading-relaxed border-l-2 border-primary/30 pl-4">
                   "{secret.story}"
                 </p>
+                {/* EXPERT SECRETS Ch 8: Micro-Epiphany — the specific "aha" moment per secret */}
+                <div className="bg-primary/5 border border-primary/15 rounded-lg p-2.5 mb-3">
+                  <p className="text-xs text-primary italic leading-relaxed">
+                    ✦ {secret.microEpiphany}
+                  </p>
+                </div>
                 <div className="bg-surface rounded-lg p-3 mb-3 space-y-1.5">
                   {secret.steps.map((step, si) => (
                     <div key={si} className="flex items-start gap-2">
@@ -755,7 +764,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Vehicle Belief */}
+            {/* Vehicle Belief — BROKEN WITH A STORY, NOT LOGIC (Expert Secrets Ch 7-8) */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-red-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-red-100 text-red-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -765,11 +774,15 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-3">
                 "I need to quit my job to build something real."
               </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                <strong className="text-foreground">The truth:</strong> Your job IS the vehicle.
-                Your salary is non-dilutive runway. Your corporate skills are exactly what solo
-                founders lack. Your 5-hour constraint forces a focus that 60-hour founders can't replicate.
-              </p>
+              {/* EPIPHANY BRIDGE MICRO-STORY (Russell: beliefs break with stories, not arguments) */}
+              <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
+                <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
+                  I almost quit. Resignation letter drafted. Then I looked at my bank account: my salary had quietly funded 14 months of building — without giving up a single share. A VC would have charged me 20% of the company for the same runway. My job gave it to me for free. The only cost was 5 hours a week that I'd been spending on Netflix anyway.
+                </p>
+                <p className="text-xs text-foreground font-semibold">
+                  That's when it clicked: the job wasn't the obstacle. It was the best funding round I never had to pitch for.
+                </p>
+              </div>
               <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-3">
                 <p className="text-xs text-red-700">
                   <strong>False belief:</strong> "Employment and entrepreneurship are mutually exclusive."
@@ -782,7 +795,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Internal Belief */}
+            {/* Internal Belief — MICRO-STORY */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-amber-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-amber-100 text-amber-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -792,12 +805,14 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-3">
                 "I don't have the skills to build a product."
               </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                <strong className="text-foreground">The truth:</strong> You manage teams, run P&Ls,
-                execute roadmaps, navigate stakeholders. Those ARE founder skills. The technical
-                part is the smallest piece — AI and no-code handle that. Your unfair advantage is
-                operational excellence, not code.
-              </p>
+              <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
+                <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
+                  Month 3. I was staring at a half-built landing page, convinced I was too corporate to do this. Then my developer cancelled. I had no choice — I managed the build myself. And I realized something: I already knew how to scope a project, set a deadline, communicate with users, read a P&L, and ship under pressure. Those aren't "corporate skills." Those are the exact skills that separate founders who ship from founders who stall.
+                </p>
+                <p className="text-xs text-foreground font-semibold">
+                  I shipped the landing page myself that weekend. It converted at 3.2%. No code required — just the operational judgment I'd been undervaluing for 15 years.
+                </p>
+              </div>
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3">
                 <p className="text-xs text-amber-700">
                   <strong>False belief:</strong> "I'm not technical enough to build software."
@@ -810,7 +825,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* External Belief */}
+            {/* External Belief — MICRO-STORY */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-blue-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-blue-100 text-blue-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -820,12 +835,14 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-3">
                 "If I build something, my employer will find out."
               </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                <strong className="text-foreground">The truth:</strong> With proper entity
-                separation — different name, different LLC, different Stripe, different hosting —
-                the connection is mathematically zero. I built for 14 months with zero detection.
-                A colleague even found a similar site on a call. Nothing traced back.
-              </p>
+              <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
+                <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
+                  Week 3 of building. My colleague said during a team call: "Hey, has anyone seen this website? It looks like something we'd build." My blood ran cold for 3 seconds. Then I remembered: different name, different LLC, different Stripe, different hosting, different market. Zero digital connection. The call moved on. Nobody ever mentioned it again. Those 3 seconds of panic proved the system worked — and they were the best $25/month I've ever spent.
+                </p>
+                <p className="text-xs text-foreground font-semibold">
+                  14 months later: still invisible. Not because I'm clever — because the Triple-Separation Protocol made detection mathematically impossible, not just unlikely.
+                </p>
+              </div>
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
                 <p className="text-xs text-blue-700">
                   <strong>False belief:</strong> "Anything I build online is traceable to me."
@@ -1097,6 +1114,15 @@ const Index = () => {
             <p className="text-caption text-center mt-4">
               That's $3,924/year in value for $11.64/year. 99.7% off. For founding members who start now.
             </p>
+
+            {/* BRUNSON Ch 11: The One Thing — simplify the offer to ONE sentence with "because" */}
+            <div className="mt-6 bg-primary/10 border border-primary/25 rounded-xl p-4 text-center">
+              <p className="text-xs text-primary-light uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
+              <p className="text-white font-bold text-base">Get all 5 tools for $0.97/month. Cancel anytime.</p>
+              <p className="text-white/50 text-xs mt-1">
+                Because every month you wait is $4,000 in MRR you'll never recover.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1373,6 +1399,26 @@ const Index = () => {
           <p className="text-body text-white/60 mb-2">
             The 97% would have left by now. The fact that you're still here means something.
           </p>
+
+          {/* EXPERT SECRETS Ch 15: The "5 Years From Now" Close — All-or-Nothing framing */}
+          <div className="max-w-2xl mx-auto my-10 bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8 text-left">
+            <p className="text-eyebrow text-primary-light mb-4 text-center">Five Years From Now</p>
+            <div className="space-y-4 text-white/60 text-sm sm:text-base leading-relaxed">
+              <p>
+                Picture yourself five years from today. Two versions of you exist.
+              </p>
+              <p>
+                <strong className="text-white/40">Version one:</strong> You closed this page. You went back to the spreadsheet. The IPO happened — or it didn't. You're still in the same chair, with the same 0.5%, telling yourself the same story about "someday." Five more years of golden handcuffs. Five more years of someone else owning your exit.
+              </p>
+              <p>
+                <strong className="text-primary-light">Version two:</strong> You calculated your freedom number today. You started small — 5 hours a week, one boring product, one anonymous LLC. Today, five years later, you have $8,000/month in recurring revenue from products you own. You walk into meetings differently. You negotiate differently. You're still employed — but by choice, not by necessity. The handcuffs came off quietly, three years ago, and nobody at your company ever noticed.
+              </p>
+              <p className="text-white font-medium pt-2">
+                Same person. Same salary. Same 5 hours. The only difference is what you decided to do in the next 90 seconds.
+              </p>
+            </div>
+          </div>
+
           <p className="text-body text-white/60 mb-10 max-w-xl mx-auto">
             You have two choices. Keep scrolling. Or find out how close you are to walking through it.
           </p>

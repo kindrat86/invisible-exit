@@ -39,6 +39,8 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Affiliate Assets](https://invisibleexit.com/affiliate-assets): Swipe copy and creative assets for affiliates
 - [Podcast Pitch Kit](https://invisibleexit.com/podcast-pitch): Pitch templates for anonymous podcast outreach
 - [Backlink Strategy](https://invisibleexit.com/backlink-strategy): Step-by-step backlink acquisition playbook
+- [Hooks Library](https://invisibleexit.com/hooks): 50+ ready-to-deploy content hooks for social media
+- [Growth Hacking](https://invisibleexit.com/growth): Viral loop engine and butterfly marketing framework
 
 ## Blog: AI Tools
 
@@ -1627,6 +1629,13 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [How to Make Money with Sales Skills](https://invisibleexit.com/skills/sales): Sales is the ultimate business skill — nothing happens until somebody sells something. Your ability to identify prospect
 - [How to Make Money Teaching](https://invisibleexit.com/skills/teaching): Teaching is a deeply monetizable skill in the online economy. Your ability to break down complex topics and guide learni
 - [How to Make Money with Automation Skills](https://invisibleexit.com/skills/automation): Automation is one of the highest-value skills in 2026. Every business wastes hours on repetitive tasks that could be aut
+
+## Exit Strategy Guides
+
+- [How to Sell a Micro SaaS: The Complete Exit Guide](https://invisibleexit.com/exit-strategies/micro-saas-exit-guide): You've built a micro-SaaS generating $1K-$20K/month. Now you want to exit — or at least understand what your business is
+- [How to Value a Micro SaaS Business](https://invisibleexit.com/exit-strategies/how-to-value-a-micro-saas): Valuing a micro-SaaS is different from valuing a VC-backed startup. There's no hockey-stick growth to project. There's n
+- [Micro SaaS Acquisition Prep Checklist (90-Day Plan)](https://invisibleexit.com/exit-strategies/micro-saas-acquisition-checklist): You want to sell your micro-SaaS for the highest possible price. The difference between a 'quick flip' and a 'premium ex
+- [Acquire.com vs MicroAcquire vs Flippa: Which Marketplace to Sell Your Micro SaaS](https://invisibleexit.com/exit-strategies/acquire-dot-com-vs-microacquire): You've prepped your micro-SaaS for sale. Now where do you list it? The three major marketplaces — Acquire.com (formerly 
 
 ## Topics Covered
 

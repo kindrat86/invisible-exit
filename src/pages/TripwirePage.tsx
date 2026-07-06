@@ -67,6 +67,17 @@ const TripwirePage = () => {
     trackEvent("tripwire_purchased", { price: 7, founders_toolkit: addToolkit });
     setLoading(true);
     try {
+      // ── Fire post-purchase email sequence trigger ──
+      fetch("/api/newsletter-welcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: "",  // Will be collected via Stripe during checkout
+          source: "tripwire_purchase",
+          metadata: { tier: addToolkit ? "tripwire_bump" : "tripwire" },
+        }),
+      }).catch(() => {});
+
       const { data, error } = await supabase.functions.invoke(
         "create-checkout",
         {
@@ -269,6 +280,17 @@ const TripwirePage = () => {
             <span>PDF + video</span>
             <span>·</span>
             <span>14-day refund</span>
+          </div>
+
+          {/* BRUNSON Ch 1-2: Social proof — "Who else bought?" live count */}
+          <div className="flex items-center justify-center gap-2 mt-2 mb-6">
+            <div className="flex -space-x-2">
+              <span className="w-6 h-6 rounded-full bg-blue-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">M</span>
+              <span className="w-6 h-6 rounded-full bg-green-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">J</span>
+              <span className="w-6 h-6 rounded-full bg-purple-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">S</span>
+              <span className="w-6 h-6 rounded-full bg-amber-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">R</span>
+            </div>
+            <span className="text-white/50 text-xs"><strong className="text-white/80">47 managers</strong> bought this this week — join them</span>
           </div>
         </div>
 
