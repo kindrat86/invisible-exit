@@ -665,6 +665,30 @@
     {
       "source": "/best/:slug",
       "destination": "/best/:slug.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/citations",
+      "destination": "/citations.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/answers",
+      "destination": "/answers.html"
+    },
+    {
+      "source": "/AGENTS.md",
+      "destination": "/agents.md"
+    },
+    {
+      "source": "/agents.md",
+      "destination": "/agents.md"
     }
   ],
   "crons": [

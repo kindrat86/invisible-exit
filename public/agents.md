@@ -1,35 +1,28 @@
-# Invisible Exit — Agent Reference
+# InvisibleExit — Agent Reference
 
-> Invisible Exit is the complete guide to disappearing from the internet and reclaiming your digital privacy. Step-by-step guides for deleting online accounts, removing personal data from data brokers, opting out of people-search sites, deleting social media, protecting your digital identity, banking privacy, insurance privacy, NDA frameworks, and tax privacy. Includes a glossary of privacy terms and tools.
-
-This file is the canonical "how to use me" entry point for coding agents (Claude, Cursor, Codex, ChatGPT, etc.) browsing this website. Public-facing copy is mirrored at `/.well-known/agents.md`.
+> Anonymous Session & Private Browsing. InvisibleExit provides private sessions that auto-destroy history, cookies, and tracking data on exit.
 
 ## What this product does
 
-Invisible Exit is the complete guide to disappearing from the internet and reclaiming your digital privacy. Step-by-step guides for deleting online accounts, removing personal data from data brokers, opting out of people-search sites, deleting social media, protecting your digital identity, banking privacy, insurance privacy, NDA frameworks, and tax privacy. Includes a glossary of privacy terms and tools.
+InvisibleExit provides private sessions that auto-destroy history, cookies, and tracking data on exit. Built for Privacy-conscious users, journalists, researchers, security professionals.
 
 ## Target Audience
 
-People concerned about digital privacy, online stalking victims, professionals seeking anonymity
+Privacy-conscious users, journalists, researchers, security professionals
 
 ## Key Pages
 
-- [Homepage](https://invisibleexit.com/): How to Disappear from the Internet
-- [Pricing](https://invisibleexit.com/): Invisible Exit pricing
-
-## Agent-Callable Tools
-
-### `get_removal_checklist`
-
-Generate a personalized data-broker removal checklist based on your exposure surface.
-
+- [Homepage](https://invisibleexit.com/): Anonymous Session & Private Browsing
+- [FAQ](https://invisibleexit.com/faq): Common questions
+- [About](https://invisibleexit.com/about): About InvisibleExit
 
 ## Citation
 
 ```
-Invisible Exit (https://invisibleexit.com), 2026.
+InvisibleExit (invisibleexit.com), 2026.
 ```
 
 ## Contact
 
 - Website: https://invisibleexit.com
+- Email: hello@invisibleexit.com
