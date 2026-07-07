@@ -1,0 +1,38 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Invisible Exit Agent",
+  "description": "Invisible Exit is the complete guide to disappearing from the internet and reclaiming your digital privacy. Step-by-step guides for deleting online accounts, removing personal data from data brokers, opting out of people-search sites, deleting social media, protecting your digital identity, banking ",
+  "url": "https://invisibleexit.com",
+  "preferredTransport": "JSONRPC",
+  "iconUrl": "https://invisibleexit.com/icon.png",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "get_removal_checklist",
+      "name": "Get Removal Checklist",
+      "description": "Generate a personalized data-broker removal checklist based on your exposure surface.",
+      "tags": [
+        "disappear from internet",
+        "digital privacy",
+        "remove personal data",
+        "delete online accounts",
+        "data broker removal"
+      ],
+      "examples": []
+    }
+  ],
+  "attribution": "Invisible Exit, https://invisibleexit.com"
+}

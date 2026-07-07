@@ -1,63 +1,30 @@
-User-agent: *
+User-Agent: *
+Disallow: /api/auth/
+Disallow: /api/webhook/
+Disallow: /api/cron/
+Disallow: /dashboard/
+Disallow: /account/
+Disallow: /login/
+
+User-Agent: GPTBot
 Allow: /
 
-# AI Crawlers - explicitly allow
-User-agent: GPTBot
+User-Agent: ChatGPT-User
 Allow: /
 
-User-agent: ChatGPT-User
+User-Agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-Agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
+User-Agent: anthropic-ai
 Allow: /
 
-User-agent: Perplexity-User
+User-Agent: Google-Extended
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Pinterestbot
-Allow: /
-
-User-agent: Twitterbot
+User-Agent: Bingbot
 Allow: /
 
 Sitemap: https://invisibleexit.com/sitemap.xml
-
-# LLM context pages
-# https://invisibleexit.com/llms.txt
-# https://invisibleexit.com/llms-full.txt
