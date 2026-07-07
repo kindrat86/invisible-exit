@@ -1,5 +1,61 @@
-const { readFileSync, existsSync } = require('fs');
-const { join } = require('path');
+const SITE_CONFIG = {
+  "protocolVersion": "0.3.0",
+  "name": "Invisible Exit Agent",
+  "description": "Invisible Exit is the complete guide to disappearing from the internet and reclaiming your digital privacy. Step-by-step guides for deleting online accounts, removing personal data from data brokers, opting out of people-search sites, deleting social media, protecting your digital identity, banking ",
+  "url": "https://invisibleexit.com",
+  "preferredTransport": "JSONRPC",
+  "iconUrl": "https://invisibleexit.com/icon.png",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "get_removal_checklist",
+      "name": "Get Removal Checklist",
+      "description": "Generate a personalized data-broker removal checklist based on your exposure surface.",
+      "tags": [
+        "disappear from internet",
+        "digital privacy",
+        "remove personal data",
+        "delete online accounts",
+        "data broker removal"
+      ],
+      "examples": []
+    }
+  ],
+  "attribution": "Invisible Exit, https://invisibleexit.com",
+  "content": [
+    {
+      "title": "Invisible Exit \u2014 Digital Privacy",
+      "url": "https://invisibleexit.com/",
+      "description": "Remove your digital footprint. Data broker opt-out, people search removal.",
+      "type": "homepage"
+    },
+    {
+      "title": "Invisible Exit Pricing",
+      "url": "https://invisibleexit.com/pricing",
+      "description": "One-time and subscription privacy removal plans.",
+      "type": "pricing"
+    },
+    {
+      "title": "How It Works",
+      "url": "https://invisibleexit.com/how-it-works",
+      "description": "Step-by-step digital footprint removal process.",
+      "type": "guide"
+    }
+  ]
+};
 
 module.exports = function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,29 +64,7 @@ module.exports = function handler(req, res) {
   
   if (req.method === 'OPTIONS') return res.status(200).end();
 
-  let siteConfig;
-  try {
-    const paths = [
-      join(process.cwd(), '.well-known', 'agent-card.json'),
-      join(process.cwd(), 'public', '.well-known', 'agent-card.json'),
-      join(process.cwd(), '..', '.well-known', 'agent-card.json'),
-    ];
-    for (const p of paths) {
-      if (existsSync(p)) {
-        siteConfig = JSON.parse(readFileSync(p, 'utf-8'));
-        break;
-      }
-    }
-    if (!siteConfig) throw new Error('not found');
-  } catch (e) {
-    return res.status(200).json({
-      name: require('path').basename(process.cwd()),
-      description: 'Site description not yet configured',
-      url: `https://${process.env.VERCEL_URL || 'example.com'}`,
-      capabilities: [],
-      content: []
-    });
-  }
+  const siteConfig = SITE_CONFIG;
 
   if (req.method === 'GET') {
     return res.status(200).json(siteConfig);
@@ -83,7 +117,7 @@ module.exports = function handler(req, res) {
     default:
       return res.status(200).json({
         jsonrpc: '2.0',
-        error: { code: -32601, message: `Method not found: ${method}` },
+        error: { code: -32601, message: 'Method not found: ' + method },
         id
       });
   }
