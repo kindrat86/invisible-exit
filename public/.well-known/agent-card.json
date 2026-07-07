@@ -34,5 +34,25 @@
       "examples": []
     }
   ],
-  "attribution": "Invisible Exit, https://invisibleexit.com"
+  "attribution": "Invisible Exit, https://invisibleexit.com",
+  "content": [
+    {
+      "title": "Invisible Exit \u2014 Digital Privacy",
+      "url": "https://invisibleexit.com/",
+      "description": "Remove your digital footprint. Data broker opt-out, people search removal.",
+      "type": "homepage"
+    },
+    {
+      "title": "Invisible Exit Pricing",
+      "url": "https://invisibleexit.com/pricing",
+      "description": "One-time and subscription privacy removal plans.",
+      "type": "pricing"
+    },
+    {
+      "title": "How It Works",
+      "url": "https://invisibleexit.com/how-it-works",
+      "description": "Step-by-step digital footprint removal process.",
+      "type": "guide"
+    }
+  ]
 }
