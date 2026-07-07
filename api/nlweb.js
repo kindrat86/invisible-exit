@@ -1,108 +1,53 @@
-/**
- * NLWeb Endpoint — Vite / Express / Vercel Serverless
- * ---------------------------------------------------------------------------
- * Spec: https://nlweb.dev
- *
- * Framework-agnostic JS version. Works as:
- *   1. Vercel serverless function → place at  api/nlweb.js
- *   2. Express route              → app.get/post("/api/nlweb", handler)
- *   3. Vite middleware            → adapt with connect-style wrapper
- *
- * Config: reads `a2a-config.json` from repo root (shared with A2A endpoint).
- */
+const { readFileSync, existsSync } = require('fs');
+const { join } = require('path');
 
-const fs = require("fs");
-const path = require("path");
+module.exports = function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  if (req.method === 'OPTIONS') return res.status(200).end();
 
-let cachedConfig = null;
-
-function loadConfigSync() {
-  if (cachedConfig) return cachedConfig;
-  const cfgPath =
-    process.env.A2A_CONFIG_PATH ||
-    path.join(process.cwd(), "a2a-config.json");
+  let siteConfig;
   try {
-    cachedConfig = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
-  } catch {
-    cachedConfig = {
-      siteName: "Unconfigured Site",
-      description:
-        "NLWeb endpoint installed but no a2a-config.json found at repo root.",
-      domain: "",
-      capabilities: [],
-      contentItems: [],
-    };
-  }
-  return cachedConfig;
-}
-
-function rankContent(query, items) {
-  const q = (query || "").toLowerCase();
-  const terms = q.split(/\s+/).filter((t) => t.length > 2);
-  if (terms.length === 0) return items || [];
-  return (items || [])
-    .map((it) => {
-      const haystack = `${it.title} ${it.description}`.toLowerCase();
-      let score = 0;
-      for (const t of terms) if (haystack.includes(t)) score += 1;
-      return { item: it, score };
-    })
-    .filter((x) => x.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .map((x) => x.item);
-}
-
-function setCors(res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-}
-
-async function handler(req, res) {
-  setCors(res);
-  if (req.method === "OPTIONS") {
-    res.status(204);
-    return res.end();
+    const paths = [
+      join(process.cwd(), '.well-known', 'agent-card.json'),
+      join(process.cwd(), 'public', '.well-known', 'agent-card.json'),
+      join(process.cwd(), '..', '.well-known', 'agent-card.json'),
+    ];
+    for (const p of paths) {
+      if (existsSync(p)) {
+        siteConfig = JSON.parse(readFileSync(p, 'utf-8'));
+        break;
+      }
+    }
+    if (!siteConfig) throw new Error('not found');
+  } catch (e) {
+    return res.status(200).json({ query: '', results: [], total: 0 });
   }
 
-  if (req.method !== "GET" && req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  const query = req.query?.query || req.body?.query || '';
+  const limit = parseInt(req.query?.limit || req.body?.limit || '10');
 
-  const cfg = loadConfigSync();
-
-  // Accept query from body (POST) or query string (GET)
-  const query =
-    (req.body && req.body.query) ||
-    (req.query && req.query.query) ||
-    (req.query && req.query.q) ||
-    "";
-
-  // No query → return site manifest (NLWeb discovery form)
-  if (!query || !query.trim()) {
-    return res.status(200).json({
-      site: cfg.siteName,
-      description: cfg.description,
-      domain: cfg.domain,
-      content: cfg.contentItems,
-      capabilities: cfg.capabilities,
-    });
-  }
-
-  const results = rankContent(query, cfg.contentItems);
+  const results = (siteConfig.content || []).filter(item => {
+    if (!query) return true;
+    const q = String(query).toLowerCase();
+    return (item.title || '').toLowerCase().includes(q) ||
+           (item.description || '').toLowerCase().includes(q);
+  }).slice(0, limit);
 
   return res.status(200).json({
     query,
-    site: cfg.siteName,
-    results: results.map((r) => ({
-      title: r.title,
-      url: r.url,
-      description: r.description,
+    results: results.map(c => ({
+      url: c.url,
+      name: c.title,
+      description: c.description,
+      site_name: siteConfig.name,
+      site_url: siteConfig.url,
+      type: c.type || 'webpage',
+      score: 1.0
     })),
     total: results.length,
+    ai_answer: query ? `${siteConfig.name}: ${siteConfig.description}` : undefined
   });
-}
-
-module.exports = handler;
-module.exports.default = handler;
-module.exports.handler = handler;
+};

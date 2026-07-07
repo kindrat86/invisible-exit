@@ -1,213 +1,90 @@
-/**
- * A2A (Agent-to-Agent) Protocol Endpoint — Vite / Express / Vercel Serverless
- * ---------------------------------------------------------------------------
- * Protocol: https://github.com/google/agent-to-agent  (JSON-RPC 2.0)
- *
- * This is the framework-agnostic JS version. It works as:
- *   1. A Vercel serverless function  → place at  api/a2a.js
- *      (uses Vercel's Node req/res signature — identical to this handler)
- *   2. An Express route              → app.post("/api/a2a", handler)
- *   3. A Vite middleware             → plugin.middlewares.use(...) adapter
- *
- * Config: reads `a2a-config.json` from the repo root (or CONFIG_PATH env).
- *
- * Supported JSON-RPC methods:
- *   - "agent/info"         — identity + protocol version
- *   - "agent/capabilities" — what this agent can do
- *   - "agent/query"        — natural-language query over site content
- */
+const { readFileSync, existsSync } = require('fs');
+const { join } = require('path');
 
-// ---------------------------------------------------------------------------
-// Config loading
-// ---------------------------------------------------------------------------
+module.exports = function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  if (req.method === 'OPTIONS') return res.status(200).end();
 
-const fs = require("fs");
-const path = require("path");
-
-let cachedConfig = null;
-
-function loadConfigSync() {
-  if (cachedConfig) return cachedConfig;
-  const cfgPath =
-    process.env.A2A_CONFIG_PATH ||
-    path.join(process.cwd(), "a2a-config.json");
+  let siteConfig;
   try {
-    cachedConfig = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
-  } catch {
-    cachedConfig = {
-      siteName: "Unconfigured Site",
-      description:
-        "A2A endpoint installed but no a2a-config.json found at repo root.",
-      domain: "",
+    const paths = [
+      join(process.cwd(), '.well-known', 'agent-card.json'),
+      join(process.cwd(), 'public', '.well-known', 'agent-card.json'),
+      join(process.cwd(), '..', '.well-known', 'agent-card.json'),
+    ];
+    for (const p of paths) {
+      if (existsSync(p)) {
+        siteConfig = JSON.parse(readFileSync(p, 'utf-8'));
+        break;
+      }
+    }
+    if (!siteConfig) throw new Error('not found');
+  } catch (e) {
+    return res.status(200).json({
+      name: require('path').basename(process.cwd()),
+      description: 'Site description not yet configured',
+      url: `https://${process.env.VERCEL_URL || 'example.com'}`,
       capabilities: [],
-      contentItems: [],
-    };
+      content: []
+    });
   }
-  return cachedConfig;
-}
 
-// ---------------------------------------------------------------------------
-// Method handlers
-// ---------------------------------------------------------------------------
+  if (req.method === 'GET') {
+    return res.status(200).json(siteConfig);
+  }
 
-function handleAgentInfo(cfg) {
-  return {
-    protocolVersion: cfg.protocolVersion || "0.3.0",
-    name: cfg.siteName,
-    description: cfg.description,
-    url: cfg.domain,
-    preferredTransport: "JSONRPC",
-    version: "1.0.0",
-    capabilities: {
-      streaming: false,
-      pushNotifications: false,
-      stateTransitionHistory: false,
-    },
-    defaultInputModes: ["text/plain", "application/json"],
-    defaultOutputModes: ["text/plain", "application/json"],
-    skills: (cfg.capabilities || []).map((c) => ({
-      id: c.name,
-      name: c.name,
-      description: c.description,
-      tags: c.examples || [],
-      examples: c.examples || [],
-    })),
-    ...(cfg.contact ? { contact: cfg.contact } : {}),
-    attribution: `${cfg.siteName}, ${cfg.domain}`,
-  };
-}
+  const { jsonrpc, method, params, id } = req.body || {};
 
-function handleAgentCapabilities(cfg) {
-  return {
-    protocolVersion: cfg.protocolVersion || "0.3.0",
-    capabilities: cfg.capabilities || [],
-    content: cfg.contentItems || [],
-  };
-}
+  if (jsonrpc !== '2.0') {
+    return res.status(200).json({ jsonrpc: '2.0', error: { code: -32600, message: 'Invalid Request' }, id: id || null });
+  }
 
-function rankContent(query, items) {
-  const q = (query || "").toLowerCase();
-  const terms = q.split(/\s+/).filter((t) => t.length > 2);
-  if (terms.length === 0) return items || [];
-  return (items || [])
-    .map((it) => {
-      const haystack = `${it.title} ${it.description}`.toLowerCase();
-      let score = 0;
-      for (const t of terms) if (haystack.includes(t)) score += 1;
-      return { item: it, score };
-    })
-    .filter((x) => x.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .map((x) => x.item);
-}
+  switch (method) {
+    case 'agent/info':
+    case 'agent.describe':
+      return res.status(200).json({
+        jsonrpc: '2.0',
+        result: {
+          name: siteConfig.name,
+          description: siteConfig.description,
+          url: siteConfig.url,
+          capabilities: siteConfig.capabilities || [],
+          version: siteConfig.version || '1.0.0',
+          authentication: siteConfig.authentication || { type: 'none' }
+        },
+        id
+      });
 
-function handleAgentQuery(cfg, params) {
-  params = params || {};
-  const query = params.query || params.q || "";
-  const results = rankContent(query, cfg.contentItems);
-  return {
-    query,
-    site: cfg.siteName,
-    results: results.map((r) => ({
-      title: r.title,
-      url: r.url,
-      description: r.description,
-    })),
-    total: results.length,
-  };
-}
+    case 'agent/capabilities':
+      return res.status(200).json({
+        jsonrpc: '2.0',
+        result: { capabilities: siteConfig.capabilities || [], content: siteConfig.content || [] },
+        id
+      });
 
-// ---------------------------------------------------------------------------
-// Router
-// ---------------------------------------------------------------------------
+    case 'agent/query':
+    case 'agent/search':
+      const query = (params && (params.query || params.q)) || '';
+      const content = (siteConfig.content || []).filter(item => {
+        if (!query) return true;
+        const q = query.toLowerCase();
+        return (item.title || '').toLowerCase().includes(q) ||
+               (item.description || '').toLowerCase().includes(q);
+      });
+      return res.status(200).json({
+        jsonrpc: '2.0',
+        result: { query, results: content, total: content.length },
+        id
+      });
 
-const METHODS = {
-  "agent/info": handleAgentInfo,
-  "agent/capabilities": handleAgentCapabilities,
-  "agent/query": handleAgentQuery,
+    default:
+      return res.status(200).json({
+        jsonrpc: '2.0',
+        error: { code: -32601, message: `Method not found: ${method}` },
+        id
+      });
+  }
 };
-
-function rpcError(id, code, message, data) {
-  return { jsonrpc: "2.0", id, error: { code, message, data } };
-}
-function rpcOk(id, result) {
-  return { jsonrpc: "2.0", id, result };
-}
-
-function dispatch(body, cfg) {
-  const id = (body && body.id != null) ? body.id : null;
-
-  if (!body || typeof body !== "object" || typeof body.method !== "string") {
-    return rpcError(id, -32600, "Invalid Request: missing or non-object body");
-  }
-
-  const fn = METHODS[body.method];
-  if (!fn) {
-    return rpcError(id, -32601, `Method not found: ${body.method}`);
-  }
-
-  try {
-    const result = fn(cfg, body.params);
-    return rpcOk(id, result);
-  } catch (err) {
-    const message = err && err.message ? err.message : "Internal error";
-    return rpcError(id, -32603, `Internal error: ${message}`);
-  }
-}
-
-// ---------------------------------------------------------------------------
-// CORS
-// ---------------------------------------------------------------------------
-
-function setCors(res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-}
-
-// ---------------------------------------------------------------------------
-// Vercel / Express handler (Node req/res)
-// ---------------------------------------------------------------------------
-
-async function handler(req, res) {
-  setCors(res);
-  if (req.method === "OPTIONS") {
-    res.status(204);
-    return res.end();
-  }
-
-  const cfg = loadConfigSync();
-
-  // GET → agent card (discovery)
-  if (req.method === "GET") {
-    return res.status(200).json(handleAgentInfo(cfg));
-  }
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  const body = req.body || null;
-
-  // Batch request
-  if (Array.isArray(body)) {
-    return res.status(200).json(body.map((b) => dispatch(b, cfg)));
-  }
-
-  const out = dispatch(body, cfg);
-  const status = out.error && out.error.code === -32600 ? 400 : 200;
-  return res.status(status).json(out);
-}
-
-// Default export for Vercel serverless (api/a2a.js)
-module.exports = handler;
-module.exports.default = handler;
-module.exports.handler = handler;
-
-// Named exports so the same file can be mounted in Express:
-//   const { handler } = require("./a2a-endpoint");
-//   app.post("/api/a2a", handler); app.get("/api/a2a", handler);
-module.exports.dispatch = dispatch;
-module.exports.handleAgentInfo = handleAgentInfo;
-module.exports.handleAgentCapabilities = handleAgentCapabilities;
-module.exports.handleAgentQuery = handleAgentQuery;
