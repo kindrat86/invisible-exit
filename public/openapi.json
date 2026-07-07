@@ -1,0 +1,23 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Invisible Exit",
+    "description": "Complete guide to digital privacy and disappearing from the internet.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://invisibleexit.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://invisibleexit.com"
+    }
+  ],
+  "paths": {},
+  "tags": [
+    {
+      "name": "content",
+      "description": "Site content"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Invisible Exit</title>
+    <link>https://invisibleexit.com</link>
+    <description>Complete guide to digital privacy and disappearing from the internet.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Jul 2026 14:57:21 GMT</lastBuildDate>
+    <atom:link href="https://invisibleexit.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homepage</title>
+      <link>https://invisibleexit.com/</link>
+      <guid isPermaLink="true">https://invisibleexit.com/</guid>
+      <description>How to disappear from the internet</description>
+    </item>
+    <item>
+      <title>Guides</title>
+      <link>https://invisibleexit.com/guides</link>
+      <guid isPermaLink="true">https://invisibleexit.com/guides</guid>
+      <description>Privacy guides</description>
+    </item>
+    <item>
+      <title>Glossary</title>
+      <link>https://invisibleexit.com/glossary</link>
+      <guid isPermaLink="true">https://invisibleexit.com/glossary</guid>
+      <description>Privacy terms glossary</description>
+    </item>
+    <item>
+      <title>Freedom</title>
+      <link>https://invisibleexit.com/freedom</link>
+      <guid isPermaLink="true">https://invisibleexit.com/freedom</guid>
+      <description>Digital freedom</description>
+    </item>
+    <item>
+      <title>Compare</title>
+      <link>https://invisibleexit.com/compare</link>
+      <guid isPermaLink="true">https://invisibleexit.com/compare</guid>
+      <description>Privacy tools comparison</description>
+    </item>
+  </channel>
+</rss>
