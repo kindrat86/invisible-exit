@@ -1,0 +1,1 @@
+Contact: mailto:security@sipiteno.com\nContact: mailto:signal@gitdealflow.com\nExpires: 2027-12-31T23:59:59Z\nEncryption: https://keys.openpgp.org/\nAcknowledgments: https://sipiteno.com/.well-known/security.txt\nPolicy: https://sipiteno.com/privacy\nPreferred-Languages: en\nCanonical: https://sipiteno.com/.well-known/security.txt
