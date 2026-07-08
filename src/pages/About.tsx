@@ -7,6 +7,27 @@ const About = () => {
   const jsonLdArray = [
     {
       "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Invisible Exit",
+      url: "https://invisibleexit.com",
+      logo: "https://invisibleexit.com/og-image.png",
+      description:
+        "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed.",
+      sameAs: [
+        "https://www.youtube.com/@InvisibleExit",
+        "https://www.linkedin.com/company/invisible-exit",
+        "https://twitter.com/InvisibleExit",
+        "https://github.com/kindrat86/invisible-exit",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "hello@invisibleexit.com",
+        url: "https://invisibleexit.com/contact",
+      },
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "AboutPage",
       name: "About Invisible Exit",
       description:
@@ -141,7 +162,12 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#3B82F6] hover:underline"
-            >YouTube</a>.
+            >YouTube</a>. Questions? Reach us anytime at{" "}
+            <a href="mailto:hello@invisibleexit.com" className="text-[#3B82F6] hover:underline">
+              hello@invisibleexit.com
+            </a>{" "}
+            or via the{" "}
+            <Link to="/contact" className="text-[#3B82F6] hover:underline">contact page</Link>.
           </p>
           <p className="text-gray-600 leading-relaxed">
             Ready to start? <Link to="/?checkout=starter" className="text-[#3B82F6] hover:underline">Get all 5 tools for $0.97/month</Link>.

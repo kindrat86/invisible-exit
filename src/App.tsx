@@ -139,6 +139,7 @@ const AudiencePage = lazy(() => import("./pages/AudiencePage.tsx"));
 const CityProfessionPage = lazy(() => import("./pages/CityProfessionPage.tsx"));
 const ExitStrategyPage = lazy(() => import("./pages/ExitStrategyPage.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
+const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
 
@@ -229,6 +230,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/admin/feature-requests" element={<AdminFeatureRequests />} />
           <Route path="/fym/badge/:shareId" element={<Badge />} />
           {/* Redirects from old URLs */}
