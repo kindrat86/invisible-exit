@@ -322,10 +322,26 @@ ${hreflangLinks}
 
   // Replace from <!-- Default SEO --> up to the <link rel="preconnect" line
   // (which is the stable anchor in the post-analytics-deferral HTML)
-  return finalTemplate.replace(
+  let result = finalTemplate.replace(
     /<!-- Default SEO[\s\S]*?(?=\n\s*<link rel="preconnect")/,
     metaBlock + "\n\n    "
   );
+
+  // The source index.html carries homepage-specific JSON-LD (Organization,
+  // WebSite, WebApplication, FAQPage) AFTER the preconnect anchor — i.e. OUTSIDE
+  // the region replaced above. Left untouched, that homepage schema leaks onto
+  // EVERY prerendered page, so /about, /contact, blog posts, etc. all falsely
+  // advertise the homepage FAQPage/WebApplication. On non-homepage routes, strip
+  // those default blocks so each page carries only its own route-level jsonLd
+  // (which was just injected inside metaBlock above). The homepage keeps them.
+  if (routePath !== "/") {
+    result = result.replace(
+      /\n\s*<!-- JSON-LD:[^\n]*-->\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/g,
+      ""
+    );
+  }
+
+  return result;
 }
 
 function writePage(template, routePath, meta) {
@@ -1133,6 +1149,79 @@ function getRoutes() {
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
             { "@type": "ListItem", position: 2, name: "About" },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE,
+          logo: `${SITE}/og-image.png`,
+          description:
+            "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed.",
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: "hello@invisibleexit.com",
+            url: `${SITE}/contact`,
+          },
+          sameAs: [
+            "https://www.youtube.com/@InvisibleExit",
+            "https://www.linkedin.com/company/invisible-exit",
+            "https://twitter.com/InvisibleExit",
+            "https://github.com/kindrat86/invisible-exit",
+          ],
+        },
+      ],
+    },
+  });
+
+  // --- Contact Page ---
+  routes.push({
+    path: "/contact",
+    meta: {
+      title: "Contact Invisible Exit | One Inbox, Real Replies",
+      description:
+        "Reach the Invisible Exit team. Email hello@invisibleexit.com for support, partnerships, press, or membership questions.",
+      url: `${SITE}/contact`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE,
+          logo: `${SITE}/og-image.png`,
+          description:
+            "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed.",
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: "hello@invisibleexit.com",
+            url: `${SITE}/contact`,
+          },
+          sameAs: [
+            "https://www.youtube.com/@InvisibleExit",
+            "https://www.linkedin.com/company/invisible-exit",
+            "https://twitter.com/InvisibleExit",
+            "https://github.com/kindrat86/invisible-exit",
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Invisible Exit",
+          description:
+            "Reach the Invisible Exit team. Email hello@invisibleexit.com for support, partnerships, press, or membership questions.",
+          url: `${SITE}/contact`,
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+            { "@type": "ListItem", position: 2, name: "Contact" },
           ],
         },
       ],
