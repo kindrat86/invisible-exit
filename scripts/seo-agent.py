@@ -131,7 +131,9 @@ Known gotchas (gotchas.md):
 {gotchas}
 
 CRITICAL OUTPUT FORMAT:
-Respond with ONLY a JSON object, no markdown fences, with this exact structure:
+Respond with ONLY a JSON object. No prose, no markdown fences, no commentary before or after.
+First character must be `{{` and last character must be `}}`.
+If you want to add notes, put them inside the JSON values.
 {{
   "findings": [
     {{"check": "Sitemap", "status": "PASS", "notes": "..."}},
@@ -161,7 +163,7 @@ Here is the current repository state:
 Analyze the files above and produce your audit findings as the JSON object specified."""
 
     print("Calling GLM-5.2 for audit analysis...")
-    response = glm_chat(system_prompt, user_prompt, max_tokens=12288)
+    response = glm_chat(system_prompt, user_prompt, max_tokens=16384)
 
     # Save raw response for debugging
     debug_path = REPO_ROOT / ".github" / "seo-geo-automation" / "last-response.json"
