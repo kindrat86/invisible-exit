@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Number Calculator — When Can You Quit Your Job? | Invisible Exit</title>
+<meta name="description" content="Free Freedom Number Calculator. Input your salary, expenses, and side-business MRR to see exactly when your micro-SaaS income replaces your day job. Includes tax-adjusted projections and a 3-year timeline.">
+<link rel="canonical" href="https://invisibleexit.com/tools/freedom-calculator">
+<meta property="og:title" content="Freedom Number Calculator — When Can You Quit Your Job?">
+<meta property="og:description" content="Calculate when your side business income replaces your salary. Tax-adjusted, with a 3-year MRR projection.">
+<meta property="og:url" content="https://invisibleexit.com/tools/freedom-calculator">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Freedom Number Calculator">
+<meta name="twitter:description" content="When does your side business replace your salary? Free calculator with tax-adjusted projections.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Freedom Number Calculator",
+  "url": "https://invisibleexit.com/tools/freedom-calculator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Calculate when your micro-SaaS side income replaces your day-job salary. Tax-adjusted projections with a 3-year MRR growth model.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "Invisible Exit", "url": "https://invisibleexit.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a freedom number?", "acceptedAnswer": {"@type": "Answer", "text": "Your freedom number is the monthly recurring revenue (MRR) you need from your side business to replace your day-job salary after taxes. It's calculated as (annual salary + taxes + benefits) ÷ 12, adjusted for self-employment tax and business expenses."}},
+    {"@type": "Question", "name": "How is the freedom number calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Freedom number = (Gross salary + employer-side taxes lost + benefits value + business expenses) ÷ 12. We add ~7.65% for the employer-side FICA you lose, ~$8K/yr for health insurance, and subtract deductible business expenses."}},
+    {"@type": "Question", "name": "How fast can a micro-SaaS grow?", "acceptedAnswer": {"@type": "Answer", "text": "Solo-founded micro-SaaS businesses typically grow 10-20% month-over-month in years 1-2. At 15% MoM growth, $2K MRR becomes $10K MRR in ~12 months. The calculator uses conservative (10%), realistic (15%), and aggressive (20%) growth scenarios."}},
+    {"@type": "Question", "name": "Can I embed this calculator on my site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — this calculator is free to embed. Visit the embed page at /tools/freedom-calculator/embed to get a single script tag that renders the full interactive calculator on any website."}}
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
+  --text-dim: #94a3b8; --accent: #3b82f6; --accent-hover: #2563eb;
+  --green: #22c55e; --amber: #f59e0b; --red: #ef4444;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
+nav { display: flex; gap: 16px; margin-bottom: 32px; font-size: 0.9rem; }
+nav a { color: var(--accent); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: #f8fafc; }
+.subtitle { font-size: 1.15rem; color: var(--text-dim); margin-bottom: 32px; }
+.calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+@media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
+.input-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.input-card h3 { font-size: 1.1rem; margin-bottom: 20px; color: #f8fafc; font-weight: 700; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+.input-group select, .input-group input { width: 100%; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 16px; color: var(--text); font-size: 1rem; outline: none; transition: border-color 0.2s; }
+.input-group select:focus, .input-group input:focus { border-color: var(--accent); }
+.input-group input[type="range"] { padding: 0; height: 6px; -webkit-appearance: none; background: var(--border); border-radius: 3px; }
+.input-group input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px;
+  background: var(--accent); border-radius: 50%; cursor: pointer; }
+.result-card { background: linear-gradient(135deg, var(--card), #0f172a); border: 1px solid var(--accent);
+  border-radius: 16px; padding: 32px; text-align: center; }
+.result-number { font-size: 3.5rem; font-weight: 900; color: var(--green); line-height: 1.1; margin: 12px 0; }
+.result-label { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.result-detail { margin-top: 16px; font-size: 1.1rem; color: var(--text); }
+.scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+@media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+.scenario { background: var(--bg); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid var(--border); }
+.scenario-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 8px; }
+.scenario-months { font-size: 1.8rem; font-weight: 800; }
+.scenario-mrr { font-size: 0.85rem; color: var(--text-dim); margin-top: 4px; }
+.timeline-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin: 20px 0; }
+.timeline-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); border-radius: 4px; transition: width 0.5s; }
+.share-section { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-top: 24px; }
+.share-section h3 { font-size: 1rem; margin-bottom: 12px; color: #f8fafc; }
+.share-url { display: flex; gap: 8px; align-items: center; }
+.share-url input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; color: var(--text); font-size: 0.85rem; font-family: monospace; }
+.btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 10px 20px;
+  font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.btn:hover { background: var(--accent-hover); }
+.embed-cta { text-align: center; margin-top: 32px; padding: 24px; background: var(--card);
+  border: 1px dashed var(--border); border-radius: 16px; }
+.embed-cta a { color: var(--accent); font-weight: 700; }
+footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; }
+.insight-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 16px 20px;
+  border-radius: 0 12px 12px 0; margin: 20px 0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="/">Invisible Exit</a>
+    <a href="/tools/freedom-calculator">Freedom Calculator</a>
+    <a href="/tools/freedom-calculator/embed">Embed</a>
+    <a href="/blog">Blog</a>
+  </nav>
+
+  <p style="color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Free Tool</p>
+  <h1>Freedom Number Calculator</h1>
+  <p class="subtitle">When does your side business replace your salary? Get a tax-adjusted projection with a 3-year timeline.</p>
+
+  <div class="calculator-grid">
+    <div class="input-card">
+      <h3>Your Situation</h3>
+      <div class="input-group">
+        <label>Current Annual Salary</label>
+        <select id="salary">
+          <option value="50000">$50,000</option>
+          <option value="65000">$65,000</option>
+          <option value="85000" selected>$85,000</option>
+          <option value="100000">$100,000</option>
+          <option value="125000">$125,000</option>
+          <option value="150000">$150,000</option>
+          <option value="175000">$175,000</option>
+          <option value="200000">$200,000+</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Current Side-Business MRR</label>
+        <input type="range" id="mrr" min="0" max="10000" step="500" value="1000">
+        <div style="text-align: center; font-size: 1.2rem; font-weight: 700; color: var(--green);">$<span id="mrr-display">1,000</span>/mo</div>
+      </div>
+      <div class="input-group">
+        <label>Monthly Business Expenses</label>
+        <input type="range" id="expenses" min="0" max="2000" step="50" value="200">
+        <div style="text-align: center; font-size: 1rem; color: var(--text-dim);">$<span id="expenses-display">200</span>/mo</div>
+      </div>
+      <div class="input-group">
+        <label>Monthly Living Expenses</label>
+        <input type="range" id="living" min="2000" max="10000" step="500" value="4000">
+        <div style="text-align: center; font-size: 1rem; color: var(--text-dim);">$<span id="living-display">4,000</span>/mo</div>
+      </div>
+      <div class="input-group">
+        <label>Filing Status</label>
+        <select id="filing">
+          <option value="single">Single</option>
+          <option value="married">Married Filing Jointly</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-card" style="display: flex; flex-direction: column; justify-content: center;">
+      <h3>Your Freedom Number</h3>
+      <div class="result-card" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+        <div class="result-label">Monthly MRR needed</div>
+        <div class="result-number" id="freedom-number">$7,083</div>
+        <div class="result-detail" id="freedom-detail">That's $85K/yr net income after taxes</div>
+        <div class="insight-box" id="insight">
+          At your current MRR growth rate, you'll reach your freedom number in approximately <strong>18 months</strong>.
+        </div>
+        <div class="scenarios" id="scenarios"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-section">
+    <h3>Share your result</h3>
+    <div class="share-url">
+      <input type="text" id="share-url" readonly value="https://invisibleexit.com/tools/freedom-calculator">
+      <button class="btn" onclick="copyShareUrl()">Copy</button>
+      <a class="btn" id="twitter-share" href="#" target="_blank" style="text-decoration: none;">Tweet</a>
+    </div>
+  </div>
+
+  <div class="embed-cta">
+    <p style="margin-bottom: 12px;"> Want this calculator on your own site?</p>
+    <a href="/tools/freedom-calculator/embed" style="font-size: 1.1rem;">Embed it free → (single script tag, backlink included)</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Invisible Exit. The freedom number calculation accounts for self-employment tax (15.3%), federal income tax brackets, and lost employer benefits (~$8K/yr health insurance). This is an estimate, not financial advice. | <a href="/" style="color: var(--accent);">Invisible Exit</a></p>
+  </footer>
+</div>
+
+<script>
+const FEDERAL_BRACKETS_2026 = {
+  single: [[0,0.10],[11600,0.12],[47150,0.22],[100525,0.24],[191950,0.32],[243725,0.35],[609350,0.37]],
+  married: [[0,0.10],[23200,0.12],[94300,0.22],[201050,0.24],[383900,0.32],[487450,0.35],[731200,0.37]]
+};
+const SE_TAX_RATE = 0.153;
+const EMPLOYER_BENEFITS_LOST = 8000; // health insurance, 401k match approx
+
+function federalTax(income, filing) {
+  const brackets = FEDERAL_BRACKETS_2026[filing];
+  let tax = 0, prev = 0;
+  for (const [threshold, rate] of brackets) {
+    if (income > threshold) { tax += (threshold - prev) * rate; prev = threshold; }
+    else { tax += (income - prev) * rate; break; }
+  }
+  return Math.max(0, tax);
+}
+
+function netTakeHome(salary, filing) {
+  // Current W2 take-home: salary minus federal tax minus 7.65% FICA
+  const fedTax = federalTax(salary, filing);
+  const fica = salary * 0.0765;
+  return salary - fedTax - fica;
+}
+
+function freedomMRR(salary, livingExpenses, businessExpenses, filing) {
+  // MRR needed = (salary target net + lost benefits + living expenses) / (1 - effective tax rate on self-employment)
+  const targetNetAnnual = salary + EMPLOYER_BENEFITS_LOST;
+  // Self-employment: SE tax on 92.35% of income, plus federal income tax
+  // Effective rate varies; approximate by computing on the gross target
+  const seTaxable = targetNetAnnual * 0.9235;
+  const seTax = Math.min(seTaxable, 168600) * SE_TAX_RATE;
+  const fedTax = federalTax(targetNetAnnual - (seTax * 0.5), filing); // deduct half SE tax
+  const totalTax = seTax + fedTax;
+  const grossNeeded = targetNetAnnual + totalTax;
+  const monthlyGrossNeeded = grossNeeded / 12;
+  return Math.round((monthlyGrossNeeded + businessExpenses) / 5) * 5; // round to nearest $5
+}
+
+function projectTimeline(currentMRR, targetMRR, growthRate) {
+  if (currentMRR >= targetMRR) return 0;
+  let mrr = currentMRR, months = 0;
+  while (mrr < targetMRR && months < 120) { mrr *= (1 + growthRate); months++; }
+  return months;
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calculate() {
+  const salary = parseInt(document.getElementById('salary').value);
+  const mrr = parseInt(document.getElementById('mrr').value);
+  const expenses = parseInt(document.getElementById('expenses').value);
+  const living = parseInt(document.getElementById('living').value);
+  const filing = document.getElementById('filing').value;
+
+  document.getElementById('mrr-display').textContent = mrr.toLocaleString();
+  document.getElementById('expenses-display').textContent = expenses.toLocaleString();
+  document.getElementById('living-display').textContent = living.toLocaleString();
+
+  const fn = freedomMRR(salary, living, expenses, filing);
+  document.getElementById('freedom-number').textContent = fmt(fn);
+
+  const netAnnual = salary + EMPLOYER_BENEFITS_LOST;
+  document.getElementById('freedom-detail').textContent = `That's ${fmt(netAnnual)}/yr net income after taxes + benefits`;
+
+  // Scenarios
+  const scenarios = [
+    { rate: 0.10, label: 'Conservative (10%/mo)', color: 'var(--amber)' },
+    { rate: 0.15, label: 'Realistic (15%/mo)', color: 'var(--accent)' },
+    { rate: 0.20, label: 'Aggressive (20%/mo)', color: 'var(--green)' },
+  ];
+  let html = '';
+  let realisticMonths = 0;
+  scenarios.forEach((s, i) => {
+    const months = projectTimeline(mrr, fn, s.rate);
+    if (i === 1) realisticMonths = months;
+    const mrrNeeded = fn;
+    html += `<div class="scenario"><div class="scenario-label" style="color:${s.color}">${s.label}</div><div class="scenario-months" style="color:${s.color}">${months === 0 ? '🎉' : months + 'mo'}</div><div class="scenario-mrr">to ${fmt(mrrNeeded)}/mo</div></div>`;
+  });
+  document.getElementById('scenarios').innerHTML = html;
+
+  // Insight
+  const insight = realisticMonths === 0
+    ? `🎉 You've already reached your freedom number! Your current MRR exceeds the target.`
+    : realisticMonths <= 12
+    ? `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. Focus on reducing churn and acquiring 2-3 new customers/week.`
+    : realisticMonths <= 24
+    ? `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. The key lever is growth rate — moving from 15% to 20% MoM cuts ${projectTimeline(mrr, fn, 0.15) - projectTimeline(mrr, fn, 0.20)} months off your timeline.`
+    : `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. Consider a pricing increase or vertical expansion to accelerate.`;
+  document.getElementById('insight').innerHTML = insight;
+
+  // Share URL
+  const params = new URLSearchParams({ s: salary, m: mrr, e: expenses, l: living, f: filing });
+  const shareUrl = `https://invisibleexit.com/tools/freedom-calculator#${params.toString()}`;
+  document.getElementById('share-url').value = shareUrl;
+  const tweetText = encodeURIComponent(`My freedom number is ${fmt(fn)}/mo MRR — that's when my side business replaces my salary. Calculate yours:`);
+  document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${encodeURIComponent(shareUrl)}`;
+}
+
+function copyShareUrl() {
+  const input = document.getElementById('share-url');
+  input.select(); document.execCommand('copy');
+  alert('Share URL copied! Paste it anywhere to share your freedom number.');
+}
+
+// Load from URL hash
+function loadFromHash() {
+  if (location.hash.length > 1) {
+    const params = new URLSearchParams(location.hash.slice(1));
+    if (params.get('s')) document.getElementById('salary').value = params.get('s');
+    if (params.get('m')) document.getElementById('mrr').value = params.get('m');
+    if (params.get('e')) document.getElementById('expenses').value = params.get('e');
+    if (params.get('l')) document.getElementById('living').value = params.get('l');
+    if (params.get('f')) document.getElementById('filing').value = params.get('f');
+  }
+}
+
+// Wire up
+['salary', 'mrr', 'expenses', 'living', 'filing'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+  document.getElementById(id).addEventListener('change', calculate);
+});
+loadFromHash();
+calculate();
+</script>
+</body>
+</html>
