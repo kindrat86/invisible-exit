@@ -27,6 +27,7 @@ import {
 import TestimonialGrid from "@/components/TestimonialGrid";
 import FrameworkDiagram from "@/components/FrameworkDiagram";
 import ValueLadder from "@/components/ValueLadder";
+import InlineSqueeze from "@/components/InlineSqueeze";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -199,19 +200,19 @@ const Index = () => {
               : `Most corporate managers will spend 15 years climbing a ladder that leads to someone else's exit. I found a different door. I'll show you the key.`}
           </p>
 
-          {/* CTA — ONE THING: Calculate Freedom Number → squeeze page */}
+          {/* CTA — ONE THING: Scroll to inline squeeze (email capture first, then calculator) */}
           <div className="flex flex-col items-center gap-4 mb-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <Link
-              to="/freedom"
+            <button
               onClick={() => {
-                trackEvent("homepage_hero_cta_clicked", { target: "freedom_calculator" });
+                trackEvent("homepage_hero_cta_clicked", { target: "inline_squeeze" });
                 trackABConversion("hero_headline_v1", "hero_cta_clicked", { variant: heroVariant });
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
               className="btn-primary w-full sm:w-auto text-lg px-8 inline-flex items-center justify-center gap-2"
             >
               Calculate Your Freedom Number (Free)
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </button>
             <p className="text-sm text-white/40 mt-1">
               Free calculator. Takes 90 seconds. No credit card.
             </p>
@@ -310,6 +311,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ── 1b-2. INLINE SQUEEZE — Email capture before content wall ── */}
+      {/* DOTCOM Secrets Ch 4 & Ch 6: Convert homepage from content page to funnel entry */}
+      <InlineSqueeze />
 
       {/* ── 1c. Death of the Old Vehicle ── */}
       <section className="bg-surface section-normal border-y border-border">
@@ -1598,7 +1603,7 @@ const Index = () => {
               onClick={() => trackEvent("homepage_final_cta_clicked", { target: "freedom_calculator" })}
               className="btn-primary text-lg px-8 inline-flex items-center gap-2"
             >
-              Calculate Your Freedom Number (Free)
+              I'm Ready — Calculate My Freedom Number
               <ArrowRight className="w-5 h-5" />
             </Link>
             <p className="text-sm text-white/40 mt-3">
