@@ -706,6 +706,18 @@
     {
       "source": "/agents.md",
       "destination": "/agents.md"
+    },
+    {
+      "source": "/quiz/:slug",
+      "destination": "/quiz/:slug.html"
+    },
+    {
+      "source": "/calculator/:slug",
+      "destination": "/calculator/:slug.html"
+    },
+    {
+      "source": "/stories/:slug",
+      "destination": "/stories/:slug.html"
     }
   ],
   "crons": [

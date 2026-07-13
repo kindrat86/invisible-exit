@@ -18,9 +18,15 @@ import {
   ArrowRight,
   Check,
   Lock,
+  Users,
+  MapPin,
+  Gift,
+  TrendingUp,
+  X,
 } from "lucide-react";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import FrameworkDiagram from "@/components/FrameworkDiagram";
+import ValueLadder from "@/components/ValueLadder";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -346,23 +352,174 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 1a. Who-What-Why-How Positioning (Dotcom Secrets Ch 9) ── */}
+      {/* ── 1a. The Formula: Who / Where / Bait / Result (DotCom Secrets Ch 2) ── */}
       <section className="bg-white section-normal border-t border-border">
-        <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary mb-4">The Positioning</p>
-          <div className="max-w-3xl mx-auto space-y-1 text-left sm:text-center">
-            <p className="text-body text-muted-foreground">
-              <strong className="text-foreground">WHO</strong> this is for: Corporate managers earning $120K–$200K who feel trapped by golden handcuffs but can't (or won't) quit.
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The Formula</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              Who This Is For, Where We Find You, What You Get, and What Happens Next.
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Russell Brunson's formula: <strong className="text-foreground">Who</strong> your dream customer is,
+              <strong className="text-foreground"> Where</strong> they hide,
+              the <strong className="text-foreground">Bait</strong> that gets them to raise their hand, and the
+              <strong className="text-foreground"> Result</strong> they get. Here's ours — no guesswork.
             </p>
-            <p className="text-body text-muted-foreground">
-              <strong className="text-foreground">WHAT</strong> it is: 5 AI-powered tools that help you build anonymous micro-SaaS revenue while employed — in 5 hours per week.
-            </p>
-            <p className="text-body text-muted-foreground">
-              <strong className="text-foreground">WHY</strong> it works: Because your salary isn't your worth — it's one income stream. The system, not the idea, produces $4,000/month MRR in 12–18 months.
-            </p>
-            <p className="text-body text-muted-foreground">
-              <strong className="text-foreground">HOW</strong>: Calculate your Freedom Number → validate an idea in 48 hours → build under a separate entity → ship in 5 focused hours/week → track MRR until it replaces your salary.
-            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* ── WHO ── */}
+            <div className="card-base p-6 border-t-4 border-primary/60 card-hover">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Who</span>
+              </div>
+              <h3 className="text-sm font-bold text-foreground mb-3">The Dream Customer</h3>
+              <div className="space-y-1.5 mb-4">
+                {[
+                  "Corporate managers, $120K–$200K salary",
+                  "0.5% equity — golden handcuffs",
+                  "15+ years of operational experience",
+                  "5 hours/week of dead time they can reclaim",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
+                    <span className="text-xs text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg p-3 space-y-1">
+                <p className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">NOT for you if</p>
+                {["You're already a full-time founder", "You want to build a personal brand", "You expect overnight success"].map((item) => (
+                  <div key={item} className="flex items-start gap-1.5">
+                    <X className="w-3 h-3 text-red-400 shrink-0 mt-0.5" />
+                    <span className="text-[11px] text-red-700/70 dark:text-red-300/70">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── WHERE ── */}
+            <div className="card-base p-6 border-t-4 border-primary/60 card-hover">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Where</span>
+              </div>
+              <h3 className="text-sm font-bold text-foreground mb-3">Where We Find You</h3>
+              <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                You're not browsing Instagram for business advice. You're in specific corners of the internet, asking the exact questions this system answers:
+              </p>
+              <div className="space-y-2">
+                {[
+                  { platform: "r/cscareerquestions", topic: "\"I make $180K but I'm trapped\"" },
+                  { platform: "r/FIRE", topic: "\"Golden handcuffs, what do I do?\"" },
+                  { platform: "r/SaaS", topic: "\"Building on nights & weekends\"" },
+                  { platform: "LinkedIn", topic: "\"Should I quit before IPO?\"" },
+                  { platform: "Hacker News", topic: "\"Stealth side projects\"" },
+                  { platform: "YouTube", topic: "\"Micro-SaaS for corporate folks\"" },
+                ].map((item) => (
+                  <div key={item.platform} className="flex items-start gap-2 text-xs">
+                    <span className="font-mono text-primary font-semibold shrink-0">{item.platform}</span>
+                    <span className="text-muted-foreground">{item.topic}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── BAIT ── */}
+            <div className="card-base p-6 border-t-4 border-primary/60 card-hover">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Gift className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Bait</span>
+              </div>
+              <h3 className="text-sm font-bold text-foreground mb-3">The Lead Magnet</h3>
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-3">
+                <p className="text-sm font-bold text-primary mb-1">Freedom Number Calculator</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  A 90-second interactive tool that calculates the exact monthly revenue
+                  you need to replace your salary — and the number of customers that gets you there.
+                </p>
+              </div>
+              <div className="space-y-1.5 mb-4">
+                {[
+                  "Enter your salary + expenses",
+                  "Get your personal Freedom Number",
+                  "See how many $29 customers it takes",
+                  "Get a realistic timeline (5 hrs/week)",
+                  "Free. No credit card. No commitment.",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <Check className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
+                    <span className="text-xs text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/freedom"
+                onClick={() => trackEvent("homepage_formula_bait_clicked")}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
+              >
+                Get the Calculator (Free)
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* ── RESULT ── */}
+            <div className="card-base p-6 border-t-4 border-success/60 card-hover">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center shrink-0">
+                  <TrendingUp className="w-5 h-5 text-success" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-success">Result</span>
+              </div>
+              <h3 className="text-sm font-bold text-foreground mb-3">The Outcome</h3>
+              <div className="bg-success/5 border border-success/20 rounded-xl p-4 mb-3">
+                <p className="text-3xl font-bold text-success mb-1">$4,000<span className="text-sm font-normal text-muted-foreground">/month MRR</span></p>
+                <p className="text-xs text-muted-foreground">
+                  The average result for members who follow the system for 12–18 months.
+                </p>
+              </div>
+              <div className="space-y-1.5 mb-4">
+                {[
+                  { label: "Validated idea", time: "48 hours" },
+                  { label: "First paying customer", time: "30–60 days" },
+                  { label: "First $1,000 MRR", time: "4–8 months" },
+                  { label: "Full salary replacement", time: "12–18 months" },
+                  { label: "Time investment", time: "5 hours/week" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center justify-between text-xs">
+                    <span className="text-muted-foreground">{item.label}</span>
+                    <span className="font-semibold text-foreground">{item.time}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-surface rounded-lg p-3 border border-border/50">
+                <p className="text-[11px] text-muted-foreground italic leading-relaxed">
+                  "I stopped obsessing over the perfect idea and started working the system."
+                </p>
+                <p className="text-[10px] text-foreground font-semibold mt-1">— Jennifer L., $2,300 MRR</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Brunson one-line summary */}
+          <div className="text-center mt-10 max-w-3xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
+              <p className="text-sm text-foreground leading-relaxed">
+                <strong className="text-primary">We help corporate managers</strong> trapped in golden handcuffs,
+                who we find on <strong className="text-foreground">Reddit, LinkedIn, and YouTube</strong> asking about stealth side businesses,
+                by offering a <strong className="text-foreground">free Freedom Number Calculator</strong> that shows them exactly how much
+                recurring revenue they need to quit,
+                so they can build <strong className="text-success">$4,000/month in MRR</strong> in 12–18 months without their employer finding out.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -958,6 +1115,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 4a. Value Ladder (DotCom Secrets Ch 1) ── */}
+      <ValueLadder />
+
       {/* ── 4b. The Framework (Expert Secrets Ch 10) ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-standard">
@@ -1127,15 +1287,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6b. The Path Forward (Ch 2: Continuity/Frequency) ── */}
+      {/* ── 6b. The Path Forward — Recap (Ch 2: Continuity/Frequency) ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-standard">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">The Path Forward</p>
-            <h2 className="text-h1 text-foreground mb-4">From $0.97 to Freedom</h2>
+            <h2 className="text-h1 text-foreground mb-4">From $0 to Freedom</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              This isn't a one-time purchase. It's a progression. Each step builds on the last.
-              You're not buying tools — you're buying a path.
+              The full value ladder, restated. Each step delivers 10× the value of the one
+              before. Most members start at step 1 and never need to go past step 3.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -1166,6 +1326,14 @@ const Index = () => {
               },
               {
                 step: "Step 4",
+                title: "Join Pro: coaching + community ($47/mo)",
+                desc: "Weekly group coaching, private community, idea validation reports, MRR audits.",
+                price: "$47/mo",
+                cta: "/pro",
+                ctaText: "Apply for Pro →",
+              },
+              {
+                step: "Step 5",
                 title: "Build your product live ($97 workshop)",
                 desc: "2-day weekend workshop. Build + launch your first product with Adrian.",
                 price: "$97",
@@ -1173,9 +1341,9 @@ const Index = () => {
                 ctaText: "Join the Workshop →",
               },
               {
-                step: "Step 5",
+                step: "Step 6",
                 title: "Scale with 1-on-1 coaching ($2K intensive)",
-                desc: "90 days. Private coaching. Adrian becomes your co-founder.",
+                desc: "90 days. Private coaching. Adrian becomes your co-founder. 5 spots/month.",
                 price: "$2,000",
                 cta: "/intensive",
                 ctaText: "Apply for Intensive →",
@@ -1190,7 +1358,7 @@ const Index = () => {
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
                     {i + 1}
                   </div>
-                  {i < 4 && <div className="w-px h-8 bg-border mt-1" />}
+                  {i < 5 && <div className="w-px h-8 bg-border mt-1" />}
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-muted-foreground uppercase tracking-wide">{item.step}</p>

@@ -29,7 +29,8 @@ type AnalyticsEvent =
   | "traffic_blueprint_viewed"
   | "content_calendar_copied"
   | "affiliate_asset_copied"
-  | "podcast_pitch_copied";
+  | "podcast_pitch_copied"
+  | "homepage_formula_bait_clicked";
 
 export function trackEvent(
   event: AnalyticsEvent,
