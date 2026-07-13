@@ -18,7 +18,6 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
-  id-token: write
 
 jobs:
   seo-audit:
@@ -36,27 +35,32 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
           elif [ "$(date +%u)" = "1" ]; then
-            # Monday = weekly deep audit
             echo "mode=weekly" >> "$GITHUB_OUTPUT"
           else
             echo "mode=daily" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Run SEO/GEO Audit
-        uses: anthropics/claude-code-action@beta
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          mode: agent
-          direct_prompt: |
-            You are the SEO/GEO automation agent for invisibleexit.com.
+      - name: Run SEO/GEO Audit (GLM-5.2)
+        env:
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          AUDIT_MODE: ${{ steps.mode.outputs.mode }}
+        run: python3 scripts/seo-agent.py
 
-            Read your full instructions at .github/seo-geo-automation/claude.md
-            Read past learnings at .github/seo-geo-automation/memory.md
-            Read gotchas at .github/seo-geo-automation/gotchas.md
-
-            Run a **${{ steps.mode.outputs.mode }}** audit (Mode ${{ steps.mode.outputs.mode == 'weekly' && '2: Weekly Deep Optimization' || '1: Daily Quick Audit' }}).
-
-            Today's date: $(date +%Y-%m-%d)
-
-            Execute the audit, fix any issues found, and create a PR with findings.
-            Update memory.md and gotchas.md with anything new you learn.
+      - name: Create PR if changes exist
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff HEAD~1 --quiet 2>/dev/null; then
+            echo "No changes to PR."
+          else
+            BRANCH="seo-audit/$(date +%Y-%m-%d)"
+            git checkout -b "$BRANCH"
+            git push origin "$BRANCH"
+            gh pr create \
+              --title "SEO/GEO Audit — $(date +%Y-%m-%d) (${{ steps.mode.outputs.mode }})" \
+              --body "Automated SEO/GEO audit run powered by GLM-5.2." \
+              --label "seo-audit" \
+              --base main \
+              --head "$BRANCH" || echo "PR creation skipped"
+          fi
