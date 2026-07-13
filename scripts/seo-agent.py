@@ -26,7 +26,7 @@ DATE = datetime.now().strftime("%Y-%m-%d")
 
 
 def glm_chat(system_prompt: str, user_prompt: str, max_tokens: int = 8192) -> str:
-    """Call GLM-5.2 via z.ai API."""
+    """Call GLM-5.2 via z.ai API with retries."""
     api_key = os.environ["GLM_API_KEY"]
     payload = {
         "model": "glm-5.2",
@@ -38,26 +38,35 @@ def glm_chat(system_prompt: str, user_prompt: str, max_tokens: int = 8192) -> st
         "temperature": 0.4,
     }
     data = json.dumps(payload).encode()
-    req = urllib.request.Request(
-        GLM_API_URL,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            result = json.loads(resp.read())
-            return result["choices"][0]["message"]["content"]
-    except urllib.error.HTTPError as e:
-        body = e.read().decode() if e.fp else ""
-        print(f"GLM API error {e.code}: {body}", file=sys.stderr)
-        raise
-    except Exception as e:
-        print(f"GLM API call failed: {e}", file=sys.stderr)
-        raise
+    
+    last_err = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(
+                GLM_API_URL,
+                data=data,
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {api_key}",
+                },
+                method="POST",
+            )
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                result = json.loads(resp.read())
+                return result["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as e:
+            body = e.read().decode() if e.fp else ""
+            print(f"GLM API error {e.code} (attempt {attempt+1}/3): {body}", file=sys.stderr)
+            last_err = e
+        except Exception as e:
+            print(f"GLM API call failed (attempt {attempt+1}/3): {e}", file=sys.stderr)
+            last_err = e
+        
+        if attempt < 2:
+            import time
+            time.sleep(10 * (attempt + 1))
+    
+    raise RuntimeError(f"GLM API failed after 3 attempts: {last_err}")
 
 
 def read_file(path: Path) -> str:
