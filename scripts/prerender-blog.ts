@@ -951,7 +951,7 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 <text x="400" y="60" text-anchor="middle" fill="#3B82F6" font-size="22" font-weight="700" font-family="system-ui">${safeTitle}</text>
 <text x="400" y="90" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="system-ui">${safeSub}</text>
 <rect x="200" y="115" width="400" height="3" fill="#1e3a5f" rx="1"/>
-<text x="400" y="145" text-anchor="middle" fill="#64748b" font-size="11" font-family="system-ui">Invisible Exit — Build a Side Business While Employed</text>
+<text x="400" y="145" text-anchor="middle" fill="#64748b" font-size="11" font-family="system-ui">$4,000/Month Side Business — Without Quitting Your Job</text>
 <text x="400" y="165" text-anchor="middle" fill="#475569" font-size="10" font-family="system-ui">5 AI-powered tools · From $0.97/month · No code required</text>
 </svg>
 <figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center">${altText}</figcaption>
@@ -964,9 +964,9 @@ function homepageBodyHtml(): string {
   return `<div class="min-h-screen">
 <section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center">
 <div style="max-width:56rem;margin:0 auto">
-<h1 style="font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem">Build a Side Business While Employed — Invisibly</h1>
-<p style="font-size:1.25rem;color:#4b5563;margin-bottom:2rem">5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible.</p>
-<p style="font-size:0.875rem;color:#6b7280">From $0.97/month. No code required. Cancel anytime.</p>
+<h1 style="font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem">How to Build a $4,000/Month Side Business Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out</h1>
+<p style="font-size:1.25rem;color:#4b5563;margin-bottom:2rem">5 AI-powered tools that take you from golden handcuffs to real recurring revenue in 12 months — working 5 hours a week. Calculate your freedom number, validate ideas, and stay invisible.</p>
+<p style="font-size:0.875rem;color:#6b7280">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:56rem">

@@ -148,8 +148,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit | Build a Side Business While Employed"
-        description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses. Calculate your freedom number, validate ideas, stay invisible. From $0.97/mo."
+        title="Build a $4,000/Month Side Business Without Quitting | Invisible Exit"
+        description="5 AI-powered tools that help corporate managers build $4,000/month in anonymous micro-SaaS revenue in 12 months — without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
       <Navbar />
