@@ -128,21 +128,9 @@ const Index = () => {
   }, []);
 
   const handleCheckout = async () => {
+    // DOTCOM SECRETS Ch 8: Two-step order — send to /start order page, not direct checkout
     trackEvent("homepage_cta_clicked", { source: "landing_page" });
-    setCheckoutLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke(
-        "create-checkout",
-        { body: { tier: "starter" } }
-      );
-      if (error) throw error;
-      if (data?.url) window.location.href = data.url;
-    } catch (err) {
-      toast.error("Could not start checkout. Please try again.");
-      console.error(err);
-    } finally {
-      setCheckoutLoading(false);
-    }
+    window.location.href = "/start";
   };
 
   return (
@@ -466,14 +454,16 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <Link
-                to="/freedom"
-                onClick={() => trackEvent("homepage_formula_bait_clicked")}
+              <button
+                onClick={() => {
+                  trackEvent("homepage_formula_bait_clicked");
+                  document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
               >
                 Get the Calculator (Free)
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </button>
             </div>
 
             {/* ── RESULT ── */}
@@ -601,15 +591,14 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Manifesto link */}
+          {/* Manifesto link — de-emphasized, inline reference not CTA */}
           <div className="text-center mt-12">
             <Link
               to="/manifesto"
               onClick={() => trackEvent("homepage_manifesto_clicked")}
-              className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors"
+              className="text-muted-foreground hover:text-primary text-sm underline transition-colors"
             >
               Read the full manifesto — the 6 principles of the Invisible Builder
-              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -730,9 +719,9 @@ const Index = () => {
             <Link
               to="/frameworks"
               onClick={() => trackEvent("homepage_frameworks_link_clicked")}
-              className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors mt-4"
+              className="text-muted-foreground hover:text-primary text-sm underline transition-colors mt-4 inline-block"
             >
-              Learn the 3 frameworks →
+              Learn the 3 frameworks
             </Link>
           </div>
         </div>
@@ -1037,61 +1026,6 @@ const Index = () => {
       </section>
 
       {/* ── 3. Start Here Reading Path ── */}
-      <section className="bg-surface section-normal border-y border-border">
-        <div className="container-standard">
-          <div className="max-w-3xl mb-10">
-            <p className="text-eyebrow text-primary mb-4">Not Ready to Buy?</p>
-            <h2 className="text-h1 text-foreground mb-4">Read these 3 guides first.</h2>
-            <p className="text-body text-muted-foreground">
-              If the pitch resonates but you need more proof, start with the
-              roadmap, the stealth guide, and the no-ads customer guide.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                slug: "the-invisible-exit-roadmap-what-to-do-in-your-first-90-days",
-                category: "Exit Planning",
-                title: "The Invisible Exit Roadmap",
-                excerpt: "The first 90 days matter because they create direction, not just motion.",
-              },
-              {
-                slug: "invisible-business-model",
-                category: "Stealth Operations",
-                title: "The Invisible Business Model",
-                excerpt: "How to build revenue your employer cannot easily see.",
-              },
-              {
-                slug: "how-corporate-managers-can-get-their-first-paying-customers-without-ads",
-                category: "Growth",
-                title: "First Paying Customers Without Ads",
-                excerpt: "How to get early customers through clarity, trust, and direct conversations.",
-              },
-            ].map((guide) => (
-              <Link
-                key={guide.slug}
-                to={`/blog/${guide.slug}`}
-                onClick={() =>
-                  trackEvent("homepage_blog_clicked", {
-                    source: "homepage_start_here_section",
-                    slug: guide.slug,
-                  })
-                }
-                className="card-base p-6 card-hover group"
-              >
-                <span className="text-eyebrow text-primary mb-3 block">
-                  {guide.category}
-                </span>
-                <h3 className="text-h3 text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {guide.title}
-                </h3>
-                <p className="text-caption">{guide.excerpt}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── 4. The 5 Tools ── */}
       <section className="hero-dark section-wide">
         <div className="container-standard">
@@ -1181,9 +1115,9 @@ const Index = () => {
           <Link
             to="/founding-wall"
             onClick={() => trackEvent("homepage_movement_tracker_clicked")}
-            className="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold text-sm transition-colors"
+            className="text-muted-foreground hover:text-primary text-sm underline transition-colors"
           >
-            See who's already building →
+            See who's already building
           </Link>
         </div>
       </section>
@@ -1288,6 +1222,21 @@ const Index = () => {
                 Because every month you wait is $4,000 in MRR you'll never recover.
               </p>
             </div>
+
+            {/* DOTCOM SECRETS Ch 8: Two-step order — the actual checkout CTA */}
+            <div className="mt-8">
+              <Link
+                to="/start"
+                onClick={() => trackEvent("homepage_stack_cta_clicked")}
+                className="btn-primary text-lg px-8 py-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[56px]"
+              >
+                Start for $0.97/Month
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <p className="text-sm text-muted-foreground mt-3 text-center">
+                Secure Stripe checkout · 30-day money-back guarantee · Locked for life
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1310,48 +1259,38 @@ const Index = () => {
                 title: "Calculate your freedom number (Free)",
                 desc: "Know exactly how much recurring revenue you need to replace your salary.",
                 price: "$0",
-                cta: "/freedom",
-                ctaText: "Calculate Free →",
+                isPrimary: true,
               },
               {
                 step: "Step 2",
                 title: "Get the Stealth Ops Blueprint ($7)",
                 desc: "The 47-point checklist that keeps your employer from finding out. One-time.",
                 price: "$7",
-                cta: "/tripwire",
-                ctaText: "Get the Blueprint →",
               },
               {
                 step: "Step 3",
                 title: "Start the 5-tool system ($0.97/mo)",
                 desc: "All 5 tools. Freedom number, idea pipeline, stealth ops, launch, brand.",
                 price: "$0.97/mo",
-                cta: "/freedom",
-                ctaText: "Start for $0.97/mo →",
+                isPrimary: true,
               },
               {
                 step: "Step 4",
                 title: "Join Pro: coaching + community ($47/mo)",
                 desc: "Weekly group coaching, private community, idea validation reports, MRR audits.",
                 price: "$47/mo",
-                cta: "/pro",
-                ctaText: "Apply for Pro →",
               },
               {
                 step: "Step 5",
                 title: "Build your product live ($97 workshop)",
                 desc: "2-day weekend workshop. Build + launch your first product with Adrian.",
                 price: "$97",
-                cta: "/weekend-workshop",
-                ctaText: "Join the Workshop →",
               },
               {
                 step: "Step 6",
                 title: "Scale with 1-on-1 coaching ($2K intensive)",
                 desc: "90 days. Private coaching. Adrian becomes your co-founder. 5 spots/month.",
                 price: "$2,000",
-                cta: "/intensive",
-                ctaText: "Apply for Intensive →",
               },
             ].map((item, i) => (
               <div
@@ -1372,12 +1311,16 @@ const Index = () => {
                 </div>
                 <div className="text-right shrink-0">
                   <p className="text-sm font-bold text-primary">{item.price}</p>
-                  <Link
-                    to={item.cta}
-                    className="text-xs text-primary hover:text-primary-hover font-medium"
-                  >
-                    {item.ctaText}
-                  </Link>
+                  {item.isPrimary ? (
+                    <button
+                      onClick={() => document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                      className="text-xs text-primary hover:text-primary-hover font-medium"
+                    >
+                      Start here →
+                    </button>
+                  ) : (
+                    <span className="text-xs text-muted-foreground/50">later</span>
+                  )}
                 </div>
               </div>
             ))}
@@ -1392,14 +1335,25 @@ const Index = () => {
           <p className="text-body text-white/50 mb-10">
             Read how I went from trapped to $4,100 MRR in 12 months. 10 chapters. 15 minutes.
           </p>
-          <Link
-            to="/story"
-            onClick={() => trackEvent("homepage_mid_cta_clicked", { target: "story_page" })}
-            className="btn-primary text-lg px-8 inline-flex items-center gap-2"
-          >
-            Read My Full Story
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-col items-center gap-4">
+            <button
+              onClick={() => {
+                trackEvent("homepage_mid_cta_clicked", { target: "inline_squeeze" });
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="btn-primary text-lg px-8 inline-flex items-center gap-2"
+            >
+              Calculate Your Freedom Number (Free)
+              <ArrowRight className="w-5 h-5" />
+            </button>
+            <Link
+              to="/story"
+              onClick={() => trackEvent("homepage_mid_cta_clicked", { target: "story_page" })}
+              className="text-sm text-white/40 hover:text-white/70 transition-colors underline"
+            >
+              or read the full backstory →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -1434,28 +1388,6 @@ const Index = () => {
               mission: help corporate managers build invisible recurring revenue.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* ── 8b. "Who Else" Pattern + Ask Campaign CTA ── */}
-      <section className="bg-surface section-normal border-y border-border">
-        <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary mb-4">Who Else?</p>
-          <h2 className="text-h1 text-foreground mb-4">
-            Who Else Wants to Join 127 Managers Already Building?
-          </h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-8">
-            Every one of them started with the same question you have right now.
-            What's yours? Ask it — and I'll answer it personally.
-          </p>
-          <Link
-            to="/ask"
-            onClick={() => trackEvent("homepage_ask_cta_clicked")}
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-3 rounded-xl transition-all"
-          >
-            Ask Adrian Your #1 Question
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
 
@@ -1560,6 +1492,51 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 10b. Free Book Funnel Banner (DotCom Secrets Ch 9) ── */}
+      <section className="section-wide bg-gradient-to-b from-transparent via-amber-950/[0.06] to-transparent">
+        <div className="container-narrow">
+          <div className="relative overflow-hidden rounded-3xl border border-amber-500/20 bg-gradient-to-br from-amber-950/20 via-[hsl(222_47%_11%)] to-[hsl(222_47%_11%)] p-8 sm:p-12">
+            {/* Glow orb */}
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl" />
+
+            <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-5">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  FREE BOOK — Just Pay Shipping
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
+                  Prefer to Read First?
+                </h3>
+                <p className="text-white/60 text-base leading-relaxed mb-4 max-w-lg">
+                  Get the complete <strong className="text-white">Invisible Exit Manifesto</strong> —
+                  152 pages, 7 chapters, the exact $4,100/month system. Free. You just cover $4.95 shipping.
+                </p>
+                <div className="flex flex-wrap items-center gap-3 text-sm">
+                  <span className="text-white/40 line-through">$24.99</span>
+                  <span className="text-2xl font-bold text-amber-400">FREE</span>
+                  <span className="text-white/40">+ $4.95 S&amp;H</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 md:items-end">
+                <Link
+                  to="/free-book"
+                  onClick={() => trackEvent("homepage_free_book_clicked")}
+                  className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-[hsl(222_47%_11%)] font-bold text-base px-7 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-amber-500/25 hover:-translate-y-0.5 min-h-[52px] whitespace-nowrap"
+                >
+                  Get the Free Book
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <p className="text-white/30 text-xs md:text-right">
+                  3 digital bonuses included · 30-day guarantee
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 11. Final CTA — Continuous Loop + Multi-CTA ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
@@ -1598,49 +1575,19 @@ const Index = () => {
 
           {/* Primary CTA */}
           <div className="mb-6">
-            <Link
-              to="/freedom"
-              onClick={() => trackEvent("homepage_final_cta_clicked", { target: "freedom_calculator" })}
+            <button
+              onClick={() => {
+                trackEvent("homepage_final_cta_clicked", { target: "inline_squeeze" });
+                document.getElementById("get-started")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
               className="btn-primary text-lg px-8 inline-flex items-center gap-2"
             >
               I'm Ready — Calculate My Freedom Number
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </button>
             <p className="text-sm text-white/40 mt-3">
               No credit card. No spam. 90 seconds. Just the number that changes how you see your salary.
             </p>
-          </div>
-
-          {/* Divider */}
-          <div className="flex items-center gap-4 max-w-md mx-auto my-8">
-            <div className="flex-1 h-px bg-white/10" />
-            <span className="text-white/30 text-xs uppercase tracking-wide">or</span>
-            <div className="flex-1 h-px bg-white/10" />
-          </div>
-
-          {/* Secondary CTAs */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <Link
-              to="/story"
-              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
-            >
-              <p className="text-white/80 font-semibold text-sm mb-1">Read My Story</p>
-              <p className="text-white/40 text-xs">The full Amsterdam moment. 10 chapters.</p>
-            </Link>
-            <Link
-              to="/masterclass"
-              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
-            >
-              <p className="text-white/80 font-semibold text-sm mb-1">Watch the Masterclass</p>
-              <p className="text-white/40 text-xs">14 slides. 45 minutes. Zero fluff.</p>
-            </Link>
-            <Link
-              to="/ask"
-              className="group rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-4 transition-all text-left"
-            >
-              <p className="text-white/80 font-semibold text-sm mb-1">Ask Me Anything</p>
-              <p className="text-white/40 text-xs">Your #1 question, answered personally.</p>
-            </Link>
           </div>
 
           {/* Final urgency */}

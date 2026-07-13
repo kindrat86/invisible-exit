@@ -625,17 +625,17 @@ const BlogPost = () => {
               Calculate Your Freedom Number (Free)
             </Link>
             <Link
-              to="/story"
+              to="/free-book"
               onClick={() =>
                 trackEvent("blog_article_cta_clicked", {
                   slug: post.slug,
-                  source: "article_footer_story",
+                  source: "article_footer_free_book",
                   category: post.category,
                 })
               }
-              className="btn-secondary text-lg border-white/20 text-white hover:bg-white/10"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-[hsl(222_47%_11%)] font-bold text-lg px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-amber-500/25"
             >
-              Read My Full Story First
+              📖 Get the Free Book ($4.95 S&amp;H)
             </Link>
             <Link
               to="/blog"

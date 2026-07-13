@@ -47,6 +47,7 @@ export const en = {
   "nav.whoIsAdrian": "Who Is Adrian?",
   "nav.innerCircle": "Inner Circle",
   "nav.affiliates": "Affiliates",
+  "nav.freeBook": "Free Book (Just Pay Shipping)",
 
   "nav.freeCalculator": "Free Calculator",
   "nav.getStarted": "Get Started",

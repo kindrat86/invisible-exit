@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Menu, X, ArrowRight, ChevronDown, Search, LayoutDashboard } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, Search, LayoutDashboard, BookOpen } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const NAV_GROUPS = [
@@ -48,6 +48,7 @@ const NAV_GROUPS = [
   {
     labelKey: "nav.story",
     links: [
+      { labelKey: "nav.freeBook", to: "/free-book" },
       { labelKey: "nav.myOriginStory", to: "/story" },
       { labelKey: "nav.theManifesto", to: "/manifesto" },
       { labelKey: "nav.whoIsAdrian", to: "/adrian" },
@@ -169,13 +170,20 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-3">
               <LanguageSwitcher variant="compact" className="text-white/80" />
               <Link
+                to="/free-book"
+                className="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 text-sm font-semibold px-3 py-2 rounded-lg transition-colors hover:bg-amber-500/10"
+              >
+                <BookOpen className="w-4 h-4" />
+                Free Book
+              </Link>
+              <Link
                 to="/freedom"
                 className="text-white/60 hover:text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
               >
                 {t("nav.freeCalculator")}
               </Link>
               <Link
-                to="/oto/founding"
+                to="/start"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 {t("nav.getStarted")}
@@ -279,7 +287,7 @@ const Navbar = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
-                  to="/oto/founding"
+                  to="/start"
                   className="flex items-center justify-center px-4 py-3 rounded-xl text-sm font-medium text-white/80 border border-white/15 hover:bg-white/5 transition-colors active:scale-[0.97]"
                   style={{ minHeight: "44px" }}
                 >
