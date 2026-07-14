@@ -155,6 +155,17 @@ const Footer = () => {
             </p>
             <div className="mt-4 flex items-center gap-3">
               <a
+                href="https://www.reddit.com/r/invisibleexit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/60 hover:text-white hover:bg-white/15 transition-colors"
+                aria-label="Reddit"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.105 6.79c.769 0 1.383.614 1.383 1.383s-.614 1.383-1.383 1.383-1.383-.614-1.383-1.383.614-1.383 1.383-1.383zM12 8.456c1.588 0 2.863 1.276 2.863 2.864 0 .226-.025.45-.075.665.147.068.285.15.414.244l2.18-1.143a.723.723 0 0 1 .676 1.278l-2.19 1.149c.007.073.012.147.012.222 0 .078-.005.155-.012.232l2.19 1.149a.723.723 0 0 1-.676 1.278l-2.18-1.143a2.382 2.382 0 0 1-.414.244c.05.215.075.44.075.665 0 1.588-1.275 2.864-2.863 2.864s-2.863-1.276-2.863-2.864c0-.225.025-.45.075-.665a2.38 2.38 0 0 1-.414-.244l-2.18 1.143a.723.723 0 0 1-.676-1.278l2.19-1.149A2.87 2.87 0 0 1 9.137 12c0-.075.005-.152.012-.229l-2.19-1.149a.723.723 0 0 1 .676-1.278l2.18 1.143c.129-.094.267-.176.414-.244a2.87 2.87 0 0 1-.075-.665c0-1.588 1.275-2.864 2.863-2.864zm0 1.657c-.656 0-1.206.55-1.206 1.207 0 .656.55 1.206 1.206 1.206s1.206-.55 1.206-1.206c0-.657-.55-1.207-1.206-1.207zm0 4.822c-.656 0-1.206.55-1.206 1.206 0 .657.55 1.207 1.206 1.207s1.206-.55 1.206-1.207c0-.656-.55-1.206-1.206-1.206z" />
+                </svg>
+              </a>
+              <a
                 href="https://www.youtube.com/@InvisibleExit"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -170,21 +181,10 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/60 hover:text-white hover:bg-white/15 transition-colors"
-                aria-label="Twitter"
+                aria-label="Twitter / X"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/invisible-exit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/60 hover:text-white hover:bg-white/15 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
                 </svg>
               </a>
             </div>

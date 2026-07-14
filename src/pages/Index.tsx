@@ -27,6 +27,7 @@ import {
   Zap,
   Star,
   AlertTriangle,
+  Heart,
 } from "lucide-react";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import FrameworkDiagram from "@/components/FrameworkDiagram";
@@ -541,6 +542,269 @@ const Index = () => {
                 by offering a <strong className="text-foreground">free Freedom Number Calculator</strong> that shows them exactly how much
                 recurring revenue they need to quit,
                 so they can build <strong className="text-success">$4,000/month in MRR</strong> in 12–18 months without their employer finding out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONGREGATIONS / WHERE THEY HIDE (Traffic Secrets Secret #2) ── */}
+      {/* Brunson: "If you know where they gather, you can join the conversation before they ever land on your page." */}
+      {/* This section makes the invisible communities VISIBLE. It answers "where do people like me hang out?" */}
+      <section className="bg-white section-normal border-b border-border">
+        <div className="container-standard">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">Where We Gather</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              You're Already <span className="text-gradient">in the Room.</span>{" "}
+              You Just Don't Know It Yet.
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-3">
+              Your future co-founders and first customers are in the same communities you scroll
+              during lunch. Here's where the movement quietly grows — and where you should be reading, learning, and eventually engaging.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 text-xs text-amber-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse shrink-0" />
+              <span className="font-medium">20+ congregations mapped — here are the 6 most active today</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {[
+              {
+                name: "r/invisibleexit",
+                type: "Reddit",
+                url: "https://www.reddit.com/r/invisibleexit",
+                members: "Growing",
+                description:
+                  "Our home base. Anonymous builders share wins, ask stealth questions, and post MRR updates. No self-promotion — just real talk from people who get it.",
+                vibe: "Authentic. Supportive.",
+              },
+              {
+                name: "@InvisibleExit",
+                type: "YouTube",
+                url: "https://www.youtube.com/@InvisibleExit",
+                members: "Early",
+                description:
+                  "Adrian's channel. Full walkthroughs: how to find your freedom number, validate an idea in 48 hours, and launch without showing your face.",
+                vibe: "Practical. Step-by-step.",
+              },
+              {
+                name: "@InvisibleExit",
+                type: "X / Twitter",
+                url: "https://twitter.com/InvisibleExit",
+                members: "Growing",
+                description:
+                  "Daily threads, micro-SaaS ideas, equity math breakdowns, and the occasional \"I can't believe this works\" moment.",
+                vibe: "Fast. Derivative-free.",
+              },
+              {
+                name: "Indie Hackers",
+                type: "Community",
+                url: "https://www.indiehackers.com/",
+                members: "500K+",
+                description:
+                  "The single best congregation of bootstrapped founders on the web. Full build timelines from $0 to $4K MRR from members who started here.",
+                vibe: "Transparent. MRR-focused.",
+              },
+              {
+                name: "r/SaaS + r/FIRE",
+                type: "Reddit",
+                url: "https://www.reddit.com/r/SaaS/",
+                members: "3M+",
+                description:
+                  "Where members cross-post their build logs and equity-vs-revenue math. Two subreddits, one audience: people who want out.",
+                vibe: "Question-driven. Curious.",
+              },
+              {
+                name: "LinkedIn (30–45)",
+                type: "LinkedIn",
+                url: "#",
+                members: "50M+",
+                description:
+                  "The congregation they don't say out loud. Every post about golden handcuffs gets 50+ DMs asking \"how do I build a side business?\" (Our LinkedIn page is coming.)",
+                vibe: "Cloak-and-dagger.",
+              },
+            ].map((site) => (
+              <a
+                key={site.name}
+                href={site.url.startsWith("#") ? undefined : site.url}
+                target={site.url.startsWith("#") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className={`card-base p-5 border-t-4 ${
+                  site.type === "Reddit"
+                    ? "border-orange-400"
+                    : site.type === "YouTube"
+                    ? "border-red-500"
+                    : site.type === "Community"
+                    ? "border-blue-500"
+                    : site.type === "X / Twitter"
+                    ? "border-sky-500"
+                    : "border-gray-400"
+                } card-hover group cursor-pointer`}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">
+                    {site.name}
+                  </h3>
+                  <span className="text-[10px] font-medium text-muted-foreground bg-white/50 rounded-full px-2 py-0.5 border border-border">
+                    {site.type}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                  {site.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400" />
+                    {site.members}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground italic">
+                    {site.vibe}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              to="/where"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
+            >
+              See All 24 Congregations (Full Where-They-Hide Map)
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PSYCHOGRAPHIC IDENTIFICATION (Traffic Secrets Secret #1) ── */}
+      {/* The Formula above defines WHO they are demographically. This section
+           surfaces the fears, desires, and awareness stage that demographics
+           can't capture — the "that's ME" moment before the frameworks. */}
+      <section className="bg-surface section-normal border-y border-border">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">Beyond the Demographics</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              What's Really <span className="text-gradient">Keeping You Here</span>
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              You fit the profile above. But the profile doesn't explain the Sunday
+              night chest tightness, the 3 AM spiral, or why you've read this far.
+              These do.
+            </p>
+          </div>
+
+          {/* Two columns: Fears | Desires */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* ── DEEP FEARS ── */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <AlertTriangle className="w-5 h-5 text-amber-500" />
+                <h3 className="text-lg font-bold text-foreground">
+                  The Fears You Don't Say Out Loud
+                </h3>
+              </div>
+              <div className="space-y-3">
+                {[
+                  {
+                    fear: "Discovery",
+                    detail:
+                      "Your employer finds the side business. The career you spent 15 years building — gone in one Slack message.",
+                  },
+                  {
+                    fear: "Failure",
+                    detail:
+                      "You spend months building. Nobody buys. It proves you're 'just a manager' who can't build anything real.",
+                  },
+                  {
+                    fear: "Legal",
+                    detail:
+                      "Your non-compete or IP assignment clause gets enforced. You get sued by the company that pays your salary.",
+                  },
+                  {
+                    fear: "The Cure Is Worse",
+                    detail:
+                      "Building steals time from your kids. You escape the golden handcuffs but lose the weekends that kept you sane.",
+                  },
+                ].map((f) => (
+                  <div
+                    key={f.fear}
+                    className="card-base p-4 border-l-4 border-amber-400/50"
+                  >
+                    <p className="font-semibold text-foreground text-sm mb-1">
+                      "What if {f.fear.toLowerCase()}…"
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {f.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── DEEP DESIRES ── */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Heart className="w-5 h-5 text-rose-500" />
+                <h3 className="text-lg font-bold text-foreground">
+                  What You Actually Want (But Won't Admit)
+                </h3>
+              </div>
+              <div className="space-y-3">
+                {[
+                  {
+                    desire: "Optionality",
+                    detail:
+                      "Not to quit — but to have the ABILITY to quit. The power to disagree in a meeting without calculating the financial consequences.",
+                  },
+                  {
+                    desire: "Proof of Separation",
+                    detail:
+                      "Evidence that your worth exists outside the company. One Stripe notification — $29 from a stranger — changes everything.",
+                  },
+                  {
+                    desire: "Stealth",
+                    detail:
+                      "To build without your employer, colleagues, or LinkedIn network knowing. Anonymity isn't hiding — it's freedom to fail without consequences.",
+                  },
+                  {
+                    desire: "Systems, Not Hustle",
+                    detail:
+                      "A repeatable system that works in 5 hours a week — not a 60-hour grind that burns you out before you reach escape velocity.",
+                  },
+                ].map((d) => (
+                  <div
+                    key={d.desire}
+                    className="card-base p-4 border-l-4 border-rose-400/50"
+                  >
+                    <p className="font-semibold text-foreground text-sm mb-1">
+                      {d.desire}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {d.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── AWARENESS BRIDGE (Eugene Schwartz → Brunson) ── */}
+          <div className="mt-10 max-w-3xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
+              <p className="text-sm text-foreground leading-relaxed">
+                If you read both columns and thought{" "}
+                <strong className="text-primary">"that's me"</strong> — you're not
+                unaware anymore. You're{" "}
+                <strong className="text-foreground">problem-aware</strong>. You
+                know the cage exists. You've felt the bars. You just haven't found
+                the door yet.
+              </p>
+              <p className="text-sm text-muted-foreground mt-3">
+                That's exactly what the next section is about.
               </p>
             </div>
           </div>
