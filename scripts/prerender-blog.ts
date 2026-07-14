@@ -1021,21 +1021,7 @@ function homepageBodyHtml(): string {
 </div>
 </div>
 </section>
-<section style="padding:3rem 1.5rem;background-color:#f8fafc">
-<div style="max-width:56rem;margin:0 auto">
-<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem;text-align:center">Explore Resources</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem">
-<a href="/ideas" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Micro-SaaS Ideas</h3><p style="font-size:0.75rem;color:#6b7280">155 ideas by profession</p></a>
-<a href="/best" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Best AI Tools</h3><p style="font-size:0.75rem;color:#6b7280">120 tool guides</p></a>
-<a href="/glossary" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Glossary</h3><p style="font-size:0.75rem;color:#6b7280">30 key terms defined</p></a>
-<a href="/guides" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">State Guides</h3><p style="font-size:0.75rem;color:#6b7280">52 state business guides</p></a>
-<a href="/data" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Data Reports</h3><p style="font-size:0.75rem;color:#6b7280">75 benchmarks & reports</p></a>
-<a href="/compare" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Comparisons</h3><p style="font-size:0.75rem;color:#6b7280">50 side-by-side guides</p></a>
-<a href="/calculators" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Calculators</h3><p style="font-size:0.75rem;color:#6b7280">Free financial tools</p></a>
-<a href="/explore" style="display:block;padding:1.25rem;background:white;border-radius:0.75rem;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><h3 style="font-weight:700;font-size:1rem;margin-bottom:0.25rem">Explore All</h3><p style="font-size:0.75rem;color:#6b7280">Complete resource index</p></a>
-</div>
-</div>
-</section>
+
 <section style="padding:3rem 1.5rem;background-color:#f9fafb">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
@@ -1074,9 +1060,47 @@ function homepageBodyHtml(): string {
 </div>
 </div>
 </section>
-<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
-<div style="max-width:48rem;margin:0 auto">
-<p style="font-size:0.875rem;color:#6b7280">Trusted by corporate managers from Fortune 500 companies. <a href="/pro" style="color:#3B82F6">$0.97/month</a>. <a href="/freedom" style="color:#3B82F6">Calculate your freedom number</a>. <a href="/blog" style="color:#3B82F6">Read the blog</a>. <a href="/manifesto" style="color:#3B82F6">Read the manifesto</a>. <a href="/guides/freedom-number" style="color:#3B82F6">Freedom Number Guide</a>. <a href="/compare" style="color:#3B82F6">Compare alternatives</a>. <a href="/ideas" style="color:#3B82F6">Micro-SaaS ideas</a>. <a href="/glossary" style="color:#3B82F6">Glossary</a>. <a href="/best" style="color:#3B82F6">Best AI tools</a>. <a href="/guides" style="color:#3B82F6">State guides</a>. <a href="/data" style="color:#3B82F6">Data reports</a>. <a href="/explore" style="color:#3B82F6">Explore all resources</a>. Cancel anytime. No credit card required to start.</p>
+<section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb;background:#f9fafb">
+<div style="max-width:64rem;margin:0 auto">
+<nav style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:left;margin-bottom:2rem">
+<div>
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Micro-SaaS by Industry</h3>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="margin-bottom:0.375rem"><a href="/ideas" style="color:#374151;text-decoration:none;font-size:0.875rem">All Ideas</a></li>
+<li style="margin-bottom:0.375rem"><a href="/for/privacy" style="color:#374151;text-decoration:none;font-size:0.875rem">Privacy</a></li>
+<li style="margin-bottom:0.375rem"><a href="/for/security" style="color:#374151;text-decoration:none;font-size:0.875rem">Security</a></li>
+<li style="margin-bottom:0.375rem"><a href="/for/journalism" style="color:#374151;text-decoration:none;font-size:0.875rem">Journalism</a></li>
+</ul>
+</div>
+<div>
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Guides by State</h3>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="margin-bottom:0.375rem"><a href="/guides" style="color:#374151;text-decoration:none;font-size:0.875rem">All State Guides</a></li>
+<li style="margin-bottom:0.375rem"><a href="/guides/wyoming" style="color:#374151;text-decoration:none;font-size:0.875rem">Wyoming LLC</a></li>
+<li style="margin-bottom:0.375rem"><a href="/guides/delaware" style="color:#374151;text-decoration:none;font-size:0.875rem">Delaware LLC</a></li>
+<li style="margin-bottom:0.375rem"><a href="/guides/nevada" style="color:#374151;text-decoration:none;font-size:0.875rem">Nevada LLC</a></li>
+</ul>
+</div>
+<div>
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Tools & Calculators</h3>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="margin-bottom:0.375rem"><a href="/freedom" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators" style="color:#374151;text-decoration:none;font-size:0.875rem">All Calculators</a></li>
+<li style="margin-bottom:0.375rem"><a href="/best" style="color:#374151;text-decoration:none;font-size:0.875rem">Best AI Tools</a></li>
+<li style="margin-bottom:0.375rem"><a href="/glossary" style="color:#374151;text-decoration:none;font-size:0.875rem">Glossary</a></li>
+</ul>
+</div>
+<div>
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Compare & Research</h3>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="margin-bottom:0.375rem"><a href="/compare" style="color:#374151;text-decoration:none;font-size:0.875rem">Comparisons</a></li>
+<li style="margin-bottom:0.375rem"><a href="/data" style="color:#374151;text-decoration:none;font-size:0.875rem">Data Reports</a></li>
+<li style="margin-bottom:0.375rem"><a href="/blog" style="color:#374151;text-decoration:none;font-size:0.875rem">Blog</a></li>
+<li style="margin-bottom:0.375rem"><a href="/explore" style="color:#374151;text-decoration:none;font-size:0.875rem">Explore All</a></li>
+</ul>
+</div>
+</nav>
+<p style="font-size:0.75rem;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:1.5rem">From $0.97/month. Cancel anytime. Built by a corporate manager, for corporate managers.</p>
 </div>
 </section>
 </div>`;
@@ -3625,15 +3649,53 @@ ${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The c
 <p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete story of how a former corporate director built a profitable micro-SaaS portfolio while fully employed — without anyone finding out. No viral launch, no venture capital, no personal brand. Just quiet, systematic execution.</p>
 </div>
 </section>
+<section style="padding:1rem 1.5rem 2rem;border-bottom:1px solid #e5e7eb">
+<div style="max-width:48rem;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:1rem">
+<div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#dbeafe,#eff6ff);border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center">
+<span style="font-size:28px;font-weight:700;color:#2563eb">A</span>
+</div>
+<div>
+<p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#2563eb;margin-bottom:2px">Your Guide</p>
+<h2 style="font-size:1.5rem;font-weight:700;color:#111827;margin-bottom:2px">Adrian</h2>
+<p style="font-size:0.875rem;color:#6b7280">Former Corporate Director · 8+ years · MBA</p>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#f0fdf4"><span style="color:#16a34a;font-weight:700">$4,100/mo verified</span></span>
+<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#eff6ff">Still employed</span>
+<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#f0fdf4">Entity-separated &amp; legal</span>
+</div>
+</div>
+<div style="max-width:42rem;margin:1.5rem auto 0;padding:1rem 1.25rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:0.75rem">
+<p style="font-size:0.875rem;color:#4b5563;line-height:1.6;text-align:center"><strong style="color:#111827">Why no face or last name?</strong> Anonymity isn't a gimmick — it's the proof of concept. I'm still employed. My employer still doesn't know. The system works so well that revealing my identity would defeat its purpose. Everything is documented and verifiable through Stripe statements, company registrations, and tax filings.</p>
+</div>
+</section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">The Beginning</h2>
-<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">It started with a simple question: "If I lost my job tomorrow, how long could I survive?" The answer was 3 months. That was the wake-up call. I was a corporate director with an MBA, a good salary, and zero financial independence. If the company decided to let me go, I'd have nothing to show for 8+ years of work.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I'm Adrian. I was a corporate director with an MBA, a $120K salary, and less than 0.5% equity. The question that changed everything: "If I lost my job tomorrow, how long could I survive?" The answer was 3 months. That was the wake-up call.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to quit. I liked my job. But I wanted a safety net — recurring revenue that didn't depend on showing up at an office. The answer was micro-SaaS: small, focused software products with monthly subscriptions that could be built nights and weekends, run anonymously, and scaled without employees.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The Amsterdam Taxi Moment</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">6 AM. Raining. First morning of a family vacation in Amsterdam. My phone buzzed in the taxi. Two notifications sat side by side: corporate escalation emails from people fighting over responsibilities at 6 AM, and a Stripe notification — "$0.97 received." A complete stranger had paid for a landing page I'd built while I slept on a plane, under a name that isn't mine.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I screamed in the taxi. This wasn't about $0.97. This was proof that the cage has a door.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The System</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">Over 18 months, I built a system: (1) Calculate the freedom number, (2) Find ideas in my professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get first 10 customers, (6) Stay anonymous through entity separation and compliance. The result: $4,000/month in recurring revenue from products nobody knew I owned.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">The system beats the idea. I spent 3 months choosing the "right" idea. The first made $9/month. The second made $47. The third hit $850. The fourth crossed $4,000. Stop obsessing over the idea. Build the system, and you can swap ideas like cartridges in a printer.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The Honest Timeline</h2>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 1–3:</strong> Built, launched, zero customers. Almost quit twice.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 4:</strong> First customer ($9/mo). Screamed in the car.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 6:</strong> $850 MRR. Still employed. Employer clueless.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 12:</strong> $4,100 MRR across 3 products. The boring one pays most of the mortgage.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem;margin-top:1rem">I didn't get rich. I got free. Rich is a number. Free is an option. I bought the option to say no.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">Why Invisible Exit?</h2>
-<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">After hitting $4K/month, I realized there were millions of corporate managers in the same position — wanting financial independence but unable to risk their career. I built Invisible Exit to share the exact system, tools, and methodology. Five AI-powered tools that handle the hard parts: calculating your freedom number, validating ideas, ensuring compliance, automating launch, and building an audience without showing your face.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">After hitting $4K/month, colleagues noticed I was calmer. A friend in Finance pulled me aside: "Something changed. What happened?" I realized the system I built wasn't just for me. There are millions of corporate managers trapped in the same cage, waiting for someone to hand them the key.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to build Invisible Exit. I wanted to keep building micro-SaaS products in peace. But every time I explained the system, they got the same look I had in that Amsterdam taxi. The look of someone who just realized the cage has a door.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">

@@ -364,7 +364,7 @@ function getRoutes() {
     meta: {
       title: "Build a $4,000/Month Side Business Without Quitting",
       description:
-        "5 AI-powered tools that help corporate managers build $4,000/month in anonymous micro-SaaS revenue in 12 months — without quitting, without code, without your employer finding out. From $0.97/mo.",
+        "5 AI-powered tools anchored against $252/mo in alternatives + 3 bonuses + 12-month continuity. Founding member price: $0.97/month (99.9% off). Build $4K/month in anonymous micro-SaaS revenue without quitting your job. From $0.97/mo.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [
@@ -400,29 +400,68 @@ function getRoutes() {
           name: SITE_NAME,
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
-          offers: {
-            "@type": "Offer",
-            price: "0.97",
-            priceCurrency: "USD",
-          },
           description:
-            "5 AI-powered tools for building anonymous micro-SaaS businesses: freedom number calculator, idea validator, stealth ops hub, launch automation, and anonymous brand builder.",
+            "5 AI-powered tools for building anonymous micro-SaaS businesses: freedom number calculator, idea validator, stealth ops hub, launch automation, and anonymous brand builder. Total comparable value: $999/year across 5 tools + 3 bonuses. Founding member price: $0.97/month (99.9% off).",
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "USD",
+            lowPrice: "0.97",
+            highPrice: "252.00",
+            offerCount: "8",
+            offers: [
+              {
+                "@type": "Offer",
+                name: "FYM Dashboard",
+                price: "79.00",
+                priceCurrency: "USD",
+                description: "Real-time MRR tracking, churn analytics, exit timeline — vs. Baremetrics/ChartMogul ($79/mo standalone)"
+              },
+              {
+                "@type": "Offer",
+                name: "Idea Pipeline",
+                price: "49.00",
+                priceCurrency: "USD",
+                description: "500+ scored micro-SaaS ideas with 48h AI validation"
+              },
+              {
+                "@type": "Offer",
+                name: "Stealth Ops Hub",
+                price: "39.00",
+                priceCurrency: "USD",
+                description: "Entity separation, invisibility scoring, and compliance audit against common contract clauses"
+              },
+              {
+                "@type": "Offer",
+                name: "Launch Control",
+                price: "36.00",
+                priceCurrency: "USD",
+                description: "Go-live automation: Stripe integration, landing page generation, launch sequence builder"
+              },
+              {
+                "@type": "Offer",
+                name: "Brand Manager",
+                price: "49.00",
+                priceCurrency: "USD",
+                description: "Faceless content: YouTube scripts, Reddit playbooks, SEO templates"
+              }
+            ]
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: "127",
+            reviewCount: "89",
+            itemReviewed: {
+              "@type": "SoftwareApplication",
+              name: SITE_NAME,
+              applicationCategory: "BusinessApplication"
+            }
+          },
           url: SITE,
           screenshot: `${SITE}/og-image.png`,
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          reviewCount: "127",
-          bestRating: "5",
-          worstRating: "1",
-          itemReviewed: {
-            "@type": "SoftwareApplication",
-            name: SITE_NAME,
-            applicationCategory: "BusinessApplication",
           },
-        },
         {
           "@context": "https://schema.org",
           "@type": "Review",
@@ -1700,6 +1739,7 @@ function getRoutes() {
     { path: "/founding-wall", title: "The Founding Wall — Meet the First 27 Builders | Invisible Exit", desc: "The first 27 Invisible Exit members. Their freedom numbers, their products, their stories. 73 spots remaining.", type: "website" },
     { path: "/frameworks", title: "The 3 Proprietary Frameworks — Origin Stories | Invisible Exit", desc: "The Salary-Runway Method, Triple-Separation Protocol, and Cartridge System. Each framework's origin story and methodology.", type: "website" },
     { path: "/proof", title: "Proof & Results — Member Case Studies | Invisible Exit", desc: "Aggregate stats, detailed case studies, 12-month results timeline, and trust signals from the Invisible Exit community.", type: "website" },
+    { path: "/press", title: "Press & Media Kit — Speaking Topics & Interview Formats | Invisible Exit", desc: "Media kit with 6 original speaking topics, 4 interview formats, fact sheet, boilerplate copy, and sample questions for podcast hosts and journalists covering the anonymous micro-SaaS movement.", type: "website" },
     { path: "/beliefs", title: "Belief Crusher — Break the 3 False Beliefs | Invisible Exit", desc: "Interactive 4-step experience that identifies and shatters the 3 false beliefs keeping you trapped in your corporate job.", type: "website" },
     { path: "/lexicon", title: "Movement Lexicon — 14 Terms That Define Us | Invisible Exit", desc: "The shared vocabulary of the Invisible Exit movement: Freedom Number, Golden Handcuffs, Cartridge System, The 3%, and more.", type: "website" },
     { path: "/one-thing", title: "The One Thing — Build the System First | Invisible Exit", desc: "If you could only learn one thing, it would be this: the system beats the idea. One message, zero distractions.", type: "website" },

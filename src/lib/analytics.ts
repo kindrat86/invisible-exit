@@ -32,7 +32,10 @@ type AnalyticsEvent =
   | "podcast_pitch_copied"
   | "homepage_formula_bait_clicked"
   | "story_masterclass_bridge_clicked"
-  | "story_final_cta_masterclass";
+  | "story_final_cta_masterclass"
+  | "manifesto_hero_cta"
+  | "manifesto_final_cta"
+  | "manifesto_system_cta";
 
 export function trackEvent(
   event: AnalyticsEvent,

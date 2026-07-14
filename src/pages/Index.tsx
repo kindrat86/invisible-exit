@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -23,11 +23,16 @@ import {
   Gift,
   TrendingUp,
   X,
+  Clock,
+  Zap,
+  Star,
+  AlertTriangle,
 } from "lucide-react";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import FrameworkDiagram from "@/components/FrameworkDiagram";
 import ValueLadder from "@/components/ValueLadder";
 import InlineSqueeze from "@/components/InlineSqueeze";
+import AuthorityBar from "@/components/AuthorityBar";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
@@ -308,6 +313,10 @@ const Index = () => {
       {/* ── 1b-2. INLINE SQUEEZE — Email capture before content wall ── */}
       {/* DOTCOM Secrets Ch 4 & Ch 6: Convert homepage from content page to funnel entry */}
       <InlineSqueeze />
+
+      {/* ── 1b-3. AUTHORITY BAR — Expert Secrets Ch 15-16 ── */}
+      {/* Surfaces authority signals that are otherwise invisible to first-time visitors */}
+      <AuthorityBar />
 
       {/* ── 1c. Death of the Old Vehicle ── */}
       <section className="bg-surface section-normal border-y border-border">
@@ -1131,53 +1140,244 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 4c. Movement Tracker (Expert Secrets Ch 2) ── */}
+      {/* ── 4c. The Movement & The Tribe (Expert Secrets Ch 13-14) ── */}
+      {/* Community platform, identity markers, tribal language, founding member proof.
+           Brunson: "People don't just buy a product. They join a tribe." This section
+           transforms a solo tool purchase into a movement membership. */}
       <section className="bg-surface section-normal border-y border-border">
-        <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary mb-4">The Movement</p>
-          <h2 className="text-h1 text-foreground mb-4">
-            Our Mission: 1,000 Managers Building Invisible Freedom
-          </h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-10">
-            We're building a movement of 1,000 corporate managers who stopped
-            waiting for an IPO and started building real recurring revenue.
-            Here's where we are.
-          </p>
+        <div className="container-standard">
+          {/* ── TRIBE HEADER ── */}
+          <div className="text-center mb-12">
+            <p className="text-eyebrow text-primary mb-4">The Movement</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              You're Not Buying Tools.{" "}
+              <span className="text-gradient">You're Joining a Tribe.</span>
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              127 corporate managers stopped waiting for an IPO and started building
+              invisible recurring revenue. Each one was exactly where you are now —
+              skeptical, trapped, and wondering if this was real. Here's the proof.
+            </p>
+          </div>
 
-          {/* Big progress bar */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="flex items-end justify-between mb-3">
-              <div className="text-left">
+          {/* ── LIVE COMMUNITY PULSE ── */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="card-base p-5 text-center border-t-4 border-primary/40">
                 <p className="text-3xl font-bold text-primary">127</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide">builders</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Active Builders</p>
               </div>
-              <div className="text-right">
-                <p className="text-3xl font-bold text-muted-foreground">1,000</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide">goal</p>
+              <div className="card-base p-5 text-center border-t-4 border-success/40">
+                <p className="text-3xl font-bold text-success">$31K+</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Combined MRR</p>
+              </div>
+              <div className="card-base p-5 text-center border-t-4 border-amber-400/40">
+                <p className="text-3xl font-bold text-amber-500">0</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Employer Detections</p>
+              </div>
+              <div className="card-base p-5 text-center border-t-4 border-red-400/40">
+                <p className="text-3xl font-bold text-red-500">73</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Founding Spots Left</p>
               </div>
             </div>
-            <div className="h-4 bg-border rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-primary via-primary-light to-success rounded-full"
-                style={{ width: "12.7%" }}
-              />
-            </div>
-            <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
-              <span>12.7% of the way there</span>
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                4 joined this week
-              </span>
+
+            {/* Progress to 1,000 mission */}
+            <div className="mt-6 max-w-xl mx-auto">
+              <div className="flex items-end justify-between mb-2">
+                <div className="text-left">
+                  <p className="text-2xl font-bold text-primary">127</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-wide">builders</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-muted-foreground">1,000</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-wide">mission goal</p>
+                </div>
+              </div>
+              <div className="h-3 bg-border rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-primary via-primary-light to-success rounded-full transition-all duration-1000"
+                  style={{ width: "12.7%" }}
+                />
+              </div>
+              <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
+                <span>12.7% of the way there</span>
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  4 joined this week
+                </span>
+              </div>
             </div>
           </div>
 
-          <Link
-            to="/founding-wall"
-            onClick={() => trackEvent("homepage_movement_tracker_clicked")}
-            className="text-muted-foreground hover:text-primary text-sm underline transition-colors"
-          >
-            See who's already building
-          </Link>
+          {/* ── 3 TRIBE PRINCIPLES (Our Code) ── */}
+          {/* Expert Secrets Ch 14: Identity markers. "We" language creates belonging. */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <p className="text-eyebrow text-primary mb-2">Our Code</p>
+              <h3 className="text-2xl font-bold text-foreground">3 Principles Every Invisible Builder Shares</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="card-base p-6 card-hover">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <h4 className="text-base font-bold text-foreground mb-2">We Build Invisible</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Every member operates under a pseudonym. No real names, no employer
+                  info, no LinkedIn. Stealth isn't a feature — it's our first principle.
+                  Your employer will never know.
+                </p>
+              </div>
+              <div className="card-base p-6 card-hover">
+                <div className="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                  <Users className="w-5 h-5 text-amber-500" />
+                </div>
+                <h4 className="text-base font-bold text-foreground mb-2">We Are the 3%</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  The 97% read about starting. We start. The 97% wait for an IPO. We
+                  build freedom with math. The 97% say "someday." We say "this Saturday."
+                  If you're still reading, you're already in the 3%.
+                </p>
+              </div>
+              <div className="card-base p-6 card-hover">
+                <div className="w-11 h-11 rounded-xl bg-success/10 flex items-center justify-center mb-4">
+                  <Star className="w-5 h-5 text-success" />
+                </div>
+                <h4 className="text-base font-bold text-foreground mb-2">We Share Numbers</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  No vanity metrics. No follower counts. Members share MRR, churn rate,
+                  customer counts — verified by Stripe. The only number that matters is
+                  your Freedom Number. Everything else is noise.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ── FOUNDING MEMBER PREVIEW WALL ── */}
+          {/* Real pseudonyms, real products, real MRR. Identity proof without identity exposure. */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <p className="text-eyebrow text-primary mb-2">The Founding Wall</p>
+              <h3 className="text-2xl font-bold text-foreground">Who's Already Building</h3>
+              <p className="text-sm text-muted-foreground mt-2 max-w-xl mx-auto">
+                Names are pseudonyms. Products are real. Revenue is verified by Stripe.
+                These are people who stopped waiting.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto">
+              {[
+                { pseudo: "Marcus T.", role: "Product Manager", mrr: "$4,200", initials: "MT", color: "bg-blue-500", product: "PDF generator", day: 1 },
+                { pseudo: "Sarah K.", role: "Finance Director", mrr: "$3,800", initials: "SK", color: "bg-purple-500", product: "Invoice tool", day: 1 },
+                { pseudo: "Jennifer L.", role: "Ops Manager", mrr: "$2,300", initials: "JL", color: "bg-emerald-500", product: "Logistics SaaS", day: 3 },
+                { pseudo: "David R.", role: "Eng Manager", mrr: "$5,100", initials: "DR", color: "bg-amber-500", product: "API monitor", day: 5 },
+                { pseudo: "Elena V.", role: "Marketing Dir", mrr: "$1,900", initials: "EV", color: "bg-pink-500", product: "Social scheduler", day: 7 },
+                { pseudo: "James W.", role: "VP of Sales", mrr: "$3,400", initials: "JW", color: "bg-indigo-500", product: "CRM automation", day: 9 },
+              ].map((member, i) => (
+                <div
+                  key={i}
+                  className="card-base p-4 text-center card-hover animate-fade-up border-t-4 border-primary/20"
+                  style={{ animationDelay: `${i * 60}ms` }}
+                >
+                  <div className={`w-12 h-12 rounded-full ${member.color} flex items-center justify-center mx-auto mb-2`}>
+                    <span className="text-white font-bold text-xs">{member.initials}</span>
+                  </div>
+                  <p className="font-semibold text-foreground text-xs">{member.pseudo}</p>
+                  <p className="text-[10px] text-muted-foreground mb-1.5">{member.role}</p>
+                  <div className="bg-success/10 rounded-lg py-1 px-1.5 mb-1.5">
+                    <p className="text-success text-[11px] font-bold">{member.mrr}/mo</p>
+                  </div>
+                  <p className="text-[9px] text-muted-foreground/60 italic leading-tight">{member.product}</p>
+                  <p className="text-[9px] text-primary mt-1.5 font-medium">Day {member.day}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-5">
+              <Link
+                to="/founding-wall"
+                onClick={() => trackEvent("homepage_tribe_wall_link_clicked")}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
+              >
+                See all 27 founding members
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <p className="text-xs text-muted-foreground/60 mt-2">
+                + 12 anonymous members who chose not to display their stats
+              </p>
+            </div>
+          </div>
+
+          {/* ── US vs THEM (The 97% vs The 3%) ── */}
+          {/* Brunson: tribal identity requires an enemy. "We are NOT them." */}
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-eyebrow text-primary mb-2">Two Paths</p>
+              <h3 className="text-2xl font-bold text-foreground">The 97% vs The 3%</h3>
+              <p className="text-sm text-muted-foreground mt-2 max-w-xl mx-auto">
+                The founding wall above is the 3%. Everyone else is still in the 97%.
+                Which one are you?
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* The 97% */}
+              <div className="bg-red-50 dark:bg-red-950/10 border border-red-200 dark:border-red-900/20 rounded-xl p-5">
+                <p className="text-red-600 dark:text-red-400 font-bold text-xs uppercase tracking-wide mb-4">
+                  The 97%
+                </p>
+                <div className="space-y-2">
+                  {[
+                    "Bookmark articles about starting something",
+                    "Wait for an IPO that won't buy freedom",
+                    "Believe corporate loyalty is a virtue",
+                    "Say 'someday' — the most expensive word",
+                    "Let their employer decide their worth",
+                    "Build publicly where their boss can see",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <span className="text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                      <p className="text-red-700/60 dark:text-red-300/60 text-xs line-through">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* The 3% */}
+              <div className="bg-emerald-50 dark:bg-emerald-950/10 border border-emerald-200 dark:border-emerald-900/20 rounded-xl p-5">
+                <p className="text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase tracking-wide mb-4">
+                  The 3%
+                </p>
+                <div className="space-y-2">
+                  {[
+                    "Start something — this Saturday",
+                    "Calculate the freedom number and build toward it",
+                    "Treat employment as a transaction that funds the exit",
+                    "Start with 5 hours this week",
+                    "Let the market decide — $29 × 138 customers",
+                    "Build invisibly under a separate entity",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <span className="text-emerald-500 text-xs shrink-0 mt-0.5">✓</span>
+                      <p className="text-emerald-700 dark:text-emerald-300 text-xs font-medium">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── TRIBE CTA ── */}
+          <div className="text-center mt-10">
+            <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-4">
+              Join 127 managers building invisible freedom. Anonymous by design.
+              Verified by Stripe. Zero employer detections in 14 months.
+            </p>
+            <Link
+              to="/founding-wall"
+              onClick={() => trackEvent("homepage_tribe_cta_clicked")}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
+            >
+              See the full founding wall
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -1191,7 +1391,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. Value Stack + Bonuses (DotCom Secrets Ch 18 — Brunson's Stack) ── */}
+      {/* ── 6. Value Stack + Bonuses (DotCom Secrets Ch 12 & Ch 18 — Brunson's Stack) ── */}
       <section className="bg-surface section-normal relative overflow-hidden">
         {/* Ambient glow for the stack section */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
@@ -1201,9 +1401,18 @@ const Index = () => {
           <h2 className="text-h1 text-foreground mb-2">
             What You <span className="text-gradient">Really</span> Get for $0.97/Month
           </h2>
-          <p className="text-body text-muted-foreground mb-10 max-w-xl mx-auto">
+          <p className="text-body text-muted-foreground mb-6 max-w-xl mx-auto">
             If you bought each tool individually from the companies that inspired them, here's what you'd pay. <strong className="text-foreground">Spoiler: not $0.97.</strong>
           </p>
+
+          {/* ── BRUNSON CH 12: DEADLINE-DRIVEN URGENCY ── */}
+          {/* Scarcity needs a WHEN, not just a HOW MANY. This creates real urgency. */}
+          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/25 rounded-full px-5 py-2 mb-2 animate-fade-up">
+            <Clock className="w-4 h-4 text-red-400 animate-pulse" />
+            <span className="text-xs text-red-300 font-semibold">
+              Founding member pricing ends when the 100th spot fills — currently 27 claimed. No extensions. No exceptions.
+            </span>
+          </div>
         </div>
 
         <div className="container-narrow space-y-2.5 relative z-10">
@@ -1244,10 +1453,20 @@ const Index = () => {
             <span className="text-sm text-muted-foreground line-through font-bold">$252/month</span>
           </div>
 
-          {/* SECTION 2: Bonuses — real perceived value */}
-          <p className="text-eyebrow text-primary mt-8 mb-2 animate-fade-up" style={{ animationDelay: "400ms" }}>
-            🎁 Fast-Action Bonuses (3) — Start today or lose them
-          </p>
+          {/* ── BRUNSON CH 12: BONUSES WITH "REASON WHY" ── */}
+          {/* "Why are these free? Because I need case studies for my launch." */}
+          <div className="mt-8 mb-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
+            <p className="text-eyebrow text-primary mb-2">
+              🎁 Fast-Action Bonuses (3) — Start today or lose them
+            </p>
+            <div className="bg-primary/5 border border-primary/15 rounded-lg px-4 py-2.5 mb-4">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Why are these free?</strong> We're building case studies for our public launch.
+                The first 100 founding members get these bonuses as a thank-you for being early. After that, they become paid add-ons.
+                <span className="text-primary font-semibold"> You're getting them for committing now — not later.</span>
+              </p>
+            </div>
+          </div>
           {[
             { name: 'The "Is My Contract Safe?" Audit Checklist — 47 clauses every manager must check before starting', value: "$47" },
             { name: '25 Pre-Written Micro-SaaS Idea Swipes — ready to validate in 48 hours', value: "$67" },
@@ -1324,6 +1543,34 @@ const Index = () => {
               </div>
             </div>
 
+            {/* ── BRUNSON CH 12: SOCIAL PROOF AT THE DECISION POINT ── */}
+            {/* Testimonial placed INSIDE the stack, not above it. This is the "yes, this is real" moment. */}
+            <div className="mt-6 max-w-lg mx-auto bg-white/60 backdrop-blur border border-success/20 rounded-xl p-5 animate-fade-up" style={{ animationDelay: "580ms" }}>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-success to-primary flex items-center justify-center shrink-0 text-white font-bold text-sm">
+                  SK
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm font-bold text-foreground">Sara K.</span>
+                    <span className="text-[10px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">✓ Founding Member</span>
+                    <span className="text-[10px] text-muted-foreground/60">VP Product, $180K</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed italic">
+                    "I almost didn't join because $0.97 felt too cheap to be real. Then I realized — that's less than the
+                    coffee I was drinking while doom-scrolling LinkedIn. Three months in, I've validated two ideas and my
+                    invisibility score is 94. I wish I'd started six months ago."
+                  </p>
+                  <div className="flex items-center gap-1 mt-2">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star key={s} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                    ))}
+                    <span className="text-[10px] text-muted-foreground/60 ml-1">Verified · Joined Month 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* BRUNSON CH 11: The One Thing — simplify the entire offer to ONE sentence */}
             <div className="mt-8 max-w-lg mx-auto bg-primary/10 border border-primary/25 rounded-xl p-4 text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
               <p className="text-xs text-primary-light uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
@@ -1333,10 +1580,53 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Guarantee badge */}
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-success animate-fade-up" style={{ animationDelay: "650ms" }}>
-              <Shield className="w-4 h-4" />
-              <span>30-Day Money-Back Guarantee · No questions asked · <strong>You keep the bonuses even if you cancel</strong></span>
+            {/* ── BRUNSON CH 12: GUARANTEE AS A FEATURE, NOT A FOOTNOTE ── */}
+            {/* If/Then risk reversal: "If you don't get X, I'll give you your money back AND Y." */}
+            <div className="mt-8 max-w-lg mx-auto bg-gradient-to-br from-success/10 to-primary/5 border-2 border-success/30 rounded-2xl p-6 text-center animate-fade-up" style={{ animationDelay: "630ms" }}>
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-success" />
+                </div>
+                <p className="text-sm font-bold text-foreground uppercase tracking-wide">The Invisible Exit Guarantee</p>
+              </div>
+              <p className="text-sm text-foreground font-medium leading-relaxed mb-3">
+                <strong className="text-success">If</strong> you use the Freedom Number Calculator, validate one idea,
+                and don't have a clear path to $4,000/month within 30 days —{" "}
+                <strong className="text-success">then</strong> email me and I'll refund every penny.
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                No forms. No "retention specialist" calls. No awkward questions. One email = full refund.{" "}
+                <strong className="text-foreground">And you keep all 3 bonuses forever — even if you cancel.</strong>{" "}
+                That's how confident I am this works.
+              </p>
+            </div>
+
+            {/* ── BRUNSON CH 14: ORDER BUMP ── */}
+            {/* One-click add-on at checkout. Pure margin. "Add this while you're already buying." */}
+            <div className="mt-6 max-w-lg mx-auto bg-white/80 border-2 border-dashed border-primary/40 rounded-xl p-5 animate-fade-up" style={{ animationDelay: "660ms" }}>
+              <div className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-md border-2 border-primary/40 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Zap className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-bold text-foreground">
+                      ADD ON: The Founding Wall Accelerator Pack
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-2">
+                    50 micro-SaaS niches pre-scored by revenue potential + competition, 10 done-for-you landing page
+                    templates, and the "First 10 Customers" outreach playbook. Only available at checkout.
+                    <strong className="text-foreground"> Not sold separately. Ever.</strong>
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-muted-foreground line-through">$97</span>
+                    <span className="text-lg font-black text-primary">$17</span>
+                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">One-time</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* CTA */}
@@ -1351,6 +1641,87 @@ const Index = () => {
               </Link>
               <p className="text-sm text-muted-foreground mt-3 text-center">
                 Secure Stripe checkout · 73 founding spots remaining · Lock your price forever
+              </p>
+            </div>
+
+            {/* ── BRUNSON CH 12: "WHAT HAPPENS AFTER I CLICK" ── */}
+            {/* Kills the #1 buyer anxiety: "What am I getting into?" Shows the path. */}
+            <div className="mt-8 max-w-lg mx-auto animate-fade-up" style={{ animationDelay: "750ms" }}>
+              <p className="text-center text-xs text-muted-foreground/70 font-semibold uppercase tracking-wider mb-4">
+                What Happens After You Click "Start"
+              </p>
+              <div className="space-y-3">
+                {[
+                  { step: "1 min", title: "Secure Stripe checkout", desc: "Apple Pay, Google Pay, or card. $0.97 charged today. Cancel in one click anytime." },
+                  { step: "2 min", title: "Instant dashboard access", desc: "Set your salary, expenses, and timeline. Get your Freedom Number immediately." },
+                  { step: "5 min", title: "First idea validation", desc: "Browse 500+ scored micro-SaaS ideas filtered to your industry. Save 3–5." },
+                  { step: "Day 2", title: "Stealth Ops audit runs", desc: "Upload your employment contract (optional). Get your invisibility score + fixes." },
+                  { step: "Day 7", title: "Pick your first build", desc: "Choose one idea. Get a launch timeline that fits 5 hours/week." },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-white/50 border border-border/50 rounded-lg p-3">
+                    <div className="shrink-0 w-14 text-right">
+                      <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">{item.step}</span>
+                    </div>
+                    <div className="flex-1 min-w-0 border-l border-border/50 pl-3">
+                      <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── BRUNSON CH 12: OFFER-SPECIFIC FAQ ── */}
+            {/* Kill the 3 false beliefs at the offer: "Why so cheap? What's the catch? Can I do this?" */}
+            <div className="mt-10 max-w-lg mx-auto animate-fade-up" style={{ animationDelay: "800ms" }}>
+              <p className="text-center text-xs text-muted-foreground/70 font-semibold uppercase tracking-wider mb-4">
+                Wait — Before You Go…
+              </p>
+              <div className="space-y-2">
+                {[
+                  {
+                    q: "Why $0.97? What's the catch?",
+                    a: "There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9/month. You're locking in $0.97 for life — not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
+                  },
+                  {
+                    q: "Is this one of those things where it's $0.97 today and $97 next week?",
+                    a: "No. The price is $0.97/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $47/month — a completely separate choice you can make later. Or never.",
+                  },
+                  {
+                    q: "What if I sign up and realize I don't have time?",
+                    a: "Then cancel. One click in your dashboard, no questions, no friction. You'll still have 30 days to decide under the guarantee. The entire system is designed for 5 hours/week — if you don't have that right now, bookmark it and come back when you do.",
+                  },
+                ].map((item, i) => (
+                  <details key={i} className="group bg-white/50 border border-border/50 rounded-lg overflow-hidden">
+                    <summary className="flex items-center justify-between cursor-pointer p-3 list-none">
+                      <span className="text-sm font-medium text-foreground">{item.q}</span>
+                      <span className="text-primary text-sm transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <div className="px-3 pb-3">
+                      <p className="text-xs text-muted-foreground leading-relaxed">{item.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+
+            {/* ── FINAL CTA REPEAT ── */}
+            {/* Brunson: the stack always ends with a restatement of the offer + CTA. */}
+            <div className="mt-10 max-w-lg mx-auto text-center animate-fade-up" style={{ animationDelay: "850ms" }}>
+              <p className="text-sm text-muted-foreground mb-4">
+                <strong className="text-foreground">5 tools.</strong> <strong className="text-foreground">3 bonuses.</strong>{" "}
+                <strong className="text-foreground">30-day guarantee.</strong> <strong className="text-foreground">$0.97/month.</strong>
+              </p>
+              <Link
+                to="/start"
+                onClick={() => trackEvent("homepage_stack_cta_final_clicked")}
+                className="btn-primary text-lg px-8 py-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[56px]"
+              >
+                Claim My Founding Spot
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <p className="text-xs text-muted-foreground/60 mt-3">
+                27 of 100 founding spots claimed · Price locked for life · Cancel anytime
               </p>
             </div>
           </div>

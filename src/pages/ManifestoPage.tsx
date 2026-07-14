@@ -9,7 +9,9 @@ import {
   Eye,
   TrendingUp,
   Lock,
-  Headphones,
+  Target,
+  Crosshair,
+  Layers,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -222,6 +224,38 @@ const ManifestoPage = () => {
         </div>
       </section>
 
+      {/* ── The Big Domino (Expert Secrets Ch 3) ── */}
+      <section className="bg-primary text-white section-normal">
+        <div className="container-narrow text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 mb-6">
+            <Target className="w-4 h-4 text-primary-light" />
+            <span className="text-xs font-semibold tracking-wide text-primary-light">The One Belief</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">
+            If you believe{" "}
+            <span className="text-primary-light">one thing</span>, everything else becomes irrelevant.
+          </h2>
+          <div className="bg-white/5 border border-white/20 rounded-2xl p-8 sm:p-10 max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl font-semibold leading-relaxed">
+              "I can build $4,000/month in recurring revenue from products I own —
+              invisibly, in 5 hours a week — while my salary funds the entire
+              thing without risk."
+            </p>
+            <p className="text-white/60 text-sm mt-6 leading-relaxed">
+              If you believe that, you don't need motivation. You don't need
+              permission. You don't need a perfect idea. You just need the system
+              and a starting number. Everything on this site exists to make you
+              believe this one sentence.
+            </p>
+          </div>
+          <p className="text-white/40 text-xs mt-6">
+            This is what Brunson calls "The Big Domino" — the one belief that, if
+            toppled, knocks down every doubt, every objection, and every reason
+            to stay in your chair.
+          </p>
+        </div>
+      </section>
+
       {/* ── The 6 Principles ── */}
       <section className="bg-white section-normal">
         <div className="container-standard">
@@ -256,6 +290,100 @@ const ManifestoPage = () => {
         </div>
       </section>
 
+      {/* ── The 3 Lies (Expert Secrets Ch 6: False Belief Pattern) ── */}
+      <section className="bg-surface section-normal border-t border-border">
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-destructive/10 rounded-full px-4 py-1.5 mb-4">
+              <Crosshair className="w-4 h-4 text-destructive" />
+              <span className="text-xs font-semibold tracking-wide text-destructive">Objection Crusher</span>
+            </div>
+            <h2 className="text-h1 text-foreground mb-4">
+              The 3 Lies Keeping You{" "}
+              <span className="text-destructive">Trapped</span>
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Every manager who reads this manifesto has the same three doubts.
+              Each one is a lie your environment taught you. Here's the truth.
+            </p>
+          </div>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            {/* Lie 1: Vehicle */}
+            <div className="card-base p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-destructive/10 text-destructive font-bold text-sm">
+                  L1
+                </span>
+                <h3 className="text-lg font-bold text-foreground">
+                  The Vehicle Lie
+                </h3>
+                <span className="text-xs text-muted-foreground ml-auto">"It won't work for me"</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                <strong className="text-destructive">The Lie:</strong> "Building a business requires quitting my job, raising capital, and taking massive risk. I can't do that with a mortgage and kids."
+              </p>
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-sm text-foreground font-medium mb-1">
+                  <strong className="text-primary">The Truth:</strong>
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The Invisible Exit System is specifically engineered for employed managers. Your salary IS the capital. Your 5 hours/week IS the time. 240+ members are running it right now — without quitting, without investors, without risk. The vehicle was designed around your constraints, not despite them.
+                </p>
+              </div>
+            </div>
+
+            {/* Lie 2: Internal */}
+            <div className="card-base p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-destructive/10 text-destructive font-bold text-sm">
+                  L2
+                </span>
+                <h3 className="text-lg font-bold text-foreground">
+                  The Internal Belief Lie
+                </h3>
+                <span className="text-xs text-muted-foreground ml-auto">"I can't do this"</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                <strong className="text-destructive">The Lie:</strong> "I'm a corporate manager, not a developer. I don't have the technical skills to build software products."
+              </p>
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-sm text-foreground font-medium mb-1">
+                  <strong className="text-primary">The Truth:</strong>
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The 5-tool system does the technical work for you. Idea Pipeline validates demand before you build. The system handles landing pages, payment, and deployment — no code required. Your actual job is reading P&amp;Ls, managing teams, and executing under pressure. Those are exactly the skills that make solo founders fail. You already have the hard skills. The system handles the rest.
+                </p>
+              </div>
+            </div>
+
+            {/* Lie 3: External */}
+            <div className="card-base p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-destructive/10 text-destructive font-bold text-sm">
+                  L3
+                </span>
+                <h3 className="text-lg font-bold text-foreground">
+                  The External Belief Lie
+                </h3>
+                <span className="text-xs text-muted-foreground ml-auto">"My employer will find out"</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                <strong className="text-destructive">The Lie:</strong> "If I start a business while employed, my employer will find out. I'll violate my non-compete, breach my contract, and lose everything."
+              </p>
+              <div className="border-l-2 border-primary pl-4">
+                <p className="text-sm text-foreground font-medium mb-1">
+                  <strong className="text-primary">The Truth:</strong>
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The Stealth Ops tool builds your business inside a legal firewall: anonymous LLCs, separate identities, and non-compete compliance checks for all 50 states before you write a line of code. The entire system is designed so that your employer, your LinkedIn network, and your competitors never see it coming. The mask isn't deception — it's a legal moat. Anonymity is your competitive advantage, not a liability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── The Future-Based Cause ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
@@ -284,6 +412,22 @@ const ManifestoPage = () => {
             <p className="text-white font-medium text-lg pt-4">
               That's the future we're building. One manager at a time.
             </p>
+          </div>
+
+          {/* Social proof bar */}
+          <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto mt-12 pt-8 border-t border-white/10">
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold text-white">240+</p>
+              <p className="text-xs text-white/40 mt-1">managers building</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold text-white">$4K/mo</p>
+              <p className="text-xs text-white/40 mt-1">avg target hit</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold text-white">5 hrs</p>
+              <p className="text-xs text-white/40 mt-1">per week</p>
+            </div>
           </div>
         </div>
       </section>
@@ -374,42 +518,72 @@ const ManifestoPage = () => {
         </div>
       </section>
 
-      {/* EXPERT SECRETS Ch 7: Video Section — The Story in 3 Minutes */}
+      {/* ── The Invisible Exit System™ (Expert Secrets Ch 10-11: Named Frameworks) ── */}
       <section className="bg-surface section-normal border-y border-border">
-        <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary mb-4">Watch The Story</p>
-          <h2 className="text-h1 text-foreground mb-4">The Moment That Changed Everything</h2>
-          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
-            If you prefer watching over reading, here's the Amsterdam taxi story in 3 minutes.
-            Same story. Same system. Less text.
-          </p>
-          <div className="max-w-xl mx-auto">
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-surface-dark border border-border">
-              {/* Video placeholder — replace src with actual video URL when recorded */}
-              <video
-                className="w-full h-full object-cover"
-                controls
-                poster="/og-image.png"
-                preload="metadata"
-              >
-                <source src="" type="video/mp4" />
-                <p className="flex items-center justify-center h-full text-muted-foreground text-sm p-8">
-                  <Headphones className="w-6 h-6 mr-3 shrink-0" />
-                  Video coming soon. In the meantime,{' '}
-                  <Link to="/story" className="text-primary hover:underline mx-1">
-                    read the full story here
-                  </Link>
-                  .
-                </p>
-              </video>
+        <div className="container-standard">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+              <Layers className="w-4 h-4 text-primary" />
+              <span className="text-xs font-semibold tracking-wide text-primary">The Framework</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-3">
-              Can't see the video?{' '}
-              <Link to="/story" className="text-primary hover:underline">
-                Read the 10-chapter story
-              </Link>
-              {' '}— it's the same content, just text.
+            <h2 className="text-h1 text-foreground mb-4">
+              The Invisible Exit System™
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              Every successful invisible builder runs the same five-stage system.
+              It's not a course. It's not a checklist. It's a proprietary
+              framework you run once and own forever.
             </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              { stage: "Stage 1", name: "Freedom Number", tool: "FYM Dashboard", desc: "Calculate the exact monthly revenue that replaces your salary. This single number becomes your target — and your freedom date.", icon: Target },
+              { stage: "Stage 2", name: "Idea Pipeline", tool: "Idea Validator", desc: "500+ pre-validated micro-SaaS ideas scored by revenue probability, market boredom, and 5-hour feasibility. No more guessing.", icon: Crosshair },
+              { stage: "Stage 3", name: "Stealth Ops", tool: "Compliance Engine", desc: "Anonymous LLC structure, non-compete check for all 50 states, separate identity setup. Your legal moat — built before you launch.", icon: Shield },
+              { stage: "Stage 4", name: "Launch Control", tool: "5-Hour Launcher", desc: "A deployment system that takes you from validated idea to live product in 5 hours/week over 4 weeks. The job funds the build.", icon: Rocket },
+              { stage: "Stage 5", name: "Brand Manager", tool: "Faceless Builder", desc: "Grow an anonymous audience using your products' own distribution. Zero personal brand. Zero exposure. Pure compounding revenue.", icon: Eye },
+            ].map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.stage}
+                  className="flex items-start gap-4 p-5 rounded-xl bg-white border border-border card-hover animate-fade-up"
+                  style={{ animationDelay: `${i * 60}ms` }}
+                >
+                  <div className="flex flex-col items-center gap-1 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    {i < 4 && <div className="w-px h-8 bg-border mt-1" />}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-xs font-bold text-primary uppercase tracking-wide">{s.stage}</span>
+                      <span className="text-xs text-muted-foreground bg-surface px-2 py-0.5 rounded">{s.tool}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-1">{s.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              Each stage is one tool in your dashboard. All five run together for{" "}
+              <strong className="text-foreground">$0.97/month</strong> — less than
+              the coffee you'll drink while building.
+            </p>
+            <Link
+              to="/freedom"
+              onClick={() => trackEvent("manifesto_system_cta")}
+              className="btn-primary text-lg px-8 inline-flex items-center gap-2 mt-6"
+            >
+              Start with Stage 1 — Free
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>

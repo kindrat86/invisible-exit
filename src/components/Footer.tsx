@@ -37,6 +37,7 @@ const FOOTER_SECTIONS = [
       { label: "Integration Marketing", to: "/partners/embed" },
       { label: "Cold Traffic Bridge", to: "/feeling-stuck" },
       { label: "Free Masterclass", to: "/masterclass" },
+      { label: "Press & Media Kit", to: "/press" },
       { label: "The Inner Circle", to: "/inner-circle" },
     ],
   },

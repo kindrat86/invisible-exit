@@ -120,6 +120,7 @@ const JVPage = lazy(() => import("./pages/JVPage.tsx"));
 const HubAndSpokePage = lazy(() => import("./pages/HubAndSpokePage.tsx"));
 const HooksLibraryPage = lazy(() => import("./pages/HooksLibraryPage.tsx"));
 const GrowthHackingPage = lazy(() => import("./pages/GrowthHackingPage.tsx"));
+const PressPage = lazy(() => import("./pages/PressPage.tsx"));
 // ── Greg Isenberg pSEO Round 4 ──
 const SideHustlePage = lazy(() => import("./pages/SideHustlePage.tsx"));
 const BudgetStartPage = lazy(() => import("./pages/BudgetStartPage.tsx"));
@@ -427,6 +428,7 @@ const App = () => (
           <Route path="/content-strategy" element={<HubAndSpokePage />} />
           <Route path="/hooks" element={<HooksLibraryPage />} />
           <Route path="/growth" element={<GrowthHackingPage />} />
+          <Route path="/press" element={<PressPage />} />
           <Route path="/oto/second-tool" element={<Navigate to="/" replace />} />
           {/* Redirects from /fym/ prefixed URLs (legacy worktree) */}
           <Route path="/fym/oto/founding" element={<Navigate to="/oto/founding" replace />} />
