@@ -41,6 +41,7 @@ const TOOLS = [
     description:
       "Tracks your recurring revenue, churn, growth rate, and exit timeline across all your projects.",
     value: "$12/month",
+    framework: "Salary-Runway Method",
   },
   {
     icon: Lightbulb,
@@ -49,6 +50,7 @@ const TOOLS = [
     description:
       "500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential. AI-powered validation in 48 hours.",
     value: "$15/month",
+    framework: "Cartridge System",
   },
   {
     icon: Shield,
@@ -57,6 +59,7 @@ const TOOLS = [
     description:
       "Entity separation, compliance audit, digital footprint cleanup. Invisibility score from 0-100 with specific fixes.",
     value: "$25/month",
+    framework: "Triple-Separation Protocol",
   },
   {
     icon: Rocket,
@@ -65,6 +68,7 @@ const TOOLS = [
     description:
       "Full launch automation: checklists, email sequences, go-live tracking. Built for people with 5 hours a week.",
     value: "$18/month",
+    framework: "Salary-Runway + Cartridge",
   },
   {
     icon: Megaphone,
@@ -73,6 +77,7 @@ const TOOLS = [
     description:
       "Content calendar, YouTube scripts, Reddit playbooks. Everything you need to grow an anonymous brand.",
     value: "$27/month",
+    framework: "Cartridge System",
   },
 ];
 
@@ -155,15 +160,15 @@ const Index = () => {
           </div>
 
           <p className="text-eyebrow text-primary-light mb-6 animate-fade-in" style={{ animationDelay: "50ms" }}>
-            For Corporate Managers Who Want Out
+            You Know Who You Are — The Title, The Salary, The 0.5%. Keep Reading.
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] animate-fade-up">
             {heroVariant === "benefit" ? (
               <>
-                How to Build a{" "}
-                <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
-                Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out
+                How Corporate Managers Build{" "}
+                <span className="text-gradient-light">$4,000/Month in Recurring Revenue</span>{" "}
+                — Without Quitting, Without Code, Without Being Found Out
               </>
             ) : (
               <>
@@ -184,8 +189,8 @@ const Index = () => {
 
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
             {heroVariant === "benefit"
-              ? `5 AI-powered tools that take you from "trapped in the golden handcuffs" to real recurring revenue — in 12 months, working 5 hours a week.`
-              : `Most corporate managers will spend 15 years climbing a ladder that leads to someone else's exit. I found a different door. I'll show you the key.`}
+              ? `You're 37. Managing Director. $165K salary. 0.5% equity that vests in 4 years. You can't sleep because the golden handcuffs are starting to feel like they're tightening. I know — I was you 14 months ago. Here's the system that got me out.`
+              : `You're reading this on your work phone, aren't you? In a meeting that could've been an email. Making $165K for someone else's exit. I found a different door — and I'll show you the key. You have 5 hours a week. That's all this takes.`}
           </p>
 
           {/* CTA — ONE THING: Scroll to inline squeeze (email capture first, then calculator) */}
@@ -370,13 +375,27 @@ const Index = () => {
                 </div>
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">Who</span>
               </div>
-              <h3 className="text-sm font-bold text-foreground mb-3">The Dream Customer</h3>
+              <h3 className="text-sm font-bold text-foreground mb-3">I'm Writing to One Person</h3>
+
+              {/* Vivid persona portrait — Brunson Dream Customer */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
+                <p className="text-sm text-foreground leading-relaxed">
+                  You're <strong>37</strong>. <strong>Managing Director</strong> or VP. You make <strong>$165K</strong> (base + bonus).
+                  You've got <strong>0.5% equity</strong> vesting over 4 years, and the IPO clock keeps moving.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed mt-2">
+                  You run teams, ship projects, manage P&Ls. You're good at your job.
+                  But every Sunday night your chest tightens. Not because you hate the work —
+                  because you know there's a door, and you haven't found it yet.
+                </p>
+              </div>
+
               <div className="space-y-1.5 mb-4">
                 {[
-                  "Corporate managers, $120K–$200K salary",
-                  "0.5% equity — golden handcuffs",
-                  "15+ years of operational experience",
-                  "5 hours/week of dead time they can reclaim",
+                  "15+ years of operational experience (your unfair advantage)",
+                  "5 hours/week of dead time — lunch breaks, evenings, weekends",
+                  "Golden handcuffs: salary too good to quit, equity too small to wait for",
+                  "You've thought about a side business for 2+ years but never started",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2">
                     <Check className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" />
@@ -385,8 +404,8 @@ const Index = () => {
                 ))}
               </div>
               <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg p-3 space-y-1">
-                <p className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">NOT for you if</p>
-                {["You're already a full-time founder", "You want to build a personal brand", "You expect overnight success"].map((item) => (
+                <p className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">This isn't you if</p>
+                {["You're already a full-time founder", "You want to build a public personal brand", "You expect overnight success", "You make under $100K — build cash flow first"].map((item) => (
                   <div key={item} className="flex items-start gap-1.5">
                     <X className="w-3 h-3 text-red-400 shrink-0 mt-0.5" />
                     <span className="text-[11px] text-red-700/70 dark:text-red-300/70">{item}</span>
@@ -519,16 +538,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 1b. The 3 Secrets (Russell's framework) ── */}
+      {/* ── 1b. The 3 FRAMEWORKS — named, proprietary, linked (Expert Secrets Ch 10-11) ── */}
+      {/* EXPERT SECRETS Ch 10: Proprietary Frameworks. Each gets a NAME, an ORIGIN STORY,
+           a PROCESS, and a MEASURABLE OUTPUT. This transforms "5 tools" into "3
+           methodologies no one else can teach." */}
       <section className="bg-white section-normal">
         <div className="container-standard">
           <div className="text-center mb-12">
-            <p className="text-eyebrow text-primary mb-4">The Framework</p>
-            <h2 className="text-h1 text-foreground mb-4">The 3 Frameworks Nobody Teaches Corporate Managers</h2>
+            <p className="text-eyebrow text-primary mb-4">The Frameworks (Not the Tools)</p>
+            <h2 className="text-h1 text-foreground mb-4">
+              3 Proprietary Frameworks.{" "}
+              <span className="text-gradient">14 Months of Failure.</span>
+            </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              These aren't tips or motivation. Each is a proprietary framework
-              with a name, a process, and a specific output. They took me 14
-              months of failure to discover.
+              The 5 tools are the <strong>implementation</strong> of 3 named
+              methodologies:{" "}
+              <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Salary-Runway Method</Link>
+              ,{" "}
+              <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Triple-Separation Protocol</Link>
+              , and{" "}
+              <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Cartridge System</Link>.
+              Each has a specific origin, a step-by-step process, and a
+              measurable output. Nobody else teaches them.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -565,9 +596,14 @@ const Index = () => {
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary font-bold text-lg mb-4">
                   {secret.num}
                 </span>
-                <p className="text-xs uppercase tracking-wide text-primary font-bold mb-1">
-                  Framework: {secret.framework}
-                </p>
+                <Link
+                  to="/frameworks"
+                  onClick={() => trackEvent("homepage_framework_card_clicked", { framework: secret.framework })}
+                  className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wide font-bold mb-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  {secret.framework}
+                </Link>
                 <h3 className="text-h3 text-foreground mb-3">{secret.title}</h3>
                 <p className="text-caption text-muted-foreground italic mb-3 leading-relaxed border-l-2 border-primary/30 pl-4">
                   "{secret.story}"
@@ -1026,13 +1062,29 @@ const Index = () => {
       </section>
 
       {/* ── 3. Start Here Reading Path ── */}
-      {/* ── 4. The 5 Tools ── */}
+      {/* ── 4. The 5 Tools — each mapped to a proprietary framework ── */}
       <section className="hero-dark section-wide">
         <div className="container-standard">
-          <p className="text-eyebrow text-primary-light mb-4 text-center">The System</p>
-          <h2 className="text-h1 text-white mb-2 text-center">5 Tools. Each Solves a Specific Problem.</h2>
-          <p className="text-body text-white/60 mb-12 text-center max-w-2xl mx-auto">
-            From "trapped" to "free." All 5 included at $0.97/month.
+          <p className="text-eyebrow text-primary-light mb-4 text-center">The Invisible Exit System</p>
+          <h2 className="text-h1 text-white mb-2 text-center">
+            5 Tools. <span className="text-gradient-light">3 Frameworks.</span> One System.
+          </h2>
+          <p className="text-body text-white/60 mb-4 text-center max-w-2xl mx-auto">
+            From "trapped" to "free." Each tool is the implementation of a
+            proprietary methodology. All 5 at $0.97/month.
+          </p>
+          <p className="text-xs text-white/30 text-center mb-12 max-w-lg mx-auto">
+            <a href="/frameworks" className="text-primary-light underline hover:text-white transition-colors">
+              The Salary-Runway Method
+            </a>{" "}
+            ·{" "}
+            <a href="/frameworks" className="text-primary-light underline hover:text-white transition-colors">
+              The Triple-Separation Protocol
+            </a>{" "}
+            ·{" "}
+            <a href="/frameworks" className="text-primary-light underline hover:text-white transition-colors">
+              The Cartridge System
+            </a>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1042,9 +1094,16 @@ const Index = () => {
                 className="card-glass p-6 sm:p-8 transition-all hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${i * 75}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-3">
                   <tool.icon className="w-6 h-6 text-primary-light" />
                 </div>
+                <Link
+                  to="/frameworks"
+                  className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-primary-light/70 hover:text-primary-light mb-1 transition-colors"
+                >
+                  <span className="w-1 h-1.5 rounded-full bg-primary-light/50" />
+                  {tool.framework}
+                </Link>
                 <h3 className="text-h3 text-white mb-1">{tool.name}</h3>
                 <p className="text-white/70 mb-3 font-medium">{tool.outcome}</p>
                 <p className="text-sm text-white/50 leading-relaxed">{tool.description}</p>
@@ -1132,99 +1191,156 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. Value Stack + Bonuses ── */}
-      <section className="bg-surface section-normal">
-        <div className="container-narrow text-center">
-          <p className="text-eyebrow text-primary mb-4">The Full Stack</p>
-          <h2 className="text-h1 text-foreground mb-2">What You Get for $0.97/Month</h2>
-          <p className="text-body text-muted-foreground mb-8">
-            5 tools + 3 bonuses. Total value $328/month. Your price: less than a coffee.
-          </p>
+      {/* ── 6. Value Stack + Bonuses (DotCom Secrets Ch 18 — Brunson's Stack) ── */}
+      <section className="bg-surface section-normal relative overflow-hidden">
+        {/* Ambient glow for the stack section */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
-          {/* Guarantee Badge */}
-          <div className="inline-flex items-center gap-3 bg-success/10 border border-success/20 rounded-full px-6 py-3 mb-8">
-            <Shield className="w-5 h-5 text-success" />
-            <span className="text-sm font-semibold text-success">
-              30-Day Money-Back Guarantee. Zero Risk.
-            </span>
-          </div>
+        <div className="container-narrow text-center relative z-10">
+          <p className="text-eyebrow text-primary mb-4">The Value Stack</p>
+          <h2 className="text-h1 text-foreground mb-2">
+            What You <span className="text-gradient">Really</span> Get for $0.97/Month
+          </h2>
+          <p className="text-body text-muted-foreground mb-10 max-w-xl mx-auto">
+            If you bought each tool individually from the companies that inspired them, here's what you'd pay. <strong className="text-foreground">Spoiler: not $0.97.</strong>
+          </p>
         </div>
 
-        <div className="container-narrow space-y-3">
-          {/* Core Tools */}
-          <p className="text-eyebrow text-muted-foreground mb-2 animate-fade-up">Core Tools (5)</p>
-          {TOOLS.map((tool, i) => (
+        <div className="container-narrow space-y-2.5 relative z-10">
+          {/* SECTION 1: Anchored against the alternative — what each tool replaces */}
+          <p className="text-eyebrow text-muted-foreground mb-2 animate-fade-up">The 5 Tools — Anchored Against Real Alternatives</p>
+          {[
+            { name: "FYM Dashboard", anchor: "vs. Baremetrics · ChartMogul", anchorPrice: "$79/mo", ourPrice: "Included", outcome: "Real-time MRR tracking, churn analytics, exit timeline" },
+            { name: "Idea Pipeline", anchor: "vs. MicroConf · Idea validation tools", anchorPrice: "$49/mo", ourPrice: "Included", outcome: "500+ scored ideas + 48h AI validation" },
+            { name: "Stealth Ops Hub", anchor: "vs. Compliance audits · Privacy tools", anchorPrice: "$39/mo", ourPrice: "Included", outcome: "Entity separation, invisibility score, contract audit" },
+            { name: "Launch Control", anchor: "vs. Webflow · Carrd · Notion OS", anchorPrice: "$36/mo", ourPrice: "Included", outcome: "Launch in 5 hrs/week — Stripe, landing pages, sequences" },
+            { name: "Brand Manager", anchor: "vs. Hootsuite · Buffer · VidIQ", anchorPrice: "$49/mo", ourPrice: "Included", outcome: "Faceless content: YouTube scripts, Reddit playbooks, SEO" },
+          ].map((item, i) => (
             <div
-              key={tool.name}
-              className="flex items-center justify-between py-3.5 border-b border-border animate-fade-up"
-              style={{ animationDelay: `${i * 100}ms` }}
+              key={item.name}
+              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/[0.02] transition-colors animate-fade-up border-b border-border/50 last:border-0"
+              style={{ animationDelay: `${i * 80}ms` }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-success/15 flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
+                <span className="w-6 h-6 rounded-full bg-success/15 flex items-center justify-center shrink-0">
                   <Check className="w-4 h-4 text-success" />
+                </span>
+                <div className="min-w-0">
+                  <span className="text-foreground font-semibold text-sm">{item.name}</span>
+                  <span className="text-muted-foreground/50 text-xs ml-2 hidden sm:inline">{item.anchor}</span>
+                  <p className="text-muted-foreground/40 text-[11px] mt-0.5 truncate sm:hidden">{item.outcome}</p>
                 </div>
-                <span className="text-foreground font-medium">{tool.name}</span>
               </div>
-              <span className="text-muted-foreground text-sm">{tool.value}</span>
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-xs text-muted-foreground/40 line-through hidden sm:block">{item.anchorPrice}</span>
+                <span className="text-xs font-bold text-success">FREE</span>
+              </div>
             </div>
           ))}
 
-          {/* Bonuses */}
-          <p className="text-eyebrow text-primary mt-6 mb-2">🎁 Fast-Action Bonuses (3) — Included when you start today</p>
+          {/* Subtotal */}
+          <div className="flex items-center justify-between py-2 px-4 mt-2">
+            <span className="text-xs text-muted-foreground">If bought separately:</span>
+            <span className="text-sm text-muted-foreground line-through font-bold">$252/month</span>
+          </div>
+
+          {/* SECTION 2: Bonuses — real perceived value */}
+          <p className="text-eyebrow text-primary mt-8 mb-2 animate-fade-up" style={{ animationDelay: "400ms" }}>
+            🎁 Fast-Action Bonuses (3) — Start today or lose them
+          </p>
           {[
-            { name: "The Employment Contract Audit Checklist", value: "$27" },
-            { name: "25 Done-For-You Micro-SaaS Idea Swipes", value: "$47" },
-            { name: "The Faceless Founder Content Calendar", value: "$27" },
+            { name: 'The "Is My Contract Safe?" Audit Checklist — 47 clauses every manager must check before starting', value: "$47" },
+            { name: '25 Pre-Written Micro-SaaS Idea Swipes — ready to validate in 48 hours', value: "$67" },
+            { name: 'The 90-Day Faceless Content Engine — YouTube scripts + Reddit playbooks + SEO templates', value: "$57" },
           ].map((bonus) => (
             <div
               key={bonus.name}
-              className="flex items-center justify-between py-3.5 border-b border-border"
+              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/[0.02] transition-colors border-b border-border/50 last:border-0"
             >
-              <div className="flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0 text-primary text-xs">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
+                <span className="w-6 h-6 rounded-full bg-amber-500/15 flex items-center justify-center shrink-0 text-amber-400 text-xs">
                   🎁
                 </span>
-                <span className="text-foreground font-medium">{bonus.name}</span>
+                <span className="text-foreground font-medium text-sm">{bonus.name}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-muted-foreground/50 text-xs line-through">{bonus.value}</span>
-                <span className="text-success text-sm font-semibold">FREE</span>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="text-muted-foreground/40 text-xs line-through">{bonus.value}</span>
+                <span className="text-success text-xs font-bold">FREE</span>
               </div>
             </div>
           ))}
 
-          {/* Total with dramatic "All this for" moment */}
-          <div className="pt-6 mt-4 border-t-2 border-border">
-            <p className="text-center text-h2 text-foreground font-bold mb-6 mt-2">
+          {/* SECTION 3: The Dramatic Reveal — Brunson Ch 18 style */}
+          <div className="relative mt-10">
+            {/* Thin separator line */}
+            <div className="absolute -top-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+            <p className="text-center text-h2 text-foreground font-bold mb-8 mt-6 animate-fade-up" style={{ animationDelay: "500ms" }}>
               So... how much for all of this?
             </p>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-muted-foreground">Total value:</span>
-              <span className="text-muted-foreground line-through">$328/month</span>
-            </div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-muted-foreground">Founding member discount:</span>
-              <span className="text-success font-semibold">−99.7%</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-foreground font-semibold text-lg">Your price:</span>
-              <span className="text-4xl sm:text-5xl font-bold text-primary">$0.97<span className="text-lg font-normal text-muted-foreground">/mo</span></span>
-            </div>
-            <p className="text-caption text-center mt-4">
-              That's $3,924/year in value for $11.64/year. 99.7% off. For founding members who start now.
-            </p>
 
-            {/* BRUNSON Ch 11: The One Thing — simplify the offer to ONE sentence with "because" */}
-            <div className="mt-6 bg-primary/10 border border-primary/25 rounded-xl p-4 text-center">
+            {/* Stack comparison card */}
+            <div className="bg-white border border-border/80 rounded-2xl p-6 sm:p-8 max-w-lg mx-auto shadow-lg animate-fade-up" style={{ animationDelay: "550ms" }}>
+              <div className="space-y-3">
+                {/* Each line with visual weight */}
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">Core tools (if bought separately)</span>
+                  <span className="text-muted-foreground line-through">$252/month</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">Fast-action bonuses</span>
+                  <span className="text-muted-foreground line-through">$171</span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">12-month continuity value</span>
+                  <span className="text-muted-foreground line-through">$576/year</span>
+                </div>
+
+                {/* Separator */}
+                <div className="border-t border-border/50 pt-3 mt-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground font-medium">Total comparable value</span>
+                    <span className="text-muted-foreground/60 line-through text-base font-bold">$999/year</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-foreground font-semibold text-base">Founding member price</span>
+                  <span className="text-5xl sm:text-6xl font-black text-primary">$0.97<span className="text-base font-normal text-muted-foreground">/mo</span></span>
+                </div>
+
+                <div className="flex items-center justify-between text-xs text-muted-foreground/50">
+                  <span>That's $11.64/year</span>
+                  <span className="text-success font-bold">99.9% off market value</span>
+                </div>
+              </div>
+
+              {/* Nudge vs price bar */}
+              <div className="mt-4 bg-amber-500/5 border border-amber-500/15 rounded-lg px-4 py-2.5 flex items-center justify-between">
+                <span className="text-amber-300 text-xs font-medium">
+                  ⏳ <span className="text-amber-200">73 founding spots left</span> at this price
+                </span>
+                <span className="text-amber-300 text-xs font-bold">Locked for life</span>
+              </div>
+            </div>
+
+            {/* BRUNSON CH 11: The One Thing — simplify the entire offer to ONE sentence */}
+            <div className="mt-8 max-w-lg mx-auto bg-primary/10 border border-primary/25 rounded-xl p-4 text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
               <p className="text-xs text-primary-light uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
-              <p className="text-white font-bold text-base">Get all 5 tools for $0.97/month. Cancel anytime.</p>
+              <p className="text-white font-bold text-base">Get all 5 tools + 3 bonuses for $0.97/month. Cancel anytime.</p>
               <p className="text-white/50 text-xs mt-1">
-                Because every month you wait is $4,000 in MRR you'll never recover.
+                Because every month you wait is <strong className="text-white/70">$4,000 in MRR</strong> you'll never recover.
               </p>
             </div>
 
-            {/* DOTCOM SECRETS Ch 8: Two-step order — the actual checkout CTA */}
-            <div className="mt-8">
+            {/* Guarantee badge */}
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-success animate-fade-up" style={{ animationDelay: "650ms" }}>
+              <Shield className="w-4 h-4" />
+              <span>30-Day Money-Back Guarantee · No questions asked · <strong>You keep the bonuses even if you cancel</strong></span>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-8 animate-fade-up" style={{ animationDelay: "700ms" }}>
               <Link
                 to="/start"
                 onClick={() => trackEvent("homepage_stack_cta_clicked")}
@@ -1234,7 +1350,7 @@ const Index = () => {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <p className="text-sm text-muted-foreground mt-3 text-center">
-                Secure Stripe checkout · 30-day money-back guarantee · Locked for life
+                Secure Stripe checkout · 73 founding spots remaining · Lock your price forever
               </p>
             </div>
           </div>

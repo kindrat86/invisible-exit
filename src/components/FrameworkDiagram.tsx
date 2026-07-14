@@ -1,4 +1,26 @@
-import { BarChart3, Lightbulb, Shield, Rocket, Megaphone, ArrowRight } from "lucide-react";
+import { BarChart3, Lightbulb, Shield, Rocket, Megaphone, ArrowRight, Link as LinkIcon } from "lucide-react";
+
+/**
+ * EXPERT SECRETS Ch 10-11: Proprietary Frameworks Diagram
+ *
+ * The 5 tools are the "cartridges" (implementation) of the 3 proprietary
+ * frameworks. Each tool maps to a specific framework:
+ *
+ *   FYM Dashboard      ← The Salary-Runway Method
+ *   Idea Pipeline      ← The Cartridge System
+ *   Stealth Ops Hub    ← The Triple-Separation Protocol
+ *   Launch Control     ← The Salary-Runway Method + The Cartridge System
+ *   Brand Manager      ← The Cartridge System (distribution)
+ *
+ * This transforms "5 tools" into "3 named methodologies you can't get
+ * anywhere else."
+ */
+
+interface FrameworkLink {
+  name: string;
+  href: string;
+  color: string;
+}
 
 const STAGES = [
   {
@@ -10,6 +32,11 @@ const STAGES = [
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
+    framework: {
+      name: "The Salary-Runway Method",
+      href: "/frameworks",
+      color: "text-blue-400",
+    },
   },
   {
     num: 2,
@@ -20,6 +47,11 @@ const STAGES = [
     color: "text-amber-400",
     bg: "bg-amber-500/10",
     border: "border-amber-500/20",
+    framework: {
+      name: "The Cartridge System",
+      href: "/frameworks",
+      color: "text-amber-400",
+    },
   },
   {
     num: 3,
@@ -30,6 +62,11 @@ const STAGES = [
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20",
+    framework: {
+      name: "The Triple-Separation Protocol",
+      href: "/frameworks",
+      color: "text-emerald-400",
+    },
   },
   {
     num: 4,
@@ -40,6 +77,11 @@ const STAGES = [
     color: "text-purple-400",
     bg: "bg-purple-500/10",
     border: "border-purple-500/20",
+    framework: {
+      name: "Salary-Runway + Cartridge",
+      href: "/frameworks",
+      color: "text-purple-400",
+    },
   },
   {
     num: 5,
@@ -50,6 +92,11 @@ const STAGES = [
     color: "text-pink-400",
     bg: "bg-pink-500/10",
     border: "border-pink-500/20",
+    framework: {
+      name: "The Cartridge System",
+      href: "/frameworks",
+      color: "text-pink-400",
+    },
   },
 ];
 
@@ -68,6 +115,12 @@ const FrameworkDiagram = () => {
               </div>
               <p className={`text-xs font-bold ${stage.color} mb-1`}>STEP {stage.num}</p>
               <h3 className="text-sm font-bold text-foreground mb-2">{stage.name}</h3>
+              <p className={`text-[10px] leading-relaxed ${stage.framework.color} font-semibold mb-1.5 flex items-center justify-center gap-1`}>
+                <LinkIcon className="w-3 h-3" />
+                <a href={stage.framework.href} className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                  {stage.framework.name}
+                </a>
+              </p>
               <p className="text-xs text-muted-foreground italic mb-2">"{stage.question}"</p>
               <p className="text-xs font-semibold text-foreground">→ {stage.output}</p>
             </div>
@@ -89,6 +142,10 @@ const FrameworkDiagram = () => {
               <div className="flex-1 min-w-0">
                 <p className={`text-xs font-bold ${stage.color} mb-0.5`}>STEP {stage.num}</p>
                 <h3 className="text-sm font-bold text-foreground">{stage.name}</h3>
+                <p className={`text-[11px] ${stage.framework.color} font-medium mt-0.5 flex items-center gap-1`}>
+                  <LinkIcon className="w-3 h-3" />
+                  {stage.framework.name}
+                </p>
                 <p className="text-xs text-muted-foreground italic">"{stage.question}"</p>
                 <p className="text-xs font-semibold text-foreground mt-1">→ {stage.output}</p>
               </div>
@@ -102,13 +159,20 @@ const FrameworkDiagram = () => {
         ))}
       </div>
 
-      {/* Result banner */}
-      <div className="mt-8 text-center">
+      {/* Result banner with note about frameworks */}
+      <div className="mt-8 text-center space-y-3">
         <div className="inline-block bg-gradient-to-r from-primary to-accent-primary text-white px-8 py-4 rounded-xl shadow-lg">
           <p className="text-sm font-bold tracking-wide">
             RESULT: $4,000+/month MRR while employed — in 12 months
           </p>
         </div>
+        <p className="text-xs text-muted-foreground">
+          Each tool implements one of{" "}
+          <a href="/frameworks" className="text-primary underline hover:text-primary-hover font-medium">
+            3 proprietary frameworks
+          </a>
+          . You're not buying features — you're buying a methodology nobody else teaches.
+        </p>
       </div>
     </div>
   );
