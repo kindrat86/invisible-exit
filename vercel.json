@@ -220,6 +220,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/start",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/index.html"
+    },
+    {
       "source": "/oto/founding",
       "destination": "/index.html"
     },

@@ -30,7 +30,9 @@ type AnalyticsEvent =
   | "content_calendar_copied"
   | "affiliate_asset_copied"
   | "podcast_pitch_copied"
-  | "homepage_formula_bait_clicked";
+  | "homepage_formula_bait_clicked"
+  | "story_masterclass_bridge_clicked"
+  | "story_final_cta_masterclass";
 
 export function trackEvent(
   event: AnalyticsEvent,

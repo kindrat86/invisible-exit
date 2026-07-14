@@ -20,7 +20,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Map tier names to Stripe price IDs
     // Subscriptions: starter, founding, standard
-    // One-time: tripwire, tripwire_bump, workshop, book, book_audiobook
+    // One-time: tripwire, workshop, book
+    // Combo: tripwire_bump = starter sub ($0.97/mo) + tripwire one-time ($7)
     const SUBSCRIPTION_TIERS: Record<string, TierConfig> = {
       starter: {
         priceId: process.env.STRIPE_STARTER_PRICE_ID!,
@@ -42,10 +43,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           process.env.STRIPE_TRIPWIRE_PRICE_ID ?? "price_tripwire_stealth_blueprint",
         product: "tripwire",
       },
-      tripwire_bump: {
-        priceId: process.env.STRIPE_TRIPWIRE_BUMP_PRICE_ID ?? "price_tripwire_bump",
-        product: "tripwire_bump",
-      },
       workshop: {
         priceId:
           process.env.STRIPE_WORKSHOP_PRICE_ID ?? "price_weekend_workshop",
@@ -62,6 +59,59 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     };
 
+    // tripwire_bump = combo: starter subscription + tripwire one-time
+    // This creates a checkout session with BOTH line items (Ch 14 Order Bump pattern)
+    // First: resolve customer email (same logic as below)
+    let customerEmail: string | undefined;
+    const authHeader = req.headers["authorization"];
+    if (authHeader?.startsWith("Bearer ")) {
+      try {
+        const jwt = (await import("jsonwebtoken")).default;
+        const token = authHeader.replace("Bearer ", "");
+        const payload = jwt.verify(token, process.env.JWT_SECRET!) as {
+          email?: string;
+        };
+        customerEmail = payload.email;
+      } catch {
+        // Ignore auth failures — allow guest checkout
+      }
+    }
+
+    // ── Order Bump (DotCom Secrets Ch 14): Always include the tripwire
+    //    as a Stripe-side line item when subscribing to Starter.
+    //    The user sees BOTH items in Stripe Checkout — no page-level toggle.
+    //    This avoids the conversion-killing price change on the CTA button
+    //    while still getting the $7 bump on every new subscription.
+    const starterPrice = process.env.STRIPE_STARTER_PRICE_ID!;
+    const tripwirePrice = process.env.STRIPE_TRIPWIRE_PRICE_ID!;
+
+    if (tier === "starter" || tier === "tripwire_bump") {
+      const bumpSuccessUrl = returnUrl
+        ? `${returnUrl.startsWith("http") ? "" : siteUrl}${returnUrl}?session_id={CHECKOUT_SESSION_ID}`
+        : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
+
+      const bumpSessionParams: Stripe.Checkout.SessionCreateParams = {
+        mode: "subscription",
+        line_items: [
+          { price: starterPrice, quantity: 1 },
+          { price: tripwirePrice, quantity: 1 },
+        ],
+        success_url: bumpSuccessUrl,
+        cancel_url: cancelUrl
+          ? `${cancelUrl.startsWith("http") ? "" : siteUrl}${cancelUrl}`
+          : `${siteUrl}/`,
+        allow_promotion_codes: false,
+        metadata: { product: "starter", order_bump: "tripwire" },
+      };
+
+      if (customerEmail) {
+        bumpSessionParams.customer_email = customerEmail;
+      }
+
+      const session = await stripe.checkout.sessions.create(bumpSessionParams);
+      return res.status(200).json({ url: session.url });
+    }
+
     const isOneTime = tier in ONETIME_TIERS;
     const tierConfig = isOneTime
       ? ONETIME_TIERS[tier as keyof typeof ONETIME_TIERS]
@@ -74,24 +124,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const successUrl = returnUrl
       ? `${returnUrl.startsWith("http") ? "" : siteUrl}${returnUrl}?session_id={CHECKOUT_SESSION_ID}`
       : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
-
-    // If the user is authenticated, reuse/create a Stripe customer by email
-    let customerEmail: string | undefined;
-    const authHeader = req.headers["authorization"];
-    if (authHeader?.startsWith("Bearer ")) {
-      // Optional: decode email from JWT for customer reuse. We do lightweight
-      // customer creation here only if a verified email is available.
-      try {
-        const jwt = (await import("jsonwebtoken")).default;
-        const token = authHeader.replace("Bearer ", "");
-        const payload = jwt.verify(token, process.env.JWT_SECRET!) as {
-          email?: string;
-        };
-        customerEmail = payload.email;
-      } catch {
-        // Ignore auth failures — allow guest checkout
-      }
-    }
 
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: isOneTime ? "payment" : "subscription",

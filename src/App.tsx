@@ -143,6 +143,10 @@ const Contact = lazy(() => import("./pages/Contact.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
 
+// Checkout / Order pages
+const StartPage = lazy(() => import("./pages/StartPage.tsx"));
+const PricingPage = lazy(() => import("./pages/PricingPage.tsx"));
+
 // App pages (authenticated, never crawled)
 const OTOFounding = lazy(() => import("./pages/OTOFounding.tsx"));
 const Login = lazy(() => import("./pages/Login.tsx"));
@@ -221,6 +225,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/start" element={<StartPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/oto/founding" element={<OTOFounding />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/checkout/success" element={<CheckoutSuccess />} />

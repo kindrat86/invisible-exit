@@ -83,7 +83,7 @@ const TripwirePage = () => {
         {
           body: {
             tier: addToolkit ? "tripwire_bump" : "tripwire",
-            returnUrl: window.location.origin + "/checkout/success?sku=stealth-blueprint",
+            returnUrl: window.location.origin + "/start?from=tripwire",
           },
         }
       );
@@ -393,10 +393,10 @@ const TripwirePage = () => {
             No thanks, I'll risk it without the blueprint.
           </p>
           <Link
-            to="/freedom"
+            to="/start"
             className="text-white/30 underline hover:text-white/50 transition-colors text-sm"
           >
-            Skip this offer →
+            Skip this offer — get the full tools for $0.97/month →
           </Link>
           <p className="text-white/20 text-xs mt-3">
             You won't see this price again. Regular price: $47.

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Mic, ArrowRight, ArrowLeft, Headphones } from "lucide-react";
+import { Mic, ArrowRight, ArrowLeft, Headphones, Play, Clock, Monitor, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -319,6 +319,79 @@ const StoryPage = () => {
         </div>
       </section>
 
+      {/* ── MASTERCLASS BRIDGE: After Chapter 3 (0.5% Equity Hook) ── */}
+      {activeChapter === 2 && (
+        <section className="section-wide animate-fade-in border-t border-white/10 py-12">
+          <div className="container-narrow">
+            <div className="max-w-md mx-auto text-center">
+              <p className="text-eyebrow text-primary-light mb-3">Want to See How This Ends?</p>
+              <h3 className="text-white font-bold text-lg mb-3">
+                The free masterclass breaks down the exact math — and the solution.
+              </h3>
+              <p className="text-white/50 text-sm mb-6">
+                What if your equity is worth less than you think? And what if there's a better
+                vehicle that doesn't require a billion-dollar exit?
+              </p>
+              <Link
+                to="/masterclass"
+                onClick={() => trackEvent("story_masterclass_bridge_clicked", { chapter: 3 })}
+                className="inline-flex items-center gap-2 text-primary-light hover:text-white font-medium text-sm transition-colors"
+              >
+                Jump to the Free Masterclass →
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── MASTERCLASS BRIDGE: After Chapter 7 (The System) ── */}
+      {activeChapter === 6 && (
+        <section className="hero-dark section-wide animate-fade-in border-t border-white/10">
+          <div className="container-narrow text-center">
+            <div className="bg-primary/10 border border-primary/20 rounded-2xl p-8 sm:p-12">
+              <span className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary-light text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                <Play className="w-4 h-4" />
+                Free 45-Minute Masterclass
+              </span>
+
+              <p className="text-eyebrow text-primary-light mb-4">See the System Broken Down</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+                This Is the System — But There's More to the Picture
+              </h2>
+              <p className="text-white/60 text-base max-w-lg mx-auto mb-8">
+                The 10 chapters above give you the framework. The masterclass gives you every slide —
+                including the exact false beliefs breakdown, the value stack, and the step-by-step
+                implementation plan. 14 slides. 45 minutes. Read-only, no video needed.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 max-w-lg mx-auto">
+                {[
+                  { icon: Lightbulb, label: "3 False Beliefs Broken Down" },
+                  { icon: Monitor, label: "14 Interactive Slides" },
+                  { icon: Clock, label: "45 Minutes, Read at Your Pace" },
+                ].map((item) => (
+                  <div key={item.label} className="bg-white/[0.04] border border-white/10 rounded-xl p-4 text-center">
+                    <item.icon className="w-5 h-5 text-primary-light mx-auto mb-2" />
+                    <span className="text-white/60 text-xs font-medium">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                to="/masterclass"
+                onClick={() => trackEvent("story_masterclass_bridge_clicked", { chapter: 7 })}
+                className="btn-primary text-lg px-8 inline-flex items-center gap-2"
+              >
+                Go to the Free Masterclass →
+              </Link>
+              <p className="text-white/40 text-xs mt-3">
+                No email required. Start reading immediately.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA — only on last chapter */}
       {activeChapter === CHAPTERS.length - 1 && (
         <section className="hero-dark section-wide animate-fade-in">
@@ -348,43 +421,72 @@ const StoryPage = () => {
               </div>
             </div>
 
-            <p className="text-eyebrow text-primary-light mb-4">Your Turn</p>
+            <p className="text-eyebrow text-primary-light mb-4">Your Next Step</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              This is the system that saved me 4 months of frustration.
+              Two Ways Forward — Pick Your Path
             </h2>
             <p className="text-white/60 mb-8 max-w-lg mx-auto">
-              5 tools. $0.97/month. The exact framework you just read about.
+              The full story is in your head now. Here's how to turn it into action.
             </p>
-            {!submitted ? (
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your best email"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-4 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
-                />
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn-primary w-full text-lg"
-                >
-                  {loading ? "Loading..." : "Start for $0.97/month"}
-                  {!loading && <ArrowRight className="w-5 h-5" />}
-                </button>
-              </form>
-            ) : (
-              <div className="max-w-md mx-auto card-glass p-8 animate-scale-in">
-                <p className="text-white text-lg font-semibold mb-2">You're in.</p>
-                <p className="text-white/60 text-sm">
-                  Check your inbox. Over the next 5 days, I'll send you the full story —
-                  including the Amsterdam moment that started everything.
+
+            {/* Two-option path: Masterclass first, then tools */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
+              <Link
+                to="/masterclass"
+                onClick={() => trackEvent("story_final_cta_masterclass")}
+                className="group card-glass p-6 hover:bg-white/[0.08] transition-all border border-primary/30 hover:border-primary/50 text-left"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center mb-3">
+                  <Play className="w-5 h-5 text-primary-light" />
+                </div>
+                <h3 className="text-white font-bold text-base mb-1 group-hover:text-primary-light transition-colors">
+                  Watch the Free Masterclass →
+                </h3>
+                <p className="text-white/50 text-xs">
+                  14 slides. The complete 5-tool system broken down step by step.
                 </p>
+              </Link>
+
+              <div className="card-glass p-6 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-success/20 flex items-center justify-center mb-3">
+                  <ArrowRight className="w-5 h-5 text-success" />
+                </div>
+                <h3 className="text-white font-bold text-base mb-1">
+                  Start With the Tools ($0.97)
+                </h3>
+                <p className="text-white/50 text-xs mb-4">
+                  Skip the theory. Get the 5 tools and start building today.
+                </p>
+                {!submitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-2">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your email"
+                      className="w-full rounded-lg bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-2.5 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    />
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-2.5 px-4 rounded-lg text-sm transition-all disabled:opacity-50"
+                    >
+                      {loading ? "..." : "Start for $0.97/month"}
+                      {!loading && <ArrowRight className="w-4 h-4 inline ml-1" />}
+                    </button>
+                  </form>
+                ) : (
+                  <div className="p-3 rounded-lg bg-success/10 border border-success/20 text-center">
+                    <p className="text-success text-sm font-semibold">You're in!</p>
+                    <p className="text-white/50 text-xs mt-1">Check your inbox.</p>
+                  </div>
+                )}
               </div>
-            )}
-            <p className="text-white/30 text-xs mt-6">
-              30-day money-back guarantee. Cancel anytime.
+            </div>
+
+            <p className="text-white/30 text-xs">
+              30-day money-back guarantee. Cancel anytime. No risk.
             </p>
           </div>
         </section>
