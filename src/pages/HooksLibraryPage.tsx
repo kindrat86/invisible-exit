@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Anchor,
   Copy,
@@ -16,6 +16,7 @@ import {
   Lightbulb,
   Flame,
   Eye,
+  X,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -196,6 +197,46 @@ const HooksLibraryPage = () => {
   const [copied, setCopied] = useState<string | null>(null);
   const [activeGap, setActiveGap] = useState<string>("all");
   const [activePlatform, setActivePlatform] = useState<string>("all");
+  const [statusFilter, setStatusFilter] = useState<string>("all");
+
+  // ── Deployment tracking (localStorage) ──
+  // Brunson: hooks aren't "ideas" — they're deployed, tested, and measured.
+  // Track: draft (default), deployed, testing, winner, killed
+  type HookStatus = "draft" | "deployed" | "testing" | "winner" | "killed";
+  const STATUS_KEY = "ie_hooks_status";
+  const [statuses, setStatuses] = useState<Record<string, HookStatus>>({});
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STATUS_KEY);
+      if (saved) setStatuses(JSON.parse(saved));
+    } catch { /* ignore */ }
+  }, []);
+
+  const updateStatus = (hookId: string, status: HookStatus) => {
+    const updated = { ...statuses, [hookId]: status };
+    setStatuses(updated);
+    localStorage.setItem(STATUS_KEY, JSON.stringify(updated));
+    trackEvent("hook_status_update", { hook_id: hookId, status });
+  };
+
+  const STATUS_META: Record<HookStatus, { label: string; color: string; icon: typeof Zap }> = {
+    draft: { label: "Draft", color: "bg-slate-500/15 text-slate-400 border-slate-500/20", icon: Zap },
+    deployed: { label: "Deployed", color: "bg-blue-500/15 text-blue-400 border-blue-500/20", icon: ArrowRight },
+    testing: { label: "Testing", color: "bg-amber-500/15 text-amber-400 border-amber-500/20", icon: TrendingUp },
+    winner: { label: "Winner", color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20", icon: Check },
+    killed: { label: "Killed", color: "bg-red-500/15 text-red-400 border-red-500/20", icon: X },
+  };
+
+  // Stats
+  const statusCounts = {
+    total: HOOKS.length,
+    draft: HOOKS.filter((_, i) => (statuses[`hook-${i}`] || "draft") === "draft").length,
+    deployed: HOOKS.filter((_, i) => statuses[`hook-${i}`] === "deployed").length,
+    testing: HOOKS.filter((_, i) => statuses[`hook-${i}`] === "testing").length,
+    winner: HOOKS.filter((_, i) => statuses[`hook-${i}`] === "winner").length,
+    killed: HOOKS.filter((_, i) => statuses[`hook-${i}`] === "killed").length,
+  };
 
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
@@ -204,10 +245,11 @@ const HooksLibraryPage = () => {
     setTimeout(() => setCopied(null), 3000);
   };
 
-  const filteredHooks = HOOKS.filter((h) => {
+  const filteredHooks = HOOKS.filter((h, i) => {
     const gapMatch = activeGap === "all" || h.gap === activeGap;
     const platformMatch = activePlatform === "all" || h.platform === activePlatform;
-    return gapMatch && platformMatch;
+    const statusMatch = statusFilter === "all" || (statuses[`hook-${i}`] || "draft") === statusFilter;
+    return gapMatch && platformMatch && statusMatch;
   });
 
   return (
@@ -241,7 +283,7 @@ const HooksLibraryPage = () => {
           <div className="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
             <span className="text-amber-200 text-xs font-medium">
-              Social Content Engine score: 30 → 70 (this library is the fix)
+              {statusCounts.deployed + statusCounts.testing} deployed · {statusCounts.winner} winners · {statusCounts.draft} drafts ready
             </span>
           </div>
         </div>
@@ -278,9 +320,30 @@ const HooksLibraryPage = () => {
         </div>
       </section>
 
-      {/* Platform Filter */}
+      {/* Platform + Status Filter */}
       <section className="bg-surface section-normal border-b border-border">
         <div className="container-standard">
+          {/* Status Stats Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            {(["draft", "deployed", "testing", "winner", "killed"] as const).map((s) => {
+              const meta = STATUS_META[s];
+              const count = statusCounts[s];
+              const isActive = statusFilter === s;
+              return (
+                <button
+                  key={s}
+                  onClick={() => setStatusFilter(isActive ? "all" : s)}
+                  className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                    isActive ? "ring-2 ring-primary ring-offset-1 ring-offset-surface" : ""
+                  } ${meta.color}`}
+                >
+                  <meta.icon className="w-3.5 h-3.5" />
+                  {meta.label}: {count}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="text-sm font-semibold text-muted-foreground mr-2">Platform:</span>
             {["all", "youtube", "twitter", "linkedin", "reddit", "any"].map((p) => {
@@ -305,6 +368,9 @@ const HooksLibraryPage = () => {
             Showing <span className="font-bold text-foreground">{filteredHooks.length}</span> hooks
             {activeGap !== "all" && (
               <> · filtered by <span className="font-bold text-primary">{STORY_GAPS.find((g) => g.id === activeGap)?.title}</span></>
+            )}
+            {statusFilter !== "all" && (
+              <> · status: <span className="font-bold text-primary">{STATUS_META[statusFilter as HookStatus].label}</span></>
             )}
           </div>
         </div>
@@ -341,20 +407,33 @@ const HooksLibraryPage = () => {
                     </span>
                   </div>
                   <p className="text-sm text-foreground leading-relaxed flex-1">{hook.text}</p>
-                  <button
-                    onClick={() => handleCopy(hook.text, hookId)}
-                    className={`self-start inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                      copied === hookId
-                        ? "bg-success/15 text-success"
-                        : "bg-primary/10 text-primary hover:bg-primary/20"
-                    }`}
-                  >
-                    {copied === hookId ? (
-                      <><Check className="w-3.5 h-3.5" /> Copied!</>
-                    ) : (
-                      <><Copy className="w-3.5 h-3.5" /> Copy Hook</>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <button
+                      onClick={() => handleCopy(hook.text, hookId)}
+                      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                        copied === hookId
+                          ? "bg-success/15 text-success"
+                          : "bg-primary/10 text-primary hover:bg-primary/20"
+                      }`}
+                    >
+                      {copied === hookId ? (
+                        <><Check className="w-3.5 h-3.5" /> Copied!</>
+                      ) : (
+                        <><Copy className="w-3.5 h-3.5" /> Copy Hook</>
+                      )}
+                    </button>
+                    <select
+                      value={statuses[hookId] || "draft"}
+                      onChange={(e) => updateStatus(hookId, e.target.value as HookStatus)}
+                      className={`text-xs px-2 py-1.5 rounded-lg border-0 outline-none cursor-pointer font-medium ${STATUS_META[statuses[hookId] as HookStatus || "draft"].color}`}
+                    >
+                      {(["draft", "deployed", "testing", "winner", "killed"] as HookStatus[]).map((s) => (
+                        <option key={s} value={s} className="bg-white text-foreground">
+                          {STATUS_META[s].label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               );
             })}

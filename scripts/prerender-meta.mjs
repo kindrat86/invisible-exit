@@ -378,9 +378,8 @@ function getRoutes() {
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: [
             "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
             "https://twitter.com/InvisibleExit",
-            "https://github.com/kindrat86/invisible-exit"
+            "https://www.reddit.com/r/invisibleexit"
           ],
         },
         {
@@ -1173,9 +1172,8 @@ function getRoutes() {
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
           sameAs: [
             "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
             "https://twitter.com/InvisibleExit",
-            "https://github.com/kindrat86/invisible-exit"
+            "https://www.reddit.com/r/invisibleexit"
           ],
           worksFor: {
             "@type": "Organization",

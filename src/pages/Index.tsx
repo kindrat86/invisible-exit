@@ -2352,6 +2352,47 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── Growth Lab: Distribution Engine ── */}
+      {/* Traffic Secrets Secret #3-4: Fill Your Funnel + Hook/Story/Offer per Channel */}
+      <section className="bg-surface section-normal border-t border-border">
+        <div className="container-standard">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary mb-4">Behind the Scenes</p>
+            <h2 className="text-h2 md:text-h1 text-foreground mb-4">
+              The Distribution Engine
+            </h2>
+            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+              We don't just build content. We built the system to distribute it. Every tool here
+              is functional and tracked.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+            <Link to="/dream-100-tracker" className="card-base p-5 text-center card-hover">
+              <p className="text-3xl font-bold text-primary">100</p>
+              <p className="text-xs text-muted-foreground mt-1">Dream 100 targets</p>
+            </Link>
+            <Link to="/hooks" className="card-base p-5 text-center card-hover">
+              <p className="text-3xl font-bold text-primary">50+</p>
+              <p className="text-xs text-muted-foreground mt-1">Content hooks</p>
+            </Link>
+            <Link to="/ad-library" className="card-base p-5 text-center card-hover">
+              <p className="text-3xl font-bold text-primary">8</p>
+              <p className="text-xs text-muted-foreground mt-1">Ad campaigns</p>
+            </Link>
+            <Link to="/content-calendar" className="card-base p-5 text-center card-hover">
+              <p className="text-3xl font-bold text-primary">30</p>
+              <p className="text-xs text-muted-foreground mt-1">Days of content</p>
+            </Link>
+          </div>
+          <div className="text-center">
+            <Link to="/growth-lab" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-hover">
+              Explore the Growth Lab
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       </main>
       <Footer />
     </div>

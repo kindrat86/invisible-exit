@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   Facebook,
   Instagram,
@@ -14,11 +14,14 @@ import {
   Check,
   ChevronDown,
   Megaphone,
+  Rocket,
+  TrendingUp,
+  Pause,
 } from "lucide-react";
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { trackEvent } from "@/lib/analytics";
 
 interface AdConcept {
   angle: string;
@@ -178,6 +181,44 @@ const TARGETING_PRESETS = [
 const AD_LIBRARY = () => {
   const [copied, setCopied] = useState<string | null>(null);
 
+  // ── Campaign status tracking (localStorage) ──
+  // Track: concept (default), launching, live, winning, paused, killed
+  type CampaignStatus = "concept" | "launching" | "live" | "winning" | "paused" | "killed";
+  const STATUS_KEY = "ie_ad_campaigns";
+  const [campaigns, setCampaigns] = useState<Record<string, CampaignStatus>>({});
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STATUS_KEY);
+      if (saved) setCampaigns(JSON.parse(saved));
+    } catch { /* ignore */ }
+  }, []);
+
+  const updateCampaign = (id: string, status: CampaignStatus) => {
+    const updated = { ...campaigns, [id]: status };
+    setCampaigns(updated);
+    localStorage.setItem(STATUS_KEY, JSON.stringify(updated));
+    trackEvent("ad_status_update", { ad_id: id, status });
+  };
+
+  const CAMPAIGN_META: Record<CampaignStatus, { label: string; color: string; icon: typeof Target }> = {
+    concept: { label: "Concept", color: "bg-slate-500/15 text-slate-400 border-slate-500/20", icon: Target },
+    launching: { label: "Launching", color: "bg-blue-500/15 text-blue-400 border-blue-500/20", icon: Rocket },
+    live: { label: "Live", color: "bg-amber-500/15 text-amber-400 border-amber-500/20", icon: Megaphone },
+    winning: { label: "Winning", color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20", icon: TrendingUp },
+    paused: { label: "Paused", color: "bg-purple-500/15 text-purple-400 border-purple-500/20", icon: Pause },
+    killed: { label: "Killed", color: "bg-red-500/15 text-red-400 border-red-500/20", icon: ChevronDown },
+  };
+
+  const campaignStats = {
+    concept: AD_CONCEPTS.filter((_, i) => (campaigns[`ad-${i}`] || "concept") === "concept").length,
+    launching: AD_CONCEPTS.filter((_, i) => campaigns[`ad-${i}`] === "launching").length,
+    live: AD_CONCEPTS.filter((_, i) => campaigns[`ad-${i}`] === "live").length,
+    winning: AD_CONCEPTS.filter((_, i) => campaigns[`ad-${i}`] === "winning").length,
+    paused: AD_CONCEPTS.filter((_, i) => campaigns[`ad-${i}`] === "paused").length,
+    killed: AD_CONCEPTS.filter((_, i) => campaigns[`ad-${i}`] === "killed").length,
+  };
+
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopied(id);
@@ -219,15 +260,26 @@ const AD_LIBRARY = () => {
         </div>
       </section>
 
-      {/* Status Banner */}
+      {/* Campaign Status Dashboard */}
       <section className="bg-amber-50 border-b border-amber-200 dark:bg-amber-950/20 dark:border-amber-900/50 py-4">
-        <div className="container-narrow flex items-center justify-center gap-3">
-          <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-          <p className="text-sm text-foreground text-center">
-            <strong>Pixels installed:</strong> Meta, LinkedIn, Reddit, Google Ads ·{" "}
-            <strong>Landing pages ready:</strong> Squeeze, Masterclass, Blog ·{" "}
-            <strong>Status:</strong> Turn on $10/day Meta retargeting to start
-          </p>
+        <div className="container-narrow">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Target className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0" />
+            {(["concept", "launching", "live", "winning", "paused", "killed"] as CampaignStatus[]).map((s) => {
+              const meta = CAMPAIGN_META[s];
+              const count = campaignStats[s];
+              if (count === 0 && s !== "concept") return null;
+              return (
+                <span key={s} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium border ${meta.color}`}>
+                  <meta.icon className="w-3 h-3" />
+                  {meta.label}: <strong>{count}</strong>
+                </span>
+              );
+            })}
+            <span className="text-xs text-muted-foreground ml-2">
+              · Pixels: Meta, LinkedIn, Reddit, Google
+            </span>
+          </div>
         </div>
       </section>
 
@@ -320,6 +372,17 @@ const AD_LIBRARY = () => {
                       <><Copy className="w-4 h-4" /> Copy Ad Copy</>
                     )}
                   </button>
+                  <select
+                    value={campaigns[`ad-${i}`] || "concept"}
+                    onChange={(e) => updateCampaign(`ad-${i}`, e.target.value as CampaignStatus)}
+                    className={`text-xs px-3 py-2 rounded-lg border-0 outline-none cursor-pointer font-medium ${(CAMPAIGN_META[campaigns[`ad-${i}`] as CampaignStatus] || CAMPAIGN_META.concept).color}`}
+                  >
+                    {(["concept", "launching", "live", "winning", "paused", "killed"] as CampaignStatus[]).map((s) => (
+                      <option key={s} value={s} className="bg-white text-foreground">
+                        {CAMPAIGN_META[s].label}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
             ))}

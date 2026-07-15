@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import SocialShare from "@/components/SocialShare";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { glossaryTerms } from "@/data/glossary";
 import { blogPosts } from "@/data/blog-posts";
 
@@ -188,6 +190,16 @@ const GlossaryTermPage = () => {
             .map((p) => ({ to: `/blog/${p.slug}`, title: p.title, description: p.excerpt }))}
           title="Articles Mentioning This Term"
         />
+      </section>
+
+      {/* ── TRAFFIC SECRETS: Share + Email Capture ── */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="mb-8">
+            <SocialShare title={`${term!.term} — Definition | Invisible Exit`} url={`/glossary/${slug}`} />
+          </div>
+          <InlineNewsletter source={`glossary_${slug}`} />
+        </div>
       </section>
 
       <Footer />

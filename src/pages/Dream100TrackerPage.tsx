@@ -31,46 +31,8 @@ import { trackEvent } from "@/lib/analytics";
  *   - Tiered priority system
  */
 
-interface DreamTarget {
-  name: string;
-  platform: string;
-  audience: string;
-  tier: "Tier 1" | "Tier 2" | "Tier 3";
-  angle: string;
-  priority: "P0" | "P1" | "P2";
-}
-
-const TARGETS: DreamTarget[] = [
-  // Tier 1 — Dream Partners
-  { name: "Pat Walls (Starter Story)", platform: "Newsletter + Podcast", audience: "500K+", tier: "Tier 1", angle: "Corporate manager builds $4K MRR anonymously — full timeline feature", priority: "P0" },
-  { name: "Courtland Allen (Indie Hackers)", platform: "Community + Podcast", audience: "500K+", tier: "Tier 1", angle: "From $120K salary to $4K MRR while employed — IH feature + podcast", priority: "P0" },
-  { name: "Pieter Levels (Nomad List)", platform: "Twitter + Products", audience: "300K+", tier: "Tier 1", angle: "Anonymous founder building micro-SaaS — crossover with nomad philosophy", priority: "P1" },
-  { name: "Justin Welsh", platform: "LinkedIn + Newsletter", audience: "500K+", tier: "Tier 1", angle: "Solopreneur who left corporate — the 'invisible' angle is differentiated", priority: "P1" },
-  { name: "Nicolas Cole (Ship 30)", platform: "Twitter + Newsletter", audience: "200K+", tier: "Tier 1", angle: "Writing → digital products → the system for employed professionals", priority: "P1" },
-  { name: "Dickie Bush (Ship 30)", platform: "Newsletter", audience: "200K+", tier: "Tier 1", angle: "Same as Nicolas Cole — co-target", priority: "P1" },
-  { name: "Marc Lou", platform: "YouTube + Twitter", audience: "300K+", tier: "Tier 1", angle: "Indie hacker building micro-SaaS — faceless building angle", priority: "P2" },
-  { name: "Daniel Vassallo", platform: "Twitter + Podcast", audience: "200K+", tier: "Tier 1", angle: "Anti-corporate career advice → invisible exit is the system", priority: "P2" },
-  { name: "Adam Robinson", platform: "Newsletter + Twitter", audience: "100K+", tier: "Tier 1", angle: "Career → entrepreneurship; the retention.com → invisible exit pipeline", priority: "P2" },
-  { name: "Ali Abdaal", platform: "YouTube + Podcast", audience: "5M+", tier: "Tier 1", angle: "Productivity → passive income for professionals", priority: "P2" },
-  // Tier 2 — Strategic Affiliates
-  { name: "Indie Hackers Community", platform: "Forum", audience: "500K+ members", tier: "Tier 2", angle: "Post the full $0→$4K MRR timeline as a community story", priority: "P0" },
-  { name: "r/FIRE Mods", platform: "Reddit", audience: "800K", tier: "Tier 2", angle: "Sponsored post or AMA about MRR vs stock options", priority: "P1" },
-  { name: "r/SideHustle Community", platform: "Reddit", audience: "1.5M", tier: "Tier 2", angle: "Value-first story posts about the 5-tool system", priority: "P1" },
-  { name: "Trends.vc (Dru Riley)", platform: "Newsletter", audience: "50K+", tier: "Tier 2", angle: "Micro-SaaS trend report feature — perfect audience match", priority: "P1" },
-  { name: "Starter Story Weekly", platform: "Newsletter", audience: "200K+", tier: "Tier 2", angle: "Cross-feature with Starter Story main brand", priority: "P1" },
-  { name: "MicroConf Connect", platform: "Slack", audience: "30K", tier: "Tier 2", angle: "Bootstrapped SaaS for corporate managers", priority: "P2" },
-  { name: "The Hustle (Daily Newsletter)", platform: "Newsletter", audience: "2M+", tier: "Tier 2", angle: "Sponsored placement or featured story", priority: "P2" },
-  { name: "Morning Brew", platform: "Newsletter", audience: "4M+", tier: "Tier 2", angle: "Sponsored placement — expensive but huge reach", priority: "P2" },
-  // Tier 3 — Content Amplifiers / Podcasts
-  { name: "Side Hustle School (Chris Guillebeau)", platform: "Podcast", audience: "400K/listeners", tier: "Tier 3", angle: "5 tools, 5 hours/week, $4K MRR — daily show format", priority: "P0" },
-  { name: "The Side Hustle Show (Nick Loper)", platform: "Podcast", audience: "250K", tier: "Tier 3", angle: "The system-beats-idea framework — tactical interview", priority: "P0" },
-  { name: "Indie Hackers Podcast", platform: "Podcast", audience: "200K", tier: "Tier 3", angle: "The Amsterdam taxi story + full MRR timeline", priority: "P1" },
-  { name: "ChooseFI Podcast", platform: "Podcast", audience: "300K", tier: "Tier 3", angle: "Recurring revenue as FIRE accelerator", priority: "P1" },
-  { name: "My First Million (Pulte/Shaan)", platform: "Podcast", audience: "500K", tier: "Tier 3", angle: "Micro-SaaS for boring industries — idea-focused episode", priority: "P2" },
-  { name: "The Tim Ferriss Show", platform: "Podcast", audience: "2M+", tier: "Tier 3", angle: "Lifestyle design + invisible exit system", priority: "P2" },
-  { name: "Dev.to Editorial", platform: "Publication", audience: "1.2M", tier: "Tier 3", angle: "Technical tutorial: building micro-SaaS with AI (no code)", priority: "P1" },
-  { name: "HackerNoon", platform: "Publication", audience: "3M/month", tier: "Tier 3", angle: "The anonymous founder stack — how to build without being seen", priority: "P1" },
-];
+import { DREAM_100_TARGETS as TARGETS } from "@/data/dream100";
+import type { DreamTarget } from "@/data/dream100";
 
 type Stage = "Not started" | "Researching" | "First touch sent" | "In conversation" | "Partnered";
 
@@ -202,7 +164,7 @@ const Dream100TrackerPage = () => {
             Dream 100 Tracker
           </h1>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            26 targets identified. This tool tracks your outreach stage, touch
+            100 targets identified. This tool tracks your outreach stage, touch
             count, and follow-ups. Progress saves automatically in your browser.
           </p>
         </div>
@@ -380,7 +342,7 @@ const Dream100TrackerPage = () => {
           </div>
           <div className="text-center mt-8">
             <p className="text-white/40 text-sm">
-              Total: ~2 hours/week. At this pace, you'll contact all 26 targets in 13 weeks.
+              Total: ~2 hours/week. At this pace, you'll contact all 100 targets in 25 weeks.
             </p>
           </div>
         </div>

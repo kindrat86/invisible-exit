@@ -35,7 +35,14 @@ type AnalyticsEvent =
   | "story_final_cta_masterclass"
   | "manifesto_hero_cta"
   | "manifesto_final_cta"
-  | "manifesto_system_cta";
+  | "manifesto_system_cta"
+  | "social_share"
+  | "email_signup"
+  | "hook_copied"
+  | "hook_status_update"
+  | "dream100_stage_update"
+  | "dream100_touch_increment"
+  | "ad_status_update";
 
 export function trackEvent(
   event: AnalyticsEvent,

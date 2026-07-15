@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { ArrowRight } from "lucide-react";
+import SocialShare from "@/components/SocialShare";
+import InlineNewsletter from "@/components/InlineNewsletter";
 
 export default function IndustryIdeasPage() {
   const { profession } = useParams<{ profession: string }>();
@@ -219,6 +221,17 @@ export default function IndustryIdeasPage() {
           </div>
         </section>
       </div>
+
+      {/* ── TRAFFIC SECRETS: Share + Email Capture ── */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="mb-8">
+            <SocialShare title={`${data.profession} Micro-SaaS Ideas | Invisible Exit`} url={`/ideas/${profession}`} />
+          </div>
+          <InlineNewsletter source={`ideas_page_${profession}`} />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

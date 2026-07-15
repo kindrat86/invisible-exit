@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import SocialShare from "@/components/SocialShare";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { slugifyCategory } from "@/lib/utils";
 
 export default function StateGuidePage() {
@@ -161,6 +163,17 @@ export default function StateGuidePage() {
           title="Related Resources"
         />
       </div>
+
+      {/* ── TRAFFIC SECRETS: Share + Email Capture ── */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="mb-8">
+            <SocialShare title={`Anonymous LLC Guide for ${guide!.state} | Invisible Exit`} url={`/guides/${state}`} />
+          </div>
+          <InlineNewsletter source={`state_guide_${state}`} />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
