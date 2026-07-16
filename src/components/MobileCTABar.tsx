@@ -7,16 +7,26 @@ import { ArrowRight, X } from "lucide-react";
  * Sticky bottom CTA bar for mobile devices.
  * Features:
  * - Appears after scrolling past hero (600px)
- * - Swipe down to dismiss
+ * - Swipe down or tap X to dismiss — stays dismissed for the session
  * - Tracks scroll direction: hides when scrolling down, shows when scrolling up
+ * - Yields to the exit-intent popup (body[data-popup-open])
+ * - Toggles body.has-cta-bar so the footer gets bottom clearance (index.css)
  * - Hidden on desktop, auth pages, and funnel pages
  */
 const HIDDEN_ROUTES = ["/freedom", "/oto/", "/checkout", "/login", "/dashboard", "/masterclass"];
 
+const DISMISS_KEY = "cta_bar_dismissed";
+
 export function MobileCTABar() {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(() => {
+    try {
+      return sessionStorage.getItem(DISMISS_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
   const location = useLocation();
   const touchStartY = useRef(0);
   const lastScrollY = useRef(0);
@@ -25,13 +35,29 @@ export function MobileCTABar() {
   // Check if current route should hide the CTA bar
   const shouldHide = HIDDEN_ROUTES.some((route) => location.pathname.startsWith(route));
 
+  const dismiss = () => {
+    setVisible(false);
+    setDismissed(true);
+    try {
+      sessionStorage.setItem(DISMISS_KEY, "1");
+    } catch {
+      /* storage blocked — session-only dismissal still works via state */
+    }
+  };
+
   useEffect(() => {
-    if (shouldHide) {
+    if (shouldHide || dismissed) {
       setVisible(false);
       return;
     }
 
     const handler = () => {
+      // Yield to an open modal
+      if (document.body.dataset.popupOpen) {
+        setVisible(false);
+        return;
+      }
+
       const currentY = window.scrollY;
       const scrollingDown = currentY > lastScrollY.current;
 
@@ -59,12 +85,15 @@ export function MobileCTABar() {
 
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
-  }, [shouldHide, location.pathname]);
+  }, [shouldHide, dismissed, location.pathname]);
 
-  // Reset dismissed state when route changes
+  // Footer clearance while the bar can appear (keyed on mount state, not
+  // the transient `visible`, so the footer doesn't jump while scrolling)
   useEffect(() => {
-    setDismissed(false);
-  }, [location.pathname]);
+    const active = !shouldHide && !dismissed;
+    document.body.classList.toggle("has-cta-bar", active);
+    return () => document.body.classList.remove("has-cta-bar");
+  }, [shouldHide, dismissed]);
 
   // Swipe down to dismiss
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -75,8 +104,7 @@ export function MobileCTABar() {
     const deltaY = e.changedTouches[0].clientY - touchStartY.current;
     if (deltaY > 50) {
       // Swiped down more than 50px
-      setVisible(false);
-      setDismissed(true);
+      dismiss();
     }
   };
 
@@ -103,7 +131,7 @@ export function MobileCTABar() {
           <ArrowRight className="w-4 h-4" />
         </Link>
         <button
-          onClick={() => { setVisible(false); setDismissed(true); }}
+          onClick={dismiss}
           className="flex items-center justify-center w-10 h-10 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors flex-shrink-0 active:scale-90"
           aria-label="Dismiss"
         >

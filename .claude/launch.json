@@ -2,18 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "Vite Dev Server",
-      "runtimeExecutable": "/Users/maryankondratyuk/.nvm/versions/node/v22.18.0/bin/node",
-      "runtimeArgs": ["node_modules/.bin/vite", "--port", "8080"],
-      "port": 8080,
-      "autoPort": true
-    },
-    {
-      "name": "Vite Preview Server",
-      "runtimeExecutable": "/Users/maryankondratyuk/.nvm/versions/node/v22.18.0/bin/node",
-      "runtimeArgs": ["node_modules/.bin/vite", "preview", "--port", "4173"],
-      "port": 4173,
-      "autoPort": true
+      "name": "invisible-exit-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5199"],
+      "port": 5199,
+      "cwd": "/Users/sipi/invisible-exit"
     }
   ]
 }

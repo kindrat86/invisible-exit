@@ -41,7 +41,7 @@ const SqueezePage = () => {
 
   // ── DOTCOM SECRETS Ch 14: Order Bump ──
   // Checkbox on the email step that adds a $7 one-time to the $0.97/mo checkout
-  const [addStealthBlueprint, setAddStealthBlueprint] = useState(true);
+  const [addStealthBlueprint, setAddStealthBlueprint] = useState(false);
 
   // Calculated result
   const [result, setResult] = useState<CalcResult | null>(null);
@@ -94,10 +94,6 @@ const SqueezePage = () => {
     e.preventDefault();
     if (!email || !result) return;
     setLoading(true);
-    trackEvent("squeeze_page_submitted", {
-      source: "freedom_calculator",
-      freedomNumber: result.freedomNumber,
-    });
     try {
       // ── Send to API endpoint (handles both Turso DB insert + Resend welcome) ──
       const apiRes = await fetch("/api/newsletter-welcome", {
@@ -110,6 +106,7 @@ const SqueezePage = () => {
             freedom_number: result.freedomNumber,
             salary: result.annualSalary,
             timeline: result.timelineMonths,
+            add_stealth_blueprint: addStealthBlueprint,
           },
         }),
       });
@@ -117,9 +114,19 @@ const SqueezePage = () => {
       if (!apiRes.ok) {
         const errData = await apiRes.json().catch(() => ({}));
         console.error("Newsletter API error:", errData);
-        // Fallback: still try Supabase as a backup
+        if (apiRes.status === 429) {
+          toast.error("Too many attempts. Please try again in a few minutes.");
+        } else {
+          toast.error("Something went wrong — please try again.");
+        }
+        return;
       }
 
+      trackEvent("squeeze_page_submitted", {
+        source: "freedom_calculator",
+        freedomNumber: result.freedomNumber,
+        add_stealth_blueprint: addStealthBlueprint,
+      });
       toast.success("Check your inbox — your detailed breakdown is on the way!");
       setStep("email");
     } catch (err) {
@@ -172,7 +179,7 @@ const SqueezePage = () => {
                   "The exact MRR that replaces <strong>your</strong> salary",
                   "How many customers you need (at any price point)",
                   "Your timeline based on <strong>your</strong> hours/week",
-                  "The invisibility score — can your employer find out?",
+                  "The stealth checklist members use to stay invisible (avg score: 72/100)",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
@@ -247,52 +254,61 @@ const SqueezePage = () => {
                 This is the number your side business needs to replace.
               </p>
 
-              <div className="relative mb-6">
-                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  autoComplete="off"
-                  aria-label="Annual salary"
-                  autoFocus
-                  value={salary}
-                  onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
-                  placeholder="120000"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
-                />
-              </div>
-
-              {/* Quick selects */}
-              <div className="grid grid-cols-3 gap-2 mb-8">
-                {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
-                  (val) => {
-                    const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
-                    return (
-                      <button
-                        key={val}
-                        onClick={() => setSalary(String(num))}
-                        className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
-                          salary === String(num)
-                            ? "bg-primary text-white"
-                            : "bg-white/5 text-white/60 hover:bg-white/10"
-                        }`}
-                      >
-                        {val}
-                      </button>
-                    );
-                  }
-                )}
-              </div>
-
-              <button
-                onClick={() => setStep("expenses")}
-                disabled={!salary}
-                className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (salary) setStep("expenses");
+                }}
               >
-                Continue
-                <ArrowRight className="w-5 h-5" />
-              </button>
+                <div className="relative mb-6">
+                  <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="off"
+                    aria-label="Annual salary"
+                    enterKeyHint="next"
+                    autoFocus
+                    value={salary}
+                    onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
+                    placeholder="120000"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                  />
+                </div>
+
+                {/* Quick selects */}
+                <div className="grid grid-cols-3 gap-2 mb-8">
+                  {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
+                    (val) => {
+                      const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                      return (
+                        <button
+                          key={val}
+                          type="button"
+                          onClick={() => setSalary(String(num))}
+                          className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                            salary === String(num)
+                              ? "bg-primary text-white"
+                              : "bg-white/5 text-white/60 hover:bg-white/10"
+                          }`}
+                        >
+                          {val}
+                        </button>
+                      );
+                    }
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!salary}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                >
+                  Continue
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
             </div>
           )}
 
@@ -321,57 +337,67 @@ const SqueezePage = () => {
                 floor.
               </p>
 
-              <div className="relative mb-6">
-                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  autoComplete="off"
-                  aria-label="Monthly living expenses"
-                  autoFocus
-                  value={expenses}
-                  onChange={(e) => setExpenses(e.target.value.replace(/[^0-9]/g, ''))}
-                  placeholder="5000"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
-                />
-              </div>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (expenses) setStep("timeline");
+                }}
+              >
+                <div className="relative mb-6">
+                  <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="off"
+                    aria-label="Monthly living expenses"
+                    enterKeyHint="next"
+                    autoFocus
+                    value={expenses}
+                    onChange={(e) => setExpenses(e.target.value.replace(/[^0-9]/g, ''))}
+                    placeholder="5000"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                  />
+                </div>
 
-              <div className="grid grid-cols-4 gap-2 mb-8">
-                {["$3K", "$5K", "$8K", "$12K"].map((val) => {
-                  const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
-                  return (
-                    <button
-                      key={val}
-                      onClick={() => setExpenses(String(num))}
-                      className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
-                        expenses === String(num)
-                          ? "bg-primary text-white"
-                          : "bg-white/5 text-white/60 hover:bg-white/10"
-                      }`}
-                    >
-                      {val}
-                    </button>
-                  );
-                })}
-              </div>
+                <div className="grid grid-cols-4 gap-2 mb-8">
+                  {["$3K", "$5K", "$8K", "$12K"].map((val) => {
+                    const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                    return (
+                      <button
+                        key={val}
+                        type="button"
+                        onClick={() => setExpenses(String(num))}
+                        className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                          expenses === String(num)
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {val}
+                      </button>
+                    );
+                  })}
+                </div>
 
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setStep("salary")}
-                  className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
-                >
-                  Back
-                </button>
-                <button
-                  onClick={() => setStep("timeline")}
-                  disabled={!expenses}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
-                >
-                  Continue
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setStep("salary")}
+                    className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={!expenses}
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                  >
+                    Continue
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </div>
+              </form>
             </div>
           )}
 
@@ -496,12 +522,12 @@ const SqueezePage = () => {
                 <div className="bg-white/5 rounded-xl p-5 border border-white/10">
                   <Shield className="w-5 h-5 text-primary-light mb-2" />
                   <p className="text-white/50 text-xs mb-1">
-                    Invisibility score
+                    Avg member invisibility score
                   </p>
                   <p className="text-2xl font-bold text-white">
                     {result.invisibilityScore}
                     <span className="text-sm font-normal text-white/50">
-                      /100
+                      /100 avg
                     </span>
                   </p>
                 </div>
@@ -582,6 +608,8 @@ const SqueezePage = () => {
                   <input
                     type="email"
                     required
+                    name="email"
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your best email address"
@@ -599,18 +627,15 @@ const SqueezePage = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <span className="text-white text-sm font-semibold">
-                          YES! Add the Stealth Ops Blueprint
-                        </span>
-                        <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-                          Save $40
+                          YES — send me the $7 Stealth Ops Blueprint offer next
                         </span>
                       </div>
                       <p className="text-white/50 text-xs leading-relaxed mb-1">
-                        The 47-point employment contract audit + entity setup walkthroughs.
-                        Normally $47. Add it now for just <strong className="text-amber-300">$7 one-time</strong>.
+                        The 47-point employment contract audit + entity setup walkthroughs
+                        (normally $47, $7 one-time for founding members).
                       </p>
-                      <p className="text-white/30 text-[11px] italic">
-                        ☑ Checked by default — uncheck to skip
+                      <p className="text-white/60 text-[11px] italic">
+                        You'll complete the purchase on the next page — nothing is charged here.
                       </p>
                     </div>
                   </label>
@@ -673,7 +698,10 @@ const SqueezePage = () => {
 
               <div className="space-y-3 mt-6">
                 <Link
-                  to={addStealthBlueprint ? "/tripwire" : "/?checkout=starter"}
+                  to={addStealthBlueprint ? "/tripwire" : "/start"}
+                  onClick={() =>
+                    trackEvent("homepage_cta_clicked", { source: "squeeze_post_email" })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
                   {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $0.97/month"}

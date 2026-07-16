@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+// NOTE: imported eagerly by App.tsx — keep this module free of heavy deps
+// (no recharts/html2canvas) so the entry bundle stays lean.
 import { useEffect, useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -124,6 +126,7 @@ const FAQS = [
 
 const Index = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const navigate = useNavigate();
 
   // ── A/B TEST: Hero headline (Dotcom Secrets Ch 3b) ──
   // Variant A: "How to Build a $4,000/Month Side Business..." (benefit-focused)
@@ -141,7 +144,7 @@ const Index = () => {
   const handleCheckout = async () => {
     // DOTCOM SECRETS Ch 8: Two-step order — send to /start order page, not direct checkout
     trackEvent("homepage_cta_clicked", { source: "landing_page" });
-    window.location.href = "/start";
+    navigate("/start");
   };
 
   return (
@@ -160,12 +163,12 @@ const Index = () => {
           {/* EXPERT SECRETS Ch 1: Polarizing Leader — "If this offends you, leave" */}
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in">
             <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
-            <span className="text-xs text-red-300 font-semibold uppercase tracking-wider">
+            <span className="text-xs text-red-300 font-semibold uppercase tracking-wider text-balance">
               ⚠️ WARNING: If This Offends You, This Isn't for You.
             </span>
           </div>
 
-          <p className="text-eyebrow text-primary-light mb-6 animate-fade-in" style={{ animationDelay: "50ms" }}>
+          <p className="text-eyebrow text-primary-light mb-6 text-balance animate-fade-in" style={{ animationDelay: "50ms" }}>
             You Know Who You Are — The Title, The Salary, The 0.5%. Keep Reading.
           </p>
 
@@ -188,7 +191,7 @@ const Index = () => {
           {/* DOTCOM SECRETS Ch 2: Category Creation — right below the headline */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs text-primary-light font-medium">
+            <span className="text-xs text-primary-light font-medium text-balance">
               Not a course · Not a community · The world's first anonymity-native business system
             </span>
           </div>
@@ -212,7 +215,7 @@ const Index = () => {
               Calculate Your Freedom Number (Free)
               <ArrowRight className="w-5 h-5" />
             </button>
-            <p className="text-sm text-white/40 mt-1">
+            <p className="text-sm text-white/60 mt-1">
               Free calculator. Takes 90 seconds. No credit card.
             </p>
           </div>
@@ -220,20 +223,20 @@ const Index = () => {
           {/* EXPERT SECRETS Ch 15: Rallying Cry + Ch 14: Reluctant Hero (below CTA) */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6 animate-fade-up" style={{ animationDelay: "250ms" }}>
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
-              <span className="text-primary text-sm font-bold">\"</span>
-              <span className="text-white/50 text-xs italic">
+              <span className="text-primary text-sm font-bold">“</span>
+              <span className="text-white/60 text-xs italic">
                 I didn't want to build this. I wanted to build in peace. But I had to leave the key.
               </span>
-              <span className="text-primary text-sm font-bold">\"</span>
-              <span className="text-white/30 text-[10px]">— Adrian</span>
+              <span className="text-primary text-sm font-bold">”</span>
+              <span className="text-white/60 text-[11px] whitespace-nowrap shrink-0">— Adrian</span>
             </div>
           </div>
 
           {/* EXPERT SECRETS Ch 16: Cost of Delay — live counter */}
           <div className="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
-            <span className="text-amber-200 text-xs font-medium">
-              Every month you wait costs you ~$4,000 in unrealized MRR. That's <strong className="text-amber-100">$48,000/year of delay</strong>.
+            <span className="text-amber-200 text-xs font-medium text-balance">
+              Every month you wait costs you ~$4,000 in unrealized MRR. That's <strong className="text-amber-100 whitespace-nowrap">$48,000/year of delay</strong>.
             </span>
           </div>
 
@@ -270,7 +273,7 @@ const Index = () => {
           </div>
 
           {/* Social proof — real-time count */}
-          <div className="flex items-center justify-center gap-4 mt-4 text-xs text-white/40 animate-fade-up" style={{ animationDelay: "350ms" }}>
+          <div className="flex items-center justify-center gap-4 mt-4 text-xs text-white/60 animate-fade-up" style={{ animationDelay: "350ms" }}>
             <span className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               127 building now
@@ -280,16 +283,16 @@ const Index = () => {
             <span>·</span>
             <span>73 founding spots left</span>
             <span>·</span>
-            <span className="text-primary-light font-semibold">\"We don't wait for exits. We build our own.\"</span>
+            <span className="text-primary-light font-semibold">“We don't wait for exits. We build our own.”</span>
           </div>
         </div>
       </section>
 
       {/* ── 1b. Social Proof Bar ── */}
-      <section className="bg-primary py-3 sm:py-4 border-b border-primary-dark">
+      <section className="bg-primary-strong py-3 sm:py-4 border-b border-primary-dark">
         <div className="container-standard">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
-            <span className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-medium">
+            <span className="flex items-center gap-2 text-white text-sm font-medium">
               <span className="flex -space-x-2">
                 {["bg-blue-400", "bg-green-400", "bg-purple-400", "bg-orange-400"].map((c, i) => (
                   <span key={i} className={`w-6 h-6 rounded-full ${c} border-2 border-primary flex items-center justify-center text-[10px] font-bold text-white`}>
@@ -299,11 +302,11 @@ const Index = () => {
               </span>
               127 managers building now
             </span>
-            <span className="flex items-center gap-1.5 text-white/90 text-xs sm:text-sm">
+            <span className="flex items-center gap-1.5 text-white text-sm">
               <span className="text-amber-300">★★★★★</span>
               <span className="font-medium">4.8/5 rating</span>
             </span>
-            <span className="flex items-center gap-1.5 text-white/90 text-xs sm:text-sm">
+            <span className="flex items-center gap-1.5 text-white text-sm">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="font-medium">73 founding spots left</span>
             </span>
@@ -365,7 +368,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Formula</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               Who This Is For, Where We Find You, What You Get, and What Happens Next.
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
@@ -414,7 +417,7 @@ const Index = () => {
                 ))}
               </div>
               <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg p-3 space-y-1">
-                <p className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">This isn't you if</p>
+                <p className="text-[11px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">This isn't you if</p>
                 {["You're already a full-time founder", "You want to build a public personal brand", "You expect overnight success", "You make under $100K — build cash flow first"].map((item) => (
                   <div key={item} className="flex items-start gap-1.5">
                     <X className="w-3 h-3 text-red-400 shrink-0 mt-0.5" />
@@ -528,7 +531,7 @@ const Index = () => {
                 <p className="text-[11px] text-muted-foreground italic leading-relaxed">
                   "I stopped obsessing over the perfect idea and started working the system."
                 </p>
-                <p className="text-[10px] text-foreground font-semibold mt-1">— Jennifer L., $2,300 MRR</p>
+                <p className="text-[11px] text-foreground font-semibold mt-1">— Jennifer L., $2,300 MRR</p>
               </div>
             </div>
           </div>
@@ -555,7 +558,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">Where We Gather</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               You're Already <span className="text-gradient">in the Room.</span>{" "}
               You Just Don't Know It Yet.
             </h2>
@@ -584,18 +587,18 @@ const Index = () => {
                 name: "@InvisibleExit",
                 type: "YouTube",
                 url: "https://www.youtube.com/@InvisibleExit",
-                members: "Early",
+                members: "Launching",
                 description:
-                  "Adrian's channel. Full walkthroughs: how to find your freedom number, validate an idea in 48 hours, and launch without showing your face.",
+                  "Adrian's channel — launching with full walkthroughs on finding your freedom number, validating ideas in 48 hours, and launching without showing your face.",
                 vibe: "Practical. Step-by-step.",
               },
               {
                 name: "@InvisibleExit",
                 type: "X / Twitter",
                 url: "https://twitter.com/InvisibleExit",
-                members: "Growing",
+                members: "Launching",
                 description:
-                  "Daily threads, micro-SaaS ideas, equity math breakdowns, and the occasional \"I can't believe this works\" moment.",
+                  "Daily threads, micro-SaaS ideas, equity math breakdowns, and the occasional \"I can't believe this works\" moment — launching soon.",
                 vibe: "Fast. Derivative-free.",
               },
               {
@@ -627,7 +630,7 @@ const Index = () => {
               },
             ].map((site) => (
               <a
-                key={site.name}
+                key={`${site.type}-${site.name}`}
                 href={site.url.startsWith("#") ? undefined : site.url}
                 target={site.url.startsWith("#") ? undefined : "_blank"}
                 rel="noopener noreferrer"
@@ -647,7 +650,7 @@ const Index = () => {
                   <h3 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">
                     {site.name}
                   </h3>
-                  <span className="text-[10px] font-medium text-muted-foreground bg-white/50 rounded-full px-2 py-0.5 border border-border">
+                  <span className="text-[11px] font-medium text-muted-foreground bg-white/50 rounded-full px-2 py-0.5 border border-border">
                     {site.type}
                   </span>
                 </div>
@@ -655,11 +658,11 @@ const Index = () => {
                   {site.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                  <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400" />
                     {site.members}
                   </span>
-                  <span className="text-[10px] text-muted-foreground italic">
+                  <span className="text-[11px] text-muted-foreground italic">
                     {site.vibe}
                   </span>
                 </div>
@@ -687,7 +690,7 @@ const Index = () => {
         <div className="container-narrow">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">Beyond the Demographics</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               What's Really <span className="text-gradient">Keeping You Here</span>
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
@@ -819,7 +822,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Frameworks (Not the Tools)</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               3 Proprietary Frameworks.{" "}
               <span className="text-gradient">14 Months of Failure.</span>
             </h2>
@@ -957,7 +960,7 @@ const Index = () => {
         <div className="container-narrow">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">A New Category — Not a Better Tool</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               What Is <span className="text-gradient">The Invisible Exit System?</span>
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
@@ -1104,7 +1107,7 @@ const Index = () => {
         <div className="container-narrow">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-red-600 dark:text-red-400 mb-4">Uncomfortable Truths</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               If This Offends You, This Isn't for You.
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
@@ -1163,7 +1166,7 @@ const Index = () => {
           {/* Epiphany Bridge: The Desire (Expert Secrets Ch 5-6) */}
           <p className="text-eyebrow text-muted-foreground mb-4">The Desire</p>
           <h2 className="text-h2 text-foreground mb-6">I Didn't Want Escape. I Wanted Optionality.</h2>
-          <div className="text-body text-muted-foreground space-y-5">
+          <div className="text-body text-muted-foreground space-y-5 max-w-2xl">
             <p>
               People assume I wanted to quit. I didn't. I loved parts of my job — the team, the
               strategy, the wins. What I wanted was something simpler and more dangerous:
@@ -1184,7 +1187,7 @@ const Index = () => {
 
           <p className="text-eyebrow text-muted-foreground mb-4">The Conflict</p>
           <h2 className="text-h2 text-foreground mb-6">Month 4: The Wall</h2>
-          <div className="text-body text-muted-foreground space-y-5">
+          <div className="text-body text-muted-foreground space-y-5 max-w-2xl">
             <p>
               I'd been building for 4 months. One product live. <strong className="text-foreground">Zero customers.</strong> My
               5 hours a week felt pointless. I was seriously considering shutting it down and
@@ -1214,7 +1217,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The 3 Lies You've Been Told</p>
-            <h2 className="text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               3 Beliefs Keeping You Trapped
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
@@ -1372,7 +1375,7 @@ const Index = () => {
                 </div>
                 <Link
                   to="/frameworks"
-                  className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-primary-light/70 hover:text-primary-light mb-1 transition-colors"
+                  className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-primary-light/70 hover:text-primary-light mb-1 transition-colors"
                 >
                   <span className="w-1 h-1.5 rounded-full bg-primary-light/50" />
                   {tool.framework}
@@ -1394,7 +1397,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The System</p>
-            <h2 className="text-h1 text-foreground mb-4">5 Steps. From Trapped to Building.</h2>
+            <h2 className="text-h2 text-foreground mb-4">5 Steps. From Trapped to Building.</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               Each step answers one question and produces one output. No theory.
               No motivation. Just a system that works within your constraints.
@@ -1546,12 +1549,12 @@ const Index = () => {
                     <span className="text-white font-bold text-xs">{member.initials}</span>
                   </div>
                   <p className="font-semibold text-foreground text-xs">{member.pseudo}</p>
-                  <p className="text-[10px] text-muted-foreground mb-1.5">{member.role}</p>
+                  <p className="text-[11px] text-muted-foreground mb-1.5">{member.role}</p>
                   <div className="bg-success/10 rounded-lg py-1 px-1.5 mb-1.5">
                     <p className="text-success text-[11px] font-bold">{member.mrr}/mo</p>
                   </div>
-                  <p className="text-[9px] text-muted-foreground/60 italic leading-tight">{member.product}</p>
-                  <p className="text-[9px] text-primary mt-1.5 font-medium">Day {member.day}</p>
+                  <p className="text-[11px] text-muted-foreground/60 italic leading-tight">{member.product}</p>
+                  <p className="text-[11px] text-primary mt-1.5 font-medium">Day {member.day}</p>
                 </div>
               ))}
             </div>
@@ -1672,8 +1675,8 @@ const Index = () => {
           {/* ── BRUNSON CH 12: DEADLINE-DRIVEN URGENCY ── */}
           {/* Scarcity needs a WHEN, not just a HOW MANY. This creates real urgency. */}
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/25 rounded-full px-5 py-2 mb-2 animate-fade-up">
-            <Clock className="w-4 h-4 text-red-400 animate-pulse" />
-            <span className="text-xs text-red-300 font-semibold">
+            <Clock className="w-4 h-4 text-red-600 animate-pulse" />
+            <span className="text-xs text-red-700 font-semibold text-balance">
               Founding member pricing ends when the 100th spot fills — currently 27 claimed. No extensions. No exceptions.
             </span>
           </div>
@@ -1691,7 +1694,7 @@ const Index = () => {
           ].map((item, i) => (
             <div
               key={item.name}
-              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/[0.02] transition-colors animate-fade-up border-b border-border/50 last:border-0"
+              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-black/[0.03] transition-colors animate-fade-up border-b border-border/50 last:border-0"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-center gap-3 min-w-0 flex-1">
@@ -1701,11 +1704,11 @@ const Index = () => {
                 <div className="min-w-0">
                   <span className="text-foreground font-semibold text-sm">{item.name}</span>
                   <span className="text-muted-foreground/50 text-xs ml-2 hidden sm:inline">{item.anchor}</span>
-                  <p className="text-muted-foreground/40 text-[11px] mt-0.5 truncate sm:hidden">{item.outcome}</p>
+                  <p className="text-muted-foreground/70 text-[11px] mt-0.5 truncate sm:hidden">{item.outcome}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 shrink-0">
-                <span className="text-xs text-muted-foreground/40 line-through hidden sm:block">{item.anchorPrice}</span>
+                <span className="text-xs text-muted-foreground/60 line-through hidden sm:block">{item.anchorPrice}</span>
                 <span className="text-xs font-bold text-success">FREE</span>
               </div>
             </div>
@@ -1738,7 +1741,7 @@ const Index = () => {
           ].map((bonus) => (
             <div
               key={bonus.name}
-              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/[0.02] transition-colors border-b border-border/50 last:border-0"
+              className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-black/[0.03] transition-colors border-b border-border/50 last:border-0"
             >
               <div className="flex items-center gap-3 min-w-0 flex-1">
                 <span className="w-6 h-6 rounded-full bg-amber-500/15 flex items-center justify-center shrink-0 text-amber-400 text-xs">
@@ -1787,9 +1790,9 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-1">
+                <div className="flex flex-col items-center gap-1 text-center sm:flex-row sm:items-center sm:justify-between pt-1">
                   <span className="text-foreground font-semibold text-base">Founding member price</span>
-                  <span className="text-5xl sm:text-6xl font-black text-primary">$0.97<span className="text-base font-normal text-muted-foreground">/mo</span></span>
+                  <span className="text-5xl sm:text-6xl font-black text-primary whitespace-nowrap">$0.97<span className="text-base font-normal text-muted-foreground">/mo</span></span>
                 </div>
 
                 <div className="flex items-center justify-between text-xs text-muted-foreground/50">
@@ -1800,10 +1803,10 @@ const Index = () => {
 
               {/* Nudge vs price bar */}
               <div className="mt-4 bg-amber-500/5 border border-amber-500/15 rounded-lg px-4 py-2.5 flex items-center justify-between">
-                <span className="text-amber-300 text-xs font-medium">
-                  ⏳ <span className="text-amber-200">73 founding spots left</span> at this price
+                <span className="text-amber-700 text-xs font-medium">
+                  ⏳ <span className="text-amber-800 font-semibold">73 founding spots left</span> at this price
                 </span>
-                <span className="text-amber-300 text-xs font-bold">Locked for life</span>
+                <span className="text-amber-700 text-xs font-bold">Locked for life</span>
               </div>
             </div>
 
@@ -1817,8 +1820,8 @@ const Index = () => {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm font-bold text-foreground">Sara K.</span>
-                    <span className="text-[10px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">✓ Founding Member</span>
-                    <span className="text-[10px] text-muted-foreground/60">VP Product, $180K</span>
+                    <span className="text-[11px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">✓ Founding Member</span>
+                    <span className="text-[11px] text-muted-foreground/60">VP Product, $180K</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed italic">
                     "I almost didn't join because $0.97 felt too cheap to be real. Then I realized — that's less than the
@@ -1829,7 +1832,7 @@ const Index = () => {
                     {[1, 2, 3, 4, 5].map((s) => (
                       <Star key={s} className="w-3 h-3 fill-amber-400 text-amber-400" />
                     ))}
-                    <span className="text-[10px] text-muted-foreground/60 ml-1">Verified · Joined Month 1</span>
+                    <span className="text-[11px] text-muted-foreground/60 ml-1">Verified · Joined Month 1</span>
                   </div>
                 </div>
               </div>
@@ -1837,10 +1840,10 @@ const Index = () => {
 
             {/* BRUNSON CH 11: The One Thing — simplify the entire offer to ONE sentence */}
             <div className="mt-8 max-w-lg mx-auto bg-primary/10 border border-primary/25 rounded-xl p-4 text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
-              <p className="text-xs text-primary-light uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
-              <p className="text-white font-bold text-base">Get all 5 tools + 3 bonuses for $0.97/month. Cancel anytime.</p>
-              <p className="text-white/50 text-xs mt-1">
-                Because every month you wait is <strong className="text-white/70">$4,000 in MRR</strong> you'll never recover.
+              <p className="text-xs text-primary uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
+              <p className="text-foreground font-bold text-base">Get all 5 tools + 3 bonuses for $0.97/month. Cancel anytime.</p>
+              <p className="text-muted-foreground text-xs mt-1">
+                Because every month you wait is <strong className="text-foreground">$4,000 in MRR</strong> you'll never recover.
               </p>
             </div>
 
@@ -1887,7 +1890,7 @@ const Index = () => {
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-muted-foreground line-through">$97</span>
                     <span className="text-lg font-black text-primary">$17</span>
-                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">One-time</span>
+                    <span className="text-[11px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">One-time</span>
                   </div>
                 </div>
               </div>
@@ -1924,7 +1927,7 @@ const Index = () => {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 bg-white/50 border border-border/50 rounded-lg p-3">
                     <div className="shrink-0 w-14 text-right">
-                      <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">{item.step}</span>
+                      <span className="text-[11px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">{item.step}</span>
                     </div>
                     <div className="flex-1 min-w-0 border-l border-border/50 pl-3">
                       <p className="text-sm font-semibold text-foreground">{item.title}</p>
@@ -1997,7 +2000,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">The Path Forward</p>
-            <h2 className="text-h1 text-foreground mb-4">From $0 to Freedom</h2>
+            <h2 className="text-h2 text-foreground mb-4">From $0 to Freedom</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               The full value ladder, restated. Each step delivers 10× the value of the one
               before. Most members start at step 1 and never need to go past step 3.
@@ -2100,7 +2103,7 @@ const Index = () => {
             <Link
               to="/story"
               onClick={() => trackEvent("homepage_mid_cta_clicked", { target: "story_page" })}
-              className="text-sm text-white/40 hover:text-white/70 transition-colors underline"
+              className="text-sm text-white/60 hover:text-white transition-colors underline"
             >
               or read the full backstory →
             </Link>
@@ -2112,7 +2115,7 @@ const Index = () => {
       <section className="bg-white section-wide">
         <div className="container-narrow">
           <p className="text-eyebrow text-muted-foreground mb-8">The Backstory</p>
-          <div className="text-body text-muted-foreground space-y-6">
+          <div className="text-body text-muted-foreground space-y-6 max-w-2xl">
             <p>
               Amsterdam. 6 AM. Raining. I had just landed on a KLM flight with my
               wife and 8-year-old for a family vacation. My phone buzzed in the
@@ -2163,8 +2166,8 @@ const Index = () => {
       {/* ── 10. FAQ ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-narrow">
-          <h2 className="text-h1 text-foreground mb-8">Questions Corporate Managers Ask</h2>
-          <Accordion type="single" collapsible className="w-full">
+          <h2 className="text-h2 text-foreground mb-8">Questions Corporate Managers Ask</h2>
+          <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
             {FAQS.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger className="text-left text-base font-semibold text-foreground">
@@ -2184,7 +2187,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Continuous Loop</p>
-            <h2 className="text-h1 text-foreground mb-4">Why Members Stay Month After Month</h2>
+            <h2 className="text-h2 text-foreground mb-4">Why Members Stay Month After Month</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               A subscription is a promise. Russell Brunson's Chapter 12 teaches that the
               continuous loop — the thing that makes people stay — must compound value every
@@ -2264,9 +2267,9 @@ const Index = () => {
                   152 pages, 7 chapters, the exact $4,100/month system. Free. You just cover $4.95 shipping.
                 </p>
                 <div className="flex flex-wrap items-center gap-3 text-sm">
-                  <span className="text-white/40 line-through">$24.99</span>
+                  <span className="text-white/60 line-through">$24.99</span>
                   <span className="text-2xl font-bold text-amber-400">FREE</span>
-                  <span className="text-white/40">+ $4.95 S&amp;H</span>
+                  <span className="text-white/60">+ $4.95 S&amp;H</span>
                 </div>
               </div>
 
@@ -2279,7 +2282,7 @@ const Index = () => {
                   Get the Free Book
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <p className="text-white/30 text-xs md:text-right">
+                <p className="text-white/60 text-xs md:text-right">
                   3 digital bonuses included · 30-day guarantee
                 </p>
               </div>
@@ -2358,7 +2361,7 @@ const Index = () => {
         <div className="container-standard">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">Behind the Scenes</p>
-            <h2 className="text-h2 md:text-h1 text-foreground mb-4">
+            <h2 className="text-h2 text-foreground mb-4">
               The Distribution Engine
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">

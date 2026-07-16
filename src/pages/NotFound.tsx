@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
 
@@ -12,7 +12,7 @@ const NotFound = () => {
   const links = [
     { href: "/", title: "Homepage", desc: "5 AI tools for building a side business while employed" },
     { href: "/blog", title: "Blog", desc: "Strategies for invisible recurring revenue" },
-    { href: "/fym", title: "Freedom Calculator", desc: "Calculate how much you need to quit your job" },
+    { href: "/freedom", title: "Freedom Calculator", desc: "Calculate how much you need to quit your job" },
     { href: "/glossary", title: "Glossary", desc: "Key terms for employed founders" },
     { href: "/guides", title: "State Guides", desc: "LLC formation and anonymity by state" },
     { href: "/ideas", title: "Micro-SaaS Ideas", desc: "500+ ideas scored by industry fit" },
@@ -38,23 +38,23 @@ const NotFound = () => {
 
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="block rounded-xl border border-border bg-card p-5 text-left transition hover:border-primary hover:bg-accent"
             >
               <div className="mb-1 font-semibold">{link.title}</div>
               <div className="text-sm text-muted-foreground">{link.desc}</div>
-            </a>
+            </Link>
           ))}
         </div>
 
-        <a
-          href="/"
+        <Link
+          to="/"
           className="inline-block rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-3.5 font-semibold text-white transition hover:opacity-90"
         >
           Return to Homepage
-        </a>
+        </Link>
       </div>
     </div>
   );

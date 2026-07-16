@@ -15,7 +15,9 @@ import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
 import { AutoTranslate } from "@/i18n/AutoTranslate.tsx";
-const Index = lazy(() => import("./pages/Index.tsx"));
+// Eager: the homepage is the money page — no spinner between prerendered
+// shell and hydrated hero.
+import Index from "./pages/Index.tsx";
 
 // ── Lazy: all other routes (code-splitting for smaller initial bundle) ──
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));

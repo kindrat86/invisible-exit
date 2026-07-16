@@ -76,8 +76,9 @@
         // Reddit Pixel
         !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_iqsi13q5oijk",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_iqsi13q5oijk');rdt('track', 'PageVisit');
 
-        // PostHog
-        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=void 0,(o=e.createElement("script")).src="https://eu.i.posthog.com/static/array.js",o.onload=function(){window.posthog.__requestInit={headers:{"Content-Type":"application/json"}},p=n=e.createElement("script"),p.src="https://eu.i.posthog.com/array.js",p.crossOrigin="",p.type="text/javascript",p.onload=function(){posthog.init("phc_lyZCgvTpicjLzAO3rY2GhxuX5WUc5jQjP8ZVwwJqauX",{api_host:"https://eu.i.posthog.com",session_recording:{recordCrossOriginIframes:!0,maskAllInputs:!1}})},r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(p,r)}),r.parentNode.insertBefore(o,r)}(0,document);
+        // PostHog is initialized once by the app bundle (src/integrations/posthog.ts).
+        // Do NOT add a second init here — it double-counts events and un-masks
+        // session-recording inputs.
 
         // Meta (Facebook) Pixel
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1278454893564023');fbq('track','PageView');
@@ -99,9 +100,17 @@
       "description": "Invisible Exit provides AI-powered tools that help corporate managers and employed founders build anonymous micro-SaaS businesses and side income without risking their day job or personal identity.",
       "foundingDate": "2024",
       "sameAs": [
-        "https://www.youtube.com/@InvisibleExit",
-        "https://twitter.com/InvisibleExit",
-        "https://www.reddit.com/r/invisibleexit"
+        "https://www.reddit.com/r/invisibleexit",
+        "https://github.com/kindrat86/invisible-exit"
+      ],
+      "knowsAbout": [
+        "Micro-SaaS",
+        "Anonymous business building",
+        "Corporate career strategy",
+        "Recurring revenue models",
+        "Side business validation",
+        "Digital privacy for entrepreneurs",
+        "Entity separation and legal compliance"
       ]
     }
     </script>
@@ -146,12 +155,7 @@
       },
       "publisher": {
         "@id": "https://invisibleexit.com/#organization",
-        "name": "Invisible Exit",
-        "sameAs": [
-          "https://www.youtube.com/@InvisibleExit",
-          "https://twitter.com/InvisibleExit",
-          "https://www.reddit.com/r/invisibleexit"
-        ]
+        "name": "Invisible Exit"
       },
       "featureList": [
         "Freedom number calculator",
@@ -242,13 +246,14 @@
   
 <!-- pSEO Footer Navigation -->
 <style>
-.pseo-footer { max-width: 1200px; margin: 0 auto; padding: 40px 20px; border-top: 1px solid #e5e7eb; margin-top: 60px; }
-.pseo-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-.pseo-footer-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; }
+/* Matches the app footer (hsl(222 47% 9%)) so this static block reads as part of it */
+.pseo-footer { background: hsl(222 47% 9%); border-top: 1px solid rgba(255,255,255,0.05); margin: 0; padding: 32px 20px calc(40px + env(safe-area-inset-bottom, 0px)); }
+.pseo-footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px 30px; }
+.pseo-footer-section h3 { font-size: 12px; font-weight: 600; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); }
 .pseo-footer-section ul { list-style: none; padding: 0; margin: 0; }
-.pseo-footer-section li { margin-bottom: 6px; }
-.pseo-footer-section a { color: #374151; text-decoration: none; font-size: 14px; }
-.pseo-footer-section a:hover { color: #4f46e5; text-decoration: underline; }
+.pseo-footer-section li { margin-bottom: 2px; }
+.pseo-footer-section a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; display: inline-block; padding: 6px 0; }
+.pseo-footer-section a:hover { color: #ffffff; text-decoration: underline; }
 </style>
 <nav class="pseo-footer" aria-label="Resources">
   <div class="pseo-footer-grid">

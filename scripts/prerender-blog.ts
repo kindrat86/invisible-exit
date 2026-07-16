@@ -961,12 +961,13 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 // ---------- Homepage body ----------
 
 function homepageBodyHtml(): string {
-  return `<div class="min-h-screen">
-<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center">
+  // Dark shell matching the hydrated hero — prevents the light→dark flash on load
+  return `<div class="min-h-screen" style="background:#0f172a">
+<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center;background:#0f172a">
 <div style="max-width:56rem;margin:0 auto">
-<h1 style="font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem">How to Build a $4,000/Month Side Business Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out</h1>
-<p style="font-size:1.25rem;color:#4b5563;margin-bottom:2rem">5 AI-powered tools that take you from golden handcuffs to real recurring revenue in 12 months — working 5 hours a week. Calculate your freedom number, validate ideas, and stay invisible.</p>
-<p style="font-size:0.875rem;color:#6b7280">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
+<h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue — Without Quitting, Without Code, Without Being Found Out</h1>
+<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">5 AI-powered tools that take you from golden handcuffs to real recurring revenue in 12 months — working 5 hours a week. Calculate your freedom number, validate ideas, and stay invisible.</p>
+<p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:56rem">
