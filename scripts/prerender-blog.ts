@@ -1072,6 +1072,8 @@ function homepageBodyHtml(): string {
 <li style="margin-bottom:0.375rem"><a href="/for/security" style="color:#374151;text-decoration:none;font-size:0.875rem">Security</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/journalism" style="color:#374151;text-decoration:none;font-size:0.875rem">Journalism</a></li>
 </ul>
+<li style="margin-bottom:0.375rem"><a href="/niches/ai-automation" style="color:#374151;text-decoration:none;font-size:0.875rem">AI Automation Niches</a></li>
+<li style="margin-bottom:0.375rem"><a href="/niches/developer-tools" style="color:#374151;text-decoration:none;font-size:0.875rem">Developer Tool Niches</a></li>
 </div>
 <div>
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Guides by State</h3>
@@ -1081,6 +1083,8 @@ function homepageBodyHtml(): string {
 <li style="margin-bottom:0.375rem"><a href="/guides/delaware" style="color:#374151;text-decoration:none;font-size:0.875rem">Delaware LLC</a></li>
 <li style="margin-bottom:0.375rem"><a href="/guides/nevada" style="color:#374151;text-decoration:none;font-size:0.875rem">Nevada LLC</a></li>
 </ul>
+<li style="margin-bottom:0.375rem"><a href="/non-compete/software-engineers-california" style="color:#374151;text-decoration:none;font-size:0.875rem">Non-Compete: Engineers in California</a></li>
+<li style="margin-bottom:0.375rem"><a href="/non-compete/software-engineers-texas" style="color:#374151;text-decoration:none;font-size:0.875rem">Non-Compete: Engineers in Texas</a></li>
 </div>
 <div>
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Tools & Calculators</h3>
@@ -1088,6 +1092,9 @@ function homepageBodyHtml(): string {
 <li style="margin-bottom:0.375rem"><a href="/freedom" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
 <li style="margin-bottom:0.375rem"><a href="/calculators" style="color:#374151;text-decoration:none;font-size:0.875rem">All Calculators</a></li>
 <li style="margin-bottom:0.375rem"><a href="/best" style="color:#374151;text-decoration:none;font-size:0.875rem">Best AI Tools</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/freedom-number" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/micro-saas-pricing" style="color:#374151;text-decoration:none;font-size:0.875rem">Micro-SaaS Pricing Calculator</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/churn-impact" style="color:#374151;text-decoration:none;font-size:0.875rem">Churn Impact Calculator</a></li>
 <li style="margin-bottom:0.375rem"><a href="/glossary" style="color:#374151;text-decoration:none;font-size:0.875rem">Glossary</a></li>
 </ul>
 </div>
@@ -1096,6 +1103,9 @@ function homepageBodyHtml(): string {
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/compare" style="color:#374151;text-decoration:none;font-size:0.875rem">Comparisons</a></li>
 <li style="margin-bottom:0.375rem"><a href="/data" style="color:#374151;text-decoration:none;font-size:0.875rem">Data Reports</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/micro-saas-vs-real-estate" style="color:#374151;text-decoration:none;font-size:0.875rem">Micro-SaaS vs Real Estate</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/llc-vs-s-corp-side-business" style="color:#374151;text-decoration:none;font-size:0.875rem">LLC vs S-Corp (Side Business)</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/side-business-vs-full-time-startup" style="color:#374151;text-decoration:none;font-size:0.875rem">Side Business vs Full-Time Startup</a></li>
 <li style="margin-bottom:0.375rem"><a href="/blog" style="color:#374151;text-decoration:none;font-size:0.875rem">Blog</a></li>
 <li style="margin-bottom:0.375rem"><a href="/explore" style="color:#374151;text-decoration:none;font-size:0.875rem">Explore All</a></li>
 </ul>
