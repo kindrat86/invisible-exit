@@ -1112,6 +1112,14 @@ function homepageBodyHtml(): string {
 </ul>
 </div>
 </nav>
+<div style="border-top:1px solid #e5e7eb;padding-top:1.5rem;text-align:left;max-width:48rem;margin:0 auto">
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.5rem">Sources &amp; further reading</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1rem;font-size:0.8125rem;color:#6b7280">
+<li style="margin-bottom:0.25rem">Non-compete rules: <a href="https://www.ftc.gov/legal-library/browse/rules/noncompete-rule" rel="noopener" style="color:#3B82F6">FTC — Noncompete Rule</a> and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&amp;sectionNum=16600" rel="noopener" style="color:#3B82F6">California Business &amp; Professions Code §16600</a></li>
+<li style="margin-bottom:0.25rem">Business structure: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" rel="noopener" style="color:#3B82F6">IRS — Limited Liability Company (LLC)</a> and <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure" rel="noopener" style="color:#3B82F6">SBA — Choose a business structure</a></li>
+</ul>
+<p style="font-size:0.75rem;color:#9ca3af;margin-bottom:1rem">Page last updated: July 17, 2026. Revenue examples on this page are arithmetic illustrations (e.g. 138 customers &times; $29/month &asymp; $4,000/month), not income guarantees.</p>
+</div>
 <p style="font-size:0.75rem;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:1.5rem">From $0.97/month. Cancel anytime. Built by a corporate manager, for corporate managers.</p>
 </div>
 </section>
