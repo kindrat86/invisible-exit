@@ -7,6 +7,7 @@
 export interface GlossaryTerm {
   slug: string;
   term: string;
+  metaTitle?: string; // optional override when GSC shows a better-matching query phrasing
   definition: string; // 1-2 sentence concise definition (featured-snippet optimized)
   detailed: string; // fuller explanation for the page body
   category: string;
@@ -18,6 +19,8 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "what-is-micro-saas",
     term: "Micro-SaaS",
+    // GSC 28d (2026-07-17): "micro saas meaning" pos 10, "micro saas definition" pos 10
+    metaTitle: "Micro-SaaS Meaning: Definition, Examples & Revenue Math | Invisible Exit",
     category: "Business Model",
     definition:
       "A micro-SaaS is a small software-as-a-service business that targets a narrow niche, typically operated by a solo founder or tiny team, charging $10-$100/month per customer. It needs 50-500 paying customers to generate meaningful recurring revenue.",

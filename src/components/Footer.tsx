@@ -77,6 +77,7 @@ const FOOTER_SECTIONS = [
     title: "Reference",
     links: [
       { label: "Glossary", to: "/glossary" },
+      { label: "What Is Micro-SaaS?", to: "/glossary/what-is-micro-saas" },
       { label: "Comparisons", to: "/compare" },
       { label: "Career vs SaaS", to: "/vs" },
       { label: "Micro-SaaS vs Real Estate", to: "/compare/micro-saas-vs-real-estate" },

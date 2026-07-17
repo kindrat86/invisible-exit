@@ -1031,7 +1031,7 @@ function homepageBodyHtml(): string {
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Does this violate my employment contract?</h3><p>Most contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. The Stealth Ops Hub runs a compliance audit against common contract clauses.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Can my employer find out?</h3><p>The Stealth Ops Hub includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content — all without coding.</p></div>
-<div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A <a href="/glossary/what-is-micro-saas" style="color:#3B82F6">micro-SaaS</a> charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
 </div>
 </div>
 </section>
@@ -1068,6 +1068,7 @@ function homepageBodyHtml(): string {
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Micro-SaaS by Industry</h3>
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/ideas" style="color:#374151;text-decoration:none;font-size:0.875rem">All Ideas</a></li>
+<li style="margin-bottom:0.375rem"><a href="/glossary/what-is-micro-saas" style="color:#374151;text-decoration:none;font-size:0.875rem">What Is Micro-SaaS?</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/privacy" style="color:#374151;text-decoration:none;font-size:0.875rem">Privacy</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/security" style="color:#374151;text-decoration:none;font-size:0.875rem">Security</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/journalism" style="color:#374151;text-decoration:none;font-size:0.875rem">Journalism</a></li>

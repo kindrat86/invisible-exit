@@ -1091,7 +1091,7 @@ function getRoutes() {
     routes.push({
       path: `/glossary/${term.slug}`,
       meta: {
-        title: `What Is ${term.term}? Definition & Guide | Invisible Exit`,
+        title: term.metaTitle || `What Is ${term.term}? Definition & Guide | Invisible Exit`,
         description: term.definition.slice(0, 155),
         url: termUrl,
         type: "article",
