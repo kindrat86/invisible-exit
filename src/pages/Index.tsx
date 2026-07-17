@@ -188,6 +188,15 @@ const Index = () => {
             )}
           </h1>
 
+          {/* Mechanism sub-headline — HOW the promise gets delivered (Brunson: vehicle clarity) */}
+          <p className="text-white/80 text-base sm:text-lg font-medium max-w-2xl mx-auto mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
+            The answer: build a <strong className="text-white">micro-SaaS</strong> on the side —
+            one niche problem, about $29/month, roughly 138 customers = $4,000/month — run through
+            a separate legal entity your employer never sees. <strong className="text-white">5 AI-powered
+            tools</strong> handle each step: calculate your exit number, validate your idea, stay
+            invisible, launch, and grow a faceless brand — in 5 hours a week.
+          </p>
+
           {/* DOTCOM SECRETS Ch 2: Category Creation — right below the headline */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />

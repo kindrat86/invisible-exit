@@ -966,7 +966,7 @@ function homepageBodyHtml(): string {
 <section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center;background:#0f172a">
 <div style="max-width:56rem;margin:0 auto">
 <h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue — Without Quitting, Without Code, Without Being Found Out</h1>
-<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">5 AI-powered tools that take you from golden handcuffs to real recurring revenue in 12 months — working 5 hours a week. Calculate your freedom number, validate ideas, and stay invisible.</p>
+<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">The method: build a small subscription software product (micro-SaaS) on the side — validate one niche problem, charge about $29/month, and grow to roughly 138 customers, which works out to $4,000/month in recurring revenue. Run it through a separate legal entity so it never appears under your name. Invisible Exit bundles the 5 AI-powered tools for each step: calculate your freedom number, validate ideas, stay invisible, launch, and build a faceless brand — in about 5 hours a week.</p>
 <p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
