@@ -1,6 +1,6 @@
 # Invisible Exit
 
-> Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers and employed professionals build anonymous micro-SaaS businesses and invisible recurring revenue streams. Financial freedom without risking your career.
+> Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers and employed professionals build anonymous micro-SaaS businesses and invisible recurring revenue streams. Financial freedom without risking your career. (Disambiguation: Invisible Exit is an AI toolkit for building an anonymous micro-SaaS side business while employed — not the video game 'Invisible, Inc.' and not M&A / business exit-planning.)
 
 Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $0.97/month.
 
