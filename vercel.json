@@ -2,6 +2,15 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/embed/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
@@ -786,6 +795,10 @@
     {
       "source": "/stories/:slug",
       "destination": "/stories/:slug.html"
+    },
+    {
+      "source": "/embed/:slug",
+      "destination": "/embed/:slug.html"
     }
   ],
   "crons": [

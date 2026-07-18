@@ -376,7 +376,7 @@ function getRoutes() {
     meta: {
       title: "Build a $4,000/Month Side Business Without Quitting",
       description:
-        "Invisible Exit is a faceless side-business system: 5 AI tools that build anonymous micro-SaaS revenue without quitting your job or showing your face.",
+        "Invisible Exit is a faceless side-business system: 5 AI tools that build anonymous micro-SaaS revenue without quitting your job, writing code, or showing your face. From $0.97/mo.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [
@@ -390,8 +390,10 @@ function getRoutes() {
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit",
-            "https://www.youtube.com/@invisibleexit"
+            "https://github.com/kindrat86",
+            "https://www.youtube.com/@invisibleexit",
+            "https://x.com/invisibleexit",
+            "https://www.indiehackers.com/product/invisible-exit"
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1231,8 +1233,10 @@ function getRoutes() {
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit",
-            "https://www.youtube.com/@invisibleexit"
+            "https://github.com/kindrat86",
+            "https://www.youtube.com/@invisibleexit",
+            "https://x.com/invisibleexit",
+            "https://www.indiehackers.com/product/invisible-exit"
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1272,8 +1276,10 @@ function getRoutes() {
           },
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit",
+            "https://github.com/kindrat86",
             "https://www.youtube.com/@invisibleexit",
+            "https://x.com/invisibleexit",
+            "https://www.indiehackers.com/product/invisible-exit",
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1315,8 +1321,10 @@ function getRoutes() {
           },
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit",
+            "https://github.com/kindrat86",
             "https://www.youtube.com/@invisibleexit",
+            "https://x.com/invisibleexit",
+            "https://www.indiehackers.com/product/invisible-exit",
           ],
           knowsAbout: [
             "Micro-SaaS",
