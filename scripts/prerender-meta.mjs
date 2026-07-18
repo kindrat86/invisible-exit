@@ -377,9 +377,17 @@ function getRoutes() {
           description:
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://twitter.com/InvisibleExit",
-            "https://www.reddit.com/r/invisibleexit"
+            "https://www.reddit.com/r/invisibleexit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
         {
@@ -1171,9 +1179,17 @@ function getRoutes() {
           description:
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://twitter.com/InvisibleExit",
-            "https://www.reddit.com/r/invisibleexit"
+            "https://www.reddit.com/r/invisibleexit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
           worksFor: {
             "@type": "Organization",
@@ -1203,10 +1219,17 @@ function getRoutes() {
             url: `${SITE}/contact`,
           },
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
-            "https://twitter.com/InvisibleExit",
+            "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
       ],
@@ -1238,10 +1261,17 @@ function getRoutes() {
             url: `${SITE}/contact`,
           },
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
-            "https://twitter.com/InvisibleExit",
+            "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
         {

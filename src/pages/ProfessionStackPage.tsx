@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import PSEOShareSection from "@/components/PSEOShareSection";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { professionStacks, type ProfessionStack } from "@/data/profession-stacks";
 
 export default function ProfessionStackPage() {
@@ -118,6 +120,12 @@ export default function ProfessionStackPage() {
           title="Related Resources"
         />
       </article>
+
+      <PSEOShareSection title={entry.h1} />
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="stack_page_footer" />
+      </div>
 
       <Footer />
     </div>

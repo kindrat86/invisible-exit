@@ -203,7 +203,7 @@ const Index = () => {
           </p>
 
           {/* DOTCOM SECRETS Ch 2: Category Creation — right below the headline */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "75ms" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs text-primary-light font-medium text-balance">
               Not a course · Not a community · The world's first anonymity-native business system
@@ -1962,7 +1962,7 @@ const Index = () => {
                 {[
                   {
                     q: "Why $0.97? What's the catch?",
-                    a: "There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9/month. You're locking in $0.97 for life — not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
+                    a: "There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9.99/month. You're locking in $0.97 for life — not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
                   },
                   {
                     q: "Is this one of those things where it's $0.97 today and $97 next week?",

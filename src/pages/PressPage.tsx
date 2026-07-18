@@ -48,7 +48,7 @@ const HEADLINE_STATS = [
   { value: "$4,100/mo", label: "Verified MRR", icon: TrendingUp, source: "Stripe-documented across 3 products" },
   { value: "127", label: "Active Builders", icon: Users, source: "Paying members across 14 countries" },
   { value: "3", label: "Proprietary Frameworks", icon: Code2, source: "Named, tested, independently taught" },
-  { value: "200+", label: "Original Frameworks", icon: BookOpen, source: "Guides, case studies, methodologies" },
+  { value: "55", label: "Original Guides", icon: BookOpen, source: "Long-form methodologies and case studies" },
 ];
 
 const SPEAKING_TOPICS = [
@@ -153,9 +153,11 @@ const FACT_SHEET = {
   languages: "96 languages via real-time translation",
   contact: "hello@invisibleexit.com",
   social: {
-    youtube: "https://www.youtube.com/@InvisibleExit",
-    linkedin: "https://www.linkedin.com/company/invisible-exit",
-    twitter: "https://twitter.com/InvisibleExit",
+    primary: "https://invisibleexit.com/blog (55 original guides)",
+    community: "https://www.reddit.com/r/invisibleexit",
+    code: "https://github.com/kindrat86/invisible-exit",
+    youtube: "https://www.youtube.com/@InvisibleExit (launching)",
+    twitter: "https://twitter.com/InvisibleExit (launching)",
   },
 };
 

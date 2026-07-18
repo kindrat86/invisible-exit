@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { revenueMilestones, type RevenueMilestone } from "@/data/revenue-milestones";
 
 export default function RevenueMilestonePage() {
@@ -126,6 +127,10 @@ export default function RevenueMilestonePage() {
           title="Next Steps"
         />
       </article>
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="revenue_milestone_footer" />
+      </div>
 
       <Footer />
     </div>

@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import PSEOShareSection from "@/components/PSEOShareSection";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { salaries, type SalaryEntry } from "@/data/salaries";
 
 export default function SalaryPage() {
@@ -131,6 +133,12 @@ export default function SalaryPage() {
           title="Next Steps"
         />
       </article>
+
+      <PSEOShareSection title={entry.h1} />
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="salary_page_footer" />
+      </div>
 
       <Footer />
     </div>

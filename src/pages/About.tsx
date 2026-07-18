@@ -14,10 +14,14 @@ const About = () => {
       description:
         "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed.",
       sameAs: [
-        "https://www.youtube.com/@InvisibleExit",
-        "https://www.linkedin.com/company/invisible-exit",
-        "https://twitter.com/InvisibleExit",
+        "https://www.reddit.com/r/invisibleexit",
         "https://github.com/kindrat86/invisible-exit",
+      ],
+      knowsAbout: [
+        "Micro-SaaS",
+        "Anonymous business building",
+        "Corporate career strategy",
+        "Recurring revenue models",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -47,8 +51,12 @@ const About = () => {
       url: "https://invisibleexit.com/about",
       description:
         "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it. He created Invisible Exit to share the exact frameworks, tools, and operating systems that worked for him.",
-      sameAs: [
-        "https://www.youtube.com/@InvisibleExit",
+      knowsAbout: [
+        "Micro-SaaS",
+        "Anonymous business building",
+        "Corporate career strategy",
+        "Recurring revenue models",
+        "Side business validation",
       ],
       worksFor: {
         "@type": "Organization",
@@ -156,13 +164,14 @@ const About = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-12">Connect</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             We publish frameworks, case studies, and guides on the{" "}
-            <Link to="/blog" className="text-[#3B82F6] hover:underline">blog</Link> and on{" "}
+            <Link to="/blog" className="text-[#3B82F6] hover:underline">blog</Link>{" "}
+            and in our{" "}
             <a
-              href="https://www.youtube.com/@InvisibleExit"
+              href="https://www.reddit.com/r/invisibleexit"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#3B82F6] hover:underline"
-            >YouTube</a>. Questions? Reach us anytime at{" "}
+            >Reddit community</a>. Questions? Reach us anytime at{" "}
             <a href="mailto:hello@invisibleexit.com" className="text-[#3B82F6] hover:underline">
               hello@invisibleexit.com
             </a>{" "}

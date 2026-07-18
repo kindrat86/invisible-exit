@@ -63,7 +63,7 @@ export default function Signup() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-white">Password</Label>
-                  <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="At least 6 characters" required minLength={6} className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
+                  <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="At least 8 characters" required minLength={8} className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                 </div>
                 <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold" disabled={loading}>
                   {loading ? "Creating account..." : "Sign Up"}

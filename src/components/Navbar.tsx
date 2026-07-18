@@ -138,6 +138,11 @@ const Navbar = () => {
     setTimeout(() => ripple.remove(), 600);
   }, []);
 
+  // ONE FUNNEL, ONE OFFER (DotCom Secrets): on the homepage the nav competes
+  // with the funnel, so resource links are hidden there. They remain in the
+  // footer (and on every other page) for discovery + SEO interlinking.
+  const isHomepage = location.pathname === "/";
+
   const navbarHeight = compact ? "h-14" : "h-16 lg:h-20";
   const logoSize = compact ? "w-7 h-7" : "w-8 h-8";
   const pulseBlock = compact ? "w-2.5 h-2.5" : "w-3 h-3";
@@ -166,9 +171,9 @@ const Navbar = () => {
               <span className={`inline transition-all duration-300 ${brandFontSize}`}>Invisible Exit</span>
             </Link>
 
-            {/* Desktop nav */}
+            {/* Desktop nav — suppressed on the homepage (one funnel, one offer) */}
             <div className="hidden lg:flex items-center gap-1">
-              {DESKTOP_LINKS.map((link) => (
+              {!isHomepage && DESKTOP_LINKS.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}

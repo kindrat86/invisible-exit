@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import PSEOShareSection from "@/components/PSEOShareSection";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { alternatives, type Alternative } from "@/data/alternatives";
 
 export default function AlternativesPage() {
@@ -133,6 +135,12 @@ export default function AlternativesPage() {
           title="Related Resources"
         />
       </article>
+
+      <PSEOShareSection title={entry.metaTitle} />
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="alternatives_page_footer" />
+      </div>
 
       <Footer />
     </div>

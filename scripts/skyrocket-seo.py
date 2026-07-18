@@ -17,63 +17,17 @@ SITE = "https://invisibleexit.com"
 MARKER = "<!-- skyrocket-seo-v1 -->"
 
 # ── Hub→child link mesh ────────────────────────────────────────────
-HUBS = {
-    "for/index.html": {
-        "title": "Use Cases by Industry",
-        "children": [
-            ("for/security", "Security Teams", "Anonymous sessions for security professionals who need zero-trace browsing"),
-            ("for/privacy", "Privacy Advocates", "Private browsing sessions that auto-destroy all traces on exit"),
-            ("for/journalism", "Journalists", "Protect sources with sessions that leave no digital footprint"),
-            ("for/research", "Researchers", "Conduct research without polluting your browsing history"),
-            ("for/legal", "Legal Professionals", "Confidential case research without leaving tracks"),
-            ("for/whistleblowing", "Whistleblowers", "Report safely with sessions that auto-destroy"),
-        ],
-    },
-    "alternatives-to/index.html": {
-        "title": "Browser Alternatives",
-        "children": [
-            ("alternatives-to/brave", "Brave Browser Alternative", "Why teams switch from Brave to InvisibleExit for private sessions"),
-            ("alternatives-to/duckduckgo", "DuckDuckGo Alternative", "Purpose-built session privacy beyond DuckDuckGo"),
-            ("alternatives-to/tor-browser", "Tor Browser Alternative", "Faster, lighter alternative for everyday private browsing"),
-            ("alternatives-to/incognito-mode", "Chrome Incognito Alternative", "Real privacy beyond Chrome's incognito mode"),
-            ("alternatives-to/epic-browser", "Epic Browser Alternative", "Session-based privacy vs Epic's always-on approach"),
-            ("alternatives-to/mullvad-browser", "Mullvad Browser Alternative", "Simpler private browsing without VPN complexity"),
-        ],
-    },
-    "vs/index.html": {
-        "title": "Head-to-Head Comparisons",
-        "children": [
-            ("vs/brave", "InvisibleExit vs Brave", "Feature-by-feature comparison with Brave Browser"),
-            ("vs/duckduckgo", "InvisibleExit vs DuckDuckGo", "Detailed comparison with DuckDuckGo"),
-            ("vs/tor-browser", "InvisibleExit vs Tor", "Speed and usability compared to Tor Browser"),
-            ("vs/incognito-mode", "InvisibleExit vs Incognito", "Why Chrome Incognito isn't enough"),
-            ("vs/epic-browser", "InvisibleExit vs Epic", "Comparison with Epic Privacy Browser"),
-            ("vs/mullvad-browser", "InvisibleExit vs Mullvad", "Session isolation vs Mullvad's approach"),
-        ],
-    },
-    "glossary/index.html": {
-        "title": "Privacy & Security Glossary",
-        "children": [
-            ("glossary/dns-leak", "DNS Leak", "What DNS leaks are and how InvisibleExit prevents them"),
-            ("glossary/fingerprinting", "Browser Fingerprinting", "How fingerprinting tracks you and how to stop it"),
-            ("glossary/private-browsing", "Private Browsing", "What private browsing actually means in 2026"),
-            ("glossary/cookie-destruction", "Cookie Destruction", "Auto-destroying cookies on session exit"),
-            ("glossary/session-isolation", "Session Isolation", "Complete isolation between browsing sessions"),
-            ("glossary/tracking-protection", "Tracking Protection", "Blocking trackers across all sessions"),
-            ("glossary/webrtc-leak", "WebRTC Leak", "How WebRTC exposes your IP and how to prevent it"),
-        ],
-    },
-}
+# NOTE (2026-07-18): The former for/, alternatives-to/, vs/ and glossary/ hubs
+# pointed at privacy-browser pSEO pages (Tor/Mullvad/Brave/fingerprinting/etc.)
+# that misrepresented the brand. Invisible Exit is a faceless side-business system
+# for employed professionals — NOT a privacy / anonymous-browsing tool (see
+# canonical-descriptors.json → never_call_it). Those pages were deleted, so their
+# hub/sibling mesh is removed here to stop this script from re-injecting links to
+# pages that no longer exist. Repopulate only with real side-business hubs.
+HUBS = {}
 
 # ── Related-content cross-links (sibling pages link to each other) ──────────
-SIBLING_GROUPS = [
-    ["for/security", "for/privacy", "for/journalism", "for/research", "for/legal", "for/whistleblowing"],
-    ["alternatives-to/brave", "alternatives-to/duckduckgo", "alternatives-to/tor-browser",
-     "alternatives-to/incognito-mode", "alternatives-to/epic-browser", "alternatives-to/mullvad-browser"],
-    ["vs/brave", "vs/duckduckgo", "vs/tor-browser", "vs/incognito-mode", "vs/epic-browser", "vs/mullvad-browser"],
-    ["glossary/dns-leak", "glossary/fingerprinting", "glossary/private-browsing",
-     "glossary/cookie-destruction", "glossary/session-isolation", "glossary/tracking-protection", "glossary/webrtc-leak"],
-]
+SIBLING_GROUPS = []
 
 # ── Page titles for related links ──────────────────────────────────
 def get_title(html):

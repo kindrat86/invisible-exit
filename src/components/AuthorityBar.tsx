@@ -14,8 +14,8 @@ import { BookOpen, Code2, Globe2, Mic, FileText, TrendingUp } from "lucide-react
  *  1. Documented revenue (verified, not claimed)
  *  2. Named proprietary frameworks (IP = authority)
  *  3. Active community footprint
- *  4. Content library depth
- *  5. Media readiness (podcast-ready, interview-trained)
+ *  4. Content library depth (real article count, not vanity metric)
+ *  5. Media readiness (interview-trained, not past appearances)
  *  6. Global reach (languages, countries)
  *
  * Placement: directly below the hero social proof bar, before the
@@ -40,16 +40,16 @@ const SIGNALS = [
   },
   {
     icon: BookOpen,
-    value: "200+",
-    label: "Guides & Frameworks",
+    value: "55",
+    label: "In-Depth Guides",
     sublabel: "Original methodologies, not recycled content",
     href: "/blog",
   },
   {
     icon: Mic,
-    value: "Podcast-Ready",
-    label: "3 Interview Formats",
-    sublabel: "5-min elevator → 45-min masterclass",
+    value: "Media-Ready",
+    label: "6 Speaking Topics",
+    sublabel: "Prepped for podcasts & press — book a slot",
     href: "/press",
   },
   {
@@ -81,8 +81,9 @@ const AuthorityBar = () => {
             The Work Is the Proof.
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-lg mx-auto">
-            No face. No LinkedIn. No podcast tour. Just documented systems,
-            verified revenue, and 127 managers building right now.
+            No face. No podcast tour. No guest articles — yet. Just documented
+            systems, verified revenue, 55 original guides, and 127 managers
+            building right now.
           </p>
         </div>
 

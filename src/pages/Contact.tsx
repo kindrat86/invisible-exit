@@ -14,10 +14,14 @@ const Contact = () => {
       description:
         "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed.",
       sameAs: [
-        "https://www.youtube.com/@InvisibleExit",
-        "https://www.linkedin.com/company/invisible-exit",
-        "https://twitter.com/InvisibleExit",
+        "https://www.reddit.com/r/invisibleexit",
         "https://github.com/kindrat86/invisible-exit",
+      ],
+      knowsAbout: [
+        "Micro-SaaS",
+        "Anonymous business building",
+        "Corporate career strategy",
+        "Recurring revenue models",
       ],
       contactPoint: {
         "@type": "ContactPoint",

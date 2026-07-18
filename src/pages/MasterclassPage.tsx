@@ -276,6 +276,42 @@ const MasterclassPage = () => {
         </div>
       </section>
 
+      {/* ── The Masterclass Video (YouTube embed) ── */}
+      {/* TRAFFIC SECRETS: Record one 15-min video and embed it here. 
+           This makes the /masterclass page real instead of a dead route.
+           Replace YOUTUBE_VIDEO_ID with the actual ID after uploading. */}
+      <section className="bg-surface-dark section-normal">
+        <div className="container-narrow text-center">
+          <p className="text-eyebrow text-primary-light mb-4">The Full Masterclass</p>
+          <h2 className="text-h1 text-white mb-8">
+            Watch the 15-Minute Crash Course
+          </h2>
+          <div className="mx-auto max-w-3xl rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+            <div className="aspect-video bg-[hsl(222_47%_14%)] flex flex-col items-center justify-center gap-4 p-6">
+              <Play className="w-12 h-12 text-primary-light/60" />
+              <p className="text-white/50 text-sm max-w-md text-center">
+                📹 <strong>Video coming soon.</strong> Record a 15-minute Loom covering:
+                the epiphany bridge, the 3 false beliefs, and the 5-tool system.
+                Post to <a href="https://youtube.com/@InvisibleExit" className="text-primary-light hover:underline" target="_blank" rel="noopener">YouTube @InvisibleExit</a> and embed here.
+              </p>
+              <p className="text-white/30 text-xs">
+                Until then, scroll through the slide deck above or{' '}
+                <Link to="/freedom" className="text-primary-light hover:underline">calculate your freedom number</Link>.
+              </p>
+              {/* Uncomment when video is ready:
+              <iframe
+                className="w-full aspect-video"
+                src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+                title="Invisible Exit Masterclass"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              */}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What You'll Learn (from slides) */}
       <section className="bg-white section-normal">
         <div className="container-narrow">

@@ -4,6 +4,7 @@ import { Search, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { glossaryTerms } from "@/data/glossary";
 
 const GlossaryIndex = () => {
@@ -129,6 +130,10 @@ const GlossaryIndex = () => {
           )}
         </div>
       </section>
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="glossary_index_footer" />
+      </div>
 
       <Footer />
     </div>

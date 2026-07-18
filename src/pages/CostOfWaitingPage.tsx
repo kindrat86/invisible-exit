@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { costOfWaitingPages, type CostOfWaiting } from "@/data/cost-of-waiting";
 
 export default function CostOfWaitingPage() {
@@ -126,6 +127,10 @@ export default function CostOfWaitingPage() {
           title="Take Action"
         />
       </article>
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="cost_of_waiting_footer" />
+      </div>
 
       <Footer />
     </div>
