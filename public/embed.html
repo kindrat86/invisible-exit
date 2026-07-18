@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed InvisibleExit Tools — Free Widgets</title>
+<meta name="description" content="Free embeddable widgets from InvisibleExit. Copy-paste iframe snippets for your blog or docs.">
+<link rel="canonical" href="https://invisibleexit.com/embed">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0f172a; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 2rem 1rem; }
+.container { max-width: 800px; margin: 0 auto; }
+h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+h1 span { color: #8b5cf6; }
+p.subtitle { color: #94a3b8; margin-bottom: 2.5rem; font-size: 1rem; }
+h2 { font-size: 1.2rem; font-weight: 600; margin: 2rem 0 1rem; color: #e2e8f0; }
+.widget-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.widget-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #f1f5f9; }
+.widget-card p { color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; }
+.code-block { position: relative; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1rem; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; color: #e2e8f0; overflow-x: auto; word-break: break-all; line-height: 1.5; }
+.copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: #334155; color: #e2e8f0; border: none; border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; transition: background 0.15s; }
+.copy-btn:hover { background: #475569; }
+.copy-btn.copied { background: #059669; }
+.footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e293b; text-align: center; color: #64748b; font-size: 0.8rem; }
+.footer a { color: #8b5cf6; text-decoration: none; }
+</style>
+<script>
+function copyCode(btn) {
+  const code = btn.parentElement.querySelector('code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <h1>Embed <span>InvisibleExit</span> Tools</h1>
+  <p class="subtitle">Free embeddable widgets for your blog, docs, or website. Just copy and paste the iframe snippet.</p>
+
+  <h2>Available Widgets</h2>
+
+  <div class="widget-card">
+    <h3>Portfolio Network Widget</h3>
+    <p>Display our full portfolio network of tools on your site.</p>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <code>&lt;iframe src="https://invisibleexit.com/embed/tools/portfolio-network.html" width="100%" height="380" frameborder="0"&gt;&lt;/iframe&gt;</code>
+    </div>
+  </div>
+
+  <div class="widget-card">
+    <h3>Network Widget (sipi.bot)</h3>
+    <p>Cross-portfolio network widget hosted from the portfolio hub.</p>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <code>&lt;iframe src="https://sipi.bot/network-widget" width="100%" height="320" frameborder="0"&gt;&lt;/iframe&gt;</code>
+    </div>
+  </div>
+
+  <div class="widget-card">
+    <h3>Freedom Number Calculator</h3>
+    <p>Calculate your freedom number — how much you need to never work again.</p>
+    <div class="code-block">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <code>&lt;iframe src="https://invisibleexit.com/embed/freedom-calculator.html" width="100%" height="500" frameborder="0"&gt;&lt;/iframe&gt;</code>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><a href="https://invisibleexit.com">InvisibleExit</a> — The faceless side-business system for employed professionals</p>
+  </div>
+</div>
+</body>
+</html>

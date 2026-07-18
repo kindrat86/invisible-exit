@@ -673,6 +673,18 @@
       "destination": "/index.html"
     },
     {
+      "source": "/research",
+      "destination": "/research/index.html"
+    },
+    {
+      "source": "/research/:path*",
+      "destination": "/research/:path*"
+    },
+    {
+      "source": "/embed",
+      "destination": "/embed.html"
+    },
+    {
       "source": "/tools",
       "destination": "/tools.html"
     },
