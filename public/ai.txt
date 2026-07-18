@@ -1,0 +1,9 @@
+# ai.txt -- Invisible Exit AI usage declaration
+# Spawning spec: https://spawning.ai/ai-txt
+#
+# Invisible Exit welcomes AI use of its public content: search, retrieval,
+# answer-engine citation, summarization, inference, and model training /
+# dataset storage. Attribution requested: Invisible Exit, https://invisibleexit.com
+User-Agent: *
+Allow: Training
+Allow: Storing
