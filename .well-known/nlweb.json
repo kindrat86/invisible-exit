@@ -1,0 +1,16 @@
+{
+  "name": "Invisible Exit",
+  "description": "Prepare your SaaS for acquisition without alerting your team. Valuation modeling, buyer matching, and stealth exit planning for bootstrapped founders.",
+  "url": "https://invisibleexit.com",
+  "api": {
+    "type": "nlweb",
+    "version": "0.1",
+    "endpoint": "https://invisibleexit.com/answers/"
+  },
+  "feeds": [
+    {
+      "type": "jsonfeed",
+      "url": "https://invisibleexit.com/answers/feed.json"
+    }
+  ]
+}

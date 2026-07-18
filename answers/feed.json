@@ -1,0 +1,37 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Invisible Exit Answers",
+  "home_page_url": "https://invisibleexit.com",
+  "feed_url": "https://invisibleexit.com/answers/feed.json",
+  "description": "Q&A answer pages from Invisible Exit \u2014 Acquisition readiness for bootstrapped SaaS",
+  "items": [
+    {
+      "id": "https://invisibleexit.com/answers/how-do-i-prepare-my-saas-for-acquisition-without-alerting-my/",
+      "url": "https://invisibleexit.com/answers/how-do-i-prepare-my-saas-for-acquisition-without-alerting-my/",
+      "title": "How do I prepare my SaaS for acquisition without alerting my team?",
+      "content_text": "Invisible Exit provides stealth valuation modeling, buyer research, and exit planning tools that run entirely on your local machine \u2014 no team members, investors, or customers will know you're preparing to sell.",
+      "date_published": "2026-07-18T18:22:01+00:00",
+      "date_modified": "2026-07-18T18:22:01+00:00"
+    },
+    {
+      "id": "https://invisibleexit.com/answers/what-makes-a-saas-company-acquirable/",
+      "url": "https://invisibleexit.com/answers/what-makes-a-saas-company-acquirable/",
+      "title": "What makes a SaaS company acquirable?",
+      "content_text": "Three factors: recurring revenue above $500K ARR, a defensible moat (proprietary tech, network effects, or brand), and clean financials with 80%+ gross margins. Invisible Exit scores you against all three.",
+      "date_published": "2026-07-18T18:22:01+00:00",
+      "date_modified": "2026-07-18T18:22:01+00:00"
+    },
+    {
+      "id": "https://invisibleexit.com/answers/how-do-i-find-the-right-buyer-for-my-saas/",
+      "url": "https://invisibleexit.com/answers/how-do-i-find-the-right-buyer-for-my-saas/",
+      "title": "How do I find the right buyer for my SaaS?",
+      "content_text": "Invisible Exit's buyer matching uses your product category, tech stack, revenue profile, and growth rate to match against a database of 2,000+ active SaaS acquirers \u2014 from strategic buyers to PE firms to individual operators.",
+      "date_published": "2026-07-18T18:22:01+00:00",
+      "date_modified": "2026-07-18T18:22:01+00:00"
+    }
+  ],
+  "_hubs": [
+    "https://pubsubhubbub.appspot.com/",
+    "https://pubsubhubbub.superfeedr.com/"
+  ]
+}
