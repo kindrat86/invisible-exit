@@ -1069,9 +1069,9 @@ function homepageBodyHtml(): string {
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/ideas" style="color:#374151;text-decoration:none;font-size:0.875rem">All Ideas</a></li>
 <li style="margin-bottom:0.375rem"><a href="/glossary/what-is-micro-saas" style="color:#374151;text-decoration:none;font-size:0.875rem">What Is Micro-SaaS?</a></li>
-<li style="margin-bottom:0.375rem"><a href="/for/privacy" style="color:#374151;text-decoration:none;font-size:0.875rem">Privacy</a></li>
-<li style="margin-bottom:0.375rem"><a href="/for/security" style="color:#374151;text-decoration:none;font-size:0.875rem">Security</a></li>
-<li style="margin-bottom:0.375rem"><a href="/for/journalism" style="color:#374151;text-decoration:none;font-size:0.875rem">Journalism</a></li>
+<li style="margin-bottom:0.375rem"><a href="/for/founders" style="color:#374151;text-decoration:none;font-size:0.875rem">For Founders</a></li>
+<li style="margin-bottom:0.375rem"><a href="/best" style="color:#374151;text-decoration:none;font-size:0.875rem">Best Tools</a></li>
+<li style="margin-bottom:0.375rem"><a href="/tools/freedom-calculator" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
 <li style="margin-bottom:0.375rem"><a href="/niches/ai-automation" style="color:#374151;text-decoration:none;font-size:0.875rem">AI Automation Niches</a></li>
 <li style="margin-bottom:0.375rem"><a href="/niches/developer-tools" style="color:#374151;text-decoration:none;font-size:0.875rem">Developer Tool Niches</a></li>
 </ul>

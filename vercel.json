@@ -764,6 +764,10 @@
       "destination": "/agents.md"
     },
     {
+      "source": "/mcp",
+      "destination": "/mcp.html"
+    },
+    {
       "source": "/quiz/:slug",
       "destination": "/quiz/:slug.html"
     },
