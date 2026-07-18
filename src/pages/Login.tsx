@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,14 +65,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#1B2A4A] px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#1B2A4A] px-4 py-12">
       <SEOHead
         title="Log In | Invisible Exit"
-        description="Log in to your Invisible Exit dashboard."
+        description="Log in to your Invisible Exit dashboard to access your freedom number calculator, idea pipeline, stealth ops hub, and more."
         url="/login"
         noindex
       />
-      <Card className="w-full max-w-md border-white/10 bg-[#1B2A4A]">
+      <Card className="w-full max-w-md border-white/10 bg-[#1B2A4A] mb-12">
         <CardHeader className="text-center">
           <p className="text-blue-400 text-xs tracking-widest uppercase font-semibold mb-2">
             INVISIBLE EXIT
@@ -200,6 +200,69 @@ export default function Login() {
           )}
         </CardContent>
       </Card>
+
+      {/* ── Content section: explains what Invisible Exit is ── */}
+      <div className="w-full max-w-2xl text-center space-y-8">
+        <div>
+          <h2 className="text-2xl font-bold text-white mb-4">What Invisible Exit Is</h2>
+          <p className="text-gray-300 leading-relaxed text-lg">
+            <strong>Invisible Exit is a suite of five connected AI tools</strong> that
+            helps employed corporate managers and founders build an anonymous
+            micro-SaaS side business — validate a niche, launch it, and reach a
+            &ldquo;freedom number&rdquo; of recurring revenue without quitting their
+            job or building a public personal brand. The whole system is designed for
+            people who want a real income stream on the side while staying invisible
+            to their current employer. Plans start at $0.97/month.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-bold text-white mb-4">The Five Tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+            {[
+              {
+                title: "Freedom Number Dashboard",
+                desc: "Calculates the monthly side income that would cover your living expenses, so you know the exact target that makes leaving your job optional rather than desperate.",
+              },
+              {
+                title: "Idea Validation",
+                desc: "A library of 500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential, plus AI-powered validation of your own idea in about 48 hours.",
+              },
+              {
+                title: "Compliance & Anonymity",
+                desc: "Entity-separation and digital-invisibility guides plus a compliance audit against non-compete, IP-assignment, and moonlighting clauses.",
+              },
+              {
+                title: "Launch Automation",
+                desc: "Go-live tooling built for a five-hour weekend: Stripe integration, landing-page generation, and a launch-sequence builder.",
+              },
+              {
+                title: "Faceless Audience Builder",
+                desc: "YouTube scripts, Reddit playbooks, and SEO content templates that build demand without ever showing your face or attaching your real name.",
+              },
+            ].map((tool) => (
+              <div key={tool.title} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                <h3 className="text-blue-400 font-semibold text-sm mb-1">{tool.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{tool.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-sm text-gray-500 space-y-2">
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-blue-400 hover:text-blue-300 hover:underline">
+              Create one here
+            </Link>
+          </p>
+          <p>
+            <Link to="/" className="text-blue-400 hover:text-blue-300 hover:underline">
+              &larr; Back to home page
+            </Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
