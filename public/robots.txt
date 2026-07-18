@@ -24,6 +24,24 @@ Allow: /
 User-Agent: Google-Extended
 Allow: /
 
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: Cohere-AI
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+User-Agent: FacebookBot
+Allow: /
+
+User-Agent: Applebot
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
 User-Agent: Bingbot
 Allow: /
 
