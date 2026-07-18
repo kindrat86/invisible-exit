@@ -1,5 +1,5 @@
 // Invisible Exit Service Worker — PWA offline support + performance caching
-const CACHE_VERSION = 'ie-v1';
+const CACHE_VERSION = 'ie-v2';
 const STATIC_CACHE = `ie-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ie-pages-${CACHE_VERSION}`;
 
@@ -34,9 +34,9 @@ self.addEventListener('activate', (event) => {
 });
 
 // Fetch strategy:
-// - Navigation requests: stale-while-revalidate (fast page loads, background update)
+// - Navigation requests: network-first, cache fallback. NOT cache-first —
+//   stale HTML references old hashed chunks after a deploy → white screen.
 // - Static assets (JS/CSS/fonts): cache-first (immutable, hashed filenames)
-// - Everything else: network-first, fallback to cache
 self.addEventListener('fetch', (event) => {
   const { request } = event;
 
@@ -56,16 +56,16 @@ self.addEventListener('fetch', (event) => {
   if (request.mode === 'navigate') {
     event.respondWith(
       caches.open(PAGE_CACHE).then(async (cache) => {
-        const cached = await cache.match(request);
-        const networkPromise = fetch(request)
-          .then((response) => {
-            if (response.ok) {
-              cache.put(request, response.clone());
-            }
-            return response;
-          })
-          .catch(() => cached);
-        return cached || networkPromise;
+        try {
+          const response = await fetch(request);
+          if (response.ok) {
+            cache.put(request, response.clone());
+          }
+          return response;
+        } catch {
+          const cached = await cache.match(request);
+          return cached || cache.match('/');
+        }
       })
     );
     return;

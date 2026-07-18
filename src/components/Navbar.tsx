@@ -4,7 +4,9 @@ import { useTranslation } from "react-i18next";
 import { Menu, X, ArrowRight, ChevronDown, Search, LayoutDashboard, BookOpen } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const NAV_GROUPS = [
+type NavLinkDef = { to: string; labelKey?: string; label?: string };
+
+const NAV_GROUPS: { labelKey: string; links: NavLinkDef[] }[] = [
   {
     labelKey: "nav.build",
     links: [
@@ -29,7 +31,6 @@ const NAV_GROUPS = [
       { labelKey: "nav.resources", to: "/resources" },
       { labelKey: "nav.timeline", to: "/timeline" },
       { labelKey: "nav.revenueMilestones", to: "/milestones" },
-      { labelKey: "nav.pricingModels", to: "/pricing-models" },
       { labelKey: "nav.breakEvenCalculator", to: "/break-even" },
     ],
   },
@@ -54,18 +55,21 @@ const NAV_GROUPS = [
       { labelKey: "nav.whoIsAdrian", to: "/adrian" },
       { labelKey: "nav.innerCircle", to: "/inner-circle" },
       { labelKey: "nav.affiliates", to: "/affiliates" },
+      // Hardcoded label (like the Free Book CTA) — avoids touching 96 locale files
+      { label: "Pricing", to: "/pricing" },
     ],
   },
 ];
 
 // Flatten for desktop
-const DESKTOP_LINKS = [
+const DESKTOP_LINKS: NavLinkDef[] = [
   { labelKey: "nav.blog", to: "/blog" },
   { labelKey: "nav.ideas", to: "/ideas" },
   { labelKey: "nav.guides", to: "/guides" },
   { labelKey: "nav.tools", to: "/best" },
   { labelKey: "nav.calculators", to: "/calculators" },
   { labelKey: "nav.glossary", to: "/glossary" },
+  { label: "Pricing", to: "/pricing" },
 ];
 
 const Navbar = () => {
@@ -75,6 +79,8 @@ const Navbar = () => {
   const [compact, setCompact] = useState(false);
   const location = useLocation();
   const lastScrollY = useRef(0);
+  const drawerCloseRef = useRef<HTMLButtonElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -94,15 +100,27 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  // Lock scroll when mobile menu open
+  // Lock scroll when mobile menu open + Escape to close + focus management
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      drawerCloseRef.current?.focus();
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileOpen) {
+        setMobileOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
     return () => {
+      document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [mobileOpen]);
 
@@ -119,6 +137,11 @@ const Navbar = () => {
     target.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   }, []);
+
+  // ONE FUNNEL, ONE OFFER (DotCom Secrets): on the homepage the nav competes
+  // with the funnel, so resource links are hidden there. They remain in the
+  // footer (and on every other page) for discovery + SEO interlinking.
+  const isHomepage = location.pathname === "/";
 
   const navbarHeight = compact ? "h-14" : "h-16 lg:h-20";
   const logoSize = compact ? "w-7 h-7" : "w-8 h-8";
@@ -148,9 +171,9 @@ const Navbar = () => {
               <span className={`inline transition-all duration-300 ${brandFontSize}`}>Invisible Exit</span>
             </Link>
 
-            {/* Desktop nav */}
+            {/* Desktop nav — suppressed on the homepage (one funnel, one offer) */}
             <div className="hidden lg:flex items-center gap-1">
-              {DESKTOP_LINKS.map((link) => (
+              {!isHomepage && DESKTOP_LINKS.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -161,7 +184,7 @@ const Navbar = () => {
                       : "text-white/60 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  {t(link.labelKey)}
+                  {link.label ?? t(link.labelKey!)}
                 </Link>
               ))}
             </div>
@@ -195,10 +218,12 @@ const Navbar = () => {
             <div className="flex lg:hidden items-center gap-1">
               <LanguageSwitcher variant="compact" className="text-white/80" />
               <button
+                ref={hamburgerRef}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
                 aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
                 aria-expanded={mobileOpen}
+                aria-controls="mobile-nav-drawer"
               >
                 {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -217,13 +242,17 @@ const Navbar = () => {
 
       {/* Mobile right-side drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden" onClick={() => setMobileOpen(false)}>
+        <div className="fixed inset-0 z-[60] lg:hidden" onClick={() => setMobileOpen(false)}>
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in" />
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in touch-none" />
 
           {/* Drawer panel — slides in from right */}
           <div
-            className="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[hsl(222_47%_11%)] shadow-2xl overflow-y-auto safe-top safe-bottom"
+            id="mobile-nav-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t("nav.menu")}
+            className="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[hsl(222_47%_11%)] shadow-2xl overflow-y-auto overscroll-contain safe-top safe-bottom"
             onClick={(e) => e.stopPropagation()}
             style={{
               animation: "drawerSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
@@ -240,7 +269,11 @@ const Navbar = () => {
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 sticky top-0 bg-[hsl(222_47%_11%)]/95 backdrop-blur-xl z-10">
               <span className="text-white font-bold text-lg">{t("nav.menu")}</span>
               <button
-                onClick={() => setMobileOpen(false)}
+                ref={drawerCloseRef}
+                onClick={() => {
+                  setMobileOpen(false);
+                  hamburgerRef.current?.focus();
+                }}
                 className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
                 aria-label={t("nav.closeMenu")}
               >
@@ -266,7 +299,7 @@ const Navbar = () => {
                             : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
                       >
-                        {t(link.labelKey)}
+                        {link.label ?? t(link.labelKey!)}
                         <ArrowRight className="w-4 h-4 opacity-30" />
                       </Link>
                     ))}

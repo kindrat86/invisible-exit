@@ -25,8 +25,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // React core — stable, cached long-term
-          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          // React core — stable, cached long-term. clsx/tailwind-merge live here
+          // so the entry's cn() helper doesn't drag the charts chunk onto every page.
+          "vendor-react": ["react", "react-dom", "react-router-dom", "clsx", "tailwind-merge"],
           // Radix UI primitives — shared across many components
           "vendor-radix": [
             "@radix-ui/react-accordion",

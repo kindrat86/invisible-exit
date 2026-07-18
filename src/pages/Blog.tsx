@@ -4,7 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blog-posts";
+import { Share2 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import ShareButtons from "@/components/ShareButtons";
+import ContentUpgrade from "@/components/ContentUpgrade";
 
 const START_HERE_PATHS = [
   {
@@ -311,12 +314,48 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* SECRET 3 & 5: Email capture + share buttons on blog hub */}
+      <section className="bg-white py-12 px-6 border-b border-gray-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <ContentUpgrade
+                title="Get the Reading Roadmap + Freedom Number (Free)"
+                description="New articles delivered to your inbox every week. Plus the Freedom Number Calculator link so you always know your number."
+                source="blog_hub_capture"
+                category="Strategy"
+              />
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                  <Share2 className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-blue-600 font-bold mb-1">
+                    Share the Archive
+                  </p>
+                  <h3 className="text-sm font-bold text-gray-900">
+                    Know a corporate manager who needs this?
+                  </h3>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                If this blog has helped you, share it with someone who is still sitting on the fence. One article can start their invisible exit.
+              </p>
+              <ShareButtons
+                title="Invisible Exit Blog — Build $4K/month MRR while employed"
+                url="https://invisibleexit.com/blog"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Start here by situation */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10">
-            <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-wide mb-3">
-              Start here by situation
-            </p>
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
               Four reading paths for corporate managers
             </h2>

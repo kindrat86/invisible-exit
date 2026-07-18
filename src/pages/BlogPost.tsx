@@ -3,10 +3,10 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { RelatedContent, getRelatedPosts, getRelevantCalculators } from "@/components/RelatedContent";
 import ShareButtons from "@/components/ShareButtons";
 import ContentUpgrade from "@/components/ContentUpgrade";
+import ClickToTweet from "@/components/ClickToTweet";
 import {
   Accordion,
   AccordionContent,
@@ -429,6 +429,36 @@ const BlogPost = () => {
         </article>
       </section>
 
+      {/* SECRET 5: End-of-article share prompt — click-to-tweet + social share */}
+      <section className="bg-white section-tight border-t border-border">
+        <div className="container-narrow">
+          <div className="rounded-xl border border-primary/10 bg-gradient-to-br from-primary/[0.02] to-blue-500/[0.02] p-6 sm:p-8">
+            <div className="text-center mb-6">
+              <p className="text-eyebrow text-primary mb-2">Share this article</p>
+              <h2 className="text-h3 text-foreground">
+                If this resonated, share it with someone who needs it.
+              </h2>
+            </div>
+            <ClickToTweet
+              quote={post.title}
+              className="mt-4 mb-6"
+            />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <ShareButtons title={post.title} />
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://invisibleexit.com/blog/${post.slug}`)}&via=InvisibleExit`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("blog_share_prompt_clicked", { slug: post.slug, source: "end_of_article" })}
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              >
+                Share on X/Twitter →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Next steps: Category guide + Start here */}
       {(categoryGuide && categoryGuidePost) || startHerePost ? (
         <section className="bg-surface section-tight border-y border-border">
@@ -598,6 +628,7 @@ const BlogPost = () => {
             description="The 27-point checklist for calculating your exact freedom number, planning your exit timeline, and tracking your progress. Sent to your inbox."
             source="blog_content_upgrade"
             slug={post.slug}
+            category={post.category}
           />
         </div>
       </section>
@@ -665,7 +696,6 @@ const BlogPost = () => {
       </section>
 
       <Footer />
-      <ExitIntentPopup />
     </div>
   );
 };

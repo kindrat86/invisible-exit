@@ -11,9 +11,12 @@ import jwt from "jsonwebtoken";
  */
 const JWT_SECRET_RAW = process.env.JWT_SECRET;
 if (!JWT_SECRET_RAW && process.env.NODE_ENV === "production") {
-  console.error("FATAL: JWT_SECRET environment variable is not set. Authentication will fail.");
+  // Fail closed: never sign or verify tokens under an empty/guessable secret.
+  // Throwing at module load makes every auth-dependent function 500 loudly
+  // instead of silently running with an insecure fallback.
+  throw new Error("FATAL: JWT_SECRET environment variable is not set. Refusing to start with an empty secret.");
 }
-export const JWT_SECRET = JWT_SECRET_RAW || (process.env.NODE_ENV === "production" ? "" : "dev-secret-change-me");
+export const JWT_SECRET = JWT_SECRET_RAW || "dev-secret-change-me";
 
 export interface JwtPayload {
   sub: string;

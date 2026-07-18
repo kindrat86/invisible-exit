@@ -33,6 +33,7 @@ const SqueezePage = () => {
   const [step, setStep] = useState<Step>("intro");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [emailDelivered, setEmailDelivered] = useState(false);
 
   // Inputs
   const [salary, setSalary] = useState("");
@@ -41,7 +42,7 @@ const SqueezePage = () => {
 
   // ── DOTCOM SECRETS Ch 14: Order Bump ──
   // Checkbox on the email step that adds a $7 one-time to the $0.97/mo checkout
-  const [addStealthBlueprint, setAddStealthBlueprint] = useState(true);
+  const [addStealthBlueprint, setAddStealthBlueprint] = useState(false);
 
   // Calculated result
   const [result, setResult] = useState<CalcResult | null>(null);
@@ -83,7 +84,7 @@ const SqueezePage = () => {
   const handleCalculate = () => {
     const res = calculate();
     setResult(res);
-    setStep("result");
+    setStep("email");
     trackEvent("freedom_number_calculated", {
       freedomNumber: res.freedomNumber,
       salary: res.annualSalary,
@@ -94,10 +95,6 @@ const SqueezePage = () => {
     e.preventDefault();
     if (!email || !result) return;
     setLoading(true);
-    trackEvent("squeeze_page_submitted", {
-      source: "freedom_calculator",
-      freedomNumber: result.freedomNumber,
-    });
     try {
       // ── Send to API endpoint (handles both Turso DB insert + Resend welcome) ──
       const apiRes = await fetch("/api/newsletter-welcome", {
@@ -110,6 +107,7 @@ const SqueezePage = () => {
             freedom_number: result.freedomNumber,
             salary: result.annualSalary,
             timeline: result.timelineMonths,
+            add_stealth_blueprint: addStealthBlueprint,
           },
         }),
       });
@@ -117,11 +115,26 @@ const SqueezePage = () => {
       if (!apiRes.ok) {
         const errData = await apiRes.json().catch(() => ({}));
         console.error("Newsletter API error:", errData);
-        // Fallback: still try Supabase as a backup
+        if (apiRes.status === 429) {
+          toast.error("Too many attempts. Please try again in a few minutes.");
+          return;
+        }
+        // Fail open: the result is the promise — never hold it hostage to a
+        // backend hiccup. The email send failed, so soften the messaging.
+        trackEvent("squeeze_email_capture_failed", { status: apiRes.status });
+        toast.error("Couldn't send the email breakdown — but here's your number.");
+        setStep("result");
+        return;
       }
 
+      trackEvent("squeeze_page_submitted", {
+        source: "freedom_calculator",
+        freedomNumber: result.freedomNumber,
+        add_stealth_blueprint: addStealthBlueprint,
+      });
       toast.success("Check your inbox — your detailed breakdown is on the way!");
-      setStep("email");
+      setEmailDelivered(true);
+      setStep("result");
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
       console.error(err);
@@ -172,7 +185,7 @@ const SqueezePage = () => {
                   "The exact MRR that replaces <strong>your</strong> salary",
                   "How many customers you need (at any price point)",
                   "Your timeline based on <strong>your</strong> hours/week",
-                  "The invisibility score — can your employer find out?",
+                  "The stealth checklist members use to stay invisible (avg score: 72/100)",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
@@ -247,52 +260,61 @@ const SqueezePage = () => {
                 This is the number your side business needs to replace.
               </p>
 
-              <div className="relative mb-6">
-                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  autoComplete="off"
-                  aria-label="Annual salary"
-                  autoFocus
-                  value={salary}
-                  onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
-                  placeholder="120000"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
-                />
-              </div>
-
-              {/* Quick selects */}
-              <div className="grid grid-cols-3 gap-2 mb-8">
-                {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
-                  (val) => {
-                    const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
-                    return (
-                      <button
-                        key={val}
-                        onClick={() => setSalary(String(num))}
-                        className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
-                          salary === String(num)
-                            ? "bg-primary text-white"
-                            : "bg-white/5 text-white/60 hover:bg-white/10"
-                        }`}
-                      >
-                        {val}
-                      </button>
-                    );
-                  }
-                )}
-              </div>
-
-              <button
-                onClick={() => setStep("expenses")}
-                disabled={!salary}
-                className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (salary) setStep("expenses");
+                }}
               >
-                Continue
-                <ArrowRight className="w-5 h-5" />
-              </button>
+                <div className="relative mb-6">
+                  <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="off"
+                    aria-label="Annual salary"
+                    enterKeyHint="next"
+                    autoFocus
+                    value={salary}
+                    onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
+                    placeholder="120000"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                  />
+                </div>
+
+                {/* Quick selects */}
+                <div className="grid grid-cols-3 gap-2 mb-8">
+                  {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
+                    (val) => {
+                      const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                      return (
+                        <button
+                          key={val}
+                          type="button"
+                          onClick={() => setSalary(String(num))}
+                          className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                            salary === String(num)
+                              ? "bg-primary text-white"
+                              : "bg-white/5 text-white/60 hover:bg-white/10"
+                          }`}
+                        >
+                          {val}
+                        </button>
+                      );
+                    }
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!salary}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                >
+                  Continue
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
             </div>
           )}
 
@@ -321,57 +343,67 @@ const SqueezePage = () => {
                 floor.
               </p>
 
-              <div className="relative mb-6">
-                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  autoComplete="off"
-                  aria-label="Monthly living expenses"
-                  autoFocus
-                  value={expenses}
-                  onChange={(e) => setExpenses(e.target.value.replace(/[^0-9]/g, ''))}
-                  placeholder="5000"
-                  className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
-                />
-              </div>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (expenses) setStep("timeline");
+                }}
+              >
+                <div className="relative mb-6">
+                  <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="off"
+                    aria-label="Monthly living expenses"
+                    enterKeyHint="next"
+                    autoFocus
+                    value={expenses}
+                    onChange={(e) => setExpenses(e.target.value.replace(/[^0-9]/g, ''))}
+                    placeholder="5000"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                  />
+                </div>
 
-              <div className="grid grid-cols-4 gap-2 mb-8">
-                {["$3K", "$5K", "$8K", "$12K"].map((val) => {
-                  const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
-                  return (
-                    <button
-                      key={val}
-                      onClick={() => setExpenses(String(num))}
-                      className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
-                        expenses === String(num)
-                          ? "bg-primary text-white"
-                          : "bg-white/5 text-white/60 hover:bg-white/10"
-                      }`}
-                    >
-                      {val}
-                    </button>
-                  );
-                })}
-              </div>
+                <div className="grid grid-cols-4 gap-2 mb-8">
+                  {["$3K", "$5K", "$8K", "$12K"].map((val) => {
+                    const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                    return (
+                      <button
+                        key={val}
+                        type="button"
+                        onClick={() => setExpenses(String(num))}
+                        className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                          expenses === String(num)
+                            ? "bg-primary text-white"
+                            : "bg-white/5 text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {val}
+                      </button>
+                    );
+                  })}
+                </div>
 
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setStep("salary")}
-                  className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
-                >
-                  Back
-                </button>
-                <button
-                  onClick={() => setStep("timeline")}
-                  disabled={!expenses}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
-                >
-                  Continue
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setStep("salary")}
+                    className="px-6 py-4 rounded-xl bg-white/5 text-white/50 hover:text-white/80 transition-colors text-sm font-medium"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={!expenses}
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                  >
+                    Continue
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </div>
+              </form>
             </div>
           )}
 
@@ -434,10 +466,171 @@ const SqueezePage = () => {
             </div>
           )}
 
-          {/* ─── STEP: RESULT ─── */}
+          {/* ─── STEP: EMAIL GATE — number is calculated, email unlocks it ─── */}
+          {step === "email" && result && (
+            <div className="animate-scale-in max-w-lg mx-auto">
+              {/* The locked number teaser */}
+              <div className="relative bg-gradient-to-br from-primary/15 to-transparent rounded-2xl p-8 border border-primary/25 mb-6 overflow-hidden">
+                <p className="text-white/50 text-xs uppercase tracking-wide mb-2">
+                  Your Freedom Number Is Ready
+                </p>
+                <p className="text-5xl sm:text-6xl font-bold text-primary-light mb-2 blur-lg select-none" aria-hidden="true">
+                  $4,200
+                  <span className="text-lg text-white/50 block sm:inline sm:ml-2">
+                    /month MRR
+                  </span>
+                </p>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="inline-flex items-center gap-2 bg-[hsl(222_47%_14%)]/90 border border-white/15 rounded-full px-4 py-2 text-white/80 text-xs font-semibold">
+                    <Lock className="w-3.5 h-3.5" />
+                    Enter your email below to unlock your number
+                  </span>
+                </div>
+                <p className="text-white/40 text-sm mt-3">
+                  Calculated from your {formatMoney(result.annualSalary)} salary
+                  and {formatMoney(result.monthlyExpenses)}/mo expenses. One
+                  step left.
+                </p>
+              </div>
+
+              {/* What the unlock reveals */}
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10 mb-4 text-left">
+                <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-3 text-center">
+                  What you'll see on the next screen
+                </p>
+                <div className="space-y-2.5">
+                  {[
+                    "Your exact Freedom Number — the MRR that replaces your salary",
+                    "How many customers you need at $29/mo and $9/mo pricing",
+                    `Your realistic timeline at ${hoursPerWeek} hours/week`,
+                    "The invisibility benchmark members use to stay undetected",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-primary-light mt-0.5 shrink-0" />
+                      <span className="text-white/70 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* DOTCOM SECRETS Ch 11: Urgency + Scarcity */}
+              <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl p-4 mb-4 flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                <p className="text-amber-200 text-xs">
+                  <strong>73 of 100</strong> founding spots remaining. Price goes to $9.99/mo when founding closes.
+                </p>
+              </div>
+
+              {/* Social proof bar */}
+              <div className="flex items-center justify-center gap-3 mb-4 text-white/40 text-xs">
+                <span className="flex items-center gap-1">
+                  <span className="text-amber-400">★★★★★</span>
+                </span>
+                <span>·</span>
+                <span>127 managers building now</span>
+                <span>·</span>
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  4 joined today
+                </span>
+              </div>
+
+              {/* EXPERT SECRETS Ch 11: Pre-Frame Objection Crusher — right before email capture */}
+              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-4">
+                <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-3 text-center">
+                  Questions Before You Enter Your Email?
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { q: "Is this really free?", a: "Yes. The calculator and your result are 100% free. No credit card. No trial. Your email is where I send the detailed breakdown — and it unlocks your number on the next screen instantly." },
+                    { q: "What if I don't have a business idea?", a: "The calculator doesn't require one. It just needs your salary, expenses, and hours. The Freedom Number works whether you have an idea or not — it tells you the target, not the path." },
+                    { q: "Will this work for my situation?", a: "The math is the math. Salary, expenses, hours — these are universal inputs. The formula applies whether you're at $80K or $250K." },
+                    { q: "What if I'm not technical?", a: "The calculator doesn't require technical skills. It asks 3 questions in 30 seconds. The system that follows is designed for non-technical managers." },
+                  ].map((item) => (
+                    <details key={item.q} className="group">
+                      <summary className="flex items-center justify-between text-sm text-white/70 cursor-pointer list-none select-none py-1.5">
+                        {item.q}
+                        <ChevronDown className="w-3.5 h-3.5 text-white/30 transition-transform group-open:rotate-180 shrink-0" />
+                      </summary>
+                      <p className="text-xs text-white/50 leading-relaxed mt-1 pl-0">{item.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+
+              {/* Email gate — unlocks the result */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
+                <p className="text-white/70 text-sm mb-1 font-semibold">
+                  Enter your email → see your Freedom Number
+                </p>
+                <p className="text-white/50 text-sm mb-4">
+                  Your number appears instantly on the next screen. I'll also
+                  send the full breakdown: your personalized exit timeline,
+                  customer acquisition plan, and the 5-tool system that gets you
+                  there.
+                </p>
+
+                <form onSubmit={handleSubmitEmail} className="space-y-3">
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your best email address"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
+                  />
+
+                  {/* ── DOTCOM SECRETS Ch 14: ORDER BUMP ── */}
+                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${addStealthBlueprint ? "bg-primary/10 border-primary/40" : "bg-white/5 border-white/10 hover:bg-white/[0.07]"}`}>
+                    <input
+                      type="checkbox"
+                      checked={addStealthBlueprint}
+                      onChange={(e) => setAddStealthBlueprint(e.target.checked)}
+                      className="mt-1 w-5 h-5 rounded accent-primary shrink-0 cursor-pointer"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span className="text-white text-sm font-semibold">
+                          YES — send me the $7 Stealth Ops Blueprint offer next
+                        </span>
+                      </div>
+                      <p className="text-white/50 text-xs leading-relaxed mb-1">
+                        The 47-point employment contract audit + entity setup walkthroughs
+                        (normally $47, $7 one-time for founding members).
+                      </p>
+                      <p className="text-white/60 text-[11px] italic">
+                        You'll complete the purchase on the next page — nothing is charged here.
+                      </p>
+                    </div>
+                  </label>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-base py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-50 min-h-[52px]"
+                  >
+                    {loading ? "Unlocking..." : "Show Me My Freedom Number"}
+                    {!loading && <ArrowRight className="w-4 h-4" />}
+                  </button>
+                </form>
+              </div>
+
+              {/* Direct CTA — skip email */}
+              <Link
+                to="/tripwire"
+                className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
+              >
+                Skip email — get the $7 Stealth Ops Blueprint →
+              </Link>
+            </div>
+          )}
+
+          {/* ─── STEP: RESULT — unlocked after email ─── */}
           {step === "result" && result && (
             <div className="animate-scale-in max-w-lg mx-auto">
-              {/* The big number */}
+              {/* The big number — revealed */}
               <div className="bg-gradient-to-br from-primary/15 to-transparent rounded-2xl p-8 border border-primary/25 mb-6">
                 <p className="text-white/50 text-xs uppercase tracking-wide mb-2">
                   Your Freedom Number
@@ -496,12 +689,12 @@ const SqueezePage = () => {
                 <div className="bg-white/5 rounded-xl p-5 border border-white/10">
                   <Shield className="w-5 h-5 text-primary-light mb-2" />
                   <p className="text-white/50 text-xs mb-1">
-                    Invisibility score
+                    Avg member invisibility score
                   </p>
                   <p className="text-2xl font-bold text-white">
                     {result.invisibilityScore}
                     <span className="text-sm font-normal text-white/50">
-                      /100
+                      /100 avg
                     </span>
                   </p>
                 </div>
@@ -522,150 +715,23 @@ const SqueezePage = () => {
                 </p>
               </div>
 
-              {/* DOTCOM SECRETS Ch 11: Urgency + Scarcity */}
-              <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl p-4 mb-4 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
-                <p className="text-amber-200 text-xs">
-                  <strong>73 of 100</strong> founding spots remaining. Price goes to $9.99/mo when founding closes.
-                </p>
-              </div>
-
-              {/* Social proof bar */}
-              <div className="flex items-center justify-center gap-3 mb-4 text-white/40 text-xs">
-                <span className="flex items-center gap-1">
-                  <span className="text-amber-400">★★★★★</span>
-                </span>
-                <span>·</span>
-                <span>127 managers building now</span>
-                <span>·</span>
-                <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  4 joined today
-                </span>
-              </div>
-
-              {/* EXPERT SECRETS Ch 11: Pre-Frame Objection Crusher — right before email capture */}
-              <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-4">
-                <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-3 text-center">
-                  Questions Before You Enter Your Email?
-                </p>
-                <div className="space-y-3">
-                  {[
-                    { q: "Is this really free?", a: "Yes. The calculator is 100% free. No credit card. No trial. You get your Freedom Number instantly. The email is optional — but if you want the detailed breakdown sent to you, that's free too." },
-                    { q: "What if I don't have a business idea?", a: "The calculator doesn't require one. It just needs your salary, expenses, and hours. The Freedom Number works whether you have an idea or not — it tells you the target, not the path." },
-                    { q: "Will this work for my situation?", a: "The math is the math. Salary, expenses, hours — these are universal inputs. The formula applies whether you're at $80K or $250K." },
-                    { q: "What if I'm not technical?", a: "The calculator doesn't require technical skills. It asks 3 questions in 30 seconds. The system that follows is designed for non-technical managers." },
-                  ].map((item) => (
-                    <details key={item.q} className="group">
-                      <summary className="flex items-center justify-between text-sm text-white/70 cursor-pointer list-none select-none py-1.5">
-                        {item.q}
-                        <ChevronDown className="w-3.5 h-3.5 text-white/30 transition-transform group-open:rotate-180 shrink-0" />
-                      </summary>
-                      <p className="text-xs text-white/50 leading-relaxed mt-1 pl-0">{item.a}</p>
-                    </details>
-                  ))}
-                </div>
-              </div>
-
-              {/* Email gate for detailed plan */}
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
-                <p className="text-white/70 text-sm mb-1">
-                  Want the full breakdown?
-                </p>
-                <p className="text-white/50 text-sm mb-4">
-                  I'll send your personalized exit timeline, customer acquisition
-                  plan, and the 5-tool system that gets you to{" "}
-                  {formatMoney(result.freedomNumber)}/month.
-                </p>
-
-                <form onSubmit={handleSubmitEmail} className="space-y-3">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your best email address"
-                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
-                  />
-
-                  {/* ── DOTCOM SECRETS Ch 14: ORDER BUMP ── */}
-                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${addStealthBlueprint ? "bg-primary/10 border-primary/40" : "bg-white/5 border-white/10 hover:bg-white/[0.07]"}`}>
-                    <input
-                      type="checkbox"
-                      checked={addStealthBlueprint}
-                      onChange={(e) => setAddStealthBlueprint(e.target.checked)}
-                      className="mt-1 w-5 h-5 rounded accent-primary shrink-0 cursor-pointer"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <span className="text-white text-sm font-semibold">
-                          YES! Add the Stealth Ops Blueprint
-                        </span>
-                        <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-                          Save $40
-                        </span>
-                      </div>
-                      <p className="text-white/50 text-xs leading-relaxed mb-1">
-                        The 47-point employment contract audit + entity setup walkthroughs.
-                        Normally $47. Add it now for just <strong className="text-amber-300">$7 one-time</strong>.
-                      </p>
-                      <p className="text-white/30 text-[11px] italic">
-                        ☑ Checked by default — uncheck to skip
-                      </p>
-                    </div>
-                  </label>
-
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-base py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-50 min-h-[52px]"
-                  >
-                    {loading ? "Sending..." : "Send Me My Exit Plan"}
-                    {!loading && <ArrowRight className="w-4 h-4" />}
-                  </button>
-                </form>
-              </div>
-
-              {/* Direct CTA — skip email */}
-              <Link
-                to="/tripwire"
-                className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
-              >
-                Skip email — get the $7 Stealth Ops Blueprint →
-              </Link>
-            </div>
-          )}
-
-          {/* ─── STEP: EMAIL CONFIRMED ─── */}
-          {step === "email" && result && (
-            <div className="animate-scale-in max-w-md mx-auto card-glass p-8">
-              <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
-                <span className="text-success text-2xl">✓</span>
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-3">
-                Your Freedom Number: {formatMoney(result.freedomNumber)}/month
-              </h2>
-
-              {/* INSTANT DELIVERY: show the result again (Dotcom Secrets Ch 6) */}
-              <div className="bg-primary/10 border border-primary/25 rounded-xl p-4 mb-4">
-                <div className="grid grid-cols-2 gap-3 text-center">
-                  <div>
-                    <p className="text-white/40 text-xs">At $29/mo</p>
-                    <p className="text-white font-bold text-lg">{result.customers29} customers</p>
-                  </div>
-                  <div>
-                    <p className="text-white/40 text-xs">Timeline</p>
-                    <p className="text-white font-bold text-lg">{result.timelineMonths} months</p>
-                  </div>
-                </div>
-              </div>
-
               <p className="text-white/70 mb-2">
-                I just sent a detailed breakdown to{" "}
-                <strong className="text-white">{email}</strong> — including your
-                personalized exit timeline, the Amsterdam moment that started
-                everything, and the 5-tool system that gets you to{" "}
-                {formatMoney(result.freedomNumber)}/month.
+                {emailDelivered ? (
+                  <>
+                    I just sent a detailed breakdown to{" "}
+                    <strong className="text-white">{email}</strong> — including
+                    your personalized exit timeline, the Amsterdam moment that
+                    started everything, and the 5-tool system that gets you to{" "}
+                    {formatMoney(result.freedomNumber)}/month.
+                  </>
+                ) : (
+                  <>
+                    Your detailed breakdown for{" "}
+                    <strong className="text-white">{email}</strong> is queued —
+                    your personalized exit timeline and the 5-tool system that
+                    gets you to {formatMoney(result.freedomNumber)}/month.
+                  </>
+                )}
               </p>
               <p className="text-white/40 text-xs mb-4">
                 But you don't need to wait. Here's your next step right now:
@@ -673,7 +739,10 @@ const SqueezePage = () => {
 
               <div className="space-y-3 mt-6">
                 <Link
-                  to={addStealthBlueprint ? "/tripwire" : "/?checkout=starter"}
+                  to={addStealthBlueprint ? "/tripwire" : "/start"}
+                  onClick={() =>
+                    trackEvent("homepage_cta_clicked", { source: "squeeze_post_email" })
+                  }
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
                   {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $0.97/month"}

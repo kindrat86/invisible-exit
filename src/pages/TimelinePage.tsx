@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { RelatedContent } from "@/components/RelatedContent";
+import InlineNewsletter from "@/components/InlineNewsletter";
 import { timelines, type TimelineEntry } from "@/data/timelines";
 
 export default function TimelinePage() {
@@ -123,6 +124,10 @@ export default function TimelinePage() {
           title="Related"
         />
       </article>
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source="timeline_footer" />
+      </div>
 
       <Footer />
     </div>

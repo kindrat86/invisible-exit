@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invisible Exit MCP Server — Install in Claude, Cursor, Windsurf</title>
+<meta name="description" content="Complete guide to digital privacy and disappearing from the internet. Install the MCP server in any MCP-aware client.">
+<link rel="canonical" href="https://invisibleexit.com/mcp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Invisible Exit MCP Server","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://invisibleexit.com/mcp","downloadUrl":"https://invisibleexit.com/api/mcp","description":"Complete guide to digital privacy and disappearing from the internet.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:720px;margin:0 auto;padding:2rem 1.5rem;line-height:1.6;color:#1a1a2e}
+h1{font-size:1.8rem;margin-bottom:0.5rem}
+h2{font-size:1.3rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:0.3rem}
+code,pre{font-family:'SF Mono',Fira Code,monospace;font-size:0.9rem}
+pre{background:#f5f5f5;padding:1rem;border-radius:8px;overflow-x-auto;border:1px solid #e0e0e0}
+a{color:#0066cc}
+.badge{display:inline-block;background:#0066cc;color:white;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:600;margin-bottom:1rem}
+ul{padding-left:1.5rem} li{margin-bottom:0.5rem}
+</style>
+</head>
+<body>
+<span class="badge">MCP Server</span>
+<h1>Invisible Exit — MCP Server</h1>
+<p>Complete guide to digital privacy and disappearing from the internet.</p>
+<p>One endpoint. Stateless HTTP transport. No auth required. Paste it into any MCP client:</p>
+<pre><code>https://invisibleexit.com/api/mcp</code></pre>
+
+<h2>Install in Claude Desktop</h2>
+<p>Add to <code>claude_desktop_config.json</code>:</p>
+<pre><code>{
+  "mcpServers": {
+    "invisibleexit": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://invisibleexit.com/api/mcp"]
+    }
+  }
+}</code></pre>
+
+<h2>Install in Cursor</h2>
+<p>Add to <code>.cursor/mcp.json</code>:</p>
+<pre><code>{
+  "mcpServers": {
+    "invisibleexit": {
+      "url": "https://invisibleexit.com/api/mcp"
+    }
+  }
+}</code></pre>
+
+<h2>Inspect</h2>
+<pre><code>npx @modelcontextprotocol/inspector https://invisibleexit.com/api/mcp</code></pre>
+
+<h2>Available Tools (3)</h2>
+<ul>
+<li><code>search_privacy_guides</code> — Search privacy guides by topic.</li>
+<li><code>get_privacy_guide</code> — Get a detailed step-by-step privacy guide.</li>
+<li><code>check_data_brokers</code> — List major data brokers with opt-out links.</li>
+</ul>
+
+<p style="margin-top:2rem;color:#666;font-size:0.9rem">
+Discovery manifest: <a href="/.well-known/mcp.json">/.well-known/mcp.json</a> ·
+<a href="/">← Back to Invisible Exit</a>
+</p>
+</body>
+</html>

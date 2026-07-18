@@ -106,9 +106,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       NEWSLETTER_EMAIL_HTML,
     );
 
+    // The subscriber upsert above already succeeded — from here on we degrade
+    // gracefully instead of showing the visitor a 500 for a record that was
+    // actually created (e.g. RESEND_API_KEY unset, Resend outage).
     if (!result.success) {
-      console.error("Newsletter welcome email failed:", result.error);
-      return res.status(500).json({ error: "Failed to send email" });
+      console.error(
+        "Newsletter welcome email failed (subscriber stored, welcome email deferred):",
+        result.error,
+      );
     }
 
     // ── 3. Create email_sequence_schedule entry for soap_opera ──
@@ -125,6 +130,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // Don't fail the whole request if scheduling fails
     }
 
+    if (!result.success) {
+      return res.status(200).json({ success: true, welcome_email: "deferred" });
+    }
     return res.status(200).json({ success: true });
   } catch (err: any) {
     console.error("Newsletter welcome error:", err);

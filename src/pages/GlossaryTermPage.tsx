@@ -85,7 +85,7 @@ const GlossaryTermPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title={`What Is ${term.term}? Definition & Guide | Invisible Exit`}
+        title={term.metaTitle || `What Is ${term.term}? Definition & Guide | Invisible Exit`}
         description={term.definition.slice(0, 155)}
         url={`/glossary/${term.slug}`}
       />

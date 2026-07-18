@@ -364,7 +364,7 @@ function getRoutes() {
     meta: {
       title: "Build a $4,000/Month Side Business Without Quitting",
       description:
-        "5 AI-powered tools anchored against $252/mo in alternatives + 3 bonuses + 12-month continuity. Founding member price: $0.97/month (99.9% off). Build $4K/month in anonymous micro-SaaS revenue without quitting your job. From $0.97/mo.",
+        "Invisible Exit is a faceless side-business system: 5 AI tools that build anonymous micro-SaaS revenue without quitting your job or showing your face.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [
@@ -377,9 +377,17 @@ function getRoutes() {
           description:
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://twitter.com/InvisibleExit",
-            "https://www.reddit.com/r/invisibleexit"
+            "https://www.reddit.com/r/invisibleexit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
         {
@@ -1091,7 +1099,7 @@ function getRoutes() {
     routes.push({
       path: `/glossary/${term.slug}`,
       meta: {
-        title: `What Is ${term.term}? Definition & Guide | Invisible Exit`,
+        title: term.metaTitle || `What Is ${term.term}? Definition & Guide | Invisible Exit`,
         description: term.definition.slice(0, 155),
         url: termUrl,
         type: "article",
@@ -1171,9 +1179,17 @@ function getRoutes() {
           description:
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://twitter.com/InvisibleExit",
-            "https://www.reddit.com/r/invisibleexit"
+            "https://www.reddit.com/r/invisibleexit",
+            "https://github.com/kindrat86/invisible-exit"
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
           worksFor: {
             "@type": "Organization",
@@ -1203,10 +1219,17 @@ function getRoutes() {
             url: `${SITE}/contact`,
           },
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
-            "https://twitter.com/InvisibleExit",
+            "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
       ],
@@ -1238,10 +1261,17 @@ function getRoutes() {
             url: `${SITE}/contact`,
           },
           sameAs: [
-            "https://www.youtube.com/@InvisibleExit",
-            "https://www.linkedin.com/company/invisible-exit",
-            "https://twitter.com/InvisibleExit",
+            "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+          ],
+          knowsAbout: [
+            "Micro-SaaS",
+            "Anonymous business building",
+            "Corporate career strategy",
+            "Recurring revenue models",
+            "Side business validation",
+            "Digital privacy for entrepreneurs",
+            "Entity separation and legal compliance"
           ],
         },
         {

@@ -6,6 +6,32 @@ interface TierConfig {
   product: string;
 }
 
+/**
+ * Sanitize a client-supplied return/cancel URL so Stripe can only ever
+ * redirect back to our own site (blocks open-redirect / phishing after
+ * payment). Accepts relative paths or absolute URLs on the site host;
+ * anything else falls back to `fallback`.
+ */
+function safeSiteUrl(input: unknown, siteUrl: string, fallback: string): string {
+  if (typeof input !== "string" || input.length === 0) return fallback;
+  if (input.startsWith("/") && !input.startsWith("//")) return `${siteUrl}${input}`;
+  try {
+    const target = new URL(input);
+    const site = new URL(siteUrl);
+    if ((target.protocol === "https:" || target.protocol === "http:") && target.host === site.host) {
+      return `${site.origin}${target.pathname}${target.search}`;
+    }
+  } catch {
+    // not a parseable absolute URL — fall through
+  }
+  return fallback;
+}
+
+/** Append the Stripe session id placeholder, respecting an existing query string. */
+function withSessionId(url: string): string {
+  return `${url}${url.includes("?") ? "&" : "?"}session_id={CHECKOUT_SESSION_ID}`;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -86,9 +112,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const tripwirePrice = process.env.STRIPE_TRIPWIRE_PRICE_ID!;
 
     if (tier === "starter" || tier === "tripwire_bump") {
-      const bumpSuccessUrl = returnUrl
-        ? `${returnUrl.startsWith("http") ? "" : siteUrl}${returnUrl}?session_id={CHECKOUT_SESSION_ID}`
-        : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
+      const bumpSuccessUrl = withSessionId(
+        safeSiteUrl(returnUrl, siteUrl, `${siteUrl}/oto/founding`)
+      );
 
       const bumpSessionParams: Stripe.Checkout.SessionCreateParams = {
         mode: "subscription",
@@ -97,9 +123,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           { price: tripwirePrice, quantity: 1 },
         ],
         success_url: bumpSuccessUrl,
-        cancel_url: cancelUrl
-          ? `${cancelUrl.startsWith("http") ? "" : siteUrl}${cancelUrl}`
-          : `${siteUrl}/`,
+        cancel_url: safeSiteUrl(cancelUrl, siteUrl, `${siteUrl}/`),
         allow_promotion_codes: false,
         metadata: { product: "starter", order_bump: "tripwire" },
       };
@@ -121,17 +145,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: "Invalid tier" });
     }
 
-    const successUrl = returnUrl
-      ? `${returnUrl.startsWith("http") ? "" : siteUrl}${returnUrl}?session_id={CHECKOUT_SESSION_ID}`
-      : `${siteUrl}/oto/founding?session_id={CHECKOUT_SESSION_ID}`;
+    const successUrl = withSessionId(
+      safeSiteUrl(returnUrl, siteUrl, `${siteUrl}/oto/founding`)
+    );
 
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: isOneTime ? "payment" : "subscription",
       line_items: [{ price: tierConfig.priceId, quantity: 1 }],
       success_url: successUrl,
-      cancel_url: cancelUrl
-        ? `${cancelUrl.startsWith("http") ? "" : siteUrl}${cancelUrl}`
-        : `${siteUrl}/`,
+      cancel_url: safeSiteUrl(cancelUrl, siteUrl, `${siteUrl}/`),
       allow_promotion_codes: false,
       metadata: { product: tierConfig.product },
     };

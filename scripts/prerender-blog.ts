@@ -961,12 +961,13 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 // ---------- Homepage body ----------
 
 function homepageBodyHtml(): string {
-  return `<div class="min-h-screen">
-<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center">
+  // Dark shell matching the hydrated hero — prevents the light→dark flash on load
+  return `<div class="min-h-screen" style="background:#0f172a">
+<section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center;background:#0f172a">
 <div style="max-width:56rem;margin:0 auto">
-<h1 style="font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem">How to Build a $4,000/Month Side Business Without Quitting Your Job, Without Writing Code, and Without Your Employer Finding Out</h1>
-<p style="font-size:1.25rem;color:#4b5563;margin-bottom:2rem">5 AI-powered tools that take you from golden handcuffs to real recurring revenue in 12 months — working 5 hours a week. Calculate your freedom number, validate ideas, and stay invisible.</p>
-<p style="font-size:0.875rem;color:#6b7280">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
+<h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue — Without Quitting, Without Code, Without Being Found Out</h1>
+<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">The method: build a small subscription software product (micro-SaaS) on the side — validate one niche problem, charge about $29/month, and grow to roughly 138 customers, which works out to $4,000/month in recurring revenue. Run it through a separate legal entity so it never appears under your name. Invisible Exit bundles the 5 AI-powered tools for each step: calculate your freedom number, validate ideas, stay invisible, launch, and build a faceless brand — in about 5 hours a week.</p>
+<p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:56rem">
@@ -1030,7 +1031,7 @@ function homepageBodyHtml(): string {
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Does this violate my employment contract?</h3><p>Most contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. The Stealth Ops Hub runs a compliance audit against common contract clauses.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Can my employer find out?</h3><p>The Stealth Ops Hub includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content — all without coding.</p></div>
-<div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A <a href="/glossary/what-is-micro-saas" style="color:#3B82F6">micro-SaaS</a> charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
 </div>
 </div>
 </section>
@@ -1067,9 +1068,12 @@ function homepageBodyHtml(): string {
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Micro-SaaS by Industry</h3>
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/ideas" style="color:#374151;text-decoration:none;font-size:0.875rem">All Ideas</a></li>
+<li style="margin-bottom:0.375rem"><a href="/glossary/what-is-micro-saas" style="color:#374151;text-decoration:none;font-size:0.875rem">What Is Micro-SaaS?</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/privacy" style="color:#374151;text-decoration:none;font-size:0.875rem">Privacy</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/security" style="color:#374151;text-decoration:none;font-size:0.875rem">Security</a></li>
 <li style="margin-bottom:0.375rem"><a href="/for/journalism" style="color:#374151;text-decoration:none;font-size:0.875rem">Journalism</a></li>
+<li style="margin-bottom:0.375rem"><a href="/niches/ai-automation" style="color:#374151;text-decoration:none;font-size:0.875rem">AI Automation Niches</a></li>
+<li style="margin-bottom:0.375rem"><a href="/niches/developer-tools" style="color:#374151;text-decoration:none;font-size:0.875rem">Developer Tool Niches</a></li>
 </ul>
 </div>
 <div>
@@ -1079,6 +1083,8 @@ function homepageBodyHtml(): string {
 <li style="margin-bottom:0.375rem"><a href="/guides/wyoming" style="color:#374151;text-decoration:none;font-size:0.875rem">Wyoming LLC</a></li>
 <li style="margin-bottom:0.375rem"><a href="/guides/delaware" style="color:#374151;text-decoration:none;font-size:0.875rem">Delaware LLC</a></li>
 <li style="margin-bottom:0.375rem"><a href="/guides/nevada" style="color:#374151;text-decoration:none;font-size:0.875rem">Nevada LLC</a></li>
+<li style="margin-bottom:0.375rem"><a href="/non-compete/software-engineers-california" style="color:#374151;text-decoration:none;font-size:0.875rem">Non-Compete: Engineers in California</a></li>
+<li style="margin-bottom:0.375rem"><a href="/non-compete/software-engineers-texas" style="color:#374151;text-decoration:none;font-size:0.875rem">Non-Compete: Engineers in Texas</a></li>
 </ul>
 </div>
 <div>
@@ -1086,6 +1092,9 @@ function homepageBodyHtml(): string {
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/freedom" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
 <li style="margin-bottom:0.375rem"><a href="/calculators" style="color:#374151;text-decoration:none;font-size:0.875rem">All Calculators</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/freedom-number" style="color:#374151;text-decoration:none;font-size:0.875rem">Freedom Number Calculator</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/micro-saas-pricing" style="color:#374151;text-decoration:none;font-size:0.875rem">Micro-SaaS Pricing Calculator</a></li>
+<li style="margin-bottom:0.375rem"><a href="/calculators/churn-impact" style="color:#374151;text-decoration:none;font-size:0.875rem">Churn Impact Calculator</a></li>
 <li style="margin-bottom:0.375rem"><a href="/best" style="color:#374151;text-decoration:none;font-size:0.875rem">Best AI Tools</a></li>
 <li style="margin-bottom:0.375rem"><a href="/glossary" style="color:#374151;text-decoration:none;font-size:0.875rem">Glossary</a></li>
 </ul>
@@ -1094,12 +1103,23 @@ function homepageBodyHtml(): string {
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.75rem">Compare & Research</h3>
 <ul style="list-style:none;padding:0;margin:0">
 <li style="margin-bottom:0.375rem"><a href="/compare" style="color:#374151;text-decoration:none;font-size:0.875rem">Comparisons</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/micro-saas-vs-real-estate" style="color:#374151;text-decoration:none;font-size:0.875rem">Micro-SaaS vs Real Estate</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/llc-vs-s-corp-side-business" style="color:#374151;text-decoration:none;font-size:0.875rem">LLC vs S-Corp (Side Business)</a></li>
+<li style="margin-bottom:0.375rem"><a href="/compare/side-business-vs-full-time-startup" style="color:#374151;text-decoration:none;font-size:0.875rem">Side Business vs Full-Time Startup</a></li>
 <li style="margin-bottom:0.375rem"><a href="/data" style="color:#374151;text-decoration:none;font-size:0.875rem">Data Reports</a></li>
 <li style="margin-bottom:0.375rem"><a href="/blog" style="color:#374151;text-decoration:none;font-size:0.875rem">Blog</a></li>
 <li style="margin-bottom:0.375rem"><a href="/explore" style="color:#374151;text-decoration:none;font-size:0.875rem">Explore All</a></li>
 </ul>
 </div>
 </nav>
+<div style="border-top:1px solid #e5e7eb;padding-top:1.5rem;text-align:left;max-width:48rem;margin:0 auto">
+<h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.5rem">Sources &amp; further reading</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1rem;font-size:0.8125rem;color:#6b7280">
+<li style="margin-bottom:0.25rem">Non-compete rules: <a href="https://www.ftc.gov/legal-library/browse/rules/noncompete-rule" rel="noopener" style="color:#3B82F6">FTC — Noncompete Rule</a> and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&amp;sectionNum=16600" rel="noopener" style="color:#3B82F6">California Business &amp; Professions Code §16600</a></li>
+<li style="margin-bottom:0.25rem">Business structure: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" rel="noopener" style="color:#3B82F6">IRS — Limited Liability Company (LLC)</a> and <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure" rel="noopener" style="color:#3B82F6">SBA — Choose a business structure</a></li>
+</ul>
+<p style="font-size:0.75rem;color:#9ca3af;margin-bottom:1rem">Page last updated: July 17, 2026. Revenue examples on this page are arithmetic illustrations (e.g. 138 customers &times; $29/month &asymp; $4,000/month), not income guarantees.</p>
+</div>
 <p style="font-size:0.75rem;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:1.5rem">From $0.97/month. Cancel anytime. Built by a corporate manager, for corporate managers.</p>
 </div>
 </section>

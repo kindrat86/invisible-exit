@@ -14,7 +14,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+      sans: ["Inter", "'Inter Fallback'", "system-ui", "-apple-system", "sans-serif"],
       mono: ["'SF Mono'", "'Cascadia Code'", "'Fira Code'", "ui-monospace", "monospace"],
     },
     extend: {
@@ -36,6 +36,8 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           hover: "hsl(var(--primary-hover))",
           light: "hsl(var(--primary-light))",
+          strong: "hsl(var(--primary-strong))",
+          "strong-hover": "hsl(var(--primary-strong-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

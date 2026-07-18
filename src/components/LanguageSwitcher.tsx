@@ -51,9 +51,10 @@ export default function LanguageSwitcher({ variant = "compact", className = "" }
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Focus search when opened
+  // Focus search when opened — desktop only (on touch it pops the keyboard
+  // over the list before the user can see the options)
   useEffect(() => {
-    if (open) {
+    if (open && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       setTimeout(() => searchInputRef.current?.focus(), 50);
     }
   }, [open]);
@@ -199,7 +200,7 @@ function LanguageDropdown({
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search languages…"
-            className="w-full pl-8 pr-8 py-2 text-sm rounded-lg bg-surface-2 border-0 focus:ring-2 focus:ring-primary outline-none"
+            className="w-full pl-8 pr-8 py-2 text-[16px] sm:text-sm rounded-lg bg-surface-2 border-0 focus:ring-2 focus:ring-primary outline-none"
           />
           {search && (
             <button

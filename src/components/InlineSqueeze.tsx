@@ -170,6 +170,8 @@ const InlineSqueeze = () => {
                 <input
                   type="email"
                   required
+                  name="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your best email address"
@@ -263,14 +265,14 @@ const InlineSqueeze = () => {
               const StepIcon = step.icon;
               return (
                 <div key={step.num} className="animate-fade-up" style={{ animationDelay: `${i * 100}ms` }}>
-                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-primary/30 transition-all group">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-primary/30 transition-all group">
                     {/* Step number */}
                     <div className="relative shrink-0">
                       <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center">
                         <StepIcon className="w-6 h-6 text-primary-light" />
                       </div>
                       {i < FUNNEL_STEPS.length - 1 && (
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-px h-6 bg-white/10" />
+                        <div className="hidden sm:block absolute top-full left-1/2 -translate-x-1/2 w-px h-6 bg-white/10" />
                       )}
                     </div>
 
@@ -296,7 +298,7 @@ const InlineSqueeze = () => {
                     <Link
                       to={step.href}
                       onClick={() => trackEvent("inline_squeeze_step_clicked", { step: step.num })}
-                      className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-light hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-lg transition-all whitespace-nowrap"
+                      className="shrink-0 inline-flex items-center justify-center gap-1.5 w-full sm:w-auto text-xs font-semibold text-primary-light hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-lg transition-all"
                     >
                       {step.cta}
                       <ArrowRight className="w-3.5 h-3.5" />

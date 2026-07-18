@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { useParams, Navigate } from "react-router-dom";
 import { blogPosts } from "@/data/blog-posts";
 import { trackEvent } from "@/lib/analytics";
+import InlineNewsletter from "@/components/InlineNewsletter";
 
 // Category descriptions for SEO + AEO
 const CATEGORY_META: Record<
@@ -375,6 +376,10 @@ const BlogCategory = () => {
           </div>
         </section>
       )}
+
+      <div className="container-standard py-12">
+        <InlineNewsletter source={`blog_category_${category}`} />
+      </div>
 
       <Footer />
     </div>

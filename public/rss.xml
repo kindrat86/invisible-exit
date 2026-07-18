@@ -1,41 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Invisible Exit</title>
+    <title>InvisibleExit</title>
     <link>https://invisibleexit.com</link>
-    <description>Complete guide to digital privacy and disappearing from the internet.</description>
+    <description>Build a side business while employed — AI tools, funnel strategies, and step-by-step playbooks for launching your first revenue-generating side hustle without quitting your day job.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Jul 2026 14:57:21 GMT</lastBuildDate>
-    <atom:link href="https://invisibleexit.com/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jul 2026 09:01:55 GMT</lastBuildDate>
+    <generator>Hermes WebSub Feed Generator</generator>
+    <ttl>60</ttl>
+    <atom:link href="https://invisibleexit.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://invisibleexit.com/rss.xml" rel="alternate" type="application/rss+xml"/>
+    <atom:link href="https://invisibleexit.com/feed.json" rel="alternate" type="application/json"/>
+    <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+    <atom:link href="https://pubsubhubbub.superfeedr.com/" rel="hub"/>
+    <atom:link href="https://websubhub.com/" rel="hub"/>
     <item>
-      <title>Homepage</title>
-      <link>https://invisibleexit.com/</link>
-      <guid isPermaLink="true">https://invisibleexit.com/</guid>
-      <description>How to disappear from the internet</description>
+      <title>Build a $4,000/Month Side Business Without Quitting</title>
+      <link>https://invisibleexit.com</link>
+      <guid isPermaLink="true">https://invisibleexit.com</guid>
+      <description>5 AI-powered tools anchored against $252/mo in alternatives + 3 bonuses + 12-month continuity. Founding member price: $0.97/month (99.9% off). Build...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Tue, 14 Apr 2026 21:00:00 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
     </item>
     <item>
-      <title>Guides</title>
+      <title>About Invisible Exit | Built by a Corporate Manager, for...</title>
+      <link>https://invisibleexit.com/about</link>
+      <guid isPermaLink="true">https://invisibleexit.com/about</guid>
+      <description>Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Thu, 16 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Blog: Invisible Exit Strategies for Corporate Managers |...</title>
+      <link>https://invisibleexit.com/blog</link>
+      <guid isPermaLink="true">https://invisibleexit.com/blog</guid>
+      <description>Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Tue, 14 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Career vs SaaS: Profession Comparisons | Invisible Exit</title>
+      <link>https://invisibleexit.com/vs</link>
+      <guid isPermaLink="true">https://invisibleexit.com/vs</guid>
+      <description>Detailed comparisons of staying in your career versus building a micro-SaaS side business. Salary math, equity analysis, and MRR timelines.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Sun, 12 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>My Story — How I Built $4K/Month While Employed |...</title>
+      <link>https://invisibleexit.com/story</link>
+      <guid isPermaLink="true">https://invisibleexit.com/story</guid>
+      <description>The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Fri, 03 Jul 2026 21:00:00 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Free Resources — Calculators, Guides &amp; Templates |...</title>
+      <link>https://invisibleexit.com/resources</link>
+      <guid isPermaLink="true">https://invisibleexit.com/resources</guid>
+      <description>Free tools and resources for building an invisible side business: freedom number calculator, state guides, employment contract checklists, idea validation...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Wed, 08 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Free Masterclass: Build a $4K/Month Side Business While...</title>
+      <link>https://invisibleexit.com/masterclass</link>
+      <guid isPermaLink="true">https://invisibleexit.com/masterclass</guid>
+      <description>45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Mon, 06 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>The Invisible Exit Manifesto — A Movement for Trapped...</title>
+      <link>https://invisibleexit.com/manifesto</link>
+      <guid isPermaLink="true">https://invisibleexit.com/manifesto</guid>
+      <description>This isn</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Fri, 03 Jul 2026 21:00:00 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>The Invisible Exit Inner Circle — Private Community for...</title>
+      <link>https://invisibleexit.com/inner-circle</link>
+      <guid isPermaLink="true">https://invisibleexit.com/inner-circle</guid>
+      <description>A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Thu, 02 Jul 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Micro-SaaS Ideas by Profession | Invisible Exit</title>
+      <link>https://invisibleexit.com/ideas</link>
+      <guid isPermaLink="true">https://invisibleexit.com/ideas</guid>
+      <description>500+ micro-SaaS ideas organized by profession. Find ideas tailored to your industry expertise, validated by AI for revenue potential.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Tue, 30 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>State-by-State Anonymous LLC Guide | Invisible Exit</title>
       <link>https://invisibleexit.com/guides</link>
       <guid isPermaLink="true">https://invisibleexit.com/guides</guid>
-      <description>Privacy guides</description>
+      <description>Complete guides to forming anonymous LLCs in all 50 states. Filing fees, privacy protections, and non-compete analysis for employed founders.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Sun, 28 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
     </item>
     <item>
-      <title>Glossary</title>
+      <title>Glossary: Side Business, Micro-SaaS &amp; Invisible Exit...</title>
       <link>https://invisibleexit.com/glossary</link>
       <guid isPermaLink="true">https://invisibleexit.com/glossary</guid>
-      <description>Privacy terms glossary</description>
+      <description>Plain-English definitions of micro-SaaS, recurring revenue, stealth operations, non-compete clauses, freedom numbers, and more. A reference for employed...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Fri, 26 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
     </item>
     <item>
-      <title>Freedom</title>
+      <title>Free Freedom Number Calculator | Invisible Exit</title>
       <link>https://invisibleexit.com/freedom</link>
       <guid isPermaLink="true">https://invisibleexit.com/freedom</guid>
-      <description>Digital freedom</description>
+      <description>Calculate exactly how much recurring revenue you need to quit your job. Free tool. Takes 90 seconds. No credit card.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Wed, 24 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
     </item>
     <item>
-      <title>Compare</title>
+      <title>Do You Feel Stuck in Your Career? (You&#x27;re Not Crazy) |...</title>
+      <link>https://invisibleexit.com/feeling-stuck</link>
+      <guid isPermaLink="true">https://invisibleexit.com/feeling-stuck</guid>
+      <description>If you</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Mon, 22 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Data Reports for Side Business Founders | Invisible Exit</title>
+      <link>https://invisibleexit.com/data</link>
+      <guid isPermaLink="true">https://invisibleexit.com/data</guid>
+      <description>Revenue benchmarks, salary comparisons, and market data for corporate managers building micro-SaaS businesses on the side.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Sat, 20 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Hub-and-Spoke Content Strategy — The Pillar Framework |...</title>
+      <link>https://invisibleexit.com/content-strategy</link>
+      <guid isPermaLink="true">https://invisibleexit.com/content-strategy</guid>
+      <description>The complete hub-and-spoke content strategy: 5 pillar guides (3,500-5,000 words each) with 10+ supporting spokes per hub, targeting high-volume keywords...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Thu, 18 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Invisible Exit vs Every Alternative — The Honest Comparison</title>
       <link>https://invisibleexit.com/compare</link>
       <guid isPermaLink="true">https://invisibleexit.com/compare</guid>
-      <description>Privacy tools comparison</description>
+      <description>Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest...</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Fri, 03 Jul 2026 21:00:00 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Free Calculators for Employed Founders | Invisible Exit</title>
+      <link>https://invisibleexit.com/calculators</link>
+      <guid isPermaLink="true">https://invisibleexit.com/calculators</guid>
+      <description>Freedom number, break-even, timeline, and invisibility calculators for corporate managers building side businesses.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Sun, 14 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Best AI Tools for Building Micro-SaaS | Invisible Exit</title>
+      <link>https://invisibleexit.com/best</link>
+      <guid isPermaLink="true">https://invisibleexit.com/best</guid>
+      <description>The complete directory of AI tools that let corporate managers build, launch, and grow micro-SaaS businesses without coding. Curated by use case.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Fri, 12 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
+    </item>
+    <item>
+      <title>Affiliate Program — 30% Recurring | Invisible Exit</title>
+      <link>https://invisibleexit.com/affiliates</link>
+      <guid isPermaLink="true">https://invisibleexit.com/affiliates</guid>
+      <description>Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts.</description>
+      <dc:creator>InvisibleExit</dc:creator>
+      <pubDate>Wed, 10 Jun 2026 09:01:55 GMT</pubDate>
+      <media:content url="https://invisibleexit.com/og-image.png" medium="image"/>
     </item>
   </channel>
 </rss>
