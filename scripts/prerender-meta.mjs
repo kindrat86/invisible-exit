@@ -2005,6 +2005,39 @@ function getRoutes() {
             ],
           },
           {
+            // ItemList schema — the structured-data format Google uses for
+            // "Best X" listicle rich results and what AI parsers can read
+            // verbatim. Each tool becomes a positioned SoftwareApplication
+            // with an editorial Review (single named author — Adrian —
+            // assigning a 1-5 star rating). This is the policy-safe pattern
+            // used by Wirecutter/CNET: it is NOT a self-served
+            // aggregateRating (which we removed elsewhere). Each entry also
+            // has Offer markup with the tool's pricing.
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: list.title,
+            description: list.intro,
+            itemListElement: list.tools.map((t, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "SoftwareApplication",
+                name: t.name,
+                url: t.url,
+                applicationCategory: "SoftwareApplication",
+                operatingSystem: "Web",
+                description: `${t.bestFor}. Pricing: ${t.pricing}.`,
+                offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: t.pricing },
+                review: {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: String(t.rating), bestRating: "5" },
+                  author: { "@type": "Person", name: "Adrian" },
+                  publisher: { "@type": "Organization", name: SITE_NAME },
+                },
+              },
+            })),
+          },
+          {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: list.faqs.map(f => ({
