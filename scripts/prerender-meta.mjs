@@ -376,7 +376,7 @@ function getRoutes() {
     meta: {
       title: "Build a $4,000/Month Side Business Without Quitting",
       description:
-        "Invisible Exit is a faceless side-business system: 5 AI tools that build anonymous micro-SaaS revenue without quitting your job, writing code, or showing your face. From $0.97/mo.",
+        "Build anonymous micro-SaaS revenue while employed. Invisible Exit gives you 5 AI tools to validate, launch, and grow — no quitting required. From $0.97/mo.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [
