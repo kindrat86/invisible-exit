@@ -67,6 +67,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
 const SITE = "https://invisibleexit.com";
 const SITE_NAME = "Invisible Exit";
+// AEO entity-collision fix: canonical Organization disambiguation carried on every
+// prerendered route (the homepage already has it in index.html). Source of truth:
+// ~/.growth-engine/canonical-descriptors.json (invisibleexit).
+const ORG_DISAMBIG = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE,
+  description: "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.",
+  disambiguatingDescription: "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income — unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory.",
+};
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
 // 101-language hreflang set (BCP47 tags for SEO internationalization)
@@ -233,6 +244,7 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
     (Array.isArray(s["@context"]) ? false : false)
   );
   const finalJsonLd = (jsonLd || []).slice();
+  if (routePath !== "/") finalJsonLd.push(ORG_DISAMBIG);
   if (!hasSpeakable && (type === "article" || type === "review")) {
     finalJsonLd.push({
       "@context": "https://schema.org",
