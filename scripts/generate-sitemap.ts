@@ -301,6 +301,10 @@ async function main() {
     { loc: "https://invisibleexit.com/first-year", lastmod: today, changefreq: "monthly", priority: "0.6" },
     { loc: "https://invisibleexit.com/hours", lastmod: today, changefreq: "monthly", priority: "0.6" },
     { loc: "https://invisibleexit.com/budget", lastmod: today, changefreq: "monthly", priority: "0.6" },
+    // /for hub + audience pages (previously only listed in the now-removed orphan sitemap-pseo.xml).
+    // Canonical is /for (no trailing slash); the orphan listed /for/ which 308-redirects, so it is dropped.
+    { loc: "https://invisibleexit.com/for", lastmod: today, changefreq: "monthly", priority: "0.7" },
+    { loc: "https://invisibleexit.com/for/founders", lastmod: today, changefreq: "monthly", priority: "0.6" },
     {
       loc: "https://invisibleexit.com/dream-100",
       lastmod: today,
