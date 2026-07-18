@@ -12,6 +12,7 @@ import FeatureGate from "@/components/FeatureGate";
 import ReportBadgeShareModal from "@/components/ReportBadgeShareModal";
 import ReferralWidget from "@/components/ReferralWidget";
 import OnboardingWizard from "@/components/fym/OnboardingWizard";
+import AttributionSurvey from "@/components/AttributionSurvey";
 import CoreStealthActions from "@/components/fym/CoreStealthActions";
 import UpgradePage from "@/components/fym/UpgradePage";
 import { Button } from "@/components/ui/button";
@@ -546,6 +547,7 @@ function DashboardContent() {
           badgeData={reportBadgeData}
         />
       )}
+      <AttributionSurvey userId={userId} />
     </DashboardLayout>
   );
 }
