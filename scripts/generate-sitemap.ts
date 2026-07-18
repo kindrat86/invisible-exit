@@ -213,6 +213,12 @@ async function main() {
       changefreq: "monthly",
       priority: "0.9",
     },
+    {
+      loc: "https://invisibleexit.com/tools",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.9",
+    },
     // Funnel + Expert Secrets pages
     {
       loc: "https://invisibleexit.com/story",

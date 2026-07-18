@@ -665,7 +665,7 @@
     },
     {
       "source": "/tools",
-      "destination": "/index.html"
+      "destination": "/tools.html"
     },
     {
       "source": "/budget",
