@@ -785,6 +785,10 @@
       "destination": "/mcp.html"
     },
     {
+      "source": "/ea8998db.txt",
+      "destination": "/ea8998db.txt"
+    },
+    {
       "source": "/quiz/:slug",
       "destination": "/quiz/:slug.html"
     },
