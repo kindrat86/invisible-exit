@@ -88,8 +88,9 @@ const Contact = () => {
               Contact Invisible Exit
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              One inbox, real replies. No ticket system pretending to be a person —
-              your message reaches the team directly.
+              Contact Invisible Exit for support, partnership inquiries, press, or membership
+              questions. Replies within 24 hours, EU business time. One inbox, real replies —
+              no ticket system pretending to be a person. Your message reaches the team directly.
             </p>
           </div>
         </section>
