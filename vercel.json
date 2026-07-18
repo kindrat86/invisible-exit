@@ -292,6 +292,10 @@
       "destination": "/freedom-calculator-widget.html"
     },
     {
+      "source": "/freedom-path-calculator",
+      "destination": "/freedom-path-calculator.html"
+    },
+    {
       "source": "/oto/downsell",
       "destination": "/index.html"
     },

@@ -207,6 +207,12 @@ async function main() {
       changefreq: "monthly",
       priority: "0.9",
     },
+    {
+      loc: "https://invisibleexit.com/freedom-path-calculator",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
     // Funnel + Expert Secrets pages
     {
       loc: "https://invisibleexit.com/story",

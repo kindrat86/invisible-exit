@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Freedom Calculator: Micro-SaaS vs Real Estate — Which Path to $4,000/mo? | Invisible Exit</title>
+<meta name="description" content="Compare micro-SaaS, real estate, franchising, and consulting side-by-side: startup cost, time to $4,000/month, stealth score, and lifetime ROI. Interactive calculator for employed founders.">
+<link rel="canonical" href="https://invisibleexit.com/freedom-path-calculator">
+<meta property="og:title" content="Corporate Freedom Calculator: Which Path to Financial Independence?">
+<meta property="og:description" content="Micro-SaaS vs Real Estate vs Franchise — interactive comparison for employed founders. See the numbers side by side.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --bg: #0F172A; --card: #1E293B; --accent: #3B82F6; --text: #F1F5F9;
+    --muted: #94A3B8; --green: #10B981; --amber: #F59E0B; --red: #EF4444;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    background: var(--bg); color: var(--text); padding: 2rem 1rem; line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+  
+  .sliders { background: var(--card); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; }
+  .slider-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .slider-row label { min-width: 160px; font-size: 0.85rem; color: var(--muted); }
+  .slider-row input[type=range] { flex: 1; min-width: 150px; accent-color: var(--accent); }
+  .slider-row .val { min-width: 60px; text-align: right; font-weight: 600; font-size: 0.9rem; }
+
+  .comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .card {
+    background: var(--card); border-radius: 14px; padding: 1.5rem;
+    border: 2px solid transparent; transition: border-color 0.2s;
+  }
+  .card.winner { border-color: var(--green); }
+  .card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .card .metric { margin-bottom: 0.5rem; }
+  .card .metric .label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .card .metric .value { font-size: 1.1rem; font-weight: 700; }
+  .card .verdict {
+    margin-top: 1rem; padding: 0.75rem; border-radius: 8px;
+    font-size: 0.8rem; font-weight: 600; text-align: center;
+  }
+  .verdict.best { background: rgba(16,185,129,0.15); color: var(--green); }
+  .verdict.good { background: rgba(59,130,246,0.15); color: var(--accent); }
+  .verdict.warn { background: rgba(245,158,11,0.15); color: var(--amber); }
+
+  .insight { background: var(--card); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .insight h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .insight p { color: var(--muted); font-size: 0.9rem; }
+
+  .footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .footer p { color: var(--muted); font-size: 0.8rem; }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  .embed-section { background: var(--card); border-radius: 14px; padding: 1.5rem; margin-top: 2rem; }
+  .embed-section h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .embed-code {
+    background: #0F172A; border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem; font-size: 0.7rem; font-family: 'SF Mono', monospace;
+    color: var(--muted); overflow-x: auto; white-space: pre-wrap; line-height: 1.5;
+    user-select: all;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Corporate Freedom Calculator</h1>
+<p class="subtitle">Compare four paths to financial independence side-by-side: micro-SaaS, real estate, franchising, and consulting. All numbers are estimates based on real-world data for employed founders with 5-10 hours/week to invest.</p>
+
+<div class="sliders">
+  <div class="slider-row">
+    <label>Monthly savings capacity</label>
+    <input type="range" id="savings" min="500" max="10000" value="2000" step="100">
+    <span class="val" id="savings-val">$2,000</span>
+  </div>
+  <div class="slider-row">
+    <label>Available startup capital</label>
+    <input type="range" id="capital" min="500" max="200000" value="10000" step="500">
+    <span class="val" id="capital-val">$10,000</span>
+  </div>
+  <div class="slider-row">
+    <label>Hours/week available</label>
+    <input type="range" id="hours" min="2" max="20" value="7" step="1">
+    <span class="val" id="hours-val">7 hrs</span>
+  </div>
+  <div class="slider-row">
+    <label>Target monthly revenue</label>
+    <input type="range" id="target" min="1000" max="20000" value="4000" step="500">
+    <span class="val" id="target-val">$4,000</span>
+  </div>
+  <div class="slider-row">
+    <label>Stealth priority (1=must be invisible, 5=don't care)</label>
+    <input type="range" id="stealth" min="1" max="5" value="1" step="1">
+    <span class="val" id="stealth-val">1 — Must be invisible</span>
+  </div>
+</div>
+
+<div class="comparison" id="comparison"></div>
+
+<div class="insight">
+  <h3>🔍 Why micro-SaaS wins for employed founders</h3>
+  <p>Micro-SaaS has the lowest startup cost ($500-$5,000), fastest path to revenue (weeks, not years), and is the most invisible path — your name is never on the product. A micro-SaaS charging $29/month needs ~138 customers for $4,000/month. At 5 hours/week, most corporate managers reach this in 12-18 months using Invisible Exit's five AI tools. Real estate requires $50K+ in capital and your name on public records. Franchising requires full-time commitment. Consulting trades your time for money and is hard to keep anonymous.</p>
+</div>
+
+<div class="embed-section">
+  <h3>📋 Embed this calculator on your site</h3>
+  <div class="embed-code">&lt;iframe src="https://invisibleexit.com/freedom-path-calculator.html" width="100%" height="800" frameborder="0" style="max-width:900px;border-radius:16px;" title="Corporate Freedom Calculator"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<div class="footer">
+  <p>Built by <a href="https://invisibleexit.com">Invisible Exit</a> — the faceless side-business system for employed professionals. From $0.97/month.</p>
+  <p style="margin-top:0.5rem"><a href="https://invisibleexit.com/freedom">Freedom Number Calculator</a> · <a href="https://invisibleexit.com/freedom-calculator-widget.html">Embeddable Widget</a> · <a href="https://invisibleexit.com/compare/micro-saas-vs-real-estate">Detailed Micro-SaaS vs Real Estate Comparison</a></p>
+</div>
+
+</div>
+
+<script>
+  const savingsEl = document.getElementById('savings');
+  const capitalEl = document.getElementById('capital');
+  const hoursEl = document.getElementById('hours');
+  const targetEl = document.getElementById('target');
+  const stealthEl = document.getElementById('stealth');
+
+  function updateVal(id, prefix, suffix) {
+    const el = document.getElementById(id);
+    document.getElementById(id+'-val').textContent = prefix + Number(el.value).toLocaleString() + suffix;
+  }
+  savingsEl.addEventListener('input', () => updateVal('savings', '$', ''));
+  capitalEl.addEventListener('input', () => updateVal('capital', '$', ''));
+  hoursEl.addEventListener('input', () => updateVal('hours', '', ' hrs'));
+  targetEl.addEventListener('input', () => updateVal('target', '$', ''));
+  stealthEl.addEventListener('input', () => {
+    const labels = ['','1 — Must be invisible','2 — Prefer private','3 — Neutral','4 — Some visibility OK','5 — Full public OK'];
+    document.getElementById('stealth-val').textContent = labels[Number(stealthEl.value)];
+  });
+
+  function calculate() {
+    const savings = Number(savingsEl.value);
+    const capital = Number(capitalEl.value);
+    const hours = Number(hoursEl.value);
+    const target = Number(targetEl.value);
+    const stealth = Number(stealthEl.value);
+
+    const paths = [
+      {
+        name: '🛠️ Micro-SaaS',
+        startup: '$500-$5,000',
+        startupNum: 2500,
+        timeToTarget: '12-18 months',
+        timeMonths: 15,
+        hoursNeeded: '5-10 hrs/week',
+        stealthScore: 5,
+        roi5yr: '$240K-$480K',
+        roiNum: 360000,
+        pros: 'Lowest cost, fastest, fully anonymous, scalable.',
+        cons: 'Requires niche-finding skill, 12-18 month ramp.',
+        verdict: 'best',
+        verdictText: '★ Best for employed founders'
+      },
+      {
+        name: '🏠 Real Estate',
+        startup: '$50K-$100K',
+        startupNum: 75000,
+        timeToTarget: '3-5 years',
+        timeMonths: 48,
+        hoursNeeded: '5-15 hrs/week',
+        stealthScore: 2,
+        roi5yr: '$150K-$300K',
+        roiNum: 225000,
+        pros: 'Tangible asset, leverage, tax advantages.',
+        cons: 'High capital barrier, public records, management overhead.',
+        verdict: capital >= 50000 ? 'good' : 'warn',
+        verdictText: capital >= 50000 ? 'Viable with capital' : '⚠️ Capital too low'
+      },
+      {
+        name: '🏪 Franchise',
+        startup: '$50K-$250K',
+        startupNum: 150000,
+        timeToTarget: '2-4 years',
+        timeMonths: 36,
+        hoursNeeded: '40+ hrs/week',
+        stealthScore: 1,
+        roi5yr: '$100K-$300K',
+        roiNum: 200000,
+        pros: 'Proven model, support system, brand recognition.',
+        cons: 'Full-time commitment, not anonymous, high buy-in.',
+        verdict: 'warn',
+        verdictText: '⚠️ Requires quitting your job'
+      },
+      {
+        name: '💼 Consulting',
+        startup: '$0-$1,000',
+        startupNum: 500,
+        timeToTarget: '6-12 months',
+        timeMonths: 9,
+        hoursNeeded: '10-20 hrs/week',
+        stealthScore: 3,
+        roi5yr: '$120K-$300K',
+        roiNum: 210000,
+        pros: 'Zero startup cost, fastest to first dollar, uses existing skills.',
+        cons: 'Trades time for money, hard to scale, client-facing (not anonymous).',
+        verdict: 'good',
+        verdictText: 'Fastest path, but not passive'
+      }
+    ];
+
+    // Determine overall winner
+    let winner = '🛠️ Micro-SaaS';
+    if (stealth >= 4 && capital >= 50000) winner = '🏠 Real Estate';
+    if (hours >= 15 && capital >= 100000) winner = '🏪 Franchise';
+    if (stealth >= 3 && capital < 2000) winner = '💼 Consulting';
+
+    const comparisonEl = document.getElementById('comparison');
+    comparisonEl.innerHTML = paths.map(p => {
+      const isWinner = p.name === winner;
+      const timeOk = p.timeMonths <= 18;
+      const stealthOk = p.stealthScore >= stealth;
+      
+      return `
+        <div class="card ${isWinner ? 'winner' : ''}">
+          <h3>${p.name} ${isWinner ? '⭐' : ''}</h3>
+          <div class="metric">
+            <div class="label">Startup Cost</div>
+            <div class="value">${p.startup}</div>
+          </div>
+          <div class="metric">
+            <div class="label">Time to $${target.toLocaleString()}/mo</div>
+            <div class="value" style="color:${timeOk ? 'var(--green)' : 'var(--amber)'}">${p.timeToTarget}</div>
+          </div>
+          <div class="metric">
+            <div class="label">Time Commitment</div>
+            <div class="value">${p.hoursNeeded}</div>
+          </div>
+          <div class="metric">
+            <div class="label">Stealth Rating</div>
+            <div class="value" style="color:${stealthOk ? 'var(--green)' : 'var(--red)'}">${'🕶️'.repeat(p.stealthScore)}</div>
+          </div>
+          <div class="metric">
+            <div class="label">5-Year ROI</div>
+            <div class="value">${p.roi5yr}</div>
+          </div>
+          <div class="verdict ${p.verdict}">${p.verdictText}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  [savingsEl, capitalEl, hoursEl, targetEl, stealthEl].forEach(el => el.addEventListener('input', calculate));
+  calculate();
+</script>
+</body>
+</html>
