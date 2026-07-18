@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Number Calculator — Embeddable Widget | Invisible Exit</title>
+<meta name="description" content="Free embeddable freedom number calculator. Calculate how much monthly recurring revenue you need to never work again. Embed on your site with one line of HTML.">
+<link rel="canonical" href="https://invisibleexit.com/freedom-calculator-widget">
+<meta property="og:title" content="Freedom Number Calculator — Embed on Your Site">
+<meta property="og:description" content="Free embeddable calculator: how much monthly revenue do you need to quit your job? Embed this widget on your blog or website.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --bg: #1B2A4A;
+    --card: #243656;
+    --accent: #3B82F6;
+    --text: #F1F5F9;
+    --muted: #94A3B8;
+    --green: #10B981;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 2rem 1rem; min-height: 100vh;
+  }
+  .widget {
+    background: var(--card);
+    border-radius: 16px; padding: 2rem; max-width: 420px; width: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .sub { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.5rem; }
+  label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  input {
+    width: 100%; padding: 0.75rem 1rem; border-radius: 10px;
+    border: 1px solid var(--border); background: rgba(255,255,255,0.05);
+    color: var(--text); font-size: 1.1rem; margin-bottom: 1rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  input:focus { border-color: var(--accent); }
+  .result {
+    background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px; padding: 1.25rem; text-align: center; margin-top: 1rem;
+  }
+  .result .number { font-size: 2.2rem; font-weight: 800; color: var(--green); }
+  .result .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+  .result .detail { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.4; }
+  .brand { text-align: center; margin-top: 1rem; font-size: 0.7rem; color: var(--muted); }
+  .brand a { color: var(--accent); text-decoration: none; }
+  .brand a:hover { text-decoration: underline; }
+  .embed-section { margin-top: 2rem; max-width: 420px; width: 100%; }
+  .embed-section h2 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .embed-code {
+    background: #0F172A; border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem; font-size: 0.75rem; font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--muted); overflow-x: auto; white-space: pre-wrap; word-break: break-all;
+    line-height: 1.5; user-select: all;
+  }
+  .copy-btn {
+    margin-top: 0.5rem; padding: 0.5rem 1rem; font-size: 0.8rem;
+    background: var(--accent); color: white; border: none; border-radius: 8px;
+    cursor: pointer; font-weight: 600;
+  }
+  .copy-btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<div class="widget">
+  <h1>What's Your Freedom Number?</h1>
+  <p class="sub">The monthly recurring revenue you need to never work again.</p>
+
+  <label for="expenses">Monthly living expenses ($)</label>
+  <input type="number" id="expenses" placeholder="e.g. 3500" value="3500" min="500" step="100">
+
+  <label for="savings">Current savings ($)</label>
+  <input type="number" id="savings" placeholder="e.g. 24000" value="24000" min="0" step="1000">
+
+  <label for="cushion">Safety buffer (months)</label>
+  <input type="number" id="cushion" placeholder="e.g. 12" value="12" min="3" max="36" step="1">
+
+  <div class="result" id="result">
+    <div class="number" id="freedom-number">$4,000</div>
+    <div class="label">per month in recurring revenue</div>
+    <div class="detail" id="detail">
+      That's ~138 customers at $29/month.<br>
+      For a corporate manager earning $120K-$200K,<br>
+      this is achievable in 12-18 months at 5 hours/week.
+    </div>
+  </div>
+</div>
+
+<div class="brand">
+  Powered by <a href="https://invisibleexit.com/freedom" target="_blank" rel="noopener">Invisible Exit</a> — the faceless side-business system for employed professionals.
+</div>
+
+<div class="embed-section">
+  <h2>Embed this calculator on your site</h2>
+  <div class="embed-code" id="embed-code">&lt;iframe src="https://invisibleexit.com/freedom-calculator-widget.html" width="100%" height="520" frameborder="0" style="max-width:420px;border-radius:16px;" title="Freedom Number Calculator"&gt;&lt;/iframe&gt;</div>
+  <button class="copy-btn" onclick="copyEmbed()">📋 Copy embed code</button>
+  <span id="copied" style="display:none;color:var(--green);margin-left:0.5rem;font-size:0.8rem;">Copied!</span>
+</div>
+
+<script>
+  const expensesEl = document.getElementById('expenses');
+  const savingsEl = document.getElementById('savings');
+  const cushionEl = document.getElementById('cushion');
+  const freedomNumberEl = document.getElementById('freedom-number');
+  const detailEl = document.getElementById('detail');
+
+  function calculate() {
+    const expenses = parseFloat(expensesEl.value) || 3500;
+    const savings = parseFloat(savingsEl.value) || 0;
+    const cushion = parseInt(cushionEl.value) || 12;
+    
+    // Freedom number = monthly expenses (with buffer built in)
+    const freedomNumber = Math.round(expenses);
+    const customers = Math.ceil(freedomNumber / 29);
+    
+    freedomNumberEl.textContent = '$' + freedomNumber.toLocaleString();
+    detailEl.innerHTML = 
+      "That's ~" + customers + " customers at $29/month.<br>" +
+      "For a corporate manager earning $120K-$200K,<br>" +
+      "this is achievable in 12-18 months at 5 hours/week.";
+  }
+
+  expensesEl.addEventListener('input', calculate);
+  savingsEl.addEventListener('input', calculate);
+  cushionEl.addEventListener('input', calculate);
+  calculate();
+
+  function copyEmbed() {
+    const code = document.getElementById('embed-code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const el = document.getElementById('copied');
+      el.style.display = 'inline';
+      setTimeout(() => el.style.display = 'none', 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
