@@ -550,6 +550,62 @@ function getRoutes() {
                 text: "Yes. The Invisible Exit system is specifically designed for employed professionals. By building in unrelated markets, using your own tools and time, and operating through a separate legal entity, you can reach financial independence without your employer ever knowing.",
               },
             },
+            {
+              "@type": "Question",
+              name: "What are the pricing tiers? Is $0.97/month really forever?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "There are three tiers. Founding Member: $0.97/month — full access to all five tools, locked for life. Pro: $47/month — adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time — a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $0.97/month even after founding closes.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "I work for a tech company with strict IP assignment clauses. Can I still do this?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "IP assignment clauses typically claim ownership of inventions created using company time, equipment, or trade secrets — not everything you build on your own time with your own resources. The Stealth Ops Hub's compliance audit specifically flags IP-assignment language and helps you identify whether your side project falls outside the clause's scope. The key principle: build in an unrelated market, on your own equipment, outside work hours, using no proprietary knowledge. If your contract has a 'we own everything you create' clause, consult an employment attorney before starting — but many corporate managers discover their clauses are narrower than they assumed once they read the exact language.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Who is behind Invisible Exit? Is there a real person?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design — not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do I need a separate bank account, LLC, and phone number?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes, and the Stealth Ops Hub walks you through all three. Separate LLC (Wyoming LLC: ~$100 filing fee, strongest privacy): keeps your business and personal assets legally separate and your name off public registries. Separate business bank account: mandatory for LLC liability protection and clean tax filing. Separate phone number (Google Voice or Twilio, ~$1-$5/month): prevents clients from connecting your business to your personal number. Total setup cost: approximately $200-$400 one-time, plus $1-$5/month for the phone line.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What happens if I get promoted, change jobs, or get laid off?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Invisible Exit is designed to be independent of your employment status. If you get promoted: your side business continues unchanged — it was always built outside your employer's scope. If you change jobs: review your new contract against the Stealth Ops audit checklist before starting anything new, but your existing side business is unaffected. If you get laid off: you have a revenue-generating side business already running, which means you have runway other people don't. The FYM Dashboard tracks your freedom number so you know exactly how many months of expenses your side revenue covers.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Does Invisible Exit work outside the United States?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice — the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Is the $0.97/month price sustainable? What is the catch?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "The $0.97/month founding member price is a loss-leader — it costs more to serve each member than $0.97/month. The business model works because: (1) some founders upgrade to Pro ($47/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $0.97.",
+              },
+            },
           ],
         },
       ],
