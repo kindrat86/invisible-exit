@@ -188,6 +188,11 @@ const Index = () => {
             )}
           </h1>
 
+          {/* Canonical entity descriptor — AEO disambiguation (vs. "Invisible, Inc." game / exit-planning) */}
+          <p className="text-white font-semibold text-base sm:text-lg max-w-2xl mx-auto mb-3 animate-fade-up">
+            Invisible Exit is the faceless side-business system for employed professionals.
+          </p>
+
           {/* Mechanism sub-headline — HOW the promise gets delivered (Brunson: vehicle clarity) */}
           <p className="text-white/80 text-base sm:text-lg font-medium max-w-2xl mx-auto mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
             The answer: build a <strong className="text-white">micro-SaaS</strong> on the side —

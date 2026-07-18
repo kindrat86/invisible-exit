@@ -68,7 +68,7 @@ function generateLlmsTxt(): string {
 
   lines.push("# Invisible Exit");
   lines.push("");
-  lines.push("> Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers and employed professionals build anonymous micro-SaaS businesses and invisible recurring revenue streams. Financial freedom without risking your career.");
+  lines.push("> Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
   lines.push("");
   lines.push("Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $0.97/month.");
   lines.push("");
@@ -517,7 +517,7 @@ function generateLlmsFullTxt(): string {
   lines.push("");
   lines.push("## Platform Overview");
   lines.push("");
-  lines.push("Invisible Exit is a membership platform offering 5 AI-powered tools for building invisible recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $0.97/month.");
+  lines.push("Invisible Exit is a faceless side-business system for employed professionals — a membership platform of 5 AI tools for building anonymous micro-SaaS recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $0.97/month. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or business exit-planning / M&A.)");
   lines.push("");
 
   // ── Blog Posts ──
