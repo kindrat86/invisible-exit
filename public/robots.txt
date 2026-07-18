@@ -28,3 +28,5 @@ User-Agent: Bingbot
 Allow: /
 
 Sitemap: https://invisibleexit.com/sitemap.xml
+
+Sitemap: https://invisibleexit.com/sitemap-index.xml
