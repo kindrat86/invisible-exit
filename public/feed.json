@@ -1,0 +1,306 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "InvisibleExit",
+  "description": "Build a side business while employed — AI tools, funnel strategies, and step-by-step playbooks for launching your first revenue-generating side hustle without quitting your day job.",
+  "home_page_url": "https://invisibleexit.com/",
+  "feed_url": "https://invisibleexit.com/feed.json",
+  "language": "en",
+  "authors": [
+    {
+      "name": "InvisibleExit",
+      "url": "https://invisibleexit.com/about"
+    }
+  ],
+  "_hubs": [
+    "https://pubsubhubbub.appspot.com/",
+    "https://pubsubhubbub.superfeedr.com/",
+    "https://websubhub.com/"
+  ],
+  "_site": {
+    "domain": "invisibleexit.com",
+    "generator": "Hermes WebSub Feed Generator",
+    "generated_at": "2026-07-18T09:01:55Z"
+  },
+  "items": [
+    {
+      "id": "https://invisibleexit.com",
+      "url": "https://invisibleexit.com",
+      "title": "Build a $4,000/Month Side Business Without Quitting",
+      "content_text": "5 AI-powered tools anchored against $252/mo in alternatives + 3 bonuses + 12-month continuity. Founding member price: $0.97/month (99.9% off). Build...",
+      "date_published": "2026-04-15T00:00:00Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/about",
+      "url": "https://invisibleexit.com/about",
+      "title": "About Invisible Exit | Built by a Corporate Manager, for...",
+      "content_text": "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The...",
+      "date_published": "2026-07-16T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/blog",
+      "url": "https://invisibleexit.com/blog",
+      "title": "Blog: Invisible Exit Strategies for Corporate Managers |...",
+      "content_text": "Articles on building invisible recurring revenue, micro-SaaS businesses, and financial independence for corporate managers and executives.",
+      "date_published": "2026-07-14T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/vs",
+      "url": "https://invisibleexit.com/vs",
+      "title": "Career vs SaaS: Profession Comparisons | Invisible Exit",
+      "content_text": "Detailed comparisons of staying in your career versus building a micro-SaaS side business. Salary math, equity analysis, and MRR timelines.",
+      "date_published": "2026-07-12T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/story",
+      "url": "https://invisibleexit.com/story",
+      "title": "My Story — How I Built $4K/Month While Employed |...",
+      "content_text": "The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15...",
+      "date_published": "2026-07-04T00:00:00Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/resources",
+      "url": "https://invisibleexit.com/resources",
+      "title": "Free Resources — Calculators, Guides & Templates |...",
+      "content_text": "Free tools and resources for building an invisible side business: freedom number calculator, state guides, employment contract checklists, idea validation...",
+      "date_published": "2026-07-08T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/masterclass",
+      "url": "https://invisibleexit.com/masterclass",
+      "title": "Free Masterclass: Build a $4K/Month Side Business While...",
+      "content_text": "45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job.",
+      "date_published": "2026-07-06T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/manifesto",
+      "url": "https://invisibleexit.com/manifesto",
+      "title": "The Invisible Exit Manifesto — A Movement for Trapped...",
+      "content_text": "This isn",
+      "date_published": "2026-07-04T00:00:00Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/inner-circle",
+      "url": "https://invisibleexit.com/inner-circle",
+      "title": "The Invisible Exit Inner Circle — Private Community for...",
+      "content_text": "A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture.",
+      "date_published": "2026-07-02T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/ideas",
+      "url": "https://invisibleexit.com/ideas",
+      "title": "Micro-SaaS Ideas by Profession | Invisible Exit",
+      "content_text": "500+ micro-SaaS ideas organized by profession. Find ideas tailored to your industry expertise, validated by AI for revenue potential.",
+      "date_published": "2026-06-30T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/guides",
+      "url": "https://invisibleexit.com/guides",
+      "title": "State-by-State Anonymous LLC Guide | Invisible Exit",
+      "content_text": "Complete guides to forming anonymous LLCs in all 50 states. Filing fees, privacy protections, and non-compete analysis for employed founders.",
+      "date_published": "2026-06-28T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/glossary",
+      "url": "https://invisibleexit.com/glossary",
+      "title": "Glossary: Side Business, Micro-SaaS & Invisible Exit...",
+      "content_text": "Plain-English definitions of micro-SaaS, recurring revenue, stealth operations, non-compete clauses, freedom numbers, and more. A reference for employed...",
+      "date_published": "2026-06-26T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/freedom",
+      "url": "https://invisibleexit.com/freedom",
+      "title": "Free Freedom Number Calculator | Invisible Exit",
+      "content_text": "Calculate exactly how much recurring revenue you need to quit your job. Free tool. Takes 90 seconds. No credit card.",
+      "date_published": "2026-06-24T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/feeling-stuck",
+      "url": "https://invisibleexit.com/feeling-stuck",
+      "title": "Do You Feel Stuck in Your Career? (You're Not Crazy) |...",
+      "content_text": "If you",
+      "date_published": "2026-06-22T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/data",
+      "url": "https://invisibleexit.com/data",
+      "title": "Data Reports for Side Business Founders | Invisible Exit",
+      "content_text": "Revenue benchmarks, salary comparisons, and market data for corporate managers building micro-SaaS businesses on the side.",
+      "date_published": "2026-06-20T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/content-strategy",
+      "url": "https://invisibleexit.com/content-strategy",
+      "title": "Hub-and-Spoke Content Strategy — The Pillar Framework |...",
+      "content_text": "The complete hub-and-spoke content strategy: 5 pillar guides (3,500-5,000 words each) with 10+ supporting spokes per hub, targeting high-volume keywords...",
+      "date_published": "2026-06-18T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/compare",
+      "url": "https://invisibleexit.com/compare",
+      "title": "Invisible Exit vs Every Alternative — The Honest Comparison",
+      "content_text": "Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest...",
+      "date_published": "2026-07-04T00:00:00Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/calculators",
+      "url": "https://invisibleexit.com/calculators",
+      "title": "Free Calculators for Employed Founders | Invisible Exit",
+      "content_text": "Freedom number, break-even, timeline, and invisibility calculators for corporate managers building side businesses.",
+      "date_published": "2026-06-14T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/best",
+      "url": "https://invisibleexit.com/best",
+      "title": "Best AI Tools for Building Micro-SaaS | Invisible Exit",
+      "content_text": "The complete directory of AI tools that let corporate managers build, launch, and grow micro-SaaS businesses without coding. Curated by use case.",
+      "date_published": "2026-06-12T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    },
+    {
+      "id": "https://invisibleexit.com/affiliates",
+      "url": "https://invisibleexit.com/affiliates",
+      "title": "Affiliate Program — 30% Recurring | Invisible Exit",
+      "content_text": "Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts.",
+      "date_published": "2026-06-10T09:01:55Z",
+      "authors": [
+        {
+          "name": "InvisibleExit"
+        }
+      ],
+      "image": "https://invisibleexit.com/og-image.png",
+      "banner_image": "https://invisibleexit.com/og-image.png"
+    }
+  ]
+}
