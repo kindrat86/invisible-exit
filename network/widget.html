@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Related Tools</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: transparent;
+    color: #e2e8f0;
+    overflow: hidden;
+  }
+  .pin-widget {
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    max-width: 100%;
+  }
+  .pin-widget h4 {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pin-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .pin-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0.75rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    border-left: 3px solid;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .pin-item:hover { background: rgba(255,255,255,0.08); }
+  .pin-name { font-weight: 700; color: #e2e8f0; font-size: 0.9rem; }
+  .pin-tagline { color: #94a3b8; font-size: 0.8rem; }
+  .pin-category { color: #64748b; font-size: 0.7rem; }
+  .pin-brand {
+    text-align: center;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.7rem;
+    color: #475569;
+  }
+  .pin-brand a { color: #dc2626; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="pin-widget">
+  <h4>🔗 Discover Related Tools</h4>
+  <div class="pin-list">
+    
+        <a href="https://gitdealflow.com" target="_blank" rel="noopener" class="pin-item" style="border-left-color: #7c3aed">
+          <span class="pin-name">GitDealFlow</span>
+          <span class="pin-tagline">Track startup deal flow intelligently</span>
+          <span class="pin-category">Deal Flow &amp; Investing</span>
+        </a>
+        <a href="https://sipiteno.com" target="_blank" rel="noopener" class="pin-item" style="border-left-color: #2563eb">
+          <span class="pin-name">SipiTeno</span>
+          <span class="pin-tagline">AI tools for modern businesses</span>
+          <span class="pin-category">AI &amp; Automation</span>
+        </a>
+        <a href="https://signals.gitdealflow.com" target="_blank" rel="noopener" class="pin-item" style="border-left-color: #059669">
+          <span class="pin-name">Signals by GitDealFlow</span>
+          <span class="pin-tagline">Startup investment signals &amp; momentum tracking</span>
+          <span class="pin-category">Investment Analytics</span>
+        </a>
+        <a href="https://unlocksaas.com" target="_blank" rel="noopener" class="pin-item" style="border-left-color: #0891b2">
+          <span class="pin-name">UnlockSaaS</span>
+          <span class="pin-tagline">Your first paying customer in 60 days</span>
+          <span class="pin-category">SaaS Growth</span>
+        </a>
+  </div>
+  <div class="pin-brand">
+    Powered by <a href="https://invisibleexit.com/network/" target="_blank">Invisible Exit</a>
+  </div>
+</div>
+</body>
+</html>
