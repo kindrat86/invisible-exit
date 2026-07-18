@@ -390,7 +390,8 @@ function getRoutes() {
             "Helping employed professionals build profitable side businesses using AI tools and proven funnel strategies.",
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit"
+            "https://github.com/kindrat86/invisible-exit",
+            "https://www.youtube.com/@invisibleexit"
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -465,32 +466,14 @@ function getRoutes() {
               }
             ]
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "127",
-            reviewCount: "89",
-            itemReviewed: {
-              "@type": "SoftwareApplication",
-              name: SITE_NAME,
-              applicationCategory: "BusinessApplication"
-            }
-          },
+          // AEO 2026-07-18: aggregateRating + self-published Review removed.
+          // Google's structured-data guidelines treat self-served aggregate ratings as spam
+          // (risk of manual action) and AI models learn to distrust uncorroborated claims.
+          // Restore ONLY after reviews exist on a third-party platform (Trustpilot Free /
+          // G2) and mark up THAT syndicated feed — do not re-add self-served numbers.
           url: SITE,
           screenshot: `${SITE}/og-image.png`,
           },
-        {
-          "@context": "https://schema.org",
-          "@type": "Review",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          author: { "@type": "Person", name: "Sarah K." },
-          datePublished: "2026-04-15",
-          publisher: { "@type": "Organization", name: SITE_NAME },
-          reviewBody: "The freedom number calculator showed me I was 18 months away from being able to leave my VP role. Having that timeline made the side work feel real instead of hopeless.",
-          itemReviewed: { "@type": "SoftwareApplication", name: SITE_NAME },
-        },
         {
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -1192,7 +1175,8 @@ function getRoutes() {
             "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86/invisible-exit"
+            "https://github.com/kindrat86/invisible-exit",
+            "https://www.youtube.com/@invisibleexit"
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1233,6 +1217,7 @@ function getRoutes() {
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+            "https://www.youtube.com/@invisibleexit",
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1275,6 +1260,7 @@ function getRoutes() {
           sameAs: [
             "https://www.reddit.com/r/invisibleexit",
             "https://github.com/kindrat86/invisible-exit",
+            "https://www.youtube.com/@invisibleexit",
           ],
           knowsAbout: [
             "Micro-SaaS",
@@ -1717,12 +1703,8 @@ function getRoutes() {
             url: `${SITE}/intensive`,
             seller: { "@type": "Organization", name: SITE_NAME },
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "12",
-            bestRating: "5",
-          },
+          // AEO 2026-07-18: aggregateRating removed (self-served). See home SoftwareApplication
+          // for the same note. Restore only via third-party review platform syndication.
         },
         {
           "@context": "https://schema.org",
@@ -1875,12 +1857,8 @@ function getRoutes() {
             url: `${SITE}/pro`,
             seller: { "@type": "Organization", name: SITE_NAME },
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            reviewCount: "34",
-            bestRating: "5",
-          },
+          // AEO 2026-07-18: aggregateRating removed (self-served). Restore only via third-party
+          // review platform syndication.
         },
         {
           "@context": "https://schema.org",

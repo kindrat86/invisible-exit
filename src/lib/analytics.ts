@@ -107,7 +107,10 @@ type AnalyticsEvent =
   | "tripwire_page_viewed"
   | "tripwire_purchased"
   | "value_ladder_cta_clicked"
-  | "weekend_workshop_applied";
+  | "weekend_workshop_applied"
+  | "attribution_survey_shown"
+  | "attribution_survey_submitted"
+  | "attribution_survey_dismissed";
 
 export function trackEvent(
   event: AnalyticsEvent,
