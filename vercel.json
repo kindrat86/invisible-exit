@@ -288,6 +288,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/freedom-calculator-widget",
+      "destination": "/freedom-calculator-widget.html"
+    },
+    {
       "source": "/oto/downsell",
       "destination": "/index.html"
     },
