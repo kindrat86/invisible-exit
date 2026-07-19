@@ -4,7 +4,9 @@ Disallow: /api/webhook/
 Disallow: /api/cron/
 Disallow: /dashboard/
 Disallow: /account/
-Disallow: /login/
+Disallow: /login
+Disallow: /signup
+Disallow: /reset-password
 
 User-Agent: GPTBot
 Allow: /

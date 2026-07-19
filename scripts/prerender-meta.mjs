@@ -1295,6 +1295,45 @@ function getRoutes() {
     },
   });
 
+  // --- Auth pages: noindex (private/app-only), follow preserved for link equity ---
+  // Fixes Bing "thin content" + "short meta" flags on /login by prerendering
+  // a route-specific title + description and emitting a noindex robots directive.
+  routes.push({
+    path: "/login",
+    meta: {
+      title: "Log In | Invisible Exit",
+      description:
+        "Log in to your Invisible Exit dashboard to access your freedom number calculator, idea pipeline, stealth ops hub, launch automation, and anonymous brand builder.",
+      url: `${SITE}/login`,
+      type: "website",
+      noindex: true,
+    },
+  });
+
+  routes.push({
+    path: "/signup",
+    meta: {
+      title: "Create Your Account | Invisible Exit",
+      description:
+        "Join Invisible Exit and get instant access to five AI tools for building anonymous micro-SaaS income while employed. Founding-member pricing from $0.97/month.",
+      url: `${SITE}/signup`,
+      type: "website",
+      noindex: true,
+    },
+  });
+
+  routes.push({
+    path: "/reset-password",
+    meta: {
+      title: "Reset Password | Invisible Exit",
+      description:
+        "Reset your Invisible Exit account password. Enter your email to receive a secure password reset link.",
+      url: `${SITE}/reset-password`,
+      type: "website",
+      noindex: true,
+    },
+  });
+
   // --- Contact Page ---
   routes.push({
     path: "/contact",
