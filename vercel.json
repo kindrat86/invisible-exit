@@ -910,6 +910,22 @@
       "destination": "/glossary/:slug.html"
     },
     {
+      "source": "/alternatives-to/:slug",
+      "destination": "/alternatives-to/:slug.html"
+    },
+    {
+      "source": "/use-cases/:slug",
+      "destination": "/use-cases/:slug.html"
+    },
+    {
+      "source": "/checklists/:slug",
+      "destination": "/checklists/:slug.html"
+    },
+    {
+      "source": "/guides/:slug",
+      "destination": "/guides/:slug.html"
+    },
+    {
       "source": "/best/:slug",
       "destination": "/best/:slug.html"
     },
