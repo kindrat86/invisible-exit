@@ -171,6 +171,7 @@ const Index = () => {
 
   const handleCheckout = async () => {
     // DOTCOM SECRETS Ch 8: Two-step order — send to /start order page, not direct checkout
+    setCheckoutLoading(true);
     trackEvent("homepage_cta_clicked", { source: "landing_page" });
     navigate("/start");
   };
@@ -380,7 +381,7 @@ const Index = () => {
             <p>
               Here's the math.
             </p>
-            <div className="bg-white rounded-xl p-6 border border-border my-6 font-mono text-sm">
+            <div className="bg-card rounded-xl p-6 border border-border my-6 font-mono text-sm dark:bg-surface-dark">
               <p className="text-muted-foreground">$1B exit (best case)</p>
               <p className="text-muted-foreground">× 0.5% equity = <span className="text-foreground">$5,000,000</span></p>
               <p className="text-muted-foreground">− dilution (~20%) = $4,000,000</p>

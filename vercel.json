@@ -7,6 +7,31 @@
         {
           "key": "X-Frame-Options",
           "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors *; default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' https://fonts.gstatic.com"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/embed",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors *; default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' https://fonts.gstatic.com"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=86400"
         }
       ]
     },
@@ -192,7 +217,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'"
+          "value": "frame-ancestors *; default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'"
         },
         {
           "key": "Cache-Control",
@@ -265,39 +290,171 @@
       "destination": "/",
       "permanent": true
     },
-    { "source": "/vs/tor-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/mullvad-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/brave", "destination": "/", "permanent": true },
-    { "source": "/vs/duckduckgo", "destination": "/", "permanent": true },
-    { "source": "/vs/incognito-mode", "destination": "/", "permanent": true },
-    { "source": "/vs/epic-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/incogni", "destination": "/", "permanent": true },
-    { "source": "/vs/delete-me", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/tor-browser", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/mullvad-browser", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/brave", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/duckduckgo", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/incognito-mode", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/epic-browser", "destination": "/", "permanent": true },
-    { "source": "/for/privacy", "destination": "/", "permanent": true },
-    { "source": "/for/journalism", "destination": "/", "permanent": true },
-    { "source": "/for/research", "destination": "/", "permanent": true },
-    { "source": "/for/security", "destination": "/", "permanent": true },
-    { "source": "/for/whistleblowing", "destination": "/", "permanent": true },
-    { "source": "/for/legal", "destination": "/", "permanent": true },
-    { "source": "/glossary/private-browsing", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/fingerprinting", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/dns-leak", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/webrtc-leak", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/session-isolation", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/tracking-protection", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/cookie-destruction", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/data-broker", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/digital-footprint", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/right-to-be-forgotten", "destination": "/glossary", "permanent": true },
-    { "source": "/best/private-browsing-tools", "destination": "/best", "permanent": true },
-    { "source": "/best/anti-tracking-tools", "destination": "/best", "permanent": true }
+    {
+      "source": "/vs/tor-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/mullvad-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/brave",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/duckduckgo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/incognito-mode",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/epic-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/incogni",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/delete-me",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/tor-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/mullvad-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/brave",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/duckduckgo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/incognito-mode",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/epic-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/privacy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/journalism",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/research",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/security",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/whistleblowing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/legal",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/private-browsing",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/fingerprinting",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/dns-leak",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/webrtc-leak",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/session-isolation",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/tracking-protection",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/cookie-destruction",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/data-broker",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/digital-footprint",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/right-to-be-forgotten",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/best/private-browsing-tools",
+      "destination": "/best",
+      "permanent": true
+    },
+    {
+      "source": "/best/anti-tracking-tools",
+      "destination": "/best",
+      "permanent": true
+    }
   ],
   "rewrites": [
     {
