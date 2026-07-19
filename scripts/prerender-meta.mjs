@@ -233,7 +233,7 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
   // Enforce 60-char title limit across ALL pages (not just blog)
   const optimizedTitle = blogTitle(title);
   const escapedTitle = escapeHtml(optimizedTitle);
-  const escapedDesc = escapeHtml(truncate(description, 155));
+  const escapedDesc = escapeHtml(truncate(description, 160));
   const img = image || DEFAULT_IMAGE;
   const robotsContent = noindex ? "noindex, follow" : "index, follow";
 
@@ -376,7 +376,7 @@ function getRoutes() {
     meta: {
       title: "How to Build a $4,000/Month Side Business Without Quitting",
       description:
-        "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $0.97/mo.",
+        "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools help validate, launch, and grow a side business without quitting. From $0.97/mo.",
       url: `${SITE}/`,
       type: "website",
       jsonLd: [
