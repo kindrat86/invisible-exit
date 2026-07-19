@@ -285,7 +285,7 @@ const Navbar = () => {
             <div className="px-3 py-4">
               {NAV_GROUPS.map((group, gi) => (
                 <div key={group.labelKey} className={gi > 0 ? "mt-6" : ""}>
-                  <h3 className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-white/40">
+                  <h3 className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-white/60">
                     {t(group.labelKey)}
                   </h3>
                   <div className="space-y-0.5">

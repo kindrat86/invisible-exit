@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Register a Trusted Types default policy. The CSP enforces
+         require-trusted-types-for 'script' with no policy registered,
+         which silently breaks the service worker registration and any
+         innerHTML sink (dangerouslySetInnerHTML, React internals) on
+         every page load. Must run before any other script. -->
+    <script>
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        window.trustedTypes.createPolicy('default', {
+          createHTML: (s) => s,
+          createScript: (s) => s,
+          createScriptURL: (s) => s,
+        });
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -416,6 +430,35 @@
   </div>
 </section>
 <!-- /BRUNSON MOVEMENT -->
+
+<!-- BRUNSON VALUE STACK (Ch.9) — idempotency:value-stack-v2 -->
+<section id="brunson-value-stack" style="padding:4rem 0;background:#0a0a0a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <p style="color:#00d4aa;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin:0 0 .5rem">The Founding Stack</p>
+      <h2 style="font-size:clamp(1.5rem,3.5vw,2.2rem);margin:0;color:#fff">$348/month of tools. Founding members pay $0.97.</h2>
+      <p style="color:#94a3b8;font-size:1rem;margin-top:.75rem">Every tool you need to build invisible recurring revenue — in one membership.</p>
+    </div>
+    <div style="background:#111317;border:1px solid #1f2937;border-radius:12px;overflow:hidden">
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">① Freedom Number Calculator</strong><br><span style="color:#64748b;font-size:.85rem">Exact monthly revenue target in 90 seconds.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">VALUE: $79</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">② Idea Validator</strong><br><span style="color:#64748b;font-size:.85rem">500+ scored micro-SaaS blueprints. Find one that fits.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">VALUE: $99</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">③ Stealth Ops & Compliance</strong><br><span style="color:#64748b;font-size:.85rem">Separate entity + anonymity playbooks.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">VALUE: $69</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">④ Launch Automation</strong><br><span style="color:#64748b;font-size:.85rem">Landing page, Stripe, email — wired.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">VALUE: $59</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">⑤ Faceless Brand Builder</strong><br><span style="color:#64748b;font-size:.85rem">Grow demand without a personal brand.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">VALUE: $42</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1.25rem 1.5rem;background:rgba(0,212,170,.05)">
+        <div><strong style="color:#94a3b8;text-decoration:line-through">Total value</strong></div>
+        <div style="color:#94a3b8;text-decoration:line-through;font-weight:700">$348/mo</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:1.25rem 1.5rem;background:rgba(0,212,170,.08)">
+        <div><strong style="color:#00d4aa;font-size:1.1rem">Founding member price</strong></div>
+        <div style="color:#00d4aa;font-weight:800;font-size:1.4rem">$0.97/mo</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:#475569;font-size:.85rem;margin-top:1.5rem">🛡️ If you do not earn $4K/mo within 12 months, we refund every cent. Founding price locked.</p>
+  </div>
+</section>
+<!-- /BRUNSON VALUE STACK -->
+
 <!-- CROSS-PORTFOLIO NETWORK FOOTER — generated 2026-07-18 -->
 <style>
 .portfolio-network {

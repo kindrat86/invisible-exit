@@ -330,16 +330,16 @@ const Footer = () => {
 
             {/* Portfolio cross-links — reciprocal backlink mesh */}
             <div className="mt-5 pt-4 border-t border-white/5">
-              <p className="text-white/40 text-xs mb-2">Our Network</p>
-              <div className="flex flex-wrap gap-x-3 gap-y-1">
-                <a href="https://gitdealflow.com" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">GitDealFlow</a>
-                <a href="https://signals.gitdealflow.com" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">Signals</a>
-                <a href="https://sipiteno.com" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">Sipiteno</a>
-                <a href="https://unlocksaas.com" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">UnlockSaaS</a>
-                <a href="https://voicelogpro.com" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">VoiceLogPro</a>
-                <a href="https://carshake.online" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">CarShake</a>
-                <a href="https://churnlens.site" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">ChurnLens</a>
-                <a href="https://sanctionsai.dev" target="_blank" rel="noopener" className="text-white/40 hover:text-white/70 text-xs transition-colors">SanctionsAI</a>
+              <p className="text-white/60 text-xs mb-2">Our Network</p>
+              <div className="flex flex-wrap gap-x-1 gap-y-1">
+                <a href="https://gitdealflow.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">GitDealFlow</a>
+                <a href="https://signals.gitdealflow.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Signals</a>
+                <a href="https://sipiteno.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Sipiteno</a>
+                <a href="https://unlocksaas.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">UnlockSaaS</a>
+                <a href="https://voicelogpro.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">VoiceLogPro</a>
+                <a href="https://carshake.online" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">CarShake</a>
+                <a href="https://churnlens.site" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">ChurnLens</a>
+                <a href="https://sanctionsai.dev" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">SanctionsAI</a>
               </div>
             </div>
           </div>
