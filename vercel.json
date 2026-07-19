@@ -960,6 +960,10 @@
     {
       "source": "/alternatives-to/:slug",
       "destination": "/alternatives/:slug"
+    },
+    {
+      "source": "/data/micro-saas-ideas",
+      "destination": "/data/micro-saas-ideas/index.html"
     }
   ],
   "crons": [
