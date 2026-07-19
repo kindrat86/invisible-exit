@@ -43,7 +43,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com https://www.redditstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co; frame-src 'self' https://www.googletagmanager.com; form-action 'self'; object-src 'none'; base-uri 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com https://www.redditstatic.com https://www.reddit.com https://connect.facebook.net https://snap.licdn.com https://px.ads.linkedin.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co https://connect.facebook.net https://www.facebook.com https://snap.licdn.com https://px.ads.linkedin.com https://www.linkedin.com https://www.reddit.com; frame-src 'self' https://www.googletagmanager.com; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
         }
       ]
     },
@@ -265,39 +265,136 @@
       "destination": "/",
       "permanent": true
     },
-    { "source": "/vs/tor-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/mullvad-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/brave", "destination": "/", "permanent": true },
-    { "source": "/vs/duckduckgo", "destination": "/", "permanent": true },
-    { "source": "/vs/incognito-mode", "destination": "/", "permanent": true },
-    { "source": "/vs/epic-browser", "destination": "/", "permanent": true },
-    { "source": "/vs/incogni", "destination": "/", "permanent": true },
-    { "source": "/vs/delete-me", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/tor-browser", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/mullvad-browser", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/brave", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/duckduckgo", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/incognito-mode", "destination": "/", "permanent": true },
-    { "source": "/alternatives-to/epic-browser", "destination": "/", "permanent": true },
-    { "source": "/for/privacy", "destination": "/", "permanent": true },
-    { "source": "/for/journalism", "destination": "/", "permanent": true },
-    { "source": "/for/research", "destination": "/", "permanent": true },
-    { "source": "/for/security", "destination": "/", "permanent": true },
-    { "source": "/for/whistleblowing", "destination": "/", "permanent": true },
-    { "source": "/for/legal", "destination": "/", "permanent": true },
-    { "source": "/glossary/private-browsing", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/fingerprinting", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/dns-leak", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/webrtc-leak", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/session-isolation", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/tracking-protection", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/cookie-destruction", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/data-broker", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/digital-footprint", "destination": "/glossary", "permanent": true },
-    { "source": "/glossary/right-to-be-forgotten", "destination": "/glossary", "permanent": true },
-    { "source": "/best/private-browsing-tools", "destination": "/best", "permanent": true },
-    { "source": "/best/anti-tracking-tools", "destination": "/best", "permanent": true }
+    {
+      "source": "/vs/tor-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/mullvad-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/brave",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/duckduckgo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/incognito-mode",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/epic-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/incogni",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vs/delete-me",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/privacy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/journalism",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/research",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/security",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/whistleblowing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for/legal",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/private-browsing",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/fingerprinting",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/dns-leak",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/webrtc-leak",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/session-isolation",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/tracking-protection",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/cookie-destruction",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/data-broker",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/digital-footprint",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/right-to-be-forgotten",
+      "destination": "/glossary",
+      "permanent": true
+    },
+    {
+      "source": "/best/private-browsing-tools",
+      "destination": "/best",
+      "permanent": true
+    },
+    {
+      "source": "/best/anti-tracking-tools",
+      "destination": "/best",
+      "permanent": true
+    }
   ],
   "rewrites": [
     {
@@ -793,10 +890,6 @@
       "destination": "/index.html"
     },
     {
-      "source": "/alternatives-to/:slug",
-      "destination": "/alternatives-to/:slug.html"
-    },
-    {
       "source": "/vs/:slug",
       "destination": "/vs/:slug.html"
     },
@@ -859,6 +952,10 @@
     {
       "source": "/embed/:slug",
       "destination": "/embed/:slug.html"
+    },
+    {
+      "source": "/alternatives-to/:slug",
+      "destination": "/alternatives/:slug"
     }
   ],
   "crons": [

@@ -301,7 +301,7 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [The Content Repurposing System: One Asset, Ten Outputs](https://invisibleexit.com/resources/content-repurposing-system): If you create a piece of content and it stays as one asset, you are wasting 90% of its value. This system turns one core
 - [Customer Acquisition Playbook: First 10 Customers Without Ads](https://invisibleexit.com/resources/customer-acquisition-playbook): Getting your first 10 paying customers is the hardest part of building a micro-SaaS. No audience, no reputation, no budg
 
-## Product Alternatives (5)
+## Product Alternatives (6)
 
 - [All Alternatives](https://invisibleexit.com/alternatives): Index of product alternatives for solo founders
 - [Best Notion Alternatives for Solo Founders](https://invisibleexit.com/alternatives/notion-alternative): The best Notion alternatives for solo founders who need lightweight knowledge management, project tracking, and documentation without the complexity.
@@ -309,6 +309,7 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Best Carrd Alternatives for Micro-SaaS Landing Pages](https://invisibleexit.com/alternatives/carrd-alternative): The best Carrd alternatives for solo founders building micro-SaaS landing pages. Framer, Unicorn Platform, and more compared.
 - [Best Gumroad Alternatives for Micro-SaaS](https://invisibleexit.com/alternatives/gumroad-alternative): The best Gumroad alternatives for solo founders selling SaaS subscriptions and digital products. Stripe, Paddle, Lemon Squeezy compared.
 - [Best WordPress Alternatives for Solo Founders](https://invisibleexit.com/alternatives/wordpress-alternative): The best WordPress alternatives for solo founders who need a blog + content site without the maintenance burden of WordPress.
+- [Best Chrome Incognito Mode Alternatives for Building a Side Business Privately](https://invisibleexit.com/alternatives/incognito-mode): Incognito mode only hides local history. These 7 alternatives protect your identity, payments, and domain registration when building a side business anonymously.
 
 ## Salary → Freedom Number (25)
 

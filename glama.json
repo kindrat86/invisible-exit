@@ -1,12 +1,12 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
   "maintainers": ["kindrat86"],
-  "name": "sipiteno",
-  "description": "Global expansion intelligence for AI agents. Search consulting services, get country info, estimate expansion costs, analyze competitors, and request strategy calls across markets.",
+  "name": "invisibleexit",
+  "description": "Privacy and anonymity guidance for AI agents. Search step-by-step privacy guides by topic, retrieve detailed guides, and check which data brokers hold personal data.",
   "type": "mcp_server",
   "status": "production",
   "framework": "Node.js",
-  "tools": 5,
+  "tools": 3,
   "transport": ["http"],
-  "keywords": ["mcp", "mcp-server", "global-expansion", "market-entry", "consulting", "competitor-analysis", "business-intelligence"]
+  "keywords": ["mcp", "mcp-server", "privacy", "anonymity", "data-brokers", "opsec", "personal-data", "opt-out"]
 }
