@@ -1,0 +1,12 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["kindrat86"],
+  "name": "sipiteno",
+  "description": "Global expansion intelligence for AI agents. Search consulting services, get country info, estimate expansion costs, analyze competitors, and request strategy calls across markets.",
+  "type": "mcp_server",
+  "status": "production",
+  "framework": "Node.js",
+  "tools": 5,
+  "transport": ["http"],
+  "keywords": ["mcp", "mcp-server", "global-expansion", "market-entry", "consulting", "competitor-analysis", "business-intelligence"]
+}
