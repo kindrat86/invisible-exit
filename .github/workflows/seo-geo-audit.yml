@@ -40,9 +40,10 @@ jobs:
             echo "mode=daily" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Run SEO/GEO Audit (GLM-5.2)
+      - name: Run SEO/GEO Audit (GLM-5.2 → DeepSeek fallback)
         env:
           GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           AUDIT_MODE: ${{ steps.mode.outputs.mode }}
         run: python3 scripts/seo-agent.py
 
