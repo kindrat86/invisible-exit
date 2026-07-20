@@ -422,6 +422,26 @@
       "source": "/best/anti-tracking-tools",
       "destination": "/best",
       "permanent": true
+    },
+    {
+      "source": "/stealth-score",
+      "destination": "/stealth-score.html",
+      "permanent": true
+    },
+    {
+      "source": "/stealth-score/results",
+      "destination": "/stealth-score/results.html",
+      "permanent": true
+    },
+    {
+      "source": "/stealth-badge",
+      "destination": "/stealth-badge/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/embed/stealth-score",
+      "destination": "/embed/stealth-score.html",
+      "permanent": true
     }
   ],
   "rewrites": [
