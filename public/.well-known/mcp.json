@@ -1,37 +1,14 @@
 {
-  "schemaVersion": "0.1",
-  "name": "invisibleexit",
-  "displayName": "Invisible Exit",
-  "description": "Complete guide to digital privacy and disappearing from the internet.",
-  "homepageUrl": "https://invisibleexit.com/mcp",
-  "contactEmail": "support@invisibleexit.com",
-  "publisher": {
-    "name": "Invisible Exit",
-    "url": "https://invisibleexit.com"
-  },
-  "endpoints": {
-    "streamableHttp": "https://invisibleexit.com/api/mcp"
-  },
-  "transports": [
-    "streamable-http"
-  ],
-  "capabilities": {
-    "tools": true,
-    "prompts": false,
-    "resources": false
-  },
-  "tools": [
+  "name": "Invisible Exit",
+  "description": "Acquisition readiness for bootstrapped SaaS. Stealth exit planning, valuation modeling, and buyer matching.",
+  "url": "https://invisibleexit.com",
+  "version": "1.0.0",
+  "capabilities": [
     {
-      "name": "search_privacy_guides",
-      "summary": "Search privacy guides by topic."
-    },
-    {
-      "name": "get_privacy_guide",
-      "summary": "Get a detailed step-by-step privacy guide."
-    },
-    {
-      "name": "check_data_brokers",
-      "summary": "List major data brokers with opt-out links."
+      "name": "saas_valuation",
+      "description": "SaaS acquisition valuation calculator and readiness assessment",
+      "endpoint": "https://invisibleexit.com/answers/"
     }
-  ]
+  ],
+  "documentation": "https://invisibleexit.com/llms.txt"
 }
