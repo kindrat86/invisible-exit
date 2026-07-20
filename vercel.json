@@ -279,6 +279,16 @@
       "permanent": true
     },
     {
+      "source": "/alternatives-to/tor-browser",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/tor-browser.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/vs/mullvad-browser",
       "destination": "/",
       "permanent": true
@@ -291,6 +301,16 @@
     {
       "source": "/vs/duckduckgo",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/incognito-mode",
+      "destination": "/alternatives-to/chrome-private-browsing",
+      "permanent": true
+    },
+    {
+      "source": "/alternatives-to/incognito-mode.html",
+      "destination": "/alternatives-to/chrome-private-browsing",
       "permanent": true
     },
     {
@@ -984,6 +1004,22 @@
     {
       "source": "/data/micro-saas-ideas",
       "destination": "/data/micro-saas-ideas/index.html"
+    },
+    {
+      "source": "/network",
+      "destination": "/network.html"
+    },
+    {
+      "source": "/network-widget",
+      "destination": "/network-widget.html"
+    },
+    {
+      "source": "/network-feed",
+      "destination": "/network-feed.json"
+    },
+    {
+      "source": "/related-tools",
+      "destination": "/related-tools.html"
     }
   ],
   "crons": [
