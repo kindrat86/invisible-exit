@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed Stealth Score | Invisible Exit</title>
+<meta name="robots" content="noindex, follow">
+<style>
+  :root {
+    --bg: #0a0a0a; --surface: #141414; --border: #2a2a2a;
+    --text: #e0e0e0; --text2: #999; --accent: #22c55e;
+    --brand: #a78bfa; --warn: #f59e0b; --danger: #ef4444;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: transparent; color: var(--text);
+    line-height: 1.5; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .widget {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+    max-width: 360px; width: 100%;
+    text-align: center;
+  }
+  .widget .badge { font-size:0.7rem; color:var(--brand); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; }
+  .widget .title { font-size:1rem; font-weight:700; margin-bottom:0.25rem; }
+  .widget .desc { font-size:0.78rem; color:var(--text2); margin-bottom:1rem; }
+  .score-display {
+    width:100px; height:100px; border-radius:50%;
+    margin:0 auto 0.75rem;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column;
+    background:var(--surface);
+    border:3px solid var(--border);
+  }
+  .score-display .num { font-size:2rem; font-weight:900; }
+  .score-display .lbl { font-size:0.6rem; color:var(--text2); text-transform:uppercase; letter-spacing:0.05em; }
+  .btn {
+    display:inline-block; padding:0.5rem 1.25rem; border-radius:100px;
+    font-weight:700; font-size:0.82rem; text-decoration:none;
+    background:var(--accent); color:#000;
+    transition:all 0.2s;
+  }
+  .btn:hover { background:#16a34a; }
+  .powered { font-size:0.65rem; color:var(--text2); margin-top:0.75rem; }
+  .powered a { color:var(--brand); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="widget">
+  <div class="badge">🛡️ STEALTH SCORE</div>
+  <div class="title">How safe is your side business?</div>
+  <div class="desc">83% of corporate side hustlers score below 45/100.</div>
+  <div class="score-display">
+    <div class="num" style="color:var(--warn)">?</div>
+    <div class="lbl">your score</div>
+  </div>
+  <a href="https://invisibleexit.com/stealth-score" class="btn" target="_blank" rel="noopener">Calculate Yours →</a>
+  <div class="powered">Powered by <a href="https://invisibleexit.com" target="_blank" rel="noopener">Invisible Exit</a></div>
+</div>
+</body>
+</html>

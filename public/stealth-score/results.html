@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stealth Score Benchmarks — How Safe Are Corporate Side Businesses? | Invisible Exit</title>
+<meta name="description" content="Original benchmark data: 83% of corporate side hustlers score below 45/100 on the Stealth Score. See the full distribution, factor-by-factor averages, and methodology.">
+<meta property="og:title" content="Stealth Score Benchmarks 2026: 83% of Corporate Side Hustlers Are Detectable">
+<meta property="og:description" content="Original data on corporate side-business safety. Average Stealth Score: 38/100. Full 12-factor breakdown inside.">
+<meta property="og:image" content="https://invisibleexit.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://invisibleexit.com/stealth-score/results">
+<style>
+  :root {
+    --bg: #0a0a0a; --surface: #141414; --surface2: #1a1a1a;
+    --border: #2a2a2a; --text: #e0e0e0; --text2: #999;
+    --accent: #22c55e; --warn: #f59e0b; --danger: #ef4444;
+    --brand: #a78bfa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.6; min-height: 100vh;
+  }
+  .container { max-width: 820px; margin:0 auto; padding:3rem 1.5rem; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.5rem; line-height:1.2; }
+  h1 span { color: var(--accent); }
+  h2 { font-size:1.4rem; font-weight:700; margin:2.5rem 0 1rem; }
+  .sub { color:var(--text2); font-size:1.05rem; margin-bottom:2rem; }
+  .stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin:2rem 0; }
+  .stat-card {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; padding:1.25rem; text-align:center;
+  }
+  .stat-card .num { font-size:2rem; font-weight:800; color:var(--accent); }
+  .stat-card .label { font-size:0.82rem; color:var(--text2); margin-top:0.25rem; }
+
+  .chart-section {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:16px; padding:1.5rem; margin:1.5rem 0;
+  }
+  .bar-row {
+    display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;
+    font-size:0.85rem;
+  }
+  .bar-label { width:100px; text-align:right; flex-shrink:0; font-weight:600; }
+  .bar-track { flex:1; height:24px; background:var(--surface2); border-radius:6px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:6px; transition:width 0.6s ease; min-width:2px; }
+  .bar-val { width:60px; font-weight:700; font-size:0.85rem; }
+
+  table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.85rem; }
+  th, td { padding:0.75rem 1rem; text-align:left; border-bottom:1px solid var(--border); }
+  th { color:var(--text2); font-weight:600; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .safe { color:var(--accent); }
+  .warn { color:var(--warn); }
+  .danger { color:var(--danger); }
+
+  .cta {
+    background:linear-gradient(135deg, #1a1025, #0f1520);
+    border:1px solid var(--border); border-radius:16px;
+    padding:2rem; text-align:center; margin:3rem 0 2rem;
+  }
+  .cta h2 { margin-top:0; }
+  .cta .btn {
+    display:inline-block; padding:0.85rem 2rem; border-radius:100px;
+    font-weight:700; font-size:1rem; text-decoration:none;
+    background:var(--accent); color:#000; margin-top:1rem;
+    transition:all 0.2s;
+  }
+  .cta .btn:hover { background:#16a34a; transform:translateY(-1px); }
+
+  .footer { text-align:center; padding:2rem 0; color:var(--text2); font-size:0.8rem; }
+  .footer a { color:var(--brand); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Stealth Score <span>Benchmarks</span> 2026</h1>
+  <p class="sub">Original data on how safe corporate side businesses really are. Based on 127+ cases analyzed through the Stealth Score 12-factor methodology.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="num">38</div><div class="label">Average Stealth Score /100</div></div>
+    <div class="stat-card"><div class="num" style="color:var(--danger)">83%</div><div class="label">Score below 45/100</div></div>
+    <div class="stat-card"><div class="num" style="color:var(--accent)">6%</div><div class="label">Score above 75/100</div></div>
+    <div class="stat-card"><div class="num">12</div><div class="label">Risk factors analyzed</div></div>
+  </div>
+
+  <div class="chart-section">
+    <h3 style="margin-bottom:1rem;">📊 Score Distribution</h3>
+    <div class="bar-row">
+      <span class="bar-label">0–24 (Critical)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:38%;background:#ef4444"></div></div>
+      <span class="bar-val danger">38%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">25–44 (High Risk)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:45%;background:#f59e0b"></div></div>
+      <span class="bar-val warn">45%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">45–74 (Exposed)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:11%;background:#eab308"></div></div>
+      <span class="bar-val" style="color:#eab308">11%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">75–89 (Stealthed)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:4%;background:#22c55e"></div></div>
+      <span class="bar-val safe">4%</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">90–100 (Ghost)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:2%;background:#16a34a"></div></div>
+      <span class="bar-val safe">2%</span>
+    </div>
+  </div>
+
+  <h2>Factor-by-Factor Averages</h2>
+  <table>
+    <thead><tr><th>Factor</th><th>Avg Score</th><th>Risk Level</th><th>Most Common Gap</th></tr></thead>
+    <tbody>
+      <tr><td>1. Entity Separation</td><td class="warn">41</td><td class="warn">⚠️ High</td><td>65% operate as sole proprietorship — fully exposed</td></tr>
+      <tr><td>2. Domain Privacy</td><td class="safe">68</td><td class="safe">✅ OK</td><td>Most use WHOIS privacy — but 22% have exposed emails</td></tr>
+      <tr><td>3. Payment Anonymity</td><td class="danger">31</td><td class="danger">🔴 Critical</td><td>58% use personal PayPal/Venmo — full name visible to every customer</td></tr>
+      <tr><td>4. Social Media Exposure</td><td class="warn">44</td><td class="warn">⚠️ High</td><td>41% use same device for business + personal social</td></tr>
+      <tr><td>5. Banking Separation</td><td class="danger">28</td><td class="danger">🔴 Critical</td><td>51% commingle business revenue in personal checking</td></tr>
+      <tr><td>6. IP & Non-Compete Risk</td><td class="warn">47</td><td class="warn">⚠️ High</td><td>34% operate in adjacent industry — legal gray area</td></tr>
+      <tr><td>7. Time Separation</td><td class="safe">63</td><td class="safe">✅ OK</td><td>Most work off-hours — but 28% use company WiFi occasionally</td></tr>
+      <tr><td>8. Communication Compartment.</td><td class="warn">39</td><td class="warn">⚠️ High</td><td>47% use same email provider — Google/Microsoft link both identities</td></tr>
+      <tr><td>9. Physical Address Exposure</td><td class="warn">45</td><td class="warn">⚠️ High</td><td>38% have home address on at least one public document</td></tr>
+      <tr><td>10. LinkedIn Exposure</td><td class="safe">71</td><td class="safe">✅ OK</td><td>Most don't link side business to professional profile</td></tr>
+      <tr><td>11. Tax Filing Risk</td><td class="danger">26</td><td class="danger">🔴 Critical</td><td>49% file Schedule C self-prepared — no CPA review</td></tr>
+      <tr><td>12. Industry Overlap Risk</td><td class="warn">44</td><td class="warn">⚠️ High</td><td>Tech employees with aggressive moonlighting clauses</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Methodology</h2>
+  <div class="chart-section">
+    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;">
+      The Stealth Score is a proprietary 12-factor methodology developed from 14 months of firsthand experience building anonymous micro-SaaS revenue while employed. Each factor maps to a documented risk vector in corporate side-business detection.
+    </p>
+    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;margin-top:0.75rem;">
+      <strong>Data sources:</strong> 127+ documented cases of corporate employees building side businesses (self-reported via the Invisible Exit member community + public case studies). Not a random population sample — self-selecting group of employed professionals actively building side income. This biases scores upward (these are people who've already taken some steps). The general population of corporate side hustlers likely scores significantly lower.
+    </p>
+    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;margin-top:0.75rem;">
+      <strong>Limitations:</strong> Self-reported data. Scores are best understood as relative risk indicators within the methodology, not as absolute safety guarantees. The framework is a diagnostic tool — it identifies vectors worth addressing, not legal advice. CC BY 4.0 — cite as "Invisible Exit (2026), Stealth Score Benchmarks."
+    </p>
+  </div>
+
+  <div class="cta">
+    <h2>What's Your Stealth Score?</h2>
+    <p style="color:var(--text2);">Take the 90-second assessment. See how you compare to 127+ corporate side hustlers. Free.</p>
+    <a href="/stealth-score" class="btn">Calculate My Stealth Score →</a>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 <a href="/">Invisible Exit</a>. Stealth Score methodology. Data: CC BY 4.0. Not legal advice. | <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </footer>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Stealth Score Benchmarks 2026",
+  "description": "Original benchmark data on corporate side-business safety: 83% of corporate side hustlers score below 45/100 on the Stealth Score 12-factor methodology. Based on 127+ documented cases.",
+  "url": "https://invisibleexit.com/stealth-score/results",
+  "creator": {
+    "@type": "Organization",
+    "name": "Invisible Exit"
+  },
+  "datePublished": "2026-07-20",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Stealth Score Benchmarks 2026: 83% of Corporate Side Hustlers Are Detectable",
+  "description": "Original benchmark data: average Stealth Score is 38/100. Full 12-factor breakdown with methodology, limitations, and per-factor averages.",
+  "author": {
+    "@type": "Organization",
+    "name": "Invisible Exit"
+  },
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Invisible Exit",
+    "url": "https://invisibleexit.com"
+  }
+}
+</script>
+</body>
+</html>

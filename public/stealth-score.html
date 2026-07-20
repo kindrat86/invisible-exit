@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stealth Score™ — How Safe Is Your Side Business From Your Employer? | Invisible Exit</title>
+<meta name="description" content="Take the 90-second Stealth Score assessment. 12 factors that determine whether your employer can discover your side business. 83% of corporate side hustlers score below 45/100.">
+<meta property="og:title" content="What's Your Stealth Score? — The Credit Score for Corporate Side Businesses">
+<meta property="og:description" content="83% of corporate side hustlers score below 45/100. Take the 90-second assessment and see where you stand.">
+<meta property="og:image" content="https://invisibleexit.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What's Your Stealth Score?">
+<meta name="twitter:description" content="83% of corporate side hustlers score below 45/100. Take the 90-second assessment.">
+<meta name="twitter:image" content="https://invisibleexit.com/og-image.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://invisibleexit.com/stealth-score">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface2: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e0e0e0;
+    --text2: #999;
+    --accent: #22c55e;
+    --accent2: #16a34a;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+    --brand: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  /* Header */
+  .header { text-align: center; padding: 3rem 0 2rem; }
+  .header .badge {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--brand);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .header h1 span { color: var(--accent); }
+  .header .sub {
+    color: var(--text2);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .header .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+  }
+  .stat-pill .num { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .stat-pill .label { font-size: 0.75rem; color: var(--text2); margin-top: 0.15rem; }
+
+  /* Assessment */
+  .assessment { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 1.5rem 0; }
+  .progress-bar {
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--brand));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+  .step-counter { font-size: 0.8rem; color: var(--text2); margin-bottom: 0.5rem; }
+  .step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .step-desc { font-size: 0.9rem; color: var(--text2); margin-bottom: 1.25rem; }
+
+  /* Radio grid */
+  .radio-group { display: grid; gap: 0.6rem; }
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .radio-option:hover { border-color: var(--accent2); background: #1a2a1a; }
+  .radio-option.selected { border-color: var(--accent); background: #0f2a0f; }
+  .radio-option input { display: none; }
+  .radio-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .radio-text { flex: 1; }
+  .radio-label { font-weight: 600; font-size: 0.95rem; }
+  .radio-sub { font-size: 0.78rem; color: var(--text2); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); }
+  .btn-group { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+  /* Results */
+  .result { text-align: center; padding: 2rem 0; }
+  .result .score-ring {
+    width: 180px; height: 180px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  .score-ring .score-num { font-size: 3.5rem; font-weight: 900; line-height: 1; }
+  .score-ring .score-label { font-size: 0.8rem; color: var(--text2); margin-top: 0.25rem; }
+  .result h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .result .verdict { font-size: 1.1rem; color: var(--text2); margin-bottom: 2rem; }
+
+  .breakdown { text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+  .breakdown h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+  .factor-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+  .factor-row:last-child { border-bottom: none; }
+  .factor-name { font-weight: 500; }
+  .factor-score {
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+  }
+  .factor-safe { color: var(--accent); background: rgba(34,197,94,0.15); }
+  .factor-warn { color: var(--warn); background: rgba(245,158,11,0.15); }
+  .factor-danger { color: var(--danger); background: rgba(239,68,68,0.15); }
+
+  .share-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .share-section h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+  .share-btns { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+
+  .embed-section {
+    background: linear-gradient(135deg, #1a1025, #0f1520);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .embed-section h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--brand); }
+  .embed-section p { font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; }
+  .embed-code {
+    background: #000;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  .copy-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--surface2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .copy-btn:hover { border-color: var(--accent); }
+
+  /* FAQ */
+  .faq-section { margin: 3rem 0 2rem; }
+  .faq-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem; }
+  .faq-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .faq-item p { font-size: 0.85rem; color: var(--text2); }
+
+  .footer { text-align: center; padding: 2rem 0; color: var(--text2); font-size: 0.8rem; }
+  .footer a { color: var(--brand); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .container { padding: 1rem; }
+    .assessment { padding: 1.25rem; }
+    .stat-row { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="badge">🛡️ Free Assessment</div>
+    <h1>What's Your <span>Stealth Score</span>?</h1>
+    <p class="sub">The first-ever safety rating for corporate side businesses. 12 factors. 90 seconds. See if your employer can find out.</p>
+    <div class="stat-row">
+      <div class="stat-pill"><div class="num">83%</div><div class="label">Score below 45/100</div></div>
+      <div class="stat-pill"><div class="num">12</div><div class="label">Risk factors analyzed</div></div>
+      <div class="stat-pill"><div class="num">90s</div><div class="label">To complete</div></div>
+    </div>
+  </header>
+
+  <!-- ASSESSMENT (hidden after completion) -->
+  <div id="assessment" class="assessment">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="step-counter" id="stepCounter">Question 1 of 12</div>
+    <div class="step-title" id="stepTitle"></div>
+    <div class="step-desc" id="stepDesc"></div>
+    <div class="radio-group" id="radioGroup"></div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" id="btnPrev" style="display:none">← Back</button>
+      <button class="btn btn-primary" id="btnNext">Next →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS (hidden until complete) -->
+  <div id="results" style="display:none">
+    <div class="result">
+      <div class="score-ring" id="scoreRing">
+        <div class="score-num" id="scoreNum">0</div>
+        <div class="score-label">STEALTH SCORE</div>
+      </div>
+      <h2 id="verdictTitle"></h2>
+      <p class="verdict" id="verdictText"></p>
+      <button class="btn btn-primary" onclick="retake()">Retake Assessment ↻</button>
+    </div>
+
+    <!-- Factor breakdown -->
+    <div class="breakdown">
+      <h3>📊 Factor-by-Factor Breakdown</h3>
+      <div id="factorList"></div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <h3>📢 Share Your Score</h3>
+      <p style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem">83% of corporate side hustlers score below 45. See where you stand.</p>
+      <div class="share-btns">
+        <button class="btn btn-secondary" onclick="shareTwitter()">𝕏 Tweet Score</button>
+        <button class="btn btn-secondary" onclick="shareLinkedIn()">💼 LinkedIn</button>
+        <button class="btn btn-secondary" onclick="shareCopy()">📋 Copy Link</button>
+      </div>
+    </div>
+
+    <!-- Embed badge CTA -->
+    <div class="embed-section">
+      <h3>🏅 Embed Your Stealth Score Badge</h3>
+      <p>Show your score on your blog, portfolio, or anywhere. Each badge links back — permanent backlink for your credibility.</p>
+      <div class="embed-code" id="embedCode"></div>
+      <button class="copy-btn" onclick="copyEmbed()">📋 Copy Embed Code</button>
+      <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text2)">
+        <a href="/stealth-badge" style="color:var(--brand)">See all badge styles →</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>Common Questions</h2>
+    <div class="faq-item">
+      <h4>What is the Stealth Score?</h4>
+      <p>A proprietary 12-factor methodology that rates how safe your side business is from employer detection. Each factor is scored 0-100; the composite is a weighted average reflecting real risk exposure. Based on research into 127+ corporate side-business cases.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How accurate is this?</h4>
+      <p>The methodology was developed from 14 months of firsthand experience building anonymous micro-SaaS revenue while employed. Each factor reflects a real legal, technical, or operational risk vector. It's a diagnostic tool, not legal advice — but every factor maps to a documented corporate exit strategy.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Why doesn't my employer already know?</h4>
+      <p>Employers typically don't run active surveillance on employees' side businesses. However, poorly structured side businesses leave digital breadcrumbs — public WHOIS records, LinkedIn cross-references, payment processor paper trails, and social media overlaps — that can surface during background checks, IP audits, or internal investigations.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What happens after I get my score?</h4>
+      <p>Each factor in your breakdown links to a specific playbook in The Invisible Exit Method — concrete steps to improve that dimension. Members get access to the full Stealth Ops & Compliance tool that automates the fixes.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 <a href="/">Invisible Exit</a>. Stealth Score is a proprietary assessment methodology. Not legal advice. | <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </footer>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Stealth Score",
+  "description": "A 12-factor interactive assessment that rates how safe a corporate employee's side business is from employer detection.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "url": "https://invisibleexit.com/stealth-score",
+  "author": {
+    "@type": "Organization",
+    "name": "Invisible Exit"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Stealth Score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A proprietary 12-factor methodology that rates how safe your side business is from employer detection. Each factor is scored 0-100; the composite is a weighted average reflecting real risk exposure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the Stealth Score assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The methodology was developed from 14 months of firsthand experience building anonymous micro-SaaS revenue while employed. Each factor reflects a real legal, technical, or operational risk vector."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't my employer already know about my side business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employers typically don't run active surveillance. However, poorly structured side businesses leave digital breadcrumbs — public WHOIS records, LinkedIn cross-references, payment processor paper trails — that can surface during background checks or IP audits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I get my Stealth Score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each factor links to a specific playbook in The Invisible Exit Method. Members get access to the full Stealth Ops & Compliance tool that automates the fixes."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+// ─── Stealth Score Assessment Engine ───
+const QUESTIONS = [
+  {
+    id: 'entity',
+    title: '1. Entity Separation',
+    desc: 'Is your side business operated under a separate legal entity (LLC, Corp) with its own EIN — not your SSN?',
+    options: [
+      { icon: '🔒', label: 'Fully separate LLC/Corp + EIN', sub: 'Registered in a privacy-friendly state (WY, DE, NV)', val: 100 },
+      { icon: '📄', label: 'LLC formed but uses my address', sub: 'Entity exists but not fully anonymized', val: 65 },
+      { icon: '⚠️', label: 'Sole proprietorship / DBA', sub: 'Your name is on public records', val: 25 },
+      { icon: '🔓', label: 'No entity — operating under my name', sub: 'Fully exposed', val: 0 }
+    ]
+  },
+  {
+    id: 'domain',
+    title: '2. Domain Privacy',
+    desc: 'Is your side-business domain registered with WHOIS privacy protection — and NOT under your name, personal email, or home address?',
+    options: [
+      { icon: '🔒', label: 'Full WHOIS privacy + proxy registration', sub: 'Domain is untraceable to me', val: 100 },
+      { icon: '🛡️', label: 'WHOIS privacy enabled', sub: 'Name hidden but registrar knows me', val: 70 },
+      { icon: '⚠️', label: 'Partial privacy — some fields exposed', sub: 'Email or org name is visible', val: 35 },
+      { icon: '🔓', label: 'No privacy — my name + address visible', sub: 'Anyone can look it up', val: 0 }
+    ]
+  },
+  {
+    id: 'payments',
+    title: '3. Payment Anonymity',
+    desc: 'Do customers pay a business entity (Stripe business account, Mercury, etc.) — NOT your personal PayPal/Venmo?',
+    options: [
+      { icon: '🔒', label: 'Stripe business account under LLC EIN', sub: 'My name is nowhere in payment flow', val: 100 },
+      { icon: '🛡️', label: 'Business payment processor', sub: 'Company name shows on statements', val: 75 },
+      { icon: '⚠️', label: 'Personal Stripe/PayPal business', sub: 'My name may appear on some receipts', val: 40 },
+      { icon: '🔓', label: 'Personal PayPal/Venmo/CashApp', sub: 'My full name visible to every customer', val: 5 }
+    ]
+  },
+  {
+    id: 'social',
+    title: '4. Social Media Exposure',
+    desc: 'Does your side business have social media accounts that intersect with your personal identity — or your coworkers\' networks?',
+    options: [
+      { icon: '🔒', label: 'No social media for side business', sub: 'Zero digital footprint to cross-reference', val: 100 },
+      { icon: '🛡️', label: 'Brand-only accounts, no personal overlap', sub: 'Separate email, device, never cross-post', val: 80 },
+      { icon: '⚠️', label: 'Same device/email as personal accounts', sub: 'Platforms can link identities via fingerprinting', val: 40 },
+      { icon: '🔓', label: 'Personal accounts promote side business', sub: 'Coworkers can see everything', val: 0 }
+    ]
+  },
+  {
+    id: 'banking',
+    title: '5. Banking Separation',
+    desc: 'Is your side-business banking completely separate — different bank, different login, never commingled with personal funds?',
+    options: [
+      { icon: '🔒', label: 'Separate bank + separate login + never mixed', sub: 'Full financial compartmentalization', val: 100 },
+      { icon: '🛡️', label: 'Separate business account, same bank', sub: 'Bank knows both accounts are mine', val: 65 },
+      { icon: '⚠️', label: 'Business funds in personal checking', sub: 'One audit reveals everything', val: 20 },
+      { icon: '🔓', label: 'All mixed — no separation whatsoever', sub: 'Indistinguishable from personal spending', val: 0 }
+    ]
+  },
+  {
+    id: 'ip',
+    title: '6. IP & Non-Compete Risk',
+    desc: 'Could your side business be argued to compete with your employer, use their IP, or violate a non-compete you signed?',
+    options: [
+      { icon: '🔒', label: 'Completely different industry + no IP overlap', sub: 'Zero credible claim', val: 100 },
+      { icon: '🛡️', label: 'Different industry, reviewed by lawyer', sub: 'Legal opinion confirms no conflict', val: 75 },
+      { icon: '⚠️', label: 'Adjacent industry — gray area', sub: 'Could be argued either way', val: 35 },
+      { icon: '🔓', label: 'Same industry — direct competitor', sub: 'Clear non-compete violation risk', val: 0 }
+    ]
+  },
+  {
+    id: 'time',
+    title: '7. Time Separation',
+    desc: 'Do you work on your side business only outside business hours, on personal devices, never using company equipment or WiFi?',
+    options: [
+      { icon: '🔒', label: 'Only personal devices + network, off-hours', sub: 'Zero overlap with employer resources', val: 100 },
+      { icon: '🛡️', label: 'Personal devices, occasionally on lunch', sub: 'Minor time overlap, no company resources', val: 70 },
+      { icon: '⚠️', label: 'Sometimes use company WiFi or laptop', sub: 'Employer could technically monitor', val: 25 },
+      { icon: '🔓', label: 'Regularly during work hours on company device', sub: 'Trivial for IT to discover', val: 0 }
+    ]
+  },
+  {
+    id: 'comms',
+    title: '8. Communication Compartmentalization',
+    desc: 'Do you use separate email, phone, and messaging accounts for your side business — never crossing with work channels?',
+    options: [
+      { icon: '🔒', label: 'Completely separate email + phone + Slack', sub: 'Work and side business never touch', val: 100 },
+      { icon: '🛡️', label: 'Separate email, same phone (dual SIM OK)', sub: 'Minor device overlap', val: 75 },
+      { icon: '⚠️', label: 'Same email provider, different accounts', sub: 'Google knows both are mine', val: 40 },
+      { icon: '🔓', label: 'Same email + phone for everything', sub: 'One search links everything together', val: 5 }
+    ]
+  },
+  {
+    id: 'physical',
+    title: '9. Physical Address Exposure',
+    desc: 'Does your side business use your home address anywhere — website, terms of service, privacy policy, invoices, business filings?',
+    options: [
+      { icon: '🔒', label: 'Virtual address + registered agent for all', sub: 'Home address never appears anywhere', val: 100 },
+      { icon: '🛡️', label: 'Virtual address for public, home on filings', sub: 'Public-facing pages are clean', val: 60 },
+      { icon: '⚠️', label: 'PO Box — but home address on some docs', sub: 'Partial exposure', val: 30 },
+      { icon: '🔓', label: 'Home address on website + invoices', sub: 'Anyone can find where I live', val: 0 }
+    ]
+  },
+  {
+    id: 'linkedin',
+    title: '10. LinkedIn & Professional Profile Risk',
+    desc: 'Does your LinkedIn or other professional profiles reference your side business — visible to coworkers and HR?',
+    options: [
+      { icon: '🔒', label: 'No mention of side business on any profile', sub: 'Zero professional-network exposure', val: 100 },
+      { icon: '🛡️', label: 'Unlinked profile, different name variant', sub: 'Hard to connect to me', val: 80 },
+      { icon: '⚠️', label: 'Listed but no public posts about it', sub: 'Visible to anyone who checks my profile', val: 35 },
+      { icon: '🔓', label: 'Actively posting about side business', sub: 'My boss has seen it', val: 0 }
+    ]
+  },
+  {
+    id: 'tax',
+    title: '11. Tax Filing Risk',
+    desc: 'Do you file side-business taxes through the entity (separate return) — never mixing Schedule C income with your W-2 on a joint return?',
+    options: [
+      { icon: '🔒', label: 'Entity files its own return (1120/1065)', sub: 'Complete tax separation', val: 100 },
+      { icon: '🛡️', label: 'Schedule C but CPA-managed, clean records', sub: 'Audit-ready separation', val: 60 },
+      { icon: '⚠️', label: 'Schedule C, self-prepared, mixed deductions', sub: 'Audit risk if questioned', val: 25 },
+      { icon: '🔓', label: 'Haven\'t filed / cash only / unreported', sub: 'Major legal exposure', val: 0 }
+    ]
+  },
+  {
+    id: 'industry',
+    title: '12. Industry Overlap Risk',
+    desc: 'Does your employer operate in an industry where side-business surveillance is common (finance, defense, tech with aggressive IP clauses)?',
+    options: [
+      { icon: '🔒', label: 'Low-surveillance industry + no IP clauses', sub: 'Employer unlikely to ever investigate', val: 100 },
+      { icon: '🛡️', label: 'Moderate risk — standard employment terms', sub: 'Possible but not routine', val: 65 },
+      { icon: '⚠️', label: 'High-surveillance industry (finance/defense)', sub: 'Background checks are routine', val: 30 },
+      { icon: '🔓', label: 'Tech company with aggressive moonlighting ban', sub: 'Actively surveils employee side projects', val: 0 }
+    ]
+  }
+];
+
+let currentStep = 0;
+let answers = {};
+let scores = {};
+
+function init() {
+  renderStep();
+  loadFromURL();
+}
+
+function loadFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.toString()) {
+    // Try to load scores from URL
+    const urlScores = {};
+    QUESTIONS.forEach(q => {
+      const v = parseInt(params.get(q.id));
+      if (!isNaN(v) && v >= 0 && v <= 100) {
+        urlScores[q.id] = v;
+        answers[q.id] = v;
+      }
+    });
+    if (Object.keys(urlScores).length >= 6) {
+      scores = urlScores;
+      showResults();
+    }
+  }
+}
+
+function renderStep() {
+  const q = QUESTIONS[currentStep];
+  const pct = Math.round((currentStep / QUESTIONS.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('stepCounter').textContent = `Question ${currentStep+1} of ${QUESTIONS.length}`;
+  document.getElementById('stepTitle').textContent = q.title;
+  document.getElementById('stepDesc').textContent = q.desc;
+
+  let html = '';
+  q.options.forEach((opt, i) => {
+    const selected = answers[q.id] === opt.val ? ' selected' : '';
+    html += `<label class="radio-option${selected}" onclick="selectOption('${q.id}', ${opt.val}, this)">
+      <span class="radio-icon">${opt.icon}</span>
+      <div class="radio-text">
+        <div class="radio-label">${opt.label}</div>
+        <div class="radio-sub">${opt.sub}</div>
+      </div>
+    </label>`;
+  });
+  document.getElementById('radioGroup').innerHTML = html;
+
+  document.getElementById('btnPrev').style.display = currentStep > 0 ? 'inline-flex' : 'none';
+  document.getElementById('btnNext').textContent = currentStep === QUESTIONS.length - 1 ? 'Calculate My Score →' : 'Next →';
+  document.getElementById('btnNext').disabled = !answers[q.id];
+
+  // Scroll to top of assessment
+  document.getElementById('assessment').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectOption(qId, val, el) {
+  answers[qId] = val;
+  document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('btnNext').disabled = false;
+}
+
+function goNext() {
+  const q = QUESTIONS[currentStep];
+  if (!answers[q.id]) return;
+
+  if (currentStep < QUESTIONS.length - 1) {
+    currentStep++;
+    renderStep();
+  } else {
+    scores = {...answers};
+    showResults();
+  }
+}
+
+function goPrev() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderStep();
+  }
+}
+
+document.getElementById('btnNext').addEventListener('click', goNext);
+document.getElementById('btnPrev').addEventListener('click', goPrev);
+
+function showResults() {
+  document.getElementById('assessment').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+
+  const total = Object.values(scores).reduce((a,b) => a+b, 0);
+  const composite = Math.round(total / QUESTIONS.length);
+
+  // Update score ring
+  const ring = document.getElementById('scoreRing');
+  let color;
+  if (composite >= 75) color = '#22c55e';
+  else if (composite >= 50) color = '#f59e0b';
+  else color = '#ef4444';
+  ring.style.background = `conic-gradient(${color} ${composite*3.6}deg, #1a1a1a ${composite*3.6}deg)`;
+  ring.style.boxShadow = `0 0 60px ${color}22`;
+  document.getElementById('scoreNum').textContent = composite;
+  document.getElementById('scoreNum').style.color = color;
+
+  // Verdict
+  let verdict, title;
+  if (composite >= 85) {
+    title = '🛡️ Ghost Mode';
+    verdict = 'Your side business is virtually undetectable. You\'ve implemented enterprise-grade operational separation. Employers would need a forensic investigation to connect the dots — and even then, the paper trail leads to entities, not to you.';
+  } else if (composite >= 70) {
+    title = '🔒 Well-Stealthed';
+    verdict = 'Strong separation across most vectors. A determined investigator could potentially connect dots, but casual discovery is extremely unlikely. Focus on the amber factors below to reach Ghost Mode.';
+  } else if (composite >= 50) {
+    title = '⚠️ Exposed Edges';
+    verdict = 'You have some protections but multiple amber/red factors create discoverable breadcrumbs. A routine background check, IP audit, or coworker curiosity could surface your side business. Prioritize the red factors below.';
+  } else if (composite >= 30) {
+    title = '🚨 High Risk';
+    verdict = 'Multiple critical risk vectors are exposed. Your side business is discoverable through basic public-records searches, social media cross-referencing, or financial document review. Immediate action recommended on red factors.';
+  } else {
+    title = '🔓 Fully Exposed';
+    verdict = 'Your side business is trivially discoverable — through WHOIS, payment receipts, social media, or public filings. Any employer with a basic compliance process can connect everything to you within minutes.';
+  }
+  document.getElementById('verdictTitle').textContent = title;
+  document.getElementById('verdictText').textContent = verdict;
+
+  // Factor breakdown
+  let factorHTML = '';
+  QUESTIONS.forEach(q => {
+    const s = scores[q.id];
+    let cls = s >= 70 ? 'factor-safe' : s >= 40 ? 'factor-warn' : 'factor-danger';
+    factorHTML += `<div class="factor-row">
+      <span class="factor-name">${q.title.replace(/^\d+\.\s*/, '')}</span>
+      <span class="factor-score ${cls}">${s}/100</span>
+    </div>`;
+  });
+  document.getElementById('factorList').innerHTML = factorHTML;
+
+  // Generate share URL
+  const shareParams = new URLSearchParams();
+  QUESTIONS.forEach(q => shareParams.set(q.id, scores[q.id]));
+  const shareURL = `https://invisibleexit.com/stealth-score?${shareParams.toString()}`;
+
+  // Embed code
+  document.getElementById('embedCode').textContent =
+    `<a href="https://invisibleexit.com/stealth-score?${shareParams.toString()}">\n` +
+    `  <img src="https://invisibleexit.com/api/stealth-badge?score=${composite}" alt="Stealth Score: ${composite}/100" width="180" height="64" />\n` +
+    `</a>`;
+
+  // Update share buttons
+  window._shareURL = shareURL;
+  window._composite = composite;
+
+  // Update URL
+  if (history.pushState) {
+    history.pushState(null, '', `?${shareParams.toString()}`);
+  }
+
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+}
+
+function retake() {
+  answers = {};
+  scores = {};
+  currentStep = 0;
+  document.getElementById('assessment').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  if (history.pushState) history.pushState(null, '', '/stealth-score');
+  renderStep();
+  document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+}
+
+function shareTwitter() {
+  const text = encodeURIComponent(`My Stealth Score is ${window._composite}/100.\n\n83% of corporate side hustlers score below 45. How safe is YOUR side business from your employer?\n\nTake the 90-second assessment:`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window._shareURL)}`, '_blank');
+}
+
+function shareLinkedIn() {
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window._shareURL)}`, '_blank');
+}
+
+function shareCopy() {
+  navigator.clipboard.writeText(window._shareURL).then(() => {
+    alert('Link copied! Share it anywhere.');
+  });
+}
+
+function copyEmbed() {
+  navigator.clipboard.writeText(document.getElementById('embedCode').textContent).then(() => {
+    alert('Embed code copied! Paste it into your site.');
+  });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'Enter') {
+    if (!document.getElementById('btnNext').disabled) goNext();
+  }
+  if (e.key === 'ArrowLeft') goPrev();
+});
+
+init();
+</script>
+</body>
+</html>

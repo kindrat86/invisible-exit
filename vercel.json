@@ -1020,6 +1020,22 @@
     {
       "source": "/related-tools",
       "destination": "/related-tools.html"
+    },
+    {
+      "source": "/stealth-score",
+      "destination": "/stealth-score.html"
+    },
+    {
+      "source": "/stealth-score/results",
+      "destination": "/stealth-score/results.html"
+    },
+    {
+      "source": "/stealth-badge",
+      "destination": "/stealth-badge/index.html"
+    },
+    {
+      "source": "/embed/stealth-score",
+      "destination": "/embed/stealth-score.html"
     }
   ],
   "crons": [

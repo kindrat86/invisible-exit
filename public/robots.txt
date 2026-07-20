@@ -45,6 +45,13 @@ Allow: /
 User-Agent: Bingbot
 Allow: /
 
+# Google Discover eligibility — 800M+ MAU gatekeeper
+max-image-preview:large
+max-video-preview:-1
+max-snippet:-1
+
 Sitemap: https://invisibleexit.com/sitemap.xml
 
 Sitemap: https://invisibleexit.com/sitemap-index.xml
+
+Sitemap: https://invisibleexit.com/image-sitemap.xml
