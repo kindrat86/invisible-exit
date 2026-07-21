@@ -245,6 +245,31 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
     (Array.isArray(s["@context"]) ? false : false)
   );
   const finalJsonLd = (jsonLd || []).slice();
+
+  // Fix BreadcrumbList items missing the required "item" field (GSC "Missing field 'item'")
+  // Every itemListElement MUST have an "item" (URL or { @id }) per schema.org spec.
+  // This post-processing adds the missing item URLs automatically so every
+  // breadcrumb entry gets a valid URL — one edit fixes ~1,800 pages at render time.
+  for (const block of finalJsonLd) {
+    if (block["@type"] === "BreadcrumbList" && Array.isArray(block.itemListElement)) {
+      const segments = routePath.replace(/\/$/, "").split("/").filter(Boolean);
+      block.itemListElement = block.itemListElement.map((item, i) => {
+        if (item.item) return item; // already has item — leave it alone
+        if (i === 0) return { ...item, item: `${SITE}/` };
+        // Last position → full page URL
+        if (i === block.itemListElement.length - 1) {
+          return { ...item, item: `${SITE}${routePath}` };
+        }
+        // Middle positions → category-level URLs built from route segments
+        const segIdx = i - 1;
+        if (segIdx < segments.length) {
+          return { ...item, item: `${SITE}/${segments.slice(0, segIdx + 1).join("/")}` };
+        }
+        return item;
+      });
+    }
+  }
+
   if (routePath !== "/") finalJsonLd.push(ORG_DISAMBIG);
   if (!hasSpeakable && (type === "article" || type === "review")) {
     finalJsonLd.push({
