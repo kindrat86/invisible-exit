@@ -52,6 +52,4 @@ max-snippet:-1
 
 Sitemap: https://invisibleexit.com/sitemap.xml
 
-Sitemap: https://invisibleexit.com/sitemap-index.xml
-
 Sitemap: https://invisibleexit.com/image-sitemap.xml

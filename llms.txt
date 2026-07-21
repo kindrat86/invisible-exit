@@ -1,3 +1,0 @@
-
-## Statistics Hub
-- [Stats Hub](https://invisibleexit.com/stats/): Curated industry statistics and benchmarks with embeddable badges and APA citations.
