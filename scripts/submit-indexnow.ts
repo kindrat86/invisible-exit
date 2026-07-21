@@ -57,24 +57,60 @@ async function main() {
   const toSubmit = allUrls.filter((u) => prev[u] !== current[u]);
   console.log(`IndexNow: ${allUrls.length} live URLs, ${toSubmit.length} new/changed to submit.`);
 
-  // 3) Submit in batches of 10,000
-  async function submit(batch: string[]) {
+  // 3) Submit: try IndexNow first (Bing/Yandex relay), fall back to Bing WMT SubmitUrlBatch.
+  // IndexNow requires portal activation; SubmitUrlBatch works without it (500/day limit).
+  const BING_API_KEY = process.env.BING_WEBMASTER_API_KEY || "";
+
+  async function submitIndexNow(batch: string[]): Promise<boolean> {
     try {
       const r = await fetch("https://api.indexnow.org/indexnow", {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList: batch }),
       });
-      console.log(`  submitted ${batch.length} → HTTP ${r.status}`);
+      console.log(`  IndexNow: ${batch.length} URLs → HTTP ${r.status}`);
       return r.status < 400 || r.status === 429;
-    } catch (e) { console.error("  submit error (non-fatal):", (e as Error).message); return false; }
+    } catch (e) { console.error("  IndexNow error (non-fatal):", (e as Error).message); return false; }
+  }
+
+  async function submitBingWmt(batch: string[]): Promise<boolean> {
+    if (!BING_API_KEY) { console.error("  BING_WEBMASTER_API_KEY not set — skipping Bing WMT fallback."); return false; }
+    // Query remaining quota; cap batch to what's available (500/day limit)
+    let remaining = 500;
+    try {
+      const qr = await fetch(`https://www.bing.com/webmasterapi/api.svc/json/GetUrlSubmissionQuota?siteUrl=${encodeURIComponent(`https://${HOST}`)}&apikey=${BING_API_KEY}`);
+      if (qr.ok) {
+        const qj = await qr.json() as any;
+        if (qj?.d?.DailyQuota != null) remaining = qj.d.DailyQuota;
+      }
+    } catch { /* ignore — proceed with default */ }
+    if (remaining <= 0) {
+      console.log(`  BingWMT: daily quota exhausted (0 remaining) — skipping.`);
+      return true; // not an error, just skip
+    }
+    const capped = batch.slice(0, remaining);
+    console.log(`  BingWMT: submitting ${capped.length} URLs (${remaining} daily quota remaining)`);
+    try {
+      const r = await fetch(`https://www.bing.com/webmasterapi/api.svc/json/SubmitUrlBatch?apikey=${BING_API_KEY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({ siteUrl: `https://${HOST}`, urlList: capped }),
+      });
+      console.log(`  BingWMT: → HTTP ${r.status}`);
+      return r.status < 400 || r.status === 429;
+    } catch (e) { console.error("  BingWMT submit error (non-fatal):", (e as Error).message); return false; }
   }
 
   if (toSubmit.length > 0) {
-    let ok = true;
-    for (let i = 0; i < toSubmit.length; i += 10000) ok = (await submit(toSubmit.slice(i, i + 10000))) && ok;
+    // Try IndexNow first; if it fails (403 = not activated), fall back to Bing WMT
+    let ok = false;
+    ok = await submitIndexNow(toSubmit.slice(0, 10000));
+    if (!ok) {
+      console.log("  IndexNow failed (likely not activated in portal) — falling back to Bing WMT SubmitUrlBatch.");
+      ok = await submitBingWmt(toSubmit);
+    }
     if (ok) { mkdirSync(join(process.cwd(), "data"), { recursive: true }); writeFileSync(STATE, JSON.stringify(current)); console.log("✓ IndexNow state updated."); }
-    else console.log("Some batches failed; state NOT updated so they retry next run.");
+    else console.log("Both IndexNow and Bing WMT failed; state NOT updated so they retry next run.");
   } else {
     console.log("✓ Nothing new to submit.");
   }
