@@ -1,7 +1,7 @@
 {
   "protocolVersion": "0.3.0",
   "name": "Invisible Exit Agent",
-  "description": "Invisible Exit is the complete guide to disappearing from the internet and reclaiming your digital privacy. Step-by-step guides for deleting online accounts, removing personal data from data brokers, opting out of people-search sites, deleting social media, protecting your digital identity, banking ",
+  "description": "Faceless side-business system for employed professionals — 5 AI tools to validate, launch, and grow anonymous micro-SaaS recurring revenue without quitting your job.",
   "url": "https://invisibleexit.com",
   "preferredTransport": "JSONRPC",
   "iconUrl": "https://invisibleexit.com/icon.png",
@@ -21,15 +21,16 @@
   ],
   "skills": [
     {
-      "id": "get_removal_checklist",
-      "name": "Get Removal Checklist",
-      "description": "Generate a personalized data-broker removal checklist based on your exposure surface.",
+      "id": "get_side_business_guide",
+      "name": "Get Side Business Guide",
+      "description": "Get a step-by-step guide on starting an anonymous micro-SaaS business while employed.",
       "tags": [
-        "disappear from internet",
-        "digital privacy",
-        "remove personal data",
-        "delete online accounts",
-        "data broker removal"
+        "micro-saas",
+        "side business",
+        "anonymous business",
+        "recurring revenue",
+        "financial independence",
+        "stealth startup"
       ],
       "examples": []
     }
@@ -37,22 +38,22 @@
   "attribution": "Invisible Exit, https://invisibleexit.com",
   "content": [
     {
-      "title": "Invisible Exit \u2014 Digital Privacy",
+      "title": "Invisible Exit — Side Business System",
       "url": "https://invisibleexit.com/",
-      "description": "Remove your digital footprint. Data broker opt-out, people search removal.",
+      "description": "Build a $4,000/month side business without quitting your job. 5 AI tools for anonymous micro-SaaS.",
       "type": "homepage"
     },
     {
       "title": "Invisible Exit Pricing",
       "url": "https://invisibleexit.com/pricing",
-      "description": "One-time and subscription privacy removal plans.",
+      "description": "Founding member pricing from $0.97/month for all 5 AI tools.",
       "type": "pricing"
     },
     {
-      "title": "How It Works",
-      "url": "https://invisibleexit.com/how-it-works",
-      "description": "Step-by-step digital footprint removal process.",
-      "type": "guide"
+      "title": "Blog",
+      "url": "https://invisibleexit.com/blog",
+      "description": "50+ articles on micro-SaaS, stealth operations, and financial independence for employed professionals.",
+      "type": "blog"
     }
   ]
 }

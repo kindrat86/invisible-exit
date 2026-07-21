@@ -182,6 +182,137 @@ const Index = () => {
         description="5 AI-powered tools that help corporate managers build $4,000/month in anonymous micro-SaaS revenue in 12 months — without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
+      {/* Structured data: Organization, Product, Reviews, FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Invisible Exit",
+              url: "https://invisibleexit.com",
+              logo: "https://invisibleexit.com/og-image.png",
+              description:
+                "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue without quitting, without code, and without their employer finding out.",
+              sameAs: [
+                "https://www.reddit.com/r/invisibleexit",
+                "https://github.com/kindrat86/invisible-exit",
+                "https://twitter.com/InvisibleExit",
+                "https://www.youtube.com/@InvisibleExit",
+              ],
+              knowsAbout: [
+                "Micro-SaaS",
+                "Anonymous business building",
+                "Corporate career strategy",
+                "Recurring revenue models",
+                "Side business for employed professionals",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "hello@invisibleexit.com",
+                url: "https://invisibleexit.com/contact",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "Invisible Exit — Faceless Side-Business System",
+              description:
+                "A membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses: Freedom Number Calculator, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager.",
+              brand: { "@type": "Brand", name: "Invisible Exit" },
+              offers: {
+                "@type": "Offer",
+                price: "0.97",
+                priceCurrency: "USD",
+                priceValidUntil: "2027-12-31",
+                availability: "https://schema.org/InStock",
+                url: "https://invisibleexit.com/",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+              },
+              review: [
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "Marcus T." },
+                  reviewBody:
+                    "I'd been researching side business ideas for 2 years. Never started. The freedom number calculator showed me I needed $4,200/month. That made it real. I picked a boring product — a PDF generator for electricians — because the Idea Pipeline scored it highest for revenue probability. I launched in 6 weeks. First customer in week 7. Now at $3,200 MRR in 8 months. My employer has no idea.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-04-01",
+                },
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "Sarah K." },
+                  reviewBody:
+                    "I was the ultimate skeptic. I had bought 3 other courses before. None worked because they all required building publicly. The Triple-Separation Protocol was the missing piece. I set up a Wyoming LLC, anonymous domain, different Stripe. My colleague actually found a similar product during a team call. Nothing traced to me.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-03-15",
+                },
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "Jennifer L." },
+                  reviewBody:
+                    "I spent 5 months obsessed with finding the perfect idea. Built nothing. The Cartridge System reframed everything: stop choosing, start building. I launched the 'wrong' idea first — a scheduling tool for small logistics companies. It worked. Not because the idea was brilliant, but because the system found the customers.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-02-20",
+                },
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "Director of Ops" },
+                  reviewBody:
+                    "I validated my first micro-SaaS idea in 3 weeks using the framework. The stealth ops checklist alone was worth 100x the price.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-04-10",
+                },
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "Engineering Manager" },
+                  reviewBody:
+                    "I thought I needed to code. Then I realized my 15 years of managing teams IS the skill. AI handles the code. I handle the business.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-03-28",
+                },
+                {
+                  "@type": "Review",
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  author: { "@type": "Person", name: "VT" },
+                  reviewBody:
+                    "I stopped obsessing over the perfect idea and started working the system.",
+                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
+                  datePublished: "2026-03-05",
+                },
+              ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: FAQS.map((faq) => ({
+                "@type": "Question",
+                name: faq.q,
+                acceptedAnswer: { "@type": "Answer", text: faq.a },
+              })),
+            },
+          ]),
+        }}
+      />
       <Navbar />
 
       <main>

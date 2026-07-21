@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e94560"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="195"/>
+    </clipPath>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="200" fill="url(#bg)"/>
+  <!-- Subtle glow ring -->
+  <circle cx="200" cy="200" r="195" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <!-- Anonymous silhouette - minimalist profile -->
+  <!-- Head -->
+  <circle cx="200" cy="155" r="50" fill="#e0e0e0" opacity="0.9"/>
+  <!-- Invisible/masked face - subtle void (faceless brand theme) -->
+  <ellipse cx="200" cy="155" rx="36" ry="36" fill="#1a1a2e"/>
+  <!-- Small cyber accent dot (eye hint) -->
+  <circle cx="215" cy="148" r="3" fill="#e94560" opacity="0.7"/>
+  <!-- Shoulders/torso -->
+  <path d="M130 280 Q145 210 200 200 Q255 210 270 280 L270 400 L130 400 Z" fill="#e0e0e0" opacity="0.85"/>
+  <!-- Cyber grid lines on torso (faceless digital theme) -->
+  <line x1="170" y1="240" x2="170" y2="380" stroke="#1a1a2e" stroke-width="0.5" opacity="0.3"/>
+  <line x1="230" y1="240" x2="230" y2="380" stroke="#1a1a2e" stroke-width="0.5" opacity="0.3"/>
+  <line x1="200" y1="220" x2="200" y2="390" stroke="#1a1a2e" stroke-width="0.8" opacity="0.4"/>
+  <!-- Small accent rhombus (like a "stealth" badge) -->
+  <rect x="190" y="300" width="20" height="20" rx="4" fill="#e94560" opacity="0.6" transform="rotate(45 200 310)"/>
+  <!-- Invisible Exit brand text at bottom -->
+  <text x="200" y="370" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" letter-spacing="3" fill="#e94560" opacity="0.6">INVISIBLE EXIT</text>
+</svg>

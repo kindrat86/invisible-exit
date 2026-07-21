@@ -1056,6 +1056,22 @@
     {
       "source": "/embed/stealth-score",
       "destination": "/embed/stealth-score.html"
+    },
+    {
+      "source": "/data",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/",
+      "destination": "/data/index.html"
+    },
+    {
+      "source": "/data/(.*)/",
+      "destination": "/data/$1/index.html"
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/data/$1/index.html"
     }
   ],
   "crons": [

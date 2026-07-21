@@ -325,6 +325,42 @@ ${relatedHtml}
 }
 
 function blogListingBodyHtml(): string {
+  // ── Category navigation grid ──
+  const categoryMeta: Record<string, { slug: string; icon: string; count: number }> = {};
+  for (const post of blogPosts) {
+    const slug = slugifyCategory(post.category);
+    if (!categoryMeta[post.category]) {
+      categoryMeta[post.category] = { slug, icon: categoryIcon(post.category), count: 0 };
+    }
+    categoryMeta[post.category].count++;
+  }
+
+  const categoryColors: Record<string, { bg: string; accent: string; text: string }> = {
+    "Financial Independence": { bg: "#eff6ff", accent: "#3b82f6", text: "#1e40af" },
+    "Stealth Operations": { bg: "#f0fdf4", accent: "#22c55e", text: "#15803d" },
+    "Micro-SaaS": { bg: "#faf5ff", accent: "#a855f7", text: "#7e22ce" },
+    "Audience Building": { bg: "#fff7ed", accent: "#f97316", text: "#c2410c" },
+    "AI Tools": { bg: "#ecfdf5", accent: "#10b981", text: "#047857" },
+    "Exit Planning": { bg: "#fef2f2", accent: "#ef4444", text: "#b91c1c" },
+    "Strategy": { bg: "#f0f9ff", accent: "#0ea5e9", text: "#0369a1" },
+    "Time Management": { bg: "#fffbeb", accent: "#f59e0b", text: "#b45309" },
+    "Validation": { bg: "#fdf4ff", accent: "#d946ef", text: "#a21caf" },
+    "Growth": { bg: "#f0fdf4", accent: "#16a34a", text: "#15803d" },
+  };
+
+  const categoryCards = Object.entries(categoryMeta)
+    .sort(([, a], [, b]) => b.count - a.count)
+    .map(([name, meta]) => {
+      const c = categoryColors[name] || { bg: "#f9fafb", accent: "#6b7280", text: "#374151" };
+      return `<a href="/blog/category/${meta.slug}" style="display:flex;flex-direction:column;padding:1.5rem;border-radius:0.75rem;background:${c.bg};border:1px solid ${c.accent}22;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+<span style="font-size:1.5rem;margin-bottom:0.5rem">${meta.icon}</span>
+<h3 style="margin:0 0 0.25rem;font-size:0.95rem;font-weight:700;color:#111827">${name}</h3>
+<span style="font-size:0.8rem;color:${c.text};font-weight:500">${meta.count} article${meta.count !== 1 ? "s" : ""}</span>
+</a>`;
+    })
+    .join("\n");
+
+  // ── Blog post cards ──
   const cards = blogPosts
     .map((post) => {
       const date = new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -332,8 +368,9 @@ function blogListingBodyHtml(): string {
         day: "numeric",
         year: "numeric",
       });
+      const catSlug = slugifyCategory(post.category);
       return `<div>
-<span style="font-size:0.75rem;color:#3B82F6;font-weight:600">${post.category}</span>
+<a href="/blog/category/${catSlug}" style="font-size:0.75rem;color:#3B82F6;font-weight:600;text-decoration:none">${post.category}</a>
 <h2><a href="/blog/${post.slug}">${post.title}</a></h2>
 <p>${post.excerpt}</p>
 <div><span>${post.readTime}</span> <span>${date}</span></div>
@@ -342,19 +379,46 @@ function blogListingBodyHtml(): string {
     .join("\n");
 
   return `<div class="min-h-screen">
-${hubSvgFigure("Blog", "53 articles for employed founders", "Invisible Exit blog — articles on financial independence, micro-SaaS, stealth operations, and audience building")}
+${hubSvgFigure("Blog", `${blogPosts.length} articles for employed founders`, "Invisible Exit blog — articles on financial independence, micro-SaaS, stealth operations, and audience building")}
 <section style="padding-top:8rem;padding-bottom:4rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:56rem;margin:0 auto;text-align:center">
 <h1>The Invisible Exit Blog</h1>
 <p>Strategies, frameworks, and case studies for corporate managers building invisible recurring revenue.</p>
 </div>
 </section>
-<section style="padding:4rem 1.5rem">
+<section style="padding:0 1.5rem 3rem">
 <div style="max-width:72rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1.25rem;color:#374151">Browse by Topic</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:0.9rem">
+${categoryCards}
+</div>
+</div>
+</section>
+<section style="padding:0 1.5rem 4rem">
+<div style="max-width:72rem;margin:0 auto">
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1.25rem;color:#374151">All Articles</h2>
+<div style="display:grid;gap:2rem">
 ${cards}
+</div>
 </div>
 </section>
 </div>`;
+}
+
+function categoryIcon(cat: string): string {
+  const icons: Record<string, string> = {
+    "Financial Independence": "💰",
+    "Stealth Operations": "🕵️",
+    "Micro-SaaS": "⚡",
+    "Audience Building": "📢",
+    "AI Tools": "🤖",
+    "Exit Planning": "🗺️",
+    "Strategy": "🧠",
+    "Time Management": "⏰",
+    "Validation": "✅",
+    "Growth": "📈",
+  };
+  return icons[cat] || "📄";
 }
 
 // ---------- Category page body ----------

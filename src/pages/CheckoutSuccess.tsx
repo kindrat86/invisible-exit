@@ -65,6 +65,22 @@ const CheckoutSuccess = () => {
         {seoHead}
         <Navbar />
         <div className="pt-32 pb-20 px-6 text-center">
+          {/* Tripwire-to-core upsell: prominent upgrade card */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-6 text-left max-w-md mx-auto">
+            <h2 className="text-lg font-bold text-amber-900 mb-2">
+              Lock in the Founding Rate before you go
+            </h2>
+            <p className="text-amber-700 text-sm mb-4">
+              Your Starter plan gives you all 5 tools. Upgrade to <strong>$47/mo Pro</strong> to lock in the founding rate forever and unlock coaching calls, the full Stealth Ops Blueprint, and Launch Control.
+            </p>
+            <a href="/oto/founding" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+              Upgrade to Pro — $47/mo Founding Rate →
+            </a>
+            <p className="text-amber-400 text-xs mt-2 text-center">
+              138+ founders already inside. Cancel anytime.
+            </p>
+          </div>
+
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             Almost there!
           </h1>
@@ -93,6 +109,18 @@ const CheckoutSuccess = () => {
         <p className="text-gray-400 text-sm mt-2">
           You'll be redirected automatically.
         </p>
+        {/* Tripwire-to-core upsell: inline while-you-wait card */}
+        <div className="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-xl text-left max-w-sm mx-auto">
+          <p className="text-amber-800 text-sm font-semibold mb-1">
+            While you wait: your Starter is great — Pro is better.
+          </p>
+          <p className="text-amber-600 text-xs mb-3">
+            Pro ($47/mo) unlocks coaching calls, the full Stealth Ops Blueprint, Launch Control, and the complete exit framework. Founding rate — never goes up.
+          </p>
+          <a href="/oto/founding" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+            Explore Pro Plan →
+          </a>
+        </div>
       </div>
     </div>
   );

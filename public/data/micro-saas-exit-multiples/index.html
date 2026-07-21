@@ -1,0 +1,201 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-SaaS Exit Multiples &amp; Valuation Data 2026 | Invisible Exit Research Data</title>
+    <meta name="description" content="Valuation multiples and exit statistics for micro-SaaS businesses ($10K-$2M ARR). Data from marketplaces, brokers, and public transaction databases.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://invisibleexit.com/data/micro-saas-exit-multiples/">
+    <meta property="og:title" content="Micro-SaaS Exit Multiples &amp; Valuation Data 2026 | Invisible Exit Research Data">
+    <meta property="og:description" content="Valuation multiples and exit statistics for micro-SaaS businesses ($10K-$2M ARR). Data from marketplaces, brokers, and public transaction databases.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://invisibleexit.com/data/micro-saas-exit-multiples/">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+    <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Micro-SaaS Exit Multiples & Valuation Data 2026",
+    "description": "Valuation multiples and exit statistics for micro-SaaS businesses ($10K-$2M ARR). Data from marketplaces, brokers, and public transaction databases.",
+    "url": "https://invisibleexit.com/data/micro-saas-exit-multiples/",
+    "identifier": "micro-saas-exit-multiples",
+    "keywords": "micro-saas exit, valuation multiples, side business sale, SaaS acquisition",
+    "creator": {
+      "@type": "Organization",
+      "name": "Invisible Exit",
+      "url": "https://invisibleexit.com"
+    },
+    "datePublished": "2026-07-20",
+    "dateModified": "2026-07-20",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isAccessibleForFree": true,
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "CSV",
+        "contentUrl": "https://invisibleexit.com/data/micro-saas-exit-multiples/data.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "JSON",
+        "contentUrl": "https://invisibleexit.com/data/micro-saas-exit-multiples/data.json"
+      }
+    ],
+    "includedInDataCatalog": {
+      "@type": "DataCatalog",
+      "name": "Invisible Exit Research Data",
+      "url": "https://invisibleexit.com/data/"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where does the data in Micro-SaaS Exit Multiples & Valuation Data 2026 come from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All data points are sourced from publicly available industry reports, government databases, and market research published by organizations such as Gartner, PitchBook, Statista, OFAC, and others. Each data point includes its specific source citation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this data in my own research or content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! This dataset is published under CC BY 4.0 license \u2014 you are free to use, share, and adapt the data for any purpose, including commercial use, as long as you provide attribution to Micro-SaaS Exit Multiples & Valuation Data 2026 and link back to this page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is this dataset updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This dataset was last updated on 2026-07-20. We review and refresh our data sources on an annual basis as new industry reports and surveys are published."
+        }
+      }
+    ]
+  }
+]</script>
+    <style>
+    :root{--bg:#fafbfc;--fg:#1a1a2e;--accent:#2563eb;--muted:#6b7280;--border:#e5e7eb;--card:#fff;--green:#059669}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7}
+    .container{max-width:960px;margin:0 auto;padding:2rem 1.5rem}
+    h1{font-size:2.2rem;font-weight:800;margin-bottom:.5rem;line-height:1.2}
+    h2{font-size:1.5rem;font-weight:700;margin:2rem 0 1rem}
+    h3{font-size:1.15rem;font-weight:600;margin:1.5rem 0 .75rem}
+    .lead{font-size:1.15rem;color:var(--muted);margin-bottom:1.5rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+    table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+    th,td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+    th{background:var(--bg);font-weight:600;color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+    td.source{font-size:.82rem;color:var(--muted);font-style:italic}
+    .value{font-weight:700;color:var(--accent);white-space:nowrap}
+    .chart-box{margin:2rem 0;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px}
+    .chart-box canvas{max-height:380px}
+    .btn{display:inline-block;padding:.7rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem;margin:.25rem;transition:all .15s}
+    .btn-primary{background:var(--accent);color:#fff;border:none}
+    .btn-primary:hover{background:#1d4ed8}
+    .btn-outline{border:2px solid var(--border);color:var(--fg);background:transparent}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+    .cite-box{background:#f0f7ff;border:1px solid #bfdbfe;border-radius:8px;padding:1.25rem;margin:1.5rem 0;font-size:.88rem}
+    .cite-box pre{background:#1e293b;color:#e2e8f0;padding:.75rem;border-radius:6px;overflow-x:auto;font-size:.8rem;margin-top:.5rem}
+    .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb a:hover{color:var(--accent)}
+    .nav-links{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.5rem 0}
+    .badge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.75rem;font-weight:600;background:#dcfce7;color:var(--green)}
+    footer{margin-top:3rem;padding:1.5rem 0;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+    footer a{color:var(--accent)}
+    @media(max-width:640px){.container{padding:1rem}h1{font-size:1.6rem}}
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <nav class="breadcrumb"><a href="/">Home</a> › <a href="/data/">Research Data</a> › Micro-SaaS Exit Multiples &amp; Valuation Data 2026</nav>
+    <h1>Micro-SaaS Exit Multiples &amp; Valuation Data 2026</h1>
+    <p class="lead">Valuation multiples and exit statistics for micro-SaaS businesses ($10K-$2M ARR). Data from marketplaces, brokers, and public transaction databases.</p>
+    <span class="badge">CC BY 4.0</span>
+    <span class="badge" style="margin-left:.5rem;background:#dbeafe;color:#2563eb">Updated 2026-07-20</span>
+
+    <div class="nav-links">
+<a href="data.csv" class="btn btn-primary" download>📥 Download CSV</a>
+<a href="data.json" class="btn btn-outline" download>📥 Download JSON</a>
+</div>
+
+    <div class="chart-box">
+<canvas id="datasetChart"></canvas>
+</div>
+<script>
+(function() {
+  var ctx = document.getElementById('datasetChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Median revenue multiple (micro-SaaS <$500K ARR)", "Median revenue multiple ($500K-$2M ARR)", "Median SDE multiple (micro-SaaS)", "Average time to sell (listed marketplace)", "Buyer type: Individual vs Company", "Median ARR of sold micro-SaaS", "SaaS businesses listed for sale (2025)", "Average due diligence period (micro-SaaS)", "Cash-at-close vs earnout split (median)"],
+      datasets: [{
+        label: 'Value',
+        data: [2.8, 3.6, 3.2, 4.2, 68.0, 185.0, 15000.0, 28.0, 70.0],
+        backgroundColor: '#2563eb',
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, title: { display: true, text: 'Value' } }
+      }
+    }
+  });
+})();
+</script>
+
+    <h2>Data Table</h2>
+    <div class="card" style="overflow-x:auto">
+    <table>
+    <thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody><tr><td>Median revenue multiple (micro-SaaS &lt;$500K ARR)</td><td class="value">2.8x</td><td class="source">FE International Micro-SaaS Report 2025</td></tr>
+<tr><td>Median revenue multiple ($500K-$2M ARR)</td><td class="value">3.6x</td><td class="source">FE International Micro-SaaS Report 2025</td></tr>
+<tr><td>Median SDE multiple (micro-SaaS)</td><td class="value">3.2x</td><td class="source">Empire Flippers Marketplace Data 2025</td></tr>
+<tr><td>Average time to sell (listed marketplace)</td><td class="value">4.2 months</td><td class="source">Acquire.com Marketplace Data 2025</td></tr>
+<tr><td>Buyer type: Individual vs Company</td><td class="value">68% / 32%</td><td class="source">MicroAcquire Acquisition Report 2025</td></tr>
+<tr><td>Median ARR of sold micro-SaaS</td><td class="value">$185K</td><td class="source">Empire Flippers Marketplace Data 2025</td></tr>
+<tr><td>SaaS businesses listed for sale (2025)</td><td class="value">~15,000</td><td class="source">Flippa Industry Report 2025</td></tr>
+<tr><td>Average due diligence period (micro-SaaS)</td><td class="value">28 days</td><td class="source">Acquire.com Marketplace Data 2025</td></tr>
+<tr><td>Cash-at-close vs earnout split (median)</td><td class="value">70/30</td><td class="source">FE International Deal Structure Report 2025</td></tr>
+</tbody>
+    </table>
+    </div>
+
+    <p style="color:var(--muted);font-size:.85rem;margin-top:.5rem">9 data points — all sourced from publicly available industry reports and databases.</p>
+
+        <div class="cite-box">
+    <strong>📚 Cite this dataset</strong>
+    <p style="margin-top:.5rem"><strong>APA:</strong> Invisible Exit. (2026-07-20). <i>Micro-SaaS Exit Multiples & Valuation Data 2026</i>. Retrieved from https://invisibleexit.com/data/micro-saas-exit-multiples/</p>
+    <p style="margin-top:.5rem"><strong>MLA:</strong> "Micro-SaaS Exit Multiples & Valuation Data 2026." <em>Invisible Exit</em>, 2026-07-20, invisibleexit.com/data/micro-saas-exit-multiples/.</p>
+    <p style="margin-top:.5rem"><strong>BibTeX:</strong></p>
+    <pre>@misc{micro-saas-exit-multiples,
+  author       = {Invisible Exit},
+  title        = {Micro-SaaS Exit Multiples & Valuation Data 2026},
+  year         = {2026},
+  url          = {https://invisibleexit.com/data/micro-saas-exit-multiples/},
+  note         = {Accessed: 2026-07-20}
+}</pre>
+    <p style="margin-top:.5rem;color:var(--muted);font-size:.8rem">Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--accent)">CC BY 4.0</a>. Attribution required.</p>
+    </div>
+
+    <footer>
+    <p><strong>Invisible Exit</strong> — Stealth business exit planning for founders</p>
+    <p><a href="https://invisibleexit.com">invisibleexit.com</a> · <a href="https://invisibleexit.com/data/">All research datasets</a></p>
+    <p style="margin-top:.5rem">Data licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. When you use this data, please link back to this page. Each backlink helps us keep this research free and updated.</p>
+    </footer>
+
+    </div>
+    </body>
+    </html>

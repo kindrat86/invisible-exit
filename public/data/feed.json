@@ -1,0 +1,18 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Invisible Exit Research Datasets",
+  "home_page_url": "https://invisibleexit.com/data/",
+  "feed_url": "https://invisibleexit.com/data/feed.json",
+  "description": "Free, downloadable industry datasets from Invisible Exit. CC BY 4.0.",
+  "icon": "https://invisibleexit.com/favicon.ico",
+  "items": [
+    {
+      "id": "https://invisibleexit.com/data/micro-saas-exit-multiples/",
+      "url": "https://invisibleexit.com/data/micro-saas-exit-multiples/",
+      "title": "Micro-SaaS Exit Multiples & Valuation Data 2026",
+      "content_text": "Valuation multiples and exit statistics for micro-SaaS businesses ($10K-$2M ARR). Data from marketplaces, brokers, and public transaction databases.",
+      "date_published": "2026-07-20T00:00:00Z",
+      "date_modified": "2026-07-20T00:00:00Z"
+    }
+  ]
+}

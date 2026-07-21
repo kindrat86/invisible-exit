@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "Invisible Exit",
   "name_for_model": "invisibleexit",
-  "description_for_human": "Complete guide to digital privacy and disappearing from the internet.",
-  "description_for_model": "Complete guide to digital privacy and disappearing from the internet.",
+  "description_for_human": "Faceless side-business system for employed professionals — 5 AI tools to validate, launch, and grow anonymous micro-SaaS revenue without quitting your job.",
+  "description_for_model": "Faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. Includes: freedom number calculator, idea validator with 500+ micro-SaaS ideas, stealth ops hub for legal compliance, launch automation, and faceless audience builder. Pricing from $0.97/month.",
   "auth": {
     "type": "none"
   },

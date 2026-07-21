@@ -2,9 +2,9 @@
   "schemaVersion": "0.1",
   "name": "invisibleexit",
   "displayName": "Invisible Exit",
-  "description": "Complete guide to digital privacy and disappearing from the internet.",
+  "description": "Faceless side-business system for employed professionals — 5 AI tools to validate, launch, and grow anonymous micro-SaaS recurring revenue without quitting your job.",
   "homepageUrl": "https://invisibleexit.com/mcp",
-  "contactEmail": "support@invisibleexit.com",
+  "contactEmail": "hello@invisibleexit.com",
   "publisher": {
     "name": "Invisible Exit",
     "url": "https://invisibleexit.com"
@@ -22,16 +22,16 @@
   },
   "tools": [
     {
-      "name": "search_privacy_guides",
-      "summary": "Search privacy guides by topic."
+      "name": "search_side_business_guides",
+      "summary": "Search side-business guides and micro-SaaS playbooks by topic."
     },
     {
-      "name": "get_privacy_guide",
-      "summary": "Get a detailed step-by-step privacy guide."
+      "name": "get_freedom_calculator",
+      "summary": "Calculate your freedom number — the monthly recurring revenue needed to cover living expenses."
     },
     {
-      "name": "check_data_brokers",
-      "summary": "List major data brokers with opt-out links."
+      "name": "validate_idea",
+      "summary": "Validate a micro-SaaS idea against 500+ scored blueprints."
     }
   ]
 }

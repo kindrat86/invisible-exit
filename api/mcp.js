@@ -1,4 +1,4 @@
-// MCP Server for Invisible Exit — Complete guide to digital privacy and disappearing from the internet.
+// MCP Server for Invisible Exit — Faceless side-business system for employed professionals.
 // Implements Model Context Protocol JSON-RPC over HTTP (Streamable HTTP transport)
 // Deployed as a Vercel serverless function. No auth required (read-only tools).
 // Install in Claude Desktop: npx mcp-remote https://invisibleexit.com/api/mcp
@@ -10,8 +10,25 @@ const SERVER_INFO = {
 const CAPABILITIES = { tools: { listChanged: false }, resources: {}, prompts: {} };
 const TOOLS = [
   {
-    "name": "search_privacy_guides",
-    "description": "Search privacy guides by topic.",
+    "name": "search_freedom_calculator",
+    "description": "Calculate your freedom number — the monthly recurring revenue needed to cover living expenses and optionally leave your job.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "salary": {
+          "type": "number",
+          "description": "Your current annual salary"
+        },
+        "monthly_expenses": {
+          "type": "number",
+          "description": "Your monthly living expenses"
+        }
+      }
+    }
+  },
+  {
+    "name": "search_side_business_guides",
+    "description": "Search side-business guides and micro-SaaS playbooks by topic.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -22,30 +39,26 @@ const TOOLS = [
     }
   },
   {
-    "name": "get_privacy_guide",
-    "description": "Get a detailed step-by-step privacy guide.",
+    "name": "validate_idea",
+    "description": "Validate a micro-SaaS idea against 500+ scored blueprints. Get industry fit, revenue potential, and time-to-launch estimates.",
     "inputSchema": {
       "type": "object",
       "properties": {
-        "topic": {
+        "idea": {
+          "type": "string"
+        },
+        "industry": {
           "type": "string"
         }
       },
       "required": [
-        "topic"
+        "idea"
       ]
-    }
-  },
-  {
-    "name": "check_data_brokers",
-    "description": "List major data brokers with opt-out links.",
-    "inputSchema": {
-      "type": "object"
     }
   }
 ];
 const HOME_URL = "https://invisibleexit.com";
-const CONTACT = "support@invisibleexit.com";
+const CONTACT = "hello@invisibleexit.com";
 
 function makeResult(id, result) {
   return { jsonrpc: "2.0", id, result };

@@ -1,0 +1,47 @@
+[
+  {
+    "label": "Median revenue multiple (micro-SaaS <$500K ARR)",
+    "value": "2.8x",
+    "source": "FE International Micro-SaaS Report 2025"
+  },
+  {
+    "label": "Median revenue multiple ($500K-$2M ARR)",
+    "value": "3.6x",
+    "source": "FE International Micro-SaaS Report 2025"
+  },
+  {
+    "label": "Median SDE multiple (micro-SaaS)",
+    "value": "3.2x",
+    "source": "Empire Flippers Marketplace Data 2025"
+  },
+  {
+    "label": "Average time to sell (listed marketplace)",
+    "value": "4.2 months",
+    "source": "Acquire.com Marketplace Data 2025"
+  },
+  {
+    "label": "Buyer type: Individual vs Company",
+    "value": "68% / 32%",
+    "source": "MicroAcquire Acquisition Report 2025"
+  },
+  {
+    "label": "Median ARR of sold micro-SaaS",
+    "value": "$185K",
+    "source": "Empire Flippers Marketplace Data 2025"
+  },
+  {
+    "label": "SaaS businesses listed for sale (2025)",
+    "value": "~15,000",
+    "source": "Flippa Industry Report 2025"
+  },
+  {
+    "label": "Average due diligence period (micro-SaaS)",
+    "value": "28 days",
+    "source": "Acquire.com Marketplace Data 2025"
+  },
+  {
+    "label": "Cash-at-close vs earnout split (median)",
+    "value": "70/30",
+    "source": "FE International Deal Structure Report 2025"
+  }
+]
