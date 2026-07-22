@@ -434,7 +434,7 @@ function getRoutes() {
   routes.push({
     path: "/",
     meta: {
-      title: "How to Build a $4,000/Month Side Business Without Quitting | Invisible Exit",
+      title: "Build $4K/Month Side Income Without Quitting | Invisible Exit",
       description:
         "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $0.97/mo.",
       url: `${SITE}/`,
