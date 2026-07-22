@@ -178,7 +178,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Build Side Revenue Without Quitting Your Job | Invisible Exit"
+        title="How to Build a $4,000/Month Side Business Without Quitting | Invisible Exit"
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
@@ -276,6 +276,12 @@ const Index = () => {
               </>
             )}
           </h1>
+
+          {/* TL;DR extractable summary — verbatim facts from existing site copy */}
+          <div className="tl-dr-summary max-w-2xl mx-auto mb-8 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white/70 text-sm leading-relaxed animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <strong className="text-white/90">TL;DR:</strong>{" "}
+            Invisible Exit is a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue. The system is designed to reach $4,000/month in side income within 12–18 months using just 5 hours per week — without quitting your job, writing code, or revealing your identity.
+          </div>
 
           {/* Canonical entity descriptor — AEO disambiguation (vs. "Invisible, Inc." game / exit-planning) */}
           <p className="text-white font-semibold text-base sm:text-lg max-w-2xl mx-auto mb-3 animate-fade-up">
