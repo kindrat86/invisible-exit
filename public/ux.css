@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 { margin-bottom: 0.5em; }
 p { margin-bottom: 1.25em; max-width: 65ch; }
 
 /* ── 4. LINKS ───────────────────────────────────────────────────── */
-a {
+a:not([class*="bg-"]):not([role="button"]) {
   color: var(--ux-accent);
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.08em;
@@ -83,7 +83,7 @@ a {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-a:hover { color: var(--ux-accent-hover); }
+a:not([class*="bg-"]):not([role="button"]):hover { color: var(--ux-accent-hover); }
 
 /* ── 5. TOUCH-FRIENDLY INTERACTIVE TARGETS ──────────────────────── */
 button, .btn, [role="button"],
@@ -761,7 +761,7 @@ body.nav-open { overflow: hidden; }
   body { font-size: 12pt; line-height: 1.5; }
   #ux-reading-progress, #ux-back-to-top, .ux-sticky-cta, .ux-fab,
   .ux-toast-container, .ux-offline-bar, [data-mobile-nav] { display: none !important; }
-  a { text-decoration: underline; }
+  a:not([class*="bg-"]):not([role="button"]) { text-decoration: underline; }
   a[href^="http"]::after { content: ' (' attr(href) ')'; font-size: 0.8em; }
 }
 
@@ -840,3 +840,13 @@ body.nav-open { overflow: hidden; }
   .ux-stagger > * { opacity: 1; transform: none; animation: none; }
   .ux-stagger > *:nth-child(n) { animation-delay: 0ms; }
 }
+
+/* ── CONVERSION REPAIR 2026-07-22 ──────────────────────────────
+   Tailwind v4 emits utilities inside @layer utilities. Unlayered
+   rules in this file beat ANY layered rule regardless of specificity,
+   which silently overrode button text colours (measured 1.13:1 on
+   signals.gitdealflow.com). Link-buttons paint their own background
+   and must keep their own text colour. Do not reintroduce a bare
+   `a { color: ... }` rule in this file. */
+a[class*="bg-"], a[role="button"], a.btn, button a { color: revert-layer; }
+
