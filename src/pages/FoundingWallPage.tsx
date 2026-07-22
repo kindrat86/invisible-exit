@@ -316,7 +316,7 @@ const FoundingWallPage = () => {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-white/40 text-xs mt-4">
-            73 founding spots remaining · $0.97/month · Cancel anytime
+            Founding membership open · $0.97/month · Cancel anytime
           </p>
         </div>
       </section>

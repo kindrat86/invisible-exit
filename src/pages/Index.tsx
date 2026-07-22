@@ -178,8 +178,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Build a $4,000/Month Side Business Without Quitting | Invisible Exit"
-        description="5 AI-powered tools that help corporate managers build $4,000/month in anonymous micro-SaaS revenue in 12 months — without quitting, without code, without your employer finding out. From $0.97/mo."
+        title="Build Side Revenue Without Quitting Your Job | Invisible Exit"
+        description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
       {/* Structured data: Organization, Product, Reviews, FAQPage */}
@@ -214,13 +214,6 @@ const Index = () => {
                 email: "hello@invisibleexit.com",
                 url: "https://invisibleexit.com/contact",
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "127",
-              },
             },
             {
               "@context": "https://schema.org",
@@ -237,69 +230,6 @@ const Index = () => {
                 availability: "https://schema.org/InStock",
                 url: "https://invisibleexit.com/",
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "127",
-              },
-              review: [
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "Marcus T." },
-                  reviewBody:
-                    "I'd been researching side business ideas for 2 years. Never started. The freedom number calculator showed me I needed $4,200/month. That made it real. I picked a boring product — a PDF generator for electricians — because the Idea Pipeline scored it highest for revenue probability. I launched in 6 weeks. First customer in week 7. Now at $3,200 MRR in 8 months. My employer has no idea.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-04-01",
-                },
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "Sarah K." },
-                  reviewBody:
-                    "I was the ultimate skeptic. I had bought 3 other courses before. None worked because they all required building publicly. The Triple-Separation Protocol was the missing piece. I set up a Wyoming LLC, anonymous domain, different Stripe. My colleague actually found a similar product during a team call. Nothing traced to me.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-03-15",
-                },
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "Jennifer L." },
-                  reviewBody:
-                    "I spent 5 months obsessed with finding the perfect idea. Built nothing. The Cartridge System reframed everything: stop choosing, start building. I launched the 'wrong' idea first — a scheduling tool for small logistics companies. It worked. Not because the idea was brilliant, but because the system found the customers.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-02-20",
-                },
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "Director of Ops" },
-                  reviewBody:
-                    "I validated my first micro-SaaS idea in 3 weeks using the framework. The stealth ops checklist alone was worth 100x the price.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-04-10",
-                },
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "Engineering Manager" },
-                  reviewBody:
-                    "I thought I needed to code. Then I realized my 15 years of managing teams IS the skill. AI handles the code. I handle the business.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-03-28",
-                },
-                {
-                  "@type": "Review",
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  author: { "@type": "Person", name: "VT" },
-                  reviewBody:
-                    "I stopped obsessing over the perfect idea and started working the system.",
-                  itemReviewed: { "@type": "Product", name: "Invisible Exit" },
-                  datePublished: "2026-03-05",
-                },
-              ],
             },
             {
               "@context": "https://schema.org",
@@ -445,44 +375,9 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Social proof — real-time count */}
+          {/* Tagline */}
           <div className="flex items-center justify-center gap-4 mt-4 text-xs text-white/60 animate-fade-up" style={{ animationDelay: "350ms" }}>
-            <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              127 building now
-            </span>
-            <span>·</span>
-            <span>★★★★★ 4.8/5</span>
-            <span>·</span>
-            <span>73 founding spots left</span>
-            <span>·</span>
-            <span className="text-primary-light font-semibold">“We don't wait for exits. We build our own.”</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 1b. Social Proof Bar ── */}
-      <section className="bg-primary-strong py-3 sm:py-4 border-b border-primary-dark">
-        <div className="container-standard">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
-            <span className="flex items-center gap-2 text-white text-sm font-medium">
-              <span className="flex -space-x-2">
-                {["bg-blue-400", "bg-green-400", "bg-purple-400", "bg-orange-400"].map((c, i) => (
-                  <span key={i} className={`w-6 h-6 rounded-full ${c} border-2 border-primary flex items-center justify-center text-[10px] font-bold text-white`}>
-                    {["S", "M", "J", "A"][i]}
-                  </span>
-                ))}
-              </span>
-              127 managers building now
-            </span>
-            <span className="flex items-center gap-1.5 text-white text-sm">
-              <span className="text-amber-300">★★★★★</span>
-              <span className="font-medium">4.8/5 rating</span>
-            </span>
-            <span className="flex items-center gap-1.5 text-white text-sm">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="font-medium">73 founding spots left</span>
-            </span>
+            <span className="text-primary-light font-semibold">"We don't wait for exits. We build our own.”</span>
           </div>
         </div>
       </section>
@@ -1806,7 +1701,7 @@ const Index = () => {
           {/* ── TRIBE CTA ── */}
           <div className="text-center mt-10">
             <p className="text-sm text-muted-foreground max-w-lg mx-auto mb-4">
-              Join 127 managers building invisible freedom. Anonymous by design.
+              Join managers building invisible freedom. Anonymous by design.
               Verified by Stripe. Zero employer detections in 14 months.
             </p>
             <Link
@@ -1977,7 +1872,7 @@ const Index = () => {
               {/* Nudge vs price bar */}
               <div className="mt-4 bg-amber-500/5 border border-amber-500/15 rounded-lg px-4 py-2.5 flex items-center justify-between">
                 <span className="text-amber-700 text-xs font-medium">
-                  ⏳ <span className="text-amber-800 font-semibold">73 founding spots left</span> at this price
+                  Founding membership open at this price
                 </span>
                 <span className="text-amber-700 text-xs font-bold">Locked for life</span>
               </div>
@@ -2080,7 +1975,7 @@ const Index = () => {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <p className="text-sm text-muted-foreground mt-3 text-center">
-                Secure Stripe checkout · 73 founding spots remaining · Lock your price forever
+                Secure Stripe checkout · Founding membership open · Lock your price forever
               </p>
             </div>
 
@@ -2260,7 +2155,7 @@ const Index = () => {
         <div className="container-narrow text-center">
           <h2 className="text-h1 text-white mb-4">Want the full story first?</h2>
           <p className="text-body text-white/50 mb-10">
-            Read how I went from trapped to $4,100 MRR in 12 months. 10 chapters. 15 minutes.
+            Read how I went from trapped to building real side revenue. 10 chapters. 15 minutes.
           </p>
           <div className="flex flex-col items-center gap-4">
             <button
@@ -2521,8 +2416,7 @@ const Index = () => {
           <div className="mt-12 inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
             <p className="text-white/50 text-xs">
-              <strong className="text-white/70">73 of 100</strong> founding spots remaining ·{" "}
-              <strong className="text-white/70">127</strong> managers building now
+              Founding membership open · Lock in your price now
             </p>
           </div>
         </div>

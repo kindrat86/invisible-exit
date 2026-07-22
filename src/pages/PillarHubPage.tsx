@@ -30,7 +30,7 @@ const PILLAR_GUIDES = [
       "Section 4: The Stealth — Entity separation, anonymity stack, non-compete navigation (Secret #2)",
       "Section 5: The System — The Cartridge System, why system beats idea (Secret #3)",
       "Section 6: The Tools — 5-tool stack walkthrough (FYM, Pipeline, Stealth Ops, Launch, Brand)",
-      "Section 7: The Timeline — Month-by-month roadmap ($0 → $4,100 MRR in 12 months)",
+      "Section 7: The Timeline — Month-by-month roadmap ($0 → recurring side revenue)",
       "Section 8: The Mistakes — 10 common failures and how to avoid each",
       "Section 9: The Legal — Non-compete, IP assignment, employment contract clauses",
       "Section 10: The First Customer — Outreach scripts, validation, pricing",

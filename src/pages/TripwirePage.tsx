@@ -381,8 +381,8 @@ const TripwirePage = () => {
         {/* ── Guarantee (Risk Reversal) ── */}
         <div className="max-w-lg mx-auto mb-8">
           <GuaranteeBox
-            days={14}
-            title='My 14-Day "Better Than Risk-Free" Guarantee'
+            days={30}
+            title='My 30-Day "Better Than Risk-Free" Guarantee'
             keepText="the 47-point checklist, all the walkthroughs, and every template"
           />
         </div>

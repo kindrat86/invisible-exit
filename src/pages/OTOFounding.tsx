@@ -9,7 +9,7 @@ import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
 import VideoPlaceholder from "@/components/oto/VideoPlaceholder";
 import ValueStack from "@/components/oto/ValueStack";
 import PriceCard from "@/components/oto/PriceCard";
-import GuaranteeBox from "@/components/oto/GuaranteeBox";
+import GuaranteeBox from "@/components/GuaranteeBox";
 
 const OTOFounding = () => {
   const [searchParams] = useSearchParams();

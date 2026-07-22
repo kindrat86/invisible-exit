@@ -144,7 +144,7 @@ const StartPage = () => {
               <span className="text-xs text-amber-200 font-semibold uppercase tracking-wider">
                 {fromTripwire
                   ? "🎉 YOUR $7 BLUEPRINT IS WAITING — NOW UNLOCK THE FULL SYSTEM"
-                  : "73 of 100 founding spots remaining"}
+                  : "Founding membership open"}
               </span>
             </div>
 
@@ -375,16 +375,6 @@ const StartPage = () => {
             <p className="text-sm text-white/40 mt-4">
               30-day money-back guarantee · Cancel anytime · Locked at $0.97/month for life
             </p>
-            <div className="mt-6 flex items-center justify-center gap-4 text-xs text-white/30">
-              <span className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                127 managers building now
-              </span>
-              <span>·</span>
-              <span>★★★★★ 4.8/5</span>
-              <span>·</span>
-              <span>73 founding spots left</span>
-            </div>
           </div>
         </section>
       </main>

@@ -82,8 +82,7 @@ const AuthorityBar = () => {
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-lg mx-auto">
             No face. No podcast tour. No guest articles — yet. Just documented
-            systems, verified revenue, 55 original guides, and 127 managers
-            building right now.
+            systems, verified revenue, and 55 original guides.
           </p>
         </div>
 

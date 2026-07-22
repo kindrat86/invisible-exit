@@ -490,7 +490,7 @@ Give your notice. Take a week off. Then go full-time on your business.
 
 ## The Timeline Is a Guide, Not a Guarantee
 
-Some people hit $4,000/month in 9 months. Others take 24. The timeline depends on your niche, your effort, and a bit of luck.
+Timelines vary widely. Some people move faster; others take more time. It depends on your niche, your effort, and a bit of luck.
 
 What matters is the sequence: validate, build, grow, exit. Skip a step and you'll waste months backtracking.
 
