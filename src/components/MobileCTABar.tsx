@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { ArrowRight, X } from "lucide-react";
 
 /**
@@ -18,7 +17,6 @@ const HIDDEN_ROUTES = ["/freedom", "/oto/", "/checkout", "/login", "/dashboard",
 const DISMISS_KEY = "cta_bar_dismissed";
 
 export function MobileCTABar() {
-  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(() => {
     try {
@@ -119,15 +117,15 @@ export function MobileCTABar() {
     >
       <div className="flex items-center justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-white/60 font-medium">{t("nav.freeCalculator")}</p>
-          <p className="text-sm text-white font-semibold truncate">{t("mobileCta.label")}</p>
+          <p className="text-xs text-white/60 font-medium">Free Calculator</p>
+          <p className="text-sm text-white font-semibold truncate">Find your freedom number</p>
         </div>
         <Link
           to="/freedom"
           className="flex items-center gap-1.5 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors flex-shrink-0 active:scale-95"
           style={{ minHeight: "44px" }}
         >
-          {t("mobileCta.button")}
+          Calculate
           <ArrowRight className="w-4 h-4" />
         </Link>
         <button

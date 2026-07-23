@@ -1,0 +1,842 @@
+/* ════════════════════════════════════════════════════════════════════
+   R18 — WORLD-CLASS MOBILE-FIRST DESIGN SYSTEM
+   Deployed across all 10 portfolio domains
+   Features: touch ripple, autofill override, dark mode transition,
+   sticky CTA, bottom sheet, scroll snap, viewport units,
+   container queries, offline indicator, print styles, haptic
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── 0. CSS CUSTOM PROPERTIES (DESIGN TOKENS) ──────────────────── */
+:root {
+  --ux-accent: #2563eb;
+  --ux-accent-hover: #1d4ed8;
+  --ux-accent-ghost: rgba(37, 99, 235, 0.08);
+  --ux-accent-ghost-hover: rgba(37, 99, 235, 0.14);
+  --ux-surface: #ffffff;
+  --ux-surface-raised: #f8fafc;
+  --ux-border: #e2e8f0;
+  --ux-border-hover: #cbd5e1;
+  --ux-text: #0f172a;
+  --ux-text-secondary: #475569;
+  --ux-text-muted: #94a3b8;
+  --ux-radius-sm: 0.5rem;
+  --ux-radius: 0.75rem;
+  --ux-radius-lg: 1rem;
+  --ux-radius-xl: 1.5rem;
+  --ux-radius-full: 9999px;
+  --ux-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --ux-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.04);
+  --ux-shadow-lg: 0 4px 24px rgba(15, 23, 42, 0.08), 0 8px 40px rgba(15, 23, 42, 0.04);
+  --ux-shadow-xl: 0 8px 40px rgba(15, 23, 42, 0.1), 0 16px 64px rgba(15, 23, 42, 0.05);
+  --ux-transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ux-transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  --ux-nav-height: 64px;
+  /* R18 — mobile bottom bar */
+  --ux-bottom-bar-height: 0px;
+}
+
+/* ── 1. CSS RESET & BOX-SIZING ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── 2. MOBILE-FIRST TYPOGRAPHY ─────────────────────────────────── */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ux-text);
+  background: var(--ux-surface);
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* R18 — theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
+}
+
+/* ── 3. FLUID RESPONSIVE HEADING SCALE ──────────────────────────── */
+h1 { font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.12; letter-spacing: -0.025em; font-weight: 800; }
+h2 { font-size: clamp(1.375rem, 4vw, 2.25rem); line-height: 1.2; letter-spacing: -0.015em; font-weight: 700; }
+h3 { font-size: clamp(1.125rem, 3vw, 1.5rem); line-height: 1.3; font-weight: 700; }
+h4 { font-size: 1.125rem; line-height: 1.35; font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { margin-bottom: 0.5em; }
+
+p { margin-bottom: 1.25em; max-width: 65ch; }
+
+/* ── 4. LINKS ───────────────────────────────────────────────────── */
+a {
+  color: var(--ux-accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.08em;
+  transition: color var(--ux-transition);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+a:hover { color: var(--ux-accent-hover); }
+
+/* ── 5. TOUCH-FRIENDLY INTERACTIVE TARGETS ──────────────────────── */
+button, .btn, [role="button"],
+a.button, a.btn, .cta, input[type="submit"],
+input[type="button"], select {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--ux-radius);
+  border: none;
+  transition: all var(--ux-transition), background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+button:active, .btn:active, a.btn:active { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) {
+  button, .btn, [role="button"], a.button, a.btn { transition: none; }
+}
+
+/* ── 6. GRADIENT CTA BUTTONS ────────────────────────────────────── */
+.ux-cta-primary, a.ux-cta-primary {
+  background: linear-gradient(135deg, var(--ux-accent) 0%, #4f46e5 100%);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  border-radius: var(--ux-radius-full);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  letter-spacing: -0.01em;
+}
+.ux-cta-primary:hover {
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+.ux-cta-primary:active { transform: translateY(0) scale(0.97); }
+@media (prefers-reduced-motion: reduce) {
+  .ux-cta-primary, .ux-cta-primary:hover { transition: none; transform: none; }
+}
+
+/* ── 7. GLASSMORPHISM CARDS ─────────────────────────────────────── */
+.ux-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--ux-radius-lg);
+  box-shadow: var(--ux-shadow-lg);
+  transition: all var(--ux-transition-slow), background-color 0.3s ease;
+}
+.ux-glass-card:hover {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--ux-shadow-xl);
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .ux-glass-card {
+    background: var(--ux-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ux-glass-card, .ux-glass-card:hover { transition: none; transform: none; }
+}
+
+/* ── 8. STANDARD CARDS ──────────────────────────────────────────── */
+.ux-card {
+  background: var(--ux-surface);
+  border: 1px solid var(--ux-border);
+  border-radius: var(--ux-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--ux-shadow-sm);
+  transition: all var(--ux-transition-slow);
+}
+.ux-card:hover {
+  border-color: var(--ux-border-hover);
+  box-shadow: var(--ux-shadow);
+  transform: translateY(-1px);
+}
+.ux-card:active { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .ux-card, .ux-card:hover { transition: none; transform: none; }
+}
+
+/* ── 9. BADGE PILLS ─────────────────────────────────────────────── */
+.ux-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--ux-radius-full);
+  white-space: nowrap;
+}
+.ux-badge-accent {
+  background: var(--ux-accent-ghost);
+  color: var(--ux-accent);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+.ux-badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.ux-badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+.ux-badge-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ── 10. SKELETON LOADING ───────────────────────────────────────── */
+.ux-skeleton {
+  background: linear-gradient(90deg, var(--ux-border) 25%, #f1f5f9 50%, var(--ux-border) 75%);
+  background-size: 200% 100%;
+  animation: ux-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--ux-radius-sm);
+}
+@keyframes ux-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── 11. STAGGERED ENTRY ANIMATIONS ─────────────────────────────── */
+.ux-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: ux-fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.ux-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.ux-stagger > *:nth-child(2) { animation-delay: 80ms; }
+.ux-stagger > *:nth-child(3) { animation-delay: 160ms; }
+.ux-stagger > *:nth-child(4) { animation-delay: 240ms; }
+.ux-stagger > *:nth-child(5) { animation-delay: 320ms; }
+.ux-stagger > *:nth-child(6) { animation-delay: 400ms; }
+.ux-stagger > *:nth-child(7) { animation-delay: 480ms; }
+.ux-stagger > *:nth-child(8) { animation-delay: 560ms; }
+
+@keyframes ux-fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 12. READING PROGRESS BAR ───────────────────────────────────── */
+#ux-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ux-accent), #4f46e5);
+  z-index: 99999;
+  transition: width 50ms linear;
+  pointer-events: none;
+}
+
+/* ── 13. BACK-TO-TOP BUTTON ─────────────────────────────────────── */
+#ux-back-to-top {
+  position: fixed;
+  bottom: clamp(1.5rem, 4vw, 2rem);
+  right: clamp(1.5rem, 4vw, 2rem);
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: var(--ux-radius-full);
+  background: var(--ux-surface);
+  color: var(--ux-text);
+  border: 1px solid var(--ux-border);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--ux-shadow-lg);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--ux-transition-slow), transform var(--ux-transition-slow), background-color 0.3s ease, color 0.3s ease;
+  z-index: 99998;
+  pointer-events: none;
+  padding: 0;
+}
+#ux-back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#ux-back-to-top:hover {
+  box-shadow: var(--ux-shadow-xl);
+  transform: translateY(-2px);
+  border-color: var(--ux-accent);
+}
+#ux-back-to-top:active { transform: translateY(0) scale(0.95); }
+
+/* ── 14. SAFE-AREA INSETS (iOS notched + Dynamic Island) ────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--ux-bottom-bar-height));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  #ux-back-to-top {
+    bottom: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-bottom));
+    right: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-right));
+  }
+  /* R18 — sticky CTA respects safe area */
+  .ux-sticky-cta {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+  /* R18 — bottom sheet respects safe area */
+  .ux-bottom-sheet {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ── 15. FOCUS STATES ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--ux-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── 16. SKIP-TO-CONTENT ────────────────────────────────────────── */
+.ux-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--ux-accent);
+  color: #fff;
+  font-weight: 700;
+  border-radius: var(--ux-radius-sm);
+  z-index: 100000;
+  transition: top 0.15s ease;
+}
+.ux-skip-link:focus { top: 0.75rem; }
+
+/* ── 17. IMAGES — CLS PREVENTION ────────────────────────────────── */
+img, video, iframe, embed { max-width: 100%; height: auto; display: block; }
+img:not([width]):not([height]) { aspect-ratio: 16/9; }
+img[loading="lazy"] { opacity: 0; transition: opacity 0.3s ease; }
+img[loading="lazy"].loaded { opacity: 1; }
+
+/* ── 18. FORM ELEMENTS ──────────────────────────────────────────── */
+input, textarea, select {
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.75rem 0.875rem;
+  border: 1.5px solid var(--ux-border);
+  border-radius: var(--ux-radius);
+  width: 100%;
+  background: var(--ux-surface);
+  color: var(--ux-text);
+  transition: border-color var(--ux-transition), box-shadow var(--ux-transition), background-color 0.3s ease;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--ux-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  outline: none;
+}
+label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ux-text);
+}
+::placeholder { color: var(--ux-text-muted); opacity: 1; }
+
+/* ── R18 — AUTOFILL OVERRIDE (kill Chrome/Safari yellow bg) ─────── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--ux-surface) inset !important;
+  -webkit-text-fill-color: var(--ux-text) !important;
+  caret-color: var(--ux-text);
+  transition: background-color 5000s ease-in-out 0s;
+}
+@media (prefers-color-scheme: dark) {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--ux-surface) inset !important;
+    -webkit-text-fill-color: var(--ux-text) !important;
+  }
+}
+
+/* ── R18 — TOUCH RIPPLE EFFECT ──────────────────────────────────── */
+.ux-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ux-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(10, 10);
+  transition: transform 0.5s, opacity 0.6s;
+  pointer-events: none;
+}
+.ux-ripple:active::after {
+  opacity: 1;
+  transform: scale(0, 0);
+  transition: 0s;
+}
+
+/* ── 19. SPACING ────────────────────────────────────────────────── */
+section, .section { padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem); }
+
+/* ── R18 — VIEWPORT-AWARE SECTIONS ───────────────────────────────── */
+.ux-section-full { min-height: 100dvh; display: flex; align-items: center; }
+.ux-section-narrow { max-width: 800px; margin: 0 auto; }
+
+/* ── 20. DIVIDERS ───────────────────────────────────────────────── */
+.ux-divider {
+  height: 1px;
+  background: var(--ux-border);
+  width: 100%;
+}
+.ux-divider-accent {
+  height: 3px;
+  width: 48px;
+  background: var(--ux-accent);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* ── 21. GRADIENT TEXT ──────────────────────────────────────────── */
+.ux-gradient-text {
+  background: linear-gradient(135deg, var(--ux-accent), #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── 22. GRADIENT ORB DECORATIONS ───────────────────────────────── */
+.ux-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+.ux-orb-accent {
+  background: radial-gradient(circle, var(--ux-accent) 0%, transparent 70%);
+}
+
+/* ── 23. SCROLLBAR HIDE ─────────────────────────────────────────── */
+.ux-scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ux-scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* ── 24. MOBILE NAV OVERLAY ─────────────────────────────────────── */
+body.nav-open { overflow: hidden; }
+[data-mobile-nav] {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--ux-nav-height);
+  background: var(--ux-surface);
+  z-index: 99997;
+  overflow-y: auto;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--ux-transition), transform var(--ux-transition), background-color 0.3s ease;
+}
+[data-mobile-nav].open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+/* R18 — mobile nav swipe-down-to-close hint */
+.ux-nav-swipe-hint {
+  width: 36px;
+  height: 5px;
+  background: var(--ux-border);
+  border-radius: 3px;
+  margin: 0 auto 1.25rem;
+}
+
+/* ── 25. ACCORDIONS ─────────────────────────────────────────────── */
+[data-accordion-trigger] {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--ux-text);
+  border-bottom: 1px solid var(--ux-border);
+  transition: color var(--ux-transition);
+}
+[data-accordion-trigger]:hover { color: var(--ux-accent); }
+[data-accordion-trigger]::after {
+  content: '+';
+  font-size: 1.25rem;
+  transition: transform var(--ux-transition);
+  min-width: 24px;
+  text-align: center;
+}
+[data-accordion-trigger][aria-expanded="true"]::after { content: '\2212'; }
+[data-accordion] {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--ux-transition-slow);
+}
+[data-accordion].open { max-height: 2000px; }
+
+/* ── 26. PULSE ANIMATION ────────────────────────────────────────── */
+@keyframes ux-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.ux-pulse { animation: ux-pulse 2s ease-in-out infinite; }
+
+/* ── 27. RESPONSIVE TABLE WRAPPER ───────────────────────────────── */
+.ux-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   R18 — NEW MOBILE-FIRST FEATURES BELOW
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── 28. STICKY MOBILE CTA BAR ───────────────────────────────────── */
+.ux-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  background: var(--ux-surface);
+  border-top: 1px solid var(--ux-border);
+  z-index: 99996;
+  display: none;
+  box-shadow: 0 -2px 16px rgba(15, 23, 42, 0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.ux-sticky-cta.visible { display: flex; align-items: center; gap: 0.75rem; }
+.ux-sticky-cta .ux-cta-primary { flex: 1; }
+
+/* ── 29. BOTTOM SHEET ───────────────────────────────────────────── */
+.ux-bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ux-transition-slow);
+}
+.ux-bottom-sheet-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ux-bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85dvh;
+  background: var(--ux-surface);
+  border-radius: var(--ux-radius-xl) var(--ux-radius-xl) 0 0;
+  z-index: 99991;
+  transform: translateY(100%);
+  transition: transform var(--ux-transition-slow);
+  overflow-y: auto;
+  padding: 0.5rem 1.25rem 1.5rem;
+  box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.15);
+}
+.ux-bottom-sheet.open { transform: translateY(0); }
+
+/* ── 30. SCROLL SNAP ─────────────────────────────────────────────── */
+.ux-snap-x {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 1rem;
+}
+.ux-snap-x > * {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+.ux-snap-y {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.ux-snap-y > * { scroll-snap-align: start; }
+
+/* ── 31. MOBILE CAROUSEL HINT ────────────────────────────────────── */
+.ux-carousel {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  scroll-behavior: smooth;
+}
+.ux-carousel > * {
+  flex: 0 0 auto;
+  min-width: 280px;
+  max-width: 340px;
+}
+@media (max-width: 480px) {
+  .ux-carousel > * { min-width: 240px; }
+}
+
+/* ── 32. FLOATING ACTION BUTTON ─────────────────────────────────── */
+.ux-fab {
+  position: fixed;
+  bottom: clamp(1.5rem, 4vw, 2rem);
+  right: clamp(1.5rem, 4vw, 2rem);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--ux-radius-full);
+  background: var(--ux-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  z-index: 99995;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--ux-transition), box-shadow var(--ux-transition);
+}
+.ux-fab:hover { transform: scale(1.06); box-shadow: 0 6px 24px rgba(37, 99, 235, 0.45); }
+.ux-fab:active { transform: scale(0.95); }
+
+/* ── 33. TOAST NOTIFICATIONS ────────────────────────────────────── */
+.ux-toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  max-width: calc(100vw - 2rem);
+}
+.ux-toast {
+  padding: 0.75rem 1.25rem;
+  background: var(--ux-surface);
+  border: 1px solid var(--ux-border);
+  border-radius: var(--ux-radius);
+  box-shadow: var(--ux-shadow-lg);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  pointer-events: auto;
+  animation: ux-toast-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-width: 380px;
+}
+.ux-toast.removing {
+  animation: ux-toast-out 0.25s ease forwards;
+}
+@keyframes ux-toast-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes ux-toast-out {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(20px); }
+}
+
+/* ── 34. RESPONSIVE GRID UTILITY ─────────────────────────────────── */
+.ux-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.ux-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.ux-grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.ux-grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+@media (max-width: 480px) {
+  .ux-grid-2, .ux-grid-3, .ux-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── 35. OFFLINE INDICATOR ──────────────────────────────────────── */
+.ux-offline-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: #f59e0b;
+  color: #78350f;
+  z-index: 100001;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+.ux-offline-bar.visible { transform: translateY(0); }
+
+/* ── 36. CONTAINER QUERIES (modern browsers) ─────────────────────── */
+@supports (container-type: inline-size) {
+  .ux-container-query { container-type: inline-size; }
+  @container (min-width: 500px) {
+    .ux-cq-card { display: flex; gap: 1.5rem; }
+  }
+}
+
+/* ── 37. SCROLL-DRIVEN ANIMATIONS (modern browsers) ──────────────── */
+@supports (animation-timeline: scroll()) {
+  .ux-scroll-reveal {
+    animation: ux-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+  @keyframes ux-reveal {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ── 38. DATA SAVING MODE ───────────────────────────────────────── */
+@media (prefers-reduced-data: reduce) {
+  .ux-glass-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ux-orb { display: none; }
+  img[loading="lazy"] { opacity: 1; } /* skip fade animation */
+}
+
+/* ── 39. HAPTIC FEEDBACK SUPPORT ─────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .ux-haptic:active {
+    /* Devices that support haptic feedback will use this */
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.15);
+  }
+}
+
+/* ── 40. PRINT STYLES ───────────────────────────────────────────── */
+@media print {
+  *, *::before, *::after { background: transparent !important; color: #000 !important; box-shadow: none !important; }
+  body { font-size: 12pt; line-height: 1.5; }
+  #ux-reading-progress, #ux-back-to-top, .ux-sticky-cta, .ux-fab,
+  .ux-toast-container, .ux-offline-bar, [data-mobile-nav] { display: none !important; }
+  a { text-decoration: underline; }
+  a[href^="http"]::after { content: ' (' attr(href) ')'; font-size: 0.8em; }
+}
+
+/* ── 41. MOBILE BREAKPOINTS ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 1rem; line-height: 1.6; }
+  h1 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+  h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+  section, .section { padding: 1.5rem 1rem; }
+  .ux-card { padding: 1.25rem; }
+  .ux-glass-card { border-radius: var(--ux-radius); }
+  .ux-stagger > * { animation-duration: 0.45s; }
+  .ux-stagger > *:nth-child(n+3) { animation-delay: 40ms; }
+  /* R18 - mobile sticky CTA */
+  .ux-sticky-cta { display: flex; }
+  .ux-sticky-cta.visible { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .ux-cta-primary { padding: 0.625rem 1.5rem; font-size: 0.9375rem; }
+  section, .section { padding: 1.25rem 0.875rem; }
+}
+
+/* ── 42. DARK MODE ──────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ux-accent: #60a5fa;
+    --ux-accent-hover: #93bbfd;
+    --ux-accent-ghost: rgba(96, 165, 250, 0.12);
+    --ux-accent-ghost-hover: rgba(96, 165, 250, 0.2);
+    --ux-surface: #0f172a;
+    --ux-surface-raised: #1e293b;
+    --ux-border: #334155;
+    --ux-border-hover: #475569;
+    --ux-text: #f1f5f9;
+    --ux-text-secondary: #94a3b8;
+    --ux-text-muted: #64748b;
+    --ux-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --ux-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+    --ux-shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.4), 0 8px 40px rgba(0, 0, 0, 0.2);
+    --ux-shadow-xl: 0 8px 40px rgba(0, 0, 0, 0.5), 0 16px 64px rgba(0, 0, 0, 0.3);
+  }
+  body { background: var(--ux-surface); color: var(--ux-text); }
+  input, textarea, select { background: var(--ux-surface-raised); border-color: var(--ux-border); color: var(--ux-text); }
+  input:focus, textarea:focus, select:focus { border-color: var(--ux-accent); box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15); }
+  .ux-glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(148, 163, 184, 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+  .ux-glass-card:hover { background: rgba(30, 41, 59, 0.85); }
+  .ux-skeleton { background: linear-gradient(90deg, var(--ux-border) 25%, #1e293b 50%, var(--ux-border) 75%); background-size: 200% 100%; }
+  .ux-badge-accent { background: rgba(96, 165, 250, 0.15); color: var(--ux-accent); }
+  .ux-badge-success { background: rgba(52, 211, 153, 0.12); color: #6ee7b7; border-color: rgba(52, 211, 153, 0.2); }
+  .ux-badge-warning { background: rgba(251, 191, 36, 0.12); color: #fcd34d; border-color: rgba(251, 191, 36, 0.2); }
+  .ux-badge-danger { background: rgba(248, 113, 113, 0.12); color: #fca5a5; border-color: rgba(248, 113, 113, 0.2); }
+  .ux-orb-accent { opacity: 0.08; }
+  .ux-bottom-sheet-overlay { background: rgba(0, 0, 0, 0.7); }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .ux-glass-card {
+    background: rgba(15, 23, 42, 0.85);
+  }
+}
+
+/* ── 43. REDUCED MOTION ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ux-stagger > * { opacity: 1; transform: none; animation: none; }
+  .ux-stagger > *:nth-child(n) { animation-delay: 0ms; }
+}

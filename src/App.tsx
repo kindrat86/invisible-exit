@@ -1,8 +1,6 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { LANGUAGE_MAP } from "@/i18n/languages";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,7 +12,6 @@ import ReadingProgress from "./components/ReadingProgress.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
-import { AutoTranslate } from "@/i18n/AutoTranslate.tsx";
 // Eager: the homepage is the money page — no spinner between prerendered
 // shell and hydrated hero.
 import Index from "./pages/Index.tsx";
@@ -164,47 +161,6 @@ const AdminFeatureRequests = lazy(() => import("./pages/AdminFeatureRequests.tsx
 
 const queryClient = new QueryClient();
 
-/**
- * Handles /:lang/* URLs for localization.
- * When a user visits /es/blog, this sets the i18next language to Spanish
- * and navigates to /blog (so the actual page renders).
- * The language is persisted to localStorage so it sticks across navigation.
- */
-function LangRedirectWrapper() {
-  const { lang } = useParams<{ lang: string }>();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    if (lang && LANGUAGE_MAP[lang]) {
-      // Set and persist the language BEFORE navigating
-      i18n.changeLanguage(lang);
-      try {
-        localStorage.setItem("i18n_lang", lang);
-      } catch {
-        // ignore
-      }
-      // Set a flag so the i18n init code knows not to override from URL
-      try {
-        sessionStorage.setItem("i18n_lang_set", "1");
-      } catch {
-        // ignore
-      }
-      // Navigate to the path without the lang prefix
-      const segments = location.pathname.split("/").filter(Boolean);
-      const rest = "/" + segments.slice(1).join("/");
-      navigate(rest, { replace: true });
-    }
-  }, [lang, location.pathname]);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-10 h-10 rounded-full border-4 border-primary border-t-transparent animate-spin" />
-    </div>
-  );
-}
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -224,7 +180,6 @@ const App = () => (
             </div>
           </div>
         }>
-        <AutoTranslate>
         <div className="page-enter">
         <Routes>
           <Route path="/" element={<Index />} />
@@ -440,15 +395,9 @@ const App = () => (
           <Route path="/fym/dashboard" element={<Navigate to="/dashboard" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 
-          {/* ── i18n: Language-prefixed routes (/:lang/*) ── */}
-          {/* Handles /es, /ar, /ja, etc. — strips lang prefix, sets i18next, redirects */}
-          <Route path="/:lang" element={<LangRedirectWrapper />} />
-          <Route path="/:lang/*" element={<LangRedirectWrapper />} />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
         </div>
-        </AutoTranslate>
         </Suspense>
         </ErrorBoundary>
         <BackToTop />

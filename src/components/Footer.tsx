@@ -1,26 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Mail, ArrowRight, Check } from "lucide-react";
-import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 const FOOTER_SECTIONS = [
   {
-    title: "Playbook",
+    title: "Product",
     links: [
-      { label: "Blog", to: "/blog" },
-      { label: "My Story", to: "/story" },
-      { label: "Manifesto", to: "/manifesto" },
-      { label: "Why Not Something Else?", to: "/compare" },
-      { label: "Who Is Adrian?", to: "/adrian" },
-      { label: "Free Freedom Calculator", to: "/freedom" },
-      { label: "Ask Adrian Anything", to: "/ask" },
-      { label: "Free Book (Just Pay Shipping)", to: "/free-book" },
-      { label: "Founding Wall", to: "/founding-wall" },
-      { label: "The 3 Frameworks", to: "/frameworks" },
-      { label: "Proof & Results", to: "/proof" },
       { label: "Belief Crusher", to: "/beliefs" },
       { label: "Movement Lexicon", to: "/lexicon" },
       { label: "The One Thing", to: "/one-thing" },
@@ -28,18 +15,14 @@ const FOOTER_SECTIONS = [
       { label: "Is This You?", to: "/is-this-you" },
       { label: "Dream Customer Avatar", to: "/who" },
       { label: "Where They Hide", to: "/where" },
-      { label: "Ad Creative Library", to: "/ad-library" },
-      { label: "Growth Lab", to: "/growth-lab" },
-      { label: "Hooks Library", to: "/hooks" },
-      { label: "Content Calendar", to: "/content-calendar" },
-      { label: "Dream 100 Framework", to: "/dream-100" },
-      { label: "Hook-Story-Offer Matrix", to: "/hso" },
-      { label: "0→100K Traffic Roadmap", to: "/traffic-roadmap" },
-      { label: "Growing Grid (A/B Tests)", to: "/testing" },
-      { label: "YouTube Strategy", to: "/youtube-strategy" },
-      { label: "Dream 100 Tracker", to: "/dream-100-tracker" },
-      { label: "Pillar Content Hub", to: "/pillar-hub" },
-      { label: "Explore Everything", to: "/explore" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Contact", to: "/contact" },
+      { label: "Story", to: "/story" },
       { label: "Integration Marketing", to: "/partners/embed" },
       { label: "Cold Traffic Bridge", to: "/feeling-stuck" },
       { label: "Free Masterclass", to: "/masterclass" },
@@ -66,23 +49,11 @@ const FOOTER_SECTIONS = [
       { label: "AI Automation Niches", to: "/niches/ai-automation" },
       { label: "Developer Tool Niches", to: "/niches/developer-tools" },
       { label: "Break-Even Calculator", to: "/break-even" },
-      { label: "Data Reports", to: "/data" },
-      { label: "Resources", to: "/resources" },
-      { label: "Timeline", to: "/timeline" },
-      { label: "Revenue Milestones", to: "/milestones" },
-      { label: "Pricing", to: "/pricing" },
     ],
   },
   {
-    title: "Reference",
+    title: "Research",
     links: [
-      { label: "Glossary", to: "/glossary" },
-      { label: "What Is Micro-SaaS?", to: "/glossary/what-is-micro-saas" },
-      { label: "Comparisons", to: "/compare" },
-      { label: "Micro-SaaS vs Real Estate", to: "/compare/micro-saas-vs-real-estate" },
-      { label: "LLC vs S-Corp (Side Business)", to: "/compare/llc-vs-s-corp-side-business" },
-      { label: "Side Business vs Full-Time Startup", to: "/compare/side-business-vs-full-time-startup" },
-      { label: "Non-Compete: Engineers in California", to: "/non-compete/software-engineers-california" },
       { label: "Non-Compete: Engineers in Texas", to: "/non-compete/software-engineers-texas" },
       { label: "Career vs SaaS", to: "/vs" },
       { label: "Common Mistakes", to: "/mistakes" },
@@ -94,24 +65,15 @@ const FOOTER_SECTIONS = [
       { label: "Affiliates (30%)", to: "/affiliates" },
       { label: "Pro ($47/mo)", to: "/pro" },
       { label: "Weekend Workshop ($97)", to: "/weekend-workshop" },
-      { label: "Intensive ($2K)", to: "/intensive" },
-      { label: "RSS Feed", to: "/blog/rss.xml" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", to: "/privacy" },
-      { label: "Terms of Service", to: "/terms" },
     ],
   },
 ];
 
-// Collapsible section for mobile
+// ── Collapsible section for mobile ──
 function CollapsibleSection({
   title,
   links,
-  defaultOpen = false,
+  defaultOpen = true,
 }: {
   title: string;
   links: { label: string; to: string }[];
@@ -120,50 +82,38 @@ function CollapsibleSection({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border-b border-white/5 md:border-0">
+    <div className="md:col-span-1">
+      {/* Mobile: collapsible header button, Desktop: just a heading */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between py-4 md:hidden"
+        className="w-full flex items-center justify-between md:cursor-default text-white font-semibold text-sm uppercase tracking-wider mb-4"
         aria-expanded={open}
       >
-        <h3 className="text-white/90 font-semibold text-sm">{title}</h3>
+        {title}
         <ChevronDown
-          className={`w-4 h-4 text-white/40 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-white/40 transition-transform md:hidden ${
+            open ? "rotate-180" : ""
+          }`}
         />
       </button>
-
-      {/* Always visible on desktop, toggle on mobile */}
-      <div className={`${open ? "block" : "hidden"} md:block pb-4 md:pb-0`}>
-        <h3 className="hidden md:block text-white/90 font-semibold text-sm mb-4">{title}</h3>
-        <ul className="space-y-2.5 md:space-y-2">
-          {links.map((link) => (
-            <li key={link.to}>
-              {link.to.endsWith(".xml") ? (
-                // Static files must bypass the SPA router
-                <a
-                  href={link.to}
-                  className="text-white/70 hover:text-white text-sm transition-colors block py-2 md:py-1.5"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  to={link.to}
-                  className="text-white/70 hover:text-white text-sm transition-colors block py-2 md:py-1.5"
-                >
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className={`space-y-2.5 ${open ? "block" : "hidden md:block"}`}>
+        {links.map((link) => (
+          <li key={link.to}>
+            <Link
+              to={link.to}
+              className="block text-white/60 hover:text-white/90 text-sm transition-colors py-1"
+              style={{ minHeight: "44px", lineHeight: "44px" }}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 const Footer = () => {
-  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -265,10 +215,10 @@ const Footer = () => {
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/20 border border-primary/30">
                 <span className="block w-3 h-3 rounded-sm bg-primary" />
               </span>
-              <span>{t("nav.brand")}</span>
+              <span>Invisible Exit</span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              {t("footer.tagline")}
+              Build a side business while employed — invisibly.
             </p>
             <div className="mt-4 flex items-center gap-3">
               <a
@@ -358,10 +308,9 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-white/5">
           <p className="text-white/50 text-xs sm:text-sm order-2 sm:order-1">
-            © {new Date().getFullYear()} {t("nav.brand")}. {t("footer.allRightsReserved")}
+            © {new Date().getFullYear()} Invisible Exit. All rights reserved.
           </p>
           <div className="flex items-center gap-4 order-1 sm:order-2">
-            <LanguageSwitcher variant="compact" className="text-white/70" />
             <p className="hidden sm:block text-white/50 text-xs sm:text-sm">
               Built by a corporate manager, for corporate managers.
             </p>
