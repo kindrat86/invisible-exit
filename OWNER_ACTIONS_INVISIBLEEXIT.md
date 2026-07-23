@@ -70,11 +70,11 @@ The conservative NOINDEX prune applied to ~590 thin pSEO pages (cross-product te
 
 ---
 
-## 5. Stale Service Worker Warning
+## 5. Stale Service Worker — ✅ FIXED
 
-**Issue:** Returning visitors may see old content on first load because the service worker (`public/sw.js`) caches aggressively. This affects verification — fresh curl requests are immune, but human visitors opening the site may briefly see the pre-deploy version.
+**Issue:** Returning visitors saw old content on first load because the service worker cached HTML aggressively.
 
-**Fix (for owner):** After deploy, bump the service worker version in `public/sw.js`. Add a cache-busting strategy or reduce cache TTL for HTML pages. The SW currently caches the app shell, which includes the old `<title>` tag until the SW updates.
+**Fix applied:** Bumped SW version from `ie-v2` → `ie-v3` in `public/sw.js`. The `activate` handler nukes old caches (`ie-v2`), so existing SW instances are replaced immediately on the next page load. The `skipWaiting()` + `clients.claim()` pattern ensures the new SW takes control without requiring a second refresh. Deployed and verified live.
 
 ---
 
