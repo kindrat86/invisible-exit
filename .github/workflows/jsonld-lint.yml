@@ -1,0 +1,21 @@
+name: JSON-LD Lint
+
+# Blocks on any invalid <script type="application/ld+json"> block (unparsable
+# JSON, missing @context/@type). Added 2026-07-24 as part of a portfolio-wide
+# structured-data sweep (no bugs found here yet, but no guard rail existed).
+# Scans the ~2,171 static pSEO .html files committed as source, independent
+# of the vite build.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-jsonld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON-LD
+        run: python3 scripts/validate_jsonld.py .
