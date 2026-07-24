@@ -1817,26 +1817,6 @@ function getRoutes() {
       jsonLd: [
         {
           "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Invisible Exit Intensive",
-          description:
-            "Done-with-you 90-day program: strategy session, stealth audit, idea validation sprint, launch review, and 30-day Slack access.",
-          brand: { "@type": "Brand", name: SITE_NAME },
-          image: DEFAULT_IMAGE,
-          offers: {
-            "@type": "Offer",
-            price: "2000",
-            priceCurrency: "USD",
-            availability: "https://schema.org/LimitedAvailability",
-            priceValidUntil: "2026-12-31",
-            url: `${SITE}/intensive`,
-            seller: { "@type": "Organization", name: SITE_NAME },
-          },
-          // AEO 2026-07-18: aggregateRating removed (self-served). See home SoftwareApplication
-          // for the same note. Restore only via third-party review platform syndication.
-        },
-        {
-          "@context": "https://schema.org",
           "@type": "Service",
           name: "Invisible Exit Intensive",
           serviceType: "Business Coaching",
@@ -1970,27 +1950,6 @@ function getRoutes() {
       url: `${SITE}/pro`,
       type: "website",
       jsonLd: [
-        {
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Invisible Exit Pro",
-          description:
-            "Weekly group coaching calls, private community, idea validation reports, and monthly MRR audits for corporate managers building side businesses.",
-          brand: { "@type": "Brand", name: SITE_NAME },
-          image: DEFAULT_IMAGE,
-          offers: {
-            "@type": "Offer",
-            price: "47",
-            priceCurrency: "USD",
-            description: "per month",
-            priceValidUntil: "2026-12-31",
-            availability: "https://schema.org/InStock",
-            url: `${SITE}/pro`,
-            seller: { "@type": "Organization", name: SITE_NAME },
-          },
-          // AEO 2026-07-18: aggregateRating removed (self-served). Restore only via third-party
-          // review platform syndication.
-        },
         {
           "@context": "https://schema.org",
           "@type": "Service",
