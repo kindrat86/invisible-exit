@@ -1274,7 +1274,7 @@ function getRoutes() {
       jsonLd: [
         {
           "@context": "https://schema.org",
-          "@type": "AboutPage",
+          "@type": "ProfilePage",
           name: "About Invisible Exit",
           description:
             "Invisible Exit is a membership platform with 5 AI-powered tools for corporate managers building anonymous micro-SaaS businesses.",
@@ -1284,35 +1284,34 @@ function getRoutes() {
             name: SITE_NAME,
             url: SITE,
           },
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Adrian",
-          jobTitle: "Founder, Invisible Exit",
-          image: `${SITE}/adrian-avatar.svg`,
-          url: `${SITE}/about`,
-          description:
-            "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
-          sameAs: [
-            "https://www.reddit.com/r/invisibleexit",
-            "https://github.com/kindrat86",
-            "https://www.youtube.com/@invisibleexit",
-            "https://x.com/invisibleexit",
-            "https://www.indiehackers.com/product/invisible-exit"
-          ],
-          knowsAbout: [
-            "Micro-SaaS",
-            "Anonymous business building",
-            "Corporate career strategy",
-            "Recurring revenue models",
-            "Side business validation",
-            "Digital privacy for entrepreneurs",
-            "Entity separation and legal compliance"
-          ],
-          worksFor: {
-            "@type": "Organization",
-            name: SITE_NAME,
+          mainEntity: {
+            "@type": "Person",
+            name: "Adrian",
+            jobTitle: "Founder, Invisible Exit",
+            image: `${SITE}/adrian-avatar.svg`,
+            url: `${SITE}/about`,
+            description:
+              "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it.",
+            sameAs: [
+              "https://www.reddit.com/r/invisibleexit",
+              "https://github.com/kindrat86",
+              "https://www.youtube.com/@invisibleexit",
+              "https://x.com/invisibleexit",
+              "https://www.indiehackers.com/product/invisible-exit"
+            ],
+            knowsAbout: [
+              "Micro-SaaS",
+              "Anonymous business building",
+              "Corporate career strategy",
+              "Recurring revenue models",
+              "Side business validation",
+              "Digital privacy for entrepreneurs",
+              "Entity separation and legal compliance"
+            ],
+            worksFor: {
+              "@type": "Organization",
+              name: SITE_NAME,
+            },
           },
         },
         {
