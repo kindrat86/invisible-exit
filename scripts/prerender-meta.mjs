@@ -534,6 +534,7 @@ function getRoutes() {
           // Restore ONLY after reviews exist on a third-party platform (Trustpilot Free /
           // G2) and mark up THAT syndicated feed — do not re-add self-served numbers.
           url: SITE,
+          image: DEFAULT_IMAGE,
           screenshot: `${SITE}/og-image.png`,
           },
         {
@@ -1821,6 +1822,7 @@ function getRoutes() {
           description:
             "Done-with-you 90-day program: strategy session, stealth audit, idea validation sprint, launch review, and 30-day Slack access.",
           brand: { "@type": "Brand", name: SITE_NAME },
+          image: DEFAULT_IMAGE,
           offers: {
             "@type": "Offer",
             price: "2000",
@@ -1975,12 +1977,14 @@ function getRoutes() {
           description:
             "Weekly group coaching calls, private community, idea validation reports, and monthly MRR audits for corporate managers building side businesses.",
           brand: { "@type": "Brand", name: SITE_NAME },
+          image: DEFAULT_IMAGE,
           offers: {
             "@type": "Offer",
             price: "47",
             priceCurrency: "USD",
             description: "per month",
             priceValidUntil: "2026-12-31",
+            availability: "https://schema.org/InStock",
             url: `${SITE}/pro`,
             seller: { "@type": "Organization", name: SITE_NAME },
           },
@@ -3688,7 +3692,7 @@ function getRoutes() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-              { "@type": "ListItem", position: 2, name: "Niches" },
+              { "@type": "ListItem", position: 2, name: "Niches", item: `${SITE}/niches` },
               { "@type": "ListItem", position: 3, name: n.niche },
             ],
           },
