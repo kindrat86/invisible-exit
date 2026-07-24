@@ -182,7 +182,7 @@ const Index = () => {
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
-      {/* Structured data: Organization, Product, Reviews, FAQPage */}
+      {/* Structured data: Organization, FAQPage. No Product/review schema — no genuine reviews exist to back it (see TestimonialGrid). */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -212,22 +212,6 @@ const Index = () => {
                 contactType: "customer support",
                 email: "hello@invisibleexit.com",
                 url: "https://invisibleexit.com/contact",
-              },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "Product",
-              name: "Invisible Exit — Faceless Side-Business System",
-              description:
-                "A membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses: Freedom Number Calculator, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager.",
-              brand: { "@type": "Brand", name: "Invisible Exit" },
-              offers: {
-                "@type": "Offer",
-                price: "0.97",
-                priceCurrency: "USD",
-                priceValidUntil: "2027-12-31",
-                availability: "https://schema.org/InStock",
-                url: "https://invisibleexit.com/",
               },
             },
             {
