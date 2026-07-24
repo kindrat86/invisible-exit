@@ -881,10 +881,18 @@ async function main() {
     })),
   ];
 
-  // Post-process: truthful lastmod. Only blog posts carry real dates.
-  // All other pages are programmatic — stamping "today" is misleading.
+  // Post-process: truthful lastmod. Only individual blog posts (real
+  // publishedAt dates) and the /blog hub (latestPostDate, a genuinely
+  // meaningful aggregate) carry real dates. Everything else — including
+  // /blog/category/* pages, which also contain the substring "/blog/" and
+  // were wrongly kept by a naive `.includes("/blog/")` check — is
+  // programmatic and gets no lastmod.
+  const realLastmodLocs = new Set([
+    "https://invisibleexit.com/blog",
+    ...blogPosts.map((post: { slug: string }) => `https://invisibleexit.com/blog/${post.slug}`),
+  ]);
   for (const e of entries) {
-    if (!e.loc.includes("/blog/")) {
+    if (!realLastmodLocs.has(e.loc)) {
       e.lastmod = NO_LASTMOD;
     }
   }
