@@ -44,12 +44,12 @@ const BELIEFS: Belief[] = [
     falseBelief: "I need to quit my job to build something real.",
     selfIdentify: "Do you believe you can't start until you leave?",
     breakingStory:
-      "I almost quit. Resignation letter drafted. Title: 'Resignation_Final_v3.docx.' Then I opened my bank statement: my salary was the only thing keeping me solvent while I built. If I quit, I'd need to raise $500K and give up 20% equity. My salary cost me nothing. That night I deleted the letter. I didn't quit. I built WITHIN my constraints — and reached $4,100/month in 12 months while still employed.",
+      "I almost quit. Resignation letter drafted. Title: 'Resignation_Final_v3.docx.' Then I opened my bank statement: my salary was the only thing keeping me solvent while I built. If I quit, I'd need to raise $500K and give up 20% equity. My salary cost me nothing. That night I deleted the letter. I didn't quit. I built WITHIN my constraints — and built sustainable side revenue while staying employed.",
     evidence: [
       "Salary = non-dilutive runway (0% equity cost vs 20% for VC funding)",
       "Corporate skills (P&L, team management, execution) are exactly what solo founders lack",
       "5 hours/week constraint forces focus that 60-hour founders can't replicate",
-      "127 Invisible Exit members are building while employed RIGHT NOW",
+      "Invisible Exit members are building while employed RIGHT NOW",
     ],
     newBelief: "My job IS the vehicle. It funds my build without dilution.",
     epiphany: "The vehicle isn't a startup. The vehicle is YOUR JOB.",

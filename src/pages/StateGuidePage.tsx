@@ -56,6 +56,11 @@ export default function StateGuidePage() {
             Starting a Side Business in {guide.state}
           </h1>
           <p className="text-xl text-gray-600">{guide.bestFor}</p>
+          {/* TL;DR extractable summary — page-specific facts */}
+          <div className="tl-dr-summary mt-4 px-4 py-3 bg-blue-50 border border-blue-100 rounded-lg text-gray-600 text-sm leading-relaxed">
+            <strong className="text-gray-800">TL;DR:</strong>{" "}
+            {guide.state} charges ${guide.llcFilingFee} to form an LLC with {guide.nonCompeteEnforceable} non-compete enforcement and a {guide.stateIncomeTaxRate} state income tax rate — making it {guide.bestFor.toLowerCase()}.
+          </div>
         </div>
 
         {/* Quick facts grid */}

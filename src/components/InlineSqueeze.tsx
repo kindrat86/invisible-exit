@@ -130,11 +130,11 @@ const InlineSqueeze = () => {
 
         <div className="container-narrow relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            {/* Urgency badge */}
+            {/* Urgency badge — removed fabricated scarcity */}
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-xs text-amber-200 font-semibold uppercase tracking-wider">
-                73 of 100 founding spots remaining
+                Founding membership open
               </span>
             </div>
 
@@ -214,7 +214,7 @@ const InlineSqueeze = () => {
                     </span>
                   ))}
                 </span>
-                127 managers building now
+                Managers building now
               </span>
               <span>·</span>
               <span className="text-amber-300">★★★★★</span>

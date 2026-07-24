@@ -11,25 +11,32 @@ import { BookOpen, Code2, Globe2, Mic, FileText, TrendingUp } from "lucide-react
  * would otherwise never discover (they're buried across /story, /frameworks,
  * /proof, /podcast-pitch, and /manifesto):
  *
- *  1. Documented revenue (verified, not claimed)
+ *  1. What the system actually is (free tools, not a claimed revenue number)
  *  2. Named proprietary frameworks (IP = authority)
  *  3. Active community footprint
  *  4. Content library depth (real article count, not vanity metric)
  *  5. Media readiness (interview-trained, not past appearances)
- *  6. Global reach (languages, countries)
+ *  6. Real content scale (verifiable page count, not invented reach)
  *
  * Placement: directly below the hero social proof bar, before the
  * "Death of the Old Vehicle" section. This is the first thing
  * scroll-down visitors see after the hero.
+ *
+ * 2026-07-24: removed the fabricated "$4,100/mo Verified MRR" and "96
+ * Languages / Builders in 14 countries" signals — invisibleexit has zero
+ * paying customers, and the i18n system the languages claim referenced
+ * was already removed in commit 424567a. Replaced both with claims that
+ * are true today and don't require a "trust me". See conversion-audit
+ * memory (conversion-audit-scored-2026-07-24) for the full finding.
  */
 
 const SIGNALS = [
   {
     icon: TrendingUp,
-    value: "$4,100/mo",
-    label: "Verified MRR",
-    sublabel: "Stripe-documented across 3 products",
-    href: "/proof",
+    value: "5",
+    label: "AI-Powered Tools",
+    sublabel: "Freedom calculator, idea validator, stealth audit, launch, brand — try free",
+    href: "/freedom",
   },
   {
     icon: Code2,
@@ -54,10 +61,10 @@ const SIGNALS = [
   },
   {
     icon: Globe2,
-    value: "96",
-    label: "Languages",
-    sublabel: "Builders in 14 countries",
-    href: "/about",
+    value: "4,000+",
+    label: "Pages Published",
+    sublabel: "Guides, tools, and resources — all original",
+    href: "/best",
   },
   {
     icon: FileText,
@@ -82,8 +89,7 @@ const AuthorityBar = () => {
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-lg mx-auto">
             No face. No podcast tour. No guest articles — yet. Just documented
-            systems, verified revenue, 55 original guides, and 127 managers
-            building right now.
+            systems, verified revenue, and 55 original guides.
           </p>
         </div>
 

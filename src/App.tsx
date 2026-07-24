@@ -1,8 +1,6 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { LANGUAGE_MAP } from "@/i18n/languages";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,7 +12,6 @@ import ReadingProgress from "./components/ReadingProgress.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
-import { AutoTranslate } from "@/i18n/AutoTranslate.tsx";
 // Eager: the homepage is the money page — no spinner between prerendered
 // shell and hydrated hero.
 import Index from "./pages/Index.tsx";
@@ -164,47 +161,6 @@ const AdminFeatureRequests = lazy(() => import("./pages/AdminFeatureRequests.tsx
 
 const queryClient = new QueryClient();
 
-/**
- * Handles /:lang/* URLs for localization.
- * When a user visits /es/blog, this sets the i18next language to Spanish
- * and navigates to /blog (so the actual page renders).
- * The language is persisted to localStorage so it sticks across navigation.
- */
-function LangRedirectWrapper() {
-  const { lang } = useParams<{ lang: string }>();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    if (lang && LANGUAGE_MAP[lang]) {
-      // Set and persist the language BEFORE navigating
-      i18n.changeLanguage(lang);
-      try {
-        localStorage.setItem("i18n_lang", lang);
-      } catch {
-        // ignore
-      }
-      // Set a flag so the i18n init code knows not to override from URL
-      try {
-        sessionStorage.setItem("i18n_lang_set", "1");
-      } catch {
-        // ignore
-      }
-      // Navigate to the path without the lang prefix
-      const segments = location.pathname.split("/").filter(Boolean);
-      const rest = "/" + segments.slice(1).join("/");
-      navigate(rest, { replace: true });
-    }
-  }, [lang, location.pathname]);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-10 h-10 rounded-full border-4 border-primary border-t-transparent animate-spin" />
-    </div>
-  );
-}
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -224,7 +180,6 @@ const App = () => (
             </div>
           </div>
         }>
-        <AutoTranslate>
         <div className="page-enter">
         <Routes>
           <Route path="/" element={<Index />} />
@@ -440,15 +395,9 @@ const App = () => (
           <Route path="/fym/dashboard" element={<Navigate to="/dashboard" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 
-          {/* ── i18n: Language-prefixed routes (/:lang/*) ── */}
-          {/* Handles /es, /ar, /ja, etc. — strips lang prefix, sets i18next, redirects */}
-          <Route path="/:lang" element={<LangRedirectWrapper />} />
-          <Route path="/:lang/*" element={<LangRedirectWrapper />} />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
         </div>
-        </AutoTranslate>
         </Suspense>
         </ErrorBoundary>
         <BackToTop />
@@ -459,14 +408,14 @@ const App = () => (
 <section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
   <div style="max-width:900px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$4,000</span><br><span style="font-size:.82rem;color:#94a3b8">Monthly Recurring Target</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">138</span><br><span style="font-size:.82rem;color:#94a3b8">Customers Onboarded</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$0.97</span><br><span style="font-size:.82rem;color:#94a3b8">Tripwire Start</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">5h/wk</span><br><span style="font-size:.82rem;color:#94a3b8">Time Commitment</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$0.97</span><br><span style="font-size:.82rem;color:#94a3b8">Founding Price</span></div>
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">5</span><br><span style="font-size:.82rem;color:#94a3b8">AI Tools Included</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">30-Day</span><br><span style="font-size:.82rem;color:#94a3b8">Money-Back Guarantee</span></div>
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">Your corporate job pays the bills. A side business pays your freedom. Start for less than a coffee.</p>
     <a href="/#start" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get Started for $0.97</a>
-    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">30-day money-back guarantee. If you do not build revenue, you do not pay.</p>
+    <p style="margin-top:18px;font-size:.78rem;color:#6b7178">30-day money-back guarantee. No questions, no forms.</p>
   </div>
 </section>` }} />
       </BrowserRouter>

@@ -32,7 +32,7 @@ const About = () => {
     },
     {
       "@context": "https://schema.org",
-      "@type": "AboutPage",
+      "@type": "ProfilePage",
       name: "About Invisible Exit",
       description:
         "Invisible Exit is a membership platform with 5 AI-powered tools for corporate managers building anonymous micro-SaaS businesses. Founded by Adrian, an employed corporate manager who built a side business without quitting.",
@@ -42,25 +42,24 @@ const About = () => {
         name: "Invisible Exit",
         url: "https://invisibleexit.com",
       },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Adrian",
-      jobTitle: "Founder, Invisible Exit",
-      url: "https://invisibleexit.com/about",
-      description:
-        "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it. He created Invisible Exit to share the exact frameworks, tools, and operating systems that worked for him.",
-      knowsAbout: [
-        "Micro-SaaS",
-        "Anonymous business building",
-        "Corporate career strategy",
-        "Recurring revenue models",
-        "Side business validation",
-      ],
-      worksFor: {
-        "@type": "Organization",
-        name: "Invisible Exit",
+      mainEntity: {
+        "@type": "Person",
+        name: "Adrian",
+        jobTitle: "Founder, Invisible Exit",
+        url: "https://invisibleexit.com/about",
+        description:
+          "Adrian is a corporate manager who built a profitable micro-SaaS business while employed, without his employer discovering it. He created Invisible Exit to share the exact frameworks, tools, and operating systems that worked for him.",
+        knowsAbout: [
+          "Micro-SaaS",
+          "Anonymous business building",
+          "Corporate career strategy",
+          "Recurring revenue models",
+          "Side business validation",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          name: "Invisible Exit",
+        },
       },
     },
     {

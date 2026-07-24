@@ -90,7 +90,7 @@ const PILLAR_STRUCTURE = [
     elements: [
       "Real revenue numbers (from FYM Dashboard)",
       "Timeline screenshots (Month 1 → Month 12 arc)",
-      "Social proof box ('127 managers using this')",
+      "Social proof box (honest community stats)",
       "3 specific case studies with names/results",
     ],
   },

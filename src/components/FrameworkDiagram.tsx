@@ -163,7 +163,7 @@ const FrameworkDiagram = () => {
       <div className="mt-8 text-center space-y-3">
         <div className="inline-block bg-gradient-to-r from-primary to-accent-primary text-white px-8 py-4 rounded-xl shadow-lg">
           <p className="text-sm font-bold tracking-wide">
-            RESULT: $4,000+/month MRR while employed — in 12 months
+            GOAL: build recurring revenue while still employed
           </p>
         </div>
         <p className="text-xs text-muted-foreground">

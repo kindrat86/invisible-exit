@@ -1,5 +1,5 @@
 // Invisible Exit Service Worker — PWA offline support + performance caching
-const CACHE_VERSION = 'ie-v2';
+const CACHE_VERSION = 'ie-v4';
 const STATIC_CACHE = `ie-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ie-pages-${CACHE_VERSION}`;
 

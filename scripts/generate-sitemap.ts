@@ -6,6 +6,38 @@ import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
+/**
+ * Check if a URL should be excluded from sitemaps (thin programmatic pSEO pages).
+ * Mirrors the logic in src/data/noindex-config.ts and scripts/prerender-meta.mjs.
+ */
+function shouldNoindexSitemapUrl(loc: string): boolean {
+  const url = new URL(loc);
+  const path = url.pathname;
+  if (path === "/" || path === "" || path.startsWith("/freedom") || path === "/site-index.html") {
+    return false;
+  }
+  // KEEP single-profession idea pages — only NOINDEX cross-products
+  if (path.startsWith("/ideas/")) {
+    const segments = path.split("/").filter(Boolean);
+    if (segments.length === 2) return false;
+    return true;
+  }
+  const noindexPatterns = [
+    "/cities/",
+    "/revenue/",
+    "/break-even/",
+    "/cost-of-waiting/",
+    "/non-compete/",
+    "/first-year/",
+    "/mistakes/",
+    "/reddit/",
+    "/pricing-models/",
+    "/skills/",
+    "/audience/",
+  ];
+  return noindexPatterns.some(p => path.startsWith(p));
+}
+
 interface SitemapEntry {
   loc: string;
   lastmod: string;
@@ -85,6 +117,10 @@ async function main() {
   const { bankingGuides } = await import("../src/data/banking.js");
 
   const today = new Date().toISOString().split("T")[0];
+  // Truthful lastmod: only blog posts carry real dates. Non-blog pSEO pages
+  // are generated fresh each build — stamping "today" is misleading. Empty string
+  // signals the XML writer to omit the lastmod tag (optional per sitemap spec).
+  const NO_LASTMOD = "";
   const latestPostDate = blogPosts
     .map((p: { publishedAt: string }) => p.publishedAt)
     .sort()
@@ -845,13 +881,26 @@ async function main() {
     })),
   ];
 
+  // Post-process: truthful lastmod. Only blog posts carry real dates.
+  // All other pages are programmatic — stamping "today" is misleading.
+  for (const e of entries) {
+    if (!e.loc.includes("/blog/")) {
+      e.lastmod = NO_LASTMOD;
+    }
+  }
+
+  // ── Filter out NOINDEX pages before splitting into sitemaps ──
+  const noindexCount = entries.filter(e => shouldNoindexSitemapUrl(e.loc)).length;
+  const filteredEntries = entries.filter(e => !shouldNoindexSitemapUrl(e.loc));
+  console.log(`  NOINDEX filter: ${noindexCount} thin pages excluded from sitemaps (${filteredEntries.length} kept)`);
+
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const publicDir = resolve(__dirname, "../public");
 
   // ── Split sitemap into sub-sitemaps by type for better crawl efficiency ──
 // Google recommends max ~500 URLs per sitemap. We have ~1,800 URLs, so we split.
 const submaps: Record<string, SitemapEntry[]> = {
-  "core": entries.filter(e =>
+  "core": filteredEntries.filter(e =>
     !e.loc.includes("/blog/") &&
     !e.loc.includes("/guides/") &&
     !e.loc.includes("/ideas/") &&
@@ -896,50 +945,35 @@ const submaps: Record<string, SitemapEntry[]> = {
     !e.loc.includes("/insurance/") &&
     !e.loc.includes("/time-frameworks/")
   ),
-  "blog": entries.filter(e => e.loc.includes("/blog/")),
-  "guides": entries.filter(e => e.loc.includes("/guides/")),
-  "ideas": entries.filter(e => e.loc.includes("/ideas/")),
-  "tools": entries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/") || e.loc.includes("/reviews/")),
-  "glossary": entries.filter(e => e.loc.includes("/glossary/")),
-  "compare": entries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
-  "data": entries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
-  "professions": entries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
-  "ideas-builds": entries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/") || e.loc.includes("/revenue/") || e.loc.includes("/cities/") || e.loc.includes("/skills/") || e.loc.includes("/audience/")),
-  "banking": entries.filter(e => e.loc.includes("/banking/")),
-  "tax-guides": entries.filter(e => e.loc.includes("/tax-guides/")),
-  "nda-guides": entries.filter(e => e.loc.includes("/nda-guides/")),
-  "insurance": entries.filter(e => e.loc.includes("/insurance/")),
-  "time-frameworks": entries.filter(e => e.loc.includes("/time-frameworks/")),
+  "blog": filteredEntries.filter(e => e.loc.includes("/blog/")),
+  "guides": filteredEntries.filter(e => e.loc.includes("/guides/")),
+  "ideas": filteredEntries.filter(e => e.loc.includes("/ideas/")),
+  "tools": filteredEntries.filter(e => e.loc.includes("/best/") || e.loc.includes("/tools/") || e.loc.includes("/stack/") || e.loc.includes("/reviews/")),
+  "glossary": filteredEntries.filter(e => e.loc.includes("/glossary/")),
+  "compare": filteredEntries.filter(e => e.loc.includes("/compare/") || e.loc.includes("/alternatives/") || e.loc.includes("/vs/")),
+  "data": filteredEntries.filter(e => e.loc.includes("/calculators/") || e.loc.includes("/data/") || e.loc.includes("/salaries/") || e.loc.includes("/milestones/") || e.loc.includes("/timeline/") || e.loc.includes("/cost-of-waiting/") || e.loc.includes("/cost-analysis/") || e.loc.includes("/is-it-legal/") || e.loc.includes("/by-budget/") || e.loc.includes("/niches/")),
+  "professions": filteredEntries.filter(e => e.loc.includes("/mistakes/") || e.loc.includes("/reddit/") || e.loc.includes("/pricing-models/") || e.loc.includes("/break-even/") || e.loc.includes("/first-year/") || e.loc.includes("/non-compete/") || e.loc.includes("/how-to/") || e.loc.includes("/side-hustles/") || e.loc.includes("/quit-your-job/")),
+  "ideas-builds": filteredEntries.filter(e => e.loc.includes("/weekend-builds/") || e.loc.includes("/failure-stories/") || e.loc.includes("/niches/") || e.loc.includes("/case-studies/") || e.loc.includes("/revenue/") || e.loc.includes("/cities/") || e.loc.includes("/skills/") || e.loc.includes("/audience/")),
+  "banking": filteredEntries.filter(e => e.loc.includes("/banking/")),
+  "tax-guides": filteredEntries.filter(e => e.loc.includes("/tax-guides/")),
+  "nda-guides": filteredEntries.filter(e => e.loc.includes("/nda-guides/")),
+  "insurance": filteredEntries.filter(e => e.loc.includes("/insurance/")),
+  "time-frameworks": filteredEntries.filter(e => e.loc.includes("/time-frameworks/")),
 };
 
-// Write each sub-sitemap (with hreflang + image annotations)
-// Top languages for hreflang annotations (full list in src/i18n/languages.ts)
-const HREFLANG_LANGS = [
-  "es", "zh", "hi", "ar", "fr", "pt", "ja", "de", "ru", "ko",
-  "it", "tr", "nl", "pl", "uk", "id", "vi", "th", "fa", "he",
-  "bn", "ta", "te", "mr", "gu", "kn", "ml", "pa", "or", "ms",
-  "sw", "am", "ha", "yo", "ig", "zu", "xh", "af", "my", "km",
-  "lo", "ne", "si", "ps", "kk", "uz", "az", "ka", "hy", "mn",
-  "ceb", "ilo", "jv", "su", "mad", "hmn", "ku", "bal", "tg",
-  "tk", "sr", "hr", "bs", "sk", "sl", "lt", "lv", "et", "be",
-  "bg", "mk", "ca", "eu", "gl", "cy", "ga", "is", "gd", "br",
-  "lb", "mt", "fil", "bo", "ug", "nan", "wuu", "hak", "pcm",
-];
+// Write each sub-sitemap (image annotations only — hreflang removed 2026-07-23)
 
 const submapFiles: string[] = [];
 for (const [name, subs] of Object.entries(submaps)) {
   if (subs.length === 0) continue;
   const subXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
     subs.map(e => {
-      let url = '  <url>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n';
-      // hreflang annotations — English + all supported languages
-      const path = e.loc.replace('https://invisibleexit.com', '');
-      url += '    <xhtml:link rel="alternate" hreflang="en" href="' + e.loc + '" />\n';
-      url += '    <xhtml:link rel="alternate" hreflang="x-default" href="' + e.loc + '" />\n';
-      for (const lang of HREFLANG_LANGS) {
-        url += '    <xhtml:link rel="alternate" hreflang="' + lang + '" href="https://invisibleexit.com/' + lang + path + '" />\n';
-      }
+      // Truthful lastmod: omit when unknown (non-blog pSEO pages). Optional per spec.
+      const lastmodXml = e.lastmod ? '    <lastmod>' + e.lastmod + '</lastmod>\n' : '';
+      let url = '  <url>\n    <loc>' + e.loc + '</loc>\n' + lastmodXml + '    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n';
+      // Hreflang removed 2026-07-23: no real translations exist — all locale URLs 308-redirect.
+      // Broken hreflang in sitemaps is worse than none (Google may penalize).
       // Image annotation for blog posts
       if (e.loc.includes('/blog/') && !e.loc.includes('/category/')) {
         const slug = e.loc.split('/blog/')[1];
@@ -973,7 +1007,7 @@ writeFileSync(resolve(publicDir, "sitemap.xml"), indexXml, "utf-8");
 // The split sub-sitemap approach (sitemap-{type}.xml) is the canonical structure.
 // Keeping a 1,463-URL monolithic sitemap wastes disk and creates crawl-budget confusion.
 
-console.log(`\nSitemap index written (${entries.length} total URLs across ${submapFiles.length} sub-sitemaps)`);
+console.log(`\nSitemap index written (${filteredEntries.length} total URLs across ${submapFiles.length} sub-sitemaps; ${noindexCount} thin pages excluded)`);
 console.log(`  Blog posts: ${blogPosts.length}`);
 console.log(`  Categories: ${categorySlugs.length}`);
 console.log(`  Comparisons: ${comparisons.length}`);

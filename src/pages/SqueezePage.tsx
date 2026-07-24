@@ -158,69 +158,80 @@ const SqueezePage = () => {
             <Calculator className="w-8 h-8 text-primary-light" />
           </div>
 
-          {/* ─── STEP: INTRO ─── */}
+          {/* ─── STEP: INTRO — calculator first, one ask above the fold ─── */}
           {step === "intro" && (
-            <div className="animate-fade-in">
-              {/* PATTERN INTERRUPT — Brunson Ch 3-4: Curiosity gap */}
-              <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 rounded-full px-4 py-2 mb-6">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span className="text-amber-200 text-xs font-semibold uppercase tracking-wider">
-                  WARNING: This Calculator Will Tell You Something Uncomfortable
-                </span>
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                How Much Recurring Revenue Do You Actually Need to{" "}
-                <span className="text-gradient-light">Walk Away?</span>
+            <div className="animate-fade-in max-w-md mx-auto">
+              <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+                How much recurring revenue do you actually need to{" "}
+                <span className="text-gradient-light">leave your job?</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-2">
-                Not how much you <em>want</em>. What your specific salary, expenses, and hours-per-week{" "}
-                <strong className="text-white">require</strong>. Takes 30 seconds.
+              <p className="text-eyebrow text-primary-light mb-3">Step 1 of 3</p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                What's your current annual salary?
+              </h2>
+              <p className="text-white/50 text-sm mb-8">
+                This is the number your side business needs to replace.
               </p>
 
-              {/* Hook bullets — 4 specific pains (Brunson Ch 3) */}
-              <div className="max-w-sm mx-auto text-left mb-8 space-y-2.5">
-                {[
-                  "The exact MRR that replaces <strong>your</strong> salary",
-                  "How many customers you need (at any price point)",
-                  "Your timeline based on <strong>your</strong> hours/week",
-                  "The stealth checklist members use to stay invisible (avg score: 72/100)",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
-                    <span className="text-white/70 text-sm" dangerouslySetInnerHTML={{ __html: item }} />
-                  </div>
-                ))}
-              </div>
-
-              {/* BRUNSON Ch 1: Dream Customer Portrait — Meet the person this is for */}
-              <div className="bg-white/[0.04] border border-white/10 rounded-xl p-4 mb-8 max-w-lg mx-auto text-left">
-                <p className="text-primary-light text-xs font-semibold uppercase tracking-wider mb-2">This is for someone like David</p>
-                <p className="text-white/60 text-xs leading-relaxed">
-                  38. Senior Product Manager. $145K. 0.4% equity. Been telling himself &ldquo;after the IPO&rdquo; for 3 years.{' '}
-                  <strong className="text-white/80">He just ran this calculator. Now he knows the truth.</strong>
-                </p>
-              </div>
-
-              {/* URGENCY — "73 of 100 founding spots" visible from first screen */}
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs text-white/60">127 managers already found their number</span>
-              </div>
-
-              <button
-                onClick={() => setStep("salary")}
-                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 min-h-[52px]"
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (salary) {
+                    trackEvent("freedom_calc_started", { salary: parseInt(salary) || 0 });
+                    setStep("expenses");
+                  }
+                }}
               >
-                Calculate My Freedom Number
-                <ArrowRight className="w-5 h-5" />
-              </button>
+                <div className="relative mb-6">
+                  <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    autoComplete="off"
+                    aria-label="Annual salary"
+                    enterKeyHint="next"
+                    autoFocus
+                    value={salary}
+                    onChange={(e) => setSalary(e.target.value.replace(/[^0-9]/g, ''))}
+                    placeholder="120000"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/30 py-4 pl-12 pr-5 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 min-h-[56px]"
+                  />
+                </div>
 
-              {/* BRUNSON: Add 'because' after CTA — gives the reason to act NOW */}
-              <p className="text-white/40 text-xs italic mt-2">
-                Because 6 months from now, you'll either have the number — or you'll still be guessing.
-              </p>
+                {/* Quick selects */}
+                <div className="grid grid-cols-3 gap-2 mb-8">
+                  {["$80K", "$120K", "$160K", "$200K", "$250K", "$300K+"].map(
+                    (val) => {
+                      const num = parseInt(val.replace(/[^0-9]/g, "")) * 1000;
+                      return (
+                        <button
+                          key={val}
+                          type="button"
+                          onClick={() => setSalary(String(num))}
+                          className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                            salary === String(num)
+                              ? "bg-primary text-white"
+                              : "bg-white/5 text-white/60 hover:bg-white/10"
+                          }`}
+                        >
+                          {val}
+                        </button>
+                      );
+                    }
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!salary}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 disabled:opacity-40 min-h-[52px]"
+                >
+                  Continue
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
 
               <div className="flex items-center justify-center gap-4 mt-8 text-white/40 text-sm">
                 <span className="flex items-center gap-1.5">
@@ -263,7 +274,10 @@ const SqueezePage = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  if (salary) setStep("expenses");
+                  if (salary) {
+                    trackEvent("freedom_calc_income_entered", { salary: parseInt(salary) || 0 });
+                    setStep("expenses");
+                  }
                 }}
               >
                 <div className="relative mb-6">
@@ -346,7 +360,10 @@ const SqueezePage = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  if (expenses) setStep("timeline");
+                  if (expenses) {
+                    trackEvent("freedom_calc_expenses_entered", { expenses: parseInt(expenses) || 0 });
+                    setStep("timeline");
+                  }
                 }}
               >
                 <div className="relative mb-6">
@@ -456,7 +473,10 @@ const SqueezePage = () => {
                   Back
                 </button>
                 <button
-                  onClick={handleCalculate}
+                  onClick={() => {
+                    trackEvent("freedom_calc_hours_entered", { hoursPerWeek: parseInt(hoursPerWeek) || 5 });
+                    handleCalculate();
+                  }}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-lg py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 min-h-[52px]"
                 >
                   See My Freedom Number
@@ -513,25 +533,18 @@ const SqueezePage = () => {
                 </div>
               </div>
 
-              {/* DOTCOM SECRETS Ch 11: Urgency + Scarcity */}
+              {/* Founding membership open */}
               <div className="bg-amber-500/10 border border-amber-500/25 rounded-xl p-4 mb-4 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
                 <p className="text-amber-200 text-xs">
-                  <strong>73 of 100</strong> founding spots remaining. Price goes to $9.99/mo when founding closes.
+                  Founding membership open. Lock in your price now.
                 </p>
               </div>
 
-              {/* Social proof bar */}
+              {/* Social proof bar — removed fabricated counts */}
               <div className="flex items-center justify-center gap-3 mb-4 text-white/40 text-xs">
                 <span className="flex items-center gap-1">
                   <span className="text-amber-400">★★★★★</span>
-                </span>
-                <span>·</span>
-                <span>127 managers building now</span>
-                <span>·</span>
-                <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  4 joined today
                 </span>
               </div>
 
@@ -760,6 +773,47 @@ const SqueezePage = () => {
               />
             </div>
           )}
+
+          {/* ─── THE STORY: narrative moved below the calculator ─── */}
+          <div className="max-w-lg mx-auto mt-16 pt-12 border-t border-white/10">
+            <p className="text-white/40 text-xs uppercase tracking-wider mb-6">The Story Behind This Calculator</p>
+
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
+              How Much Recurring Revenue Do You Actually Need to{" "}
+              <span className="text-gradient-light">Walk Away?</span>
+            </h2>
+
+            <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-6">
+              Not how much you <em>want</em>. What your specific salary, expenses, and hours-per-week{" "}
+              <strong className="text-white">require</strong>. Takes 30 seconds.
+            </p>
+
+            <div className="max-w-sm mx-auto text-left mb-8 space-y-2.5">
+              {[
+                "The exact MRR that replaces <strong>your</strong> salary",
+                "How many customers you need (at any price point)",
+                "Your timeline based on <strong>your</strong> hours/week",
+                "The stealth checklist members use to stay invisible",
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <Check className="w-5 h-5 text-primary-light mt-0.5 shrink-0" />
+                  <span className="text-white/70 text-sm" dangerouslySetInnerHTML={{ __html: item }} />
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white/[0.04] border border-white/10 rounded-xl p-4 mb-8 max-w-lg mx-auto text-left">
+              <p className="text-primary-light text-xs font-semibold uppercase tracking-wider mb-2">This is for someone like David</p>
+              <p className="text-white/60 text-xs leading-relaxed">
+                38. Senior Product Manager. $145K. 0.4% equity. Been telling himself "after the IPO" for 3 years.{" "}
+                <strong className="text-white/80">He just ran this calculator. Now he knows the truth.</strong>
+              </p>
+            </div>
+
+            <p className="text-white/40 text-xs italic mt-2">
+              Because 6 months from now, you will either have the number — or you will still be guessing.
+            </p>
+          </div>
         </div>
       </div>
       <Footer />

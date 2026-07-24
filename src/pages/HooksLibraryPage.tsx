@@ -141,7 +141,7 @@ const HOOKS: Hook[] = [
   { text: "I waited 8 years for the IPO. It came. My 0.5% was worth less than my salary. Don't wait like I did. Here's what to do instead:", platform: "twitter", awareness: "unaware", gap: "when" },
   { text: "The best time to start building was 5 years ago. The second best time is your next 5-hour weekend. Here's the system:", platform: "twitter", awareness: "problem", gap: "when" },
   { text: "If you don't start building invisible income this year, you'll be in the exact same job, with the exact same equity, in 2027. Here's how to change that:", platform: "linkedin", awareness: "problem", gap: "when" },
-  { text: "73 founding spots left. After that, the price goes up and the founding member benefits expire. Here's why it matters:", platform: "twitter", awareness: "most", gap: "when" },
+  { text: "Founding membership open. After that, the price goes up and the founding member benefits expire. Here's why it matters:", platform: "twitter", awareness: "most", gap: "when" },
 
   // ── WHY GAP (Purpose & Meaning) ──
   { text: "I didn't want to quit my job. I wanted to matter outside of it. Here's what I learned about identity and optionality:", platform: "linkedin", awareness: "unaware", gap: "why" },
@@ -153,18 +153,18 @@ const HOOKS: Hook[] = [
   { text: "I wanted to leave the key for the next person trapped in the same cage. That's why I built this. Not for money. For freedom.", platform: "linkedin", awareness: "solution", gap: "why" },
 
   // ── HOW GAP (Method & System) ──
-  { text: "How to build a $4K/month side business without quitting your job, without writing code, and without your employer finding out (full system):", platform: "youtube", awareness: "problem", gap: "how" },
+  { text: "How to build recurring side revenue without quitting your job, without writing code, and without your employer finding out (full system):", platform: "youtube", awareness: "problem", gap: "how" },
   { text: "The 5-tool system that takes you from 'trapped in golden handcuffs' to real recurring revenue in 12 months:", platform: "twitter", awareness: "solution", gap: "how" },
   { text: "Step 1: Calculate your freedom number (90 seconds). Step 2: Validate one micro-SaaS idea (48 hours). Step 3: Build invisible revenue (5h/week). Here's the full framework:", platform: "twitter", awareness: "problem", gap: "how" },
   { text: "I set up my side business so my employer could never find it. Here's the Triple-Separation Protocol (entity, name, payment processor):", platform: "youtube", awareness: "problem", gap: "how" },
   { text: "How to validate a micro-SaaS idea in 48 hours without writing a single line of code:", platform: "twitter", awareness: "solution", gap: "how" },
-  { text: "The exact tech stack a non-technical manager used to build $4,100/month MRR in 12 months. No code required:", platform: "twitter", awareness: "solution", gap: "how" },
+  { text: "The exact tech stack a non-technical manager used to build recurring monthly revenue. No code required:", platform: "twitter", awareness: "solution", gap: "how" },
   { text: "How to build an anonymous brand without showing your face, using your real name, or linking to your LinkedIn:", platform: "youtube", awareness: "problem", gap: "how" },
   { text: "Step-by-step: how I set up a separate LLC, separate name, and separate Stripe account so my employer can never connect my side business to me:", platform: "twitter", awareness: "solution", gap: "how" },
 
   // ── REDDIT-SPECIFIC (value-first, no link in hook) ──
   { text: "I did the math on my 0.5% equity. Even a $1B exit wouldn't replace my salary. Here's the full breakdown (and what I'm doing instead):", platform: "reddit", awareness: "unaware", gap: "what" },
-  { text: "I'm a Managing Director earning $120K. I built $4,100/month in side revenue in 12 months working 5 hours/week. AMA about the system (not the idea):", platform: "reddit", awareness: "problem", gap: "how" },
+  { text: "I'm a Managing Director earning $120K. I built recurring side revenue working 5 hours/week. AMA about the system (not the idea):", platform: "reddit", awareness: "problem", gap: "how" },
   { text: "The cost of waiting: I calculated that every month I delayed starting my side business cost me ~$4,000 in unrealized MRR. Here's the math that woke me up:", platform: "reddit", awareness: "problem", gap: "when" },
   { text: "How I set up a side business so my employer can never find it (entity separation, name separation, payment separation):", platform: "reddit", awareness: "solution", gap: "how" },
   { text: "I got my first Stripe notification ($0.97) while on vacation. It changed how I see my $120K salary more than any raise ever did. Here's why:", platform: "reddit", awareness: "unaware", gap: "why" },
@@ -172,7 +172,7 @@ const HOOKS: Hook[] = [
   // ── AD HOOKS (for paid traffic) ──
   { text: "⚠️ Your 0.5% equity is worth less than you think. Here's the math nobody showed you.", platform: "any", awareness: "unaware", gap: "what" },
   { text: "The cage has a door. Here's the key nobody told you about.", platform: "any", awareness: "unaware", gap: "why" },
-  { text: "73 founding spots left. After that, the price doubles. Here's what you get:", platform: "any", awareness: "most", gap: "when" },
+  { text: "Founding membership open. After that, the price doubles. Here's what you get:", platform: "any", awareness: "most", gap: "when" },
   { text: "5 tools. $0.97/month. Cancel anytime. If you're a corporate manager, this will change how you see your salary.", platform: "any", awareness: "product", gap: "what" },
   { text: "Stop waiting for the IPO. Start building your own exit. Here's the system:", platform: "any", awareness: "problem", gap: "when" },
 ];

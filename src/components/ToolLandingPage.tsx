@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GuaranteeBox from "@/components/GuaranteeBox";
 import {
   Accordion,
   AccordionContent,
@@ -255,13 +256,10 @@ const ToolLandingPage = ({
         </div>
       </section>
 
-      {/* Guarantee */}
+      {/* Guarantee — unified component */}
       <section className="bg-[#1B2A4A] py-24 px-6">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">30-Day No-Questions Guarantee</h2>
-          <p className="text-white/70 text-lg leading-relaxed">
-            Use it for 30 days. If it doesn't deliver, email us one word: 'refund.' Every cent back within 24 hours.
-          </p>
+        <div className="mx-auto max-w-xl">
+          <GuaranteeBox variant="bold" days={30} />
         </div>
       </section>
 

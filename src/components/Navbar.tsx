@@ -1,61 +1,58 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { Menu, X, ArrowRight, ChevronDown, Search, LayoutDashboard, BookOpen } from "lucide-react";
-import LanguageSwitcher from "./LanguageSwitcher";
 
 type NavLinkDef = { to: string; labelKey?: string; label?: string };
 
 const NAV_GROUPS: { labelKey: string; links: NavLinkDef[] }[] = [
   {
-    labelKey: "nav.build",
+    labelKey: "Build",
     links: [
-      { labelKey: "nav.blog", to: "/blog" },
-      { labelKey: "nav.microSaaSIdeas", to: "/ideas" },
-      { labelKey: "nav.aiToolIdeas", to: "/ideas/for-accountants/with/chatgpt" },
-      { labelKey: "nav.budgetStacks", to: "/budget/0-dollars" },
-      { labelKey: "nav.timeStrategy", to: "/hours/5-hours-per-week" },
-      { labelKey: "nav.stateGuides", to: "/guides" },
-      { labelKey: "nav.toolStacks", to: "/stack" },
-      { labelKey: "nav.firstYearRoadmaps", to: "/first-year" },
+      { label: "Blog", to: "/blog" },
+      { label: "Micro-SaaS Ideas", to: "/ideas" },
+      { label: "AI Tool Ideas", to: "/ideas/for-accountants/with/chatgpt" },
+      { label: "Budget Stacks", to: "/budget/0-dollars" },
+      { label: "Time Strategy", to: "/hours/5-hours-per-week" },
+      { label: "State Guides", to: "/guides" },
+      { label: "Tool Stacks", to: "/stack" },
+      { label: "First Year Roadmaps", to: "/first-year" },
     ],
   },
   {
-    labelKey: "nav.learn",
+    labelKey: "Learn",
     links: [
-      { labelKey: "nav.calculators", to: "/calculators" },
-      { labelKey: "nav.bestTools", to: "/best" },
-      { labelKey: "nav.toolCrossReference", to: "/tools" },
-      { labelKey: "nav.dataReports", to: "/data" },
-      { labelKey: "nav.glossary", to: "/glossary" },
-      { labelKey: "nav.resources", to: "/resources" },
-      { labelKey: "nav.timeline", to: "/timeline" },
-      { labelKey: "nav.revenueMilestones", to: "/milestones" },
-      { labelKey: "nav.breakEvenCalculator", to: "/break-even" },
+      { label: "Calculators", to: "/calculators" },
+      { label: "Best Tools", to: "/best" },
+      { label: "Tool Cross-Reference", to: "/tools" },
+      { label: "Data Reports", to: "/data" },
+      { label: "Glossary", to: "/glossary" },
+      { label: "Resources", to: "/resources" },
+      { label: "Timeline", to: "/timeline" },
+      { label: "Revenue Milestones", to: "/milestones" },
+      { label: "Break-Even Calculator", to: "/break-even" },
     ],
   },
   {
-    labelKey: "nav.decide",
+    labelKey: "Decide",
     links: [
-      { labelKey: "nav.comparisons", to: "/compare" },
-      { labelKey: "nav.careerVsSaaS", to: "/vs" },
-      { labelKey: "nav.alternatives", to: "/alternatives" },
-      { labelKey: "nav.salariesToSaaS", to: "/salaries" },
-      { labelKey: "nav.commonMistakes", to: "/mistakes" },
-      { labelKey: "nav.redditStrategy", to: "/reddit" },
-      { labelKey: "nav.nonCompeteGuide", to: "/non-compete" },
+      { label: "Comparisons", to: "/compare" },
+      { label: "Career vs SaaS", to: "/vs" },
+      { label: "Alternatives", to: "/alternatives" },
+      { label: "Salaries to SaaS", to: "/salaries" },
+      { label: "Common Mistakes", to: "/mistakes" },
+      { label: "Reddit Strategy", to: "/reddit" },
+      { label: "Non-Compete Guide", to: "/non-compete" },
     ],
   },
   {
-    labelKey: "nav.story",
+    labelKey: "Story",
     links: [
-      { labelKey: "nav.freeBook", to: "/free-book" },
-      { labelKey: "nav.myOriginStory", to: "/story" },
-      { labelKey: "nav.theManifesto", to: "/manifesto" },
-      { labelKey: "nav.whoIsAdrian", to: "/adrian" },
-      { labelKey: "nav.innerCircle", to: "/inner-circle" },
-      { labelKey: "nav.affiliates", to: "/affiliates" },
-      // Hardcoded label (like the Free Book CTA) — avoids touching 96 locale files
+      { label: "Free Book (Just Pay Shipping)", to: "/free-book" },
+      { label: "My Origin Story", to: "/story" },
+      { label: "The Manifesto", to: "/manifesto" },
+      { label: "Who Is Adrian?", to: "/adrian" },
+      { label: "Inner Circle", to: "/inner-circle" },
+      { label: "Affiliates", to: "/affiliates" },
       { label: "Pricing", to: "/pricing" },
     ],
   },
@@ -63,17 +60,16 @@ const NAV_GROUPS: { labelKey: string; links: NavLinkDef[] }[] = [
 
 // Flatten for desktop
 const DESKTOP_LINKS: NavLinkDef[] = [
-  { labelKey: "nav.blog", to: "/blog" },
-  { labelKey: "nav.ideas", to: "/ideas" },
-  { labelKey: "nav.guides", to: "/guides" },
-  { labelKey: "nav.tools", to: "/best" },
-  { labelKey: "nav.calculators", to: "/calculators" },
-  { labelKey: "nav.glossary", to: "/glossary" },
+  { label: "Blog", to: "/blog" },
+  { label: "Ideas", to: "/ideas" },
+  { label: "Guides", to: "/guides" },
+  { label: "Tools", to: "/best" },
+  { label: "Calculators", to: "/calculators" },
+  { label: "Glossary", to: "/glossary" },
   { label: "Pricing", to: "/pricing" },
 ];
 
 const Navbar = () => {
-  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [compact, setCompact] = useState(false);
@@ -184,14 +180,13 @@ const Navbar = () => {
                       : "text-white/60 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  {link.label ?? t(link.labelKey!)}
+                  {link.label ?? link.labelKey}
                 </Link>
               ))}
             </div>
 
-            {/* Desktop CTA + Language */}
+            {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <LanguageSwitcher variant="compact" className="text-white/80" />
               <Link
                 to="/free-book"
                 className="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 text-sm font-semibold px-3 py-2 rounded-lg transition-colors hover:bg-amber-500/10"
@@ -203,25 +198,24 @@ const Navbar = () => {
                 to="/freedom"
                 className="text-white/60 hover:text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
               >
-                {t("nav.freeCalculator")}
+                Free Calculator
               </Link>
               <Link
                 to="/start"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-[0.97]"
               >
-                {t("nav.getStarted")}
+                Get Started
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Mobile: language + hamburger */}
+            {/* Mobile: hamburger only */}
             <div className="flex lg:hidden items-center gap-1">
-              <LanguageSwitcher variant="compact" className="text-white/80" />
               <button
                 ref={hamburgerRef}
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
-                aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-nav-drawer"
               >
@@ -251,7 +245,7 @@ const Navbar = () => {
             id="mobile-nav-drawer"
             role="dialog"
             aria-modal="true"
-            aria-label={t("nav.menu")}
+            aria-label="Menu"
             className="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[hsl(222_47%_11%)] shadow-2xl overflow-y-auto overscroll-contain safe-top safe-bottom"
             onClick={(e) => e.stopPropagation()}
             style={{
@@ -267,7 +261,7 @@ const Navbar = () => {
 
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 sticky top-0 bg-[hsl(222_47%_11%)]/95 backdrop-blur-xl z-10">
-              <span className="text-white font-bold text-lg">{t("nav.menu")}</span>
+              <span className="text-white font-bold text-lg">Menu</span>
               <button
                 ref={drawerCloseRef}
                 onClick={() => {
@@ -275,7 +269,7 @@ const Navbar = () => {
                   hamburgerRef.current?.focus();
                 }}
                 className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors active:scale-95"
-                aria-label={t("nav.closeMenu")}
+                aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -286,7 +280,7 @@ const Navbar = () => {
               {NAV_GROUPS.map((group, gi) => (
                 <div key={group.labelKey} className={gi > 0 ? "mt-6" : ""}>
                   <h3 className="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-white/60">
-                    {t(group.labelKey)}
+                    {group.labelKey}
                   </h3>
                   <div className="space-y-0.5">
                     {group.links.map((link) => (
@@ -299,7 +293,7 @@ const Navbar = () => {
                             : "text-white/70 hover:text-white hover:bg-white/5"
                         }`}
                       >
-                        {link.label ?? t(link.labelKey!)}
+                        {link.label ?? link.labelKey}
                         <ArrowRight className="w-4 h-4 opacity-30" />
                       </Link>
                     ))}
@@ -316,7 +310,7 @@ const Navbar = () => {
                   className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors active:scale-[0.97]"
                   style={{ minHeight: "48px" }}
                 >
-                  {t("cta.calculateFreedomNumber")}
+                  Calculate Freedom Number (Free)
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
@@ -324,7 +318,7 @@ const Navbar = () => {
                   className="flex items-center justify-center px-4 py-3 rounded-xl text-sm font-medium text-white/80 border border-white/15 hover:bg-white/5 transition-colors active:scale-[0.97]"
                   style={{ minHeight: "44px" }}
                 >
-                  {t("cta.getStartedPrice")}
+                  Get Started
                 </Link>
               </div>
             </div>

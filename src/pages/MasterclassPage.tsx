@@ -90,8 +90,8 @@ const SLIDES = [
     title: "The Results",
     eyebrow: "12-Month Timeline",
     hook: "Here's the honest timeline. Not the highlight reel.",
-    body: "Month 1–3: Built, launched, zero customers. Almost quit twice. Month 4: First customer ($9/mo). Screamed in the car. Month 6: $850 MRR. Still employed. Employer clueless. Month 9: $2,100 MRR. Turned down a promotion. Month 12: $4,100 MRR across 3 products. The boring product (a PDF generator for electricians) pays most of the mortgage. I didn't get rich. I got free. There's a difference.",
-    stat: "$4,100 MRR in 12 months",
+    body: "Month 1–3: Built, launched, zero customers. Almost quit twice. Month 4: First customer ($9/mo). Screamed in the car. Month 6: Growing MRR. Still employed. Employer clueless. Month 9: Turned down a promotion. Month 12: Recurring revenue across 3 products. The boring product (a PDF generator for electricians) pays most of the mortgage. I didn't get rich. I got free. There's a difference.",
+    stat: "Recurring revenue while employed",
   },
   {
     title: "The Stack",
@@ -386,10 +386,10 @@ const MasterclassPage = () => {
           {/* Urgency */}
           <div className="max-w-lg mx-auto bg-primary/10 border border-primary/30 rounded-xl p-5 mb-8">
             <p className="text-primary-light font-semibold text-sm mb-1">
-              ⚡ Founding Member Spots: 73 of 100 Remaining
+              ⚡ Founding Membership Open
             </p>
             <p className="text-white/50 text-xs">
-              After 100 founding members, price goes to $9.99/month. Your $0.97 is locked for life.
+              After founding period, price goes to $9.99/month. Your $0.97 is locked for life.
             </p>
           </div>
 
