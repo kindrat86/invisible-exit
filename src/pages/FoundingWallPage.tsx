@@ -30,23 +30,13 @@ interface FoundingMember {
   product?: string;
 }
 
-const FOUNDING_MEMBERS: FoundingMember[] = [
-  { pseudonym: "Marcus T.", role: "Product Manager", freedomNumber: "$4,200", joinedDay: 1, initials: "MT", color: "bg-blue-500", product: "PDF generator for electricians" },
-  { pseudonym: "Sarah K.", role: "Finance Director", freedomNumber: "$3,800", joinedDay: 1, initials: "SK", color: "bg-purple-500", product: "Invoice tool for freelancers" },
-  { pseudonym: "Jennifer L.", role: "Operations Manager", freedomNumber: "$2,300", joinedDay: 3, initials: "JL", color: "bg-emerald-500", product: "Logistics scheduling SaaS" },
-  { pseudonym: "David R.", role: "Engineering Manager", freedomNumber: "$5,100", joinedDay: 5, initials: "DR", color: "bg-amber-500", product: "API monitoring dashboard" },
-  { pseudonym: "Elena V.", role: "Marketing Director", freedomNumber: "$1,900", joinedDay: 7, initials: "EV", color: "bg-pink-500", product: "Social media scheduler" },
-  { pseudonym: "James W.", role: "VP of Sales", freedomNumber: "$3,400", joinedDay: 9, initials: "JW", color: "bg-indigo-500", product: "CRM automation tool" },
-  { pseudonym: "Maria C.", role: "Head of HR", freedomNumber: "$2,700", joinedDay: 11, initials: "MC", color: "bg-teal-500", product: "Employee onboarding platform" },
-  { pseudonym: "Tom H.", role: "Director of Ops", freedomNumber: "$4,500", joinedDay: 13, initials: "TH", color: "bg-red-500", product: "Inventory management SaaS" },
-  { pseudonym: "Anna B.", role: "Strategy Lead", freedomNumber: "$1,600", joinedDay: 15, initials: "AB", color: "bg-orange-500", product: "Competitor analysis tool" },
-  { pseudonym: "Chris M.", role: "Senior PM", freedomNumber: "$3,200", joinedDay: 17, initials: "CM", color: "bg-cyan-500", product: "Email template builder" },
-  { pseudonym: "Linda F.", role: "Controller", freedomNumber: "$2,800", joinedDay: 19, initials: "LF", color: "bg-violet-500", product: "Budget tracking dashboard" },
-  { pseudonym: "Rob S.", role: "Engineering Lead", freedomNumber: "$4,900", joinedDay: 21, initials: "RS", color: "bg-lime-500", product: "Code documentation generator" },
-  { pseudonym: "Nina P.", role: "Brand Manager", freedomNumber: "$1,400", joinedDay: 23, initials: "NP", color: "bg-fuchsia-500", product: "Brand asset organizer" },
-  { pseudonym: "Alex D.", role: "Program Manager", freedomNumber: "$3,600", joinedDay: 25, initials: "AD", color: "bg-sky-500", product: "Project tracking tool" },
-  { pseudonym: "Sophie L.", role: "Director of Finance", freedomNumber: "$5,300", joinedDay: 27, initials: "SL", color: "bg-rose-500", product: "Financial reporting automation" },
-];
+// 2026-07-24: this array held 15 entirely invented pseudonyms with invented
+// MRR figures, explicitly captioned "Revenue is verified by Stripe screenshots
+// submitted to Adrian" — invisibleexit has zero paying customers on any tier.
+// This was the single worst honesty violation the 2026-07-24 conversion audit
+// found on the site. Left empty and honest; repopulate only with real,
+// permissioned members once they exist. See conversion-audit-scored-2026-07-24.
+const FOUNDING_MEMBERS: FoundingMember[] = [];
 
 const TRIBE_PILLARS = [
   {
@@ -67,16 +57,11 @@ const TRIBE_PILLARS = [
 ];
 
 const FoundingWallPage = () => {
-  const totalMRR = FOUNDING_MEMBERS.reduce((sum, m) => {
-    const num = parseInt(m.freedomNumber.replace(/[^0-9]/g, ""));
-    return sum + num;
-  }, 0);
-
   return (
     <div className="min-h-screen">
       <SEOHead
         title="The Invisible Builders Wall | Founding Members of Invisible Exit"
-        description="Meet the corporate managers building invisible recurring revenue. 100 founding spots. 27 claimed. Anonymous by design."
+        description="Meet the corporate managers building invisible recurring revenue. 100 founding spots, all open. Anonymous by design."
         url="/founding-wall"
       />
       <Navbar />
@@ -97,20 +82,15 @@ const FoundingWallPage = () => {
             wondering if the system actually works.
           </p>
 
-          {/* Live stats */}
+          {/* Live stats — honest: 0 members today, nothing rounded up */}
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-8">
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-primary-light">27</p>
+              <p className="text-3xl sm:text-4xl font-bold text-primary-light">{FOUNDING_MEMBERS.length}</p>
               <p className="text-white/50 text-xs uppercase tracking-wide">Founding Members</p>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-success">${totalMRR.toLocaleString()}/mo</p>
-              <p className="text-white/50 text-xs uppercase tracking-wide">Combined MRR</p>
-            </div>
-            <div className="w-px h-12 bg-white/10" />
-            <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-amber-400">73</p>
+              <p className="text-3xl sm:text-4xl font-bold text-amber-400">100</p>
               <p className="text-white/50 text-xs uppercase tracking-wide">Spots Remaining</p>
             </div>
           </div>
@@ -119,13 +99,13 @@ const FoundingWallPage = () => {
           <div className="max-w-md mx-auto mb-8">
             <div className="flex items-center justify-between text-xs text-white/40 mb-2">
               <span>0</span>
-              <span>27% claimed</span>
+              <span>0% claimed</span>
               <span>100</span>
             </div>
             <div className="h-3 bg-white/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all duration-1000"
-                style={{ width: "27%" }}
+                style={{ width: "0%" }}
               />
             </div>
           </div>
@@ -172,11 +152,11 @@ const FoundingWallPage = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Wall</p>
-            <h2 className="text-h1 text-foreground mb-4">27 Founding Members. And Counting.</h2>
+            <h2 className="text-h1 text-foreground mb-4">100 Spots. All Open. Be First.</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              Names are pseudonyms. Products are real. Revenue is verified by
-              Stripe screenshots submitted to Adrian. This is the wall of
-              people who stopped waiting.
+              This wall is empty right now — on purpose. No invented members,
+              no backdated revenue. When real founding members join (real
+              pseudonyms, real Stripe-verified revenue), they'll appear here.
             </p>
           </div>
 
@@ -208,8 +188,8 @@ const FoundingWallPage = () => {
               </div>
             ))}
 
-            {/* Empty slots */}
-            {[...Array(8)].map((_, i) => (
+            {/* Empty slots — honest: nobody has claimed a spot yet */}
+            {[...Array(10)].map((_, i) => (
               <div
                 key={`empty-${i}`}
                 className="card-base p-5 text-center border-dashed border-2 border-border opacity-50"
@@ -224,16 +204,10 @@ const FoundingWallPage = () => {
                   <p className="text-muted-foreground text-[10px]">Not started</p>
                 </div>
                 <p className="text-[10px] text-muted-foreground">
-                  Claim spot #{28 + i}
+                  Claim spot #{i + 1}
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-muted-foreground text-sm">
-              + 12 anonymous members who chose not to display their stats
-            </p>
           </div>
         </div>
       </section>

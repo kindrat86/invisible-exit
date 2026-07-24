@@ -1106,25 +1106,11 @@ function homepageBodyHtml(): string {
 <a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $0.97</a>
 </div>
 </section>
-<section style="padding:3rem 1.5rem;background-color:#f0f9ff">
-<div style="max-width:48rem;margin:0 auto">
-<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem;text-align:center">What Members Say</h2>
-<div style="display:grid;gap:1.5rem">
-<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
-<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"The freedom number calculator showed me I was 18 months away from being able to leave my VP role. Having that timeline made the side work feel real instead of hopeless."</p>
-<p style="font-weight:600;font-size:0.875rem">— Sarah K., Finance Director</p>
-</div>
-<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
-<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"I validated my micro-SaaS idea in 48 hours and had my first paying customer within 3 weeks. The stealth ops hub gave me confidence that my employer would never find out."</p>
-<p style="font-weight:600;font-size:0.875rem">— Marcus T., Product Manager</p>
-</div>
-<div style="padding:1.5rem;background:white;border-radius:0.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1)">
-<p style="font-style:italic;color:#1f2937;margin-bottom:0.75rem">"As someone with zero coding background, the AI-powered tools let me build something real. I went from idea to $2,300/month recurring revenue in 7 months."</p>
-<p style="font-weight:600;font-size:0.875rem">— Jennifer L., Operations Manager</p>
-</div>
-</div>
-</div>
-</section>
+<!-- 2026-07-24: removed a "What Members Say" block — 3 invented named
+testimonials (Sarah K., Marcus T., Jennifer L.) with fake results, injected
+by this single template into every blog page in the fleet. invisibleexit has
+zero paying customers; there is nothing real to cite here yet. See
+conversion-audit-scored-2026-07-24. -->
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb;background:#f9fafb">
 <div style="max-width:64rem;margin:0 auto">
 <nav style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:left;margin-bottom:2rem">
@@ -3746,13 +3732,15 @@ ${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The c
 </div>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
-<span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#f0fdf4"><span style="color:#16a34a;font-weight:700">$4,100/mo verified</span></span>
+<!-- 2026-07-24: removed a "$4,100/mo verified" badge — a specific, false
+Stripe-verification claim (invisibleexit has zero paying customers). See
+conversion-audit-scored-2026-07-24. -->
 <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#eff6ff">Still employed</span>
 <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#f0fdf4">Entity-separated &amp; legal</span>
 </div>
 </div>
 <div style="max-width:42rem;margin:1.5rem auto 0;padding:1rem 1.25rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:0.75rem">
-<p style="font-size:0.875rem;color:#4b5563;line-height:1.6;text-align:center"><strong style="color:#111827">Why no face or last name?</strong> Anonymity isn't a gimmick — it's the proof of concept. I'm still employed. My employer still doesn't know. The system works so well that revealing my identity would defeat its purpose. Everything is documented and verifiable through Stripe statements, company registrations, and tax filings.</p>
+<p style="font-size:0.875rem;color:#4b5563;line-height:1.6;text-align:center"><strong style="color:#111827">Why no face or last name?</strong> Anonymity isn't a gimmick — it's the proof of concept. I'm still employed. My employer still doesn't know. The system works so well that revealing my identity would defeat its purpose.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">

@@ -198,7 +198,6 @@ const Index = () => {
               sameAs: [
                 "https://www.reddit.com/r/invisibleexit",
                 "https://github.com/kindrat86/invisible-exit",
-                "https://twitter.com/InvisibleExit",
                 "https://www.youtube.com/@InvisibleExit",
               ],
               knowsAbout: [
@@ -667,15 +666,6 @@ const Index = () => {
                 vibe: "Practical. Step-by-step.",
               },
               {
-                name: "@InvisibleExit",
-                type: "X / Twitter",
-                url: "https://twitter.com/InvisibleExit",
-                members: "Launching",
-                description:
-                  "Daily threads, micro-SaaS ideas, equity math breakdowns, and the occasional \"I can't believe this works\" moment — launching soon.",
-                vibe: "Fast. Derivative-free.",
-              },
-              {
                 name: "Indie Hackers",
                 type: "Community",
                 url: "https://www.indiehackers.com/",
@@ -988,44 +978,11 @@ const Index = () => {
             </Link>
           </div>
 
-          {/* Case studies / Proof stories */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                secret: "Vehicle",
-                story: "Sarah K., Finance Director",
-                before: "Spent 6 months researching startup ideas. Analysis paralysis. Had the skills but no system.",
-                action: "Used salary as runway. Picked a boring fintech tool for SMBs. Validated in 2 weeks. Launched in 6.",
-                result: "$3,200 MRR in 8 months",
-                quote: "My corporate skills gave me an unfair advantage that full-time founders don't have.",
-              },
-              {
-                secret: "Stealth",
-                story: "Marcus T., Product Manager",
-                before: "Worried his employer would discover his side project. Nearly didn't start.",
-                action: "Set up separate LLC, anonymous domain, different Stripe account. Colleague found a similar site on a team call. Zero connection traced.",
-                result: "Zero detection in 14 months",
-                quote: "Those 3 seconds of panic were the best $25/month I've ever spent.",
-              },
-              {
-                secret: "System",
-                story: "Jennifer L., Operations Manager",
-                before: "Obsessed over finding the 'perfect' idea for 5 months. Built nothing.",
-                action: "Stopped choosing ideas. Started working the system. Pivoted twice using the Idea Pipeline. Third product was a PDF generator for logistics companies.",
-                result: "$2,300 MRR with 5 hrs/week",
-                quote: "I stopped obsessing over the perfect idea and started working the system.",
-              },
-            ].map((cs) => (
-              <div key={cs.secret} className="card-base p-5 border-l-4 border-primary/40">
-                <p className="text-eyebrow text-primary text-xs mb-2">{cs.secret}</p>
-                <p className="text-sm font-semibold text-foreground mb-3">{cs.story}</p>
-                <p className="text-xs text-muted-foreground mb-2"><span className="font-semibold text-foreground">Before:</span> {cs.before}</p>
-                <p className="text-xs text-muted-foreground mb-3"><span className="font-semibold text-foreground">After:</span> {cs.action}</p>
-                <p className="text-caption text-sm italic mb-3">"{cs.quote}"</p>
-                <p className="text-success text-sm font-bold">{cs.result}</p>
-              </div>
-            ))}
-          </div>
+          {/* 2026-07-24: removed a "Case studies / Proof stories" block — 3 fully
+              invented named people (Sarah K., Marcus T., Jennifer L.) with fake
+              specific MRR results and quotes, presented as real proof.
+              invisibleexit has zero paying customers; there is nothing real to
+              cite here yet. See conversion-audit-scored-2026-07-24. */}
         </div>
       </section>
 
@@ -1495,58 +1452,24 @@ const Index = () => {
               <span className="text-gradient">You're Joining a Tribe.</span>
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              127 corporate managers stopped waiting for an IPO and started building
-              invisible recurring revenue. Each one was exactly where you are now —
-              skeptical, trapped, and wondering if this was real. Here's the proof.
+              Stopped waiting for an IPO and started building invisible recurring
+              revenue. If you're skeptical, trapped, and wondering if this is
+              real — that's exactly where every builder starts.
             </p>
           </div>
 
-          {/* ── LIVE COMMUNITY PULSE ── */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="card-base p-5 text-center border-t-4 border-primary/40">
-                <p className="text-3xl font-bold text-primary">127</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Active Builders</p>
-              </div>
-              <div className="card-base p-5 text-center border-t-4 border-success/40">
-                <p className="text-3xl font-bold text-success">$31K+</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Combined MRR</p>
-              </div>
-              <div className="card-base p-5 text-center border-t-4 border-amber-400/40">
-                <p className="text-3xl font-bold text-amber-500">0</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Employer Detections</p>
-              </div>
-              <div className="card-base p-5 text-center border-t-4 border-red-400/40">
-                <p className="text-3xl font-bold text-red-500">73</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wide mt-1">Founding Spots Left</p>
-              </div>
-            </div>
-
-            {/* Progress to 1,000 mission */}
-            <div className="mt-6 max-w-xl mx-auto">
-              <div className="flex items-end justify-between mb-2">
-                <div className="text-left">
-                  <p className="text-2xl font-bold text-primary">127</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wide">builders</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl font-bold text-muted-foreground">1,000</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wide">mission goal</p>
-                </div>
-              </div>
-              <div className="h-3 bg-border rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-primary via-primary-light to-success rounded-full transition-all duration-1000"
-                  style={{ width: "12.7%" }}
-                />
-              </div>
-              <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
-                <span>12.7% of the way there</span>
-                <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  4 joined this week
-                </span>
-              </div>
+          {/* ── FOUNDING COHORT STATUS ── */}
+          {/* 2026-07-24: replaced fabricated live counters (127 builders, $31K
+              combined MRR, 73/1,000 progress bar) with an honest founding-open
+              framing. invisibleexit has zero paying customers today — no number
+              here is faked or rounded up. See conversion-audit-scored-2026-07-24. */}
+          <div className="max-w-2xl mx-auto mb-12 text-center">
+            <div className="card-base p-6 border-t-4 border-primary/40 inline-block">
+              <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">Founding cohort — 100 seats, opening now</p>
+              <p className="text-sm text-muted-foreground">
+                No inflated headcount, no fake activity ticker. Be one of the first
+                — the $0.97/mo founding price is locked for members who join early.
+              </p>
             </div>
           </div>
 
@@ -1594,57 +1517,23 @@ const Index = () => {
             </div>
           </div>
 
-          {/* ── FOUNDING MEMBER PREVIEW WALL ── */}
-          {/* Real pseudonyms, real products, real MRR. Identity proof without identity exposure. */}
-          <div className="mb-12">
-            <div className="text-center mb-8">
-              <p className="text-eyebrow text-primary mb-2">The Founding Wall</p>
-              <h3 className="text-2xl font-bold text-foreground">Who's Already Building</h3>
-              <p className="text-sm text-muted-foreground mt-2 max-w-xl mx-auto">
-                Names are pseudonyms. Products are real. Revenue is verified by Stripe.
-                These are people who stopped waiting.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto">
-              {[
-                { pseudo: "Marcus T.", role: "Product Manager", mrr: "$4,200", initials: "MT", color: "bg-blue-500", product: "PDF generator", day: 1 },
-                { pseudo: "Sarah K.", role: "Finance Director", mrr: "$3,800", initials: "SK", color: "bg-purple-500", product: "Invoice tool", day: 1 },
-                { pseudo: "Jennifer L.", role: "Ops Manager", mrr: "$2,300", initials: "JL", color: "bg-emerald-500", product: "Logistics SaaS", day: 3 },
-                { pseudo: "David R.", role: "Eng Manager", mrr: "$5,100", initials: "DR", color: "bg-amber-500", product: "API monitor", day: 5 },
-                { pseudo: "Elena V.", role: "Marketing Dir", mrr: "$1,900", initials: "EV", color: "bg-pink-500", product: "Social scheduler", day: 7 },
-                { pseudo: "James W.", role: "VP of Sales", mrr: "$3,400", initials: "JW", color: "bg-indigo-500", product: "CRM automation", day: 9 },
-              ].map((member, i) => (
-                <div
-                  key={i}
-                  className="card-base p-4 text-center card-hover animate-fade-up border-t-4 border-primary/20"
-                  style={{ animationDelay: `${i * 60}ms` }}
-                >
-                  <div className={`w-12 h-12 rounded-full ${member.color} flex items-center justify-center mx-auto mb-2`}>
-                    <span className="text-white font-bold text-xs">{member.initials}</span>
-                  </div>
-                  <p className="font-semibold text-foreground text-xs">{member.pseudo}</p>
-                  <p className="text-[11px] text-muted-foreground mb-1.5">{member.role}</p>
-                  <div className="bg-success/10 rounded-lg py-1 px-1.5 mb-1.5">
-                    <p className="text-success text-[11px] font-bold">{member.mrr}/mo</p>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground/60 italic leading-tight">{member.product}</p>
-                  <p className="text-[11px] text-primary mt-1.5 font-medium">Day {member.day}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-5">
-              <Link
-                to="/founding-wall"
-                onClick={() => trackEvent("homepage_tribe_wall_link_clicked")}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
-              >
-                See all 27 founding members
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <p className="text-xs text-muted-foreground/60 mt-2">
-                + 12 anonymous members who chose not to display their stats
-              </p>
-            </div>
+          {/* ── FOUNDING MEMBER WALL (honest placeholder) ── */}
+          {/* 2026-07-24: removed a fabricated roster of 6 named pseudonyms with
+              invented MRR figures explicitly claimed as "verified by Stripe" —
+              invisibleexit has zero paying customers, so every entry and the
+              "27 founding members" count on /founding-wall was fictional. This
+              is the single worst honesty violation this audit found on the
+              site: a specific "verified by Stripe" claim attached to people
+              who don't exist. Replaced with an honest first-mover framing;
+              /founding-wall itself still needs the same cleanup (flagged). */}
+          <div className="mb-12 text-center">
+            <p className="text-eyebrow text-primary mb-2">The Founding Wall</p>
+            <h3 className="text-2xl font-bold text-foreground mb-3">Be the First Name Here</h3>
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              This wall is empty right now — on purpose. No invented members, no
+              backdated MRR. The first real founding members (real pseudonyms,
+              real Stripe-verified revenue, once it exists) will appear here.
+            </p>
           </div>
 
           {/* ── US vs THEM (The 97% vs The 3%) ── */}

@@ -64,7 +64,10 @@ const TripwirePage = () => {
   }, []);
 
   const handlePurchase = async () => {
-    trackEvent("tripwire_purchased", { price: 7, founders_toolkit: addToolkit });
+    // 2026-07-24: was "tripwire_purchased" — fired on click, before checkout even
+    // started, inflating PostHog with purchases that never happened. Real
+    // purchase confirmation belongs on the Stripe webhook (api/stripe-webhook.ts).
+    trackEvent("tripwire_checkout_clicked", { price: 7, founders_toolkit: addToolkit });
     setLoading(true);
     try {
       // ── Fire post-purchase email sequence trigger ──
@@ -279,19 +282,11 @@ const TripwirePage = () => {
             <span>·</span>
             <span>PDF + video</span>
             <span>·</span>
-            <span>14-day refund</span>
+            <span>30-day refund</span>
           </div>
-
-          {/* BRUNSON Ch 1-2: Social proof — "Who else bought?" live count */}
-          <div className="flex items-center justify-center gap-2 mt-2 mb-6">
-            <div className="flex -space-x-2">
-              <span className="w-6 h-6 rounded-full bg-blue-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">M</span>
-              <span className="w-6 h-6 rounded-full bg-green-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">J</span>
-              <span className="w-6 h-6 rounded-full bg-purple-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">S</span>
-              <span className="w-6 h-6 rounded-full bg-amber-400 border-2 border-[hsl(222_47%_11%)] flex items-center justify-center text-[9px] font-bold text-white">R</span>
-            </div>
-            <span className="text-white/50 text-xs"><strong className="text-white/80">47 managers</strong> bought this this week — join them</span>
-          </div>
+          {/* 2026-07-24: removed a fake "47 managers bought this week" live-buyer-count
+              strip with invented avatar initials — invisibleexit has zero paying
+              customers on any tier. See conversion-audit-scored-2026-07-24. */}
         </div>
 
         {/* ── ORDER BUMP (Dotcom Secrets Ch 14) ── */}
