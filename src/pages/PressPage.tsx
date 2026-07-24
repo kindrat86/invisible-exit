@@ -157,7 +157,6 @@ const FACT_SHEET = {
     community: "https://www.reddit.com/r/invisibleexit",
     code: "https://github.com/kindrat86/invisible-exit",
     youtube: "https://www.youtube.com/@InvisibleExit (launching)",
-    twitter: "https://twitter.com/InvisibleExit (launching)",
   },
 };
 
