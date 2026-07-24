@@ -1600,7 +1600,7 @@ function getRoutes() {
           description:
             "The anonymous founder behind Invisible Exit. A 37-year-old Managing Director building invisible recurring revenue while employed.",
           url: `${SITE}/adrian`,
-          about: {
+          mainEntity: {
             "@type": "Person",
             name: "Adrian",
             jobTitle: "Managing Director & Founder",
