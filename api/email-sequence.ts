@@ -315,7 +315,7 @@ export const ASCENSION: EmailEntry[] = [
   { day: 1, subject: "Your Freedom Number is [$X]. Here's how to hit it in 90 days.", html: ascension1() },
   { day: 3, subject: "The one thing most $0.97 members miss (and why it matters)", html: ascension2() },
   { day: 5, subject: "🔓 One-Time Offer: Unlock everything — inside", html: ascension3() },
-  { day: 7, subject: "Your 7-day trial of Pro starts tomorrow. Here's how it works.", html: ascension4() },
+  { day: 7, subject: "Your first week is covered. Here's what's next.", html: ascension4() },
 ];
 
 export const POST_PURCHASE: EmailEntry[] = [
