@@ -26,5 +26,20 @@ The repo context now carries an `ASSET INVENTORY (public/)` section. Treat it
 as the only evidence about which non-page files exist. If a path is in that
 list, it exists — do not report it missing.
 
-### Brand colors are blue-based only
-Never use gold/amber accents. Stick to the homepage's blue palette (#1B2A4A, #3B82F6, #60A5FA).
+### Brand colors are blue-based only — but amber IS the warning color
+BRAND accents (headings, CTAs, links, decorative flourishes) stay blue:
+#1B2A4A, #3B82F6, #60A5FA. Never introduce gold/amber as a brand accent.
+
+Amber is NOT banned — it is the site's established warning/urgency semantic,
+and the homepage itself uses it that way ~48 times (urgency badges,
+`AlertTriangle`, `border-l-4 border-amber-400/50` callouts). Site-wide, 66 of
+178 page/component files use amber, and 48 use the `bg-amber-50` +
+`border-l-4 border-amber-400` disclaimer callout.
+
+So: `bg-amber-50` legal-disclaimer boxes and warning callouts are CORRECT and
+must not be "fixed" to blue. Recolouring a sampled handful of them only
+breaks consistency with the other ~40 pages and drops the caution signal.
+The 2026-07-25 audit flagged 8 such pages (ProfessionStatePage,
+IsItLegalHubPage, NdaGuideHubPage, InsuranceHubPage, BankingHubPage,
+TaxGuideHubPage, TimeFrameworkHubPage, HowToGuidePage) — reviewed by the
+owner and deliberately left as-is. Do not re-report them.
