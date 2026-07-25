@@ -26,8 +26,27 @@ AUDIT_MODE = os.environ.get("AUDIT_MODE", "daily")
 DATE = datetime.now().strftime("%Y-%m-%d")
 
 
+class TruncatedResponse(RuntimeError):
+    """Model stopped because it hit max_tokens — the JSON object is incomplete."""
+
+    def __init__(self, content: str):
+        super().__init__("response truncated at max_tokens")
+        self.content = content
+
+
+# Per-model output ceilings. Asking for more than the model can emit just
+# means the response gets cut mid-JSON (that is how the 2026-07-24 run died:
+# GLM was quota-exhausted, the DeepSeek fallback inherited GLM's 16384 and
+# truncated at its own 8192 cap, so json.loads() had nothing parseable).
+MODEL_MAX_TOKENS = {
+    "glm-5.2": 16384,
+    "deepseek-chat": 8192,
+}
+
+
 def _chat_api(api_url: str, api_key: str, model: str, system_prompt: str, user_prompt: str, max_tokens: int, label: str) -> str:
     """Call an OpenAI-compatible chat API with retries."""
+    max_tokens = min(max_tokens, MODEL_MAX_TOKENS.get(model, max_tokens))
     payload = {
         "model": model,
         "messages": [
@@ -53,7 +72,19 @@ def _chat_api(api_url: str, api_key: str, model: str, system_prompt: str, user_p
             )
             with urllib.request.urlopen(req, timeout=300) as resp:
                 result = json.loads(resp.read())
-                return result["choices"][0]["message"]["content"]
+                choice = result["choices"][0]
+                content = choice["message"]["content"]
+                if choice.get("finish_reason") == "length":
+                    print(
+                        f"{label} response hit the {max_tokens}-token ceiling — truncated.",
+                        file=sys.stderr,
+                    )
+                    raise TruncatedResponse(content)
+                return content
+        except TruncatedResponse:
+            # Retrying the identical request just truncates again — the caller
+            # re-asks in a shorter format instead.
+            raise
         except urllib.error.HTTPError as e:
             body = e.read().decode() if e.fp else ""
             print(f"{label} API error {e.code} (attempt {attempt+1}/3): {body}", file=sys.stderr)
@@ -80,6 +111,8 @@ def glm_chat(system_prompt: str, user_prompt: str, max_tokens: int = 8192) -> st
     if glm_key:
         try:
             return _chat_api(GLM_API_URL, glm_key, "glm-5.2", system_prompt, user_prompt, max_tokens, "GLM")
+        except TruncatedResponse:
+            raise
         except RuntimeError as e:
             err_str = str(e)
             is_rate_limit = "429" in err_str or "limit" in err_str.lower()
@@ -187,7 +220,23 @@ Here is the current repository state:
 Analyze the files above and produce your audit findings as the JSON object specified."""
 
     print("Calling AI for audit analysis...")
-    response = glm_chat(system_prompt, user_prompt, max_tokens=16384)
+    try:
+        response = glm_chat(system_prompt, user_prompt, max_tokens=16384)
+    except TruncatedResponse:
+        # The diff is what blows the budget. Re-ask for findings only: a
+        # report-only audit run is far more useful than a red X on the cron,
+        # and a half-written diff must never reach `git apply` anyway.
+        print(
+            "Response was truncated — re-running in findings-only mode (no diff).",
+            file=sys.stderr,
+        )
+        compact_prompt = (
+            user_prompt
+            + "\n\nIMPORTANT: keep the response short enough to finish. Set "
+            '"diff" to "" and report findings, changes_made, and summary only. '
+            "Keep every `notes` value under 200 characters."
+        )
+        response = glm_chat(system_prompt, compact_prompt, max_tokens=8192)
 
     # Save raw response for debugging
     debug_path = REPO_ROOT / ".github" / "seo-geo-automation" / "last-response.json"
