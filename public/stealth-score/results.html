@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stealth Score Benchmarks — How Safe Are Corporate Side Businesses? | Invisible Exit</title>
-<meta name="description" content="Original benchmark data: 83% of corporate side hustlers score below 45/100 on the Stealth Score. See the full distribution, factor-by-factor averages, and methodology.">
-<meta property="og:title" content="Stealth Score Benchmarks 2026: 83% of Corporate Side Hustlers Are Detectable">
-<meta property="og:description" content="Original data on corporate side-business safety. Average Stealth Score: 38/100. Full 12-factor breakdown inside.">
+<title>Stealth Score Framework: 12 Factors That Expose a Corporate Side Business | Invisible Exit</title>
+<meta name="description" content="The 12-factor Stealth Score framework: the linkage vectors that make a corporate side business traceable. A diagnostic rubric, not a dataset - no scores are collected.">
+<meta property="og:title" content="Stealth Score Framework: 12 Factors That Expose a Corporate Side Business">
+<meta property="og:description" content="The 12-factor Stealth Score framework: the linkage vectors that make a corporate side business traceable. A diagnostic rubric, not a dataset - no scores are collected.">
 <meta property="og:image" content="https://invisibleexit.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -79,80 +79,43 @@
 <body>
 <div class="container">
 
-  <h1>Stealth Score <span>Benchmarks</span> 2026</h1>
-  <p class="sub">Original data on how safe corporate side businesses really are. Based on 127+ cases analyzed through the Stealth Score 12-factor methodology.</p>
+  <h1>Stealth Score <span>Framework</span></h1>
+  <p class="sub">The 12 factors that determine whether a corporate side business is traceable back to you — and how to read your own score.</p>
 
-  <div class="stat-grid">
-    <div class="stat-card"><div class="num">38</div><div class="label">Average Stealth Score /100</div></div>
-    <div class="stat-card"><div class="num" style="color:var(--danger)">83%</div><div class="label">Score below 45/100</div></div>
-    <div class="stat-card"><div class="num" style="color:var(--accent)">6%</div><div class="label">Score above 75/100</div></div>
-    <div class="stat-card"><div class="num">12</div><div class="label">Risk factors analyzed</div></div>
+  <div class="chart-section" style="border-left:3px solid #ef4444">
+    <h2 style="margin-top:0">Correction (2026-07-25)</h2>
+    <p>An earlier version of this page published a benchmark distribution — an average score, a five-band distribution and per-factor averages, attributed to a self-reported case corpus from an Invisible Exit member community.</p>
+    <p>No such case corpus exists. The Stealth Score assessment runs entirely in your browser and stores nothing: <code>api/stealth-badge.js</code> persists no results and the assessment page makes no network calls, so scores have never been collected, let alone aggregated. Those figures were fabricated and have been removed rather than restated.</p>
+    <p>What was real, and is kept below, is the 12-factor framework itself — a rubric for the risk vectors, not a measurement of anyone.</p>
   </div>
 
-  <div class="chart-section">
-    <h3 style="margin-bottom:1rem;">📊 Score Distribution</h3>
-    <div class="bar-row">
-      <span class="bar-label">0–24 (Critical)</span>
-      <div class="bar-track"><div class="bar-fill" style="width:38%;background:#ef4444"></div></div>
-      <span class="bar-val danger">38%</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">25–44 (High Risk)</span>
-      <div class="bar-track"><div class="bar-fill" style="width:45%;background:#f59e0b"></div></div>
-      <span class="bar-val warn">45%</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">45–74 (Exposed)</span>
-      <div class="bar-track"><div class="bar-fill" style="width:11%;background:#eab308"></div></div>
-      <span class="bar-val" style="color:#eab308">11%</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">75–89 (Stealthed)</span>
-      <div class="bar-track"><div class="bar-fill" style="width:4%;background:#22c55e"></div></div>
-      <span class="bar-val safe">4%</span>
-    </div>
-    <div class="bar-row">
-      <span class="bar-label">90–100 (Ghost)</span>
-      <div class="bar-track"><div class="bar-fill" style="width:2%;background:#16a34a"></div></div>
-      <span class="bar-val safe">2%</span>
-    </div>
-  </div>
-
-  <h2>Factor-by-Factor Averages</h2>
+  <h2>The 12 factors</h2>
+  <p>Each factor is a distinct way a side business can be linked back to an employed founder. Score yourself honestly on each; the value is in finding which vectors are open, not in the total.</p>
   <table>
-    <thead><tr><th>Factor</th><th>Avg Score</th><th>Risk Level</th><th>Most Common Gap</th></tr></thead>
+    <thead><tr><th>#</th><th>Factor</th><th>The exposure it covers</th></tr></thead>
     <tbody>
-      <tr><td>1. Entity Separation</td><td class="warn">41</td><td class="warn">⚠️ High</td><td>65% operate as sole proprietorship — fully exposed</td></tr>
-      <tr><td>2. Domain Privacy</td><td class="safe">68</td><td class="safe">✅ OK</td><td>Most use WHOIS privacy — but 22% have exposed emails</td></tr>
-      <tr><td>3. Payment Anonymity</td><td class="danger">31</td><td class="danger">🔴 Critical</td><td>58% use personal PayPal/Venmo — full name visible to every customer</td></tr>
-      <tr><td>4. Social Media Exposure</td><td class="warn">44</td><td class="warn">⚠️ High</td><td>41% use same device for business + personal social</td></tr>
-      <tr><td>5. Banking Separation</td><td class="danger">28</td><td class="danger">🔴 Critical</td><td>51% commingle business revenue in personal checking</td></tr>
-      <tr><td>6. IP & Non-Compete Risk</td><td class="warn">47</td><td class="warn">⚠️ High</td><td>34% operate in adjacent industry — legal gray area</td></tr>
-      <tr><td>7. Time Separation</td><td class="safe">63</td><td class="safe">✅ OK</td><td>Most work off-hours — but 28% use company WiFi occasionally</td></tr>
-      <tr><td>8. Communication Compartment.</td><td class="warn">39</td><td class="warn">⚠️ High</td><td>47% use same email provider — Google/Microsoft link both identities</td></tr>
-      <tr><td>9. Physical Address Exposure</td><td class="warn">45</td><td class="warn">⚠️ High</td><td>38% have home address on at least one public document</td></tr>
-      <tr><td>10. LinkedIn Exposure</td><td class="safe">71</td><td class="safe">✅ OK</td><td>Most don't link side business to professional profile</td></tr>
-      <tr><td>11. Tax Filing Risk</td><td class="danger">26</td><td class="danger">🔴 Critical</td><td>49% file Schedule C self-prepared — no CPA review</td></tr>
-      <tr><td>12. Industry Overlap Risk</td><td class="warn">44</td><td class="warn">⚠️ High</td><td>Tech employees with aggressive moonlighting clauses</td></tr>
+      <tr><td>1</td><td>Entity separation</td><td>Operating as a sole proprietorship puts your legal name on the business</td></tr>
+      <tr><td>2</td><td>Domain privacy</td><td>WHOIS records and contact emails exposed on the domain</td></tr>
+      <tr><td>3</td><td>Payment anonymity</td><td>Personal payment handles show your full name to every customer</td></tr>
+      <tr><td>4</td><td>Social media exposure</td><td>Shared devices and accounts linking business and personal identities</td></tr>
+      <tr><td>5</td><td>Banking separation</td><td>Revenue commingled into a personal account</td></tr>
+      <tr><td>6</td><td>IP &amp; non-compete risk</td><td>Operating in a field adjacent to your employer's</td></tr>
+      <tr><td>7</td><td>Time separation</td><td>Work performed on employer time, hardware or network</td></tr>
+      <tr><td>8</td><td>Communication compartmentalisation</td><td>A shared email provider linking both identities</td></tr>
+      <tr><td>9</td><td>Physical address exposure</td><td>A home address on public filings or registrations</td></tr>
+      <tr><td>10</td><td>LinkedIn exposure</td><td>The side business linked from a professional profile</td></tr>
+      <tr><td>11</td><td>Tax filing risk</td><td>Self-prepared filings with no professional review</td></tr>
+      <tr><td>12</td><td>Industry overlap risk</td><td>Moonlighting clauses that specifically cover your sector</td></tr>
     </tbody>
   </table>
 
-  <h2>Methodology</h2>
-  <div class="chart-section">
-    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;">
-      The Stealth Score is a proprietary 12-factor methodology developed from 14 months of firsthand experience building anonymous micro-SaaS revenue while employed. Each factor maps to a documented risk vector in corporate side-business detection.
-    </p>
-    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;margin-top:0.75rem;">
-      <strong>Data sources:</strong> 127+ documented cases of corporate employees building side businesses (self-reported via the Invisible Exit member community + public case studies). Not a random population sample — self-selecting group of employed professionals actively building side income. This biases scores upward (these are people who've already taken some steps). The general population of corporate side hustlers likely scores significantly lower.
-    </p>
-    <p style="color:var(--text2);font-size:0.9rem;line-height:1.7;margin-top:0.75rem;">
-      <strong>Limitations:</strong> Self-reported data. Scores are best understood as relative risk indicators within the methodology, not as absolute safety guarantees. The framework is a diagnostic tool — it identifies vectors worth addressing, not legal advice. CC BY 4.0 — cite as "Invisible Exit (2026), Stealth Score Benchmarks."
-    </p>
-  </div>
+  <h2 id="methodology">Methodology</h2>
+  <p>The Stealth Score is a 12-factor rubric built from firsthand experience running an anonymous micro-SaaS while employed, plus publicly documented cases of side businesses being traced back to employees. Each factor maps to a documented linkage vector.</p>
+  <p><strong>It is a diagnostic, not a measurement.</strong> Invisible Exit collects no assessment results and publishes no score distribution, averages or population statistics — there is no dataset behind this page, and any figure claiming otherwise was removed on 25 July 2026. A score is useful only as a checklist of which vectors you have left open. This is not legal advice.</p>
 
   <div class="cta">
     <h2>What's Your Stealth Score?</h2>
-    <p style="color:var(--text2);">Take the 90-second assessment. See how you compare to 127+ corporate side hustlers. Free.</p>
+    <p style="color:var(--text2);">Take the 90-second assessment and see which of the 12 vectors you have left open. Runs in your browser; nothing is stored. Free.</p>
     <a href="/stealth-score" class="btn">Calculate My Stealth Score →</a>
   </div>
 
@@ -164,9 +127,9 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "Stealth Score Benchmarks 2026",
-  "description": "Original benchmark data on corporate side-business safety: 83% of corporate side hustlers score below 45/100 on the Stealth Score 12-factor methodology. Based on 127+ documented cases.",
+  "@type": "WebPage",
+  "name": "Stealth Score Framework",
+  "description": "The 12-factor Stealth Score framework: the linkage vectors that make a corporate side business traceable. A diagnostic rubric, not a dataset - no scores are collected.",
   "url": "https://invisibleexit.com/stealth-score/results",
   "creator": {
     "@type": "Organization",
@@ -181,8 +144,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Stealth Score Benchmarks 2026: 83% of Corporate Side Hustlers Are Detectable",
-  "description": "Original benchmark data: average Stealth Score is 38/100. Full 12-factor breakdown with methodology, limitations, and per-factor averages.",
+  "headline": "Stealth Score Framework: 12 Factors That Expose a Corporate Side Business",
+  "description": "The 12-factor Stealth Score framework: the linkage vectors that make a corporate side business traceable. A diagnostic rubric, not a dataset - no scores are collected.",
   "author": {
     "@type": "Organization",
     "name": "Invisible Exit"

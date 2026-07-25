@@ -6,6 +6,14 @@
  * with full article content so search engine crawlers can index it.
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";
+
+// Profession names in this dataset are already plural ("Software Engineers"), so a
+// bare `${slug}s` produced /ideas/for-software-engineerss — a 404 that shipped on
+// every /non-compete/<profession>-<state> page. Pluralise idempotently instead.
+const pluralSlug = (s: string): string => {
+  const base = s.toLowerCase().replace(/ /g, "-");
+  return base.endsWith("s") ? base : `${base}s`;
+};
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -95,9 +103,12 @@ function autoLinkContent(html: string): string {
   const linkMap: { pattern: RegExp; href: string; text: string }[] = [
     { pattern: /\bfreedom number\b/i, href: "/freedom", text: "freedom number" },
     { pattern: /\bmicro-SaaS\b/i, href: "/glossary/micro-saas", text: "micro-SaaS" },
-    { pattern: /\bnon-compete clause\b/i, href: "/glossary/non-compete", text: "non-compete clause" },
+    { pattern: /\bnon-compete clause\b/i, href: "/non-compete", text: "non-compete clause" },
     { pattern: /\banonymous LLC\b/i, href: "/guides/wyoming", text: "anonymous LLC" },
-    { pattern: /\bidea validation\b/i, href: "/calculators/idea-validator", text: "idea validation" },
+      // Was /calculators/idea-validator — a calculator that has never existed, so
+      // this auto-link 404'd on every post mentioning "idea validation". A real page
+      // on exactly this topic does exist.
+    { pattern: /\bidea validation\b/i, href: "/how-to/validate-a-micro-saas-idea-in-a-weekend", text: "idea validation" },
     { pattern: /\bfinancial independence\b/i, href: "/blog/category/financial-independence", text: "financial independence" },
     { pattern: /\bstealth ops\b/i, href: "/blog/category/stealth-operations", text: "stealth ops" },
     { pattern: /\bside hustle\b/i, href: "/side-hustles", text: "side hustle" },
@@ -999,9 +1010,17 @@ function injectBody(filePath: string, bodyHtml: string): boolean {
   if (!existsSync(filePath)) {
     return false;
   }
-  let html = readFileSync(filePath, "utf-8");
-  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
-  writeFileSync(filePath, html, "utf-8");
+  const html = readFileSync(filePath, "utf-8");
+  const ANCHOR = '<div id="root"></div>';
+  // This used to return true unconditionally. On a dist that had already been
+  // injected the anchor is gone, so the replace was a no-op — and the script still
+  // printed "Injected body content into N pages". Re-running after editing a hub
+  // generator therefore appeared to work and changed nothing, which cost a debugging
+  // cycle. Report the truth instead: a body injection needs a fresh `vite build`.
+  if (!html.includes(ANCHOR)) {
+    return false;
+  }
+  writeFileSync(filePath, html.replace(ANCHOR, `<div id="root">${bodyHtml}</div>`), "utf-8");
   return true;
 }
 
@@ -1311,7 +1330,7 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Non-Compete Risk for Employed Founders in ${g.state}</h2>
 <p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">${nonCompeteGuidance}</p>
-<p style="line-height:1.7;color:#1f2937">Read our comprehensive <a href="/non-compete/${g.slug}" style="color:#3B82F6">non-compete risk analysis for ${g.state}</a> for a detailed breakdown of court precedents and enforcement patterns.</p>
+<p style="line-height:1.7;color:#1f2937">Read our comprehensive <a href="/non-compete" style="color:#3B82F6">non-compete risk analysis by profession</a> for a detailed breakdown of court precedents and enforcement patterns.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -1636,8 +1655,43 @@ ${hubSvgFigure("Alternatives", "Product comparison", "Detailed comparison of pro
 </div>`;
 }
 
+/**
+ * Cross-links from a salary page used to be built by string-guessing, and every
+ * guess was wrong for at least some of the 25 professions:
+ *   /cost-of-waiting/${item.slug}   — that route is keyed by YEARS+SALARY
+ *                                     (`5-years-$150k-salary`), never by profession
+ *   /side-hustles/for-${plural}     — only 6 of 25 professions have a page
+ *   /mistakes/mistakes-${slug}s-make — naive +s; the data owns its own slugs
+ *   /ideas/for-${plural}            — 25 exist but the plural forms do not all match
+ * That produced ~60 of this site's broken internal links. Now every cross-link is
+ * looked up in the same data the prerenderer iterates, and omitted when absent — a
+ * missing related-link is invisible; a 404 is not.
+ */
+const IDEA_SLUGS = new Set(industryIdeas.map((i) => i.slug));
+const SIDE_HUSTLE_SLUGS = new Set(sideHustles.map((s) => s.slug));
+const MISTAKE_SLUGS = new Set(professionMistakes.map((m) => m.slug));
+const NON_COMPETE_SLUGS = new Set(nonCompeteMatrix.map((n) => n.slug));
+const SALARY_SLUGS = new Set(salaries.map((s) => s.slug));
+const PROFESSION_STATE_SLUGS = new Set(
+  professionStatePages.map((p) => `${p.professionSlug}/in/${p.stateSlug}`)
+);
+
+/** Nearest cost-of-waiting page for a salary string like "$147K", at N years. */
+function costOfWaitingSlugFor(avgSalary: string, years: number): string | null {
+  const k = Number(String(avgSalary).replace(/[^0-9]/g, ""));
+  if (!k) return null;
+  const target = k * 1000;
+  const candidates = costOfWaitingPages.filter((c) => c.years === years);
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) =>
+    Math.abs(b.salary - target) < Math.abs(a.salary - target) ? b : a
+  );
+  return best.slug;
+}
+
 function salaryBodyHtml(item: typeof salaries[0]): string {
-  const freedomUrl = `/cost-of-waiting/${item.slug}`;
+  const cowSlug = costOfWaitingSlugFor(item.avgSalary, 5);
+  const freedomUrl = cowSlug ? `/cost-of-waiting/${cowSlug}` : "/calculators/freedom-number";
   return `<div class="min-h-screen">
 ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom number conversion showing how much micro-SaaS revenue replaces your income")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -1655,13 +1709,23 @@ ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom nu
 </div></section>
 ${item.tips ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Tips for ${item.role}</h2><ul>${(item.tips || []).map((t: string) => `<li>${t}</li>`).join("")}</ul></div></section>` : ""}
 ${relatedLinksSection([
-  { href: `/ideas/for-${item.slug}s`, text: `← Micro-SaaS Ideas for ${item.role}s` },
-  { href: `/side-hustles/for-${item.slug}s`, text: `Best Side Hustles for ${item.role}s` },
-  { href: `/mistakes/mistakes-${item.slug}s-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` },
-  { href: `/cost-of-waiting/${item.slug}`, text: `Cost of Waiting for ${item.role}s — How Much You're Losing` },
-  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
-  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
-])}
+    // Each profession-specific link is emitted only when that page actually exists.
+    // A missing related-link is invisible to the reader; a 404 is not.
+    ...(IDEA_SLUGS.has(`for-${pluralSlug(item.slug)}`)
+      ? [{ href: `/ideas/for-${pluralSlug(item.slug)}`, text: `\u2190 Micro-SaaS Ideas for ${item.role}s` }]
+      : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${pluralSlug(item.slug)}`)
+      ? [{ href: `/side-hustles/for-${pluralSlug(item.slug)}`, text: `Best Side Hustles for ${item.role}s` }]
+      : []),
+    ...(MISTAKE_SLUGS.has(`mistakes-${pluralSlug(item.slug)}-make`)
+      ? [{ href: `/mistakes/mistakes-${pluralSlug(item.slug)}-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` }]
+      : []),
+    ...(cowSlug
+      ? [{ href: `/cost-of-waiting/${cowSlug}`, text: `Cost of Waiting 5 Years on a ${item.avgSalary} Salary` }]
+      : []),
+    { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
+    { href: `/quit-your-job`, text: `When to Quit Your Job \u2014 Honest Framework` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Salary estimates are general ranges. Individual compensation varies. Not financial advice.</p>
 </div></section>
@@ -1809,14 +1873,19 @@ ${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete cla
 <h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Key Considerations for ${item.profession} in ${item.state}</h2>
 <p>${item.analysis}</p>
 </div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
-${relatedLinksSection([
-  { href: `/guides/${item.state.toLowerCase()}`, text: `← Anonymous LLC Guide for ${item.state}` },
-  { href: `/ideas/for-${item.profession.toLowerCase().replace(/ /g, "-")}s/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession}s in ${item.state}` },
-  { href: `/side-hustles/for-${item.profession.toLowerCase().replace(/ /g, "-")}s`, text: `Best Side Hustles for ${item.profession}s` },
-  { href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}s` },
-  { href: `/glossary/non-compete`, text: `Non-Compete Clause — Definition & Explanation` },
-  { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
-])}
+  ${relatedLinksSection([
+    // Existence-checked: only 6 of these professions have a side-hustles page, and
+    // the /ideas/<prof>/in/<state> fleet does not cover every state.
+    { href: `/guides/${item.state.toLowerCase()}`, text: `\u2190 Anonymous LLC Guide for ${item.state}` },
+    ...(PROFESSION_STATE_SLUGS.has(`for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`)
+      ? [{ href: `/ideas/for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession} in ${item.state}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${pluralSlug(item.profession)}`)
+      ? [{ href: `/side-hustles/for-${pluralSlug(item.profession)}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, ""))
+      ? [{ href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    { href: `/non-compete`, text: `Non-Compete Guides by Profession` },
+    { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/guides/${item.state.toLowerCase()}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Read the ${item.state} State Guide &rarr;</a>
 </div></section>
@@ -1829,12 +1898,24 @@ ${relatedLinksSection([
 function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
   const profSlug = item.professionSlug;
   const stateSlug = item.stateSlug;
+  // Every profession/state cross-link is looked up before it is emitted. These were
+  // string-guessed, and the non-compete guess alone produced 285 broken links: this
+  // /ideas/<prof>/in/<state> fleet spans far more states than nonCompeteMatrix
+  // covers (10 professions x 10 states), so most combinations have no page.
+  const bare = profSlug.replace(/^for-/, "").replace(/s$/, "");
+  const ncSlug = `${bare}s-${stateSlug}`;
+  const mistakeSlug = `mistakes-${bare}s-make`;
   const related = relatedLinksSection([
-    { href: `/ideas/${profSlug}`, text: `← All Micro-SaaS Ideas for ${item.profession}` },
-    { href: `/side-hustles/${profSlug}`, text: `Best Side Hustles for ${item.profession}` },
-    { href: `/salaries/${profSlug.replace(/^for-/, "").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
-    { href: `/mistakes/mistakes-${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make When Starting a Side Business` },
-    { href: `/non-compete/${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-${stateSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` },
+    ...(IDEA_SLUGS.has(profSlug)
+      ? [{ href: `/ideas/${profSlug}`, text: `← All Micro-SaaS Ideas for ${item.profession}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(profSlug)
+      ? [{ href: `/side-hustles/${profSlug}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(bare)
+      ? [{ href: `/salaries/${bare}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    ...(MISTAKE_SLUGS.has(mistakeSlug)
+      ? [{ href: `/mistakes/${mistakeSlug}`, text: `Mistakes ${item.profession} Make When Starting a Side Business` }] : []),
+    ...(NON_COMPETE_SLUGS.has(ncSlug)
+      ? [{ href: `/non-compete/${ncSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` }] : []),
     { href: `/guides/${stateSlug}`, text: `Anonymous LLC Guide for ${item.state}` },
     { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
     { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
@@ -3279,6 +3360,12 @@ ${faqs}
 // ---------- Hub page bodies ----------
 
 function costAnalysisHubBodyHtml(): string {
+  // Derived from costAnalysisPages — the SAME array prerender-meta.mjs iterates to emit
+  // /cost-analysis/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = costAnalysisPages
+    .map((x) => `<a href="/cost-analysis/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", "Cost breakdown for starting and running a micro-SaaS business while employed — from $0 to $500/month budgets")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3300,11 +3387,7 @@ ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", 
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Cost Analysis Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/cost-analysis/starting-from-zero" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;transition:border-color 0.2s"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How Much Does It Cost to Start a Micro-SaaS from $0?</h3><p style="font-size:0.875rem;color:#6b7280">The complete $0 starter guide — free tiers, free tools, and what you actually need to pay for.</p></a>
-<a href="/cost-analysis/monthly-operating-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Monthly Operating Costs for a Micro-SaaS</h3><p style="font-size:0.875rem;color:#6b7280">Hosting, domains, email, analytics — the real monthly stack costs broken down by stage.</p></a>
-<a href="/cost-analysis/llc-formation-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">LLC Formation Costs by State</h3><p style="font-size:0.875rem;color:#6b7280">Filing fees, registered agent, annual reports — what it costs to form an anonymous LLC.</p></a>
-<a href="/cost-analysis/tools-stack-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">AI Tools Stack: What You Actually Need to Pay For</h3><p style="font-size:0.875rem;color:#6b7280">ChatGPT, Claude, Midjourney, coding tools — which AI tools are essential vs nice-to-have.</p></a>
-<a href="/cost-analysis/first-year-budget" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">First-Year Budget: $0 to $4K/month MRR</h3><p style="font-size:0.875rem;color:#6b7280">Month-by-month spending plan from idea validation to $4K recurring revenue.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3317,6 +3400,12 @@ ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", 
 }
 
 function howToHubBodyHtml(): string {
+  // Derived from howToGuides — the SAME array prerender-meta.mjs iterates to emit
+  // /how-to/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = howToGuides
+    .map((x) => `<a href="/how-to/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-step guides for building a micro-SaaS while employed — validation, building, launching, and growing")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3338,11 +3427,7 @@ ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-s
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All How-To Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/how-to/validate-idea-in-48-hours" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Validate a Micro-SaaS Idea in 48 Hours</h3><p style="font-size:0.875rem;color:#6b7280">The exact validation framework — landing page, traffic test, pre-sell, go/no-go decision.</p></a>
-<a href="/how-to/start-without-coding" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Start a SaaS Without Knowing How to Code</h3><p style="font-size:0.875rem;color:#6b7280">No-code tools, AI-assisted coding, and when to hire help — the non-technical founder's guide.</p></a>
-<a href="/how-to/get-first-10-customers" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Get Your First 10 Paying Customers</h3><p style="font-size:0.875rem;color:#6b7280">Direct outreach templates, community mining, and the pre-sell playbook for zero-audience founders.</p></a>
-<a href="/how-to/build-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Build a Business While Employed (Without Getting Caught)</h3><p style="font-size:0.875rem;color:#6b7280">Time management, device separation, entity structuring, and compliance for employed founders.</p></a>
-<a href="/how-to/stay-anonymous" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Stay Anonymous Online as a Founder</h3><p style="font-size:0.875rem;color:#6b7280">Anonymous LLC, pseudonymous brands, digital footprint cleanup, and operational security.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3355,6 +3440,12 @@ ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-s
 }
 
 function isItLegalHubBodyHtml(): string {
+  // Derived from isItLegalPages — the SAME array prerender-meta.mjs iterates to emit
+  // /is-it-legal/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = isItLegalPages
+    .map((x) => `<a href="/is-it-legal/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal analysis of non-competes, IP ownership, moonlighting policies, and anonymous LLCs for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3375,11 +3466,7 @@ ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal 
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Legal Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/is-it-legal/non-compete-enforceable" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is Your Non-Compete Actually Enforceable?</h3><p style="font-size:0.875rem;color:#6b7280">State-by-state enforceability, reasonable scope tests, and the 2024 FTC non-compete ban explained.</p></a>
-<a href="/is-it-legal/work-on-side-project" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Work on a Side Project While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">Moonlighting policies, duty of loyalty, and when your employer can claim your side work.</p></a>
-<a href="/is-it-legal/anonymous-llc" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Form an Anonymous LLC?</h3><p style="font-size:0.875rem;color:#6b7280">Which states allow anonymous LLCs, what information is public, and how privacy actually works.</p></a>
-<a href="/is-it-legal/use-ai-at-work" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Use AI Tools Built at Work for Your Side Business?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment clauses, work-for-hire doctrine, and the danger of using employer resources.</p></a>
-<a href="/is-it-legal/own-ip-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Who Owns the IP You Create While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment agreements, outside-hours clauses, and how to protect your side project IP.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3392,7 +3479,7 @@ ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal 
 }
 
 function ideasHubBodyHtml(): string {
-  const professions = ["accountants", "lawyers", "data-analysts", "marketers", "product-managers", "software-engineers", "sales-managers", "consultants", "hr-managers", "designers", "project-managers", "financial-analysts", "operations-managers", "teachers", "nurses", "engineers", "recruiters", "real-estate-agents", "customer-success-managers", "account-managers", "developers", "analysts", "managers", "executives", "directors"];
+  const professions = ["accountants", "lawyers", "data-analysts", "marketers", "product-managers", "software-engineers", "sales-managers", "consultants", "hr-managers", "designers", "project-managers", "financial-analysts", "operations-managers", "teachers", "nurses", "recruiters", "real-estate-agents"];
   const cards = professions.slice(0, 25).map((p) =>
     `<a href="/ideas/for-${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827;text-transform:capitalize">Micro-SaaS Ideas for ${p.replace(/-/g, " ")}</h3><p style="font-size:0.8rem;color:#6b7280">5 validated ideas with market analysis</p></a>`).join("\n");
 
@@ -3781,9 +3868,18 @@ conversion-audit-scored-2026-07-24. -->
 // ---------- Missing pSEO hub bodies ----------
 
 function nonCompeteHubBodyHtml(): string {
-  const professions = ["software-engineers", "product-managers", "lawyers", "doctors", "financial-analysts", "marketers", "consultants", "designers", "sales-managers", "accountants"];
-  const links = professions.map(p =>
-    `<a href="/non-compete/${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${p.replace(/-/g," ")} Non-Compete Guide</h3></a>`
+  // /non-compete/:slug is keyed by profession+STATE (nonCompeteMatrix is 10
+  // professions × 10 states = 100 entries, slug `${profession}-${state}`). The
+  // hardcoded list linked a BARE profession — a slug that route never produces, so
+  // all 10 cards 404'd. Link one representative page per profession, derived from
+  // the same array prerender-meta.mjs iterates, and say which state it covers
+  // rather than implying the guide is state-agnostic.
+  const firstByProfession = new Map<string, (typeof nonCompeteMatrix)[number]>();
+  for (const nc of nonCompeteMatrix) {
+    if (!firstByProfession.has(nc.profession)) firstByProfession.set(nc.profession, nc);
+  }
+  const links = [...firstByProfession.values()].map(nc =>
+    `<a href="/non-compete/${nc.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${nc.profession} Non-Compete Guide</h3><p style="font-size:0.8125rem;color:#6b7280;margin-top:0.25rem">${nc.state} — plus 9 more states</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "Non-compete clause analysis by profession and state — enforceability, risks, and safe harbors for employed founders")}
@@ -3829,9 +3925,11 @@ ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "No
 }
 
 function stackHubBodyHtml(): string {
-  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
-  const links = entries.map(e =>
-    `<a href="/stack/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Tool Stack</h3></a>`
+  // Derived from professionStacks — the SAME array prerender-meta.mjs iterates.
+  // The hardcoded 12 included four professions with no stack page (data has 10).
+  const entries = professionStacks;
+  const links = entries.map(s =>
+    `<a href="/stack/${s.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${s.profession} Tool Stack</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Profession-specific tool stacks for building micro-SaaS products — tailored to your existing skills")}
@@ -3865,6 +3963,12 @@ ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Pro
 }
 
 function milestonesHubBodyHtml(): string {
+  // Derived from revenueMilestones — the SAME array prerender-meta.mjs iterates to emit
+  // /milestones/<slug>. The 4 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = revenueMilestones
+    .map((x) => `<a href="/milestones/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage micro-SaaS revenue milestone guides — pricing, team needs, and distribution at each level")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3885,10 +3989,7 @@ ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage mic
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Milestones</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/milestones/reaching-0-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">Your first paying customers and validation</p></a>
-<a href="/milestones/reaching-500-to-1000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 to $1K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Consistency and market fit</p></a>
-<a href="/milestones/reaching-1000-to-2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$1K to $2K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Growth and optimization</p></a>
-<a href="/milestones/reaching-2000-to-4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K to $4K MRR</h3><p style="font-size:0.875rem;color:#6b7280">The freedom number zone</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3901,6 +4002,12 @@ ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage mic
 }
 
 function timelineHubBodyHtml(): string {
+  // Derived from timelines — the SAME array prerender-meta.mjs iterates to emit
+  // /timeline/<slug>. The 2 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = timelines
+    .map((x) => `<a href="/timeline/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-SaaS timelines for employed founders — what to do and expect at each stage")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3921,8 +4028,7 @@ ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-Saa
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Timelines</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/timeline/zero-to-first-customer" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to First Customer</h3><p style="font-size:0.875rem;color:#6b7280">90-day timeline from idea to paying user</p></a>
-<a href="/timeline/zero-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">6-month timeline to consistent revenue</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3935,9 +4041,14 @@ ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-Saa
 }
 
 function pricingModelsHubBodyHtml(): string {
-  const models = ["flat-rate", "usage-based", "tiered", "freemium", "per-seat", "per-feature", "outcome-based", "flat-rate-plus-overage", "two-sided-marketplace", "community-plus-premium", "equity-deferred", "agency-model", "donation-plus", "revenue-share"];
+  // Derived from pricingModels — the SAME array prerender-meta.mjs iterates. The
+  // hardcoded list was wrong twice over: slugs omitted the "-pricing" suffix the
+  // data appends ("freemium" vs "freemium-pricing"), and it advertised six models
+  // with no data at all (agency-model, outcome-based, donation-plus, equity-deferred,
+  // revenue-share, two-sided-marketplace). All 14 cards 404'd.
+  const models = pricingModels;
   const links = models.map(m =>
-    `<a href="/pricing-models/${m}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${m.replace(/-/g," ")} Model</h3></a>`
+    `<a href="/pricing-models/${m.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${m.model} Model</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pricing model comparisons — flat-rate, usage-based, tiered, freemium with revenue benchmarks")}
@@ -3960,9 +4071,13 @@ ${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pric
 }
 
 function redditHubBodyHtml(): string {
-  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
-  const links = entries.map(e =>
-    `<a href="/reddit/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Reddit Strategy</h3></a>`
+  // Derived from redditStrategies — the SAME array prerender-meta.mjs iterates to
+  // emit /reddit/<slug>. It previously hardcoded 12 slugs shaped "for-marketers",
+  // while the data computes `reddit-for-${p.slug}`, so all 12 cards 404'd. Deriving
+  // makes drift impossible and picks up all 25 professions instead of 12.
+  const entries = redditStrategies;
+  const links = entries.map(r =>
+    `<a href="/reddit/${r.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${r.profession} Reddit Strategy</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marketing strategy for anonymous founders — best subreddits, posting schedules, and content templates")}
@@ -4007,6 +4122,12 @@ ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marke
 }
 
 function costOfWaitingHubBodyHtml(): string {
+  // Derived from costOfWaitingPages — the SAME array prerender-meta.mjs iterates to emit
+  // /cost-of-waiting/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = costOfWaitingPages
+    .map((x) => `<a href="/cost-of-waiting/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true cost of delaying your micro-SaaS — how much recurring revenue you lose by waiting another year")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4028,9 +4149,7 @@ ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true c
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">See the Cost for Your Salary</h2>
 <p style="font-size:1rem;color:#4b5563;margin-bottom:1.5rem">Cost-of-waiting projections for different salary brackets and time horizons:</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-<a href="/cost-of-waiting/1-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 1 year</h3><p style="font-size:0.875rem;color:#6b7280">See what 1 year of delay costs at $100K salary</p></a>
-<a href="/cost-of-waiting/3-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 3 years</h3><p style="font-size:0.875rem;color:#6b7280">3-year delay cost at $100K salary</p></a>
-<a href="/cost-of-waiting/5-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 5 years</h3><p style="font-size:0.875rem;color:#6b7280">5-year delay cost at $100K salary</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4054,6 +4173,12 @@ ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true c
 }
 
 function breakEvenHubBodyHtml(): string {
+  // Derived from breakEvenPages — the SAME array prerender-meta.mjs iterates to emit
+  // /break-even/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = breakEvenPages
+    .map((x) => `<a href="/break-even/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Break-even analysis for micro-SaaS — month-by-month projections based on revenue tiers and costs")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4074,9 +4199,7 @@ ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Br
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Break-Even Scenarios</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-<a href="/break-even/500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $500/month micro-SaaS</p></a>
-<a href="/break-even/2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $2K/month micro-SaaS</p></a>
-<a href="/break-even/4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$4K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $4K/month micro-SaaS (freedom number)</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4089,6 +4212,12 @@ ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Br
 }
 
 function budgetHubBodyHtml(): string {
+  // Derived from budgetPages — the SAME array prerender-meta.mjs iterates to emit
+  // /budget/<slug>. The 4 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = budgetPages
+    .map((x) => `<a href="/budget/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Budget guides for starting a micro-SaaS — what you get at each spending level from $0 to premium")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4109,10 +4238,7 @@ ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Bud
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Budget Levels</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/budget/0-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 Budget</h3><p style="font-size:0.875rem;color:#6b7280">Everything you need is free</p></a>
-<a href="/budget/50-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$50/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Basic pro tools</p></a>
-<a href="/budget/100-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Comfortable stack</p></a>
-<a href="/budget/500-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Premium everything</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4125,6 +4251,12 @@ ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Bud
 }
 
 function hoursHubBodyHtml(): string {
+  // Derived from hoursPages — the SAME array prerender-meta.mjs iterates to emit
+  // /hours/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = hoursPages
+    .map((x) => `<a href="/hours/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmaps for building a micro-SaaS with 1-10 hours per week")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4145,9 +4277,7 @@ ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmap
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Time Commitments</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/hours/5-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">5 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">The sweet spot for employed founders</p></a>
-<a href="/hours/10-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">10 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Accelerated timeline</p></a>
-<a href="/hours/3-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">3 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Minimum viable commitment</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4477,14 +4607,19 @@ ${hubSvgFigure("Revenue Target", item.tier, `How to reach ${item.monthlyRevenue}
 <h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
 ${faqs}
 </div></section>
-${relatedLinksSection([
-  { href: `/ideas/for-${item.professionSlug}`, text: `← Micro-SaaS Ideas for ${item.profession}` },
-  { href: `/salaries/${item.professionSlug.replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
-  { href: `/side-hustles/for-${item.professionSlug}`, text: `Best Side Hustles for ${item.profession}` },
-  { href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` },
-  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
-])}
+  ${relatedLinksSection([
+    // Existence-checked against the same data the prerenderer iterates.
+    ...(IDEA_SLUGS.has(`for-${item.professionSlug}`)
+      ? [{ href: `/ideas/for-${item.professionSlug}`, text: `\u2190 Micro-SaaS Ideas for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(item.professionSlug.replace(/s$/, ""))
+      ? [{ href: `/salaries/${item.professionSlug.replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${item.professionSlug}`)
+      ? [{ href: `/side-hustles/for-${item.professionSlug}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(MISTAKE_SLUGS.has(`mistakes-${item.professionSlug.replace(/s$/, "")}s-make`)
+      ? [{ href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` }] : []),
+    { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+    { href: `/weekend-builds`, text: `Weekend Build Ideas \u2014 Launch in 48 Hours` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
 </div></section>

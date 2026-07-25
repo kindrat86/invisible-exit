@@ -12,8 +12,8 @@ const BENEFITS = [
   },
   {
     icon: TrendingUp,
-    title: "Lifetime Cookie",
-    description: "60-day cookie window. If someone clicks your link and subscribes within 60 days, you get the commission. No expiration games.",
+    title: "Attribution, agreed by email",
+    description: "There is no tracking cookie yet — the program is run by hand. We agree a referral code with you by email, and anyone who mentions it or whom you introduce directly is attributed to you for the life of their account. We would rather say that than describe tracking we have not built.",
   },
   {
     icon: Users,
@@ -34,7 +34,7 @@ const AffiliatesPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Affiliate Program — 30% Recurring | Invisible Exit"
-        description="Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts."
+        description="Earn 30% recurring commission referring corporate managers to Invisible Exit. Referral code agreed by email, paid manually."
         url="/affiliates"
       />
       <Navbar />

@@ -171,8 +171,8 @@ const AffiliateAssetsPage = () => {
           <p className="text-eyebrow text-primary mb-4 text-center">Step 1</p>
           <h2 className="text-h1 text-foreground mb-4 text-center">Your Tracking Links</h2>
           <p className="text-body text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-            Replace <code className="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-sm">AFFILIATE_CODE</code> with your unique referral code from the dashboard.
-            60-day cookie window on all links.
+            Replace <code className="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-sm">AFFILIATE_CODE</code> with the referral code we agree with you by email.
+            There is no click-tracking cookie yet — attribution is manual, so tell people to mention your code.
           </p>
           <div className="space-y-3 max-w-2xl mx-auto">
             {LINK_STRUCTURES.map((link) => (

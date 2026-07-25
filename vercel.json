@@ -43,7 +43,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com https://www.redditstatic.com https://www.reddit.com https://connect.facebook.net https://snap.licdn.com https://px.ads.linkedin.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co https://connect.facebook.net https://www.facebook.com https://snap.licdn.com https://px.ads.linkedin.com https://www.linkedin.com https://www.reddit.com; frame-src 'self' https://www.googletagmanager.com; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://eu.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://eu.i.posthog.com https://*.supabase.co; frame-src 'self'; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'"
         },
         {
           "key": "Cross-Origin-Embedder-Policy",
@@ -223,6 +223,11 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/roadmap",
+      "destination": "/milestones",
+      "permanent": true
+    },
     {
       "source": "/:lang(zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|mr|te|tr|ta|vi|yue|pa|ko|fa|it|th|gu|kn|ml|or|pl|uk|nl|ro|el|cs|hu|sv|fi|no|da|he|sw|am|so|ha|yo|ig|zu|xh|af|ms|my|km|lo|ne|si|ps|kk|uz|az|ka|hy|mn|bo|ug|tl|ceb|ilo|jv|su|mad|hmn|ku|bal|tg|tk|sq|sr|hr|bs|sk|sl|lt|lv|et|be|bg|mk|ca|eu|gl|cy|ga|gd|br|is|lb|mt)/:path*",
       "destination": "/:path*",
@@ -451,6 +456,96 @@
     {
       "source": "/embed/stealth-score",
       "destination": "/embed/stealth-score.html",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-engineers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-customer-success-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-account-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-developers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-analysts",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-executives",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-directors",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss",
+      "destination": "/ideas/for-software-engineers",
+      "permanent": true
+    },
+    {
+      "source": "/side-hustles/for-software-engineerss",
+      "destination": "/side-hustles/for-software-engineers",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss/in/california",
+      "destination": "/ideas/for-software-engineers/in/california",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss/in/texas",
+      "destination": "/ideas/for-software-engineers/in/texas",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/delaware",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/nevada",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/wyoming",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/non-compete",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/how-to/validate-idea-in-48-hours",
+      "destination": "/how-to",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
       "permanent": true
     }
   ],

@@ -286,10 +286,10 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 ## Data & Benchmark Reports (5)
 
-- [Micro-SaaS Revenue Benchmarks 2026](https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026): How much do bootstrapped micro-SaaS businesses actually make? We analyzed revenue data from 500+ solo-founded SaaS busin
+- [Micro-SaaS Revenue Benchmarks 2026](https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026): How much do bootstrapped micro-SaaS businesses actually make? This report compiles indicative revenue benchmarks for the
 - [Side Business Statistics 2026: The Complete Data Report](https://invisibleexit.com/data/side-business-statistics-2026): How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from gover
 - [Non-Compete Enforcement by State: Complete Guide (2026)](https://invisibleexit.com/data/non-compete-enforcement-by-state): Non-compete laws vary dramatically by state. Some states ban them entirely. Others enforce them aggressively. Before sta
-- [Micro-SaaS Pricing Benchmarks 2026: What to Charge](https://invisibleexit.com/data/micro-saas-pricing-benchmarks): Stop guessing your pricing. We analyzed 300+ bootstrapped micro-SaaS products to determine what solo founders actually c
+- [Micro-SaaS Pricing Benchmarks 2026: What to Charge](https://invisibleexit.com/data/micro-saas-pricing-benchmarks): Stop guessing your pricing. This report compiles publicly listed pricing from bootstrapped micro-SaaS products to show w
 - [SaaS Churn Benchmarks by Niche: 2026 Data](https://invisibleexit.com/data/churn-benchmarks-by-niche): Churn is the most important — and most misunderstood — metric in SaaS. Is 5% monthly churn good or bad? It depends on yo
 
 ## Resource Hub (6)

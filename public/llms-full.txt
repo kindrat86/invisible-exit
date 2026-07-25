@@ -2059,8 +2059,8 @@ Invisible Exit is a faceless side-business system for employed professionals —
 
 ### Micro-SaaS Revenue Benchmarks 2026
 - **URL:** https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026
-- **Summary:** How much do bootstrapped micro-SaaS businesses actually make? We analyzed revenue data from 500+ solo-founded SaaS businesses to create the first comprehensive benchmark report for the micro-SaaS category.
-- **Methodology:** Data collected from public SaaS metrics dashboards (Baremetrics, Stripe Atlas reports, Indie Hackers milestones), founder surveys, and acquired business listings on MicroAcquire and Flippa between January 2024 and June 2026. All businesses are bootstrapped or pre-seed with under 5 employees.
+- **Summary:** How much do bootstrapped micro-SaaS businesses actually make? This report compiles indicative revenue benchmarks for the micro-SaaS category from publicly available sources. The figures are editorial estimates, not first-party research - see the methodology below.
+- **Methodology:** Compiled from publicly available sources: openly published SaaS metrics dashboards (Baremetrics Open Startups, Indie Hackers milestones), Stripe Atlas reports, and acquired-business listings on MicroAcquire and Flippa, January 2024 to June 2026. Businesses referenced are bootstrapped or pre-seed with under 5 employees. Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.
 - **Key Data Points:**
   - Median MRR at month 12: $890 (50th percentile of solo-founded SaaS businesses at 12 months old)
   - Median MRR at month 24: $2,400 (Businesses that survived past month 12 showed 2.7x growth)
@@ -2075,8 +2075,8 @@ Invisible Exit is a faceless side-business system for employed professionals —
 
 ### Side Business Statistics 2026: The Complete Data Report
 - **URL:** https://invisibleexit.com/data/side-business-statistics-2026
-- **Summary:** How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from government data, industry surveys, and academic research to create the definitive reference on side business economics.
-- **Methodology:** Data compiled from US Census Bureau non-employer statistics, Bureau of Labor Statistics, Upwork Freelance Forward report, Bankrate side hustle survey, Stripe Atlas data, and proprietary survey of 1,200 employed professionals earning $100K+ who operate a side business.
+- **Summary:** How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from government data, published industry surveys, and academic research into a single reference on side business economics.
+- **Methodology:** Compiled from published sources: US Census Bureau non-employer statistics, Bureau of Labor Statistics, the Upwork Freelance Forward report, the Bankrate side-hustle survey, and Stripe Atlas data. Invisible Exit ran no survey of its own; every figure here restates a public source, so check that source before relying on it.
 - **Key Data Points:**
   - US adults with a side business: 45% (93.3 million Americans have a side income source (Upwork 2025))
   - Average monthly side business income: $1,122 (Across all side business types (Bankrate 2025))
@@ -2102,8 +2102,8 @@ Invisible Exit is a faceless side-business system for employed professionals —
 
 ### Micro-SaaS Pricing Benchmarks 2026: What to Charge
 - **URL:** https://invisibleexit.com/data/micro-saas-pricing-benchmarks
-- **Summary:** Stop guessing your pricing. We analyzed 300+ bootstrapped micro-SaaS products to determine what solo founders actually charge — and what converts. This report gives you the data to price with confidence.
-- **Methodology:** Pricing data collected from 300+ micro-SaaS pricing pages, Stripe payment data (anonymized), MicroAcquire listings, and founder surveys. All products are solo-founded or under 3 people, bootstrapped, and generating $500-$50K MRR.
+- **Summary:** Stop guessing your pricing. This report compiles publicly listed pricing from bootstrapped micro-SaaS products to show what solo founders actually charge. The figures are editorial estimates drawn from public pricing pages, not first-party research.
+- **Methodology:** Compiled from publicly visible micro-SaaS pricing pages and MicroAcquire listings. Products referenced are solo-founded or under 3 people, bootstrapped, and generating $500-$50K MRR. Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.
 - **Key Data Points:**
   - Most common price point: $29/month (The modal price across all micro-SaaS products analyzed)
   - Average price: $42/month (Higher than the mode due to premium B2B products pulling the average up)
@@ -2116,7 +2116,7 @@ Invisible Exit is a faceless side-business system for employed professionals —
 ### SaaS Churn Benchmarks by Niche: 2026 Data
 - **URL:** https://invisibleexit.com/data/churn-benchmarks-by-niche
 - **Summary:** Churn is the most important — and most misunderstood — metric in SaaS. Is 5% monthly churn good or bad? It depends on your niche. This report gives you the benchmark data to know if your churn is actually a problem.
-- **Methodology:** Churn data collected from 400+ SaaS businesses via Baremetrics open startups, Stripe anonymized data, founder surveys, and public metrics dashboards. Monthly churn calculated as (customers lost in month / customers at start of month).
+- **Methodology:** Compiled from openly published metrics: Baremetrics Open Startups and other public founder dashboards. Monthly churn is calculated as (customers lost in month / customers at start of month). Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.
 - **Key Data Points:**
   - Median monthly churn (all SaaS): 4.7% (Across all niches and company sizes)
   - Best-in-class monthly churn: 1.5% (Top 10% of SaaS products)

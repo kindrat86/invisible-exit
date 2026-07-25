@@ -158,6 +158,10 @@ const TripwirePage = () => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-red-600/95 backdrop-blur-sm border-b border-red-400/20 px-4 py-2.5">
         <div className="max-w-3xl mx-auto flex items-center justify-center gap-3">
           <Clock className="w-4 h-4 text-white animate-pulse shrink-0" />
+          {/* Checked 2026-07-25: this countdown is NOT cosmetic — the purchase button
+              is `disabled` once it reaches 00:00 (see the CTA below), so the claim is
+              enforced and stays. Contrast churnlens/oto, where an identical banner sat
+              over a public Stripe link and enforced nothing; that one was removed. */}
           <p className="text-white text-sm font-semibold">
             ⚡ This offer expires in{" "}
             <span className="tabular-nums font-bold">
