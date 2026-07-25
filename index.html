@@ -652,14 +652,15 @@
     max-width: 1200px;
     margin: 4rem auto 2rem;
     padding: 2rem 1.5rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgba(127, 127, 127, 0.28);
     font-family: system-ui, -apple-system, sans-serif;
 }
 .portfolio-network h3 {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #9ca3af;
+    color: inherit;
+    opacity: 0.85;
     margin: 0 0 1rem;
     text-align: center;
 }
@@ -676,10 +677,10 @@
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.15s;
-    background: #f9fafb;
+    background: rgba(127, 127, 127, 0.12);
 }
 .network-card:hover {
-    background: #f3f4f6;
+    background: rgba(127, 127, 127, 0.20);
 }
 .network-dot {
     width: 8px;
@@ -690,25 +691,24 @@
 .network-name {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #111827;
+    color: inherit;
     white-space: nowrap;
 }
 .network-tagline {
     font-size: 0.6875rem;
-    color: #9ca3af;
+    color: inherit;
+    opacity: 0.85;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .portfolio-network { border-top-color: #374151; }
-    .portfolio-network h3 { color: #6b7280; }
-    .network-card { background: #1f2937; }
-    .network-card:hover { background: #374151; }
-    .network-name { color: #f9fafb; }
-    .network-tagline { color: #6b7280; }
-}
+/* No prefers-color-scheme block on purpose. The widget used to assert light
+   colours with a dark override keyed on the OS setting, but its tagline failed
+   contrast in BOTH themes on its own card (#9ca3af on #f9fafb = 2.43:1;
+   #6b7280 on #1f2937 = 3.55:1), and hosts like sipi.bot and sanctionsai are
+   always dark regardless of the OS. Inheriting the host's colour and tinting
+   with currentColor/alpha is correct on any background. */
 </style>
 <section class="portfolio-network">
     <h3>🚀 Explore Our Network</h3>
