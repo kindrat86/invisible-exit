@@ -73,6 +73,9 @@ const SITE_NAME = "Invisible Exit";
 const ORG_DISAMBIG = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  // Same @id as index.html's canonical Organization so consumers merge these
+  // into ONE entity instead of treating them as two competing Organizations.
+  "@id": `${SITE}/#organization`,
   name: SITE_NAME,
   url: SITE,
   description: "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.",
@@ -1099,6 +1102,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": `${SITE}/#organization`,
           name: SITE_NAME,
           url: SITE,
           logo: `${SITE}/og-image.png`,
@@ -1144,6 +1148,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": `${SITE}/#organization`,
           name: SITE_NAME,
           url: SITE,
           logo: `${SITE}/og-image.png`,
