@@ -182,50 +182,11 @@ const Index = () => {
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $0.97/mo."
         url="/"
       />
-      {/* Structured data: Organization, FAQPage. No Product/review schema — no genuine reviews exist to back it (see TestimonialGrid). */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Invisible Exit",
-              url: "https://invisibleexit.com",
-              logo: "https://invisibleexit.com/og-image.png",
-              description:
-                "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue without quitting, without code, and without their employer finding out.",
-              sameAs: [
-                "https://www.reddit.com/r/invisibleexit",
-                "https://github.com/kindrat86/invisible-exit",
-                "https://www.youtube.com/@InvisibleExit",
-              ],
-              knowsAbout: [
-                "Micro-SaaS",
-                "Anonymous business building",
-                "Corporate career strategy",
-                "Recurring revenue models",
-                "Side business for employed professionals",
-              ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer support",
-                email: "hello@invisibleexit.com",
-                url: "https://invisibleexit.com/contact",
-              },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: FAQS.map((faq) => ({
-                "@type": "Question",
-                name: faq.q,
-                acceptedAnswer: { "@type": "Answer", text: faq.a },
-              })),
-            },
-          ]),
-        }}
-      />
+      {/* Structured data (Organization, WebSite, WebApplication, FAQPage,
+          SoftwareApplication) is emitted once from index.html, which owns the
+          canonical @id-keyed nodes. This component previously emitted a second
+          Organization + FAQPage, giving the homepage duplicate conflicting
+          entities; the 15 FAQ entries below now live in index.html's FAQPage. */}
       <Navbar />
 
       <main>
