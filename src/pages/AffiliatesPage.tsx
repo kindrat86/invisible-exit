@@ -166,16 +166,16 @@ const AffiliatesPage = () => {
         <div className="container-narrow">
           <div className="text-center mb-10">
             <p className="text-eyebrow text-primary mb-4">Best Fit Affiliates</p>
-            <h2 className="text-h1 text-foreground mb-4">Who Earns the Most</h2>
+            <h2 className="text-h1 text-foreground mb-4">Who This Fits Best</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
-              { audience: "Career & business bloggers", desc: "Your readers are managers looking for escape routes. This is the vehicle.", commission: "Highest converting" },
+              { audience: "Career & business bloggers", desc: "Your readers are managers looking for escape routes. This is the vehicle.", commission: "Direct audience match" },
               { audience: "YouTubers in finance/career", desc: "Your viewers trust your recommendations. $0.97 is an impulse buy after a 10-min video.", commission: "Best for video demos" },
-              { audience: "Newsletter writers (business)", desc: "A single mention to 5,000 subscribers can generate 50+ referrals.", commission: "Best ROI per send" },
-              { audience: "Community leaders (Slack/Discord)", desc: "Your community of managers, founders, or career-switchers is the perfect fit.", commission: "Highest LTV referrals" },
+              { audience: "Newsletter writers (business)", desc: "Your subscribers already open you for career and money advice.", commission: "Good fit for a single mention" },
+              { audience: "Community leaders (Slack/Discord)", desc: "Your community of managers, founders, or career-switchers is the perfect fit.", commission: "Strong community fit" },
               { audience: "Podcasters (career/entrepreneurship)", desc: "Audio listeners convert well on story-driven offers. Promo code included.", commission: "Best for storytelling" },
-              { audience: "Reddit/community moderators", desc: "Authentic recommendations in r/cscareerquestions, r/financialindependence, etc.", commission: "Highest intent traffic" },
+              { audience: "Reddit/community moderators", desc: "Authentic recommendations in r/cscareerquestions, r/financialindependence, etc.", commission: "High-intent communities" },
             ].map((fit) => (
               <div key={fit.audience} className="card-base p-5">
                 <div className="flex items-center gap-2 mb-2">
