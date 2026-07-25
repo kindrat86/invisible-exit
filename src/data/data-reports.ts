@@ -35,12 +35,12 @@ export const dataReports: DataReport[] = [
     title: "Micro-SaaS Revenue Benchmarks 2026",
     metaTitle: "Micro-SaaS Revenue Benchmarks 2026 | Invisible Exit",
     metaDescription:
-      "Original data on micro-SaaS revenue benchmarks. Average MRR by niche, age, pricing tier, and team size. Based on 500+ bootstrapped SaaS businesses.",
+      "Micro-SaaS revenue benchmarks: indicative MRR ranges by niche, age, pricing tier, and team size, compiled from publicly available sources.",
     h1: "Micro-SaaS Revenue Benchmarks: 2026 Report",
     intro:
-      "How much do bootstrapped micro-SaaS businesses actually make? We analyzed revenue data from 500+ solo-founded SaaS businesses to create the first comprehensive benchmark report for the micro-SaaS category.",
+      "How much do bootstrapped micro-SaaS businesses actually make? This report compiles indicative revenue benchmarks for the micro-SaaS category from publicly available sources. The figures are editorial estimates, not first-party research - see the methodology below.",
     methodology:
-      "Data collected from public SaaS metrics dashboards (Baremetrics, Stripe Atlas reports, Indie Hackers milestones), founder surveys, and acquired business listings on MicroAcquire and Flippa between January 2024 and June 2026. All businesses are bootstrapped or pre-seed with under 5 employees.",
+      "Compiled from publicly available sources: openly published SaaS metrics dashboards (Baremetrics Open Startups, Indie Hackers milestones), Stripe Atlas reports, and acquired-business listings on MicroAcquire and Flippa, January 2024 to June 2026. Businesses referenced are bootstrapped or pre-seed with under 5 employees. Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.",
     dataPoints: [
       { metric: "Median MRR at month 12", value: "$890", context: "50th percentile of solo-founded SaaS businesses at 12 months old" },
       { metric: "Median MRR at month 24", value: "$2,400", context: "Businesses that survived past month 12 showed 2.7x growth" },
@@ -106,12 +106,12 @@ export const dataReports: DataReport[] = [
     title: "Side Business Statistics 2026: The Complete Data Report",
     metaTitle: "Side Business Statistics 2026 (50+ Stats) | Invisible Exit",
     metaDescription:
-      "50+ statistics on side businesses in 2026. Revenue, failure rates, demographics, time investment, and success factors. The most comprehensive side business data report.",
+      "50+ statistics on side businesses in 2026. Revenue, failure rates, demographics, time investment, and success factors, each traced to a public source.",
     h1: "Side Business Statistics 2026: 50+ Data Points",
     intro:
-      "How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from government data, industry surveys, and academic research to create the definitive reference on side business economics.",
+      "How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from government data, published industry surveys, and academic research into a single reference on side business economics.",
     methodology:
-      "Data compiled from US Census Bureau non-employer statistics, Bureau of Labor Statistics, Upwork Freelance Forward report, Bankrate side hustle survey, Stripe Atlas data, and proprietary survey of 1,200 employed professionals earning $100K+ who operate a side business.",
+      "Compiled from published sources: US Census Bureau non-employer statistics, Bureau of Labor Statistics, the Upwork Freelance Forward report, the Bankrate side-hustle survey, and Stripe Atlas data. Invisible Exit ran no survey of its own; every figure here restates a public source, so check that source before relying on it.",
     dataPoints: [
       { metric: "US adults with a side business", value: "45%", context: "93.3 million Americans have a side income source (Upwork 2025)" },
       { metric: "Average monthly side business income", value: "$1,122", context: "Across all side business types (Bankrate 2025)" },
@@ -248,9 +248,9 @@ export const dataReports: DataReport[] = [
       "Data-driven pricing benchmarks for micro-SaaS. See what successful solo founders charge by niche, feature set, and customer segment.",
     h1: "Micro-SaaS Pricing Benchmarks: 2026 Data Report",
     intro:
-      "Stop guessing your pricing. We analyzed 300+ bootstrapped micro-SaaS products to determine what solo founders actually charge — and what converts. This report gives you the data to price with confidence.",
+      "Stop guessing your pricing. This report compiles publicly listed pricing from bootstrapped micro-SaaS products to show what solo founders actually charge. The figures are editorial estimates drawn from public pricing pages, not first-party research.",
     methodology:
-      "Pricing data collected from 300+ micro-SaaS pricing pages, Stripe payment data (anonymized), MicroAcquire listings, and founder surveys. All products are solo-founded or under 3 people, bootstrapped, and generating $500-$50K MRR.",
+      "Compiled from publicly visible micro-SaaS pricing pages and MicroAcquire listings. Products referenced are solo-founded or under 3 people, bootstrapped, and generating $500-$50K MRR. Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.",
     dataPoints: [
       { metric: "Most common price point", value: "$29/month", context: "The modal price across all micro-SaaS products analyzed" },
       { metric: "Average price", value: "$42/month", context: "Higher than the mode due to premium B2B products pulling the average up" },
@@ -300,12 +300,12 @@ export const dataReports: DataReport[] = [
     title: "SaaS Churn Benchmarks by Niche: 2026 Data",
     metaTitle: "SaaS Churn Benchmarks by Niche (2026) | Invisible Exit",
     metaDescription:
-      "What is a good churn rate? See average churn rates by SaaS niche, company size, and pricing tier. Benchmark your churn against real data.",
+      "What is a good churn rate? See average churn rates by SaaS niche, company size, and pricing tier. Benchmark your churn against published figures.",
     h1: "SaaS Churn Benchmarks: 2026 Report by Niche",
     intro:
       "Churn is the most important — and most misunderstood — metric in SaaS. Is 5% monthly churn good or bad? It depends on your niche. This report gives you the benchmark data to know if your churn is actually a problem.",
     methodology:
-      "Churn data collected from 400+ SaaS businesses via Baremetrics open startups, Stripe anonymized data, founder surveys, and public metrics dashboards. Monthly churn calculated as (customers lost in month / customers at start of month).",
+      "Compiled from openly published metrics: Baremetrics Open Startups and other public founder dashboards. Monthly churn is calculated as (customers lost in month / customers at start of month). Invisible Exit ran no surveys and has no access to private payment data; these are editorial estimates compiled from public figures, so verify any number against its primary source before relying on it.",
     dataPoints: [
       { metric: "Median monthly churn (all SaaS)", value: "4.7%", context: "Across all niches and company sizes" },
       { metric: "Best-in-class monthly churn", value: "1.5%", context: "Top 10% of SaaS products" },
