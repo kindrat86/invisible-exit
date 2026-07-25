@@ -327,6 +327,22 @@
     </image:image>
   </url>
   <url>
+    <loc>https://invisibleexit.com/network</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/network.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/site-index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/site-index.html.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/for</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

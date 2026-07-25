@@ -528,7 +528,7 @@ const Index = () => {
               <div className="bg-success/5 border border-success/20 rounded-xl p-4 mb-3">
                 <p className="text-3xl font-bold text-success mb-1">$4,000<span className="text-sm font-normal text-muted-foreground">/month MRR</span></p>
                 <p className="text-xs text-muted-foreground">
-                  The average result for members who follow the system for 12–18 months.
+                  What the system is designed to reach in 12–18 months at 5 hours/week — a target, not a typical or guaranteed result.
                 </p>
               </div>
               <div className="space-y-1.5 mb-4">
