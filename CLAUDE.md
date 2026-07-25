@@ -1,6 +1,15 @@
 # invisibleexit — граблі та правила
 
 ## Деплой
+- **`vercel build` ОБОВʼЯЗКОВО перед `vercel deploy --prebuilt`.** `npm run build` пише в `dist/`,
+  а `--prebuilt` відвантажує `.vercel/output/` — це РІЗНІ директорії, і тут немає кроку
+  синхронізації (на відміну від sipiteno). Якщо пропустити `vercel build`, деплой ТИХО
+  відвантажить старий артефакт, поверне READY і оновить alias — виглядає як успіх, але фікс
+  не поїхав. 07-25: так було втрачено фікс прес-кіту (dist мав `index-DbeUyxIN`,
+  `.vercel/output` — годинної давнини `index-dB_6G45D`).
+- Перевіряй ПОЗИТИВНИМ контролем: не «старого рядка немає» (він і так відсутній у HTML,
+  бо контент рендериться з JS-бандла), а «НОВИЙ рядок присутній». Перевіряй по URL деплою,
+  не по aliased-домену (CDN кеш s-maxage=86400).
 - `vercel build && vercel deploy --prebuilt --prod --archive=tgz`
 - Git author = `sales@sipiteno.com`
 
