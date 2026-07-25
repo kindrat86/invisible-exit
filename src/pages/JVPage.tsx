@@ -330,11 +330,12 @@ Link in bio.`,
           </p>
 
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+            <form method="post" onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1.5">Your Email *</label>
                 <input
                   type="email"
+          aria-label="Email address"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

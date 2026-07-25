@@ -329,9 +329,10 @@ const BookFunnelPage = () => {
               Claim Your FREE Book Below
             </h3>
 
-            <form onSubmit={handleOrder} className="space-y-4">
+            <form method="post" onSubmit={handleOrder} className="space-y-4">
               <input
                 type="email"
+          aria-label="Email address"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
