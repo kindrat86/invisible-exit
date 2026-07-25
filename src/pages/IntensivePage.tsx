@@ -380,7 +380,7 @@ const IntensivePage = () => {
           )}
 
           {!applied ? (
-            <form onSubmit={handleApply} className="max-w-md mx-auto text-left">
+            <form method="post" onSubmit={handleApply} className="max-w-md mx-auto text-left">
               {/* Progress indicator */}
               <div className="flex items-center justify-center gap-2 mb-6">
                 {[0, 1, 2, 3].map((n) => (
@@ -400,6 +400,7 @@ const IntensivePage = () => {
                   <h3 className="text-lg font-bold text-white mb-3 text-center">What's your email?</h3>
                   <input
                     type="email"
+          aria-label="Email address"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

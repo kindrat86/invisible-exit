@@ -160,7 +160,7 @@ const InlineSqueeze = () => {
             </div>
 
             {/* Email form */}
-            <form
+            <form method="post"
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto animate-fade-up"
               style={{ animationDelay: "150ms" }}
@@ -169,6 +169,7 @@ const InlineSqueeze = () => {
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
                 <input
                   type="email"
+          aria-label="Email address"
                   required
                   name="email"
                   autoComplete="email"

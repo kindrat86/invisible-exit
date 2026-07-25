@@ -323,13 +323,14 @@ const ProPage = () => {
           )}
 
           {!applied ? (
-            <form onSubmit={handleApply} className="max-w-md mx-auto">
+            <form method="post" onSubmit={handleApply} className="max-w-md mx-auto">
               {/* DOTCOM SECRETS Ch 8: Qualify Backend Buyers — multi-step form */}
               {appStep === 0 && (
                 <div className="animate-fade-in">
                   <p className="text-white/40 text-xs mb-2 text-center">Step 1 of 3</p>
                   <input
                     type="email"
+          aria-label="Email address"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

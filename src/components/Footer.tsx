@@ -177,7 +177,7 @@ const Footer = () => {
                 You're subscribed — check your inbox for the welcome email.
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex gap-2 w-full max-w-md md:ml-auto">
+              <form method="post" onSubmit={handleSubscribe} className="flex gap-2 w-full max-w-md md:ml-auto">
                 <input
                   type="email"
                   required

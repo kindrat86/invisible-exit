@@ -125,7 +125,7 @@ const AskCampaignPage = () => {
       <section className="bg-white section-normal">
         <div className="container-narrow">
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+            <form method="post" onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
               {/* Category Selection */}
               <div>
                 <label className="block text-foreground font-semibold text-sm mb-3">
@@ -175,6 +175,7 @@ const AskCampaignPage = () => {
                 </label>
                 <input
                   type="email"
+          aria-label="Email address"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

@@ -191,9 +191,10 @@ export function ContentUpgrade({
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{upgrade.description}</p>
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+      <form method="post" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
         <input
           type="email"
+          aria-label="Email address"
           required
           name="email"
           autoComplete="email"

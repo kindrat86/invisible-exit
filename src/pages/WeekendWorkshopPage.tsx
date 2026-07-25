@@ -406,9 +406,10 @@ const WeekendWorkshopPage = () => {
           </p>
 
           {!applied ? (
-            <form onSubmit={handleApply} className="max-w-md mx-auto">
+            <form method="post" onSubmit={handleApply} className="max-w-md mx-auto">
               <input
                 type="email"
+          aria-label="Email address"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

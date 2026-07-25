@@ -112,7 +112,7 @@ const InlineNewsletter = ({
         {subtext || "Calculate the exact monthly revenue that replaces your salary. Free tool, takes 90 seconds. Sent to your inbox."}
       </p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+      <form method="post" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <input
           type="email"
           required
