@@ -2813,7 +2813,13 @@ function getRoutes() {
             author: ADRIAN_PERSON,
             publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
-            about: { "@type": "SoftwareApplication", name: ta.tool, category: ta.category },
+            // `about` is a topical pointer, not a thing we sell or rate. Typing it
+            // SoftwareApplication made Google's product parser demand one of
+            // offers/review/aggregateRating ("Either offers, review, or
+            // aggregateRating should be specified" — GSC, 2026-07-25). We have no
+            // honest offer or rating for a third-party tool here, so the node is a
+            // plain Thing: same topical signal, no product claim.
+            about: { "@type": "Thing", name: ta.tool, description: `${ta.category} software` },
           },
           {
             "@context": "https://schema.org",
@@ -3513,14 +3519,29 @@ function getRoutes() {
         url, type: "review",
         jsonLd: [
           {
+            // Nested-review shape: the reviewed tool is the top-level node and
+            // carries our single editorial Review. A bare `itemReviewed`
+            // SoftwareApplication has none of offers/review/aggregateRating, which
+            // Google flags as critical ("Either offers, review, or aggregateRating
+            // should be specified" — GSC, 2026-07-25). Inverting satisfies it with
+            // the rating we already publish — t.rating is rendered visibly on the
+            // page (e.g. "4.5/5"), so the markup matches on-page content.
+            // Same policy-safe pattern as the /best listicles above: one named
+            // editorial review, NOT a self-served aggregateRating.
             "@context": "https://schema.org",
-            "@type": "Review",
-            itemReviewed: { "@type": "SoftwareApplication", name: t.toolName, applicationCategory: "SoftwareApplication", operatingSystem: "Web" },
-            reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
-            author: ADRIAN_PERSON,
-            publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
-            headline: t.h1,
+            "@type": "SoftwareApplication",
+            name: t.toolName,
+            applicationCategory: "SoftwareApplication",
+            operatingSystem: "Web",
             description: t.intro,
+            review: {
+              "@type": "Review",
+              reviewRating: { "@type": "Rating", ratingValue: String(t.rating), bestRating: "5" },
+              author: ADRIAN_PERSON,
+              publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+              headline: t.h1,
+              description: t.intro,
+            },
           },
           { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Reviews" }, { "@type": "ListItem", position: 3, name: t.toolName } ] },
           { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: t.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
