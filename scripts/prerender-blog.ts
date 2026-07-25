@@ -1007,9 +1007,17 @@ function injectBody(filePath: string, bodyHtml: string): boolean {
   if (!existsSync(filePath)) {
     return false;
   }
-  let html = readFileSync(filePath, "utf-8");
-  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
-  writeFileSync(filePath, html, "utf-8");
+  const html = readFileSync(filePath, "utf-8");
+  const ANCHOR = '<div id="root"></div>';
+  // This used to return true unconditionally. On a dist that had already been
+  // injected the anchor is gone, so the replace was a no-op — and the script still
+  // printed "Injected body content into N pages". Re-running after editing a hub
+  // generator therefore appeared to work and changed nothing, which cost a debugging
+  // cycle. Report the truth instead: a body injection needs a fresh `vite build`.
+  if (!html.includes(ANCHOR)) {
+    return false;
+  }
+  writeFileSync(filePath, html.replace(ANCHOR, `<div id="root">${bodyHtml}</div>`), "utf-8");
   return true;
 }
 
@@ -1644,8 +1652,43 @@ ${hubSvgFigure("Alternatives", "Product comparison", "Detailed comparison of pro
 </div>`;
 }
 
+/**
+ * Cross-links from a salary page used to be built by string-guessing, and every
+ * guess was wrong for at least some of the 25 professions:
+ *   /cost-of-waiting/${item.slug}   — that route is keyed by YEARS+SALARY
+ *                                     (`5-years-$150k-salary`), never by profession
+ *   /side-hustles/for-${plural}     — only 6 of 25 professions have a page
+ *   /mistakes/mistakes-${slug}s-make — naive +s; the data owns its own slugs
+ *   /ideas/for-${plural}            — 25 exist but the plural forms do not all match
+ * That produced ~60 of this site's broken internal links. Now every cross-link is
+ * looked up in the same data the prerenderer iterates, and omitted when absent — a
+ * missing related-link is invisible; a 404 is not.
+ */
+const IDEA_SLUGS = new Set(industryIdeas.map((i) => i.slug));
+const SIDE_HUSTLE_SLUGS = new Set(sideHustles.map((s) => s.slug));
+const MISTAKE_SLUGS = new Set(professionMistakes.map((m) => m.slug));
+const NON_COMPETE_SLUGS = new Set(nonCompeteMatrix.map((n) => n.slug));
+const SALARY_SLUGS = new Set(salaries.map((s) => s.slug));
+const PROFESSION_STATE_SLUGS = new Set(
+  professionStatePages.map((p) => `${p.professionSlug}/in/${p.stateSlug}`)
+);
+
+/** Nearest cost-of-waiting page for a salary string like "$147K", at N years. */
+function costOfWaitingSlugFor(avgSalary: string, years: number): string | null {
+  const k = Number(String(avgSalary).replace(/[^0-9]/g, ""));
+  if (!k) return null;
+  const target = k * 1000;
+  const candidates = costOfWaitingPages.filter((c) => c.years === years);
+  if (!candidates.length) return null;
+  const best = candidates.reduce((a, b) =>
+    Math.abs(b.salary - target) < Math.abs(a.salary - target) ? b : a
+  );
+  return best.slug;
+}
+
 function salaryBodyHtml(item: typeof salaries[0]): string {
-  const freedomUrl = `/cost-of-waiting/${item.slug}`;
+  const cowSlug = costOfWaitingSlugFor(item.avgSalary, 5);
+  const freedomUrl = cowSlug ? `/cost-of-waiting/${cowSlug}` : "/calculators/freedom-number";
   return `<div class="min-h-screen">
 ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom number conversion showing how much micro-SaaS revenue replaces your income")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -1663,13 +1706,23 @@ ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom nu
 </div></section>
 ${item.tips ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Tips for ${item.role}</h2><ul>${(item.tips || []).map((t: string) => `<li>${t}</li>`).join("")}</ul></div></section>` : ""}
 ${relatedLinksSection([
-  { href: `/ideas/for-${pluralSlug(item.slug)}`, text: `← Micro-SaaS Ideas for ${item.role}s` },
-  { href: `/side-hustles/for-${pluralSlug(item.slug)}`, text: `Best Side Hustles for ${item.role}s` },
-  { href: `/mistakes/mistakes-${item.slug}s-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` },
-  { href: `/cost-of-waiting/${item.slug}`, text: `Cost of Waiting for ${item.role}s — How Much You're Losing` },
-  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
-  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
-])}
+    // Each profession-specific link is emitted only when that page actually exists.
+    // A missing related-link is invisible to the reader; a 404 is not.
+    ...(IDEA_SLUGS.has(`for-${pluralSlug(item.slug)}`)
+      ? [{ href: `/ideas/for-${pluralSlug(item.slug)}`, text: `\u2190 Micro-SaaS Ideas for ${item.role}s` }]
+      : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${pluralSlug(item.slug)}`)
+      ? [{ href: `/side-hustles/for-${pluralSlug(item.slug)}`, text: `Best Side Hustles for ${item.role}s` }]
+      : []),
+    ...(MISTAKE_SLUGS.has(`mistakes-${pluralSlug(item.slug)}-make`)
+      ? [{ href: `/mistakes/mistakes-${pluralSlug(item.slug)}-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` }]
+      : []),
+    ...(cowSlug
+      ? [{ href: `/cost-of-waiting/${cowSlug}`, text: `Cost of Waiting 5 Years on a ${item.avgSalary} Salary` }]
+      : []),
+    { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
+    { href: `/quit-your-job`, text: `When to Quit Your Job \u2014 Honest Framework` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Salary estimates are general ranges. Individual compensation varies. Not financial advice.</p>
 </div></section>
@@ -1817,14 +1870,19 @@ ${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete cla
 <h2 style="font-size:1.125rem;font-weight:600;margin-bottom:0.5rem">Key Considerations for ${item.profession} in ${item.state}</h2>
 <p>${item.analysis}</p>
 </div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
-${relatedLinksSection([
-  { href: `/guides/${item.state.toLowerCase()}`, text: `← Anonymous LLC Guide for ${item.state}` },
-  { href: `/ideas/for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession} in ${item.state}` },
-  { href: `/side-hustles/for-${pluralSlug(item.profession)}`, text: `Best Side Hustles for ${item.profession}` },
-  { href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
-  { href: `/non-compete`, text: `Non-Compete Guides by Profession` },
-  { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
-])}
+  ${relatedLinksSection([
+    // Existence-checked: only 6 of these professions have a side-hustles page, and
+    // the /ideas/<prof>/in/<state> fleet does not cover every state.
+    { href: `/guides/${item.state.toLowerCase()}`, text: `\u2190 Anonymous LLC Guide for ${item.state}` },
+    ...(PROFESSION_STATE_SLUGS.has(`for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`)
+      ? [{ href: `/ideas/for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession} in ${item.state}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${pluralSlug(item.profession)}`)
+      ? [{ href: `/side-hustles/for-${pluralSlug(item.profession)}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, ""))
+      ? [{ href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    { href: `/non-compete`, text: `Non-Compete Guides by Profession` },
+    { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/guides/${item.state.toLowerCase()}" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Read the ${item.state} State Guide &rarr;</a>
 </div></section>
@@ -1837,12 +1895,24 @@ ${relatedLinksSection([
 function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
   const profSlug = item.professionSlug;
   const stateSlug = item.stateSlug;
+  // Every profession/state cross-link is looked up before it is emitted. These were
+  // string-guessed, and the non-compete guess alone produced 285 broken links: this
+  // /ideas/<prof>/in/<state> fleet spans far more states than nonCompeteMatrix
+  // covers (10 professions x 10 states), so most combinations have no page.
+  const bare = profSlug.replace(/^for-/, "").replace(/s$/, "");
+  const ncSlug = `${bare}s-${stateSlug}`;
+  const mistakeSlug = `mistakes-${bare}s-make`;
   const related = relatedLinksSection([
-    { href: `/ideas/${profSlug}`, text: `← All Micro-SaaS Ideas for ${item.profession}` },
-    { href: `/side-hustles/${profSlug}`, text: `Best Side Hustles for ${item.profession}` },
-    { href: `/salaries/${profSlug.replace(/^for-/, "").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
-    { href: `/mistakes/mistakes-${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make When Starting a Side Business` },
-    { href: `/non-compete/${profSlug.replace(/^for-/, "").replace(/s$/, "")}s-${stateSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` },
+    ...(IDEA_SLUGS.has(profSlug)
+      ? [{ href: `/ideas/${profSlug}`, text: `← All Micro-SaaS Ideas for ${item.profession}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(profSlug)
+      ? [{ href: `/side-hustles/${profSlug}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(bare)
+      ? [{ href: `/salaries/${bare}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    ...(MISTAKE_SLUGS.has(mistakeSlug)
+      ? [{ href: `/mistakes/${mistakeSlug}`, text: `Mistakes ${item.profession} Make When Starting a Side Business` }] : []),
+    ...(NON_COMPETE_SLUGS.has(ncSlug)
+      ? [{ href: `/non-compete/${ncSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` }] : []),
     { href: `/guides/${stateSlug}`, text: `Anonymous LLC Guide for ${item.state}` },
     { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
     { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
@@ -3789,9 +3859,18 @@ conversion-audit-scored-2026-07-24. -->
 // ---------- Missing pSEO hub bodies ----------
 
 function nonCompeteHubBodyHtml(): string {
-  const professions = ["software-engineers", "product-managers", "lawyers", "doctors", "financial-analysts", "marketers", "consultants", "designers", "sales-managers", "accountants"];
-  const links = professions.map(p =>
-    `<a href="/non-compete/${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${p.replace(/-/g," ")} Non-Compete Guide</h3></a>`
+  // /non-compete/:slug is keyed by profession+STATE (nonCompeteMatrix is 10
+  // professions × 10 states = 100 entries, slug `${profession}-${state}`). The
+  // hardcoded list linked a BARE profession — a slug that route never produces, so
+  // all 10 cards 404'd. Link one representative page per profession, derived from
+  // the same array prerender-meta.mjs iterates, and say which state it covers
+  // rather than implying the guide is state-agnostic.
+  const firstByProfession = new Map<string, (typeof nonCompeteMatrix)[number]>();
+  for (const nc of nonCompeteMatrix) {
+    if (!firstByProfession.has(nc.profession)) firstByProfession.set(nc.profession, nc);
+  }
+  const links = [...firstByProfession.values()].map(nc =>
+    `<a href="/non-compete/${nc.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${nc.profession} Non-Compete Guide</h3><p style="font-size:0.8125rem;color:#6b7280;margin-top:0.25rem">${nc.state} — plus 9 more states</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "Non-compete clause analysis by profession and state — enforceability, risks, and safe harbors for employed founders")}
@@ -3837,9 +3916,11 @@ ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "No
 }
 
 function stackHubBodyHtml(): string {
-  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
-  const links = entries.map(e =>
-    `<a href="/stack/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Tool Stack</h3></a>`
+  // Derived from professionStacks — the SAME array prerender-meta.mjs iterates.
+  // The hardcoded 12 included four professions with no stack page (data has 10).
+  const entries = professionStacks;
+  const links = entries.map(s =>
+    `<a href="/stack/${s.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${s.profession} Tool Stack</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Profession-specific tool stacks for building micro-SaaS products — tailored to your existing skills")}
@@ -3943,9 +4024,14 @@ ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-Saa
 }
 
 function pricingModelsHubBodyHtml(): string {
-  const models = ["flat-rate", "usage-based", "tiered", "freemium", "per-seat", "per-feature", "outcome-based", "flat-rate-plus-overage", "two-sided-marketplace", "community-plus-premium", "equity-deferred", "agency-model", "donation-plus", "revenue-share"];
+  // Derived from pricingModels — the SAME array prerender-meta.mjs iterates. The
+  // hardcoded list was wrong twice over: slugs omitted the "-pricing" suffix the
+  // data appends ("freemium" vs "freemium-pricing"), and it advertised six models
+  // with no data at all (agency-model, outcome-based, donation-plus, equity-deferred,
+  // revenue-share, two-sided-marketplace). All 14 cards 404'd.
+  const models = pricingModels;
   const links = models.map(m =>
-    `<a href="/pricing-models/${m}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${m.replace(/-/g," ")} Model</h3></a>`
+    `<a href="/pricing-models/${m.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${m.model} Model</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pricing model comparisons — flat-rate, usage-based, tiered, freemium with revenue benchmarks")}
@@ -3968,9 +4054,13 @@ ${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pric
 }
 
 function redditHubBodyHtml(): string {
-  const entries = ["for-marketers", "for-software-engineers", "for-product-managers", "for-consultants", "for-designers", "for-sales-managers", "for-accountants", "for-lawyers", "for-data-analysts", "for-financial-analysts", "for-hr-managers", "for-operations-managers"];
-  const links = entries.map(e =>
-    `<a href="/reddit/${e}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827;text-transform:capitalize">${e.replace("for-","").replace(/-/g," ")} Reddit Strategy</h3></a>`
+  // Derived from redditStrategies — the SAME array prerender-meta.mjs iterates to
+  // emit /reddit/<slug>. It previously hardcoded 12 slugs shaped "for-marketers",
+  // while the data computes `reddit-for-${p.slug}`, so all 12 cards 404'd. Deriving
+  // makes drift impossible and picks up all 25 professions instead of 12.
+  const entries = redditStrategies;
+  const links = entries.map(r =>
+    `<a href="/reddit/${r.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${r.profession} Reddit Strategy</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marketing strategy for anonymous founders — best subreddits, posting schedules, and content templates")}
@@ -4485,14 +4575,19 @@ ${hubSvgFigure("Revenue Target", item.tier, `How to reach ${item.monthlyRevenue}
 <h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>
 ${faqs}
 </div></section>
-${relatedLinksSection([
-  { href: `/ideas/for-${item.professionSlug}`, text: `← Micro-SaaS Ideas for ${item.profession}` },
-  { href: `/salaries/${item.professionSlug.replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
-  { href: `/side-hustles/for-${item.professionSlug}`, text: `Best Side Hustles for ${item.profession}` },
-  { href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` },
-  { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
-])}
+  ${relatedLinksSection([
+    // Existence-checked against the same data the prerenderer iterates.
+    ...(IDEA_SLUGS.has(`for-${item.professionSlug}`)
+      ? [{ href: `/ideas/for-${item.professionSlug}`, text: `\u2190 Micro-SaaS Ideas for ${item.profession}` }] : []),
+    ...(SALARY_SLUGS.has(item.professionSlug.replace(/s$/, ""))
+      ? [{ href: `/salaries/${item.professionSlug.replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` }] : []),
+    ...(SIDE_HUSTLE_SLUGS.has(`for-${item.professionSlug}`)
+      ? [{ href: `/side-hustles/for-${item.professionSlug}`, text: `Best Side Hustles for ${item.profession}` }] : []),
+    ...(MISTAKE_SLUGS.has(`mistakes-${item.professionSlug.replace(/s$/, "")}s-make`)
+      ? [{ href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` }] : []),
+    { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
+    { href: `/weekend-builds`, text: `Weekend Build Ideas \u2014 Launch in 48 Hours` },
+  ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
 </div></section>
