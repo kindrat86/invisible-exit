@@ -21,6 +21,11 @@ GOTCHAS_FILE = REPO_ROOT / ".github" / "seo-geo-automation" / "gotchas.md"
 CHANGELOG_FILE = REPO_ROOT / "SEO_CHANGELOG.md"
 GLM_API_URL = "https://api.z.ai/api/coding/paas/v4/chat/completions"
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
+# DeepSeek retired the `deepseek-chat` alias — /v1/models now serves only
+# deepseek-v4-pro and deepseek-v4-flash, and the old name 400s. Both are
+# reasoning models, so reasoning tokens eat into the same output budget as
+# the JSON answer (see TruncatedResponse below).
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-pro")
 
 AUDIT_MODE = os.environ.get("AUDIT_MODE", "daily")
 DATE = datetime.now().strftime("%Y-%m-%d")
@@ -37,10 +42,14 @@ class TruncatedResponse(RuntimeError):
 # Per-model output ceilings. Asking for more than the model can emit just
 # means the response gets cut mid-JSON (that is how the 2026-07-24 run died:
 # GLM was quota-exhausted, the DeepSeek fallback inherited GLM's 16384 and
-# truncated at its own 8192 cap, so json.loads() had nothing parseable).
+# truncated at the then-current deepseek-chat's 8192 cap, so json.loads()
+# had nothing parseable). Models absent from this table keep the requested
+# budget — finish_reason == "length" is the backstop either way.
 MODEL_MAX_TOKENS = {
     "glm-5.2": 16384,
     "deepseek-chat": 8192,
+    "deepseek-v4-pro": 16384,
+    "deepseek-v4-flash": 16384,
 }
 
 
@@ -121,7 +130,7 @@ def glm_chat(system_prompt: str, user_prompt: str, max_tokens: int = 8192) -> st
             print("GLM rate-limited, falling back to DeepSeek...", file=sys.stderr)
 
     if ds_key:
-        return _chat_api(DEEPSEEK_API_URL, ds_key, "deepseek-chat", system_prompt, user_prompt, max_tokens, "DeepSeek")
+        return _chat_api(DEEPSEEK_API_URL, ds_key, DEEPSEEK_MODEL, system_prompt, user_prompt, max_tokens, "DeepSeek")
 
     raise RuntimeError("No API key available — set GLM_API_KEY or DEEPSEEK_API_KEY")
 
