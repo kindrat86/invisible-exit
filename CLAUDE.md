@@ -14,6 +14,18 @@
 - Git author = `sales@sipiteno.com`
 
 ## Критичні граблі
+- **НЕ запускай `vercel` / `vercel link` з `public/`.** 2026-07-25 там лежав
+  `public/.vercel/` з `project.json`, що вказував на ОКРЕМИЙ проєкт з назвою
+  **"public"** (prj_9TkHwQr6…), а не на `invisible-exit`. Два наслідки:
+  1) Vite копіює `public/` дослівно в `dist/`, тому файл їхав у
+     `.vercel/output/static/.vercel/project.json` і віддавався живим:
+     **invisibleexit.com/.vercel/project.json = 200** (projectId + orgId).
+  2) Будь-який `vercel deploy` з `public/` пішов би в той чужий проєкт —
+     той самий wrong-project trap, що задокументований для gitdealflow.
+  Каталог був UNTRACKED, тому жоден code review його б не показав. Видалено;
+  бекап у /tmp/ie-vercel-stray. Перевірка: `curl -s -o /dev/null -w '%{http_code}'
+  https://invisibleexit.com/.vercel/project.json` має бути 404.
+
 - Застарілий Service Worker може віддавати стару версію на перший load — перевіряй у чистому профілі/hard reload
 - tsc-помилки в репо PRE-EXISTING — не блокер, не намагайся "полагодити все"
 - Дерево часто некомітнуте — не робити reset/clean без перевірки
