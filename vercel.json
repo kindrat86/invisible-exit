@@ -452,6 +452,96 @@
       "source": "/embed/stealth-score",
       "destination": "/embed/stealth-score.html",
       "permanent": true
+    },
+    {
+      "source": "/ideas/for-engineers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-customer-success-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-account-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-developers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-analysts",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-managers",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-executives",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-directors",
+      "destination": "/ideas",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss",
+      "destination": "/ideas/for-software-engineers",
+      "permanent": true
+    },
+    {
+      "source": "/side-hustles/for-software-engineerss",
+      "destination": "/side-hustles/for-software-engineers",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss/in/california",
+      "destination": "/ideas/for-software-engineers/in/california",
+      "permanent": true
+    },
+    {
+      "source": "/ideas/for-software-engineerss/in/texas",
+      "destination": "/ideas/for-software-engineers/in/texas",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/delaware",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/nevada",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/non-compete/wyoming",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/non-compete",
+      "destination": "/non-compete",
+      "permanent": true
+    },
+    {
+      "source": "/how-to/validate-idea-in-48-hours",
+      "destination": "/how-to",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [

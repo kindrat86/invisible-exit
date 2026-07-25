@@ -6,6 +6,14 @@
  * with full article content so search engine crawlers can index it.
  */
 import { readFileSync, writeFileSync, existsSync } from "fs";
+
+// Profession names in this dataset are already plural ("Software Engineers"), so a
+// bare `${slug}s` produced /ideas/for-software-engineerss — a 404 that shipped on
+// every /non-compete/<profession>-<state> page. Pluralise idempotently instead.
+const pluralSlug = (s: string): string => {
+  const base = s.toLowerCase().replace(/ /g, "-");
+  return base.endsWith("s") ? base : `${base}s`;
+};
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -95,7 +103,7 @@ function autoLinkContent(html: string): string {
   const linkMap: { pattern: RegExp; href: string; text: string }[] = [
     { pattern: /\bfreedom number\b/i, href: "/freedom", text: "freedom number" },
     { pattern: /\bmicro-SaaS\b/i, href: "/glossary/micro-saas", text: "micro-SaaS" },
-    { pattern: /\bnon-compete clause\b/i, href: "/glossary/non-compete", text: "non-compete clause" },
+    { pattern: /\bnon-compete clause\b/i, href: "/non-compete", text: "non-compete clause" },
     { pattern: /\banonymous LLC\b/i, href: "/guides/wyoming", text: "anonymous LLC" },
     { pattern: /\bidea validation\b/i, href: "/calculators/idea-validator", text: "idea validation" },
     { pattern: /\bfinancial independence\b/i, href: "/blog/category/financial-independence", text: "financial independence" },
@@ -1311,7 +1319,7 @@ function stateGuideBodyHtml(g: typeof stateGuides[0]): string {
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Non-Compete Risk for Employed Founders in ${g.state}</h2>
 <p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">${nonCompeteGuidance}</p>
-<p style="line-height:1.7;color:#1f2937">Read our comprehensive <a href="/non-compete/${g.slug}" style="color:#3B82F6">non-compete risk analysis for ${g.state}</a> for a detailed breakdown of court precedents and enforcement patterns.</p>
+<p style="line-height:1.7;color:#1f2937">Read our comprehensive <a href="/non-compete" style="color:#3B82F6">non-compete risk analysis by profession</a> for a detailed breakdown of court precedents and enforcement patterns.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -1655,8 +1663,8 @@ ${hubSvgFigure("Salary to Freedom", "Freedom number math", "Salary-to-freedom nu
 </div></section>
 ${item.tips ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Side Business Tips for ${item.role}</h2><ul>${(item.tips || []).map((t: string) => `<li>${t}</li>`).join("")}</ul></div></section>` : ""}
 ${relatedLinksSection([
-  { href: `/ideas/for-${item.slug}s`, text: `← Micro-SaaS Ideas for ${item.role}s` },
-  { href: `/side-hustles/for-${item.slug}s`, text: `Best Side Hustles for ${item.role}s` },
+  { href: `/ideas/for-${pluralSlug(item.slug)}`, text: `← Micro-SaaS Ideas for ${item.role}s` },
+  { href: `/side-hustles/for-${pluralSlug(item.slug)}`, text: `Best Side Hustles for ${item.role}s` },
   { href: `/mistakes/mistakes-${item.slug}s-make`, text: `Mistakes ${item.role}s Make When Starting a Side Business` },
   { href: `/cost-of-waiting/${item.slug}`, text: `Cost of Waiting for ${item.role}s — How Much You're Losing` },
   { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
@@ -1811,10 +1819,10 @@ ${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete cla
 </div></section>${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: `/guides/${item.state.toLowerCase()}`, text: `← Anonymous LLC Guide for ${item.state}` },
-  { href: `/ideas/for-${item.profession.toLowerCase().replace(/ /g, "-")}s/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession}s in ${item.state}` },
-  { href: `/side-hustles/for-${item.profession.toLowerCase().replace(/ /g, "-")}s`, text: `Best Side Hustles for ${item.profession}s` },
-  { href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}s` },
-  { href: `/glossary/non-compete`, text: `Non-Compete Clause — Definition & Explanation` },
+  { href: `/ideas/for-${pluralSlug(item.profession)}/in/${item.state.toLowerCase().replace(/ /g, "-")}`, text: `Micro-SaaS Ideas for ${item.profession} in ${item.state}` },
+  { href: `/side-hustles/for-${pluralSlug(item.profession)}`, text: `Best Side Hustles for ${item.profession}` },
+  { href: `/salaries/${item.profession.toLowerCase().replace(/ /g, "-").replace(/s$/, "")}`, text: `Salary & Freedom Number for ${item.profession}` },
+  { href: `/non-compete`, text: `Non-Compete Guides by Profession` },
   { href: `/blog/category/stealth-operations`, text: `Stealth Operations Articles` },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
@@ -3392,7 +3400,7 @@ ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal 
 }
 
 function ideasHubBodyHtml(): string {
-  const professions = ["accountants", "lawyers", "data-analysts", "marketers", "product-managers", "software-engineers", "sales-managers", "consultants", "hr-managers", "designers", "project-managers", "financial-analysts", "operations-managers", "teachers", "nurses", "engineers", "recruiters", "real-estate-agents", "customer-success-managers", "account-managers", "developers", "analysts", "managers", "executives", "directors"];
+  const professions = ["accountants", "lawyers", "data-analysts", "marketers", "product-managers", "software-engineers", "sales-managers", "consultants", "hr-managers", "designers", "project-managers", "financial-analysts", "operations-managers", "teachers", "nurses", "recruiters", "real-estate-agents"];
   const cards = professions.slice(0, 25).map((p) =>
     `<a href="/ideas/for-${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827;text-transform:capitalize">Micro-SaaS Ideas for ${p.replace(/-/g, " ")}</h3><p style="font-size:0.8rem;color:#6b7280">5 validated ideas with market analysis</p></a>`).join("\n");
 
