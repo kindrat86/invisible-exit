@@ -16,12 +16,13 @@
     "reconcile:sitemap": "npx tsx scripts/reconcile-sitemap-index.ts",
     "generate:site-index": "npx tsx scripts/generate-site-index.ts",
     "submit:indexnow": "npx tsx scripts/submit-indexnow.ts",
-    "build": "npm run guard:positioning && npm run generate:sitemap && npm run generate:llms && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts && npm run generate:distribution && npm run generate:site-index && npm run reconcile:sitemap",
+    "build": "npm run guard:positioning && npm run generate:sitemap && npm run generate:llms && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts && npm run generate:distribution && npm run generate:site-index && npm run reconcile:sitemap && npm run verify:jsonld",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "verify:jsonld": "node scripts/verify-jsonld.mjs dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
