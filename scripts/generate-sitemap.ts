@@ -361,6 +361,15 @@ async function main() {
     { loc: "https://invisibleexit.com/first-year", lastmod: today, changefreq: "monthly", priority: "0.6" },
     { loc: "https://invisibleexit.com/hours", lastmod: today, changefreq: "monthly", priority: "0.6" },
     { loc: "https://invisibleexit.com/budget", lastmod: today, changefreq: "monthly", priority: "0.6" },
+    // Orphan repair 2026-07-25: both were in NO sitemap AND had ZERO internal
+    // inbound links, so GSC reported them as "URL is unknown to Google".
+    // /site-index.html is the crawlable discovery hub itself, which
+    // shouldNoindexSitemapUrl() has always whitelisted; /network is a real
+    // static page (public/network.html, rewritten from /network).
+    // NOT added: the /niches hub — App.tsx routes it to <Navigate to="/blog" />,
+    // so submitting it would just feed Google a client-side redirect.
+    { loc: "https://invisibleexit.com/network", lastmod: today, changefreq: "monthly", priority: "0.5" },
+    { loc: "https://invisibleexit.com/site-index.html", lastmod: today, changefreq: "weekly", priority: "0.5" },
     // /for hub + audience pages (previously only listed in the now-removed orphan sitemap-pseo.xml).
     // Canonical is /for (no trailing slash); the orphan listed /for/ which 308-redirects, so it is dropped.
     { loc: "https://invisibleexit.com/for", lastmod: today, changefreq: "monthly", priority: "0.7" },

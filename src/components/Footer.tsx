@@ -305,6 +305,19 @@ const Footer = () => {
           ))}
         </div>
 
+        {/*
+          Crawl entry points. Plain <a>, NOT react-router <Link>: /site-index.html
+          is a static file emitted by scripts/generate-site-index.ts and /network
+          is public/network.html behind a rewrite — a <Link> would client-side
+          route to them and render the SPA's 404 view instead. Added 2026-07-25:
+          both pages previously had ZERO internal inbound links across all 1,881
+          prerendered pages, and GSC reported both as "URL is unknown to Google".
+        */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-6 border-t border-white/5">
+          <a href="/site-index.html" className="text-white/40 hover:text-white/70 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">All Pages</a>
+          <a href="/network" className="text-white/40 hover:text-white/70 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Portfolio Network</a>
+        </div>
+
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-white/5">
           <p className="text-white/50 text-xs sm:text-sm order-2 sm:order-1">
