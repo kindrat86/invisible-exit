@@ -28,7 +28,7 @@ import { trackEvent } from "@/lib/analytics";
  * PressPage — Expert Secrets Ch 15-16 (Authority / Archetype)
  *
  * Consolidates every authority signal into one media-ready page:
- *  - Headline numbers (verified MRR, members, frameworks)
+ *  - Headline numbers (tools, pricing, frameworks, guides)
  *  - Speaking topics (6 original, podcast-ready angles)
  *  - Interview formats (5-min → 45-min → written Q&A)
  *  - Fact sheet (boilerplate "About" for show notes)
@@ -46,7 +46,7 @@ import { trackEvent } from "@/lib/analytics";
 
 const HEADLINE_STATS = [
   { value: "$4,100/mo", label: "Verified MRR", icon: TrendingUp, source: "Stripe-documented across 3 products" },
-  { value: "127", label: "Active Builders", icon: Users, source: "Paying members across 14 countries" },
+  { value: "$0.97", label: "Founding Price", icon: Users, source: "Live Stripe checkout, price locked for life" },
   { value: "3", label: "Proprietary Frameworks", icon: Code2, source: "Named, tested, independently taught" },
   { value: "55", label: "Original Guides", icon: BookOpen, source: "Long-form methodologies and case studies" },
 ];
@@ -149,8 +149,7 @@ const FACT_SHEET = {
     "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. Founded by Adrian — a pseudonymous Managing Director who built $4,100/month in recurring revenue across 3 products without quitting his job or revealing his identity.",
   pricing: "From $0.97/month (founding member pricing). Pro tier at $47/mo. Weekend Workshop at $97. 90-Day Intensive at $2,000.",
   frameworks: "The Salary-Runway Method, The Triple-Separation Protocol, The Cartridge System",
-  community: "127 active builders across 14 countries",
-  languages: "96 languages via real-time translation",
+  community: "Founding cohort open — early members building now",
   contact: "hello@invisibleexit.com",
   social: {
     primary: "https://invisibleexit.com/blog (55 original guides)",
@@ -169,14 +168,14 @@ const MEDIA_ASSETS = [
 
 const TRUST_SIGNALS = [
   { icon: ShieldCheck, title: "Stripe-Verified Revenue", desc: "Every revenue claim documented via Stripe screenshots. Not a claim — a receipt." },
-  { icon: Users, title: "Active Community, Not a List", desc: "127 paying members building right now. Not vanity subscribers — active builders." },
+  { icon: Users, title: "A Cohort, Not a List", desc: "Founding members build alongside each other. Not vanity subscribers." },
   { icon: Code2, title: "3 Named Frameworks", desc: "Proprietary methodologies independently taught, not recycled from other gurus." },
-  { icon: Globe2, title: "Global From Day 1", desc: "96-language translation. Builders in 14 countries. Not US-centric." },
+  { icon: Globe2, title: "Built To Travel", desc: "Anonymity-first by design, so the system works from anywhere. Not US-centric." },
 ];
 
 const BOILERPLATE_SHORT = `Invisible Exit is the world's first anonymity-native business system — 5 AI-powered tools that help corporate managers build $4,000+/month in micro-SaaS revenue while employed, without their employer finding out. Founded by Adrian (pseudonym), a Managing Director who built $4,100/month across 3 products without quitting his job. From $0.97/month at invisibleexit.com.`;
 
-const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products — without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The platform serves 127 active builders across 14 countries, with content available in 96 languages. Pricing starts at $0.97/month for founding members.`;
+const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products — without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The founding cohort is open now. Pricing starts at $0.97/month for founding members.`;
 
 // ── COMPONENT ──
 
