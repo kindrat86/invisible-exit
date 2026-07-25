@@ -105,7 +105,10 @@ function autoLinkContent(html: string): string {
     { pattern: /\bmicro-SaaS\b/i, href: "/glossary/micro-saas", text: "micro-SaaS" },
     { pattern: /\bnon-compete clause\b/i, href: "/non-compete", text: "non-compete clause" },
     { pattern: /\banonymous LLC\b/i, href: "/guides/wyoming", text: "anonymous LLC" },
-    { pattern: /\bidea validation\b/i, href: "/calculators/idea-validator", text: "idea validation" },
+      // Was /calculators/idea-validator — a calculator that has never existed, so
+      // this auto-link 404'd on every post mentioning "idea validation". A real page
+      // on exactly this topic does exist.
+    { pattern: /\bidea validation\b/i, href: "/how-to/validate-a-micro-saas-idea-in-a-weekend", text: "idea validation" },
     { pattern: /\bfinancial independence\b/i, href: "/blog/category/financial-independence", text: "financial independence" },
     { pattern: /\bstealth ops\b/i, href: "/blog/category/stealth-operations", text: "stealth ops" },
     { pattern: /\bside hustle\b/i, href: "/side-hustles", text: "side hustle" },
@@ -3357,6 +3360,12 @@ ${faqs}
 // ---------- Hub page bodies ----------
 
 function costAnalysisHubBodyHtml(): string {
+  // Derived from costAnalysisPages — the SAME array prerender-meta.mjs iterates to emit
+  // /cost-analysis/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = costAnalysisPages
+    .map((x) => `<a href="/cost-analysis/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", "Cost breakdown for starting and running a micro-SaaS business while employed — from $0 to $500/month budgets")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3378,11 +3387,7 @@ ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", 
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Cost Analysis Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/cost-analysis/starting-from-zero" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;transition:border-color 0.2s"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How Much Does It Cost to Start a Micro-SaaS from $0?</h3><p style="font-size:0.875rem;color:#6b7280">The complete $0 starter guide — free tiers, free tools, and what you actually need to pay for.</p></a>
-<a href="/cost-analysis/monthly-operating-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Monthly Operating Costs for a Micro-SaaS</h3><p style="font-size:0.875rem;color:#6b7280">Hosting, domains, email, analytics — the real monthly stack costs broken down by stage.</p></a>
-<a href="/cost-analysis/llc-formation-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">LLC Formation Costs by State</h3><p style="font-size:0.875rem;color:#6b7280">Filing fees, registered agent, annual reports — what it costs to form an anonymous LLC.</p></a>
-<a href="/cost-analysis/tools-stack-costs" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">AI Tools Stack: What You Actually Need to Pay For</h3><p style="font-size:0.875rem;color:#6b7280">ChatGPT, Claude, Midjourney, coding tools — which AI tools are essential vs nice-to-have.</p></a>
-<a href="/cost-analysis/first-year-budget" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">First-Year Budget: $0 to $4K/month MRR</h3><p style="font-size:0.875rem;color:#6b7280">Month-by-month spending plan from idea validation to $4K recurring revenue.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3395,6 +3400,12 @@ ${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", 
 }
 
 function howToHubBodyHtml(): string {
+  // Derived from howToGuides — the SAME array prerender-meta.mjs iterates to emit
+  // /how-to/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = howToGuides
+    .map((x) => `<a href="/how-to/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-step guides for building a micro-SaaS while employed — validation, building, launching, and growing")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3416,11 +3427,7 @@ ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-s
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All How-To Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/how-to/validate-idea-in-48-hours" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Validate a Micro-SaaS Idea in 48 Hours</h3><p style="font-size:0.875rem;color:#6b7280">The exact validation framework — landing page, traffic test, pre-sell, go/no-go decision.</p></a>
-<a href="/how-to/start-without-coding" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Start a SaaS Without Knowing How to Code</h3><p style="font-size:0.875rem;color:#6b7280">No-code tools, AI-assisted coding, and when to hire help — the non-technical founder's guide.</p></a>
-<a href="/how-to/get-first-10-customers" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Get Your First 10 Paying Customers</h3><p style="font-size:0.875rem;color:#6b7280">Direct outreach templates, community mining, and the pre-sell playbook for zero-audience founders.</p></a>
-<a href="/how-to/build-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Build a Business While Employed (Without Getting Caught)</h3><p style="font-size:0.875rem;color:#6b7280">Time management, device separation, entity structuring, and compliance for employed founders.</p></a>
-<a href="/how-to/stay-anonymous" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">How to Stay Anonymous Online as a Founder</h3><p style="font-size:0.875rem;color:#6b7280">Anonymous LLC, pseudonymous brands, digital footprint cleanup, and operational security.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3433,6 +3440,12 @@ ${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-s
 }
 
 function isItLegalHubBodyHtml(): string {
+  // Derived from isItLegalPages — the SAME array prerender-meta.mjs iterates to emit
+  // /is-it-legal/<slug>. The 5 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = isItLegalPages
+    .map((x) => `<a href="/is-it-legal/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal analysis of non-competes, IP ownership, moonlighting policies, and anonymous LLCs for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3453,11 +3466,7 @@ ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal 
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">All Legal Guides</h2>
 <div style="display:grid;gap:1rem">
-<a href="/is-it-legal/non-compete-enforceable" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is Your Non-Compete Actually Enforceable?</h3><p style="font-size:0.875rem;color:#6b7280">State-by-state enforceability, reasonable scope tests, and the 2024 FTC non-compete ban explained.</p></a>
-<a href="/is-it-legal/work-on-side-project" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Work on a Side Project While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">Moonlighting policies, duty of loyalty, and when your employer can claim your side work.</p></a>
-<a href="/is-it-legal/anonymous-llc" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Form an Anonymous LLC?</h3><p style="font-size:0.875rem;color:#6b7280">Which states allow anonymous LLCs, what information is public, and how privacy actually works.</p></a>
-<a href="/is-it-legal/use-ai-at-work" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Is It Legal to Use AI Tools Built at Work for Your Side Business?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment clauses, work-for-hire doctrine, and the danger of using employer resources.</p></a>
-<a href="/is-it-legal/own-ip-while-employed" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">Who Owns the IP You Create While Employed?</h3><p style="font-size:0.875rem;color:#6b7280">IP assignment agreements, outside-hours clauses, and how to protect your side project IP.</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3954,6 +3963,12 @@ ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Pro
 }
 
 function milestonesHubBodyHtml(): string {
+  // Derived from revenueMilestones — the SAME array prerender-meta.mjs iterates to emit
+  // /milestones/<slug>. The 4 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = revenueMilestones
+    .map((x) => `<a href="/milestones/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage micro-SaaS revenue milestone guides — pricing, team needs, and distribution at each level")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -3974,10 +3989,7 @@ ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage mic
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Milestones</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/milestones/reaching-0-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">Your first paying customers and validation</p></a>
-<a href="/milestones/reaching-500-to-1000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 to $1K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Consistency and market fit</p></a>
-<a href="/milestones/reaching-1000-to-2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$1K to $2K MRR</h3><p style="font-size:0.875rem;color:#6b7280">Growth and optimization</p></a>
-<a href="/milestones/reaching-2000-to-4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K to $4K MRR</h3><p style="font-size:0.875rem;color:#6b7280">The freedom number zone</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -3990,6 +4002,12 @@ ${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage mic
 }
 
 function timelineHubBodyHtml(): string {
+  // Derived from timelines — the SAME array prerender-meta.mjs iterates to emit
+  // /timeline/<slug>. The 2 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = timelines
+    .map((x) => `<a href="/timeline/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-SaaS timelines for employed founders — what to do and expect at each stage")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4010,8 +4028,7 @@ ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-Saa
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Timelines</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/timeline/zero-to-first-customer" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to First Customer</h3><p style="font-size:0.875rem;color:#6b7280">90-day timeline from idea to paying user</p></a>
-<a href="/timeline/zero-to-500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">Zero to $500 MRR</h3><p style="font-size:0.875rem;color:#6b7280">6-month timeline to consistent revenue</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4105,6 +4122,12 @@ ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marke
 }
 
 function costOfWaitingHubBodyHtml(): string {
+  // Derived from costOfWaitingPages — the SAME array prerender-meta.mjs iterates to emit
+  // /cost-of-waiting/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = costOfWaitingPages
+    .map((x) => `<a href="/cost-of-waiting/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true cost of delaying your micro-SaaS — how much recurring revenue you lose by waiting another year")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4126,9 +4149,7 @@ ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true c
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">See the Cost for Your Salary</h2>
 <p style="font-size:1rem;color:#4b5563;margin-bottom:1.5rem">Cost-of-waiting projections for different salary brackets and time horizons:</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-<a href="/cost-of-waiting/1-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 1 year</h3><p style="font-size:0.875rem;color:#6b7280">See what 1 year of delay costs at $100K salary</p></a>
-<a href="/cost-of-waiting/3-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 3 years</h3><p style="font-size:0.875rem;color:#6b7280">3-year delay cost at $100K salary</p></a>
-<a href="/cost-of-waiting/5-years-100k-salary" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100K salary, 5 years</h3><p style="font-size:0.875rem;color:#6b7280">5-year delay cost at $100K salary</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4152,6 +4173,12 @@ ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true c
 }
 
 function breakEvenHubBodyHtml(): string {
+  // Derived from breakEvenPages — the SAME array prerender-meta.mjs iterates to emit
+  // /break-even/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = breakEvenPages
+    .map((x) => `<a href="/break-even/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Break-even analysis for micro-SaaS — month-by-month projections based on revenue tiers and costs")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4172,9 +4199,7 @@ ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Br
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Break-Even Scenarios</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-<a href="/break-even/500-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500 MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $500/month micro-SaaS</p></a>
-<a href="/break-even/2000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$2K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $2K/month micro-SaaS</p></a>
-<a href="/break-even/4000-mrr" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$4K MRR Break-Even</h3><p style="font-size:0.875rem;color:#6b7280">Break-even timeline for a $4K/month micro-SaaS (freedom number)</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4187,6 +4212,12 @@ ${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Br
 }
 
 function budgetHubBodyHtml(): string {
+  // Derived from budgetPages — the SAME array prerender-meta.mjs iterates to emit
+  // /budget/<slug>. The 4 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = budgetPages
+    .map((x) => `<a href="/budget/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Budget guides for starting a micro-SaaS — what you get at each spending level from $0 to premium")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4207,10 +4238,7 @@ ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Bud
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Budget Levels</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/budget/0-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$0 Budget</h3><p style="font-size:0.875rem;color:#6b7280">Everything you need is free</p></a>
-<a href="/budget/50-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$50/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Basic pro tools</p></a>
-<a href="/budget/100-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$100/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Comfortable stack</p></a>
-<a href="/budget/500-dollars" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">$500/month Budget</h3><p style="font-size:0.875rem;color:#6b7280">Premium everything</p></a>
+${links}
 </div>
 </div>
 </section>
@@ -4223,6 +4251,12 @@ ${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Bud
 }
 
 function hoursHubBodyHtml(): string {
+  // Derived from hoursPages — the SAME array prerender-meta.mjs iterates to emit
+  // /hours/<slug>. The 3 cards here were hardcoded under a naming scheme
+  // the data never used, so every one of them 404'd.
+  const links = hoursPages
+    .map((x) => `<a href="/hours/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
+    .join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmaps for building a micro-SaaS with 1-10 hours per week")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
@@ -4243,9 +4277,7 @@ ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmap
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Browse Time Commitments</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-<a href="/hours/5-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">5 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">The sweet spot for employed founders</p></a>
-<a href="/hours/10-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">10 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Accelerated timeline</p></a>
-<a href="/hours/3-hours-per-week" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-weight:700;color:#111827">3 Hours/Week</h3><p style="font-size:0.875rem;color:#6b7280">Minimum viable commitment</p></a>
+${links}
 </div>
 </div>
 </section>

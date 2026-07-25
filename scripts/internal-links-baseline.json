@@ -1,34 +1,4 @@
 {
   "generated": "manual",
-  "allow": [
-    "/break-even/2000-mrr",
-    "/break-even/4000-mrr",
-    "/break-even/500-mrr",
-    "/budget/50-dollars",
-    "/calculators/idea-validator",
-    "/cost-analysis/first-year-budget",
-    "/cost-analysis/llc-formation-costs",
-    "/cost-analysis/monthly-operating-costs",
-    "/cost-analysis/starting-from-zero",
-    "/cost-analysis/tools-stack-costs",
-    "/cost-of-waiting/1-years-100k-salary",
-    "/cost-of-waiting/3-years-100k-salary",
-    "/cost-of-waiting/5-years-100k-salary",
-    "/hours/3-hours-per-week",
-    "/how-to/build-while-employed",
-    "/how-to/get-first-10-customers",
-    "/how-to/start-without-coding",
-    "/how-to/stay-anonymous",
-    "/is-it-legal/anonymous-llc",
-    "/is-it-legal/non-compete-enforceable",
-    "/is-it-legal/own-ip-while-employed",
-    "/is-it-legal/use-ai-at-work",
-    "/is-it-legal/work-on-side-project",
-    "/milestones/reaching-0-to-500-mrr",
-    "/milestones/reaching-1000-to-2000-mrr",
-    "/milestones/reaching-2000-to-4000-mrr",
-    "/milestones/reaching-500-to-1000-mrr",
-    "/timeline/zero-to-500-mrr",
-    "/timeline/zero-to-first-customer"
-  ]
+  "allow": []
 }
