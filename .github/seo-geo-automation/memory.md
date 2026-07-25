@@ -13,7 +13,9 @@
 - Blog listing and individual posts now use SEOHead with proper Article JSON-LD
 - AI crawlers explicitly allowed in robots.txt (GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, ClaudeBot, Applebot-Extended)
 - llms.txt created with all public pages listed
-- OG image URL (`/og-image.png`) is a TODO — image file does not exist yet
+- OG image `/og-image.png` EXISTS and ships (1200x630 PNG, tracked in git,
+  serves HTTP 200 live; `/og-image.webp` too) — verified 2026-07-25. Earlier
+  entries claiming it was missing were wrong; do not re-report it.
 
 ### Keyword Targets
 - "build side income while employed"

@@ -14,8 +14,17 @@ Do not use phrases like "corporate managers aged 35-45" or similar demographic d
 ### Blog pages were using DOM manipulation
 Before this fix, `Blog.tsx` and `BlogPost.tsx` used `document.title` and `document.querySelector` to set meta tags. This is fragile in SPAs. Always use the `SEOHead` component.
 
-### OG image does not exist
-`og-image.png` is referenced in meta tags but the file hasn't been created. This means social media previews will show a broken image. Needs to be created (1200x630px).
+### Do not claim a file is missing unless the ASSET INVENTORY says so
+For ~5 audit runs this file asserted "og-image.png is referenced but hasn't
+been created". That was false the whole time: `public/og-image.png` is a
+1200x630 PNG, tracked in git, and `https://invisibleexit.com/og-image.png`
+returns HTTP 200 (verified 2026-07-25). The audit prompt never included a
+listing of `public/`, so the model inferred absence from silence — and this
+file then fed the false claim back into every later run.
+
+The repo context now carries an `ASSET INVENTORY (public/)` section. Treat it
+as the only evidence about which non-page files exist. If a path is in that
+list, it exists — do not report it missing.
 
 ### Brand colors are blue-based only
 Never use gold/amber accents. Stick to the homepage's blue palette (#1B2A4A, #3B82F6, #60A5FA).

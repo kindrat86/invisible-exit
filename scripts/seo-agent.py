@@ -172,7 +172,60 @@ def collect_repo_context() -> str:
                 content = content[:8000] + "\n... [truncated]"
             parts.append(f"--- FILE: {f} ---\n{content}")
 
+    inventory = collect_asset_inventory()
+    if inventory:
+        parts.append(f"--- ASSET INVENTORY (public/) ---\n{inventory}")
+
     return "\n\n".join(parts) if parts else "[No SEO files found]"
+
+
+def collect_asset_inventory() -> str:
+    """List the non-page assets that ship in public/.
+
+    Without this the model only ever saw meta tags REFERENCING assets, never
+    evidence of the assets themselves — so it inferred absence from silence
+    and reported `og-image.png` as missing on every run for weeks, while the
+    file was tracked in git and serving 200. The 4005-page HTML fleet is
+    deliberately excluded; it is covered by the sitemap checks.
+    """
+    public_dir = REPO_ROOT / "public"
+    if not public_dir.is_dir():
+        return ""
+
+    asset_suffixes = {
+        ".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".ico", ".avif",
+        ".txt", ".xml", ".json", ".pdf", ".woff", ".woff2",
+    }
+    image_suffixes = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".ico", ".avif"}
+    root_rows = []
+    by_dir = {}
+    for path in sorted(public_dir.rglob("*")):
+        if not path.is_file() or path.suffix.lower() not in asset_suffixes:
+            continue
+        rel = path.relative_to(public_dir)
+        if any(part.startswith(".") for part in rel.parts):
+            continue  # .vercel/, .well-known/ — build and protocol internals
+        if len(rel.parts) == 1:
+            root_rows.append(f"/{rel} ({path.stat().st_size} bytes)")
+        elif path.suffix.lower() in image_suffixes:
+            # Per-page sidecars across the 4005-page fleet (public/og/ alone
+            # holds ~1070 cards) get summarised, not enumerated — listing
+            # them would cost more prompt than the rest of the audit.
+            by_dir.setdefault("/" + rel.parts[0], []).append(rel.name)
+
+    rows = list(root_rows)
+    for directory, names in sorted(by_dir.items()):
+        if len(names) <= 10:
+            rows.extend(f"{directory}/{n}" for n in names)
+        else:
+            rows.append(f"{directory}/ — {len(names)} image files (e.g. {names[0]})")
+
+    if not rows:
+        return ""
+    return (
+        "These files EXIST and are served from the site root. Any path listed "
+        "here is present — never report it as missing.\n" + "\n".join(rows)
+    )
 
 
 def run_audit():
@@ -218,6 +271,10 @@ Rules:
 2. Only suggest changes for public-facing marketing pages.
 3. Never mention the target audience by name.
 4. If everything passes, say so — don't invent issues.
+5. Never report a file as missing unless it is absent from the ASSET
+   INVENTORY section of the repo context. That list is the only evidence
+   about which non-page files exist; a meta tag referencing a path is not
+   evidence that the path is broken.
 """
 
     user_prompt = f"""Run a {AUDIT_MODE} audit for {DATE}.
@@ -316,7 +373,18 @@ def apply_changes(result: dict):
             )
             if proc2.returncode != 0:
                 print(f"git apply --3way also failed: {proc2.stderr}")
-                print("Diff saved but not applied automatically.")
+                # Do NOT leave the .diff in the tree: `git add -A` below would
+                # commit the temp artifact to main, and the PR would claim the
+                # changes landed when nothing was applied.
+                print(
+                    "DIFF NOT APPLIED — discarding it; the findings below still stand."
+                )
+                diff_path.unlink(missing_ok=True)
+                result["changes_made"] = [
+                    "NOTE: the proposed diff did not apply cleanly and was discarded — "
+                    "no code changes were made this run."
+                ] + list(changes)
+                changes = result["changes_made"]
             else:
                 print("Diff applied with 3-way merge.")
                 diff_path.unlink()
