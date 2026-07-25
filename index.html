@@ -65,41 +65,42 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- Analytics deferred until after first paint -->
+    <!-- Analytics deferred until after first paint.
+         NO AD / RETARGETING PIXELS HERE — deliberate, do not re-add. Removed 2026-07-25:
+         Meta 1278454893564023, Reddit a2_iqsi13q5oijk, LinkedIn Insight 7293451,
+         Google Ads AW-18046014876, and the GTM container GTM-T8X36MNB / GT-KTTZ3L7C.
+         The site is operated from the EU with no consent mechanism, so ePrivacy Art 5(3)
+         required prior consent for every one of them; meanwhile 180 days of PostHog across
+         the portfolio recorded 0 gclid, 0 rdt_cid and 0 cpc traffic — no campaign has ever
+         run, so they were pure liability. The GTM container went too: it can inject
+         arbitrary remote tags without a code change, which would silently defeat the CSP.
+         GA4 is kept as plain analytics. If retargeting is ever funded, ship a consent
+         gate FIRST. The ad origins are also gone from the CSP in vercel.json, so anything
+         re-added here fails loudly instead of tracking silently. -->
     <script>
       // Defer analytics loading until browser is idle
       window.addEventListener('load', function() {
-        // Google tag (gtag.js)
+        // Google Analytics 4 (gtag.js) — analytics only, no Ads/Tag-Manager containers
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GT-KTTZ3L7C');
         gtag('config', 'G-1LJVDK6QJN');
-        gtag('config', 'AW-18046014876');
         var ga = document.createElement('script');
         ga.async = true;
-        ga.src = 'https://www.googletagmanager.com/gtag/js?id=GT-KTTZ3L7C';
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-1LJVDK6QJN';
         document.head.appendChild(ga);
 
-        // Google Tag Manager
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-T8X36MNB');
-
-        // Reddit Pixel
-        !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_iqsi13q5oijk",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_iqsi13q5oijk');rdt('track', 'PageVisit');
+        // Clears identifiers the removed pixels already dropped into visitors' browsers.
+        // Inert now, but they were set without consent, so delete rather than wait out
+        // the expiry. Safe to drop once returning visitors have cycled through.
+        (function(){var s=['_rdt_uuid','_fbp','_fbc','_gcl_au'],h=location.hostname,
+        d=['','; domain='+h,'; domain=.'+h.replace(/^www\./,'')];
+        for(var i=0;i<s.length;i++){if(document.cookie.indexOf(s[i]+'=')<0)continue;
+        for(var j=0;j<d.length;j++){document.cookie=s[i]+'=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT'+d[j];}}})();
 
         // PostHog is initialized once by the app bundle (src/integrations/posthog.ts).
         // Do NOT add a second init here — it double-counts events and un-masks
         // session-recording inputs.
-
-        // Meta (Facebook) Pixel
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1278454893564023');fbq('track','PageView');
-
-        // LinkedIn Insight Tag
-        _linkedin_partner_id = "7293451";window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];window._linkedin_data_partner_ids.push(_linkedin_partner_id);(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";s.parentNode.insertBefore(b,s)})(window.lintrk);
       });
     </script>
 
@@ -448,13 +449,8 @@
 
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:outline-none">Skip to content</a>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8X36MNB"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- Meta Pixel (noscript) -->
-    <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1278454893564023&ev=PageView&noscript=1" /></noscript>
-    <!-- LinkedIn (noscript) -->
-    <noscript><img height="1" width="1" style="display:none" alt="" src="https://px.ads.linkedin.com/collect/?pid=7293451&fmt=gif" /></noscript>
+    <!-- The GTM iframe and the Meta / LinkedIn <noscript> beacons were removed 2026-07-25
+         together with their script-side pixels — see the note in <head>. Do not re-add. -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>

@@ -78,11 +78,27 @@ const Privacy = () => {
             secure, and we cannot guarantee absolute security.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies, Analytics and Advertising</h2>
           <p className="text-gray-600 mb-6">
-            We use essential cookies to enable core platform functionality. We may also
-            use analytics cookies to understand how visitors interact with our platform.
-            You can control cookie preferences through your browser settings.
+            <strong>We run no advertising or retargeting pixels.</strong> Invisible Exit does not
+            use the Meta/Facebook pixel, the Reddit pixel, the LinkedIn Insight Tag, Google Ads
+            tags or Google Tag Manager, and we do not build or share advertising audiences. All of
+            those were present on this site until 25 July 2026 and have been removed; any
+            identifier they left in your browser is deleted automatically on your next visit.
+          </p>
+          <p className="text-gray-600 mb-6">
+            We use essential cookies to enable core platform functionality. For analytics we use
+            two processors:{' '}
+            <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">PostHog</a>,
+            on its EU-hosted infrastructure, and Google Analytics 4. Between them they record page
+            views (URL, referrer, and the approximate country and browser derived from your
+            request) and a small set of product events, so we can tell which pages work. Both store
+            an identifier in your browser. Neither is used to track you across other websites.
+          </p>
+          <p className="text-gray-600 mb-6">
+            You can control cookie preferences through your browser settings. Blocking{' '}
+            <code>eu.i.posthog.com</code> and <code>googletagmanager.com</code> disables analytics
+            entirely without affecting how the site works.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Your Rights</h2>
