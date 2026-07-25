@@ -13,11 +13,540 @@
       "url": "https://invisibleexit.com"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/api/mcp": {
+      "get": {
+        "summary": "MCP server manifest",
+        "description": "Discovery document: server info, capabilities, protocol version and the tool list (names and descriptions only).",
+        "operationId": "getMcpManifest",
+        "tags": [
+          "agent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Server manifest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "serverInfo": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "capabilities": {
+                      "type": "object"
+                    },
+                    "protocolVersion": {
+                      "type": "string"
+                    },
+                    "tools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "enum": [
+                              "search_freedom_calculator",
+                              "search_side_business_guides",
+                              "validate_idea"
+                            ]
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "_meta": {
+                      "type": "object",
+                      "description": "Install hints, e.g. `npx mcp-remote https://invisibleexit.com/api/mcp`."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "MCP JSON-RPC (Streamable HTTP)",
+        "description": "Model Context Protocol over JSON-RPC. Supports `initialize`, `tools/list`, `tools/call` and the `notifications/initialized` notification. Batch requests (a JSON array) are accepted. No auth — tools are read-only.",
+        "operationId": "postMcpRpc",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "JSON-RPC 2.0 request, or an array of them for a batch.",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "const": "2.0"
+                  },
+                  "id": {
+                    "description": "Omit for notifications; the server then replies 202 with no body.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "initialize",
+                      "notifications/initialized",
+                      "tools/list",
+                      "tools/call"
+                    ]
+                  },
+                  "params": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "method"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON-RPC result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "id": {},
+                    "result": {
+                      "type": "object"
+                    },
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Notification accepted (request had no `id`); empty body."
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/a2a": {
+      "get": {
+        "summary": "A2A agent card",
+        "description": "Agent-to-agent discovery card: protocol version, transport, capabilities and the skill list.",
+        "operationId": "getAgentCard",
+        "tags": [
+          "agent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Agent card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "protocolVersion": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "preferredTransport": {
+                      "type": "string"
+                    },
+                    "capabilities": {
+                      "type": "object"
+                    },
+                    "skills": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "enum": [
+                              "privacy_scan",
+                              "account_deletion_guide"
+                            ]
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "examples": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "A2A JSON-RPC",
+        "description": "`rpc.discover` and `agent/card` both return the agent card. `faq.search` takes `params.query` and returns case-insensitive substring matches over the FAQ set. Any other method returns the agent summary and skill list.",
+        "operationId": "postAgentRpc",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "JSON-RPC 2.0 request.",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "const": "2.0"
+                  },
+                  "id": {
+                    "description": "Omit for notifications; the server then replies 202 with no body.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "rpc.discover",
+                      "agent/card",
+                      "faq.search"
+                    ]
+                  },
+                  "params": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "method"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON-RPC result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "id": {},
+                    "result": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/nlweb": {
+      "get": {
+        "summary": "NLWeb knowledge-base query",
+        "description": "Returns the knowledge base as a schema.org ItemList. With `query`, returns only entries whose question or answer contains it (case-insensitive substring); without it, returns everything.",
+        "operationId": "getNlwebQuery",
+        "tags": [
+          "agent"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Case-insensitive substring filter. Omit to list all entries."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "schema.org ItemList of matching questions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@context": {
+                      "type": "string",
+                      "const": "https://schema.org"
+                    },
+                    "@type": {
+                      "type": "string",
+                      "const": "ItemList"
+                    },
+                    "name": {
+                      "type": "string",
+                      "const": "InvisibleExit Knowledge Base"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "numberOfItems": {
+                      "type": "integer"
+                    },
+                    "itemListElement": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "@type": {
+                            "type": "string",
+                            "const": "Question"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "acceptedAnswer": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "NLWeb knowledge-base query (POST)",
+        "description": "Same as GET, with the term in the JSON body instead of the query string.",
+        "operationId": "postNlwebQuery",
+        "tags": [
+          "agent"
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "schema.org ItemList of matching questions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@context": {
+                      "type": "string",
+                      "const": "https://schema.org"
+                    },
+                    "@type": {
+                      "type": "string",
+                      "const": "ItemList"
+                    },
+                    "name": {
+                      "type": "string",
+                      "const": "InvisibleExit Knowledge Base"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "numberOfItems": {
+                      "type": "integer"
+                    },
+                    "itemListElement": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "@type": {
+                            "type": "string",
+                            "const": "Question"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "acceptedAnswer": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stealth-badge": {
+      "get": {
+        "summary": "Stealth Score SVG badge",
+        "description": "Returns an embeddable SVG badge for a Stealth Score. The score is clamped to 0-100; the band and colour follow it (>=75 WELL-STEALTHED green, >=50 EXPOSED EDGES amber, otherwise HIGH RISK red). Cached for 24h.",
+        "operationId": "getStealthBadge",
+        "tags": [
+          "embed"
+        ],
+        "parameters": [
+          {
+            "name": "score",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "default": 0
+            },
+            "description": "Clamped to 0-100; unparseable values become 0."
+          },
+          {
+            "name": "style",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "default",
+                "benchmark"
+              ],
+              "default": "default"
+            },
+            "description": "`benchmark` renders the wider 320x64 variant with a percentile line; `default` is 280x64."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SVG badge",
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "tags": [
     {
-      "name": "content",
-      "description": "Site content"
+      "name": "agent",
+      "description": "Agent-facing discovery and query endpoints (MCP, A2A, NLWeb)"
+    },
+    {
+      "name": "embed",
+      "description": "Embeddable assets"
     }
   ]
 }
