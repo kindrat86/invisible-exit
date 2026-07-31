@@ -1705,7 +1705,7 @@ const Index = () => {
 
                 <div className="flex items-center justify-between text-xs text-muted-foreground/50">
                   <span>That's $11.64/year</span>
-                  <span className="text-success font-bold">99.9% off market value</span>
+                  <span className="text-success font-bold">Founding price, locked for life</span>
                 </div>
               </div>
 
@@ -1718,30 +1718,24 @@ const Index = () => {
               </div>
             </div>
 
-            {/* ── BRUNSON CH 12: SOCIAL PROOF AT THE DECISION POINT ── */}
-            {/* Testimonial placed INSIDE the stack, not above it. This is the "yes, this is real" moment. */}
+            {/* ── HONESTY AT THE DECISION POINT ── */}
+            {/* No customers yet means no testimonials yet. A straight founder's note
+                converts better than an invented one — and doesn't poison trust. */}
             <div className="mt-6 max-w-lg mx-auto bg-white/60 backdrop-blur border border-success/20 rounded-xl p-5 animate-fade-up" style={{ animationDelay: "580ms" }}>
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-success to-primary flex items-center justify-center shrink-0 text-white font-bold text-sm">
-                  SK
+                  M
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm font-bold text-foreground">Sara K.</span>
-                    <span className="text-[11px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">✓ Founding Member</span>
-                    <span className="text-[11px] text-muted-foreground/60">VP Product, $180K</span>
+                    <span className="text-sm font-bold text-foreground">A note from the founder</span>
+                    <span className="text-[11px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">Building in public</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed italic">
-                    "I almost didn't join because $0.97 felt too cheap to be real. Then I realized — that's less than the
-                    coffee I was drinking while doom-scrolling LinkedIn. Three months in, I've validated two ideas and my
-                    invisibility score is 94. I wish I'd started six months ago."
+                    "Why $0.97? Because I want the price to be a non-decision. You're joining early, while I'm still
+                    building this in public — so you get the founding price locked for life, and I get people using the
+                    tools and telling me what to fix. If it's not for you, cancel in two clicks."
                   </p>
-                  <div className="flex items-center gap-1 mt-2">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} className="w-3 h-3 fill-amber-400 text-amber-400" />
-                    ))}
-                    <span className="text-[11px] text-muted-foreground/60 ml-1">Verified · Joined Month 1</span>
-                  </div>
                 </div>
               </div>
             </div>
