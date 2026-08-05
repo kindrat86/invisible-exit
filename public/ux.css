@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 { margin-bottom: 0.5em; }
 p { margin-bottom: 1.25em; max-width: 65ch; }
 
 /* ── 4. LINKS ───────────────────────────────────────────────────── */
-a:not([class*="bg-"]):not([role="button"]) {
+a:not([class*="bg-"]):not([role="button"]):not([class*="btn"]):not([class*="text-"]) {
   color: var(--ux-accent);
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.08em;
@@ -83,7 +83,7 @@ a:not([class*="bg-"]):not([role="button"]) {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-a:not([class*="bg-"]):not([role="button"]):hover { color: var(--ux-accent-hover); }
+a:not([class*="bg-"]):not([role="button"]):not([class*="btn"]):not([class*="text-"]):hover { color: var(--ux-accent-hover); }
 
 /* ── 5. TOUCH-FRIENDLY INTERACTIVE TARGETS ──────────────────────── */
 button, .btn, [role="button"],
@@ -761,7 +761,7 @@ body.nav-open { overflow: hidden; }
   body { font-size: 12pt; line-height: 1.5; }
   #ux-reading-progress, #ux-back-to-top, .ux-sticky-cta, .ux-fab,
   .ux-toast-container, .ux-offline-bar, [data-mobile-nav] { display: none !important; }
-  a:not([class*="bg-"]):not([role="button"]) { text-decoration: underline; }
+  a:not([class*="bg-"]):not([role="button"]):not([class*="btn"]):not([class*="text-"]) { text-decoration: underline; }
   a[href^="http"]::after { content: ' (' attr(href) ')'; font-size: 0.8em; }
 }
 
@@ -848,7 +848,7 @@ body.nav-open { overflow: hidden; }
    signals.gitdealflow.com). Link-buttons paint their own background
    and must keep their own text colour. Do not reintroduce a bare
    `a { color: ... }` rule in this file. */
-a[class*="bg-"], a[role="button"], button a { color: revert; }
+button a { color: inherit; }
 
 
 

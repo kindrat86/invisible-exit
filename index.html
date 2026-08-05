@@ -121,7 +121,8 @@
         "https://github.com/kindrat86",
         "https://www.youtube.com/@invisibleexit",
         "https://x.com/invisibleexit",
-        "https://www.indiehackers.com/product/invisible-exit"
+        "https://www.indiehackers.com/product/invisible-exit",
+        "https://hirenika.com"
       ],
       "knowsAbout": [
         "Micro-SaaS",
@@ -558,7 +559,7 @@
     <span style="background:rgba(0,212,170,0.12);color:#00d4aa;padding:4px 14px;border-radius:20px;font-size:.78rem;font-weight:600">FREE · 5-PART EMAIL SERIES</span>
     <h2 style="font-size:1.6rem;margin:16px 0 8px;line-height:1.3;color:#e8eaed">The Faceless Founder Playbook</h2>
     <p style="font-size:1rem;color:#94a3b8;margin-bottom:24px">How corporate managers build $4,000/mo in anonymous side revenue without code, without quitting, without being found out.</p>
-    <form action="https://invisibleexit.com/subscribe" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto">
+    <form action="/api/newsletter-welcome" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto" onsubmit="var f=this,b=f.querySelector('button');fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:f.email.value,source:'homepage_squeeze'})}).then(function(r){if(r.ok){f.innerHTML='<p style=&quot;color:#00d4aa;font-weight:600&quot;>Check your inbox — the first email is on its way.</p>';}else{b.disabled=false;b.textContent='Try again';}}).catch(function(){b.disabled=false;b.textContent='Try again';});b.disabled=true;b.textContent='Sending…';return false;">
       <input type="email" name="email" placeholder="manager@company.com" required style="padding:14px 18px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e8eaed;font-size:1rem;outline:none">
       <button type="submit" style="background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer">Send Me the Free Playbook</button>
     </form>
@@ -772,6 +773,12 @@
                 <span class="network-dot" style="background:#14B8A6"></span>
                 <span class="network-name">Sipi.bot</span>
                 <span class="network-tagline">AI Infrastructure</span>
+            </a>
+            <a href="https://hirenika.com" class="network-card" 
+               title="hirenika.com: AI employees for small business">
+                <span class="network-dot" style="background:#F97316"></span>
+                <span class="network-name">hirenika.com</span>
+                <span class="network-tagline">AI employees for small business</span>
             </a>
     </nav>
 </section>
