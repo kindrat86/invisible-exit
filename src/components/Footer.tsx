@@ -305,7 +305,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://x.com/invisibleexit"
+                href="https://x.com/sipiteno"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/60 hover:text-white hover:bg-white/15 transition-colors"
