@@ -362,12 +362,12 @@
     },
     {
       "source": "/alternatives-to/incognito-mode",
-      "destination": "/alternatives-to/chrome-private-browsing",
+      "destination": "/alternatives/incognito-mode",
       "permanent": true
     },
     {
       "source": "/alternatives-to/incognito-mode.html",
-      "destination": "/alternatives-to/chrome-private-browsing",
+      "destination": "/alternatives/incognito-mode",
       "permanent": true
     },
     {
