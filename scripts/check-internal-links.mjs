@@ -165,7 +165,14 @@ for (const name of TEXT_SURFACES) {
     // link, and counting it twice would report 2x the real number of dead URLs.
     const ours = [...new Set(raws.map(hrefFrom).filter(Boolean))];
     if (ours.length === 0) { kept.push(line); continue; }
-    const bad = ours.filter((h) => !servedByFile(h) && !servedByRouting(h));
+    // STRICTER THAN THE HTML SCAN, deliberately. A vercel rewrite matching the
+    // source proves only that routing accepts the path — not that its
+    // destination exists. `/vs/:slug -> /vs/:slug.html` matched
+    // /vs/marketing-manager-vs-micro-saas-founder and let it survive the first
+    // prune, but the .html was never built and it 404s in production. For a file
+    // we hand to AI crawlers, "might route somewhere" is not good enough: the
+    // URL has to actually resolve to something on disk.
+    const bad = ours.filter((h) => !servedByFile(h));
     if (bad.length === ours.length) { dead.push(...bad); continue; }
     kept.push(line);
   }
