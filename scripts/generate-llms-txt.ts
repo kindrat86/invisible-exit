@@ -100,6 +100,8 @@ function generateLlmsTxt(): string {
   lines.push("");
   lines.push(`- [Pro Membership](https://invisibleexit.com/pro): Pro tier — full access to all 5 AI tools`);
   lines.push(`- [Freedom Number Calculator](https://invisibleexit.com/freedom): Calculate your freedom number and MRR target`);
+  lines.push(`- [Non-Compete Scanner](https://invisibleexit.com/tools/non-compete-scanner): Free in-browser scanner that flags employment-contract clauses (non-compete, IP assignment, moonlighting bans) that could block a side business, scored against all 50 states' laws`);
+  lines.push(`- [Freedom Number Calculator Tool](https://invisibleexit.com/tools/freedom-calculator): Interactive calculator — when does side-business MRR replace your salary (tax-adjusted, embeddable)`);
   lines.push(`- [Inner Circle](https://invisibleexit.com/inner-circle): Private community of employed founders building invisible revenue`);
   lines.push(`- [Affiliate Program](https://invisibleexit.com/affiliates): Earn recurring commissions referring Invisible Exit`);
   lines.push(`- [Dream 100](https://invisibleexit.com/dream-100): Dream 100 audience-building framework`);

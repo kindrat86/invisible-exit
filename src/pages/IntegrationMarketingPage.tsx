@@ -91,9 +91,9 @@ const INTEGRATION_TYPES = [
 ];
 
 const EMBED_WIDGET = `<iframe 
-  src="https://invisibleexit.com/freedom?embed=true" 
+  src="https://invisibleexit.com/embed/freedom-calculator.html" 
   width="100%" 
-  height="500" 
+  height="640" 
   frameborder="0"
   style="border-radius:12px; border:1px solid #e5e7eb;"
   title="Freedom Number Calculator">
