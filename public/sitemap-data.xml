@@ -81,6 +81,22 @@
     </image:image>
   </url>
   <url>
+    <loc>https://invisibleexit.com/data/golden-handcuffs-index</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-golden-handcuffs-index.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/data/micro-saas-exit-multiples</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/data-micro-saas-exit-multiples.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/salaries/product-manager</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -250,6 +250,18 @@ async function main() {
       priority: "0.9",
     },
     {
+      loc: "https://invisibleexit.com/tools/freedom-calculator",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
+    {
+      loc: "https://invisibleexit.com/tools/non-compete-scanner",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
+    {
       loc: "https://invisibleexit.com/tools",
       lastmod: today,
       changefreq: "weekly",
@@ -370,6 +382,11 @@ async function main() {
     // so submitting it would just feed Google a client-side redirect.
     { loc: "https://invisibleexit.com/network", lastmod: today, changefreq: "monthly", priority: "0.5" },
     { loc: "https://invisibleexit.com/site-index.html", lastmod: today, changefreq: "weekly", priority: "0.5" },
+    // Static research datasets (public/data/<slug>/index.html, served via /data/(.*) rewrite).
+    // These are NOT dataReports entries (those are React routes) — list them explicitly
+    // or the build-regenerated sitemap drops them.
+    { loc: "https://invisibleexit.com/data/golden-handcuffs-index", lastmod: "2026-08-13", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://invisibleexit.com/data/micro-saas-exit-multiples", lastmod: "2026-07-20", changefreq: "monthly", priority: "0.8" },
     // /for hub + audience pages (previously only listed in the now-removed orphan sitemap-pseo.xml).
     // Canonical is /for (no trailing slash); the orphan listed /for/ which 308-redirects, so it is dropped.
     { loc: "https://invisibleexit.com/for", lastmod: today, changefreq: "monthly", priority: "0.7" },
