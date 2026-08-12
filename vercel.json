@@ -954,10 +954,6 @@
       "destination": "/index.html"
     },
     {
-      "source": "/data",
-      "destination": "/index.html"
-    },
-    {
       "source": "/resources",
       "destination": "/index.html"
     },
@@ -1200,6 +1196,14 @@
     {
       "source": "/embed/stealth-score",
       "destination": "/embed/stealth-score.html"
+    },
+    {
+      "source": "/templates",
+      "destination": "/templates/index.html"
+    },
+    {
+      "source": "/templates/",
+      "destination": "/templates/index.html"
     },
     {
       "source": "/data",

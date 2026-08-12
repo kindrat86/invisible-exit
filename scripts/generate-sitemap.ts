@@ -267,6 +267,25 @@ async function main() {
       changefreq: "weekly",
       priority: "0.9",
     },
+    // Free templates hub + flagship lead magnets
+    {
+      loc: "https://invisibleexit.com/templates",
+      lastmod: today,
+      changefreq: "weekly",
+      priority: "0.9",
+    },
+    {
+      loc: "https://invisibleexit.com/templates/5-year-stealth-plan",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
+    {
+      loc: "https://invisibleexit.com/templates/non-compete-risk-assessment",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.9",
+    },
     // Funnel + Expert Secrets pages
     {
       loc: "https://invisibleexit.com/story",
