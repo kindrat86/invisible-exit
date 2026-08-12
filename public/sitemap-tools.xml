@@ -81,6 +81,22 @@
     </image:image>
   </url>
   <url>
+    <loc>https://invisibleexit.com/tools/freedom-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/tools-freedom-calculator.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/tools/non-compete-scanner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/tools-non-compete-scanner.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/stack/for-accountants</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
