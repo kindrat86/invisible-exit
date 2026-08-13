@@ -12,7 +12,7 @@ import { join } from "node:path";
 
 const HOST = "invisibleexit.com";
 const BASE = `https://${HOST}`;
-const KEY = "invisibleexit-indexnow-2026";
+const KEY = "88107c813c0a44d17323b2bef2b691d7";
 const KEY_LOCATION = `${BASE}/${KEY}.txt`;
 const STATE = join(process.cwd(), "data/.indexnow-state.json");
 
