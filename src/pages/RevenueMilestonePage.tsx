@@ -120,7 +120,7 @@ export default function RevenueMilestonePage() {
 
         <RelatedContent
           links={[
-            { to: "/data/micro-saas-revenue-benchmarks-2026", title: "Revenue Benchmarks 2026", description: "How you compare to 500+ SaaS" },
+            { to: "/data/micro-saas-exit-multiples", title: "Micro-SaaS Exit Multiples", description: "What micro-SaaS businesses sell for" },
             { to: "/calculators/freedom-number", title: "Freedom Number Calculator", description: "Your target MRR" },
             { to: "/resources/customer-acquisition-playbook", title: "Customer Acquisition Playbook", description: "Get more customers" },
           ]}

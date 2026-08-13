@@ -121,7 +121,7 @@ export default function CostOfWaitingPage() {
         <RelatedContent
           links={[
             { to: `/salaries/product-manager`, title: "Product Manager → Side Business", description: "See the math for your role" },
-            { to: "/data/micro-saas-revenue-benchmarks-2026", title: "Revenue Benchmarks 2026", description: "Real data from 500+ SaaS" },
+            { to: "/data/golden-handcuffs-index", title: "Golden Handcuffs Index", description: "Employee lock-in by industry, from BLS data" },
             { to: "/resources/micro-saas-launch-checklist", title: "30-Step Launch Checklist", description: "Start today" },
           ]}
           title="Take Action"

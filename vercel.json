@@ -291,6 +291,31 @@
   ],
   "redirects": [
     {
+      "source": "/data/micro-saas-revenue-benchmarks-2026",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/data/side-business-statistics-2026",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/data/non-compete-enforcement-by-state",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/data/micro-saas-pricing-benchmarks",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/data/churn-benchmarks-by-niche",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
       "source": "/roadmap",
       "destination": "/milestones",
       "permanent": true
