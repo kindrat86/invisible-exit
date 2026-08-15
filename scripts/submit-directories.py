@@ -27,7 +27,7 @@ SUBMISSIONS = [
         "name": "Toolify.ai",
         "url": "https://www.toolify.ai/submit/",
         "category": "Business",
-        "description": "Invisible Exit is a membership platform that helps employed professionals build anonymous recurring-revenue businesses. Five AI-powered tools cover financial planning, idea validation, legal compliance, launch automation, and anonymous brand building. From $0.97/month.",
+        "description": "Invisible Exit is a membership platform that helps employed professionals build anonymous recurring-revenue businesses. Five AI-powered tools cover financial planning, idea validation, legal compliance, launch automation, and anonymous brand building. From $9/month.",
     },
     {
         "name": "TopAI.tools",
@@ -58,7 +58,7 @@ SUBMISSIONS = [
         "name": "Easy With AI",
         "url": "https://easywithai.com/submit/",
         "category": "Business & Entrepreneurship",
-        "description": "Build a micro-SaaS side business without your employer knowing. Invisible Exit provides AI tools for freedom number calculation, idea validation, stealth compliance, launch automation, and anonymous brand building. Starting at $0.97/month.",
+        "description": "Build a micro-SaaS side business without your employer knowing. Invisible Exit provides AI tools for freedom number calculation, idea validation, stealth compliance, launch automation, and anonymous brand building. Starting at $9/month.",
     },
     {
         "name": "AI Valley",
@@ -70,7 +70,7 @@ SUBMISSIONS = [
         "name": "AI Scout",
         "url": "https://aiscout.net/submit-a-tool/",
         "category": "Business",
-        "description": "The invisible side-business platform. Invisible Exit gives employed professionals 5 AI tools to plan, validate, build, and grow anonymous micro-SaaS revenue without quitting their job or revealing their identity. Founding member price: $0.97/month.",
+        "description": "The invisible side-business platform. Invisible Exit gives employed professionals 5 AI tools to plan, validate, build, and grow anonymous micro-SaaS revenue without quitting their job or revealing their identity. Founding member price: $9/month.",
     },
     {
         "name": "AI Top Tools",
@@ -94,7 +94,7 @@ SUBMISSIONS = [
         "name": "AItools.fyi",
         "url": "https://aitools.fyi/submit",
         "category": "Business",
-        "description": "Invisible Exit turns employed professionals into anonymous micro-SaaS founders. Calculate your freedom number, validate ideas in 48 hours, stay compliant, automate launches, and build a brand without showing your face. From $0.97/month.",
+        "description": "Invisible Exit turns employed professionals into anonymous micro-SaaS founders. Calculate your freedom number, validate ideas in 48 hours, stay compliant, automate launches, and build a brand without showing your face. From $9/month.",
     },
     # TIER 3: Product launch / SaaS directories
     {
@@ -107,7 +107,7 @@ SUBMISSIONS = [
         "name": "Launching Next",
         "url": "https://www.launchingnext.com/submit/",
         "category": "SaaS",
-        "description": "Invisible Exit: AI toolkit for building an anonymous side business while employed. Includes freedom calculator, idea validator, compliance checker, launch automation, and faceless content creator. $0.97/month founding member price.",
+        "description": "Invisible Exit: AI toolkit for building an anonymous side business while employed. Includes freedom calculator, idea validator, compliance checker, launch automation, and faceless content creator. $9/month founding member price.",
     },
     {
         "name": "Startup Stash",
@@ -131,7 +131,7 @@ SUBMISSIONS = [
         "name": "Uneed",
         "url": "https://www.uneed.best/submit",
         "category": "SaaS / Productivity",
-        "description": "Invisible Exit: The faceless side-business platform. 5 AI tools for employed professionals to build anonymous micro-SaaS revenue. Freedom calculator, idea validator, ops hub, launch control, and brand manager. From $0.97/month.",
+        "description": "Invisible Exit: The faceless side-business platform. 5 AI tools for employed professionals to build anonymous micro-SaaS revenue. Freedom calculator, idea validator, ops hub, launch control, and brand manager. From $9/month.",
     },
     # TIER 4: Developer / indie communities
     {
@@ -150,7 +150,7 @@ SUBMISSIONS = [
         "name": "Indie Hackers",
         "url": "https://www.indiehackers.com/products/new",
         "category": "Micro-SaaS",
-        "description": "Invisible Exit is the faceless side-business system I built to help employed professionals generate recurring revenue anonymously. 5 AI tools — freedom calculator, idea pipeline, stealth ops, launch control, brand manager — from $0.97/mo. Built for corporate escapees who can't afford to get caught.",
+        "description": "Invisible Exit is the faceless side-business system I built to help employed professionals generate recurring revenue anonymously. 5 AI tools — freedom calculator, idea pipeline, stealth ops, launch control, brand manager — from $9/mo. Built for corporate escapees who can't afford to get caught.",
     },
     # TIER 5: Startup databases
     {
@@ -172,7 +172,7 @@ SITE = {
     "tagline": "Build a $4,000/Month Side Business Without Quitting",
     "url": "https://invisibleexit.com",
     "logo": "https://invisibleexit.com/og-image.png",
-    "pricing": "Freemium (from $0.97/month)",
+    "pricing": "Freemium (from $9/month)",
     "twitter": "https://x.com/invisibleexit",
 }
 

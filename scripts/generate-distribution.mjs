@@ -484,7 +484,7 @@ const HOOKS = [
   { text: "I'm a Managing Director earning $120K. I built $4,100/month in side revenue in 12 months working 5 hours/week. AMA about the system (not the idea):", platform: "reddit", gap: "how", awareness: "problem" },
   // Ad hooks
   { text: "⚠️ Your 0.5% equity is worth less than you think. Here's the math nobody showed you.", platform: "any", gap: "what", awareness: "unaware" },
-  { text: "5 tools. $0.97/month. Cancel anytime. If you're a corporate manager, this will change how you see your salary.", platform: "any", gap: "what", awareness: "product" },
+  { text: "5 tools. $9/month. Cancel anytime. If you're a corporate manager, this will change how you see your salary.", platform: "any", gap: "what", awareness: "product" },
 ];
 
 // ═══════════════════════════════════════════════════

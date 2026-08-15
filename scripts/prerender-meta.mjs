@@ -319,9 +319,10 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
 
   // Hreflang removed 2026-07-23: all 98 locale variants return 308 redirects —
   // no actual translated content exists. Half-broken hreflang is worse than none.
-  // Owner decision: invest in real translations or drop i18n annotations entirely.
-  // Keeping x-default self-reference for canonical signal.
-  const hreflangLinks = `    <link rel="alternate" hreflang="x-default" href="${url}" />`;
+  // Self-referencing x-default removed 2026-07-28: Google sees it as an
+  // "alternative page with proper canonical tag" signal — it creates noise
+  // without real translated content to link to.
+  const hreflangLinks = "";
 
   const metaBlock = `<!-- SEO (pre-rendered) -->
     <title>${optimizedTitle}</title>
@@ -439,7 +440,7 @@ function getRoutes() {
     meta: {
       title: "Build a Faceless Side Business Without Quitting | Invisible Exit",
       description:
-        "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $0.97/mo.",
+        "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $9/mo.",
       url: `${SITE}/`,
       type: "website",
       // No route-level jsonLd for "/": index.html already carries the
@@ -1615,7 +1616,7 @@ function getRoutes() {
           mainEntity: [
             {
               "@type": "Question",
-              name: "How is this different from the $0.97/month or $17.99/month plans?",
+              name: "How is this different from the $9/month or $17.99/month plans?",
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "Those are DIY tools. The Intensive is done-with-you. I personally review your situation, validate your ideas, audit your stealth setup, and build your roadmap.",
@@ -1722,7 +1723,7 @@ function getRoutes() {
   routes.push({
     path: "/pro",
     meta: {
-      title: "Invisible Exit Pro — Group Coaching + Community ($47/month)",
+      title: "Invisible Exit Pro — Group Coaching + Community ($29/month)",
       description:
         "Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support.",
       url: `${SITE}/pro`,
@@ -2596,7 +2597,10 @@ function getRoutes() {
     { path: "/guides", title: "State-by-State Anonymous LLC Guide | Invisible Exit", desc: "Complete guides to forming anonymous LLCs in all 50 states. Filing fees, privacy protections, and non-compete analysis for employed founders." },
     { path: "/ideas", title: "Micro-SaaS Ideas by Profession | Invisible Exit", desc: "500+ micro-SaaS ideas organized by profession. Find ideas tailored to your industry expertise, validated by AI for revenue potential." },
     { path: "/calculators", title: "Free Calculators for Employed Founders | Invisible Exit", desc: "Freedom number, break-even, timeline, and invisibility calculators for corporate managers building side businesses." },
-    { path: "/data", title: "Data Reports for Side Business Founders | Invisible Exit", desc: "Revenue benchmarks, salary comparisons, and market data for corporate managers building micro-SaaS businesses on the side." },
+    // "/data" removed 2026-08-13: the React route /data (DataReportPage without a slug)
+    // renders "Report not found" — a soft 404. The real hub is the STATIC
+    // public/data/index.html (vercel.json rewrites /data → /data/index.html).
+    // Prerendering /data here would overwrite dist/data/index.html with the SPA shell.
     { path: "/vs", title: "Career vs SaaS: Profession Comparisons | Invisible Exit", desc: "Detailed comparisons of staying in your career versus building a micro-SaaS side business. Salary math, equity analysis, and MRR timelines." },
     { path: "/alternatives", title: "Invisible Exit Alternatives Compared | Invisible Exit", desc: "How Invisible Exit compares to courses, FIRE communities, bootcamps, and career coaching. Feature-by-feature comparison." },
     { path: "/salaries", title: "Salary to MRR Conversion by Profession | Invisible Exit", desc: "How many micro-SaaS customers you need to replace your salary. Profession-by-profession breakdown with pricing models." },

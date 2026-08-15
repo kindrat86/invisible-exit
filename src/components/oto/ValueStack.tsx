@@ -4,9 +4,9 @@ const stackItems = [
     label: "EXCLUSIVE #1",
     badge: "BIGGEST ADVANTAGE",
     title: "Price Locked at $17.99/month. For Life.",
-    body: "When founding closes, the public price becomes $97.99/month. Your rate never changes. Not next year. Not in five years. The longer you stay, the wider the gap between what you pay and what everyone else pays.",
-    anchor: "That's $960/year in savings versus everyone who joins after you.",
-    value: "$960/yr saved",
+    body: "When founding closes, the public price becomes $29/month. Your rate never changes. Not next year. Not in five years. The longer you stay, the wider the gap between what you pay and what everyone else pays.",
+    anchor: "That's $132/year in savings versus everyone who joins after you.",
+    value: "$132/yr saved",
   },
   {
     label: "EXCLUSIVE #2",
@@ -33,8 +33,8 @@ const stackItems = [
     label: "EXCLUSIVE #5",
     title: "Unlimited Access to Every Tool",
     body: "No caps on scenarios, ideas, audits, automations, or content calendars. While standard members hit limits, you use every tool to its full potential. No friction. No upgrade prompts. Just build.",
-    anchor: "Standard members pay $47/mo for the same usage. You pay $17.99. Forever.",
-    value: "$348/yr saved",
+    anchor: "Standard members pay $29/mo for the same usage. You pay $17.99. Forever.",
+    value: "$132/yr saved",
   },
   {
     label: "🎁 BONUS #1",
@@ -124,8 +124,8 @@ const ValueStack = () => {
           </p>
           <div className="space-y-2 max-w-sm mx-auto">
             {[
-              { label: "Price lock savings ($960/yr)", value: "$960" },
-              { label: "Unlimited usage ($348/yr saved)", value: "$348" },
+              { label: "Price lock savings ($132/yr)", value: "$132" },
+              { label: "Unlimited usage ($132/yr saved)", value: "$132" },
               { label: "Community access ($97/mo × 12)", value: "$1,164" },
               { label: "Monthly masterclasses ($197 × 12)", value: "$2,364" },
               { label: "Early access to new features", value: "$240" },
@@ -139,7 +139,7 @@ const ValueStack = () => {
           </div>
           <div className="flex items-center justify-between pt-4 mt-2 border-t-2 border-white/10">
             <span className="text-white font-semibold">Total annual value:</span>
-            <span className="text-white/70 line-through text-lg">$5,076</span>
+            <span className="text-white/70 line-through text-lg">$4,032</span>
           </div>
           <div className="flex items-center justify-between mt-1">
             <span className="text-[#60A5FA] font-semibold">Your founding price:</span>
@@ -149,7 +149,7 @@ const ValueStack = () => {
             </div>
           </div>
           <p className="text-center text-sm text-white/40 mt-3">
-            That's $215/year for $5,076 in value. <strong className="text-success">95.8% off.</strong> Locked for life.
+            That's $215/year for $4,032 in value. <strong className="text-success">94.7% off.</strong> Locked for life.
           </p>
         </div>
       </div>

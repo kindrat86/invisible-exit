@@ -4,7 +4,7 @@
 # Pixel ID: 1278454893564033 (already installed on invisibleexit.com)
 # Ads account: Configured (AW-18046014876)
 
-## CAMPAIGN 1: Retargeting — Warm Traffic → $0.97 Offer
+## CAMPAIGN 1: Retargeting — Warm Traffic → $9 Offer
 ## =================================================================
 ## Audience: Anyone who visited invisibleexit.com in the last 90 days
 ##           AND did NOT visit /start or /checkout/success (exclude converters)
@@ -12,9 +12,9 @@
 ## Goal: Conversions (Purchase — starter subscription)
 
 ### Ad Set 1: The Stack (Value-focused)
-**Headline:** 5 AI Tools for $0.97/Month. Total Value: $328/mo.
+**Headline:** 5 AI Tools for $9/Month. Total Value: $328/mo.
 **Primary Text:**
-  You visited Invisible Exit. Here's what $0.97/month actually gets you:
+  You visited Invisible Exit. Here's what $9/month actually gets you:
 
   → FYM Dashboard — tracks your exit timeline ($12/mo value)
   → Idea Pipeline — 500+ validated ideas with AI scoring ($15/mo value)
@@ -23,7 +23,7 @@
   → Brand Manager — faceless audience building ($27/mo value)
   + 3 exclusive bonuses ($101 value)
 
-  Total value: $328/month. Founding member price: $0.97/month.
+  Total value: $328/month. Founding member price: $9/month.
 
   **Image:** The 5-tool SVG diagram from the homepage (dark navy w/ blue circles)
 

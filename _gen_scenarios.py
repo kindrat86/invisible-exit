@@ -102,7 +102,7 @@ def build_page(scenario):
         (f"Can I exit a side business quietly without a public announcement?",
          f"Yes. Most micro-SaaS exits are 'silent' — the business is either sold to a buyer who absorbs the brand, migrated to a successor product, or wound down without a public post. Public exits are the exception, not the rule. The recovery playbook on this page walks through the quiet-exit path specific to a " + title.lower() + " scenario."),
         (f"Does Invisible Exit help with the {title.lower()} scenario specifically?",
-         f"Yes. Invisible Exit's five AI tools include exit-readiness checklists, valuation modelers, buyer-network access, SOP builders, and wind-down checklists — each tuned to specific exit scenarios including " + title.lower() + ". Membership starts at $0.97/month during the founding period."),
+         f"Yes. Invisible Exit's five AI tools include exit-readiness checklists, valuation modelers, buyer-network access, SOP builders, and wind-down checklists — each tuned to specific exit scenarios including " + title.lower() + ". Membership starts at $9/month during the founding period."),
     ]
 
     article_json = {
@@ -229,10 +229,10 @@ def build_page(scenario):
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
 <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$4K</span><br><span style="font-size:.82rem;color:#94a3b8">Target /month</span></div>
 <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">5</span><br><span style="font-size:.82rem;color:#94a3b8">AI tools included</span></div>
-<div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$0.97</span><br><span style="font-size:.82rem;color:#94a3b8">Founding /mo</span></div>
+<div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$9</span><br><span style="font-size:.82rem;color:#94a3b8">Founding /mo</span></div>
 </div>
 <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">Founding spots are limited and the price locks forever.</p>
-<a href="{BASE}/#start" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get Started for $0.97 →</a>
+<a href="{BASE}/#start" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get Started for $9 →</a>
 <p style="margin-top:18px;font-size:.78rem;color:#6b7178">🛡️ If you do not earn $4K/mo within 12 months, we refund every cent. Founding price locked.</p>
 </div>
 </section>
