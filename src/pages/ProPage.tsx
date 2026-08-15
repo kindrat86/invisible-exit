@@ -42,7 +42,7 @@ const INCLUDES = [
   {
     icon: Star,
     title: "All 5 Core Tools (Included)",
-    description: "FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager. Everything in the $0.97 plan, included.",
+    description: "FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager. Everything in the $9 plan, included.",
     value: "$12/month",
   },
 ];
@@ -61,7 +61,7 @@ const COMPARISON = [
 
 const FAQS = [
   {
-    q: "How is Pro different from the $0.97 starter plan?",
+    q: "How is Pro different from the $9 starter plan?",
     a: "Starter is DIY — you get the 5 tools and email sequence, but you're on your own. Pro is done-with-others: weekly coaching calls, community access, idea validation reports, and monthly MRR audits. You get direct access to Adrian and a community of peers.",
   },
   {
@@ -70,11 +70,11 @@ const FAQS = [
   },
   {
     q: "Can I upgrade from Starter to Pro later?",
-    a: "Yes, anytime. Your existing subscription is prorated. The $47/month kicks in on your next billing cycle. No setup fees.",
+    a: "Yes, anytime. Your existing subscription is prorated. The $29/month kicks in on your next billing cycle. No setup fees.",
   },
   {
     q: "What if I join and it's not worth it?",
-    a: "30-day money-back guarantee. If you attend one coaching call, submit one idea, and don't find it 10x more valuable than the $0.97 plan, email 'refund' and get every cent back.",
+    a: "30-day money-back guarantee. If you attend one coaching call, submit one idea, and don't find it 10x more valuable than the $9 plan, email 'refund' and get every cent back.",
   },
   {
     q: "When are the coaching calls?",
@@ -122,8 +122,8 @@ const ProPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit Pro — Group Coaching + Community ($47/month)"
-        description="Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support. $47/month."
+        title="Invisible Exit Pro — Group Coaching + Community ($29/month)"
+        description="Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support. $29/month."
         url="/pro"
       />
       <Navbar />
@@ -211,10 +211,10 @@ const ProPage = () => {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-foreground font-semibold text-lg">Your price:</span>
-              <span className="text-4xl sm:text-5xl font-bold text-primary">$47<span className="text-lg font-normal text-muted-foreground">/mo</span></span>
+              <span className="text-4xl sm:text-5xl font-bold text-primary">$29<span className="text-lg font-normal text-muted-foreground">/mo</span></span>
             </div>
             <p className="text-caption text-center mt-4">
-              That's $8,496/year in value for $564/year. Save 93% vs. individual pricing.
+              That's $8,496/year in value for $348/year. Save 96% vs. individual pricing.
             </p>
           </div>
         </div>
@@ -230,8 +230,8 @@ const ProPage = () => {
               <thead>
                 <tr className="border-b-2 border-border">
                   <th className="text-left py-4 px-4 text-sm font-semibold text-muted-foreground">Feature</th>
-                  <th className="text-center py-4 px-4 text-sm font-bold text-muted-foreground">$0.97</th>
-                  <th className="text-center py-4 px-4 text-sm font-bold text-primary bg-primary/5">$47 Pro</th>
+                  <th className="text-center py-4 px-4 text-sm font-bold text-muted-foreground">$9</th>
+                  <th className="text-center py-4 px-4 text-sm font-bold text-primary bg-primary/5">$29 Pro</th>
                   <th className="text-center py-4 px-4 text-sm font-bold text-muted-foreground">$17.99</th>
                 </tr>
               </thead>
@@ -304,7 +304,7 @@ const ProPage = () => {
                       : "text-white/60 hover:text-white"
                   }`}
                 >
-                  $47/month
+                  $29/month
                   <span className="block text-xs font-normal opacity-80">Cancel anytime</span>
                 </button>
                 <button
@@ -315,8 +315,8 @@ const ProPage = () => {
                       : "text-white/60 hover:text-white"
                   }`}
                 >
-                  $470/year
-                  <span className="block text-xs font-normal opacity-80">Save $94/year</span>
+                  $290/year
+                  <span className="block text-xs font-normal opacity-80">Save $58/year</span>
                 </button>
               </div>
             </div>
@@ -386,19 +386,19 @@ const ProPage = () => {
                 <div className="animate-fade-in">
                   <p className="text-white/40 text-xs mb-3 text-center">Step 3 of 3</p>
                   <p className="text-white/60 text-sm font-medium mb-4">
-                    {paymentPlan === "annual" ? "Lock in $470/year — save $94" : "Confirm $47/month"}
+                    {paymentPlan === "annual" ? "Lock in $290/year — save $58" : "Confirm $29/month"}
                   </p>
                   <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-4 text-center">
                     <p className="text-white/50 text-xs">Your plan</p>
-                    <p className="text-white font-bold text-lg">{paymentPlan === "annual" ? "$470/year" : "$47/month"}</p>
-                    {paymentPlan === "annual" && <p className="text-primary-light text-xs">You save $94 vs monthly</p>}
+                    <p className="text-white font-bold text-lg">{paymentPlan === "annual" ? "$290/year" : "$29/month"}</p>
+                    {paymentPlan === "annual" && <p className="text-primary-light text-xs">You save $58 vs monthly</p>}
                   </div>
                   <button
                     type="submit"
                     disabled={loading}
                     className="btn-primary w-full text-lg"
                   >
-                    {loading ? "Submitting..." : `Apply for Pro — ${paymentPlan === "annual" ? "$470/year" : "$47/month"}`}
+                    {loading ? "Submitting..." : `Apply for Pro — ${paymentPlan === "annual" ? "$290/year" : "$29/month"}`}
                     {!loading && <ArrowRight className="w-5 h-5" />}
                   </button>
                   <p className="text-white/40 text-xs mt-3">

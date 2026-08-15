@@ -63,7 +63,7 @@ const FOOTER_SECTIONS = [
       { label: "Non-Compete Guide", to: "/non-compete" },
       { label: "About", to: "/about" },
       { label: "Affiliates (30%)", to: "/affiliates" },
-      { label: "Pro ($47/mo)", to: "/pro" },
+      { label: "Pro ($29/mo)", to: "/pro" },
       { label: "Weekend Workshop ($97)", to: "/weekend-workshop" },
     ],
   },
