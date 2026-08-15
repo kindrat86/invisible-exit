@@ -91,7 +91,7 @@ const TOOLS = [
 
 const FAQS = [
   {
-    q: "What do I get for $0.97/month?",
+    q: "What do I get for $9/month?",
     a: "FYM Dashboard tells you exactly how much recurring revenue you need to quit. Idea Pipeline finds and validates your first product in 48 hours. Stealth Ops Hub makes sure your employer never finds out. Launch Control ships your product in weeks, not months. Brand Manager builds your audience without showing your face. All five, one price.",
   },
   {
@@ -123,8 +123,8 @@ const FAQS = [
     a: "Yes. No contracts, no commitments. Cancel from your dashboard in one click. Plus there's a 30-day money-back guarantee.",
   },
   {
-    q: "What are the pricing tiers? Is $0.97/month really forever?",
-    a: "There are three tiers. Founding Member: $0.97/month — full access to all five tools, locked for life. Pro: $47/month — adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time — a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $0.97/month even after founding closes.",
+    q: "What are the pricing tiers? Is $9/month really forever?",
+    a: "There are three tiers. Founding Member: $9/month — full access to all five tools, locked for life. Pro: $29/month — adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time — a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $9/month even after founding closes.",
   },
   {
     q: "I work for a tech company with strict IP assignment clauses. Can I still do this?",
@@ -147,8 +147,8 @@ const FAQS = [
     a: "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice — the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ.",
   },
   {
-    q: "Is the $0.97/month price sustainable? What's the catch?",
-    a: "The $0.97/month founding member price is a loss-leader — it costs more to serve each member than $0.97/month. The business model works because: (1) some founders upgrade to Pro ($47/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $0.97.",
+    q: "Is the $9/month price sustainable? What's the catch?",
+    a: "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9.",
   },
 ];
 
@@ -179,7 +179,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEOHead
         title="$4K/Month Side Income Without Quitting | Invisible Exit"
-        description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $0.97/mo."
+        description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $9/mo."
         url="/"
       />
       {/* Structured data (Organization, WebSite, WebApplication, FAQPage,
@@ -1323,7 +1323,7 @@ const Index = () => {
           </h2>
           <p className="text-body text-white/60 mb-4 text-center max-w-2xl mx-auto">
             From "trapped" to "free." Each tool is the implementation of a
-            proprietary methodology. All 5 at $0.97/month.
+            proprietary methodology. All 5 at $9/month.
           </p>
           <p className="text-xs text-white/30 text-center mb-12 max-w-lg mx-auto">
             <a href="/frameworks" className="text-primary-light underline hover:text-white transition-colors">
@@ -1413,7 +1413,7 @@ const Index = () => {
               <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">Founding cohort — 100 seats, opening now</p>
               <p className="text-sm text-muted-foreground">
                 No inflated headcount, no fake activity ticker. Be one of the first
-                — the $0.97/mo founding price is locked for members who join early.
+                — the $9/mo founding price is locked for members who join early.
               </p>
             </div>
           </div>
@@ -1574,10 +1574,10 @@ const Index = () => {
         <div className="container-narrow text-center relative z-10">
           <p className="text-eyebrow text-primary mb-4">The Value Stack</p>
           <h2 className="text-h1 text-foreground mb-2">
-            What You <span className="text-gradient">Really</span> Get for $0.97/Month
+            What You <span className="text-gradient">Really</span> Get for $9/Month
           </h2>
           <p className="text-body text-muted-foreground mb-6 max-w-xl mx-auto">
-            If you bought each tool individually from the companies that inspired them, here's what you'd pay. <strong className="text-foreground">Spoiler: not $0.97.</strong>
+            If you bought each tool individually from the companies that inspired them, here's what you'd pay. <strong className="text-foreground">Spoiler: not $9.</strong>
           </p>
 
           {/* ── BRUNSON CH 12: DEADLINE-DRIVEN URGENCY ── */}
@@ -1700,7 +1700,7 @@ const Index = () => {
 
                 <div className="flex flex-col items-center gap-1 text-center sm:flex-row sm:items-center sm:justify-between pt-1">
                   <span className="text-foreground font-semibold text-base">Founding member price</span>
-                  <span className="text-5xl sm:text-6xl font-black text-primary whitespace-nowrap">$0.97<span className="text-base font-normal text-muted-foreground">/mo</span></span>
+                  <span className="text-5xl sm:text-6xl font-black text-primary whitespace-nowrap">$9<span className="text-base font-normal text-muted-foreground">/mo</span></span>
                 </div>
 
                 <div className="flex items-center justify-between text-xs text-muted-foreground/50">
@@ -1732,7 +1732,7 @@ const Index = () => {
                     <span className="text-[11px] bg-success/15 text-success px-1.5 py-0.5 rounded-full font-semibold">Building in public</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed italic">
-                    "Why $0.97? Because I want the price to be a non-decision. You're joining early, while I'm still
+                    "Why $9? Because I want the price to be a non-decision. You're joining early, while I'm still
                     building this in public — so you get the founding price locked for life, and I get people using the
                     tools and telling me what to fix. If it's not for you, cancel in two clicks."
                   </p>
@@ -1743,7 +1743,7 @@ const Index = () => {
             {/* BRUNSON CH 11: The One Thing — simplify the entire offer to ONE sentence */}
             <div className="mt-8 max-w-lg mx-auto bg-primary/10 border border-primary/25 rounded-xl p-4 text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
               <p className="text-xs text-primary uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
-              <p className="text-foreground font-bold text-base">Get all 5 tools + 3 bonuses for $0.97/month. Cancel anytime.</p>
+              <p className="text-foreground font-bold text-base">Get all 5 tools + 3 bonuses for $9/month. Cancel anytime.</p>
               <p className="text-muted-foreground text-xs mt-1">
                 Because every month you wait is <strong className="text-foreground">$4,000 in MRR</strong> you'll never recover.
               </p>
@@ -1805,7 +1805,7 @@ const Index = () => {
                 onClick={() => trackEvent("homepage_stack_cta_clicked")}
                 className="btn-primary text-lg px-8 py-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[56px]"
               >
-                Start for $0.97/Month
+                Start for $9/Month
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <p className="text-sm text-muted-foreground mt-3 text-center">
@@ -1821,7 +1821,7 @@ const Index = () => {
               </p>
               <div className="space-y-3">
                 {[
-                  { step: "1 min", title: "Secure Stripe checkout", desc: "Apple Pay, Google Pay, or card. $0.97 charged today. Cancel in one click anytime." },
+                  { step: "1 min", title: "Secure Stripe checkout", desc: "Apple Pay, Google Pay, or card. $9 charged today. Cancel in one click anytime." },
                   { step: "2 min", title: "Instant dashboard access", desc: "Set your salary, expenses, and timeline. Get your Freedom Number immediately." },
                   { step: "5 min", title: "First idea validation", desc: "Browse 500+ scored micro-SaaS ideas filtered to your industry. Save 3–5." },
                   { step: "Day 2", title: "Stealth Ops audit runs", desc: "Upload your employment contract (optional). Get your invisibility score + fixes." },
@@ -1849,12 +1849,12 @@ const Index = () => {
               <div className="space-y-2">
                 {[
                   {
-                    q: "Why $0.97? What's the catch?",
-                    a: "There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9.99/month. You're locking in $0.97 for life — not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
+                    q: "Why $9? What's the catch?",
+                    a: "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life — not a trial, not an intro rate. Your card gets charged $9 every month until you cancel.",
                   },
                   {
-                    q: "Is this one of those things where it's $0.97 today and $97 next week?",
-                    a: "No. The price is $0.97/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $47/month — a completely separate choice you can make later. Or never.",
+                    q: "Is this one of those things where it's $9 today and $97 next week?",
+                    a: "No. The price is $9/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $29/month — a completely separate choice you can make later. Or never.",
                   },
                   {
                     q: "What if I sign up and realize I don't have time?",
@@ -1879,7 +1879,7 @@ const Index = () => {
             <div className="mt-10 max-w-lg mx-auto text-center animate-fade-up" style={{ animationDelay: "850ms" }}>
               <p className="text-sm text-muted-foreground mb-4">
                 <strong className="text-foreground">5 tools.</strong> <strong className="text-foreground">3 bonuses.</strong>{" "}
-                <strong className="text-foreground">30-day guarantee.</strong> <strong className="text-foreground">$0.97/month.</strong>
+                <strong className="text-foreground">30-day guarantee.</strong> <strong className="text-foreground">$9/month.</strong>
               </p>
               <Link
                 to="/start"
@@ -1925,16 +1925,16 @@ const Index = () => {
               },
               {
                 step: "Step 3",
-                title: "Start the 5-tool system ($0.97/mo)",
+                title: "Start the 5-tool system ($9/mo)",
                 desc: "All 5 tools. Freedom number, idea pipeline, stealth ops, launch, brand.",
-                price: "$0.97/mo",
+                price: "$9/mo",
                 isPrimary: true,
               },
               {
                 step: "Step 4",
-                title: "Join Pro: coaching + community ($47/mo)",
+                title: "Join Pro: coaching + community ($29/mo)",
                 desc: "Weekly group coaching, private community, idea validation reports, MRR audits.",
-                price: "$47/mo",
+                price: "$29/mo",
               },
               {
                 step: "Step 5",
@@ -2142,7 +2142,7 @@ const Index = () => {
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
               The loop compounds: more MRR → higher invisibility score → more confidence →
               more products → more MRR. The system feeds itself. That's why members who start
-              at $0.97/month upgrade to Founding — the loop is worth more than any single tool.
+              at $9/month upgrade to Founding — the loop is worth more than any single tool.
             </p>
           </div>
         </div>

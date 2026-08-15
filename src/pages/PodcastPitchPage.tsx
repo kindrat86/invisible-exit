@@ -23,7 +23,7 @@ I screamed in the taxi. The driver thought I was insane.
 
 That $0.97 wasn't money. It was proof that the cage has a door. That's when I realized: my salary isn't my worth. It's one income stream. And I needed to build more.
 
-I built Invisible Exit — 5 tools that help corporate managers build anonymous recurring revenue while employed. $0.97/month. Still employed. Still invisible.`,
+I built Invisible Exit — 5 tools that help corporate managers build anonymous recurring revenue while employed. $9/month. Still employed. Still invisible.`,
   },
   {
     duration: "15 min",

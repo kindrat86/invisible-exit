@@ -117,7 +117,7 @@ const AWARENESS_LADDER = [
   {
     stage: "Most Aware",
     state: "I'm ready to start building my exit",
-    bridgedBy: "Start for $0.97/month",
+    bridgedBy: "Start for $9/month",
   },
 ];
 

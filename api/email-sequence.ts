@@ -28,8 +28,8 @@ export function wrap(day: string, title: string, bodyHtml: string, cta = true) {
 <h1 style="font-size:24px;font-weight:700;margin-bottom:16px;line-height:1.3;">${title}</h1>
 ${bodyHtml}
 ${cta ? `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
-<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $0.97/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
-<a href="https://invisibleexit.com/?checkout=starter" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Start for $0.97/month</a>
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
+<a href="https://invisibleexit.com/?checkout=starter" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Start for $9/month</a>
 </div>` : ""}
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:4px;">Talk soon,</p>
 <p style="font-size:16px;font-weight:600;margin-bottom:0;">Adrian</p>
@@ -81,7 +81,7 @@ export function soap5() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Let me tell you about the most expensive word I know. "Someday."</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Someday I'll start something. Someday after the IPO. Someday when the kids are older.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month of MRR you'll never earn. At $4,000/month target, that's <strong>$48,000 per year of delay</strong>.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $0.97/month.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence — the one designed to move you from "thinking about it" to "doing it" — ends now.</p>`);
 }
 
@@ -199,9 +199,9 @@ export function ascension1() {
     "DAY 1",
     "You Know Your Number. Now Let's Make It Real.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Welcome to the 3% — people who didn't just calculate their freedom number, but actually took the first step.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's something nobody tells you about the $0.97 plan: it's the map, not the journey. The 5 tools show you where the door is and give you the skeleton key. But to actually walk through it — to hit your number in months instead of years — most members do one thing differently.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's something nobody tells you about the $9 plan: it's the map, not the journey. The 5 tools show you where the door is and give you the skeleton key. But to actually walk through it — to hit your number in months instead of years — most members do one thing differently.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>They go from DIY to done-with-others.</strong></p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow I'll show you what Pro members get that $0.97 members don't. Hint: it's not just more tools.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow I'll show you what Pro members get that $9 members don't. Hint: it's not just more tools.</p>`,
     false,
   );
 }
@@ -210,9 +210,9 @@ export function ascension2() {
   return wrap(
     "DAY 3",
     "The Idea Pipeline Won't Validate Itself.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">How's your first week going? If you're like most $0.97 members, you've probably opened the FYM Dashboard, clicked around the Idea Pipeline, and started reading about Stealth Ops.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">How's your first week going? If you're like most $9 members, you've probably opened the FYM Dashboard, clicked around the Idea Pipeline, and started reading about Stealth Ops.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">And now you're stuck on the same question: <strong>"Which idea do I actually pick?"</strong></p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $0.97 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong> — market sizing, pricing research, and a clear go/no-go recommendation.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $9 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong> — market sizing, pricing research, and a clear go/no-go recommendation.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">A single validated idea is worth $4,000/month. The validation reports alone cost more than Pro membership.</p>`,
     false,
   );
@@ -221,7 +221,7 @@ export function ascension2() {
 export function ascension3() {
   return wrap(
     "DAY 5",
-    "🔥 Today Only: Unlock Everything at 93% Off",
+    "🔥 Today Only: Unlock Everything at 96% Off",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I don't normally do this, but you've been reading my emails and I want to give you the full toolkit to see what happens.</p>
 <p style="font-size:18px;font-weight:600;color:#3B82F6;margin-bottom:20px;">Here's the offer: Upgrade to Pro today and get everything.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>What you get:</strong></p>
@@ -233,8 +233,8 @@ export function ascension3() {
 <li>Monthly MRR audit — personalized review (value: $199/mo)</li>
 <li>All 5 core tools included (value: $12/mo)</li>
 </ul>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Total value: $708/month. Your price: $47/month.</strong> That's 93% off. Cancel anytime. 30-day guarantee.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $0.97 plan stays active no matter what — this is a complement, not a replacement.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Total value: $708/month. Your price: $29/month.</strong> That's 96% off. Cancel anytime. 30-day guarantee.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $9 plan stays active no matter what — this is a complement, not a replacement.</p>`,
   );
 }
 
@@ -243,8 +243,8 @@ export function ascension4() {
     "DAY 7",
     "Your First Week Is Covered. Here's What's Next.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you upgraded to Pro this week — welcome. Your first coaching call is Tuesday at 7 PM CET. Submit your ideas in the Slack channel before then so we can review them on the call.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $0.97, that's okay. You have the tools. The only difference between you and the $4,000/month members is: they found someone to hold them accountable and validate their decisions faster.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands — $47/month, cancel anytime. The door is open.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $9, that's okay. You have the tools. The only difference between you and the $4,000/month members is: they found someone to hold them accountable and validate their decisions faster.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands — $29/month, cancel anytime. The door is open.</p>`,
     false,
   );
 }
@@ -313,7 +313,7 @@ export const WINBACK: EmailEntry[] = [
 
 export const ASCENSION: EmailEntry[] = [
   { day: 1, subject: "Your Freedom Number is [$X]. Here's how to hit it in 90 days.", html: ascension1() },
-  { day: 3, subject: "The one thing most $0.97 members miss (and why it matters)", html: ascension2() },
+  { day: 3, subject: "The one thing most $9 members miss (and why it matters)", html: ascension2() },
   { day: 5, subject: "🔓 One-Time Offer: Unlock everything — inside", html: ascension3() },
   { day: 7, subject: "Your first week is covered. Here's what's next.", html: ascension4() },
 ];

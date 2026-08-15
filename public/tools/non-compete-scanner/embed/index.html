@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed the Non-Compete Scanner — Free Widget | Invisible Exit</title>
+<meta name="description" content="Embed the free Non-Compete Scanner on your site with one iframe tag. Your readers scan their employment contracts for side-business blockers — 100% in-browser, private, free.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://invisibleexit.com/tools/non-compete-scanner/embed">
+<style>
+body { font-family: -apple-system, system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #1a1a1a; }
+h1 { font-size: 1.8rem; } h2 { font-size: 1.3rem; margin-top: 32px; }
+pre { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 12px; overflow-x: auto; font-size: 0.85rem; white-space: pre-wrap; word-break: break-all; }
+code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+a { color: #3b82f6; }
+.btn { display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; cursor: pointer; border: none; }
+nav a { margin-right: 16px; }
+.audience { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+.audience div { border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; font-size: 0.92rem; }
+.audience strong { display: block; margin-bottom: 4px; }
+@media (max-width: 640px) { .audience { grid-template-columns: 1fr; } }
+</style>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Invisible Exit", "url": "https://invisibleexit.com", "description": "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.", "disambiguatingDescription": "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income — unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory."}</script>
+</head>
+<body>
+<nav>
+  <a href="/">Invisible Exit</a>
+  <a href="/tools/non-compete-scanner">Scanner</a>
+  <a href="/tools/freedom-calculator">Freedom Calculator</a>
+  <a href="/blog">Blog</a>
+</nav>
+<h1>Embed the Non-Compete Scanner</h1>
+<p>Add a free, interactive employment-contract scanner to any website with a single iframe. Your readers paste their contract, get an instant side-business risk score against all 50 states' non-compete laws — and the scan runs 100% in their browser, so no contract text ever touches a server (yours or ours).</p>
+
+<h2>Who this is for</h2>
+<div class="audience">
+  <div><strong>Career & FIRE blogs</strong>Readers planning side income get a genuinely useful interactive tool — longer time-on-page, more shares.</div>
+  <div><strong>Employment law firms</strong>A lead-generating widget: visitors self-diagnose, then book a consult for the real review.</div>
+  <div><strong>Indie hacker & side-hustle communities</strong>The first question every employed founder asks: "can my employer take my project?" Answer it on your page.</div>
+  <div><strong>HR & compensation newsletters</strong>Embed in posts about non-compete reform, moonlighting policies, or the FTC rule.</div>
+</div>
+
+<h2>Quick embed (iframe)</h2>
+<p>Copy this into your HTML where you want the scanner to appear:</p>
+<pre id="embed-code">&lt;iframe src="https://invisibleexit.com/tools/non-compete-scanner" width="100%" height="1100" frameborder="0" loading="lazy" style="border:none;max-width:960px;margin:0 auto;display:block" title="Non-Compete Scanner — employment contract risk check"&gt;&lt;/iframe&gt;</pre>
+<button class="btn" onclick="copyCode()">Copy embed code</button>
+
+<h2>How it works</h2>
+<ul style="margin: 16px 0; padding-left: 20px;">
+  <li><strong>Your readers</strong> get a free, private contract scan without leaving your page</li>
+  <li><strong>You</strong> get increased engagement time and a differentiated page (Google loves interactive content)</li>
+  <li><strong>We get</strong> a backlink and attribution (thank you!)</li>
+  <li><strong>Privacy:</strong> the scan is pure client-side JavaScript — no contract text is transmitted to anyone</li>
+</ul>
+
+<h2>Pre-select a state</h2>
+<p>Writing for a state-specific audience? Pre-select the governing state with a URL hash:</p>
+<pre>https://invisibleexit.com/tools/non-compete-scanner#st=CA</pre>
+<p><code>st</code> = two-letter state code (CA, NY, TX, FL, WA…)</p>
+
+<h2>FAQ</h2>
+<p><strong>Is it free?</strong> Yes, free forever, no API keys, no rate limits — it's a static page.</p>
+<p><strong>Do you collect my readers' contracts?</strong> No. The scanner runs entirely in the visitor's browser. Nothing is uploaded or stored.</p>
+<p><strong>Will it slow my site?</strong> No — use <code>loading="lazy"</code> (included in the snippet) and the iframe loads only when scrolled into view.</p>
+<p><strong>Can I customize the styling?</strong> The widget ships in a dark theme. If you need a custom theme for a high-traffic placement, email <a href="mailto:hello@invisibleexit.com">hello@invisibleexit.com</a>.</p>
+
+<h2>Live demo</h2>
+<iframe src="https://invisibleexit.com/tools/non-compete-scanner" width="100%" height="1100" frameborder="0" loading="lazy" style="border:1px solid #ddd;max-width:960px;margin:0 auto;display:block;border-radius:12px" title="Non-Compete Scanner — employment contract risk check"></iframe>
+
+<p style="margin-top:32px;"><a class="btn" href="/">Explore Invisible Exit →</a></p>
+
+<script>
+function copyCode() {
+  const code = document.getElementById('embed-code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    alert('Embed code copied! Paste it into your website HTML.');
+  });
+}
+</script>
+</body>
+</html>

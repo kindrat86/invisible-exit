@@ -17,7 +17,7 @@ Corporate managers (37, Managing Director/VP level, $165K salary) who are trappe
 - [Homepage](https://invisibleexit.com/): Build a $4,000/month side business without quitting
 - [About](https://invisibleexit.com/about): About Invisible Exit and the founder
 - [Blog](https://invisibleexit.com/blog): 50+ articles on micro-SaaS and stealth operations
-- [Pricing](https://invisibleexit.com/pro): Founding member pricing from $0.97/month
+- [Pricing](https://invisibleexit.com/pro): Founding member pricing from $9/month
 - [Framework: Salary-Runway Method](https://invisibleexit.com/frameworks)
 - [Framework: Triple-Separation Protocol](https://invisibleexit.com/frameworks)
 - [Framework: The Cartridge System](https://invisibleexit.com/frameworks)

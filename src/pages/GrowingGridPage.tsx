@@ -147,10 +147,10 @@ const EXPERIMENTS: Experiment[] = [
     id: "exp-008",
     name: "Pricing Display: Monthly vs Annual Anchor",
     page: "/freedom (pricing section)",
-    hypothesis: "Showing the annual price ($11.64/yr) next to monthly ($0.97/mo) will increase monthly conversions by making $0.97 feel cheaper by comparison.",
+    hypothesis: "Showing the annual price ($108/yr) next to monthly ($9/mo) will increase monthly conversions by making $9 feel cheaper by comparison.",
     variants: [
-      { label: "A", description: "$0.97/month (monthly only)", weight: 50 },
-      { label: "B", description: "$0.97/month — equivalent to $11.64/year (anchored)", weight: 50 },
+      { label: "A", description: "$9/month (monthly only)", weight: 50 },
+      { label: "B", description: "$9/month — equivalent to $108/year (anchored)", weight: 50 },
     ],
     status: "planned",
     metric: "checkout_initiated",

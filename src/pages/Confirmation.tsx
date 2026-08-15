@@ -372,14 +372,14 @@ const Confirmation = () => {
             </h3>
             <p className="text-gray-500 text-sm mb-5 text-center leading-relaxed">
               Founding Members lock in <strong className="text-gray-700">$17.99/month for life</strong> (goes to
-              $97.99 after 100 members), vote on features, get beta access, and have their
+              $29 after 100 members), vote on features, get beta access, and have their
               name on the founding wall.
             </p>
 
             {/* Mini value stack */}
             <div className="bg-gray-50 rounded-xl p-4 mb-5 space-y-2">
               {[
-                "Lifetime price lock at $17.99/mo (saves $960/year vs public)",
+                "Lifetime price lock at $17.99/mo (saves $132/year vs public)",
                 "Vote on the roadmap — your feature requests go first",
                 "Beta access to every new tool before public release",
                 "Your name permanently on the founding wall",
@@ -395,7 +395,7 @@ const Confirmation = () => {
             {/* Price anchor */}
             <div className="text-center mb-4">
               <p className="text-gray-400 text-sm">
-                <span className="line-through">$97.99/mo</span> →{" "}
+                <span className="line-through">$29/mo</span> →{" "}
                 <span className="text-2xl font-bold text-[#60A5FA]">$17.99/mo</span>
                 <span className="text-gray-400 text-sm"> locked for life</span>
               </p>
@@ -409,7 +409,7 @@ const Confirmation = () => {
               See the Founding Member Offer →
             </Link>
             <p className="text-gray-400 text-xs text-center">
-              Available right now. After you leave this page, the price is $97.99/mo.
+              Available right now. After you leave this page, the price is $29/mo.
             </p>
           </div>
         </div>

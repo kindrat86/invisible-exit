@@ -412,6 +412,22 @@ const auth = {
 const functions = {
   async invoke(name: string, opts?: { body?: unknown; headers?: Record<string, string> }) {
     const token = getAccessToken();
+
+    // Referral Engine: transparently attach the stored referral code to
+    // checkout calls so every purchase carries attribution.
+    let body = opts?.body ?? {};
+    if (name === "create-checkout") {
+      try {
+        const { getReferralCode } = await import("@/lib/referral");
+        const referralCode = getReferralCode();
+        if (referralCode && body && typeof body === "object" && !(body as Record<string, unknown>).referralCode) {
+          body = { ...(body as Record<string, unknown>), referralCode };
+        }
+      } catch {
+        // attribution is best-effort
+      }
+    }
+
     const res = await fetch(`/api/${name}`, {
       method: "POST",
       headers: {
@@ -419,7 +435,7 @@ const functions = {
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
         ...opts?.headers,
       },
-      body: JSON.stringify(opts?.body ?? {}),
+      body: JSON.stringify(body),
     });
 
     const data = await res.json().catch(() => ({}));

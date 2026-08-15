@@ -27,7 +27,7 @@ import GuaranteeBox from "@/components/GuaranteeBox";
  *   2. Deliver 10x perceived value ($197+ anchor)
  *   3. Have hard scarcity (countdown + spots)
  *   4. Be available ONLY on this page (true one-time offer)
- *   5. Transition to the core $0.97/mo offer afterward
+ *   5. Transition to the core $9/mo offer afterward
  */
 const TripwirePage = () => {
   const [loading, setLoading] = useState(false);
@@ -126,12 +126,12 @@ const TripwirePage = () => {
 
   const faqs = [
     {
-      q: "Is this different from the $0.97/month membership?",
-      a: "Yes. The Stealth Ops Blueprint is a one-time purchase ($7) that gives you the complete checklist and walkthroughs forever. The $0.97/mo membership gives you the interactive dashboard, idea pipeline, and ongoing tools. You'll see that offer after this one.",
+      q: "Is this different from the $9/month membership?",
+      a: "Yes. The Stealth Ops Blueprint is a one-time purchase ($7) that gives you the complete checklist and walkthroughs forever. The $9/mo membership gives you the interactive dashboard, idea pipeline, and ongoing tools. You'll see that offer after this one.",
     },
     {
       q: "Why only $7?",
-      a: "Because I want to separate browsers from buyers. $7 filters out people who will never act. If $7 feels like a risk, the $0.97/mo tools won't help you either. This is the cheapest way to find out if the system works for you.",
+      a: "Because I want to separate browsers from buyers. $7 filters out people who will never act. If $7 feels like a risk, the $9/mo tools won't help you either. This is the cheapest way to find out if the system works for you.",
     },
     {
       q: "What if it doesn't apply to my contract?",
@@ -395,7 +395,7 @@ const TripwirePage = () => {
             to="/start"
             className="text-white/30 underline hover:text-white/50 transition-colors text-sm"
           >
-            Skip this offer — get the full tools for $0.97/month →
+            Skip this offer — get the full tools for $9/month →
           </Link>
           <p className="text-white/20 text-xs mt-3">
             You won't see this price again. Regular price: $47.

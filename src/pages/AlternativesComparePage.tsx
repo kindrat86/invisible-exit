@@ -49,7 +49,7 @@ const ALTERNATIVES = [
     philosophy: "Climb higher. Get the credential. Network with other climbers.",
     whatTheySay: "Invest in yourself and the promotions will follow.",
     whatTheyMiss: "An MBA gives you a credential for someone else's ladder. It doesn't create revenue you own. It doesn't give you optionality. It deepens the golden handcuffs.",
-    ourAnswer: "Instead of spending $100K on a credential that makes you more valuable to employers, spend $0.97/month on a system that makes you less dependent on them.",
+    ourAnswer: "Instead of spending $100K on a credential that makes you more valuable to employers, spend $9/month on a system that makes you less dependent on them.",
     verdict: "Valuable for career advancement. Useless for financial freedom.",
   },
   {
@@ -256,7 +256,7 @@ const ComparePage = () => {
           <h2 className="text-h1 text-white mb-4">See If It's Right for You</h2>
           <p className="text-body text-white/60 mb-8 max-w-xl mx-auto">
             Calculate your freedom number. If the math makes sense, try the system
-            for $0.97. If it doesn't, you'll know in 90 seconds — no cost.
+            for $9. If it doesn't, you'll know in 90 seconds — no cost.
           </p>
           <Link
             to="/freedom"

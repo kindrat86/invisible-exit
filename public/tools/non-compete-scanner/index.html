@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Non-Compete Scanner — Can Your Employer Block Your Side Business? | Invisible Exit</title>
+<meta name="description" content="Free non-compete clause scanner. Paste your employment contract and instantly see which clauses could block your side business — non-compete, IP assignment, moonlighting bans — scored against your state's law. 100% in-browser, your contract never leaves your device.">
+<link rel="canonical" href="https://invisibleexit.com/tools/non-compete-scanner">
+<meta property="og:title" content="Non-Compete Scanner — Can Your Employer Block Your Side Business?">
+<meta property="og:description" content="Paste your employment contract, get an instant risk score. Detects non-compete, IP assignment, and moonlighting clauses — checked against all 50 states' enforceability laws. Free, in-browser, private.">
+<meta property="og:url" content="https://invisibleexit.com/tools/non-compete-scanner">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Non-Compete Scanner — Free Employment Contract Risk Check">
+<meta name="twitter:description" content="Which clauses in your employment contract could block your side business? Instant scan against all 50 states' non-compete laws. Nothing is uploaded.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Non-Compete Scanner",
+  "url": "https://invisibleexit.com/tools/non-compete-scanner",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Scan an employment contract for clauses that restrict side businesses — non-compete, non-solicit, invention assignment, moonlighting bans — and score the risk against state-by-state enforceability law. Runs entirely in the browser; no contract text is transmitted or stored.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "Invisible Exit", "url": "https://invisibleexit.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to check if your employment contract blocks a side business",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Paste your contract", "text": "Copy the text of your employment agreement, offer letter, or employee handbook section and paste it into the scanner. The scan runs locally in your browser — nothing is uploaded."},
+    {"@type": "HowToStep", "position": 2, "name": "Select your state and situation", "text": "Choose the US state whose law governs your employment (usually where you work), plus your salary band — several states void non-competes below salary thresholds."},
+    {"@type": "HowToStep", "position": 3, "name": "Review your risk report", "text": "The scanner flags each restrictive clause it finds, scores your overall side-business risk 0–100 against your state's enforceability law, and generates a step-by-step mitigation plan you can print or copy."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is the Non-Compete Scanner free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — completely free, no signup required. It is built by Invisible Exit as a free tool for employed professionals planning a side business."}},
+    {"@type": "Question", "name": "Do you store or read my contract?", "acceptedAnswer": {"@type": "Answer", "text": "No. The entire scan runs in JavaScript inside your browser. Your contract text is never transmitted, uploaded, logged, or stored anywhere. You can verify this by loading the page and then going offline — the scan still works."}},
+    {"@type": "Question", "name": "What clauses does it detect?", "acceptedAnswer": {"@type": "Answer", "text": "Eight clause families: non-compete covenants, non-solicitation, invention/IP assignment, moonlighting and outside-employment bans, exclusivity (full time and attention) clauses, confidentiality/trade-secret provisions, conflict-of-interest policies, and employer device/monitoring provisions."}},
+    {"@type": "Question", "name": "Is this legal advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. The scanner reflects general enforcement patterns by state as of 2024–2026 and is for education only. Non-compete law changes fast. Always have a licensed employment attorney in your state review your specific agreement before acting."}},
+    {"@type": "Question", "name": "Can I embed this scanner on my own site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — it is free to embed with a single iframe tag. Visit invisibleexit.com/tools/non-compete-scanner/embed for the copy-paste code."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Invisible Exit", "item": "https://invisibleexit.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://invisibleexit.com/best"},
+    {"@type": "ListItem", "position": 3, "name": "Non-Compete Scanner", "item": "https://invisibleexit.com/tools/non-compete-scanner"}
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
+  --text-dim: #94a3b8; --accent: #3b82f6; --accent-hover: #2563eb;
+  --green: #22c55e; --amber: #f59e0b; --red: #ef4444; --purple: #8b5cf6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px; }
+nav { display: flex; gap: 16px; margin-bottom: 32px; font-size: 0.9rem; flex-wrap: wrap; }
+nav a { color: var(--accent); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: #f8fafc; }
+h2 { font-size: 1.4rem; font-weight: 700; margin: 32px 0 12px; color: #f8fafc; }
+.subtitle { font-size: 1.15rem; color: var(--text-dim); margin-bottom: 12px; }
+.privacy-note { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.35); color: var(--green); border-radius: 999px;
+  padding: 6px 14px; font-size: 0.82rem; font-weight: 600; margin-bottom: 28px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 16px; color: #f8fafc; font-weight: 700; }
+label { display: block; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+textarea { width: 100%; min-height: 220px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px; color: var(--text); font-size: 0.92rem; outline: none;
+  resize: vertical; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; line-height: 1.5; }
+textarea:focus { border-color: var(--accent); }
+.controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 18px; }
+@media (max-width: 720px) { .controls { grid-template-columns: 1fr; } }
+select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; color: var(--text); font-size: 0.95rem; outline: none; }
+select:focus { border-color: var(--accent); }
+.btn { display: inline-block; background: var(--accent); color: white; padding: 14px 28px; border-radius: 10px;
+  text-decoration: none; font-weight: 700; cursor: pointer; border: none; font-size: 1rem; transition: background 0.2s; }
+.btn:hover { background: var(--accent-hover); }
+.btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-secondary:hover { background: var(--card); }
+.btn-row { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+.sample-link { font-size: 0.82rem; color: var(--text-dim); margin-top: 10px; }
+.sample-link a { color: var(--accent); cursor: pointer; }
+#report { display: none; }
+.score-hero { text-align: center; padding: 36px 24px; border-radius: 16px; border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--card), #0f172a); margin-bottom: 24px; }
+.score-label { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.score-number { font-size: 4rem; font-weight: 900; line-height: 1.1; margin: 8px 0; }
+.score-verdict { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+.score-sub { color: var(--text-dim); max-width: 560px; margin: 0 auto; }
+.gauge { height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; max-width: 480px; margin: 20px auto 0; }
+.gauge-fill { height: 100%; border-radius: 5px; transition: width 0.6s; }
+.finding { border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; background: var(--bg); }
+.finding-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.finding-title { font-weight: 700; font-size: 1rem; color: #f8fafc; }
+.severity { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 4px 10px; border-radius: 999px; }
+.sev-high { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.4); }
+.sev-med { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.4); }
+.sev-low { background: rgba(59,130,246,0.15); color: var(--accent); border: 1px solid rgba(59,130,246,0.4); }
+.sev-ok { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.4); }
+.finding-why { color: var(--text-dim); font-size: 0.9rem; margin-top: 8px; }
+.excerpt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; color: var(--amber);
+  background: rgba(245,158,11,0.07); border-left: 3px solid var(--amber); padding: 10px 14px; margin-top: 10px;
+  border-radius: 0 8px 8px 0; white-space: pre-wrap; word-break: break-word; }
+.state-box { border: 1px solid var(--purple); background: rgba(139,92,246,0.08); border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+.state-box strong { color: var(--purple); }
+.plan-step { display: flex; gap: 14px; margin-bottom: 16px; }
+.plan-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent);
+  color: white; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+.plan-text { padding-top: 3px; }
+.plan-text strong { color: #f8fafc; }
+.cta-box { text-align: center; background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.12));
+  border: 1px solid var(--accent); border-radius: 16px; padding: 32px 24px; margin: 32px 0; }
+.cta-box h3 { font-size: 1.3rem; margin-bottom: 10px; color: #f8fafc; }
+.cta-box p { color: var(--text-dim); max-width: 540px; margin: 0 auto 20px; }
+.share-section { margin-top: 28px; }
+.share-url { display: flex; gap: 10px; flex-wrap: wrap; }
+.share-url input { flex: 1; min-width: 240px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px; color: var(--text-dim); font-size: 0.85rem; }
+.faq-item { margin-bottom: 18px; }
+.faq-item strong { color: #f8fafc; display: block; margin-bottom: 4px; }
+.faq-item p { color: var(--text-dim); font-size: 0.92rem; }
+footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+  color: var(--text-dim); font-size: 0.8rem; }
+footer a { color: var(--accent); }
+.disclaimer { font-size: 0.78rem; color: var(--text-dim); background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px; margin-top: 20px; }
+@media print {
+  nav, .input-section, .btn-row, .share-section, .cta-box, .faq-section, .sample-link, .privacy-note { display: none !important; }
+  body { background: white; color: #111; }
+  .card, .finding, .score-hero, .state-box { background: white; border-color: #ccc; color: #111; }
+  .finding-title, h1, h2, .card h3, .plan-text strong, .score-verdict { color: #111; }
+  .finding-why, .score-sub, .plan-text, footer { color: #333; }
+  #report { display: block !important; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="/">Invisible Exit</a>
+    <a href="/tools/freedom-calculator">Freedom Calculator</a>
+    <a href="/non-compete">Non-Compete Matrix</a>
+    <a href="/blog">Blog</a>
+  </nav>
+
+  <h1>Non-Compete Scanner</h1>
+  <p class="subtitle">Paste your employment contract. Instantly see which clauses could block your side business — scored against your state's law.</p>
+  <div class="privacy-note">🔒 100% in-browser — your contract never leaves your device. No upload, no storage, no account.</div>
+
+  <div class="card input-section">
+    <h3>1. Paste your contract text</h3>
+    <label for="contract">Employment agreement, offer letter, or the relevant handbook sections (more text = better scan)</label>
+    <textarea id="contract" placeholder="Paste your employment agreement here…&#10;&#10;Example clauses the scanner detects:&#10;• “Employee shall not engage in any other business activity…”&#10;• “All inventions conceived during employment shall be the property of the Company…”&#10;• “For a period of twelve months following termination, Employee shall not compete…”"></textarea>
+    <p class="sample-link">No contract handy? <a onclick="loadSample()">Load a sample contract</a> to see how the scan works.</p>
+
+    <div class="controls">
+      <div>
+        <label for="state">Governing state (usually where you work)</label>
+        <select id="state"></select>
+      </div>
+      <div>
+        <label for="salary">Annual salary band</label>
+        <select id="salary">
+          <option value="60000">Under $75K</option>
+          <option value="90000">$75K – $100K</option>
+          <option value="110000" selected>$100K – $120K</option>
+          <option value="150000">$120K – $200K</option>
+          <option value="250000">Over $200K</option>
+        </select>
+      </div>
+      <div>
+        <label for="sideBusinessType">Your planned side business</label>
+        <select id="sideBusinessType">
+          <option value="unrelated" selected>Unrelated to my day job</option>
+          <option value="adjacent">Same industry, different product</option>
+          <option value="competing">Similar to what my employer does</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" onclick="scan()">Scan my contract →</button>
+      <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+    </div>
+  </div>
+
+  <div id="report">
+    <div class="score-hero">
+      <div class="score-label">Side-Business Risk Score</div>
+      <div class="score-number" id="score-number">—</div>
+      <div class="score-verdict" id="score-verdict"></div>
+      <p class="score-sub" id="score-sub"></p>
+      <div class="gauge"><div class="gauge-fill" id="gauge-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="state-box" id="state-analysis"></div>
+
+    <div class="card">
+      <h3>Clause findings</h3>
+      <div id="findings"></div>
+    </div>
+
+    <div class="card">
+      <h3>Your mitigation plan</h3>
+      <div id="plan"></div>
+      <div class="disclaimer"><strong>Not legal advice.</strong> This scan reflects general non-compete enforcement patterns by state as of 2024–2026 and detects clause language heuristically — it can miss clauses or flag benign ones. Non-compete law is changing rapidly (state reforms, FTC rulemaking). Always have a licensed employment attorney in your state review your specific agreement before relying on any of this.</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" onclick="window.print()">📄 Download report (PDF)</button>
+      <button class="btn btn-secondary" onclick="copySummary()">Copy summary</button>
+    </div>
+
+    <div class="share-section card">
+      <h3>Share your result (score only — never your contract)</h3>
+      <div class="share-url">
+        <input type="text" id="share-url" readonly value="https://invisibleexit.com/tools/non-compete-scanner">
+        <button class="btn" onclick="copyShareUrl()">Copy</button>
+        <a class="btn" id="twitter-share" href="#" target="_blank" rel="noopener" style="text-decoration:none;">Post on X</a>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Your contract says you can build. Now what?</h3>
+      <p>Invisible Exit is the faceless side-business system for employed professionals: validate a micro-SaaS idea, pass a full stealth-compliance audit (including the clauses found above), and launch anonymously — without your employer ever knowing.</p>
+      <a class="btn" href="/">Start your invisible exit →</a>
+      <p style="margin-top:14px; font-size:0.85rem;">Next tool: <a href="/tools/freedom-calculator" style="color:var(--accent);">calculate the MRR you need to quit →</a></p>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><strong>Is the Non-Compete Scanner free?</strong><p>Yes — completely free, no signup required.</p></div>
+    <div class="faq-item"><strong>Do you store or read my contract?</strong><p>No. The entire scan runs in JavaScript inside your browser. Your contract text is never transmitted, uploaded, logged, or stored anywhere. Load the page, disconnect from the internet, and the scan still works.</p></div>
+    <div class="faq-item"><strong>What clauses does it detect?</strong><p>Eight clause families: non-compete covenants, non-solicitation, invention/IP assignment, moonlighting and outside-employment bans, exclusivity ("full time and attention") clauses, confidentiality/trade-secret provisions, conflict-of-interest policies, and employer device/monitoring provisions.</p></div>
+    <div class="faq-item"><strong>Is this legal advice?</strong><p>No — education only. Enforcement varies by state and by contract wording. Consult a licensed employment attorney in your jurisdiction before acting.</p></div>
+    <div class="faq-item"><strong>Can I embed this scanner on my site?</strong><p>Yes, free, with a single iframe tag. <a href="/tools/non-compete-scanner/embed" style="color:var(--accent);">Get the embed code →</a></p></div>
+  </div>
+
+  <footer>
+    <p>© 2026 Invisible Exit. State enforceability data reflects general patterns as of 2024–2026; see the full <a href="/non-compete">profession × state non-compete matrix</a> for deeper analysis. This tool provides education, not legal advice. | <a href="/">Invisible Exit</a></p>
+  </footer>
+</div>
+
+<script>
+// ── State enforceability data (mirrors src/data/state-guides.ts) ─────────────
+const STATES = [{"s":"Alabama","ab":"AL","e":"enforced","n":"Enforced if reasonable in scope, geography, and duration."},{"s":"Alaska","ab":"AK","e":"limited","n":"Allowed for sellers of a business; otherwise disfavored."},{"s":"Arizona","ab":"AZ","e":"enforced","n":"Enforced if reasonable and protecting legitimate business interests."},{"s":"Arkansas","ab":"AR","e":"enforced","n":"Enforced when reasonable in scope and duration."},{"s":"California","ab":"CA","e":"not_enforced","n":"Banned except for sale-of-business and partnership exit scenarios."},{"s":"Colorado","ab":"CO","e":"not_enforced","n":"Void for workers earning under $100K/year (2022 reform)."},{"s":"Connecticut","ab":"CT","e":"limited","n":"Restricted for lower-wage workers and certain professions."},{"s":"Delaware","ab":"DE","e":"limited","n":"Enforced if reasonable; Delaware is employer-friendly but reviews scope."},{"s":"District of Columbia","ab":"DC","e":"limited","n":"Banned for most non-healthcare workers; repealed in 2020s."},{"s":"Florida","ab":"FL","e":"enforced","n":"Strongly enforced under Florida's specific statutory framework."},{"s":"Georgia","ab":"GA","e":"enforced","n":"Enforced under Georgia's restrictive covenant statute if reasonable."},{"s":"Hawaii","ab":"HI","e":"limited","n":"Allowed only for legitimate business interests; scrutinized."},{"s":"Idaho","ab":"ID","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Illinois","ab":"IL","e":"limited","n":"Banned for workers earning under $75K (2023 reform)."},{"s":"Indiana","ab":"IN","e":"limited","n":"Allowed if reasonable but subject to judicial scrutiny."},{"s":"Iowa","ab":"IA","e":"enforced","n":"Enforced if reasonable and protecting legitimate interests."},{"s":"Kansas","ab":"KS","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Kentucky","ab":"KY","e":"enforced","n":"Enforced if reasonable in scope, geography, and duration."},{"s":"Louisiana","ab":"LA","e":"enforced","n":"Enforced if specific in scope and duration."},{"s":"Maine","ab":"ME","e":"limited","n":"Allowed only for legitimate interests; scrutinized."},{"s":"Maryland","ab":"MD","e":"limited","n":"Allowed for legitimate interests but heavily regulated."},{"s":"Massachusetts","ab":"MA","e":"limited","n":"Allowed under the 2018 MA Noncompetition Agreement Act with strict rules."},{"s":"Michigan","ab":"MI","e":"enforced","n":"Enforced if reasonable and protecting legitimate interests."},{"s":"Minnesota","ab":"MN","e":"not_enforced","n":"Banned for most workers starting 2025."},{"s":"Mississippi","ab":"MS","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Missouri","ab":"MO","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Montana","ab":"MT","e":"enforced","n":"Enforced if reasonable and protecting legitimate interests."},{"s":"Nebraska","ab":"NE","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Nevada","ab":"NV","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"New Hampshire","ab":"NH","e":"limited","n":"Allowed if reasonable but closely scrutinized."},{"s":"New Jersey","ab":"NJ","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"New Mexico","ab":"NM","e":"limited","n":"Allowed if reasonable but healthcare worker rules apply."},{"s":"New York","ab":"NY","e":"limited","n":"Allowed if reasonable; recent reforms restrict low-wage use."},{"s":"North Carolina","ab":"NC","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"North Dakota","ab":"ND","e":"not_enforced","n":"Banned for most workers under 2019 reform."},{"s":"Ohio","ab":"OH","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Oklahoma","ab":"OK","e":"not_enforced","n":"Banned for most workers under 2024-2025 reform."},{"s":"Oregon","ab":"OR","e":"limited","n":"Allowed only with legitimate business interest and caps on duration."},{"s":"Pennsylvania","ab":"PA","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Rhode Island","ab":"RI","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"South Carolina","ab":"SC","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"South Dakota","ab":"SD","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Tennessee","ab":"TN","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Texas","ab":"TX","e":"enforced","n":"Enforced if reasonable and protecting legitimate interests."},{"s":"Utah","ab":"UT","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Vermont","ab":"VT","e":"limited","n":"Allowed if reasonable but subject to judicial scrutiny."},{"s":"Virginia","ab":"VA","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Washington","ab":"WA","e":"limited","n":"Restricted for workers earning under ~$120K/year."},{"s":"West Virginia","ab":"WV","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Wisconsin","ab":"WI","e":"enforced","n":"Enforced if reasonable in scope and duration."},{"s":"Wyoming","ab":"WY","e":"limited","n":"Allowed if reasonable but courts scrutinize scope."}];
+// Salary-threshold reforms: non-compete void below these annual salaries
+const SALARY_THRESHOLDS = { CO: 100000, IL: 75000, WA: 120000 };
+
+// ── Clause detection patterns ────────────────────────────────────────────────
+const CLAUSES = [
+  { id: "non_compete", name: "Non-compete covenant", weight: 25, stateSensitive: true,
+    re: /non-?compet\w*|shall not[^.]{0,120}(compete|competitive)|(engage|participate)[^.]{0,80}(competitive|competing)\s+(business|activity|enterprise|venture)|restrictive covenant/i,
+    why: "Restricts you from running a business your employer considers competitive — during employment and often 6–24 months after. This is the clause state law regulates most heavily." },
+  { id: "ip_assignment", name: "Invention / IP assignment", weight: 25, stateSensitive: false,
+    re: /invention[s]?\s+assignment|assign[^.]{0,100}(invention|intellectual property|work product|discoveries)|(inventions?|works?|developments?)[^.]{0,80}(property of|belong[s]? to|owned by)\s+the\s+(company|employer|corporation)|work[- ]?(s)?\s*(made\s*)?for\s*hire/i,
+    why: "The single biggest micro-SaaS risk: broadly drafted IP-assignment clauses can claim ownership of code and products you build on personal time. Check for a 'prior inventions' schedule and state carve-outs (e.g., CA Labor Code §2870)." },
+  { id: "moonlighting", name: "Moonlighting / outside employment ban", weight: 20, stateSensitive: false,
+    re: /moonlight\w*|outside\s+(employment|business|work|activities|engagement)|other\s+employment|secondary\s+employment|(engage|participate)[^.]{0,60}any other (business|employment|occupation)|prior written (consent|approval)[^.]{0,80}(business|employment|activity)/i,
+    why: "Requires disclosure or permission for any outside business — even non-competing ones. Violating a disclosure duty is a fireable offense independent of whether the business competes." },
+  { id: "exclusivity", name: "Exclusivity (full time & attention)", weight: 10, stateSensitive: false,
+    re: /devote[^.]{0,60}(full|entire|whole)[^.]{0,40}(time|attention|effort|energies)|exclusive\s+(services?|employment)|best efforts[^.]{0,50}(company|employer)/i,
+    why: "'Full time and attention' language gives your employer an argument that ANY side project breaches the agreement, even without a non-compete. Mitigate by keeping strict time separation and never using work hours or equipment." },
+  { id: "non_solicit", name: "Non-solicitation", weight: 8, stateSensitive: true,
+    re: /non-?solicit\w*|solicit[^.]{0,80}(employee|customer|client|business relation)|(hire|recruit|induce)[^.]{0,60}(employee|contractor)[^.]{0,40}(leave|terminate)/i,
+    why: "Blocks selling to your employer's customers or recruiting coworkers. For an unrelated micro-SaaS this is usually low-risk — as long as your customer base doesn't overlap." },
+  { id: "confidentiality", name: "Confidentiality / trade secrets", weight: 5, stateSensitive: false,
+    re: /confidential\w*|trade secret|proprietary information|non-?disclosure/i,
+    why: "Standard in every contract and enforceable everywhere. Risk to you: never reuse internal documents, code, data, or processes in your side business — trade-secret claims don't need a non-compete." },
+  { id: "conflict", name: "Conflict of interest policy", weight: 5, stateSensitive: false,
+    re: /conflict[s]?\s+of\s+interest|business\s+opportunit(y|ies)[^.]{0,60}(company|employer|present|offer)/i,
+    why: "Corporate-opportunity language means business ideas you encounter through work may have to be offered to your employer first. Build in a domain your job gives you no special access to." },
+  { id: "monitoring", name: "Employer devices & monitoring", weight: 2, stateSensitive: false,
+    re: /company\s+(equipment|devices?|systems|network|computers?)|(monitor|inspection|audit)[^.]{0,60}(email|communications|devices?|systems)|no expectation of privacy/i,
+    why: "Your employer can likely read anything on work devices and networks. Operational rule #1 of a stealth side business: personal device, personal accounts, personal network — always." }
+];
+
+// ── UI setup ─────────────────────────────────────────────────────────────────
+const stateSel = document.getElementById('state');
+STATES.forEach((st, i) => {
+  const o = document.createElement('option');
+  o.value = i; o.textContent = st.s;
+  if (st.ab === 'NY') o.selected = true;
+  stateSel.appendChild(o);
+});
+
+const SAMPLE = `EMPLOYMENT AGREEMENT (EXCERPT)
+
+4.1 Exclusive Services. Employee shall devote Employee's full working time, attention and energies to the business of the Company and shall not, without the prior written consent of the Company, engage in any other business, employment or occupation.
+
+5.2 Inventions Assignment. Employee agrees that all inventions, discoveries, developments and works of authorship conceived, made or reduced to practice during the term of employment shall be the sole and exclusive property of the Company, and Employee hereby assigns all right, title and interest therein to the Company.
+
+6.1 Non-Competition. For a period of twelve (12) months following termination of employment, Employee shall not, directly or indirectly, engage in any business that is competitive with the business of the Company within any geographic market in which the Company operates.
+
+6.2 Non-Solicitation. During employment and for eighteen (18) months thereafter, Employee shall not solicit any customer or employee of the Company for any competing business purpose.
+
+7.1 Confidentiality. Employee shall hold in strict confidence all trade secrets and proprietary information of the Company.
+
+8.3 Company Systems. Employee acknowledges that the Company may monitor all email and communications on Company systems and that Employee has no expectation of privacy on Company equipment.`;
+
+function loadSample() { document.getElementById('contract').value = SAMPLE; scan(); }
+function clearAll() { document.getElementById('contract').value = ''; document.getElementById('report').style.display = 'none'; }
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function excerptFor(text, re) {
+  const m = text.match(re);
+  if (!m) return null;
+  const idx = m.index;
+  const start = Math.max(0, text.lastIndexOf('.', idx) + 1);
+  let end = text.indexOf('.', idx + m[0].length);
+  if (end === -1) end = Math.min(text.length, idx + m[0].length + 160);
+  let ex = text.slice(start, end + 1).trim();
+  if (ex.length > 300) ex = ex.slice(0, 300) + '…';
+  return ex;
+}
+
+let lastResult = null;
+
+function scan() {
+  const text = document.getElementById('contract').value.trim();
+  if (text.length < 40) { alert('Paste at least a paragraph of your contract (or load the sample) so the scanner has something to analyze.'); return; }
+
+  const st = STATES[parseInt(stateSel.value)];
+  const salary = parseInt(document.getElementById('salary').value);
+  const bizType = document.getElementById('sideBusinessType').value;
+
+  // Detect clauses
+  const findings = [];
+  let rawScore = 0;
+  for (const c of CLAUSES) {
+    const found = c.re.test(text);
+    let weight = c.weight;
+    let note = '';
+
+    if (found && c.stateSensitive) {
+      const threshold = SALARY_THRESHOLDS[st.ab];
+      if (st.e === 'not_enforced') {
+        if (st.ab === 'CO' && salary >= 100000) { note = `Colorado only voids non-competes under $100K/yr — at your salary band it may still be enforceable.`; }
+        else { weight = Math.round(weight * 0.2); note = `${st.s}: ${st.n} A post-employment non-compete is very unlikely to be enforced against you — but the clause can still chill (your employer can threaten suit even when it would lose).`; }
+      } else if (st.e === 'limited') {
+        if (threshold && salary < threshold) { weight = Math.round(weight * 0.25); note = `${st.s}: ${st.n} At your salary band, the clause is likely VOID under the state threshold.`; }
+        else { weight = Math.round(weight * 0.6); note = `${st.s}: ${st.n} Courts will scrutinize scope — a truly unrelated side business is hard to block.`; }
+      } else {
+        note = `${st.s}: ${st.n} Treat this clause as live and enforceable.`;
+      }
+    }
+    // Unrelated side business halves competition-family risk
+    if (found && (c.id === 'non_compete' || c.id === 'non_solicit')) {
+      if (bizType === 'unrelated') { weight = Math.round(weight * 0.5); note += ' Your side business is unrelated to your day job, which puts it outside most non-competes\u2019 scope.'; }
+      else if (bizType === 'competing') { weight = Math.round(weight * 1.4); note += ' ⚠ You plan to build something similar to your employer\u2019s business — this clause is aimed squarely at that. Strongly consider a different niche.'; }
+    }
+    if (found) rawScore += weight;
+    findings.push({ ...c, found, effWeight: found ? weight : 0, note, excerpt: found ? excerptFor(text, c.re) : null });
+  }
+
+  const score = Math.min(100, Math.round(rawScore * 100 / 78)); // 78 = base max before multipliers
+  const level = score >= 60 ? 'HIGH' : score >= 30 ? 'MODERATE' : 'LOW';
+  const color = level === 'HIGH' ? 'var(--red)' : level === 'MODERATE' ? 'var(--amber)' : 'var(--green)';
+
+  // Render hero
+  document.getElementById('report').style.display = 'block';
+  document.getElementById('score-number').textContent = score;
+  document.getElementById('score-number').style.color = color;
+  document.getElementById('score-verdict').textContent = level + ' RISK';
+  document.getElementById('score-verdict').style.color = color;
+  const foundCount = findings.filter(f => f.found).length;
+  document.getElementById('score-sub').textContent =
+    level === 'HIGH' ? `${foundCount} of 8 restrictive clause families detected. You can very likely still build — but only with strict operational separation and possibly a legal consult first.`
+    : level === 'MODERATE' ? `${foundCount} of 8 restrictive clause families detected. Buildable with the right precautions — follow the mitigation plan below.`
+    : `${foundCount} of 8 restrictive clause families detected. Your contract leaves you room to build. Follow basic hygiene and go.`;
+  const gf = document.getElementById('gauge-fill');
+  gf.style.width = score + '%'; gf.style.background = color;
+
+  // State analysis
+  const stateVerdict = st.e === 'not_enforced' ? '✅ Non-competes are largely NOT enforceable here'
+    : st.e === 'limited' ? '⚠️ Non-competes are only PARTIALLY enforceable here'
+    : '🔴 Non-competes ARE generally enforced here';
+  const thr = SALARY_THRESHOLDS[st.ab];
+  document.getElementById('state-analysis').innerHTML =
+    `<strong>${esc(st.s)} law:</strong> ${stateVerdict}.<br>${esc(st.n)}` +
+    (thr ? `<br>Salary threshold: non-competes are void for workers earning under <strong>$${thr.toLocaleString()}/yr</strong> in ${esc(st.s)}.` : '') +
+    `<br><a href="/non-compete" style="color:var(--purple);">See the full profession × state non-compete matrix →</a>`;
+
+  // Findings list
+  document.getElementById('findings').innerHTML = findings.map(f => {
+    const sev = !f.found ? 'sev-ok' : f.effWeight >= 15 ? 'sev-high' : f.effWeight >= 7 ? 'sev-med' : 'sev-low';
+    const sevLabel = !f.found ? 'Not found' : f.effWeight >= 15 ? 'High impact' : f.effWeight >= 7 ? 'Medium' : 'Low';
+    return `<div class="finding">
+      <div class="finding-head"><span class="finding-title">${f.found ? '⚠️' : '✅'} ${esc(f.name)}</span><span class="severity ${sev}">${sevLabel}</span></div>
+      ${f.found ? `<p class="finding-why">${esc(f.why)}${f.note ? ' ' + esc(f.note) : ''}</p>` : `<p class="finding-why">No ${esc(f.name.toLowerCase())} language detected in the pasted text.</p>`}
+      ${f.excerpt ? `<div class="excerpt">“${esc(f.excerpt)}”</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Mitigation plan
+  const has = id => findings.find(f => f.id === id).found;
+  const steps = [];
+  if (has('ip_assignment')) steps.push(['Protect your IP first', 'Check your agreement for a "prior inventions" schedule and list your project idea there if you can. Build only on personal devices, personal accounts, and personal time — and keep timestamped evidence (commit history on a personal GitHub, receipts for your own tooling).']);
+  if (has('moonlighting') || has('exclusivity')) steps.push(['Decide your disclosure strategy', 'Your contract restricts outside work. Options: (a) request written approval framed as a hobby project, (b) structure under an anonymous LLC so the business is not publicly tied to your name, or (c) both. Never rely on "they won\u2019t find out" alone — rely on being genuinely non-competing and operationally separate.']);
+  if (has('non_compete') && document.getElementById('sideBusinessType').value !== 'unrelated') steps.push(['Change your niche', 'The cheapest mitigation for a non-compete is picking a market your employer demonstrably does not serve. An unrelated micro-SaaS converts a HIGH-risk plan into a defensible one overnight.']);
+  steps.push(['Form an anonymous LLC in the right state', 'New Mexico, Wyoming, and Delaware allow anonymous LLC ownership — your name stays off public records, so casual employer searches find nothing. This is stealth layer #1.']);
+  steps.push(['Keep total operational separation', 'Separate laptop, separate email, separate bank account, no work Wi-Fi, no work hours. ' + (has('monitoring') ? 'Your contract explicitly allows employer monitoring — treat every company device as an open book.' : 'Even without an explicit monitoring clause, assume work devices are visible to your employer.')]);
+  steps.push(['Run a full stealth-compliance audit before launch', 'Clause detection is step one. Before you take a dollar of revenue, audit every public surface — domain WHOIS, payment descriptor, marketing identity, LLC filings — so nothing links the business to your name.']);
+  document.getElementById('plan').innerHTML = steps.map((s, i) =>
+    `<div class="plan-step"><div class="plan-num">${i + 1}</div><div class="plan-text"><strong>${esc(s[0])}.</strong> ${esc(s[1])}</div></div>`).join('');
+
+  // Share (score + state only — never contract content)
+  const shareUrl = `https://invisibleexit.com/tools/non-compete-scanner#score=${score}&st=${st.ab}&lvl=${level}`;
+  document.getElementById('share-url').value = shareUrl;
+  const tweet = encodeURIComponent(`I scanned my employment contract for side-business blockers: ${level} risk (${score}/100) under ${st.s} law. ${foundCount}/8 restrictive clause families found. Scan yours free (nothing gets uploaded):`);
+  document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${tweet}&url=${encodeURIComponent('https://invisibleexit.com/tools/non-compete-scanner')}`;
+
+  lastResult = { score, level, state: st.s, foundCount, findings };
+  document.getElementById('report').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copySummary() {
+  if (!lastResult) return;
+  const r = lastResult;
+  const lines = [
+    `NON-COMPETE SCAN — ${r.level} RISK (${r.score}/100) under ${r.state} law`,
+    `${r.foundCount}/8 restrictive clause families detected:`,
+    ...r.findings.filter(f => f.found).map(f => `  ⚠ ${f.name}`),
+    ``,
+    `Full scan + mitigation plan: https://invisibleexit.com/tools/non-compete-scanner`
+  ];
+  navigator.clipboard.writeText(lines.join('\n')).then(() => alert('Summary copied — paste it anywhere.'));
+}
+function copyShareUrl() {
+  const input = document.getElementById('share-url');
+  input.select();
+  navigator.clipboard.writeText(input.value).then(() => alert('Share URL copied! (Contains only your score — never your contract.)'));
+}
+
+// Hash restore: show a banner-style prefill for shared links
+(function () {
+  if (location.hash.length > 1) {
+    const p = new URLSearchParams(location.hash.slice(1));
+    const stAb = p.get('st');
+    if (stAb) {
+      const idx = STATES.findIndex(x => x.ab === stAb);
+      if (idx >= 0) stateSel.value = idx;
+    }
+  }
+})();
+</script>
+</body>
+</html>

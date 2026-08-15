@@ -573,7 +573,7 @@ const ManifestoPage = () => {
           <div className="text-center mt-10">
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
               Each stage is one tool in your dashboard. All five run together for{" "}
-              <strong className="text-foreground">$0.97/month</strong> — less than
+              <strong className="text-foreground">$9/month</strong> — less than
               the coffee you'll drink while building.
             </p>
             <Link

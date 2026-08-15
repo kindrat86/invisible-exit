@@ -549,7 +549,7 @@ const StoryPage = () => {
                   <ArrowRight className="w-5 h-5 text-success" />
                 </div>
                 <h3 className="text-white font-bold text-base mb-1">
-                  Start With the Tools ($0.97)
+                  Start With the Tools ($9)
                 </h3>
                 <p className="text-white/50 text-xs mb-4">
                   Skip the theory. Get the 5 tools and start building today.
@@ -569,7 +569,7 @@ const StoryPage = () => {
                       disabled={loading}
                       className="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-2.5 px-4 rounded-lg text-sm transition-all disabled:opacity-50"
                     >
-                      {loading ? "..." : "Start for $0.97/month"}
+                      {loading ? "..." : "Start for $9/month"}
                       {!loading && <ArrowRight className="w-4 h-4 inline ml-1" />}
                     </button>
                   </form>

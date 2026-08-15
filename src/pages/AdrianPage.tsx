@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: "How do I know you're not lying about the revenue?",
-    a: "You don't. And I can't prove it without revealing my identity, which I won't do. Here's what I can tell you: the system is based on verifiable math. $29/month × 138 customers = $4,002/month. That's not a claim — it's arithmetic. If the math makes sense to you, try the system for $0.97. If it doesn't work, refund.",
+    a: "You don't. And I can't prove it without revealing my identity, which I won't do. Here's what I can tell you: the system is based on verifiable math. $29/month × 138 customers = $4,002/month. That's not a claim — it's arithmetic. If the math makes sense to you, try the system for $9. If it doesn't work, refund.",
   },
   {
     q: "Will you ever reveal your identity?",
@@ -38,7 +38,7 @@ const FAQS = [
   },
   {
     q: "How can I trust advice from someone I can't see?",
-    a: "You shouldn't trust blindly. Read the story. Check the math. Try the tools for $0.97. The 30-day money-back guarantee means the risk is on me, not you. If the system doesn't work, you lose nothing. If it does, you gain everything. That's the deal.",
+    a: "You shouldn't trust blindly. Read the story. Check the math. Try the tools for $9. The 30-day money-back guarantee means the risk is on me, not you. If the system doesn't work, you lose nothing. If it does, you gain everything. That's the deal.",
   },
 ];
 

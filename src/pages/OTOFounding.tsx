@@ -96,9 +96,9 @@ const OTOFounding = () => {
     { name: "Stealth Ops Hub (entity + compliance)", value: "$25/mo" },
     { name: "Launch Control (go-live automation)", value: "$18/mo" },
     { name: "Brand Manager (faceless content)", value: "$27/mo" },
-    { name: "Founding Perks (lifetime lock + beta + community + wall)", value: "$47/mo" },
+    { name: "Founding Perks (lifetime lock + beta + community + wall)", value: "$29/mo" },
   ];
-  const TOTAL_VALUE = 12 + 15 + 25 + 18 + 27 + 47;
+  const TOTAL_VALUE = 12 + 15 + 25 + 18 + 27 + 29;
 
 
   return (
@@ -158,7 +158,7 @@ const OTOFounding = () => {
           {/* Price preview — visible above the fold on mobile */}
           <div className="mb-6">
             <p className="text-white/50 text-sm mb-1">
-              <span className="line-through text-red-400/70">$97.99/month</span> — Founding price locks at:
+              <span className="line-through text-red-400/70">$29/month</span> — Founding price locks at:
             </p>
             <div className="flex items-baseline justify-center gap-1">
               <span className="text-4xl font-extrabold text-white">$17.99</span>
@@ -308,7 +308,7 @@ const OTOFounding = () => {
               },
               {
                 q: "\"$17.99/month feels like a lot right now.\"",
-                a: "I spent $2,400 in wasted time researching LLC formations because I didn't have the Stealth Ops Hub. $17.99/month is $215/year. The price lock saves you $960/year versus what future members pay. You're not spending $17.99 — you're investing $215 to avoid losing $2,400.",
+                a: "I spent $2,400 in wasted time researching LLC formations because I didn't have the Stealth Ops Hub. $17.99/month is $215/year. The price lock saves you $132/year versus what future members pay. You're not spending $17.99 — you're investing $215 to avoid losing $2,400.",
               },
               {
                 q: "\"What if my employer finds out?\"",
@@ -320,7 +320,7 @@ const OTOFounding = () => {
               },
               {
                 q: "\"What if I join and it doesn't work?\"",
-                a: "Email 'refund' within 30 days. You get every cent back. No questions. No forms. No friction. You keep the basic $0.97 membership either way. The risk is entirely on me.",
+                a: "Email 'refund' within 30 days. You get every cent back. No questions. No forms. No friction. You keep the basic $9 membership either way. The risk is entirely on me.",
               },
               {
                 q: "\"Can't I just figure this out myself for free?\"",
@@ -552,7 +552,7 @@ const OTOFounding = () => {
             What happens if you do nothing?
           </p>
           <p className="text-white/60 text-sm leading-relaxed">
-            Your $0.97/month tools will still work. Your dashboard will still run. But{' '}
+            Your $9/month tools will still work. Your dashboard will still run. But{' '}
             <strong className="text-white/80">the founding price expires in {14 - Math.floor((Date.now() - new Date('2026-07-06').getTime()) / (1000 * 60 * 60 * 24)) > 0 ? 'a few' : '0'} days</strong>.
             After that, it's $9.99/month forever. And the founding wall — your name on the list of
             people who believed first — closes permanently.

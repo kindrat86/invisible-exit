@@ -14,7 +14,7 @@ import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
  * Step 1: The Offer (this page — full stack, guarantee, social proof)
  * Step 2: Stripe Checkout (the actual payment)
  *
- * This page replaces the broken flow where $0.97/mo CTA went to /dashboard
+ * This page replaces the broken flow where $9/mo CTA went to /dashboard
  * (a login page) with no checkout in between.
  *
  * Brunson patterns implemented:
@@ -45,8 +45,8 @@ const GRAND_TOTAL = TOTAL_VALUE_MONTHLY + TOTAL_BONUS_VALUE; // $198
 
 const FAQS = [
   {
-    q: "Is this really $0.97/month?",
-    a: "Yes. Founding members lock in $0.97/month for life. When founding closes, the price goes to $12/month. You keep $0.97 forever.",
+    q: "Is this really $9/month?",
+    a: "Yes. Founding members lock in $9/month for life. When founding closes, the price goes to $19/month. You keep $9 forever.",
   },
   {
     q: "Can I cancel anytime?",
@@ -106,7 +106,7 @@ const StartPage = () => {
 
   const handleCheckout = async () => {
     trackEvent("start_page_checkout_clicked");
-    trackGoogleConversion(0.97);
+    trackGoogleConversion(9);
     setCheckoutLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke("create-checkout", {
@@ -128,8 +128,8 @@ const StartPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Start Building for $0.97/Month | Invisible Exit"
-        description="Get all 5 tools — FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager — for $0.97/month. 30-day money-back guarantee."
+        title="Start Building for $9/Month | Invisible Exit"
+        description="Get all 5 tools — FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager — for $9/month. 30-day money-back guarantee."
         url="/start"
         noindex
       />
@@ -159,7 +159,7 @@ const StartPage = () => {
             <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "50ms" }}>
               {fromTripwire
                 ? "The Stealth Ops Blueprint shows you how to stay invisible. These 5 tools show you what to build, validate, launch, and grow — all while keeping your day job."
-                : "All 5 tools. 3 bonuses. $0.97/month. Locked for life."}
+                : "All 5 tools. 3 bonuses. $9/month. Locked for life."}
             </p>
 
             {/* Trust bar */}
@@ -180,7 +180,7 @@ const StartPage = () => {
             <p className="text-eyebrow text-primary mb-4 text-center">The Full Stack</p>
             <h2 className="text-h1 text-foreground mb-2 text-center">Here's Everything You Get</h2>
             <p className="text-body text-muted-foreground text-center mb-10 max-w-xl mx-auto">
-              5 tools + 3 fast-action bonuses. Total value <strong className="text-foreground">${GRAND_TOTAL}</strong>. Your founding price: less than a dollar.
+              5 tools + 3 fast-action bonuses. Total value <strong className="text-foreground">${GRAND_TOTAL}</strong>. Your founding price: $9/month.
             </p>
 
             {/* Core tools */}
@@ -239,12 +239,12 @@ const StartPage = () => {
                 <div className="flex items-center justify-between py-4">
                   <span className="text-foreground font-semibold text-lg">Your price today:</span>
                   <div className="text-right">
-                    <span className="text-4xl sm:text-5xl font-bold text-primary">$0.97</span>
+                    <span className="text-4xl sm:text-5xl font-bold text-primary">$9</span>
                     <span className="text-lg font-normal text-muted-foreground">/mo</span>
                   </div>
                 </div>
                 <p className="text-caption text-center mb-6">
-                  That's ${GRAND_TOTAL}/month in value for $0.97/month. Locked for life.
+                  That's ${GRAND_TOTAL}/month in value for $9/month. Locked for life.
                 </p>
               </div>
             </div>
@@ -267,13 +267,13 @@ const StartPage = () => {
               ) : (
                 <>
                   <Lock className="w-5 h-5" />
-                  Start for $0.97/mo
+                  Start for $9/mo
                   <ArrowRight className="w-5 h-5" />
                 </>
               )}
             </button>
             <p className="text-sm text-muted-foreground mt-4">
-              $0.97/month · Secure Stripe checkout.
+              $9/month · Secure Stripe checkout.
               {" "}Cancel anytime.
             </p>
             <div className="flex items-center justify-center gap-4 mt-4 text-xs text-muted-foreground/60">
@@ -320,7 +320,7 @@ const StartPage = () => {
                 <p className="text-muted-foreground text-xs">
                   <span id="start-countdown-days" className="font-bold text-red-500">14</span> days,{" "}
                   <span id="start-countdown-hours" className="font-bold text-red-500">23</span> hours remaining.
-                  After that, the price goes to $12/month permanently.
+                  After that, the price goes to $19/month permanently.
                 </p>
               </div>
             </div>
@@ -367,13 +367,13 @@ const StartPage = () => {
               ) : (
                 <>
                   <Lock className="w-5 h-5" />
-                  Start for $0.97/mo
+                  Start for $9/mo
                   <ArrowRight className="w-5 h-5" />
                 </>
               )}
             </button>
             <p className="text-sm text-white/40 mt-4">
-              30-day money-back guarantee · Cancel anytime · Locked at $0.97/month for life
+              30-day money-back guarantee · Cancel anytime · Locked at $9/month for life
             </p>
           </div>
         </section>

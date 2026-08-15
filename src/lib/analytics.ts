@@ -101,6 +101,7 @@ type AnalyticsEvent =
   | "pricing_page_starter_clicked"
   | "proof_page_cta_clicked"
   | "referral_link_copied"
+  | "referral_share_clicked"
   | "squeeze_email_capture_failed"
   | "start_page_checkout_clicked"
   | "start_page_viewed"

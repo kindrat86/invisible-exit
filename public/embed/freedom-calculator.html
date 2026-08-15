@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://invisibleexit.com/embed/freedom-calculator" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Freedom Number Calculator — InvisibleExit</title>
@@ -14,8 +16,15 @@ input:focus{outline:2px solid #8b5cf6;border-color:transparent}
 .result{margin-top:1.2rem;padding:1rem;background:#1e293b;border-radius:8px;text-align:center}
 .result .num{font-size:1.8rem;font-weight:700;color:#8b5cf6}
 .result .label{font-size:0.75rem;color:#64748b;margin-top:0.3rem}
+.alt{margin-top:0.8rem;padding:0.9rem;background:#132034;border:1px solid #1e3a5f;border-radius:8px;text-align:center}
+.alt .num{font-size:1.3rem;font-weight:700;color:#34d399}
+.alt .label{font-size:0.72rem;color:#64748b;margin-top:0.3rem;line-height:1.4}
 button{width:100%;padding:0.6rem;margin-top:1rem;background:linear-gradient(135deg,#8b5cf6,#a78bfa);color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;transition:opacity 0.2s}
 button:hover{opacity:0.9}
+.cta{display:block;margin-top:0.8rem;padding:0.55rem;text-align:center;background:transparent;border:1px solid #8b5cf6;border-radius:8px;color:#a78bfa;font-size:0.8rem;font-weight:600;text-decoration:none;transition:background 0.2s}
+.cta:hover{background:rgba(139,92,246,0.12)}
+.brand{margin-top:0.9rem;text-align:center;font-size:0.68rem;color:#475569}
+.brand a{color:#8b5cf6;text-decoration:none}
 </style>
 </head>
 <body>
@@ -26,15 +35,22 @@ button:hover{opacity:0.9}
 <input type="number" id="rate" value="4" min="0" max="20" step="0.1">
 <div class="result" id="result">
   <div class="num" id="freedomNumber">$1,200,000</div>
-  <div class="label">Your Freedom Number</div>
+  <div class="label">Your Freedom Number (nest egg via the 4% rule)</div>
+</div>
+<div class="alt">
+  <div class="num" id="mrrNumber">$4,000/mo</div>
+  <div class="label">The shortcut: cover the same expenses with recurring side-business income — no nest egg required</div>
 </div>
 <button onclick="calculate()">Calculate</button>
+<a class="cta" id="ctaLink" href="https://invisibleexit.com/freedom?utm_source=embed&utm_medium=widget&utm_campaign=fire-partners" target="_blank" rel="noopener">Build your exit plan free →</a>
+<p class="brand">Powered by <a href="https://invisibleexit.com/?utm_source=embed&utm_medium=widget&utm_campaign=fire-partners" target="_blank">InvisibleExit</a> — build a side business your employer never sees</p>
 <script>
 function calculate(){
   const e=parseFloat(document.getElementById('expenses').value)||0;
   const r=(parseFloat(document.getElementById('rate').value)||4)/100;
   const n=r>0?(e*12/r).toFixed(0):0;
   document.getElementById('freedomNumber').textContent='$'+Number(n).toLocaleString();
+  document.getElementById('mrrNumber').textContent='$'+Number(e.toFixed(0)).toLocaleString()+'/mo';
 }
 calculate();
 </script>

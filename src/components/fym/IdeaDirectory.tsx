@@ -485,7 +485,7 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
                     Step 1: Identify 3 target communities where your audience gathers.
                     Step 2: Create a minimal landing page with your value proposition.
                     Step 3: Post a problem-awareness thread and measure response.
-                    Step 4: Run a micro-test with a $0.97 entry point.
+                    Step 4: Run a micro-test with a $9 entry point.
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
                     The step-by-step validation script to test this idea in one weekend.

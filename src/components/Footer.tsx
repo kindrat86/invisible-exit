@@ -63,7 +63,7 @@ const FOOTER_SECTIONS = [
       { label: "Non-Compete Guide", to: "/non-compete" },
       { label: "About", to: "/about" },
       { label: "Affiliates (30%)", to: "/affiliates" },
-      { label: "Pro ($47/mo)", to: "/pro" },
+      { label: "Pro ($29/mo)", to: "/pro" },
       { label: "Weekend Workshop ($97)", to: "/weekend-workshop" },
     ],
   },
@@ -324,6 +324,15 @@ const Footer = () => {
             © {new Date().getFullYear()} Invisible Exit. All rights reserved.
           </p>
           <div className="flex items-center gap-4 order-1 sm:order-2">
+            <a
+              href="https://strategic-flow-audit.replit.app/directory"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary-light hover:bg-primary/20 transition-colors"
+              aria-label="Listed on ToolIndex"
+            >
+              Listed on ToolIndex
+            </a>
             <p className="hidden sm:block text-white/50 text-xs sm:text-sm">
               Built by a corporate manager, for corporate managers.
             </p>

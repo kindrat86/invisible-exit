@@ -7,6 +7,14 @@
   "icon": "https://invisibleexit.com/favicon.ico",
   "items": [
     {
+      "id": "https://invisibleexit.com/data/golden-handcuffs-index/",
+      "url": "https://invisibleexit.com/data/golden-handcuffs-index/",
+      "title": "Golden Handcuffs Index 2026 \u2014 Which Industries Trap Their Employees",
+      "content_text": "Composite 0-100 index of employee lock-in across 10 U.S. industries, built from BLS quits rates, tenure, and earnings. Finance quits: 1.0%/mo vs hospitality 4.2%/mo.",
+      "date_published": "2026-08-13T00:00:00Z",
+      "date_modified": "2026-08-13T00:00:00Z"
+    },
+    {
       "id": "https://invisibleexit.com/data/micro-saas-exit-multiples/",
       "url": "https://invisibleexit.com/data/micro-saas-exit-multiples/",
       "title": "Micro-SaaS Exit Multiples & Valuation Data 2026",

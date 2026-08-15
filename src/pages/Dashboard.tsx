@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import AuthGuard from "@/components/AuthGuard";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import SEOHead from "@/components/SEOHead";
 import DashboardLayout from "@/components/DashboardLayout";
 import FYMCalculator from "@/components/FYMCalculator";
 import FYMHistory from "@/components/FYMHistory";
@@ -556,6 +557,11 @@ export default function Dashboard() {
   return (
     <AuthGuard>
       <ErrorBoundary>
+        <SEOHead
+          title="Dashboard - Invisible Exit"
+          description="Your Invisible Exit dashboard — track freedom number, validate ideas, manage stealth ops, and build your anonymous side business."
+          noindex={true}
+        />
         <DashboardContent />
       </ErrorBoundary>
     </AuthGuard>

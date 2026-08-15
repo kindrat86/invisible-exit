@@ -70,7 +70,7 @@ function generateLlmsTxt(): string {
   lines.push("");
   lines.push("> Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
   lines.push("");
-  lines.push("Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $0.97/month.");
+  lines.push("Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $9/month.");
   lines.push("");
 
   // ── Core Pages ──
@@ -100,6 +100,8 @@ function generateLlmsTxt(): string {
   lines.push("");
   lines.push(`- [Pro Membership](https://invisibleexit.com/pro): Pro tier — full access to all 5 AI tools`);
   lines.push(`- [Freedom Number Calculator](https://invisibleexit.com/freedom): Calculate your freedom number and MRR target`);
+  lines.push(`- [Non-Compete Scanner](https://invisibleexit.com/tools/non-compete-scanner): Free in-browser scanner that flags employment-contract clauses (non-compete, IP assignment, moonlighting bans) that could block a side business, scored against all 50 states' laws`);
+  lines.push(`- [Freedom Number Calculator Tool](https://invisibleexit.com/tools/freedom-calculator): Interactive calculator — when does side-business MRR replace your salary (tax-adjusted, embeddable)`);
   lines.push(`- [Inner Circle](https://invisibleexit.com/inner-circle): Private community of employed founders building invisible revenue`);
   lines.push(`- [Affiliate Program](https://invisibleexit.com/affiliates): Earn recurring commissions referring Invisible Exit`);
   lines.push(`- [Dream 100](https://invisibleexit.com/dream-100): Dream 100 audience-building framework`);
@@ -517,7 +519,7 @@ function generateLlmsFullTxt(): string {
   lines.push("");
   lines.push("## Platform Overview");
   lines.push("");
-  lines.push("Invisible Exit is a faceless side-business system for employed professionals — a membership platform of 5 AI tools for building anonymous micro-SaaS recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $0.97/month. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or business exit-planning / M&A.)");
+  lines.push("Invisible Exit is a faceless side-business system for employed professionals — a membership platform of 5 AI tools for building anonymous micro-SaaS recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $9/month. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or business exit-planning / M&A.)");
   lines.push("");
 
   // ── Blog Posts ──

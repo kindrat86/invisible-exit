@@ -41,7 +41,7 @@ const SqueezePage = () => {
   const [hoursPerWeek, setHoursPerWeek] = useState("5");
 
   // ── DOTCOM SECRETS Ch 14: Order Bump ──
-  // Checkbox on the email step that adds a $7 one-time to the $0.97/mo checkout
+  // Checkbox on the email step that adds a $7 one-time to the $9/mo checkout
   const [addStealthBlueprint, setAddStealthBlueprint] = useState(false);
 
   // Calculated result
@@ -758,7 +758,7 @@ const SqueezePage = () => {
                   }
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
-                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $0.97/month"}
+                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $9/month"}
                 </Link>
                 <Link
                   to="/story"

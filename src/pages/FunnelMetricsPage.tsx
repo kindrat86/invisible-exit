@@ -83,7 +83,7 @@ const FUNNEL_STAGES = [
     bg: "bg-emerald-500/10",
   },
   {
-    stage: "Purchases ($0.97)",
+    stage: "Purchases ($9)",
     icon: Check,
     target: "50% checkout completion (2.8/month)",
     current: "0 — no traffic yet",
@@ -105,7 +105,7 @@ const FUNNEL_STAGES = [
     bg: "bg-emerald-500/10",
   },
   {
-    stage: "Pro Upgrade ($47)",
+    stage: "Pro Upgrade ($29)",
     icon: Users,
     target: "10% of buyers (0.28/month)",
     current: "NEW: /pro page with comparison table + application",
@@ -165,7 +165,7 @@ const FunnelMetricsPage = () => {
       const otoBuyers = Math.round(buyers * otoUpgradeRate);
       const proBuyers = Math.round(otoBuyers * proUpgradeRate);
 
-      const mrr = (buyers * 0.97) + (otoBuyers * 17.99) + (proBuyers * 47);
+      const mrr = (buyers * 9) + (otoBuyers * 17.99) + (proBuyers * 29);
       const monthsTo4k = mrr > 0 ? Math.ceil(4000 / mrr) : Infinity;
       const cac = buyers > 0 ? 0 / buyers : 0; // $0 ad spend
 
@@ -288,7 +288,7 @@ const FunnelMetricsPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
                 <p className="text-2xl font-bold text-foreground">2.8</p>
-                <p className="text-xs text-muted-foreground">$0.97 buyers</p>
+                <p className="text-xs text-muted-foreground">$9 buyers</p>
                 <p className="text-xs text-success">$2.72/mo</p>
               </div>
               <div>
@@ -298,7 +298,7 @@ const FunnelMetricsPage = () => {
               </div>
               <div>
                 <p className="text-2xl font-bold text-foreground">0.28</p>
-                <p className="text-xs text-muted-foreground">$47 Pro</p>
+                <p className="text-xs text-muted-foreground">$29 Pro</p>
                 <p className="text-xs text-success">$13.16/mo</p>
               </div>
               <div>
@@ -411,7 +411,7 @@ const FunnelMetricsPage = () => {
               </div>
               <div className="text-center">
                 <p className="text-3xl font-bold text-foreground tabular-nums" id="calc-buyers">1</p>
-                <p className="text-xs text-muted-foreground">$0.97 Buyers</p>
+                <p className="text-xs text-muted-foreground">$9 Buyers</p>
               </div>
               <div className="text-center">
                 <p className="text-3xl font-bold text-amber-500 tabular-nums" id="calc-oto">0</p>
@@ -437,7 +437,7 @@ const FunnelMetricsPage = () => {
 
           <p className="text-center text-xs text-muted-foreground mt-4 max-w-lg mx-auto">
             Assumptions: 50% of squeeze optins open emails. 40% of checkout starts complete.
-            20% of $0.97 buyers upgrade to OTO. 10% of OTO buyers go Pro ($47).
+            20% of $9 buyers upgrade to OTO. 10% of OTO buyers go Pro ($29).
             These are Russell's benchmark conversion rates from Dotcom Secrets.
           </p>
         </div>

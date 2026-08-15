@@ -2,7 +2,7 @@
 
 > Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game "Invisible, Inc." or traditional business exit-planning / M&A advisory.)
 
-Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $0.97/month.
+Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $9/month.
 
 ## Core Pages
 
@@ -30,6 +30,8 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 
 - [Pro Membership](https://invisibleexit.com/pro): Pro tier — full access to all 5 AI tools
 - [Freedom Number Calculator](https://invisibleexit.com/freedom): Calculate your freedom number and MRR target
+- [Non-Compete Scanner](https://invisibleexit.com/tools/non-compete-scanner): Free in-browser scanner that flags employment-contract clauses (non-compete, IP assignment, moonlighting bans) that could block a side business, scored against all 50 states' laws
+- [Freedom Number Calculator Tool](https://invisibleexit.com/tools/freedom-calculator): Interactive calculator — when does side-business MRR replace your salary (tax-adjusted, embeddable)
 - [Inner Circle](https://invisibleexit.com/inner-circle): Private community of employed founders building invisible revenue
 - [Affiliate Program](https://invisibleexit.com/affiliates): Earn recurring commissions referring Invisible Exit
 - [Dream 100](https://invisibleexit.com/dream-100): Dream 100 audience-building framework
@@ -284,13 +286,8 @@ Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and
 - [Personal Runway Calculator](https://invisibleexit.com/calculators/runway-calculator): Your runway is how many months you can survive on savings without any income. The longer your runway, the more risks you
 - [Equity vs. Micro-SaaS Calculator](https://invisibleexit.com/calculators/equity-vs-saas): If you are waiting for a corporate equity event (IPO, acquisition, vesting), you are making a bet. This calculator compa
 
-## Data & Benchmark Reports (5)
+## Data & Benchmark Reports (0)
 
-- [Micro-SaaS Revenue Benchmarks 2026](https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026): How much do bootstrapped micro-SaaS businesses actually make? This report compiles indicative revenue benchmarks for the
-- [Side Business Statistics 2026: The Complete Data Report](https://invisibleexit.com/data/side-business-statistics-2026): How common are side businesses? How much do they make? What are the success rates? We compiled 50+ statistics from gover
-- [Non-Compete Enforcement by State: Complete Guide (2026)](https://invisibleexit.com/data/non-compete-enforcement-by-state): Non-compete laws vary dramatically by state. Some states ban them entirely. Others enforce them aggressively. Before sta
-- [Micro-SaaS Pricing Benchmarks 2026: What to Charge](https://invisibleexit.com/data/micro-saas-pricing-benchmarks): Stop guessing your pricing. This report compiles publicly listed pricing from bootstrapped micro-SaaS products to show w
-- [SaaS Churn Benchmarks by Niche: 2026 Data](https://invisibleexit.com/data/churn-benchmarks-by-niche): Churn is the most important — and most misunderstood — metric in SaaS. Is 5% monthly churn good or bad? It depends on yo
 
 ## Resource Hub (6)
 

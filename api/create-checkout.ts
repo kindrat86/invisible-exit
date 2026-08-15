@@ -1,5 +1,11 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import Stripe from "stripe";
+import {
+  findReferrer,
+  ensureReferredFirstMonthCoupon,
+  isValidCodeFormat,
+  REFERRAL_COUPON_FIRST_MONTH,
+} from "./_lib/referral";
 
 interface TierConfig {
   priceId: string;
@@ -40,18 +46,43 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-    const { tier, returnUrl, cancelUrl } = req.body;
+    const { tier, returnUrl, cancelUrl, referralCode } = req.body;
     const siteUrl =
       process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? "https://invisibleexit.com";
 
+    // ── Referral Engine: validate the code and prep the referred-user reward.
+    //    A valid code (a) is stamped into session metadata so the webhook can
+    //    credit the referrer, and (b) gives the referred subscriber their
+    //    first month free (100% off, 1 cycle) on subscription checkouts.
+    let referralMeta: Record<string, string> = {};
+    let referralDiscount: Stripe.Checkout.SessionCreateParams.Discount[] | undefined;
+    if (isValidCodeFormat(referralCode)) {
+      try {
+        const referrer = await findReferrer(referralCode);
+        if (referrer) {
+          referralMeta = { referral_code: referralCode };
+          if (await ensureReferredFirstMonthCoupon(stripe)) {
+            referralDiscount = [{ coupon: REFERRAL_COUPON_FIRST_MONTH }];
+          }
+        }
+      } catch (refErr) {
+        // Referral lookup must never block checkout.
+        console.error("referral lookup failed:", refErr);
+      }
+    }
+
     // Map tier names to Stripe price IDs
-    // Subscriptions: starter, founding, standard
+    // Subscriptions: starter ($9/mo Founder), founder_annual ($79/yr), founding (legacy), standard ($29/mo Stealth Pro)
     // One-time: tripwire, workshop, book
-    // Combo: tripwire_bump = starter sub ($0.97/mo) + tripwire one-time ($7)
+    // Combo: tripwire_bump = starter sub ($9/mo) + tripwire one-time ($7)
     const SUBSCRIPTION_TIERS: Record<string, TierConfig> = {
       starter: {
         priceId: process.env.STRIPE_STARTER_PRICE_ID!,
         product: "starter",
+      },
+      founder_annual: {
+        priceId: process.env.STRIPE_FOUNDER_ANNUAL_PRICE_ID!,
+        product: "founder_annual",
       },
       founding: {
         priceId: process.env.STRIPE_FOUNDING_PRICE_ID!,
@@ -125,8 +156,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         success_url: bumpSuccessUrl,
         cancel_url: safeSiteUrl(cancelUrl, siteUrl, `${siteUrl}/`),
         allow_promotion_codes: false,
-        metadata: { product: "starter", order_bump: "tripwire" },
+        metadata: { product: "starter", order_bump: "tripwire", ...referralMeta },
       };
+      if (referralDiscount) {
+        bumpSessionParams.discounts = referralDiscount;
+      }
 
       if (customerEmail) {
         bumpSessionParams.customer_email = customerEmail;
@@ -155,8 +189,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       success_url: successUrl,
       cancel_url: safeSiteUrl(cancelUrl, siteUrl, `${siteUrl}/`),
       allow_promotion_codes: false,
-      metadata: { product: tierConfig.product },
+      metadata: { product: tierConfig.product, ...referralMeta },
     };
+    // Referred-user first-month-free applies to subscriptions only
+    // (a "repeating" coupon can't be attached to a one-time payment).
+    if (!isOneTime && referralDiscount) {
+      sessionParams.discounts = referralDiscount;
+    }
 
     if (customerEmail) {
       sessionParams.customer_email = customerEmail;

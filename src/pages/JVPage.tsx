@@ -57,9 +57,9 @@ const JV_OFFER_ITEMS = [
 
 const REVENUE_EXAMPLES = [
   { audience: "5,000 newsletter subs", clickRate: "3%", clicks: 150, convRate: "2%", buyers: 3, price: "$17.99", monthly: "$27", annual: "$323" },
-  { audience: "20,000 YouTube subs", clickRate: "1%", clicks: 200, convRate: "3%", buyers: 6, price: "$47", monthly: "$141", annual: "$1,692" },
+  { audience: "20,000 YouTube subs", clickRate: "1%", clicks: 200, convRate: "3%", buyers: 6, price: "$29", monthly: "$87", annual: "$1,044" },
   { audience: "50K social followers", clickRate: "0.5%", clicks: 250, convRate: "2%", buyers: 5, price: "$17.99", monthly: "$45", annual: "$539" },
-  { audience: "100K podcast downloads/mo", clickRate: "2%", clicks: 2000, convRate: "1%", buyers: 20, price: "$0.97", monthly: "$10", annual: "$116" },
+  { audience: "100K podcast downloads/mo", clickRate: "2%", clicks: 2000, convRate: "1%", buyers: 20, price: "$9", monthly: "$90", annual: "$1,080" },
 ];
 
 const DREAM_100_APPLICATION_STEPS = [

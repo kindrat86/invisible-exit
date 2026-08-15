@@ -18,6 +18,7 @@ import crypto from "crypto";
 import { query, queryOne, execute } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 import { triggerWinback } from "./winback-sequence";
+import { recordReferralConversion } from "./_lib/referral";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2026-06-24.dahlia",
@@ -42,7 +43,7 @@ const WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
   </ol>
   <p style="font-size: 14px; color: #8A95A8;">This link expires in 24 hours. If expired, go to invisibleexit.com/login and use "Sign in with magic link."</p>
   <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 32px 0;" />
-  <p style="font-size: 12px; color: #8A95A8;">You received this because you subscribed to FYM Dashboard ($0.97/month). Cancel anytime from your Stripe billing portal.</p>
+  <p style="font-size: 12px; color: #8A95A8;">You received this because you subscribed to FYM Dashboard ($9/month). Cancel anytime from your Stripe billing portal.</p>
 </div>`;
 
 const FOUNDING_WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
@@ -58,7 +59,7 @@ const FOUNDING_WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
     <tr>
       <td style="padding: 12px 16px; border-bottom: 1px solid #E2E8F0;">
         <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0B1D3A;">Price Locked at $17.99/mo For Life</p>
-        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Public price goes to $97.99/mo. You save $960/year.</p>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #8A95A8;">Public price goes to $29/mo. You save $132/year.</p>
       </td>
     </tr>
     <tr>
@@ -126,6 +127,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   // Map product metadata to tier
   const productToTier: Record<string, string> = {
     starter: "starter",
+    founder_annual: "starter",
     founding: "founding",
     standard: "standard",
     fym_dashboard: "starter",
@@ -198,6 +200,10 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   } catch (convErr) {
     console.error("Mark converted failed:", convErr);
   }
+
+  // ── Referral Engine: record conversion + reward the referrer ──
+  // (no-op when the session carries no referral_code; never throws)
+  await recordReferralConversion(stripe, session);
 }
 
 async function updateSubscriptionStatus(stripeCustomerId: string, status: string) {

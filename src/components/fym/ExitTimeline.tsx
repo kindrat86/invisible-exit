@@ -190,7 +190,7 @@ export default function ExitTimeline({ userId }: ExitTimelineProps) {
             </p>
             <p className="text-[#8A95A8]">
               That's okay. The best time to plant a tree was 20 years ago. The
-              second best time is now. Start with one tool, one idea, one $0.97
+              second best time is now. Start with one tool, one idea, one $9
               payment from a stranger.
             </p>
           </CardContent>

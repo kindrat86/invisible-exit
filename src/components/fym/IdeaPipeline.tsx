@@ -894,7 +894,7 @@ export default function IdeaPipeline({
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-4 w-4 rounded border" />
-                    <span className="text-sm">Configure Stripe for $0.97 test pricing</span>
+                    <span className="text-sm">Configure Stripe for $9 test pricing</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-4 w-4 rounded border" />

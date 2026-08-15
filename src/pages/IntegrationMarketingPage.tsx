@@ -91,9 +91,9 @@ const INTEGRATION_TYPES = [
 ];
 
 const EMBED_WIDGET = `<iframe 
-  src="https://invisibleexit.com/freedom?embed=true" 
+  src="https://invisibleexit.com/embed/freedom-calculator.html" 
   width="100%" 
-  height="500" 
+  height="640" 
   frameborder="0"
   style="border-radius:12px; border:1px solid #e5e7eb;"
   title="Freedom Number Calculator">
@@ -103,7 +103,7 @@ const THANK_YOU_BLOCK = `<div style="max-width:500px;margin:24px auto;padding:24
   <h3 style="color:#60a5fa;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Recommended Resource</h3>
   <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">Want to build a side business without quitting your job? Calculate your Freedom Number — the exact MRR you need to never work for someone else again.</p>
   <a href="YOUR_AFFILIATE_LINK" style="display:inline-block;padding:12px 28px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px;font-weight:600;">Calculate Your Freedom Number →</a>
-  <p style="font-size:12px;color:#94a3b8;margin-top:12px;">5 AI tools. $0.97/month. Cancel anytime.</p>
+  <p style="font-size:12px;color:#94a3b8;margin-top:12px;">5 AI tools. $9/month. Cancel anytime.</p>
 </div>`;
 
 const EMAIL_SWIPE = `Subject: The math that makes your salary irrelevant
@@ -131,7 +131,7 @@ The system is called Invisible Exit. 5 AI tools for employed professionals who w
 
 [YOUR_AFFILIATE_LINK]
 
-$0.97/month to start. Cancel anytime.
+$9/month to start. Cancel anytime.
 
 [YOUR_NAME]`;
 

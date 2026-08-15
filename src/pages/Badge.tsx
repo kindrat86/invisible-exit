@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import SEOHead from "@/components/SEOHead";
 
 const fmt = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -39,6 +40,7 @@ export default function Badge() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0B1D3A] flex items-center justify-center">
+        <SEOHead title="Badge - Invisible Exit" description="" noindex={true} />
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#60A5FA] border-t-transparent" />
       </div>
     );
@@ -47,6 +49,7 @@ export default function Badge() {
   if (notFound) {
     return (
       <div className="min-h-screen bg-[#0B1D3A] flex items-center justify-center px-4">
+        <SEOHead title="Badge Not Found - Invisible Exit" description="" noindex={true} />
         <div className="text-center">
           <p className="text-[#8A95A8] text-lg mb-4">
             This badge is no longer available.
@@ -64,6 +67,7 @@ export default function Badge() {
 
   return (
     <div className="min-h-screen bg-[#0B1D3A] flex flex-col items-center justify-center px-4">
+      <SEOHead title="Badge - Invisible Exit" description="Share your freedom number badge" noindex={true} />
       <div className="text-center space-y-6">
         <p className="text-5xl sm:text-7xl font-bold text-[#60A5FA]">
           {badgeValue !== null ? fmt.format(badgeValue) : ""}

@@ -20,12 +20,28 @@ export function RelatedContent({
   title?: string;
 }) {
   if (!links || links.length === 0) return null;
+  // Static, non-SPA destinations (prerendered files in public/) must be plain
+  // <a href> — react-router would intercept <Link to> and render an SPA 404.
+  // /data/* dataset pages are static public/ files served via vercel.json rewrites.
+  const isStaticPath = (to: string) =>
+    to.startsWith("/data/") || to === "/site-index.html" || to === "/network";
   return (
     <nav className="mt-12 border-t border-[#E2E8F0] pt-8" aria-label="Related content">
       <h2 className="mb-4 text-xl font-bold text-[#1B2A4A]">{title}</h2>
       <ul className="grid gap-3 sm:grid-cols-2">
         {links.map((link, i) => (
           <li key={i}>
+            {isStaticPath(link.to) ? (
+              <a
+                href={link.to}
+                className="block rounded-lg border border-[#E2E8F0] p-4 transition hover:border-[#3B82F6] hover:shadow-sm"
+              >
+                <span className="font-semibold text-[#3B82F6]">{link.title}</span>
+                {link.description && (
+                  <span className="mt-1 block text-sm text-[#64748B]">{link.description}</span>
+                )}
+              </a>
+            ) : (
             <Link
               to={link.to}
               className="block rounded-lg border border-[#E2E8F0] p-4 transition hover:border-[#3B82F6] hover:shadow-sm"
@@ -35,6 +51,7 @@ export function RelatedContent({
                 <span className="mt-1 block text-sm text-[#64748B]">{link.description}</span>
               )}
             </Link>
+            )}
           </li>
         ))}
       </ul>

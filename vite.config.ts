@@ -54,7 +54,7 @@ export default defineConfig({
           // Icons — large set, rarely changes
           "vendor-icons": ["lucide-react"],
           // Data layer
-          "vendor-data": ["@tanstack/react-query", "@supabase/supabase-js"],
+          "vendor-data": ["@tanstack/react-query"],
           // Charting — only used in dashboard
           "vendor-charts": ["recharts", "date-fns"],
           // Capture — only used in specific tools

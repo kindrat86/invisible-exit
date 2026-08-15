@@ -41,43 +41,19 @@
     </image:image>
   </url>
   <url>
-    <loc>https://invisibleexit.com/data/micro-saas-revenue-benchmarks-2026</loc>
+    <loc>https://invisibleexit.com/data/golden-handcuffs-index</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://invisibleexit.com/og/data-micro-saas-revenue-benchmarks-2026.svg</image:loc>
+      <image:loc>https://invisibleexit.com/og/data-golden-handcuffs-index.svg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://invisibleexit.com/data/side-business-statistics-2026</loc>
+    <loc>https://invisibleexit.com/data/micro-saas-exit-multiples</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://invisibleexit.com/og/data-side-business-statistics-2026.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://invisibleexit.com/data/non-compete-enforcement-by-state</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://invisibleexit.com/og/data-non-compete-enforcement-by-state.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://invisibleexit.com/data/micro-saas-pricing-benchmarks</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://invisibleexit.com/og/data-micro-saas-pricing-benchmarks.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://invisibleexit.com/data/churn-benchmarks-by-niche</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://invisibleexit.com/og/data-churn-benchmarks-by-niche.svg</image:loc>
+      <image:loc>https://invisibleexit.com/og/data-micro-saas-exit-multiples.svg</image:loc>
     </image:image>
   </url>
   <url>

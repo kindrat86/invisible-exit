@@ -237,7 +237,7 @@ const DownsellPage = () => {
               {[
                 "Full refund within 24 hours — no questions, no forms",
                 "You keep every framework, checklist, and your freedom number calculation",
-                "You keep the basic $0.97/month membership forever",
+                "You keep the basic $9/month membership forever",
                 "We part as friends. No hard feelings.",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
@@ -256,7 +256,7 @@ const DownsellPage = () => {
               to="/dashboard"
               className="text-sm text-white/40 underline hover:text-white/60 transition-colors"
             >
-              No thanks, I'll stick with the $0.97 basic plan
+              No thanks, I'll stick with the $9 basic plan
             </Link>
           </div>
           <div>

@@ -150,7 +150,7 @@ const WeekendWorkshopPage = () => {
 
   const faqs = [
     {
-      q: "How is this different from the $0.97/mo or $17.99/mo plans?",
+      q: "How is this different from the $9/mo or $17.99/mo plans?",
       a: "Those are DIY tools. The Weekend Workshop is done-with-you, live, in a group. You build your actual product during the workshop. You leave with something live. The tools are the system; the workshop is the execution.",
     },
     {

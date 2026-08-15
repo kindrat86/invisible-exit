@@ -8,7 +8,7 @@ _Prepared 2026-07-18 · AEO architect skill, Ahrefs methodology._
 - **Business type:** **Product / SaaS** (membership: 5 AI tools for anonymous micro-SaaS building) → visibility
   that matters most: **category queries** ("best faceless side business", "anonymous micro-SaaS",
   "alternatives to [competitor]") + **expert-in-answers** for stealth-ops / non-compete / freedom-number
-  how-to prompts. A citation can convert directly at $0.97–$252 price points.
+  how-to prompts. A citation can convert directly at $9–$252 price points.
 - **Branded entity map:**
   - Main brand: **Invisible Exit**
   - Sub-brands / products: **FYM Dashboard**, **Idea Pipeline**, **Stealth Ops Hub**, **Launch Control**,

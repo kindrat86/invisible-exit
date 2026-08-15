@@ -1035,7 +1035,7 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 <text x="400" y="90" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="system-ui">${safeSub}</text>
 <rect x="200" y="115" width="400" height="3" fill="#1e3a5f" rx="1"/>
 <text x="400" y="145" text-anchor="middle" fill="#64748b" font-size="11" font-family="system-ui">$4,000/Month Side Business — Without Quitting Your Job</text>
-<text x="400" y="165" text-anchor="middle" fill="#475569" font-size="10" font-family="system-ui">5 AI-powered tools · From $0.97/month · No code required</text>
+<text x="400" y="165" text-anchor="middle" fill="#475569" font-size="10" font-family="system-ui">5 AI-powered tools · From $9/month · No code required</text>
 </svg>
 <figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center">${altText}</figcaption>
 </figure>`;
@@ -1050,7 +1050,7 @@ function homepageBodyHtml(): string {
 <div style="max-width:56rem;margin:0 auto">
 <h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue — Without Quitting, Without Code, Without Being Found Out</h1>
 <p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">The method: build a small subscription software product (micro-SaaS) on the side — validate one niche problem, charge about $29/month, and grow to roughly 138 customers, which works out to $4,000/month in recurring revenue. Run it through a separate legal entity so it never appears under your name. Invisible Exit bundles the 5 AI-powered tools for each step: calculate your freedom number, validate ideas, stay invisible, launch, and build a faceless brand — in about 5 hours a week.</p>
-<p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $0.97/month. No code required. 90-second setup. Cancel anytime.</p>
+<p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $9/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:56rem">
@@ -1110,7 +1110,7 @@ function homepageBodyHtml(): string {
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
 <div style="display:grid;gap:1.5rem">
-<div><h3 style="font-weight:600;margin-bottom:0.5rem">What do I get for $0.97/month?</h3><p>Five AI-powered tools: FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager. All five tools, one price.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">What do I get for $9/month?</h3><p>Five AI-powered tools: FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager. All five tools, one price.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Does this violate my employment contract?</h3><p>Most contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. The Stealth Ops Hub runs a compliance audit against common contract clauses.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Can my employer find out?</h3><p>The Stealth Ops Hub includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content — all without coding.</p></div>
@@ -1122,7 +1122,7 @@ function homepageBodyHtml(): string {
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">Ready to Build Your Invisible Exit?</h2>
 <p style="color:#4b5563;margin-bottom:2rem">Start with the Freedom Number calculator. See exactly how close you are.</p>
-<a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $0.97</a>
+<a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $9</a>
 </div>
 </section>
 <!-- 2026-07-24: removed a "What Members Say" block — 3 invented named
@@ -1189,7 +1189,7 @@ conversion-audit-scored-2026-07-24. -->
 </ul>
 <p style="font-size:0.75rem;color:#9ca3af;margin-bottom:1rem">Page last updated: July 17, 2026. Revenue examples on this page are arithmetic illustrations (e.g. 138 customers &times; $29/month &asymp; $4,000/month), not income guarantees.</p>
 </div>
-<p style="font-size:0.75rem;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:1.5rem">From $0.97/month. Cancel anytime. Built by a corporate manager, for corporate managers.</p>
+<p style="font-size:0.75rem;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:1.5rem">From $9/month. Cancel anytime. Built by a corporate manager, for corporate managers.</p>
 </div>
 </section>
 </div>`;
@@ -2362,7 +2362,7 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Invest in yourself and the promotions will follow."</p></div>
 <div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">An MBA gives you a credential for someone else's ladder. It doesn't create revenue you own. It doesn't give you optionality. It deepens the golden handcuffs.</p></div>
 </div>
-<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Instead of spending $100K on a credential that makes you more valuable to employers, spend $0.97/month on a system that makes you less dependent on them.</p></div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Instead of spending $100K on a credential that makes you more valuable to employers, spend $9/month on a system that makes you less dependent on them.</p></div>
 <p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Valuable for career advancement. Useless for financial freedom.</p>
 </div>
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">

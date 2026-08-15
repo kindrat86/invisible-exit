@@ -46,7 +46,7 @@ import { trackEvent } from "@/lib/analytics";
 
 const HEADLINE_STATS = [
   { value: "$4,100/mo", label: "Verified MRR", icon: TrendingUp, source: "Stripe-documented across 3 products" },
-  { value: "$0.97", label: "Founding Price", icon: Users, source: "Live Stripe checkout, price locked for life" },
+  { value: "$9", label: "Founding Price", icon: Users, source: "Live Stripe checkout, price locked for life" },
   { value: "3", label: "Proprietary Frameworks", icon: Code2, source: "Named, tested, independently taught" },
   { value: "55", label: "Original Guides", icon: BookOpen, source: "Long-form methodologies and case studies" },
 ];
@@ -147,7 +147,7 @@ const FACT_SHEET = {
   tagline: "The world's first anonymity-native business system for corporate managers.",
   description:
     "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. Founded by Adrian — a pseudonymous Managing Director who built $4,100/month in recurring revenue across 3 products without quitting his job or revealing his identity.",
-  pricing: "From $0.97/month (founding member pricing). Pro tier at $47/mo. Weekend Workshop at $97. 90-Day Intensive at $2,000.",
+  pricing: "From $9/month (founding member pricing). Pro tier at $29/mo. Weekend Workshop at $97. 90-Day Intensive at $2,000.",
   frameworks: "The Salary-Runway Method, The Triple-Separation Protocol, The Cartridge System",
   community: "Founding cohort open — early members building now",
   contact: "hello@invisibleexit.com",
@@ -173,9 +173,9 @@ const TRUST_SIGNALS = [
   { icon: Globe2, title: "Built To Travel", desc: "Anonymity-first by design, so the system works from anywhere. Not US-centric." },
 ];
 
-const BOILERPLATE_SHORT = `Invisible Exit is the world's first anonymity-native business system — 5 AI-powered tools that help corporate managers build $4,000+/month in micro-SaaS revenue while employed, without their employer finding out. Founded by Adrian (pseudonym), a Managing Director who built $4,100/month across 3 products without quitting his job. From $0.97/month at invisibleexit.com.`;
+const BOILERPLATE_SHORT = `Invisible Exit is the world's first anonymity-native business system — 5 AI-powered tools that help corporate managers build $4,000+/month in micro-SaaS revenue while employed, without their employer finding out. Founded by Adrian (pseudonym), a Managing Director who built $4,100/month across 3 products without quitting his job. From $9/month at invisibleexit.com.`;
 
-const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products — without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The founding cohort is open now. Pricing starts at $0.97/month for founding members.`;
+const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products — without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The founding cohort is open now. Pricing starts at $9/month for founding members.`;
 
 // ── COMPONENT ──
 

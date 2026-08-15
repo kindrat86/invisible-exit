@@ -63,6 +63,30 @@
     </image:image>
   </url>
   <url>
+    <loc>https://invisibleexit.com/templates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/templates.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/templates/5-year-stealth-plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/templates-5-year-stealth-plan.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://invisibleexit.com/templates/non-compete-risk-assessment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/templates-non-compete-risk-assessment.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/story</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

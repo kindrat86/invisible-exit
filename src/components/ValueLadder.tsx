@@ -9,7 +9,7 @@ import { trackEvent } from "@/lib/analytics";
  * Price goes up because the transformation goes up.
  *
  * The ladder makes the full progression visible to every visitor:
- *   Free → $7 → $0.97/mo → $47/mo → $97 → $2,000
+ *   Free → $7 → $9/mo → $29/mo → $97 → $2,000
  *
  * Previously this was a plain text list buried at section 17/24.
  * Now it's a visual staircase with glow, gradient, and glassmorphism.
@@ -70,12 +70,12 @@ const RUNGS: Rung[] = [
     num: 3,
     phase: "Core Offer",
     name: "The 5-Tool System",
-    price: "$0.97",
+    price: "$9",
     period: "/month",
     outcome: "FYM Dashboard, Idea Pipeline, Stealth Ops, Launch Control, Brand Manager. Full toolkit.",
     valueLabel: "System",
     href: "/freedom",
-    cta: "Start $0.97/mo",
+    cta: "Start $9/mo",
     badgeBg: "bg-primary/20",
     badgeText: "text-primary-light",
     borderColor: "border-primary/30",
@@ -87,7 +87,7 @@ const RUNGS: Rung[] = [
     num: 4,
     phase: "Continuity+",
     name: "Pro: Coaching + Community",
-    price: "$47",
+    price: "$29",
     period: "/month",
     outcome: "Weekly group coaching, private community, idea validation, monthly MRR audits.",
     valueLabel: "Momentum",

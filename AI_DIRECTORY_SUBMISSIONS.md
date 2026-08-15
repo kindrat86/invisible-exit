@@ -38,3 +38,6 @@ Once listed, point reviewers to:
 - https://invisibleexit.com/embed — Widget gallery + embed codes
 - https://invisibleexit.com/research/quiet-exit-2026 — Citable research report (CC BY 4.0)
 - https://invisibleexit.com/tools/freedom-calculator — Embeddable freedom number calculator
+
+## Completed listings
+- **ToolIndex** (strategic-flow-audit.replit.app/directory) — claimed 2026-08-15 by escape@invisibleexit.com. Dofollow backlink (no `nofollow` in directory). Listing id 5878, category Founder Resources, "✓ Verified Founder", publisher "Adrian", pricing Freemium. Claim OTP-verified via email (noreply@strategicflow.tech). **Backlink FULLY ACTIVATED 2026-08-15:** "Listed on ToolIndex" badge added to Footer.tsx bottom bar (links to strategic-flow-audit.replit.app/directory, dofollow rel=noopener), deployed to prod (deploy dpl_CQQWFyZfMGy3rfHFA4KH7aU3PrNw, bundle index-D5AlEO6Q.js), and `confirm-backlink` POSTed with backlink_url=https://invisibleexit.com → ok:true. Verified: badge string live in served bundle on invisibleexit.com, listing "Visit" link rel=noopener (no nofollow).

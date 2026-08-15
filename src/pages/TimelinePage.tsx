@@ -117,7 +117,7 @@ export default function TimelinePage() {
 
         <RelatedContent
           links={[
-            { to: "/data/micro-saas-revenue-benchmarks-2026", title: "Revenue Benchmarks", description: "Compare your progress" },
+            { to: "/data/golden-handcuffs-index", title: "Golden Handcuffs Index", description: "Which industries trap their employees (BLS data)" },
             { to: "/resources/micro-saas-launch-checklist", title: "30-Step Launch Checklist", description: "The exact sequence" },
             { to: "/calculators/freedom-number", title: "Freedom Number Calculator", description: "Your target" },
           ]}

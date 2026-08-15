@@ -9,6 +9,7 @@ import PostHogPageviewTracker from "./components/PostHogPageviewTracker.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import BackToTop from "./components/BackToTop.tsx";
 import ReadingProgress from "./components/ReadingProgress.tsx";
+import ReferralBanner from "./components/ReferralBanner.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
@@ -169,6 +170,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <ReadingProgress />
+        <ReferralBanner />
         <PostHogPageviewTracker />
         <ScrollReveal />
         <ErrorBoundary>
@@ -409,12 +411,12 @@ const App = () => (
   <div style="max-width:900px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">5h/wk</span><br><span style="font-size:.82rem;color:#94a3b8">Time Commitment</span></div>
-      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$0.97</span><br><span style="font-size:.82rem;color:#94a3b8">Founding Price</span></div>
+      <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">$9</span><br><span style="font-size:.82rem;color:#94a3b8">Founding Price</span></div>
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">5</span><br><span style="font-size:.82rem;color:#94a3b8">AI Tools Included</span></div>
       <div><span style="font-size:1.6rem;font-weight:700;color:#00d4aa">30-Day</span><br><span style="font-size:.82rem;color:#94a3b8">Money-Back Guarantee</span></div>
     </div>
     <p style="font-size:1.05rem;margin-bottom:24px;color:#cbd5e1">Your corporate job pays the bills. A side business pays your freedom. Start for less than a coffee.</p>
-    <a href="/#start" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get Started for $0.97</a>
+    <a href="/#start" style="display:inline-block;background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px 32px;border-radius:12px;font-weight:700;text-decoration:none;font-size:.95rem;box-shadow:0 8px 24px -10px rgba(0,212,170,.5)">Get Started for $9</a>
     <p style="margin-top:18px;font-size:.78rem;color:#6b7178">30-day money-back guarantee. No questions, no forms.</p>
   </div>
 </section>` }} />

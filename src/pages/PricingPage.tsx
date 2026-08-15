@@ -10,7 +10,7 @@ import { trackEvent } from "@/lib/analytics";
 
 /**
  * /pricing — Fixes the 404 that was in the schema markup.
- * Shows the full value ladder: Free → $0.97/mo → $7 tripwire → $47/mo Pro.
+ * Shows the full value ladder: Free → $9/mo → $7 tripwire → $29/mo Pro.
  * Brunson DotCom Secrets Ch 1 (Value Ladder) + Ch 7 (One Funnel One Offer).
  */
 
@@ -30,8 +30,8 @@ const TIERS = [
     highlight: false,
   },
   {
-    name: "Starter",
-    price: "$0.97",
+    name: "Founder",
+    price: "$9",
     period: "/month",
     description: "All 5 tools. Everything you need to build invisible revenue.",
     features: [
@@ -42,25 +42,26 @@ const TIERS = [
       "Brand Manager (faceless content)",
       "30-day money-back guarantee",
     ],
-    cta: "Start for $0.97/mo",
+    cta: "Start for $9/mo",
     href: "/start",
     highlight: true,
     badge: "Founding price — locked for life",
+    annualNote: "or $79/year (save $29)",
   },
   {
-    name: "Pro",
-    price: "$47",
+    name: "Stealth Pro",
+    price: "$29",
     period: "/month",
     description: "Coaching + community. For builders who want velocity.",
     features: [
-      "Everything in Starter",
+      "Everything in Founder",
       "Private community of corporate managers",
       "Weekly group coaching calls",
       "Idea validation reports (3/month)",
       "Monthly MRR audits",
       "Early access to new tools",
     ],
-    cta: "Join Pro",
+    cta: "Join Stealth Pro",
     href: "/pro",
     highlight: false,
   },
@@ -107,7 +108,7 @@ const PricingPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Pricing | Invisible Exit"
-        description="Simple pricing. Start for $0.97/month (founding price, locked for life). Pro is $47/month with coaching and community. 30-day money-back guarantee."
+        description="Simple pricing. Start for $9/month (founding price, locked for life). Pro is $29/month with coaching and community. 30-day money-back guarantee."
         url="/pricing"
       />
       <Navbar />
@@ -120,7 +121,7 @@ const PricingPage = () => {
               <span className="text-gradient-light">Build Your Exit.</span>
             </h1>
             <p className="text-body-lg text-white/60 max-w-xl mx-auto mb-8">
-              Start for less than a dollar. Founding members lock in $0.97/month for life.
+              Start for $9/month — founding members lock the rate in for life. Or save with $79/year.
             </p>
             <div className="inline-flex items-center gap-3 bg-success/10 border border-success/20 rounded-full px-5 py-2.5">
               <Shield className="w-4 h-4 text-success" />
@@ -158,6 +159,9 @@ const PricingPage = () => {
                   <div className="mb-6">
                     <span className="text-4xl font-bold text-foreground">{tier.price}</span>
                     <span className="text-muted-foreground text-sm font-normal">{tier.period}</span>
+                    {"annualNote" in tier && tier.annualNote && (
+                      <p className="text-xs text-muted-foreground mt-1">{tier.annualNote}</p>
+                    )}
                   </div>
 
                   <div className="space-y-2.5 mb-8">
@@ -169,7 +173,7 @@ const PricingPage = () => {
                     ))}
                   </div>
 
-                  {tier.name === "Starter" ? (
+                  {tier.name === "Founder" ? (
                     <button
                       onClick={handleStarterCheckout}
                       disabled={loadingTier === "starter"}
@@ -188,7 +192,7 @@ const PricingPage = () => {
                         </>
                       )}
                     </button>
-                  ) : tier.name === "Pro" ? (
+                  ) : tier.name === "Stealth Pro" ? (
                     <button
                       onClick={handleProCheckout}
                       disabled={loadingTier === "pro"}
