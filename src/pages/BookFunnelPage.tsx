@@ -556,7 +556,7 @@ const BookFunnelPage = () => {
             Because my mission isn't to sell books. It's to help 1,000 corporate
             managers build invisible recurring revenue. The book is the gateway.
             If you read it and want the interactive tools, you'll join Invisible
-            Exit at $0.97/month. If not, you keep the book and the bonuses. No risk.
+            Exit at $9/month. If not, you keep the book and the bonuses. No risk.
           </p>
         </div>
 

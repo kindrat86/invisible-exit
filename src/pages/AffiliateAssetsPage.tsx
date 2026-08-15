@@ -27,7 +27,7 @@ His name is Adrian. He built Invisible Exit — 5 tools that help corporate mana
 
 No quitting. No coding. No employer finding out.
 
-$0.97/month. All 5 tools. Cancel anytime.
+$9/month. All 5 tools. Cancel anytime.
 
 [YOUR AFFILIATE LINK]
 
@@ -52,7 +52,7 @@ Even a BILLION DOLLAR EXIT doesn't buy your freedom. It buys a longer leash.
 
 That's the problem Invisible Exit solves. It's a system for building $4,000/month in recurring revenue from products YOU own — while you're still employed.
 
-5 AI-powered tools. $0.97/month. Cancel anytime.
+5 AI-powered tools. $9/month. Cancel anytime.
 
 [YOUR AFFILIATE LINK]
 
@@ -60,7 +60,7 @@ That's the problem Invisible Exit solves. It's a system for building $4,000/mont
   },
   {
     name: "Quick Promo Email",
-    subject: "5 tools for building a side business while employed ($0.97/mo)",
+    subject: "5 tools for building a side business while employed ($9/mo)",
     body: `Hey [FIRST_NAME],
 
 If you've ever thought about building something on the side but didn't know where to start, this is worth a look:
@@ -73,7 +73,7 @@ Invisible Exit — 5 AI-powered tools that help corporate managers build anonymo
 ✅ Launch Control (go-live automation for 5 hrs/week)
 ✅ Brand Manager (faceless audience building)
 
-All 5 tools. $0.97/month. 30-day money-back guarantee.
+All 5 tools. $9/month. 30-day money-back guarantee.
 
 [YOUR AFFILIATE LINK]
 
@@ -88,7 +88,7 @@ const SOCIAL_POSTS = [
   },
   {
     platform: "LinkedIn",
-    text: "For 8 years, I believed the IPO would save me.\n\nThen I did the math: even a billion-dollar exit, after dilution and taxes, invested at 5%, barely covers my salary.\n\nThe golden handcuffs were never designed to come off.\n\nThat's why I built something on the side. 5 tools. $0.97/month.\n\n[YOUR LINK]",
+    text: "For 8 years, I believed the IPO would save me.\n\nThen I did the math: even a billion-dollar exit, after dilution and taxes, invested at 5%, barely covers my salary.\n\nThe golden handcuffs were never designed to come off.\n\nThat's why I built something on the side. 5 tools. $9/month.\n\n[YOUR LINK]",
   },
   {
     platform: "Reddit",
@@ -150,7 +150,7 @@ const AffiliateAssetsPage = () => {
         <div className="container-standard">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { plan: "Starter ($0.97)", perRef: "$0.29/mo", annual: "$3.48/yr" },
+              { plan: "Starter ($9)", perRef: "$2.70/mo", annual: "$3.48/yr" },
               { plan: "Founding ($17.99)", perRef: "$5.40/mo", annual: "$64.80/yr" },
               { plan: "Intensive ($2,000)", perRef: "$600 one-time", annual: "$600" },
             ].map((tier) => (

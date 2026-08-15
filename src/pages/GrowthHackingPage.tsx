@@ -169,7 +169,7 @@ const VIRAL_LOOP = [
   {
     step: "6",
     title: "Subscriber converts to customer",
-    desc: "Checkout for $0.97/mo. Becomes a subscriber. Can now refer friends for free months (step 7).",
+    desc: "Checkout for $9/mo. Becomes a subscriber. Can now refer friends for free months (step 7).",
     icon: Check,
   },
   {

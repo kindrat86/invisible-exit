@@ -2,6 +2,10 @@ import { createRoot } from "react-dom/client";
 import './integrations/posthog';
 import App from "./App.tsx";
 import "./index.css";
+import { captureReferralFromUrl } from "./lib/referral";
+
+// Referral Engine: capture ?ref=CODE before the router strips/changes the URL.
+captureReferralFromUrl();
 
 // A deploy replaces hashed chunk files; a returning visitor's cached shell may
 // request chunks that no longer exist. Reload once to pick up the new build.

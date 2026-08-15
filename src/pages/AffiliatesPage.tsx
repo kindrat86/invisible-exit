@@ -8,7 +8,7 @@ const BENEFITS = [
   {
     icon: DollarSign,
     title: "30% Recurring Commission",
-    description: "Earn 30% of every subscription you refer — for the lifetime of the customer. $0.97 plan earns you $0.29/month. Founding plan ($17.99) earns you $5.40/month per referral.",
+    description: "Earn 30% of every subscription you refer — for the lifetime of the customer. $9 plan earns you $2.70/month. Founding plan ($17.99) earns you $5.40/month per referral.",
   },
   {
     icon: TrendingUp,
@@ -101,7 +101,7 @@ const AffiliatesPage = () => {
           <h2 className="text-h1 text-foreground mb-8 text-center">Revenue Examples</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { refs: 10, plan: "Starter ($0.97)", monthly: "$2.90", annual: "$34.80" },
+              { refs: 10, plan: "Starter ($9)", monthly: "$27", annual: "$324" },
               { refs: 25, plan: "Founding ($17.99)", monthly: "$135/mo", annual: "$1,620/yr" },
               { refs: 100, plan: "Mixed avg", monthly: "$420/mo", annual: "$5,040/yr" },
             ].map((ex) => (
@@ -171,7 +171,7 @@ const AffiliatesPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               { audience: "Career & business bloggers", desc: "Your readers are managers looking for escape routes. This is the vehicle.", commission: "Direct audience match" },
-              { audience: "YouTubers in finance/career", desc: "Your viewers trust your recommendations. $0.97 is an impulse buy after a 10-min video.", commission: "Best for video demos" },
+              { audience: "YouTubers in finance/career", desc: "Your viewers trust your recommendations. $9 is an impulse buy after a 10-min video.", commission: "Best for video demos" },
               { audience: "Newsletter writers (business)", desc: "Your subscribers already open you for career and money advice.", commission: "Good fit for a single mention" },
               { audience: "Community leaders (Slack/Discord)", desc: "Your community of managers, founders, or career-switchers is the perfect fit.", commission: "Strong community fit" },
               { audience: "Podcasters (career/entrepreneurship)", desc: "Audio listeners convert well on story-driven offers. Promo code included.", commission: "Best for storytelling" },

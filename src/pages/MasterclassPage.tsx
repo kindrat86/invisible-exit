@@ -63,7 +63,7 @@ const SLIDES = [
     eyebrow: "5 Tools, One Pipeline",
     hook: "I spent 3 months choosing the 'right' idea. Then I launched the wrong one and it made $9/month.",
     body: "The lesson: stop obsessing over the idea. Build the SYSTEM first. FYM Dashboard (freedom number) → Idea Pipeline (500+ ideas, 48h validation) → Stealth Ops (entity + compliance) → Launch Control (go-live automation) → Brand Manager (faceless content). [Each of these 5 tools is in the stack I'll show you at the end.] Once you have the system, you can swap ideas in and out like cartridges. The system doesn't care which idea you pick. The system cares that you HAVE a system.",
-    stat: "5 tools, $0.97/month",
+    stat: "5 tools, $9/month",
   },
   {
     title: "False Belief #1: The Vehicle",
@@ -97,15 +97,15 @@ const SLIDES = [
     title: "The Stack",
     eyebrow: "What You Get",
     hook: "5 tools worth $97/month. 3 bonuses worth $101. Total value: $328/month.",
-    body: "All 5 tools (FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager) + 3 bonuses (Employment Contract Audit Checklist, 25 Micro-SaaS Idea Swipes, Faceless Founder Content Calendar). Total value $328/month. Your price as a founding member: $0.97/month. That's 99.7% off. Not because the tools are cheap — because I want this in the hands of people who act.",
-    stat: "$328/month → $0.97/month",
+    body: "All 5 tools (FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager) + 3 bonuses (Employment Contract Audit Checklist, 25 Micro-SaaS Idea Swipes, Faceless Founder Content Calendar). Total value $328/month. Your price as a founding member: $9/month. That's 97% off. Not because the tools are cheap — because I want this in the hands of people who act.",
+    stat: "$328/month → $9/month",
   },
   {
     title: "Your Next Step",
     eyebrow: "The Offer — Act Now",
     hook: "Every month you wait costs you $4,000 in unrealized MRR.",
-    body: "All 5 tools. $0.97/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members — after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
-    stat: "Start for $0.97 — before founding closes",
+    body: "All 5 tools. $9/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members — after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
+    stat: "Start for $9 — before founding closes",
   },
 ];
 
@@ -379,7 +379,7 @@ const MasterclassPage = () => {
               { name: "Bonus: 25 Micro-SaaS Idea Swipes", value: "$47" },
               { name: "Bonus: Faceless Founder Content Calendar", value: "$27" },
             ]}
-            finalPrice="$0.97/mo"
+            finalPrice="$9/mo"
             priceLabel="Your Price Today"
           />
 
@@ -389,7 +389,7 @@ const MasterclassPage = () => {
               ⚡ Founding Membership Open
             </p>
             <p className="text-white/50 text-xs">
-              After founding period, price goes to $9.99/month. Your $0.97 is locked for life.
+              After founding period, price goes to $19/month. Your $9 is locked for life.
             </p>
           </div>
 

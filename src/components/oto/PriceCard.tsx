@@ -21,7 +21,7 @@ const PriceCard = ({ onUpgrade, loading }: PriceCardProps) => {
           {/* Strikethrough price */}
           <p className="text-base text-white/70 mt-4 mb-2">
             Public price after founding closes:{" "}
-            <span className="line-through text-[#dc2626]">$97.99/month</span>
+            <span className="line-through text-[#dc2626]">$29/month</span>
           </p>
 
           {/* Main price */}

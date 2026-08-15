@@ -151,7 +151,7 @@ const Contact = () => {
             <p className="text-gray-600 leading-relaxed">
               Ready to start?{" "}
               <Link to="/?checkout=starter" className="text-[#3B82F6] hover:underline">
-                Get all 5 tools for $0.97/month
+                Get all 5 tools for $9/month
               </Link>.
             </p>
           </div>

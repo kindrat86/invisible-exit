@@ -78,7 +78,7 @@ const BONUSES = [
 
 const FAQS = [
   {
-    q: "How is this different from the $0.97/month or $17.99/month plans?",
+    q: "How is this different from the $9/month or $17.99/month plans?",
     a: "Those are DIY tools. The Intensive is done-with-you. I personally review your situation, validate your ideas, audit your stealth setup, and build your roadmap. You get direct access to me for 30 days.",
   },
   {
@@ -201,7 +201,7 @@ const IntensivePage = () => {
             <p>
               I'm going to be direct with you. If you're the kind of person who reads
               the blog, calculates their freedom number, and then... does nothing...
-              this page isn't for you. The $0.97 plan is. It's perfect for that.
+              this page isn't for you. The $9 plan is. It's perfect for that.
             </p>
             <p>
               The Intensive is for the manager who's already decided. You know the
@@ -222,7 +222,7 @@ const IntensivePage = () => {
               each one. When the 5 spots are filled, this page changes to a waitlist.
             </p>
             <p>
-              If that resonates, apply below. If it doesn't, the $0.97 plan is still
+              If that resonates, apply below. If it doesn't, the $9 plan is still
               the best $12/year you'll spend. No hard feelings either way.
             </p>
             <p className="text-sm">

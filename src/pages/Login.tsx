@@ -212,7 +212,7 @@ export default function Login() {
             &ldquo;freedom number&rdquo; of recurring revenue without quitting their
             job or building a public personal brand. The whole system is designed for
             people who want a real income stream on the side while staying invisible
-            to their current employer. Plans start at $0.97/month.
+            to their current employer. Plans start at $9/month.
           </p>
         </div>
 

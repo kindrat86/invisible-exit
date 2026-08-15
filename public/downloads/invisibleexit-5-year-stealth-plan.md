@@ -153,4 +153,4 @@ Scoring guide: Demand 40 pts · Willingness-to-pay 25 pts · Low competition 20 
 
 ---
 
-*Template © InvisibleExit — free to use and adapt. The automated version of this plan (freedom-number tracking, idea validation, stealth audits, launch control) lives at **[invisibleexit.com](https://invisibleexit.com)** — $0.97/month, with a $4K-MRR-in-12-months guarantee.*
+*Template © InvisibleExit — free to use and adapt. The automated version of this plan (freedom-number tracking, idea validation, stealth audits, launch control) lives at **[invisibleexit.com](https://invisibleexit.com)** — $9/month, with a $4K-MRR-in-12-months guarantee.*

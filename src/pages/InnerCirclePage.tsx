@@ -190,7 +190,7 @@ const InnerCirclePage = () => {
           <h2 className="text-h1 text-white mb-4">The Circle Is Waiting.</h2>
           <p className="text-body text-white/60 mb-8 max-w-xl mx-auto">
             Join a community of managers who decided the golden handcuffs aren't enough.
-            $0.97/month includes full community access.
+            $9/month includes full community access.
           </p>
           <Link to="/freedom" className="btn-primary text-lg">
             Start Your Invisible Exit

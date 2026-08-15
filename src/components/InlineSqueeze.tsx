@@ -58,9 +58,9 @@ const FUNNEL_STEPS = [
     num: "3",
     title: "Start the 5-Tool System",
     desc: "All 5 tools — freedom number, idea pipeline, stealth ops, launch control, brand manager.",
-    cta: "Start for $0.97/mo",
+    cta: "Start for $9/mo",
     href: "/start",
-    price: "$0.97/mo",
+    price: "$9/mo",
     priceColor: "text-primary-light",
   },
 ];

@@ -64,10 +64,10 @@ const PHASES: Phase[] = [
     title: "First Blood",
     subtitle: "0 → 1,000 Unique Visitors / Month",
     duration: "Month 1",
-    goal: "Prove the funnel converts. First email subscribers. First $0.97 customer.",
+    goal: "Prove the funnel converts. First email subscribers. First $9 customer.",
     traffic: 1000,
     emails: 100,
-    mrr: "$0.97",
+    mrr: "$9",
     color: "text-emerald-500",
     borderColor: "border-emerald-400",
     tasks: [
@@ -80,7 +80,7 @@ const PHASES: Phase[] = [
     ],
     milestones: [
       "First subscriber from squeeze page",
-      "First $0.97 customer",
+      "First $9 customer",
       "Reddit post hits 100+ upvotes",
       "GSC shows first organic impressions",
     ],

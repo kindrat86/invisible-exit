@@ -2,9 +2,16 @@ User-Agent: *
 Disallow: /api/auth/
 Disallow: /api/webhook/
 Disallow: /api/cron/
-Disallow: /dashboard/
-Disallow: /account/
-Disallow: /login/
+Disallow: /dashboard
+Disallow: /account
+Disallow: /login
+Disallow: /signup
+Disallow: /reset-password
+Disallow: /checkout/
+Disallow: /oto/
+Disallow: /confirmation
+Disallow: /admin/
+Disallow: /fym/badge/
 
 User-Agent: GPTBot
 Allow: /
@@ -51,5 +58,3 @@ max-video-preview:-1
 max-snippet:-1
 
 Sitemap: https://invisibleexit.com/sitemap.xml
-
-Sitemap: https://invisibleexit.com/image-sitemap.xml

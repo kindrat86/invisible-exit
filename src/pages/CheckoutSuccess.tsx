@@ -71,10 +71,10 @@ const CheckoutSuccess = () => {
               Lock in the Founding Rate before you go
             </h2>
             <p className="text-amber-700 text-sm mb-4">
-              Your Starter plan gives you all 5 tools. Upgrade to <strong>$47/mo Pro</strong> to lock in the founding rate forever and unlock coaching calls, the full Stealth Ops Blueprint, and Launch Control.
+              Your Starter plan gives you all 5 tools. Upgrade to <strong>$29/mo Pro</strong> to lock in the founding rate forever and unlock coaching calls, the full Stealth Ops Blueprint, and Launch Control.
             </p>
             <a href="/oto/founding" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
-              Upgrade to Pro — $47/mo Founding Rate →
+              Upgrade to Pro — $29/mo Founding Rate →
             </a>
             <p className="text-amber-400 text-xs mt-2 text-center">
               138+ founders already inside. Cancel anytime.
@@ -115,7 +115,7 @@ const CheckoutSuccess = () => {
             While you wait: your Starter is great — Pro is better.
           </p>
           <p className="text-amber-600 text-xs mb-3">
-            Pro ($47/mo) unlocks coaching calls, the full Stealth Ops Blueprint, Launch Control, and the complete exit framework. Founding rate — never goes up.
+            Pro ($29/mo) unlocks coaching calls, the full Stealth Ops Blueprint, Launch Control, and the complete exit framework. Founding rate — never goes up.
           </p>
           <a href="/oto/founding" className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
             Explore Pro Plan →

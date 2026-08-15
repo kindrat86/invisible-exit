@@ -178,7 +178,7 @@ const About = () => {
             <Link to="/contact" className="text-[#3B82F6] hover:underline">contact page</Link>.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Ready to start? <Link to="/?checkout=starter" className="text-[#3B82F6] hover:underline">Get all 5 tools for $0.97/month</Link>.
+            Ready to start? <Link to="/?checkout=starter" className="text-[#3B82F6] hover:underline">Get all 5 tools for $9/month</Link>.
           </p>
         </div>
       </section>

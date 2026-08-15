@@ -122,8 +122,8 @@ const HOOKS: Hook[] = [
   // ── WHAT GAP (The Thing / The Result) ──
   { text: "I screamed in a taxi over $0.97. Here's why that changed everything:", platform: "twitter", awareness: "unaware", gap: "what" },
   { text: "$1B exit × 0.5% equity = $5M, right? Wrong. Here's what you actually get (after dilution, vesting, and taxes):", platform: "youtube", awareness: "unaware", gap: "what" },
-  { text: "This $0.97/month tool does what my $120K salary couldn't: prove my worth exists outside the company.", platform: "twitter", awareness: "solution", gap: "what" },
-  { text: "5 tools. $0.97/month. That's the entire system a corporate manager needs to build invisible recurring revenue. No code. No quitting. No employer finding out.", platform: "linkedin", awareness: "product", gap: "what" },
+  { text: "This $9/month tool does what my $120K salary couldn't: prove my worth exists outside the company.", platform: "twitter", awareness: "solution", gap: "what" },
+  { text: "5 tools. $9/month. That's the entire system a corporate manager needs to build invisible recurring revenue. No code. No quitting. No employer finding out.", platform: "linkedin", awareness: "product", gap: "what" },
   { text: "I spent 90 days choosing the perfect idea. Then I launched the wrong one. It made $4,100/month. Here's why the system beat the idea:", platform: "youtube", awareness: "problem", gap: "what" },
   { text: "A stranger paid me $0.97 while I slept. That's worth more than any raise I ever got. Here's why:", platform: "twitter", awareness: "unaware", gap: "what" },
   { text: "Your freedom number isn't $1M. It's probably $4,000/month MRR. Here's how to calculate yours in 90 seconds:", platform: "twitter", awareness: "problem", gap: "what" },
@@ -173,7 +173,7 @@ const HOOKS: Hook[] = [
   { text: "⚠️ Your 0.5% equity is worth less than you think. Here's the math nobody showed you.", platform: "any", awareness: "unaware", gap: "what" },
   { text: "The cage has a door. Here's the key nobody told you about.", platform: "any", awareness: "unaware", gap: "why" },
   { text: "Founding membership open. After that, the price doubles. Here's what you get:", platform: "any", awareness: "most", gap: "when" },
-  { text: "5 tools. $0.97/month. Cancel anytime. If you're a corporate manager, this will change how you see your salary.", platform: "any", awareness: "product", gap: "what" },
+  { text: "5 tools. $9/month. Cancel anytime. If you're a corporate manager, this will change how you see your salary.", platform: "any", awareness: "product", gap: "what" },
   { text: "Stop waiting for the IPO. Start building your own exit. Here's the system:", platform: "any", awareness: "problem", gap: "when" },
 ];
 
