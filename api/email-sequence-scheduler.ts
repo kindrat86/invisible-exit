@@ -72,6 +72,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const maxDays = MAX_DAYS[sequence] ?? 4;
       const allEmails = getSequence(sequence);
 
+      // ── TESTER SUPPRESSION ──
+      // Exclude tester addresses from marketing sends.
+      // Scope: Invisible Exit / Adrian <escape@invisibleexit.com> only.
+      // Matches by domain — all @sipiteno.com and @sipi.bot addresses
+      // are internal test accounts.
+      // (Ported from supabase/functions/email-sequence-scheduler, which was
+      // never deployed: the Vercel cron hits THIS route, not the edge function.)
+      const TESTER_DOMAINS = ["sipiteno.com", "sipi.bot"];
+      const emailDomain = schedule.email.split("@")[1]?.toLowerCase();
+      if (emailDomain && TESTER_DOMAINS.includes(emailDomain)) {
+        const tsTester = new Date().toISOString();
+        await query(
+          `UPDATE email_sequence_schedule
+           SET completed_at = $1, updated_at = $2
+           WHERE id = $3`,
+          [tsTester, tsTester, schedule.id],
+        );
+        continue; // Skip tester — mark complete, do not send
+      }
+
       // ── BUYER SUPPRESSION ──
       // Check if subscriber is now a buyer (profile with active subscription)
       const profile = await queryOne<{ subscription_status: string; subscription_tier: string | null }>(

@@ -1,6 +1,6 @@
 /**
  * Server-side Stripe SDK instance.
- * Used in Vercel serverless API routes (api/webhooks/stripe.ts).
+ * Used in Vercel serverless API routes (api/stripe-webhook.ts).
  * Requires STRIPE_SECRET_KEY env var.
  */
 import Stripe from "stripe";
