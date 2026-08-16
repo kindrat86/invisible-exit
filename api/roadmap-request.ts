@@ -61,7 +61,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           subject: `Feature Request: ${title}`,
           html: `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0B1D3A;">
-  <p style="color: #60A5FA; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT — FEATURE REQUEST</p>
+  <p style="color: #60A5FA; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT: FEATURE REQUEST</p>
   <h1 style="font-size: 24px; font-weight: 700; margin-bottom: 16px;">${title}</h1>
   <p style="font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 24px;">${description || "No description provided."}</p>
   <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 24px 0;" />

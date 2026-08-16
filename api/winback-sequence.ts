@@ -22,14 +22,14 @@ import { sendEmail, wrap } from "./email-sequence";
 
 function winbackDay0() {
   return wrap("WIN-BACK · DAY 1", "Can I ask you something?",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you cancelled your Invisible Exit subscription. I'm not going to try to change your mind — at least not yet.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you cancelled your Invisible Exit subscription. I'm not going to try to change your mind. At least not yet.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But I do want to understand why. If you have 30 seconds, just reply to this email with one of these numbers:</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:8px;"><strong>1.</strong> The tools didn't work for my situation</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:8px;"><strong>2.</strong> I didn't have time to use them</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:8px;"><strong>3.</strong> I already started building without them</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:8px;"><strong>4.</strong> Too expensive for where I am right now</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:8px;"><strong>5.</strong> Something else (just tell me)</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Every reply helps me make this better. And who knows — maybe this isn't the end.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Every reply helps me make this better. And who knows, maybe this isn't the end.</p>`,
     false,
   );
 }
@@ -49,22 +49,22 @@ function winbackDay3() {
 }
 
 function winbackDay7() {
-  return wrap("WIN-BACK · DAY 8", "50% off — but only because I mean it",
+  return wrap("WIN-BACK · DAY 8", "50% off, but only because I mean it",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is my last email. If you've read this far, I know you're not done with this. Something about it stuck.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">So here's what I'll do. Come back at <strong>50% off for 3 months</strong>. That's $4.50/month for the starter plan. Less than a coffee. If you don't have your first customer by the end of those 3 months, we part ways for real.</p>
 <div style="background:#FEF3C7;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;border:1px solid #FDE68A;">
-<p style="font-size:18px;color:#92400E;font-weight:700;margin-bottom:8px;">50% Off — 3 Months</p>
+<p style="font-size:18px;color:#92400E;font-weight:700;margin-bottom:8px;">50% Off: 3 Months</p>
 <p style="font-size:14px;color:#78350F;margin-bottom:12px;">Code <strong>COMEBACK50</strong> applies automatically at checkout.</p>
 <a href="https://invisibleexit.com/start?promo=COMEBACK50" style="display:inline-block;padding:12px 24px;background:#92400E;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Claim 50% Off and Come Back</a>
 </div>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">No catch. No auto-renewal trick. Just a genuine "I want you back" offer because the system works better when you're in it.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If not, I understand. I'll stop emailing. But the freedom number concept — that's yours forever. Calculate it. Track it. Build toward it, with or without me.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If not, I understand. I'll stop emailing. But the freedom number concept: that's yours forever. Calculate it. Track it. Build toward it, with or without me.</p>`,
     false,
   );
 }
 
 const WINBACK_EMAILS = [
-  { day: 0, subject: "Wait — before you go, can I ask you one thing?", html: winbackDay0() },
+  { day: 0, subject: "Wait, before you go, can I ask you one thing?", html: winbackDay0() },
   { day: 3, subject: "The month I almost deleted everything (and what changed my mind)", html: winbackDay3() },
   { day: 7, subject: "I'll make this worth your while (50% off, no catch)", html: winbackDay7() },
 ];

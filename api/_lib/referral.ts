@@ -64,7 +64,7 @@ export async function ensureReferredFirstMonthCoupon(stripe: Stripe): Promise<bo
     percent_off: 100,
     duration: "repeating",
     duration_in_months: 1,
-    name: "Referral — first month free",
+    name: "Referral: first month free",
   });
 }
 
@@ -145,7 +145,7 @@ export async function recordReferralConversion(
             const ok = await ensureCoupon(stripe, REFERRAL_COUPON_FREE_LIFE, {
               percent_off: 100,
               duration: "forever",
-              name: "Referral — free for life (3 referrals)",
+              name: "Referral: free for life (3 referrals)",
             });
             if (ok) {
               try {
@@ -166,7 +166,7 @@ export async function recordReferralConversion(
               await stripe.customers.createBalanceTransaction(referrerCustomerId, {
                 amount: -amount,
                 currency,
-                description: `Referral reward — 1 free month (referral #${conversions})`,
+                description: `Referral reward: 1 free month (referral #${conversions})`,
               });
               rewardApplied = "free_month";
             }
@@ -183,10 +183,10 @@ export async function recordReferralConversion(
       const remaining = Math.max(0, FREE_FOR_LIFE_THRESHOLD - conversions);
       const rewardLine =
         rewardApplied === "free_for_life"
-          ? `That was referral #${conversions} — <strong>your membership is now free for life.</strong> No more charges, ever.`
+          ? `That was referral #${conversions}: <strong>your membership is now free for life.</strong> No more charges, ever.`
           : rewardApplied === "free_month"
-            ? `That's referral #${conversions} — <strong>one free month</strong> has been credited to your account automatically.${remaining > 0 ? ` ${remaining} more referral${remaining === 1 ? "" : "s"} and your membership is free for life.` : ""}`
-            : `That's referral #${conversions}. Subscribe to start collecting your free months — your referrals are banked and waiting.`;
+            ? `That's referral #${conversions}: <strong>one free month</strong> has been credited to your account automatically.${remaining > 0 ? ` ${remaining} more referral${remaining === 1 ? "" : "s"} and your membership is free for life.` : ""}`
+            : `That's referral #${conversions}. Subscribe to start collecting your free months: your referrals are banked and waiting.`;
       const html = `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0B1D3A;">
   <p style="color: #60A5FA; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px;">INVISIBLE EXIT</p>

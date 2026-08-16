@@ -34,14 +34,14 @@ const DEFAULT_CTA = `<div style="background:#F0F4FF;border-radius:8px;padding:20
 export function wrap(day: string, title: string, bodyHtml: string, cta: boolean | string = true) {
   const ctaHtml = cta === false ? "" : typeof cta === "string" ? cta : DEFAULT_CTA;
   return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:560px;margin:0 auto;padding:40px 20px;color:#0B1D3A;">
-<p style="color:#60A5FA;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">INVISIBLE EXIT — ${day}</p>
+<p style="color:#60A5FA;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">INVISIBLE EXIT: ${day}</p>
 <h1 style="font-size:24px;font-weight:700;margin-bottom:16px;line-height:1.3;">${title}</h1>
 ${bodyHtml}
 ${ctaHtml}
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:4px;">Talk soon,</p>
 <p style="font-size:16px;font-weight:600;margin-bottom:0;">Adrian</p>
 <hr style="border:none;border-top:1px solid #E2E8F0;margin:32px 0;"/>
-<p style="font-size:12px;color:#8A95A8;">Invisible Exit — Build a side business while employed, invisibly. Unsubscribe anytime.</p>
+<p style="font-size:12px;color:#8A95A8;">Invisible Exit: Build a side business while employed, invisibly. Unsubscribe anytime.</p>
 </div>`;
 }
 
@@ -96,7 +96,7 @@ export function soap5() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month of MRR you'll never earn. At $4,000/month target, that's <strong>$48,000 per year of delay</strong>.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the risk, spelled out: try it for 30 days. If it doesn't move you closer to your freedom number, email "refund" and you're out. No questions. That's the entire bet.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence — the one designed to move you from "thinking about it" to "doing it" — ends now.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence, the one designed to move you from "thinking about it" to "doing it", ends now.</p>`);
 }
 
 // ═══ SEINFELD FOLLOW-UP — weekly ongoing ═══
@@ -111,7 +111,7 @@ export function seinfeld1() {
 
 export function seinfeld2() {
   return wrap("FROM THE TRENCHES", "A weird thing happened with my first customer.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">When I got my first Stripe notification — $0.97 from a stranger — I expected to feel excited. What I didn't expect was how it would change my relationship with my salary.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">When I got my first Stripe notification, $0.97 from a stranger, I expected to feel excited. What I didn't expect was how it would change my relationship with my salary.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Suddenly, $120K/year didn't feel like "what I'm worth." It felt like "one income stream." The psychological shift was instant. I stopped feeling dependent. I started thinking like an owner.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's the real value of the first dollar online. Not the money. The <strong>identity shift</strong>.</p>`);
 }
@@ -120,7 +120,7 @@ export function seinfeld3() {
   return wrap("FROM THE TRENCHES", '"That\'s great. Now show me the numbers."',
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My wife is a rational person. When I told her I wanted to build something on the side, she said:</p>
 <p style="font-size:20px;font-weight:600;color:#3B82F6;margin-bottom:20px;">"That's great. Now show me the numbers."</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's why the Freedom Number Calculator exists. When you can show a clear number — "$3,200 MRR by month 14" — the conversation changes from "are you sure?" to "how do we get there?"</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's why the Freedom Number Calculator exists. When you can show a clear number, "$3,200 MRR by month 14", the conversation changes from "are you sure?" to "how do we get there?"</p>`);
 }
 
 export function seinfeld4() {
@@ -134,7 +134,7 @@ export function seinfeld5() {
   return wrap("FROM THE TRENCHES", "Why I went faceless.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Last month I deleted my personal Twitter. 2,000 followers. 5 years of posts. Gone.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Instead, I created an anonymous account for my side business. No photo. No real name. Just the content. In 3 weeks it passed my personal account in engagement. Nobody knows it's me.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The Brand Manager tool gave me the content calendar, the scripts, and the playbook. <strong>Anonymity isn't a limitation — it's a strategy.</strong></p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The Brand Manager tool gave me the content calendar, the scripts, and the playbook. <strong>Anonymity isn't a limitation: it's a strategy.</strong></p>`);
 }
 
 export function seinfeld6() {
@@ -148,7 +148,7 @@ export function seinfeld7() {
   return wrap("FROM THE TRENCHES", "I said no.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My company offered me a promotion last week. Director → VP. 15% raise. More equity. More responsibility.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I turned it down.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Not because I'm brave. Because the FYM Dashboard showed me exactly what the promotion would cost: 10+ extra hours/week, more visibility, more stress, less time to build. The raise would have been €18K/year. My side business grew by $600 MRR last month alone — $7,200/year, and it compounds.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Not because I'm brave. Because the FYM Dashboard showed me exactly what the promotion would cost: 10+ extra hours/week, more visibility, more stress, less time to build. The raise would have been €18K/year. My side business grew by $600 MRR last month alone: $7,200/year, and it compounds.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>The freedom number isn't about quitting.</strong> It's about having the option to say no.</p>`);
 }
 
@@ -191,11 +191,11 @@ export function seinfeld12() {
 // ═══ WINBACK (legacy email-sequence winback block) ═══
 function winback1() {
   return wrap("WIN-BACK", "It's been a while.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you haven't opened my last few emails. No hard feelings — I get it. Your inbox is a war zone.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you haven't opened my last few emails. No hard feelings. I get it. Your inbox is a war zone.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But I want to check: are you still thinking about building something on the side? Or did you file this under "someday"?</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still interested, here's what I'd do today: <strong>calculate your freedom number.</strong> Not next week. Not after the IPO. Today.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Because every month you wait is $4,000 in unrealized MRR. That's $48,000/year of delay.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're done, no worries — just ignore this email and I'll stop sending. But if there's still a spark, <strong>reply with the word "still in"</strong> and I'll send you something special.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're done, no worries: just ignore this email and I'll stop sending. But if there's still a spark, <strong>reply with the word "still in"</strong> and I'll send you something special.</p>`);
 }
 
 function winback2() {
@@ -212,8 +212,8 @@ export function ascension1() {
   return wrap(
     "DAY 1",
     "You Know Your Number. Now Let's Make It Real.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Welcome to the 3% — people who didn't just calculate their freedom number, but actually took the first step.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's something nobody tells you about the $9 plan: it's the map, not the journey. The 5 tools show you where the door is and give you the skeleton key. But to actually walk through it — to hit your number in months instead of years — most members do one thing differently.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Welcome to the 3%: people who didn't just calculate their freedom number, but actually took the first step.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's something nobody tells you about the $9 plan: it's the map, not the journey. The 5 tools show you where the door is and give you the skeleton key. But to actually walk through it, to hit your number in months instead of years, most members do one thing differently.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>They go from DIY to done-with-others.</strong></p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow I'll show you what Pro members get that $9 members don't. Hint: it's not just more tools.</p>`,
     false,
@@ -226,7 +226,7 @@ export function ascension2() {
     "The Idea Pipeline Won't Validate Itself.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">How's your first week going? If you're like most $9 members, you've probably opened the FYM Dashboard, clicked around the Idea Pipeline, and started reading about Stealth Ops.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">And now you're stuck on the same question: <strong>"Which idea do I actually pick?"</strong></p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $9 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong> — market sizing, pricing research, and a clear go/no-go recommendation.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $9 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong>: market sizing, pricing research, and a clear go/no-go recommendation.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">A single validated idea is worth $4,000/month. The validation reports alone cost more than Pro membership.</p>`,
     false,
   );
@@ -242,13 +242,13 @@ export function ascension3() {
 <ul style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">
 <li>Weekly group coaching with Adrian (value: $199/mo)</li>
 <li>Private community of corporate managers (value: $49/mo)</li>
-<li>Idea validation reports — 3/month (value: $150/mo)</li>
-<li>Priority Slack access — 12-hour response (value: $99/mo)</li>
-<li>Monthly MRR audit — personalized review (value: $199/mo)</li>
+<li>Idea validation reports (3/month, value: $150/mo)</li>
+<li>Priority Slack access (12-hour response, value: $99/mo)</li>
+<li>Monthly MRR audit (personalized review, value: $199/mo)</li>
 <li>All 5 core tools included (value: $12/mo)</li>
 </ul>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Total value: $708/month. Your price: $29/month.</strong> That's 96% off. Cancel anytime. 30-day guarantee.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $9 plan stays active no matter what — this is a complement, not a replacement.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $9 plan stays active no matter what: this is a complement, not a replacement.</p>`,
 `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
 <p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>Pro is $29/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
 <a href="https://invisibleexit.com/pro" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Apply for Pro: $29/month</a>
@@ -260,9 +260,9 @@ export function ascension4() {
   return wrap(
     "DAY 7",
     "Your First Week Is Covered. Here's What's Next.",
-    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you upgraded to Pro this week — welcome. Your first coaching call is Tuesday at 7 PM CET. Submit your ideas in the Slack channel before then so we can review them on the call.</p>
+    `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you upgraded to Pro this week, welcome. Your first coaching call is Tuesday at 7 PM CET. Submit your ideas in the Slack channel before then so we can review them on the call.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $9, that's okay. You have the tools. The only difference between you and the $4,000/month members is: they found someone to hold them accountable and validate their decisions faster.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands — $29/month, cancel anytime. The door is open.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands: $29/month, cancel anytime. The door is open.</p>`,
     false,
   );
 }
@@ -346,7 +346,7 @@ export const WINBACK: EmailEntry[] = [
 export const ASCENSION: EmailEntry[] = [
   { day: 1, subject: "Your Freedom Number is [$X]. Here's how to hit it in 90 days.", html: ascension1() },
   { day: 3, subject: "The one thing most $9 members miss (and why it matters)", html: ascension2() },
-  { day: 5, subject: "🔓 One-Time Offer: Unlock everything — inside", html: ascension3() },
+  { day: 5, subject: "🔓 One-Time Offer: Unlock everything inside", html: ascension3() },
   { day: 7, subject: "Your first week is covered. Here's what's next.", html: ascension4() },
 ];
 
