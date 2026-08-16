@@ -22,15 +22,22 @@ export interface EmailEntry {
 }
 
 // ═══ wrap() helper — shared email shell ═══
-export function wrap(day: string, title: string, bodyHtml: string, cta = true) {
+// `cta` controls the call-to-action block rendered after the body:
+//   - `false`        → no CTA (pure story / reply-driven emails)
+//   - a string       → custom CTA HTML (replaces the default below)
+//   - `true`/omitted → default "$9 starter" CTA
+const DEFAULT_CTA = `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
+<a href="https://invisibleexit.com/?checkout=starter" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Start for $9/month</a>
+</div>`;
+
+export function wrap(day: string, title: string, bodyHtml: string, cta: boolean | string = true) {
+  const ctaHtml = cta === false ? "" : typeof cta === "string" ? cta : DEFAULT_CTA;
   return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:560px;margin:0 auto;padding:40px 20px;color:#0B1D3A;">
 <p style="color:#60A5FA;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">INVISIBLE EXIT — ${day}</p>
 <h1 style="font-size:24px;font-weight:700;margin-bottom:16px;line-height:1.3;">${title}</h1>
 ${bodyHtml}
-${cta ? `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
-<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
-<a href="https://invisibleexit.com/?checkout=starter" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Start for $9/month</a>
-</div>` : ""}
+${ctaHtml}
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:4px;">Talk soon,</p>
 <p style="font-size:16px;font-weight:600;margin-bottom:0;">Adrian</p>
 <hr style="border:none;border-top:1px solid #E2E8F0;margin:32px 0;"/>
@@ -44,7 +51,9 @@ export function soap1() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">You gave me your email. That's the difference between people who escape and people who keep waiting.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Most people in your position bookmark articles. Save podcast episodes. Tell themselves "next quarter." They consume content about building something on the side but never actually <strong>start</strong>.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. And over the next 5 days, I'm going to tell you a story about a taxi ride in Amsterdam that changed everything.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow, I'll tell you what happened at 6 AM in that taxi. Two notifications. One changed my perspective permanently.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow, I'll tell you what happened at 6 AM in that taxi. Two notifications. One changed my perspective permanently.</p>`,
+    false,
+  );
 }
 
 export function soap2() {
@@ -54,7 +63,9 @@ export function soap2() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>The first:</strong> Corporate escalation emails. People at my company fighting over responsibilities. At 6 AM. On the first morning of my vacation.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>The second:</strong> A Stripe notification. "$0.97 received." A complete stranger had paid for a landing page I built for plumbers in the USA. While I slept on a plane.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I screamed in the taxi. The driver thought I was insane. My wife understood: this wasn't about $0.97. This was proof that <strong>the cage has a door</strong>.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow, I'll show you the moment I realized what that door actually looks like.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Tomorrow, I'll show you the moment I realized what that door actually looks like.</p>`,
+    false,
+  );
 }
 
 export function soap3() {
@@ -63,7 +74,9 @@ export function soap3() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">$120K salary. Less than 0.5% equity. Even a $1B exit, after taxes and dilution, invested at 5%, the passive income <strong>still wouldn't cover my yearly salary</strong>. I'd still need to work for someone.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>That's not an exit. That's a longer leash.</strong></p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the epiphany: <strong>Corporate loyalty is a transaction, not a virtue.</strong> Less than 0.5% is a leash disguised as a partnership.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But your 15 years of corporate experience isn't a weakness. It's founder gold. You understand customers, systems, and execution better than anyone with just a pitch deck. You don't need to quit. You need 5 hours a week and a system.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But your 15 years of corporate experience isn't a weakness. It's founder gold. You understand customers, systems, and execution better than anyone with just a pitch deck. You don't need to quit. You need 5 hours a week and a system.</p>`,
+    false,
+  );
 }
 
 export function soap4() {
@@ -82,6 +95,7 @@ export function soap5() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Someday I'll start something. Someday after the IPO. Someday when the kids are older.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month of MRR you'll never earn. At $4,000/month target, that's <strong>$48,000 per year of delay</strong>.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $9/month.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the risk, spelled out: try it for 30 days. If it doesn't move you closer to your freedom number, email "refund" and you're out. No questions. That's the entire bet.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence — the one designed to move you from "thinking about it" to "doing it" — ends now.</p>`);
 }
 
@@ -235,6 +249,10 @@ export function ascension3() {
 </ul>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Total value: $708/month. Your price: $29/month.</strong> That's 96% off. Cancel anytime. 30-day guarantee.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The $9 plan stays active no matter what — this is a complement, not a replacement.</p>`,
+`<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>Pro is $29/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
+<a href="https://invisibleexit.com/pro" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Apply for Pro: $29/month</a>
+</div>`,
   );
 }
 
@@ -250,13 +268,21 @@ export function ascension4() {
 }
 
 // ═══ POST-PURCHASE — buyer onboarding (5 days) ═══
+// Buyers already pay — never show them a re-buy CTA; point at the dashboard.
+const DASHBOARD_CTA = `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>Your tools are live and waiting.</strong></p>
+<a href="https://invisibleexit.com/dashboard" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Open your dashboard</a>
+</div>`;
+
 export function postPurchase1() {
   return wrap("DAY 1 · ONBOARDING", "Welcome to the 3%. Let's get to work.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">You did something 97% of managers never do: you took action. Your dashboard is live. Your tools are ready. Here's what to do in the next 10 minutes.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 1:</strong> Open the FYM Dashboard. Enter your salary and expenses. See your Freedom Number.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 2:</strong> Open the Idea Pipeline. Browse 3 ideas that match your industry.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;"><strong>Step 3:</strong> Check the Stealth Ops Hub. Score your current invisibility level.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's it. 10 minutes. You're already ahead of everyone who bookmarked this and said "tomorrow."</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">That's it. 10 minutes. You're already ahead of everyone who bookmarked this and said "tomorrow."</p>`,
+    DASHBOARD_CTA,
+  );
 }
 
 export function postPurchase2() {
@@ -264,14 +290,18 @@ export function postPurchase2() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Every morning, I open one dashboard. Not Slack. Not email. My FYM Dashboard.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">90 seconds. I check my MRR, my invisibility score, and my exit timeline. Then I close it and go to work.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This habit does something psychological: it makes the exit feel real. Every morning, you see the number moving. Even when it's $0, the dashboard reminds you that the system is running. You're not just dreaming about starting. You're tracking it.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Start tomorrow. 90 seconds. Then go build.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Start tomorrow. 90 seconds. Then go build.</p>`,
+    DASHBOARD_CTA,
+  );
 }
 
 export function postPurchase3() {
   return wrap("DAY 3 · ONBOARDING", "The $2,400 mistake",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I spent three weekends researching LLC formations. Wyoming vs. Delaware vs. Estonia. Three weekends I should have spent building. That was $2,400 in lost building time.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Don't make this mistake. The Stealth Ops Hub has the answer in 5 minutes. Choose your state, file the forms, move on. The point is to BUILD, not to research building.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you catch yourself spending more than one evening on any setup task, stop. You're overthinking. The system has the answer. Use it. Move on.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you catch yourself spending more than one evening on any setup task, stop. You're overthinking. The system has the answer. Use it. Move on.</p>`,
+    DASHBOARD_CTA,
+  );
 }
 
 export function postPurchase4() {
@@ -279,7 +309,9 @@ export function postPurchase4() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This weekend, do one thing: validate one idea. Not build. Not launch. Validate.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Open the Idea Pipeline. Pick the idea that scored highest for your industry. Run the 48-hour validation framework: who's the customer, what's the pain, what's the pricing, does anyone search for it?</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If it passes validation, you have your first product. If it doesn't, you saved yourself 3 months of building the wrong thing. Either way, you win.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The system beats the idea. Pick one. Validate. Move on.</p>`);
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The system beats the idea. Pick one. Validate. Move on.</p>`,
+    DASHBOARD_CTA,
+  );
 }
 
 // ═══ SEQUENCE ARRAYS ═══
@@ -401,7 +433,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // ── Sequence validation ──
-    const validSequences = ["soap_opera", "winback", " launch"];
+    const validSequences = Object.keys(SEQUENCE_MAP);
     if (!validSequences.includes(sequence)) {
       return res.status(400).json({ error: "Invalid sequence" });
     }

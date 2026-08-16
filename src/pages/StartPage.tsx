@@ -70,6 +70,7 @@ const StartPage = () => {
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const fromTripwire = searchParams.get("from") === "tripwire";
+  const promo = searchParams.get("promo");
 
   // Clean the query param from URL so it doesn't persist on refresh
   useEffect(() => {
@@ -113,6 +114,7 @@ const StartPage = () => {
         body: {
           tier: "starter",
           returnUrl: window.location.origin + "/checkout/success",
+          ...(promo ? { coupon: promo } : {}),
         },
       });
       if (error) throw error;

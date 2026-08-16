@@ -15,25 +15,10 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 import { query } from "./_lib/db";
-import { sendEmail } from "./email-sequence";
+import { sendEmail, wrap } from "./email-sequence";
 
 // ═══ WIN-BACK SEQUENCE — 3 emails over 7 days ═══
 // (Day 0 sent immediately; Days 3 & 7 scheduled via email_sequence_schedule)
-function wrap(day: string, title: string, bodyHtml: string, cta = true) {
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:560px;margin:0 auto;padding:40px 20px;color:#0B1D3A;">
-<p style="color:#60A5FA;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">INVISIBLE EXIT — ${day}</p>
-<h1 style="font-size:24px;font-weight:700;margin-bottom:16px;line-height:1.3;">${title}</h1>
-${bodyHtml}
-${cta ? `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
-<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
-<a href="https://invisibleexit.com/freedom" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Come Back for $9/month</a>
-</div>` : ""}
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:4px;">Talk soon,</p>
-<p style="font-size:16px;font-weight:600;margin-bottom:0;">Adrian</p>
-<hr style="border:none;border-top:1px solid #E2E8F0;margin:32px 0;"/>
-<p style="font-size:12px;color:#8A95A8;">Invisible Exit — Build a side business while employed, invisibly. Unsubscribe anytime.</p>
-</div>`;
-}
 
 function winbackDay0() {
   return wrap("WIN-BACK · DAY 1", "Can I ask you something?",
@@ -56,20 +41,25 @@ function winbackDay3() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Then I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. $4,000/month MRR = optionality. The math doesn't care about your feelings.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I pivoted. Two weeks later: first customer. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're in Month 4 right now, I want you to know: the wall is real, but it's not permanent. The system works. It just needs consistency.</p>`,
+    `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
+<a href="https://invisibleexit.com/start" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Come Back for $9/month</a>
+</div>`,
   );
 }
 
 function winbackDay7() {
   return wrap("WIN-BACK · DAY 8", "50% off — but only because I mean it",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is my last email. If you've read this far, I know you're not done with this. Something about it stuck.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">So here's what I'll do. Come back at <strong>50% off for 3 months</strong>. That's $0.48/month for the starter plan. Less than a coffee. If you don't have your first customer by the end of those 3 months, we part ways for real.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">So here's what I'll do. Come back at <strong>50% off for 3 months</strong>. That's $4.50/month for the starter plan. Less than a coffee. If you don't have your first customer by the end of those 3 months, we part ways for real.</p>
 <div style="background:#FEF3C7;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;border:1px solid #FDE68A;">
 <p style="font-size:18px;color:#92400E;font-weight:700;margin-bottom:8px;">50% Off — 3 Months</p>
-<p style="font-size:14px;color:#78350F;margin-bottom:12px;">Use code: <strong>COMEBACK50</strong></p>
-<a href="https://invisibleexit.com/freedom" style="display:inline-block;padding:12px 24px;background:#92400E;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Claim 50% Off and Come Back</a>
+<p style="font-size:14px;color:#78350F;margin-bottom:12px;">Code <strong>COMEBACK50</strong> applies automatically at checkout.</p>
+<a href="https://invisibleexit.com/start?promo=COMEBACK50" style="display:inline-block;padding:12px 24px;background:#92400E;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Claim 50% Off and Come Back</a>
 </div>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">No catch. No auto-renewal trick. Just a genuine "I want you back" offer because the system works better when you're in it.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If not, I understand. I'll stop emailing. But the freedom number concept — that's yours forever. Calculate it. Track it. Build toward it, with or without me.</p>`,
+    false,
   );
 }
 

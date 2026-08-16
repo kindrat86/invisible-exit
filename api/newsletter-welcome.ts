@@ -38,11 +38,11 @@ const NEWSLETTER_EMAIL_HTML = `
     <li>The mental shifts that make the exit feel inevitable</li>
   </ul>
 
-  <p style="font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 28px;">No fluff. No motivational quotes. Just what's working for someone who's doing exactly what you're thinking about.</p>
+  <p style="font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 28px;">No fluff. No motivational quotes. Just what's working for someone who's doing exactly what you're thinking about. Everything I send is a system I use myself, in production, while employed. If a tactic stops working, I'll tell you that too.</p>
 
   <div style="background: #F0F4FF; border-radius: 8px; padding: 20px; margin-bottom: 28px;">
-    <p style="font-size: 14px; line-height: 1.6; color: #4A5568; margin: 0 0 12px 0;">If you don't want to wait for the first email, you can access all 5 tools right now for $9/month. Calculate your runway. See how close you really are.</p>
-    <a href="https://invisibleexit.com/?checkout=starter" style="display: inline-block; padding: 12px 24px; background: #3B82F6; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">Start for $9/month</a>
+    <p style="font-size: 14px; line-height: 1.6; color: #4A5568; margin: 0 0 12px 0;"><strong>Hit reply and tell me one thing:</strong> what's the single biggest blocker standing between you and starting? I read every reply and answer the most common ones in future emails.</p>
+    <p style="font-size: 13px; line-height: 1.6; color: #8A95A8; margin: 0;">Want to skip ahead? All 5 tools are <a href="https://invisibleexit.com/?checkout=starter" style="color: #3B82F6; text-decoration: none; font-weight: 600;">$9/month</a>, but you don't need them to get value from these emails.</p>
   </div>
 
   <p style="font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 4px;">Talk soon,</p>

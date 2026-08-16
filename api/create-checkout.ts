@@ -3,9 +3,20 @@ import Stripe from "stripe";
 import {
   findReferrer,
   ensureReferredFirstMonthCoupon,
+  ensureCoupon,
   isValidCodeFormat,
   REFERRAL_COUPON_FIRST_MONTH,
 } from "./_lib/referral";
+
+// ── Win-back promo: COMEBACK50 = 50% off, 3 months (repeating). ──
+// Created idempotently (fixed ID); a malformed/unknown code is ignored.
+const WINBACK_COUPON_ID = "COMEBACK50";
+const WINBACK_COUPON_PARAMS: Stripe.CouponCreateParams = {
+  percent_off: 50,
+  duration: "repeating",
+  duration_in_months: 3,
+  name: "Win-back: 50% off for 3 months",
+};
 
 interface TierConfig {
   priceId: string;
@@ -46,9 +57,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-    const { tier, returnUrl, cancelUrl, referralCode } = req.body;
+    const { tier, returnUrl, cancelUrl, referralCode, coupon } = req.body;
     const siteUrl =
       process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? "https://invisibleexit.com";
+
+    // ── Win-back promo (COMEBACK50): validate against the whitelist, ensure
+    //    the coupon exists, and pre-apply it to the checkout session. ──
+    let winbackDiscount: Stripe.Checkout.SessionCreateParams.Discount[] | undefined;
+    if (typeof coupon === "string" && coupon.trim().toUpperCase() === WINBACK_COUPON_ID) {
+      if (await ensureCoupon(stripe, WINBACK_COUPON_ID, WINBACK_COUPON_PARAMS)) {
+        winbackDiscount = [{ coupon: WINBACK_COUPON_ID }];
+      }
+    }
 
     // ── Referral Engine: validate the code and prep the referred-user reward.
     //    A valid code (a) is stamped into session metadata so the webhook can
@@ -158,8 +178,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         allow_promotion_codes: false,
         metadata: { product: "starter", order_bump: "tripwire", ...referralMeta },
       };
-      if (referralDiscount) {
-        bumpSessionParams.discounts = referralDiscount;
+      const discounts: Stripe.Checkout.SessionCreateParams.Discount[] = [
+        ...(referralDiscount ?? []),
+        ...(winbackDiscount ?? []),
+      ];
+      if (discounts.length) {
+        bumpSessionParams.discounts = discounts;
       }
 
       if (customerEmail) {
@@ -191,10 +215,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       allow_promotion_codes: false,
       metadata: { product: tierConfig.product, ...referralMeta },
     };
-    // Referred-user first-month-free applies to subscriptions only
-    // (a "repeating" coupon can't be attached to a one-time payment).
-    if (!isOneTime && referralDiscount) {
-      sessionParams.discounts = referralDiscount;
+    // Referred-user first-month-free and win-back coupons apply to
+    // subscriptions only (a "repeating" coupon can't attach to one-time).
+    if (!isOneTime) {
+      const discounts: Stripe.Checkout.SessionCreateParams.Discount[] = [
+        ...(referralDiscount ?? []),
+        ...(winbackDiscount ?? []),
+      ];
+      if (discounts.length) {
+        sessionParams.discounts = discounts;
+      }
     }
 
     if (customerEmail) {
