@@ -271,7 +271,7 @@ function generateLlmsTxt(): string {
   lines.push(`- [Customer Success Manager vs Micro-SaaS](${SITE}/vs/customer-succes-vs-micro-saas-founder): Salary, risk, and freedom math`);
   lines.push(`- [Product Manager vs Micro-SaaS](${SITE}/vs/product-manager-vs-micro-saas-founder): Which path wins for long-term freedom`);
   lines.push(`- [Software Engineer vs Micro-SaaS](${SITE}/vs/software-engineer-vs-micro-saas-founder): Comparing two paths to independence`);
-  lines.push(`- [Marketing Manager vs Micro-SaaS](${SITE}/vs/marketing-manager-vs-micro-saas-founder): Career trajectory comparison`);
+  lines.push(`- [Marketer vs Micro-SaaS](${SITE}/vs/marketer-vs-micro-saas-founder): Career trajectory comparison, why marketers keep shipping features nobody wants`);
   lines.push("");
 
   // ── pSEO: First Year Roadmaps ──
@@ -288,10 +288,12 @@ function generateLlmsTxt(): string {
   lines.push(`## Budget Guides`);
   lines.push("");
   lines.push(`- [Budget Overview](${SITE}/budget): All budget configurations`);
-  lines.push(`- [$0/Month Budget](${SITE}/budget/0-dollars): Free tool stack for zero-budget founders`);
-  lines.push(`- [$50/Month Budget](${SITE}/budget/50-dollars): Starter budget configuration`);
-  lines.push(`- [$100/Month Budget](${SITE}/budget/100-dollars): Growth budget for employed founders`);
-  lines.push(`- [$500/Month Budget](${SITE}/budget/500-dollars): Scale budget for serious builders`);
+  // 2026-08-16: emit from the budgetPages data array (like the loop at the
+  // bottom of this file) instead of hardcoding. The old hardcoded list
+  // advertised /budget/50-dollars, which was never built and 404s.
+  for (const b of budgetPages) {
+    lines.push(`- [${b.h1}](${SITE}/budget/${b.slug}): ${b.intro?.substring(0, 120) || "Budget-based micro-SaaS planning"}`);
+  }
   lines.push("");
 
   // ── pSEO: Hours Per Week Guides ──
@@ -309,8 +311,9 @@ function generateLlmsTxt(): string {
   lines.push("");
   lines.push(`- [Tool Cross-Reference Index](${SITE}/tools): All AI tool comparisons`);
   lines.push(`- [Best Analytics Tools](${SITE}/tools/best-analytics-tools-for-product-managers): Analytics tools for PMs`);
-  lines.push(`- [Best Development Tools](${SITE}/tools/best-development-tools-for-software-engineers): Dev tools for engineers`);
-  lines.push(`- [Best Marketing Tools](${SITE}/tools/best-marketing-tools-for-marketing-managers): Marketing stacks for side businesses`);
+  // 2026-08-16: these two hardcoded /tools/best-* URLs were never built and
+  // 404. The real best-tools family is emitted from bestToolsLists below.
+  lines.push(`- [Best AI Tools for Solo Founders](${SITE}/best/best-ai-tools-for-solo-founders): AI tool stack for one-person businesses`);
   lines.push("");
 
   // ── pSEO: Tool Alternatives (Greg Isenberg) ──
@@ -405,8 +408,11 @@ function generateLlmsTxt(): string {
 
   lines.push("## Micro-SaaS Failure Stories");
   lines.push("");
+  // 2026-08-16: failure-stories pages live at /failure-stories/<slug>, NOT
+  // /mistakes/<slug> (that family belongs to professionMistakes below).
+  // Emitting /mistakes/ here advertised 6 dead URLs to AI crawlers.
   for (const f of failureStories) {
-    lines.push(`- [${f.h1}](${SITE}/mistakes/${f.slug}): ${f.intro?.substring(0, 120) || "Real failure patterns and lessons"}`);
+    lines.push(`- [${f.h1}](${SITE}/failure-stories/${f.slug}): ${f.intro?.substring(0, 120) || "Real failure patterns and lessons"}`);
   }
   lines.push("");
 
@@ -436,14 +442,18 @@ function generateLlmsTxt(): string {
   for (const r of redditStrategies) {
     lines.push(`- [${r.h1}](${SITE}/reddit/${r.slug}): Reddit growth strategies for employed founders`);
   }
+  // 2026-08-16: pricing-model pages live at /pricing-models/<slug> (see
+  // generate-sitemap.ts + prerender-meta.mjs), NOT /pricing/<slug>.
   for (const p of pricingModels) {
-    lines.push(`- [${p.h1}](${SITE}/pricing/${p.slug}): Pricing model analysis for micro-SaaS`);
+    lines.push(`- [${p.h1}](${SITE}/pricing-models/${p.slug}): Pricing model analysis for micro-SaaS`);
   }
   for (const b of breakEvenPages) {
     lines.push(`- [${b.h1}](${SITE}/break-even/${b.slug}): Break-even analysis for your profession`);
   }
+  // 2026-08-16: profession-vs-career pages live at /vs/<slug> (see
+  // generate-sitemap.ts + prerender-meta.mjs), NOT /vs-career/<slug>.
   for (const p of professionVsCareer) {
-    lines.push(`- [${p.h1}](${SITE}/vs-career/${p.slug}): Profession vs career entrepreneurship comparison`);
+    lines.push(`- [${p.h1}](${SITE}/vs/${p.slug}): Profession vs career entrepreneurship comparison`);
   }
   for (const f of firstYearEntries) {
     lines.push(`- [${f.h1}](${SITE}/first-year/${f.slug}): First year of side business, what to expect`);
@@ -451,8 +461,13 @@ function generateLlmsTxt(): string {
   for (const t of toolCrossReference) {
     lines.push(`- [${t.h1}](${SITE}/tools/${t.slug}): Tool comparison and cross-reference`);
   }
+  // 2026-08-16: AI-tool × profession pages live at
+  // /ideas/<professionSlug>/with/<toolSlug> (see generate-sitemap.ts +
+  // prerender-meta.mjs). The a.slug field ("for-accountants-with-chatgpt")
+  // has never been a URL; /ai-tools/ is not a route. This was the single
+  // largest dead family (80 URLs) advertised to AI crawlers.
   for (const a of aiToolProfessionPages) {
-    lines.push(`- [${a.h1}](${SITE}/ai-tools/${a.slug}): AI tools for specific professions`);
+    lines.push(`- [${a.h1}](${SITE}/ideas/${a.professionSlug}/with/${a.toolSlug}): AI tools for specific professions`);
   }
   for (const b of budgetPages) {
     lines.push(`- [${b.h1}](${SITE}/budget/${b.slug}): Budget-based micro-SaaS planning`);
