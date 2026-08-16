@@ -134,7 +134,7 @@ const Footer = () => {
         if (res.status === 429) {
           toast.error("Too many attempts. Please try again in a few minutes.");
         } else {
-          toast.error("Something went wrong — please try again.");
+          toast.error("Something went wrong, please try again.");
         }
         return;
       }
@@ -142,7 +142,7 @@ const Footer = () => {
       toast.success("You're in! Check your inbox.");
     } catch (err) {
       console.error(err);
-      toast.error("Network error — please check your connection and retry.");
+      toast.error("Network error, please check your connection and retry.");
     } finally {
       setLoading(false);
     }
@@ -151,7 +151,7 @@ const Footer = () => {
   return (
     <footer className="bg-[hsl(222_47%_9%)] border-t border-white/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ── Newsletter band — Traffic You Own (Secrets 11-15) ── */}
+        {/* ── Newsletter band, Traffic You Own (Secrets 11-15) ── */}
         <div className="py-10 md:py-12 border-b border-white/5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
             <div>
@@ -174,7 +174,7 @@ const Footer = () => {
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-success/20 shrink-0">
                   <Check className="w-4 h-4 text-success" />
                 </div>
-                You're subscribed — check your inbox for the welcome email.
+                You're subscribed, check your inbox for the welcome email.
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex gap-2 w-full max-w-md md:ml-auto">
@@ -218,7 +218,7 @@ const Footer = () => {
               <span>Invisible Exit</span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Build a side business while employed — invisibly.
+              Build a side business while employed, invisibly.
             </p>
             <div className="mt-4 flex items-center gap-3">
               <a
@@ -278,7 +278,7 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Portfolio cross-links — reciprocal backlink mesh */}
+            {/* Portfolio cross-links, reciprocal backlink mesh */}
             <div className="mt-5 pt-4 border-t border-white/5">
               <p className="text-white/60 text-xs mb-2">Our Network</p>
               <div className="flex flex-wrap gap-x-1 gap-y-1">
@@ -308,7 +308,7 @@ const Footer = () => {
         {/*
           Crawl entry points. Plain <a>, NOT react-router <Link>: /site-index.html
           is a static file emitted by scripts/generate-site-index.ts and /network
-          is public/network.html behind a rewrite — a <Link> would client-side
+          is public/network.html behind a rewrite, a <Link> would client-side
           route to them and render the SPA's 404 view instead. Added 2026-07-25:
           both pages previously had ZERO internal inbound links across all 1,881
           prerendered pages, and GSC reported both as "URL is unknown to Google".

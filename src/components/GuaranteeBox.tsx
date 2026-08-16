@@ -86,7 +86,7 @@ export default function GuaranteeBox({
           </p>
           <p>
             If you're not absolutely convinced this is the most practical, actionable system
-            for building a side business while employed — email me one word:{" "}
+            for building a side business while employed, email me one word:{" "}
             <span className="inline-flex items-center gap-1 bg-muted/50 rounded px-2 py-0.5 font-mono text-xs">
               <RotateCcw className="w-3 h-3" /> "refund"
             </span>
@@ -106,7 +106,7 @@ export default function GuaranteeBox({
             {[
               `You keep ${keepText}`,
               "You keep every insight, every framework, every checklist",
-              "You keep your calculated freedom number — that knowledge is yours forever",
+              "You keep your calculated freedom number, that knowledge is yours forever",
               "You owe nothing. We part as friends. No hard feelings.",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">

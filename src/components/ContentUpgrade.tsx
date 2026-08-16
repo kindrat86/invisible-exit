@@ -16,13 +16,13 @@ const CATEGORY_UPGRADES: Record<
   "Stealth Operations": {
     title: "Get the Stealth Ops Checklist (Free PDF)",
     description:
-      "The 47-point checklist for keeping your employer from finding out. Entity setup, compliance audit, digital separation, and operational security — all in a single page.",
+      "The 47-point checklist for keeping your employer from finding out. Entity setup, compliance audit, digital separation, and operational security, all in a single page.",
     icon: "🛡️",
   },
   "Financial Independence": {
     title: "Get the Freedom Number Calculator (Free Tool)",
     description:
-      "Punch in your salary and expenses. See your exact exit number in 90 seconds. No signup required — enter your email and we'll send the link + a breakdown of the math.",
+      "Punch in your salary and expenses. See your exact exit number in 90 seconds. No signup required, enter your email and we'll send the link + a breakdown of the math.",
     icon: "💰",
   },
   "Audience Building": {
@@ -64,7 +64,7 @@ const CATEGORY_UPGRADES: Record<
   "Time Management": {
     title: "Get the 5-Hour Operating System (Free PDF)",
     description:
-      "The exact weekly system for building a micro-SaaS on 5 hours per week. No productivity fluff — just the schedule.",
+      "The exact weekly system for building a micro-SaaS on 5 hours per week. No productivity fluff, just the schedule.",
     icon: "⏱️",
   },
   "AI Tools": {
@@ -98,7 +98,7 @@ interface ContentUpgradeProps {
   source?: string;
   /** Which page this appears on */
   slug?: string;
-  /** Blog post category — auto-selects the right lead magnet */
+  /** Blog post category, auto-selects the right lead magnet */
   category?: string;
 }
 
@@ -141,17 +141,17 @@ export function ContentUpgrade({
           toast.error("Too many attempts. Please try again in a few minutes.");
         } else {
           console.error("Newsletter API error:", await res.json().catch(() => ({})));
-          toast.error("Something went wrong — please try again.");
+          toast.error("Something went wrong, please try again.");
         }
         return;
       }
 
       trackEvent("content_upgrade_submitted", { source, slug, category });
       setSubmitted(true);
-      toast.success("Check your inbox — it's on the way!");
+      toast.success("Check your inbox, it's on the way!");
     } catch (err) {
       console.error(err);
-      toast.error("Network error — please check your connection and retry.");
+      toast.error("Network error, please check your connection and retry.");
     } finally {
       setLoading(false);
     }

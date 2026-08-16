@@ -120,7 +120,7 @@ export default function ValueStackTotal({
         })}
       </div>
 
-      {/* Running Total — climbs as items appear */}
+      {/* Running Total, climbs as items appear */}
       <div className="border-t-2 border-white/10 pt-4 space-y-2">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
@@ -133,7 +133,7 @@ export default function ValueStackTotal({
           </span>
         </div>
 
-        {/* Final Price Reveal — only when all items visible */}
+        {/* Final Price Reveal, only when all items visible */}
         <div
           className={`flex items-center justify-between pt-2 transition-all duration-500 ${
             visibleCount >= totalItems ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"

@@ -25,8 +25,8 @@ const VIDEO_PIPELINE = [
     format: "Long-form (8-12 min)",
     searchVolume: "High",
     keyword: "side business while employed",
-    hook: "3 seconds of panic. That's what happened when my colleague found my website on a team call. Here's how I survived it — and how you can set up the same protection.",
-    script: "HOOK (0:00-0:15): 'My colleague found a website that looked like my side project. On a team call. With 12 people watching. My blood ran cold for 3 seconds. Then I remembered my stealth setup — and you're about to learn yours.'\n\nPROBLEM (0:15-2:00): Why employed founders get discovered. The 5 common mistakes (same name, same email, same hosting, employer device, LinkedIn overlap).\n\nSOLUTION (2:00-7:00): The Triple-Separation Protocol. Separate entity, separate name, separate payment processor. Walkthrough of each. Show the Stealth Ops Hub.\n\nPROOF (7:00-9:00): The team call story. 3 seconds of panic → zero connection → call moved on.\n\nCTA (9:00-10:00): 'Audit your own stealth score at invisibleexit.com. Link in description.'",
+    hook: "3 seconds of panic. That's what happened when my colleague found my website on a team call. Here's how I survived it, and how you can set up the same protection.",
+    script: "HOOK (0:00-0:15): 'My colleague found a website that looked like my side project. On a team call. With 12 people watching. My blood ran cold for 3 seconds. Then I remembered my stealth setup, and you're about to learn yours.'\n\nPROBLEM (0:15-2:00): Why employed founders get discovered. The 5 common mistakes (same name, same email, same hosting, employer device, LinkedIn overlap).\n\nSOLUTION (2:00-7:00): The Triple-Separation Protocol. Separate entity, separate name, separate payment processor. Walkthrough of each. Show the Stealth Ops Hub.\n\nPROOF (7:00-9:00): The team call story. 3 seconds of panic → zero connection → call moved on.\n\nCTA (9:00-10:00): 'Audit your own stealth score at invisibleexit.com. Link in description.'",
     thumbnail: "Split screen: 'Employer Finds Side Business' (red) vs 'Complete Stealth Setup' (green). Shocked face emoji.",
   },
   {
@@ -35,7 +35,7 @@ const VIDEO_PIPELINE = [
     format: "Long-form (6-8 min)",
     searchVolume: "Medium",
     keyword: "first dollar online identity shift",
-    hook: "When I got my first Stripe notification — $0.97 from a stranger — I expected excitement. What I didn't expect was how it would change my relationship with my salary.",
+    hook: "When I got my first Stripe notification, $0.97 from a stranger, I expected excitement. What I didn't expect was how it would change my relationship with my salary.",
     script: "HOOK (0:00-0:10): 'This notification changed my life more than any raise ever did. It was for $0.97.'\n\nSTORY (0:10-3:00): The Amsterdam taxi moment. Two notifications. The scream. The identity shift.\n\nINSIGHT (3:00-5:00): Why the first dollar matters more than the amount. Employee → owner psychology.\n\nFRAMEWORK (5:00-6:30): Freedom Number concept. Your salary = one income stream, not your identity.\n\nCTA (6:30-7:00): 'Calculate your freedom number at invisibleexit.com.'",
     thumbnail: "Phone screen showing Stripe $0.97 notification, next to $120K salary. Split contrast.",
   },
@@ -45,7 +45,7 @@ const VIDEO_PIPELINE = [
     format: "Long-form (10-15 min)",
     searchVolume: "High",
     keyword: "startup equity calculator, equity math",
-    hook: "$1 billion exit × 0.5% equity = $5 million, right? Wrong. Here's what you actually get — and why it changes everything.",
+    hook: "$1 billion exit × 0.5% equity = $5 million, right? Wrong. Here's what you actually get, and why it changes everything.",
     script: "HOOK (0:00-0:20): Show the math on screen. '$1B × 0.5% = $5M... then reality hits.'\n\nMATH BREAKDOWN (0:20-5:00): Dilution (3 rounds), vesting cliffs, tax implications. Step by step with on-screen numbers.\n\nRESULT (5:00-6:00): $1.7M after everything. Invested at 5% = $85K/year. Less than your salary.\n\nSOLUTION (6:00-10:00): Why building recurring revenue is the actual escape hatch. The 5-tool system.\n\nCTA (10:00-11:00): 'Calculate your own freedom number.'",
     thumbnail: "Calculator showing $5,000,000 crossed out. Real number: $1,700,000 in red.",
   },
@@ -61,12 +61,12 @@ const VIDEO_PIPELINE = [
   },
   {
     priority: 5,
-    title: "Month 4, Zero Customers — The Night I Almost Deleted Everything",
+    title: "Month 4, Zero Customers, The Night I Almost Deleted Everything",
     format: "Long-form (6-8 min)",
     searchVolume: "Medium",
     keyword: "side business failure, giving up on startup",
     hook: "11 PM. Cursor over 'Cancel Subscription.' The voice said 'go back to managing.' Here's what saved me.",
-    script: "HOOK (0:00-0:10): 'Month 4. Zero customers. This is the night I almost quit.'\n\nSTORY (0:10-3:00): The Month 4 wall. The voice. The cancel tab.\n\nTURNING POINT (3:00-5:00): Opening the freedom number calculation. The math hadn't changed.\n\nRESULT (5:00-6:30): Two weeks later — first customer. $9/month. Then the compounding.\n\nLESSON (6:30-7:00): 'The system doesn't care about your feelings. It needs consistency.'",
+    script: "HOOK (0:00-0:10): 'Month 4. Zero customers. This is the night I almost quit.'\n\nSTORY (0:10-3:00): The Month 4 wall. The voice. The cancel tab.\n\nTURNING POINT (3:00-5:00): Opening the freedom number calculation. The math hadn't changed.\n\nRESULT (5:00-6:30): Two weeks later, first customer. $9/month. Then the compounding.\n\nLESSON (6:30-7:00): 'The system doesn't care about your feelings. It needs consistency.'",
     thumbnail: "Dark screen, cursor over red 'Cancel Subscription' button. Timestamp: 11:00 PM.",
   },
   {
@@ -109,7 +109,7 @@ const YOUTUBE_STRATEGY = [
       "Target search-optimized topics (side business, micro-SaaS, employed founder)",
       "Collaborate with 2 faceless channels in the space",
       "Test thumbnail variations (YouTube's built-in A/B testing)",
-      "Analyze retention graphs — fix drop-off points in next videos",
+      "Analyze retention graphs, fix drop-off points in next videos",
     ],
   },
   {
@@ -125,13 +125,13 @@ const YOUTUBE_STRATEGY = [
 ];
 
 const SEO_TARGETS = [
-  { keyword: "side business while employed", volume: "2,400/mo", difficulty: "Medium", intent: "High — problem aware" },
-  { keyword: "how to start a business without quitting", volume: "1,900/mo", difficulty: "Medium", intent: "High — solution aware" },
-  { keyword: "anonymous side business", volume: "880/mo", difficulty: "Low", intent: "Medium — product aware" },
-  { keyword: "micro saas ideas", volume: "12,000/mo", difficulty: "High", intent: "High — solution aware" },
-  { keyword: "non compete side business", volume: "1,300/mo", difficulty: "Low", intent: "High — problem aware" },
-  { keyword: "passive income while employed", volume: "6,600/mo", difficulty: "High", intent: "Medium — problem aware" },
-  { keyword: "stealth startup", volume: "4,400/mo", difficulty: "Medium", intent: "Medium — solution aware" },
+  { keyword: "side business while employed", volume: "2,400/mo", difficulty: "Medium", intent: "High, problem aware" },
+  { keyword: "how to start a business without quitting", volume: "1,900/mo", difficulty: "Medium", intent: "High, solution aware" },
+  { keyword: "anonymous side business", volume: "880/mo", difficulty: "Low", intent: "Medium, product aware" },
+  { keyword: "micro saas ideas", volume: "12,000/mo", difficulty: "High", intent: "High, solution aware" },
+  { keyword: "non compete side business", volume: "1,300/mo", difficulty: "Low", intent: "High, problem aware" },
+  { keyword: "passive income while employed", volume: "6,600/mo", difficulty: "High", intent: "Medium, problem aware" },
+  { keyword: "stealth startup", volume: "4,400/mo", difficulty: "Medium", intent: "Medium, solution aware" },
 ];
 
 const YOUTUBE_STRATEGY_PAGE = () => {
@@ -146,7 +146,7 @@ const YOUTUBE_STRATEGY_PAGE = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="YouTube Strategy — 6 Video Scripts + Channel Plan | Invisible Exit"
+        title="YouTube Strategy, 6 Video Scripts + Channel Plan | Invisible Exit"
         description="Complete YouTube strategy for faceless channel: 6 priority video scripts with hooks, thumbnails, SEO keywords, and a 4-phase channel growth plan."
         url="/youtube-strategy"
       />

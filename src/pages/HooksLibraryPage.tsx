@@ -24,13 +24,13 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * TRAFFIC SECRETS: Secret #7-8 — The Hooks Library
+ * TRAFFIC SECRETS: Secret #7-8, The Hooks Library
  *
  * Russell Brunson: "Traffic = Hooks × Content."
  * Every piece of content (video, thread, post, ad, email) needs a hook.
  * Without hooks, there is no content engine.
  *
- * This page is the master swipe file — categorized by:
+ * This page is the master swipe file, categorized by:
  *   1. The 6 Story Gaps (Who, What, Where, When, Why, How)
  *   2. Awareness Level (Unaware → Most Aware)
  *   3. Platform (YouTube, Twitter/X, LinkedIn, Reddit)
@@ -200,7 +200,7 @@ const HooksLibraryPage = () => {
   const [statusFilter, setStatusFilter] = useState<string>("all");
 
   // ── Deployment tracking (localStorage) ──
-  // Brunson: hooks aren't "ideas" — they're deployed, tested, and measured.
+  // Brunson: hooks aren't "ideas", they're deployed, tested, and measured.
   // Track: draft (default), deployed, testing, winner, killed
   type HookStatus = "draft" | "deployed" | "testing" | "winner" | "killed";
   const STATUS_KEY = "ie_hooks_status";
@@ -255,7 +255,7 @@ const HooksLibraryPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The Hooks Library — 50+ Ready-to-Deploy Content Hooks | Invisible Exit"
+        title="The Hooks Library, 50+ Ready-to-Deploy Content Hooks | Invisible Exit"
         description="The master swipe file of content hooks for corporate escape content. Categorized by the 6 Story Gaps, awareness level, and platform. Copy and deploy."
         url="/hooks"
       />
@@ -273,7 +273,7 @@ const HooksLibraryPage = () => {
             <span className="text-gradient-light">× Content</span>
           </h1>
           <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-4">
-            Russell Brunson's core formula. You don't have a traffic problem —
+            Russell Brunson's core formula. You don't have a traffic problem, 
             you have a hooks problem.
           </p>
           <p className="text-base text-white/40 max-w-xl mx-auto mb-8">
@@ -296,7 +296,7 @@ const HooksLibraryPage = () => {
           <h2 className="text-h1 text-foreground mb-4 text-center">The 6 Story Gaps</h2>
           <p className="text-body text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Russell's framework: every great hook exploits one of 6 "gaps" in your
-            audience's story — the things they know they should know but don't.
+            audience's story, the things they know they should know but don't.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {STORY_GAPS.map((gap) => (

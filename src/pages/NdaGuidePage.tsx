@@ -30,7 +30,7 @@ export default function NdaGuidePage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`NDA Guide for ${guide.stateName} — Side Business & Non-Compete | Invisible Exit`}
+        title={`NDA Guide for ${guide.stateName}, Side Business & Non-Compete | Invisible Exit`}
         description={`NDA and non-compete guide for side businesses in ${guide.stateName}. Enforceability: ${guide.ndaEnforceability}. What to check in your employment agreement before starting a side business.`}
         url={`https://invisibleexit.com/nda-guides/${guide.slug}`}
       />

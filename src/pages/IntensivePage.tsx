@@ -149,7 +149,7 @@ const IntensivePage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The Invisible Exit Intensive — Done-With-You 90-Day Program ($2,000)"
+        title="The Invisible Exit Intensive, Done-With-You 90-Day Program ($2,000)"
         description="Private 1-on-1 coaching with Adrian. Freedom number, stealth audit, idea validation, launch review, and 30 days of direct access. Limited to 5 managers per month."
         url="/intensive"
       />
@@ -206,7 +206,7 @@ const IntensivePage = () => {
             <p>
               The Intensive is for the manager who's already decided. You know the
               golden handcuffs are real. You've done the equity math. You know 5 hours
-              a week is enough — if you use them right. What you don't have is a
+              a week is enough, if you use them right. What you don't have is a
               proven system, a second set of eyes on your employment contract, and
               someone who's done it before sitting next to you.
             </p>
@@ -215,7 +215,7 @@ const IntensivePage = () => {
               Not your coach. Not your cheerleader. Your co-founder. I review your
               ideas personally. I audit your stealth setup personally. I review your
               launch personally. If something's wrong, I tell you before it costs you
-              $2,400 in wasted time — because I already made that mistake.
+              $2,400 in wasted time, because I already made that mistake.
             </p>
             <p className="text-foreground font-medium">
               I take 5 managers per month. No more. Because I personally work with
@@ -226,7 +226,7 @@ const IntensivePage = () => {
               the best $12/year you'll spend. No hard feelings either way.
             </p>
             <p className="text-sm">
-              — Adrian
+              - Adrian
             </p>
           </div>
         </div>
@@ -340,7 +340,7 @@ const IntensivePage = () => {
         </div>
       </section>
 
-      {/* Application CTA — Multi-Step Qualification Form */}
+      {/* Application CTA, Multi-Step Qualification Form */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
           <h2 className="text-h1 text-white mb-4">Apply for the Intensive</h2>

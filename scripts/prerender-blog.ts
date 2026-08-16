@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 
 // Profession names in this dataset are already plural ("Software Engineers"), so a
-// bare `${slug}s` produced /ideas/for-software-engineerss — a 404 that shipped on
+// bare `${slug}s` produced /ideas/for-software-engineerss, a 404 that shipped on
 // every /non-compete/<profession>-<state> page. Pluralise idempotently instead.
 const pluralSlug = (s: string): string => {
   const base = s.toLowerCase().replace(/ /g, "-");
@@ -105,7 +105,7 @@ function autoLinkContent(html: string): string {
     { pattern: /\bmicro-SaaS\b/i, href: "/glossary/micro-saas", text: "micro-SaaS" },
     { pattern: /\bnon-compete clause\b/i, href: "/non-compete", text: "non-compete clause" },
     { pattern: /\banonymous LLC\b/i, href: "/guides/wyoming", text: "anonymous LLC" },
-      // Was /calculators/idea-validator — a calculator that has never existed, so
+      // Was /calculators/idea-validator, a calculator that has never existed, so
       // this auto-link 404'd on every post mentioning "idea validation". A real page
       // on exactly this topic does exist.
     { pattern: /\bidea validation\b/i, href: "/how-to/validate-a-micro-saas-idea-in-a-weekend", text: "idea validation" },
@@ -241,7 +241,7 @@ ${steps}
   let relatedHtml = "";
 
   // Content image (SEO-critical: inline SVG diagram with descriptive alt text)
-  const altText = `${post.title} — visual summary diagram from Invisible Exit`;
+  const altText = `${post.title}, visual summary diagram from Invisible Exit`;
   const categoryColors: Record<string, { bg: string; accent: string; text: string }> = {
     "Financial Independence": { bg: "#eff6ff", accent: "#3b82f6", text: "#1e40af" },
     "Stealth Operations": { bg: "#f0fdf4", accent: "#22c55e", text: "#15803d" },
@@ -390,7 +390,7 @@ function blogListingBodyHtml(): string {
     .join("\n");
 
   return `<div class="min-h-screen">
-${hubSvgFigure("Blog", `${blogPosts.length} articles for employed founders`, "Invisible Exit blog — articles on financial independence, micro-SaaS, stealth operations, and audience building")}
+${hubSvgFigure("Blog", `${blogPosts.length} articles for employed founders`, "Invisible Exit blog, articles on financial independence, micro-SaaS, stealth operations, and audience building")}
 <section style="padding-top:8rem;padding-bottom:4rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:56rem;margin:0 auto;text-align:center">
 <h1>The Invisible Exit Blog</h1>
@@ -492,15 +492,15 @@ ${items}
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why ${term.term} Matters for Employed Founders</h2>
 <p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">For corporate managers and employed professionals building a side business, understanding ${termLower} is essential. It directly affects how you structure your operations, manage legal risk, and plan your transition from employment to entrepreneurship. ${term.detailed}</p>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">The concept of ${termLower} is particularly relevant in the context of micro-SaaS businesses and invisible exits — where employed founders need to navigate employment contracts, non-compete clauses, and entity separation while building recurring revenue streams on the side.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:1rem">The concept of ${termLower} is particularly relevant in the context of micro-SaaS businesses and invisible exits, where employed founders need to navigate employment contracts, non-compete clauses, and entity separation while building recurring revenue streams on the side.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">How to Apply This to Your Side Business</h2>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 1 — Understand the legal context:</strong> ${term.term} interacts with your employment contract, tax obligations, and business formation requirements. Before making any decisions, review how this concept applies to your specific situation. If you are unsure, consult a qualified attorney or CPA.</p>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 2 — Evaluate the impact on your stealth strategy:</strong> If you are building a micro-SaaS while employed, ${termLower} may affect your entity choice, your tax filings, or how visible your business is to your employer. Factor this into your operational planning.</p>
-<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 3 — Use the right tools:</strong> The Invisible Exit platform includes tools designed to help you navigate ${termLower} and related concepts. The Stealth Ops Hub runs compliance checks, the FYM Dashboard tracks financial implications, and the Idea Pipeline validates whether your idea aligns with your constraints.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 1:  Understand the legal context:</strong> ${term.term} interacts with your employment contract, tax obligations, and business formation requirements. Before making any decisions, review how this concept applies to your specific situation. If you are unsure, consult a qualified attorney or CPA.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 2:  Evaluate the impact on your stealth strategy:</strong> If you are building a micro-SaaS while employed, ${termLower} may affect your entity choice, your tax filings, or how visible your business is to your employer. Factor this into your operational planning.</p>
+<p style="line-height:1.7;color:#1f2937;margin-bottom:0.75rem"><strong>Step 3:  Use the right tools:</strong> The Invisible Exit platform includes tools designed to help you navigate ${termLower} and related concepts. The Stealth Ops Hub runs compliance checks, the FYM Dashboard tracks financial implications, and the Idea Pipeline validates whether your idea aligns with your constraints.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;background-color:#f9fafb">
@@ -512,7 +512,7 @@ ${items}
 <li><strong>Waiting too long to address it:</strong> The best time to understand ${termLower} is before you launch. Fixing mistakes after the fact is expensive.</li>
 <li><strong>Confusing it with related concepts:</strong> ${term.term} is often confused with adjacent concepts. Read the related terms below to understand the distinctions.</li>
 </ul>
-<p style="line-height:1.7;color:#1f2937">If you want a structured approach to building a side business while employed, <a href="/freedom" style="color:#3B82F6">calculate your freedom number first</a> — it will clarify which concepts matter most for your specific timeline.</p>
+<p style="line-height:1.7;color:#1f2937">If you want a structured approach to building a side business while employed, <a href="/freedom" style="color:#3B82F6">calculate your freedom number first</a>, it will clarify which concepts matter most for your specific timeline.</p>
 </div>
 </section>`;
 
@@ -550,7 +550,7 @@ ${items}
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:48rem">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" role="img" aria-label="${term.term} definition diagram — key concept from Invisible Exit" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" role="img" aria-label="${term.term} definition diagram, key concept from Invisible Exit" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
 <rect width="800" height="250" fill="#f8fafc"/>
 <rect x="0" y="0" width="800" height="6" fill="#3b82f6"/>
 <text x="40" y="45" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#3b82f6" letter-spacing="1">DEFINITION</text>
@@ -1013,7 +1013,7 @@ function injectBody(filePath: string, bodyHtml: string): boolean {
   const html = readFileSync(filePath, "utf-8");
   const ANCHOR = '<div id="root"></div>';
   // This used to return true unconditionally. On a dist that had already been
-  // injected the anchor is gone, so the replace was a no-op — and the script still
+  // injected the anchor is gone, so the replace was a no-op, and the script still
   // printed "Injected body content into N pages". Re-running after editing a hub
   // generator therefore appeared to work and changed nothing, which cost a debugging
   // cycle. Report the truth instead: a body injection needs a fresh `vite build`.
@@ -1034,7 +1034,7 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 <text x="400" y="60" text-anchor="middle" fill="#3B82F6" font-size="22" font-weight="700" font-family="system-ui">${safeTitle}</text>
 <text x="400" y="90" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="system-ui">${safeSub}</text>
 <rect x="200" y="115" width="400" height="3" fill="#1e3a5f" rx="1"/>
-<text x="400" y="145" text-anchor="middle" fill="#64748b" font-size="11" font-family="system-ui">$4,000/Month Side Business — Without Quitting Your Job</text>
+<text x="400" y="145" text-anchor="middle" fill="#64748b" font-size="11" font-family="system-ui">$4,000/Month Side Business, Without Quitting Your Job</text>
 <text x="400" y="165" text-anchor="middle" fill="#475569" font-size="10" font-family="system-ui">5 AI-powered tools · From $9/month · No code required</text>
 </svg>
 <figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center">${altText}</figcaption>
@@ -1044,17 +1044,17 @@ function hubSvgFigure(title: string, subtitle: string, altText: string): string 
 // ---------- Homepage body ----------
 
 function homepageBodyHtml(): string {
-  // Dark shell matching the hydrated hero — prevents the light→dark flash on load
+  // Dark shell matching the hydrated hero, prevents the light→dark flash on load
   return `<div class="min-h-screen" style="background:#0f172a">
 <section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem;text-align:center;background:#0f172a">
 <div style="max-width:56rem;margin:0 auto">
-<h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue — Without Quitting, Without Code, Without Being Found Out</h1>
-<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">The method: build a small subscription software product (micro-SaaS) on the side — validate one niche problem, charge about $29/month, and grow to roughly 138 customers, which works out to $4,000/month in recurring revenue. Run it through a separate legal entity so it never appears under your name. Invisible Exit bundles the 5 AI-powered tools for each step: calculate your freedom number, validate ideas, stay invisible, launch, and build a faceless brand — in about 5 hours a week.</p>
+<h1 style="font-size:3rem;font-weight:700;line-height:1.1;margin-bottom:1.5rem;color:#ffffff">How Corporate Managers Build $4,000/Month in Recurring Revenue, Without Quitting, Without Code, Without Being Found Out</h1>
+<p style="font-size:1.25rem;color:rgba(255,255,255,0.7);margin-bottom:2rem">The method: build a small subscription software product (micro-SaaS) on the side, validate one niche problem, charge about $29/month, and grow to roughly 138 customers, which works out to $4,000/month in recurring revenue. Run it through a separate legal entity so it never appears under your name. Invisible Exit bundles the 5 AI-powered tools for each step: calculate your freedom number, validate ideas, stay invisible, launch, and build a faceless brand, in about 5 hours a week.</p>
 <p style="font-size:0.875rem;color:rgba(255,255,255,0.55)">From $9/month. No code required. 90-second setup. Cancel anytime.</p>
 </div>
 </section>
 <figure style="margin:0 auto 2rem;padding:0 1.5rem;max-width:56rem">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="The Invisible Exit System: 5 AI-powered tools for building a micro-SaaS business while employed — FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="The Invisible Exit System: 5 AI-powered tools for building a micro-SaaS business while employed, FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid #e5e7eb">
 <rect width="800" height="320" fill="#0f172a" rx="12"/>
 <text x="400" y="35" text-anchor="middle" fill="#3B82F6" font-size="18" font-weight="700" font-family="system-ui">The Invisible Exit System</text>
 <text x="400" y="58" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">5 AI-Powered Tools for Employed Founders</text>
@@ -1091,7 +1091,7 @@ function homepageBodyHtml(): string {
 <text x="400" y="268" text-anchor="middle" fill="#3B82F6" font-size="11" font-weight="600" font-family="system-ui">Freedom Number = $4K/month MRR</text>
 <text x="400" y="282" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">138 customers × $29/month = financial independence</text>
 </svg>
-<figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center;line-height:1.5">The Invisible Exit System: 5 connected AI tools that take you from employed to financially independent — calculate your freedom number, validate ideas, stay compliant, launch products, and build an audience without showing your face.</figcaption>
+<figcaption style="font-size:0.875rem;color:#6b7280;margin-top:0.5rem;text-align:center;line-height:1.5">The Invisible Exit System: 5 connected AI tools that take you from employed to financially independent, calculate your freedom number, validate ideas, stay compliant, launch products, and build an audience without showing your face.</figcaption>
 </figure>
 <section style="padding:3rem 1.5rem">
 <div style="max-width:56rem;margin:0 auto">
@@ -1101,7 +1101,7 @@ function homepageBodyHtml(): string {
 <div><h3 style="font-weight:700;font-size:1.125rem">Idea Pipeline</h3><p>500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential. AI-powered validation in 48 hours.</p></div>
 <div><h3 style="font-weight:700;font-size:1.125rem">Stealth Ops Hub</h3><p>Entity separation, invisibility scoring, and compliance audit against common contract clauses including non-compete and IP assignment.</p></div>
 <div><h3 style="font-weight:700;font-size:1.125rem">Launch Control</h3><p>Go-live automation designed for 5-hour weekends. Stripe integration, landing page generation, and launch sequence builder.</p></div>
-<div><h3 style="font-weight:700;font-size:1.125rem">Brand Manager</h3><p>Faceless audience building with YouTube scripts, Reddit playbooks, and SEO content — all without using your real name.</p></div>
+<div><h3 style="font-weight:700;font-size:1.125rem">Brand Manager</h3><p>Faceless audience building with YouTube scripts, Reddit playbooks, and SEO content, all without using your real name.</p></div>
 </div>
 </div>
 </section>
@@ -1113,7 +1113,7 @@ function homepageBodyHtml(): string {
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">What do I get for $9/month?</h3><p>Five AI-powered tools: FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, and Brand Manager. All five tools, one price.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Does this violate my employment contract?</h3><p>Most contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints. The Stealth Ops Hub runs a compliance audit against common contract clauses.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">Can my employer find out?</h3><p>The Stealth Ops Hub includes entity separation guidance, compliance audit tools, and digital footprint cleanup. Your business operates under a completely separate legal structure.</p></div>
-<div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content — all without coding.</p></div>
+<div><h3 style="font-weight:600;margin-bottom:0.5rem">Do I need to know how to code?</h3><p>No. All tools use AI-powered automation. The Idea Pipeline validates concepts, Launch Control handles deployment, and Brand Manager generates content, all without coding.</p></div>
 <div><h3 style="font-weight:600;margin-bottom:0.5rem">How much can I make?</h3><p>A <a href="/glossary/what-is-micro-saas" style="color:#3B82F6">micro-SaaS</a> charging $29/month with 138 customers generates $4,000/month in recurring revenue. The FYM Dashboard calculates your specific freedom number based on your expenses.</p></div>
 </div>
 </div>
@@ -1125,7 +1125,7 @@ function homepageBodyHtml(): string {
 <a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $9</a>
 </div>
 </section>
-<!-- 2026-07-24: removed a "What Members Say" block — 3 invented named
+<!-- 2026-07-24: removed a "What Members Say" block, 3 invented named
 testimonials (Sarah K., Marcus T., Jennifer L.) with fake results, injected
 by this single template into every blog page in the fleet. invisibleexit has
 zero paying customers; there is nothing real to cite here yet. See
@@ -1184,8 +1184,8 @@ conversion-audit-scored-2026-07-24. -->
 <div style="border-top:1px solid #e5e7eb;padding-top:1.5rem;text-align:left;max-width:48rem;margin:0 auto">
 <h3 style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:0.5rem">Sources &amp; further reading</h3>
 <ul style="list-style:none;padding:0;margin:0 0 1rem;font-size:0.8125rem;color:#6b7280">
-<li style="margin-bottom:0.25rem">Non-compete rules: <a href="https://www.ftc.gov/legal-library/browse/rules/noncompete-rule" rel="noopener" style="color:#3B82F6">FTC — Noncompete Rule</a> and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&amp;sectionNum=16600" rel="noopener" style="color:#3B82F6">California Business &amp; Professions Code §16600</a></li>
-<li style="margin-bottom:0.25rem">Business structure: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" rel="noopener" style="color:#3B82F6">IRS — Limited Liability Company (LLC)</a> and <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure" rel="noopener" style="color:#3B82F6">SBA — Choose a business structure</a></li>
+<li style="margin-bottom:0.25rem">Non-compete rules: <a href="https://www.ftc.gov/legal-library/browse/rules/noncompete-rule" rel="noopener" style="color:#3B82F6">FTC, Noncompete Rule</a> and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&amp;sectionNum=16600" rel="noopener" style="color:#3B82F6">California Business &amp; Professions Code §16600</a></li>
+<li style="margin-bottom:0.25rem">Business structure: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/limited-liability-company-llc" rel="noopener" style="color:#3B82F6">IRS, Limited Liability Company (LLC)</a> and <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure" rel="noopener" style="color:#3B82F6">SBA, Choose a business structure</a></li>
 </ul>
 <p style="font-size:0.75rem;color:#9ca3af;margin-bottom:1rem">Page last updated: July 17, 2026. Revenue examples on this page are arithmetic illustrations (e.g. 138 customers &times; $29/month &asymp; $4,000/month), not income guarantees.</p>
 </div>
@@ -1199,17 +1199,17 @@ conversion-audit-scored-2026-07-24. -->
 
 function aboutPageBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("About Invisible Exit", "Built by a corporate manager", "About the founder and methodology behind Invisible Exit — 5 AI tools for building anonymous recurring revenue")}
+${hubSvgFigure("About Invisible Exit", "Built by a corporate manager", "About the founder and methodology behind Invisible Exit, 5 AI tools for building anonymous recurring revenue")}
 <section style="padding-top:6rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">About Invisible Exit</h1>
-<p style="font-size:1.125rem;color:#4b5563">Built by a corporate manager, for corporate managers who want to build something of their own — without risking their day job.</p>
+<p style="font-size:1.125rem;color:#4b5563">Built by a corporate manager, for corporate managers who want to build something of their own, without risking their day job.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Who Built This</h2>
-<p style="line-height:1.7;color:#1f2937">Invisible Exit was created by Adrian, a corporate managing director who spent years building micro-SaaS businesses on the side. After reaching the point where recurring revenue covered his living expenses, he documented the entire process — the tools, the frameworks, the legal considerations, and the psychology of managing two careers simultaneously.</p>
+<p style="line-height:1.7;color:#1f2937">Invisible Exit was created by Adrian, a corporate managing director who spent years building micro-SaaS businesses on the side. After reaching the point where recurring revenue covered his living expenses, he documented the entire process, the tools, the frameworks, the legal considerations, and the psychology of managing two careers simultaneously.</p>
 <p style="line-height:1.7;color:#1f2937;margin-top:1rem">The platform codifies everything learned through trial and error: how to validate ideas without quitting your job, how to operate anonymously, how to manage legal risks, and how to know when your side income is sufficient to make the jump.</p>
 </div>
 </section>
@@ -1221,7 +1221,7 @@ ${hubSvgFigure("About Invisible Exit", "Built by a corporate manager", "About th
 <li><strong>Freedom Number Calculator:</strong> Based on the 4% safe withdrawal rate, adjusted for recurring revenue compounding.</li>
 <li><strong>Idea Validation:</strong> Uses a scoring framework tested across 50+ micro-SaaS launches.</li>
 <li><strong>Stealth Operations:</strong> Built around actual employment contract analysis and entity separation strategies.</li>
-<li><strong>Launch Automation:</strong> Designed for the constraint of 5-10 hours per week — not full-time startup hours.</li>
+<li><strong>Launch Automation:</strong> Designed for the constraint of 5-10 hours per week, not full-time startup hours.</li>
 </ul>
 </div>
 </section>
@@ -1231,7 +1231,7 @@ ${hubSvgFigure("About Invisible Exit", "Built by a corporate manager", "About th
 <ul style="line-height:1.7;color:#1f2937;padding-left:1.5rem">
 <li>You should not have to quit your job to start building.</li>
 <li>Recurring revenue changes how you think about work permanently.</li>
-<li>Anonymity is a feature, not a limitation — it protects you while you build.</li>
+<li>Anonymity is a feature, not a limitation, it protects you while you build.</li>
 <li>AI tools make it possible for one person to do what took a team five years ago.</li>
 <li>The best time to start was three years ago. The second best time is this weekend.</li>
 </ul>
@@ -1467,7 +1467,7 @@ function calculatorBodyHtml(calc: typeof calculators[0]): string {
   const faqs = calc.faqs.map((f: { question: string; answer: string }) =>
     `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Calculators", "Financial tools for founders", "Interactive calculators for freedom number, break-even, and pricing — financial planning for employed founders")}
+${hubSvgFigure("Calculators", "Financial tools for founders", "Interactive calculators for freedom number, break-even, and pricing, financial planning for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> › <a href="/calculators" style="color:#3B82F6;text-decoration:none">Calculators</a> › <span>${calc.h1}</span>
 </nav>
@@ -1625,7 +1625,7 @@ ${faqs}
 
 function alternativesBodyHtml(item: typeof alternatives[0]): string {
   const altList = item.alternatives
-    .map((a: { name: string; why: string }) => `<li><strong>${a.name}</strong> — ${a.why}</li>`)
+    .map((a: { name: string; why: string }) => `<li><strong>${a.name}</strong>, ${a.why}</li>`)
     .join("\n");
   const faqs = (item.faqs || [])
     .map((f: { question: string; answer: string }) => `<div><h3>${f.question}</h3><p>${f.answer}</p></div>`)
@@ -1658,13 +1658,13 @@ ${hubSvgFigure("Alternatives", "Product comparison", "Detailed comparison of pro
 /**
  * Cross-links from a salary page used to be built by string-guessing, and every
  * guess was wrong for at least some of the 25 professions:
- *   /cost-of-waiting/${item.slug}   — that route is keyed by YEARS+SALARY
+ *   /cost-of-waiting/${item.slug}, that route is keyed by YEARS+SALARY
  *                                     (`5-years-$150k-salary`), never by profession
- *   /side-hustles/for-${plural}     — only 6 of 25 professions have a page
- *   /mistakes/mistakes-${slug}s-make — naive +s; the data owns its own slugs
- *   /ideas/for-${plural}            — 25 exist but the plural forms do not all match
+ *   /side-hustles/for-${plural}, only 6 of 25 professions have a page
+ *   /mistakes/mistakes-${slug}s-make, naive +s; the data owns its own slugs
+ *   /ideas/for-${plural}, 25 exist but the plural forms do not all match
  * That produced ~60 of this site's broken internal links. Now every cross-link is
- * looked up in the same data the prerenderer iterates, and omitted when absent — a
+ * looked up in the same data the prerenderer iterates, and omitted when absent, a
  * missing related-link is invisible; a 404 is not.
  */
 const IDEA_SLUGS = new Set(industryIdeas.map((i) => i.slug));
@@ -1724,7 +1724,7 @@ ${relatedLinksSection([
       ? [{ href: `/cost-of-waiting/${cowSlug}`, text: `Cost of Waiting 5 Years on a ${item.avgSalary} Salary` }]
       : []),
     { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
-    { href: `/quit-your-job`, text: `When to Quit Your Job \u2014 Honest Framework` },
+    { href: `/quit-your-job`, text: `When to Quit Your Job, Honest Framework` },
   ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto">
 <p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> Salary estimates are general ranges. Individual compensation varies. Not financial advice.</p>
@@ -1741,7 +1741,7 @@ function milestoneBodyHtml(item: typeof revenueMilestones[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Revenue Milestones", "Stage-by-stage guide", "Micro-SaaS revenue milestone guide — what to expect and do at each MRR tier")}
+${hubSvgFigure("Revenue Milestones", "Stage-by-stage guide", "Micro-SaaS revenue milestone guide, what to expect and do at each MRR tier")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1773,7 +1773,7 @@ function timelineBodyHtml(item: typeof timelines[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Timeline", "Month-by-month roadmap", "Month-by-month timeline for building a micro-SaaS while employed — actionable steps at each stage")}
+${hubSvgFigure("Timeline", "Month-by-month roadmap", "Month-by-month timeline for building a micro-SaaS while employed, actionable steps at each stage")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1827,7 +1827,7 @@ ${hubSvgFigure("Tool Stack", "Profession-specific recommendations", "Recommended
 
 function costOfWaitingBodyHtml(item: typeof costOfWaitingPages[0]): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Cost of Waiting", "Opportunity cost calculator", "The true financial cost of delaying your micro-SaaS business — lost revenue and compound growth")}
+${hubSvgFigure("Cost of Waiting", "Opportunity cost calculator", "The true financial cost of delaying your micro-SaaS business, lost revenue and compound growth")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1857,7 +1857,7 @@ function nonCompeteBodyHtml(item: typeof nonCompeteMatrix[0]): string {
     `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete clause analysis — enforceability, key risks, and safe harbors for your profession and state")}
+${hubSvgFigure("Non-Compete Analysis", "Legal risk assessment", "Non-compete clause analysis, enforceability, key risks, and safe harbors for your profession and state")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span>
 </nav>
@@ -1918,10 +1918,10 @@ function professionStateBodyHtml(item: typeof professionStatePages[0]): string {
       ? [{ href: `/non-compete/${ncSlug}`, text: `Non-Compete Guide for ${item.profession} in ${item.state}` }] : []),
     { href: `/guides/${stateSlug}`, text: `Anonymous LLC Guide for ${item.state}` },
     { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue Numbers` },
-    { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+    { href: `/weekend-builds`, text: `Weekend Build Ideas, Launch in 48 Hours` },
   ]);
   return `<div class="min-h-screen">
-${hubSvgFigure("Profession × State", "Ideas by location", "Micro-SaaS ideas for your profession in your specific state — local considerations and opportunities")}
+${hubSvgFigure("Profession × State", "Ideas by location", "Micro-SaaS ideas for your profession in your specific state, local considerations and opportunities")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/ideas/${profSlug}" style="color:#3B82F6;text-decoration:none">${item.profession}</a> &rsaquo; <span>${item.state}</span>
 </nav>
@@ -1948,7 +1948,7 @@ function professionMistakesBodyHtml(item: typeof professionMistakes[0]): string 
   const signs = (item.positiveSigns || []).map((s: string) => `<li>${s}</li>`).join("");
   const faqs = (item.faqs || []).map((f:any) => `<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Common Mistakes", "Profession-specific pitfalls", "Mistakes that professionals make when starting a side business — and how to avoid them")}
+${hubSvgFigure("Common Mistakes", "Profession-specific pitfalls", "Mistakes that professionals make when starting a side business, and how to avoid them")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style="max-width:48rem;margin:0 auto">${mistakes}</div></section>
@@ -1957,10 +1957,10 @@ ${faqs ? `<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div sty
 ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
   { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
-  { href: `/failure-stories`, text: `Micro-SaaS Failure Stories — Learn From Real Mistakes` },
+  { href: `/failure-stories`, text: `Micro-SaaS Failure Stories, Learn From Real Mistakes` },
   { href: `/salaries`, text: `Salary to Freedom Number Calculator` },
   { href: `/case-studies`, text: `Successful Micro-SaaS Case Studies` },
-  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job, Honest Framework` },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><p style="font-size:0.75rem;color:#9ca3af"><strong>Disclaimer:</strong> For informational purposes only. Not legal, financial, or tax advice.</p></div></section>
@@ -1992,7 +1992,7 @@ function pricingModelBodyHtml(item: typeof pricingModels[0]): string {
   const benchmarks = (item.benchmarks||[]).map((b:any)=>`<div><dt style="font-size:0.75rem;color:#6b7280">${b.metric}</dt><dd style="font-weight:700">${b.value}</dd></div>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Pricing Model", "Revenue comparison", "Micro-SaaS pricing model analysis — how it works, pros, cons, and real revenue examples")}
+${hubSvgFigure("Pricing Model", "Revenue comparison", "Micro-SaaS pricing model analysis, how it works, pros, cons, and real revenue examples")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.model} Pricing</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;margin-bottom:0.5rem">How It Works</h2><p style="color:#4b5563">${item.howItWorks}</p></div></section>
@@ -2037,7 +2037,7 @@ function professionVsCareerBodyHtml(item: typeof professionVsCareer[0]): string 
   const comparison = (item.comparison||[]).map((c:any)=>`<tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;font-weight:600">${c.factor}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.career}</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;color:#4b5563">${c.saas}</td></tr>`).join("\n");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Career vs SaaS", "Honest comparison", "Comparing staying in your career versus building a micro-SaaS — salary, equity, risk, and freedom")}
+${hubSvgFigure("Career vs SaaS", "Honest comparison", "Comparing staying in your career versus building a micro-SaaS, salary, equity, risk, and freedom")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
@@ -2059,7 +2059,7 @@ function firstYearBodyHtml(item: typeof firstYearEntries[0]): string {
   const lessons = (item.lessonsLearned||[]).map((l:string)=>`<li>${l}</li>`).join("");
   const faqs = (item.faqs||[]).map((f:any)=>`<div><h3 style="font-weight:600">${f.question}</h3><p>${f.answer}</p></div>`).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("First Year", "12-month roadmap", "Month-by-month first-year roadmap for building a micro-SaaS — goals, deliverables, and reality checks")}
+${hubSvgFigure("First Year", "12-month roadmap", "Month-by-month first-year roadmap for building a micro-SaaS, goals, deliverables, and reality checks")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1.5rem;padding:2rem 1.5rem;max-width:48rem;margin:0 auto">
@@ -2092,14 +2092,14 @@ ${faqs?`<section style="padding:2rem 1.5rem;background-color:#f9fafb"><div style
 
 function manifestoBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisible Exit manifesto — why building anonymous recurring revenue is the path to freedom")}
+${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisible Exit manifesto, why building anonymous recurring revenue is the path to freedom")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Manifesto</span></nav>
 <section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
 <div style="max-width:48rem;margin:0 auto">
 <p style="color:#60a5fa;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1.5rem">The Manifesto</p>
 <h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">This Isn't a Side-Hustle Course. It's a New Vehicle.</h1>
-<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1.5rem">Every other program teaches you to improve — to build a better business, to hustle harder, to optimize your side project. We don't teach improvement. We offer a fundamentally different path to financial freedom.</p>
-<p style="color:rgba(255,255,255,0.5);max-width:32rem;margin:0 auto 2rem">If you're a corporate manager earning $120K-$200K with golden handcuffs and less than 0.5% equity — this is your declaration of independence.</p>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1.5rem">Every other program teaches you to improve, to build a better business, to hustle harder, to optimize your side project. We don't teach improvement. We offer a fundamentally different path to financial freedom.</p>
+<p style="color:rgba(255,255,255,0.5);max-width:32rem;margin:0 auto 2rem">If you're a corporate manager earning $120K-$200K with golden handcuffs and less than 0.5% equity, this is your declaration of independence.</p>
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
 </div>
 </section>
@@ -2109,8 +2109,8 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Improvement vs. A New Opportunity</h2>
 <div style="color:#4b5563;line-height:1.8">
 <p style="margin-bottom:1rem"><strong>Improvement</strong> is: "How to build a better side business." It competes with 10,000 other courses, books, and YouTube channels. It positions you as just another person learning to hustle.</p>
-<p style="margin-bottom:1rem"><strong style="color:#3b82f6">A New Opportunity</strong> is: "A fundamentally different vehicle for financial freedom — one designed specifically for employed managers who need to stay invisible." It creates a category that didn't exist before. A category we own.</p>
-<p style="font-weight:500;font-size:1.125rem;color:#0f172a">We don't teach you to build a side business. We hand you the Invisible Exit System — the world's first anonymity-native, stealth-first framework for building recurring revenue while employed.</p>
+<p style="margin-bottom:1rem"><strong style="color:#3b82f6">A New Opportunity</strong> is: "A fundamentally different vehicle for financial freedom, one designed specifically for employed managers who need to stay invisible." It creates a category that didn't exist before. A category we own.</p>
+<p style="font-weight:500;font-size:1.125rem;color:#0f172a">We don't teach you to build a side business. We hand you the Invisible Exit System, the world's first anonymity-native, stealth-first framework for building recurring revenue while employed.</p>
 </div>
 </div>
 </section>
@@ -2123,23 +2123,23 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 </div>
 <div style="max-width:48rem;margin:0 auto">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Vehicle — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Climb the corporate ladder. Wait for equity to vest. Hope the IPO delivers.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Vehicle, Old Way</p><p style="font-size:0.875rem;color:#6b7280">Climb the corporate ladder. Wait for equity to vest. Hope the IPO delivers.</p></div>
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Build invisible recurring revenue. Own products, not promises.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Timeline — Old Way</p><p style="font-size:0.875rem;color:#6b7280">5-8 years to a liquidity event you don't control.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Timeline, Old Way</p><p style="font-size:0.875rem;color:#6b7280">5-8 years to a liquidity event you don't control.</p></div>
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">12-18 months to $4,000/month MRR you own today.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Visibility — Old Way</p><p style="font-size:0.875rem;color:#6b7280">LinkedIn brand. Conference talks. Your name on everything.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Visibility, Old Way</p><p style="font-size:0.875rem;color:#6b7280">LinkedIn brand. Conference talks. Your name on everything.</p></div>
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Anonymous entities. Separate identities. Zero exposure.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Skill Set — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Learn to pitch investors. Build a deck. Network at events.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Skill Set, Old Way</p><p style="font-size:0.875rem;color:#6b7280">Learn to pitch investors. Build a deck. Network at events.</p></div>
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Use your existing P&L, team management, and execution skills.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Risk — Old Way</p><p style="font-size:0.875rem;color:#6b7280">Quit your job. Burn the bridge. Sink or swim.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Risk, Old Way</p><p style="font-size:0.875rem;color:#6b7280">Quit your job. Burn the bridge. Sink or swim.</p></div>
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Keep your salary. Build in 5 hours/week. The job funds the exit.</p></div>
 </div>
 </div>
@@ -2153,12 +2153,12 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 <p style="color:#4b5563;max-width:36rem;margin:0 auto">These aren't tips. They're the foundational beliefs of a movement. If you agree with all six, you're one of us.</p>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:48rem;margin:0 auto">
-<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">01</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Revenue beats equity.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today — not in 5 years when an IPO 'might' happen.</p></div>
-<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">02</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Anonymity is the advantage.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">The faceless founder can experiment without fear, fail without consequence, and build in any market — all while the employer, the LinkedIn network, and the competitors have no idea. The mask IS the moat.</p></div>
-<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">03</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Constraints produce focus.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">5 hours a week isn't a limitation. It's a forcing function. Full-time founders with 60 hours dilute their effort across a dozen priorities. The 5-hour builder does one thing that matters — every single week.</p></div>
-<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">04</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">The system beats the idea.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Stop obsessing over finding the 'right' idea. Build the framework first — freedom number, idea pipeline, stealth ops, launch control, brand. Once the system exists, you can swap ideas in and out like cartridges.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">01</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Revenue beats equity.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today, not in 5 years when an IPO 'might' happen.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">02</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Anonymity is the advantage.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">The faceless founder can experiment without fear, fail without consequence, and build in any market, all while the employer, the LinkedIn network, and the competitors have no idea. The mask IS the moat.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">03</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Constraints produce focus.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">5 hours a week isn't a limitation. It's a forcing function. Full-time founders with 60 hours dilute their effort across a dozen priorities. The 5-hour builder does one thing that matters, every single week.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">04</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">The system beats the idea.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Stop obsessing over finding the 'right' idea. Build the framework first, freedom number, idea pipeline, stealth ops, launch control, brand. Once the system exists, you can swap ideas in and out like cartridges.</p></div>
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">05</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Boring products pay mortgages.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">A PDF generator for electricians beats a sexy AI tool. Boring markets have less competition, higher willingness to pay, and lower churn. The Idea Pipeline scores for revenue probability, not excitement.</p></div>
-<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">06</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Your job is the launchpad, not the trap.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Your salary is runway funding that costs zero equity. Your corporate skills (managing teams, reading P&Ls, executing under pressure) are exactly what solo founders lack. The job isn't what you escape — it's what funds the escape.</p></div>
+<div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem"><span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.5rem;background-color:rgba(59,130,246,0.1);color:#3b82f6;font-weight:700;font-size:0.875rem;margin-bottom:1rem">06</span><h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.75rem">Your job is the launchpad, not the trap.</h3><p style="font-size:0.875rem;color:#6b7280;line-height:1.6">Your salary is runway funding that costs zero equity. Your corporate skills (managing teams, reading P&Ls, executing under pressure) are exactly what solo founders lack. The job isn't what you escape, it's what funds the escape.</p></div>
 </div>
 </div>
 </section>
@@ -2170,8 +2170,8 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 </div>
 <div style="color:rgba(255,255,255,0.6);line-height:1.8">
 <p style="margin-bottom:1.25rem">Imagine a world where corporate managers don't wait 8 years for an IPO that may never deliver freedom. Where they don't gamble their family's future on a 0.5% equity lottery ticket.</p>
-<p style="margin-bottom:1.25rem">Imagine if 10,000 managers — each building quietly, each earning $4,000/month from products they own — walked into their annual review knowing the golden handcuffs were already off.</p>
-<p style="margin-bottom:1.25rem">Not because they quit. Not because they burned a bridge. But because they built an invisible exit — a door only they could see and only they could open.</p>
+<p style="margin-bottom:1.25rem">Imagine if 10,000 managers, each building quietly, each earning $4,000/month from products they own, walked into their annual review knowing the golden handcuffs were already off.</p>
+<p style="margin-bottom:1.25rem">Not because they quit. Not because they burned a bridge. But because they built an invisible exit, a door only they could see and only they could open.</p>
 <p style="color:white;font-weight:500;font-size:1.125rem;margin-top:1rem">That's the future we're building. One manager at a time.</p>
 </div>
 </div>
@@ -2181,7 +2181,7 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 <p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">Your Move</p>
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">If You've Read This Far, You're Already Different</h2>
 <p style="color:#4b5563;margin-bottom:2rem">97% of managers will read this and go back to their spreadsheet. 3% will calculate their freedom number. That 3% is who this is for.</p>
-<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number — Free</a>
+<a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number, Free</a>
 <p style="font-size:0.875rem;color:#6b7280;margin-top:1rem">90 seconds. No credit card. The first step of the invisible exit.</p>
 </div>
 </section>
@@ -2196,7 +2196,7 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <div style="max-width:48rem;margin:0 auto">
 <p style="display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#60a5fa;font-size:0.875rem;font-weight:600;padding:0.5rem 1rem;border-radius:9999px;margin-bottom:2rem">Definitive Guide · 3,500+ words</p>
 <h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">The Complete Freedom Number Guide</h1>
-<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1rem">How to calculate the exact monthly recurring revenue you need to never work for someone else again — with real numbers, timelines, and the framework to hit it.</p>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto 1rem">How to calculate the exact monthly recurring revenue you need to never work for someone else again, with real numbers, timelines, and the framework to hit it.</p>
 <p style="color:rgba(255,255,255,0.5)">Updated July 2026 · 12 min read</p>
 </div>
 </section>
@@ -2205,10 +2205,10 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">What Is a Freedom Number?</h2>
 <div style="color:#4b5563;line-height:1.8">
 <p style="margin-bottom:1.25rem">Your <strong>freedom number</strong> is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses.</p>
-<p style="margin-bottom:1.25rem">It's the number that makes the golden handcuffs irrelevant. When your side business generates this much per month, consistently, you have optionality — the freedom to choose whether you keep working for someone else or not.</p>
+<p style="margin-bottom:1.25rem">It's the number that makes the golden handcuffs irrelevant. When your side business generates this much per month, consistently, you have optionality, the freedom to choose whether you keep working for someone else or not.</p>
 <p style="margin-bottom:1.25rem">Most corporate managers have never calculated this number. They operate on a vague feeling that "someday" they'll have enough. That vagueness is what keeps them trapped. A specific number changes everything. It turns an abstract dream into a math problem. And math problems have solutions.</p>
 <div style="background:rgba(59,130,246,0.05);border-left:4px solid #3b82f6;border-radius:0 0.5rem 0.5rem 0;padding:1.25rem;margin:1.5rem 0">
-<p style="color:#0f172a;font-weight:500">The average freedom number for a corporate manager earning $120K-$200K is <strong style="color:#3b82f6">$12,000-$20,000/month in MRR</strong>. That sounds like a lot — until you realize it's 138-450 customers at $29-$97/month. Boring products for boring industries.</p>
+<p style="color:#0f172a;font-weight:500">The average freedom number for a corporate manager earning $120K-$200K is <strong style="color:#3b82f6">$12,000-$20,000/month in MRR</strong>. That sounds like a lot, until you realize it's 138-450 customers at $29-$97/month. Boring products for boring industries.</p>
 </div>
 </div>
 </section>
@@ -2223,16 +2223,16 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <p style="color:#6b7280">+ Tax &amp; Benefits Buffer (+30%)</p>
 <p style="color:#0f172a;font-weight:700;margin-top:0.75rem;border-top:1px solid #e2e8f0;padding-top:0.75rem">= Your Monthly MRR Target</p>
 </div>
-<p style="margin-top:1.25rem"><strong>Why the 30% buffer?</strong> Your employer covers more than just salary — there's healthcare, retirement match, paid time off, and other benefits worth $15,000-$30,000/year. Plus, self-employment tax is ~15.3% in the US (or equivalent elsewhere). The buffer ensures your freedom number actually replaces your total compensation, not just your base pay.</p>
+<p style="margin-top:1.25rem"><strong>Why the 30% buffer?</strong> Your employer covers more than just salary, there's healthcare, retirement match, paid time off, and other benefits worth $15,000-$30,000/year. Plus, self-employment tax is ~15.3% in the US (or equivalent elsewhere). The buffer ensures your freedom number actually replaces your total compensation, not just your base pay.</p>
 </div>
 </section>
 <section style="margin-bottom:3rem">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">How to Calculate Yours (Step by Step)</h2>
 <div style="display:grid;gap:1.5rem">
-<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Determine your annual salary (including bonuses)</h3><p style="font-size:0.875rem;color:#6b7280">Use your total compensation — base salary plus any expected bonus, not just your base pay. If you earn $120K base + $15K bonus, your number is $135,000.</p></div></div>
-<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Calculate monthly living expenses</h3><p style="font-size:0.875rem;color:#6b7280">Include everything: mortgage/rent, food, transportation, childcare, debt payments, subscriptions, healthcare premiums, and discretionary spending. Be honest — underestimating here is the #1 mistake.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Determine your annual salary (including bonuses)</h3><p style="font-size:0.875rem;color:#6b7280">Use your total compensation, base salary plus any expected bonus, not just your base pay. If you earn $120K base + $15K bonus, your number is $135,000.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Calculate monthly living expenses</h3><p style="font-size:0.875rem;color:#6b7280">Include everything: mortgage/rent, food, transportation, childcare, debt payments, subscriptions, healthcare premiums, and discretionary spending. Be honest, underestimating here is the #1 mistake.</p></div></div>
 <div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Add the 30% tax and benefits buffer</h3><p style="font-size:0.875rem;color:#6b7280">Take your monthly salary replacement + expenses and multiply by 1.30. This covers self-employment taxes, healthcare, retirement contributions, and the benefits you're leaving behind.</p></div></div>
-<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Round up to the nearest $100</h3><p style="font-size:0.875rem;color:#6b7280">Round to give yourself a small margin. This is your freedom number — the monthly MRR target that replaces your employment.</p></div></div>
+<div style="display:flex;gap:1rem"><div style="width:2rem;height:2rem;border-radius:50%;background:#3b82f6;color:white;font-weight:700;font-size:0.875rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div><div><h3 style="font-weight:600;margin-bottom:0.25rem">Round up to the nearest $100</h3><p style="font-size:0.875rem;color:#6b7280">Round to give yourself a small margin. This is your freedom number, the monthly MRR target that replaces your employment.</p></div></div>
 </div>
 </section>
 <section style="margin-bottom:3rem">
@@ -2253,7 +2253,7 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <section style="margin-bottom:3rem">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">How Many Customers You Need</h2>
 <div style="color:#4b5563;line-height:1.8">
-<p style="margin-bottom:1.25rem">The beauty of the freedom number is that it reframes the problem. You're not trying to "build a business" — you're trying to acquire a specific number of customers at a specific price point.</p>
+<p style="margin-bottom:1.25rem">The beauty of the freedom number is that it reframes the problem. You're not trying to "build a business", you're trying to acquire a specific number of customers at a specific price point.</p>
 <p style="margin-bottom:1.25rem">Higher pricing = fewer customers needed = faster path to freedom. A $97/month product serving a boring industry (electricians, plumbers, accountants) needs just 155 customers. That's achievable in 12-18 months with consistent distribution.</p>
 </div>
 </section>
@@ -2268,7 +2268,7 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 9</p></div><p style="font-size:0.875rem;flex:1">Growth phase, second product</p><p style="font-size:0.875rem;font-weight:700">$1,500-2,500/mo</p></div>
 <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem"><div style="width:5rem;flex-shrink:0"><p style="font-size:0.75rem;font-weight:700;color:#3b82f6">Month 12-18</p></div><p style="font-size:0.875rem;flex:1">Approaching or hitting freedom number</p><p style="font-size:0.875rem;font-weight:700">$3,000-5,000+/mo</p></div>
 </div>
-<p style="margin-top:1.25rem"><strong>Important:</strong> These are averages, not guarantees. Some members hit $2,000 MRR in 4 months. Others take 18 months to reach $1,000. The variable is execution consistency — how reliably you show up for your 5 hours each week.</p>
+<p style="margin-top:1.25rem"><strong>Important:</strong> These are averages, not guarantees. Some members hit $2,000 MRR in 4 months. Others take 18 months to reach $1,000. The variable is execution consistency, how reliably you show up for your 5 hours each week.</p>
 </div>
 </section>
 <section style="margin-bottom:3rem">
@@ -2290,11 +2290,11 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 <section style="margin-bottom:3rem">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1.5rem">Frequently Asked Questions</h2>
 <div style="display:grid;gap:1rem">
-<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What exactly is a freedom number?</h3><p style="font-size:0.875rem;color:#6b7280">Your freedom number is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses. It's not about quitting your job — it's about having the option to. Once your MRR hits your freedom number, the golden handcuffs are off. You stay because you choose to, not because you have to.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What exactly is a freedom number?</h3><p style="font-size:0.875rem;color:#6b7280">Your freedom number is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses. It's not about quitting your job, it's about having the option to. Once your MRR hits your freedom number, the golden handcuffs are off. You stay because you choose to, not because you have to.</p></div>
 <div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">How is this different from the 4% rule in FIRE?</h3><p style="font-size:0.875rem;color:#6b7280">The FIRE 4% rule requires you to accumulate a large lump sum (typically $1M-$3M) invested in index funds, then withdraw 4% annually. The freedom number approach replaces that with recurring revenue from products you own. Instead of drawing down a finite pool, you're building a renewable income stream that doesn't deplete. Both paths lead to freedom; the MRR path gets there faster because you don't need to accumulate the full lump sum first.</p></div>
 <div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">Do I need to quit my job to hit my freedom number?</h3><p style="font-size:0.875rem;color:#6b7280">No. That's the entire point of the Invisible Exit system. You build in 5 hours per week while employed. Your salary funds the build. Your corporate skills give you an advantage solo founders lack. Most members hit their first $1,000 MRR within 6-8 months while still fully employed.</p></div>
-<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What if my expenses are higher than the examples?</h3><p style="font-size:0.875rem;color:#6b7280">The formula works at any expense level. Higher expenses mean a higher freedom number, which means either more customers or higher pricing. The math doesn't change — it scales. If your freedom number feels unreachable at $9/month pricing, raise your price. At $97/month, a $15,000 freedom number needs just 155 customers.</p></div>
-<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">How accurate is the freedom number calculator?</h3><p style="font-size:0.875rem;color:#6b7280">The calculator uses standard financial modeling: salary replacement + expense coverage + a 30% buffer for taxes and benefits. It's directionally accurate — it tells you the order of magnitude you're targeting. For exact planning, use the detailed breakdown in your dashboard after calculating.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">What if my expenses are higher than the examples?</h3><p style="font-size:0.875rem;color:#6b7280">The formula works at any expense level. Higher expenses mean a higher freedom number, which means either more customers or higher pricing. The math doesn't change, it scales. If your freedom number feels unreachable at $9/month pricing, raise your price. At $97/month, a $15,000 freedom number needs just 155 customers.</p></div>
+<div style="padding:1.25rem;border:1px solid #e2e8f0;border-radius:0.5rem"><h3 style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem">How accurate is the freedom number calculator?</h3><p style="font-size:0.875rem;color:#6b7280">The calculator uses standard financial modeling: salary replacement + expense coverage + a 30% buffer for taxes and benefits. It's directionally accurate, it tells you the order of magnitude you're targeting. For exact planning, use the detailed breakdown in your dashboard after calculating.</p></div>
 </div>
 </section>
 <section style="padding:2rem;background:#f8fafc;border-radius:1rem;text-align:center;border:1px solid #e2e8f0">
@@ -2308,21 +2308,21 @@ ${hubSvgFigure("Freedom Number", "The math of independence", "How to calculate y
 
 function comparePageBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invisible Exit compares to every alternative — features, pricing, and honest tradeoffs")}
+${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invisible Exit compares to every alternative, features, pricing, and honest tradeoffs")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Honest Comparison</span></nav>
 <section style="padding:6rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse at top, #1e3a5f, #0f172a)">
 <div style="max-width:48rem;margin:0 auto">
 <p style="display:inline-block;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#60a5fa;font-size:0.875rem;font-weight:600;padding:0.5rem 1rem;border-radius:9999px;margin-bottom:2rem">The Honest Comparison</p>
 <h1 style="font-size:2.5rem;font-weight:800;color:white;line-height:1.1;margin-bottom:1.5rem">Why Not Just Something Else?</h1>
-<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto">Every alternative teaches improvement. We offer a new opportunity. Here's the honest comparison — including where each alternative is actually better.</p>
+<p style="font-size:1.125rem;color:rgba(255,255,255,0.7);max-width:36rem;margin:0 auto">Every alternative teaches improvement. We offer a new opportunity. Here's the honest comparison, including where each alternative is actually better.</p>
 </div>
 </section>
 <section style="padding:3rem 1.5rem">
 <div style="max-width:56rem;margin:0 auto">
 <div style="text-align:center;margin-bottom:3rem">
 <p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Alternatives</p>
-<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">6 Paths to Freedom — Compared</h2>
-<p style="color:#4b5563;max-width:36rem;margin:0 auto">We're not going to pretend every alternative is bad. Some are good for different goals. Here's where each one wins — and where it falls apart for corporate managers.</p>
+<h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1rem">6 Paths to Freedom, Compared</h2>
+<p style="color:#4b5563;max-width:36rem;margin:0 auto">We're not going to pretend every alternative is bad. Some are good for different goals. Here's where each one wins, and where it falls apart for corporate managers.</p>
 </div>
 <div style="max-width:48rem;margin:0 auto;display:grid;gap:1.5rem">
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
@@ -2332,7 +2332,7 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Just start! Pick an idea and go!"</p></div>
 <div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">No stealth framework. No anonymity system. No employment-contract compliance. If your employer finds out, you lose everything.</p></div>
 </div>
-<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">We don't teach improvement. We give you a new vehicle — the Invisible Exit System — designed from day one for employed managers who can't be discovered.</p></div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">We don't teach improvement. We give you a new vehicle, the Invisible Exit System, designed from day one for employed managers who can't be discovered.</p></div>
 <p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Good for motivation. Dangerous for corporate managers who need to stay invisible.</p>
 </div>
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
@@ -2340,9 +2340,9 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Save 70% of income. Invest in index funds. Retire in 20-30 years.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
 <div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Live below your means and let compounding do the work."</p></div>
-<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Requires decades of frugality. Depends on market returns you don't control. Doesn't create anything you own. You're still dependent — just on the market instead of an employer.</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Requires decades of frugality. Depends on market returns you don't control. Doesn't create anything you own. You're still dependent, just on the market instead of an employer.</p></div>
 </div>
-<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">The freedom number approach uses recurring revenue from products you own. It's renewable — it doesn't deplete. And it takes 12-18 months, not 20-30 years.</p></div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">The freedom number approach uses recurring revenue from products you own. It's renewable, it doesn't deplete. And it takes 12-18 months, not 20-30 years.</p></div>
 <p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Valid path, but slow. We offer a faster vehicle that doesn't require decades of sacrifice.</p>
 </div>
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
@@ -2352,7 +2352,7 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"If you have a backup plan, you'll never go all in."</p></div>
 <div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Ignores the reality that most people have families, mortgages, and healthcare tied to employment. 'Burning the boats' is advice from people who raised $500K before quitting.</p></div>
 </div>
-<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Your job is the launchpad, not the trap. Your salary is runway funding that costs zero equity. Your 5 hours/week forces focus. You don't need to quit — you need a system that works within your constraints.</p></div>
+<div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Your job is the launchpad, not the trap. Your salary is runway funding that costs zero equity. Your 5 hours/week forces focus. You don't need to quit, you need a system that works within your constraints.</p></div>
 <p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Inspiring for 23-year-olds with no responsibilities. Dangerous for managers with families.</p>
 </div>
 <div style="padding:1.5rem;border:1px solid #e2e8f0;border-radius:0.75rem">
@@ -2370,7 +2370,7 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <p style="font-size:0.875rem;color:#6b7280;font-style:italic;margin-bottom:1rem">Learn to build apps without code.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
 <div style="background:#f8fafc;border-radius:0.5rem;padding:1rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem">What they say</p><p style="font-size:0.875rem;color:#6b7280;font-style:italic">"Anyone can build a SaaS with Bubble and Airtable!"</p></div>
-<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Teaches the tool, not the system. You learn to build — but not what to build, how to validate it, how to launch it stealthily, or how to get customers without ads.</p></div>
+<div style="background:rgba(239,68,68,0.05);border-radius:0.5rem;padding:1rem;border:1px solid rgba(239,68,68,0.1)"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.5rem">What they miss</p><p style="font-size:0.875rem;color:#6b7280">Teaches the tool, not the system. You learn to build, but not what to build, how to validate it, how to launch it stealthily, or how to get customers without ads.</p></div>
 </div>
 <div style="background:rgba(59,130,246,0.05);border-radius:0.5rem;padding:1rem;border-left:2px solid #3b82f6;margin-bottom:0.75rem"><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.5rem">Our answer</p><p style="font-size:0.875rem;color:#0f172a">Tools are commodities. The system is the asset. The Idea Pipeline tells you what to build. Launch Control tells you how to ship. Brand Manager tells you how to get customers. The tools are just the medium.</p></div>
 <p style="font-size:0.75rem;color:#6b7280;font-style:italic"><strong>Verdict:</strong> Good for learning a skill. Insufficient as a path to freedom.</p>
@@ -2393,8 +2393,8 @@ ${hubSvgFigure("Honest Comparison", "Invisible Exit vs alternatives", "How Invis
 <p style="color:#3b82f6;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem">The Core Difference</p>
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Everything Else Teaches Improvement. We Offer a New Opportunity.</h2>
 <div style="color:#4b5563;line-height:1.8">
-<p style="margin-bottom:1.25rem">Side-hustle courses teach you to build a better business. FIRE teaches you to save more money. Quit-your-job advice teaches you to be braver. MBAs teach you to climb higher. All of these are improvement — incremental progress on a path you're already on.</p>
-<p style="font-weight:500;font-size:1.125rem;color:#0f172a;margin-top:1rem">Invisible Exit doesn't improve your current path. It hands you a different vehicle entirely — one designed from the ground up for corporate managers who need to stay invisible, work in 5 hours/week, and reach $4,000/month in 12-18 months.</p>
+<p style="margin-bottom:1.25rem">Side-hustle courses teach you to build a better business. FIRE teaches you to save more money. Quit-your-job advice teaches you to be braver. MBAs teach you to climb higher. All of these are improvement, incremental progress on a path you're already on.</p>
+<p style="font-weight:500;font-size:1.125rem;color:#0f172a;margin-top:1rem">Invisible Exit doesn't improve your current path. It hands you a different vehicle entirely, one designed from the ground up for corporate managers who need to stay invisible, work in 5 hours/week, and reach $4,000/month in 12-18 months.</p>
 </div>
 <a href="/freedom" style="display:inline-block;margin-top:2rem;padding:0.75rem 1.5rem;background-color:#3b82f6;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number</a>
 </div>
@@ -2622,7 +2622,7 @@ function main() {
     if (injectBody(resolve(DIST, "tools", item.slug, "index.html"), toolCrossRefBodyHtml(item))) { count++; }
   }
 
-  // ── Flagship pages (SEO-critical — were rendering client-side only) ──
+  // ── Flagship pages (SEO-critical, were rendering client-side only) ──
   if (injectBody(resolve(DIST, "manifesto", "index.html"), manifestoBodyHtml())) {
     console.log("  /manifesto");
     count++;
@@ -2649,20 +2649,20 @@ function main() {
   if (injectBody(resolve(DIST, "data", "index.html"), dataHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "explore", "index.html"), exploreHubBodyHtml())) { count++; }
 
-  // ── Greg Isenberg pSEO Round 4 — hub landing pages ──
+  // ── Greg Isenberg pSEO Round 4, hub landing pages ──
   if (injectBody(resolve(DIST, "side-hustles", "index.html"), sideHustlesHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "by-budget", "index.html"), byBudgetHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "niches", "index.html"), nichesHubBodyHtml())) { count++; }
 
-  // ── Greg Isenberg pSEO Round 5 — hub landing pages ──
+  // ── Greg Isenberg pSEO Round 5, hub landing pages ──
   if (injectBody(resolve(DIST, "quit-your-job", "index.html"), quitJobHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "weekend-builds", "index.html"), weekendBuildsHubBodyHtml())) { count++; }
   if (injectBody(resolve(DIST, "failure-stories", "index.html"), failureStoriesHubBodyHtml())) { count++; }
 
-  // ── Greg Isenberg pSEO Round 6 — hub landing pages ──
+  // ── Greg Isenberg pSEO Round 6, hub landing pages ──
   if (injectBody(resolve(DIST, "reviews", "index.html"), reviewsHubBodyHtml())) { count++; }
 
-  // ── Greg Isenberg pSEO Round 7 — hub landing pages ──
+  // ── Greg Isenberg pSEO Round 7, hub landing pages ──
   if (injectBody(resolve(DIST, "case-studies", "index.html"), caseStudiesHubBodyHtml())) { count++; }
 
   // ── Missing pSEO hub pages (were 0 words for crawlers) ──
@@ -2866,7 +2866,7 @@ function budgetStartBodyHtml(item: typeof budgetStartPages[0]): string {
   const stack = item.stack.map((s: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${s}</span>`).join("");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("By Budget", "Business startup costs", "Best business ideas based on available capital — from $0 to $10,000")}
+${hubSvgFigure("By Budget", "Business startup costs", "Best business ideas based on available capital, from $0 to $10,000")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Best Options with ${item.budgetTier}</h2>${options}</div></section>
@@ -2875,8 +2875,8 @@ ${hubSvgFigure("By Budget", "Business startup costs", "Best business ideas based
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
-  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
-  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas, Launch in 48 Hours` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps, $1K to $20K/month` },
   { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
   { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
   { href: `/skills`, text: `How to Make Money with Your Skills` },
@@ -2895,7 +2895,7 @@ function nicheBodyHtml(item: typeof niches[0]): string {
   const mistakes = item.mistakes.map((m: string) => `<li style="display:flex;align-items:flex-start;gap:0.5rem;color:#374151;margin-bottom:0.5rem;font-size:0.875rem"><span style="color:#dc2626;flex-shrink:0">⚠️</span><span>${m}</span></li>`).join("");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("Micro-SaaS Niches", "Trending opportunities", "Best micro-SaaS niches to build in 2025 — market analysis and specific product ideas")}
+${hubSvgFigure("Micro-SaaS Niches", "Trending opportunities", "Best micro-SaaS niches to build in 2025, market analysis and specific product ideas")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem"><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1rem;font-weight:700;color:#1d4ed8">${item.marketSize}</div><div style="font-size:0.7rem;color:#6b7280">Market Size</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1rem;font-weight:700;color:#166534">${item.growthRate}</div><div style="font-size:0.7rem;color:#6b7280">Growth Rate</div></div><div style="background:#fff7ed;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#c2410c">${item.difficulty}</div><div style="font-size:0.7rem;color:#6b7280">Difficulty</div></div></div>
@@ -2908,10 +2908,10 @@ ${hubSvgFigure("Micro-SaaS Niches", "Trending opportunities", "Best micro-SaaS n
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
-  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas, Launch in 48 Hours` },
   { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
-  { href: `/failure-stories`, text: `Failure Stories — What NOT to Do` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps, $1K to $20K/month` },
+  { href: `/failure-stories`, text: `Failure Stories, What NOT to Do` },
   { href: `/skills`, text: `How to Make Money with Your Skills` },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
@@ -3128,7 +3128,7 @@ function costAnalysisBodyHtml(ca: typeof costAnalysisPages[0]): string {
   ).join("\n");
 
   return `<div class="min-h-screen">
-${hubSvgFigure("Cost Analysis", "Detailed financial breakdown", "Detailed cost analysis for starting and running a micro-SaaS — every expense category explained")}
+${hubSvgFigure("Cost Analysis", "Detailed financial breakdown", "Detailed cost analysis for starting and running a micro-SaaS, every expense category explained")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${ca.topic}</span>
 </nav>
@@ -3360,27 +3360,27 @@ ${faqs}
 // ---------- Hub page bodies ----------
 
 function costAnalysisHubBodyHtml(): string {
-  // Derived from costAnalysisPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from costAnalysisPages, the SAME array prerender-meta.mjs iterates to emit
   // /cost-analysis/<slug>. The 5 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = costAnalysisPages
     .map((x) => `<a href="/cost-analysis/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", "Cost breakdown for starting and running a micro-SaaS business while employed — from $0 to $500/month budgets")}
+${hubSvgFigure("Cost Analysis", "How much does it cost to build a micro-SaaS?", "Cost breakdown for starting and running a micro-SaaS business while employed, from $0 to $500/month budgets")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Cost Analysis</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
-<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Cost Analysis — How Much Does It Cost?</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed breakdowns of every cost involved in starting, running, and scaling a micro-SaaS business while employed. From $0 to $10,000 — know exactly what you'll spend before you start.</p>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Cost Analysis, How Much Does It Cost?</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed breakdowns of every cost involved in starting, running, and scaling a micro-SaaS business while employed. From $0 to $10,000, know exactly what you'll spend before you start.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
-<p style="font-size:1rem;line-height:1.6;color:#111827">You can start a micro-SaaS for as little as $0 using free tiers, but a realistic budget is $50-$200/month for hosting, domains, and tools. The biggest hidden cost is your time — most employed founders invest 5-15 hours/week.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">You can start a micro-SaaS for as little as $0 using free tiers, but a realistic budget is $50-$200/month for hosting, domains, and tools. The biggest hidden cost is your time, most employed founders invest 5-15 hours/week.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3400,27 +3400,27 @@ ${links}
 }
 
 function howToHubBodyHtml(): string {
-  // Derived from howToGuides — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from howToGuides, the SAME array prerender-meta.mjs iterates to emit
   // /how-to/<slug>. The 5 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = howToGuides
     .map((x) => `<a href="/how-to/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-step guides for building a micro-SaaS while employed — validation, building, launching, and growing")}
+${hubSvgFigure("How-To Guides", "Step-by-step for employed founders", "Step-by-step guides for building a micro-SaaS while employed, validation, building, launching, and growing")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>How-To Guides</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
-<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">How-To Guides — Step-by-Step for Employed Founders</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Actionable, step-by-step guides for every stage of building a micro-SaaS business while employed. No fluff — just the exact steps, tools, and timeline you need.</p>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">How-To Guides, Step-by-Step for Employed Founders</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Actionable, step-by-step guides for every stage of building a micro-SaaS business while employed. No fluff, just the exact steps, tools, and timeline you need.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
-<p style="font-size:1rem;line-height:1.6;color:#111827">The fastest path from idea to first paying customer: validate in 48 hours, build an MVP in 2-4 weeks, and get your first 10 customers through direct outreach — all while working full-time.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The fastest path from idea to first paying customer: validate in 48 hours, build an MVP in 2-4 weeks, and get your first 10 customers through direct outreach, all while working full-time.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3440,7 +3440,7 @@ ${links}
 }
 
 function isItLegalHubBodyHtml(): string {
-  // Derived from isItLegalPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from isItLegalPages, the SAME array prerender-meta.mjs iterates to emit
   // /is-it-legal/<slug>. The 5 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = isItLegalPages
@@ -3453,8 +3453,8 @@ ${hubSvgFigure("Is It Legal?", "Side business legal concerns explained", "Legal 
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
-<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Is It Legal? — Side Business Legal Concerns</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Clear, practical answers to the legal questions every employed founder asks. Non-compete clauses, IP ownership, moonlighting policies, anonymous businesses — know your rights and risks.</p>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Is It Legal?, Side Business Legal Concerns</h1>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Clear, practical answers to the legal questions every employed founder asks. Non-compete clauses, IP ownership, moonlighting policies, anonymous businesses, know your rights and risks.</p>
 </div>
 </section>
 <section style="background-color:#fef2f2;border-left:4px solid #ef4444;padding:1.5rem;margin-bottom:2rem">
@@ -3484,20 +3484,20 @@ function ideasHubBodyHtml(): string {
     `<a href="/ideas/for-${p}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827;text-transform:capitalize">Micro-SaaS Ideas for ${p.replace(/-/g, " ")}</h3><p style="font-size:0.8rem;color:#6b7280">5 validated ideas with market analysis</p></a>`).join("\n");
 
   return `<div class="min-h-screen">
-${hubSvgFigure("Micro-SaaS Ideas", "By profession — 125+ validated ideas", "Micro-SaaS ideas organized by professional expertise — 25 professions with 5 ideas each")}
+${hubSvgFigure("Micro-SaaS Ideas", "By profession, 125+ validated ideas", "Micro-SaaS ideas organized by professional expertise, 25 professions with 5 ideas each")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Ideas</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Ideas by Profession</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated micro-SaaS ideas tailored to your professional expertise. Each profession has 5 validated ideas with market analysis, competitive landscape, and revenue potential — designed to be built while employed.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated micro-SaaS ideas tailored to your professional expertise. Each profession has 5 validated ideas with market analysis, competitive landscape, and revenue potential, designed to be built while employed.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Quick Answer</p>
-<p style="font-size:1rem;line-height:1.6;color:#111827">The best micro-SaaS ideas come from your professional domain — problems you understand deeply because you live them daily. Browse ideas for your profession, validate in 48 hours, and start building.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The best micro-SaaS ideas come from your professional domain, problems you understand deeply because you live them daily. Browse ideas for your profession, validate in 48 hours, and start building.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3547,14 +3547,14 @@ function guidesHubBodyHtml(): string {
     `<a href="/guides/${g.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${g.state} Side Business Guide</h3><p style="font-size:0.8rem;color:#6b7280">LLC costs, non-compete status, tax rates</p></a>`).join("\n");
 
   return `<div class="min-h-screen">
-${hubSvgFigure("State Business Guides", "50 states + DC — LLC, taxes, non-competes", "State-by-state guides covering LLC filing fees, annual reports, non-compete enforceability, and anonymous LLC availability")}
+${hubSvgFigure("State Business Guides", "50 states + DC, LLC, taxes, non-competes", "State-by-state guides covering LLC filing fees, annual reports, non-compete enforceability, and anonymous LLC availability")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>State Guides</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">State-by-State Side Business Guides</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Complete guides for all 50 US states + DC. Each guide covers LLC filing fees, annual report costs, non-compete enforceability, state income tax, and anonymous LLC availability — everything an employed founder needs before forming an entity.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Complete guides for all 50 US states + DC. Each guide covers LLC filing fees, annual report costs, non-compete enforceability, state income tax, and anonymous LLC availability, everything an employed founder needs before forming an entity.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3597,7 +3597,7 @@ ${lists}
 
 function alternativesHubBodyHtml(): string {
   const items = alternatives.map((a) =>
-    `<a href="/alternatives/${a.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${a.product} Alternatives</h3><p style="font-size:0.8rem;color:#6b7280">${a.category} — ${a.alternatives.length} alternatives compared</p></a>`).join("\n");
+    `<a href="/alternatives/${a.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${a.product} Alternatives</h3><p style="font-size:0.8rem;color:#6b7280">${a.category}, ${a.alternatives.length} alternatives compared</p></a>`).join("\n");
 
   return `<div class="min-h-screen">
 ${hubSvgFigure("Alternatives", "Honest product comparisons", "Comparisons of Invisible Exit against other tools and platforms for building micro-SaaS businesses")}
@@ -3607,7 +3607,7 @@ ${hubSvgFigure("Alternatives", "Honest product comparisons", "Comparisons of Inv
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Invisible Exit Alternatives Compared</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Honest comparisons of Invisible Exit against other tools and platforms. We break down what each alternative does well, where it falls short, and who it's best for — including when Invisible Exit is NOT the right choice.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Honest comparisons of Invisible Exit against other tools and platforms. We break down what each alternative does well, where it falls short, and who it's best for, including when Invisible Exit is NOT the right choice.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3630,7 +3630,7 @@ ${hubSvgFigure("Salary → Freedom", "Convert your salary to freedom math", "Sal
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Salary to Freedom Number Converter</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How many months of micro-SaaS revenue would it take to replace your salary? These pages intercept salary search traffic and convert it into freedom math — showing exactly how recurring revenue replaces employment income.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How many months of micro-SaaS revenue would it take to replace your salary? These pages intercept salary search traffic and convert it into freedom math, showing exactly how recurring revenue replaces employment income.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3673,14 +3673,14 @@ ${reports}
 
 function exploreHubBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Explore Resources", "Complete site index — 900+ pages", "Central hub linking to all Invisible Exit content categories — ideas, guides, tools, glossary, data, and more")}
+${hubSvgFigure("Explore Resources", "Complete site index, 900+ pages", "Central hub linking to all Invisible Exit content categories, ideas, guides, tools, glossary, data, and more")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Explore</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:56rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Explore All Resources</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete index of Invisible Exit resources — 900+ pages of ideas, guides, tools, calculators, comparisons, and data reports for employed founders building micro-SaaS businesses.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete index of Invisible Exit resources, 900+ pages of ideas, guides, tools, calculators, comparisons, and data reports for employed founders building micro-SaaS businesses.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3688,7 +3688,7 @@ ${hubSvgFigure("Explore Resources", "Complete site index — 900+ pages", "Centr
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">Content Categories</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem">
 <a href="/ideas" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">💡 Micro-SaaS Ideas</h3><p style="font-size:0.875rem;color:#6b7280">25 professions × 5 ideas each = 125+ validated micro-SaaS ideas with market analysis</p></a>
-<a href="/guides" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🏛️ State Guides</h3><p style="font-size:0.875rem;color:#6b7280">50 states + DC — LLC costs, non-compete status, tax rates, anonymous LLC availability</p></a>
+<a href="/guides" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🏛️ State Guides</h3><p style="font-size:0.875rem;color:#6b7280">50 states + DC, LLC costs, non-compete status, tax rates, anonymous LLC availability</p></a>
 <a href="/best" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">🛠️ Best Tools</h3><p style="font-size:0.875rem;color:#6b7280">Curated AI tool lists for building, launching, and growing micro-SaaS</p></a>
 <a href="/glossary" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">📖 Glossary</h3><p style="font-size:0.875rem;color:#6b7280">30+ plain-English definitions of micro-SaaS and financial independence terms</p></a>
 <a href="/compare" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:#111827">⚖️ Comparisons</h3><p style="font-size:0.875rem;color:#6b7280">Honest comparisons of Invisible Exit vs alternatives</p></a>
@@ -3707,41 +3707,41 @@ ${hubSvgFigure("Explore Resources", "Complete site index — 900+ pages", "Centr
 
 function masterclassPageBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Free Masterclass", "Build a $4K/month side business", "Free 45-minute masterclass for corporate managers — the 5-step system for building anonymous recurring revenue")}
+${hubSvgFigure("Free Masterclass", "Build a $4K/month side business", "Free 45-minute masterclass for corporate managers, the 5-step system for building anonymous recurring revenue")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Free Masterclass</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">Free 45-Minute Masterclass</span>
-<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Build a $4K/Month Side Business While Employed — Without Your Boss Finding Out</h1>
+<h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Build a $4K/Month Side Business While Employed, Without Your Boss Finding Out</h1>
 <p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">A free 45-minute masterclass for corporate managers and employed professionals who want to build anonymous recurring revenue streams. Learn the exact system used to build a $4K/month micro-SaaS portfolio while working full-time.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto" class="quick-answer">
 <p style="font-size:0.875rem;font-weight:700;color:#3B82F6;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">What You'll Learn</p>
-<p style="font-size:1rem;line-height:1.6;color:#111827">The 5-step system for building a micro-SaaS while employed: (1) Calculate your freedom number, (2) Find ideas in your professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get your first 10 customers — all while maintaining complete anonymity and compliance with your employment contract.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827">The 5-step system for building a micro-SaaS while employed: (1) Calculate your freedom number, (2) Find ideas in your professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get your first 10 customers, all while maintaining complete anonymity and compliance with your employment contract.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">In This Masterclass</h2>
 <ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
-<li>How to calculate your "freedom number" — the exact monthly recurring revenue that replaces your salary</li>
+<li>How to calculate your "freedom number", the exact monthly recurring revenue that replaces your salary</li>
 <li>The 5 most profitable micro-SaaS models for employed founders (with real revenue examples)</li>
 <li>How to validate any idea in 48 hours without writing a single line of code</li>
-<li>Anonymous LLC formation — which states protect your identity, how much it costs, and how to set it up</li>
-<li>Compliance audit — how to check your employment contract for non-compete, IP assignment, and moonlighting clauses</li>
-<li>The "5-Hour Weekend" method — how to find time to build even with a demanding full-time job and family</li>
-<li>Faceless audience building — getting customers without showing your face or using your real name</li>
+<li>Anonymous LLC formation, which states protect your identity, how much it costs, and how to set it up</li>
+<li>Compliance audit, how to check your employment contract for non-compete, IP assignment, and moonlighting clauses</li>
+<li>The "5-Hour Weekend" method, how to find time to build even with a demanding full-time job and family</li>
+<li>Faceless audience building, getting customers without showing your face or using your real name</li>
 </ul>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;background-color:#f9fafb">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Who This Is For</h2>
-<p style="font-size:1rem;color:#4b5563;line-height:1.7">Corporate managers, directors, and employed professionals who want to build a side business but can't risk their career. If you have 5+ hours a week, want recurring revenue, and need to stay anonymous — this masterclass is for you.</p>
+<p style="font-size:1rem;color:#4b5563;line-height:1.7">Corporate managers, directors, and employed professionals who want to build a side business but can't risk their career. If you have 5+ hours a week, want recurring revenue, and need to stay anonymous, this masterclass is for you.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
@@ -3755,14 +3755,14 @@ ${hubSvgFigure("Free Masterclass", "Build a $4K/month side business", "Free 45-m
 
 function freedomPageBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Freedom Number", "When does your job become optional?", "Freedom number calculator — the monthly recurring revenue that replaces your salary and gives you independence")}
+${hubSvgFigure("Freedom Number", "When does your job become optional?", "Freedom number calculator, the monthly recurring revenue that replaces your salary and gives you independence")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Freedom Number</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">What's Your Freedom Number?</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Your Freedom Number is the monthly recurring revenue that replaces your salary and gives you the choice to keep working — or not. It's the single most important number for any employed founder. Calculate yours below and see how close you are to financial independence.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Your Freedom Number is the monthly recurring revenue that replaces your salary and gives you the choice to keep working, or not. It's the single most important number for any employed founder. Calculate yours below and see how close you are to financial independence.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
@@ -3776,11 +3776,11 @@ ${hubSvgFigure("Freedom Number", "When does your job become optional?", "Freedom
 <h2 style="font-size:1.875rem;font-weight:700;margin-bottom:1.5rem">How to Calculate Your Freedom Number</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.7;margin-bottom:1rem">Your Freedom Number isn't just your salary divided by 12. You need to account for:</p>
 <ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
-<li><strong>Base salary</strong> — your gross annual income</li>
-<li><strong>Self-employment taxes</strong> — ~15.3% for Social Security + Medicare (employer portion)</li>
-<li><strong>Health insurance</strong> — what your employer pays (~$6K-$15K/year for a family)</li>
-<li><strong>Retirement contributions</strong> — employer match + any pension</li>
-<li><strong>Other benefits</strong> — life insurance, disability, gym, etc.</li>
+<li><strong>Base salary</strong>, your gross annual income</li>
+<li><strong>Self-employment taxes</strong>, ~15.3% for Social Security + Medicare (employer portion)</li>
+<li><strong>Health insurance</strong>, what your employer pays (~$6K-$15K/year for a family)</li>
+<li><strong>Retirement contributions</strong>, employer match + any pension</li>
+<li><strong>Other benefits</strong>, life insurance, disability, gym, etc.</li>
 </ul>
 <p style="font-size:1rem;color:#4b5563;line-height:1.7;margin-top:1rem">A common rule of thumb: multiply your gross salary by 1.3-1.5x, then divide by 12. A $100K salary becomes a $11K-$12.5K Freedom Number.</p>
 </div>
@@ -3795,7 +3795,7 @@ ${hubSvgFigure("Freedom Number", "When does your job become optional?", "Freedom
 
 function storyPageBodyHtml(): string {
   return `<div class="min-h-screen">
-${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The complete story of building a profitable micro-SaaS portfolio while fully employed — without anyone finding out")}
+${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The complete story of building a profitable micro-SaaS portfolio while fully employed, without anyone finding out")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>The Story</span>
 </nav>
@@ -3803,7 +3803,7 @@ ${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The c
 <div style="max-width:48rem;margin:0 auto">
 <span style="display:inline-block;padding:0.25rem 0.75rem;background-color:#dbeafe;color:#1e40af;border-radius:9999px;font-size:0.75rem;font-weight:600;margin-bottom:1rem">Origin Story</span>
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">How a Corporate Manager Built $4K/Month Invisibly</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete story of how a former corporate director built a profitable micro-SaaS portfolio while fully employed — without anyone finding out. No viral launch, no venture capital, no personal brand. Just quiet, systematic execution.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">The complete story of how a former corporate director built a profitable micro-SaaS portfolio while fully employed, without anyone finding out. No viral launch, no venture capital, no personal brand. Just quiet, systematic execution.</p>
 </div>
 </section>
 <section style="padding:1rem 1.5rem 2rem;border-bottom:1px solid #e5e7eb">
@@ -3819,7 +3819,7 @@ ${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The c
 </div>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
-<!-- 2026-07-24: removed a "$4,100/mo verified" badge — a specific, false
+<!-- 2026-07-24: removed a "$4,100/mo verified" badge, a specific, false
 Stripe-verification claim (invisibleexit has zero paying customers). See
 conversion-audit-scored-2026-07-24. -->
 <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#eff6ff">Still employed</span>
@@ -3827,34 +3827,34 @@ conversion-audit-scored-2026-07-24. -->
 </div>
 </div>
 <div style="max-width:42rem;margin:1.5rem auto 0;padding:1rem 1.25rem;background:#f9fafb;border:1px solid #e5e7eb;border-radius:0.75rem">
-<p style="font-size:0.875rem;color:#4b5563;line-height:1.6;text-align:center"><strong style="color:#111827">Why no face or last name?</strong> Anonymity isn't a gimmick — it's the proof of concept. I'm still employed. My employer still doesn't know. The system works so well that revealing my identity would defeat its purpose.</p>
+<p style="font-size:0.875rem;color:#4b5563;line-height:1.6;text-align:center"><strong style="color:#111827">Why no face or last name?</strong> Anonymity isn't a gimmick, it's the proof of concept. I'm still employed. My employer still doesn't know. The system works so well that revealing my identity would defeat its purpose.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">The Beginning</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I'm Adrian. I was a corporate director with an MBA, a $120K salary, and less than 0.5% equity. The question that changed everything: "If I lost my job tomorrow, how long could I survive?" The answer was 3 months. That was the wake-up call.</p>
-<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to quit. I liked my job. But I wanted a safety net — recurring revenue that didn't depend on showing up at an office. The answer was micro-SaaS: small, focused software products with monthly subscriptions that could be built nights and weekends, run anonymously, and scaled without employees.</p>
-<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to quit. I liked my job. But I wanted a safety net, recurring revenue that didn't depend on showing up at an office. The answer was micro-SaaS: small, focused software products with monthly subscriptions that could be built nights and weekends, run anonymously, and scaled without employees.</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">, Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The Amsterdam Taxi Moment</h2>
-<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">6 AM. Raining. First morning of a family vacation in Amsterdam. My phone buzzed in the taxi. Two notifications sat side by side: corporate escalation emails from people fighting over responsibilities at 6 AM, and a Stripe notification — "$0.97 received." A complete stranger had paid for a landing page I'd built while I slept on a plane, under a name that isn't mine.</p>
+<p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">6 AM. Raining. First morning of a family vacation in Amsterdam. My phone buzzed in the taxi. Two notifications sat side by side: corporate escalation emails from people fighting over responsibilities at 6 AM, and a Stripe notification, "$0.97 received." A complete stranger had paid for a landing page I'd built while I slept on a plane, under a name that isn't mine.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I screamed in the taxi. This wasn't about $0.97. This was proof that the cage has a door.</p>
-<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">, Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The System</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">Over 18 months, I built a system: (1) Calculate the freedom number, (2) Find ideas in my professional domain, (3) Validate in 48 hours, (4) Build with AI tools in 5 hours/week, (5) Launch and get first 10 customers, (6) Stay anonymous through entity separation and compliance. The result: $4,000/month in recurring revenue from products nobody knew I owned.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">The system beats the idea. I spent 3 months choosing the "right" idea. The first made $9/month. The second made $47. The third hit $850. The fourth crossed $4,000. Stop obsessing over the idea. Build the system, and you can swap ideas like cartridges in a printer.</p>
-<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">, Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">The Honest Timeline</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 1–3:</strong> Built, launched, zero customers. Almost quit twice.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 4:</strong> First customer ($9/mo). Screamed in the car.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 6:</strong> $850 MRR. Still employed. Employer clueless.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:0.5rem"><strong>Month 12:</strong> $4,100 MRR across 3 products. The boring one pays most of the mortgage.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem;margin-top:1rem">I didn't get rich. I got free. Rich is a number. Free is an option. I bought the option to say no.</p>
-<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">, Adrian</p>
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;margin-top:2rem">Why Invisible Exit?</h2>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">After hitting $4K/month, colleagues noticed I was calmer. A friend in Finance pulled me aside: "Something changed. What happened?" I realized the system I built wasn't just for me. There are millions of corporate managers trapped in the same cage, waiting for someone to hand them the key.</p>
 <p style="font-size:1rem;color:#1f2937;line-height:1.8;margin-bottom:1.5rem">I didn't want to build Invisible Exit. I wanted to keep building micro-SaaS products in peace. But every time I explained the system, they got the same look I had in that Amsterdam taxi. The look of someone who just realized the cage has a door.</p>
-<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">— Adrian</p>
+<p style="font-size:0.875rem;color:#2563eb;font-weight:500;font-style:italic;margin-bottom:2rem">, Adrian</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
@@ -3870,7 +3870,7 @@ conversion-audit-scored-2026-07-24. -->
 function nonCompeteHubBodyHtml(): string {
   // /non-compete/:slug is keyed by profession+STATE (nonCompeteMatrix is 10
   // professions × 10 states = 100 entries, slug `${profession}-${state}`). The
-  // hardcoded list linked a BARE profession — a slug that route never produces, so
+  // hardcoded list linked a BARE profession, a slug that route never produces, so
   // all 10 cards 404'd. Link one representative page per profession, derived from
   // the same array prerender-meta.mjs iterates, and say which state it covers
   // rather than implying the guide is state-agnostic.
@@ -3879,17 +3879,17 @@ function nonCompeteHubBodyHtml(): string {
     if (!firstByProfession.has(nc.profession)) firstByProfession.set(nc.profession, nc);
   }
   const links = [...firstByProfession.values()].map(nc =>
-    `<a href="/non-compete/${nc.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${nc.profession} Non-Compete Guide</h3><p style="font-size:0.8125rem;color:#6b7280;margin-top:0.25rem">${nc.state} — plus 9 more states</p></a>`
+    `<a href="/non-compete/${nc.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${nc.profession} Non-Compete Guide</h3><p style="font-size:0.8125rem;color:#6b7280;margin-top:0.25rem">${nc.state}, plus 9 more states</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "Non-compete clause analysis by profession and state — enforceability, risks, and safe harbors for employed founders")}
+${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "Non-compete clause analysis by profession and state, enforceability, risks, and safe harbors for employed founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Non-Compete Analysis</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Non-Compete Clause Analysis by Profession & State</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed analysis of non-compete enforceability for employed founders. Cross-reference your profession with your state to understand your specific risk level, key legal considerations, and how to build safely. Non-compete clauses are governed by state law and enforced differently across professions — knowing where you stand is the first step to building your invisible exit.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Detailed analysis of non-compete enforceability for employed founders. Cross-reference your profession with your state to understand your specific risk level, key legal considerations, and how to build safely. Non-compete clauses are governed by state law and enforced differently across professions, knowing where you stand is the first step to building your invisible exit.</p>
 </div>
 </section>
 <section style="background-color:#fef2f2;border-left:4px solid #ef4444;padding:1.5rem;margin-bottom:2rem">
@@ -3910,8 +3910,8 @@ ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "No
 <ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
 <li>Whether your state enforces non-compete agreements</li>
 <li>How enforceability varies by profession and job role</li>
-<li>Key risks to watch for — including boilerplate clauses in your contract</li>
-<li>Safe harbors — what you can do without triggering enforcement</li>
+<li>Key risks to watch for, including boilerplate clauses in your contract</li>
+<li>Safe harbors, what you can do without triggering enforcement</li>
 <li>Legal disclaimer tailored to your specific jurisdiction</li>
 </ul>
 </div>
@@ -3925,21 +3925,21 @@ ${hubSvgFigure("Non-Compete Analysis", "Profession × state enforceability", "No
 }
 
 function stackHubBodyHtml(): string {
-  // Derived from professionStacks — the SAME array prerender-meta.mjs iterates.
+  // Derived from professionStacks, the SAME array prerender-meta.mjs iterates.
   // The hardcoded 12 included four professions with no stack page (data has 10).
   const entries = professionStacks;
   const links = entries.map(s =>
     `<a href="/stack/${s.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${s.profession} Tool Stack</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Profession-specific tool stacks for building micro-SaaS products — tailored to your existing skills")}
+${hubSvgFigure("Tool Stacks", "By profession, tailored recommendations", "Profession-specific tool stacks for building micro-SaaS products, tailored to your existing skills")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Tool Stacks</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Recommended Tool Stacks by Profession</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated tool stacks for building micro-SaaS products. Each stack is tailored to a profession's existing skills — tools that complement what you already know so you can build faster, cheaper, and with less friction. No generic lists, just targeted recommendations.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Curated tool stacks for building micro-SaaS products. Each stack is tailored to a profession's existing skills, tools that complement what you already know so you can build faster, cheaper, and with less friction. No generic lists, just targeted recommendations.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -3951,7 +3951,7 @@ ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Pro
 <section style="padding:2rem 1.5rem;background-color:#f9fafb">
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">Why Profession-Specific Stacks?</h2>
-<p style="font-size:1rem;color:#4b5563;line-height:1.7">A designer needs different tools than a software engineer to build a micro-SaaS. Designers excel at frontend and UX, so their stack emphasizes no-code builders and visual tools. Engineers can leverage existing coding skills for faster backends. Each stack assumes you're starting from your current skill set and fills the gaps with the minimum viable toolchain — no over-engineering, no unnecessary complexity.</p>
+<p style="font-size:1rem;color:#4b5563;line-height:1.7">A designer needs different tools than a software engineer to build a micro-SaaS. Designers excel at frontend and UX, so their stack emphasizes no-code builders and visual tools. Engineers can leverage existing coding skills for faster backends. Each stack assumes you're starting from your current skill set and fills the gaps with the minimum viable toolchain, no over-engineering, no unnecessary complexity.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb">
@@ -3963,21 +3963,21 @@ ${hubSvgFigure("Tool Stacks", "By profession — tailored recommendations", "Pro
 }
 
 function milestonesHubBodyHtml(): string {
-  // Derived from revenueMilestones — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from revenueMilestones, the SAME array prerender-meta.mjs iterates to emit
   // /milestones/<slug>. The 4 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = revenueMilestones
     .map((x) => `<a href="/milestones/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage micro-SaaS revenue milestone guides — pricing, team needs, and distribution at each level")}
+${hubSvgFigure("Revenue Milestones", "From $0 to $50K+ MRR", "Stage-by-stage micro-SaaS revenue milestone guides, pricing, team needs, and distribution at each level")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Revenue Milestones</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Revenue Milestones</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Stage-by-stage guides for every MRR milestone. From $0 to $50K+ MRR, know what to expect at each level — pricing, team needs, distribution channels, and common mistakes. Each milestone includes a month-by-month playbook, key metrics to track, and the specific actions you need to reach the next tier.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Stage-by-stage guides for every MRR milestone. From $0 to $50K+ MRR, know what to expect at each level, pricing, team needs, distribution channels, and common mistakes. Each milestone includes a month-by-month playbook, key metrics to track, and the specific actions you need to reach the next tier.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
@@ -4002,14 +4002,14 @@ ${links}
 }
 
 function timelineHubBodyHtml(): string {
-  // Derived from timelines — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from timelines, the SAME array prerender-meta.mjs iterates to emit
   // /timeline/<slug>. The 2 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = timelines
     .map((x) => `<a href="/timeline/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-SaaS timelines for employed founders — what to do and expect at each stage")}
+${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-SaaS timelines for employed founders, what to do and expect at each stage")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Timelines</span>
 </nav>
@@ -4021,7 +4021,7 @@ ${hubSvgFigure("Timelines", "Month-by-month roadmaps", "Month-by-month micro-Saa
 </section>
 <section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
 <div style="max-width:48rem;margin:0 auto">
-<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick Answer:</strong> Most employed founders can go from idea → first paying customer in 60-90 days with 5-10 hours per week. The first 30 days should be validation-only — no code until someone signals willingness to pay.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick Answer:</strong> Most employed founders can go from idea → first paying customer in 60-90 days with 5-10 hours per week. The first 30 days should be validation-only, no code until someone signals willingness to pay.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -4041,7 +4041,7 @@ ${links}
 }
 
 function pricingModelsHubBodyHtml(): string {
-  // Derived from pricingModels — the SAME array prerender-meta.mjs iterates. The
+  // Derived from pricingModels, the SAME array prerender-meta.mjs iterates. The
   // hardcoded list was wrong twice over: slugs omitted the "-pricing" suffix the
   // data appends ("freemium" vs "freemium-pricing"), and it advertised six models
   // with no data at all (agency-model, outcome-based, donation-plus, equity-deferred,
@@ -4051,14 +4051,14 @@ function pricingModelsHubBodyHtml(): string {
     `<a href="/pricing-models/${m.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${m.model} Model</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pricing model comparisons — flat-rate, usage-based, tiered, freemium with revenue benchmarks")}
+${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pricing model comparisons, flat-rate, usage-based, tiered, freemium with revenue benchmarks")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Pricing Models</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Pricing Models Compared</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Compare the most effective pricing models for micro-SaaS. Flat-rate, usage-based, tiered, freemium, and more — with real revenue examples, benchmarks, and pros/cons for each. Choose the model that maximizes revenue with minimal complexity for your solo operation.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Compare the most effective pricing models for micro-SaaS. Flat-rate, usage-based, tiered, freemium, and more, with real revenue examples, benchmarks, and pros/cons for each. Choose the model that maximizes revenue with minimal complexity for your solo operation.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -4071,7 +4071,7 @@ ${hubSvgFigure("Pricing Models", "Compared with real examples", "Micro-SaaS pric
 }
 
 function redditHubBodyHtml(): string {
-  // Derived from redditStrategies — the SAME array prerender-meta.mjs iterates to
+  // Derived from redditStrategies, the SAME array prerender-meta.mjs iterates to
   // emit /reddit/<slug>. It previously hardcoded 12 slugs shaped "for-marketers",
   // while the data computes `reddit-for-${p.slug}`, so all 12 cards 404'd. Deriving
   // makes drift impossible and picks up all 25 professions instead of 12.
@@ -4080,14 +4080,14 @@ function redditHubBodyHtml(): string {
     `<a href="/reddit/${r.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1rem;font-weight:700;color:#111827">${r.profession} Reddit Strategy</h3></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marketing strategy for anonymous founders — best subreddits, posting schedules, and content templates")}
+${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marketing strategy for anonymous founders, best subreddits, posting schedules, and content templates")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Reddit Strategy</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Reddit Strategy for Employed Founders</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How to build an audience and get customers on Reddit without revealing your identity. Profession-specific strategies with best subreddits, posting schedules, content templates, and common mistakes that get founders banned. Reddit is the #1 acquisition channel for anonymous founders — if you know how to use it right.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How to build an audience and get customers on Reddit without revealing your identity. Profession-specific strategies with best subreddits, posting schedules, content templates, and common mistakes that get founders banned. Reddit is the #1 acquisition channel for anonymous founders, if you know how to use it right.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem;background-color:#eff6ff;border-left:4px solid #3B82F6">
@@ -4105,7 +4105,7 @@ ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marke
 <div style="max-width:48rem;margin:0 auto">
 <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem">What Each Guide Includes</h2>
 <ul style="font-size:1rem;color:#1f2937;line-height:2;padding-left:1.5rem">
-<li>Best subreddits for your profession — subscriber counts and why they work</li>
+<li>Best subreddits for your profession, subscriber counts and why they work</li>
 <li>Posting strategy tailored to your industry's culture and rules</li>
 <li>Content ideas that attract your ideal customers without self-promotion</li>
 <li>Common mistakes that get your account suspended</li>
@@ -4122,14 +4122,14 @@ ${hubSvgFigure("Reddit Strategy", "Profession-specific playbooks", "Reddit marke
 }
 
 function costOfWaitingHubBodyHtml(): string {
-  // Derived from costOfWaitingPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from costOfWaitingPages, the SAME array prerender-meta.mjs iterates to emit
   // /cost-of-waiting/<slug>. The 3 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = costOfWaitingPages
     .map((x) => `<a href="/cost-of-waiting/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true cost of delaying your micro-SaaS — how much recurring revenue you lose by waiting another year")}
+${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true cost of delaying your micro-SaaS, how much recurring revenue you lose by waiting another year")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Cost of Waiting</span>
 </nav>
@@ -4141,7 +4141,7 @@ ${hubSvgFigure("Cost of Waiting", "Calculate your opportunity cost", "The true c
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
 <div style="max-width:48rem;margin:0 auto">
-<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick math:</strong> At $4K/month MRR (the freedom number), waiting 3 years costs you $144,000 in lost revenue — plus the compounding effect of reinvestment and the equity-building that happens as your business matures. Every month you wait is a month of recurring revenue you'll never get back.</p>
+<p style="font-size:1rem;line-height:1.6;color:#111827"><strong>Quick math:</strong> At $4K/month MRR (the freedom number), waiting 3 years costs you $144,000 in lost revenue, plus the compounding effect of reinvestment and the equity-building that happens as your business matures. Every month you wait is a month of recurring revenue you'll never get back.</p>
 </div>
 </section>
 <section style="padding:2rem 1.5rem">
@@ -4160,7 +4160,7 @@ ${links}
 <li><strong>Compound revenue:</strong> MRR compounds as you add customers, raise prices, and launch new products</li>
 <li><strong>Asset value:</strong> A micro-SaaS at $4K MRR is worth 24-36× monthly revenue ($96K-$144K)</li>
 <li><strong>Skill building:</strong> Every month of building teaches you distribution, pricing, and customer psychology</li>
-<li><strong>Data advantage:</strong> Starting earlier means you have more data to optimize from — and more time to iterate</li>
+<li><strong>Data advantage:</strong> Starting earlier means you have more data to optimize from, and more time to iterate</li>
 </ul>
 </div>
 </section>
@@ -4173,21 +4173,21 @@ ${links}
 }
 
 function breakEvenHubBodyHtml(): string {
-  // Derived from breakEvenPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from breakEvenPages, the SAME array prerender-meta.mjs iterates to emit
   // /break-even/<slug>. The 3 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = breakEvenPages
     .map((x) => `<a href="/break-even/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Break-even analysis for micro-SaaS — month-by-month projections based on revenue tiers and costs")}
+${hubSvgFigure("Break-Even Analysis", "When will your SaaS pay for itself?", "Break-even analysis for micro-SaaS, month-by-month projections based on revenue tiers and costs")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Break-Even Analysis</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Break-Even Analysis for Micro-SaaS</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How long until your micro-SaaS breaks even? Detailed month-by-month projections based on revenue tiers, costs, and growth rates. See exactly when your initial investment is recovered and your business becomes self-sustaining — with realistic timelines for employed founders building on the side.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">How long until your micro-SaaS breaks even? Detailed month-by-month projections based on revenue tiers, costs, and growth rates. See exactly when your initial investment is recovered and your business becomes self-sustaining, with realistic timelines for employed founders building on the side.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
@@ -4212,21 +4212,21 @@ ${links}
 }
 
 function budgetHubBodyHtml(): string {
-  // Derived from budgetPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from budgetPages, the SAME array prerender-meta.mjs iterates to emit
   // /budget/<slug>. The 4 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = budgetPages
     .map((x) => `<a href="/budget/${x.slug}" style="display:block;padding:1.5rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit"><h3 style="font-size:1.125rem;font-weight:700;margin-bottom:0.25rem;color:#111827">${x.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${x.metaDescription}</p></a>`)
     .join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Budget Levels", "Start on any budget — $0 to $500/month", "Budget guides for starting a micro-SaaS — what you get at each spending level from $0 to premium")}
+${hubSvgFigure("Budget Levels", "Start on any budget, $0 to $500/month", "Budget guides for starting a micro-SaaS, what you get at each spending level from $0 to premium")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Budget Levels</span>
 </nav>
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Start Your Micro-SaaS on Any Budget</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">You can start a micro-SaaS on any budget. From $0 using free tiers (Vercel, Supabase, Resend, GitHub) to $500/month for a premium stack — we break down exactly what you get at each spending level so you can make an informed decision based on your current resources.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">You can start a micro-SaaS on any budget. From $0 using free tiers (Vercel, Supabase, Resend, GitHub) to $500/month for a premium stack, we break down exactly what you get at each spending level so you can make an informed decision based on your current resources.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
@@ -4251,7 +4251,7 @@ ${links}
 }
 
 function hoursHubBodyHtml(): string {
-  // Derived from hoursPages — the SAME array prerender-meta.mjs iterates to emit
+  // Derived from hoursPages, the SAME array prerender-meta.mjs iterates to emit
   // /hours/<slug>. The 3 cards here were hardcoded under a naming scheme
   // the data never used, so every one of them 404'd.
   const links = hoursPages
@@ -4265,7 +4265,7 @@ ${hubSvgFigure("Hours Per Week", "Build with limited time", "Time-budget roadmap
 <section style="padding-top:4rem;padding-bottom:3rem;padding-left:1.5rem;padding-right:1.5rem">
 <div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.5rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Build a Micro-SaaS with Limited Time</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Realistic roadmaps for building a micro-SaaS when you only have 1-10 hours per week. See what's achievable at each time commitment level with AI-powered tools and efficient workflows. Your time constraint is NOT a deal-breaker — it's a forcing function for better decisions.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:2rem">Realistic roadmaps for building a micro-SaaS when you only have 1-10 hours per week. See what's achievable at each time commitment level with AI-powered tools and efficient workflows. Your time constraint is NOT a deal-breaker, it's a forcing function for better decisions.</p>
 </div>
 </section>
 <section style="background-color:#eff6ff;border-left:4px solid #3B82F6;padding:1.5rem;margin-bottom:2rem">
@@ -4289,18 +4289,18 @@ ${links}
 </div>`;
 }
 
-// ---------- Greg Isenberg pSEO Round 4 — Hub landing page bodies ----------
+// ---------- Greg Isenberg pSEO Round 4, Hub landing page bodies ----------
 
 function sideHustlesHubBodyHtml(): string {
   const links = sideHustles.map((s) =>
     `<a href="/side-hustles/${s.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${s.profession}</h3><p style="font-size:0.875rem;color:#6b7280">${s.hustleType} · ${s.startupCost} startup · ${s.timeToFirstDollar} to first dollar</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Side Hustles", "Profession-specific income ideas", "Best side hustles for every profession — compare startup costs, earning potential, and time commitments")}
+${hubSvgFigure("Side Hustles", "Profession-specific income ideas", "Best side hustles for every profession, compare startup costs, earning potential, and time commitments")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Side Hustles by Profession</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Best Side Hustles by Profession</h1>
-<p style="color:#4b5563;margin-bottom:1.5rem">Not all side hustles are created equal. Your profession gives you unique advantages — leverage them. Browse side hustle ideas tailored to your career, ranked by earning potential, startup cost, and time to first dollar.</p>
+<p style="color:#4b5563;margin-bottom:1.5rem">Not all side hustles are created equal. Your profession gives you unique advantages, leverage them. Browse side hustle ideas tailored to your career, ranked by earning potential, startup cost, and time to first dollar.</p>
 </div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
 <h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Profession</h2>
@@ -4317,11 +4317,11 @@ function byBudgetHubBodyHtml(): string {
     `<a href="/by-budget/${b.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${b.h1}</h3><p style="font-size:0.875rem;color:#6b7280">Start with ${b.budgetTier} · ${b.bestOptions.length} business options analyzed</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("By Budget", "Starting capital guide", "Business ideas ranked by startup cost — from zero dollars to serious capital")}
+${hubSvgFigure("By Budget", "Starting capital guide", "Business ideas ranked by startup cost, from zero dollars to serious capital")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Build by Budget</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">What You Can Build With Your Budget</h1>
-<p style="color:#4b5563;margin-bottom:1.5rem">How much money do you actually need to start a business? Less than you think. Browse business options by budget tier — from $0 to $10,000 — with realistic earning potential, tool stacks, and 30-day action plans.</p>
+<p style="color:#4b5563;margin-bottom:1.5rem">How much money do you actually need to start a business? Less than you think. Browse business options by budget tier, from $0 to $10,000, with realistic earning potential, tool stacks, and 30-day action plans.</p>
 </div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto">
 <h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Budget Tier</h2>
@@ -4338,7 +4338,7 @@ function nichesHubBodyHtml(): string {
     `<a href="/niches/${n.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${n.niche}</h3><p style="font-size:0.875rem;color:#6b7280">${n.marketSize} · ${n.growthRate} · ${n.difficulty}</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Niche Micro-SaaS", "Market analysis", "The best niches for building micro-SaaS products — analyzed by market size, competition, and growth potential")}
+${hubSvgFigure("Niche Micro-SaaS", "Market analysis", "The best niches for building micro-SaaS products, analyzed by market size, competition, and growth potential")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Micro-SaaS Niches</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Best Micro-SaaS Niches for 2025</h1>
@@ -4354,7 +4354,7 @@ ${links}
 </div>`;
 }
 
-// ---------- Greg Isenberg pSEO Round 5 — Body generators ----------
+// ---------- Greg Isenberg pSEO Round 5, Body generators ----------
 
 function quitJobBodyHtml(item: typeof quitJobPages[0]): string {
   const ready = item.signsYouAreReady.map((s: string) => `<li style="color:#374151;margin-bottom:0.25rem">✅ ${s}</li>`).join("");
@@ -4377,9 +4377,9 @@ ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
   { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
   { href: `/salaries`, text: `Salary to Freedom Number Calculator` },
-  { href: `/cost-of-waiting`, text: `Cost of Waiting — How Much You're Losing` },
+  { href: `/cost-of-waiting`, text: `Cost of Waiting, How Much You're Losing` },
   { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-  { href: `/failure-stories`, text: `Failure Stories — Learn From Real Mistakes` },
+  { href: `/failure-stories`, text: `Failure Stories, Learn From Real Mistakes` },
   { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a></div></section>
@@ -4391,7 +4391,7 @@ function weekendBuildBodyHtml(item: typeof weekendBuilds[0]): string {
   const stack = item.techStack.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("Weekend Builds", "48-hour launch plan", "Build and launch a profitable side business in one weekend — hour-by-hour plan with tech stack and monetization")}
+${hubSvgFigure("Weekend Builds", "48-hour launch plan", "Build and launch a profitable side business in one weekend, hour-by-hour plan with tech stack and monetization")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem"><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#1d4ed8">${item.difficulty}</div><div style="font-size:0.7rem;color:#6b7280">Difficulty</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#166534">${item.totalHours}</div><div style="font-size:0.7rem;color:#6b7280">Total Time</div></div><div style="background:#faf5ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#7e22ce">${item.cost}</div><div style="font-size:0.7rem;color:#6b7280">Cost</div></div><div style="background:#fff7ed;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#c2410c">${item.revenuePotential}</div><div style="font-size:0.7rem;color:#6b7280">Revenue</div></div></div>
@@ -4403,9 +4403,9 @@ ${hubSvgFigure("Weekend Builds", "48-hour launch plan", "Build and launch a prof
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
-  { href: `/case-studies`, text: `Micro-SaaS Case Studies — Real Revenue Numbers` },
-  { href: `/revenue`, text: `Revenue Target Roadmaps — $1K to $20K/month` },
-  { href: `/quit-your-job`, text: `When to Quit Your Job — Honest Framework` },
+  { href: `/case-studies`, text: `Micro-SaaS Case Studies, Real Revenue Numbers` },
+  { href: `/revenue`, text: `Revenue Target Roadmaps, $1K to $20K/month` },
+  { href: `/quit-your-job`, text: `When to Quit Your Job, Honest Framework` },
   { href: `/skills`, text: `How to Make Money with Your Skills` },
   { href: `/side-hustles`, text: `Best Side Hustles by Profession` },
 ])}
@@ -4420,7 +4420,7 @@ function failureStoryBodyHtml(item: typeof failureStories[0]): string {
   const avoids = item.howToAvoid.map((h: string) => `<li style="color:#374151;margin-bottom:0.25rem">✅ ${h}</li>`).join("");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail — honest analysis of common failure patterns and how to avoid them")}
+${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail, honest analysis of common failure patterns and how to avoid them")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><span style="display:inline-block;background:#fee2e2;color:#b91c1c;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem;font-weight:600">${item.failureType}</span><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin:0.75rem 0 1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p></div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">The Story</h2><p style="color:#374151">${item.theStory}</p></div></section>
@@ -4431,7 +4431,7 @@ ${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail
 ${faqs ? `<section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: "/case-studies", text: "→ Success stories: real micro-SaaS revenue numbers" },
-  { href: "/quit-your-job", text: "→ When to quit your job — honest framework" },
+  { href: "/quit-your-job", text: "→ When to quit your job, honest framework" },
   { href: "/side-hustles", text: "→ Best side hustles by profession" },
   { href: "/weekend-builds", text: "→ Weekend build ideas to start fast" },
   { href: "/niches", text: "→ Best micro-SaaS niches for 2025" },
@@ -4445,9 +4445,9 @@ function quitJobHubBodyHtml(): string {
     `<a href="/quit-your-job/${q.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${q.profession}</h3><p style="font-size:0.875rem;color:#6b7280">${q.theHonestAnswer.substring(0, 120)}...</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Quit Your Job", "The decision framework", "When to quit your job to start a business — honest, numbers-based framework for every profession")}
+${hubSvgFigure("Quit Your Job", "The decision framework", "When to quit your job to start a business, honest, numbers-based framework for every profession")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>When to Quit Your Job</span></nav>
-<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">When Should You Quit Your Job?</h1><p style="color:#4b5563;margin-bottom:1.5rem">The most common question we get. The answer isn't 'just do it' or 'never take risk.' It's a calculation. Browse profession-specific frameworks below — each with financial milestones, readiness signs, and honest timelines.</p></div></section>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">When Should You Quit Your Job?</h1><p style="color:#4b5563;margin-bottom:1.5rem">The most common question we get. The answer isn't 'just do it' or 'never take risk.' It's a calculation. Browse profession-specific frameworks below, each with financial milestones, readiness signs, and honest timelines.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse by Profession</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number →</a></div></section>
 </div>`;
@@ -4458,9 +4458,9 @@ function weekendBuildsHubBodyHtml(): string {
     `<a href="/weekend-builds/${w.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><h3 style="font-weight:700;color:#111827;margin-bottom:0.25rem">${w.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${w.category} · ${w.totalHours} · ${w.revenuePotential}</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Weekend Builds", "48-hour launch ideas", "Build and launch a profitable side business in one weekend — step-by-step plans with tech stacks and monetization")}
+${hubSvgFigure("Weekend Builds", "48-hour launch ideas", "Build and launch a profitable side business in one weekend, step-by-step plans with tech stacks and monetization")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Weekend Builds</span></nav>
-<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Weekend Build Ideas</h1><p style="color:#4b5563;margin-bottom:1.5rem">What can you build in 48 hours that could generate $500-$5K/month? Here are step-by-step plans with hour-by-hour schedules, tech stacks, and honest revenue potential. No fluff — just actionable builds you can start Friday night.</p></div></section>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Weekend Build Ideas</h1><p style="color:#4b5563;margin-bottom:1.5rem">What can you build in 48 hours that could generate $500-$5K/month? Here are step-by-step plans with hour-by-hour schedules, tech stacks, and honest revenue potential. No fluff, just actionable builds you can start Friday night.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Weekend Builds</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse All Ideas →</a></div></section>
 </div>`;
@@ -4471,15 +4471,15 @@ function failureStoriesHubBodyHtml(): string {
     `<a href="/failure-stories/${f.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><span style="display:inline-block;background:#fee2e2;color:#b91c1c;padding:0.15rem 0.5rem;border-radius:9999px;font-size:0.7rem;font-weight:600">${f.failureType}</span><h3 style="font-weight:700;color:#111827;margin:0.5rem 0 0.25rem">${f.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${f.intro.substring(0, 120)}...</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail — honest analysis of common failure patterns, warning signs, and lessons")}
+${hubSvgFigure("Failure Stories", "Learn from real mistakes", "Why startups fail, honest analysis of common failure patterns, warning signs, and lessons")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Failure Stories</span></nav>
-<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Failure Stories</h1><p style="color:#4b5563;margin-bottom:1.5rem">Success stories teach you what worked. Failure stories teach you what to avoid — and they're more useful. Here are the most common ways micro-SaaS startups die, with real patterns, numbers, and lessons. Learn from others' mistakes.</p></div></section>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Failure Stories</h1><p style="color:#4b5563;margin-bottom:1.5rem">Success stories teach you what worked. Failure stories teach you what to avoid, and they're more useful. Here are the most common ways micro-SaaS startups die, with real patterns, numbers, and lessons. Learn from others' mistakes.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Failure Stories</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/mistakes" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Mistake Guides →</a></div></section>
 </div>`;
 }
 
-// ---------- Greg Isenberg pSEO Round 6 — Body generator ----------
+// ---------- Greg Isenberg pSEO Round 6, Body generator ----------
 
 function toolReviewBodyHtml(item: typeof toolReviews[0]): string {
   const pros = item.pros.map((p: string) => `<li style="color:#374151;font-size:0.875rem;margin-bottom:0.25rem">${p}</li>`).join("");
@@ -4491,7 +4491,7 @@ function toolReviewBodyHtml(item: typeof toolReviews[0]): string {
   const alts = item.alternatives.map((a: any) => `<div style="padding:0.75rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.5rem;font-size:0.875rem"><div style="font-weight:600;color:#0f172a">${a.name}</div><div style="color:#6b7280;margin-top:0.2rem">${a.why}</div></div>`).join("\n");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("Tool Reviews", "Honest software reviews", "In-depth reviews of the tools solo founders actually use — honest verdicts, not affiliate fluff")}
+${hubSvgFigure("Tool Reviews", "Honest software reviews", "In-depth reviews of the tools solo founders actually use, honest verdicts, not affiliate fluff")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><div style="display:flex;align-items:flex-start;gap:1rem"><div style="flex-shrink:0;width:3rem;height:3rem;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:0.75rem;font-size:1.5rem;font-weight:700;color:#475569">${item.toolName[0]}</div><div><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2">${item.h1}</h1><p style="font-size:0.875rem;color:#6b7280;margin-top:0.25rem">${item.tagline}</p></div></div><p style="color:#4b5563;margin-top:1rem">${item.intro}</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.5rem"><div style="background:#fffbeb;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#d97706">${item.rating}/5</div><div style="font-size:0.7rem;color:#6b7280">Rating</div></div><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#1d4ed8">${item.pricing}</div><div style="font-size:0.7rem;color:#6b7280">Pricing</div></div><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#166534">${item.freeTier}</div><div style="font-size:0.7rem;color:#6b7280">Free Tier</div></div></div>
@@ -4505,7 +4505,7 @@ ${hubSvgFigure("Tool Reviews", "Honest software reviews", "In-depth reviews of t
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
   { href: "/failure-stories", text: "→ Learn from micro-SaaS failure stories" },
-  { href: "/weekend-builds", text: "→ Weekend build ideas — launch in 48 hours" },
+  { href: "/weekend-builds", text: "→ Weekend build ideas, launch in 48 hours" },
   { href: "/reviews", text: "→ Tool reviews for solo founders" },
   { href: "/side-hustles", text: "→ Best side hustles by profession" },
   { href: "/niches", text: "→ Best micro-SaaS niches for 2025" },
@@ -4516,18 +4516,18 @@ ${relatedLinksSection([
 
 function reviewsHubBodyHtml(): string {
   const links = toolReviews.map((t) =>
-    `<a href="/reviews/${t.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><div style="display:flex;align-items:center;gap:1rem"><div style="flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:0.5rem;font-weight:700">${t.toolName[0]}</div><div style="flex:1"><h3 style="font-weight:700;color:#111827">${t.toolName} — ${t.h1}</h3><p style="font-size:0.875rem;color:#6b7280;margin-top:0.15rem">${t.tagline} · ⭐ ${t.rating}/5 · ${t.pricing}</p></div></div></a>`
+    `<a href="/reviews/${t.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><div style="display:flex;align-items:center;gap:1rem"><div style="flex-shrink:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:0.5rem;font-weight:700">${t.toolName[0]}</div><div style="flex:1"><h3 style="font-weight:700;color:#111827">${t.toolName}, ${t.h1}</h3><p style="font-size:0.875rem;color:#6b7280;margin-top:0.15rem">${t.tagline} · ⭐ ${t.rating}/5 · ${t.pricing}</p></div></div></a>`
   ).join("\n");
   return `<div class="min-h-screen">
 ${hubSvgFigure("Tool Reviews", "Honest software reviews", "Real talk: what solo founders should actually pay for and what's not worth it")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Tool Reviews</span></nav>
-<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Tool Reviews for Solo Founders</h1><p style="color:#4b5563;margin-bottom:1.5rem">Everyone recommends tools. We actually use them. These are honest reviews of the software I rely on to build invisible-exit.com — Cursor, Vercel, Supabase, Stripe, Linear, Claude. No affiliate fluff, no sponsored tiers. Just real verdicts from daily use.</p></div></section>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Tool Reviews for Solo Founders</h1><p style="color:#4b5563;margin-bottom:1.5rem">Everyone recommends tools. We actually use them. These are honest reviews of the software I rely on to build invisible-exit.com, Cursor, Vercel, Supabase, Stripe, Linear, Claude. No affiliate fluff, no sponsored tiers. Just real verdicts from daily use.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Reviews</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
 }
 
-// ---------- Greg Isenberg pSEO Round 7 — Body generator ----------
+// ---------- Greg Isenberg pSEO Round 7, Body generator ----------
 
 function caseStudyBodyHtml(item: typeof caseStudies[0]): string {
   const worked = item.whatWorked.map((w: any) => `<div style="padding:1rem;border:1px solid #e2e8f0;border-radius:0.5rem;margin-bottom:0.5rem"><h3 style="font-weight:700;color:#0f172a;font-size:0.95rem">✅ ${w.strategy}</h3><p style="color:#6b7280;font-size:0.85rem;margin-top:0.25rem">${w.detail}</p></div>`).join("\n");
@@ -4536,7 +4536,7 @@ function caseStudyBodyHtml(item: typeof caseStudies[0]): string {
   const stack = item.techStack.map((t: string) => `<span style="display:inline-block;padding:0.25rem 0.75rem;background:#f1f5f9;border-radius:0.375rem;font-size:0.8rem;color:#475569;margin:0.15rem">${t}</span>`).join("");
   const faqs = item.faqs.map((f: any) => `<div style="margin-bottom:1.5rem"><h3 style="font-weight:600;font-size:1rem;color:#0f172a">${f.question}</h3><p style="color:#6b7280;font-size:0.9rem;margin-top:0.25rem">${f.answer}</p></div>`).join("");
   return `<div class="min-h-screen">
-${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies — learn from real founders")}
+${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies, learn from real founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>${item.h1}</span></nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><span style="display:inline-block;background:#dbeafe;color:#1d4ed8;padding:0.25rem 0.75rem;border-radius:9999px;font-size:0.75rem;font-weight:600">${item.niche}</span><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin:0.75rem 0 1rem">${item.h1}</h1><p style="color:#4b5563;margin-bottom:1.5rem">${item.intro}</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem"><div style="background:#f0fdf4;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.85rem;font-weight:700;color:#166534">${item.revenue}</div><div style="font-size:0.7rem;color:#6b7280">Revenue</div></div><div style="background:#eff6ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.8rem;font-weight:700;color:#1d4ed8">${item.pricing}</div><div style="font-size:0.7rem;color:#6b7280">Pricing</div></div><div style="background:#faf5ff;padding:0.75rem;border-radius:0.75rem;text-align:center"><div style="font-size:0.75rem;font-weight:700;color:#7e22ce">${item.timeToRevenue}</div><div style="font-size:0.7rem;color:#6b7280">Timeline</div></div></div>
@@ -4549,10 +4549,10 @@ ${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies 
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Tech Stack</h2><div>${stack}</div></div></section>
 ${faqs ? `<section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">FAQs</h2>${faqs}</div></section>` : ""}
 ${relatedLinksSection([
-  { href: "/reviews", text: "→ Tool reviews — Cursor, Vercel, Supabase, Stripe" },
+  { href: "/reviews", text: "→ Tool reviews, Cursor, Vercel, Supabase, Stripe" },
   { href: "/weekend-builds", text: "→ Build your own micro-SaaS in a weekend" },
   { href: "/failure-stories", text: "→ Learn from micro-SaaS failure stories" },
-  { href: "/quit-your-job", text: "→ When to quit your job — honest framework" },
+  { href: "/quit-your-job", text: "→ When to quit your job, honest framework" },
   { href: "/side-hustles", text: "→ Best side hustles by profession" },
 ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
@@ -4564,9 +4564,9 @@ function caseStudiesHubBodyHtml(): string {
     `<a href="/case-studies/${c.slug}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.75rem;text-decoration:none;color:inherit;margin-bottom:0.75rem"><span style="display:inline-block;background:#dbeafe;color:#1d4ed8;padding:0.15rem 0.5rem;border-radius:9999px;font-size:0.7rem;font-weight:600">${c.niche}</span><h3 style="font-weight:700;color:#111827;margin:0.5rem 0 0.25rem">${c.h1}</h3><p style="font-size:0.875rem;color:#6b7280">${c.revenue} · ${c.pricing}</p></a>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies — learn from real founders")}
+${hubSvgFigure("Case Studies", "Real revenue numbers", "Micro-SaaS case studies with actual revenue, timelines, and strategies, learn from real founders")}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280"><a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <span>Case Studies</span></nav>
-<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Case Studies</h1><p style="color:#4b5563;margin-bottom:1.5rem">Real micro-SaaS companies with real revenue numbers, growth timelines, and strategies. No vanity metrics — just honest breakdowns of what worked, what didn't, and what you can learn. These are the case studies I wish I had when starting.</p></div></section>
+<section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto"><h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Micro-SaaS Case Studies</h1><p style="color:#4b5563;margin-bottom:1.5rem">Real micro-SaaS companies with real revenue numbers, growth timelines, and strategies. No vanity metrics, just honest breakdowns of what worked, what didn't, and what you can learn. These are the case studies I wish I had when starting.</p></div></section>
 <section style="padding:2rem 1.5rem;background:#f9fafb"><div style="max-width:48rem;margin:0 auto"><h2 style="font-weight:700;font-size:1.5rem;margin-bottom:1rem">Browse Case Studies</h2>${links}</div></section>
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb"><div style="max-width:48rem;margin:0 auto"><a href="/ideas" style="display:inline-block;padding:0.75rem 1.5rem;background:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Browse Ideas →</a></div></section>
 </div>`;
@@ -4584,7 +4584,7 @@ function revenueTargetBodyHtml(item: typeof revenueTargets[0]): string {
     `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure("Revenue Target", item.tier, `How to reach ${item.monthlyRevenue} in recurring revenue — realistic math, pricing, and timeline`)}
+${hubSvgFigure("Revenue Target", item.tier, `How to reach ${item.monthlyRevenue} in recurring revenue, realistic math, pricing, and timeline`)}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/revenue" style="color:#3B82F6;text-decoration:none">Revenue Targets</a> &rsaquo; <span>${item.tier} for ${item.profession}</span>
 </nav>
@@ -4618,7 +4618,7 @@ ${faqs}
     ...(MISTAKE_SLUGS.has(`mistakes-${item.professionSlug.replace(/s$/, "")}s-make`)
       ? [{ href: `/mistakes/mistakes-${item.professionSlug.replace(/s$/, "")}s-make`, text: `Mistakes ${item.profession} Make` }] : []),
     { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-    { href: `/weekend-builds`, text: `Weekend Build Ideas \u2014 Launch in 48 Hours` },
+    { href: `/weekend-builds`, text: `Weekend Build Ideas, Launch in 48 Hours` },
   ])}
 <section style="padding:2rem 1.5rem;border-top:1px solid #e5e7eb;text-align:center"><div style="max-width:48rem;margin:0 auto">
 <a href="/freedom" style="display:inline-block;padding:0.75rem 1.5rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Calculate Your Freedom Number &rarr;</a>
@@ -4633,7 +4633,7 @@ function cityBodyHtml(item: typeof cities[0]): string {
     `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure(item.city, item.state, `Side business ecosystem in ${item.city}, ${item.state} — legal context, startup scene, and opportunities`)}
+${hubSvgFigure(item.city, item.state, `Side business ecosystem in ${item.city}, ${item.state}, legal context, startup scene, and opportunities`)}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/cities" style="color:#3B82F6;text-decoration:none">Cities</a> &rsaquo; <span>${item.city}</span>
 </nav>
@@ -4681,7 +4681,7 @@ function skillBodyHtml(item: typeof skills[0]): string {
     `<div style="margin-bottom:1rem"><h3 style="font-weight:600;color:#111827">${f.question}</h3><p style="color:#4b5563">${f.answer}</p></div>`
   ).join("\n");
   return `<div class="min-h-screen">
-${hubSvgFigure(item.skill, item.category, `How to monetize ${item.skill} skills — freelance rates, SaaS ideas, and revenue paths`)}
+${hubSvgFigure(item.skill, item.category, `How to monetize ${item.skill} skills, freelance rates, SaaS ideas, and revenue paths`)}
 <nav style="padding:1rem 1.5rem;max-width:48rem;margin:0 auto;font-size:0.875rem;color:#6b7280">
 <a href="/" style="color:#3B82F6;text-decoration:none">Home</a> &rsaquo; <a href="/skills" style="color:#3B82F6;text-decoration:none">Skills</a> &rsaquo; <span>${item.skill}</span>
 </nav>
@@ -4713,7 +4713,7 @@ ${faqs}
 ${relatedLinksSection([
   { href: `/ideas`, text: `← All Micro-SaaS Ideas` },
   { href: `/case-studies`, text: `Micro-SaaS Case Studies with Real Revenue` },
-  { href: `/weekend-builds`, text: `Weekend Build Ideas — Launch in 48 Hours` },
+  { href: `/weekend-builds`, text: `Weekend Build Ideas, Launch in 48 Hours` },
   { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },
   { href: `/quit-your-job`, text: `When to Quit Your Job` },
 ])}
@@ -4801,7 +4801,7 @@ ${hubSvgFigure("Side Business by Audience", "15 demographic guides", "Side busin
 </nav>
 <section style="padding:3rem 1.5rem"><div style="max-width:48rem;margin:0 auto">
 <h1 style="font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1rem">Side Business Ideas by Audience</h1>
-<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">Side business and micro-SaaS ideas tailored to your life situation. Whether you're a college student, stay-at-home parent, military veteran, retiree, or digital nomad — find ideas that fit your schedule, budget, and skills.</p>
+<p style="font-size:1.125rem;color:#4b5563;margin-bottom:1.5rem">Side business and micro-SaaS ideas tailored to your life situation. Whether you're a college student, stay-at-home parent, military veteran, retiree, or digital nomad, find ideas that fit your schedule, budget, and skills.</p>
 </div></section>
 <section style="padding:2rem 1.5rem"><div style="max-width:48rem;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem">
 ${cards}
@@ -4855,7 +4855,7 @@ ${hubSvgFigure(`${item.profession} in ${item.city}`, item.city, `Best micro-SaaS
 ${faqs}
 </div></section>
 ${relatedLinksSection([
-  { href: `/cities/${item.citySlug}`, text: `Side Business in ${item.city} — Full Guide` },
+  { href: `/cities/${item.citySlug}`, text: `Side Business in ${item.city}, Full Guide` },
   { href: `/cities`, text: `All City Guides` },
   { href: `/ideas`, text: `Micro-SaaS Ideas by Profession` },
   { href: `/revenue`, text: `Revenue Target Roadmaps by Profession` },

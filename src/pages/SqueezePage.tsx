@@ -67,7 +67,7 @@ const SqueezePage = () => {
     // Base: 18 months at 5 hrs/week, scales down with more time
     const timelineMonths = Math.round(18 * (5 / Math.max(hrs, 1)));
 
-    // Invisibility score (static for now — would be computed from stealth audit)
+    // Invisibility score (static for now, would be computed from stealth audit)
     const invisibilityScore = 72;
 
     return {
@@ -119,10 +119,10 @@ const SqueezePage = () => {
           toast.error("Too many attempts. Please try again in a few minutes.");
           return;
         }
-        // Fail open: the result is the promise — never hold it hostage to a
+        // Fail open: the result is the promise, never hold it hostage to a
         // backend hiccup. The email send failed, so soften the messaging.
         trackEvent("squeeze_email_capture_failed", { status: apiRes.status });
-        toast.error("Couldn't send the email breakdown — but here's your number.");
+        toast.error("Couldn't send the email breakdown, but here's your number.");
         setStep("result");
         return;
       }
@@ -132,7 +132,7 @@ const SqueezePage = () => {
         freedomNumber: result.freedomNumber,
         add_stealth_blueprint: addStealthBlueprint,
       });
-      toast.success("Check your inbox — your detailed breakdown is on the way!");
+      toast.success("Check your inbox, your detailed breakdown is on the way!");
       setEmailDelivered(true);
       setStep("result");
     } catch (err) {
@@ -158,7 +158,7 @@ const SqueezePage = () => {
             <Calculator className="w-8 h-8 text-primary-light" />
           </div>
 
-          {/* ─── STEP: INTRO — calculator first, one ask above the fold ─── */}
+          {/* ─── STEP: INTRO, calculator first, one ask above the fold ─── */}
           {step === "intro" && (
             <div className="animate-fade-in max-w-md mx-auto">
               <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
@@ -486,7 +486,7 @@ const SqueezePage = () => {
             </div>
           )}
 
-          {/* ─── STEP: EMAIL GATE — number is calculated, email unlocks it ─── */}
+          {/* ─── STEP: EMAIL GATE, number is calculated, email unlocks it ─── */}
           {step === "email" && result && (
             <div className="animate-scale-in max-w-lg mx-auto">
               {/* The locked number teaser */}
@@ -520,7 +520,7 @@ const SqueezePage = () => {
                 </p>
                 <div className="space-y-2.5">
                   {[
-                    "Your exact Freedom Number — the MRR that replaces your salary",
+                    "Your exact Freedom Number, the MRR that replaces your salary",
                     "How many customers you need at $29/mo and $9/mo pricing",
                     `Your realistic timeline at ${hoursPerWeek} hours/week`,
                     "The invisibility benchmark members use to stay undetected",
@@ -541,23 +541,23 @@ const SqueezePage = () => {
                 </p>
               </div>
 
-              {/* Social proof bar — removed fabricated counts */}
+              {/* Social proof bar, removed fabricated counts */}
               <div className="flex items-center justify-center gap-3 mb-4 text-white/40 text-xs">
                 <span className="flex items-center gap-1">
                   <span className="text-amber-400">★★★★★</span>
                 </span>
               </div>
 
-              {/* EXPERT SECRETS Ch 11: Pre-Frame Objection Crusher — right before email capture */}
+              {/* EXPERT SECRETS Ch 11: Pre-Frame Objection Crusher, right before email capture */}
               <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-4">
                 <p className="text-white/40 text-[11px] uppercase tracking-wider font-semibold mb-3 text-center">
                   Questions Before You Enter Your Email?
                 </p>
                 <div className="space-y-3">
                   {[
-                    { q: "Is this really free?", a: "Yes. The calculator and your result are 100% free. No credit card. No trial. Your email is where I send the detailed breakdown — and it unlocks your number on the next screen instantly." },
-                    { q: "What if I don't have a business idea?", a: "The calculator doesn't require one. It just needs your salary, expenses, and hours. The Freedom Number works whether you have an idea or not — it tells you the target, not the path." },
-                    { q: "Will this work for my situation?", a: "The math is the math. Salary, expenses, hours — these are universal inputs. The formula applies whether you're at $80K or $250K." },
+                    { q: "Is this really free?", a: "Yes. The calculator and your result are 100% free. No credit card. No trial. Your email is where I send the detailed breakdown, and it unlocks your number on the next screen instantly." },
+                    { q: "What if I don't have a business idea?", a: "The calculator doesn't require one. It just needs your salary, expenses, and hours. The Freedom Number works whether you have an idea or not, it tells you the target, not the path." },
+                    { q: "Will this work for my situation?", a: "The math is the math. Salary, expenses, hours, these are universal inputs. The formula applies whether you're at $80K or $250K." },
                     { q: "What if I'm not technical?", a: "The calculator doesn't require technical skills. It asks 3 questions in 30 seconds. The system that follows is designed for non-technical managers." },
                   ].map((item) => (
                     <details key={item.q} className="group">
@@ -571,7 +571,7 @@ const SqueezePage = () => {
                 </div>
               </div>
 
-              {/* Email gate — unlocks the result */}
+              {/* Email gate, unlocks the result */}
               <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
                 <p className="text-white/70 text-sm mb-1 font-semibold">
                   Enter your email → see your Freedom Number
@@ -606,7 +606,7 @@ const SqueezePage = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <span className="text-white text-sm font-semibold">
-                          YES — send me the $7 Stealth Ops Blueprint offer next
+                          YES, send me the $7 Stealth Ops Blueprint offer next
                         </span>
                       </div>
                       <p className="text-white/50 text-xs leading-relaxed mb-1">
@@ -614,7 +614,7 @@ const SqueezePage = () => {
                         (normally $47, $7 one-time for founding members).
                       </p>
                       <p className="text-white/60 text-[11px] italic">
-                        You'll complete the purchase on the next page — nothing is charged here.
+                        You'll complete the purchase on the next page, nothing is charged here.
                       </p>
                     </div>
                   </label>
@@ -630,20 +630,20 @@ const SqueezePage = () => {
                 </form>
               </div>
 
-              {/* Direct CTA — skip email */}
+              {/* Direct CTA, skip email */}
               <Link
                 to="/tripwire"
                 className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
               >
-                Skip email — get the $7 Stealth Ops Blueprint →
+                Skip email, get the $7 Stealth Ops Blueprint →
               </Link>
             </div>
           )}
 
-          {/* ─── STEP: RESULT — unlocked after email ─── */}
+          {/* ─── STEP: RESULT, unlocked after email ─── */}
           {step === "result" && result && (
             <div className="animate-scale-in max-w-lg mx-auto">
-              {/* The big number — revealed */}
+              {/* The big number, revealed */}
               <div className="bg-gradient-to-br from-primary/15 to-transparent rounded-2xl p-8 border border-primary/25 mb-6">
                 <p className="text-white/50 text-xs uppercase tracking-wide mb-2">
                   Your Freedom Number
@@ -732,7 +732,7 @@ const SqueezePage = () => {
                 {emailDelivered ? (
                   <>
                     I just sent a detailed breakdown to{" "}
-                    <strong className="text-white">{email}</strong> — including
+                    <strong className="text-white">{email}</strong>, including
                     your personalized exit timeline, the Amsterdam moment that
                     started everything, and the 5-tool system that gets you to{" "}
                     {formatMoney(result.freedomNumber)}/month.
@@ -740,7 +740,7 @@ const SqueezePage = () => {
                 ) : (
                   <>
                     Your detailed breakdown for{" "}
-                    <strong className="text-white">{email}</strong> is queued —
+                    <strong className="text-white">{email}</strong> is queued, 
                     your personalized exit timeline and the 5-tool system that
                     gets you to {formatMoney(result.freedomNumber)}/month.
                   </>
@@ -758,7 +758,7 @@ const SqueezePage = () => {
                   }
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
-                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools — $9/month"}
+                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools, $9/month"}
                 </Link>
                 <Link
                   to="/story"
@@ -811,7 +811,7 @@ const SqueezePage = () => {
             </div>
 
             <p className="text-white/40 text-xs italic mt-2">
-              Because 6 months from now, you will either have the number — or you will still be guessing.
+              Because 6 months from now, you will either have the number, or you will still be guessing.
             </p>
           </div>
         </div>

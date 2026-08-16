@@ -82,7 +82,7 @@
       },
       "post": {
         "summary": "MCP JSON-RPC (Streamable HTTP)",
-        "description": "Model Context Protocol over JSON-RPC. Supports `initialize`, `tools/list`, `tools/call` and the `notifications/initialized` notification. Batch requests (a JSON array) are accepted. No auth — tools are read-only.",
+        "description": "Model Context Protocol over JSON-RPC. Supports `initialize`, `tools/list`, `tools/call` and the `notifications/initialized` notification. Batch requests (a JSON array) are accepted. No auth, tools are read-only.",
         "operationId": "postMcpRpc",
         "tags": [
           "agent"

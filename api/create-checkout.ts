@@ -39,7 +39,7 @@ function safeSiteUrl(input: unknown, siteUrl: string, fallback: string): string 
       return `${site.origin}${target.pathname}${target.search}`;
     }
   } catch {
-    // not a parseable absolute URL — fall through
+    // not a parseable absolute URL, fall through
   }
   return fallback;
 }
@@ -150,13 +150,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         };
         customerEmail = payload.email;
       } catch {
-        // Ignore auth failures — allow guest checkout
+        // Ignore auth failures, allow guest checkout
       }
     }
 
     // ── Order Bump (DotCom Secrets Ch 14): Always include the tripwire
     //    as a Stripe-side line item when subscribing to Starter.
-    //    The user sees BOTH items in Stripe Checkout — no page-level toggle.
+    //    The user sees BOTH items in Stripe Checkout, no page-level toggle.
     //    This avoids the conversion-killing price change on the CTA button
     //    while still getting the $7 bump on every new subscription.
     const starterPrice = process.env.STRIPE_STARTER_PRICE_ID!;

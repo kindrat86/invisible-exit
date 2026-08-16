@@ -35,7 +35,7 @@ interface AdConcept {
 
 const AD_CONCEPTS: AdConcept[] = [
   {
-    angle: "Curiosity — The Taxi Moment",
+    angle: "Curiosity, The Taxi Moment",
     hook: "I screamed in a taxi over $0.97.",
     bodyCopy: "A stranger paid for something I built while I slept.\n\nThat $0.97 changed how I see my $120K salary.\n\nNot because of the money. Because of what it proved:\n\n→ My worth exists outside the company\n→ I can build invisible income while employed\n→ The cage has a door\n\nI built 5 tools that help you find yours.",
     cta: "Calculate Your Freedom Number",
@@ -44,7 +44,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.80-$1.50",
   },
   {
-    angle: "Fear — The Discovery Nightmare",
+    angle: "Fear, The Discovery Nightmare",
     hook: "My colleague found my side business on a team call.",
     bodyCopy: "3 seconds of pure panic.\n\nThen I remembered: different entity, different name, different Stripe, different hosting.\n\nZero connection to me.\n\nThe call moved on. Nobody knew.\n\nIf you're building on the side, your stealth setup isn't optional.\n\nIt's career insurance.",
     cta: "Audit Your Stealth Score",
@@ -53,7 +53,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.60-$1.20",
   },
   {
-    angle: "Math — The Equity Trap",
+    angle: "Math, The Equity Trap",
     hook: "Your 0.5% equity is worth less than you think.",
     bodyCopy: "$1B exit × 0.5% = $5M\nAfter dilution: $2.4M\nAfter taxes: $1.7M\nInvested at 5%: $85K/year\n\nThat's less than your current salary.\n\nEven a billion-dollar exit doesn't buy freedom.\nIt buys a longer leash.\n\nThe math doesn't lie.",
     cta: "See the Full Breakdown",
@@ -62,7 +62,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$1.00-$2.00",
   },
   {
-    angle: "Aspiration — The Identity Shift",
+    angle: "Aspiration, The Identity Shift",
     hook: "The first $0.97 online isn't money. It's an identity shift.",
     bodyCopy: "For 8 years, I defined myself by my salary.\n$120K = what I'm worth.\n\nThen a stranger paid me $0.97 for something I built.\n\nSuddenly my salary stopped being my identity.\nIt became one income stream.\n\nEmployee → owner.\n\nThe first dollar changes everything.",
     cta: "Start Your Shift",
@@ -71,7 +71,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.70-$1.30",
   },
   {
-    angle: "Authority — The System Beats Idea",
+    angle: "Authority, The System Beats Idea",
     hook: "I spent 3 months choosing the 'right' idea. Then I launched the wrong one.",
     bodyCopy: "It made $9/month.\n\nThe system worked regardless.\n\nMonth 4: first customer\nMonth 6: $850 MRR\nMonth 9: $2,100 MRR\nMonth 12: $4,100 MRR\n\nI didn't have a better idea. I had a better system.\n\n5 tools. 5 hours/week. Still employed.",
     cta: "See the 5-Tool System",
@@ -80,7 +80,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.50-$1.00",
   },
   {
-    angle: "Comparison — Bonus vs MRR",
+    angle: "Comparison, Bonus vs MRR",
     hook: "My boss got a €15K bonus. My side business made $4,100/month.",
     bodyCopy: "He was thrilled.\n\nHis bonus: capped. Decided by someone else.\nMy MRR: compounding. 8% monthly growth.\n\n$49,200/year.\nNo boss. No board. No equity dilution.\n\nDifferent games.\nDifferent math.\n\nWhich are you playing?",
     cta: "Run the Numbers",
@@ -89,7 +89,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.80-$1.50",
   },
   {
-    angle: "Vulnerability — Almost Quit",
+    angle: "Vulnerability, Almost Quit",
     hook: "Month 4. Zero customers. I almost deleted everything.",
     bodyCopy: "11 PM on a Tuesday.\nCursor over 'Cancel Subscription.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\n$4,000/month = optionality.\n\nThe math doesn't care about your feelings.\n\nTwo weeks later: first customer. $9/month.\n\nConsistency beats motivation.",
     cta: "Calculate Your Freedom Number",
@@ -98,7 +98,7 @@ const AD_CONCEPTS: AdConcept[] = [
     estimatedCpc: "$0.60-$1.10",
   },
   {
-    angle: "Contrarian — Anonymity Is Strategy",
+    angle: "Contrarian, Anonymity Is Strategy",
     hook: "I deleted my personal Twitter (2K followers) and went anonymous.",
     bodyCopy: "In 3 weeks, the anonymous account passed my personal account in engagement.\n\nNobody knows it's me.\n\nAnonymity means I can:\n→ Experiment without fear\n→ Build in any market\n→ Fail without consequences\n→ Stay employed\n\nAnonymity isn't hiding.\nIt's strategy.",
     cta: "Build Your Faceless Brand",
@@ -234,7 +234,7 @@ const AD_LIBRARY = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Ad Creative Library — 8 Ready-to-Launch Campaigns | Invisible Exit"
+        title="Ad Creative Library, 8 Ready-to-Launch Campaigns | Invisible Exit"
         description="8 Facebook, Instagram, LinkedIn, and Reddit ad concepts with full targeting presets, copy, and budget recommendations for the Invisible Exit funnel."
         url="/ad-library"
       />
@@ -313,7 +313,7 @@ const AD_LIBRARY = () => {
       <section className="bg-surface section-normal border-b border-border">
         <div className="container-narrow">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            8 Ad Concepts — Ready to Launch
+            8 Ad Concepts, Ready to Launch
           </h2>
           <p className="text-muted-foreground mb-8">
             Each concept includes hook, body copy, CTA, format, audience, and estimated CPC.

@@ -1,7 +1,7 @@
 import ShareButtons from "@/components/ShareButtons";
 
 /**
- * PSEOShareSection — Social share buttons for pSEO blog-style pages.
+ * PSEOShareSection, Social share buttons for pSEO blog-style pages.
  *
  * TRAFFIC SECRETS Sec 3: Every piece of content must have frictionless sharing.
  * This component adds Twitter, LinkedIn, Reddit, and Copy Link buttons

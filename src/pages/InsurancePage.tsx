@@ -23,7 +23,7 @@ export default function InsurancePage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`Side Business Insurance in ${guide.stateName} — LLC & Solo Founder Guide | Invisible Exit`}
+        title={`Side Business Insurance in ${guide.stateName}, LLC & Solo Founder Guide | Invisible Exit`}
         description={`Small business insurance guide for ${guide.stateName}. General liability, professional liability, workers' comp, and cyber insurance requirements for LLCs and side businesses.`}
         url={`https://invisibleexit.com/insurance/${guide.slug}`}
       />

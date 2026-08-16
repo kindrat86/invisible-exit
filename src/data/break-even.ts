@@ -47,7 +47,7 @@ function generateBreakEven(rev: typeof revenueLevels[0], cost: typeof costTiers[
     metaTitle: `Break-Even Calculator: ${rev.label} at ${cost.label} (2026)`,
     metaDescription: `How long does it take to break even on a micro-SaaS earning ${rev.label} with ${cost.label} operating costs? Month-by-month breakdown and sensitivity analysis.`,
     h1: `Break-Even Analysis: ${rev.label} with ${cost.label}`,
-    intro: `If your micro-SaaS earns ${rev.label} and your monthly costs are ${cost.label} (${cost.cost > 0 ? `$${cost.cost}/mo` : "near zero"}), here's exactly how long it takes to recover your initial investment — and what happens if costs change.`,
+    intro: `If your micro-SaaS earns ${rev.label} and your monthly costs are ${cost.label} (${cost.cost > 0 ? `$${cost.cost}/mo` : "near zero"}), here's exactly how long it takes to recover your initial investment, and what happens if costs change.`,
     monthlyRevenue: rev.mrr,
     monthlyCosts: cost.cost,
     breakEvenMonths: breakEven,
@@ -68,7 +68,7 @@ function generateBreakEven(rev: typeof revenueLevels[0], cost: typeof costTiers[
     faqs: [
       {
         question: `Is ${rev.label} realistic for a side business?`,
-        answer: `${rev.mrr >= 4000 ? "Yes, but it typically takes 12-18 months of consistent effort. Most solo founders reach this level after finding a specific niche and charging $29-99/month per customer." : rev.mrr >= 1000 ? "Yes, $1K-$2K MRR is achievable within 6-12 months. You need 35-70 paying customers at $29/month." : "Yes, $500 MRR is the first meaningful milestone. It requires just 18 customers at $29/month — achievable in 3-6 months."}`,
+        answer: `${rev.mrr >= 4000 ? "Yes, but it typically takes 12-18 months of consistent effort. Most solo founders reach this level after finding a specific niche and charging $29-99/month per customer." : rev.mrr >= 1000 ? "Yes, $1K-$2K MRR is achievable within 6-12 months. You need 35-70 paying customers at $29/month." : "Yes, $500 MRR is the first meaningful milestone. It requires just 18 customers at $29/month, achievable in 3-6 months."}`,
       },
       {
         question: `What costs are included in "${cost.label}"?`,
@@ -76,7 +76,7 @@ function generateBreakEven(rev: typeof revenueLevels[0], cost: typeof costTiers[
       },
       {
         question: "Should I reinvest profits or take them out?",
-        answer: `Until you reach ${breakEven <= 6 ? "$4K MRR" : "break-even"}, reinvest everything into growth (content, ads, tools). After break-even, take 30% as profit and reinvest 70%. The goal is reaching your freedom number — typically $4,000/month MRR.`,
+        answer: `Until you reach ${breakEven <= 6 ? "$4K MRR" : "break-even"}, reinvest everything into growth (content, ads, tools). After break-even, take 30% as profit and reinvest 70%. The goal is reaching your freedom number, typically $4,000/month MRR.`,
       },
     ],
   };

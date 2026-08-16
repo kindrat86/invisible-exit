@@ -3,7 +3,7 @@
  * Targets the highest-emotion, highest-intent search in the niche:
  * "when to quit [job] to start a business" / "should I quit my job"
  *
- * Greg Isenberg pSEO Round 5 — emotional/temporal dimension.
+ * Greg Isenberg pSEO Round 5, emotional/temporal dimension.
  */
 
 export interface QuitJobEntry {
@@ -29,9 +29,9 @@ export const quitJobPages: QuitJobEntry[] = [
     slug: "software-engineer",
     profession: "Software Engineer",
     metaTitle: "When Should a Software Engineer Quit Their Job? (Honest Guide) | Invisible Exit",
-    metaDescription: "The honest answer for software engineers wondering when to quit. Financial milestones, readiness signs, and the framework for deciding — no toxic hustle advice.",
+    metaDescription: "The honest answer for software engineers wondering when to quit. Financial milestones, readiness signs, and the framework for deciding, no toxic hustle advice.",
     h1: "When Should a Software Engineer Quit Their Job?",
-    intro: "You're a software engineer making $120K-$300K. You have a side project generating some revenue. You're wondering: is now the time? Here's the honest, numbers-based answer — not the toxic 'burn the boats' hustle advice.",
+    intro: "You're a software engineer making $120K-$300K. You have a side project generating some revenue. You're wondering: is now the time? Here's the honest, numbers-based answer, not the toxic 'burn the boats' hustle advice.",
     theHonestAnswer: "Most software engineers quit 6-12 months too early. The optimal time is when your side project generates 75%+ of your living expenses for 3 consecutive months AND you have 12 months of runway saved. With a $150K salary, that means waiting until your side project hits ~$7K/month consistently.",
     signsYouAreReady: [
       "Your side project generates 75%+ of your monthly living expenses",
@@ -65,13 +65,13 @@ export const quitJobPages: QuitJobEntry[] = [
       { milestone: "Side income hits 75% of salary", criteria: "~$7K-$10K/month for 3+ months", action: "Final prep. Negotiate reduced hours or sabbatical. Set quit date 2-3 months out." },
       { milestone: "Side income hits 100% of salary", criteria: "Your project fully replaces your income", action: "Quit. But first: negotiate. Many engineers get unpaid sabbatical or reduced hours." },
     ],
-    whatHappensIfYouQuitTooEarly: "You'll feel financial pressure within 3-4 months. That pressure kills creativity and leads to desperate decisions — raising bad money, taking bad clients, or abandoning your product for quick freelance cash. Most engineers who quit at $2K/month end up back at a job within 8 months, having burned their runway and their confidence.",
-    whatHappensIfYouWaitTooLong: "You miss the compounding effect of going full-time. A side project at $10K/month could become $30K/month full-time in 6 months — the 40 extra hours/week matter. You also risk golden handcuffs: the longer you stay, the more comfortable the salary feels, and the harder it is to leave. Engineers who wait until 'the perfect moment' often never quit.",
+    whatHappensIfYouQuitTooEarly: "You'll feel financial pressure within 3-4 months. That pressure kills creativity and leads to desperate decisions, raising bad money, taking bad clients, or abandoning your product for quick freelance cash. Most engineers who quit at $2K/month end up back at a job within 8 months, having burned their runway and their confidence.",
+    whatHappensIfYouWaitTooLong: "You miss the compounding effect of going full-time. A side project at $10K/month could become $30K/month full-time in 6 months, the 40 extra hours/week matter. You also risk golden handcuffs: the longer you stay, the more comfortable the salary feels, and the harder it is to leave. Engineers who wait until 'the perfect moment' often never quit.",
     realTimeline: "For a software engineer making $150K with no side project yet: expect 12-24 months from idea to quit-ready. With an existing project at $2K/month: 6-12 months. With a project at $5K/month: 3-6 months.",
     faqs: [
-      { question: "Should I quit my software engineering job to do a startup?", answer: "Only if your side project generates 75%+ of your living expenses for 3+ consecutive months and you have 12 months of runway. Software engineers have it easier than most — you can build products faster and freelance for $100+/hr to extend runway. Don't quit with just an idea." },
+      { question: "Should I quit my software engineering job to do a startup?", answer: "Only if your side project generates 75%+ of your living expenses for 3+ consecutive months and you have 12 months of runway. Software engineers have it easier than most, you can build products faster and freelance for $100+/hr to extend runway. Don't quit with just an idea." },
       { question: "How much money do I need before quitting?", answer: "12 months of living expenses in liquid savings, PLUS your side project covering 75% of expenses. For a typical engineer in a high-cost area, that's $60K-$100K in savings plus $6K-$8K/month side income. It sounds like a lot, but on a $150K-$300K salary, it's achievable in 12-18 months of aggressive saving." },
-      { question: "Can I negotiate a sabbatical instead of quitting?", answer: "Yes — many engineers don't realize this. Ask for 1-3 months unpaid leave to 'test a business idea.' Most companies say yes, especially if you're a strong performer. This gives you a safety net: test full-time entrepreneurship with the option to return." },
+      { question: "Can I negotiate a sabbatical instead of quitting?", answer: "Yes, many engineers don't realize this. Ask for 1-3 months unpaid leave to 'test a business idea.' Most companies say yes, especially if you're a strong performer. This gives you a safety net: test full-time entrepreneurship with the option to return." },
     ],
   },
   {
@@ -96,7 +96,7 @@ export const quitJobPages: QuitJobEntry[] = [
       "No technical co-founder and no coding/no-code skills",
       "Your side project is still just a Figma mockup",
       "Less than $3K/month side income",
-      "You think being a PM prepares you for founding — it doesn't fully",
+      "You think being a PM prepares you for founding, it doesn't fully",
       "You haven't done any customer interviews",
     ],
     financialChecklist: [
@@ -117,7 +117,7 @@ export const quitJobPages: QuitJobEntry[] = [
     realTimeline: "For a PM with no co-founder: 18-30 months (need to learn no-code or find a partner). With a technical co-founder: 6-12 months. With a live product at $3K/month: 6-9 months.",
     faqs: [
       { question: "Do product managers make good startup founders?", answer: "Yes, but differently than engineers. PMs excel at customer discovery, positioning, and go-to-market. They struggle with building speed. The best PM founders pair with a technical co-founder or master no-code/AI tools (Bubble, Cursor, v0) to build MVPs solo." },
-      { question: "Should I learn to code before quitting?", answer: "Not necessarily — learn no-code and AI tools instead. Cursor + Claude + Vercel can build most MVPs. Traditional coding takes 6-12 months to be productive; no-code takes 2-4 weeks. The goal is building speed, not becoming a software engineer." },
+      { question: "Should I learn to code before quitting?", answer: "Not necessarily, learn no-code and AI tools instead. Cursor + Claude + Vercel can build most MVPs. Traditional coding takes 6-12 months to be productive; no-code takes 2-4 weeks. The goal is building speed, not becoming a software engineer." },
     ],
   },
   {
@@ -156,11 +156,11 @@ export const quitJobPages: QuitJobEntry[] = [
       { milestone: "Income covers expenses", criteria: "100% replacement for 2+ months", action: "Quit if you have 6 months runway + pipeline." },
     ],
     whatHappensIfYouQuitTooEarly: "Marketers who quit too early often become 'consultants' who can't find clients without a corporate title. Without the credibility of a job, client acquisition is harder. Build your personal brand BEFORE quitting.",
-    whatHappensIfYouWaitTooLong: "Marketers who wait too long lose their edge — the market moves fast, and skills atrophy. Also, your freelance clients will eventually want you full-time or move on.",
+    whatHappensIfYouWaitTooLong: "Marketers who wait too long lose their edge, the market moves fast, and skills atrophy. Also, your freelance clients will eventually want you full-time or move on.",
     realTimeline: "For a marketer starting from scratch: 6-12 months to first freelance income, 12-18 months to quit-ready. With existing freelance income at $3K/month: 3-6 months.",
     faqs: [
-      { question: "Can marketers freelance full-time instead of building a product?", answer: "Yes — many marketers build $10K-$30K/month solo agencies and never build a product. The tradeoff: agencies are service businesses (trading time for money) while products scale. The best path: freelance for cash flow, build a product for equity. Quit your job when freelance covers expenses." },
-      { question: "What's the biggest mistake marketers make when quitting?", answer: "Quitting without a personal brand. When you have a corporate title, clients trust you by association. Without it, you need a personal brand (LinkedIn, X, newsletter, podcast) to establish credibility. Build your audience BEFORE quitting — it takes 6-12 months." },
+      { question: "Can marketers freelance full-time instead of building a product?", answer: "Yes, many marketers build $10K-$30K/month solo agencies and never build a product. The tradeoff: agencies are service businesses (trading time for money) while products scale. The best path: freelance for cash flow, build a product for equity. Quit your job when freelance covers expenses." },
+      { question: "What's the biggest mistake marketers make when quitting?", answer: "Quitting without a personal brand. When you have a corporate title, clients trust you by association. Without it, you need a personal brand (LinkedIn, X, newsletter, podcast) to establish credibility. Build your audience BEFORE quitting, it takes 6-12 months." },
     ],
   },
   {
@@ -184,7 +184,7 @@ export const quitJobPages: QuitJobEntry[] = [
       "Less than $3K/month side income",
       "No inbound leads from your portfolio",
       "You're known for your employer's work, not your own",
-      "No niche — you'll compete with every designer globally",
+      "No niche, you'll compete with every designer globally",
     ],
     financialChecklist: [
       { item: "Emergency fund", target: "6 months expenses" },
@@ -198,11 +198,11 @@ export const quitJobPages: QuitJobEntry[] = [
       { milestone: "Stable productized income", criteria: "$5K-$8K/month for 3 months", action: "Quit. Or launch digital products for passive income." },
     ],
     whatHappensIfYouQuitTooEarly: "Designers who quit without a niche become commodity freelancers competing on price. You'll earn less than you did as an employee because you're competing with global talent.",
-    whatHappensIfYouWaitTooLong: "Designers who wait too long get stuck in the 'agency trap' — comfortable retainer income that feels like a job. They never build scalable products because the service income is too comfortable to risk.",
+    whatHappensIfYouWaitTooLong: "Designers who wait too long get stuck in the 'agency trap', comfortable retainer income that feels like a job. They never build scalable products because the service income is too comfortable to risk.",
     realTimeline: "For a designer starting fresh: 6-12 months to build a portfolio + first clients, 12-18 months to quit-ready. With existing freelance at $3K/month: 4-6 months.",
     faqs: [
       { question: "Should designers build products or do services?", answer: "Both, but start with services. Productized services (unlimited design for $4K/month) generate immediate cash flow. Use that runway to build digital products (UI kits, templates, courses) that scale. The Designjoy model ($1M+/year solo) proves productized design services can be more profitable than products." },
-      { question: "Can designers really make $10K+/month solo?", answer: "Yes. Productized service: 3 clients at $3.5K/month = $10.5K/month. Digital products: 200 sales at $49 = $9.8K/month. The key is niche specialization and productization — don't sell hours, sell outcomes." },
+      { question: "Can designers really make $10K+/month solo?", answer: "Yes. Productized service: 3 clients at $3.5K/month = $10.5K/month. Digital products: 200 sales at $49 = $9.8K/month. The key is niche specialization and productization, don't sell hours, sell outcomes." },
     ],
   },
   {
@@ -211,21 +211,21 @@ export const quitJobPages: QuitJobEntry[] = [
     metaTitle: "When Should a Consultant Quit Their Job? | Invisible Exit",
     metaDescription: "The honest framework for consultants deciding when to go independent. Client pipeline, niche validation, and the transition from firm to solo.",
     h1: "When Should a Consultant Quit Their Job?",
-    intro: "Consultants (McKinsey, BCG, Deloitte, boutique firms) have the highest freelance earning potential of any profession. But leaving a consulting firm is different from leaving a corporate job — here's the honest framework.",
-    theHonestAnswer: "Consultants can quit earliest of any profession because solo consulting pays $200-$500/hr immediately. The threshold: when you have 2+ clients committed to paying $10K+ each, and 6 months runway. Your firm's non-compete may be a factor — check it first.",
+    intro: "Consultants (McKinsey, BCG, Deloitte, boutique firms) have the highest freelance earning potential of any profession. But leaving a consulting firm is different from leaving a corporate job, here's the honest framework.",
+    theHonestAnswer: "Consultants can quit earliest of any profession because solo consulting pays $200-$500/hr immediately. The threshold: when you have 2+ clients committed to paying $10K+ each, and 6 months runway. Your firm's non-compete may be a factor, check it first.",
     signsYouAreReady: [
       "You have 2+ clients ready to pay you directly (not through your firm)",
       "Your network can generate $20K+/month in projects",
       "You have a clear niche (not 'general strategy consultant')",
       "6 months of runway (you'll earn fast, so less buffer needed)",
       "You've cleared your non-compete or it doesn't apply",
-      "You can sell — consultants often forget this skill",
+      "You can sell, consultants often forget this skill",
     ],
     signsYouAreNot: [
       "No clients lined up (you need warm leads, not cold outreach)",
       "Your firm does all your client acquisition",
       "You have an active non-compete that covers your target clients",
-      "No niche — you'll compete with every ex-consultant",
+      "No niche, you'll compete with every ex-consultant",
       "You can't handle sales, contracts, and billing",
     ],
     financialChecklist: [
@@ -242,10 +242,10 @@ export const quitJobPages: QuitJobEntry[] = [
     ],
     whatHappensIfYouQuitTooEarly: "Consultants who quit without clients lined up discover that cold outreach as an independent is much harder than when you had the firm's brand behind you. The firm's logo opens doors; your name alone opens fewer.",
     whatHappensIfYouWaitTooLong: "Consultants who wait too long become dependent on firm infrastructure and lose the hunger for independent work. Also, the longer you stay, the more your network associates you with your firm rather than as an independent.",
-    realTimeline: "For a consultant at a top firm: 3-12 months from decision to quit (fastest of any profession). You already have the skills, network, and credibility — you just need to convert them to independent clients.",
+    realTimeline: "For a consultant at a top firm: 3-12 months from decision to quit (fastest of any profession). You already have the skills, network, and credibility, you just need to convert them to independent clients.",
     faqs: [
-      { question: "Can I take clients from my consulting firm?", answer: "Generally no — check your employment agreement. Most firms have non-solicitation clauses preventing you from working with their clients for 12-24 months. However, clients you bring to the firm (originated) may be fair game. Always consult an employment attorney before approaching any firm clients." },
-      { question: "How much can independent consultants earn?", answer: "Independent niche consultants earn $300K-$1M+/year. The math: 200 billable days × $2K-$5K/day = $400K-$1M. The challenge isn't earning — it's client acquisition. Top independents get clients through LinkedIn, speaking, and referrals from their firm network." },
+      { question: "Can I take clients from my consulting firm?", answer: "Generally no, check your employment agreement. Most firms have non-solicitation clauses preventing you from working with their clients for 12-24 months. However, clients you bring to the firm (originated) may be fair game. Always consult an employment attorney before approaching any firm clients." },
+      { question: "How much can independent consultants earn?", answer: "Independent niche consultants earn $300K-$1M+/year. The math: 200 billable days × $2K-$5K/day = $400K-$1M. The challenge isn't earning, it's client acquisition. Top independents get clients through LinkedIn, speaking, and referrals from their firm network." },
     ],
   },
   {
@@ -254,7 +254,7 @@ export const quitJobPages: QuitJobEntry[] = [
     metaTitle: "When Should an Accountant Quit Their Job? | Invisible Exit",
     metaDescription: "The honest framework for accountants and CPAs deciding when to go independent. Client base, seasonal considerations, and liability protection.",
     h1: "When Should an Accountant Quit Their Job?",
-    intro: "Accountants have one of the most stable paths to independence — every business needs bookkeeping and tax help. But the seasonal nature of the work and professional liability make the quit decision unique. Here's the honest framework.",
+    intro: "Accountants have one of the most stable paths to independence, every business needs bookkeeping and tax help. But the seasonal nature of the work and professional liability make the quit decision unique. Here's the honest framework.",
     theHonestAnswer: "Accountants should quit when they have 8-10 bookkeeping clients generating $4K-$6K/month in recurring revenue. 6 months runway is sufficient. Quit in May-June (after tax season) to maximize runway before the next busy season.",
     signsYouAreReady: [
       "8-10 monthly bookkeeping retainer clients ($300-$600 each)",
@@ -286,11 +286,11 @@ export const quitJobPages: QuitJobEntry[] = [
       { milestone: "8-10 clients", criteria: "$4K-$6K/month + tax pipeline", action: "Quit in May. Use summer to build systems before next tax season." },
     ],
     whatHappensIfYouQuitTooEarly: "Accountants who quit before tax season without a pipeline miss the biggest earning window (Jan-April generates 40-60% of annual revenue). They struggle through the off-season with insufficient runway.",
-    whatHappensIfYouWaitTooLong: "Accountants who wait too long risk burnout — the firm grind (especially Big 4) is unsustainable past 5-7 years for most. Your health and relationships suffer.",
+    whatHappensIfYouWaitTooLong: "Accountants who wait too long risk burnout, the firm grind (especially Big 4) is unsustainable past 5-7 years for most. Your health and relationships suffer.",
     realTimeline: "For an accountant starting to build a client base: 6-12 months to 5 clients, 12-18 months to quit-ready. Time your quit for May-June to maximize the off-season runway.",
     faqs: [
-      { question: "Do I need my CPA to go independent?", answer: "For tax preparation, you need a PTIN (free), not a CPA. For bookkeeping, no license is needed — QuickBooks ProAdvisor ($200) is sufficient. A CPA is only required for audit/attestation services. Many independent accountants earn $100K+ without a CPA license." },
-      { question: "When is the best time of year to quit?", answer: "May-June, right after tax season ends. This gives you 7-8 months of lower workload to build systems before the next busy season. You also bank your tax season bonus (if any) before leaving. Avoid quitting in December-January — you'll miss the earning peak." },
+      { question: "Do I need my CPA to go independent?", answer: "For tax preparation, you need a PTIN (free), not a CPA. For bookkeeping, no license is needed, QuickBooks ProAdvisor ($200) is sufficient. A CPA is only required for audit/attestation services. Many independent accountants earn $100K+ without a CPA license." },
+      { question: "When is the best time of year to quit?", answer: "May-June, right after tax season ends. This gives you 7-8 months of lower workload to build systems before the next busy season. You also bank your tax season bonus (if any) before leaving. Avoid quitting in December-January, you'll miss the earning peak." },
     ],
   },
   {
@@ -340,10 +340,10 @@ export const quitJobPages: QuitJobEntry[] = [
     slug: "general",
     profession: "Any Profession",
     metaTitle: "When Should You Quit Your Job to Start a Business? (Honest Guide) | Invisible Exit",
-    metaDescription: "The universal framework for deciding when to quit your job. Financial milestones, readiness signs, and the math behind the decision — no toxic hustle advice.",
+    metaDescription: "The universal framework for deciding when to quit your job. Financial milestones, readiness signs, and the math behind the decision, no toxic hustle advice.",
     h1: "When Should You Quit Your Job to Start a Business?",
     intro: "This is the most common question we get. The answer isn't 'just do it' or 'never take risk.' It's a calculation. Here's the honest, universal framework that works for any profession.",
-    theHonestAnswer: "Quit when your side business generates 75% of your living expenses for 3 consecutive months AND you have 12 months of runway saved. This isn't conservative — it's the sweet spot that minimizes failure risk while not waiting so long that you lose momentum.",
+    theHonestAnswer: "Quit when your side business generates 75% of your living expenses for 3 consecutive months AND you have 12 months of runway saved. This isn't conservative, it's the sweet spot that minimizes failure risk while not waiting so long that you lose momentum.",
     signsYouAreReady: [
       "Your side business covers 75%+ of living expenses for 3+ months",
       "12 months of living expenses in liquid savings",
@@ -376,11 +376,11 @@ export const quitJobPages: QuitJobEntry[] = [
       { milestone: "Quit-ready", criteria: "75% income replacement + 12mo runway", action: "Quit. Or negotiate part-time first." },
     ],
     whatHappensIfYouQuitTooEarly: "Financial pressure kills creativity. You'll make desperate decisions: taking bad clients, raising bad money, abandoning your vision for quick cash. 70% of founders who quit with under $2K/month side income return to employment within 12 months.",
-    whatHappensIfYouWaitTooLong: "Golden handcuffs get tighter every year. The compounding growth you'd get from full-time focus never happens. Someone else ships your idea. The 'perfect moment' never arrives — at some point, you must take a calculated leap.",
+    whatHappensIfYouWaitTooLong: "Golden handcuffs get tighter every year. The compounding growth you'd get from full-time focus never happens. Someone else ships your idea. The 'perfect moment' never arrives, at some point, you must take a calculated leap.",
     realTimeline: "Average: 12-24 months from side business start to quit-ready. Faster for high-income professionals with savings. Slower for those starting from scratch.",
     faqs: [
-      { question: "Should I quit my job with no savings if I have a great idea?", answer: "No. Ideas are worth nothing without execution. Build the MVP while employed. Get your first 10 customers while employed. Quit only when the business has proven it can generate income. The exception: if you have a spouse who covers expenses and supports you — but even then, 6 months runway is wise." },
-      { question: "What if I get fired or laid off — should I start a business then?", answer: "A layoff can be an opportunity IF you have severance (runway) and a side business already started. If you have 3+ months severance and a validated idea, go for it. If not, take the opportunity to find a better job while building on the side. Don't start a business out of desperation — it leads to bad decisions." },
+      { question: "Should I quit my job with no savings if I have a great idea?", answer: "No. Ideas are worth nothing without execution. Build the MVP while employed. Get your first 10 customers while employed. Quit only when the business has proven it can generate income. The exception: if you have a spouse who covers expenses and supports you, but even then, 6 months runway is wise." },
+      { question: "What if I get fired or laid off, should I start a business then?", answer: "A layoff can be an opportunity IF you have severance (runway) and a side business already started. If you have 3+ months severance and a validated idea, go for it. If not, take the opportunity to find a better job while building on the side. Don't start a business out of desperation, it leads to bad decisions." },
       { question: "How do I know if it's the right time emotionally?", answer: "You should feel excited AND terrified. If you only feel excited, you're underestimating the risk. If you only feel terrified, you're not ready financially. The right balance: confident in your plan, humble about the challenge, and at peace with the possibility of failure. Talk to your family. Get therapy if needed. Emotional readiness matters as much as financial." },
     ],
   },

@@ -13,7 +13,7 @@ posthog.init(POSTHOG_KEY, {
 });
 
 // Super property: rides on every event, so traffic queries can filter
-// `is_bot = false`. Safe to register straight after init — this site fires
+// `is_bot = false`. Safe to register straight after init, this site fires
 // pageviews manually (capture_pageview: false), so nothing is captured
 // before this line runs.
 posthog.register({ is_bot: detectClientBot() });

@@ -16,12 +16,12 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 16 — Becoming the Expert / Authority
+ * EXPERT SECRETS: Chapter 16:  Becoming the Expert / Authority
  *
  * Russell: "When you have proprietary frameworks, you're not a reseller.
  * You're a thought leader. People follow thought leaders, not resellers."
  *
- * This page documents the ORIGIN STORY of each framework — when Adrian
+ * This page documents the ORIGIN STORY of each framework, when Adrian
  * discovered it, what problem it solved, and how it was named. This
  * transforms "5 tools" into "3 proprietary methodologies" that no one
  * else can teach.
@@ -59,11 +59,11 @@ const FRAMEWORKS = [
     originDate: "Week 3",
     originTitle: "The 3-Second Panic",
     originStory:
-      "Week 3 of building. Team call. A colleague says: 'Hey, has anyone seen this website? It looks like something we'd build.' My blood ran cold for exactly 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent — because they proved the system worked. I named the protocol that night.",
+      "Week 3 of building. Team call. A colleague says: 'Hey, has anyone seen this website? It looks like something we'd build.' My blood ran cold for exactly 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent, because they proved the system worked. I named the protocol that night.",
     theMethod: [
-      "SEPARATE THE LEGAL ENTITY — Wyoming LLC (anonymous, $100 filing, no state tax)",
-      "SEPARATE THE DIGITAL FOOTPRINT — different registrar, different hosting, different Stripe, different email provider",
-      "SEPARATE THE IDENTITY — no real name, no LinkedIn cross-link, no employer mention, no professional network overlap",
+      "SEPARATE THE LEGAL ENTITY, Wyoming LLC (anonymous, $100 filing, no state tax)",
+      "SEPARATE THE DIGITAL FOOTPRINT, different registrar, different hosting, different Stripe, different email provider",
+      "SEPARATE THE IDENTITY, no real name, no LinkedIn cross-link, no employer mention, no professional network overlap",
     ],
     theOutput: "Mathematical zero connection between your employment identity and your business identity.",
     theBigIdea:
@@ -79,11 +79,11 @@ const FRAMEWORKS = [
     originDate: "Month 5",
     originTitle: "The Wrong Idea That Made $9",
     originStory:
-      "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Competitor analysis. Analysis paralysis disguised as research. Then I launched the WRONG idea. It made $9/month. I almost quit. Instead, I pivoted — without rebuilding the infrastructure. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. That's when I named it: ideas are cartridges. The system is the printer.",
+      "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Competitor analysis. Analysis paralysis disguised as research. Then I launched the WRONG idea. It made $9/month. I almost quit. Instead, I pivoted, without rebuilding the infrastructure. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. That's when I named it: ideas are cartridges. The system is the printer.",
     theMethod: [
       "Build the 5-tool pipeline FIRST (freedom number → idea validation → stealth ops → launch → brand)",
-      "Launch the 'wrong' idea to test the system — prove the pipeline works before optimizing the product",
-      "Pivot ideas WITHOUT rebuilding infrastructure — swap the cartridge, keep the printer",
+      "Launch the 'wrong' idea to test the system, prove the pipeline works before optimizing the product",
+      "Pivot ideas WITHOUT rebuilding infrastructure, swap the cartridge, keep the printer",
       "Score each idea on: market size × willingness to pay × your unfair advantage × build difficulty",
     ],
     theOutput: "A repeatable system that produces validated products regardless of which idea you start with.",
@@ -105,7 +105,7 @@ const FrameworkOriginsPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The 3 Frameworks — Proprietary Methodologies | Invisible Exit"
+        title="The 3 Frameworks, Proprietary Methodologies | Invisible Exit"
         description="The Salary-Runway Method, The Triple-Separation Protocol, and The Cartridge System. Three proprietary frameworks developed over 14 months of building invisible recurring revenue."
         url="/frameworks"
       />
@@ -251,7 +251,7 @@ const FrameworkOriginsPage = () => {
           <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
             The Salary-Runway Method powers the FYM Dashboard. The Triple-Separation
             Protocol powers the Stealth Ops Hub. The Cartridge System powers the
-            Idea Pipeline. You don't learn them — you use them.
+            Idea Pipeline. You don't learn them, you use them.
           </p>
           <Link
             to="/freedom"

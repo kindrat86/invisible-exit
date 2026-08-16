@@ -4,24 +4,24 @@ import { Play, Pause, Headphones } from "lucide-react";
 /**
  * Audio narrator component for the /story page.
  * Uses the Web Speech API (SpeechSynthesis) to read the story aloud.
- * No external API needed — runs entirely in the browser.
+ * No external API needed, runs entirely in the browser.
  * Respects reduced-motion and reduced-data preferences.
  *
  * EXPERT SECRETS Ch 11: Pre-frame objections by making the story accessible
  * to mobile readers who don't have 15 minutes of reading time.
  */
 const chapterTitles = [
-  "Background — I was the perfect employee.",
-  "The Desire — I didn't want to quit. I wanted to matter.",
-  "The Hook — 0.5% equity. 18 months to IPO.",
-  "The Origin — Amsterdam. 6 AM. Raining.",
-  "The Epiphany — Corporate loyalty is a transaction.",
-  "Secret #1 — The Vehicle",
-  "Secret #2 — The Stealth",
-  "Secret #3 — The System",
-  "The Wall — Month 4, zero customers.",
-  "External Conflict — The competitor.",
-  "The One Thing — 12 months. $4,100 MRR.",
+  "Background, I was the perfect employee.",
+  "The Desire, I didn't want to quit. I wanted to matter.",
+  "The Hook, 0.5% equity. 18 months to IPO.",
+  "The Origin, Amsterdam. 6 AM. Raining.",
+  "The Epiphany, Corporate loyalty is a transaction.",
+  "Secret #1:  The Vehicle",
+  "Secret #2:  The Stealth",
+  "Secret #3:  The System",
+  "The Wall, Month 4, zero customers.",
+  "External Conflict, The competitor.",
+  "The One Thing, 12 months. $4,100 MRR.",
   "Return with the Elixir",
 ];
 

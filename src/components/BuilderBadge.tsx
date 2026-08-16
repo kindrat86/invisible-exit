@@ -1,7 +1,7 @@
 import { Shield, Star, TrendingUp } from "lucide-react";
 
 /**
- * EXPERT SECRETS: Chapter 14 — Tribal Identity Markers
+ * EXPERT SECRETS: Chapter 14:  Tribal Identity Markers
  *
  * Russell: "Identity badges create belonging. People fight for the badge."
  *

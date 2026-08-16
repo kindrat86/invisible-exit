@@ -3,7 +3,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * ValueLadder — DotCom Secrets Ch 1
+ * ValueLadder, DotCom Secrets Ch 1
  *
  * Russell Brunson's Value Ladder: each rung delivers 10× the value of the one below.
  * Price goes up because the transformation goes up.
@@ -56,7 +56,7 @@ const RUNGS: Rung[] = [
     name: "Stealth Ops Blueprint",
     price: "$7",
     period: "one-time",
-    outcome: "The 47-point invisibility checklist. Entity, digital footprint, compliance — audited.",
+    outcome: "The 47-point invisibility checklist. Entity, digital footprint, compliance, audited.",
     valueLabel: "Safety",
     href: "/tripwire",
     cta: "Get Blueprint",
@@ -217,7 +217,7 @@ const ValueLadder = () => {
             Every rung delivers{" "}
             <span className="text-primary-light font-bold">10× the value</span>{" "}
             of the one below it. Start free. Climb at your own pace. Most members
-            never go past step 3 — and that's exactly right.
+            never go past step 3:  and that's exactly right.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ const ValueLadder = () => {
           <p className="text-center text-white/25 text-xs italic mt-6 max-w-xl mx-auto">
             "The Value Ladder isn't about upselling. It's about delivering more
             transformation at each step. The price goes up because the value goes
-            up 10×." — Russell Brunson, DotCom Secrets
+            up 10×.", Russell Brunson, DotCom Secrets
           </p>
         </div>
       </div>

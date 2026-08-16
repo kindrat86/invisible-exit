@@ -26,7 +26,7 @@ export interface IndustryIdea {
 export const industryIdeas: IndustryIdea[] = [
   {
     slug: "for-accountants", profession: "Accountants", icon: "📊",
-    unfairAdvantage: "Accountants understand compliance, billing cycles, and financial workflows — the exact pain points businesses pay to solve.",
+    unfairAdvantage: "Accountants understand compliance, billing cycles, and financial workflows, the exact pain points businesses pay to solve.",
     avgSalary: "$70K-$120K",
     transferableSkills: ["Financial modeling", "Compliance", "Reconciliation", "Tax preparation", "Spreadsheet automation"],
     ideas: [
@@ -45,7 +45,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-lawyers", profession: "Lawyers", icon: "⚖️",
-    unfairAdvantage: "Lawyers understand regulatory compliance, contract language, and legal workflows — highly monetizable niche expertise.",
+    unfairAdvantage: "Lawyers understand regulatory compliance, contract language, and legal workflows, highly monetizable niche expertise.",
     avgSalary: "$120K-$250K",
     transferableSkills: ["Contract analysis", "Legal research", "Compliance frameworks", "Document automation", "Client intake"],
     ideas: [
@@ -59,12 +59,12 @@ export const industryIdeas: IndustryIdea[] = [
     whatToAvoid: "Do not practice law through your SaaS (unauthorized practice of law). Build tools that assist non-lawyers or streamline firm operations, not legal advice engines.",
     faqs: [
       { question: "Can lawyers build legal tech SaaS?", answer: "Yes. Lawyers have a unique advantage in legal tech. The key is building tools that assist rather than replace legal advice. Focus on document automation, compliance tracking, and workflow tools." },
-      { question: "What is the highest-paying legal micro-SaaS?", answer: "Contract analysis tools targeting businesses. Companies pay $49-$199/month to avoid legal review costs. The TAM is massive — every business signs contracts." },
+      { question: "What is the highest-paying legal micro-SaaS?", answer: "Contract analysis tools targeting businesses. Companies pay $49-$199/month to avoid legal review costs. The TAM is massive, every business signs contracts." },
     ],
   },
   {
     slug: "for-teachers", profession: "Teachers", icon: "📚",
-    unfairAdvantage: "Teachers understand curriculum design, assessment, and student engagement — skills directly transferable to EdTech.",
+    unfairAdvantage: "Teachers understand curriculum design, assessment, and student engagement, skills directly transferable to EdTech.",
     avgSalary: "$50K-$80K",
     transferableSkills: ["Curriculum design", "Assessment creation", "Content explanation", "Student engagement", "Learning analytics"],
     ideas: [
@@ -77,13 +77,13 @@ export const industryIdeas: IndustryIdea[] = [
     toolsTheyAlreadyKnow: ["Google Classroom", "Canvas", "Kahoot", "Quizlet", "Nearpod"],
     whatToAvoid: "Avoid building tools that compete with your school district's purchased software. Check your employment contract for IP assignment clauses regarding educational materials.",
     faqs: [
-      { question: "Can teachers sell educational content online?", answer: "Generally yes, if you create it on your own time and it is not derived from your school's curriculum. Check your district's IP policy — some claim ownership of teacher-created materials." },
+      { question: "Can teachers sell educational content online?", answer: "Generally yes, if you create it on your own time and it is not derived from your school's curriculum. Check your district's IP policy, some claim ownership of teacher-created materials." },
       { question: "Is EdTech profitable for solo founders?", answer: "Yes. The key is targeting a specific niche: homeschoolers, tutors, or specific subject areas. Subscription pricing of $9-$29/month with 200-500 users generates solid recurring revenue." },
     ],
   },
   {
     slug: "for-nurses", profession: "Nurses", icon: "🏥",
-    unfairAdvantage: "Nurses understand clinical workflows, patient education, and healthcare compliance — deeply underserved niche.",
+    unfairAdvantage: "Nurses understand clinical workflows, patient education, and healthcare compliance, deeply underserved niche.",
     avgSalary: "$60K-$110K",
     transferableSkills: ["Patient education", "Clinical protocols", "Care coordination", "Health literacy", "Compliance documentation"],
     ideas: [
@@ -102,7 +102,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-software-engineers", profession: "Software Engineers", icon: "💻",
-    unfairAdvantage: "Engineers can build, ship, and maintain products without hiring anyone — the ultimate unfair advantage in micro-SaaS.",
+    unfairAdvantage: "Engineers can build, ship, and maintain products without hiring anyone, the ultimate unfair advantage in micro-SaaS.",
     avgSalary: "$120K-$300K",
     transferableSkills: ["Full-stack development", "API design", "Database architecture", "DevOps", "Code review", "System design"],
     ideas: [
@@ -121,7 +121,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-marketers", profession: "Marketing Managers", icon: "📈",
-    unfairAdvantage: "Marketers understand audience psychology, conversion funnels, and content strategy — the skills that generate revenue.",
+    unfairAdvantage: "Marketers understand audience psychology, conversion funnels, and content strategy, the skills that generate revenue.",
     avgSalary: "$80K-$150K",
     transferableSkills: ["Content strategy", "SEO optimization", "A/B testing", "Email marketing", "Social media management", "Analytics"],
     ideas: [
@@ -140,7 +140,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-hr-managers", profession: "HR Managers", icon: "👥",
-    unfairAdvantage: "HR managers understand hiring workflows, compliance, and employee engagement — painful problems companies pay to solve.",
+    unfairAdvantage: "HR managers understand hiring workflows, compliance, and employee engagement, painful problems companies pay to solve.",
     avgSalary: "$70K-$130K",
     transferableSkills: ["Hiring workflows", "Compliance documentation", "Employee onboarding", "Performance management", "Policy writing"],
     ideas: [
@@ -159,7 +159,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-consultants", profession: "Management Consultants", icon: "💼",
-    unfairAdvantage: "Consultants understand frameworks, data analysis, and executive communication — skills that command premium pricing.",
+    unfairAdvantage: "Consultants understand frameworks, data analysis, and executive communication, skills that command premium pricing.",
     avgSalary: "$150K-$300K",
     transferableSkills: ["Framework thinking", "Data analysis", "Executive reporting", "Process mapping", "Stakeholder management"],
     ideas: [
@@ -178,7 +178,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-designers", profession: "Designers", icon: "🎨",
-    unfairAdvantage: "Designers can create beautiful, usable products without hiring a designer — a massive cost advantage in early-stage SaaS.",
+    unfairAdvantage: "Designers can create beautiful, usable products without hiring a designer, a massive cost advantage in early-stage SaaS.",
     avgSalary: "$60K-$140K",
     transferableSkills: ["UI/UX design", "Prototyping", "Brand identity", "Design systems", "User research", "Figma"],
     ideas: [
@@ -191,13 +191,13 @@ export const industryIdeas: IndustryIdea[] = [
     toolsTheyAlreadyKnow: ["Figma", "Adobe Creative Suite", "Sketch", "Framer", "Webflow"],
     whatToAvoid: "Do not use your employer's design assets, templates, or brand guidelines. Build original design tools and templates that do not compete with your employer's design services.",
     faqs: [
-      { question: "Can designers build SaaS without coding?", answer: "Yes. Use no-code tools like Webflow, Framer, or Bubble. Or partner with a developer — designers plus developers build the best products because they split the work evenly." },
+      { question: "Can designers build SaaS without coding?", answer: "Yes. Use no-code tools like Webflow, Framer, or Bubble. Or partner with a developer, designers plus developers build the best products because they split the work evenly." },
       { question: "What is the best SaaS for designers?", answer: "Design-to-code tools and asset marketplaces. Designers create once and sell many times. Template marketplaces and conversion tools have low marginal cost and high scalability." },
     ],
   },
   {
     slug: "for-financial-analysts", profession: "Financial Analysts", icon: "💰",
-    unfairAdvantage: "Analysts understand financial modeling, data interpretation, and reporting — skills that command premium B2B pricing.",
+    unfairAdvantage: "Analysts understand financial modeling, data interpretation, and reporting, skills that command premium B2B pricing.",
     avgSalary: "$80K-$180K",
     transferableSkills: ["Financial modeling", "Excel/Sheets automation", "Data visualization", "Forecasting", "KPI dashboards"],
     ideas: [
@@ -216,7 +216,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-product-managers", profession: "Product Managers", icon: "📦",
-    unfairAdvantage: "PMs understand user research, roadmapping, and prioritization — the exact skills needed to identify and build the right product.",
+    unfairAdvantage: "PMs understand user research, roadmapping, and prioritization, the exact skills needed to identify and build the right product.",
     avgSalary: "$110K-$200K",
     transferableSkills: ["User research", "Roadmapping", "Prioritization frameworks", "A/B testing", "Stakeholder communication", "Data analysis"],
     ideas: [
@@ -235,7 +235,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-sales-managers", profession: "Sales Managers", icon: "🤝",
-    unfairAdvantage: "Sales managers understand outreach, conversion psychology, and revenue tracking — directly monetizable skills.",
+    unfairAdvantage: "Sales managers understand outreach, conversion psychology, and revenue tracking, directly monetizable skills.",
     avgSalary: "$100K-$250K (with commission)",
     transferableSkills: ["Cold outreach", "Sales funnel design", "CRM management", "Objection handling", "Pipeline forecasting"],
     ideas: [
@@ -254,7 +254,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-doctors", profession: "Physicians", icon: "🩺",
-    unfairAdvantage: "Doctors have deep medical expertise, regulatory knowledge, and patient trust — the highest-barrier entry in any profession.",
+    unfairAdvantage: "Doctors have deep medical expertise, regulatory knowledge, and patient trust, the highest-barrier entry in any profession.",
     avgSalary: "$200K-$500K",
     transferableSkills: ["Clinical knowledge", "Patient communication", "Medical compliance", "Healthcare workflows", "Evidence-based analysis"],
     ideas: [
@@ -265,15 +265,15 @@ export const industryIdeas: IndustryIdea[] = [
       { name: "Telehealth Setup Consultant Tool", description: "Step-by-step guide for setting up compliant telehealth infrastructure.", targetCustomer: "Small practices adding telehealth", pricing: "$199/one-time", difficulty: "Low", revenuePotential: "$2K-$8K/month" },
     ],
     toolsTheyAlreadyKnow: ["Epic", "Cerner", "UpToDate", "Epocrates", "Medscape"],
-    whatToAvoid: "Never provide medical advice through your SaaS without proper licensing and liability insurance. Build tools for workflow, education, or compliance — not diagnosis or treatment.",
+    whatToAvoid: "Never provide medical advice through your SaaS without proper licensing and liability insurance. Build tools for workflow, education, or compliance, not diagnosis or treatment.",
     faqs: [
-      { question: "Can doctors build healthcare SaaS?", answer: "Yes. Physicians have unique domain expertise that developers cannot replicate. Focus on workflow tools, education, and compliance — not medical advice or diagnosis." },
+      { question: "Can doctors build healthcare SaaS?", answer: "Yes. Physicians have unique domain expertise that developers cannot replicate. Focus on workflow tools, education, and compliance, not medical advice or diagnosis." },
       { question: "Do I need HIPAA compliance?", answer: "Only if your tool handles protected health information (PHI). If your tool provides general education, workflow tools, or reference material without storing patient data, HIPAA does not apply." },
     ],
   },
   {
     slug: "for-real-estate-agents", profession: "Real Estate Agents", icon: "🏠",
-    unfairAdvantage: "Agents understand property valuation, local markets, and client communication — a massive, fragmented market.",
+    unfairAdvantage: "Agents understand property valuation, local markets, and client communication, a massive, fragmented market.",
     avgSalary: "$50K-$200K (commission-based)",
     transferableSkills: ["Property valuation", "Client relationship management", "Market analysis", "Negotiation", "Local networking"],
     ideas: [
@@ -292,7 +292,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-recruiters", profession: "Recruiters", icon: "🔍",
-    unfairAdvantage: "Recruiters understand candidate evaluation, sourcing, and matching — the core mechanics of a multi-billion dollar industry.",
+    unfairAdvantage: "Recruiters understand candidate evaluation, sourcing, and matching, the core mechanics of a multi-billion dollar industry.",
     avgSalary: "$60K-$150K",
     transferableSkills: ["Candidate sourcing", "Interview assessment", " ATS management", "Salary negotiation", "Pipeline management"],
     ideas: [
@@ -311,7 +311,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-project-managers", profession: "Project Managers", icon: "✅",
-    unfairAdvantage: "PMs understand process optimization, resource allocation, and stakeholder communication — critical operational skills.",
+    unfairAdvantage: "PMs understand process optimization, resource allocation, and stakeholder communication, critical operational skills.",
     avgSalary: "$80K-$150K",
     transferableSkills: ["Process design", "Resource planning", "Risk management", "Stakeholder reporting", "Gantt/chart creation"],
     ideas: [
@@ -324,13 +324,13 @@ export const industryIdeas: IndustryIdea[] = [
     toolsTheyAlreadyKnow: ["Jira", "Asana", "Monday.com", "MS Project", "Confluence", "Miro"],
     whatToAvoid: "Do not use your employer's project data, proprietary processes, or client information. Build generic PM tools that work with any team.",
     faqs: [
-      { question: "Can project managers build SaaS?", answer: "Yes. PMs excel at process optimization — the core of good SaaS. Focus on workflow automation tools. Use no-code platforms to build MVPs quickly." },
+      { question: "Can project managers build SaaS?", answer: "Yes. PMs excel at process optimization, the core of good SaaS. Focus on workflow automation tools. Use no-code platforms to build MVPs quickly." },
       { question: "What is the best PM micro-SaaS?", answer: "Status report automation. Every PM spends 2-3 hours per week writing status reports. A tool that auto-generates these from task data saves massive time and is worth $29/month." },
     ],
   },
   {
     slug: "for-data-analysts", profession: "Data Analysts", icon: "📊",
-    unfairAdvantage: "Analysts can build data-driven products, dashboards, and automation — the backbone of any modern SaaS.",
+    unfairAdvantage: "Analysts can build data-driven products, dashboards, and automation, the backbone of any modern SaaS.",
     avgSalary: "$70K-$140K",
     transferableSkills: ["SQL", "Python/R", "Data visualization", "Statistical analysis", "Dashboard design", "ETL pipelines"],
     ideas: [
@@ -349,7 +349,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-customer-success", profession: "Customer Success Managers", icon: "😊",
-    unfairAdvantage: "CSMs understand retention, churn prevention, and customer health — the highest-leverage revenue skills in SaaS.",
+    unfairAdvantage: "CSMs understand retention, churn prevention, and customer health, the highest-leverage revenue skills in SaaS.",
     avgSalary: "$70K-$130K",
     transferableSkills: ["Customer onboarding", "Churn prevention", "Health scoring", "Renewal management", "Customer communication"],
     ideas: [
@@ -368,7 +368,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-operations-managers", profession: "Operations Managers", icon: "⚙️",
-    unfairAdvantage: "Ops managers understand process efficiency, resource planning, and systems thinking — the foundation of operational SaaS.",
+    unfairAdvantage: "Ops managers understand process efficiency, resource planning, and systems thinking, the foundation of operational SaaS.",
     avgSalary: "$70K-$140K",
     transferableSkills: ["Process optimization", "Workflow design", "Vendor management", "Inventory planning", "Quality control"],
     ideas: [
@@ -381,13 +381,13 @@ export const industryIdeas: IndustryIdea[] = [
     toolsTheyAlreadyKnow: ["Notion", "Airtable", "Asana", "Excel", "Zapier"],
     whatToAvoid: "Do not use your employer's operational data, vendor contracts, or proprietary processes. Build generic tools applicable to any business.",
     faqs: [
-      { question: "Can operations managers build SaaS?", answer: "Yes. Ops managers excel at process automation — the core of B2B SaaS. Focus on workflow tools that replace manual spreadsheets and email chains." },
+      { question: "Can operations managers build SaaS?", answer: "Yes. Ops managers excel at process automation, the core of B2B SaaS. Focus on workflow tools that replace manual spreadsheets and email chains." },
       { question: "What is the best ops micro-SaaS?", answer: "Process documentation and SOP tools. Every growing company struggles with documentation. A tool that auto-generates SOPs from screen recordings saves 10+ hours per week." },
     ],
   },
   {
     slug: "for-executive-assistants", profession: "Executive Assistants", icon: "📅",
-    unfairAdvantage: "EAs understand scheduling, prioritization, and executive communication — the glue that keeps organizations running.",
+    unfairAdvantage: "EAs understand scheduling, prioritization, and executive communication, the glue that keeps organizations running.",
     avgSalary: "$60K-$120K",
     transferableSkills: ["Calendar management", "Travel planning", "Expense tracking", "Meeting preparation", "Executive communication"],
     ideas: [
@@ -406,7 +406,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-virtual-assistants", profession: "Virtual Assistants", icon: "🌐",
-    unfairAdvantage: "VAs manage multiple clients, tools, and workflows — they see cross-industry patterns others miss.",
+    unfairAdvantage: "VAs manage multiple clients, tools, and workflows, they see cross-industry patterns others miss.",
     avgSalary: "$30K-$80K",
     transferableSkills: ["Multi-client management", "Task automation", "Inbox management", "Social media scheduling", "Research"],
     ideas: [
@@ -425,7 +425,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-photographers", profession: "Photographers", icon: "📷",
-    unfairAdvantage: "Photographers understand visual branding, client delivery, and image workflow — a creative niche with spending power.",
+    unfairAdvantage: "Photographers understand visual branding, client delivery, and image workflow, a creative niche with spending power.",
     avgSalary: "$40K-$100K",
     transferableSkills: ["Image editing", "Client gallery management", "Visual composition", "Contract creation", "Portfolio curation"],
     ideas: [
@@ -444,7 +444,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-writers", profession: "Writers", icon: "✍️",
-    unfairAdvantage: "Writers understand content strategy, SEO, and audience engagement — the skills that drive traffic and revenue.",
+    unfairAdvantage: "Writers understand content strategy, SEO, and audience engagement, the skills that drive traffic and revenue.",
     avgSalary: "$50K-$120K",
     transferableSkills: ["Content strategy", "SEO writing", "Copywriting", "Editing", "Content repurposing", "Headline writing"],
     ideas: [
@@ -463,7 +463,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-trainers", profession: "Corporate Trainers", icon: "🎓",
-    unfairAdvantage: "Trainers understand adult learning, assessment design, and skill measurement — the core of the $370B training industry.",
+    unfairAdvantage: "Trainers understand adult learning, assessment design, and skill measurement, the core of the $370B training industry.",
     avgSalary: "$60K-$120K",
     transferableSkills: ["Curriculum design", "Assessment creation", "Learning management", "Workshop facilitation", "Feedback analysis"],
     ideas: [
@@ -482,7 +482,7 @@ export const industryIdeas: IndustryIdea[] = [
   },
   {
     slug: "for-supply-chain", profession: "Supply Chain Managers", icon: "🚚",
-    unfairAdvantage: "Supply chain managers understand logistics optimization, vendor management, and inventory forecasting — a data-rich domain.",
+    unfairAdvantage: "Supply chain managers understand logistics optimization, vendor management, and inventory forecasting, a data-rich domain.",
     avgSalary: "$80K-$150K",
     transferableSkills: ["Demand forecasting", "Inventory optimization", "Vendor negotiation", "Logistics planning", "ERP systems"],
     ideas: [

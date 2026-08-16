@@ -15,15 +15,15 @@ A 37-year-old Managing Director sat in a taxi in Amsterdam at 6 AM.
 
 Two notifications lit up his phone:
 
-1. Corporate escalation emails — colleagues fighting over responsibilities on the first day of his vacation.
+1. Corporate escalation emails, colleagues fighting over responsibilities on the first day of his vacation.
 
-2. A Stripe notification — "$0.97 received" from a stranger who bought something he'd built while he slept.
+2. A Stripe notification, "$0.97 received" from a stranger who bought something he'd built while he slept.
 
 He screamed. The driver thought he was insane.
 
 That $0.97 wasn't money. It was proof that the cage has a door.
 
-His name is Adrian. He built Invisible Exit — 5 tools that help corporate managers build invisible recurring revenue while employed.
+His name is Adrian. He built Invisible Exit, 5 tools that help corporate managers build invisible recurring revenue while employed.
 
 No quitting. No coding. No employer finding out.
 
@@ -50,7 +50,7 @@ Your salary: $120K/year.
 
 Even a BILLION DOLLAR EXIT doesn't buy your freedom. It buys a longer leash.
 
-That's the problem Invisible Exit solves. It's a system for building $4,000/month in recurring revenue from products YOU own — while you're still employed.
+That's the problem Invisible Exit solves. It's a system for building $4,000/month in recurring revenue from products YOU own, while you're still employed.
 
 5 AI-powered tools. $9/month. Cancel anytime.
 
@@ -65,7 +65,7 @@ That's the problem Invisible Exit solves. It's a system for building $4,000/mont
 
 If you've ever thought about building something on the side but didn't know where to start, this is worth a look:
 
-Invisible Exit — 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses:
+Invisible Exit, 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses:
 
 ✅ Freedom Number Calculator (know exactly how much you need)
 ✅ Idea Pipeline (500+ validated ideas, 48h validation)
@@ -123,7 +123,7 @@ const AffiliateAssetsPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Affiliate Assets — Swipe Copy, Emails, Banners | Invisible Exit"
+        title="Affiliate Assets, Swipe Copy, Emails, Banners | Invisible Exit"
         description="Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring."
         url="/affiliate-assets"
       />
@@ -172,7 +172,7 @@ const AffiliateAssetsPage = () => {
           <h2 className="text-h1 text-foreground mb-4 text-center">Your Tracking Links</h2>
           <p className="text-body text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
             Replace <code className="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-sm">AFFILIATE_CODE</code> with the referral code we agree with you by email.
-            There is no click-tracking cookie yet — attribution is manual, so tell people to mention your code.
+            There is no click-tracking cookie yet, attribution is manual, so tell people to mention your code.
           </p>
           <div className="space-y-3 max-w-2xl mx-auto">
             {LINK_STRUCTURES.map((link) => (
@@ -279,7 +279,7 @@ const AffiliateAssetsPage = () => {
                   <Image className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{banner.size} — {banner.name}</p>
+                  <p className="text-sm font-semibold text-foreground">{banner.size}, {banner.name}</p>
                   <p className="text-xs text-muted-foreground">{banner.desc}</p>
                 </div>
               </div>

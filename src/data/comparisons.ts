@@ -88,7 +88,7 @@ export const comparisons: ComparisonData[] = [
     intro:
       "The entity you choose for your side business affects your taxes, your privacy, and your ongoing paperwork. For corporate managers building an invisible exit, the right structure can also affect how visible your business is to your employer. Here's how LLC and S-Corp compare.",
     summary:
-      "An LLC is simpler, cheaper, and more private — ideal for the first 1-2 years of a side business. An S-Corp election saves on self-employment taxes once your profit exceeds ~$60,000/year. You can start as an LLC and elect S-Corp taxation later without changing the entity.",
+      "An LLC is simpler, cheaper, and more private, ideal for the first 1-2 years of a side business. An S-Corp election saves on self-employment taxes once your profit exceeds ~$60,000/year. You can start as an LLC and elect S-Corp taxation later without changing the entity.",
     table: [
       { criteria: "Formation cost", optionA: "$50–$500 (state filing)", optionB: "$50–$500 (same filing + S election)" },
       { criteria: "Ongoing fees", optionA: "$0–$800/year (varies by state)", optionB: "$0–$800/year + payroll processing" },
@@ -102,9 +102,9 @@ export const comparisons: ComparisonData[] = [
       { criteria: "Recommended for stealth ops", optionA: "Yes (start here)", optionB: "Elect later via form 2553" },
     ],
     verdictA:
-      "Start with an LLC. It's cheaper, simpler, and more flexible — perfect for the first 1-2 years while you validate your idea and build revenue. Use a registered agent (not your home address) for privacy.",
+      "Start with an LLC. It's cheaper, simpler, and more flexible, perfect for the first 1-2 years while you validate your idea and build revenue. Use a registered agent (not your home address) for privacy.",
     verdictB:
-      "Elect S-Corp taxation once your annual profit consistently exceeds $60,000. The tax savings from reduced self-employment tax outweigh the added payroll and filing complexity. You don't create a new entity — you file Form 2553 with the IRS.",
+      "Elect S-Corp taxation once your annual profit consistently exceeds $60,000. The tax savings from reduced self-employment tax outweigh the added payroll and filing complexity. You don't create a new entity, you file Form 2553 with the IRS.",
     faqs: [
       {
         question: "Should I form an LLC or S-Corp for my side business?",
@@ -114,7 +114,7 @@ export const comparisons: ComparisonData[] = [
       {
         question: "Does an LLC protect me from my employer finding out about my side business?",
         answer:
-          "An LLC with a registered agent (not your home address) creates a legal separation and keeps your name off public address records. Your employer won't see your business in property records or title searches. However, state business registries may list your name as the organizer — use a registered agent service for maximum privacy.",
+          "An LLC with a registered agent (not your home address) creates a legal separation and keeps your name off public address records. Your employer won't see your business in property records or title searches. However, state business registries may list your name as the organizer, use a registered agent service for maximum privacy.",
       },
       {
         question: "Can my employer stop me from forming an LLC?",
@@ -136,7 +136,7 @@ export const comparisons: ComparisonData[] = [
     intro:
       "The romanticized startup narrative says quit your job and go all-in. The practical reality for most corporate managers is different. Here's how a side business compares to a full-time startup on the criteria that actually matter.",
     summary:
-      "A side business wins on risk, lifestyle stability, and learning speed. A full-time startup wins on growth speed and focus. For corporate managers earning $120K+, the side business is the better first step — it preserves your salary while you test and build. Go full-time only after your recurring revenue covers your core expenses.",
+      "A side business wins on risk, lifestyle stability, and learning speed. A full-time startup wins on growth speed and focus. For corporate managers earning $120K+, the side business is the better first step, it preserves your salary while you test and build. Go full-time only after your recurring revenue covers your core expenses.",
     table: [
       { criteria: "Financial risk", optionA: "Very low (salary intact)", optionB: "High (no income for 6-18 months)" },
       { criteria: "Time to build", optionA: "Slower (5-15 hrs/week)", optionB: "Faster (40-60 hrs/week)" },
@@ -157,7 +157,7 @@ export const comparisons: ComparisonData[] = [
       {
         question: "Can I build a successful startup as a side business?",
         answer:
-          "Yes. Many successful SaaS companies started as side projects — Basecamp, Gumroad, and countless micro-SaaS businesses. The key is choosing a business model that fits 5-15 hours per week (micro-SaaS, not consumer apps) and being consistent for 12-18 months.",
+          "Yes. Many successful SaaS companies started as side projects, Basecamp, Gumroad, and countless micro-SaaS businesses. The key is choosing a business model that fits 5-15 hours per week (micro-SaaS, not consumer apps) and being consistent for 12-18 months.",
       },
       {
         question: "When should I quit my job to go full-time?",
@@ -179,7 +179,7 @@ export const comparisons: ComparisonData[] = [
     intro:
       "The conventional startup advice is to build a personal brand. For corporate managers, that can create unnecessary risk. Here's the honest comparison between building in public with your name and building an anonymous faceless brand.",
     summary:
-      "A personal brand grows faster but creates employer visibility and personal risk. An anonymous business is safer and more sellable but grows slower. For corporate managers in sensitive roles, the anonymous approach is strongly recommended — you can always reveal yourself later once it's safe.",
+      "A personal brand grows faster but creates employer visibility and personal risk. An anonymous business is safer and more sellable but grows slower. For corporate managers in sensitive roles, the anonymous approach is strongly recommended, you can always reveal yourself later once it's safe.",
     table: [
       { criteria: "Audience growth speed", optionA: "Faster (personality attracts)", optionB: "Slower (content quality only)" },
       { criteria: "Employer visibility risk", optionA: "High", optionB: "Very low" },
@@ -195,7 +195,7 @@ export const comparisons: ComparisonData[] = [
     verdictA:
       "Choose a personal brand only if your employer doesn't restrict outside activity, you're comfortable being visible, and you want to build a reputation that compounds with your career. This is the better choice for educators, consultants, and non-competing niches.",
     verdictB:
-      "Choose an anonymous business if you're a corporate manager in a sensitive role, your employer has strict policies, or you simply value privacy. Build through SEO, faceless YouTube, and value-first content. You can always reveal yourself later — but you can't un-reveal.",
+      "Choose an anonymous business if you're a corporate manager in a sensitive role, your employer has strict policies, or you simply value privacy. Build through SEO, faceless YouTube, and value-first content. You can always reveal yourself later, but you can't un-reveal.",
     faqs: [
       {
         question: "Can I start anonymous and build a personal brand later?",
@@ -298,7 +298,7 @@ export const comparisons: ComparisonData[] = [
       "Micro-SaaS vs e-commerce for corporate managers. Compare margins, inventory, scalability, and time investment.",
     h1: "Micro-SaaS vs. E-Commerce: Which Is Better for Side Income?",
     intro:
-      "Both can generate significant side income. But they operate on completely different economic models — one sells digital access, the other sells physical products.",
+      "Both can generate significant side income. But they operate on completely different economic models, one sells digital access, the other sells physical products.",
     summary:
       "Micro-SaaS offers 80-90% gross margins, zero inventory, and recurring revenue. E-commerce offers faster initial traction but lower margins (20-40%), inventory risk, and fulfillment complexity. For time-constrained managers, micro-SaaS is simpler.",
     table: [

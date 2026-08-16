@@ -22,7 +22,7 @@ import { trackEvent } from "@/lib/analytics";
 import GuaranteeBox from "@/components/GuaranteeBox";
 
 /**
- * DOTCOM SECRETS: Chapter 1 — Value Ladder
+ * DOTCOM SECRETS: Chapter 1:  Value Ladder
  *
  * This fills the gap between $17.99/mo (Founding Member) and $2,000 (Intensive).
  * Russell's rule: max 10x between rungs. $17.99 → $97 = 5.4x. $97 → $2,000 = 20.6x.
@@ -32,7 +32,7 @@ import GuaranteeBox from "@/components/GuaranteeBox";
  *   - Build your first product live with Adrian + 9 other managers
  *   - Go live by Sunday evening
  *
- * This is Russell's "Group Coaching" rung — below 1-on-1 ($2K) but above DIY tools ($18/mo).
+ * This is Russell's "Group Coaching" rung, below 1-on-1 ($2K) but above DIY tools ($18/mo).
  */
 const WeekendWorkshopPage = () => {
   const [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ const WeekendWorkshopPage = () => {
     setLoading(true);
     trackEvent("weekend_workshop_applied", { source: "workshop_page" });
     try {
-      // Try checkout directly — if Stripe price not configured, fall back to application
+      // Try checkout directly, if Stripe price not configured, fall back to application
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: {
           tier: "workshop",
@@ -163,7 +163,7 @@ const WeekendWorkshopPage = () => {
     },
     {
       q: "What if I can't attend the dates?",
-      a: "All sessions are recorded. You get lifetime access to the recordings and the private Slack. But the magic is in attending live — the energy, accountability, and real-time feedback are why this works.",
+      a: "All sessions are recorded. You get lifetime access to the recordings and the private Slack. But the magic is in attending live, the energy, accountability, and real-time feedback are why this works.",
     },
     {
       q: "What if I don't have an idea yet?",
@@ -180,7 +180,7 @@ const WeekendWorkshopPage = () => {
   return (
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
-        title="The Invisible Exit Weekend Workshop — Build Your Product in 48 Hours ($97)"
+        title="The Invisible Exit Weekend Workshop, Build Your Product in 48 Hours ($97)"
         description="2-day virtual workshop with Adrian and 9 other managers. Build your first micro-SaaS live. Go from idea to launch by Sunday evening. Limited to 10 seats."
         url="/weekend-workshop"
       />
@@ -348,7 +348,7 @@ const WeekendWorkshopPage = () => {
               },
               {
                 quote:
-                  "Being in a room with 9 other managers doing the same thing — that's the magic. You can't replicate that energy alone.",
+                  "Being in a room with 9 other managers doing the same thing, that's the magic. You can't replicate that energy alone.",
                 name: "Engineering Manager",
                 detail: "Built + launched in weekend 1",
               },

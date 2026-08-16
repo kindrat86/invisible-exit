@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freedom Number Calculator — When Can You Quit Your Job? | Invisible Exit</title>
+<title>Freedom Number Calculator, When Can You Quit Your Job? | Invisible Exit</title>
 <meta name="description" content="Free Freedom Number Calculator. Input your salary, expenses, and side-business MRR to see exactly when your micro-SaaS income replaces your day job. Includes tax-adjusted projections and a 3-year timeline.">
 <link rel="canonical" href="https://invisibleexit.com/tools/freedom-calculator">
-<meta property="og:title" content="Freedom Number Calculator — When Can You Quit Your Job?">
+<meta property="og:title" content="Freedom Number Calculator, When Can You Quit Your Job?">
 <meta property="og:description" content="Calculate when your side business income replaces your salary. Tax-adjusted, with a 3-year MRR projection.">
 <meta property="og:url" content="https://invisibleexit.com/tools/freedom-calculator">
 <meta property="og:type" content="website">
@@ -34,7 +34,7 @@
     {"@type": "Question", "name": "What is a freedom number?", "acceptedAnswer": {"@type": "Answer", "text": "Your freedom number is the monthly recurring revenue (MRR) you need from your side business to replace your day-job salary after taxes. It's calculated as (annual salary + taxes + benefits) ÷ 12, adjusted for self-employment tax and business expenses."}},
     {"@type": "Question", "name": "How is the freedom number calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Freedom number = (Gross salary + employer-side taxes lost + benefits value + business expenses) ÷ 12. We add ~7.65% for the employer-side FICA you lose, ~$8K/yr for health insurance, and subtract deductible business expenses."}},
     {"@type": "Question", "name": "How fast can a micro-SaaS grow?", "acceptedAnswer": {"@type": "Answer", "text": "Solo-founded micro-SaaS businesses typically grow 10-20% month-over-month in years 1-2. At 15% MoM growth, $2K MRR becomes $10K MRR in ~12 months. The calculator uses conservative (10%), realistic (15%), and aggressive (20%) growth scenarios."}},
-    {"@type": "Question", "name": "Can I embed this calculator on my site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — this calculator is free to embed. Visit the embed page at /tools/freedom-calculator/embed to get a single script tag that renders the full interactive calculator on any website."}}
+    {"@type": "Question", "name": "Can I embed this calculator on my site?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this calculator is free to embed. Visit the embed page at /tools/freedom-calculator/embed to get a single script tag that renders the full interactive calculator on any website."}}
   ]
 }
 </script>
@@ -93,7 +93,7 @@ footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border
 .insight-box { background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); padding: 16px 20px;
   border-radius: 0 12px 12px 0; margin: 20px 0; font-size: 0.95rem; }
 </style>
-<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Invisible Exit", "url": "https://invisibleexit.com", "description": "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.", "disambiguatingDescription": "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income — unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory."}</script>
+<!-- canonical-disambiguation --><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Invisible Exit", "url": "https://invisibleexit.com", "description": "Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.", "disambiguatingDescription": "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income, unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory."}</script>
 </head>
 <body>
 <div class="container">
@@ -269,7 +269,7 @@ function calculate() {
     : realisticMonths <= 12
     ? `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. Focus on reducing churn and acquiring 2-3 new customers/week.`
     : realisticMonths <= 24
-    ? `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. The key lever is growth rate — moving from 15% to 20% MoM cuts ${projectTimeline(mrr, fn, 0.15) - projectTimeline(mrr, fn, 0.20)} months off your timeline.`
+    ? `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. The key lever is growth rate, moving from 15% to 20% MoM cuts ${projectTimeline(mrr, fn, 0.15) - projectTimeline(mrr, fn, 0.20)} months off your timeline.`
     : `At 15% monthly growth, you'll reach your freedom number in <strong>${realisticMonths} months</strong>. Consider a pricing increase or vertical expansion to accelerate.`;
   document.getElementById('insight').innerHTML = insight;
 
@@ -277,7 +277,7 @@ function calculate() {
   const params = new URLSearchParams({ s: salary, m: mrr, e: expenses, l: living, f: filing });
   const shareUrl = `https://invisibleexit.com/tools/freedom-calculator#${params.toString()}`;
   document.getElementById('share-url').value = shareUrl;
-  const tweetText = encodeURIComponent(`My freedom number is ${fmt(fn)}/mo MRR — that's when my side business replaces my salary. Calculate yours:`);
+  const tweetText = encodeURIComponent(`My freedom number is ${fmt(fn)}/mo MRR, that's when my side business replaces my salary. Calculate yours:`);
   document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${encodeURIComponent(shareUrl)}`;
 }
 

@@ -80,7 +80,7 @@ EDITS = [
     ),
     (
         "report4 intro: 'We analyzed 300+'",
-        "Stop guessing your pricing. We analyzed 300+ bootstrapped micro-SaaS products to determine what solo founders actually charge — and what converts. This report gives you the data to price with confidence.",
+        "Stop guessing your pricing. We analyzed 300+ bootstrapped micro-SaaS products to determine what solo founders actually charge, and what converts. This report gives you the data to price with confidence.",
         "Stop guessing your pricing. This report compiles publicly listed pricing from bootstrapped micro-SaaS products to show what solo founders actually charge. The figures are editorial estimates drawn from public pricing pages, not first-party research.",
     ),
     (

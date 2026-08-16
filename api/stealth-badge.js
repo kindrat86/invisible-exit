@@ -1,4 +1,4 @@
-// Stealth Score SVG Badge API — Vercel serverless function
+// Stealth Score SVG Badge API, Vercel serverless function
 // GET /api/stealth-badge?score=N[&style=benchmark]
 module.exports = function handler(req, res) {
   const { score = '0', style = 'default' } = req.query;

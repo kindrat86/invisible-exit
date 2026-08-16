@@ -146,7 +146,7 @@ const TEMPLATES: Record<string, IdeaTemplate[]> = {
     { title: "{noun} Certificate Generator", description: "Creates professional certificates for {noun} course completions. Includes verification links and bulk generation for institutions.", tags: ["education", "automation", "B2B", "SaaS"] },
   ],
   "Real Estate": [
-    { title: "Virtual Tour Creator for {noun}", description: "Lets {noun} agents create 360° virtual tours from smartphone photos. No expensive cameras needed — just upload and publish.", tags: ["real-estate", "content", "B2B", "SaaS"] },
+    { title: "Virtual Tour Creator for {noun}", description: "Lets {noun} agents create 360° virtual tours from smartphone photos. No expensive cameras needed, just upload and publish.", tags: ["real-estate", "content", "B2B", "SaaS"] },
     { title: "{noun} CRM Lite", description: "A lightweight CRM built specifically for {noun} professionals. Tracks leads, follow-ups, and deal stages without the bloat.", tags: ["real-estate", "CRM", "B2B", "SaaS"] },
     { title: "Rental Application Processor for {noun}", description: "Automates {noun} rental application screening. Background checks, credit reports, and tenant scoring in one dashboard.", tags: ["real-estate", "automation", "B2B", "SaaS"] },
     { title: "{noun} Market Report Generator", description: "Auto-generates beautiful {noun} market reports from MLS data. Agents share branded reports to position as local experts.", tags: ["real-estate", "marketing", "automation", "B2B"] },
@@ -283,7 +283,7 @@ const TEMPLATES: Record<string, IdeaTemplate[]> = {
     { title: "Setlist Planner for {noun}", description: "Collaborative setlist planning for {noun} performers. Track song durations, transitions, and audience energy flow.", tags: ["entertainment", "planning", "B2C", "SaaS"] },
     { title: "{noun} Streaming Analytics", description: "Cross-platform streaming analytics for {noun} content creators. Track views, engagement, and revenue across platforms.", tags: ["entertainment", "analytics", "B2C", "SaaS"] },
     { title: "Podcast Guest Matcher for {noun}", description: "Connects {noun} podcast hosts with relevant guests. AI-powered matching based on topics, audience, and availability.", tags: ["entertainment", "marketplace", "AI", "B2B"] },
-    { title: "{noun} Content Licensing Platform", description: "Marketplace for licensing {noun} content — music, photos, videos. Handles rights management and royalty tracking.", tags: ["entertainment", "marketplace", "B2B", "platform"] },
+    { title: "{noun} Content Licensing Platform", description: "Marketplace for licensing {noun} content, music, photos, videos. Handles rights management and royalty tracking.", tags: ["entertainment", "marketplace", "B2B", "platform"] },
   ],
   "Non-Profit": [
     { title: "Donor Management System for {noun}", description: "Simple donor CRM for {noun} organizations. Track donations, send thank-you letters, and manage campaigns.", tags: ["non-profit", "CRM", "B2B", "SaaS"] },

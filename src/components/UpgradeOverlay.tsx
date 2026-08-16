@@ -56,7 +56,7 @@ export default function UpgradeOverlay({
           disabled={checkoutLoading}
           className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-5 py-2.5 rounded-xl transition-colors disabled:opacity-50 text-xs"
         >
-          {checkoutLoading ? "Loading..." : `${ctaText} — $17.99/mo`}
+          {checkoutLoading ? "Loading..." : `${ctaText}, $17.99/mo`}
         </button>
 
         <p className="text-[10px] text-[#9CA3AF] mt-2">

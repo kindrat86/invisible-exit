@@ -75,7 +75,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (allBadges.length >= 10) {
       const toDelete = allBadges.slice(0, allBadges.length - 9);
       if (toDelete.length > 0) {
-        // SQLite has no arrays / ANY() — expand to IN (?, ?, ...)
+        // SQLite has no arrays / ANY(), expand to IN (?, ?, ...)
         const placeholders = toDelete.map((_, i) => `$${i + 1}`).join(", ");
         await execute(
           `DELETE FROM fym_badges WHERE id IN (${placeholders})`,

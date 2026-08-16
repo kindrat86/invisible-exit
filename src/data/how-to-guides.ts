@@ -34,7 +34,7 @@ export const howToGuides: HowToGuide[] = [
     metaDescription: "Step-by-step guide to starting a micro-SaaS with no money. Free tools, zero-cost validation, and how to launch without spending a cent.",
     h1: "How to Start a Micro-SaaS with No Money",
     intro: "You do not need capital to start a profitable micro-SaaS. The tools are free. The audience is waiting. Here is exactly how to build your first $4K/month micro-SaaS for $0 upfront.",
-    whyThisMatters: "The biggest barrier for corporate managers is not skill or time — it's the belief that starting a business requires money. It does not. You can validate, build, and launch a micro-SaaS for exactly $0. Every dollar you spend before validating demand is a dollar wasted.",
+    whyThisMatters: "The biggest barrier for corporate managers is not skill or time, it's the belief that starting a business requires money. It does not. You can validate, build, and launch a micro-SaaS for exactly $0. Every dollar you spend before validating demand is a dollar wasted.",
     steps: [
       {
         name: "Find a Niche with a Painful Problem",
@@ -50,7 +50,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Build the MVP Yourself (AI-Powered)",
-        description: "Use free AI tools to build your MVP. Describe what you want to Cursor or Claude and iterate. For no-code options, Bubble's free tier lets you build full applications. The goal is a working prototype for 1-3 users — not a polished product.",
+        description: "Use free AI tools to build your MVP. Describe what you want to Cursor or Claude and iterate. For no-code options, Bubble's free tier lets you build full applications. The goal is a working prototype for 1-3 users, not a polished product.",
         tools: ["Claude (free tier)", "Cursor (free tier)", "Bubble (free tier)", "GitHub (free for public repos)", "Vercel (hobby tier)"],
         timeEstimate: "20-40 hours over 2-3 weeks",
       },
@@ -64,7 +64,7 @@ export const howToGuides: HowToGuide[] = [
         name: "Iterate Based on Real Usage",
         description: "Watch how your first customers use the product. Fix the pain points they hit. Add the features they ask for repeatedly. Ignore everything else. Do not add features until at least 3 customers ask for the same thing.",
         tools: ["PostHog (free up to 1M events)", "Google Analytics (free)", "Simple email (free)"],
-        timeEstimate: "Ongoing — 3-5 hours/week",
+        timeEstimate: "Ongoing, 3-5 hours/week",
       },
     ],
     proTips: [
@@ -93,7 +93,7 @@ export const howToGuides: HowToGuide[] = [
     metaDescription: "Actionable playbook for getting your first 10 paying customers. Step-by-step outreach, positioning, and conversion tactics that work for solo founders.",
     h1: "How to Find Your First 10 Paying Customers",
     intro: "Your first 10 customers determine whether your micro-SaaS succeeds or fails. Here is the exact playbook that works for solo founders with no audience, no budget, and no connections.",
-    whyThisMatters: "Most micro-SaaS founders spend months building and then realize they have no idea how to find customers. Your first 10 should come before launch — not after. These 10 people will shape your product, your pricing, and your positioning. They are worth 100x more than their revenue.",
+    whyThisMatters: "Most micro-SaaS founders spend months building and then realize they have no idea how to find customers. Your first 10 should come before launch, not after. These 10 people will shape your product, your pricing, and your positioning. They are worth 100x more than their revenue.",
     steps: [
       {
         name: "Build a List of 100 Ideal Prospects",
@@ -129,8 +129,8 @@ export const howToGuides: HowToGuide[] = [
     proTips: [
       "Do not cold email. Start conversations first. People buy from people they trust.",
       "Target prospects who are actively complaining about the problem you solve. Their pain is fresh. They are ready for a solution.",
-      "Use your personal LinkedIn profile — not a company page. People connect with people, not logos.",
-      "Give so much value upfront that they feel obligated to try your product. Free guides, templates, checklists — anything that solves a piece of their problem.",
+      "Use your personal LinkedIn profile, not a company page. People connect with people, not logos.",
+      "Give so much value upfront that they feel obligated to try your product. Free guides, templates, checklists, anything that solves a piece of their problem.",
     ],
     commonMistakes: [
       "Building a solution before talking to potential customers. Talk to 20 people before you write a line of code.",
@@ -156,7 +156,7 @@ export const howToGuides: HowToGuide[] = [
     steps: [
       {
         name: "Identify Problems, Not Solutions",
-        description: "Look for problems that cause real pain — lost money, wasted time, legal risk, customer complaints. The more painful the problem, the easier the sell. Search for phrases like 'I hate...', 'this is so frustrating...', 'wish there was a tool...' in your target industry.",
+        description: "Look for problems that cause real pain, lost money, wasted time, legal risk, customer complaints. The more painful the problem, the easier the sell. Search for phrases like 'I hate...', 'this is so frustrating...', 'wish there was a tool...' in your target industry.",
         tools: ["Reddit (niche subreddits)", "GummySearch", "Ahrefs free tools", "Google 'problem + reviews'"],
         timeEstimate: "5-10 hours",
       },
@@ -174,7 +174,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Analyze the Competition",
-        description: "A perfect niche has 3-10 competitors — enough to validate demand, not so many that the market is saturated. If there are zero competitors, either the problem is not real or the market is too small. If there are 50+, you are entering a red ocean.",
+        description: "A perfect niche has 3-10 competitors, enough to validate demand, not so many that the market is saturated. If there are zero competitors, either the problem is not real or the market is too small. If there are 50+, you are entering a red ocean.",
         tools: ["Google search for '[niche] software'", "G2/Capterra for the category", "Product Hunt for recent launches", "Crunchbase for funded competitors"],
         timeEstimate: "2-3 hours",
       },
@@ -189,7 +189,7 @@ export const howToGuides: HowToGuide[] = [
       "Pick a niche related to your current profession. Your domain knowledge is a massive moat.",
       "B2B niches are better than B2C. Businesses have budgets and are used to paying for tools.",
       'Look for "boring" niches. Exciting markets (AI, crypto, creator economy) are crowded. Boring markets (plumbing compliance, dental billing, HVAC scheduling) are gold mines.',
-      "The best niches have a professional association, trade magazine, or certification — a central place to find all your customers.",
+      "The best niches have a professional association, trade magazine, or certification, a central place to find all your customers.",
     ],
     commonMistakes: [
       "Picking a niche you have no connection to. Building software for dentists when you have never been in a dental office is harder than building for your own profession.",
@@ -213,13 +213,13 @@ export const howToGuides: HowToGuide[] = [
     steps: [
       {
         name: "Form a Privacy-First LLC",
-        description: "Form your LLC in Wyoming, New Mexico, or Delaware — the most privacy-friendly states. Use a registered agent service (Northwest Registered Agent or similar) so the agent's address appears on public filings, not your home address. Your personal name does not appear on public LLC records.",
+        description: "Form your LLC in Wyoming, New Mexico, or Delaware, the most privacy-friendly states. Use a registered agent service (Northwest Registered Agent or similar) so the agent's address appears on public filings, not your home address. Your personal name does not appear on public LLC records.",
         tools: ["Northwest Registered Agent ($39 + state fee)", "Wyoming Secretary of State", "New Mexico Secretary of State"],
         timeEstimate: "3-7 days processing",
       },
       {
         name: "Get an EIN from the IRS",
-        description: "Get your Employer Identification Number (EIN) from the IRS. It is free and takes 5 minutes online. Use the EIN for all banking and payment processor applications — never give out your SSN to business partners.",
+        description: "Get your Employer Identification Number (EIN) from the IRS. It is free and takes 5 minutes online. Use the EIN for all banking and payment processor applications, never give out your SSN to business partners.",
         tools: ["IRS EIN Online Assistant (free)"],
         timeEstimate: "5 minutes",
       },
@@ -231,7 +231,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Set Up a Payment Processor",
-        description: "Sign up for Stripe or Lemon Squeezy with your LLC information. Customer receipts and credit card statements show your business name — not your personal name. Use a virtual mailbox address for the processor's records.",
+        description: "Sign up for Stripe or Lemon Squeezy with your LLC information. Customer receipts and credit card statements show your business name, not your personal name. Use a virtual mailbox address for the processor's records.",
         tools: ["Stripe (pay per transaction)", "Lemon Squeezy (5% + $0.50)", "Polar (open-source alternative)"],
         timeEstimate: "1-2 hours",
       },
@@ -243,10 +243,10 @@ export const howToGuides: HowToGuide[] = [
       },
     ],
     proTips: [
-      "New Mexico LLCs have the strongest privacy — no public disclosure of members and no annual report requirement.",
+      "New Mexico LLCs have the strongest privacy, no public disclosure of members and no annual report requirement.",
       "Use a completely separate email and phone number for your business. Google Voice (free) gives you a second number.",
       "Never use your home address for anything business-related. Use the registered agent or virtual mailbox.",
-      "Set up a business credit card (Stripe or Mercury) to build business credit — separate from personal credit.",
+      "Set up a business credit card (Stripe or Mercury) to build business credit, separate from personal credit.",
     ],
     commonMistakes: [
       "Using your home address for the LLC formation. This makes your address public. Always use a registered agent.",
@@ -255,7 +255,7 @@ export const howToGuides: HowToGuide[] = [
       "Opening a personal bank account for business deposits. This creates legal liability and accounting headaches.",
     ],
     faqs: [
-      { question: "Is it legal to open a business bank account anonymously?", answer: "No bank can offer a truly anonymous account (federal KYC laws require identity verification). But the bank knows you — your name does not appear on statements, checks, or public records." },
+      { question: "Is it legal to open a business bank account anonymously?", answer: "No bank can offer a truly anonymous account (federal KYC laws require identity verification). But the bank knows you, your name does not appear on statements, checks, or public records." },
       { question: "Which online bank is best for anonymous LLCs?", answer: "Mercury is the most popular for startup LLCs. It has no minimum balance, no monthly fees, and works with privacy-friendly state LLCs (Wyoming, New Mexico, Delaware)." },
       { question: "Do I need a physical address for my business bank account?", answer: "Yes. Use a virtual mailbox service that provides a real street address, not a PO Box. iPostal1 and Anytime Mailbox provide these and scan your mail online." },
     ],
@@ -271,25 +271,25 @@ export const howToGuides: HowToGuide[] = [
     steps: [
       {
         name: "Friday Evening: Research & Targeting",
-        description: "Spend 2-3 hours finding where your target customers hang out online. Search Reddit, niche forums, LinkedIn groups, and Facebook groups for people actively complaining about the problem. Identify 50-100 specific people who would benefit from a solution. The more specific, the better — 'plumbing contractors in Texas who struggle with invoice follow-up.'",
+        description: "Spend 2-3 hours finding where your target customers hang out online. Search Reddit, niche forums, LinkedIn groups, and Facebook groups for people actively complaining about the problem. Identify 50-100 specific people who would benefit from a solution. The more specific, the better, 'plumbing contractors in Texas who struggle with invoice follow-up.'",
         tools: ["Reddit search", "LinkedIn Groups", "Facebook Groups", "Google Sheets (free)"],
         timeEstimate: "2-3 hours",
       },
       {
         name: "Saturday: Build a Validation Landing Page",
-        description: "Create a single landing page with: (1) headline describing the problem, (2) your proposed solution in one sentence, (3) a 'Get Early Access' or 'Pre-Order Now' button. Use Carrd (free) — it takes 30 minutes. The page should look like a real product is coming. Add a $19/month pre-order price or a free beta signup.",
+        description: "Create a single landing page with: (1) headline describing the problem, (2) your proposed solution in one sentence, (3) a 'Get Early Access' or 'Pre-Order Now' button. Use Carrd (free), it takes 30 minutes. The page should look like a real product is coming. Add a $19/month pre-order price or a free beta signup.",
         tools: ["Carrd (free)", "Google Forms (free)", "Buttondown (free for <100 subscribers)", "Canva (free for one design)"],
         timeEstimate: "1-2 hours",
       },
       {
         name: "Saturday: Drive Targeted Traffic",
-        description: "Post in 3-5 places where your target audience hangs out. Reddit posts work best if you are genuinely helpful. LinkedIn posts to your professional network. Niche Facebook group posts if allowed. Do not pitch — share the problem and mention you are building a solution. Track clicks and sign-ups with a free link shortener or UTM parameters.",
+        description: "Post in 3-5 places where your target audience hangs out. Reddit posts work best if you are genuinely helpful. LinkedIn posts to your professional network. Niche Facebook group posts if allowed. Do not pitch, share the problem and mention you are building a solution. Track clicks and sign-ups with a free link shortener or UTM parameters.",
         tools: ["Reddit (free)", "LinkedIn (free)", "Facebook Groups (free)", "Bitly (free)", "Google Analytics (free)"],
         timeEstimate: "2-3 hours + monitoring",
       },
       {
         name: "Sunday: Analyze Results & Decide",
-        description: "Check your results. Key metrics: (1) 100+ visitors to landing page, (2) 10+ email signups or pre-orders, (3) 3+ people who say 'I would pay for this' in DMs. If you hit these numbers, you have validation. If not, the idea needs work — different niche, different problem, or different positioning.",
+        description: "Check your results. Key metrics: (1) 100+ visitors to landing page, (2) 10+ email signups or pre-orders, (3) 3+ people who say 'I would pay for this' in DMs. If you hit these numbers, you have validation. If not, the idea needs work, different niche, different problem, or different positioning.",
         tools: ["Google Analytics (free)", "Email count", "DM responses"],
         timeEstimate: "1-2 hours",
       },
@@ -297,7 +297,7 @@ export const howToGuides: HowToGuide[] = [
     proTips: [
       "Pre-sell at a real price. Getting 5 people to enter their credit card (even if you refund them) is stronger validation than 500 email signups.",
       "Do not post in startup communities. They are not your customers. Post where your actual target audience hangs out.",
-      "The validation test is: would someone pay real money for this today — not 'this is interesting' or 'I would use the free version.'",
+      "The validation test is: would someone pay real money for this today, not 'this is interesting' or 'I would use the free version.'",
       "If you cannot get 100 targeted visitors in a weekend, your niche may be too small or your distribution channel is wrong.",
     ],
     commonMistakes: [
@@ -319,7 +319,7 @@ export const howToGuides: HowToGuide[] = [
     metaDescription: "Complete guide to operating a side business without coworkers finding out. Social media isolation, public record privacy, and operational security best practices.",
     h1: "How to Hide Your Side Business from Coworkers",
     intro: "Your side business is nobody's business at work. But in the age of social media and public business records, keeping it hidden requires intentional effort. Here is the complete operational security playbook.",
-    whyThisMatters: "The #1 reason employed founders get discovered is not their employer investigating — it is accidental exposure. Coworker sees a TikTok video. LinkedIn algorithm suggests your business page to a teammate. A client happens to work at your company. Operational security prevents these accidents before they happen.",
+    whyThisMatters: "The #1 reason employed founders get discovered is not their employer investigating, it is accidental exposure. Coworker sees a TikTok video. LinkedIn algorithm suggests your business page to a teammate. A client happens to work at your company. Operational security prevents these accidents before they happen.",
     steps: [
       {
         name: "Create a Separate Digital Identity",
@@ -341,7 +341,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Operate on Separate Devices and Networks",
-        description: "Use a personal computer for your side business — never your work laptop. Use a personal hotspot or home internet, not company Wi-Fi. If you must check business notifications during lunch, use your phone's cellular data, not the company guest network.",
+        description: "Use a personal computer for your side business, never your work laptop. Use a personal hotspot or home internet, not company Wi-Fi. If you must check business notifications during lunch, use your phone's cellular data, not the company guest network.",
         tools: ["Personal laptop (already own)", "Phone cellular data (already have)", "Personal hotspot on phone (free)"],
         timeEstimate: "Ongoing habit",
       },
@@ -355,7 +355,7 @@ export const howToGuides: HowToGuide[] = [
     proTips: [
       "The most common discovery method: algorithm suggestions. TikTok, LinkedIn, and Instagram will suggest your business content to coworkers because of mutual connections. Counteract by blocking coworkers on business accounts preemptively.",
       "Use a VPN on your personal devices. If you ever need to access business accounts from a shared network (coffee shop, airport), the VPN prevents easy traffic inspection.",
-      "Do not tell a single coworker — not even your closest work friend. Secrets in an office spread fast. One person knowing creates a 10x exposure risk.",
+      "Do not tell a single coworker, not even your closest work friend. Secrets in an office spread fast. One person knowing creates a 10x exposure risk.",
     ],
     commonMistakes: [
       "Using your real photo or name on business social media. A faceless brand with a logo avatar protects you.",
@@ -366,7 +366,7 @@ export const howToGuides: HowToGuide[] = [
     faqs: [
       { question: "Can my employer find my LLC through a public records search?", answer: "Only if your name is on the LLC filing. A Wyoming LLC with a registered agent keeps your name off public records. Your employer would need to know your business name to find it." },
       { question: "What if a coworker finds my business TikTok?", answer: "Block your coworkers preemptively. TikTok's algorithm shows content from mutual connections. If you are faceless and use a brand name, they would need to know it is you to identify you." },
-      { question: "Should I use a different name for my business?", answer: "Yes. Use your DBA or LLC name — not your personal name. This creates a legal and practical separation between your personal and business identities." },
+      { question: "Should I use a different name for my business?", answer: "Yes. Use your DBA or LLC name, not your personal name. This creates a legal and practical separation between your personal and business identities." },
     ],
   },
   {
@@ -375,12 +375,12 @@ export const howToGuides: HowToGuide[] = [
     metaTitle: "How to Go from $0 to $4,000 MRR with a Micro-SaaS | Invisible Exit",
     metaDescription: "The exact playbook for taking a micro-SaaS from zero to $4,000/month recurring revenue. Pricing, customer acquisition, retention, and the milestones along the way.",
     h1: "How to Go from $0 to $4,000 MRR",
-    intro: "$4,000/month is the freedom number for most corporate managers — the point where a side business replaces your paycheck's utility and you can consider quitting. Here is exactly how to get there.",
+    intro: "$4,000/month is the freedom number for most corporate managers, the point where a side business replaces your paycheck's utility and you can consider quitting. Here is exactly how to get there.",
     whyThisMatters: "$4,000/month is the inflection point. Below $4K, the side business is a hobby with benefits. Above $4K, it becomes a real option. Every step to $4K follows a predictable pattern. Understanding the pattern means you can stop guessing and start executing.",
     steps: [
       {
         name: "Phase 1: Get to $500 MRR (1-3 months)",
-        description: "Find 10-20 customers who will pay $29-49/month. Do not optimize pricing yet. Use manual outreach, personal onboarding, and extreme customer service. At this stage, your product is you — the personal attention is the value. Key metric: monthly churn under 10%.",
+        description: "Find 10-20 customers who will pay $29-49/month. Do not optimize pricing yet. Use manual outreach, personal onboarding, and extreme customer service. At this stage, your product is you, the personal attention is the value. Key metric: monthly churn under 10%.",
         tools: ["Stripe", "Calendly", "Simple email", "PostHog (free)"],
         timeEstimate: "1-3 months at 10-15 hours/week",
       },
@@ -392,7 +392,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Phase 3: $1,500 to $3,000 MRR (3-6 months)",
-        description: "This is the hardest phase. You need 50-80 customers. Automate what you can. Reduce personal onboarding to a video walkthrough. Add $5-10/month in features and raise prices for new customers. Start thinking about a single hire — a freelancer for support or development.",
+        description: "This is the hardest phase. You need 50-80 customers. Automate what you can. Reduce personal onboarding to a video walkthrough. Add $5-10/month in features and raise prices for new customers. Start thinking about a single hire, a freelancer for support or development.",
         tools: ["Customer onboarding video", "Loom (free)", "Zapier (free tier)", "Upwork for first hire"],
         timeEstimate: "3-6 months",
       },
@@ -419,7 +419,7 @@ export const howToGuides: HowToGuide[] = [
       { question: "How long does it take to reach $4,000 MRR?", answer: "6-12 months working 10-15 hours/week is realistic. Some founders do it in 3 months with a hot niche. Most take 8-14 months. The #1 variable is niche selection." },
       { question: "Should I charge monthly or annually?", answer: "Both. Monthly ($29-49) for low commitment. Annual (2 months free) for committed customers who want to save. Annual customers churn less and pay upfront." },
       { question: "How many customers do I need for $4,000 MRR?", answer: "At $29/month: 138 customers. At $49/month: 82 customers. At $79/month: 51 customers. Higher prices = fewer customers to support." },
-      { question: "What if I hit $2,000 MRR and growth stalls?", answer: "This is normal. The fix is usually: (1) raise prices, (2) add a higher-tier plan, or (3) double down on your best acquisition channel. The product is not the problem — distribution is." },
+      { question: "What if I hit $2,000 MRR and growth stalls?", answer: "This is normal. The fix is usually: (1) raise prices, (2) add a higher-tier plan, or (3) double down on your best acquisition channel. The product is not the problem, distribution is." },
     ],
   },
   {
@@ -429,7 +429,7 @@ export const howToGuides: HowToGuide[] = [
     metaDescription: "Step-by-step guide to building a faceless content channel. No camera, no voice, no personal brand. AI tools, content strategy, and monetization for anonymous creators.",
     h1: "How to Build a Faceless YouTube or TikTok Channel",
     intro: "A faceless content channel lets you build an audience and revenue without ever showing your face or using your real voice. It is the perfect side business for employed people who need anonymity.",
-    whyThisMatters: "Most corporate managers cannot show their face on YouTube or TikTok — coworkers would find them. Faceless channels solve this. You can build a profitable content business using screen recordings, animations, stock footage, and AI voiceover. The market is growing 40%+ year over year. No personal brand required.",
+    whyThisMatters: "Most corporate managers cannot show their face on YouTube or TikTok, coworkers would find them. Faceless channels solve this. You can build a profitable content business using screen recordings, animations, stock footage, and AI voiceover. The market is growing 40%+ year over year. No personal brand required.",
     steps: [
       {
         name: "Pick a Faceless-Friendly Niche",
@@ -439,7 +439,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Set Up Your Anonymous Production Pipeline",
-        description: "Create accounts under your brand name — not your personal name. Use a brand email, brand YouTube/TikTok/Instagram handles, and a brand logo. Do not use your real name anywhere. Set up a separate browser profile for all content accounts. Use a VPN for content management.",
+        description: "Create accounts under your brand name, not your personal name. Use a brand email, brand YouTube/TikTok/Instagram handles, and a brand logo. Do not use your real name anywhere. Set up a separate browser profile for all content accounts. Use a VPN for content management.",
         tools: ["Separate browser profile (free)", "Canva (free tier) for logo", "Proton Mail (free)", "VPN ($3-5/month)"],
         timeEstimate: "1-2 hours",
       },
@@ -484,18 +484,18 @@ export const howToGuides: HowToGuide[] = [
     metaTitle: "How to Read and Understand Your Non-Compete Clause | Invisible Exit",
     metaDescription: "The complete guide to decoding non-compete clauses. What language to look for, what is enforceable, and what you can safely ignore as a side business founder.",
     h1: "How to Read and Understand Your Non-Compete Clause",
-    intro: "Your employment contract may contain a non-compete clause. Understanding exactly what it says — and whether it is enforceable — determines how freely you can pursue your side business. Here is how to decode it.",
+    intro: "Your employment contract may contain a non-compete clause. Understanding exactly what it says, and whether it is enforceable, determines how freely you can pursue your side business. Here is how to decode it.",
     whyThisMatters: "Most founders never read their non-compete. They assume it blocks everything or assume it is unenforceable. The truth is usually in the middle. Reading and understanding your non-compete costs 30 minutes but can save you years of legal anxiety.",
     steps: [
       {
         name: "Find the Non-Compete in Your Contract",
-        description: "Search your employment contract, offer letter, and employee handbook for key phrases: 'non-compete,' 'non-competition,' 'covenant not to compete,' 'exclusive service,' 'outside business activities,' 'conflict of interest,' and 'moonlighting.' If you have signed multiple documents, check all of them — the most recent one typically supersedes earlier ones.",
+        description: "Search your employment contract, offer letter, and employee handbook for key phrases: 'non-compete,' 'non-competition,' 'covenant not to compete,' 'exclusive service,' 'outside business activities,' 'conflict of interest,' and 'moonlighting.' If you have signed multiple documents, check all of them, the most recent one typically supersedes earlier ones.",
         tools: ["Your employment contract (PDF or paper)", "Employee handbook", "Ctrl+F for key phrases", "Adobe Reader or Preview (free)"],
         timeEstimate: "15-30 minutes",
       },
       {
         name: "Identify the Three Key Restrictions",
-        description: "Every non-compete has three dimensions: (1) Scope — what type of business is restricted? Usually 'any business that competes with the company.' (2) Geography — where is it restricted? Some specify a radius (50 miles), others are national or global. (3) Duration — how long does it last? Typically 6-24 months after employment ends.",
+        description: "Every non-compete has three dimensions: (1) Scope, what type of business is restricted? Usually 'any business that competes with the company.' (2) Geography, where is it restricted? Some specify a radius (50 miles), others are national or global. (3) Duration, how long does it last? Typically 6-24 months after employment ends.",
         tools: ["Highlighter or document annotation", "Your contract"],
         timeEstimate: "15 minutes",
       },
@@ -507,30 +507,30 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Research Your State's Enforceability",
-        description: "California, Colorado, Minnesota, Oklahoma, North Dakota, and D.C. make most non-competes unenforceable. Other states (Florida, Texas, Georgia, Massachusetts) generally enforce them if they are 'reasonable' in scope, geography, and duration. Federal law may also apply — the FTC proposed a nationwide ban in 2024 (check current status).",
+        description: "California, Colorado, Minnesota, Oklahoma, North Dakota, and D.C. make most non-competes unenforceable. Other states (Florida, Texas, Georgia, Massachusetts) generally enforce them if they are 'reasonable' in scope, geography, and duration. Federal law may also apply, the FTC proposed a nationwide ban in 2024 (check current status).",
         tools: ["Google 'non-compete enforceability [your state]'", "Your state legislature website", "FTC.gov for federal updates"],
         timeEstimate: "30 minutes",
       },
       {
         name: "Decide Your Actual Risk Level",
-        description: "Are you in a completely different industry than your employer? If yes, the non-compete likely does not apply regardless of enforceability. Are you in a partial overlap? Consult an attorney. Are you in the same industry? Your risk is real — plan your business with legal guidance. Most corporate employees building micro-SaaS in different industries are safe.",
+        description: "Are you in a completely different industry than your employer? If yes, the non-compete likely does not apply regardless of enforceability. Are you in a partial overlap? Consult an attorney. Are you in the same industry? Your risk is real, plan your business with legal guidance. Most corporate employees building micro-SaaS in different industries are safe.",
         tools: ["Your judgment based on industry overlap", "Employment attorney consultation ($300-500)"],
         timeEstimate: "30 minutes",
       },
     ],
     proTips: [
-      "A non-compete is only as strong as your employer's willingness to enforce it. Most employers will not sue a departing employee who starts a non-competing micro-SaaS — the legal costs exceed any potential damages.",
+      "A non-compete is only as strong as your employer's willingness to enforce it. Most employers will not sue a departing employee who starts a non-competing micro-SaaS, the legal costs exceed any potential damages.",
       "If your non-compete seems overly broad (entire industry, nationwide, 5 years), it is likely unenforceable even in states that generally allow non-competes. Courts will 'blue pencil' (modify) unreasonable terms or strike the entire clause.",
       "If you are in California, Colorado, Minnesota, or Oklahoma, non-competes are generally unenforceable for employees. You can start any business you want.",
     ],
     commonMistakes: [
       "Ignoring the non-compete entirely because 'it is probably unenforceable.' Even unenforceable clauses can cause expensive legal fights. Know what you signed.",
       "Assuming your non-compete applies to any business activity. Most are limited to businesses that 'compete' with your employer.",
-      "Not checking if your state's laws have changed recently. Non-compete reform is moving fast — what was enforceable last year may not be today.",
+      "Not checking if your state's laws have changed recently. Non-compete reform is moving fast, what was enforceable last year may not be today.",
     ],
     faqs: [
       { question: "Is my non-compete enforceable if I signed it after starting the job?", answer: "In many states, non-competes signed after employment begins (without new consideration like a raise or promotion) are less enforceable. Some states require consideration at the time of signing." },
-      { question: "Can my employer enforce a non-compete if I am fired?", answer: "In most states, yes — if you are fired without cause, some courts have ruled non-competes unenforceable. If you quit, enforcement is more likely. Check your state's specific precedent." },
+      { question: "Can my employer enforce a non-compete if I am fired?", answer: "In most states, yes, if you are fired without cause, some courts have ruled non-competes unenforceable. If you quit, enforcement is more likely. Check your state's specific precedent." },
       { question: "What happens if I violate my non-compete?", answer: "Your employer can sue for: (1) an injunction (court order to stop your business), (2) damages (lost profits), or (3) attorney fees. Lawsuits are rare for micro-SaaS, but the threat is real if you are directly competing." },
     ],
   },
@@ -540,8 +540,8 @@ export const howToGuides: HowToGuide[] = [
     metaTitle: "How to Automate Customer Support as a Solo Founder | Invisible Exit",
     metaDescription: "The solo founder's guide to zero-support customer service. AI chatbots, self-serve knowledge bases, automated email responses, and when to escalate to a human (you).",
     h1: "How to Automate Customer Support as a Solo Founder",
-    intro: "As a solo founder, every hour spent on support is an hour not spent on product or growth. The goal is not zero support — it is automated, scalable support that handles 80% of inquiries without you. Here is exactly how to build that system.",
-    whyThisMatters: "Support is the silent time-sink of solo founders. A small micro-SaaS with 100 customers generates 10-20 support tickets/month. Each takes 15-30 minutes to handle. That is 5-10 hours/month of unproductive, interrupt-driven work. Automating 80% of support frees up 4-8 hours/month — time you should spend on growth.",
+    intro: "As a solo founder, every hour spent on support is an hour not spent on product or growth. The goal is not zero support, it is automated, scalable support that handles 80% of inquiries without you. Here is exactly how to build that system.",
+    whyThisMatters: "Support is the silent time-sink of solo founders. A small micro-SaaS with 100 customers generates 10-20 support tickets/month. Each takes 15-30 minutes to handle. That is 5-10 hours/month of unproductive, interrupt-driven work. Automating 80% of support frees up 4-8 hours/month, time you should spend on growth.",
     steps: [
       {
         name: "Build a Comprehensive Knowledge Base",
@@ -577,12 +577,12 @@ export const howToGuides: HowToGuide[] = [
     proTips: [
       "Every support interaction is a feature request in disguise. The third time someone asks the same question, fix the product instead of writing a better answer.",
       "Your knowledge base is an SEO asset. Well-written help articles rank in Google and bring in new customers searching for solutions to their problems.",
-      "Upset customers are your best growth source — fix their problem so thoroughly they tell someone. Automated support should always let them reach a human (you) easily.",
+      "Upset customers are your best growth source, fix their problem so thoroughly they tell someone. Automated support should always let them reach a human (you) easily.",
     ],
     commonMistakes: [
       "Hiding your support contact. Make it easy to reach a human. Automated support that does not let customers escalate creates frustration and churn.",
       "Over-automating. Not everything should be automated. Personal responses to complex questions build loyalty. Know when to step in.",
-      "Building a knowledge base nobody reads. Link to relevant help articles contextually inside your product — the customer should see them at the moment they need them.",
+      "Building a knowledge base nobody reads. Link to relevant help articles contextually inside your product, the customer should see them at the moment they need them.",
     ],
     faqs: [
       { question: "What if I have zero support budget?", answer: "Start with a free Intercom or Crisp tier + Google Docs as a knowledge base. That handles 60% of support. Upgrade when you have paying customers." },
@@ -597,7 +597,7 @@ export const howToGuides: HowToGuide[] = [
     metaDescription: "The complete micro-SaaS pricing playbook. How to find your ideal price point, when to raise prices, three-tier pricing structure, and psychological pricing tactics that work.",
     h1: "How to Price Your Micro-SaaS",
     intro: "Pricing is the single most impactful business decision you will make. A 20% price increase flows 100% to your bottom line. Here is the exact framework for finding, testing, and optimizing your micro-SaaS pricing.",
-    whyThisMatters: "Most micro-SaaS founders underprice by 2-5x. They are afraid that charging more means fewer customers. But a micro-SaaS at $49/month with 200 customers ($9,800 MRR) is a better business than the same product at $9/month with 1,089 customers ($9,801 MRR) — same revenue, 5x less support burden, 5x less infrastructure cost, and 5x fewer customers to acquire.",
+    whyThisMatters: "Most micro-SaaS founders underprice by 2-5x. They are afraid that charging more means fewer customers. But a micro-SaaS at $49/month with 200 customers ($9,800 MRR) is a better business than the same product at $9/month with 1,089 customers ($9,801 MRR), same revenue, 5x less support burden, 5x less infrastructure cost, and 5x fewer customers to acquire.",
     steps: [
       {
         name: "Calculate Your Minimum Viable Price",
@@ -613,7 +613,7 @@ export const howToGuides: HowToGuide[] = [
       },
       {
         name: "Design a Three-Tier Pricing Structure",
-        description: "The gold standard for micro-SaaS is three tiers: (1) Starter/Lite — $19-29/month, for individuals dipping their toes, (2) Pro — $49-79/month, your main product with full features, (3) Business/Enterprise — custom pricing for teams. The middle tier is your focus. The low tier catches price-sensitive users. The high tier creates an 'anchor' that makes your middle tier feel reasonable.",
+        description: "The gold standard for micro-SaaS is three tiers: (1) Starter/Lite, $19-29/month, for individuals dipping their toes, (2) Pro, $49-79/month, your main product with full features, (3) Business/Enterprise, custom pricing for teams. The middle tier is your focus. The low tier catches price-sensitive users. The high tier creates an 'anchor' that makes your middle tier feel reasonable.",
         tools: ["Stripe billing (built-in tiered pricing)", "ChartMogul (free tier for revenue analytics)", "Simple pricing page on Carrd (free)"],
         timeEstimate: "2-4 hours to design",
       },

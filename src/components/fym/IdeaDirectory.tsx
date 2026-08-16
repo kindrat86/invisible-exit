@@ -312,7 +312,7 @@ export default function IdeaDirectory({ onValidateIdea, onSwitchTab, hasFullAcce
             onClick={() => onSwitchTab?.("upgrade")}
             className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
           >
-            See Founding Toolkit — $17.99/mo
+            See Founding Toolkit, $17.99/mo
           </button>
           <p className="text-xs text-[#9CA3AF] mt-2">
             Founding price, locked for life. Cancel anytime.

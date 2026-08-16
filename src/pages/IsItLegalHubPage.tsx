@@ -9,7 +9,7 @@ export default function IsItLegalHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Is It Legal? — Side Business Legal Concerns | Invisible Exit"
+        title="Is It Legal?, Side Business Legal Concerns | Invisible Exit"
         description="Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations."
         url="https://invisibleexit.com/is-it-legal"
       />
@@ -28,7 +28,7 @@ export default function IsItLegalHubPage() {
             <h1 className="text-4xl font-bold text-gray-900">Is It Legal?</h1>
           </div>
           <p className="text-xl text-gray-600">
-            The #1 anxiety for employed founders, answered. Clear, factual guidance on the legal questions that keep you up at night. Not legal advice — but a starting point.
+            The #1 anxiety for employed founders, answered. Clear, factual guidance on the legal questions that keep you up at night. Not legal advice, but a starting point.
           </p>
         </div>
 

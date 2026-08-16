@@ -11,7 +11,7 @@ Prepared 2026-07-19. Use these for manual submissions (CAPTCHA required on all).
 - Name: InvisibleExit
 - URL: https://invisibleexit.com
 - Tagline: The faceless side-business system for employed professionals
-- Description: InvisibleExit helps employed professionals build anonymous micro-SaaS businesses — with AI tools for business idea validation, market analysis, financial forecasting, and quiet exit planning. No code required. No identity revealed.
+- Description: InvisibleExit helps employed professionals build anonymous micro-SaaS businesses, with AI tools for business idea validation, market analysis, financial forecasting, and quiet exit planning. No code required. No identity revealed.
 - Category: Business / Productivity / AI Assistant
 - Tags: quiet exit, anonymous business, micro-SaaS, side income, solopreneur, business planning
 - Logo: https://invisibleexit.com/favicon.svg
@@ -35,9 +35,9 @@ Prepared 2026-07-19. Use these for manual submissions (CAPTCHA required on all).
 
 ## Embed Hub for Promotion
 Once listed, point reviewers to:
-- https://invisibleexit.com/embed — Widget gallery + embed codes
-- https://invisibleexit.com/research/quiet-exit-2026 — Citable research report (CC BY 4.0)
-- https://invisibleexit.com/tools/freedom-calculator — Embeddable freedom number calculator
+- https://invisibleexit.com/embed, Widget gallery + embed codes
+- https://invisibleexit.com/research/quiet-exit-2026, Citable research report (CC BY 4.0)
+- https://invisibleexit.com/tools/freedom-calculator, Embeddable freedom number calculator
 
 ## Completed listings
-- **ToolIndex** (strategic-flow-audit.replit.app/directory) — claimed 2026-08-15 by escape@invisibleexit.com. Dofollow backlink (no `nofollow` in directory). Listing id 5878, category Founder Resources, "✓ Verified Founder", publisher "Adrian", pricing Freemium. Claim OTP-verified via email (noreply@strategicflow.tech). **Backlink FULLY ACTIVATED 2026-08-15:** "Listed on ToolIndex" badge added to Footer.tsx bottom bar (links to strategic-flow-audit.replit.app/directory, dofollow rel=noopener), deployed to prod (deploy dpl_CQQWFyZfMGy3rfHFA4KH7aU3PrNw, bundle index-D5AlEO6Q.js), and `confirm-backlink` POSTed with backlink_url=https://invisibleexit.com → ok:true. Verified: badge string live in served bundle on invisibleexit.com, listing "Visit" link rel=noopener (no nofollow).
+- **ToolIndex** (strategic-flow-audit.replit.app/directory), claimed 2026-08-15 by escape@invisibleexit.com. Dofollow backlink (no `nofollow` in directory). Listing id 5878, category Founder Resources, "✓ Verified Founder", publisher "Adrian", pricing Freemium. Claim OTP-verified via email (noreply@strategicflow.tech). **Backlink FULLY ACTIVATED 2026-08-15:** "Listed on ToolIndex" badge added to Footer.tsx bottom bar (links to strategic-flow-audit.replit.app/directory, dofollow rel=noopener), deployed to prod (deploy dpl_CQQWFyZfMGy3rfHFA4KH7aU3PrNw, bundle index-D5AlEO6Q.js), and `confirm-backlink` POSTed with backlink_url=https://invisibleexit.com → ok:true. Verified: badge string live in served bundle on invisibleexit.com, listing "Visit" link rel=noopener (no nofollow).

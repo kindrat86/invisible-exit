@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * generate-site-index.ts — build a crawlable HTML sitemap hub at /site-index.html
+ * generate-site-index.ts, build a crawlable HTML sitemap hub at /site-index.html
  * from the live/dist sub-sitemaps. Additive static page. Idempotent.
  */
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -8,7 +8,7 @@ import { join } from "node:path";
 
 const DIST = join(process.cwd(), "dist");
 const BASE = "https://invisibleexit.com";
-if (!existsSync(DIST)) { console.log("(no dist/ — skipping site-index)"); process.exit(0); }
+if (!existsSync(DIST)) { console.log("(no dist/, skipping site-index)"); process.exit(0); }
 
 const EXCLUDE = new Set(["sitemap.xml", "sitemap-index.xml", "image-sitemap.xml"]);
 const subs = readdirSync(DIST).filter((f) => /^sitemap-.*\.xml$/.test(f) && !EXCLUDE.has(f)).sort();
@@ -26,11 +26,11 @@ for (const f of subs) {
 }
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Site Index — Invisible Exit</title>
+<title>Site Index, Invisible Exit</title>
 <meta name="description" content="Full index of Invisible Exit: every guide, idea, calculator, profession, city, and comparison for building a faceless side business.">
 <link rel="canonical" href="${BASE}/site-index.html">
 <style>body{font:16px/1.6 system-ui,sans-serif;max-width:1100px;margin:0 auto;padding:2rem 1rem;color:#111}h1{margin:0 0 1rem}section{margin:1.5rem 0}h2{font-size:1.1rem;border-bottom:1px solid #eee;padding-bottom:.3rem}ul{columns:3;list-style:none;padding:0}@media(max-width:800px){ul{columns:1}}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}small{color:#888;font-weight:400}</style>
-</head><body><h1>Invisible Exit — Site Index</h1>
+</head><body><h1>Invisible Exit, Site Index</h1>
 <p>Every page, organized by section. Looking for the homepage? <a href="/">invisibleexit.com</a>.</p>
 ${sections}</body></html>`;
 

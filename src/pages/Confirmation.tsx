@@ -355,17 +355,17 @@ const Confirmation = () => {
         </div>
       </section>
 
-      {/* Section 4: Upgrade Nudge — One-Time Offer */}
+      {/* Section 4: Upgrade Nudge, One-Time Offer */}
       <section className="py-16 px-6 bg-gradient-to-b from-white to-blue-50">
         <div className="mx-auto max-w-2xl">
           <div className="relative rounded-2xl border-2 border-[#60A5FA] bg-white p-8 shadow-lg">
             {/* Badge */}
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#60A5FA] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap">
-              ⚡ One-Time Offer — Only Available Now
+              ⚡ One-Time Offer, Only Available Now
             </span>
 
             <p className="text-xs uppercase tracking-wide text-[#60A5FA] font-semibold mb-2 mt-2 text-center">
-              Wait — Before You Start
+              Wait, Before You Start
             </p>
             <h3 className="text-gray-900 text-xl font-bold mb-3 text-center">
               Want Lifetime Price Lock + Shape the Roadmap?
@@ -380,7 +380,7 @@ const Confirmation = () => {
             <div className="bg-gray-50 rounded-xl p-4 mb-5 space-y-2">
               {[
                 "Lifetime price lock at $17.99/mo (saves $132/year vs public)",
-                "Vote on the roadmap — your feature requests go first",
+                "Vote on the roadmap, your feature requests go first",
                 "Beta access to every new tool before public release",
                 "Your name permanently on the founding wall",
                 "Unlimited usage on all tools (no caps)",
@@ -415,7 +415,7 @@ const Confirmation = () => {
         </div>
       </section>
 
-      {/* DOTCOM SECRETS Ch 14: ORDER BUMP on Confirmation — add Founders Toolkit */}
+      {/* DOTCOM SECRETS Ch 14: ORDER BUMP on Confirmation, add Founders Toolkit */}
       <section className="py-12 px-6 bg-gradient-to-br from-amber-50 to-white">
         <div className="mx-auto max-w-2xl">
           <label className={`flex items-start gap-4 p-6 rounded-2xl border-2 cursor-pointer transition-all ${
@@ -432,7 +432,7 @@ const Confirmation = () => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span className="text-gray-900 text-base font-bold">
-                  ☑ YES — Add the Founder's Toolkit
+                  ☑ YES, Add the Founder's Toolkit
                 </span>
                 <span className="bg-amber-500/20 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
                   Save $60
@@ -449,14 +449,14 @@ const Confirmation = () => {
                 <span className="text-gray-400 text-xs">(added to your purchase)</span>
               </div>
               <p className="text-gray-400 text-[11px] italic mt-2">
-                ☑ Checked by default — uncheck to skip
+                ☑ Checked by default, uncheck to skip
               </p>
               <button
                 onClick={handleToolkitPurchase}
                 disabled={toolkitLoading}
                 className="mt-3 w-full bg-amber-500 hover:bg-amber-400 text-white font-bold text-base py-3 px-6 rounded-xl transition-all disabled:opacity-50 min-h-[48px]"
               >
-                {toolkitLoading ? "Processing..." : `Complete My Order — $${addToolkit ? 37 : 0}`}
+                {toolkitLoading ? "Processing..." : `Complete My Order, $${addToolkit ? 37 : 0}`}
               </button>
               <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-400">
                 <span className="flex items-center gap-1">

@@ -74,7 +74,7 @@ const Terms = () => {
           <p className="text-gray-600 mb-6">
             You may cancel your subscription at any time through your account settings.
             Cancellation takes effect at the end of the current billing period. We offer
-            a 30-day money-back guarantee — if you are not satisfied within the first 30
+            a 30-day money-back guarantee, if you are not satisfied within the first 30
             days, contact us for a full refund, no questions asked.
           </p>
 
@@ -90,8 +90,8 @@ const Terms = () => {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Intellectual Property</h2>
           <p className="text-gray-600 mb-6">
-            All content, features, and functionality of the Invisible Exit platform —
-            including text, graphics, logos, and software — are the exclusive property of
+            All content, features, and functionality of the Invisible Exit platform, 
+            including text, graphics, logos, and software, are the exclusive property of
             Invisible Exit and are protected by intellectual property laws. You may not
             reproduce, distribute, or create derivative works without our prior written
             consent.

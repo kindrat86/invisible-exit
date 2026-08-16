@@ -4,7 +4,7 @@ import { Star, Quote, TrendingUp } from "lucide-react";
  * Testimonial Grid Component
  *
  * Renders testimonials when provided. Without verified testimonials,
- * this component renders nothing — social proof must be earned.
+ * this component renders nothing, social proof must be earned.
  */
 
 export interface Testimonial {
@@ -29,7 +29,7 @@ interface TestimonialGridProps {
   subtitle?: string;
 }
 
-// No default testimonials — real proof must be earned, not written.
+// No default testimonials, real proof must be earned, not written.
 const DEFAULT_TESTIMONIALS: Testimonial[] = [];
 
 export default function TestimonialGrid({

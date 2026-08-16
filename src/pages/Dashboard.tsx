@@ -559,7 +559,7 @@ export default function Dashboard() {
       <ErrorBoundary>
         <SEOHead
           title="Dashboard - Invisible Exit"
-          description="Your Invisible Exit dashboard — track freedom number, validate ideas, manage stealth ops, and build your anonymous side business."
+          description="Your Invisible Exit dashboard, track freedom number, validate ideas, manage stealth ops, and build your anonymous side business."
           noindex={true}
         />
         <DashboardContent />

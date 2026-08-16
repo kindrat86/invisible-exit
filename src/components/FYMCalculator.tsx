@@ -306,7 +306,7 @@ export default function FYMCalculator({
               </span>
             </div>
 
-            {/* Exit Readiness Score — UNLOCKED for Starter (read-only) */}
+            {/* Exit Readiness Score, UNLOCKED for Starter (read-only) */}
             <RiskFreedomScore
               inputs={inputs}
               freedomLevel={freedomLevel}
@@ -314,7 +314,7 @@ export default function FYMCalculator({
               onSwitchToInvisibility={() => onSwitchTab("invisibility")}
             />
 
-            {/* Teaser 1: Scenario Engine — BLURRED */}
+            {/* Teaser 1: Scenario Engine, BLURRED */}
             <div className="relative rounded-xl border border-border/50 overflow-hidden">
               <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
                 <ScenarioEngine inputs={mockScenarioInputs} />
@@ -334,7 +334,7 @@ export default function FYMCalculator({
                   onClick={() => onSwitchTab("upgrade")}
                   className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
                 >
-                  See Founding Toolkit — $17.99/mo
+                  See Founding Toolkit, $17.99/mo
                 </Button>
                 <p className="text-xs text-muted-foreground mt-2">
                   Founding price, locked for life.
@@ -342,7 +342,7 @@ export default function FYMCalculator({
               </div>
             </div>
 
-            {/* Teaser 2: Reverse Calculator — BLURRED */}
+            {/* Teaser 2: Reverse Calculator, BLURRED */}
             <div className="relative rounded-xl border border-border/50 overflow-hidden">
               <div className="filter blur-[6px] pointer-events-none select-none opacity-70">
                 <ReverseCalculator inputs={mockReverseInputs} />
@@ -357,7 +357,7 @@ export default function FYMCalculator({
                   onClick={() => onSwitchTab("upgrade")}
                   className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold"
                 >
-                  See Founding Toolkit — $17.99/mo
+                  See Founding Toolkit, $17.99/mo
                 </Button>
                 <p className="text-xs text-muted-foreground mt-2">
                   Founding price, locked for life.

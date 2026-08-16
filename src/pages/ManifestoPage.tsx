@@ -60,22 +60,22 @@ const PRINCIPLES = [
   {
     num: "01",
     title: "Revenue beats equity.",
-    body: "0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today — not in 5 years when an IPO 'might' happen.",
+    body: "0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today, not in 5 years when an IPO 'might' happen.",
   },
   {
     num: "02",
     title: "Anonymity is the advantage.",
-    body: "The faceless founder can experiment without fear, fail without consequence, and build in any market — all while the employer, the LinkedIn network, and the competitors have no idea. The mask IS the moat.",
+    body: "The faceless founder can experiment without fear, fail without consequence, and build in any market, all while the employer, the LinkedIn network, and the competitors have no idea. The mask IS the moat.",
   },
   {
     num: "03",
     title: "Constraints produce focus.",
-    body: "5 hours a week isn't a limitation. It's a forcing function. Full-time founders with 60 hours dilute their effort across a dozen priorities. The 5-hour builder does one thing that matters — every single week.",
+    body: "5 hours a week isn't a limitation. It's a forcing function. Full-time founders with 60 hours dilute their effort across a dozen priorities. The 5-hour builder does one thing that matters, every single week.",
   },
   {
     num: "04",
     title: "The system beats the idea.",
-    body: "Stop obsessing over finding the 'right' idea. Build the framework first — freedom number, idea pipeline, stealth ops, launch control, brand. Once the system exists, you can swap ideas in and out like cartridges.",
+    body: "Stop obsessing over finding the 'right' idea. Build the framework first, freedom number, idea pipeline, stealth ops, launch control, brand. Once the system exists, you can swap ideas in and out like cartridges.",
   },
   {
     num: "05",
@@ -85,7 +85,7 @@ const PRINCIPLES = [
   {
     num: "06",
     title: "Your job is the launchpad, not the trap.",
-    body: "Your salary is runway funding that costs zero equity. Your corporate skills (managing teams, reading P&Ls, executing under pressure) are exactly what solo founders lack. The job isn't what you escape — it's what funds the escape.",
+    body: "Your salary is runway funding that costs zero equity. Your corporate skills (managing teams, reading P&Ls, executing under pressure) are exactly what solo founders lack. The job isn't what you escape, it's what funds the escape.",
   },
 ];
 
@@ -93,7 +93,7 @@ const ManifestoPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The Invisible Exit Manifesto — A Movement for Trapped Managers"
+        title="The Invisible Exit Manifesto, A Movement for Trapped Managers"
         description="This isn't a side-hustle course. It's a new vehicle for financial freedom. Read the 6 principles of the Invisible Builder movement."
         url="/manifesto"
       />
@@ -113,14 +113,14 @@ const ManifestoPage = () => {
             </span>
           </h1>
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            Every other program teaches you to improve — to build a better
+            Every other program teaches you to improve, to build a better
             business, to hustle harder, to optimize your side project. We don't
             teach improvement. We offer a fundamentally different path to
             financial freedom.
           </p>
           <p className="text-lg text-white/50 max-w-xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "200ms" }}>
             If you're a corporate manager earning $120K-$200K with golden
-            handcuffs and less than 0.5% equity — this is your declaration of
+            handcuffs and less than 0.5% equity, this is your declaration of
             independence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: "300ms" }}>
@@ -161,14 +161,14 @@ const ManifestoPage = () => {
               <strong className="text-primary">
                 A New Opportunity
               </strong>{" "}
-              is: "A fundamentally different vehicle for financial freedom —
+              is: "A fundamentally different vehicle for financial freedom, 
               one designed specifically for employed managers who need to stay
               invisible." It creates a category that didn't exist before. A
               category we own.
             </p>
             <p className="text-foreground font-medium text-lg pt-4">
               We don't teach you to build a side business. We hand you the
-              Invisible Exit System — the world's first anonymity-native,
+              Invisible Exit System, the world's first anonymity-native,
               stealth-first framework for building recurring revenue while
               employed.
             </p>
@@ -201,7 +201,7 @@ const ManifestoPage = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold mb-1">
-                      {row.aspect} — Old Way
+                      {row.aspect}, Old Way
                     </p>
                     <p className="text-sm text-muted-foreground">{row.oldWay}</p>
                   </div>
@@ -213,7 +213,7 @@ const ManifestoPage = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-wide text-primary font-semibold mb-1">
-                      {row.aspect} — Invisible Way
+                      {row.aspect}, Invisible Way
                     </p>
                     <p className="text-sm text-foreground">{row.newWay}</p>
                   </div>
@@ -237,8 +237,8 @@ const ManifestoPage = () => {
           </h2>
           <div className="bg-white/5 border border-white/20 rounded-2xl p-8 sm:p-10 max-w-2xl mx-auto">
             <p className="text-xl sm:text-2xl font-semibold leading-relaxed">
-              "I can build $4,000/month in recurring revenue from products I own —
-              invisibly, in 5 hours a week — while my salary funds the entire
+              "I can build $4,000/month in recurring revenue from products I own, 
+              invisibly, in 5 hours a week, while my salary funds the entire
               thing without risk."
             </p>
             <p className="text-white/60 text-sm mt-6 leading-relaxed">
@@ -249,7 +249,7 @@ const ManifestoPage = () => {
             </p>
           </div>
           <p className="text-white/40 text-xs mt-6">
-            This is what Brunson calls "The Big Domino" — the one belief that, if
+            This is what Brunson calls "The Big Domino", the one belief that, if
             toppled, knocks down every doubt, every objection, and every reason
             to stay in your chair.
           </p>
@@ -328,7 +328,7 @@ const ManifestoPage = () => {
                   <strong className="text-primary">The Truth:</strong>
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The Invisible Exit System is specifically engineered for employed managers. Your salary IS the capital. Your 5 hours/week IS the time. 240+ members are running it right now — without quitting, without investors, without risk. The vehicle was designed around your constraints, not despite them.
+                  The Invisible Exit System is specifically engineered for employed managers. Your salary IS the capital. Your 5 hours/week IS the time. 240+ members are running it right now, without quitting, without investors, without risk. The vehicle was designed around your constraints, not despite them.
                 </p>
               </div>
             </div>
@@ -352,7 +352,7 @@ const ManifestoPage = () => {
                   <strong className="text-primary">The Truth:</strong>
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The 5-tool system does the technical work for you. Idea Pipeline validates demand before you build. The system handles landing pages, payment, and deployment — no code required. Your actual job is reading P&amp;Ls, managing teams, and executing under pressure. Those are exactly the skills that make solo founders fail. You already have the hard skills. The system handles the rest.
+                  The 5-tool system does the technical work for you. Idea Pipeline validates demand before you build. The system handles landing pages, payment, and deployment, no code required. Your actual job is reading P&amp;Ls, managing teams, and executing under pressure. Those are exactly the skills that make solo founders fail. You already have the hard skills. The system handles the rest.
                 </p>
               </div>
             </div>
@@ -376,7 +376,7 @@ const ManifestoPage = () => {
                   <strong className="text-primary">The Truth:</strong>
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The Stealth Ops tool builds your business inside a legal firewall: anonymous LLCs, separate identities, and non-compete compliance checks for all 50 states before you write a line of code. The entire system is designed so that your employer, your LinkedIn network, and your competitors never see it coming. The mask isn't deception — it's a legal moat. Anonymity is your competitive advantage, not a liability.
+                  The Stealth Ops tool builds your business inside a legal firewall: anonymous LLCs, separate identities, and non-compete compliance checks for all 50 states before you write a line of code. The entire system is designed so that your employer, your LinkedIn network, and your competitors never see it coming. The mask isn't deception, it's a legal moat. Anonymity is your competitive advantage, not a liability.
                 </p>
               </div>
             </div>
@@ -400,13 +400,13 @@ const ManifestoPage = () => {
               family's future on a 0.5% equity lottery ticket.
             </p>
             <p>
-              Imagine if 10,000 managers — each building quietly, each earning
-              $4,000/month from products they own — walked into their annual
+              Imagine if 10,000 managers, each building quietly, each earning
+              $4,000/month from products they own, walked into their annual
               review knowing the golden handcuffs were already off.
             </p>
             <p>
               Not because they quit. Not because they burned a bridge. But
-              because they built an invisible exit — a door only they could see
+              because they built an invisible exit, a door only they could see
               and only they could open.
             </p>
             <p className="text-white font-medium text-lg pt-4">
@@ -497,7 +497,7 @@ const ManifestoPage = () => {
               <strong className="text-foreground">Path A:</strong> You close this tab. Five years from now, you're in the same chair, with the same 0.5%, telling the same story.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong className="text-primary">Path B:</strong> You spend 90 seconds on one calculator. Five years from now, you own $8,000/month in recurring revenue — and your employer still has no idea.
+              <strong className="text-primary">Path B:</strong> You spend 90 seconds on one calculator. Five years from now, you own $8,000/month in recurring revenue, and your employer still has no idea.
             </p>
           </div>
 
@@ -506,14 +506,14 @@ const ManifestoPage = () => {
             onClick={() => trackEvent("manifesto_final_cta")}
             className="btn-primary text-lg px-8 inline-flex items-center gap-2"
           >
-            Calculate Your Freedom Number — Free
+            Calculate Your Freedom Number, Free
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-sm text-muted-foreground mt-4">
             90 seconds. No credit card. The first step of the invisible exit.
           </p>
           <p className="text-xs text-muted-foreground/50 mt-2 italic">
-            Because 6 months from now, you'll either have the number — or you'll still be guessing.
+            Because 6 months from now, you'll either have the number, or you'll still be guessing.
           </p>
         </div>
       </section>
@@ -538,9 +538,9 @@ const ManifestoPage = () => {
 
           <div className="max-w-3xl mx-auto space-y-4">
             {[
-              { stage: "Stage 1", name: "Freedom Number", tool: "FYM Dashboard", desc: "Calculate the exact monthly revenue that replaces your salary. This single number becomes your target — and your freedom date.", icon: Target },
+              { stage: "Stage 1", name: "Freedom Number", tool: "FYM Dashboard", desc: "Calculate the exact monthly revenue that replaces your salary. This single number becomes your target, and your freedom date.", icon: Target },
               { stage: "Stage 2", name: "Idea Pipeline", tool: "Idea Validator", desc: "500+ pre-validated micro-SaaS ideas scored by revenue probability, market boredom, and 5-hour feasibility. No more guessing.", icon: Crosshair },
-              { stage: "Stage 3", name: "Stealth Ops", tool: "Compliance Engine", desc: "Anonymous LLC structure, non-compete check for all 50 states, separate identity setup. Your legal moat — built before you launch.", icon: Shield },
+              { stage: "Stage 3", name: "Stealth Ops", tool: "Compliance Engine", desc: "Anonymous LLC structure, non-compete check for all 50 states, separate identity setup. Your legal moat, built before you launch.", icon: Shield },
               { stage: "Stage 4", name: "Launch Control", tool: "5-Hour Launcher", desc: "A deployment system that takes you from validated idea to live product in 5 hours/week over 4 weeks. The job funds the build.", icon: Rocket },
               { stage: "Stage 5", name: "Brand Manager", tool: "Faceless Builder", desc: "Grow an anonymous audience using your products' own distribution. Zero personal brand. Zero exposure. Pure compounding revenue.", icon: Eye },
             ].map((s, i) => {
@@ -573,7 +573,7 @@ const ManifestoPage = () => {
           <div className="text-center mt-10">
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
               Each stage is one tool in your dashboard. All five run together for{" "}
-              <strong className="text-foreground">$9/month</strong> — less than
+              <strong className="text-foreground">$9/month</strong>, less than
               the coffee you'll drink while building.
             </p>
             <Link
@@ -581,7 +581,7 @@ const ManifestoPage = () => {
               onClick={() => trackEvent("manifesto_system_cta")}
               className="btn-primary text-lg px-8 inline-flex items-center gap-2 mt-6"
             >
-              Start with Stage 1 — Free
+              Start with Stage 1, Free
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

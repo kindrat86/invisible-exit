@@ -10,7 +10,7 @@ interface QuickStatsProps {
 }
 
 function getPipelineLabel(entry: PipelineEntry | null | undefined): string {
-  if (!entry) return "—";
+  if (!entry) return ", ";
   if (entry.verdict === "GO") return "GO";
   if (entry.verdict === "CONDITIONAL_GO") return "MAYBE";
   return "NO-GO";

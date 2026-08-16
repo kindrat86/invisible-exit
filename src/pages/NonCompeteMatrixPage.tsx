@@ -73,7 +73,7 @@ export default function NonCompeteMatrixPage() {
 
         {/* Safe Harbors */}
         <section className="mt-10">
-          <h2 className="text-2xl font-bold text-slate-900">Safe Harbors — What You CAN Do</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Safe Harbors, What You CAN Do</h2>
           <ul className="mt-4 space-y-3">
             {entry.safeHarbors.map((harbor, i) => (
               <li key={i} className="flex gap-3 rounded-lg border border-slate-200 p-4">

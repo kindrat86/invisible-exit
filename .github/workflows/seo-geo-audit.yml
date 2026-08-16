@@ -59,7 +59,7 @@ jobs:
             git checkout -b "$BRANCH"
             git push origin "$BRANCH"
             gh pr create \
-              --title "SEO/GEO Audit — $(date +%Y-%m-%d) (${{ steps.mode.outputs.mode }})" \
+              --title "SEO/GEO Audit, $(date +%Y-%m-%d) (${{ steps.mode.outputs.mode }})" \
               --body "Automated SEO/GEO audit run powered by GLM-5.2." \
               --label "seo-audit" \
               --base main \

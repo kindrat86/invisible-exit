@@ -1,12 +1,12 @@
 /**
  * Shared JWT auth helpers for /api/ routes.
- * Not a route itself — imported by auth + db handlers.
+ * Not a route itself, imported by auth + db handlers.
  */
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
 
 /**
- * JWT secret — fails hard if not set in production (no insecure fallback).
+ * JWT secret, fails hard if not set in production (no insecure fallback).
  * Generate one with: node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
  */
 const JWT_SECRET_RAW = process.env.JWT_SECRET;

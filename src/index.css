@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Metric-matched fallback for Inter — kills the layout shift while the
+/* Metric-matched fallback for Inter, kills the layout shift while the
    webfont loads (FOUT). Used via fontFamily.sans in tailwind.config.ts. */
 @font-face {
   font-family: "Inter Fallback";
@@ -14,7 +14,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   INVISIBLE EXIT — WORLD-CLASS DESIGN SYSTEM
+   INVISIBLE EXIT, WORLD-CLASS DESIGN SYSTEM
    Mobile-first · Accessible · Dark-mode ready
    ═══════════════════════════════════════════════════════════ */
 
@@ -39,7 +39,7 @@
     --primary-foreground: 0 0% 100%;
     --primary-hover: 217 91% 52%;
     --primary-light: 213 94% 68%;
-    /* Darker primary for white-text surfaces (buttons, bands) — WCAG AA vs white */
+    /* Darker primary for white-text surfaces (buttons, bands), WCAG AA vs white */
     --primary-strong: 217 91% 48%;
     --primary-strong-hover: 217 91% 42%;
 
@@ -162,7 +162,7 @@
 
   /* sonner's live-region wrapper (<section aria-label="Notifications alt+T">)
      was picking up global section padding and occupying 40px of flow at the
-     top of every page — a white bar above the nav on the dark homepage. */
+     top of every page, a white bar above the nav on the dark homepage. */
   section[aria-label*="Notifications"] {
     position: fixed;
   }
@@ -172,12 +172,12 @@
     font-feature-settings: "cv11", "ss01", "ss03";
     overflow-x: hidden;
     /* Prevent long strings from overflowing containers/borders on any device.
-       NOTE: no hyphens/word-break here — auto-hyphenation breaks words mid-word
+       NOTE: no hyphens/word-break here, auto-hyphenation breaks words mid-word
        ("build-ing") in headings, badges, and stats on small screens. */
     overflow-wrap: break-word;
   }
 
-  /* Ensure all elements respect their borders — critical for iOS Safari */
+  /* Ensure all elements respect their borders, critical for iOS Safari */
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -614,7 +614,7 @@ p {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  /* Larger tap targets on mobile — only intentional interactive elements */
+  /* Larger tap targets on mobile, only intentional interactive elements */
   .btn-primary,
   .btn-secondary,
   .btn-ghost,
@@ -1220,7 +1220,7 @@ article.mx-auto.max-w-3xl li {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   RTL (Right-to-Left) SUPPORT — Arabic, Hebrew, Persian, Urdu, etc.
+   RTL (Right-to-Left) SUPPORT, Arabic, Hebrew, Persian, Urdu, etc.
    ═══════════════════════════════════════════════════════════ */
 
 /* When document is RTL, mirror layouts */

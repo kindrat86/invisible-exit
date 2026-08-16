@@ -164,7 +164,7 @@ const ComparePage = () => {
         </div>
       </section>
 
-      {/* TL;DR Summary Box — optimized for featured snippets */}
+      {/* TL;DR Summary Box, optimized for featured snippets */}
       <section className="bg-blue-50 border-l-4 border-[#3B82F6] py-8 px-6">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-sm font-bold text-[#3B82F6] uppercase tracking-wide mb-3">

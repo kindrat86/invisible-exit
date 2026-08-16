@@ -328,7 +328,7 @@ export default function OnboardingWizard({
                       Required Growth
                     </p>
                     <p className="text-lg font-bold text-white font-mono">
-                      {requiredGrowthRate > 0 ? `${requiredGrowthRate.toFixed(1)}%` : "—"}/mo
+                      {requiredGrowthRate > 0 ? `${requiredGrowthRate.toFixed(1)}%` : ", "}/mo
                     </p>
                   </div>
                 </div>
@@ -346,7 +346,7 @@ export default function OnboardingWizard({
                   </p>
                   <p className="text-sm text-white/80">
                     {concerns.includes("Getting caught by employer")
-                      ? "Complete your Invisibility Audit — make sure you're protected before you start building."
+                      ? "Complete your Invisibility Audit, make sure you're protected before you start building."
                       : concerns.includes("Not being technical enough")
                         ? "Browse the Idea Directory for no-code business ideas that match your skills."
                         : "Log your numbers in the Calculator and find your freedom level."}

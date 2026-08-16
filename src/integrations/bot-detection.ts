@@ -1,20 +1,20 @@
 /**
  * Bot flag for analytics events.
  *
- * Every event we capture — client and server — carries a boolean `is_bot`
+ * Every event we capture, client and server, carries a boolean `is_bot`
  * property so traffic queries can say `WHERE is_bot = false` and mean it.
  * This matches the convention already used by sanctionsai.dev, whose
  * dashboards filter on the same property name and value type.
  *
  * Two detectors, because the two sides see different things:
- *   - `isBotUserAgent(ua)` — string match, usable anywhere. On the server the
+ *   - `isBotUserAgent(ua)`, string match, usable anywhere. On the server the
  *     User-Agent header is authoritative; in the browser it is `navigator.userAgent`.
- *   - `detectClientBot()` — adds the runtime signals only a browser exposes
+ *   - `detectClientBot()`, adds the runtime signals only a browser exposes
  *     (WebDriver automation, headless builds, no declared languages), which
  *     catch crawlers that send an honest-looking Chrome UA string.
  *
  * This is a *flag*, not a block: flagged traffic is still captured and still
- * served. Deliberately biased toward false negatives — mislabelling a real
+ * served. Deliberately biased toward false negatives, mislabelling a real
  * visitor as a bot would hide a lead, which costs more than an over-counted
  * pageview.
  */
@@ -29,7 +29,7 @@ const BOT_UA_PATTERNS = [
   // Generic self-identifying crawlers
   'bot/', 'bot;', 'bot)', '-bot', '_bot', 'bot ', 'crawler', 'spider', 'scraper',
   'slurp', 'archiver', 'indexer',
-  // Headless / automation runtimes. Note: "electron" is deliberately absent —
+  // Headless / automation runtimes. Note: "electron" is deliberately absent, 
   // plenty of real people browse from Electron-shelled apps, and driven
   // Electron sets navigator.webdriver anyway (see detectClientBot).
   'headless', 'phantomjs', 'selenium', 'puppeteer', 'playwright',
@@ -47,7 +47,7 @@ const BOT_UA_PATTERNS = [
   'gptbot', 'oai-searchbot', 'chatgpt-user', 'claudebot', 'claude-web',
   'anthropic-ai', 'perplexitybot', 'youbot', 'ccbot', 'google-extended',
   'meta-externalagent', 'cohere-ai', 'diffbot', 'timpibot', 'omgili',
-  // Link unfurlers — a real person triggered these, but no page was read
+  // Link unfurlers, a real person triggered these, but no page was read
   'facebookexternalhit', 'whatsapp', 'telegrambot', 'slackbot', 'discordbot',
   'twitterbot', 'linkedinbot', 'redditbot', 'embedly', 'quora link preview',
   'skypeuripreview', 'vkshare', 'w3c_validator',
@@ -71,7 +71,7 @@ export function isBotUserAgent(userAgent: string | null | undefined): boolean {
  *   - `navigator.languages` is always populated in a real browser; headless
  *     builds routinely report an empty list.
  *
- * Safe to call before PostHog is initialised, and on any platform — anything
+ * Safe to call before PostHog is initialised, and on any platform, anything
  * unexpected resolves to `false` (treat as human) rather than throwing.
  */
 export function detectClientBot(): boolean {
@@ -82,7 +82,7 @@ export function detectClientBot(): boolean {
     if (Array.isArray(navigator.languages) && navigator.languages.length === 0) return true;
     return false;
   } catch {
-    // A detector that throws must never take analytics — or the page — down.
+    // A detector that throws must never take analytics, or the page, down.
     return false;
   }
 }

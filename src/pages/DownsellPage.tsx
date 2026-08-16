@@ -17,14 +17,14 @@ import { toast } from "sonner";
 import { trackEvent, trackGoogleConversion, trackRedditConversion } from "@/lib/analytics";
 
 /**
- * DOTCOM SECRETS: Chapter 15 — The Downsell
+ * DOTCOM SECRETS: Chapter 15:  The Downsell
  *
  * Russell's downsell pattern:
  *   1. Acknowledge the objection ("I understand")
- *   2. Reframe — remove something to lower the price (not just discount)
- *   3. NEW anchor — show what they DON'T get vs what they DO get
- *   4. Fresh urgency — this page is also one-time (countdown timer)
- *   5. Clean exit — if they decline here, send them somewhere useful
+ *   2. Reframe, remove something to lower the price (not just discount)
+ *   3. NEW anchor, show what they DON'T get vs what they DO get
+ *   4. Fresh urgency, this page is also one-time (countdown timer)
+ *   5. Clean exit, if they decline here, send them somewhere useful
  *
  * The key insight: a downsell removes value to justify the lower price.
  * It's NOT just a discount. It's a different offer.
@@ -99,7 +99,7 @@ const DownsellPage = () => {
   return (
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
-        title="Wait — Before You Go... | Invisible Exit"
+        title="Wait, Before You Go... | Invisible Exit"
         description="Get all 5 tools at the standard rate. No founding perks. Cancel anytime."
         url="/oto/downsell"
         noindex
@@ -121,7 +121,7 @@ const DownsellPage = () => {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 pt-20 pb-16 md:pt-24">
         {/* ── 1. Acknowledge ── */}
         <div className="text-center mb-12">
-          <p className="text-eyebrow text-primary-light mb-6">Wait — Before You Go...</p>
+          <p className="text-eyebrow text-primary-light mb-6">Wait, Before You Go...</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
             I understand.{" "}
             <span className="text-white/50">$17.99/month</span> is a stretch right now.
@@ -131,7 +131,7 @@ const DownsellPage = () => {
             The content calendar. But the founding price doesn't fit right now.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto mt-4">
-            Here's what I can do. <strong className="text-white/70">I'll remove the founding perks</strong> —
+            Here's what I can do. <strong className="text-white/70">I'll remove the founding perks</strong>, 
             the community, the masterclass replays, the beta access, the price lock. You get all 5
             tools. Nothing else. At a lower price.
           </p>
@@ -155,7 +155,7 @@ const DownsellPage = () => {
               <span className="text-lg text-white/50">/month</span>
             </div>
             <p className="text-success text-sm font-semibold">
-              You save $8/month ($96/year) — but you lose the founding perks below.
+              You save $8/month ($96/year), but you lose the founding perks below.
             </p>
           </div>
 
@@ -235,7 +235,7 @@ const DownsellPage = () => {
             </div>
             <div className="space-y-2">
               {[
-                "Full refund within 24 hours — no questions, no forms",
+                "Full refund within 24 hours, no questions, no forms",
                 "You keep every framework, checklist, and your freedom number calculation",
                 "You keep the basic $9/month membership forever",
                 "We part as friends. No hard feelings.",
@@ -278,7 +278,7 @@ const DownsellPage = () => {
             </p>
             <p className="text-white/60 text-sm leading-relaxed">
               Nothing changes. You keep your job. You keep your 0.5% equity. You keep hoping the
-              IPO delivers. Six months from now, you'll be in the same spot — except{" "}
+              IPO delivers. Six months from now, you'll be in the same spot, except{" "}
               <strong className="text-white/80">the founding price will be gone</strong>, and
               you'll wish you'd locked it in when you had the chance.
             </p>

@@ -10,8 +10,8 @@ import sys
 
 RULES = [
     # FAQ rewrite fragments present in prerendered HTML (mirror src/ rewrites)
-    ("The $0.97/month founding member price is a loss-leader — it costs more to serve each member than $0.97/month.",
-     "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin."),
+    ("The $0.97/month founding member price is a loss-leader, it costs more to serve each member than $0.97/month.",
+     "The $9/month Founder price is an early-believer price, priced to be a no-brainer, not to maximize margin."),
     ("it costs more to serve each member than $0.97/month",
      "it is priced to be a no-brainer, not to maximize margin"),
     ("Is the $0.97/month price sustainable?", "Is the $9/month price sustainable?"),

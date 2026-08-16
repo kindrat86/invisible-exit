@@ -1,22 +1,22 @@
 # SEO/GEO Changelog
 
-## 2026-03-29 — Initial SEO/GEO Automation Setup
+## 2026-03-29, Initial SEO/GEO Automation Setup
 
 ### Added
-- **GitHub Actions workflow** (`.github/workflows/seo-geo-audit.yml`) — Daily automated SEO audits at 12:00 UTC, weekly deep optimization on Mondays, manual trigger support
-- **Automation agent instructions** (`.github/seo-geo-automation/claude.md`) — Master instructions for the SEO/GEO agent with Mode 1 (Daily) and Mode 2 (Weekly) definitions
-- **Learnings tracker** (`.github/seo-geo-automation/memory.md`) — Initial findings documented
-- **Gotchas tracker** (`.github/seo-geo-automation/gotchas.md`) — Known pitfalls documented
+- **GitHub Actions workflow** (`.github/workflows/seo-geo-audit.yml`), Daily automated SEO audits at 12:00 UTC, weekly deep optimization on Mondays, manual trigger support
+- **Automation agent instructions** (`.github/seo-geo-automation/claude.md`), Master instructions for the SEO/GEO agent with Mode 1 (Daily) and Mode 2 (Weekly) definitions
+- **Learnings tracker** (`.github/seo-geo-automation/memory.md`), Initial findings documented
+- **Gotchas tracker** (`.github/seo-geo-automation/gotchas.md`), Known pitfalls documented
 - **Quick-start guide** (`.github/seo-geo-automation/FastStart.txt`)
-- **llms.txt** (`public/llms.txt`) — AI/LLM context page listing all public pages and blog posts
-- **SEO_CHANGELOG.md** — This file
+- **llms.txt** (`public/llms.txt`), AI/LLM context page listing all public pages and blog posts
+- **SEO_CHANGELOG.md**, This file
 
 ### Fixed
-- **Blog listing page** (`src/pages/Blog.tsx`) — Replaced fragile DOM manipulation with `SEOHead` component + Blog JSON-LD schema
-- **Blog post pages** (`src/pages/BlogPost.tsx`) — Replaced DOM manipulation with `SEOHead` component + Article JSON-LD schema (headline, datePublished, author, publisher)
-- **Sitemap** (`public/sitemap.xml`) — Added 7 missing URLs: `/blog`, 6 individual blog posts. Total: 10 URLs (was 3)
-- **Vercel config** (`vercel.json`) — Added caching headers for static assets and proper content-type for SEO files
-- **robots.txt** (`public/robots.txt`) — Added llms.txt reference
+- **Blog listing page** (`src/pages/Blog.tsx`), Replaced fragile DOM manipulation with `SEOHead` component + Blog JSON-LD schema
+- **Blog post pages** (`src/pages/BlogPost.tsx`), Replaced DOM manipulation with `SEOHead` component + Article JSON-LD schema (headline, datePublished, author, publisher)
+- **Sitemap** (`public/sitemap.xml`), Added 7 missing URLs: `/blog`, 6 individual blog posts. Total: 10 URLs (was 3)
+- **Vercel config** (`vercel.json`), Added caching headers for static assets and proper content-type for SEO files
+- **robots.txt** (`public/robots.txt`), Added llms.txt reference
 
 ### Audit Findings
 | Check | Status | Notes |

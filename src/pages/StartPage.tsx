@@ -9,9 +9,9 @@ import { toast } from "sonner";
 import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
 
 /**
- * DOTCOM SECRETS Ch 8 — Two-Step Order Page
+ * DOTCOM SECRETS Ch 8, Two-Step Order Page
  *
- * Step 1: The Offer (this page — full stack, guarantee, social proof)
+ * Step 1: The Offer (this page, full stack, guarantee, social proof)
  * Step 2: Stripe Checkout (the actual payment)
  *
  * This page replaces the broken flow where $9/mo CTA went to /dashboard
@@ -26,11 +26,11 @@ import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
  */
 
 const STACK_ITEMS = [
-  { name: "FYM Dashboard — tracks your exit timeline", value: "$12/mo" },
-  { name: "Idea Pipeline — 500+ validated micro-SaaS ideas", value: "$15/mo" },
-  { name: "Stealth Ops Hub — entity separation + compliance", value: "$25/mo" },
-  { name: "Launch Control — 5-hour launch automation", value: "$18/mo" },
-  { name: "Brand Manager — faceless audience building", value: "$27/mo" },
+  { name: "FYM Dashboard, tracks your exit timeline", value: "$12/mo" },
+  { name: "Idea Pipeline, 500+ validated micro-SaaS ideas", value: "$15/mo" },
+  { name: "Stealth Ops Hub, entity separation + compliance", value: "$25/mo" },
+  { name: "Launch Control, 5-hour launch automation", value: "$18/mo" },
+  { name: "Brand Manager, faceless audience building", value: "$27/mo" },
 ];
 
 const BONUSES = [
@@ -50,7 +50,7 @@ const FAQS = [
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. One click in your dashboard. No contracts, no friction. Plus there's a 30-day money-back guarantee — email 'refund' and you're out.",
+    a: "Yes. One click in your dashboard. No contracts, no friction. Plus there's a 30-day money-back guarantee, email 'refund' and you're out.",
   },
   {
     q: "What if my employer finds out?",
@@ -131,7 +131,7 @@ const StartPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Start Building for $9/Month | Invisible Exit"
-        description="Get all 5 tools — FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager — for $9/month. 30-day money-back guarantee."
+        description="Get all 5 tools, FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, for $9/month. 30-day money-back guarantee."
         url="/start"
         noindex
       />
@@ -145,7 +145,7 @@ const StartPage = () => {
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-xs text-amber-200 font-semibold uppercase tracking-wider">
                 {fromTripwire
-                  ? "🎉 YOUR $7 BLUEPRINT IS WAITING — NOW UNLOCK THE FULL SYSTEM"
+                  ? "🎉 YOUR $7 BLUEPRINT IS WAITING, NOW UNLOCK THE FULL SYSTEM"
                   : "Founding membership open"}
               </span>
             </div>
@@ -160,7 +160,7 @@ const StartPage = () => {
             </h1>
             <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "50ms" }}>
               {fromTripwire
-                ? "The Stealth Ops Blueprint shows you how to stay invisible. These 5 tools show you what to build, validate, launch, and grow — all while keeping your day job."
+                ? "The Stealth Ops Blueprint shows you how to stay invisible. These 5 tools show you what to build, validate, launch, and grow, all while keeping your day job."
                 : "All 5 tools. 3 bonuses. $9/month. Locked for life."}
             </p>
 
@@ -207,7 +207,7 @@ const StartPage = () => {
               </div>
 
               {/* Bonuses */}
-              <p className="text-eyebrow text-primary mb-3">🎁 Fast-Action Bonuses (3) — Included when you start today</p>
+              <p className="text-eyebrow text-primary mb-3">🎁 Fast-Action Bonuses (3), Included when you start today</p>
               <div className="space-y-3 mb-8">
                 {BONUSES.map((bonus, i) => (
                   <div
@@ -302,7 +302,7 @@ const StartPage = () => {
               <h3 className="text-h3 text-foreground mb-3">30-Day Money-Back Guarantee</h3>
               <p className="text-body text-muted-foreground leading-relaxed mb-4">
                 Try every tool for 30 days. If you don't have a validated freedom number, a clear
-                exit timeline, and at least 3 micro-SaaS ideas worth building — email the word
+                exit timeline, and at least 3 micro-SaaS ideas worth building, email the word
                 "refund" and you get every cent back. No questions. No forms. No friction.
               </p>
               <p className="text-sm text-foreground font-medium">

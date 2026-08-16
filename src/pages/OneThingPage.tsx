@@ -6,13 +6,13 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 7 — The One Thing
+ * EXPERT SECRETS: Chapter 7:  The One Thing
  *
  * Russell: "If you could only teach ONE thing, what would it be?
  * That's the One Thing. Everything else is supporting evidence."
  *
  * This page is intentionally minimalist. One message. One idea.
- * One decision. No stacks, no bonuses, no urgency — just the One Thing.
+ * One decision. No stacks, no bonuses, no urgency, just the One Thing.
  *
  * The One Thing: Build the system first. Ideas are cartridges.
  */

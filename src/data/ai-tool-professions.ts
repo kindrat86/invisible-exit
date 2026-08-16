@@ -47,7 +47,7 @@ const TOOLS = [
   { name: "Zapier AI", slug: "zapier", strength: "workflow automation connecting 6,000+ apps without code" },
   { name: "Perplexity", slug: "perplexity", strength: "real-time research, competitor analysis, and market intelligence" },
   { name: "ElevenLabs", slug: "elevenlabs", strength: "voice synthesis for content creation, accessibility, and automated narration" },
-  { name: "Vercel v0", slug: "v0", strength: "UI generation from text prompts — spin up landing pages and dashboards in minutes" },
+  { name: "Vercel v0", slug: "v0", strength: "UI generation from text prompts, spin up landing pages and dashboards in minutes" },
 ];
 
 function generateIdeas(profession: string, tool: string, toolStrength: string) {
@@ -112,7 +112,7 @@ function generateHowTo(tool: string, ideaName: string): string {
 function generateWorkflow(tool: string, toolStrength: string): string[] {
   return [
     `Identify the most painful, repetitive task in your target industry that ${tool}'s ${toolStrength} can address.`,
-    `Build a prototype using ${tool} — a simple prompt chain, a Cursor-generated frontend, or a Zapier automation.`,
+    `Build a prototype using ${tool}, a simple prompt chain, a Cursor-generated frontend, or a Zapier automation.`,
     `Test with 3-5 potential customers. Charge from day one, even if it's $9/month.`,
     `Productize: wrap the ${tool} workflow in a simple web interface using Cursor or v0.`,
     `Set up Stripe billing ($29/month minimum) and launch to your initial customers.`,
@@ -135,7 +135,7 @@ function generateToolTips(tool: string): string[] {
     "Cursor": [
       "Use Cmd+K for inline generation and Cmd+L for multi-file refactors.",
       "Reference existing files with @ to give the AI context about your codebase.",
-      "Build the MVP in one weekend — Cursor can generate 80% of boilerplate code.",
+      "Build the MVP in one weekend, Cursor can generate 80% of boilerplate code.",
     ],
     "Midjourney": [
       "Create a consistent style by reusing the same --style and --ar parameters.",
@@ -153,12 +153,12 @@ function generateToolTips(tool: string): string[] {
       "Use the Focus mode to get academic or industry-specific sources.",
     ],
     "ElevenLabs": [
-      "Clone a consistent voice for your brand — one that sounds professional and trustworthy.",
+      "Clone a consistent voice for your brand, one that sounds professional and trustworthy.",
       "Use the API for dynamic text-to-speech in your app.",
       "Generate audio versions of blog posts for podcast distribution.",
     ],
     "Vercel v0": [
-      "Describe the complete page layout in one prompt — v0 handles responsive design automatically.",
+      "Describe the complete page layout in one prompt, v0 handles responsive design automatically.",
       "Use the chat interface to iterate on specific sections without regenerating everything.",
       "Export the code and integrate with your existing React app via shadcn/ui components.",
     ],
@@ -182,7 +182,7 @@ for (const prof of PROFESSIONS) {
       metaTitle: `Micro-SaaS Ideas for ${prof} Using ${tool.name} (2026)`,
       metaDescription: `5 profitable micro-SaaS ideas ${prof.toLowerCase()} can build with ${tool.name}. Real revenue potential, pricing models, and a step-by-step workflow for each.`,
       h1: `${prof} + ${tool.name}: 5 Micro-SaaS Ideas`,
-      intro: `${prof} have a unfair advantage when building with ${tool.name}: they understand domain-specific pain points that ${tool.name}'s ${tool.strength} can solve. Here are 5 micro-SaaS ideas at that intersection — each with revenue potential, pricing, and exactly how to use the tool.`,
+      intro: `${prof} have a unfair advantage when building with ${tool.name}: they understand domain-specific pain points that ${tool.name}'s ${tool.strength} can solve. Here are 5 micro-SaaS ideas at that intersection, each with revenue potential, pricing, and exactly how to use the tool.`,
       ideas,
       workflow: generateWorkflow(tool.name, tool.strength),
       toolTips: generateToolTips(tool.name),
@@ -190,7 +190,7 @@ for (const prof of PROFESSIONS) {
       faqs: [
         {
           question: `Can I really build a profitable micro-SaaS as a ${prof.toLowerCase()} using ${tool.name}?`,
-          answer: `Yes. ${prof} earn $70K-$200K/year and have deep domain expertise. ${tool.name} handles the technical execution. You handle the domain knowledge, customer relationships, and distribution. That combination is exactly what the market rewards — most AI tools fail because they're built by developers who don't understand the industry, not because the technology doesn't work.`,
+          answer: `Yes. ${prof} earn $70K-$200K/year and have deep domain expertise. ${tool.name} handles the technical execution. You handle the domain knowledge, customer relationships, and distribution. That combination is exactly what the market rewards, most AI tools fail because they're built by developers who don't understand the industry, not because the technology doesn't work.`,
         },
         {
           question: `How much does it cost to start?`,
@@ -198,7 +198,7 @@ for (const prof of PROFESSIONS) {
         },
         {
           question: `How long until I have paying customers?`,
-          answer: `Most ${prof.toLowerCase()} who follow the Invisible Exit framework get their first paying customer within 4-8 weeks. The bottleneck isn't building — ${tool.name} makes that fast. The bottleneck is finding the right customers and charging enough.`,
+          answer: `Most ${prof.toLowerCase()} who follow the Invisible Exit framework get their first paying customer within 4-8 weeks. The bottleneck isn't building, ${tool.name} makes that fast. The bottleneck is finding the right customers and charging enough.`,
         },
         {
           question: `Is this safe to do while employed?`,

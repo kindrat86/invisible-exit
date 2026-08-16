@@ -213,7 +213,7 @@ export default function SmartInputPanel({
             className="text-sm text-gray-700"
           >
             What your side projects earn right now
-            <HelpTip text="Total monthly recurring revenue from all your side businesses combined. Stripe payments, subscriptions, any recurring income outside your corporate salary. $0 is fine — everyone starts there." />
+            <HelpTip text="Total monthly recurring revenue from all your side businesses combined. Stripe payments, subscriptions, any recurring income outside your corporate salary. $0 is fine, everyone starts there." />
           </Label>
           <CurrencyInput
             id="monthlySideRevenue"
@@ -290,7 +290,7 @@ export default function SmartInputPanel({
         <div className="space-y-2">
           <Label htmlFor="corporateSalary" className="text-sm text-gray-700">
             Your corporate salary per year
-            <HelpTip text="Your total annual pay from your day job before tax. This is the golden handcuff number — the income you need your side projects to replace so you can walk away." />
+            <HelpTip text="Your total annual pay from your day job before tax. This is the golden handcuff number, the income you need your side projects to replace so you can walk away." />
           </Label>
           <CurrencyInput
             id="corporateSalary"

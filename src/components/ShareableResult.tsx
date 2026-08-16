@@ -3,7 +3,7 @@ import { Twitter, Linkedin, MessageSquare, Link2, Check, Share2, Lock, Gift, Spa
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * TRAFFIC SECRETS: Secret #20 — Butterfly Marketing
+ * TRAFFIC SECRETS: Secret #20:  Butterfly Marketing
  *
  * Russell's viral sharing mechanic: the most shareable moment
  * on the site (calculator results) gets a share-to-unlock gate.
@@ -114,7 +114,7 @@ const ShareableResult = ({
             <>
               <Sparkles className="w-4 h-4 text-emerald-400" />
               <p className="text-emerald-400 text-xs uppercase tracking-wide font-semibold">
-                Bonus Unlocked — Thank You!
+                Bonus Unlocked, Thank You!
               </p>
             </>
           ) : (
@@ -183,7 +183,7 @@ const ShareableResult = ({
           <p className="text-white/60 text-sm leading-relaxed mb-3">
             You shared your Freedom Number. Now here's what nobody tells you: the
             timeline from your current salary to your freedom number is shorter
-            than you think — if you follow the right system.
+            than you think, if you follow the right system.
           </p>
           <div className="grid grid-cols-3 gap-2 mb-4">
             <div className="text-center p-3 bg-white/5 rounded-lg">

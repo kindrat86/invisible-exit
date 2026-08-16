@@ -13,8 +13,8 @@ const US_VS_THEM = [
       { them: "Bookmark articles about starting something", us: "Start something" },
       { them: "Wait for the IPO that won't buy freedom", us: "Calculate the freedom number and build toward it" },
       { them: "Believe corporate loyalty is a virtue", us: "Treat employment as a transaction that funds our exit" },
-      { them: "Say 'someday' — the most expensive word", us: "Start with 5 hours this week" },
-      { them: "Let their employer decide their worth", us: "Let the market decide — $29 × 138 customers" },
+      { them: "Say 'someday', the most expensive word", us: "Start with 5 hours this week" },
+      { them: "Let their employer decide their worth", us: "Let the market decide, $29 × 138 customers" },
       { them: "Build publicly where their boss can see", us: "Build invisibly under a separate entity" },
       { them: "Obsess over the 'right' idea for months", us: "Build the system, swap ideas in and out" },
     ],
@@ -40,7 +40,7 @@ const BENEFITS = [
   {
     icon: TrendingUp,
     title: "MRR Leaderboard",
-    body: "Track your progress against other members. Monthly MRR milestones. The leaderboard is anonymous — just handles and numbers.",
+    body: "Track your progress against other members. Monthly MRR milestones. The leaderboard is anonymous, just handles and numbers.",
   },
 ];
 
@@ -48,7 +48,7 @@ const InnerCirclePage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The Invisible Exit Inner Circle — Private Community for Corporate Builders"
+        title="The Invisible Exit Inner Circle, Private Community for Corporate Builders"
         description="A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture."
         url="/inner-circle"
       />
@@ -167,7 +167,7 @@ const InnerCirclePage = () => {
               {[
                 "I will build for at least 5 hours every week. No excuses.",
                 "I will operate under a pseudonym. My employer will not find out.",
-                "I will share my MRR number — honestly — every month.",
+                "I will share my MRR number, honestly, every month.",
                 "I will help other members when I can. The circle grows by lifting each other.",
                 "I will calculate my freedom number before choosing an idea.",
                 "I will treat this as a system, not a lottery ticket.",

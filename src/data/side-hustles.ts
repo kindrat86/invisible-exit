@@ -3,7 +3,7 @@
  * Targets "best side hustle for [profession]" search intent.
  * Different from /ideas/ which focuses on micro-SaaS specifically.
  *
- * Greg Isenberg pSEO Round 4 — new search-intent dimension.
+ * Greg Isenberg pSEO Round 4, new search-intent dimension.
  */
 
 export interface SideHustleEntry {
@@ -36,9 +36,9 @@ export const sideHustles: SideHustleEntry[] = [
     slug: "for-software-engineers",
     profession: "Software Engineers",
     metaTitle: "Best Side Hustles for Software Engineers (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for software engineers — freelance, products, consulting. See startup costs, earning potential, and weekly schedules.",
+    metaDescription: "The most profitable side hustles for software engineers, freelance, products, consulting. See startup costs, earning potential, and weekly schedules.",
     h1: "Best Side Hustles for Software Engineers",
-    intro: "Software engineers have the highest-earning side hustle potential of any profession. Your coding skills can generate income within days — not months. Here are the best side hustles ranked by earning potential, time investment, and speed to first dollar.",
+    intro: "Software engineers have the highest-earning side hustle potential of any profession. Your coding skills can generate income within days, not months. Here are the best side hustles ranked by earning potential, time investment, and speed to first dollar.",
     hustleType: "Technical / Digital Products",
     startupCost: "$0-$100",
     timeToFirstDollar: "1-7 days",
@@ -68,7 +68,7 @@ export const sideHustles: SideHustleEntry[] = [
     slug: "for-marketers",
     profession: "Marketers",
     metaTitle: "Best Side Hustles for Marketers (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for marketers — from freelance SEO to newsletters. Startup costs, earning potential, and weekly schedules included.",
+    metaDescription: "The most profitable side hustles for marketers, from freelance SEO to newsletters. Startup costs, earning potential, and weekly schedules included.",
     h1: "Best Side Hustles for Marketers",
     intro: "Marketers have an unfair advantage: you know how to get attention, and attention is monetizable. Unlike engineers who build products, you can generate revenue from day one by selling your expertise. Here are the highest-ROI side hustles for marketing professionals.",
     hustleType: "Creative / Consulting",
@@ -79,7 +79,7 @@ export const sideHustles: SideHustleEntry[] = [
       { name: "Fractional CMO Services", description: "Offer part-time marketing strategy to startups that can't afford a full-time CMO.", earningPotential: "$3K-$8K/month per client", startupCost: "$0", skillsNeeded: "Strategy, team management, analytics, 7+ years experience" },
       { name: "SEO Consulting", description: "Help businesses rank higher with technical SEO audits and content strategy.", earningPotential: "$1K-$5K/month per client", startupCost: "$100 (tools)", skillsNeeded: "Keyword research, technical SEO, content optimization" },
       { name: "Email Newsletter", description: "Build a niche newsletter and monetize with sponsorships.", earningPotential: "$500-$10K/month", startupCost: "$0-$30/month", skillsNeeded: "Writing, audience building, sponsorship sales" },
-      { name: "Content Agency", description: "Productize content creation — blog posts, social, email — for a specific niche.", earningPotential: "$5K-$30K/month", startupCost: "$200", skillsNeeded: "Content strategy, hiring, project management" },
+      { name: "Content Agency", description: "Productize content creation, blog posts, social, email, for a specific niche.", earningPotential: "$5K-$30K/month", startupCost: "$200", skillsNeeded: "Content strategy, hiring, project management" },
       { name: "Paid Ads Management", description: "Manage Google/Meta ads for small businesses on retainer.", earningPotential: "$1K-$3K/month per client", startupCost: "$0", skillsNeeded: "PPC, conversion optimization, analytics" },
     ],
     weeklySchedule: [
@@ -91,7 +91,7 @@ export const sideHustles: SideHustleEntry[] = [
     pros: ["Revenue from week one", "Low startup costs", "Build a personal brand as a byproduct", "Skills compound over time", "Can transition to agency model"],
     cons: ["Trading time for money initially", "Client acquisition is the hard part", "Inconsistent income early on", "May compete with employer if not careful"],
     faqs: [
-      { question: "Can marketers do side hustles without competing with their employer?", answer: "Yes — target different industries, company sizes, or service types. If you do B2B SaaS marketing at work, target local businesses or e-commerce brands on the side. Document everything in writing." },
+      { question: "Can marketers do side hustles without competing with their employer?", answer: "Yes, target different industries, company sizes, or service types. If you do B2B SaaS marketing at work, target local businesses or e-commerce brands on the side. Document everything in writing." },
       { question: "What's the best side hustle for a marketer who wants passive income?", answer: "An email newsletter in a niche you understand. It takes 6-12 months to build an audience, but once you have 5,000+ engaged subscribers, sponsorships generate $500-$5K/month with minimal ongoing work." },
     ],
   },
@@ -99,9 +99,9 @@ export const sideHustles: SideHustleEntry[] = [
     slug: "for-designers",
     profession: "Designers",
     metaTitle: "Best Side Hustles for Designers (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for designers — from productized design to UI kits. Startup costs, earning potential, and weekly schedules included.",
+    metaDescription: "The most profitable side hustles for designers, from productized design to UI kits. Startup costs, earning potential, and weekly schedules included.",
     h1: "Best Side Hustles for Designers",
-    intro: "Designers can monetize their craft faster than almost any creative professional. Unlike many professions, your portfolio IS your marketing — every project you ship becomes a sales asset. Here are the most profitable side hustles ranked by earning potential.",
+    intro: "Designers can monetize their craft faster than almost any creative professional. Unlike many professions, your portfolio IS your marketing, every project you ship becomes a sales asset. Here are the most profitable side hustles ranked by earning potential.",
     hustleType: "Creative / Digital Products",
     startupCost: "$0-$300",
     timeToFirstDollar: "3-10 days",
@@ -122,17 +122,17 @@ export const sideHustles: SideHustleEntry[] = [
     pros: ["Portfolio builds itself", "High hourly rates for senior designers", "Digital products scale infinitely", "Visual skills are in high demand", "Can work 100% remotely"],
     cons: ["Subjective feedback can be draining", "Unlimited revisions model is risky", "Marketplace competition for digital products", "Need strong client boundaries"],
     faqs: [
-      { question: "Can designers sell work created at their job?", answer: "No — work created for an employer belongs to them. However, you can create new, original work in your own time. Avoid using employer assets, fonts, or stock subscriptions for side projects." },
-      { question: "What's the best passive income for designers?", answer: "Digital products — UI kits, icon packs, Notion templates, or Figma plugins. These take 20-40 hours to create but can earn $500-$5K/month for years with minimal maintenance. Gumroad and Creative Market are the best platforms." },
+      { question: "Can designers sell work created at their job?", answer: "No, work created for an employer belongs to them. However, you can create new, original work in your own time. Avoid using employer assets, fonts, or stock subscriptions for side projects." },
+      { question: "What's the best passive income for designers?", answer: "Digital products, UI kits, icon packs, Notion templates, or Figma plugins. These take 20-40 hours to create but can earn $500-$5K/month for years with minimal maintenance. Gumroad and Creative Market are the best platforms." },
     ],
   },
   {
     slug: "for-product-managers",
     profession: "Product Managers",
     metaTitle: "Best Side Hustles for Product Managers (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for product managers — consulting, advisory, and micro-SaaS. See startup costs and earning potential.",
+    metaDescription: "The most profitable side hustles for product managers, consulting, advisory, and micro-SaaS. See startup costs and earning potential.",
     h1: "Best Side Hustles for Product Managers",
-    intro: "Product managers are uniquely positioned for side hustles because you understand the full picture — user research, roadmap prioritization, and go-to-market. You can monetize this systems-thinking in ways most professionals can't.",
+    intro: "Product managers are uniquely positioned for side hustles because you understand the full picture, user research, roadmap prioritization, and go-to-market. You can monetize this systems-thinking in ways most professionals can't.",
     hustleType: "Strategy / Advisory",
     startupCost: "$0",
     timeToFirstDollar: "7-21 days",
@@ -153,7 +153,7 @@ export const sideHustles: SideHustleEntry[] = [
     pros: ["High-value skills command premium rates", "Advisory roles build your network exponentially", "Can work asynchronously", "Skills transfer directly to startups", "Equity upside from advisory roles"],
     cons: ["Slower to first dollar than freelancing", "Advisory equity may never pay out", "Conflict of interest risk with employer", "Need strong personal brand to attract clients"],
     faqs: [
-      { question: "Can product managers advise startups while employed?", answer: "Yes, with disclosure. Most employment agreements allow advisory roles if they don't compete. Check for non-compete clauses and get written approval. Many PMs advise 1-3 startups — it's expected at senior levels." },
+      { question: "Can product managers advise startups while employed?", answer: "Yes, with disclosure. Most employment agreements allow advisory roles if they don't compete. Check for non-compete clauses and get written approval. Many PMs advise 1-3 startups, it's expected at senior levels." },
       { question: "How do PMs find advisory opportunities?", answer: "Join communities like On Deck, Indie Hackers, or local startup accelerators. Post your expertise on LinkedIn. Most advisory roles come through warm introductions. Expect 0.25%-1% equity for 4-8 hours/month commitment." },
     ],
   },
@@ -161,7 +161,7 @@ export const sideHustles: SideHustleEntry[] = [
     slug: "for-accountants",
     profession: "Accountants",
     metaTitle: "Best Side Hustles for Accountants (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for accountants — bookkeeping, tax prep, and financial consulting. See startup costs and earning potential.",
+    metaDescription: "The most profitable side hustles for accountants, bookkeeping, tax prep, and financial consulting. See startup costs and earning potential.",
     h1: "Best Side Hustles for Accountants",
     intro: "Accountants have one of the most reliable side hustle opportunities. Every business needs financial help, and your credentials create instant trust. The key is choosing between seasonal work (tax prep) and recurring revenue (bookkeeping subscriptions).",
     hustleType: "Financial Services",
@@ -185,14 +185,14 @@ export const sideHustles: SideHustleEntry[] = [
     cons: ["Liability requires proper insurance", "Seasonal tax work is grueling (Jan-April)", "Conflict of interest if working at a firm", "Need PTIN for tax preparation", "Continuing education requirements"],
     faqs: [
       { question: "Can accountants take on private clients while working at a firm?", answer: "It depends on your firm's policies. Most firms prohibit serving the same client type. Check your employment agreement, get written approval, and never use firm resources or client lists. Many accountants do bookkeeping for different industries than their firm serves." },
-      { question: "Do I need a CPA to do bookkeeping?", answer: "No — bookkeeping doesn't require a CPA license. You need a PTIN only for tax preparation. For bookkeeping, QuickBooks ProAdvisor certification ($200) is sufficient and highly marketable." },
+      { question: "Do I need a CPA to do bookkeeping?", answer: "No, bookkeeping doesn't require a CPA license. You need a PTIN only for tax preparation. For bookkeeping, QuickBooks ProAdvisor certification ($200) is sufficient and highly marketable." },
     ],
   },
   {
     slug: "for-writers",
     profession: "Writers",
     metaTitle: "Best Side Hustles for Writers (2025) | Invisible Exit",
-    metaDescription: "The most profitable side hustles for writers — from ghostwriting to newsletters to copywriting. See startup costs and earning potential.",
+    metaDescription: "The most profitable side hustles for writers, from ghostwriting to newsletters to copywriting. See startup costs and earning potential.",
     h1: "Best Side Hustles for Writers",
     intro: "Writers have more side hustle options than ever. The demand for quality content has exploded, and AI has actually increased the value of distinctive human voices. Here are the most profitable ways to monetize your writing skills.",
     hustleType: "Content / Creative",
@@ -213,10 +213,10 @@ export const sideHustles: SideHustleEntry[] = [
     ],
     tools: ["Google Docs", "Notion", "Grammarly", "Hemingway Editor", "Beehiiv", "Scrivener"],
     pros: ["Zero startup costs", "Can work from anywhere", "AI makes research 10x faster", "Builds a personal brand as a byproduct", "Multiple revenue streams possible"],
-    cons: ["Competitive market — need a niche", "Ghostwriting means no public credit", "Income can be feast-or-famine", "Sitting for long periods", "Client revisions can be endless"],
+    cons: ["Competitive market, need a niche", "Ghostwriting means no public credit", "Income can be feast-or-famine", "Sitting for long periods", "Client revisions can be endless"],
     faqs: [
       { question: "Can writers make a full-time income from side hustles?", answer: "Yes. Ghostwriting for 3-4 founders at $2K-$4K/month each generates $6K-$16K/month. SEO content writing for B2B SaaS at $300/article, 10 articles/month = $3K/month. The key is specializing in a high-value niche (B2B SaaS, fintech, AI)." },
-      { question: "Is ghostwriting ethical?", answer: "Yes, when done transparently. Most founders publicly acknowledge they work with writers. The value you provide is their ideas and expertise — you're the vessel. It's a centuries-old practice (Hamilton ghostwrote for Washington)." },
+      { question: "Is ghostwriting ethical?", answer: "Yes, when done transparently. Most founders publicly acknowledge they work with writers. The value you provide is their ideas and expertise, you're the vessel. It's a centuries-old practice (Hamilton ghostwrote for Washington)." },
     ],
   },
 ];

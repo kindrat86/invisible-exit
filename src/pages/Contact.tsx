@@ -62,7 +62,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Contact Invisible Exit | One Inbox, Real Replies"
-        description="Reach the Invisible Exit team. Email hello@invisibleexit.com for support, partnerships, press, or membership questions — one inbox, real replies."
+        description="Reach the Invisible Exit team. Email hello@invisibleexit.com for support, partnerships, press, or membership questions, one inbox, real replies."
         url="/contact"
       />
       {jsonLdArray.map((ld, i) => (
@@ -89,7 +89,7 @@ const Contact = () => {
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
               Contact Invisible Exit for support, partnership inquiries, press, or membership
-              questions. Replies within 24 hours, EU business time. One inbox, real replies —
+              questions. Replies within 24 hours, EU business time. One inbox, real replies, 
               no ticket system pretending to be a person. Your message reaches the team directly.
             </p>
           </div>
@@ -106,7 +106,7 @@ const Contact = () => {
               >
                 hello@invisibleexit.com
               </a>{" "}
-              and we&rsquo;ll reply — usually within one business day.
+              and we&rsquo;ll reply, usually within one business day.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
               Membership support, partnerships, affiliate questions, and press all go
@@ -126,7 +126,7 @@ const Contact = () => {
                 },
                 {
                   title: "Press & media",
-                  desc: "Interviews and coverage — include your outlet and deadline.",
+                  desc: "Interviews and coverage, include your outlet and deadline.",
                 },
               ].map((item) => (
                 <div

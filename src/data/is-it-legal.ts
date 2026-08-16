@@ -3,7 +3,7 @@
  * Pattern: /is-it-legal/:topic
  * Targets the #1 anxiety of employed founders: legal risk.
  * Each page addresses a specific legal concern with clear, factual guidance.
- * High-intent: people searching these have anxiety — they will read.
+ * High-intent: people searching these have anxiety, they will read.
  */
 
 export interface IsItLegalPage {
@@ -28,13 +28,13 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaTitle: "Is It Legal to Start a Business While Employed? | Invisible Exit",
     metaDescription: "Yes, in most cases. Learn when your employer can restrict side businesses, how non-competes work, and how to stay legal while building your invisible exit.",
     h1: "Is It Legal to Start a Business While Employed?",
-    intro: "The #1 question every employed founder asks. The short answer is yes — but it depends on three things: your employment contract, your state, and what type of business you are starting.",
+    intro: "The #1 question every employed founder asks. The short answer is yes, but it depends on three things: your employment contract, your state, and what type of business you are starting.",
     shortAnswer: "Yes, starting a side business while employed is legal in the vast majority of cases. You cannot be prosecuted or sued simply for having a side business. The exceptions are: (1) you signed an enforceable non-compete that covers the business, (2) you use company time/resources, or (3) you steal company IP. For most corporate employees building a micro-SaaS in a different industry than their employer, there is zero legal risk.",
     details: [
       "At-will employment means you can be fired for any reason (including having a side business), but that is different from it being illegal. Firing is legal. Being sued requires a contract violation.",
       "Non-compete clauses are the main legal threat. They prohibit you from starting or working for a competing business. But 60%+ are unenforceable in some states and nearly all are limited in scope (industry, geography, duration).",
       "Non-solicitation clauses prevent you from poaching clients or coworkers. These are more enforceable than non-competes in most states.",
-      "IP assignment clauses are the hidden danger. Many employment contracts grant your employer ownership of anything you invent while employed — even on your own time. Always check this language.",
+      "IP assignment clauses are the hidden danger. Many employment contracts grant your employer ownership of anything you invent while employed, even on your own time. Always check this language.",
       "Using company equipment (laptop, phone, Slack, email) for your side business creates a legal liability. Your employer can argue your business is their IP because it was built on their resources.",
     ],
     keyConsiderations: [
@@ -55,19 +55,19 @@ export const isItLegalPages: IsItLegalPage[] = [
       { state: "Florida", rule: "Non-competes broadly enforceable. Courts typically uphold them if the scope is reasonable. Toughest state for side business founders." },
     ],
     whatToDo: [
-      "Read your employment contract — look for non-compete, non-solicitation, and IP assignment clauses.",
+      "Read your employment contract, look for non-compete, non-solicitation, and IP assignment clauses.",
       "Check if your state has specific laws that limit non-compete enforcement.",
-      "Use a different computer, phone, and email for your side business — never use company resources.",
+      "Use a different computer, phone, and email for your side business, never use company resources.",
       "Build in a completely different industry than your employer to eliminate non-compete concerns.",
       "Form an LLC in a privacy-friendly state (Wyoming, New Mexico, Delaware) to keep your name off public records.",
-      "Consult an employment attorney if you have a specific concern — most offer $300-500 one-time consultations.",
+      "Consult an employment attorney if you have a specific concern, most offer $300-500 one-time consultations.",
     ],
     faqs: [
       { question: "Can my employer find out about my side business?", answer: "Only if you tell them or if your business appears in public records. An anonymous LLC with a registered agent keeps your name off searchable databases. Use a business address that is not your home." },
       { question: "Can I get fired for having a side business?", answer: "Yes, in at-will employment states your employer can fire you for any reason. But this is rare unless: (1) you are directly competing, (2) you use company resources, or (3) you violate a specific contract clause. Most employers do not check." },
-      { question: "What happens if my employer sues me?", answer: "They would need to prove damages — that your side business directly cost them money. For a non-competing micro-SaaS, this is extremely difficult. Most threats are just threats." },
+      { question: "What happens if my employer sues me?", answer: "They would need to prove damages, that your side business directly cost them money. For a non-competing micro-SaaS, this is extremely difficult. Most threats are just threats." },
       { question: "Do I need to tell my employer?", answer: "No. There is generally no legal obligation to disclose side business activity. In fact, most legal advice recommends keeping your side business private to avoid employment complications." },
-      { question: "Is it illegal to use company Wi-Fi for side work?", answer: "Technically yes — it violates most company IT policies and could be considered using company resources. Use a personal hotspot or home internet for side business work." },
+      { question: "Is it illegal to use company Wi-Fi for side work?", answer: "Technically yes, it violates most company IT policies and could be considered using company resources. Use a personal hotspot or home internet for side business work." },
     ],
   },
   {
@@ -77,11 +77,11 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "The safest way to use your personal laptop for a side business. How to avoid IP contamination, keep your data separate, and protect yourself legally.",
     h1: "Is It Safe to Use My Personal Laptop for a Side Business?",
     intro: "Yes, using your personal laptop is much safer than using your work laptop. But there are important steps you should take to protect your privacy and your legal standing.",
-    shortAnswer: "Using a personal laptop for your side business is the safest approach — far better than using a work laptop. The key risk is IP contamination: if your employer's software or files are on the machine, they could argue overlap. Create a separate user account on your personal laptop, use a separate browser profile, and never log into work accounts from your side business profile.",
+    shortAnswer: "Using a personal laptop for your side business is the safest approach, far better than using a work laptop. The key risk is IP contamination: if your employer's software or files are on the machine, they could argue overlap. Create a separate user account on your personal laptop, use a separate browser profile, and never log into work accounts from your side business profile.",
     details: [
       "A personal laptop gives you full control over the environment. No employer tracking software, no IT monitoring, no accidental data leaks.",
       "The main risk is data commingling. If you have work files and side business files on the same machine, it creates ambiguity about ownership.",
-      "Using a work laptop for your side business is much riskier — everything you do could be monitored, logged, and claimed as company IP.",
+      "Using a work laptop for your side business is much riskier, everything you do could be monitored, logged, and claimed as company IP.",
       "Encryption and password protection on your personal laptop add an extra layer of privacy protection.",
     ],
     keyConsiderations: [
@@ -99,7 +99,7 @@ export const isItLegalPages: IsItLegalPage[] = [
       "Back up side business data to a personal cloud account (never work-sanctioned storage).",
     ],
     faqs: [
-      { question: "Can my employer see what I do on my personal laptop?", answer: "No — unless you have installed employer-managed software (MDM, antivirus, VPN). A personal laptop is your private device." },
+      { question: "Can my employer see what I do on my personal laptop?", answer: "No, unless you have installed employer-managed software (MDM, antivirus, VPN). A personal laptop is your private device." },
       { question: "Should I buy a separate laptop for my side business?", answer: "It is ideal but not required. A separate user account provides good legal separation. A dedicated machine is best once you have paying customers." },
       { question: "What if I need to use work software for side business tasks?", answer: "Don't. Purchase your own licenses for any software you need. Using work-licensed software blurs the line and can create IP claims." },
     ],
@@ -111,11 +111,11 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "Why using your work laptop for side business is risky. Tracking software, IP claims, and what your employer can actually see. How to do it safely if you must.",
     h1: "Can I Use My Work Laptop for a Side Business? (Risks Explained)",
     intro: "You should not use your work laptop for your side business. But if you must, here is what your employer can actually see and how to minimize your risk.",
-    shortAnswer: "Using a work laptop for your side business is risky. Your employer likely has MDM (Mobile Device Management) software that can monitor applications, websites, and keystrokes. Any code you write or files you create on a work laptop could be claimed as company IP. The safest approach is never to use your work laptop for side business — use a personal device instead.",
+    shortAnswer: "Using a work laptop for your side business is risky. Your employer likely has MDM (Mobile Device Management) software that can monitor applications, websites, and keystrokes. Any code you write or files you create on a work laptop could be claimed as company IP. The safest approach is never to use your work laptop for side business, use a personal device instead.",
     details: [
       "Most corporate laptops have monitoring software that tracks application usage, website visits, and sometimes keystrokes.",
       "IT admins can remotely access your work laptop and see running processes, open files, and browser history.",
-      "IP assignment clauses typically cover anything created using company equipment — even on personal time.",
+      "IP assignment clauses typically cover anything created using company equipment, even on personal time.",
       "Some employers use DLP (Data Loss Prevention) software that blocks or reports file transfers to personal accounts.",
     ],
     keyConsiderations: [
@@ -135,7 +135,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     faqs: [
       { question: "Can my employer see what websites I visit on my work laptop?", answer: "Probably yes, if they use web filtering or monitoring. Even incognito mode does not hide activity from installed monitoring software." },
       { question: "Can my employer claim ownership of my side business if I used my work laptop?", answer: "Possibly. Most IP assignment clauses cover anything created using company equipment. A separate personal device avoids this argument entirely." },
-      { question: "What if I only check dashboards on my work laptop — no coding?", answer: "Even logging into your side business accounts from a work laptop creates a trail. Your employer could argue you used company time to manage your business." },
+      { question: "What if I only check dashboards on my work laptop, no coding?", answer: "Even logging into your side business accounts from a work laptop creates a trail. Your employer could argue you used company time to manage your business." },
     ],
   },
   {
@@ -144,7 +144,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaTitle: "Is It Legal to Have Two Jobs at Once? (Overemployment) | Invisible Exit",
     metaDescription: "The legal reality of working two jobs simultaneously. When overemployment is legal vs. grounds for termination. State laws, employment contracts, and risks explained.",
     h1: "Is It Legal to Have Two Jobs at Once?",
-    intro: "Overemployment — working two full-time remote jobs simultaneously — has exploded in popularity. But is it legal? The answer depends on your employment contracts, your state, and whether you are salaried or hourly.",
+    intro: "Overemployment, working two full-time remote jobs simultaneously, has exploded in popularity. But is it legal? The answer depends on your employment contracts, your state, and whether you are salaried or hourly.",
     shortAnswer: "Having two jobs is generally not illegal, but it can be grounds for termination under most employment contracts. The legal issues arise from: (1) fraud if you are billing hourly for overlapping hours, (2) violating non-compete clauses, (3) violating exclusive employment clauses, or (4) IP assignment conflicts. Salaried employees are at lower risk than hourly employees. Federal employees face additional restrictions.",
     details: [
       "There is no federal law against having two jobs. Your employer can fire you for it (at-will employment), but that is different from it being illegal.",
@@ -155,7 +155,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     ],
     keyConsiderations: [
       { item: "Exclusive Employment Clause", explanation: "Check your contract for language like 'devote full time and attention' or 'exclusive service.' This is the most common contract clause overemployment violates." },
-      { item: "Hourly vs. Salaried", explanation: "If you are hourly and billing the same hours to two employers, that is fraud. If you are salaried and completing both jobs, the risk is termination — not prosecution." },
+      { item: "Hourly vs. Salaried", explanation: "If you are hourly and billing the same hours to two employers, that is fraud. If you are salaried and completing both jobs, the risk is termination, not prosecution." },
       { item: "Non-Compete Clauses", explanation: "If both jobs are in the same industry, a non-compete could apply. If they are in different industries, this is rarely an issue." },
       { item: "IP Assignment", explanation: "Both employers may claim ownership of your work output. If you build software for both, who owns what? This gets complicated fast." },
       { item: "Tax Complications", explanation: "Having two W-2 jobs is straightforward tax-wise (both withhold). A W-2 + 1099 side business means you handle self-employment tax. Both W-2 jobs may under-withhold. Adjust your W-4s." },
@@ -167,16 +167,16 @@ export const isItLegalPages: IsItLegalPage[] = [
     ],
     whatToDo: [
       "Check your employment contracts for exclusive employment, non-compete, and IP assignment clauses.",
-      "Do not bill overlapping hours if you are hourly — this is time theft and fraud.",
+      "Do not bill overlapping hours if you are hourly, this is time theft and fraud.",
       "Keep both jobs in completely different industries to avoid non-compete issues.",
       "Use separate devices and accounts for each job to avoid data commingling.",
-      "Do not tell either employer about the other — there is no legal obligation to disclose.",
+      "Do not tell either employer about the other, there is no legal obligation to disclose.",
       "Consult a tax professional to ensure proper withholding across multiple incomes.",
     ],
     faqs: [
       { question: "Can I get fired for having two jobs?", answer: "Yes, most employers can fire you for any reason (at-will). But many will not proactively check. The risk of firing increases if your performance suffers or a coworker reports you." },
-      { question: "Is overemployment fraud?", answer: "Only if you are hourly and bill overlapping hours. Salaried employees completing both roles are not committing fraud — but they may breach their employment contract." },
-      { question: "Do I have to disclose my second job to my employer?", answer: "No, there is generally no legal obligation to disclose outside employment unless your contract explicitly requires it. Some employers have disclosure policies — check your employee handbook." },
+      { question: "Is overemployment fraud?", answer: "Only if you are hourly and bill overlapping hours. Salaried employees completing both roles are not committing fraud, but they may breach their employment contract." },
+      { question: "Do I have to disclose my second job to my employer?", answer: "No, there is generally no legal obligation to disclose outside employment unless your contract explicitly requires it. Some employers have disclosure policies, check your employee handbook." },
     ],
   },
   {
@@ -186,7 +186,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "Yes. You have no legal obligation to disclose a side business to your employer. Learn how to operate anonymously with LLC structures, registered agents, and privacy best practices.",
     h1: "Is It Legal to Keep Your Side Business Anonymous from Your Employer?",
     intro: "Yes, it is completely legal to keep your side business private from your employer. You have no legal obligation to disclose outside business activities unless your contract specifically requires it. But there are important nuances about how you operate anonymously.",
-    shortAnswer: "It is legal and common to keep your side business anonymous from your employer. Your employment contract governs what you must disclose — most contracts do not require disclosure of non-competing side businesses. An anonymous LLC (using a registered agent and a business address) keeps your name off public records so your employer cannot find your business through a simple search.",
+    shortAnswer: "It is legal and common to keep your side business anonymous from your employer. Your employment contract governs what you must disclose, most contracts do not require disclosure of non-competing side businesses. An anonymous LLC (using a registered agent and a business address) keeps your name off public records so your employer cannot find your business through a simple search.",
     details: [
       "There is no general legal duty to disclose side business activity to your employer. Your privacy is protected.",
       "Some employment contracts include a 'moonlighting clause' requiring disclosure of outside business activities. Read your contract carefully.",
@@ -199,7 +199,7 @@ export const isItLegalPages: IsItLegalPage[] = [
       { item: "Professional Ethics", explanation: "Accountants (SEC rules), lawyers (bar ethics), and financial advisors (FINRA) may have specific disclosure requirements. Check your professional body's rules." },
       { item: "Public Records", explanation: "LLC registration is public record. Using a registered agent service (Northwest, LegalZoom) and a business address keeps your personal name off searchable databases." },
       { item: "Social Media Leaks", explanation: "The most common way employers discover side businesses is through social media. Keep side business social accounts completely separate from your personal profiles." },
-      { item: "Banking and Payments", explanation: "Use a business bank account under your LLC name — not your personal name. Payment processors like Stripe and Lemon Squeezy can keep your name private from customers." },
+      { item: "Banking and Payments", explanation: "Use a business bank account under your LLC name, not your personal name. Payment processors like Stripe and Lemon Squeezy can keep your name private from customers." },
     ],
     stateVariations: [
       { state: "Wyoming", rule: "Best privacy state for LLCs. The state does not require member names in public filings. Use a registered agent and your name stays off public records." },
@@ -210,13 +210,13 @@ export const isItLegalPages: IsItLegalPage[] = [
       "Read your employment contract for any disclosure requirements.",
       "Form an LLC in a privacy-friendly state (Wyoming, New Mexico, or Delaware).",
       "Use a registered agent service so your home address is not on public filings.",
-      "Use a business address (virtual mailbox or PO Box) — not your home address.",
+      "Use a business address (virtual mailbox or PO Box), not your home address.",
       "Keep side business social media and professional profiles completely separate.",
       "Use a business bank account and business credit card to keep finances separate.",
       "Never log into side business accounts from work devices or work networks.",
     ],
     faqs: [
-      { question: "Can my employer find my LLC online?", answer: "If you form an LLC with a registered agent in a privacy-friendly state, your personal name will not appear in public LLC databases. Your employer would need to know your LLC name to find it — and there is no cross-reference from your personal name." },
+      { question: "Can my employer find my LLC online?", answer: "If you form an LLC with a registered agent in a privacy-friendly state, your personal name will not appear in public LLC databases. Your employer would need to know your LLC name to find it, and there is no cross-reference from your personal name." },
       { question: "Do I need to tell my employer about my LLC?", answer: "Not unless your contract explicitly requires disclosure of outside businesses. Most employment contracts do not require this. Check your specific contract language." },
       { question: "What if my employer asks me directly?", answer: "You do not have to answer. But if you lie, that could be grounds for termination. 'I prefer not to discuss my personal financial activities' is a truthful and professional response." },
     ],
@@ -228,12 +228,12 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "Yes, you can start a micro-SaaS or side business without an LLC. But you take on personal liability. When a sole proprietorship is fine and when you need an LLC.",
     h1: "Can I Start a Side Business Without Forming an LLC?",
     intro: "Yes, you can absolutely start a micro-SaaS or side business as a sole proprietor without forming an LLC. Many successful founders started without one. But there are specific risks you should understand.",
-    shortAnswer: "You can start a side business without an LLC — you would operate as a sole proprietor reporting income on Schedule C of your tax return. The risk is unlimited personal liability: if someone sues your business, your personal assets (home, car, savings) are exposed. For low-risk businesses (small SaaS tools with no professional advice or physical products), the risk is minimal. For any business with contracts, subscriptions, or liability exposure, an LLC is strongly recommended.",
+    shortAnswer: "You can start a side business without an LLC, you would operate as a sole proprietor reporting income on Schedule C of your tax return. The risk is unlimited personal liability: if someone sues your business, your personal assets (home, car, savings) are exposed. For low-risk businesses (small SaaS tools with no professional advice or physical products), the risk is minimal. For any business with contracts, subscriptions, or liability exposure, an LLC is strongly recommended.",
     details: [
       "A sole proprietorship (no LLC) is the simplest structure. You report business income on your personal tax return (Schedule C). No separate tax filing, no annual reports.",
       "The downside is no legal separation. If your business is sued, your personal assets are at risk. For a micro-SaaS with clear terms of service, the risk is low but not zero.",
       "Without an LLC, your business is tied to your name. Customers pay you personally. Your employer could more easily discover your business.",
-      "You cannot get a business bank account with merchant services without a formal business entity — some payment processors require an EIN.",
+      "You cannot get a business bank account with merchant services without a formal business entity, some payment processors require an EIN.",
       "Upgrading from sole proprietor to LLC later is possible but creates an asset transfer that may trigger tax or contract implications.",
     ],
     keyConsiderations: [
@@ -245,7 +245,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     ],
     stateVariations: [],
     whatToDo: [
-      "Start as a sole proprietor if you are pre-revenue or under $500/month — you can upgrade later.",
+      "Start as a sole proprietor if you are pre-revenue or under $500/month, you can upgrade later.",
       "Form an LLC before accepting paying customers if your business involves contracts, advice, or data processing.",
       "Get a separate business bank account even as a sole proprietor to keep finances clean.",
       "Get business liability insurance ($25-50/month) as a bridge if you are not ready for an LLC.",
@@ -254,7 +254,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     faqs: [
       { question: "Can I get a business bank account without an LLC?", answer: "Yes, you can open a sole proprietor business account with just your SSN and a DBA (Doing Business As) name. Most banks offer this." },
       { question: "Do I need an EIN without an LLC?", answer: "No, you can use your SSN for business taxes. But an EIN is free and keeps your SSN off customer invoices. Recommended." },
-      { question: "Can I add an LLC later?", answer: "Yes. You form the LLC, then transfer your business assets (domain, customer contracts, code) into it. This may have tax implications — consult a CPA." },
+      { question: "Can I add an LLC later?", answer: "Yes. You form the LLC, then transfer your business assets (domain, customer contracts, code) into it. This may have tax implications, consult a CPA." },
     ],
   },
   {
@@ -268,7 +268,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     details: [
       "A DBA is registered at the county or state level and lets you operate under a business name without forming an entity. It costs $10-$100 depending on location.",
       "An LLC has an official name on state filings but you can operate under a different brand name (your LLC can have a DBA too).",
-      "You must use your real legal name on contracts, tax returns, and banking — even if your business has a different name.",
+      "You must use your real legal name on contracts, tax returns, and banking, even if your business has a different name.",
       "Trademark infringement is the main legal risk. Search the USPTO database before settling on a name.",
       "Using a different business name does not provide anonymity from your employer if they search court records or business filings for your personal name.",
     ],
@@ -299,16 +299,16 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "How to accept payments under your business name as a solo founder. Stripe, Lemon Squeezy, PayPal business accounts. Required documents and timeline.",
     h1: "Can I Accept Payments Under My Business Name?",
     intro: "Yes, you can accept payments under your business name through most payment processors. Here is exactly how to set it up and what each processor requires.",
-    shortAnswer: "Yes, you can accept payments under your business name through Stripe, Lemon Squeezy, PayPal Business, or any modern payment processor. You will need: (1) a business name (DBA or LLC name), (2) an EIN (free from IRS), (3) a business bank account, and (4) personal identification (your legal name and SSN for the processor's KYC checks). Customer-facing payments will show your business name — not your personal name.",
+    shortAnswer: "Yes, you can accept payments under your business name through Stripe, Lemon Squeezy, PayPal Business, or any modern payment processor. You will need: (1) a business name (DBA or LLC name), (2) an EIN (free from IRS), (3) a business bank account, and (4) personal identification (your legal name and SSN for the processor's KYC checks). Customer-facing payments will show your business name, not your personal name.",
     details: [
       "Stripe displays your business name (or DBA) on customer credit card statements and invoices by default.",
-      "Lemon Squeezy acts as a Merchant of Record — they handle tax compliance and your business name appears to customers.",
+      "Lemon Squeezy acts as a Merchant of Record, they handle tax compliance and your business name appears to customers.",
       "PayPal Business shows your business name on transactions, not your personal name, once you upgrade to a Business account.",
-      "All payment processors require Know Your Customer (KYC) verification — you must provide your personal SSN and legal name to the processor, but this is not visible to customers.",
+      "All payment processors require Know Your Customer (KYC) verification, you must provide your personal SSN and legal name to the processor, but this is not visible to customers.",
       "Gumroad shows your store name and creator name. You can set this to your brand name, not your personal name.",
     ],
     keyConsiderations: [
-      { item: "Processor KYC Requirements", explanation: "Stripe, Lemon Squeezy, and PayPal all require your personal identity documents. This is for fraud prevention only — customers never see your legal name." },
+      { item: "Processor KYC Requirements", explanation: "Stripe, Lemon Squeezy, and PayPal all require your personal identity documents. This is for fraud prevention only, customers never see your legal name." },
       { item: "Business Bank Account", explanation: "Most processors require deposits to a business bank account. If you do not have an LLC, open a sole proprietor business account at a local bank." },
       { item: "Customer Statement Name", explanation: "The name that appears on customer credit card statements is configurable in most processors. Set this to your recognizable business name." },
       { item: "Invoice Name", explanation: "Stripe invoices and Lemon Squeezy receipts show your business name. Make sure this matches your DBA or LLC name for consistency." },
@@ -335,25 +335,25 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaTitle: "Can I Open a Business Bank Account Anonymously? | Invisible Exit",
     metaDescription: "How to open a business bank account with privacy. LLC name only, registered agent setup, and what banks require. The legal reality of anonymous banking.",
     h1: "Can I Open a Business Bank Account Anonymously?",
-    intro: "You cannot open a truly anonymous bank account in the US — banks are required by federal law (Bank Secrecy Act) to verify your identity. But you can open an account under your business name where your personal name is not visible to customers.",
-    shortAnswer: "No, US banks legally cannot offer truly anonymous accounts. The Bank Secrecy Act requires them to verify the identity of all account signers. However, you can open a business account where: (1) the account is in your LLC's name, (2) your personal name is known to the bank but not to the public, and (3) customer payments show your business name, not yours. The closest thing to 'anonymous banking' is using a payment processor like Stripe or Lemon Squeezy as your front door — customers pay them, and they deposit to your account.",
+    intro: "You cannot open a truly anonymous bank account in the US, banks are required by federal law (Bank Secrecy Act) to verify your identity. But you can open an account under your business name where your personal name is not visible to customers.",
+    shortAnswer: "No, US banks legally cannot offer truly anonymous accounts. The Bank Secrecy Act requires them to verify the identity of all account signers. However, you can open a business account where: (1) the account is in your LLC's name, (2) your personal name is known to the bank but not to the public, and (3) customer payments show your business name, not yours. The closest thing to 'anonymous banking' is using a payment processor like Stripe or Lemon Squeezy as your front door, customers pay them, and they deposit to your account.",
     details: [
       "The Bank Secrecy Act requires banks to verify identity (name, DOB, SSN, address) for all account holders. No exceptions for privacy.",
       "Online banks (Mercury, Relay, Brex, Novo) are privacy-friendly but still require identity verification.",
-      "Your business name appears on checks, debit cards, and wire instructions — not your personal name.",
+      "Your business name appears on checks, debit cards, and wire instructions, not your personal name.",
       "International options like TransferWise (Wise) Business offer cross-border accounts but also require full identity verification.",
       "Bitcoin/crypto is the only way to receive payments without a named bank account, but it creates tax reporting complexity.",
     ],
     keyConsiderations: [
       { item: "LLC Name Only", explanation: "Open the account in your LLC name only. The bank knows your personal ID, but the account name, checks, and debit cards show your LLC name." },
       { item: "Online Banks", explanation: "Mercury, Relay, and Novo are startup-friendly banks that do not require a physical branch visit. They accept LLCs from any state and have minimal fees." },
-      { item: "Registered Agent Address", explanation: "Use your registered agent's address (not your home) as the business address on the bank account. Some banks may ask for a physical address — use a virtual mailbox." },
+      { item: "Registered Agent Address", explanation: "Use your registered agent's address (not your home) as the business address on the bank account. Some banks may ask for a physical address, use a virtual mailbox." },
       { item: "Crypto Payments", explanation: "Accepting crypto payments via Coinbase Commerce or OpenNode avoids banks entirely. But you must still report crypto income on taxes (IRS treats it as property)." },
     ],
     stateVariations: [],
     whatToDo: [
       "Form an LLC in a privacy-friendly state before opening the account.",
-      "Open an account with Mercury or Relay — they are startup-focused and privacy-aware.",
+      "Open an account with Mercury or Relay, they are startup-focused and privacy-aware.",
       "Use your registered agent's address as the business address.",
       "Never use your home address for business banking.",
       "Set up Stripe + Mercury as your payment flow: customers see Stripe → Stripe deposits to Mercury account in LLC name.",
@@ -371,7 +371,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaDescription: "Your income is private information. Your employer has no right to see your tax returns or side business earnings. How to keep your finances completely private.",
     h1: "Can I Hide My Side Business Income from My Employer?",
     intro: "Your side business income is your private financial information. Your employer generally has no legal right to see your tax returns, bank statements, or business income. Here is how to keep it that way.",
-    shortAnswer: "Yes, your side business income is private. Your employer has no legal access to your tax returns, bank accounts, or business financials. They cannot compel you to disclose your income unless they have a court order — which requires them to have already proven a legal violation. The risk is not your employer seeing your bank balance; it is them discovering the business exists through other means (social media, public records, customer overlap).",
+    shortAnswer: "Yes, your side business income is private. Your employer has no legal access to your tax returns, bank accounts, or business financials. They cannot compel you to disclose your income unless they have a court order, which requires them to have already proven a legal violation. The risk is not your employer seeing your bank balance; it is them discovering the business exists through other means (social media, public records, customer overlap).",
     details: [
       "Your personal tax returns are protected by federal privacy law. Your employer cannot access them without your consent or a court order.",
       "Your bank accounts are protected by financial privacy laws. Your employer cannot see your balances or transactions.",
@@ -383,7 +383,7 @@ export const isItLegalPages: IsItLegalPage[] = [
       { item: "Financial Disclosure Roles", explanation: "C-suite executives, SEC-regulated roles, financial advisors (FINRA), and some government positions require annual financial disclosures. If you are in one of these roles, your side business may need to be disclosed." },
       { item: "Social Media", explanation: "The #1 way employers discover side businesses is through social media. Do not post about your business on LinkedIn or Facebook where coworkers can see." },
       { item: "Public LLC Records", explanation: "Without an anonymous LLC setup, your name is on public business filings. A registered agent and privacy-friendly state prevents this." },
-      { item: "Payment Processor Reporting", explanation: "Stripe, PayPal, and others report your income to the IRS via 1099-K. This goes to the IRS — not to your employer." },
+      { item: "Payment Processor Reporting", explanation: "Stripe, PayPal, and others report your income to the IRS via 1099-K. This goes to the IRS, not to your employer." },
     ],
     stateVariations: [],
     whatToDo: [
@@ -391,7 +391,7 @@ export const isItLegalPages: IsItLegalPage[] = [
       "Keep side business social media completely separate from personal profiles.",
       "Do not use work email, phone, or devices for any side business communication.",
       "Set up a separate business bank account and credit card.",
-      "Use a registered agent and virtual mailbox — never your home address.",
+      "Use a registered agent and virtual mailbox, never your home address.",
       "If you are in a financial disclosure role, consult an attorney about what you must share.",
     ],
     faqs: [
@@ -406,7 +406,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaTitle: "Is It Legal to Start a TikTok or Social Media Channel While Working? | Invisible Exit",
     metaDescription: "Legal risks of faceless TikTok, YouTube, or Instagram channels while employed. Non-compete issues, IP claims, and how to start a content side business safely.",
     h1: "Is It Legal to Start a TikTok Channel While Employed?",
-    intro: "Starting a faceless TikTok, YouTube, or Instagram channel as a side business while employed is generally legal — but there are specific traps to watch for. Here is what you need to know before you start posting.",
+    intro: "Starting a faceless TikTok, YouTube, or Instagram channel as a side business while employed is generally legal, but there are specific traps to watch for. Here is what you need to know before you start posting.",
     shortAnswer: "Starting a TikTok or content channel while employed is legal. The risks are: (1) non-compete clauses if your content is in the same industry as your employer, (2) IP ownership claims if you use any company resources to create content, and (3) employment contracts that prohibit outside business activities. For faceless channels that are unrelated to your employer's industry, the legal risk is minimal. The main risk is your employer discovering the channel through the algorithm showing it to coworkers.",
     details: [
       "Creating content is a legitimate business activity. There is no law against having a side content business while employed.",
@@ -432,7 +432,7 @@ export const isItLegalPages: IsItLegalPage[] = [
     ],
     faqs: [
       { question: "Can my employer claim ownership of my TikTok channel?", answer: "Only if you created it on company time or with company resources. A channel created entirely on personal devices and time is your property." },
-      { question: "Will TikTok tell my employer I have a channel?", answer: "No. TikTok does not share creator information with employers. The risk is algorithmic — the platform may show your content to people in your network." },
+      { question: "Will TikTok tell my employer I have a channel?", answer: "No. TikTok does not share creator information with employers. The risk is algorithmic, the platform may show your content to people in your network." },
       { question: "Can I get fired for a TikTok that goes viral?", answer: "Yes, if your employer identifies you and disapproves. But this is a termination risk, not a legal one. At-will employment means they can fire you for any lawful reason." },
     ],
   },
@@ -442,8 +442,8 @@ export const isItLegalPages: IsItLegalPage[] = [
     metaTitle: "Is It Legal to Use AI to Automate My Job? | Invisible Exit",
     metaDescription: "Legal and employment risks of using AI to automate your job functions. When it is a breach of contract, when it is time theft, and how to use AI responsibly.",
     h1: "Is It Legal to Use AI to Automate My Job?",
-    intro: "Using AI tools to automate parts of your job is not illegal — but it can violate your employment agreement, IT policy, or data security requirements. Here is how to assess the risks.",
-    shortAnswer: "Using AI to automate your work is generally legal but may violate: (1) your employment contract (exclusive service clause), (2) company IT policy (software restrictions), (3) data security requirements (confidential data sent to AI), or (4) professional ethics (if you are a regulated professional). The risk is termination — not prosecution — unless you are billing hourly for time you are not working (time theft).",
+    intro: "Using AI tools to automate parts of your job is not illegal, but it can violate your employment agreement, IT policy, or data security requirements. Here is how to assess the risks.",
+    shortAnswer: "Using AI to automate your work is generally legal but may violate: (1) your employment contract (exclusive service clause), (2) company IT policy (software restrictions), (3) data security requirements (confidential data sent to AI), or (4) professional ethics (if you are a regulated professional). The risk is termination, not prosecution, unless you are billing hourly for time you are not working (time theft).",
     details: [
       "There is no law against using AI tools to work more efficiently. Many employers encourage it.",
       "The legal issue arises when automation creates time billing fraud (hourly employees billing for hours they did not work) or data security violations (feeding confidential data into public AI tools).",
@@ -462,14 +462,14 @@ export const isItLegalPages: IsItLegalPage[] = [
       "Check your employer's AI usage policy before using any AI tools.",
       "Never submit confidential company data to public AI tools.",
       "Use a personal device and account for any AI tool experimentation.",
-      "If salaried, focus on output delivered — not hours saved.",
+      "If salaried, focus on output delivered, not hours saved.",
       "If hourly, do not bill for time you are not actually working.",
       "Consider discussing AI tool adoption with your manager if appropriate.",
     ],
     faqs: [
       { question: "Can I be fired for using AI at work?", answer: "Yes, if it violates company policy. Many employers now encourage AI use. The risk is if you use unauthorized tools, submit confidential data, or automate in a way that creates data security issues." },
       { question: "Is using AI to do my job for me illegal?", answer: "No, it is not illegal. But it could be a breach of your employment contract (exclusive service clause) and grounds for termination. The exception is billing fraud for hourly workers." },
-      { question: "What if my employer finds out I have been using AI extensively?", answer: "The most likely outcome is termination or a performance discussion — not legal action. Unless you committed fraud (billing for unworked hours) or data theft, the consequences are employment-related." },
+      { question: "What if my employer finds out I have been using AI extensively?", answer: "The most likely outcome is termination or a performance discussion, not legal action. Unless you committed fraud (billing for unworked hours) or data theft, the consequences are employment-related." },
     ],
   },
 ];

@@ -6,15 +6,15 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 14 — Tribal Identity & Belonging
+ * EXPERT SECRETS: Chapter 14:  Tribal Identity & Belonging
  *
  * Russell: "People don't just buy a product. They join a tribe."
  *
  * The Founding Wall creates:
- *   1. Belonging — members see their name (pseudonym) on the wall
- *   2. Social proof — visitors see real commitment
- *   3. Scarcity — only 100 founding spots
- *   4. Identity — "I'm an Invisible Builder" badge
+ *   1. Belonging, members see their name (pseudonym) on the wall
+ *   2. Social proof, visitors see real commitment
+ *   3. Scarcity, only 100 founding spots
+ *   4. Identity, "I'm an Invisible Builder" badge
  *
  * Members are listed by pseudonym only, preserving the stealth ethos.
  * Each has: pseudonym, role, freedom number, join date.
@@ -32,7 +32,7 @@ interface FoundingMember {
 
 // 2026-07-24: this array held 15 entirely invented pseudonyms with invented
 // MRR figures, explicitly captioned "Revenue is verified by Stripe screenshots
-// submitted to Adrian" — invisibleexit has zero paying customers on any tier.
+// submitted to Adrian", invisibleexit has zero paying customers on any tier.
 // This was the single worst honesty violation the 2026-07-24 conversion audit
 // found on the site. Left empty and honest; repopulate only with real,
 // permissioned members once they exist. See conversion-audit-scored-2026-07-24.
@@ -78,11 +78,11 @@ const FoundingWallPage = () => {
           </h1>
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "100ms" }}>
             These are the founding members of the Invisible Exit movement.
-            Each one was exactly where you are now — trapped, skeptical, and
+            Each one was exactly where you are now, trapped, skeptical, and
             wondering if the system actually works.
           </p>
 
-          {/* Live stats — honest: 0 members today, nothing rounded up */}
+          {/* Live stats, honest: 0 members today, nothing rounded up */}
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-8">
             <div className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-primary-light">{FOUNDING_MEMBERS.length}</p>
@@ -154,7 +154,7 @@ const FoundingWallPage = () => {
             <p className="text-eyebrow text-primary mb-4">The Wall</p>
             <h2 className="text-h1 text-foreground mb-4">100 Spots. All Open. Be First.</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              This wall is empty right now — on purpose. No invented members,
+              This wall is empty right now, on purpose. No invented members,
               no backdated revenue. When real founding members join (real
               pseudonyms, real Stripe-verified revenue), they'll appear here.
             </p>
@@ -188,7 +188,7 @@ const FoundingWallPage = () => {
               </div>
             ))}
 
-            {/* Empty slots — honest: nobody has claimed a spot yet */}
+            {/* Empty slots, honest: nobody has claimed a spot yet */}
             {[...Array(10)].map((_, i) => (
               <div
                 key={`empty-${i}`}
@@ -233,7 +233,7 @@ const FoundingWallPage = () => {
                   "Bookmark articles about starting something",
                   "Wait for an IPO that won't buy freedom",
                   "Believe corporate loyalty is a virtue",
-                  "Say 'someday' — the most expensive word",
+                  "Say 'someday', the most expensive word",
                   "Let their employer decide their worth",
                   "Build publicly where their boss can see",
                   "Obsess over the 'right' idea for months",
@@ -251,11 +251,11 @@ const FoundingWallPage = () => {
               <p className="text-emerald-600 font-bold text-sm uppercase tracking-wide mb-4">The 3%</p>
               <div className="space-y-3">
                 {[
-                  "Start something — this Saturday",
+                  "Start something, this Saturday",
                   "Calculate the freedom number and build toward it",
                   "Treat employment as a transaction that funds the exit",
                   "Start with 5 hours this week",
-                  "Let the market decide — $29 × 138 customers",
+                  "Let the market decide, $29 × 138 customers",
                   "Build invisibly under a separate entity",
                   "Build the system, swap ideas like cartridges",
                 ].map((item, i) => (
@@ -276,7 +276,7 @@ const FoundingWallPage = () => {
           <h2 className="text-h1 text-white mb-4">Your Name Could Be Next.</h2>
           <p className="text-body text-white/60 mb-2 max-w-xl mx-auto">
             Spot #28 is waiting. The wall grows every week. The question is
-            whether you'll be on it — or still reading about it.
+            whether you'll be on it, or still reading about it.
           </p>
           <p className="text-body text-white/60 mb-10 max-w-xl mx-auto">
             Calculate your freedom number. It takes 90 seconds. Then decide.

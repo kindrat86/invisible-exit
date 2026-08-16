@@ -55,7 +55,7 @@ const PriceCard = ({ onUpgrade, loading }: PriceCardProps) => {
                 </div>
                 <p className="text-white/50 text-xs leading-relaxed">
                   The exact 27-point checklist for entity separation, digital footprint cleanup,
-                  and compliance audit. Check every box before you launch. Normally $27 — add it now for $7.
+                  and compliance audit. Check every box before you launch. Normally $27, add it now for $7.
                 </p>
                 {bumpChecked && (
                   <p className="text-[#60A5FA] text-xs mt-2 flex items-center gap-1">

@@ -155,10 +155,10 @@ const OTOFounding = () => {
             Those Still Planning a Year Later.
           </h1>
 
-          {/* Price preview — visible above the fold on mobile */}
+          {/* Price preview, visible above the fold on mobile */}
           <div className="mb-6">
             <p className="text-white/50 text-sm mb-1">
-              <span className="line-through text-red-400/70">$29/month</span> — Founding price locks at:
+              <span className="line-through text-red-400/70">$29/month</span>, Founding price locks at:
             </p>
             <div className="flex items-baseline justify-center gap-1">
               <span className="text-4xl font-extrabold text-white">$17.99</span>
@@ -167,7 +167,7 @@ const OTOFounding = () => {
             <p className="text-[#60A5FA] text-sm mt-1">Locked for life. Never increases.</p>
           </div>
 
-          {/* Quick CTA — jump to full price card */}
+          {/* Quick CTA, jump to full price card */}
           <a
             href="#price-card"
             className="inline-flex items-center gap-2 bg-[#60A5FA] hover:bg-[#93c5fd] text-white font-semibold text-base px-8 py-3.5 rounded-xl shadow-[0_4px_24px_rgba(96,165,250,0.25)] transition-all hover:-translate-y-0.5"
@@ -304,11 +304,11 @@ const OTOFounding = () => {
             {[
               {
                 q: "\"I don't have time. I already work 50+ hours.\"",
-                a: "That's exactly why the system exists. I built it for people with 5 hours a week — not 50. The Launch Control tool specifically automates the repetitive tasks that eat your evenings. You're not adding hours to your week. You're redirecting 5 of them from anxiety to action.",
+                a: "That's exactly why the system exists. I built it for people with 5 hours a week, not 50. The Launch Control tool specifically automates the repetitive tasks that eat your evenings. You're not adding hours to your week. You're redirecting 5 of them from anxiety to action.",
               },
               {
                 q: "\"$17.99/month feels like a lot right now.\"",
-                a: "I spent $2,400 in wasted time researching LLC formations because I didn't have the Stealth Ops Hub. $17.99/month is $215/year. The price lock saves you $132/year versus what future members pay. You're not spending $17.99 — you're investing $215 to avoid losing $2,400.",
+                a: "I spent $2,400 in wasted time researching LLC formations because I didn't have the Stealth Ops Hub. $17.99/month is $215/year. The price lock saves you $132/year versus what future members pay. You're not spending $17.99, you're investing $215 to avoid losing $2,400.",
               },
               {
                 q: "\"What if my employer finds out?\"",
@@ -339,7 +339,7 @@ const OTOFounding = () => {
       {/* ─── 8. Price Card ─── */}
       <PriceCard onUpgrade={handleUpgrade} loading={checkoutLoading} />
 
-      {/* ─── 8a. TOTAL VALUE STACK (Brunson Ch 10 — show savings %) ─── */}
+      {/* ─── 8a. TOTAL VALUE STACK (Brunson Ch 10, show savings %) ─── */}
       <section className="px-6 py-8">
         <div className="max-w-[720px] mx-auto">
           <div className="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
@@ -388,7 +388,7 @@ const OTOFounding = () => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span className="text-white text-base font-bold">
-                  WAIT — Add the Founder's Toolkit
+                  WAIT, Add the Founder's Toolkit
                 </span>
                 <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
                   Save $60
@@ -405,7 +405,7 @@ const OTOFounding = () => {
                 <span className="text-white/30 text-xs">(added to your first payment)</span>
               </div>
               <p className="text-white/30 text-[11px] italic mt-2">
-                ☑ Checked by default — uncheck to skip
+                ☑ Checked by default, uncheck to skip
               </p>
             </div>
           </label>
@@ -456,7 +456,7 @@ const OTOFounding = () => {
             <p className="text-white/60 text-sm leading-relaxed max-w-md mx-auto">
               Nothing changes. You keep your job. You keep your 0.5% equity.{" "}
               <strong className="text-white">6 months from now</strong>, you'll
-              be in the same spot — except the founding price will be gone.
+              be in the same spot, except the founding price will be gone.
               You'll wish you'd locked it in when you had the chance.
             </p>
           </div>
@@ -554,8 +554,8 @@ const OTOFounding = () => {
           <p className="text-white/60 text-sm leading-relaxed">
             Your $9/month tools will still work. Your dashboard will still run. But{' '}
             <strong className="text-white/80">the founding price expires in {14 - Math.floor((Date.now() - new Date('2026-07-06').getTime()) / (1000 * 60 * 60 * 24)) > 0 ? 'a few' : '0'} days</strong>.
-            After that, it's $9.99/month forever. And the founding wall — your name on the list of
-            people who believed first — closes permanently.
+            After that, it's $9.99/month forever. And the founding wall, your name on the list of
+            people who believed first, closes permanently.
           </p>
           <p className="text-primary-light text-sm font-semibold mt-3">
             Every day you wait is another day of $9.99/month you'll never get back.

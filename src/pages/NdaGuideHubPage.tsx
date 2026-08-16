@@ -16,7 +16,7 @@ export default function NdaGuideHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="NDA & Non-Compete Guides by State — Side Business Legal Guide | Invisible Exit"
+        title="NDA & Non-Compete Guides by State, Side Business Legal Guide | Invisible Exit"
         description="State-by-state NDA and non-compete guides for side businesses. Understand enforceability, what to check in your employment agreement, and how NDAs affect your side business in every state."
         url="https://invisibleexit.com/nda-guides"
       />
@@ -63,8 +63,8 @@ export default function NdaGuideHubPage() {
           <h2 className="text-lg font-bold text-gray-900 mb-3">Quick NDA Tips for Side Businesses</h2>
           <ul className="space-y-2 text-sm text-gray-700">
             <li>• NDAs protect confidential information, not competition. They generally can't stop you from competing in a different industry.</li>
-            <li>• Review the "confidential information" definition in your NDA — overly broad definitions can be challenged in court.</li>
-            <li>• Never use employer equipment, data, or time for your side business — this weakens your NDA defense significantly.</li>
+            <li>• Review the "confidential information" definition in your NDA, overly broad definitions can be challenged in court.</li>
+            <li>• Never use employer equipment, data, or time for your side business, this weakens your NDA defense significantly.</li>
             <li>• Consider forming an LLC in a different state than your employer to add an extra layer of legal separation.</li>
           </ul>
         </div>

@@ -50,7 +50,7 @@ const profRedditData: ProfReddit[] = [
     { name: "smallbusiness", subscribers: "2.5M+", why: "Healthcare business owners" },
   ]},
   { slug: "software-engineers", name: "Software Engineers", subs: [
-    { name: "SideProject", subscribers: "400K+", why: "Developers building side projects — perfect audience" },
+    { name: "SideProject", subscribers: "400K+", why: "Developers building side projects, perfect audience" },
     { name: "cscareerquestions", subscribers: "900K+", why: "Engineers looking for career alternatives" },
     { name: "startups", subscribers: "1.3M+", why: "Startup-minded engineers and founders" },
     { name: "Entrepreneur", subscribers: "2.1M+", why: "Broad founder community" },
@@ -204,11 +204,11 @@ function generateReddit(p: ProfReddit): RedditStrategy {
     slug: `reddit-for-${p.slug}`,
     profession: p.name,
     metaTitle: `Reddit Strategy for ${p.name}: Build an Audience Without Looking Like a Marketer (2026)`,
-    metaDescription: `How ${profLower} can use Reddit to build an audience for their side business — best subreddits, posting strategy, content ideas, and mistakes to avoid.`,
+    metaDescription: `How ${profLower} can use Reddit to build an audience for their side business, best subreddits, posting strategy, content ideas, and mistakes to avoid.`,
     h1: `Reddit Strategy for ${p.name}: Build an Audience Without Looking Like a Marketer`,
-    intro: `Reddit is one of the best traffic sources for ${profLower} building side businesses. But it's also the easiest place to get banned. This guide covers the exact subreddits, posting patterns, and content strategies that work for ${profLower} — without triggering spam filters or community backlash.`,
+    intro: `Reddit is one of the best traffic sources for ${profLower} building side businesses. But it's also the easiest place to get banned. This guide covers the exact subreddits, posting patterns, and content strategies that work for ${profLower}, without triggering spam filters or community backlash.`,
     bestSubreddits: p.subs,
-    postingStrategy: `The 80/20 rule is non-negotiable on Reddit. For every promotional post, share 4 value-first contributions. For ${profLower}, this means sharing industry insights, answering questions, and providing free resources before ever mentioning your product. Comment first, post second. Build karma in the community for 2-4 weeks before sharing any links. When you do share, frame it as "I built this because I couldn't find X" — not "check out my product."`,
+    postingStrategy: `The 80/20 rule is non-negotiable on Reddit. For every promotional post, share 4 value-first contributions. For ${profLower}, this means sharing industry insights, answering questions, and providing free resources before ever mentioning your product. Comment first, post second. Build karma in the community for 2-4 weeks before sharing any links. When you do share, frame it as "I built this because I couldn't find X", not "check out my product."`,
     contentIdeas: [
       `Share a detailed breakdown of a workflow problem you solved as a ${profLower.replace(/s$/, "")}`,
       "Post a case study showing real revenue numbers from your side business",
@@ -224,7 +224,7 @@ function generateReddit(p: ProfReddit): RedditStrategy {
       "Cross-posting the same content to 5 subreddits simultaneously",
       "Using a username that includes your product or company name",
       "Arguing with moderators when your post gets removed",
-      "Sharing only your own content — Reddit's algorithms penalize self-promotion ratios above 10%",
+      "Sharing only your own content, Reddit's algorithms penalize self-promotion ratios above 10%",
     ],
     faqs: [
       {
@@ -237,7 +237,7 @@ function generateReddit(p: ProfReddit): RedditStrategy {
       },
       {
         question: "What's the best time to post on Reddit?",
-        answer: "Tuesday through Thursday, 9-11 AM EST, catches the morning browsing wave. Avoid weekends — engagement drops 40%+. Check each subreddit's 'top posts this week' to find peak activity patterns.",
+        answer: "Tuesday through Thursday, 9-11 AM EST, catches the morning browsing wave. Avoid weekends, engagement drops 40%+. Check each subreddit's 'top posts this week' to find peak activity patterns.",
       },
     ],
   };

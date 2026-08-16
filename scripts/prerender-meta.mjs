@@ -78,8 +78,8 @@ const ORG_DISAMBIG = {
   "@id": `${SITE}/#organization`,
   name: SITE_NAME,
   url: SITE,
-  description: "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.",
-  disambiguatingDescription: "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income — unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory.",
+  description: "Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.",
+  disambiguatingDescription: "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income, unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory.",
 };
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
@@ -219,13 +219,13 @@ function shouldNoindexPath(path) {
   if (path === "/" || path === "" || path.startsWith("/freedom") || path === "/site-index.html") {
     return false;
   }
-  // KEEP single-profession idea pages (/ideas/accountant) — only NOINDEX cross-products
+  // KEEP single-profession idea pages (/ideas/accountant), only NOINDEX cross-products
   if (path.startsWith("/ideas/")) {
     const segments = path.split("/").filter(Boolean);
     if (segments.length === 2) return false; // single profession → KEEP
     return true; // /ideas/*/in/* or /ideas/*/with/* → NOINDEX
   }
-  // Thin programmatic pages — URL prefixes to NOINDEX
+  // Thin programmatic pages, URL prefixes to NOINDEX
   const noindexPatterns = [
     "/cities/",
     "/revenue/",
@@ -285,12 +285,12 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
   // Fix BreadcrumbList items missing the required "item" field (GSC "Missing field 'item'")
   // Every itemListElement MUST have an "item" (URL or { @id }) per schema.org spec.
   // This post-processing adds the missing item URLs automatically so every
-  // breadcrumb entry gets a valid URL — one edit fixes ~1,800 pages at render time.
+  // breadcrumb entry gets a valid URL, one edit fixes ~1,800 pages at render time.
   for (const block of finalJsonLd) {
     if (block["@type"] === "BreadcrumbList" && Array.isArray(block.itemListElement)) {
       const segments = routePath.replace(/\/$/, "").split("/").filter(Boolean);
       block.itemListElement = block.itemListElement.map((item, i) => {
-        if (item.item) return item; // already has item — leave it alone
+        if (item.item) return item; // already has item, leave it alone
         if (i === 0) return { ...item, item: `${SITE}/` };
         // Last position → full page URL
         if (i === block.itemListElement.length - 1) {
@@ -317,10 +317,10 @@ function injectMeta(template, { title, description, url, type, image, jsonLd, no
   }
   const jsonLdHtmlFinal = finalJsonLd.map(jsonLdScript).join("\n    ");
 
-  // Hreflang removed 2026-07-23: all 98 locale variants return 308 redirects —
+  // Hreflang removed 2026-07-23: all 98 locale variants return 308 redirects, 
   // no actual translated content exists. Half-broken hreflang is worse than none.
   // Self-referencing x-default removed 2026-07-28: Google sees it as an
-  // "alternative page with proper canonical tag" signal — it creates noise
+  // "alternative page with proper canonical tag" signal, it creates noise
   // without real translated content to link to.
   const hreflangLinks = "";
 
@@ -351,7 +351,7 @@ ${hreflangLinks}
     ${jsonLdHtmlFinal}`;
 
   // Remove vendor-charts + vendor-capture modulepreload from all pages except dashboard
-  // (recharts is 407K, html2canvas is 198K — neither needed on content/blog pages)
+  // (recharts is 407K, html2canvas is 198K, neither needed on content/blog pages)
   let finalTemplate = template;
   if (!routePath.includes("/dashboard")) {
     finalTemplate = finalTemplate.replace(
@@ -400,7 +400,7 @@ ${hreflangLinks}
   );
 
   // The source index.html carries homepage-specific JSON-LD (Organization,
-  // WebSite, WebApplication, FAQPage) AFTER the preconnect anchor — i.e. OUTSIDE
+  // WebSite, WebApplication, FAQPage) AFTER the preconnect anchor, i.e. OUTSIDE
   // the region replaced above. Left untouched, that homepage schema leaks onto
   // EVERY prerendered page, so /about, /contact, blog posts, etc. all falsely
   // advertise the homepage FAQPage/WebApplication. On non-homepage routes, strip
@@ -646,7 +646,7 @@ function getRoutes() {
       description:
         "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. The $4,000/month freedom threshold.",
       intro:
-        "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything — and how to get there faster than traditional saving.",
+        "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything, and how to get there faster than traditional saving.",
       faqs: [
         {
           question: "How much money do I need to never work again?",
@@ -749,7 +749,7 @@ function getRoutes() {
         {
           question: "Can AI really replace a startup team?",
           answer:
-            "AI can replace much of early-stage execution — coding, copywriting, design. It cannot replace founder judgment and accountability. A solo founder with AI can compete with a funded 5-person team on execution speed.",
+            "AI can replace much of early-stage execution, coding, copywriting, design. It cannot replace founder judgment and accountability. A solo founder with AI can compete with a funded 5-person team on execution speed.",
         },
       ],
     },
@@ -1046,7 +1046,7 @@ function getRoutes() {
     meta: {
       title: "About Invisible Exit | Built by a Corporate Manager, for Corporate Managers",
       description:
-        "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The platform shares the exact frameworks that worked.",
+        "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed, without his employer finding out. The platform shares the exact frameworks that worked.",
       url: `${SITE}/about`,
       type: "website",
       jsonLd: [
@@ -1203,7 +1203,7 @@ function getRoutes() {
   routes.push({
     path: "/story",
     meta: {
-      title: "My Story — How I Built $4K/Month While Employed | Invisible Exit",
+      title: "My Story, How I Built $4K/Month While Employed | Invisible Exit",
       description:
         "The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15 minutes.",
       url: `${SITE}/story`,
@@ -1212,7 +1212,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "How I Built a $4,000/Month Side Business While Employed — Without Anyone Knowing",
+          headline: "How I Built a $4,000/Month Side Business While Employed, Without Anyone Knowing",
           description:
             "The complete story: Amsterdam taxi moment, Month 4 wall, the competitor who almost killed me, and the system that made all of it possible.",
           author: ADRIAN_PERSON,
@@ -1235,7 +1235,7 @@ function getRoutes() {
   routes.push({
     path: "/manifesto",
     meta: {
-      title: "The Invisible Exit Manifesto — A Movement for Trapped Managers",
+      title: "The Invisible Exit Manifesto, A Movement for Trapped Managers",
       description:
         "This isn't a side-hustle course. It's a new vehicle for financial freedom. Read the 6 principles of the Invisible Builder movement.",
       url: `${SITE}/manifesto`,
@@ -1244,7 +1244,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "The Invisible Exit Manifesto — A New Vehicle for Financial Freedom",
+          headline: "The Invisible Exit Manifesto, A New Vehicle for Financial Freedom",
           description:
             "Not improvement. A new opportunity. The 6 principles of the Invisible Builder movement for corporate managers.",
           author: ADRIAN_PERSON,
@@ -1269,7 +1269,7 @@ function getRoutes() {
     meta: {
       title: "The Complete Freedom Number Guide (2026) | Invisible Exit",
       description:
-        "The definitive guide to calculating your freedom number — the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and framework.",
+        "The definitive guide to calculating your freedom number, the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and framework.",
       url: `${SITE}/guides/freedom-number`,
       type: "article",
       jsonLd: [
@@ -1310,7 +1310,7 @@ function getRoutes() {
             {
               "@type": "Question",
               name: "How is this different from the 4% rule in FIRE?",
-              acceptedAnswer: { "@type": "Answer", text: "The FIRE 4% rule requires a lump sum invested. The freedom number approach uses recurring revenue from products you own — a renewable stream that doesn't deplete." },
+              acceptedAnswer: { "@type": "Answer", text: "The FIRE 4% rule requires a lump sum invested. The freedom number approach uses recurring revenue from products you own, a renewable stream that doesn't deplete." },
             },
             {
               "@type": "Question",
@@ -1335,7 +1335,7 @@ function getRoutes() {
   routes.push({
     path: "/compare",
     meta: {
-      title: "Invisible Exit vs Every Alternative — The Honest Comparison",
+      title: "Invisible Exit vs Every Alternative, The Honest Comparison",
       description:
         "Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest comparison.",
       url: `${SITE}/compare`,
@@ -1344,7 +1344,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Invisible Exit vs Every Alternative — The Honest Comparison",
+          headline: "Invisible Exit vs Every Alternative, The Honest Comparison",
           description:
             "Comparing Invisible Exit to side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus.",
           author: ADRIAN_PERSON,
@@ -1367,7 +1367,7 @@ function getRoutes() {
   routes.push({
     path: "/adrian",
     meta: {
-      title: "Who Is Adrian? — The Anonymous Founder Behind Invisible Exit",
+      title: "Who Is Adrian?, The Anonymous Founder Behind Invisible Exit",
       description:
         "37-year-old Managing Director. $120K salary. <0.5% equity. Building $4K/month on the side. Identity protected by design. Read the full backstory.",
       url: `${SITE}/adrian`,
@@ -1501,7 +1501,7 @@ function getRoutes() {
   routes.push({
     path: "/inner-circle",
     meta: {
-      title: "The Invisible Exit Inner Circle — Private Community for Corporate Builders",
+      title: "The Invisible Exit Inner Circle, Private Community for Corporate Builders",
       description:
         "A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture.",
       url: `${SITE}/inner-circle`,
@@ -1530,7 +1530,7 @@ function getRoutes() {
   routes.push({
     path: "/dream-100",
     meta: {
-      title: "Dream 100 — Strategic Partner Framework | Invisible Exit",
+      title: "Dream 100, Strategic Partner Framework | Invisible Exit",
       description:
         "How we identify, research, and build relationships with the 100 people who already have our audience. The Russell Brunson Dream 100 strategy.",
       url: `${SITE}/dream-100`,
@@ -1559,7 +1559,7 @@ function getRoutes() {
   routes.push({
     path: "/affiliates",
     meta: {
-      title: "Affiliate Program — 30% Recurring | Invisible Exit",
+      title: "Affiliate Program, 30% Recurring | Invisible Exit",
       description:
         "Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts.",
       url: `${SITE}/affiliates`,
@@ -1568,7 +1568,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Affiliate Program — 30% Recurring",
+          name: "Affiliate Program, 30% Recurring",
           description:
             "Earn 30% recurring commission referring corporate managers to Invisible Exit.",
           url: `${SITE}/affiliates`,
@@ -1588,7 +1588,7 @@ function getRoutes() {
   routes.push({
     path: "/intensive",
     meta: {
-      title: "The Invisible Exit Intensive — Done-With-You 90-Day Program ($2,000)",
+      title: "The Invisible Exit Intensive, Done-With-You 90-Day Program ($2,000)",
       description:
         "Private 1-on-1 coaching with Adrian. Freedom number, stealth audit, idea validation, launch review, and 30 days of direct access. Limited to 5 managers per month.",
       url: `${SITE}/intensive`,
@@ -1638,56 +1638,56 @@ function getRoutes() {
 
   // --- Traffic Secrets Pages ---
   const trafficPages = [
-    { path: "/traffic-blueprint", title: "Traffic Blueprint — The Complete Distribution Plan | Invisible Exit", desc: "The full Traffic Secrets execution plan: social content engine, Dream 100 outreach, podcast pitches, pillar content, affiliate assets, and the 90-day publishing cadence.", type: "website" },
-    { path: "/content-calendar", title: "90-Day Social Content Calendar — Ready-to-Post Stories | Invisible Exit", desc: "17 email stories converted into ready-to-deploy social content: Twitter threads, Reddit posts, LinkedIn articles, and YouTube scripts. Copy, paste, post.", type: "website" },
-    { path: "/affiliate-assets", title: "Affiliate Assets — Swipe Copy, Emails, Banners | Invisible Exit", desc: "Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring.", type: "website" },
-    { path: "/podcast-pitch", title: "Podcast Pitch Kit — Story Formats & Outreach Templates | Invisible Exit", desc: "The Amsterdam taxi story in 5/15/45-minute formats plus cold pitch templates for podcast outreach. Everything you need to get on shows.", type: "website" },
-    { path: "/backlink-strategy", title: "Backlink Strategy — Guest Posts, HARO & Link Building Framework | Invisible Exit", desc: "The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy.", type: "website" },
-    { path: "/hooks", title: "The Hooks Library — 50+ Ready-to-Deploy Content Hooks | Invisible Exit", desc: "The master swipe file of content hooks for corporate escape content. Categorized by the 6 Story Gaps, awareness level, and platform. Copy and deploy.", type: "website" },
-    { path: "/growth", title: "Growth Hacking Framework — The Viral Loop Engine | Invisible Exit", desc: "How Invisible Exit builds virality into every step of the funnel. 7 viral mechanics, the full viral loop diagram, and viral coefficient estimates for each.", type: "website" },
+    { path: "/traffic-blueprint", title: "Traffic Blueprint, The Complete Distribution Plan | Invisible Exit", desc: "The full Traffic Secrets execution plan: social content engine, Dream 100 outreach, podcast pitches, pillar content, affiliate assets, and the 90-day publishing cadence.", type: "website" },
+    { path: "/content-calendar", title: "90-Day Social Content Calendar, Ready-to-Post Stories | Invisible Exit", desc: "17 email stories converted into ready-to-deploy social content: Twitter threads, Reddit posts, LinkedIn articles, and YouTube scripts. Copy, paste, post.", type: "website" },
+    { path: "/affiliate-assets", title: "Affiliate Assets, Swipe Copy, Emails, Banners | Invisible Exit", desc: "Everything our affiliates need: pre-written emails, social media posts, banner specs, and tracking link formats. Copy, paste, earn 30% recurring.", type: "website" },
+    { path: "/podcast-pitch", title: "Podcast Pitch Kit, Story Formats & Outreach Templates | Invisible Exit", desc: "The Amsterdam taxi story in 5/15/45-minute formats plus cold pitch templates for podcast outreach. Everything you need to get on shows.", type: "website" },
+    { path: "/backlink-strategy", title: "Backlink Strategy, Guest Posts, HARO & Link Building Framework | Invisible Exit", desc: "The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy.", type: "website" },
+    { path: "/hooks", title: "The Hooks Library, 50+ Ready-to-Deploy Content Hooks | Invisible Exit", desc: "The master swipe file of content hooks for corporate escape content. Categorized by the 6 Story Gaps, awareness level, and platform. Copy and deploy.", type: "website" },
+    { path: "/growth", title: "Growth Hacking Framework, The Viral Loop Engine | Invisible Exit", desc: "How Invisible Exit builds virality into every step of the funnel. 7 viral mechanics, the full viral loop diagram, and viral coefficient estimates for each.", type: "website" },
     // Expert Secrets pages
-    { path: "/founding-wall", title: "The Founding Wall — Meet the First 27 Builders | Invisible Exit", desc: "The first 27 Invisible Exit members. Their freedom numbers, their products, their stories. 73 spots remaining.", type: "website" },
-    { path: "/frameworks", title: "The 3 Proprietary Frameworks — Origin Stories | Invisible Exit", desc: "The Salary-Runway Method, Triple-Separation Protocol, and Cartridge System. Each framework's origin story and methodology.", type: "website" },
-    { path: "/proof", title: "Proof & Results — Member Case Studies | Invisible Exit", desc: "Aggregate stats, detailed case studies, 12-month results timeline, and trust signals from the Invisible Exit community.", type: "website" },
-    { path: "/press", title: "Press & Media Kit — Speaking Topics & Interview Formats | Invisible Exit", desc: "Media kit with 6 original speaking topics, 4 interview formats, fact sheet, boilerplate copy, and sample questions for podcast hosts and journalists covering the anonymous micro-SaaS movement.", type: "website" },
-    { path: "/beliefs", title: "Belief Crusher — Break the 3 False Beliefs | Invisible Exit", desc: "Interactive 4-step experience that identifies and shatters the 3 false beliefs keeping you trapped in your corporate job.", type: "website" },
-    { path: "/lexicon", title: "Movement Lexicon — 14 Terms That Define Us | Invisible Exit", desc: "The shared vocabulary of the Invisible Exit movement: Freedom Number, Golden Handcuffs, Cartridge System, The 3%, and more.", type: "website" },
-    { path: "/one-thing", title: "The One Thing — Build the System First | Invisible Exit", desc: "If you could only learn one thing, it would be this: the system beats the idea. One message, zero distractions.", type: "website" },
-    { path: "/join", title: "Join the Movement — 5 Declarations | Invisible Exit", desc: "Before you sign up, declare your commitment. 5 beliefs. 5 principles. The code of the Invisible Builder.", type: "website" },
-    { path: "/is-this-you", title: "Is This You? — Self-Qualification Quiz | Invisible Exit", desc: "5 questions to determine if Invisible Exit is the right fit for you. Find out if you're exactly who we built this for.", type: "website" },
+    { path: "/founding-wall", title: "The Founding Wall, Meet the First 27 Builders | Invisible Exit", desc: "The first 27 Invisible Exit members. Their freedom numbers, their products, their stories. 73 spots remaining.", type: "website" },
+    { path: "/frameworks", title: "The 3 Proprietary Frameworks, Origin Stories | Invisible Exit", desc: "The Salary-Runway Method, Triple-Separation Protocol, and Cartridge System. Each framework's origin story and methodology.", type: "website" },
+    { path: "/proof", title: "Proof & Results, Member Case Studies | Invisible Exit", desc: "Aggregate stats, detailed case studies, 12-month results timeline, and trust signals from the Invisible Exit community.", type: "website" },
+    { path: "/press", title: "Press & Media Kit, Speaking Topics & Interview Formats | Invisible Exit", desc: "Media kit with 6 original speaking topics, 4 interview formats, fact sheet, boilerplate copy, and sample questions for podcast hosts and journalists covering the anonymous micro-SaaS movement.", type: "website" },
+    { path: "/beliefs", title: "Belief Crusher, Break the 3 False Beliefs | Invisible Exit", desc: "Interactive 4-step experience that identifies and shatters the 3 false beliefs keeping you trapped in your corporate job.", type: "website" },
+    { path: "/lexicon", title: "Movement Lexicon, 14 Terms That Define Us | Invisible Exit", desc: "The shared vocabulary of the Invisible Exit movement: Freedom Number, Golden Handcuffs, Cartridge System, The 3%, and more.", type: "website" },
+    { path: "/one-thing", title: "The One Thing, Build the System First | Invisible Exit", desc: "If you could only learn one thing, it would be this: the system beats the idea. One message, zero distractions.", type: "website" },
+    { path: "/join", title: "Join the Movement, 5 Declarations | Invisible Exit", desc: "Before you sign up, declare your commitment. 5 beliefs. 5 principles. The code of the Invisible Builder.", type: "website" },
+    { path: "/is-this-you", title: "Is This You?, Self-Qualification Quiz | Invisible Exit", desc: "5 questions to determine if Invisible Exit is the right fit for you. Find out if you're exactly who we built this for.", type: "website" },
     // Dotcom Secrets pages
-    { path: "/funnel-metrics", title: "Funnel Metrics Calculator — Interactive | Invisible Exit", desc: "Model your entire funnel with live sliders: traffic, conversion rates, and projected revenue based on Russell Brunson's benchmark rates.", type: "website" },
-    { path: "/tripwire", title: "Stealth Blueprint Tripwire — $7 | Invisible Exit", desc: "The $7 tripwire offer: Stealth Blueprint. Converts browsers into buyers. First paid touchpoint in the value ladder.", type: "website" },
-    { path: "/weekend-workshop", title: "Weekend Workshop — $97 | Invisible Exit", desc: "A live weekend workshop that takes you from idea to first customer in 48 hours. Mid-ticket offer in the value ladder.", type: "website" },
-    { path: "/ask", title: "Ask Campaign — What Should We Build Next? | Invisible Exit", desc: "Tell us what you need. Your answers shape the next tools, features, and content we build.", type: "website" },
-    { path: "/free-book", title: "FREE Book — Just Pay Shipping | Invisible Exit", desc: "Get the Invisible Exit book for free. Just pay shipping. 7 chapters, 3 digital bonuses, 30-day guarantee.", type: "website" },
+    { path: "/funnel-metrics", title: "Funnel Metrics Calculator, Interactive | Invisible Exit", desc: "Model your entire funnel with live sliders: traffic, conversion rates, and projected revenue based on Russell Brunson's benchmark rates.", type: "website" },
+    { path: "/tripwire", title: "Stealth Blueprint Tripwire, $7 | Invisible Exit", desc: "The $7 tripwire offer: Stealth Blueprint. Converts browsers into buyers. First paid touchpoint in the value ladder.", type: "website" },
+    { path: "/weekend-workshop", title: "Weekend Workshop, $97 | Invisible Exit", desc: "A live weekend workshop that takes you from idea to first customer in 48 hours. Mid-ticket offer in the value ladder.", type: "website" },
+    { path: "/ask", title: "Ask Campaign, What Should We Build Next? | Invisible Exit", desc: "Tell us what you need. Your answers shape the next tools, features, and content we build.", type: "website" },
+    { path: "/free-book", title: "FREE Book, Just Pay Shipping | Invisible Exit", desc: "Get the Invisible Exit book for free. Just pay shipping. 7 chapters, 3 digital bonuses, 30-day guarantee.", type: "website" },
     // Traffic Secrets pages
-    { path: "/who", title: "Dream Customer Avatar — Who We Build For | Invisible Exit", desc: "The complete psychographic profile of the Invisible Exit dream customer: demographics, desires, fears, and awareness levels.", type: "website" },
-    { path: "/where", title: "Where Your Dream Customer Hides — Community Atlas | Invisible Exit", desc: "31 communities, subreddits, podcasts, newsletters, and platforms where corporate managers trapped by golden handcuffs congregate online.", type: "website" },
-    { path: "/ad-library", title: "Ad Creative Library — 8 Ready-to-Launch Campaigns | Invisible Exit", desc: "8 Facebook, Instagram, LinkedIn, and Reddit ad concepts with full targeting presets, copy, and budget recommendations.", type: "website" },
-    { path: "/hso", title: "Hook, Story, Offer Matrix — 8 Content Frameworks | Invisible Exit", desc: "Russell Brunson's Hook-Story-Offer framework applied to 8 content channels: Twitter, Reddit, LinkedIn, YouTube, email, podcast, blog, and Quora.", type: "website" },
-    { path: "/traffic-roadmap", title: "0 → 100,000 Visitors Roadmap — Phased Traffic Plan | Invisible Exit", desc: "The complete 12-month roadmap from 0 to 100,000 monthly visitors. 5 phases with specific tasks, milestones, and projections.", type: "website" },
-    { path: "/testing", title: "The Growing Grid — A/B Testing Dashboard | Invisible Exit", desc: "8 planned A/B tests across the Invisible Exit funnel: hero headline, squeeze page, tripwire pricing, CTA buttons, exit popups, email subjects, and pricing anchors.", type: "website" },
-    { path: "/youtube-strategy", title: "YouTube Strategy — 6 Video Scripts + Channel Plan | Invisible Exit", desc: "Complete YouTube strategy for faceless channel: 6 priority video scripts with hooks, thumbnails, SEO keywords, and a 4-phase channel growth plan.", type: "website" },
-    { path: "/dream-100-tracker", title: "Dream 100 Tracker — 26 Named Targets & Outreach Pipeline | Invisible Exit", desc: "The actual Dream 100 list with 26 named targets across 3 tiers, outreach status tracking, and a weekly cadence for building relationships.", type: "website" },
-    { path: "/pillar-hub", title: "Pillar Content Hub — 5 Definitive Guides to Write | Invisible Exit", desc: "The pillar content strategy: 5 definitive guides (3,500-5,000 words each) targeting high-volume keywords, designed as linkable assets to transform domain authority.", type: "website" },
-    { path: "/explore", title: "Explore All Resources — Complete Site Index | Invisible Exit", desc: "Browse all 800+ pages: micro-SaaS ideas by profession, state guides, calculators, comparison pages, glossary terms, data reports, and blog articles.", type: "website" },
-    { path: "/cost-analysis", title: "Cost Analysis — How Much Does It Cost? | Invisible Exit", desc: "Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500 — see exactly where every dollar goes.", type: "website" },
-    { path: "/how-to", title: "How-To Guides — Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
-    { path: "/is-it-legal", title: "Is It Legal? — Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
-    { path: "/banking", title: "Business Banking Guides — Best Banks for LLCs by State | Invisible Exit", desc: "State-by-state business banking guides for LLCs and side businesses. Compare local and online banks, fees, features, and business checking options for every state.", type: "website" },
-    { path: "/tax-guides", title: "Tax Guides by State — LLC & Side Business Taxes | Invisible Exit", desc: "State-by-state tax guides for side businesses and LLCs. Compare income tax rates, self-employment tax, sales tax, credits, deductions, and filing requirements for every state.", type: "website" },
+    { path: "/who", title: "Dream Customer Avatar, Who We Build For | Invisible Exit", desc: "The complete psychographic profile of the Invisible Exit dream customer: demographics, desires, fears, and awareness levels.", type: "website" },
+    { path: "/where", title: "Where Your Dream Customer Hides, Community Atlas | Invisible Exit", desc: "31 communities, subreddits, podcasts, newsletters, and platforms where corporate managers trapped by golden handcuffs congregate online.", type: "website" },
+    { path: "/ad-library", title: "Ad Creative Library, 8 Ready-to-Launch Campaigns | Invisible Exit", desc: "8 Facebook, Instagram, LinkedIn, and Reddit ad concepts with full targeting presets, copy, and budget recommendations.", type: "website" },
+    { path: "/hso", title: "Hook, Story, Offer Matrix, 8 Content Frameworks | Invisible Exit", desc: "Russell Brunson's Hook-Story-Offer framework applied to 8 content channels: Twitter, Reddit, LinkedIn, YouTube, email, podcast, blog, and Quora.", type: "website" },
+    { path: "/traffic-roadmap", title: "0 → 100,000 Visitors Roadmap, Phased Traffic Plan | Invisible Exit", desc: "The complete 12-month roadmap from 0 to 100,000 monthly visitors. 5 phases with specific tasks, milestones, and projections.", type: "website" },
+    { path: "/testing", title: "The Growing Grid, A/B Testing Dashboard | Invisible Exit", desc: "8 planned A/B tests across the Invisible Exit funnel: hero headline, squeeze page, tripwire pricing, CTA buttons, exit popups, email subjects, and pricing anchors.", type: "website" },
+    { path: "/youtube-strategy", title: "YouTube Strategy, 6 Video Scripts + Channel Plan | Invisible Exit", desc: "Complete YouTube strategy for faceless channel: 6 priority video scripts with hooks, thumbnails, SEO keywords, and a 4-phase channel growth plan.", type: "website" },
+    { path: "/dream-100-tracker", title: "Dream 100 Tracker, 26 Named Targets & Outreach Pipeline | Invisible Exit", desc: "The actual Dream 100 list with 26 named targets across 3 tiers, outreach status tracking, and a weekly cadence for building relationships.", type: "website" },
+    { path: "/pillar-hub", title: "Pillar Content Hub, 5 Definitive Guides to Write | Invisible Exit", desc: "The pillar content strategy: 5 definitive guides (3,500-5,000 words each) targeting high-volume keywords, designed as linkable assets to transform domain authority.", type: "website" },
+    { path: "/explore", title: "Explore All Resources, Complete Site Index | Invisible Exit", desc: "Browse all 800+ pages: micro-SaaS ideas by profession, state guides, calculators, comparison pages, glossary terms, data reports, and blog articles.", type: "website" },
+    { path: "/cost-analysis", title: "Cost Analysis, How Much Does It Cost? | Invisible Exit", desc: "Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500, see exactly where every dollar goes.", type: "website" },
+    { path: "/how-to", title: "How-To Guides, Step-by-Step for Employed Founders | Invisible Exit", desc: "Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips.", type: "website" },
+    { path: "/is-it-legal", title: "Is It Legal?, Side Business Legal Concerns | Invisible Exit", desc: "Clear, factual answers to the legal questions employed founders ask. Non-competes, IP assignment, moonlighting rules, and state-by-state variations.", type: "website" },
+    { path: "/banking", title: "Business Banking Guides, Best Banks for LLCs by State | Invisible Exit", desc: "State-by-state business banking guides for LLCs and side businesses. Compare local and online banks, fees, features, and business checking options for every state.", type: "website" },
+    { path: "/tax-guides", title: "Tax Guides by State, LLC & Side Business Taxes | Invisible Exit", desc: "State-by-state tax guides for side businesses and LLCs. Compare income tax rates, self-employment tax, sales tax, credits, deductions, and filing requirements for every state.", type: "website" },
     { path: "/time-frameworks", title: "Time Management Frameworks for Side Businesses | Invisible Exit", desc: "10 time management frameworks for building a side business while employed. Compare time commitments, steps, tools, and expected results for each system.", type: "website" },
-    { path: "/nda-guides", title: "NDA & Non-Compete Guides by State — Side Business Legal Guide | Invisible Exit", desc: "State-by-state NDA and non-compete guides for side businesses. Understand enforceability, what to check in your employment agreement, and how NDAs affect your side business.", type: "website" },
-    { path: "/insurance", title: "Business Insurance by State — Side Business & LLC Coverage | Invisible Exit", desc: "State-by-state business insurance guides for side businesses and LLCs. Compare requirements, recommended policies, costs, and workers' comp rules for every state.", type: "website" },
-    { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession — ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
-    { path: "/by-budget", title: "Start a Business by Budget — $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
+    { path: "/nda-guides", title: "NDA & Non-Compete Guides by State, Side Business Legal Guide | Invisible Exit", desc: "State-by-state NDA and non-compete guides for side businesses. Understand enforceability, what to check in your employment agreement, and how NDAs affect your side business.", type: "website" },
+    { path: "/insurance", title: "Business Insurance by State, Side Business & LLC Coverage | Invisible Exit", desc: "State-by-state business insurance guides for side businesses and LLCs. Compare requirements, recommended policies, costs, and workers' comp rules for every state.", type: "website" },
+    { path: "/side-hustles", title: "Best Side Hustles by Profession (2025) | Invisible Exit", desc: "The most profitable side hustles for every profession, ranked by earning potential, startup cost, and time to first dollar.", type: "website" },
+    { path: "/by-budget", title: "Start a Business by Budget, $0 to $10K Guide | Invisible Exit", desc: "What you can build with $0, $500, $5K, or $10K. Realistic earning potential, tool stacks, and 30-day action plans for each budget tier.", type: "website" },
     { path: "/niches", title: "Best Micro-SaaS Niches for 2025 | Invisible Exit", desc: "The most profitable micro-SaaS niches analyzed by market size, growth rate, and competition. Specific product ideas with pricing and monetization.", type: "website" },
-    { path: "/quit-your-job", title: "When to Quit Your Job to Start a Business (Honest Guide) | Invisible Exit", desc: "The honest framework for deciding when to quit your job. Financial milestones, readiness signs, and the math — no toxic hustle advice.", type: "website" },
-    { path: "/weekend-builds", title: "Weekend Build Ideas — Launch in 48 Hours | Invisible Exit", desc: "Step-by-step guides for building and launching a profitable side business in one weekend. AI wrappers, directories, Chrome extensions, and more.", type: "website" },
-    { path: "/failure-stories", title: "Micro-SaaS Failure Stories — Learn From Real Mistakes | Invisible Exit", desc: "Honest analysis of why startups fail. Real failure patterns, warning signs, and lessons to avoid the same mistakes.", type: "website" },
-    { path: "/reviews", title: "Tool Reviews for Solo Founders (2025) | Invisible Exit", desc: "Honest reviews of the tools solo founders actually use — Cursor, Vercel, Supabase, Stripe, Linear, Claude. Real verdicts, not affiliate fluff.", type: "website" },
-    { path: "/case-studies", title: "Micro-SaaS Case Studies — Real Revenue Numbers & Strategies | Invisible Exit", desc: "Real micro-SaaS case studies with revenue numbers, growth timelines, and strategies. Learn from Typefully, Bannerbear, Senja, and more.", type: "website" },
+    { path: "/quit-your-job", title: "When to Quit Your Job to Start a Business (Honest Guide) | Invisible Exit", desc: "The honest framework for deciding when to quit your job. Financial milestones, readiness signs, and the math, no toxic hustle advice.", type: "website" },
+    { path: "/weekend-builds", title: "Weekend Build Ideas, Launch in 48 Hours | Invisible Exit", desc: "Step-by-step guides for building and launching a profitable side business in one weekend. AI wrappers, directories, Chrome extensions, and more.", type: "website" },
+    { path: "/failure-stories", title: "Micro-SaaS Failure Stories, Learn From Real Mistakes | Invisible Exit", desc: "Honest analysis of why startups fail. Real failure patterns, warning signs, and lessons to avoid the same mistakes.", type: "website" },
+    { path: "/reviews", title: "Tool Reviews for Solo Founders (2025) | Invisible Exit", desc: "Honest reviews of the tools solo founders actually use, Cursor, Vercel, Supabase, Stripe, Linear, Claude. Real verdicts, not affiliate fluff.", type: "website" },
+    { path: "/case-studies", title: "Micro-SaaS Case Studies, Real Revenue Numbers & Strategies | Invisible Exit", desc: "Real micro-SaaS case studies with revenue numbers, growth timelines, and strategies. Learn from Typefully, Bannerbear, Senja, and more.", type: "website" },
   ];
 
   for (const page of trafficPages) {
@@ -1702,7 +1702,7 @@ function getRoutes() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: page.title.split(" — ")[0],
+            name: page.title.split(", ")[0],
             description: page.desc,
             url: `${SITE}${page.path}`,
           },
@@ -1711,7 +1711,7 @@ function getRoutes() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-              { "@type": "ListItem", position: 2, name: page.title.split(" — ")[0] },
+              { "@type": "ListItem", position: 2, name: page.title.split(", ")[0] },
             ],
           },
         ],
@@ -1723,7 +1723,7 @@ function getRoutes() {
   routes.push({
     path: "/pro",
     meta: {
-      title: "Invisible Exit Pro — Group Coaching + Community ($29/month)",
+      title: "Invisible Exit Pro, Group Coaching + Community ($29/month)",
       description:
         "Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support.",
       url: `${SITE}/pro`,
@@ -1874,10 +1874,10 @@ function getRoutes() {
             ],
           },
           {
-            // ItemList schema — the structured-data format Google uses for
+            // ItemList schema, the structured-data format Google uses for
             // "Best X" listicle rich results and what AI parsers can read
             // verbatim. Each tool becomes a positioned SoftwareApplication
-            // with an editorial Review (single named author — Adrian —
+            // with an editorial Review (single named author, Adrian, 
             // assigning a 1-5 star rating). This is the policy-safe pattern
             // used by Wirecutter/CNET: it is NOT a self-served
             // aggregateRating (which we removed elsewhere). Each entry also
@@ -2598,7 +2598,7 @@ function getRoutes() {
     { path: "/ideas", title: "Micro-SaaS Ideas by Profession | Invisible Exit", desc: "500+ micro-SaaS ideas organized by profession. Find ideas tailored to your industry expertise, validated by AI for revenue potential." },
     { path: "/calculators", title: "Free Calculators for Employed Founders | Invisible Exit", desc: "Freedom number, break-even, timeline, and invisibility calculators for corporate managers building side businesses." },
     // "/data" removed 2026-08-13: the React route /data (DataReportPage without a slug)
-    // renders "Report not found" — a soft 404. The real hub is the STATIC
+    // renders "Report not found", a soft 404. The real hub is the STATIC
     // public/data/index.html (vercel.json rewrites /data → /data/index.html).
     // Prerendering /data here would overwrite dist/data/index.html with the SPA shell.
     { path: "/vs", title: "Career vs SaaS: Profession Comparisons | Invisible Exit", desc: "Detailed comparisons of staying in your career versus building a micro-SaaS side business. Salary math, equity analysis, and MRR timelines." },
@@ -2609,7 +2609,7 @@ function getRoutes() {
     { path: "/stack", title: "Tool Stacks for Employed Founders | Invisible Exit", desc: "Recommended tool stacks for building micro-SaaS while employed. Budget configurations from $0 to $500/month." },
     { path: "/cost-of-waiting", title: "The Cost of Waiting to Start | Invisible Exit", desc: "Every month you wait to start your side business costs you in runway, compound growth, and identity shift. Calculate your cost." },
     { path: "/non-compete", title: "Non-Compete Guide for Side Business Founders | Invisible Exit", desc: "State-by-state non-compete analysis. Which states enforce non-competes, how to navigate them, and legal strategies for employed founders." },
-    { path: "/mistakes", title: "Common Mistakes Side Business Founders Make | Invisible Exit", desc: "The most expensive mistakes corporate managers make when building side businesses — and how to avoid each one." },
+    { path: "/mistakes", title: "Common Mistakes Side Business Founders Make | Invisible Exit", desc: "The most expensive mistakes corporate managers make when building side businesses, and how to avoid each one." },
     { path: "/reddit", title: "Reddit Strategy for Anonymous Founders | Invisible Exit", desc: "How to build an audience on Reddit without revealing your identity. Subreddit analysis, posting strategies, and engagement playbooks." },
     { path: "/pricing-models", title: "Micro-SaaS Pricing Models Compared | Invisible Exit", desc: "Subscription, one-time, freemium, usage-based: which pricing model works best for your micro-SaaS? Data-backed analysis." },
     { path: "/break-even", title: "Break-Even Calculator for Micro-SaaS | Invisible Exit", desc: "Calculate how many customers you need to break even on your micro-SaaS. Includes hosting, tools, and time costs." },
@@ -2653,7 +2653,7 @@ function getRoutes() {
     meta: {
       title: "Do You Feel Stuck in Your Career? (You're Not Crazy) | Invisible Exit",
       description:
-        "If you've ever felt trapped by a good job — salary too comfortable to leave, equity that never materializes, Sunday dread you can't explain — this is for you.",
+        "If you've ever felt trapped by a good job, salary too comfortable to leave, equity that never materializes, Sunday dread you can't explain, this is for you.",
       url: `${SITE}/feeling-stuck`,
       type: "website",
       jsonLd: [
@@ -2662,7 +2662,7 @@ function getRoutes() {
           "@type": "WebPage",
           name: "Feeling Stuck? The Career Trap Explained",
           description:
-            "Understanding why you feel stuck in your career — and the first step toward building your exit.",
+            "Understanding why you feel stuck in your career, and the first step toward building your exit.",
           url: `${SITE}/feeling-stuck`,
         },
         {
@@ -2681,7 +2681,7 @@ function getRoutes() {
   routes.push({
     path: "/partners/embed",
     meta: {
-      title: "Integration Marketing — Partner With Invisible Exit",
+      title: "Integration Marketing, Partner With Invisible Exit",
       description:
         "Embed our Freedom Calculator, add us to your email sequence, or co-create content. 30% recurring commission, 60-day cookies, ready-made assets.",
       url: `${SITE}/partners/embed`,
@@ -2690,7 +2690,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Integration Marketing — Partner Program",
+          name: "Integration Marketing, Partner Program",
           description:
             "Embeddable widgets, email swipe copy, and thank-you page blocks for Invisible Exit affiliates and partners.",
           url: `${SITE}/partners/embed`,
@@ -2711,7 +2711,7 @@ function getRoutes() {
   routes.push({
     path: "/partners/jv",
     meta: {
-      title: "JV Partnership — 50% Revenue Share for Creators | Invisible Exit",
+      title: "JV Partnership, 50% Revenue Share for Creators | Invisible Exit",
       description:
         "Joint Venture partnership offer for creators with audiences of corporate professionals. 50% revenue share (not affiliate commission), co-branded landing pages, and custom offers for your audience.",
       url: `${SITE}/partners/jv`,
@@ -2720,7 +2720,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "JV Partnership — 50% Revenue Share",
+          name: "JV Partnership, 50% Revenue Share",
           description:
             "Joint Venture partnership: 50% revenue share, co-branded pages, custom offers for creators with corporate professional audiences.",
           url: `${SITE}/partners/jv`,
@@ -2742,7 +2742,7 @@ function getRoutes() {
   routes.push({
     path: "/content-strategy",
     meta: {
-      title: "Hub-and-Spoke Content Strategy — The Pillar Framework | Invisible Exit",
+      title: "Hub-and-Spoke Content Strategy, The Pillar Framework | Invisible Exit",
       description:
         "The complete hub-and-spoke content strategy: 5 pillar guides (3,500-5,000 words each) with 10+ supporting spokes per hub, targeting high-volume keywords and building domain authority through linkable assets.",
       url: `${SITE}/content-strategy`,
@@ -2768,11 +2768,11 @@ function getRoutes() {
     },
   });
 
-  // Traffic Secrets: Resources Hub (Secret #16 — Ballot Box / Ball-in-Play)
+  // Traffic Secrets: Resources Hub (Secret #16:  Ballot Box / Ball-in-Play)
   routes.push({
     path: "/resources",
     meta: {
-      title: "Free Resources — Calculators, Guides & Templates | Invisible Exit",
+      title: "Free Resources, Calculators, Guides & Templates | Invisible Exit",
       description:
         "Free tools and resources for building an invisible side business: freedom number calculator, state guides, employment contract checklists, idea validation frameworks, and launch templates.",
       url: `${SITE}/resources`,
@@ -2781,7 +2781,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Free Resources — Calculators, Guides & Templates",
+          name: "Free Resources, Calculators, Guides & Templates",
           description:
             "Free tools for building a side business while employed: calculators, state guides, checklists, and templates.",
           url: `${SITE}/resources`,
@@ -2820,7 +2820,7 @@ function getRoutes() {
             // `about` is a topical pointer, not a thing we sell or rate. Typing it
             // SoftwareApplication made Google's product parser demand one of
             // offers/review/aggregateRating ("Either offers, review, or
-            // aggregateRating should be specified" — GSC, 2026-07-25). We have no
+            // aggregateRating should be specified", GSC, 2026-07-25). We have no
             // honest offer or rating for a third-party tool here, so the node is a
             // plain Thing: same topical signal, no product claim.
             about: { "@type": "Thing", name: ta.tool, description: `${ta.category} software` },
@@ -3101,7 +3101,7 @@ function getRoutes() {
     routes.push({
       path: `/banking/${bg.slug}`,
       meta: {
-        title: `Business Banking in ${bg.stateName} — Best Banks for LLCs & Side Businesses | Invisible Exit`,
+        title: `Business Banking in ${bg.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`,
         description: `Best business banking options in ${bg.stateName}. Compare ${recommendedBankCount} recommended banks for your LLC. Fees, features, and online banking options for ${bg.stateName} founders.`,
         url,
         image: `${SITE}/og/banking-${bg.slug}.svg`,
@@ -3145,7 +3145,7 @@ function getRoutes() {
     routes.push({
       path: `/tax-guides/${tg.slug}`,
       meta: {
-        title: `Tax Guide for ${tg.stateName} — LLC & Side Business Taxes | Invisible Exit`,
+        title: `Tax Guide for ${tg.stateName}, LLC & Side Business Taxes | Invisible Exit`,
         description: `Complete tax guide for side businesses and LLCs in ${tg.stateName}. Income tax rate: ${tg.incomeTaxRate}. Sales tax: ${tg.salesTaxNote}. Credits, deductions, filing deadlines.`,
         url,
         image: `${SITE}/og/tax-${tg.slug}.svg`,
@@ -3189,7 +3189,7 @@ function getRoutes() {
     routes.push({
       path: `/time-frameworks/${tf.slug}`,
       meta: {
-        title: `${tf.frameworkName} — Side Business Time Framework | Invisible Exit`,
+        title: `${tf.frameworkName}, Side Business Time Framework | Invisible Exit`,
         description: `${tf.description} ${tf.bestFor}. Weekly time commitment: ${tf.weeklyTimeCommitment}.`,
         url,
         image: `${SITE}/og/time-${tf.slug}.svg`,
@@ -3246,7 +3246,7 @@ function getRoutes() {
     routes.push({
       path: `/nda-guides/${ng.slug}`,
       meta: {
-        title: `NDA Guide for ${ng.stateName} — Side Business & Non-Compete | Invisible Exit`,
+        title: `NDA Guide for ${ng.stateName}, Side Business & Non-Compete | Invisible Exit`,
         description: `NDA and non-compete guide for side businesses in ${ng.stateName}. Enforceability: ${ng.ndaEnforceability}. What to check in your employment agreement.`,
         url,
         image: `${SITE}/og/nda-${ng.slug}.svg`,
@@ -3290,7 +3290,7 @@ function getRoutes() {
     routes.push({
       path: `/insurance/${ig.slug}`,
       meta: {
-        title: `Business Insurance in ${ig.stateName} — Side Business & LLC Coverage | Invisible Exit`,
+        title: `Business Insurance in ${ig.stateName}, Side Business & LLC Coverage | Invisible Exit`,
         description: `Business insurance guide for side businesses and LLCs in ${ig.stateName}. General liability, professional liability, cyber insurance, and workers' comp requirements.`,
         url,
         image: `${SITE}/og/insurance-${ig.slug}.svg`,
@@ -3527,8 +3527,8 @@ function getRoutes() {
             // carries our single editorial Review. A bare `itemReviewed`
             // SoftwareApplication has none of offers/review/aggregateRating, which
             // Google flags as critical ("Either offers, review, or aggregateRating
-            // should be specified" — GSC, 2026-07-25). Inverting satisfies it with
-            // the rating we already publish — t.rating is rendered visibly on the
+            // should be specified", GSC, 2026-07-25). Inverting satisfies it with
+            // the rating we already publish, t.rating is rendered visibly on the
             // page (e.g. "4.5/5"), so the markup matches on-page content.
             // Same policy-safe pattern as the /best listicles above: one named
             // editorial review, NOT a self-served aggregateRating.
@@ -3672,19 +3672,19 @@ function getRoutes() {
   }
 
   // Hub pages for new content types
-  routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession — Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [
+  routes.push({ path: "/revenue", meta: { title: "How to Make $1K-$20K/Month by Profession, Revenue Roadmaps | Invisible Exit", description: "Realistic paths to $1K, $3K, $5K, $10K, and $20K/month in recurring revenue for 25 professions. Customer math, pricing strategy, and micro-SaaS ideas.", url: `${SITE}/revenue`, type: "website", jsonLd: [
     { "@context": "https://schema.org", "@type": "WebPage", name: "Revenue Targets by Profession", description: "Realistic paths to recurring revenue targets for 25 professions" },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Revenue Targets" } ] }
   ] } });
-  routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City — Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [
+  routes.push({ path: "/cities", meta: { title: "Side Business Ideas by City, Local Guides for 15+ US Cities | Invisible Exit", description: "Start a side business in your city. Local legal context, startup ecosystem data, and micro-SaaS opportunities for Austin, SF, NYC, Seattle, Denver, and more.", url: `${SITE}/cities`, type: "website", jsonLd: [
     { "@context": "https://schema.org", "@type": "WebPage", name: "Side Business by City", description: "City-level guides for building a side business across the US" },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Cities" } ] }
   ] } });
-  routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills — 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [
+  routes.push({ path: "/skills", meta: { title: "How to Make Money with Your Skills, 20 Skill Monetization Guides | Invisible Exit", description: "Monetize Python, SQL, Excel, AI prompting, design, writing, SEO, and 13 more skills. Micro-SaaS ideas, freelance rates, and realistic revenue paths.", url: `${SITE}/skills`, type: "website", jsonLd: [
     { "@context": "https://schema.org", "@type": "WebPage", name: "Skill Monetization Guides", description: "How to turn your professional skills into recurring revenue" },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Skills" } ] }
   ] } });
-  routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience — 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [
+  routes.push({ path: "/audience", meta: { title: "Side Business Ideas by Audience, 15 Demographic Guides | Invisible Exit", description: "Side business and micro-SaaS ideas for college students, parents, veterans, retirees, nurses, teens, immigrants, digital nomads, and more. Tailored to your life situation.", url: `${SITE}/audience`, type: "website", jsonLd: [
     { "@context": "https://schema.org", "@type": "WebPage", name: "Side Business Ideas by Audience", description: "Demographic-specific micro-SaaS and side business guides" },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` }, { "@type": "ListItem", position: 2, name: "Audience" } ] }
   ] } });

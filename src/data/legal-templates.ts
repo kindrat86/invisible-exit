@@ -18,28 +18,28 @@ OF
 
 The undersigned, acting as organizer of a limited liability company under [STATE] law, adopts the following Articles of Organization:
 
-ARTICLE I — NAME
+ARTICLE I, NAME
 The name of the limited liability company is: [YOUR LLC NAME], LLC
 
-ARTICLE II — PURPOSE
+ARTICLE II, PURPOSE
 The purpose of the Company is to engage in any lawful business activity for which a limited liability company may be organized under the laws of [STATE].
 
-ARTICLE III — REGISTERED AGENT
+ARTICLE III, REGISTERED AGENT
 The name and address of the Company's registered agent is:
 Name: [REGISTERED AGENT NAME]
 Address: [REGISTERED AGENT ADDRESS]
 
-ARTICLE IV — MANAGEMENT
+ARTICLE IV, MANAGEMENT
 The Company shall be managed by its Members.
 
-ARTICLE V — PRINCIPAL OFFICE
+ARTICLE V, PRINCIPAL OFFICE
 The principal office address of the Company is:
-[BUSINESS ADDRESS — use virtual mailbox or PO Box, NOT your home address]
+[BUSINESS ADDRESS, use virtual mailbox or PO Box, NOT your home address]
 
-ARTICLE VI — DURATION
+ARTICLE VI, DURATION
 The Company shall have perpetual duration.
 
-ARTICLE VII — ORGANIZER
+ARTICLE VII, ORGANIZER
 Name: [ORGANIZER NAME]
 Address: [ORGANIZER ADDRESS]
 Signature: ___________________________
@@ -52,7 +52,7 @@ NOTE: This is a structural template for educational purposes only. State require
       "Select a business name with zero connection to your personal name",
       "Hire a registered agent service to keep your home address off public filings",
       "File Articles of Organization with the Secretary of State",
-      "Obtain an EIN (Employer Identification Number) from the IRS — free, takes 5 minutes online",
+      "Obtain an EIN (Employer Identification Number) from the IRS, free, takes 5 minutes online",
       "Open a business bank account under the LLC",
       "Set up a virtual mailbox or PO Box as your business address",
     ],
@@ -99,7 +99,7 @@ STEP 4: File Formation Documents
 
 STEP 5: Obtain EIN
 ━━━━━━━━━━━━━━━━━
-- Apply online at IRS.gov — free, immediate
+- Apply online at IRS.gov, free, immediate
 - You need this for bank accounts and payment processors
 - The EIN application DOES require your SSN but this is NOT public record
 
@@ -120,9 +120,9 @@ NOTE: This guide is for educational purposes. Privacy laws and formation require
     checklist: [
       "Research and select your formation state (WY, NM, or DE)",
       "Choose and hire a registered agent service",
-      "Pick a brand name — verify it has zero connection to your real name",
+      "Pick a brand name, verify it has zero connection to your real name",
       "File formation documents through your registered agent",
-      "Obtain EIN from IRS (irs.gov — free, immediate)",
+      "Obtain EIN from IRS (irs.gov, free, immediate)",
       "Open a business bank account under the LLC",
       "Register payment processors (Stripe, PayPal) under the LLC",
       "Verify your name does NOT appear on any public filing",
@@ -146,38 +146,38 @@ A [STATE] Limited Liability Company
 
 Effective Date: [DATE]
 
-ARTICLE I — FORMATION
+ARTICLE I, FORMATION
 1.1 The Company was formed on [FORMATION DATE] by filing Articles of Organization with the [STATE] Secretary of State.
 1.2 The Company name is [YOUR LLC NAME], LLC.
 
-ARTICLE II — PURPOSE
-2.1 The Company is formed for the purpose of [GENERAL DESCRIPTION — e.g., "providing software-as-a-service products and related digital services"].
+ARTICLE II, PURPOSE
+2.1 The Company is formed for the purpose of [GENERAL DESCRIPTION, e.g., "providing software-as-a-service products and related digital services"].
 
-ARTICLE III — MEMBER
+ARTICLE III, MEMBER
 3.1 The sole Member of the Company is:
     Name: [YOUR LEGAL NAME]
-    Address: [YOUR ADDRESS — can use virtual mailbox]
+    Address: [YOUR ADDRESS, can use virtual mailbox]
     Ownership: 100%
 
-ARTICLE IV — MANAGEMENT
+ARTICLE IV, MANAGEMENT
 4.1 The Company shall be member-managed.
 4.2 The Member shall have full authority to manage the business and affairs of the Company.
 
-ARTICLE V — CAPITAL CONTRIBUTIONS
+ARTICLE V, CAPITAL CONTRIBUTIONS
 5.1 The Member has contributed $[AMOUNT] as initial capital.
 5.2 No additional contributions are required.
 
-ARTICLE VI — DISTRIBUTIONS
+ARTICLE VI, DISTRIBUTIONS
 6.1 Distributions shall be made at the sole discretion of the Member.
 6.2 All profits and losses shall be allocated to the sole Member.
 
-ARTICLE VII — TAX TREATMENT
+ARTICLE VII, TAX TREATMENT
 7.1 The Company shall be treated as a disregarded entity for federal tax purposes.
 
-ARTICLE VIII — DISSOLUTION
+ARTICLE VIII, DISSOLUTION
 8.1 The Company may be dissolved at any time by written decision of the Member.
 
-ARTICLE IX — LIABILITY
+ARTICLE IX, LIABILITY
 9.1 The Member shall not be personally liable for any debts, obligations, or liabilities of the Company.
 
 Signed:
@@ -350,7 +350,7 @@ NOTE: Template for educational purposes only.`,
     estimated_cost: "$0 (DIY) or $200–$400 (attorney review)",
     time_to_complete: "15 minutes",
     when_you_need_it:
-      "Before any conversation where you share business details, revenue numbers, strategies, or proprietary information with another person — especially other founders or potential partners.",
+      "Before any conversation where you share business details, revenue numbers, strategies, or proprietary information with another person, especially other founders or potential partners.",
     template_content: `MUTUAL NON-DISCLOSURE AGREEMENT
 
 This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of [DATE] between:
@@ -489,7 +489,7 @@ NOTE: Template for educational purposes only.`,
     estimated_cost: "$0 (DIY) or $300–$600 (attorney review)",
     time_to_complete: "15 minutes",
     when_you_need_it:
-      "Every time a contractor creates anything for your business — code, designs, copy, logos, architecture. Without this, the contractor may legally own what they built for you.",
+      "Every time a contractor creates anything for your business, code, designs, copy, logos, architecture. Without this, the contractor may legally own what they built for you.",
     template_content: `INTELLECTUAL PROPERTY ASSIGNMENT AGREEMENT
 
 This IP Assignment Agreement ("Agreement") is entered into as of [DATE] between:
@@ -562,15 +562,15 @@ NOTE: This template is critical for protecting your business. Consider attorney 
 Date Created: [DATE]
 Last Updated: [DATE]
 
-I, [YOUR LEGAL NAME], maintain this document to establish a clear record that my side business activities are conducted independently of my employment with [EMPLOYER NAME — optional, can leave blank for extra privacy].
+I, [YOUR LEGAL NAME], maintain this document to establish a clear record that my side business activities are conducted independently of my employment with [EMPLOYER NAME, optional, can leave blank for extra privacy].
 
 DECLARATION OF INDEPENDENCE:
 
 1. SEPARATE RESOURCES
 I certify that all work on [YOUR LLC NAME / SIDE BUSINESS DESCRIPTION] is performed:
-- On my personal devices (laptop, phone, tablet) — never on company equipment
-- On my personal internet connection — never on company Wi-Fi or VPN
-- On my personal time — never during work hours, lunch breaks at the office, or company events
+- On my personal devices (laptop, phone, tablet), never on company equipment
+- On my personal internet connection, never on company Wi-Fi or VPN
+- On my personal time, never during work hours, lunch breaks at the office, or company events
 
 2. NO PROPRIETARY KNOWLEDGE
 I certify that [YOUR LLC NAME / SIDE BUSINESS DESCRIPTION]:
@@ -578,11 +578,11 @@ I certify that [YOUR LLC NAME / SIDE BUSINESS DESCRIPTION]:
 - Does not use any trade secrets, internal data, or confidential strategies
 - Does not compete with my employer's business
 - Was conceived and developed entirely from publicly available information
-- Industry: [YOUR SIDE BUSINESS INDUSTRY] — distinct from employer's industry: [EMPLOYER'S INDUSTRY]
+- Industry: [YOUR SIDE BUSINESS INDUSTRY], distinct from employer's industry: [EMPLOYER'S INDUSTRY]
 
 3. IDEA ORIGIN
 The idea for [PRODUCT/SERVICE] originated from:
-[DESCRIBE HOW YOU CAME UP WITH THE IDEA — be specific about public sources, personal experience, etc.]
+[DESCRIBE HOW YOU CAME UP WITH THE IDEA, be specific about public sources, personal experience, etc.]
 
 4. TOOLS & RESOURCES
 All tools and services used are:
@@ -591,11 +591,11 @@ All tools and services used are:
 - Not provided by or associated with my employer
 
 LIST OF TOOLS:
-[LIST YOUR TOOLS — e.g., "Personal MacBook Pro (purchased [DATE]), personal Figma account, personal GitHub account, AWS account under LLC"]
+[LIST YOUR TOOLS, e.g., "Personal MacBook Pro (purchased [DATE]), personal Figma account, personal GitHub account, AWS account under LLC"]
 
 5. TIME LOG
 I maintain records showing all side business work occurs outside of work hours:
-[OPTIONAL: Reference your time tracking method — e.g., "Toggl time entries", "Calendar blocks", "Git commit timestamps"]
+[OPTIONAL: Reference your time tracking method, e.g., "Toggl time entries", "Calendar blocks", "Git commit timestamps"]
 
 SIGNED:
 ___________________________
@@ -606,11 +606,11 @@ Date: [DATE]
 IMPORTANT: Update this document monthly. Save copies with timestamps. This is your primary evidence if your employer ever questions ownership of your side business. Consider having this notarized for additional legal weight.`,
     checklist: [
       "Fill in all sections honestly and completely",
-      "List every tool and resource you use — prove they're personal/LLC-owned",
+      "List every tool and resource you use, prove they're personal/LLC-owned",
       "Document the origin of your business idea with specific public sources",
       "Sign and date the document",
       "Update monthly with any changes",
-      "Store securely — consider a cloud backup separate from work accounts",
+      "Store securely, consider a cloud backup separate from work accounts",
       "Consider having it notarized for additional legal weight",
       "Keep git commit timestamps as supporting evidence of after-hours work",
     ],
@@ -634,7 +634,7 @@ Last Updated: [DATE]
 
 1. INFORMATION WE COLLECT
 - Account information: email address, name (if provided)
-- Payment information: processed securely through [Stripe/PayPal] — we do not store card numbers
+- Payment information: processed securely through [Stripe/PayPal], we do not store card numbers
 - Usage data: pages visited, features used, browser type, IP address
 - Cookies: we use cookies for session management and analytics
 
@@ -834,7 +834,7 @@ NOTE: This worksheet provides a simplified estimation. Your actual tax situation
     checklist: [
       "Track all business income and expenses monthly",
       "Calculate estimated quarterly payment before each deadline",
-      "Pay via IRS Direct Pay or EFTPS — never use a check linked to personal account",
+      "Pay via IRS Direct Pay or EFTPS, never use a check linked to personal account",
       "Keep all receipts for deductible business expenses",
       "Set aside 25-30% of profit for taxes in a separate savings account",
       "Consult a CPA before your first tax filing",

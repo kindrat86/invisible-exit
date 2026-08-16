@@ -1,7 +1,7 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "InvisibleExit",
-  "description": "Build a side business while employed — AI tools, funnel strategies, and step-by-step playbooks for launching your first revenue-generating side hustle without quitting your day job.",
+  "description": "Build a side business while employed, AI tools, funnel strategies, and step-by-step playbooks for launching your first revenue-generating side hustle without quitting your day job.",
   "home_page_url": "https://invisibleexit.com/",
   "feed_url": "https://invisibleexit.com/feed.json",
   "language": "en",
@@ -40,7 +40,7 @@
       "id": "https://invisibleexit.com/about",
       "url": "https://invisibleexit.com/about",
       "title": "About Invisible Exit | Built by a Corporate Manager, for...",
-      "content_text": "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The...",
+      "content_text": "Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed, without his employer finding out. The...",
       "date_published": "2026-07-16T09:01:55Z",
       "authors": [
         {
@@ -81,7 +81,7 @@
     {
       "id": "https://invisibleexit.com/story",
       "url": "https://invisibleexit.com/story",
-      "title": "My Story — How I Built $4K/Month While Employed |...",
+      "title": "My Story, How I Built $4K/Month While Employed |...",
       "content_text": "The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15...",
       "date_published": "2026-07-04T00:00:00Z",
       "authors": [
@@ -95,7 +95,7 @@
     {
       "id": "https://invisibleexit.com/resources",
       "url": "https://invisibleexit.com/resources",
-      "title": "Free Resources — Calculators, Guides & Templates |...",
+      "title": "Free Resources, Calculators, Guides & Templates |...",
       "content_text": "Free tools and resources for building an invisible side business: freedom number calculator, state guides, employment contract checklists, idea validation...",
       "date_published": "2026-07-08T09:01:55Z",
       "authors": [
@@ -123,7 +123,7 @@
     {
       "id": "https://invisibleexit.com/manifesto",
       "url": "https://invisibleexit.com/manifesto",
-      "title": "The Invisible Exit Manifesto — A Movement for Trapped...",
+      "title": "The Invisible Exit Manifesto, A Movement for Trapped...",
       "content_text": "This isn",
       "date_published": "2026-07-04T00:00:00Z",
       "authors": [
@@ -137,7 +137,7 @@
     {
       "id": "https://invisibleexit.com/inner-circle",
       "url": "https://invisibleexit.com/inner-circle",
-      "title": "The Invisible Exit Inner Circle — Private Community for...",
+      "title": "The Invisible Exit Inner Circle, Private Community for...",
       "content_text": "A private community of corporate managers building anonymous side businesses. Weekly office hours, MRR leaderboard, stealth-first culture.",
       "date_published": "2026-07-02T09:01:55Z",
       "authors": [
@@ -235,7 +235,7 @@
     {
       "id": "https://invisibleexit.com/content-strategy",
       "url": "https://invisibleexit.com/content-strategy",
-      "title": "Hub-and-Spoke Content Strategy — The Pillar Framework |...",
+      "title": "Hub-and-Spoke Content Strategy, The Pillar Framework |...",
       "content_text": "The complete hub-and-spoke content strategy: 5 pillar guides (3,500-5,000 words each) with 10+ supporting spokes per hub, targeting high-volume keywords...",
       "date_published": "2026-06-18T09:01:55Z",
       "authors": [
@@ -249,7 +249,7 @@
     {
       "id": "https://invisibleexit.com/compare",
       "url": "https://invisibleexit.com/compare",
-      "title": "Invisible Exit vs Every Alternative — The Honest Comparison",
+      "title": "Invisible Exit vs Every Alternative, The Honest Comparison",
       "content_text": "Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest...",
       "date_published": "2026-07-04T00:00:00Z",
       "authors": [
@@ -291,7 +291,7 @@
     {
       "id": "https://invisibleexit.com/affiliates",
       "url": "https://invisibleexit.com/affiliates",
-      "title": "Affiliate Program — 30% Recurring | Invisible Exit",
+      "title": "Affiliate Program, 30% Recurring | Invisible Exit",
       "content_text": "Earn 30% recurring commission referring corporate managers to Invisible Exit. Lifetime cookies, monthly payouts.",
       "date_published": "2026-06-10T09:01:55Z",
       "authors": [

@@ -9,7 +9,7 @@ export default function InsuranceHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Side Business Insurance by State — LLC Insurance Guides | Invisible Exit"
+        title="Side Business Insurance by State, LLC Insurance Guides | Invisible Exit"
         description="State-by-state insurance guides for side businesses and LLCs. Compare requirements for general liability, workers' comp, professional liability, and cyber insurance across all 50 states plus DC."
         url="https://invisibleexit.com/insurance"
       />
@@ -55,8 +55,8 @@ export default function InsuranceHubPage() {
         <div className="mt-12 bg-amber-50 rounded-xl p-6 border-l-4 border-amber-400">
           <h2 className="text-lg font-bold text-gray-900 mb-3">Quick Insurance Tips for Side Businesses</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>• General liability insurance ($30–50/month) is the minimum — most commercial leases and contracts require it.</li>
-            <li>• If you build software (SaaS, apps), add professional liability (E&O) — it covers coding errors that cost clients money.</li>
+            <li>• General liability insurance ($30–50/month) is the minimum, most commercial leases and contracts require it.</li>
+            <li>• If you build software (SaaS, apps), add professional liability (E&O), it covers coding errors that cost clients money.</li>
             <li>• Store customer data? Cyber liability insurance ($40–150/month) covers breach response and legal defense.</li>
             <li>• Workers' comp laws vary significantly by state. Know your state's threshold before hiring your first employee.</li>
           </ul>

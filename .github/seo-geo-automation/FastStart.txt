@@ -1,4 +1,4 @@
-SEO/GEO Automation — Quick Start
+SEO/GEO Automation, Quick Start
 ==================================
 
 PREREQUISITES:
@@ -21,11 +21,11 @@ WHAT IT DOES:
 - Updates memory.md and gotchas.md with findings
 
 KEY FILES:
-- .github/seo-geo-automation/claude.md   — Full instructions for the agent
-- .github/seo-geo-automation/memory.md   — Learnings tracker
-- .github/seo-geo-automation/gotchas.md  — Mistakes to avoid
-- .github/workflows/seo-geo-audit.yml    — GitHub Actions workflow
-- SEO_CHANGELOG.md                       — Change log in repo root
+- .github/seo-geo-automation/claude.md, Full instructions for the agent
+- .github/seo-geo-automation/memory.md, Learnings tracker
+- .github/seo-geo-automation/gotchas.md, Mistakes to avoid
+- .github/workflows/seo-geo-audit.yml, GitHub Actions workflow
+- SEO_CHANGELOG.md, Change log in repo root
 
 TROUBLESHOOTING:
 - If workflow fails: Check that ANTHROPIC_API_KEY secret is set

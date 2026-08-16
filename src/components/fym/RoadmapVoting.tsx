@@ -145,7 +145,7 @@ export default function RoadmapVoting({ userId }: RoadmapVotingProps) {
             Submit Your Feature Request
           </p>
           <p className="text-[#8A95A8] text-xs mt-1">
-            Tell us what you need — we'll prioritize it
+            Tell us what you need, we'll prioritize it
           </p>
         </button>
       ) : (

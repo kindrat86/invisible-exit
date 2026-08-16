@@ -184,7 +184,7 @@ const FIRST_100K = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="0 → 100,000 Visitors Roadmap — Phased Traffic Plan | Invisible Exit"
+        title="0 → 100,000 Visitors Roadmap, Phased Traffic Plan | Invisible Exit"
         description="The complete 12-month roadmap from 0 to 100,000 monthly visitors. 5 phases with specific tasks, milestones, traffic sources, and revenue projections."
         url="/traffic-roadmap"
       />

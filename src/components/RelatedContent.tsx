@@ -21,7 +21,7 @@ export function RelatedContent({
 }) {
   if (!links || links.length === 0) return null;
   // Static, non-SPA destinations (prerendered files in public/) must be plain
-  // <a href> — react-router would intercept <Link to> and render an SPA 404.
+  // <a href>, react-router would intercept <Link to> and render an SPA 404.
   // /data/* dataset pages are static public/ files served via vercel.json rewrites.
   const isStaticPath = (to: string) =>
     to.startsWith("/data/") || to === "/site-index.html" || to === "/network";

@@ -86,10 +86,10 @@ export function useMorningBriefing(
 
     if (invScore === null) {
       todaysFocus =
-        "Complete your Invisibility audit — find out if your employer could discover your side business. This matters as much as your revenue.";
+        "Complete your Invisibility audit, find out if your employer could discover your side business. This matters as much as your revenue.";
       focusEstimate = "8 minutes";
     } else if (invScore < 50) {
-      todaysFocus = `Your operation is only ${invScore}/100 hidden — your employer could still find you. Review the Invisibility fixes tab.`;
+      todaysFocus = `Your operation is only ${invScore}/100 hidden, your employer could still find you. Review the Invisibility fixes tab.`;
       focusEstimate = "5 minutes";
     } else {
       // Check if entry saved today
@@ -123,7 +123,7 @@ export function useMorningBriefing(
 
         if (allSameRevenue) {
           todaysFocus =
-            "Your revenue hasn't moved for 3 entries in a row. Time to shake things up — try a different price, reach a new audience, or launch a second product.";
+            "Your revenue hasn't moved for 3 entries in a row. Time to shake things up, try a different price, reach a new audience, or launch a second product.";
           focusEstimate = "15 minutes";
         } else {
           todaysFocus =

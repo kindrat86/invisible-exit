@@ -76,7 +76,7 @@ export default async function handler(req: Request): Promise<Response> {
       });
     }
 
-    // Limit text size (prevent abuse) — 5,000 chars max
+    // Limit text size (prevent abuse), 5,000 chars max
     if (text.length > 5000) {
       return new Response(JSON.stringify({ error: "Text too long (max 5000 chars)" }), {
         status: 413,

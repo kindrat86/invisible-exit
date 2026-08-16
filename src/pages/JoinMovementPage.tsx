@@ -7,16 +7,16 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 14 — Tribal Identity / Belonging Rituals
+ * EXPERT SECRETS: Chapter 14:  Tribal Identity / Belonging Rituals
  *
  * Russell: "Belonging isn't just about being in a group.
  * It's about the ritual of joining. The moment of commitment."
  *
  * This page creates a joining ceremony:
- *   1. The Declaration — visitor publicly commits (checkboxes)
- *   2. The Code — 5 principles they agree to live by
- *   3. The Badge — they receive their Invisible Builder identity
- *   4. The First Step — they're guided to the freedom calculator
+ *   1. The Declaration, visitor publicly commits (checkboxes)
+ *   2. The Code, 5 principles they agree to live by
+ *   3. The Badge, they receive their Invisible Builder identity
+ *   4. The First Step, they're guided to the freedom calculator
  *
  * This transforms "signing up for a newsletter" into "joining a movement."
  */
@@ -73,7 +73,7 @@ const JoinMovementPage = () => {
               </p>
               <p className="text-base text-white/40 max-w-lg mx-auto mb-12 animate-fade-up" style={{ animationDelay: "200ms" }}>
                 Check each statement you agree with. If you can't check all 5,
-                this movement isn't for you — and that's okay.
+                this movement isn't for you, and that's okay.
               </p>
             </div>
           </section>

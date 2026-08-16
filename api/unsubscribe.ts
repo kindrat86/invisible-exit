@@ -16,7 +16,7 @@ const SUPPORT = "escape@invisibleexit.com";
 /**
  * Changed 2026-07-25 (portfolio-wide audit). This was the most destructive of the
  * portfolio's five unsubscribe endpoints: a bare GET ran two DELETEs, so it
- * permanently removed rows for ANY address supplied — no token, no confirmation.
+ * permanently removed rows for ANY address supplied, no token, no confirmation.
  * Two consequences, both verified reachable live:
  *   1. Anyone could destroy subscriber rows for any address they could guess.
  *      Unlike the Resend "unsubscribed: true" flag used elsewhere, a DELETE is
@@ -25,7 +25,7 @@ const SUPPORT = "escape@invisibleexit.com";
  *      URLs in email bodies automatically, so they were deleting real
  *      subscribers who never clicked.
  * Links already in the wild carry no signature, so REQUIRING one would strand
- * real recipients with no way to opt out — worse than the bug. Hence: unsigned
+ * real recipients with no way to opt out, worse than the bug. Hence: unsigned
  * GET renders a one-click confirmation POST; a signed GET (UNSUB_SECRET) and POST
  * act directly, so RFC 8058 one-click still works. HEAD answers but never
  * mutates, because scanners HEAD links and a 405 makes them report the
@@ -75,7 +75,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await query(`DELETE FROM email_sequence_schedule WHERE email = $1`, [email]);
     ok = true;
   } catch (err) {
-    // Previously swallowed, then the success page was shown anyway — producing
+    // Previously swallowed, then the success page was shown anyway, producing
     // people who believed they had opted out and were still on the list.
     console.error("Unsubscribe query failed:", err);
   }
@@ -98,7 +98,7 @@ function shell(title: string, icon: string, heading: string, body: string): stri
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>${title} — Invisible Exit</title>
+<title>${title}, Invisible Exit</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -152,7 +152,7 @@ function send(res: VercelResponse, html: string) {
   res.status(200).send(html);
 }
 
-/** Explicit confirmation for unsigned GETs — still one click, but a human's. */
+/** Explicit confirmation for unsigned GETs, still one click, but a human's. */
 function confirmPage(res: VercelResponse, email: string) {
   return send(res, shell("Confirm unsubscribe", "&#9993;", "Confirm you want to unsubscribe",
     `<p>Click below and <span class="email">${esc(email)}</span> will stop receiving Invisible Exit emails.</p>

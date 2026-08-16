@@ -22,7 +22,7 @@ const TIMELINE = [
 const FAQS = [
   {
     q: "Why are you anonymous?",
-    a: "Because the system I teach depends on it. My employer cannot know about my side businesses. My professional network cannot connect my products to my name. If I revealed my identity, I would violate the exact principle that makes this work. Anonymity isn't a gimmick — it's the core strategy.",
+    a: "Because the system I teach depends on it. My employer cannot know about my side businesses. My professional network cannot connect my products to my name. If I revealed my identity, I would violate the exact principle that makes this work. Anonymity isn't a gimmick, it's the core strategy.",
   },
   {
     q: "Is 'Adrian' your real name?",
@@ -30,11 +30,11 @@ const FAQS = [
   },
   {
     q: "How do I know you're not lying about the revenue?",
-    a: "You don't. And I can't prove it without revealing my identity, which I won't do. Here's what I can tell you: the system is based on verifiable math. $29/month × 138 customers = $4,002/month. That's not a claim — it's arithmetic. If the math makes sense to you, try the system for $9. If it doesn't work, refund.",
+    a: "You don't. And I can't prove it without revealing my identity, which I won't do. Here's what I can tell you: the system is based on verifiable math. $29/month × 138 customers = $4,002/month. That's not a claim, it's arithmetic. If the math makes sense to you, try the system for $9. If it doesn't work, refund.",
   },
   {
     q: "Will you ever reveal your identity?",
-    a: "Maybe. When my employment situation changes — either I leave voluntarily or the IPO happens — I may go public. Until then, the anonymity is non-negotiable. It protects my family, my career, and the integrity of the system.",
+    a: "Maybe. When my employment situation changes, either I leave voluntarily or the IPO happens, I may go public. Until then, the anonymity is non-negotiable. It protects my family, my career, and the integrity of the system.",
   },
   {
     q: "How can I trust advice from someone I can't see?",
@@ -46,7 +46,7 @@ const AdrianPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Who Is Adrian? — The Anonymous Founder Behind Invisible Exit"
+        title="Who Is Adrian?, The Anonymous Founder Behind Invisible Exit"
         description="37-year-old Managing Director. $120K salary. <0.5% equity. Building $4K/month on the side. Identity protected by design."
         url="/adrian"
       />
@@ -57,7 +57,7 @@ const AdrianPage = () => {
         <div className="container-narrow text-center">
           <p className="text-eyebrow text-primary-light mb-6">The Attractive Character</p>
 
-          {/* Visual identity — anonymous avatar */}
+          {/* Visual identity, anonymous avatar */}
           <div className="flex justify-center mb-8">
             <div className="relative">
               <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-primary to-accent-primary flex items-center justify-center border-4 border-white/10 shadow-2xl shadow-primary/20">
@@ -78,7 +78,7 @@ const AdrianPage = () => {
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto mb-8">
             Building $4,000+/month in invisible recurring revenue while employed.
-            Identity protected — because that's the whole point.
+            Identity protected, because that's the whole point.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -108,7 +108,7 @@ const AdrianPage = () => {
             <h2 className="text-h1 text-foreground mb-4">The Reluctant Hero</h2>
             <p className="text-body text-muted-foreground">
               I didn't want to build this. I wanted the IPO to save me. When it couldn't,
-              I built the door myself — reluctantly, imperfectly, and only because the
+              I built the door myself, reluctantly, imperfectly, and only because the
               alternative was spending the rest of my life in a cage I was pretending was
               a corner office.
             </p>
@@ -131,7 +131,7 @@ const AdrianPage = () => {
               {
                 title: "After",
                 state: "The Reluctant Leader",
-                body: "$4,100 MRR. Still employed. Built the system, then built a platform to share it. Not because he wanted to lead — because the math demanded it.",
+                body: "$4,100 MRR. Still employed. Built the system, then built a platform to share it. Not because he wanted to lead, because the math demanded it.",
                 color: "text-success",
               },
             ].map((phase) => (
@@ -145,14 +145,14 @@ const AdrianPage = () => {
         </div>
       </section>
 
-      {/* Before the Before — false peace */}
+      {/* Before the Before, false peace */}
       <section className="bg-surface section-normal">
         <div className="container-narrow">
           <p className="text-eyebrow text-primary mb-4 text-center">Before the Before</p>
           <h2 className="text-h1 text-foreground mb-6 text-center">I was happy. That was the problem.</h2>
           <div className="max-w-2xl mx-auto text-body text-muted-foreground space-y-5">
             <p>
-              Before Amsterdam, before the math, before any of this — I was content. Genuinely content.
+              Before Amsterdam, before the math, before any of this, I was content. Genuinely content.
               I liked my job. I respected my colleagues. I believed in the mission. The promotion ladder
               felt like a path, not a trap.
             </p>
@@ -162,7 +162,7 @@ const AdrianPage = () => {
               failure stories and feel grateful I had a "real" job.
             </p>
             <p>
-              That false peace was the most dangerous part. Not because I was unhappy — unhappy people
+              That false peace was the most dangerous part. Not because I was unhappy, unhappy people
               change things. Because I was <em className="text-foreground">comfortable</em>. Comfortable
               people don't look for doors. They don't even see the cage.
             </p>
@@ -174,7 +174,7 @@ const AdrianPage = () => {
         </div>
       </section>
 
-      {/* The Dark Night — dramatized "All is Lost" */}
+      {/* The Dark Night, dramatized "All is Lost" */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-narrow">
           <p className="text-eyebrow text-muted-foreground mb-4 text-center">The Dark Night</p>
@@ -194,7 +194,7 @@ const AdrianPage = () => {
             </p>
             <p>
               I had my cursor over the "Cancel Subscription" button on the hosting dashboard. My hand was on
-              the mouse. I could feel the relief of giving up — the comfort of going back to just being an employee.
+              the mouse. I could feel the relief of giving up, the comfort of going back to just being an employee.
             </p>
             <p className="text-foreground font-medium">
               Then I opened my Freedom Number calculation. <strong>$4,000/month MRR = optionality.</strong>

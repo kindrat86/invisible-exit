@@ -11,51 +11,51 @@ import ValueStackTotal from "@/components/ValueStackTotal";
 const SLIDES = [
   {
     title: "Introduction",
-    eyebrow: "From Adrian — Why This Matters",
-    hook: "Over the next 45 minutes, I'm going to show you a fundamentally different vehicle for financial freedom — one that doesn't require quitting your job, raising capital, or revealing your identity.",
-    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. I'm not a guru. I'm not a serial entrepreneur. I'm a corporate manager who figured out that the cage has a door — and spent 14 months building the key. Over the next 45 minutes, I'll show you the 3 frameworks that took me from trapped to $4,100/month in invisible recurring revenue. This isn't theory. This is the exact system, step by step. By the end, you'll know your freedom number, your timeline, and the framework to get there.",
-    stat: "By Adrian — 14 months from $0 to $4,100 MRR",
+    eyebrow: "From Adrian, Why This Matters",
+    hook: "Over the next 45 minutes, I'm going to show you a fundamentally different vehicle for financial freedom, one that doesn't require quitting your job, raising capital, or revealing your identity.",
+    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. I'm not a guru. I'm not a serial entrepreneur. I'm a corporate manager who figured out that the cage has a door, and spent 14 months building the key. Over the next 45 minutes, I'll show you the 3 frameworks that took me from trapped to $4,100/month in invisible recurring revenue. This isn't theory. This is the exact system, step by step. By the end, you'll know your freedom number, your timeline, and the framework to get there.",
+    stat: "By Adrian, 14 months from $0 to $4,100 MRR",
   },
   {
     title: "The Big Promise",
     eyebrow: "What You'll Walk Away With",
     hook: "Three things: your freedom number, a 5-tool system to hit it, and the stealth protocol to build it without your employer ever knowing.",
-    body: "Most courses teach you to build a 'better' side business. That's improvement — and it puts you in competition with 10,000 other courses. What I'm showing you is a NEW opportunity: the Invisible Exit System. It's the world's first anonymity-native, stealth-first framework for building recurring revenue while employed. Nobody else teaches this because nobody else built it. I built it because I needed it. Now I'm sharing it.",
+    body: "Most courses teach you to build a 'better' side business. That's improvement, and it puts you in competition with 10,000 other courses. What I'm showing you is a NEW opportunity: the Invisible Exit System. It's the world's first anonymity-native, stealth-first framework for building recurring revenue while employed. Nobody else teaches this because nobody else built it. I built it because I needed it. Now I'm sharing it.",
     stat: "A new category, not a better version",
   },
   {
     title: "The One Thing",
     eyebrow: "If You Remember Nothing Else...",
     hook: "Build the system first. Ideas are cartridges you swap in and out.",
-    body: "If you get nothing else from this masterclass, get this: the system matters more than the idea. I spent 3 months choosing the 'right' idea and launched the wrong one. It made $9/month. But the system was built — so I pivoted. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. Build the pipeline once. Swap ideas like cartridges. This is the one thing that separates builders from thinkers.",
+    body: "If you get nothing else from this masterclass, get this: the system matters more than the idea. I spent 3 months choosing the 'right' idea and launched the wrong one. It made $9/month. But the system was built, so I pivoted. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. Build the pipeline once. Swap ideas like cartridges. This is the one thing that separates builders from thinkers.",
     stat: "The One Thing: System > Idea",
   },
   {
     title: "The Hook",
     eyebrow: "Why You're Here",
     hook: "You earn $120K-$200K. You have less than 0.5% equity. And you just realized something uncomfortable.",
-    body: "You did the math. Even if your company IPOs at a billion dollars — your 0.5% becomes $5M. After dilution and taxes: $2.4M. Invested at 5%: $120K/year. That's your salary. Even a billion-dollar exit doesn't buy your freedom. It buys you a longer leash. You're here because you felt that truth in your gut before I put numbers on it.",
+    body: "You did the math. Even if your company IPOs at a billion dollars, your 0.5% becomes $5M. After dilution and taxes: $2.4M. Invested at 5%: $120K/year. That's your salary. Even a billion-dollar exit doesn't buy your freedom. It buys you a longer leash. You're here because you felt that truth in your gut before I put numbers on it.",
     stat: "$120K salary ≠ freedom",
   },
   {
-    title: "The Story — Amsterdam",
+    title: "The Story, Amsterdam",
     eyebrow: "My Epiphany Bridge",
     hook: "6 AM. Taxi in Amsterdam. Two notifications that changed everything.",
-    body: "I'd just landed on a KLM flight with my wife and 8-year-old. First morning of vacation. My phone buzzed. Two notifications sat side by side. The first: corporate escalation emails — colleagues fighting over responsibilities at 6 AM on my vacation. The second: a Stripe notification — \"$0.97 received\" from a stranger who bought a landing page I built while I slept. I screamed in the taxi. The driver thought I was insane. My wife understood. The cage has a door.",
+    body: "I'd just landed on a KLM flight with my wife and 8-year-old. First morning of vacation. My phone buzzed. Two notifications sat side by side. The first: corporate escalation emails, colleagues fighting over responsibilities at 6 AM on my vacation. The second: a Stripe notification, \"$0.97 received\" from a stranger who bought a landing page I built while I slept. I screamed in the taxi. The driver thought I was insane. My wife understood. The cage has a door.",
     stat: "First $0.97 = identity shift",
   },
   {
     title: "Secret #1: The Vehicle",
     eyebrow: "Your Job Is the Launchpad",
     hook: "Everyone says quit your job to build a startup. They're wrong.",
-    body: "Here's the story: I almost quit. I had my resignation letter drafted. Then I realized — my salary is runway funding that doesn't cost me equity. My corporate skills (managing teams, P&Ls, execution) are exactly what solo founders lack. My 5 hours/week forces ruthless focus that full-time founders with 60 hours can never replicate. The vehicle isn't a startup. The vehicle is YOUR JOB. It funds you, constrains you, and gives you the skills to win. [I built the FYM Dashboard to automate this exact calculation — you'll see it in the stack at the end.]",
+    body: "Here's the story: I almost quit. I had my resignation letter drafted. Then I realized, my salary is runway funding that doesn't cost me equity. My corporate skills (managing teams, P&Ls, execution) are exactly what solo founders lack. My 5 hours/week forces ruthless focus that full-time founders with 60 hours can never replicate. The vehicle isn't a startup. The vehicle is YOUR JOB. It funds you, constrains you, and gives you the skills to win. [I built the FYM Dashboard to automate this exact calculation, you'll see it in the stack at the end.]",
     stat: "Employment = unfair advantage",
   },
   {
     title: "Secret #2: The Stealth",
     eyebrow: "Anonymity Is Your Asset",
     hook: "Week 3. My colleague found a website that looked like my side project. On a team call.",
-    body: "My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different payment processor, different hosting. Zero connection to me. The call moved on. Those 3 seconds of panic were the best $25/month I ever spent. Anonymity means you can experiment without fear, fail without consequences, and build in any market — all while your employer, your LinkedIn network, and your competitors have no idea. [This became the Stealth Ops Hub — one of the 5 tools in the stack.]",
+    body: "My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different payment processor, different hosting. Zero connection to me. The call moved on. Those 3 seconds of panic were the best $25/month I ever spent. Anonymity means you can experiment without fear, fail without consequences, and build in any market, all while your employer, your LinkedIn network, and your competitors have no idea. [This became the Stealth Ops Hub, one of the 5 tools in the stack.]",
     stat: "Zero detection in 14 months",
   },
   {
@@ -70,20 +70,20 @@ const SLIDES = [
     eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
     hook: "Let me ask you a question. Do you believe you need to quit your job to build something real?",
     body: "That's the #1 false belief I see. The 'I can't start until I leave' myth. Here's the truth: the most successful builders I know are STILL EMPLOYED. Their salary is their runway. Their constraints (5 hours, limited budget) force them to be resourceful. Full-time founders with $500K and 60 hours? They waste it. Because they have no deadline, no constraint, no skin in the game. Your job IS the unfair advantage. Don't give it up until your MRR replaces it.",
-    stat: "New belief: Don't quit — build",
+    stat: "New belief: Don't quit, build",
   },
   {
     title: "False Belief #2: The Internal",
     eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
     hook: "Do you believe you're not 'technical enough' to build software?",
-    body: "This is the internal belief that kills more potential founders than anything else. You think you need to know how to code. You don't. In 2025, code is a commodity. AI writes it. No-code tools assemble it. What you bring — the ability to manage teams, read P&Ls, execute under pressure, communicate clearly — those are 10x rarer than knowing React. The world has enough coders. It's desperately short on operators. You ARE the operator.",
+    body: "This is the internal belief that kills more potential founders than anything else. You think you need to know how to code. You don't. In 2025, code is a commodity. AI writes it. No-code tools assemble it. What you bring, the ability to manage teams, read P&Ls, execute under pressure, communicate clearly, those are 10x rarer than knowing React. The world has enough coders. It's desperately short on operators. You ARE the operator.",
     stat: "New belief: Your skills > code",
   },
   {
     title: "False Belief #3: The External",
     eyebrow: "Breaking the 3 Beliefs That Keep You Stuck",
     hook: "Do you believe if you build something, your employer will find out?",
-    body: "This is the external belief — the fear. I get it. I had it too. Then I built the Stealth Ops system: separate Wyoming LLC, anonymous domain, different Stripe account, different hosting provider. Zero digital connection to my name. I've been building for 14 months. A colleague even FOUND a similar website during a team call. Nothing. Not a trace. When the system is right, detection isn't a risk — it's an impossibility.",
+    body: "This is the external belief, the fear. I get it. I had it too. Then I built the Stealth Ops system: separate Wyoming LLC, anonymous domain, different Stripe account, different hosting provider. Zero digital connection to my name. I've been building for 14 months. A colleague even FOUND a similar website during a team call. Nothing. Not a trace. When the system is right, detection isn't a risk, it's an impossibility.",
     stat: "New belief: Invisible by design",
   },
   {
@@ -97,15 +97,15 @@ const SLIDES = [
     title: "The Stack",
     eyebrow: "What You Get",
     hook: "5 tools worth $97/month. 3 bonuses worth $101. Total value: $328/month.",
-    body: "All 5 tools (FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager) + 3 bonuses (Employment Contract Audit Checklist, 25 Micro-SaaS Idea Swipes, Faceless Founder Content Calendar). Total value $328/month. Your price as a founding member: $9/month. That's 97% off. Not because the tools are cheap — because I want this in the hands of people who act.",
+    body: "All 5 tools (FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager) + 3 bonuses (Employment Contract Audit Checklist, 25 Micro-SaaS Idea Swipes, Faceless Founder Content Calendar). Total value $328/month. Your price as a founding member: $9/month. That's 97% off. Not because the tools are cheap, because I want this in the hands of people who act.",
     stat: "$328/month → $9/month",
   },
   {
     title: "Your Next Step",
-    eyebrow: "The Offer — Act Now",
+    eyebrow: "The Offer, Act Now",
     hook: "Every month you wait costs you $4,000 in unrealized MRR.",
-    body: "All 5 tools. $9/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members — after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
-    stat: "Start for $9 — before founding closes",
+    body: "All 5 tools. $9/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members, after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
+    stat: "Start for $9, before founding closes",
   },
 ];
 
@@ -251,7 +251,7 @@ const MasterclassPage = () => {
               <h2 className="text-xl font-bold text-white mb-2">You're registered!</h2>
               <p className="text-white/70 text-sm mb-6">
                 Check <strong className="text-white">{email}</strong> for the replay link.
-                The masterclass takes 45 minutes — watch it on your lunch break.
+                The masterclass takes 45 minutes, watch it on your lunch break.
               </p>
 
               {/* Clear next steps */}
@@ -342,7 +342,7 @@ const MasterclassPage = () => {
             {[
               "You have a stable salary but feel trapped by the golden handcuffs",
               "You have less than 0.5% equity and an uncertain IPO timeline",
-              "You want to build something that's yours — but you can't quit yet",
+              "You want to build something that's yours, but you can't quit yet",
               "You have 5 hours a week and want to use them strategically",
               "You're worried your employer might find out about your side project",
               "You don't know how to code but want to build a real product",
@@ -365,14 +365,14 @@ const MasterclassPage = () => {
             If you've watched this far, you're in the 3%. Here's what the 3% get.
           </p>
 
-          {/* Value Stack — Animated with running total */}
+          {/* Value Stack, Animated with running total */}
           <ValueStackTotal
             items={[
-              { name: "FYM Dashboard — Your exact freedom number", value: "$12/mo" },
-              { name: "Idea Pipeline — 500+ validated ideas + AI scoring", value: "$15/mo" },
-              { name: "Stealth Ops Hub — Entity, compliance, invisibility", value: "$25/mo" },
-              { name: "Launch Control — Ship products in 5 hrs/week", value: "$18/mo" },
-              { name: "Brand Manager — Faceless content + calendar", value: "$27/mo" },
+              { name: "FYM Dashboard, Your exact freedom number", value: "$12/mo" },
+              { name: "Idea Pipeline, 500+ validated ideas + AI scoring", value: "$15/mo" },
+              { name: "Stealth Ops Hub, Entity, compliance, invisibility", value: "$25/mo" },
+              { name: "Launch Control, Ship products in 5 hrs/week", value: "$18/mo" },
+              { name: "Brand Manager, Faceless content + calendar", value: "$27/mo" },
             ]}
             bonuses={[
               { name: "Bonus: Employment Contract Audit Checklist", value: "$27" },
@@ -401,7 +401,7 @@ const MasterclassPage = () => {
             <p className="text-white/60 text-sm leading-relaxed text-center">
               Nothing. You go back to your spreadsheet. You keep waiting for the IPO.{" "}
               <strong className="text-white">6 months from now</strong>, you'll be in the
-              same spot — except the founding price will be gone, and you'll wish you'd
+              same spot, except the founding price will be gone, and you'll wish you'd
               acted today.
             </p>
           </div>

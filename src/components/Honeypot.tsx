@@ -22,7 +22,7 @@ interface HoneypotProps {
 
 /**
  * Hidden honeypot field + timestamp check.
- * Renders nothing visible — style + position ensure only bots interact with it.
+ * Renders nothing visible, style + position ensure only bots interact with it.
  */
 export function Honeypot({ fieldName = "hp_name" }: HoneypotProps) {
   const id = useId();

@@ -9,7 +9,7 @@ SUBMISSIONS = [
         "name": "There's An AI For That",
         "url": "https://theresanaiforthat.com/submit/",
         "category": "Business & Finance",
-        "description": "Invisible Exit is an AI-powered platform with 5 tools that help employed professionals build anonymous micro-SaaS businesses without quitting their jobs. Calculate your freedom number, validate side-business ideas in 48 hours, run stealth compliance audits, automate launch sequences, and build a faceless brand — all without revealing your identity to your employer.",
+        "description": "Invisible Exit is an AI-powered platform with 5 tools that help employed professionals build anonymous micro-SaaS businesses without quitting their jobs. Calculate your freedom number, validate side-business ideas in 48 hours, run stealth compliance audits, automate launch sequences, and build a faceless brand, all without revealing your identity to your employer.",
     },
     {
         "name": "Futurepedia",
@@ -21,7 +21,7 @@ SUBMISSIONS = [
         "name": "Future Tools",
         "url": "https://www.futuretools.io/submit-a-tool",
         "category": "Business & Productivity",
-        "description": "Build a $4,000/month side business without quitting your job. Invisible Exit provides AI-powered tools for anonymous micro-SaaS creation: calculate your escape number, validate ideas, stay legally compliant, automate launches, and grow a faceless audience — all while keeping your identity hidden from your employer.",
+        "description": "Build a $4,000/month side business without quitting your job. Invisible Exit provides AI-powered tools for anonymous micro-SaaS creation: calculate your escape number, validate ideas, stay legally compliant, automate launches, and grow a faceless audience, all while keeping your identity hidden from your employer.",
     },
     {
         "name": "Toolify.ai",
@@ -40,7 +40,7 @@ SUBMISSIONS = [
         "name": "AI Tool Hunt",
         "url": "https://www.aitoolhunt.com/submit",
         "category": "Business",
-        "description": "Invisible Exit: AI toolkit for building anonymous micro-SaaS businesses while employed. Freedom calculator, idea validator, compliance audit, launch automation, and brand builder — 5 tools to escape the 9-to-5 without your employer knowing.",
+        "description": "Invisible Exit: AI toolkit for building anonymous micro-SaaS businesses while employed. Freedom calculator, idea validator, compliance audit, launch automation, and brand builder, 5 tools to escape the 9-to-5 without your employer knowing.",
     },
     {
         "name": "AI Tools Directory",
@@ -113,7 +113,7 @@ SUBMISSIONS = [
         "name": "Startup Stash",
         "url": "https://startupstash.com/submit/",
         "category": "Business Tools",
-        "description": "Invisible Exit provides AI tools for employed professionals to build anonymous micro-SaaS businesses. Freedom number calculator, 500+ validated ideas, stealth compliance, automated launches, and faceless brand building — all in one platform.",
+        "description": "Invisible Exit provides AI tools for employed professionals to build anonymous micro-SaaS businesses. Freedom number calculator, 500+ validated ideas, stealth compliance, automated launches, and faceless brand building, all in one platform.",
     },
     {
         "name": "MicroLaunch",
@@ -150,7 +150,7 @@ SUBMISSIONS = [
         "name": "Indie Hackers",
         "url": "https://www.indiehackers.com/products/new",
         "category": "Micro-SaaS",
-        "description": "Invisible Exit is the faceless side-business system I built to help employed professionals generate recurring revenue anonymously. 5 AI tools — freedom calculator, idea pipeline, stealth ops, launch control, brand manager — from $9/mo. Built for corporate escapees who can't afford to get caught.",
+        "description": "Invisible Exit is the faceless side-business system I built to help employed professionals generate recurring revenue anonymously. 5 AI tools, freedom calculator, idea pipeline, stealth ops, launch control, brand manager, from $9/mo. Built for corporate escapees who can't afford to get caught.",
     },
     # TIER 5: Startup databases
     {

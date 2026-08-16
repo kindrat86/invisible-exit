@@ -11,14 +11,14 @@ Important caveats:
   returns a non-5xx status code for that method+URL, but does NOT prove that
   Googlebot GET requests or JavaScript rendering would produce the same outcome.
 - Samples URLs from the sitemap index. A clean sample does not guarantee all
-  888 routes are healthy — it only proves the sampled subset is clean.
+  888 routes are healthy, it only proves the sampled subset is clean.
 - Reports network failures (DNS, timeout, connection refused) separately from
   HTTP 5xx responses. Both are surfaced; only 5xx exits with code 1.
 
 Exit codes:
-  0 — No 5xx found in sampled URLs (network failures may still exist).
-  1 — At least one HTTP 5xx response was found.
-  2 — A network-level failure prevented reliable checking (child sitemap
+  0, No 5xx found in sampled URLs (network failures may still exist).
+  1, At least one HTTP 5xx response was found.
+  2, A network-level failure prevented reliable checking (child sitemap
       unreachable, sitemap index unreachable, DNS failure). Fix the network
       issue and re-run.
 
@@ -108,7 +108,7 @@ def main():
 
     urls, child_failures = get_all_urls()
 
-    # Child sitemap fetch failures are a network-level problem — exit 2.
+    # Child sitemap fetch failures are a network-level problem, exit 2.
     if child_failures:
         print(f"\nNETWORK FAILURE: {len(child_failures)} child sitemap(s) "
               f"could not be fetched:", file=sys.stderr)

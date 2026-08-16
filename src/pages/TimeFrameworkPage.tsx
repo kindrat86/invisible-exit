@@ -23,7 +23,7 @@ export default function TimeFrameworkPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`${framework.frameworkName} — Time Management for Side Businesses | Invisible Exit`}
+        title={`${framework.frameworkName}, Time Management for Side Businesses | Invisible Exit`}
         description={`${framework.description.substring(0, 155)}`}
         url={`https://invisibleexit.com/time-frameworks/${framework.slug}`}
       />

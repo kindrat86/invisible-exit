@@ -4,11 +4,11 @@
 
 > Print this, grab your employment contract, and work through all six sections. Score at the end.
 >
-> Free checklist by [InvisibleExit](https://invisibleexit.com). This is a self-education tool, **not legal advice** — for contract-specific decisions, consult an employment attorney in your jurisdiction.
+> Free checklist by [InvisibleExit](https://invisibleexit.com). This is a self-education tool, **not legal advice**, for contract-specific decisions, consult an employment attorney in your jurisdiction.
 
 ---
 
-## Section 1 — Contract Clauses (find your contract first)
+## Section 1, Contract Clauses (find your contract first)
 
 Locate each clause in your employment agreement and mark what you find.
 
@@ -26,7 +26,7 @@ Locate each clause in your employment agreement and mark what you find.
 
 **Score:** +3 for each HIGH found, +2 for each MEDIUM, +1 for each LOW. → **Section 1 total: ___**
 
-## Section 2 — IP Assignment Deep-Dive (the clause that catches most people)
+## Section 2, IP Assignment Deep-Dive (the clause that catches most people)
 
 - ☐ 2.1 Does the IP clause cover inventions made **outside working hours**? (+3 if yes)
 - ☐ 2.2 Does it cover inventions made **without employer equipment**? (+3 if yes)
@@ -36,17 +36,17 @@ Locate each clause in your employment agreement and mark what you find.
 
 **Section 2 total: ___**
 
-## Section 3 — Overlap With Your Employer
+## Section 3, Overlap With Your Employer
 
 - ☐ 3.1 Is your side-business idea in the **same industry** as your employer? (+3 if yes)
 - ☐ 3.2 Could your employer's customers plausibly buy your product? (+3 if yes)
-- ☐ 3.3 Does your idea use knowledge you could **only** have gained at this job (pricing, roadmap, customer lists)? (+4 if yes — stop, pick another idea)
+- ☐ 3.3 Does your idea use knowledge you could **only** have gained at this job (pricing, roadmap, customer lists)? (+4 if yes, stop, pick another idea)
 - ☐ 3.4 Would a reasonable colleague describe your product as "what we do, but smaller"? (+4 if yes)
 - ☐ 3.5 Is your idea in a completely unrelated industry? (−3 if yes)
 
 **Section 3 total: ___**
 
-## Section 4 — Operational Hygiene
+## Section 4, Operational Hygiene
 
 - ☐ 4.1 Have you ever opened side-project files/repos/email on a work device? (+3 if yes)
 - ☐ 4.2 Have you used a work email to register anything for the project? (+3 if yes)
@@ -56,7 +56,7 @@ Locate each clause in your employment agreement and mark what you find.
 
 **Section 4 total: ___**
 
-## Section 5 — Identity Exposure
+## Section 5, Identity Exposure
 
 - ☐ 5.1 Is your real name on the product website, blog, or social accounts? (+2 if yes)
 - ☐ 5.2 Is your domain WHOIS record unproxied (shows your name/address)? (+2 if yes)
@@ -66,7 +66,7 @@ Locate each clause in your employment agreement and mark what you find.
 
 **Section 5 total: ___**
 
-## Section 6 — Jurisdiction Modifiers
+## Section 6, Jurisdiction Modifiers
 
 - ☐ 6.1 Non-competes banned or heavily restricted where you work (e.g. California, Oklahoma, North Dakota, Minnesota)? (−3 if yes)
 - ☐ 6.2 You earn below your jurisdiction's non-compete enforceability threshold? (−2 if yes)
@@ -89,14 +89,14 @@ Locate each clause in your employment agreement and mark what you find.
 
 ## The 5 fixes that lower almost any score
 
-1. **Pick a non-overlapping idea** — different industry, different buyer (fixes Section 3).
-2. **Total device/account separation** — personal laptop, new email, personal network only (fixes Section 4).
-3. **Faceless brand + entity** — LLC with registered agent, WHOIS privacy, no real name anywhere (fixes Section 5).
-4. **Zero employer resources, zero compensated hours** — makes most IP claims dramatically weaker (fixes Sections 2 & 4).
-5. **Know your carve-outs** — many jurisdictions protect off-hours, off-equipment, non-overlapping inventions (fixes Section 6).
+1. **Pick a non-overlapping idea**, different industry, different buyer (fixes Section 3).
+2. **Total device/account separation**, personal laptop, new email, personal network only (fixes Section 4).
+3. **Faceless brand + entity**, LLC with registered agent, WHOIS privacy, no real name anywhere (fixes Section 5).
+4. **Zero employer resources, zero compensated hours**, makes most IP claims dramatically weaker (fixes Sections 2 & 4).
+5. **Know your carve-outs**, many jurisdictions protect off-hours, off-equipment, non-overlapping inventions (fixes Section 6).
 
 ---
 
 *Want this automated? The [InvisibleExit Stealth Ops Hub](https://invisibleexit.com) runs a full invisibility audit and blocks your launch until your stealth score is ≥ 80/100. Scan your actual contract free at [invisibleexit.com/tools/non-compete-scanner](https://invisibleexit.com/tools/non-compete-scanner).*
 
-*© 2026 InvisibleExit — free to use and share. Not legal advice.*
+*© 2026 InvisibleExit, free to use and share. Not legal advice.*

@@ -256,7 +256,7 @@ const ToolLandingPage = ({
         </div>
       </section>
 
-      {/* Guarantee — unified component */}
+      {/* Guarantee, unified component */}
       <section className="bg-[#1B2A4A] py-24 px-6">
         <div className="mx-auto max-w-xl">
           <GuaranteeBox variant="bold" days={30} />

@@ -22,7 +22,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
 /**
- * TRAFFIC SECRETS: Chapters 15-16 — Partnership / JV Traffic
+ * TRAFFIC SECRETS: Chapters 15-16, Partnership / JV Traffic
  *
  * Russell's insight: the fastest traffic is someone else's audience.
  * This page is the offer to potential JV partners (not affiliates).
@@ -41,7 +41,7 @@ const JV_OFFER_ITEMS = [
   {
     icon: Star,
     title: "Co-Branded Landing Page",
-    desc: "A custom landing page that features YOU as the recommend-er. Your face, your quote, your story — plus the Invisible Exit offer. Built in 48 hours.",
+    desc: "A custom landing page that features YOU as the recommend-er. Your face, your quote, your story, plus the Invisible Exit offer. Built in 48 hours.",
   },
   {
     icon: Target,
@@ -51,7 +51,7 @@ const JV_OFFER_ITEMS = [
   {
     icon: Gift,
     title: "Free Founding Membership",
-    desc: "Full lifetime access — worth $215/year — free for you and your team. Use it personally so your recommendation is genuine.",
+    desc: "Full lifetime access, worth $215/year, free for you and your team. Use it personally so your recommendation is genuine.",
   },
 ];
 
@@ -71,7 +71,7 @@ const DREAM_100_APPLICATION_STEPS = [
   {
     step: 2,
     title: "Your Story",
-    description: "Share your personal connection to the 'golden handcuffs' problem — or why your audience needs this solution.",
+    description: "Share your personal connection to the 'golden handcuffs' problem, or why your audience needs this solution.",
   },
   {
     step: 3,
@@ -102,7 +102,7 @@ const JVPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="JV Partner Program — 50% Revenue Share | Invisible Exit"
+        title="JV Partner Program, 50% Revenue Share | Invisible Exit"
         description="Joint venture partnership program for creators, podcasters, and community leaders. 50% revenue share, co-branded landing pages, dedicated tracking. Build a recurring income stream by recommending Invisible Exit to your audience."
         url="/partners/jv"
       />
@@ -119,7 +119,7 @@ const JVPage = () => {
             Your Audience Is Trapped in{" "}
             <span className="text-gradient-light">Golden Handcuffs</span>.
             <br />
-            Here's How to Free Them —{" "}
+            Here's How to Free Them, {" "}
             <span className="text-amber-400">Together.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-4">
@@ -199,7 +199,7 @@ const JVPage = () => {
           </div>
           <p className="text-center text-xs text-muted-foreground mt-6 max-w-lg mx-auto">
             These are conservative estimates based on Russell's benchmark conversion rates.
-            Your actual results will vary — but the upside is real.
+            Your actual results will vary, but the upside is real.
           </p>
         </div>
       </section>
@@ -266,7 +266,7 @@ Hey [NAME],
 
 I found something that changed how I think about corporate jobs.
 
-It's called Invisible Exit — 5 tools that help corporate managers build anonymous side businesses while employed. No code. No quitting. No employer finding out.
+It's called Invisible Exit, 5 tools that help corporate managers build anonymous side businesses while employed. No code. No quitting. No employer finding out.
 
 The creator (a fellow Managing Director at a European tech company) built $4,100/month in side revenue while working full-time. His employer never knew.
 
@@ -274,7 +274,7 @@ I negotiated a special deal for my audience: [YOUR_CUSTOM_OFFER].
 
 Check it out here: [YOUR_CO_BRANDED_LINK]
 
-I honestly wish I'd had this system when I was stuck in golden handcuffs. If you know anyone in a corporate job who dreams of starting something — send this to them.
+I honestly wish I'd had this system when I was stuck in golden handcuffs. If you know anyone in a corporate job who dreams of starting something, send this to them.
 
 [YOUR_NAME]`,
               },
@@ -381,7 +381,7 @@ Link in bio.`,
                 type="submit"
                 className="btn-primary w-full text-lg"
               >
-                Apply Now — Opens Email
+                Apply Now, Opens Email
                 <ArrowRight className="w-5 h-5" />
               </button>
               <p className="text-xs text-muted-foreground text-center">

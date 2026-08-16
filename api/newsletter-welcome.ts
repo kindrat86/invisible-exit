@@ -1,7 +1,7 @@
 /**
  * /api/newsletter-welcome.ts
  *
- * Vercel serverless route — converted from
+ * Vercel serverless route, converted from
  * supabase/functions/newsletter-welcome/index.ts
  *
  * POST { email, source? }
@@ -106,7 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       NEWSLETTER_EMAIL_HTML,
     );
 
-    // The subscriber upsert above already succeeded — from here on we degrade
+    // The subscriber upsert above already succeeded, from here on we degrade
     // gracefully instead of showing the visitor a 500 for a record that was
     // actually created (e.g. RESEND_API_KEY unset, Resend outage).
     if (!result.success) {

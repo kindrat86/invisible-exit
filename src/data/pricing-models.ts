@@ -22,7 +22,7 @@ export interface PricingModel {
 const modelData = [
   {
     slug: "freemium-pricing", model: "Freemium",
-    howItWorks: "Offer a free tier with core features, then charge for advanced functionality, higher limits, or premium support. The free tier acts as a lead generation tool — users try without risk, then upgrade when they hit limits.",
+    howItWorks: "Offer a free tier with core features, then charge for advanced functionality, higher limits, or premium support. The free tier acts as a lead generation tool, users try without risk, then upgrade when they hit limits.",
     bestFor: "Products with low marginal cost per user, high viral coefficient, and a natural 'aha moment' that demonstrates value within the free tier.",
     examples: [
       { product: "Notion", pricing: "Free for individuals, $8-14/user/mo for teams", revenue: "$500M+ ARR" },
@@ -67,7 +67,7 @@ const modelData = [
   },
   {
     slug: "usage-based-pricing", model: "Usage-Based",
-    howItWorks: "Charge based on consumption — API calls, emails sent, storage used, or transactions processed. Customers pay only for what they use, which reduces friction to start and scales naturally.",
+    howItWorks: "Charge based on consumption, API calls, emails sent, storage used, or transactions processed. Customers pay only for what they use, which reduces friction to start and scales naturally.",
     bestFor: "Infrastructure, API, and developer tools where usage is measurable and predictable. Also works for email, SMS, and cloud services.",
     examples: [
       { product: "Stripe", pricing: "2.9% + $0.30 per transaction", revenue: "$14B+ revenue" },
@@ -143,7 +143,7 @@ const modelData = [
   {
     slug: "annual-prepaid-pricing", model: "Annual Prepaid",
     howItWorks: "Charge for a full year upfront, usually with a 15-20% discount vs. monthly billing. This improves cash flow, reduces churn, and lowers payment processing costs.",
-    bestFor: "Any subscription product. Annual plans should always be offered alongside monthly — they capture different buyer preferences.",
+    bestFor: "Any subscription product. Annual plans should always be offered alongside monthly, they capture different buyer preferences.",
     examples: [
       { product: "Substack", pricing: "$5-50/mo or $48-480/year (20% savings)", revenue: "$300M+ revenue" },
       { product: "GitHub", pricing: "$4/user/mo or $36/year (25% savings)", revenue: "$1B+ ARR" },
@@ -212,9 +212,9 @@ function generatePricing(m: typeof modelData[0]): PricingModel {
     intro: `${m.model} pricing is ${m.howItWorks.includes("dominant") ? "one of the most common" : "a specialized"} pricing model in SaaS. ${m.howItWorks} In this guide, we'll break down when to use it, real-world examples, benchmarks, and how to implement it in your micro-SaaS.`,
     howItWorks: m.howItWorks,
     pros: m.model === "Freemium" ? [
-      "Massive top-of-funnel — free users become your distribution channel",
+      "Massive top-of-funnel, free users become your distribution channel",
       "Reduces customer acquisition cost (organic word-of-mouth growth)",
-      "Creates data moat — you learn from free users' behavior",
+      "Creates data moat, you learn from free users' behavior",
       "Viral coefficient is higher (free users invite other free users)",
     ] : [
       "Aligns revenue with customer value",
@@ -236,7 +236,7 @@ function generatePricing(m: typeof modelData[0]): PricingModel {
     bestFor: m.bestFor,
     realExamples: m.examples,
     benchmarks: m.benchmarks,
-    implementation: `To implement ${m.model.toLowerCase()} pricing: 1) Define your value metric (what unit determines price). 2) Set your entry price point (start high — you can always lower). 3) Build the billing logic into your product (Stripe Billing, Lemon Squeezy, or Paddle handle most models). 4) Create a pricing page that clearly communicates the model. 5) Track your core metric (conversion, expansion, churn) weekly for the first 90 days.`,
+    implementation: `To implement ${m.model.toLowerCase()} pricing: 1) Define your value metric (what unit determines price). 2) Set your entry price point (start high, you can always lower). 3) Build the billing logic into your product (Stripe Billing, Lemon Squeezy, or Paddle handle most models). 4) Create a pricing page that clearly communicates the model. 5) Track your core metric (conversion, expansion, churn) weekly for the first 90 days.`,
     faqs: [
       {
         question: `Is ${m.model.toLowerCase()} pricing still profitable in 2026?`,
@@ -244,7 +244,7 @@ function generatePricing(m: typeof modelData[0]): PricingModel {
       },
       {
         question: `What's the biggest mistake with ${m.model.toLowerCase()} pricing?`,
-        answer: `Not testing enough. Most founders set a price based on gut feeling and never iterate. Run pricing experiments every 90 days — test different price points, tiers, and presentation formats. You're likely undercharging by 2-3x.`,
+        answer: `Not testing enough. Most founders set a price based on gut feeling and never iterate. Run pricing experiments every 90 days, test different price points, tiers, and presentation formats. You're likely undercharging by 2-3x.`,
       },
       {
         question: "Should I offer discounts for annual prepayment?",

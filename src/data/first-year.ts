@@ -99,19 +99,19 @@ function generateFirstYear(p: ProfFY): FirstYearEntry {
     ],
     lessonsLearned: [
       "The problem you choose matters more than the solution you build",
-      "Distribution is 80% of success — start marketing on Day 1",
+      "Distribution is 80% of success, start marketing on Day 1",
       "Your first 10 customers will teach you more than any course or book",
       "Saying no to features is harder and more important than saying yes",
-      "Consistency beats intensity — 1 hour daily beats 7 hours on Sunday",
+      "Consistency beats intensity, 1 hour daily beats 7 hours on Sunday",
     ],
     faqs: [
       {
         question: `How much can a ${p.name.toLowerCase()} realistically earn in the first year?`,
-        answer: "$1K-$3K MRR is realistic with consistent effort. Some reach $4K+ in year one, but that requires either exceptional execution or an existing audience. The goal of year one isn't revenue — it's finding product-market fit.",
+        answer: "$1K-$3K MRR is realistic with consistent effort. Some reach $4K+ in year one, but that requires either exceptional execution or an existing audience. The goal of year one isn't revenue, it's finding product-market fit.",
       },
       {
         question: `Do I need to know how to code as a ${p.name.toLowerCase()}?`,
-        answer: "No. AI tools (Claude, Cursor, v0) can handle most development. Your ${p.advantage} is more valuable than coding ability. Focus on identifying problems and validating solutions — let AI handle the implementation.",
+        answer: "No. AI tools (Claude, Cursor, v0) can handle most development. Your ${p.advantage} is more valuable than coding ability. Focus on identifying problems and validating solutions, let AI handle the implementation.",
       },
       {
         question: "What's the biggest mistake in the first year?",

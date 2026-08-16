@@ -190,7 +190,7 @@
         };
         document.addEventListener('keydown', closeOnEsc, { once: false });
 
-        // R18 — swipe gesture to close
+        // R18, swipe gesture to close
         addSwipeToClose(nav, toggle);
       }
     });
@@ -216,7 +216,7 @@
     document.body.classList.remove('nav-open');
   }
 
-  // ── R18 — SWIPE-TO-CLOSE GESTURE (mobile nav + bottom sheet) ────
+  // ── R18, SWIPE-TO-CLOSE GESTURE (mobile nav + bottom sheet) ────
   function addSwipeToClose(el, toggle) {
     var startY = 0;
     var currentY = 0;
@@ -293,7 +293,7 @@
     });
   }
 
-  // ── R18 — STICKY CTA SCROLL-DIRECTION SHOW/HIDE ─────────────────
+  // ── R18, STICKY CTA SCROLL-DIRECTION SHOW/HIDE ─────────────────
   function initStickyCTA() {
     var cta = document.querySelector('.ux-sticky-cta');
     if (!cta) return;
@@ -322,7 +322,7 @@
     }, { passive: true });
   }
 
-  // ── R18 — NETWORK STATUS DETECTION ──────────────────────────────
+  // ── R18, NETWORK STATUS DETECTION ──────────────────────────────
   function initNetworkStatus() {
     var bar = document.createElement('div');
     bar.className = 'ux-offline-bar';
@@ -348,7 +348,7 @@
     updateStatus();
   }
 
-  // ── R18 — TOAST NOTIFICATION SYSTEM ─────────────────────────────
+  // ── R18, TOAST NOTIFICATION SYSTEM ─────────────────────────────
   function initToastSystem() {
     var container = document.querySelector('.ux-toast-container');
     if (!container) {
@@ -377,7 +377,7 @@
     };
   }
 
-  // ── R18 — ACTIVE NAV LINK HIGHLIGHTING ──────────────────────────
+  // ── R18, ACTIVE NAV LINK HIGHLIGHTING ──────────────────────────
   function initActiveNavLink() {
     var ticking = false;
     var sections = document.querySelectorAll('section[id], [id][data-nav-spy]');
@@ -408,7 +408,7 @@
     }, { passive: true });
   }
 
-  // ── R18 — COPY-TO-CLIPBOARD HELPER ──────────────────────────────
+  // ── R18, COPY-TO-CLIPBOARD HELPER ──────────────────────────────
   window.uxCopy = function(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function() {
@@ -441,7 +441,7 @@
     document.body.removeChild(textarea);
   }
 
-  // ── R18 — SHARE API HELPER ──────────────────────────────────────
+  // ── R18, SHARE API HELPER ──────────────────────────────────────
   window.uxShare = function(data) {
     if (navigator.share) {
       navigator.share(data).catch(function() {});

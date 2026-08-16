@@ -65,7 +65,7 @@ export default function RedditStrategyPage() {
         </section>
 
         <FAQAccordion faqs={entry.faqs} />
-        <CTABox title="Ready to build your audience?" description="Start with your freedom number — see how close you are to independence." />
+        <CTABox title="Ready to build your audience?" description="Start with your freedom number, see how close you are to independence." />
       </div>
     </ContentPage>
   );

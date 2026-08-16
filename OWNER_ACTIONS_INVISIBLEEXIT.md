@@ -1,8 +1,8 @@
-# Owner Action Packet — invisibleexit.com
+# Owner Action Packet, invisibleexit.com
 
 **Date:** 2026-07-23  
 **Agent:** Hermes (deepseek-v4-pro)  
-**Mission:** Traffic maximization — brand title, index-bloat prune, hreflang integrity, TL;DR blocks, llms-full, lastmod truthfulness
+**Mission:** Traffic maximization, brand title, index-bloat prune, hreflang integrity, TL;DR blocks, llms-full, lastmod truthfulness
 
 ---
 
@@ -11,8 +11,8 @@
 After deploy:
 1. Log into [Google Search Console](https://search.google.com/search-console) for invisibleexit.com
 2. Go to **Sitemaps** → submit `https://invisibleexit.com/sitemap.xml`
-3. **Expected:** GSC will surface noindex transitions for ~590 pruned pages. This is normal and intentional — these thin cross-product pages were suppressing crawl budget.
-4. Monitor **Index Coverage** report over 2–4 weeks. The noindexed pages will move to "Excluded — Excluded by noindex tag."
+3. **Expected:** GSC will surface noindex transitions for ~590 pruned pages. This is normal and intentional, these thin cross-product pages were suppressing crawl budget.
+4. Monitor **Index Coverage** report over 2–4 weeks. The noindexed pages will move to "Excluded, Excluded by noindex tag."
 
 ---
 
@@ -26,16 +26,16 @@ After deploy:
 
 ## 3. i18n Decision Memo
 
-**Finding:** All 98 hreflang locale variants return **308 redirects** — zero pages serve actual translated content. Sample of 5 locales (es, fr, de, ja, zh): 0/5 pass reciprocity.
+**Finding:** All 98 hreflang locale variants return **308 redirects**, zero pages serve actual translated content. Sample of 5 locales (es, fr, de, ja, zh): 0/5 pass reciprocity.
 
 **Action taken:** Removed hreflang annotations from:
-- `scripts/prerender-meta.mjs` — replaced 98 hreflang links with x-default self-reference only
-- `scripts/generate-sitemap.ts` — removed xhtml namespace, HREFLANG_LANGS array, and per-URL hreflang annotations
+- `scripts/prerender-meta.mjs`, replaced 98 hreflang links with x-default self-reference only
+- `scripts/generate-sitemap.ts`, removed xhtml namespace, HREFLANG_LANGS array, and per-URL hreflang annotations
 
 **Owner decision required:**
-- **Option A — Invest in i18n:** Hire translators, build real locale pages (not redirects), restore hreflang. This is the high-ROI path IF you can serve non-English audiences.
-- **Option B — Drop i18n entirely:** Remove the `/:lang` redirect routes from `App.tsx`, remove i18next/language-detector deps, and reclaim the crawl budget. The 308 redirects are wasted crawl budget for Googlebot.
-- **Recommendation:** Option B unless you have concrete plans to translate. Half-broken hreflang is worse than none — Google may penalize mismatched language annotations.
+- **Option A, Invest in i18n:** Hire translators, build real locale pages (not redirects), restore hreflang. This is the high-ROI path IF you can serve non-English audiences.
+- **Option B, Drop i18n entirely:** Remove the `/:lang` redirect routes from `App.tsx`, remove i18next/language-detector deps, and reclaim the crawl budget. The 308 redirects are wasted crawl budget for Googlebot.
+- **Recommendation:** Option B unless you have concrete plans to translate. Half-broken hreflang is worse than none, Google may penalize mismatched language annotations.
 
 ---
 
@@ -45,8 +45,8 @@ The conservative NOINDEX prune applied to ~590 thin pSEO pages (cross-product te
 
 | URL Pattern | Example | Reason to Review |
 |---|---|---|
-| `/how-to/*` | `/how-to/build-micro-saas` | Thin guides — may bulk up or noindex |
-| `/is-it-legal/*` | `/is-it-legal/side-business` | Legal templates — thin, but user-facing |
+| `/how-to/*` | `/how-to/build-micro-saas` | Thin guides, may bulk up or noindex |
+| `/is-it-legal/*` | `/is-it-legal/side-business` | Legal templates, thin, but user-facing |
 | `/cost-analysis/*` | `/cost-analysis/llc-formation` | Data-driven but template-heavy |
 | `/side-hustles/*` | `/side-hustles/software-engineer` | Thin intro + list format |
 | `/quit-your-job/*` | `/quit-your-job/at-4000-mrr` | Thin motivational content |
@@ -57,20 +57,20 @@ The conservative NOINDEX prune applied to ~590 thin pSEO pages (cross-product te
 | `/by-budget/*` | `/by-budget/500-dollars` | Template with budget number swap |
 | `/vs/*` | `/vs/software-engineer-vs-micro-saas` | Thin comparison templates |
 | `/tools/*` | `/tools/best-analytics-tools` | Cross-reference pages |
-| `/stack/*` | `/stack/software-engineer` | Profession tool stacks — thin |
-| `/salaries/*` | `/salaries/software-engineer-salary` | Salary pages — thin |
+| `/stack/*` | `/stack/software-engineer` | Profession tool stacks, thin |
+| `/salaries/*` | `/salaries/software-engineer-salary` | Salary pages, thin |
 | `/milestones/*` | `/milestones/1000-mrr` | Thin milestone pages |
 | `/timeline/*` | `/timeline/month-1` | Thin timeline entries |
-| `/alternatives/*` | `/alternatives/notion` | Product alternatives — thin |
+| `/alternatives/*` | `/alternatives/notion` | Product alternatives, thin |
 | `/exit-strategies/*` | `/exit-strategies/sell-micro-saas` | Exit strategy pages |
-| `/blueprint/*` | `/blueprint/saas-mvp` | Build blueprints — thin |
-| `/roadmap/*` | `/roadmap/1000-mrr` | Roadmap pages — thin |
+| `/blueprint/*` | `/blueprint/saas-mvp` | Build blueprints, thin |
+| `/roadmap/*` | `/roadmap/1000-mrr` | Roadmap pages, thin |
 
 **Recommendation:** Pick the bottom 10 types by traffic after 30 days post-deploy and add them to the NOINDEX list. This lets you measure actual traffic impact before pruning more.
 
 ---
 
-## 5. Stale Service Worker — ✅ FIXED
+## 5. Stale Service Worker, ✅ FIXED
 
 **Issue:** Returning visitors saw old content on first load because the service worker cached HTML aggressively.
 
@@ -87,9 +87,9 @@ The conservative NOINDEX prune applied to ~590 thin pSEO pages (cross-product te
 | Hreflang removal (98→1 x-default) | `scripts/prerender-meta.mjs`, `scripts/generate-sitemap.ts` |
 | TL;DR extractable blocks | `src/pages/Index.tsx`, `src/pages/GlossaryIndex.tsx`, `src/pages/StateGuidePage.tsx` |
 | Truthful lastmod (blog only) | `scripts/generate-sitemap.ts` |
-| llms-full.txt unchanged (already ≥15 sections) | — |
+| llms-full.txt unchanged (already ≥15 sections) |, |
 
-**Git:** Changes committed on branch `indexing-discovery-engine` (backup: `backup-pre-traffic-20260723`). Dirty tree preserved — no files discarded.
+**Git:** Changes committed on branch `indexing-discovery-engine` (backup: `backup-pre-traffic-20260723`). Dirty tree preserved, no files discarded.
 
 ---
 

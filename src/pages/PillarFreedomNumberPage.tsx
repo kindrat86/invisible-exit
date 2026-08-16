@@ -64,7 +64,7 @@ const MISTAKES = [
 const FAQS = [
   {
     q: "What exactly is a freedom number?",
-    a: "Your freedom number is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses. It's not about quitting your job — it's about having the option to. Once your MRR hits your freedom number, the golden handcuffs are off. You stay because you choose to, not because you have to.",
+    a: "Your freedom number is the monthly recurring revenue (MRR) you need from products you own to fully replace your employment income and living expenses. It's not about quitting your job, it's about having the option to. Once your MRR hits your freedom number, the golden handcuffs are off. You stay because you choose to, not because you have to.",
   },
   {
     q: "How is this different from the 4% rule in FIRE?",
@@ -76,11 +76,11 @@ const FAQS = [
   },
   {
     q: "What if my expenses are higher than the examples?",
-    a: "The formula works at any expense level. Higher expenses mean a higher freedom number, which means either more customers or higher pricing. The math doesn't change — it scales. If your freedom number feels unreachable at $9/month pricing, raise your price. At $97/month, a $15,000 freedom number needs just 155 customers.",
+    a: "The formula works at any expense level. Higher expenses mean a higher freedom number, which means either more customers or higher pricing. The math doesn't change, it scales. If your freedom number feels unreachable at $9/month pricing, raise your price. At $97/month, a $15,000 freedom number needs just 155 customers.",
   },
   {
     q: "How accurate is the freedom number calculator?",
-    a: "The calculator uses standard financial modeling: salary replacement + expense coverage + a 30% buffer for taxes and benefits. It's directionally accurate — it tells you the order of magnitude you're targeting. For exact planning, use the detailed breakdown in your dashboard after calculating.",
+    a: "The calculator uses standard financial modeling: salary replacement + expense coverage + a 30% buffer for taxes and benefits. It's directionally accurate, it tells you the order of magnitude you're targeting. For exact planning, use the detailed breakdown in your dashboard after calculating.",
   },
 ];
 
@@ -89,7 +89,7 @@ const PillarFreedomNumberPage = () => {
     <div className="min-h-screen bg-white">
       <SEOHead
         title="The Complete Freedom Number Guide (2026) | Invisible Exit"
-        description="The definitive guide to calculating your freedom number — the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and the 5-tool framework."
+        description="The definitive guide to calculating your freedom number, the exact monthly recurring revenue you need to never work for someone else again. Formula, examples, timeline, and the 5-tool framework."
         url="/guides/freedom-number"
       />
       <Navbar />
@@ -107,7 +107,7 @@ const PillarFreedomNumberPage = () => {
           </h1>
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-4">
             How to calculate the exact monthly recurring revenue you need to
-            never work for someone else again — with real numbers, timelines,
+            never work for someone else again, with real numbers, timelines,
             and the framework to hit it.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto mb-8">
@@ -150,7 +150,7 @@ const PillarFreedomNumberPage = () => {
               <p>
                 It's the number that makes the golden handcuffs irrelevant. When your
                 side business generates this much per month, consistently, you have
-                optionality — the freedom to choose whether you keep working for someone
+                optionality, the freedom to choose whether you keep working for someone
                 else or not.
               </p>
               <p>
@@ -164,7 +164,7 @@ const PillarFreedomNumberPage = () => {
                 <p className="text-foreground font-medium">
                   The average freedom number for a corporate manager earning $120K-$200K
                   is <strong className="text-primary">$12,000-$20,000/month in MRR</strong>.
-                  That sounds like a lot — until you realize it's 138-450 customers at
+                  That sounds like a lot, until you realize it's 138-450 customers at
                   $29-$97/month. Boring products for boring industries.
                 </p>
               </div>
@@ -187,7 +187,7 @@ const PillarFreedomNumberPage = () => {
               </div>
               <p>
                 <strong className="text-foreground">Why the 30% buffer?</strong> Your
-                employer covers more than just salary — there's healthcare, retirement
+                employer covers more than just salary, there's healthcare, retirement
                 match, paid time off, and other benefits worth $15,000-$30,000/year. Plus,
                 self-employment tax is ~15.3% in the US (or equivalent elsewhere). The
                 buffer ensures your freedom number actually replaces your total
@@ -204,12 +204,12 @@ const PillarFreedomNumberPage = () => {
                 {
                   num: 1,
                   title: "Determine your annual salary (including bonuses)",
-                  body: "Use your total compensation — base salary plus any expected bonus, not just your base pay. If you earn $120K base + $15K bonus, your number is $135,000.",
+                  body: "Use your total compensation, base salary plus any expected bonus, not just your base pay. If you earn $120K base + $15K bonus, your number is $135,000.",
                 },
                 {
                   num: 2,
                   title: "Calculate monthly living expenses",
-                  body: "Include everything: mortgage/rent, food, transportation, childcare, debt payments, subscriptions, healthcare premiums, and discretionary spending. Be honest — underestimating here is the #1 mistake.",
+                  body: "Include everything: mortgage/rent, food, transportation, childcare, debt payments, subscriptions, healthcare premiums, and discretionary spending. Be honest, underestimating here is the #1 mistake.",
                 },
                 {
                   num: 3,
@@ -219,7 +219,7 @@ const PillarFreedomNumberPage = () => {
                 {
                   num: 4,
                   title: "Round up to the nearest $100",
-                  body: "Round to give yourself a small margin. This is your freedom number — the monthly MRR target that replaces your employment.",
+                  body: "Round to give yourself a small margin. This is your freedom number, the monthly MRR target that replaces your employment.",
                 },
               ].map((step) => (
                 <div key={step.num} className="flex gap-4">
@@ -287,7 +287,7 @@ const PillarFreedomNumberPage = () => {
             <div className="text-body text-muted-foreground space-y-5 leading-[1.8]">
               <p>
                 The beauty of the freedom number is that it reframes the problem. You're
-                not trying to "build a business" — you're trying to acquire a specific
+                not trying to "build a business", you're trying to acquire a specific
                 number of customers at a specific price point.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
@@ -344,7 +344,7 @@ const PillarFreedomNumberPage = () => {
               <p>
                 <strong className="text-foreground">Important:</strong> These are
                 averages, not guarantees. Some members hit $2,000 MRR in 4 months. Others
-                take 18 months to reach $1,000. The variable is execution consistency —
+                take 18 months to reach $1,000. The variable is execution consistency, 
                 how reliably you show up for your 5 hours each week.
               </p>
             </div>

@@ -2,7 +2,7 @@
  * Turso (libSQL/SQLite) server-side connection.
  * Used by all /api/ routes. Replaces the Supabase/Postgres layer.
  *
- * Turso is SQLite at the edge — free tier includes 500 databases.
+ * Turso is SQLite at the edge, free tier includes 500 databases.
  * Each project gets its own database, managed via `turso db` CLI.
  */
 import { createClient } from "@libsql/client";
@@ -11,7 +11,7 @@ const url = process.env.DATABASE_URL || process.env.TURSO_DATABASE_URL || "";
 const authToken = process.env.DATABASE_AUTH_TOKEN || process.env.TURSO_AUTH_TOKEN || "";
 
 if (!url) {
-  console.warn("[turso] DATABASE_URL not set — DB operations will fail");
+  console.warn("[turso] DATABASE_URL not set, DB operations will fail");
 }
 
 export const client = createClient({ url, authToken });

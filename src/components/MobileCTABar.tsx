@@ -6,7 +6,7 @@ import { ArrowRight, X } from "lucide-react";
  * Sticky bottom CTA bar for mobile devices.
  * Features:
  * - Appears after scrolling past hero (600px)
- * - Swipe down or tap X to dismiss — stays dismissed for the session
+ * - Swipe down or tap X to dismiss, stays dismissed for the session
  * - Tracks scroll direction: hides when scrolling down, shows when scrolling up
  * - Yields to the exit-intent popup (body[data-popup-open])
  * - Toggles body.has-cta-bar so the footer gets bottom clearance (index.css)
@@ -39,7 +39,7 @@ export function MobileCTABar() {
     try {
       sessionStorage.setItem(DISMISS_KEY, "1");
     } catch {
-      /* storage blocked — session-only dismissal still works via state */
+      /* storage blocked, session-only dismissal still works via state */
     }
   };
 

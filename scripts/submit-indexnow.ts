@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * submit-indexnow.ts — submit live URLs to IndexNow (Bing/Yandex → also powers
+ * submit-indexnow.ts, submit live URLs to IndexNow (Bing/Yandex → also powers
  * ChatGPT Search + Copilot). Reads the LIVE sitemaps so only real, live URLs
  * are pinged. State-tracked (data/.indexnow-state.json) to submit only new/
  * changed URLs. Non-fatal on any error.
@@ -34,13 +34,13 @@ async function main() {
   // 0) Verify the key file is live (IndexNow requires it reachable)
   const keyCheck = await getText(KEY_LOCATION);
   if (!keyCheck || !keyCheck.includes(KEY)) {
-    console.error(`WARN: key file not live/valid at ${KEY_LOCATION} — skipping IndexNow (non-fatal). Ensure it deployed.`);
+    console.error(`WARN: key file not live/valid at ${KEY_LOCATION}, skipping IndexNow (non-fatal). Ensure it deployed.`);
     process.exit(0);
   }
 
   // 1) Collect live URLs + their lastmods from all sub-sitemaps in the index
   const index = await getText(`${BASE}/sitemap.xml`);
-  if (!index) { console.error("WARN: live sitemap.xml unreachable — skipping IndexNow (non-fatal)."); process.exit(0); }
+  if (!index) { console.error("WARN: live sitemap.xml unreachable, skipping IndexNow (non-fatal)."); process.exit(0); }
   const subUrls = locs(index).filter((u) => u.endsWith(".xml"));
   const current: Record<string, string> = {};
   for (const su of subUrls) {
@@ -49,7 +49,7 @@ async function main() {
     Object.assign(current, lastmods(xml));
   }
   const allUrls = Object.keys(current);
-  if (allUrls.length === 0) { console.error("WARN: 0 URLs from live sitemaps — skipping."); process.exit(0); }
+  if (allUrls.length === 0) { console.error("WARN: 0 URLs from live sitemaps, skipping."); process.exit(0); }
 
   // 2) Diff against state → only new/changed URLs
   let prev: Record<string, string> = {};
@@ -74,7 +74,7 @@ async function main() {
   }
 
   async function submitBingWmt(batch: string[]): Promise<boolean> {
-    if (!BING_API_KEY) { console.error("  BING_WEBMASTER_API_KEY not set — skipping Bing WMT fallback."); return false; }
+    if (!BING_API_KEY) { console.error("  BING_WEBMASTER_API_KEY not set, skipping Bing WMT fallback."); return false; }
     // Query remaining quota; cap batch to what's available (500/day limit)
     let remaining = 500;
     try {
@@ -83,9 +83,9 @@ async function main() {
         const qj = await qr.json() as any;
         if (qj?.d?.DailyQuota != null) remaining = qj.d.DailyQuota;
       }
-    } catch { /* ignore — proceed with default */ }
+    } catch { /* ignore, proceed with default */ }
     if (remaining <= 0) {
-      console.log(`  BingWMT: daily quota exhausted (0 remaining) — skipping.`);
+      console.log(`  BingWMT: daily quota exhausted (0 remaining), skipping.`);
       return true; // not an error, just skip
     }
     const capped = batch.slice(0, remaining);
@@ -106,7 +106,7 @@ async function main() {
     let ok = false;
     ok = await submitIndexNow(toSubmit.slice(0, 10000));
     if (!ok) {
-      console.log("  IndexNow failed (likely not activated in portal) — falling back to Bing WMT SubmitUrlBatch.");
+      console.log("  IndexNow failed (likely not activated in portal), falling back to Bing WMT SubmitUrlBatch.");
       ok = await submitBingWmt(toSubmit);
     }
     if (ok) { mkdirSync(join(process.cwd(), "data"), { recursive: true }); writeFileSync(STATE, JSON.stringify(current)); console.log("✓ IndexNow state updated."); }

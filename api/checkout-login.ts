@@ -81,7 +81,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       [newUserId, email, passwordHash, stripeCustomerId, tier]
     );
 
-    // SQLite has no RETURNING — fetch the upserted row
+    // SQLite has no RETURNING, fetch the upserted row
     const user = await queryOne<AppUser>(
       `SELECT id, email, stripe_customer_id, subscription_status, subscription_tier
        FROM app_users WHERE email = $1`,

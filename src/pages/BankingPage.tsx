@@ -23,7 +23,7 @@ export default function BankingPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`Business Banking in ${guide.stateName} — Best Banks for LLCs & Side Businesses | Invisible Exit`}
+        title={`Business Banking in ${guide.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`}
         description={`Best business banking options in ${guide.stateName}. Compare local and online banks for your LLC. Recommended banks, fees, and tips for ${guide.stateName} founders.`}
         url={`https://invisibleexit.com/banking/${guide.slug}`}
       />

@@ -1,12 +1,12 @@
-# Invisible Exit — Agent Reference
+# Invisible Exit, Agent Reference
 
-> Faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.
+> Faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.
 
 This file is the canonical "how to use me" entry point for coding agents (Claude, Cursor, Codex, ChatGPT, etc.) browsing this website. Public-facing copy is mirrored at `/.well-known/agents.md`.
 
 ## What this product does
 
-Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. Includes: Freedom Number Calculator, Idea Pipeline (500+ scored micro-SaaS ideas), Stealth Ops Hub (entity separation and compliance), Launch Control (go-live automation), and Brand Manager (faceless audience building).
+Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. Includes: Freedom Number Calculator, Idea Pipeline (500+ scored micro-SaaS ideas), Stealth Ops Hub (entity separation and compliance), Launch Control (go-live automation), and Brand Manager (faceless audience building).
 
 ## Target Audience
 

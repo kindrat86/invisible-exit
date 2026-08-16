@@ -39,13 +39,13 @@ export const revenueMilestones: RevenueMilestone[] = [
     ],
     tactics: [
       { tactic: "Pre-sell before you build", description: "Create a landing page describing your solution. Offer 50% lifetime discount to the first 5 customers. If 3 people pay before the product exists, build it.", effort: "Low" },
-      { tactic: "Sell to your network (carefully)", description: "Reach out to former colleagues in your target industry. Frame it as: 'I'm building something, would love your feedback on this problem.' Don't ask for payment — ask for the problem.", effort: "Low" },
+      { tactic: "Sell to your network (carefully)", description: "Reach out to former colleagues in your target industry. Frame it as: 'I'm building something, would love your feedback on this problem.' Don't ask for payment, ask for the problem.", effort: "Low" },
       { tactic: "Offer done-for-you service first", description: "Instead of building automation, offer to do the task manually for $99. When you understand the workflow deeply, then build the automation. This funds your build phase.", effort: "Medium" },
       { tactic: "One customer at a time", description: "Don't try to scale yet. Find one customer, deliver exceptional value, ask for a testimonial, then find the next one. Manual outreach works at this stage.", effort: "Medium" },
     ],
     commonMistakes: [
       "Building for 6 months without talking to a single customer",
-      "Pricing too low ($5-$10/month) — you can't validate demand at that price",
+      "Pricing too low ($5-$10/month), you can't validate demand at that price",
       "Adding features before you have 5 paying customers",
       "Focusing on SEO and ads instead of direct conversations",
     ],
@@ -64,7 +64,7 @@ export const revenueMilestones: RevenueMilestone[] = [
     metaDescription: "Stage-specific tactics for growing your micro-SaaS from $100 to $500 MRR. Customer acquisition, pricing optimization, and retention strategies.",
     h1: "From $100 to $500 MRR: Building Early Traction",
     intro: "You have paying customers. Now you need more of them. This stage is about finding repeatable acquisition channels and improving your product based on real user feedback.",
-    whatThisMeans: "At $500 MRR, you're approaching ramen profitability. It's no longer a hobby — it's a real business that covers one or two bills. This is where you learn whether you can scale.",
+    whatThisMeans: "At $500 MRR, you're approaching ramen profitability. It's no longer a hobby, it's a real business that covers one or two bills. This is where you learn whether you can scale.",
     keyMetrics: [
       { metric: "Total customers", target: "10-20 paying" },
       { metric: "Monthly churn", target: "<10%" },
@@ -81,7 +81,7 @@ export const revenueMilestones: RevenueMilestone[] = [
     commonMistakes: [
       "Raising prices too fast before understanding willingness to pay",
       "Adding features instead of improving the core workflow",
-      "Neglecting customer success — losing customers at $500 hurts more than at $100",
+      "Neglecting customer success, losing customers at $500 hurts more than at $100",
       "Scaling paid ads before organic channels are proven",
     ],
     toolsNeeded: ["Blog (Ghost or built-in)", "PostHog analytics", "Stripe", "Simple CRM (Airtable)", "Calendly"],
@@ -125,7 +125,7 @@ export const revenueMilestones: RevenueMilestone[] = [
     stage: "Freedom Number",
     mrrRange: "$1,000-$4,000",
     metaTitle: "How to Grow from $1,000 to $4,000 MRR in Micro-SaaS (2026)",
-    metaDescription: "The playbook for scaling your micro-SaaS from $1,000 to $4,000 MRR — the freedom number. SEO, partnerships, advanced retention, and the first hires.",
+    metaDescription: "The playbook for scaling your micro-SaaS from $1,000 to $4,000 MRR, the freedom number. SEO, partnerships, advanced retention, and the first hires.",
     h1: "From $1,000 to $4,000 MRR: Reaching Your Freedom Number",
     intro: "This is the most important journey in micro-SaaS. Crossing $4,000 MRR transforms your side business from 'extra income' into 'I could quit my job' territory. The tactics change from survival to systems.",
     whatThisMeans: "At $4,000 MRR, you've reached the freedom number. At this point, your recurring revenue covers core living expenses. You can walk into your employer's office and resign without panic.",
@@ -156,7 +156,7 @@ export const revenueMilestones: RevenueMilestone[] = [
     metaTitle: "How to Grow from $4K to $10K MRR in Micro-SaaS (2026)",
     metaDescription: "Scaling your micro-SaaS from $4,000 to $10,000 MRR. Systems, team, and advanced growth strategies for full-time founders.",
     h1: "From $4,000 to $10,000 MRR: Full-Time Founder Mode",
-    intro: "You've proven the model. Now it's about systems, leverage, and building a business that runs without you. At $10K MRR, you're a full-time founder — whether you've quit your job or not.",
+    intro: "You've proven the model. Now it's about systems, leverage, and building a business that runs without you. At $10K MRR, you're a full-time founder, whether you've quit your job or not.",
     whatThisMeans: "At $10,000 MRR, your business replaces a $120K-$150K salary. It's a serious business. You can hire your first employee, invest in growth, and take money off the table.",
     keyMetrics: [
       { metric: "Monthly churn", target: "<4%" },
@@ -190,7 +190,7 @@ export const revenueMilestones: RevenueMilestone[] = [
     metaDescription: "Advanced growth strategies for scaling your micro-SaaS from $10,000 to $25,000 MRR. Team building, advanced SEO, and acquisition readiness.",
     h1: "From $10,000 to $25,000 MRR: Serious Business",
     intro: "Your micro-SaaS is now a real company. At $25K MRR ($300K ARR), you're in the top 5% of bootstrapped SaaS businesses. The game changes from 'survive' to 'systematize.'",
-    whatThisMeans: "At $25,000 MRR, you're generating $300K ARR — more than most founder salaries. You can hire 2-3 people, build a real product team, and think about market expansion.",
+    whatThisMeans: "At $25,000 MRR, you're generating $300K ARR, more than most founder salaries. You can hire 2-3 people, build a real product team, and think about market expansion.",
     keyMetrics: [
       { metric: "Monthly churn", target: "<3%" },
       { metric: "Customer count", target: "500+ (at $49/mo)" },

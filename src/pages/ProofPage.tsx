@@ -36,7 +36,7 @@ const ProofPage = () => {
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "100ms" }}>
             No vanity metrics. No follower counts. No fabricated testimonials.
             Just real tools, documented systems, and a calculator that works
-            — try it yourself in 90 seconds.
+            - try it yourself in 90 seconds.
           </p>
 
           <Link
@@ -50,7 +50,7 @@ const ProofPage = () => {
         </div>
       </section>
 
-      {/* Testimonial Grid — renders only when real testimonials exist */}
+      {/* Testimonial Grid, renders only when real testimonials exist */}
       <section className="bg-white section-normal">
         <div className="container-standard">
           <TestimonialGrid

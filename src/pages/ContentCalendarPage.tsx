@@ -21,7 +21,7 @@ interface ContentItem {
 const CONTENT: ContentItem[] = [
   {
     day: 1,
-    source: "Seinfeld 1 — Close Call",
+    source: "Seinfeld 1, Close Call",
     hook: "My colleague found a website that looked like my side project. On a team call.",
     twitter: "Week 3 of my side business.\n\nMy colleague says on a team call: 'Hey, has anyone seen this website? It looks like something we'd build.'\n\nMy blood ran cold for 3 seconds.\n\nThen I remembered:\n\n→ Different name\n→ Different entity\n→ Different Stripe\n→ Different hosting\n\nZero connection to me.\n\nThose 3 seconds of panic were the best $25/month I've ever spent.\n\nIf you're building on the side: could you survive those 3 seconds?",
     reddit: "**Has anyone's employer almost discovered your side project? Here's how I survived it.**\n\nWeek 3 of building my side business. I'm on a team call presenting quarterly results. Midway through, a colleague says: 'Hey, has anyone seen this website? It looks like something [our company] would build.'\n\nMy blood ran cold for about 3 seconds.\n\nThen I remembered: different name, different entity, different payment processor, different hosting. The Stealth Ops setup had done its job. There was nothing connecting that website to me.\n\n'No idea,' I said. 'Must be a competitor.' The call moved on.\n\nThat 3 seconds of panic was the best money I've ever spent on entity separation. If you're building on the side, ask yourself: could you survive those 3 seconds?\n\nWhat's your stealth setup?",
@@ -31,37 +31,37 @@ const CONTENT: ContentItem[] = [
   },
   {
     day: 2,
-    source: "Seinfeld 2 — Identity Shift",
+    source: "Seinfeld 2, Identity Shift",
     hook: "The $0.97 that changed how I see my $120K salary.",
-    twitter: "When I got my first Stripe notification — $0.97 from a stranger — I expected to feel excited.\n\nWhat I didn't expect:\n\n$120K/year stopped feeling like 'what I'm worth.'\n\nIt started feeling like 'one income stream.'\n\nThe psychological shift was instant.\n\nI stopped feeling dependent.\nI started thinking like an owner.\n\nThat's the real value of the first dollar online.\n\nNot the money. The identity shift.",
-    reddit: "**The first $0.97 online changed how I see my $120K salary**\n\nWhen I got my first Stripe notification — $0.97 from a stranger who bought my product — I expected excitement.\n\nWhat I didn't expect was how it would change my relationship with my salary.\n\nSuddenly, $120K/year didn't feel like 'what I'm worth.' It felt like 'one income stream.' The psychological shift was instant. I stopped feeling dependent.\n\nAnyone else experience this identity shift with their first dollar online?",
-    linkedin: "The first $0.97 I earned online from a stranger changed something I didn't expect.\n\nIt didn't change my bank account. It changed my identity.\n\nFor 8 years, I defined myself by my salary. $120K = what I'm worth. When I saw that Stripe notification — $0.97 from a plumber in Ohio — something shifted.\n\nMy salary stopped being my identity. It became one income stream.\n\nThe first dollar online isn't about money. It's about the identity shift from employee to owner.\n\nHas anyone else experienced this?",
+    twitter: "When I got my first Stripe notification, $0.97 from a stranger, I expected to feel excited.\n\nWhat I didn't expect:\n\n$120K/year stopped feeling like 'what I'm worth.'\n\nIt started feeling like 'one income stream.'\n\nThe psychological shift was instant.\n\nI stopped feeling dependent.\nI started thinking like an owner.\n\nThat's the real value of the first dollar online.\n\nNot the money. The identity shift.",
+    reddit: "**The first $0.97 online changed how I see my $120K salary**\n\nWhen I got my first Stripe notification, $0.97 from a stranger who bought my product, I expected excitement.\n\nWhat I didn't expect was how it would change my relationship with my salary.\n\nSuddenly, $120K/year didn't feel like 'what I'm worth.' It felt like 'one income stream.' The psychological shift was instant. I stopped feeling dependent.\n\nAnyone else experience this identity shift with their first dollar online?",
+    linkedin: "The first $0.97 I earned online from a stranger changed something I didn't expect.\n\nIt didn't change my bank account. It changed my identity.\n\nFor 8 years, I defined myself by my salary. $120K = what I'm worth. When I saw that Stripe notification, $0.97 from a plumber in Ohio, something shifted.\n\nMy salary stopped being my identity. It became one income stream.\n\nThe first dollar online isn't about money. It's about the identity shift from employee to owner.\n\nHas anyone else experienced this?",
     youtube: "TITLE: How $0.97 Changed My Relationship With My $120K Salary\n\nHOOK: The first dollar you earn online isn't about money. It's about identity.\n\nSCRIPT:\n- Got a Stripe notification: $0.97 from a stranger.\n- Expected excitement. Got something deeper.\n- $120K salary stopped feeling like 'what I'm worth.'\n- It became 'one income stream.'\n- The identity shift: employee → owner.\n- This is why starting matters more than the amount.\n- CTA: Calculate your freedom number.",
     cta: "Start your identity shift: invisibleexit.com/freedom",
   },
   {
     day: 3,
-    source: "Seinfeld 3 — Wife's Reaction",
+    source: "Seinfeld 3, Wife's Reaction",
     hook: "I told my wife I wanted to build something on the side. She said: 'Show me the numbers.'",
-    twitter: "I told my wife I wanted to build a side business.\n\nHer response: 'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in numbers. I think in narratives.\n\nSo I built a calculator.\n\nWhen I showed her: '$3,200 MRR by month 14' — the conversation changed.\n\nFrom: 'Are you sure?'\nTo: 'How do we get there?'\n\nNumbers turn dreams into plans.",
-    reddit: "**Told my wife about my side business idea. Her response was perfect.**\n\nI told my wife I wanted to build something on the side. She said:\n\n'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in numbers. I think in narratives. We argue productively.\n\nSo I built a calculator. When I showed her a clear number — '$3,200 MRR by month 14' — the conversation changed from 'are you sure?' to 'how do we get there?'\n\nThat's why the Freedom Number matters. Spreadsheets turn dreams into plans.\n\nHow did your partner react to your side business?",
-    linkedin: "When I told my wife I wanted to build a side business, she said:\n\n'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in spreadsheets. I think in stories.\n\nSo I built a calculator. When I showed her: '$3,200/month MRR by month 14' — the conversation shifted.\n\nFrom 'are you sure?' to 'how do we get there?'\n\nThe Freedom Number isn't about motivation. It's about turning a vague dream into a number your partner can evaluate.\n\nNumbers turn anxiety into strategy.",
+    twitter: "I told my wife I wanted to build a side business.\n\nHer response: 'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in numbers. I think in narratives.\n\nSo I built a calculator.\n\nWhen I showed her: '$3,200 MRR by month 14', the conversation changed.\n\nFrom: 'Are you sure?'\nTo: 'How do we get there?'\n\nNumbers turn dreams into plans.",
+    reddit: "**Told my wife about my side business idea. Her response was perfect.**\n\nI told my wife I wanted to build something on the side. She said:\n\n'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in numbers. I think in narratives. We argue productively.\n\nSo I built a calculator. When I showed her a clear number, '$3,200 MRR by month 14', the conversation changed from 'are you sure?' to 'how do we get there?'\n\nThat's why the Freedom Number matters. Spreadsheets turn dreams into plans.\n\nHow did your partner react to your side business?",
+    linkedin: "When I told my wife I wanted to build a side business, she said:\n\n'That's great. Now show me the numbers.'\n\nShe's a data analyst. She thinks in spreadsheets. I think in stories.\n\nSo I built a calculator. When I showed her: '$3,200/month MRR by month 14', the conversation shifted.\n\nFrom 'are you sure?' to 'how do we get there?'\n\nThe Freedom Number isn't about motivation. It's about turning a vague dream into a number your partner can evaluate.\n\nNumbers turn anxiety into strategy.",
     youtube: "TITLE: I Told My Wife About My Side Business. Her Response Was Brutal.\n\nHOOK: 'That's great. Now show me the numbers.'\n\nSCRIPT:\n- Told wife about side business idea.\n- She's a data analyst. Wanted numbers, not narratives.\n- Built a freedom number calculator.\n- $3,200 MRR by month 14 = clear target.\n- Conversation shifted from doubt to planning.\n- Lesson: numbers turn dreams into plans.\n- CTA: Calculate your freedom number together.",
     cta: "Calculate your number: invisibleexit.com/freedom",
   },
   {
     day: 4,
-    source: "Seinfeld 4 — Month 4 Wall",
+    source: "Seinfeld 4, Month 4 Wall",
     hook: "Month 4. Zero customers. I almost deleted everything.",
     twitter: "Month 4 of my side business.\n\nZero customers.\n\nI sat at my desk at 11 PM. Cursor over 'Cancel Subscription.' Voice in my head:\n\n'You're not a founder. Go back to managing.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\n$4,000/month MRR = optionality.\n\nThe math doesn't care about your feelings.\n\nI closed the cancel tab. Pivoted.\n\nTwo weeks later: first customer. $9/month.",
     reddit: "**Month 4 of my side business. Zero customers. I almost quit. Here's what saved me.**\n\nI'd been building for 4 months. One product live. Nobody cared. Zero customers. I checked Stripe 40 times a day. Nothing.\n\nI sat in my car after work one Tuesday and thought: maybe I'm not cut out for this.\n\nThen I opened my freedom number calculation. The math hadn't changed. $4,000/month MRR = optionality. The math doesn't care about your feelings.\n\nI pivoted using my idea pipeline. Two weeks later: first paying customer. $9/month.\n\nThe system doesn't care about your feelings either. It just needs consistency.\n\nAnyone else hit the Month 4 wall?",
     linkedin: "Month 4. Zero customers. 11 PM on a Tuesday.\n\nI had my cursor over the 'Cancel Subscription' button on my hosting dashboard. The voice in my head was specific:\n\n'You're not a founder. You're a manager. Go back to managing.'\n\nThen I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. $4,000/month MRR = optionality.\n\nI closed the cancel tab. Pivoted. Two weeks later: first customer. $9/month.\n\nThe system doesn't care about your feelings. It just needs consistency.\n\nIf you're in Month 4 right now, keep going.",
-    youtube: "TITLE: Month 4, Zero Customers — The Night I Almost Deleted Everything\n\nHOOK: The voice said 'you're not a founder.' Here's how I proved it wrong.\n\nSCRIPT:\n- Month 4. Zero customers. Zero trial signups in 9 days.\n- 11 PM. Cursor over Cancel Subscription.\n- The voice: 'Go back to managing.'\n- Opened freedom number calculation. Math hadn't changed.\n- Pivoted. Two weeks later: first $9/month customer.\n- Lesson: the math doesn't care about feelings.\n- CTA: Calculate your freedom number.",
+    youtube: "TITLE: Month 4, Zero Customers, The Night I Almost Deleted Everything\n\nHOOK: The voice said 'you're not a founder.' Here's how I proved it wrong.\n\nSCRIPT:\n- Month 4. Zero customers. Zero trial signups in 9 days.\n- 11 PM. Cursor over Cancel Subscription.\n- The voice: 'Go back to managing.'\n- Opened freedom number calculation. Math hadn't changed.\n- Pivoted. Two weeks later: first $9/month customer.\n- Lesson: the math doesn't care about feelings.\n- CTA: Calculate your freedom number.",
     cta: "Read the full story: invisibleexit.com/story",
   },
   {
     day: 5,
-    source: "Seinfeld 5 — Deleted Twitter",
+    source: "Seinfeld 5, Deleted Twitter",
     hook: "Why I deleted my personal Twitter (2,000 followers) and went faceless.",
     twitter: "Last month I deleted my personal Twitter.\n\n2,000 followers. 5 years of posts. Gone.\n\nInstead, I created an anonymous account for my side business.\n\nNo photo. No real name. Just content.\n\nIn 3 weeks it passed my personal account in engagement.\n\nNobody knows it's me.\n\nAnonymity isn't a limitation.\n\nIt's a strategy.",
     reddit: "**I deleted my personal Twitter (2K followers) to go anonymous. Best decision I've made.**\n\nLast month I deleted my personal Twitter account. 2,000 followers. 5 years of posts. Gone.\n\nInstead, I created an anonymous account for my side business. No photo. No real name. Just the content.\n\nIn 3 weeks it passed my personal account in engagement. Nobody knows it's me.\n\nThe anonymity means I can experiment without fear. Build in markets unrelated to my expertise. Fail publicly (to the 3 people who see it) without my employer or professional network knowing.\n\nAnonymity isn't a limitation. It's a strategy.\n\nHas anyone else gone faceless?",
@@ -71,7 +71,7 @@ const CONTENT: ContentItem[] = [
   },
   {
     day: 6,
-    source: "Seinfeld 6 — Boss's Bonus",
+    source: "Seinfeld 6, Boss's Bonus",
     hook: "My boss got a €15,000 bonus. He was thrilled. My side business made $4,100/month.",
     twitter: "My boss got his annual bonus last week.\n\n€15,000.\n\nHe was thrilled.\n\nMy side business generated $4,100 MRR this month.\n\n$49,200/year.\nGrowing 8% monthly.\nNo boss.\nNo board.\nNo equity dilution.\n\nHis bonus is capped.\nMy MRR compounds.\n\nDifferent games.",
     reddit: "**My boss's €15K bonus vs. my $4.1K/month side business MRR**\n\nMy boss got his annual bonus last week. €15,000. He was thrilled.\n\nMy side business generated $4,100 MRR this month. That's $49,200/year. Growing 8% monthly. No boss. No board. No equity dilution.\n\nHis bonus is capped. My MRR compounds.\n\nI'm not saying this to brag. I'm saying it because the math is the math. If you're earning $120K with 0.5% equity, your boss's bonus IS your ceiling.\n\nUnless you build something of your own.",
@@ -81,17 +81,17 @@ const CONTENT: ContentItem[] = [
   },
   {
     day: 7,
-    source: "Seinfeld 7 — Turned Down Promotion",
+    source: "Seinfeld 7, Turned Down Promotion",
     hook: "I turned down a promotion last week. Here's the math behind why.",
     twitter: "My company offered me a promotion.\n\nDirector → VP.\n15% raise.\nMore equity.\nMore responsibility.\n\nI turned it down.\n\nNot because I'm brave.\n\nThe raise: €18K/year.\nMy side business grew $600 MRR last month alone = $7,200/year.\n\nThe promotion would cost me 10+ hours/week.\nLess time to build.\n\nThe freedom number isn't about quitting.\n\nIt's about the option to say no.",
     reddit: "**I turned down a VP promotion. Here's the math.**\n\nMy company offered me a promotion: Director → VP. 15% raise. More equity. More visibility.\n\nI turned it down.\n\nNot because I'm brave. Because the math didn't work.\n\nThe raise: €18K/year.\nThe cost: 10+ extra hours/week. More visibility (bad for stealth ops). More stress. Less time to build.\n\nMy side business grew by $600 MRR last month alone. That's $7,200/year, and it compounds. The promotion would have killed that growth rate.\n\nThe freedom number isn't about quitting. It's about having the option to say no.\n\nHas anyone else turned down a promotion for their side business?",
-    linkedin: "Last week, I turned down a promotion. Director → VP. 15% raise. More equity.\n\nNot because I'm brave. Because the math didn't work.\n\nThe raise would have been €18K/year. But the promotion required 10+ extra hours/week, more visibility (which threatens my stealth setup), and more stress.\n\nMy side business grew $600 MRR last month — $7,200/year, compounding.\n\nThe freedom number isn't about quitting your job. It's about having the option to say no.\n\nWhen you have that option, you stop being managed by fear. You start managing by choice.\n\nThat's worth more than any title.",
+    linkedin: "Last week, I turned down a promotion. Director → VP. 15% raise. More equity.\n\nNot because I'm brave. Because the math didn't work.\n\nThe raise would have been €18K/year. But the promotion required 10+ extra hours/week, more visibility (which threatens my stealth setup), and more stress.\n\nMy side business grew $600 MRR last month, $7,200/year, compounding.\n\nThe freedom number isn't about quitting your job. It's about having the option to say no.\n\nWhen you have that option, you stop being managed by fear. You start managing by choice.\n\nThat's worth more than any title.",
     youtube: "TITLE: I Turned Down a VP Promotion (The Math Behind the Decision)\n\nHOOK: 15% raise. More equity. I said no.\n\nSCRIPT:\n- Offered: Director → VP. 15% raise.\n- Raise = €18K/year.\n- Cost = 10+ hrs/week, more visibility, less build time.\n- Side business grew $600 MRR last month = $7,200/year.\n- The promotion would have killed the compounding.\n- Freedom number = option to say no.\n- CTA: Calculate your freedom number.",
     cta: "Calculate your freedom number: invisibleexit.com/freedom",
   },
   {
     day: 8,
-    source: "Seinfeld 8 — The 5am Build Session",
+    source: "Seinfeld 8, The 5am Build Session",
     hook: "I built more in 5 hours before work than in 40 hours at the office.",
     twitter: `The alarm goes off at 4:45 AM.
 
@@ -152,7 +152,7 @@ SCRIPT:
   },
   {
     day: 9,
-    source: "Seinfeld 9 — Stripe Dashboard on Apple Watch",
+    source: "Seinfeld 9, Stripe Dashboard on Apple Watch",
     hook: "I checked my Stripe revenue during a quarterly review. On my Apple Watch.",
     twitter: `Quarterly review.
 
@@ -179,7 +179,7 @@ I smiled through the rest of the meeting. She thought I was happy about the quar
 
 I was thinking about the $4K MRR compounding outside the building. The revenue she was presenting is someone else's. The revenue on my watch is mine.
 
-This tiny moment — checking YOUR income while someone presents THEIR income — changed how I sit in meetings.
+This tiny moment, checking YOUR income while someone presents THEIR income, changed how I sit in meetings.
 
 Anyone else check personal revenue during work hours?`,
     linkedin: `I checked my Stripe revenue during a quarterly review.
@@ -194,7 +194,7 @@ I was thinking about the income compounding outside the building.
 
 The numbers she presented belong to someone else. The numbers on my watch are mine.
 
-That small moment — checking YOUR income while someone presents THEIR income — changes your relationship with meetings forever.`,
+That small moment, checking YOUR income while someone presents THEIR income, changes your relationship with meetings forever.`,
     youtube: `TITLE: I Checked My Side Business Revenue During a Performance Review
 
 HOOK: She thought I was excited about quarterly numbers. I was watching my own revenue compound.
@@ -211,7 +211,7 @@ SCRIPT:
   },
   {
     day: 10,
-    source: "Seinfeld 10 — The LinkedIn Near-Miss",
+    source: "Seinfeld 10, The LinkedIn Near-Miss",
     hook: "I almost liked a post that would have exposed everything. The one-second rule saved me.",
     twitter: `I was scrolling LinkedIn during lunch.
 
@@ -271,11 +271,11 @@ SCRIPT:
   },
   {
     day: 11,
-    source: "Seinfeld 11 — First Churn",
+    source: "Seinfeld 11, First Churn",
     hook: "My first customer churned. It hurt more than I expected. Here's what it taught me.",
     twitter: `Month 7. First churn.
 
-My first customer — the $9/month one who believed in me — cancelled.
+My first customer, the $9/month one who believed in me, cancelled.
 
 I won't lie. It stung.
 
@@ -294,7 +294,7 @@ Churn isn't failure. It's feedback.
 That feedback loop made my product 3x better.`,
     reddit: `**My first customer churned. It hurt more than I expected.**
 
-Month 7 of my side business. My first customer — the $9/month one who believed in my product — cancelled.
+Month 7 of my side business. My first customer, the $9/month one who believed in my product, cancelled.
 
 It stung. Not because of the $9. Because someone looked at what I built and decided it wasn't worth it anymore.
 
@@ -309,7 +309,7 @@ Getting the first churn made my product 3x better. The $9 loss was the best inve
 Anyone else learn more from a churn than from a signup?`,
     linkedin: `My first customer churned last month. It hurt more than I expected.
 
-My first $9/month customer — the one who believed in this project when nobody else had — cancelled. Not because of the $9. But because someone decided what I built wasn't worth their money anymore.
+My first $9/month customer, the one who believed in this project when nobody else had, cancelled. Not because of the $9. But because someone decided what I built wasn't worth their money anymore.
 
 That feedback was painful. But it was also invaluable.
 
@@ -337,7 +337,7 @@ SCRIPT:
   },
   {
     day: 12,
-    source: "Seinfeld 12 — The Tax Question",
+    source: "Seinfeld 12, The Tax Question",
     hook: "I had to tell my accountant about three separate income streams. The look on his face.",
     twitter: `Tax season. My accountant asks the usual questions.
 
@@ -376,7 +376,7 @@ Best $400 I ever spent.
 If you have side business income and a regular job, talk to a CPA who understands both. The tax savings alone can fund your first year of hosting.`,
     linkedin: `Tax season taught me something surprising about running a side business while employed.
 
-When I told my accountant about my three micro-SaaS products — separate LLC, anonymous structure, $4K/month MRR — he closed his notebook and got a second coffee.
+When I told my accountant about my three micro-SaaS products, separate LLC, anonymous structure, $4K/month MRR, he closed his notebook and got a second coffee.
 
 The next 45 minutes were transformative. He walked me through entity structuring for tax efficiency, passive vs active income classification, and deductions I'd never considered.
 
@@ -400,7 +400,7 @@ SCRIPT:
   },
   {
     day: 13,
-    source: "Seinfeld 13 — Building During Lunch Breaks",
+    source: "Seinfeld 13, Building During Lunch Breaks",
     hook: "I built a $4K/month business in 45-minute lunch breaks. Here's the math.",
     twitter: `People ask how I find time to build.
 
@@ -435,7 +435,7 @@ I was building $4K/month MRR.
 The time is there. It's just disguised as lunch.`,
     linkedin: `I built a side business almost entirely during 45-minute lunch breaks.
 
-The math: 45 minutes × 5 days = 3.75 hours/week. Over a year, that's 195 hours — the equivalent of 5 full work weeks.
+The math: 45 minutes × 5 days = 3.75 hours/week. Over a year, that's 195 hours, the equivalent of 5 full work weeks.
 
 Hidden in plain sight. During the workday.
 
@@ -457,7 +457,7 @@ SCRIPT:
   },
   {
     day: 14,
-    source: "Seinfeld 14 — First $100 Month",
+    source: "Seinfeld 14, First $100 Month",
     hook: "Month 6. I hit $100/month. It felt bigger than my salary.",
     twitter: `$100/month.
 
@@ -517,7 +517,7 @@ SCRIPT:
   },
   {
     day: 15,
-    source: "Seinfeld 15 — The Competitor Copy",
+    source: "Seinfeld 15, The Competitor Copy",
     hook: "Someone copied my product. I was furious for 12 hours. Then I realized what it meant.",
     twitter: `Someone copied my product.
 
@@ -561,7 +561,7 @@ Not inspired by it. Copied it. Same UI, same copy, same pricing model. Different
 
 I was furious for about 12 hours. Then a mentor said something that reframed everything: "If they copied you, it means you were right."
 
-The copycat validated our market, our problem-solution fit, and our pricing. They spent months replicating what we built. That's not a threat — that's the most expensive market research we never had to pay for.
+The copycat validated our market, our problem-solution fit, and our pricing. They spent months replicating what we built. That's not a threat, that's the most expensive market research we never had to pay for.
 
 I stopped being angry and started building faster. Speed is the only moat that matters.`,
     youtube: `TITLE: Someone Copied My Product. Here's Why I'm Grateful.
@@ -581,7 +581,7 @@ SCRIPT:
   },
   {
     day: 16,
-    source: "Seinfeld 16 — Sunday Night Anxiety",
+    source: "Seinfeld 16, Sunday Night Anxiety",
     hook: "Sunday night used to mean dread. Now it means excitement. Same brain. Different wiring.",
     twitter: `Sunday night.
 
@@ -645,7 +645,7 @@ SCRIPT:
   },
   {
     day: 17,
-    source: "Seinfeld 17 — The Non-Compete Conversation",
+    source: "Seinfeld 17, The Non-Compete Conversation",
     hook: "HR asked if I had outside business activities. My heart rate spiked. Here's what happened.",
     twitter: `HR sent a calendar invite: "Quick chat about outside activities."
 
@@ -687,13 +687,13 @@ The Triple-Separation Protocol (entity, name, payment) works. But that 30-minute
 If you're building on the side: rehearse this answer. Know your non-compete. Build in unrelated markets. The preparation is what keeps you calm.`,
     linkedin: `I got a calendar invite from HR last month: "Quick chat about outside activities."
 
-My heart rate spiked. I'd been building a side business for 9 months — anonymous, separate entity, different name, different payment processor.
+My heart rate spiked. I'd been building a side business for 9 months, anonymous, separate entity, different name, different payment processor.
 
 The meeting was routine: an annual compliance questionnaire update. "Do you have any outside business activities that could conflict with your role?"
 
 My answer was honest: "No. I don't compete in any related industry." My products exist in completely unrelated markets.
 
-The preparation — separate entity, separate name, separate Stripe, non-competing verticals — is what allowed me to sit in that meeting calmly.
+The preparation, separate entity, separate name, separate Stripe, non-competing verticals, is what allowed me to sit in that meeting calmly.
 
 If you're building on the side, understand your employment contract. Build in non-competing markets. The legal separation isn't paranoia. It's peace of mind.`,
     youtube: `TITLE: HR Asked About My Side Business. Here's What I Said.
@@ -714,7 +714,7 @@ SCRIPT:
   },
   {
     day: 18,
-    source: "Seinfeld 18 — First Support Ticket",
+    source: "Seinfeld 18, First Support Ticket",
     hook: "My first support ticket made me realize: this isn't a project anymore. People depend on me.",
     twitter: `Support ticket #1.
 
@@ -756,12 +756,12 @@ This is the moment a side project stops being a project. It becomes a responsibi
 
 I fixed it in 20 minutes. Their reply: "Thank you so much. You saved my presentation."
 
-That "thank you" felt different than any performance review feedback I've received. Because it was voluntary — earned, not extracted.
+That "thank you" felt different than any performance review feedback I've received. Because it was voluntary, earned, not extracted.
 
 Building for customers who chose you hits different than building for an employer who assigned you.`,
     youtube: `TITLE: My First Support Ticket Changed Everything
 
-HOOK: "You saved my presentation." — a customer I'd never met.
+HOOK: "You saved my presentation.", a customer I'd never met.
 
 SCRIPT:
 - Support ticket #1. Dashboard not loading.
@@ -775,7 +775,7 @@ SCRIPT:
   },
   {
     day: 19,
-    source: "Seinfeld 19 — The VPN Revelation",
+    source: "Seinfeld 19, The VPN Revelation",
     hook: "I was logging into my side business dashboard from my work laptop. Then I learned about IP logs.",
     twitter: `I was logging into Stripe, Vercel, and my product dashboard from my work laptop.
 
@@ -797,7 +797,7 @@ I bought a personal laptop the next day. $400.
 Best $400 I ever spent on operational security.`,
     reddit: `**I was accessing my side business from my work laptop. Here's why I stopped.**
 
-For the first 5 months, I used my work laptop for everything. Stripe dashboard, Vercel, my product admin. Seemed fine — I use it for personal browsing too.
+For the first 5 months, I used my work laptop for everything. Stripe dashboard, Vercel, my product admin. Seemed fine, I use it for personal browsing too.
 
 Then someone on r/SideHustle mentioned IP logging. I looked into it.
 
@@ -811,12 +811,12 @@ My employer's IT team could reconstruct that I'm running an online business. The
 
 I bought a cheap personal laptop the next day. $400. Best investment in operational security I ever made.
 
-If you're building on a work device: stop. Get a separate device. It's not paranoia — it's hygiene.`,
+If you're building on a work device: stop. Get a separate device. It's not paranoia, it's hygiene.`,
     linkedin: `A security realization that changed my side business setup:
 
-For months, I managed my side business from my work laptop. Stripe, hosting, product dashboard — all from the same machine I use for my day job.
+For months, I managed my side business from my work laptop. Stripe, hosting, product dashboard, all from the same machine I use for my day job.
 
-Then I learned about network-level logging. Corporate IT systems log every outbound connection. While HTTPS encrypts the content, the destination domains are visible. Stripe.com, Vercel.com, a domain you recently registered — the pattern reveals a business even if the content doesn't.
+Then I learned about network-level logging. Corporate IT systems log every outbound connection. While HTTPS encrypts the content, the destination domains are visible. Stripe.com, Vercel.com, a domain you recently registered, the pattern reveals a business even if the content doesn't.
 
 I invested in a personal laptop the next day. Complete separation of devices, networks, and identities.
 
@@ -838,7 +838,7 @@ SCRIPT:
   },
   {
     day: 20,
-    source: "Seinfeld 20 — Wife's Birthday Gift",
+    source: "Seinfeld 20, Wife's Birthday Gift",
     hook: "I bought my wife's birthday gift with side business revenue. She cried. Not from the gift.",
     twitter: `Wife's birthday.
 
@@ -873,7 +873,7 @@ She opened it. Smiled. Then looked at me: "This is from the side business, isn't
 
 "Yes."
 
-She cried. Not because of the gift — it wasn't expensive. Because for the first time in 8 years, I bought something with money I earned outside the company.
+She cried. Not because of the gift, it wasn't expensive. Because for the first time in 8 years, I bought something with money I earned outside the company.
 
 Money that didn't come from the salary she watches me trade my life for. Money from something I built. On my own time. With my own hands.
 
@@ -888,7 +888,7 @@ But the source of the money mattered more than the gift.
 
 "This is from the side business, isn't it?" she asked.
 
-She cried. Not because of the gift. Because for the first time in our relationship, I bought something meaningful with money I earned entirely on my own — outside the company, outside the salary structure, outside the performance review cycle.
+She cried. Not because of the gift. Because for the first time in our relationship, I bought something meaningful with money I earned entirely on my own, outside the company, outside the salary structure, outside the performance review cycle.
 
 Money from something I built with my own hands, on my own time.
 
@@ -912,7 +912,7 @@ SCRIPT:
   },
   {
     day: 21,
-    source: "Seinfeld 21 — The Performance Review Irony",
+    source: "Seinfeld 21, The Performance Review Irony",
     hook: "My performance review praised my 'laser focus.' I was running a side business the entire time.",
     twitter: `Performance review.
 
@@ -945,7 +945,7 @@ What I didn't say: the focus came from my side business.
 
 Building $4K MRR in 5 hours/week forced me to ruthlessly prioritize at work. I cut meetings I didn't need to attend. Declined projects that didn't move the needle. Protected deep work blocks. Said no to everything non-essential.
 
-The irony: my day job performance IMPROVED because of my side business. The side business didn't distract me — it made me more efficient with the time I had.
+The irony: my day job performance IMPROVED because of my side business. The side business didn't distract me, it made me more efficient with the time I had.
 
 Has anyone else found that a side business improved their work performance?`,
     linkedin: `My annual performance review praised my "remarkable focus" and "sharper execution."
@@ -954,7 +954,7 @@ The irony? That focus came from my side business.
 
 Building a side business in 5 hours/week forced me to become ruthlessly efficient at my day job. I cut unnecessary meetings. Declined low-impact projects. Protected deep work blocks. Said no to everything that wasn't essential.
 
-The side business didn't make me worse at my job. It made me better. Not because I was distracted — because I learned what actually matters.
+The side business didn't make me worse at my job. It made me better. Not because I was distracted, because I learned what actually matters.
 
 Sometimes the best thing you can do for your career is build something on the side that teaches you to focus.`,
     youtube: `TITLE: My Boss Praised My Focus. It Came From My Side Business.
@@ -973,7 +973,7 @@ SCRIPT:
   },
   {
     day: 22,
-    source: "Seinfeld 22 — First Affiliate Signup",
+    source: "Seinfeld 22, First Affiliate Signup",
     hook: "Someone asked to promote my product. For free. I almost said no out of habit.",
     twitter: `Email subject: "Love your product. Can I promote it?"
 
@@ -1002,7 +1002,7 @@ My CAC: $0.`,
 
 Got an email: "Love your product. Can I promote it to my audience?"
 
-My first instinct was suspicion. "Why would someone help me for free?" — 8 years of corporate conditioning.
+My first instinct was suspicion. "Why would someone help me for free?", 8 years of corporate conditioning.
 
 Then I remembered: affiliate programs exist. I set one up. 30% recurring commission.
 
@@ -1012,12 +1012,12 @@ Customer wins: genuine recommendation from someone they trust.
 
 Month one: they sent 12 customers. My customer acquisition cost: $0.
 
-The corporate mindset teaches you to be suspicious of help. The builder mindset teaches you to share the upside. Both can be right — but only one grows your business.
+The corporate mindset teaches you to be suspicious of help. The builder mindset teaches you to share the upside. Both can be right, but only one grows your business.
 
 Anyone else run an affiliate program for their side business?`,
     linkedin: `Someone emailed me last month: "I love your product. Can I promote it to my audience?"
 
-My first instinct was suspicion — 8 years of corporate conditioning. Why would someone help me for free?
+My first instinct was suspicion, 8 years of corporate conditioning. Why would someone help me for free?
 
 Then I realized: this is affiliate marketing. I set up a 30% recurring commission program.
 
@@ -1045,7 +1045,7 @@ SCRIPT:
   },
   {
     day: 23,
-    source: "Seinfeld 23 — The Domain Name Hunt",
+    source: "Seinfeld 23, The Domain Name Hunt",
     hook: "Choosing anonymous domain names is an art. Here are my 5 rules for stealth domains.",
     twitter: `Every stealth builder faces this: what do you name the domain?
 
@@ -1089,11 +1089,11 @@ Too generic and it's forgettable. Too personal and it's traceable.
 
 1. No personal name, initials, or location
 2. No connection to my employer's industry
-3. Abstract but pronounceable — the kind of name that sounds like a startup, not a side project
+3. Abstract but pronounceable, the kind of name that sounds like a startup, not a side project
 4. Available as handles across all major social platforms
 5. Privacy-protected registration with WHOIS guard enabled
 
-My side business domains look like independent companies. That's the point. If someone discovers them, they see a brand — not a corporate employee's weekend project.
+My side business domains look like independent companies. That's the point. If someone discovers them, they see a brand, not a corporate employee's weekend project.
 
 Anonymity isn't hiding. It's operational strategy.`,
     youtube: `TITLE: 5 Rules for Choosing Anonymous Domain Names
@@ -1113,7 +1113,7 @@ SCRIPT:
   },
   {
     day: 24,
-    source: "Seinfeld 24 — MRR Milestone: $500",
+    source: "Seinfeld 24, MRR Milestone: $500",
     hook: "$500/month MRR is the tipping point. Here's why it's psychologically different from $499.",
     twitter: `$500/month MRR.
 
@@ -1146,7 +1146,7 @@ $500 is the point where:
 - You can cover real business expenses (hosting, tools, ads) from revenue
 - You have enough customers that you can't ignore any single one
 - The number shows up meaningfully on a tax return
-- The momentum is palpable — you can see the path to $1K, $2K, $4K
+- The momentum is palpable, you can see the path to $1K, $2K, $4K
 
 The jump from $499 to $500 isn't $1. It's identity. You stop saying "I have a side project" and start saying "I run a business."
 
@@ -1157,7 +1157,7 @@ $500 is a psychological tipping point that I didn't expect.
 
 At $100, my side business felt like an experiment. At $300, it felt like a serious hobby. At $500, it feels like a business.
 
-$500 is where revenue covers real expenses — hosting, tools, software. Where you have enough customers that churn matters. Where the number shows up meaningfully on a tax return. Where you can see the path to $1K, $2K, $4K.
+$500 is where revenue covers real expenses, hosting, tools, software. Where you have enough customers that churn matters. Where the number shows up meaningfully on a tax return. Where you can see the path to $1K, $2K, $4K.
 
 The jump from $499 to $500 isn't a dollar. It's identity. You stop saying "I have a side project" and start saying "I run a business."`,
     youtube: `TITLE: Why $500/Month MRR Is the Psychological Tipping Point
@@ -1177,7 +1177,7 @@ SCRIPT:
   },
   {
     day: 25,
-    source: "Seinfeld 25 — The Former Colleague",
+    source: "Seinfeld 25, The Former Colleague",
     hook: "I ran into a colleague who quit to start a business. He failed. The conversation was uncomfortable.",
     twitter: `Ran into a former colleague at a coffee shop.
 
@@ -1226,7 +1226,7 @@ He quit two years ago to start a business full-time. Burned through savings. No 
 
 "You still at the firm?" he asked. "Yeah," I said. He gave me a look of pity.
 
-What he doesn't know: I earn $4K/month from products I built while staying employed. His path — quit everything, bet it all — is the one startup culture celebrates. My path — stay employed, build invisibly, protect the downside — is invisible.
+What he doesn't know: I earn $4K/month from products I built while staying employed. His path, quit everything, bet it all, is the one startup culture celebrates. My path, stay employed, build invisibly, protect the downside, is invisible.
 
 His path has no floor. Mine does. His failure was public. Mine would be private.
 
@@ -1248,7 +1248,7 @@ SCRIPT:
   },
   {
     day: 26,
-    source: "Seinfeld 26 — Automating Support",
+    source: "Seinfeld 26, Automating Support",
     hook: "I automated 80% of my support tickets. The business now runs during my work hours.",
     twitter: `The hardest part of a side business: customers need help while you're at work.
 
@@ -1277,13 +1277,13 @@ The hardest part of running a side business: customers need help while you're at
 
 Here's what I built:
 
-1. Knowledge base — 60% of tickets are "how do I..." questions. Documented everything. Now customers self-serve.
+1. Knowledge base, 60% of tickets are "how do I..." questions. Documented everything. Now customers self-serve.
 
-2. Canned responses — another 20% are variations of the same 5 questions. Saved responses handle these in seconds.
+2. Canned responses, another 20% are variations of the same 5 questions. Saved responses handle these in seconds.
 
-3. Smart routing — truly urgent tickets (payment failures, outages) trigger a phone notification. Everything else waits until evening.
+3. Smart routing, truly urgent tickets (payment failures, outages) trigger a phone notification. Everything else waits until evening.
 
-4. Status page — when something breaks, customers check the status page before emailing. Reduces "is it down?" tickets by 90%.
+4. Status page, when something breaks, customers check the status page before emailing. Reduces "is it down?" tickets by 90%.
 
 Result: 80% of support is automated. The business runs while I'm in meetings. Customers get instant answers. I handle the 20% that needs a human during my evening session.
 
@@ -1317,7 +1317,7 @@ SCRIPT:
   },
   {
     day: 27,
-    source: "Seinfeld 27 — The Burnout Scare",
+    source: "Seinfeld 27, The Burnout Scare",
     hook: "5am builds + 9am work + evening sessions. I hit a wall at month 10. Here's what saved me.",
     twitter: `Month 10. The wall.
 
@@ -1363,7 +1363,7 @@ Because I was building with energy, not fumes. A burned-out builder makes worse 
 Rest isn't the enemy of progress. Burnout is.`,
     linkedin: `Month 10 of my side business. I hit the wall.
 
-5 AM builds. 9 AM work start. Evening sessions. 10 months of this schedule. Then one morning, I sat in my car at 5:15 AM and physically couldn't move. Not tired — empty.
+5 AM builds. 9 AM work start. Evening sessions. 10 months of this schedule. Then one morning, I sat in my car at 5:15 AM and physically couldn't move. Not tired, empty.
 
 I had to make hard choices:
 
@@ -1392,7 +1392,7 @@ SCRIPT:
   },
   {
     day: 28,
-    source: "Seinfeld 28 — First International Customer",
+    source: "Seinfeld 28, First International Customer",
     hook: "Someone in Tokyo paid for my product. In yen. At 3 AM their time. The internet is wild.",
     twitter: `Stripe notification:
 
@@ -1418,18 +1418,18 @@ Someone on the other side of the planet found my product, evaluated it, and paid
 
 At my day job, I serve customers in my timezone, during my working hours. The scope is bounded by geography and schedule.
 
-My side business has no boundaries. It serves anyone, anywhere, anytime. They found me through search, read my content, tried the product, and paid — all without me being awake.
+My side business has no boundaries. It serves anyone, anywhere, anytime. They found me through search, read my content, tried the product, and paid, all without me being awake.
 
 That's the power of building digital products. The internet doesn't sleep. Your MRR doesn't either.
 
 First international customer hits different. Anyone else remember theirs?`,
     linkedin: `My first international customer arrived at 3:14 AM Tokyo time.
 
-¥3,200. Someone in Japan found my product, evaluated it, and paid for it — while I was asleep in a different timezone, speaking a different language.
+¥3,200. Someone in Japan found my product, evaluated it, and paid for it, while I was asleep in a different timezone, speaking a different language.
 
 This is the part of building digital products that still amazes me. At my day job, I serve a bounded market: my timezone, my language, my working hours. My side business has no such boundaries.
 
-The internet doesn't sleep. Your products work while you don't. A customer in Tokyo can discover, evaluate, and buy what you built — all without you being present.
+The internet doesn't sleep. Your products work while you don't. A customer in Tokyo can discover, evaluate, and buy what you built, all without you being present.
 
 That's leverage that no salary can provide.`,
     youtube: `TITLE: My First International Customer (Tokyo, 3 AM, While I Slept)
@@ -1439,7 +1439,7 @@ HOOK: ¥3,200 from Tokyo while I was asleep. The internet doesn't sleep.
 SCRIPT:
 - Stripe notification: ¥3,200. Tokyo. 3:14 AM JST.
 - Different country, timezone, language.
-- Found product, evaluated, paid — while I slept.
+- Found product, evaluated, paid, while I slept.
 - Day job: bounded by timezone and geography.
 - Side business: serves the planet. 24/7.
 - The internet doesn't sleep. Neither does MRR.
@@ -1448,7 +1448,7 @@ SCRIPT:
   },
   {
     day: 29,
-    source: "Seinfeld 29 — The Revelation: Not Quitting",
+    source: "Seinfeld 29, The Revelation: Not Quitting",
     hook: "Everyone thinks the goal is to quit your job. It's not. The goal is to have the option.",
     twitter: `Everyone assumes I'm building a side business to quit.
 
@@ -1488,9 +1488,9 @@ The goal was never to leave. The goal was to not NEED to stay.
 With $4K/month in MRR, I don't have to quit. But I can. That option changes everything:
 
 How I negotiate salary (I don't need the raise, so I negotiate from strength)
-How I handle bad days (a bad meeting doesn't ruin my week — I have something else)
+How I handle bad days (a bad meeting doesn't ruin my week, I have something else)
 How I sit in meetings (I'm there because I choose to be, not because I have to be)
-How I see my salary (not as a chain — as one income stream among several)
+How I see my salary (not as a chain, as one income stream among several)
 
 Freedom isn't quitting. Freedom is having the option. And that option is worth more than any raise.
 
@@ -1503,10 +1503,10 @@ The goal was never to leave. The goal was to not need to stay.
 
 With $4K/month in recurring revenue, I don't have to quit. But I can. And that option changes everything about how I experience my career:
 
-How I negotiate — from strength, not necessity.
-How I handle difficult days — a bad meeting doesn't threaten my livelihood.
-How I show up — I'm present because I choose to be, not because I must be.
-How I see my salary — as one income stream, not the only one.
+How I negotiate, from strength, not necessity.
+How I handle difficult days, a bad meeting doesn't threaten my livelihood.
+How I show up, I'm present because I choose to be, not because I must be.
+How I see my salary, as one income stream, not the only one.
 
 Freedom isn't quitting. Freedom is having the option. And that option transforms how you experience every single day of your career.`,
     youtube: `TITLE: Why I'm NOT Quitting My Job (Even With $4K/Month Side Income)
@@ -1525,7 +1525,7 @@ SCRIPT:
   },
   {
     day: 30,
-    source: "Seinfeld 30 — The Freedom Number Reached",
+    source: "Seinfeld 30, The Freedom Number Reached",
     hook: "I hit $4,000/month MRR. Here's what I expected to feel vs what I actually felt.",
     twitter: `Month 14.
 
@@ -1571,7 +1571,7 @@ The goal was the identity shift. From "employee who depends on a salary" to "bui
 
 $4K didn't change my lifestyle. I still go to work. Still attend the same meetings. Still draw the same salary.
 
-What changed: my posture. I sit differently. Negotiate differently. Make decisions differently. Not because I'm planning to quit — because I no longer have to stay.
+What changed: my posture. I sit differently. Negotiate differently. Make decisions differently. Not because I'm planning to quit, because I no longer have to stay.
 
 The cage always had a door. I just built my own key.
 
@@ -1628,7 +1628,7 @@ const ContentCalendarPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="90-Day Social Content Calendar — Ready-to-Post Stories | Invisible Exit"
+        title="90-Day Social Content Calendar, Ready-to-Post Stories | Invisible Exit"
         description="30 days of social content from Seinfeld email stories: Twitter threads, Reddit posts, LinkedIn articles, and YouTube scripts. Copy, paste, post."
         url="/content-calendar"
       />
@@ -1746,7 +1746,7 @@ const ContentCalendarPage = () => {
             <p className="text-foreground font-semibold mb-2">30-day cycle complete. Repeat with fresh angles.</p>
             <p className="text-sm text-muted-foreground mb-4">
               After 30 days, restart the cycle with new hooks from the Hooks Library. Each cycle
-              builds on the last — winning hooks get doubled down, losers get killed.
+              builds on the last, winning hooks get doubled down, losers get killed.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/hooks" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-hover">

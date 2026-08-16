@@ -4,9 +4,9 @@
  *
  * Why this exists alongside scripts/validate_jsonld.py: that one runs at
  * checkout on committed source and skips build directories by design. The
- * corruption that actually reached Google — Search Console "Unparsable
+ * corruption that actually reached Google, Search Console "Unparsable
  * structured data / Parsing error: Missing ',' or '}'" on voicelogpro.com,
- * 2026-07-25 — is introduced *between* the repo and the deployed page, by
+ * 2026-07-25, is introduced *between* the repo and the deployed page, by
  * the centrally generated pSEO pages and by build-time post-processors. A
  * source-only lint structurally cannot see that class of bug.
  *
@@ -27,7 +27,7 @@
  * builds, and local `vercel build && vercel deploy --prebuilt` alike) and node
  * is guaranteed in all of them, while python3 is not.
  *
- * Self-contained by design — no cross-repo import, so it works in Vercel's
+ * Self-contained by design, no cross-repo import, so it works in Vercel's
  * shallow clone. Keep the copies in the 10 site repos identical.
  *
  * Usage: node scripts/verify-jsonld.mjs [dir ...]      (default: dist)
@@ -55,7 +55,7 @@ const BLOCK_RE =
 const SIGNATURES = [
   {
     re: /https:\/\/\*{3}/,
-    msg: 'clobbered @context (https://*** — expected https://schema.org)',
+    msg: 'clobbered @context (https://***, expected https://schema.org)',
   },
   {
     re: /"@context"\s*:\s*"[^"]*@type/,
@@ -115,7 +115,7 @@ function check(path) {
     try {
       parsed = JSON.parse(raw);
     } catch (err) {
-      errors.push(`${rel} [block ${i}]: invalid JSON — ${err.message}`);
+      errors.push(`${rel} [block ${i}]: invalid JSON, ${err.message}`);
       continue;
     }
 
@@ -138,7 +138,7 @@ const scanned = [];
 for (const d of dirs) {
   const root = resolve(process.cwd(), d);
   if (!existsSync(root)) {
-    console.error(`❌ verify-jsonld: ${d} not found — run the build first.`);
+    console.error(`❌ verify-jsonld: ${d} not found, run the build first.`);
     process.exit(1);
   }
   if (!statSync(root).isDirectory()) {
@@ -155,14 +155,14 @@ console.log(
 
 if (errors.length) {
   console.error(
-    `\n❌ verify-jsonld: ${errors.length} error(s) — refusing to ship broken structured data:`
+    `\n❌ verify-jsonld: ${errors.length} error(s), refusing to ship broken structured data:`
   );
   for (const e of errors) console.error(`  - ${e}`);
   console.error(
-    '\nFix the generator or post-processor that emitted this, not the page — ' +
+    '\nFix the generator or post-processor that emitted this, not the page, ' +
       'regeneration will re-introduce a hand-patched file.'
   );
   process.exit(1);
 }
 
-console.log('[verify-jsonld] OK — all shipped JSON-LD parses');
+console.log('[verify-jsonld] OK, all shipped JSON-LD parses');

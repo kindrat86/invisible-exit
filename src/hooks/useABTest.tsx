@@ -7,7 +7,7 @@ import {
 import * as React from "react";
 
 /**
- * DOTCOM SECRETS: Chapter 3b — Testing (A/B Split Tests)
+ * DOTCOM SECRETS: Chapter 3b, Testing (A/B Split Tests)
  *
  * Russell Brunson: "The one who tests the most, wins."
  *
@@ -15,7 +15,7 @@ import * as React from "react";
  *   - Assigns a variant on first visit (50/50 by default)
  *   - Persists assignment in localStorage (consistent experience)
  *   - Tracks exposure via PostHog (if available) or analytics
- *   - No external service required — works on static/SPA builds
+ *   - No external service required, works on static/SPA builds
  *
  * Usage:
  *   const variant = useABTest("hero_headline", ["control", "benefit"], [50, 50]);
@@ -77,7 +77,7 @@ export function getVariant(experiment: string, variants: string[], weights?: num
         });
       }
     } catch {
-      // PostHog not loaded — silent
+      // PostHog not loaded, silent
     }
 
     return assigned;

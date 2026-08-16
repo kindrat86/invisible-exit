@@ -88,7 +88,7 @@ function LockedPhasesUpgradeBanner() {
         disabled={loading}
         className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-6 py-2.5 rounded-xl transition-colors disabled:opacity-50 text-sm"
       >
-        {loading ? "Loading..." : "See Founding Toolkit — $17.99/mo"}
+        {loading ? "Loading..." : "See Founding Toolkit, $17.99/mo"}
       </button>
       <p className="text-xs text-[#9CA3AF] mt-2">
         Founding price, locked for life. Cancel anytime.

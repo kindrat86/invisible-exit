@@ -9,7 +9,7 @@ export default function HowToHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="How-To Guides — Step-by-Step for Employed Founders | Invisible Exit"
+        title="How-To Guides, Step-by-Step for Employed Founders | Invisible Exit"
         description="Actionable step-by-step guides for building a micro-SaaS while employed. From validation to launch, with tools, timelines, and pro tips."
         url="https://invisibleexit.com/how-to"
       />

@@ -41,7 +41,7 @@ interface WritePolicy {
 }
 
 const WRITE_POLICY: Record<string, WritePolicy> = {
-  // Anonymous lead capture (funnel pages). Insert/upsert only — the
+  // Anonymous lead capture (funnel pages). Insert/upsert only, the
   // subscribers table can never be read, updated or deleted from here.
   subscribers: {
     actions: {
@@ -67,7 +67,7 @@ const WRITE_POLICY: Record<string, WritePolicy> = {
     aliases: { email: "submitted_email" }, // legacy callers send `email`
     rateLimit: { max: 15, windowMs: 3600000 },
   },
-  // Voting counters — authenticated users only, counter columns only.
+  // Voting counters, authenticated users only, counter columns only.
   roadmap_features: {
     actions: {
       update: { access: "auth", columns: ["upvotes", "downvotes"] },
@@ -95,7 +95,7 @@ const WRITE_POLICY: Record<string, WritePolicy> = {
       insert: { access: "auth", columns: ["title", "description"] },
     },
   },
-  // User-owned tool data — authenticated, always scoped to the caller.
+  // User-owned tool data, authenticated, always scoped to the caller.
   fym_entries: {
     scopeCol: "user_id",
     actions: {
@@ -130,7 +130,7 @@ const WRITE_POLICY: Record<string, WritePolicy> = {
       delete: { access: "auth" },
     },
   },
-  // Referral codes — authenticated; referrer_email is always the caller's.
+  // Referral codes, authenticated; referrer_email is always the caller's.
   referrals: {
     scopeCol: "referrer_email",
     scopeClaim: "email",
@@ -250,7 +250,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           .map((c) => `"${c}"`)
           .join(", ")}) VALUES (${placeholders})`;
         const insResult = await execute(sql, insertParams);
-        // SQLite has no RETURNING — fetch the inserted row by rowid
+        // SQLite has no RETURNING, fetch the inserted row by rowid
         if (insResult.lastInsertRowid != null) {
           rows = await query(`SELECT * FROM "${table}" WHERE rowid = $1`, [
             insResult.lastInsertRowid,
@@ -291,7 +291,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             upResult.lastInsertRowid,
           ]);
         } else if (upResult.rowsAffected === 0 && conflictCol in data) {
-          // DO NOTHING path — fetch the pre-existing row by conflict column
+          // DO NOTHING path, fetch the pre-existing row by conflict column
           rows = await query(
             `SELECT * FROM "${table}" WHERE "${conflictCol}" = $1`,
             [data[conflictCol]]

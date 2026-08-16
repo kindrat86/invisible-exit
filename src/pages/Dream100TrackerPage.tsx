@@ -19,7 +19,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * TRAFFIC SECRETS: Secret #2 — Dream 100 Interactive Tracker
+ * TRAFFIC SECRETS: Secret #2:  Dream 100 Interactive Tracker
  *
  * This is a FUNCTIONAL tool (not just a static display page).
  * Uses localStorage to persist outreach progress across sessions.
@@ -147,7 +147,7 @@ const Dream100TrackerPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Dream 100 Tracker — Interactive Outreach Tool | Invisible Exit"
+        title="Dream 100 Tracker, Interactive Outreach Tool | Invisible Exit"
         description="Track your Dream 100 outreach progress. Manage stages, touch counts, and follow-ups. The Russell Brunson Dream 100 strategy, built as a functional tool."
         url="/dream-100-tracker"
       />

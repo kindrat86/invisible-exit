@@ -16,7 +16,7 @@ export default function ToolCrossReferencePage() {
       title={entry.metaTitle}
       description={entry.metaDescription}
       url={`/tools/${entry.slug}`}
-      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Best Tools", href: "/best" }, { label: `${entry.profession} — ${entry.category}` }]}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Best Tools", href: "/best" }, { label: `${entry.profession}, ${entry.category}` }]}
     >
       <div className="page-fade">
         <span className="content-tag content-tag-blue mb-3">🛠 Tool Stack</span>

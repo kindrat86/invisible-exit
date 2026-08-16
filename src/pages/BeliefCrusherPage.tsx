@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 6 — The False Belief Patterns
+ * EXPERT SECRETS: Chapter 6:  The False Belief Patterns
  *
  * Russell: "Before someone buys, they have 3 false beliefs.
  * If you don't break all 3, they won't buy."
@@ -44,7 +44,7 @@ const BELIEFS: Belief[] = [
     falseBelief: "I need to quit my job to build something real.",
     selfIdentify: "Do you believe you can't start until you leave?",
     breakingStory:
-      "I almost quit. Resignation letter drafted. Title: 'Resignation_Final_v3.docx.' Then I opened my bank statement: my salary was the only thing keeping me solvent while I built. If I quit, I'd need to raise $500K and give up 20% equity. My salary cost me nothing. That night I deleted the letter. I didn't quit. I built WITHIN my constraints — and built sustainable side revenue while staying employed.",
+      "I almost quit. Resignation letter drafted. Title: 'Resignation_Final_v3.docx.' Then I opened my bank statement: my salary was the only thing keeping me solvent while I built. If I quit, I'd need to raise $500K and give up 20% equity. My salary cost me nothing. That night I deleted the letter. I didn't quit. I built WITHIN my constraints, and built sustainable side revenue while staying employed.",
     evidence: [
       "Salary = non-dilutive runway (0% equity cost vs 20% for VC funding)",
       "Corporate skills (P&L, team management, execution) are exactly what solo founders lack",
@@ -62,7 +62,7 @@ const BELIEFS: Belief[] = [
     falseBelief: "I don't have the skills to build a product.",
     selfIdentify: "Do you believe you're not 'technical enough'?",
     breakingStory:
-      "I'm a Managing Director, not a developer. I can't write production code. But I can manage teams, read P&Ls, execute roadmaps, and navigate stakeholders. Those are the skills that matter. In 2025, code is a commodity — AI writes it, no-code assembles it. What's rare is operational excellence. What's rare is someone who can manage a P&L and execute under pressure. That's you. The technical part is the smallest piece. The system handles it.",
+      "I'm a Managing Director, not a developer. I can't write production code. But I can manage teams, read P&Ls, execute roadmaps, and navigate stakeholders. Those are the skills that matter. In 2025, code is a commodity, AI writes it, no-code assembles it. What's rare is operational excellence. What's rare is someone who can manage a P&L and execute under pressure. That's you. The technical part is the smallest piece. The system handles it.",
     evidence: [
       "AI + no-code tools handle 90% of technical implementation",
       "The Idea Pipeline filters specifically for no-code builds",
@@ -80,7 +80,7 @@ const BELIEFS: Belief[] = [
     falseBelief: "If I build something, my employer will find out.",
     selfIdentify: "Do you fear your employer discovering your side business?",
     breakingStory:
-      "Week 3. Team call. A colleague said: 'Hey, has anyone seen this website? It looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection to me. The call moved on. I've been building for 14 months. Zero detection. Not because I'm lucky — because the Triple-Separation Protocol makes detection mathematically impossible. When the system is right, getting caught isn't a risk. It's an impossibility.",
+      "Week 3. Team call. A colleague said: 'Hey, has anyone seen this website? It looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection to me. The call moved on. I've been building for 14 months. Zero detection. Not because I'm lucky, because the Triple-Separation Protocol makes detection mathematically impossible. When the system is right, getting caught isn't a risk. It's an impossibility.",
     evidence: [
       "Wyoming LLC = anonymous ownership, no public name disclosure",
       "Separate Stripe, hosting, domain, email = zero digital footprint overlap",
@@ -188,7 +188,7 @@ const BeliefCrusherPage = () => {
               </span>
             </div>
 
-            {/* If user hasn't answered yet — show the false belief */}
+            {/* If user hasn't answered yet, show the false belief */}
             {beliefAnswers[currentBelief.id] === undefined && (
               <div className="text-center animate-fade-in">
                 <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6 sm:p-8 mb-8">
@@ -218,7 +218,7 @@ const BeliefCrusherPage = () => {
               </div>
             )}
 
-            {/* After answering — show the breaking story */}
+            {/* After answering, show the breaking story */}
             {beliefAnswers[currentBelief.id] !== undefined && (
               <div className="animate-fade-in">
                 {/* Acknowledge */}
@@ -226,7 +226,7 @@ const BeliefCrusherPage = () => {
                   <p className="text-white/50 text-sm mb-2">
                     {beliefAnswers[currentBelief.id]
                       ? "I believed this too. Here's what changed my mind:"
-                      : "Good. But let me show you why this belief exists — and how to eliminate it permanently:"}
+                      : "Good. But let me show you why this belief exists, and how to eliminate it permanently:"}
                   </p>
                 </div>
 
@@ -288,7 +288,7 @@ const BeliefCrusherPage = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-              All 3 Beliefs — <span className="text-gradient-light">Broken.</span>
+              All 3 Beliefs, <span className="text-gradient-light">Broken.</span>
             </h2>
             <p className="text-lg text-white/70 max-w-xl mx-auto mb-8">
               You no longer need motivation. You need a system. When all 3 beliefs

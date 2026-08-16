@@ -429,7 +429,7 @@ const BlogPost = () => {
         </article>
       </section>
 
-      {/* SECRET 5: End-of-article share prompt — click-to-tweet + social share */}
+      {/* SECRET 5: End-of-article share prompt, click-to-tweet + social share */}
       <section className="bg-white section-tight border-t border-border">
         <div className="container-narrow">
           <div className="rounded-xl border border-primary/10 bg-gradient-to-br from-primary/[0.02] to-blue-500/[0.02] p-6 sm:p-8">
@@ -620,7 +620,7 @@ const BlogPost = () => {
         );
       })()}
 
-      {/* Content Upgrade — inline lead magnet */}
+      {/* Content Upgrade, inline lead magnet */}
       <section className="bg-white py-8">
         <div className="container-narrow">
           <ContentUpgrade

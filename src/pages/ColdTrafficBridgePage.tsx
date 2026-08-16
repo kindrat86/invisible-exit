@@ -18,7 +18,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * TRAFFIC SECRETS: Secret #19 — Cold Traffic Bridge
+ * TRAFFIC SECRETS: Secret #19:  Cold Traffic Bridge
  *
  * Russell Brunson: "If someone is NOT aware of your product or even
  * the desire itself, your headline starts with the PROBLEM."
@@ -49,7 +49,7 @@ const PROBLEM_SIGNALS = [
   },
   {
     text: "You've said 'next year will be different' 3+ times",
-    feeling: "Hope稀释 — dilution of hope with each repetition",
+    feeling: "Hope稀释, dilution of hope with each repetition",
   },
   {
     text: "You can't remember the last time you felt excited on a Sunday night",
@@ -74,17 +74,17 @@ const FALSE_BELIEFS = [
   {
     belief: "\"Starting something takes too much time.\"",
     bridge:
-      "It takes 5 focused hours per week. Less than one Netflix binge. The question isn't whether you have time — it's whether you're willing to redirect 5 hours from consuming to building.",
+      "It takes 5 focused hours per week. Less than one Netflix binge. The question isn't whether you have time, it's whether you're willing to redirect 5 hours from consuming to building.",
   },
   {
     belief: "\"I don't have an entrepreneur personality.\"",
     bridge:
-      "Neither did 90% of people who now run profitable side businesses. Entrepreneurship isn't a personality type — it's a skill set. Your corporate skills (project management, stakeholder communication, data analysis) are exactly what solo founders lack.",
+      "Neither did 90% of people who now run profitable side businesses. Entrepreneurship isn't a personality type, it's a skill set. Your corporate skills (project management, stakeholder communication, data analysis) are exactly what solo founders lack.",
   },
   {
     belief: "\"What if my employer finds out?\"",
     bridge:
-      "Thousands of employed professionals run side businesses without their employers knowing. Separate entity. Separate name. Separate bank account. It's not paranoid — it's professional.",
+      "Thousands of employed professionals run side businesses without their employers knowing. Separate entity. Separate name. Separate bank account. It's not paranoid, it's professional.",
   },
   {
     belief: "\"I should be grateful. Other people have it worse.\"",
@@ -111,7 +111,7 @@ const AWARENESS_LADDER = [
   },
   {
     stage: "Product Aware",
-    state: "I've seen the 5 tools — are they right for me?",
+    state: "I've seen the 5 tools, are they right for me?",
     bridgedBy: "The Free Masterclass",
   },
   {
@@ -144,12 +144,12 @@ const ColdTrafficBridgePage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Do You Feel Stuck in Your Career? (You're Not Crazy) | Invisible Exit"
-        description="If you've ever felt trapped by a good job — salary too comfortable to leave, equity that never materializes, Sunday dread you can't explain — this is for you."
+        description="If you've ever felt trapped by a good job, salary too comfortable to leave, equity that never materializes, Sunday dread you can't explain, this is for you."
         url="/feeling-stuck"
       />
       <Navbar />
 
-      {/* Hero — Problem-First (for cold traffic) */}
+      {/* Hero, Problem-First (for cold traffic) */}
       <section className="hero-dark-radial pt-28 pb-16 sm:pt-32 sm:pb-20 section">
         <div className="container-narrow text-center">
           <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-8">
@@ -157,7 +157,7 @@ const ColdTrafficBridgePage = () => {
             Not a sales page. Not a pitch. Just a question.
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Do you feel stuck —
+            Do you feel stuck, 
             <br />
             <span className="text-blue-400">but can't explain why?</span>
           </h1>
@@ -173,7 +173,7 @@ const ColdTrafficBridgePage = () => {
         </div>
       </section>
 
-      {/* Problem Signals — Interactive Checklist */}
+      {/* Problem Signals, Interactive Checklist */}
       <section className="section py-16">
         <div className="container-narrow">
           <div className="text-center mb-12">
@@ -230,14 +230,14 @@ const ColdTrafficBridgePage = () => {
               <p className="text-white/50 text-sm">
                 {checkedSignals.length} checked
                 {checkedSignals.length >= 3 &&
-                  " — keep reading. This page was written for you."}
+                  ", keep reading. This page was written for you."}
               </p>
             </div>
           )}
         </div>
       </section>
 
-      {/* The Bridge — Desire Crystallization */}
+      {/* The Bridge, Desire Crystallization */}
       {showBridge && (
         <section className="section py-16 bg-gradient-to-b from-transparent to-blue-950/20">
           <div className="container-narrow">
@@ -248,7 +248,7 @@ const ColdTrafficBridgePage = () => {
               </h2>
               <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
                 The feeling isn't a sign that something is wrong with you. It's a
-                sign that you're waking up to something. The cage isn't your job —
+                sign that you're waking up to something. The cage isn't your job, 
                 it's the belief that your salary is the only way to earn.
               </p>
             </div>
@@ -283,8 +283,8 @@ const ColdTrafficBridgePage = () => {
                 It's one income stream.
               </p>
               <p className="text-white/40 text-sm mt-4 leading-relaxed">
-                The moment you build a second income stream — even $9/month from a
-                stranger — something shifts. You stop feeling dependent. You start
+                The moment you build a second income stream, even $9/month from a
+                stranger, something shifts. You stop feeling dependent. You start
                 thinking like an owner. The cage doesn't disappear, but you see
                 the door.
               </p>
@@ -293,7 +293,7 @@ const ColdTrafficBridgePage = () => {
         </section>
       )}
 
-      {/* Awareness Ladder — Where are you? */}
+      {/* Awareness Ladder, Where are you? */}
       <section className="section py-16">
         <div className="container-narrow">
           <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">
@@ -321,7 +321,7 @@ const ColdTrafficBridgePage = () => {
         </div>
       </section>
 
-      {/* CTA — Warm, not aggressive */}
+      {/* CTA, Warm, not aggressive */}
       <section className="section py-16 bg-gradient-to-b from-blue-950/20 to-transparent">
         <div className="container-narrow text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
@@ -329,7 +329,7 @@ const ColdTrafficBridgePage = () => {
           </h2>
           <p className="text-white/60 max-w-xl mx-auto mb-8">
             Don't start a business. Don't quit your job. Don't even sign up for
-            anything yet. Just calculate one number — your Freedom Number. It
+            anything yet. Just calculate one number, your Freedom Number. It
             takes 2 minutes and it will tell you exactly how far you are from the
             door.
           </p>

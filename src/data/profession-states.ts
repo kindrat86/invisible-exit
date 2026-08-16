@@ -39,7 +39,7 @@ export interface ProfessionStatePage {
 // ---------------------------------------------------------------------------
 // Curated subset configuration
 /**
- * All 25 professions — full matrix expansion (Greg Isenberg pSEO Round 4).
+ * All 25 professions, full matrix expansion (Greg Isenberg pSEO Round 4).
  * Previously capped at 10 professions × 5 states = 50 pages.
  * Now: 25 professions × 15 states = 375 pages (7.5x increase).
  */
@@ -167,7 +167,7 @@ function buildCanBuildFaq(profession: IndustryIdea, state: StateGuide): string {
   let ncPart: string;
   switch (state.nonCompeteEnforceable) {
     case "not_enforced":
-      ncPart = `Yes — and ${state.state} is one of the best states to do it. Non-competes are essentially void, so your employer cannot use a restrictive covenant to block your side business.`;
+      ncPart = `Yes, and ${state.state} is one of the best states to do it. Non-competes are essentially void, so your employer cannot use a restrictive covenant to block your side business.`;
       break;
     case "limited":
       ncPart = `Yes. ${state.state} limits non-compete enforceability (${state.nonCompeteNotes.toLowerCase()}), which provides meaningful protection for side-business builders.`;
@@ -249,7 +249,7 @@ function buildPage(profession: IndustryIdea, state: StateGuide): ProfessionState
  * Without arguments, returns the curated subset of 50 pages
  * (top 10 professions × 5 biggest states).
  *
- * Pass explicit slug arrays to generate any combination — including the
+ * Pass explicit slug arrays to generate any combination, including the
  * full 25 × 51 = 1,275 matrix if desired:
  *
  *   generateProfessionStatePages(

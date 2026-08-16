@@ -1,5 +1,5 @@
 /**
- * Translation generation script — uses Google Translate's free endpoint.
+ * Translation generation script, uses Google Translate's free endpoint.
  * Translates each string individually for reliability across all scripts.
  *
  * Usage:
@@ -141,15 +141,15 @@ await runLangBatch(languagesToProcess, 3, async (lang) => {
     const translatedCount = enKeys.filter((k) => result[k] !== enStrings[k]).length;
 
     if (translatedCount < enKeys.length * 0.3) {
-      console.error(`  ⚠ ${lang.code} (${lang.nativeName}) — only ${translatedCount}/${enKeys.length} translated`);
+      console.error(`  ⚠ ${lang.code} (${lang.nativeName}), only ${translatedCount}/${enKeys.length} translated`);
       // Still write what we have
     }
 
     writeLocale(lang.code, lang.nativeName, result);
-    console.log(`  ✓ ${lang.code} (${lang.nativeName}) — ${translatedCount}/${enKeys.length} translated`);
+    console.log(`  ✓ ${lang.code} (${lang.nativeName}), ${translatedCount}/${enKeys.length} translated`);
     success++;
   } catch (err: any) {
-    console.error(`  ✗ ${lang.code} (${lang.nativeName}) — ${err.message}`);
+    console.error(`  ✗ ${lang.code} (${lang.nativeName}), ${err.message}`);
     failed++;
     failedLangs.push(lang.code);
   }

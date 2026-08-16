@@ -82,7 +82,7 @@ function getPolicies(slug: string, regionPremium: number) {
       name: "General Liability Insurance",
       description: "Covers third-party bodily injury, property damage, and advertising injury claims against your business.",
       typicalCost: `$${regionPremium - 10}–$${regionPremium + 15}/mo`,
-      bestFor: "Every business — required by most commercial leases and client contracts",
+      bestFor: "Every business, required by most commercial leases and client contracts",
     },
     {
       name: "Professional Liability (E&O)",
@@ -123,13 +123,13 @@ function getRules(s: { name: string; abbr: string }) {
     return `New York requires workers' compensation for all employers with even one employee. Failure to carry WC is a felony. General liability is not state-mandated for LLCs, but most NYC commercial leases require $1M–$2M in coverage. NY has a state-run insurance fund for high-risk businesses.`;
   }
   if (s.abbr === "TX") {
-    return `Texas is the only state where workers' compensation is entirely voluntary for private employers. However, going without WC means you lose the exclusive-remedy defense — employees can sue you for negligence. General liability is not required by the state but is strongly recommended for client contracts.`;
+    return `Texas is the only state where workers' compensation is entirely voluntary for private employers. However, going without WC means you lose the exclusive-remedy defense, employees can sue you for negligence. General liability is not required by the state but is strongly recommended for client contracts.`;
   }
   if (s.abbr === "WA") {
-    return `Washington has a state-run workers' compensation system (L&I) — private WC insurance is not available. Almost all employers must participate, including sole proprietors who can opt out. General liability rates in WA are average. The state has specific requirements for gig economy and independent contractor insurance.`;
+    return `Washington has a state-run workers' compensation system (L&I), private WC insurance is not available. Almost all employers must participate, including sole proprietors who can opt out. General liability rates in WA are average. The state has specific requirements for gig economy and independent contractor insurance.`;
   }
   if (s.abbr === "FL") {
-    return `Florida requires workers' compensation for construction businesses with 1+ employees and non-construction with 4+ employees. General liability is not state-mandated for LLCs, but Florida's property insurance market is volatile — expect higher premiums for any business with physical assets.`;
+    return `Florida requires workers' compensation for construction businesses with 1+ employees and non-construction with 4+ employees. General liability is not state-mandated for LLCs, but Florida's property insurance market is volatile, expect higher premiums for any business with physical assets.`;
   }
   const wcNote = wcStrictStates.has(s.abbr)
     ? `${s.name} requires workers' compensation insurance from your very first employee (including part-time).`
@@ -173,9 +173,9 @@ const insuranceGuides: InsuranceGuide[] = stateKeys.map((slug) => {
     stateSpecificRules: getRules(s),
     costEstimates: getCostEstimates(slug, multiplier),
     faqs: [
-      makeFaq(`Do I need general liability insurance for my LLC in ${s.name}?`, `No — ${s.name} does not require general liability insurance to form or operate an LLC. However, almost every commercial lease, business bank account application, and client contract will require it. The $30-$50/month cost is worth it for the peace of mind.`),
-      makeFaq(`When do I need workers' compensation insurance in ${s.name}?`, isWcStrict ? `Immediately if you have any employees at all. ${s.name} requires workers' comp from your very first hire, including part-time employees. Sole proprietors with no employees are typically exempt.` : isWcThreePlus ? `In ${s.name}, you need workers' compensation insurance once you have 3 or more employees (or 1+ in construction). If you're a solo founder with no employees, you're not required to carry it yet.` : `Check ${s.name}'s specific threshold — most states require it at 3-5 employees. As a solo founder, you typically don't need it until you hire staff.`),
-      makeFaq(`Can I use a PEO to get cheaper insurance in ${s.name}?`, `Yes. Professional Employer Organizations (PEOs) like Gusto, BambooHR, or TriNet pool your employees with other small businesses, often getting better rates on workers' comp and health insurance. For solo SaaS founders in ${s.name}, this is rarely the cheapest option — stick with an independent insurance broker.`),
+      makeFaq(`Do I need general liability insurance for my LLC in ${s.name}?`, `No, ${s.name} does not require general liability insurance to form or operate an LLC. However, almost every commercial lease, business bank account application, and client contract will require it. The $30-$50/month cost is worth it for the peace of mind.`),
+      makeFaq(`When do I need workers' compensation insurance in ${s.name}?`, isWcStrict ? `Immediately if you have any employees at all. ${s.name} requires workers' comp from your very first hire, including part-time employees. Sole proprietors with no employees are typically exempt.` : isWcThreePlus ? `In ${s.name}, you need workers' compensation insurance once you have 3 or more employees (or 1+ in construction). If you're a solo founder with no employees, you're not required to carry it yet.` : `Check ${s.name}'s specific threshold, most states require it at 3-5 employees. As a solo founder, you typically don't need it until you hire staff.`),
+      makeFaq(`Can I use a PEO to get cheaper insurance in ${s.name}?`, `Yes. Professional Employer Organizations (PEOs) like Gusto, BambooHR, or TriNet pool your employees with other small businesses, often getting better rates on workers' comp and health insurance. For solo SaaS founders in ${s.name}, this is rarely the cheapest option, stick with an independent insurance broker.`),
       makeFaq(`What's the minimum insurance I need as a solo SaaS founder in ${s.name}?`, `General liability ($1M per occurrence) and professional liability/errors & omissions ($1M per claim). If you store any customer data, add cyber liability. Total cost in ${s.name}: roughly $${Math.round(60 * multiplier)}-$${Math.round(120 * multiplier)}/month for all three.`),
     ],
   };

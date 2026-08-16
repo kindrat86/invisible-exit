@@ -1,5 +1,5 @@
 /**
- * /api/_lib/referral.ts — shared Referral Engine logic.
+ * /api/_lib/referral.ts, shared Referral Engine logic.
  *
  * Flow:
  *  1. Visitor lands with ?ref=CODE → frontend stores it → sent with checkout.
@@ -12,7 +12,7 @@
  *         credit equal to one billing cycle), free-for-life coupon at 3+.
  *       - emails the referrer.
  *
- * Coupons are created lazily and idempotently by fixed ID — no manual
+ * Coupons are created lazily and idempotently by fixed ID, no manual
  * dashboard step required.
  */
 import type Stripe from "stripe";
@@ -70,7 +70,7 @@ export async function ensureReferredFirstMonthCoupon(stripe: Stripe): Promise<bo
 
 /**
  * Called from the Stripe webhook on checkout.session.completed.
- * Never throws — referral failures must not fail the webhook.
+ * Never throws, referral failures must not fail the webhook.
  */
 export async function recordReferralConversion(
   stripe: Stripe,
@@ -102,7 +102,7 @@ export async function recordReferralConversion(
         ],
       );
     } catch {
-      // Already recorded (duplicate referred_email) — do not double-reward.
+      // Already recorded (duplicate referred_email), do not double-reward.
       return;
     }
 
@@ -141,7 +141,7 @@ export async function recordReferralConversion(
 
         if (sub) {
           if (conversions >= FREE_FOR_LIFE_THRESHOLD) {
-            // Free for life — 100% off forever on their subscription.
+            // Free for life, 100% off forever on their subscription.
             const ok = await ensureCoupon(stripe, REFERRAL_COUPON_FREE_LIFE, {
               percent_off: 100,
               duration: "forever",
@@ -158,7 +158,7 @@ export async function recordReferralConversion(
               }
             }
           } else {
-            // 1 free month — credit one billing cycle to the customer balance.
+            // 1 free month, credit one billing cycle to the customer balance.
             const item = sub.items.data[0];
             const amount = item?.price?.unit_amount ?? 0;
             const currency = item?.price?.currency ?? "usd";

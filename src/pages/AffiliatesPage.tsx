@@ -8,12 +8,12 @@ const BENEFITS = [
   {
     icon: DollarSign,
     title: "30% Recurring Commission",
-    description: "Earn 30% of every subscription you refer — for the lifetime of the customer. $9 plan earns you $2.70/month. Founding plan ($17.99) earns you $5.40/month per referral.",
+    description: "Earn 30% of every subscription you refer, for the lifetime of the customer. $9 plan earns you $2.70/month. Founding plan ($17.99) earns you $5.40/month per referral.",
   },
   {
     icon: TrendingUp,
     title: "Attribution, agreed by email",
-    description: "There is no tracking cookie yet — the program is run by hand. We agree a referral code with you by email, and anyone who mentions it or whom you introduce directly is attributed to you for the life of their account. We would rather say that than describe tracking we have not built.",
+    description: "There is no tracking cookie yet, the program is run by hand. We agree a referral code with you by email, and anyone who mentions it or whom you introduce directly is attributed to you for the life of their account. We would rather say that than describe tracking we have not built.",
   },
   {
     icon: Users,
@@ -33,7 +33,7 @@ const AffiliatesPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Affiliate Program — 30% Recurring | Invisible Exit"
+        title="Affiliate Program, 30% Recurring | Invisible Exit"
         description="Earn 30% recurring commission referring corporate managers to Invisible Exit. Referral code agreed by email, paid manually."
         url="/affiliates"
       />

@@ -20,8 +20,8 @@ const FUNNEL_STAGES = [
     stage: "Traffic",
     icon: Users,
     target: "1,000 visitors/month",
-    current: "Unknown — no ad campaigns, no social content",
-    conversion: "—",
+    current: "Unknown, no ad campaigns, no social content",
+    conversion: ", ",
     status: "blocked",
     notes: "Start $10/day Meta retargeting + 1 social post/day from content calendar",
     color: "text-red-400",
@@ -86,7 +86,7 @@ const FUNNEL_STAGES = [
     stage: "Purchases ($9)",
     icon: Check,
     target: "50% checkout completion (2.8/month)",
-    current: "0 — no traffic yet",
+    current: "0, no traffic yet",
     conversion: "50%",
     status: "blocked",
     notes: "Funnel is ready. Waiting for traffic input.",
@@ -203,7 +203,7 @@ const FunnelMetricsPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Funnel Metrics — Internal Analytics Dashboard | Invisible Exit"
+        title="Funnel Metrics, Internal Analytics Dashboard | Invisible Exit"
         description="The complete funnel visualization: traffic to blog to squeeze to email to checkout to OTO to Pro to Intensive. Target conversion rates and tracking infrastructure."
         url="/funnel-metrics"
         noindex
@@ -257,7 +257,7 @@ const FunnelMetricsPage = () => {
                         }`}>
                           {stage.status === "ready" ? "READY" : "BLOCKED"}
                         </span>
-                        {stage.conversion !== "—" && (
+                        {stage.conversion !== ", " && (
                           <span className="text-xs font-bold text-muted-foreground">
                             {stage.conversion} CVR
                           </span>
@@ -427,10 +427,10 @@ const FunnelMetricsPage = () => {
             <div className="mt-6 bg-primary/5 border border-primary/15 rounded-xl p-4 text-center">
               <p className="text-sm text-muted-foreground">
                 At this rate, you'd hit <strong className="text-foreground">$4,000/month MRR</strong> in{" "}
-                <strong className="text-primary" id="calc-timeline">— months</strong>.
+                <strong className="text-primary" id="calc-timeline">, months</strong>.
               </p>
               <p className="text-xs text-muted-foreground mt-1" id="calc-cac">
-                Customer acquisition cost: <strong>$—</strong> (at $0 ad spend)
+                Customer acquisition cost: <strong>$, </strong> (at $0 ad spend)
               </p>
             </div>
           </div>

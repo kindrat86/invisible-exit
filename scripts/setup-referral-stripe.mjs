@@ -1,5 +1,5 @@
 // Setup: inspect webhook endpoints + create referral reward coupons.
-// Prints NO secrets — only ids/urls/config.
+// Prints NO secrets, only ids/urls/config.
 import { readFileSync } from "fs";
 import Stripe from "stripe";
 
@@ -17,7 +17,7 @@ for (const ep of eps.data) {
   console.log("WEBHOOK:", ep.url, "|", ep.status, "|", ep.enabled_events.slice(0, 6).join(","));
 }
 
-// 2. Coupons — idempotent create by fixed id
+// 2. Coupons, idempotent create by fixed id
 async function ensureCoupon(id, params) {
   try {
     const c = await stripe.coupons.retrieve(id);
@@ -34,13 +34,13 @@ await ensureCoupon("REFERRAL_FREE_MONTH", {
   percent_off: 100,
   duration: "repeating",
   duration_in_months: 1,
-  name: "Referral reward — 1 month free",
+  name: "Referral reward, 1 month free",
 });
 
 await ensureCoupon("REFERRAL_FREE_LIFE", {
   percent_off: 100,
   duration: "forever",
-  name: "Referral reward — free for life (3 referrals)",
+  name: "Referral reward, free for life (3 referrals)",
 });
 
 console.log("DONE");

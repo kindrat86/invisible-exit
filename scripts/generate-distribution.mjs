@@ -1,7 +1,7 @@
 /**
  * Content Distribution Export
  *
- * TRAFFIC SECRETS: Fill Your Funnel — Multi-Platform Content Distribution
+ * TRAFFIC SECRETS: Fill Your Funnel, Multi-Platform Content Distribution
  *
  * Russell Brunson: "You don't have a traffic problem. You have a distribution
  * problem. Take the same content and publish it everywhere."
@@ -10,12 +10,12 @@
  * email sequences) and exports it as ready-to-paste files organized by platform.
  *
  * Output: dist/distribution/
- *   ├── twitter/      — threads, one per file
- *   ├── reddit/       — posts, one per file
- *   ├── linkedin/     — posts, one per file
- *   ├── youtube/      — video scripts, one per file
- *   ├── hooks/        — categorized hook swipe file
- *   └── README.md     — posting schedule + instructions
+ *   ├── twitter/, threads, one per file
+ *   ├── reddit/, posts, one per file
+ *   ├── linkedin/, posts, one per file
+ *   ├── youtube/, video scripts, one per file
+ *   ├── hooks/, categorized hook swipe file
+ *   └── README.md, posting schedule + instructions
  *
  * Usage: node scripts/generate-distribution.mjs
  */
@@ -38,7 +38,7 @@ for (const dir of ["twitter", "reddit", "linkedin", "youtube", "hooks"]) {
 const CALENDAR = [
   {
     day: 1,
-    source: "Seinfeld 1 — Close Call",
+    source: "Seinfeld 1, Close Call",
     hook: "My colleague found a website that looked like my side project. On a team call.",
     twitter: `Week 3 of my side business.
 
@@ -99,9 +99,9 @@ SCRIPT:
   },
   {
     day: 2,
-    source: "Seinfeld 2 — Identity Shift",
+    source: "Seinfeld 2, Identity Shift",
     hook: "The $0.97 that changed how I see my $120K salary.",
-    twitter: `When I got my first Stripe notification — $0.97 from a stranger — I expected to feel excited.
+    twitter: `When I got my first Stripe notification, $0.97 from a stranger, I expected to feel excited.
 
 What I didn't expect:
 
@@ -119,7 +119,7 @@ That's the real value of the first dollar online.
 Not the money. The identity shift.`,
     reddit: `**The first $0.97 online changed how I see my $120K salary**
 
-When I got my first Stripe notification — $0.97 from a stranger who bought my product — I expected excitement.
+When I got my first Stripe notification, $0.97 from a stranger who bought my product, I expected excitement.
 
 What I didn't expect was how it would change my relationship with my salary.
 
@@ -130,7 +130,7 @@ Anyone else experience this identity shift with their first dollar online?`,
 
 It didn't change my bank account. It changed my identity.
 
-For 8 years, I defined myself by my salary. $120K = what I'm worth. When I saw that Stripe notification — $0.97 from a plumber in Ohio — something shifted.
+For 8 years, I defined myself by my salary. $120K = what I'm worth. When I saw that Stripe notification, $0.97 from a plumber in Ohio, something shifted.
 
 My salary stopped being my identity. It became one income stream.
 
@@ -153,7 +153,7 @@ SCRIPT:
   },
   {
     day: 3,
-    source: "Seinfeld 3 — Wife's Reaction",
+    source: "Seinfeld 3, Wife's Reaction",
     hook: "I told my wife I wanted to build something on the side. She said: 'Show me the numbers.'",
     twitter: `I told my wife I wanted to build a side business.
 
@@ -163,7 +163,7 @@ She's a data analyst. She thinks in numbers. I think in narratives.
 
 So I built a calculator.
 
-When I showed her: '$3,200 MRR by month 14' — the conversation changed.
+When I showed her: '$3,200 MRR by month 14', the conversation changed.
 
 From: 'Are you sure?'
 To: 'How do we get there?'
@@ -177,7 +177,7 @@ I told my wife I wanted to build something on the side. She said:
 
 She's a data analyst. She thinks in numbers. I think in narratives. We argue productively.
 
-So I built a calculator. When I showed her a clear number — '$3,200 MRR by month 14' — the conversation changed from 'are you sure?' to 'how do we get there?'
+So I built a calculator. When I showed her a clear number, '$3,200 MRR by month 14', the conversation changed from 'are you sure?' to 'how do we get there?'
 
 That's why the Freedom Number matters. Spreadsheets turn dreams into plans.
 
@@ -188,7 +188,7 @@ How did your partner react to your side business?`,
 
 She's a data analyst. She thinks in spreadsheets. I think in stories.
 
-So I built a calculator. When I showed her: '$3,200/month MRR by month 14' — the conversation shifted.
+So I built a calculator. When I showed her: '$3,200/month MRR by month 14', the conversation shifted.
 
 From 'are you sure?' to 'how do we get there?'
 
@@ -211,7 +211,7 @@ SCRIPT:
   },
   {
     day: 4,
-    source: "Seinfeld 4 — Month 4 Wall",
+    source: "Seinfeld 4, Month 4 Wall",
     hook: "Month 4. Zero customers. I almost deleted everything.",
     twitter: `Month 4 of my side business.
 
@@ -257,7 +257,7 @@ I closed the cancel tab. Pivoted. Two weeks later: first customer. $9/month.
 The system doesn't care about your feelings. It just needs consistency.
 
 If you're in Month 4 right now, keep going.`,
-    youtube: `TITLE: Month 4, Zero Customers — The Night I Almost Deleted Everything
+    youtube: `TITLE: Month 4, Zero Customers, The Night I Almost Deleted Everything
 
 HOOK: The voice said 'you're not a founder.' Here's how I proved it wrong.
 
@@ -273,7 +273,7 @@ SCRIPT:
   },
   {
     day: 5,
-    source: "Seinfeld 5 — Deleted Twitter",
+    source: "Seinfeld 5, Deleted Twitter",
     hook: "Why I deleted my personal Twitter (2,000 followers) and went faceless.",
     twitter: `Last month I deleted my personal Twitter.
 
@@ -329,7 +329,7 @@ SCRIPT:
   },
   {
     day: 6,
-    source: "Seinfeld 6 — Boss's Bonus",
+    source: "Seinfeld 6, Boss's Bonus",
     hook: "My boss got a €15,000 bonus. He was thrilled. My side business made $4,100/month.",
     twitter: `My boss got his annual bonus last week.
 
@@ -387,7 +387,7 @@ SCRIPT:
   },
   {
     day: 7,
-    source: "Seinfeld 7 — Turned Down Promotion",
+    source: "Seinfeld 7, Turned Down Promotion",
     hook: "I turned down a promotion last week. Here's the math behind why.",
     twitter: `My company offered me a promotion.
 
@@ -431,7 +431,7 @@ Not because I'm brave. Because the math didn't work.
 
 The raise would have been €18K/year. But the promotion required 10+ extra hours/week, more visibility (which threatens my stealth setup), and more stress.
 
-My side business grew $600 MRR last month — $7,200/year, compounding.
+My side business grew $600 MRR last month, $7,200/year, compounding.
 
 The freedom number isn't about quitting your job. It's about having the option to say no.
 
@@ -455,7 +455,7 @@ SCRIPT:
 ];
 
 // ═══════════════════════════════════════════════════
-// HOOKS LIBRARY (from HooksLibraryPage.tsx — curated subset)
+// HOOKS LIBRARY (from HooksLibraryPage.tsx, curated subset)
 // ═══════════════════════════════════════════════════
 const HOOKS = [
   // WHO Gap
@@ -538,7 +538,7 @@ writeFileSync(
 // ── Master README with posting schedule ──
 writeFileSync(
   join(OUT, "README.md"),
-  `# Invisible Exit — Content Distribution Hub
+  `# Invisible Exit, Content Distribution Hub
 
 > TRAFFIC SECRETS: "You don't have a traffic problem. You have a distribution problem."
 
@@ -547,23 +547,23 @@ writeFileSync(
 This folder contains ready-to-post content for every platform.
 Each file is formatted and ready to copy-paste.
 
-### 📁 twitter/ — Twitter/X Threads (7 days)
+### 📁 twitter/, Twitter/X Threads (7 days)
 One thread per day. Each thread is a self-contained story with a CTA.
 **Best posting time:** Mon-Fri 9-10am or 1-2pm EST
 
-### 📁 reddit/ — Reddit Posts (7 days)
+### 📁 reddit/, Reddit Posts (7 days)
 Value-first posts designed for r/Entrepreneur, r/FIRE, r/cscareerquestions, r/SideProject.
 **Rules:** No links in the post body. Link goes in comments. Be a person, not a marketer.
 
-### 📁 linkedin/ — LinkedIn Posts (7 days)
+### 📁 linkedin/, LinkedIn Posts (7 days)
 Professional tone. Identity-focused. Designed for the corporate manager audience.
 **Best posting time:** Tue-Thu 7-9am or 12-1pm
 
-### 📁 youtube/ — Video Scripts (7 days)
+### 📁 youtube/, Video Scripts (7 days)
 Short-form video scripts (YouTube Shorts, TikTok, Reels). 30-60 seconds each.
 Hook → Story → CTA. The hook is the first 3 seconds.
 
-### 📁 hooks/ — The Hook Swipe File
+### 📁 hooks/, The Hook Swipe File
 50+ hooks organized by the 6 Story Gaps (Who, What, Where, When, Why, How).
 Plus Reddit-specific hooks and paid ad hooks.
 

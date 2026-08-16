@@ -3,7 +3,7 @@
  * Targets: "how to sell a micro SaaS", "exit strategy for side business",
  * "SaaS acquisition", "how to value a SaaS business"
  *
- * Greg Isenberg pSEO 2026 — bottom-of-funnel commercial intent.
+ * Greg Isenberg pSEO 2026, bottom-of-funnel commercial intent.
  */
 
 export interface ExitStrategyEntry {
@@ -31,7 +31,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     metaTitle: "How to Sell a Micro SaaS (Complete Exit Guide) | Invisible Exit",
     metaDescription: "The complete guide to selling a micro-SaaS: valuation multiples, buyer types, preparation checklist, and common mistakes. Real numbers based on 50+ micro-SaaS acquisitions.",
     h1: "How to Sell a Micro SaaS: The Complete Exit Guide",
-    intro: "You've built a micro-SaaS generating $1K-$20K/month. Now you want to exit — or at least understand what your business is worth. This is the honest guide to selling a small SaaS, based on actual acquisition data from 50+ micro-SaaS deals under $5M.",
+    intro: "You've built a micro-SaaS generating $1K-$20K/month. Now you want to exit, or at least understand what your business is worth. This is the honest guide to selling a small SaaS, based on actual acquisition data from 50+ micro-SaaS deals under $5M.",
     stageLabel: "Growth / Exit-Ready",
     timeframe: "3-9 months from decision to close",
     realisticValuation: "Most micro-SaaS businesses sell for 24-48x monthly recurring revenue (MRR). A $5K MRR micro-SaaS typically exits for $120K-$240K. Top performers with 30%+ net profit margin can command 48-60x. Below $1K MRR: expect 12-24x or a simple asset sale at 6-12x.",
@@ -50,7 +50,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
       {
         type: "Direct Sale (Acquisition)",
         pros: [
-          "Lump sum cash — clean break, no ongoing obligation",
+          "Lump sum cash, clean break, no ongoing obligation",
           "Earn-outs can add 20-50% to the price if you stay 6-12 months",
           "No legal complexity if under $1M (simple asset purchase agreement)",
         ],
@@ -65,11 +65,11 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         type: "Revenue Share / Partnership",
         pros: [
           "Keep 30-50% ongoing revenue share while scaling via partner resources",
-          "No upfront sale — you keep ownership while adding a growth partner",
+          "No upfront sale, you keep ownership while adding a growth partner",
           "Lower tax burden (distributions vs capital gains)",
         ],
         cons: [
-          "Hard to find legitimate partners — many are vulture buyers",
+          "Hard to find legitimate partners, many are vulture buyers",
           "Loss of control over product direction and pricing",
           "Revenue share disputes are common without clear contract terms",
         ],
@@ -80,7 +80,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         pros: [
           "Salary at market rate + acquisition price for the business",
           "Health insurance, benefits, and structure after exit",
-          "De-risked transition — you keep working on similar products",
+          "De-risked transition, you keep working on similar products",
         ],
         cons: [
           "The business is valued lower (mainly paying for you, not the product)",
@@ -94,7 +94,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         pros: [
           "Keep a royalty or referral fee for 2-3 years",
           "Business continues serving customers you care about",
-          "Simplest legal structure — no acquisition agreement needed",
+          "Simplest legal structure, no acquisition agreement needed",
         ],
         cons: [
           "You get paid over time, not upfront",
@@ -128,7 +128,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
       {
         who: "Employees / Community Members (rare, 2-5%)",
         whatTheyWant: "Your product, your trust, your future support. They already know your space and want ownership.",
-        typicalOffer: "Lowball — 12-24x MRR, often with heavy payment plan. Best for founders who value continuity over maximum cash.",
+        typicalOffer: "Lowball, 12-24x MRR, often with heavy payment plan. Best for founders who value continuity over maximum cash.",
       },
     ],
     keyNumbers: [
@@ -141,20 +141,20 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     ],
     preparationSteps: [
       { step: "Audit your codebase", detail: "Remove hardcoded secrets, add README, document architecture. A buyer will inspect your repo within 48 hours of showing interest." },
-      { step: "Clean your financials", detail: "Export 12+ months from Stripe/Paddle. Separate personal from business expenses. If you've been mixing accounts, fix that first — it's the #1 deal killer." },
+      { step: "Clean your financials", detail: "Export 12+ months from Stripe/Paddle. Separate personal from business expenses. If you've been mixing accounts, fix that first, it's the #1 deal killer." },
       { step: "Reduce churn proactively", detail: "Identify your top 10 at-risk customers and call them. A 2% churn reduction can add $10K-$30K to your sale price on a $5K MRR business." },
       { step: "Document everything", detail: "Runbook (deployment, backup, monitoring, alerting), admin guide (how to support customers), and a 30-minute Loom walkthrough of your entire stack. Buyers love this." },
       { step: "Draft a one-pager", detail: "One-page PDF: MRR, growth chart, customer segments, tech stack, team (even if just you), key risks, and why you're selling. This is your deal memo." },
       { step: "Build a buyer pipeline", detail: "List 10-20 potential buyers. Post on Acquire.com, MicroAcquire, r/microsaasbids. DM indie hackers in your space. A competitive process adds 15-30% to the price." },
     ],
-    whatHappensPostExit: "Most micro-SaaS founders regret selling for 2-3 months (the 'seller's remorse' phase), then feel relief by month 6. The cash in the bank is real. The freedom is real. But you'll miss: (1) the product — you built it; (2) the customers — you have relationships; (3) the daily challenge. Plan your next project before you close the deal. The most successful sellers have their next idea validated and are building within 30 days of the exit.",
+    whatHappensPostExit: "Most micro-SaaS founders regret selling for 2-3 months (the 'seller's remorse' phase), then feel relief by month 6. The cash in the bank is real. The freedom is real. But you'll miss: (1) the product, you built it; (2) the customers, you have relationships; (3) the daily challenge. Plan your next project before you close the deal. The most successful sellers have their next idea validated and are building within 30 days of the exit.",
     faqs: [
-      { question: "How much is my micro-SaaS worth?", answer: "For a micro-SaaS under $20K MRR: 24-48x MRR is the standard range. At $5K MRR, expect $120K-$240K. The multiple depends on: growth rate (+ multiplier), churn (+/-), profit margin (+), code quality (+), and niche (+ if competitive). The #1 factor is profitability — a $5K MRR business with 80% margin is worth more than $10K MRR with 20% margin." },
+      { question: "How much is my micro-SaaS worth?", answer: "For a micro-SaaS under $20K MRR: 24-48x MRR is the standard range. At $5K MRR, expect $120K-$240K. The multiple depends on: growth rate (+ multiplier), churn (+/-), profit margin (+), code quality (+), and niche (+ if competitive). The #1 factor is profitability, a $5K MRR business with 80% margin is worth more than $10K MRR with 20% margin." },
       { question: "Should I sell or keep collecting passive income?", answer: "If your business runs itself (passive, under 5 hours/week) and generates enough for your freedom number, keep it. If it demands 20+ hours/week and you have better ideas, sell it. Many micro-SaaS sellers reinvest into their next product and build faster with the capital." },
       { question: "How long does a micro-SaaS sale take?", answer: "Under $200K: 2-4 weeks. $200K-$1M: 2-4 months. Over $1M: 4-8 months with legal due diligence. The fastest path: clean financials, clean code, clean ownership, and a motivated buyer who already knows your niche." },
-      { question: "Do I need a lawyer?", answer: "For deals under $100K, a simple asset purchase agreement (available on LawDepot or Stripe Atlas) is sufficient. For deals over $100K, yes — spend $2K-$5K on a startup lawyer. It's worth it. The legal fee is 2-4% of your sale price and prevents post-sale disputes." },
+      { question: "Do I need a lawyer?", answer: "For deals under $100K, a simple asset purchase agreement (available on LawDepot or Stripe Atlas) is sufficient. For deals over $100K, yes, spend $2K-$5K on a startup lawyer. It's worth it. The legal fee is 2-4% of your sale price and prevents post-sale disputes." },
       { question: "Should I use a marketplace or sell direct?", answer: "Marketplaces (Acquire.com, MicroAcquire, Flippa) give you exposure to hundreds of buyers but take 5-15% commission. Direct sales to competitors or indie hackers yield higher prices (no commission) but take longer. Best strategy: list on 2 marketplaces AND reach out to 10 potential buyers directly." },
-      { question: "What happens to my customers after I sell?", answer: "It depends on your sale agreement. Most buyers want you to send a transition email. Some will keep you as a support consultant for 3-6 months. Choose a buyer who shares your values — bad buyers can destroy customer relationships and hurt your reputation." },
+      { question: "What happens to my customers after I sell?", answer: "It depends on your sale agreement. Most buyers want you to send a transition email. Some will keep you as a support consultant for 3-6 months. Choose a buyer who shares your values, bad buyers can destroy customer relationships and hurt your reputation." },
     ],
   },
   {
@@ -166,14 +166,14 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     stageLabel: "Valuation Guide",
     timeframe: "30-minute read",
     realisticValuation: "The standard formula for micro-SaaS valuation is: (ARR × Multiple) where Multiple ranges from 2x to 5x depending on growth, churn, profit margin, and niche defensibility. For MRR under $20K/month, the market standard is 24-48x MRR. Above $20K MRR, the multiple expands to 36-60x because buyers see lower risk.",
-    whyNow: "Micro-SaaS acquisitions hit an all-time high in 2025. MicroAcquire reported 40% more deals year-over-year. Prices are rising 15-25% annually as more capital enters the micro-acquisition space. If you're thinking about selling, the trend is your friend — prices are likely higher in 6 months, but competition from new sellers is also increasing.",
+    whyNow: "Micro-SaaS acquisitions hit an all-time high in 2025. MicroAcquire reported 40% more deals year-over-year. Prices are rising 15-25% annually as more capital enters the micro-acquisition space. If you're thinking about selling, the trend is your friend, prices are likely higher in 6 months, but competition from new sellers is also increasing.",
     readinessChecklist: [
       "Know your MRR trajectory for the last 12 months minimum",
       "Calculate net profit margin (revenue minus all costs including your time)",
       "Track churn monthly and understand why customers leave",
       "Document your growth channels (organic, paid, referrals)",
       "Know your niche's average acquisition multiple (search MicroAcquire for comparable sales)",
-      "Run a 'buyer readiness audit' — would you buy this business?",
+      "Run a 'buyer readiness audit', would you buy this business?",
     ],
     exitPaths: [
       {
@@ -198,7 +198,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
           "Often yields 15-25% higher valuations for lean solo businesses",
         ],
         cons: [
-          "More complex — requires recasting your P&L",
+          "More complex, requires recasting your P&L",
           "Not well understood by first-time buyers",
           "Harder to compare against listed businesses",
         ],
@@ -250,10 +250,10 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
       { step: "Adjust for churn", detail: "Calculate your gross monthly churn. Under 3%: standard multiple. Under 1%: premium. Over 5%: 20% discount." },
       { step: "Document your 'unfair advantage'", detail: "What makes your micro-SaaS hard to replicate? Proprietary data, SEO authority, brand recognition, customer relationships? Buyers pay a premium for moats." },
     ],
-    whatHappensPostExit: "Once you know your valuation range, the temptation is to 'wait for the right price.' Don't. Micro-SaaS valuations are rising but so are operating costs, competition, and churn risk. The best time to sell is when your business is growing, your books are clean, and you have a concrete plan for what's next. A bird in the hand is worth two in the bush — especially in micro-SaaS.",
+    whatHappensPostExit: "Once you know your valuation range, the temptation is to 'wait for the right price.' Don't. Micro-SaaS valuations are rising but so are operating costs, competition, and churn risk. The best time to sell is when your business is growing, your books are clean, and you have a concrete plan for what's next. A bird in the hand is worth two in the bush, especially in micro-SaaS.",
     faqs: [
       { question: "What's the formula for micro-SaaS valuation?", answer: "The standard formula is: MRR × Multiple (24-48x) × Growth Multiplier (1.0-1.5) × Churn Multiplier (0.8-1.2) × Profit Margin Multiplier (0.9-1.3). For a $5K MRR business growing 5%/month with 2% churn and 60% margins: $5K × 36 × 1.15 × 1.1 × 1.2 = $273K." },
-      { question: "Can I sell a micro-SaaS with zero revenue?", answer: "Technically yes — some buy the codebase and users (asset sale). Realistically, zero revenue = zero value in the MRR method. You'd get $1K-$5K for the code + maybe $0.10-$0.50 per user for the email list." },
+      { question: "Can I sell a micro-SaaS with zero revenue?", answer: "Technically yes, some buy the codebase and users (asset sale). Realistically, zero revenue = zero value in the MRR method. You'd get $1K-$5K for the code + maybe $0.10-$0.50 per user for the email list." },
       { question: "Do I need audited financials to sell?", answer: "For exits under $500K, no. A Stripe export and a 1-page P&L is enough. For $500K+, expect a buy-side quality of earnings (QoE) report which costs $10K-$20K and takes 2-4 weeks." },
     ],
   },
@@ -266,7 +266,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     stageLabel: "Action Plan",
     timeframe: "90 days to prepare",
     realisticValuation: "Companies that complete this 90-day prep before listing sell for 20-40% more than unprepared sellers. The average micro-SaaS gained $45K in sale price just by having clean documentation, according to MicroAcquire's 2025 seller survey.",
-    whyNow: "Most micro-SaaS founders list their business the day they decide to sell. This is a mistake. Buyers are trained to spot unprepared sellers — your rushed listing signals you're selling for the wrong reasons. A prepared seller commands a premium because the buyer's diligence is painless.",
+    whyNow: "Most micro-SaaS founders list their business the day they decide to sell. This is a mistake. Buyers are trained to spot unprepared sellers, your rushed listing signals you're selling for the wrong reasons. A prepared seller commands a premium because the buyer's diligence is painless.",
     readinessChecklist: [
       "Financial cleanup (Stripe reconciliations, expense categorization)",
       "Code audit (remove secrets, add README, architecture diagram)",
@@ -286,12 +286,12 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         type: "90-Day Prep (Recommended)",
         pros: ["20-40% price premium", "Cleaner diligence = fewer renegotiations", "Buyer pipeline builds over time"],
         cons: ["3 months of work on the business instead of the product", "Opportunity cost of delayed cash"],
-        bestFor: "Most micro-SaaS founders — the sweet spot of preparation vs speed",
+        bestFor: "Most micro-SaaS founders, the sweet spot of preparation vs speed",
       },
       {
         type: "180-Day Prep (Premium)",
         pros: ["40-60% price premium possible", "Growth metrics improve multiple during prep", "Buyer competition can drive bidding wars"],
-        cons: ["6 months is a long time to stay motivated on 'exit mode'", "Business risks (market shifts, churn) compound", "Diminishing returns — 6 months of prep doesn't yield 2x the price"],
+        cons: ["6 months is a long time to stay motivated on 'exit mode'", "Business risks (market shifts, churn) compound", "Diminishing returns, 6 months of prep doesn't yield 2x the price"],
         bestFor: "Founders who aren't in a rush and want to maximize every dollar",
       },
     ],
@@ -309,17 +309,17 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
       { metric: "All three clean", multiple: "20-40% total premium" },
     ],
     preparationSteps: [
-      { step: "Week 1-2: Financial cleanup", detail: "Export 12 months from Stripe. Categorize every expense. Separate personal from business. Create a 1-page P&L. Buyers ask for this on day 1 — have it ready." },
+      { step: "Week 1-2: Financial cleanup", detail: "Export 12 months from Stripe. Categorize every expense. Separate personal from business. Create a 1-page P&L. Buyers ask for this on day 1:  have it ready." },
       { step: "Week 3-4: Code audit", detail: "Remove hardcoded API keys. Add .gitignore. Run a linter. Write a README with setup instructions. Create a simple architecture diagram (Mermaid or Excalidraw, 5 minutes)." },
       { step: "Week 5-6: Documentation", detail: "Write a runbook (how to deploy, monitor, backup, restore). Write an admin guide (how to onboard a customer, process refunds, handle support). Record a 15-minute Loom walkthrough of the entire codebase." },
       { step: "Week 7-8: Legal & Ownership", detail: "Verify your LLC or corporation is active and in good standing. Confirm IP assignment is documented. If you have a co-founder, get their agreement in writing. Clean up any personal liability exposure." },
       { step: "Week 9-10: Growth sprint", detail: "Run one targeted growth experiment (email campaign, content push, partnership). The goal is to show an uptrend in MRR during diligence. A 3-month uptrend adds 15-25% to your multiple." },
       { step: "Week 11-12: Buyer prep", detail: "Write the one-pager. Build a data room (Google Drive with docs). List on 2 marketplaces. DM 10-20 potential buyers. Start conversations but don't accept the first offer." },
     ],
-    whatHappensPostExit: "Founders who follow this 90-day plan consistently report the same thing: 'I wish I'd done this sooner.' The prep work makes your business better regardless of whether you sell. Clean code, clean finances, documented systems — this is how you run a business you can exit at any time. And that freedom, ironically, makes you less desperate to sell and more likely to get a great price.",
+    whatHappensPostExit: "Founders who follow this 90-day plan consistently report the same thing: 'I wish I'd done this sooner.' The prep work makes your business better regardless of whether you sell. Clean code, clean finances, documented systems, this is how you run a business you can exit at any time. And that freedom, ironically, makes you less desperate to sell and more likely to get a great price.",
     faqs: [
       { question: "What's the single most important prep step?", answer: "Financial cleanup. Every buyer asks for 12 months of Stripe exports first. If your books are messy, they assume everything else is too. A clean P&L adds 10-15% to your price immediately." },
-      { question: "Should I hire someone to prepare the sale?", answer: "For deals under $200K, do it yourself — the prep work is straightforward and teaches you what buyers care about. For $200K+, consider a fractional CFO or an exit consultant (MicroAcquire offers concierge services at 5-7% of deal value)." },
+      { question: "Should I hire someone to prepare the sale?", answer: "For deals under $200K, do it yourself, the prep work is straightforward and teaches you what buyers care about. For $200K+, consider a fractional CFO or an exit consultant (MicroAcquire offers concierge services at 5-7% of deal value)." },
       { question: "What percentage of micro-SaaS listings actually sell?", answer: "About 60-70% of listed micro-SaaS businesses sell, according to MicroAcquire. The 30-40% that don't sell usually have: (1) undocumented code, (2) messy finances, (3) the founder as a key person risk, or (4) unrealistic price expectations. Our 90-day prep addresses all four." },
     ],
   },
@@ -328,11 +328,11 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     metaTitle: "Acquire.com vs MicroAcquire vs Flippa: Best Micro SaaS Marketplace | Invisible Exit",
     metaDescription: "Compare the top micro-SaaS marketplaces: Acquire.com, MicroAcquire, and Flippa. Commission rates, buyer quality, time to close, and which is best for your exit.",
     h1: "Acquire.com vs MicroAcquire vs Flippa: Which Marketplace to Sell Your Micro SaaS",
-    intro: "You've prepped your micro-SaaS for sale. Now where do you list it? The three major marketplaces — Acquire.com (formerly FE International), MicroAcquire, and Flippa — serve different segments of the micro-SaaS market. Picking the wrong one can cost you weeks and thousands in commission. Here's the honest comparison.",
+    intro: "You've prepped your micro-SaaS for sale. Now where do you list it? The three major marketplaces, Acquire.com (formerly FE International), MicroAcquire, and Flippa, serve different segments of the micro-SaaS market. Picking the wrong one can cost you weeks and thousands in commission. Here's the honest comparison.",
     stageLabel: "Marketplace Comparison",
     timeframe: "15-minute read",
     realisticValuation: "The marketplace you choose affects your final sale price by 15-30%. MicroAcquire tends to yield the highest prices for micro-SaaS under $500K. Acquire.com is better above $500K. Flippa returns lower prices but faster closes for sub-$50K assets.",
-    whyNow: "Each marketplace has evolved significantly since 2020. MicroAcquire was acquired and changed its commission structure. Acquire.com expanded into the micro-SaaS segment. Flippa added managed listings. The marketplace landscape shifts every 6 months — this is the current state.",
+    whyNow: "Each marketplace has evolved significantly since 2020. MicroAcquire was acquired and changed its commission structure. Acquire.com expanded into the micro-SaaS segment. Flippa added managed listings. The marketplace landscape shifts every 6 months, this is the current state.",
     readinessChecklist: [
       "Know your MRR, churn, growth rate, and profit margin",
       "Have your one-pager ready (different audiences for each platform)",
@@ -345,13 +345,13 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         type: "MicroAcquire (Best for $1K-$20K MRR)",
         pros: [
           "Highest buyer density for micro-SaaS under $500K",
-          "Flat $2,500 listing fee (no percentage) — keeps more of your sale",
-          "Strong indie hacker community — buyers understand the product",
+          "Flat $2,500 listing fee (no percentage), keeps more of your sale",
+          "Strong indie hacker community, buyers understand the product",
           "Fastest time to close: 2-6 weeks for well-prepared listings",
         ],
         cons: [
           "$2,500 upfront fee (refunded if not sold, but you float the cash)",
-          "Buyer quality varies — some are tire-kickers",
+          "Buyer quality varies, some are tire-kickers",
           "No escrow built-in (recommend using Escrow.com separately)",
         ],
         bestFor: "Micro-SaaS with $1K-$15K MRR. Clean code. Founded by an indie hacker.",
@@ -360,13 +360,13 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         type: "Acquire.com (Best for $500K+ exits)",
         pros: [
           "Highest quality buyers (PE funds, strategic acquirers, serial acquirers)",
-          "Managed process — they handle diligence, escrow, and legal coordination",
+          "Managed process, they handle diligence, escrow, and legal coordination",
           "Premium buyer pool = higher multiples on larger businesses",
         ],
         cons: [
           "10-15% commission (significant on a $500K deal: $50K-$75K)",
           "Longer process: 3-6 months from listing to close",
-          "Strict vetting — not all micro-SaaS qualify (need 12+ months of clean revenue)",
+          "Strict vetting, not all micro-SaaS qualify (need 12+ months of clean revenue)",
         ],
         bestFor: "Serious SaaS businesses with $500K+ ARR, auditable financials, and a growth trajectory.",
       },
@@ -380,7 +380,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
         cons: [
           "Lowest average multiples (12-24x MRR typical)",
           "High percentage of lowball offers (60-70% of first offers are below market)",
-          "Buyer quality is lowest — many are flippers, not operators",
+          "Buyer quality is lowest, many are flippers, not operators",
         ],
         bestFor: "Quick asset sales under $50K, content sites, or when you need fast cash.",
       },
@@ -418,7 +418,7 @@ export const exitStrategyPages: ExitStrategyEntry[] = [
     whatHappensPostExit: "Regardless of which marketplace you choose, the post-sale experience is the same: you'll spend 2-6 months fulfilling the transition agreement (if any), then you're free. The best marketplace for YOU depends on your business size, your patience, and how much hand-holding you need during the process.",
     faqs: [
       { question: "Can I list on multiple marketplaces simultaneously?", answer: "Yes, but disclose it in your listing. Most micro-SaaS founders list on MicroAcquire + Flippa simultaneously. The overlap is minimal. Just don't accept two offers at once." },
-      { question: "Which marketplace has the best buyer quality?", answer: "Acquire.com for $500K+ deals. MicroAcquire for indie hacker quality. Flippa for speed over quality. There's no single 'best' — match the marketplace to your business size." },
+      { question: "Which marketplace has the best buyer quality?", answer: "Acquire.com for $500K+ deals. MicroAcquire for indie hacker quality. Flippa for speed over quality. There's no single 'best', match the marketplace to your business size." },
       { question: "Do I need a broker?", answer: "For deals under $100K, marketplaces work fine without a broker. For $100K-$500K, a good broker can add 15-25% to the price. Above $500K, a broker is essential for managing diligence." },
     ],
   },

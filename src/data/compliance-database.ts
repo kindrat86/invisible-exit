@@ -5,7 +5,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     id: "comp_1",
     clause_type: "Non-Compete Agreement",
     description:
-      "Prohibits you from working for or starting a competing business during and after employment. The most feared clause for side business builders — but also the most frequently unenforceable.",
+      "Prohibits you from working for or starting a competing business during and after employment. The most feared clause for side business builders, but also the most frequently unenforceable.",
     risk_level: "Critical",
     common_in: ["Technology", "Finance", "Consulting", "Sales", "Healthcare"],
     what_it_means:
@@ -13,7 +13,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_to_do:
       "First, read the exact language. Check the scope (industry, geography, duration). If your side business is in a completely different industry, most non-competes won't apply. If there's any overlap, consult an employment attorney. Consider choosing a side business in an industry your employer has zero presence in.",
     jurisdiction_notes:
-      "California: Non-competes are completely unenforceable (Business & Professions Code 16600). Colorado: Banned for most workers earning under $123K (2024). Illinois: Unenforceable for workers earning under $75K. Minnesota: Banned entirely as of July 2023. Oklahoma: Generally unenforceable. Oregon: Limited to 1 year, requires written notice. FTC proposed a nationwide ban in 2024 — check current status.",
+      "California: Non-competes are completely unenforceable (Business & Professions Code 16600). Colorado: Banned for most workers earning under $123K (2024). Illinois: Unenforceable for workers earning under $75K. Minnesota: Banned entirely as of July 2023. Oklahoma: Generally unenforceable. Oregon: Limited to 1 year, requires written notice. FTC proposed a nationwide ban in 2024, check current status.",
     example_language:
       '"During employment and for a period of [12/24] months following termination, Employee shall not directly or indirectly engage in, own, manage, or participate in any business that competes with the Company within [geographic area]."',
   },
@@ -21,15 +21,15 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     id: "comp_2",
     clause_type: "Non-Solicitation Clause",
     description:
-      "Prevents you from contacting or doing business with your employer's clients, customers, or employees after leaving. Different from a non-compete — focused on relationships, not industries.",
+      "Prevents you from contacting or doing business with your employer's clients, customers, or employees after leaving. Different from a non-compete, focused on relationships, not industries.",
     risk_level: "High",
     common_in: ["Consulting", "Finance", "Sales", "Recruiting", "Legal"],
     what_it_means:
       "You cannot reach out to your employer's clients or recruit their employees for your side business. This is more commonly enforced than non-competes because courts see protecting client relationships as more reasonable. However, it only applies to clients/employees you had contact with.",
     what_to_do:
-      "Never target your employer's clients for your side business. Build an entirely separate customer base in a different market. If a client independently finds your side business, that's generally not solicitation — but document the circumstances. Never recruit colleagues to help with your side project.",
+      "Never target your employer's clients for your side business. Build an entirely separate customer base in a different market. If a client independently finds your side business, that's generally not solicitation, but document the circumstances. Never recruit colleagues to help with your side project.",
     jurisdiction_notes:
-      "Most states enforce non-solicitation clauses more readily than non-competes because they're seen as narrower and more reasonable. California is the exception — non-solicitation of employees may be unenforceable. Duration is typically limited to 1-2 years post-employment. Must be limited to clients/employees you actually worked with.",
+      "Most states enforce non-solicitation clauses more readily than non-competes because they're seen as narrower and more reasonable. California is the exception, non-solicitation of employees may be unenforceable. Duration is typically limited to 1-2 years post-employment. Must be limited to clients/employees you actually worked with.",
     example_language:
       '"For [12/24] months after termination, Employee shall not directly or indirectly solicit, contact, or do business with any client, customer, or prospective customer of the Company with whom Employee had contact during the last [12/24] months of employment."',
   },
@@ -51,7 +51,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_to_do:
       "Read the exact language carefully. Some clauses only restrict 'employment' (being hired by another company) not 'business ownership' (running your own LLC). Some only apply during work hours. If the clause is broad, consult an attorney about whether it's enforceable in your state. Consider the risk/reward of disclosure vs. invisibility.",
     jurisdiction_notes:
-      "California: Labor Code 96(k) protects lawful conduct during off-hours — moonlighting bans may be unenforceable. Colorado: Off-duty conduct protections exist. New York: Labor Law 201-d protects legal off-duty activities. North Dakota: Similar protections. Many states have no specific protections, meaning the restriction may be enforceable if you agreed to it.",
+      "California: Labor Code 96(k) protects lawful conduct during off-hours, moonlighting bans may be unenforceable. Colorado: Off-duty conduct protections exist. New York: Labor Law 201-d protects legal off-duty activities. North Dakota: Similar protections. Many states have no specific protections, meaning the restriction may be enforceable if you agreed to it.",
     example_language:
       '"Employee shall not engage in any outside employment, consulting, or business activity without prior written approval from their manager and Human Resources. This includes but is not limited to freelance work, consulting engagements, and ownership interest in any business entity."',
   },
@@ -59,15 +59,15 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     id: "comp_4",
     clause_type: "Intellectual Property Assignment (Employer)",
     description:
-      "Assigns ownership of inventions and intellectual property you create to your employer — potentially including work done on your own time and with your own equipment.",
+      "Assigns ownership of inventions and intellectual property you create to your employer, potentially including work done on your own time and with your own equipment.",
     risk_level: "Critical",
     common_in: ["Technology", "Engineering", "Pharma", "Biotech", "Design"],
     what_it_means:
-      "This is the most dangerous clause for side business builders. In its broadest form, it means your employer owns everything you create — even on weekends, on your personal laptop, in a completely different industry. However, many states have carved out protections for personal inventions.",
+      "This is the most dangerous clause for side business builders. In its broadest form, it means your employer owns everything you create, even on weekends, on your personal laptop, in a completely different industry. However, many states have carved out protections for personal inventions.",
     what_to_do:
       "Read the exact scope. Does it cover ALL inventions or only those 'related to the company's business'? Check if your state has inventor protection laws (see jurisdiction notes). If broad, create an Invention Assignment Disclaimer (see Legal Templates) to document that your side business was developed independently. Ensure your side business is in a different industry.",
     jurisdiction_notes:
-      "California: Labor Code 2870 — employer CANNOT claim inventions developed on your own time, with your own equipment, unrelated to employer's business. Delaware: Similar protection under Title 19 §805. Illinois: Employee Patent Act (765 ILCS 1060). Minnesota: Statute 181.78. Washington: RCW 49.44.140. North Carolina: GS 66-57.1. These states require employers to notify you of these protections in the contract.",
+      "California: Labor Code 2870, employer CANNOT claim inventions developed on your own time, with your own equipment, unrelated to employer's business. Delaware: Similar protection under Title 19 §805. Illinois: Employee Patent Act (765 ILCS 1060). Minnesota: Statute 181.78. Washington: RCW 49.44.140. North Carolina: GS 66-57.1. These states require employers to notify you of these protections in the contract.",
     example_language:
       '"Employee agrees that all inventions, discoveries, improvements, ideas, and works of authorship, whether or not patentable, that are conceived, developed, or reduced to practice during the period of employment shall be the sole and exclusive property of the Company."',
   },
@@ -103,9 +103,9 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_it_means:
       "You cannot use your employer's internal strategies, customer data, pricing information, proprietary processes, or trade secrets in your side business. This is entirely reasonable and enforceable. The risk is if your employer argues that skills or knowledge you learned on the job are 'confidential information.'",
     what_to_do:
-      "This clause is legitimate — respect it fully. Never use employer data, strategies, or proprietary knowledge in your side business. Build your side business using only publicly available information. Document the public sources of your business ideas and strategies. The key distinction: general skills and industry knowledge are NOT trade secrets. Specific processes, customer lists, and pricing data ARE.",
+      "This clause is legitimate, respect it fully. Never use employer data, strategies, or proprietary knowledge in your side business. Build your side business using only publicly available information. Document the public sources of your business ideas and strategies. The key distinction: general skills and industry knowledge are NOT trade secrets. Specific processes, customer lists, and pricing data ARE.",
     jurisdiction_notes:
-      "Confidentiality agreements are enforceable in all states. The Defend Trade Secrets Act (DTSA) provides federal protection for trade secrets. However, courts distinguish between 'trade secrets' (protectable) and 'general knowledge and skills' (not protectable). Your ability to code, manage projects, or understand an industry is NOT a trade secret — even if you learned it at your job.",
+      "Confidentiality agreements are enforceable in all states. The Defend Trade Secrets Act (DTSA) provides federal protection for trade secrets. However, courts distinguish between 'trade secrets' (protectable) and 'general knowledge and skills' (not protectable). Your ability to code, manage projects, or understand an industry is NOT a trade secret, even if you learned it at your job.",
     example_language:
       '"Employee agrees to hold in strict confidence and not disclose, publish, or use for any purpose other than Company business, any Confidential Information of the Company, including but not limited to trade secrets, customer lists, pricing strategies, business plans, technical specifications, and proprietary processes."',
   },
@@ -137,7 +137,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_to_do:
       "Review the scope. If it only covers work 'within the scope of employment' or 'using company resources,' your side business (different industry, personal time, personal equipment) is not covered. If it's broad, check your state's invention protection laws. Maintain clear documentation that your side business work is done independently.",
     jurisdiction_notes:
-      "Under U.S. Copyright Act, 'work made for hire' only applies to: (1) work by an employee within the scope of employment, or (2) certain categories of commissioned works with a written agreement. Your side business work, created on personal time and equipment, is NOT work for hire — regardless of what the contract says. State invention protection laws (CA, DE, IL, etc.) further protect personal creations.",
+      "Under U.S. Copyright Act, 'work made for hire' only applies to: (1) work by an employee within the scope of employment, or (2) certain categories of commissioned works with a written agreement. Your side business work, created on personal time and equipment, is NOT work for hire, regardless of what the contract says. State invention protection laws (CA, DE, IL, etc.) further protect personal creations.",
     example_language:
       "\"All works, materials, and deliverables created by Employee in the course of employment shall be considered 'works made for hire' under the Copyright Act and shall be the sole property of the Company.\"",
   },
@@ -172,7 +172,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_it_means:
       "Even without a non-compete or moonlighting clause, employees have a common-law duty of loyalty to their employer. This means you shouldn't actively compete with your employer while employed. However, courts have consistently held that preparing to start a non-competing business (forming an LLC, building a product in a different industry) does not violate the duty of loyalty.",
     what_to_do:
-      "Ensure your side business does not compete with your employer. Do not use work time, resources, or relationships for your side business. Do not solicit your employer's clients or recruit their employees. Preparing for your eventual departure (forming an LLC, building a product, getting customers in a different industry) is legal — just don't actively harm your employer while doing it.",
+      "Ensure your side business does not compete with your employer. Do not use work time, resources, or relationships for your side business. Do not solicit your employer's clients or recruit their employees. Preparing for your eventual departure (forming an LLC, building a product, getting customers in a different industry) is legal, just don't actively harm your employer while doing it.",
     jurisdiction_notes:
       "The duty of loyalty is a common-law principle recognized in all states. It's stronger for officers, directors, and senior management than for regular employees. Courts distinguish between 'preparation to compete' (legal) and 'active competition' (not legal). Building a side business in a different industry while employed is generally considered preparation, not competition.",
     example_language:
@@ -206,7 +206,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     what_to_do:
       "Keep your business social media completely separate from your personal accounts (see Anonymity Playbook). Don't mention your side business on any platform connected to your professional identity. Set personal accounts to private. Never post about your employer or industry from your business accounts in a way that could link the two.",
     jurisdiction_notes:
-      "Employers can legally monitor public social media. The NLRA protects some employee speech about working conditions, but does not protect disclosing your side business. Some states (like California, Colorado, New York) protect lawful off-duty conduct, which could include running a side business — but social media posts are voluntary disclosures, not protected activity.",
+      "Employers can legally monitor public social media. The NLRA protects some employee speech about working conditions, but does not protect disclosing your side business. Some states (like California, Colorado, New York) protect lawful off-duty conduct, which could include running a side business, but social media posts are voluntary disclosures, not protected activity.",
     example_language:
       '"Employees are expected to exercise good judgment when using social media. Employees should not post confidential company information, speak on behalf of the Company without authorization, or engage in online activity that could reflect negatively on the Company or create a conflict of interest."',
   },
@@ -246,7 +246,7 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
       "Sales",
     ],
     what_it_means:
-      "Even after you resign, certain obligations continue — typically confidentiality (forever), non-compete (6-24 months), non-solicitation (12-24 months), and IP assignment (for work done during employment). Understanding these timelines is critical for planning your exit.",
+      "Even after you resign, certain obligations continue, typically confidentiality (forever), non-compete (6-24 months), non-solicitation (12-24 months), and IP assignment (for work done during employment). Understanding these timelines is critical for planning your exit.",
     what_to_do:
       "Map out exactly what restrictions survive and for how long. Build your exit timeline around these dates. Remember: confidentiality of trade secrets is permanent and legitimate. Non-competes and non-solicitation have expiration dates. Start your countdown when you give notice. If your side business is in a different industry, post-employment restrictions are largely irrelevant.",
     jurisdiction_notes:
@@ -258,13 +258,13 @@ export const COMPLIANCE_ENTRIES: ComplianceEntry[] = [
     id: "comp_15",
     clause_type: "At-Will Employment Caveat",
     description:
-      "Most US employment is 'at will,' meaning either party can end the relationship at any time for any legal reason — including discovering a side business.",
+      "Most US employment is 'at will,' meaning either party can end the relationship at any time for any legal reason, including discovering a side business.",
     risk_level: "Low",
     common_in: ["All US Industries"],
     what_it_means:
-      "Even if you've done nothing wrong, your employer can fire you for having a side business in most states. At-will employment means they don't need a 'good' reason — just not an illegal one (discrimination, retaliation, etc.). This is why invisibility matters: the best protection is not being discovered.",
+      "Even if you've done nothing wrong, your employer can fire you for having a side business in most states. At-will employment means they don't need a 'good' reason, just not an illegal one (discrimination, retaliation, etc.). This is why invisibility matters: the best protection is not being discovered.",
     what_to_do:
-      "Understand that legal compliance alone doesn't guarantee job security. Your employer may fire you simply for having a side business, even if it doesn't violate any contract clause. This is why the entire Stealth Ops framework exists — prevention is better than legal arguments. Build your side business to the point where losing your job is an acceleration of your plan, not a catastrophe.",
+      "Understand that legal compliance alone doesn't guarantee job security. Your employer may fire you simply for having a side business, even if it doesn't violate any contract clause. This is why the entire Stealth Ops framework exists, prevention is better than legal arguments. Build your side business to the point where losing your job is an acceleration of your plan, not a catastrophe.",
     jurisdiction_notes:
       "At-will employment is the default in all US states except Montana. However, at-will doesn't override: (1) anti-discrimination laws, (2) whistleblower protections, (3) off-duty conduct protections (CA, CO, NY, ND), or (4) contractual protections you may have. If you have an employment contract with a fixed term or 'for cause' termination requirement, you have more protection than at-will employees.",
     example_language:

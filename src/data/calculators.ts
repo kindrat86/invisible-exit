@@ -37,10 +37,10 @@ export interface CalculatorData {
 export const calculators: CalculatorData[] = [
   {
     slug: "freedom-number",
-    title: "Freedom Number Calculator — How Much Do You Need to Quit?",
+    title: "Freedom Number Calculator, How Much Do You Need to Quit?",
     metaTitle: "Freedom Number Calculator: When Can You Quit? | Invisible Exit",
     metaDescription:
-      "Calculate your freedom number — the monthly recurring revenue that makes your job optional. Based on your real expenses, not your salary.",
+      "Calculate your freedom number, the monthly recurring revenue that makes your job optional. Based on your real expenses, not your salary.",
     h1: "Freedom Number Calculator",
     intro:
       "Your freedom number is the monthly recurring revenue that covers your essential expenses and makes your job optional. Most people overestimate this number by 50-100% because they confuse lifestyle spending with survival spending. Calculate your real number below.",
@@ -67,7 +67,7 @@ export const calculators: CalculatorData[] = [
   },
   {
     slug: "micro-saas-pricing",
-    title: "Micro-SaaS Pricing Calculator — What Should You Charge?",
+    title: "Micro-SaaS Pricing Calculator, What Should You Charge?",
     metaTitle: "Micro-SaaS Pricing Calculator | Invisible Exit",
     metaDescription:
       "Calculate the optimal price for your micro-SaaS based on value delivered, customer segment, and revenue goals. Stop guessing your pricing.",
@@ -97,7 +97,7 @@ export const calculators: CalculatorData[] = [
   },
   {
     slug: "churn-impact",
-    title: "Churn Impact Calculator — What Is Churn Really Costing You?",
+    title: "Churn Impact Calculator, What Is Churn Really Costing You?",
     metaTitle: "SaaS Churn Calculator: What Churn Costs | Invisible Exit",
     metaDescription:
       "See how monthly churn rate impacts your MRR over 12-24 months. Calculate the real cost of customer loss and find your break-even growth rate.",
@@ -118,23 +118,23 @@ export const calculators: CalculatorData[] = [
       result: "Ending MRR: ~$4,200/month. Without churn, it would be $8,000. Churn cost you $3,800 in year one.",
     },
     explanation:
-      "Churn compounds against you. At 5% monthly churn, you keep only 54% of customers after 12 months. Reducing churn from 5% to 3% can double your revenue over 2 years without acquiring a single new customer. Focus on retention before growth — it is the highest-ROI activity in SaaS.",
+      "Churn compounds against you. At 5% monthly churn, you keep only 54% of customers after 12 months. Reducing churn from 5% to 3% can double your revenue over 2 years without acquiring a single new customer. Focus on retention before growth, it is the highest-ROI activity in SaaS.",
     relatedCalculators: ["freedom-number", "micro-saas-pricing"],
     faqs: [
-      { question: "What is a good churn rate for micro-SaaS?", answer: "Under 3% monthly is good. Under 5% is acceptable. Above 5% means your product or onboarding has problems. Above 10% is critical — fix retention before growth." },
+      { question: "What is a good churn rate for micro-SaaS?", answer: "Under 3% monthly is good. Under 5% is acceptable. Above 5% means your product or onboarding has problems. Above 10% is critical, fix retention before growth." },
       { question: "How do I reduce churn?", answer: "Improve onboarding (first 7 days determine retention), fix top 3 support complaints, add annual billing (reduces cancel opportunities), and proactively contact at-risk customers before they cancel." },
       { question: "What is revenue churn vs customer churn?", answer: "Customer churn measures how many users leave. Revenue churn measures how much MRR you lose. If high-paying customers stay but low-paying ones leave, revenue churn can be lower than customer churn." },
     ],
   },
   {
     slug: "runway-calculator",
-    title: "Runway Calculator — How Many Months Do You Have?",
+    title: "Runway Calculator, How Many Months Do You Have?",
     metaTitle: "Startup Runway Calculator | Invisible Exit",
     metaDescription:
-      "Calculate your personal financial runway — how many months you can survive without income. Know your real number before making the jump.",
+      "Calculate your personal financial runway, how many months you can survive without income. Know your real number before making the jump.",
     h1: "Personal Runway Calculator",
     intro:
-      "Your runway is how many months you can survive on savings without any income. The longer your runway, the more risks you can take. Most corporate managers have more runway than they think — but only if they calculate it honestly.",
+      "Your runway is how many months you can survive on savings without any income. The longer your runway, the more risks you can take. Most corporate managers have more runway than they think, but only if they calculate it honestly.",
     formula: "Total savings / monthly essential expenses = runway in months",
     inputs: [
       { label: "Total liquid savings", id: "savings", type: "number", default: "30000", min: 0, max: 1000000, suffix: "" },
@@ -158,7 +158,7 @@ export const calculators: CalculatorData[] = [
   },
   {
     slug: "equity-vs-saas",
-    title: "Equity vs Micro-SaaS Calculator — Which Makes You Richer?",
+    title: "Equity vs Micro-SaaS Calculator, Which Makes You Richer?",
     metaTitle: "Corporate Equity vs Building SaaS Calculator | Invisible Exit",
     metaDescription:
       "Compare the real financial outcome of waiting for your corporate equity vs building your own micro-SaaS. The math may surprise you.",
@@ -179,7 +179,7 @@ export const calculators: CalculatorData[] = [
       result: "Expected equity value: $100K (after probability). SaaS value at year 4: $62,000/year MRR + $200K+ asset value. SaaS wins in expected value.",
     },
     explanation:
-      "Corporate equity has a headline value and a real expected value. A $500K grant with a 20% exit probability has an expected value of $100K — spread over 4+ years. Meanwhile, a micro-SaaS adding 5 customers/month at $29/month generates $62,000/year in MRR by year 4, plus the business itself is sellable for $150K-$250K. The micro-SaaS has higher expected value, monthly cash flow, and full control.",
+      "Corporate equity has a headline value and a real expected value. A $500K grant with a 20% exit probability has an expected value of $100K, spread over 4+ years. Meanwhile, a micro-SaaS adding 5 customers/month at $29/month generates $62,000/year in MRR by year 4, plus the business itself is sellable for $150K-$250K. The micro-SaaS has higher expected value, monthly cash flow, and full control.",
     relatedCalculators: ["freedom-number", "runway-calculator"],
     faqs: [
       { question: "Does this mean I should ignore my equity?", answer: "No. Your equity is free upside. But do not let it be your only plan. Build your own asset simultaneously. If the equity pays out, you have two assets. If it does not, you still have one." },

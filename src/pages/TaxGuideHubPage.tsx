@@ -9,7 +9,7 @@ export default function TaxGuideHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Tax Guides by State — LLC & Side Business Taxes | Invisible Exit"
+        title="Tax Guides by State, LLC & Side Business Taxes | Invisible Exit"
         description="State-by-state tax guides for side businesses and LLCs. Compare income tax rates, self-employment tax, sales tax, credits, deductions, and filing requirements for every state."
         url="https://invisibleexit.com/tax-guides"
       />
@@ -57,7 +57,7 @@ export default function TaxGuideHubPage() {
             <li>• Set aside 25-30% of your side business income for taxes (federal self-employment + state income).</li>
             <li>• Make quarterly estimated tax payments to avoid underpayment penalties. Use IRS Form 1040-ES.</li>
             <li>• Track every business expense. The QBI deduction lets you deduct 20% of qualified business income.</li>
-            <li>• Consider a SEP IRA — contributions are tax-deductible and grow tax-deferred until retirement.</li>
+            <li>• Consider a SEP IRA, contributions are tax-deductible and grow tax-deferred until retirement.</li>
           </ul>
         </div>
       </div>

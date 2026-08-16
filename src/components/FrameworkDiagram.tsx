@@ -171,7 +171,7 @@ const FrameworkDiagram = () => {
           <a href="/frameworks" className="text-primary underline hover:text-primary-hover font-medium">
             3 proprietary frameworks
           </a>
-          . You're not buying features — you're buying a methodology nobody else teaches.
+          . You're not buying features, you're buying a methodology nobody else teaches.
         </p>
       </div>
     </div>

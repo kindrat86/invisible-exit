@@ -22,7 +22,7 @@ const ALTERNATIVES = [
     philosophy: "Teach you to build a 'better' side business",
     whatTheySay: "Just start! Pick an idea and go!",
     whatTheyMiss: "No stealth framework. No anonymity system. No employment-contract compliance. If your employer finds out, you lose everything.",
-    ourAnswer: "We don't teach improvement. We give you a new vehicle — the Invisible Exit System — designed from day one for employed managers who can't be discovered.",
+    ourAnswer: "We don't teach improvement. We give you a new vehicle, the Invisible Exit System, designed from day one for employed managers who can't be discovered.",
     verdict: "Good for motivation. Dangerous for corporate managers who need to stay invisible.",
   },
   {
@@ -30,8 +30,8 @@ const ALTERNATIVES = [
     icon: TrendingUp,
     philosophy: "Save 70% of income. Invest in index funds. Retire in 20-30 years.",
     whatTheySay: "Live below your means and let compounding do the work.",
-    whatTheyMiss: "Requires decades of frugality. Depends on market returns you don't control. Doesn't create anything you own. You're still dependent — just on the market instead of an employer.",
-    ourAnswer: "The freedom number approach uses recurring revenue from products you own. It's renewable — it doesn't deplete. And it takes 12-18 months, not 20-30 years.",
+    whatTheyMiss: "Requires decades of frugality. Depends on market returns you don't control. Doesn't create anything you own. You're still dependent, just on the market instead of an employer.",
+    ourAnswer: "The freedom number approach uses recurring revenue from products you own. It's renewable, it doesn't deplete. And it takes 12-18 months, not 20-30 years.",
     verdict: "Valid path, but slow. We offer a faster vehicle that doesn't require decades of sacrifice.",
   },
   {
@@ -40,7 +40,7 @@ const ALTERNATIVES = [
     philosophy: "Burn the boats. Full commitment. Sink or swim.",
     whatTheySay: "If you have a backup plan, you'll never go all in.",
     whatTheyMiss: "Ignores the reality that most people have families, mortgages, and healthcare tied to employment. 'Burning the boats' is advice from people who raised $500K before quitting.",
-    ourAnswer: "Your job is the launchpad, not the trap. Your salary is runway funding that costs zero equity. Your 5 hours/week forces focus. You don't need to quit — you need a system that works within your constraints.",
+    ourAnswer: "Your job is the launchpad, not the trap. Your salary is runway funding that costs zero equity. Your 5 hours/week forces focus. You don't need to quit, you need a system that works within your constraints.",
     verdict: "Inspiring for 23-year-olds with no responsibilities. Dangerous for managers with families.",
   },
   {
@@ -57,7 +57,7 @@ const ALTERNATIVES = [
     icon: DollarSign,
     philosophy: "Learn to build apps without code.",
     whatTheySay: "Anyone can build a SaaS with Bubble and Airtable!",
-    whatTheyMiss: "Teaches the tool, not the system. You learn to build — but not what to build, how to validate it, how to launch it stealthily, or how to get customers without ads.",
+    whatTheyMiss: "Teaches the tool, not the system. You learn to build, but not what to build, how to validate it, how to launch it stealthily, or how to get customers without ads.",
     ourAnswer: "Tools are commodities. The system is the asset. The Idea Pipeline tells you what to build. Launch Control tells you how to ship. Brand Manager tells you how to get customers. The tools are just the medium.",
     verdict: "Good for learning a skill. Insufficient as a path to freedom.",
   },
@@ -87,7 +87,7 @@ const ComparePage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit vs Every Alternative — The Honest Comparison"
+        title="Invisible Exit vs Every Alternative, The Honest Comparison"
         description="Why Invisible Exit is fundamentally different from side-hustle courses, FIRE, quit-your-job advice, MBAs, bootcamps, and passive income gurus. The honest comparison."
         url="/compare"
       />
@@ -106,7 +106,7 @@ const ComparePage = () => {
           </h1>
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-4">
             Every alternative teaches improvement. We offer a new opportunity.
-            Here's the honest comparison — including where each alternative is
+            Here's the honest comparison, including where each alternative is
             actually better.
           </p>
         </div>
@@ -117,10 +117,10 @@ const ComparePage = () => {
         <div className="container-standard">
           <div className="text-center mb-12">
             <p className="text-eyebrow text-primary mb-4">The Alternatives</p>
-            <h2 className="text-h1 text-foreground mb-4">6 Paths to Freedom — Compared</h2>
+            <h2 className="text-h1 text-foreground mb-4">6 Paths to Freedom, Compared</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               We're not going to pretend every alternative is bad. Some are good
-              for different goals. Here's where each one wins — and where it
+              for different goals. Here's where each one wins, and where it
               falls apart for corporate managers.
             </p>
           </div>
@@ -236,13 +236,13 @@ const ComparePage = () => {
               <em>higher</em>.
             </p>
             <p>
-              All of these are improvement — incremental progress on a path you're
+              All of these are improvement, incremental progress on a path you're
               already on. And improvement puts you in competition with everyone
               else teaching improvement.
             </p>
             <p className="text-foreground font-medium text-lg pt-4">
               Invisible Exit doesn't improve your current path. It hands you a
-              different vehicle entirely — one designed from the ground up for
+              different vehicle entirely, one designed from the ground up for
               corporate managers who need to stay invisible, work in 5 hours/week,
               and reach $4,000/month in 12-18 months.
             </p>
@@ -256,7 +256,7 @@ const ComparePage = () => {
           <h2 className="text-h1 text-white mb-4">See If It's Right for You</h2>
           <p className="text-body text-white/60 mb-8 max-w-xl mx-auto">
             Calculate your freedom number. If the math makes sense, try the system
-            for $9. If it doesn't, you'll know in 90 seconds — no cost.
+            for $9. If it doesn't, you'll know in 90 seconds, no cost.
           </p>
           <Link
             to="/freedom"

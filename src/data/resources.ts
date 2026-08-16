@@ -34,10 +34,10 @@ export const resources: ResourcePage[] = [
       "A complete 30-step micro-SaaS launch checklist. From idea validation to first paying customer. Follow this exact sequence to avoid the 80% of mistakes that kill early SaaS.",
     h1: "The Complete Micro-SaaS Launch Checklist",
     intro:
-      "This is the exact 30-step sequence to go from zero to launched micro-SaaS. Every step has a time estimate and clear deliverable. Skip nothing — the order matters.",
+      "This is the exact 30-step sequence to go from zero to launched micro-SaaS. Every step has a time estimate and clear deliverable. Skip nothing, the order matters.",
     steps: [
       { title: "List 10 industries you understand deeply", description: "Write down every industry you have worked in, consulted for, or studied. Your unfair advantage is domain knowledge.", timeRequired: "1 hour", category: "Ideation" },
-      { title: "Interview 5 potential customers", description: "Find 5 people in your target niche. Ask about their top 3 daily frustrations. Do not pitch — listen.", timeRequired: "5 hours", category: "Validation" },
+      { title: "Interview 5 potential customers", description: "Find 5 people in your target niche. Ask about their top 3 daily frustrations. Do not pitch, listen.", timeRequired: "5 hours", category: "Validation" },
       { title: "Write a one-page problem statement", description: "Define the exact problem, who has it, how much it costs them, and why existing solutions fail.", timeRequired: "2 hours", category: "Validation" },
       { title: "Build a landing page with email capture", description: "Use Carrd, Framer, or a simple HTML page. Describe the solution. Capture emails. No product yet.", timeRequired: "3 hours", category: "Pre-launch" },
       { title: "Get 20 email signups", description: "Share the landing page in relevant communities. If you cannot get 20 signups, the problem is not painful enough.", timeRequired: "1 week", category: "Validation" },
@@ -55,7 +55,7 @@ export const resources: ResourcePage[] = [
       { title: "Reach 10 paying customers", description: "Focus all energy on getting to 10 customers. This proves product-market fit. Most founders overcomplicate this.", timeRequired: "2-4 weeks", category: "Growth" },
       { title: "Reduce onboarding friction", description: "Analyze where users drop off in the first 7 days. Fix the top 3 friction points. This directly improves retention.", timeRequired: "1 week", category: "Product" },
       { title: "Implement annual billing", description: "Add a yearly plan with 17% discount. This single change reduces churn by 70% and improves cash flow.", timeRequired: "2 hours", category: "Infrastructure" },
-      { title: "Write second and third blog posts", description: "Publish weekly. Content compounds — each post is a permanent traffic asset that brings customers for years.", timeRequired: "8 hours", category: "Content" },
+      { title: "Write second and third blog posts", description: "Publish weekly. Content compounds, each post is a permanent traffic asset that brings customers for years.", timeRequired: "8 hours", category: "Content" },
       { title: "Reach 25 paying customers", description: "By this point, you should have a repeatable acquisition channel. Identify what works and double down.", timeRequired: "4-6 weeks", category: "Growth" },
       { title: "Add Pro tier ($99-$199)", description: "Offer advanced features at 3-4x the base price. 15-20% of customers will upgrade. This lifts revenue 25%.", timeRequired: "1 week", category: "Product" },
       { title: "Automate customer support", description: "Create a knowledge base, FAQ page, and canned responses for top 10 questions. Reduce support to under 2 hours/week.", timeRequired: "1 week", category: "Operations" },
@@ -68,7 +68,7 @@ export const resources: ResourcePage[] = [
       { title: "Reach freedom number (138 customers at $29/month)", description: "$4,000/month MRR. Your job is now optional. You have built a real asset. Congratulations.", timeRequired: "14-18 months total", category: "Freedom" },
     ],
     tools: [
-      { name: "Cursor or Claude Code", purpose: "AI-powered coding — 10x faster development", cost: "$20/month" },
+      { name: "Cursor or Claude Code", purpose: "AI-powered coding, 10x faster development", cost: "$20/month" },
       { name: "Stripe or Paddle", purpose: "Payment processing and subscription management", cost: "2.9-5% per transaction" },
       { name: "Vercel", purpose: "Hosting and deployment", cost: "Free / $20/month" },
       { name: "Plausible Analytics", purpose: "Privacy-friendly analytics", cost: "$9/month" },
@@ -76,12 +76,12 @@ export const resources: ResourcePage[] = [
       { name: "Wyoming LLC (via ZenBusiness)", purpose: "Anonymous legal entity", cost: "$39 + $100 state fee" },
     ],
     commonMistakes: [
-      "Building before validating — 60% of founders waste 3+ months building something nobody wants",
-      "Charging too little — undercharging is the #1 pricing mistake; charge $29+, not $9",
-      "Skipping the LLC — operating as a sole proprietorship exposes personal assets and reduces anonymity",
-      "Building too many features — the MVP should have ONE core feature. Resist scope creep.",
-      "Not publishing content — founders who publish weekly grow 2x faster than those who do not",
-      "Ignoring churn — if churn is above 5%, growth cannot compound. Fix retention before acquisition.",
+      "Building before validating, 60% of founders waste 3+ months building something nobody wants",
+      "Charging too little, undercharging is the #1 pricing mistake; charge $29+, not $9",
+      "Skipping the LLC, operating as a sole proprietorship exposes personal assets and reduces anonymity",
+      "Building too many features, the MVP should have ONE core feature. Resist scope creep.",
+      "Not publishing content, founders who publish weekly grow 2x faster than those who do not",
+      "Ignoring churn, if churn is above 5%, growth cannot compound. Fix retention before acquisition.",
     ],
     successMetrics: [
       { metric: "Email signups before building", target: "20+" },
@@ -129,11 +129,11 @@ export const resources: ResourcePage[] = [
       { name: "Mercury Bank", purpose: "Business banking (no physical branch needed)", cost: "Free" },
     ],
     commonMistakes: [
-      "Using your work laptop for side business activity — employers can monitor all activity on company devices",
-      "Linking personal and business social media — following your business account from your personal LinkedIn",
-      "Naming your employer in posts — 'I work at a FAANG company' narrows the field to 5 employers",
-      "Posting screenshots with browser tabs visible — internal tools reveal your employer",
-      "Using the same phone number for business and personal — creates a direct link",
+      "Using your work laptop for side business activity, employers can monitor all activity on company devices",
+      "Linking personal and business social media, following your business account from your personal LinkedIn",
+      "Naming your employer in posts, 'I work at a FAANG company' narrows the field to 5 employers",
+      "Posting screenshots with browser tabs visible, internal tools reveal your employer",
+      "Using the same phone number for business and personal, creates a direct link",
       "Filing the LLC in your home state if it requires public member disclosure",
     ],
     successMetrics: [
@@ -177,11 +177,11 @@ export const resources: ResourcePage[] = [
       { name: "Baremetrics", purpose: "Advanced MRR and churn tracking", cost: "$129/month (when you need it)" },
     ],
     commonMistakes: [
-      "Using salary as the freedom number — salary includes lifestyle costs, not just essentials",
-      "Forgetting health insurance — budget $500-$800/month for private insurance",
-      "Not accounting for self-employment tax — budget an extra 15.3% for SE tax",
-      "Waiting until 100% replacement — freedom begins at 40-60% of salary replacement",
-      "Not building during employment — the best time to build is while you have salary stability",
+      "Using salary as the freedom number, salary includes lifestyle costs, not just essentials",
+      "Forgetting health insurance, budget $500-$800/month for private insurance",
+      "Not accounting for self-employment tax, budget an extra 15.3% for SE tax",
+      "Waiting until 100% replacement, freedom begins at 40-60% of salary replacement",
+      "Not building during employment, the best time to build is while you have salary stability",
     ],
     successMetrics: [
       { metric: "Essential monthly expenses calculated", target: "Under $5,000/month for most managers" },
@@ -191,9 +191,9 @@ export const resources: ResourcePage[] = [
       { metric: "Runway at freedom number", target: "12+ months of cash buffer" },
     ],
     faqs: [
-      { question: "How is the freedom number different from FIRE?", answer: "FIRE requires accumulating $1M+ to withdraw 4% annually. The freedom number requires building recurring revenue of $4K-$5K/month. It is faster to achieve because you do not need a large capital base — just 100-170 paying customers." },
-      { question: "What if my essential expenses are higher than $5K/month?", answer: "Then your freedom number is higher. But most managers overestimate their true essentials. Audit carefully — you may find that $3,500-$4,500 is the real number once work-related and lifestyle costs are removed." },
-      { question: "Should I quit before reaching my freedom number?", answer: "Not recommended. The beauty of the framework is that you can build toward freedom while employed. Once you reach 80-100% of your freedom number, the decision to leave becomes obvious — not scary." },
+      { question: "How is the freedom number different from FIRE?", answer: "FIRE requires accumulating $1M+ to withdraw 4% annually. The freedom number requires building recurring revenue of $4K-$5K/month. It is faster to achieve because you do not need a large capital base, just 100-170 paying customers." },
+      { question: "What if my essential expenses are higher than $5K/month?", answer: "Then your freedom number is higher. But most managers overestimate their true essentials. Audit carefully, you may find that $3,500-$4,500 is the real number once work-related and lifestyle costs are removed." },
+      { question: "Should I quit before reaching my freedom number?", answer: "Not recommended. The beauty of the framework is that you can build toward freedom while employed. Once you reach 80-100% of your freedom number, the decision to leave becomes obvious, not scary." },
     ],
   },
   {
@@ -204,7 +204,7 @@ export const resources: ResourcePage[] = [
       "The complete AI tool stack for solo founders in 2026. Coding, writing, design, research, automation, and analytics. Build a one-person company that competes with teams of 10.",
     h1: "The Solo Founder AI Tool Stack",
     intro:
-      "In 2026, one person with the right AI tools can do the work of a 10-person startup team from 2020. This guide shows you the exact stack that makes it possible — what to use, how to combine them, and what each tool costs.",
+      "In 2026, one person with the right AI tools can do the work of a 10-person startup team from 2020. This guide shows you the exact stack that makes it possible, what to use, how to combine them, and what each tool costs.",
     steps: [
       { title: "Set up your AI coding assistant", description: "Cursor (VS Code fork with Claude/GPT integration) or Claude Code (terminal-based). This replaces a senior developer at $150K/year.", timeRequired: "1 hour setup", category: "Development" },
       { title: "Set up your AI writing assistant", description: "Claude for long-form content (blog posts, landing pages). ChatGPT for quick analysis and brainstorming. This replaces a content marketer at $80K/year.", timeRequired: "30 minutes", category: "Marketing" },
@@ -214,7 +214,7 @@ export const resources: ResourcePage[] = [
       { title: "Set up AI-powered customer support", description: "Use AI to draft responses to common questions. Maintain a knowledge base that AI can reference. This handles 80% of support volume.", timeRequired: "1 day", category: "Support" },
     ],
     tools: [
-      { name: "Cursor Pro", purpose: "AI-powered IDE — code generation, refactoring, debugging", cost: "$20/month" },
+      { name: "Cursor Pro", purpose: "AI-powered IDE, code generation, refactoring, debugging", cost: "$20/month" },
       { name: "Claude Pro", purpose: "Long-form writing, code review, analysis", cost: "$20/month" },
       { name: "ChatGPT Plus", purpose: "Quick analysis, data interpretation, brainstorming", cost: "$20/month" },
       { name: "Midjourney", purpose: "Image generation for marketing and design", cost: "$10/month" },
@@ -222,11 +222,11 @@ export const resources: ResourcePage[] = [
       { name: "n8n (self-hosted)", purpose: "Automation workflows connecting all tools", cost: "Free (self-hosted)" },
     ],
     commonMistakes: [
-      "Subscribing to too many AI tools — start with 2-3 and master them before adding more",
-      "Not learning prompt engineering — the quality of AI output depends entirely on input quality",
-      "Using AI for everything — AI is best for 80% of tasks; the last 20% needs human judgment",
-      "Not fact-checking AI output — AI can hallucinate facts, code bugs, and incorrect data",
-      "Paying for annual plans before testing — use monthly plans until you are sure a tool fits your workflow",
+      "Subscribing to too many AI tools, start with 2-3 and master them before adding more",
+      "Not learning prompt engineering, the quality of AI output depends entirely on input quality",
+      "Using AI for everything, AI is best for 80% of tasks; the last 20% needs human judgment",
+      "Not fact-checking AI output, AI can hallucinate facts, code bugs, and incorrect data",
+      "Paying for annual plans before testing, use monthly plans until you are sure a tool fits your workflow",
     ],
     successMetrics: [
       { metric: "Hours saved per week by AI tools", target: "15-25 hours/week" },
@@ -237,7 +237,7 @@ export const resources: ResourcePage[] = [
     ],
     faqs: [
       { question: "Which AI tool should I start with?", answer: "Start with Claude Pro ($20/month). It handles writing, analysis, and code generation. Add Cursor if you are building software. Total cost for the essential stack: $40/month." },
-      { question: "Can AI really replace a team?", answer: "For most micro-SaaS tasks, yes. AI handles 80% of coding, writing, design, and research. The remaining 20% — strategy, customer relationships, product judgment — still requires you." },
+      { question: "Can AI really replace a team?", answer: "For most micro-SaaS tasks, yes. AI handles 80% of coding, writing, design, and research. The remaining 20%, strategy, customer relationships, product judgment, still requires you." },
       { question: "How much should I spend on AI tools?", answer: "$50-$120/month covers the full stack. The ROI is enormous: you replace $300K+ in salaries for under $1,500/year. Start with 2 tools ($40/month) and expand as needed." },
     ],
   },
@@ -249,7 +249,7 @@ export const resources: ResourcePage[] = [
       "Turn one piece of content into ten. The complete repurposing system for time-constrained founders. Write once, distribute everywhere.",
     h1: "The Content Repurposing System",
     intro:
-      "If you create a piece of content and it stays as one asset, you are wasting 90% of its value. This system turns one core piece into ten distribution outputs — perfect for founders who can only create 3-5 hours per week.",
+      "If you create a piece of content and it stays as one asset, you are wasting 90% of its value. This system turns one core piece into ten distribution outputs, perfect for founders who can only create 3-5 hours per week.",
     steps: [
       { title: "Create one core piece (blog post or video script)", description: "Write a 1,500-word blog post or a 10-minute YouTube script. This is your source material. Make it comprehensive.", timeRequired: "2-4 hours", category: "Create" },
       { title: "Extract 5 key insights", description: "Pull out the 5 most quotable, valuable points. Each becomes a standalone social media post.", timeRequired: "30 minutes", category: "Extract" },
@@ -270,11 +270,11 @@ export const resources: ResourcePage[] = [
       { name: "CapCut", purpose: "Video editing for short-form content", cost: "Free" },
     ],
     commonMistakes: [
-      "Creating one piece and not repurposing — this wastes 90% of the value",
-      "Using the same exact text on every platform — each platform has different expectations",
-      "Not scheduling distribution — create once, schedule for 2 weeks",
-      "Forgetting SEO variations — each repurpose can target a different keyword",
-      "Trying to be on every platform — start with 2-3 platforms where your audience lives",
+      "Creating one piece and not repurposing, this wastes 90% of the value",
+      "Using the same exact text on every platform, each platform has different expectations",
+      "Not scheduling distribution, create once, schedule for 2 weeks",
+      "Forgetting SEO variations, each repurpose can target a different keyword",
+      "Trying to be on every platform, start with 2-3 platforms where your audience lives",
     ],
     successMetrics: [
       { metric: "Outputs per core piece", target: "8-10 distribution pieces" },
@@ -286,7 +286,7 @@ export const resources: ResourcePage[] = [
     faqs: [
       { question: "How long does repurposing take?", answer: "About 4 hours per core piece: 2-3 hours to create the original, then 1-2 hours to repurpose into 8-10 distribution assets. One session fills 2 weeks of content." },
       { question: "Do I need to be on every platform?", answer: "No. Start with the 2-3 platforms where your audience lives. For anonymous founders: blog + Reddit + faceless YouTube. For public founders: LinkedIn + Twitter + YouTube." },
-      { question: "Can AI do the repurposing?", answer: "Mostly yes. Claude can rewrite content for different platforms in seconds. But always review and edit — AI output needs human polish before publishing." },
+      { question: "Can AI do the repurposing?", answer: "Mostly yes. Claude can rewrite content for different platforms in seconds. But always review and edit, AI output needs human polish before publishing." },
     ],
   },
   {
@@ -297,7 +297,7 @@ export const resources: ResourcePage[] = [
       "The complete customer acquisition playbook for micro-SaaS. Get your first 10 paying customers without paid ads. Proven outreach, community, and content strategies.",
     h1: "Customer Acquisition Playbook: Your First 10 Customers",
     intro:
-      "Getting your first 10 paying customers is the hardest part of building a micro-SaaS. No audience, no reputation, no budget. This playbook shows you the exact steps that work — all without spending a dollar on ads.",
+      "Getting your first 10 paying customers is the hardest part of building a micro-SaaS. No audience, no reputation, no budget. This playbook shows you the exact steps that work, all without spending a dollar on ads.",
     steps: [
       { title: "Define your ICP (Ideal Customer Profile)", description: "Write down exactly who your first 10 customers are: job title, company size, daily pain point, where they hang out online.", timeRequired: "1 hour", category: "Strategy" },
       { title: "Find 50 prospects in communities", description: "Search Reddit, Discord, Slack groups, and LinkedIn for people actively complaining about the problem you solve.", timeRequired: "2 hours", category: "Research" },
@@ -318,12 +318,12 @@ export const resources: ResourcePage[] = [
       { name: "Loom", purpose: "Record personalized video pitches", cost: "Free" },
     ],
     commonMistakes: [
-      "Pitching in the first message — you lose 90% of prospects by selling before building rapport",
-      "Copying the same message to everyone — personalization increases reply rates by 3-5x",
-      "Ignoring community posting — organic community content is the #1 channel for solo founders",
-      "Not offering early-bird pricing — lifetime deals create urgency and early social proof",
-      "Waiting for customers to come to you — the first 10 require proactive outreach",
-      "Spending on ads too early — paid acquisition only works after you have product-market fit",
+      "Pitching in the first message, you lose 90% of prospects by selling before building rapport",
+      "Copying the same message to everyone, personalization increases reply rates by 3-5x",
+      "Ignoring community posting, organic community content is the #1 channel for solo founders",
+      "Not offering early-bird pricing, lifetime deals create urgency and early social proof",
+      "Waiting for customers to come to you, the first 10 require proactive outreach",
+      "Spending on ads too early, paid acquisition only works after you have product-market fit",
     ],
     successMetrics: [
       { metric: "Outreach messages sent", target: "100+ personalized messages" },

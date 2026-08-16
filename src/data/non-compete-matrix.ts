@@ -71,7 +71,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
     inherentSafeHarbors: [
       "Build on a separate personal device using a different tech stack than your employer's",
       "Document your personal-time development with timestamps and personal resources",
-      "Review your invention assignment agreement for the 'pre-existing inventions' schedule — list your side project there",
+      "Review your invention assignment agreement for the 'pre-existing inventions' schedule, list your side project there",
     ],
     specialRules:
       "No profession-specific non-compete shield, but software engineers are the most common targets of invention assignment enforcement.",
@@ -111,7 +111,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Using firm resources (Westlaw, LexisNexis research) for side-business development is a violation",
     ],
     inherentSafeHarbors: [
-      "ABA Model Rule 5.6 prohibits non-competes that restrict a lawyer's right to practice — non-competes between lawyers are unenforceable in ALL states",
+      "ABA Model Rule 5.6 prohibits non-competes that restrict a lawyer's right to practice, non-competes between lawyers are unenforceable in ALL states",
       "Build tools that assist legal workflows (document automation, compliance tracking) rather than dispensing legal advice",
       "Target a client segment entirely separate from your firm's practice area",
     ],
@@ -132,7 +132,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Medical staff bylaws may contain restrictive covenants separate from employment agreements",
     ],
     inherentSafeHarbors: [
-      "Build tools that never touch Protected Health Information (PHI) — focus on workflow, education, or compliance",
+      "Build tools that never touch Protected Health Information (PHI), focus on workflow, education, or compliance",
       "Several states (CA, DE, MA, NH, TN for some specialties) ban or limit physician non-competes specifically",
       "Target healthcare administration rather than clinical care delivery to reduce regulatory burden",
     ],
@@ -149,12 +149,12 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Garden leave provisions requiring notice periods",
     ],
     inherentRisks: [
-      "Material Non-Public Information (MNPI) exposure — using employer data even inadvertently can trigger SEC enforcement",
+      "Material Non-Public Information (MNPI) exposure, using employer data even inadvertently can trigger SEC enforcement",
       "FINRA registered representatives face additional regulatory layers beyond state non-compete law",
       "Client lists and portfolio strategies are treated as trade secrets with strong enforcement",
     ],
     inherentSafeHarbors: [
-      "Build tools that only use user-supplied or public market data — never employer proprietary datasets",
+      "Build tools that only use user-supplied or public market data, never employer proprietary datasets",
       "FINRA Rule 204 limits post-employment restrictions on registered reps in some contexts",
       "Use clean-room development practices: no employer models, data, or tools touch your side project",
     ],
@@ -170,14 +170,14 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Non-compete at partner/senior level covering accounting services",
     ],
     inherentRisks: [
-      "Client lists and relationships are the core asset — soliciting them triggers strong enforcement",
+      "Client lists and relationships are the core asset, soliciting them triggers strong enforcement",
       "Using firm-developed methodologies or templates in your SaaS is IP infringement",
       "AICPA Code of Professional Conduct imposes ethical duties beyond contract law",
     ],
     inherentSafeHarbors: [
       "Target small businesses or individuals outside your firm's client base entirely",
       "Build automation tools (reconciliation, deadline tracking) that don't compete with accounting services",
-      "Use only public APIs and user-supplied data — never employer client data",
+      "Use only public APIs and user-supplied data, never employer client data",
     ],
     specialRules:
       "Partner-level non-competes in accounting firms are among the most aggressively enforced, but tools targeting non-competing segments face minimal risk.",
@@ -213,7 +213,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Commission clawback or forfeiture provisions",
     ],
     inherentRisks: [
-      "Customer and prospect lists are the highest-enforced trade secret category — courts routinely enforce non-solicit",
+      "Customer and prospect lists are the highest-enforced trade secret category, courts routinely enforce non-solicit",
       "CRM data (Salesforce, HubSpot) exported to your SaaS is clear-cut theft",
       "Sales playbooks and objection-handling scripts may be proprietary employer IP",
     ],
@@ -236,7 +236,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
     ],
     inherentRisks: [
       "Top consulting firms (McKinsey, BCG, Bain, Deloitte) have the most aggressive non-compete enforcement teams",
-      "Proprietary frameworks and methodologies are core firm IP — building SaaS that productizes them is high-risk",
+      "Proprietary frameworks and methodologies are core firm IP, building SaaS that productizes them is high-risk",
       "Client relationships developed through consulting work belong to the firm, not the consultant",
     ],
     inherentSafeHarbors: [
@@ -261,7 +261,7 @@ const PROFESSION_PROFILES: ProfessionProfile[] = [
       "Portfolio pieces created at work may be restricted from use in promoting your side business",
     ],
     inherentSafeHarbors: [
-      "Create all side-business design assets from scratch — never reuse employer templates or components",
+      "Create all side-business design assets from scratch, never reuse employer templates or components",
       "Use no-code tools (Webflow, Framer) to ship products without writing code",
       "Document personal-time creation with version history and personal tool licenses",
     ],
@@ -311,7 +311,7 @@ function getStateProfile(state: StateGuide): StateNCProfile {
           "Invention assignment clauses may still be enforceable even though non-competes are void",
         ],
         stateSafeHarbors: [
-          "Cal. Bus. & Prof. Code §16600 voids non-competes — the strongest protection in the U.S.",
+          "Cal. Bus. & Prof. Code §16600 voids non-competes, the strongest protection in the U.S.",
           "Labor Code §2870 protects employee inventions created on personal time with personal resources (with exceptions for employer's business)",
         ],
       };
@@ -323,7 +323,7 @@ function getStateProfile(state: StateGuide): StateNCProfile {
           "Recent Texas reforms (2023-2025) have tightened reasonableness standards but enforcement remains strong for high earners",
         ],
         stateSafeHarbors: [
-          "Texas requires the non-compete to be tied to an enforceable agreement (usually a confidentiality or non-solicit clause) — if that underlying agreement fails, the non-compete may also fail",
+          "Texas requires the non-compete to be tied to an enforceable agreement (usually a confidentiality or non-solicit clause), if that underlying agreement fails, the non-compete may also fail",
           "No state income tax means your SaaS profits are not taxed at the state level",
         ],
       };
@@ -337,19 +337,19 @@ function getStateProfile(state: StateGuide): StateNCProfile {
         stateSafeHarbors: [
           "NY requires employer consideration (continued employment alone may not suffice for existing employees)",
           "Recent NY legislation restricts non-competes for workers earning below a threshold (check current limits)",
-          "Courts apply 'blue pencil' doctrine — may modify rather than void overly broad agreements",
+          "Courts apply 'blue pencil' doctrine, may modify rather than void overly broad agreements",
         ],
       };
 
     case "florida":
       return {
         stateRisks: [
-          "Florida strongly enforces non-competes under Fla. Stat. §542.335 — courts routinely uphold reasonable restrictions",
+          "Florida strongly enforces non-competes under Fla. Stat. §542.335, courts routinely uphold reasonable restrictions",
           "Florida's statutory framework presumes enforceability if the employer shows a legitimate business interest",
         ],
         stateSafeHarbors: [
           "No state income tax reduces the financial burden of side-business operations",
-          "Fla. Stat. §542.335 requires the employer to plead and prove a legitimate business interest — vague claims may not survive",
+          "Fla. Stat. §542.335 requires the employer to plead and prove a legitimate business interest, vague claims may not survive",
           "Florida courts will reduce overly broad restrictions rather than void the entire agreement (reformation)",
         ],
       };
@@ -358,10 +358,10 @@ function getStateProfile(state: StateGuide): StateNCProfile {
       return {
         stateRisks: [
           "Illinois enforces non-competes for workers earning above $75K/year (Freedom to Work Act, 2023 reform)",
-          "The $75K threshold increases annually — verify current limits before relying on it",
+          "The $75K threshold increases annually, verify current limits before relying on it",
         ],
         stateSafeHarbors: [
-          "Illinois bans non-competes for workers earning under $75K/year (rising to $90K by 2037) — covers many professionals",
+          "Illinois bans non-competes for workers earning under $75K/year (rising to $90K by 2037), covers many professionals",
           "The Freedom to Work Act requires employers to advise employees in writing to consult an attorney before signing",
           "Illinois courts apply strict 'reasonableness' scrutiny to duration and geographic scope",
         ],
@@ -387,7 +387,7 @@ function getStateProfile(state: StateGuide): StateNCProfile {
           "Georgia courts can 'blue pencil' (modify) overly broad agreements to make them enforceable rather than voiding them",
         ],
         stateSafeHarbors: [
-          "Georgia courts apply reasonableness tests to duration and scope — 2-year limits are typical",
+          "Georgia courts apply reasonableness tests to duration and scope, 2-year limits are typical",
           "The 2011 Act requires non-competes to protect legitimate business interests, providing some defense if the interest is speculative",
         ],
       };
@@ -413,9 +413,9 @@ function getStateProfile(state: StateGuide): StateNCProfile {
           "The $100K threshold adjusts annually for inflation",
         ],
         stateSafeHarbors: [
-          "Non-competes are void for workers below the $100K earnings threshold — protects the majority of professionals",
+          "Non-competes are void for workers below the $100K earnings threshold, protects the majority of professionals",
           "Colorado requires non-competes to protect trade secrets and be no broader than necessary",
-          "Annual LLC report costs only $10 — among the cheapest in the U.S.",
+          "Annual LLC report costs only $10, among the cheapest in the U.S.",
         ],
       };
 
@@ -427,7 +427,7 @@ function getStateProfile(state: StateGuide): StateNCProfile {
         ],
         stateSafeHarbors: [
           "NC requires the employer to show a legitimate business interest (trade secrets, customer relationships, specialized training)",
-          "Courts apply strict reasonableness review — overly broad restrictions may be struck entirely (NC does not always blue-pencil)",
+          "Courts apply strict reasonableness review, overly broad restrictions may be struck entirely (NC does not always blue-pencil)",
           "Non-competes must be supported by adequate consideration (continued employment alone is debated)",
         ],
       };
@@ -474,7 +474,7 @@ function buildEntry(
   const slug = `${profile.slug}-${state.slug}`;
   const stateProfile = getStateProfile(state);
 
-  // canBuild is true everywhere — you can always start a side SaaS with proper
+  // canBuild is true everywhere, you can always start a side SaaS with proper
   // precautions. The risk profile (not permission) varies by state and profession.
   const canBuild = true;
 

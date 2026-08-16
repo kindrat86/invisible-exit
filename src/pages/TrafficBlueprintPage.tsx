@@ -64,7 +64,7 @@ const THREE_SOURCES = [
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20",
-    status: "World-class — top 5% infrastructure",
+    status: "World-class, top 5% infrastructure",
     items: [
       "17-email sequence (5 Soap Opera + 12 Seinfeld)",
       "Squeeze page with Freedom Number lead magnet",
@@ -149,7 +149,7 @@ const TrafficBlueprintPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Traffic Blueprint — The Complete Distribution Plan | Invisible Exit"
+        title="Traffic Blueprint, The Complete Distribution Plan | Invisible Exit"
         description="The full Traffic Secrets execution plan: social content engine, Dream 100 outreach, podcast pitches, pillar content, affiliate assets, and the 90-day publishing cadence."
         url="/traffic-blueprint"
       />

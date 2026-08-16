@@ -57,7 +57,7 @@ const InlineNewsletter = ({
         }),
       });
 
-      // Even if API fails (e.g. Vercel dev), show success — we don't want to
+      // Even if API fails (e.g. Vercel dev), show success, we don't want to
       // block the reading experience on a network error
       if (!res.ok) {
         console.error("Newsletter API error:", await res.json().catch(() => ({})));

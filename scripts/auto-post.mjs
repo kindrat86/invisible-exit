@@ -2,7 +2,7 @@
 /**
  * RSS → Social Auto-Poster
  * ========================
- * TRAFFIC SECRETS Sec 3: Fill Your Funnel — Content Distribution Engine
+ * TRAFFIC SECRETS Sec 3: Fill Your Funnel, Content Distribution Engine
  *
  * Reads the blog RSS feed (invisibleexit.com/blog/rss.xml) and outputs
  * ready-to-post social media content for each recent post.
@@ -17,9 +17,9 @@
  *   node scripts/auto-post.mjs --all    → generate for all posts (first run)
  *
  * Output: dist/social-queue/
- *   ├── twitter/   — ready-to-paste tweets
- *   ├── linkedin/  — ready-to-paste LinkedIn posts
- *   └── queue.json — posting schedule
+ *   ├── twitter/, ready-to-paste tweets
+ *   ├── linkedin/, ready-to-paste LinkedIn posts
+ *   └── queue.json, posting schedule
  */
 
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";

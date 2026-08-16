@@ -9,7 +9,7 @@ function loadState(userId: string): BrandManagerState {
     const raw = localStorage.getItem(STORAGE_KEY_PREFIX + userId);
     if (raw) return JSON.parse(raw);
   } catch {
-    // corrupted data — start fresh
+    // corrupted data, start fresh
   }
   return {
     taskCompletions: {},

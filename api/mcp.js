@@ -1,4 +1,4 @@
-// MCP Server for Invisible Exit — Faceless side-business system for employed professionals.
+// MCP Server for Invisible Exit, Faceless side-business system for employed professionals.
 // Implements Model Context Protocol JSON-RPC over HTTP (Streamable HTTP transport)
 // Deployed as a Vercel serverless function. No auth required (read-only tools).
 // Install in Claude Desktop: npx mcp-remote https://invisibleexit.com/api/mcp
@@ -11,7 +11,7 @@ const CAPABILITIES = { tools: { listChanged: false }, resources: {}, prompts: {}
 const TOOLS = [
   {
     "name": "search_freedom_calculator",
-    "description": "Calculate your freedom number — the monthly recurring revenue needed to cover living expenses and optionally leave your job.",
+    "description": "Calculate your freedom number, the monthly recurring revenue needed to cover living expenses and optionally leave your job.",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -100,7 +100,7 @@ function handleToolCall(name, args) {
 }
 
 export default function handler(req, res) {
-  // CORS — MCP clients connect from various origins
+  // CORS, MCP clients connect from various origins
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, Mcp-Session-Id");
@@ -140,7 +140,7 @@ export default function handler(req, res) {
 
   const result = handleSingleRequest(body);
   if (result === null) {
-    // Notification (no id) — acknowledge silently
+    // Notification (no id), acknowledge silently
     return res.status(202).end();
   }
   return res.json(result);

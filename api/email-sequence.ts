@@ -1,7 +1,7 @@
 /**
  * /api/email-sequence.ts
  *
- * Vercel serverless route — converted from
+ * Vercel serverless route, converted from
  * supabase/functions/email-sequence/index.ts
  *
  * Exports all email template functions, the wrap() helper, the sequence
@@ -21,7 +21,7 @@ export interface EmailEntry {
   html: string;
 }
 
-// ═══ wrap() helper — shared email shell ═══
+// ═══ wrap() helper, shared email shell ═══
 // `cta` controls the call-to-action block rendered after the body:
 //   - `false`        → no CTA (pure story / reply-driven emails)
 //   - a string       → custom CTA HTML (replaces the default below)
@@ -45,7 +45,7 @@ ${ctaHtml}
 </div>`;
 }
 
-// ═══ SOAP OPERA — 5 emails over 5 days ═══
+// ═══ SOAP OPERA, 5 emails over 5 days ═══
 export function soap1() {
   return wrap("DAY 1", "You did something 97% of managers won't.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">You gave me your email. That's the difference between people who escape and people who keep waiting.</p>
@@ -99,7 +99,7 @@ export function soap5() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence, the one designed to move you from "thinking about it" to "doing it", ends now.</p>`);
 }
 
-// ═══ SEINFELD FOLLOW-UP — weekly ongoing ═══
+// ═══ SEINFELD FOLLOW-UP, weekly ongoing ═══
 export function seinfeld1() {
   return wrap("FROM THE TRENCHES", "A close call at the office.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Last Wednesday, I was on a Zoom call presenting quarterly results. Midway through, someone asked about a website that looked suspiciously like one of my side projects.</p>
@@ -207,7 +207,7 @@ function winback2() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you've been thinking about starting for more than 30 days, you're already overthinking it. The system is ready. The ideas are validated. The stealth setup is documented. All that's missing is you pressing start.</p>`);
 }
 
-// ═══ ASCENSION — buyer upsell to Pro/Founding (7 days) ═══
+// ═══ ASCENSION, buyer upsell to Pro/Founding (7 days) ═══
 export function ascension1() {
   return wrap(
     "DAY 1",
@@ -267,8 +267,8 @@ export function ascension4() {
   );
 }
 
-// ═══ POST-PURCHASE — buyer onboarding (5 days) ═══
-// Buyers already pay — never show them a re-buy CTA; point at the dashboard.
+// ═══ POST-PURCHASE, buyer onboarding (5 days) ═══
+// Buyers already pay, never show them a re-buy CTA; point at the dashboard.
 const DASHBOARD_CTA = `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
 <p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>Your tools are live and waiting.</strong></p>
 <a href="https://invisibleexit.com/dashboard" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Open your dashboard</a>
@@ -371,7 +371,7 @@ export function getSequence(name: string): EmailEntry[] {
 
 /**
  * Send a single email via Resend using raw fetch.
- * Reused by all other /api routes — never does HTTP fetch to self.
+ * Reused by all other /api routes, never does HTTP fetch to self.
  */
 export async function sendEmail(
   to: string,

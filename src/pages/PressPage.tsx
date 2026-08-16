@@ -25,7 +25,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * PressPage — Expert Secrets Ch 15-16 (Authority / Archetype)
+ * PressPage, Expert Secrets Ch 15-16 (Authority / Archetype)
  *
  * Consolidates every authority signal into one media-ready page:
  *  - Headline numbers (tools, pricing, frameworks, guides)
@@ -55,7 +55,7 @@ const SPEAKING_TOPICS = [
   {
     num: "01",
     title: "The $0.97 Amsterdam Taxi Moment",
-    angle: "How a single Stripe notification at 6 AM on vacation cracked the identity shift from employee to owner — and why the first dollar online matters more than the amount.",
+    angle: "How a single Stripe notification at 6 AM on vacation cracked the identity shift from employee to owner, and why the first dollar online matters more than the amount.",
     bestFor: "Startup podcasts, founder mindset shows, side-hustle audiences",
     duration: "15-30 min",
   },
@@ -76,21 +76,21 @@ const SPEAKING_TOPICS = [
   {
     num: "04",
     title: "The System Beats the Idea (The Cartridge System)",
-    angle: "I spent 3 months choosing the 'right' idea. Then launched the wrong one. It made $9/month. Then I pivoted — same system, different idea, $4,100/month. Why systems compound and ideas don't.",
+    angle: "I spent 3 months choosing the 'right' idea. Then launched the wrong one. It made $9/month. Then I pivoted, same system, different idea, $4,100/month. Why systems compound and ideas don't.",
     bestFor: "Product, SaaS, maker, bootstrapper communities",
     duration: "20-35 min",
   },
   {
     num: "05",
     title: "AI Solo Founders vs. Funded 5-Person Teams",
-    angle: "How AI tools closed the execution gap. A corporate manager with 5 hours/week can now out-ship a seed-stage team. The new unfair advantage isn't capital — it's focus + AI.",
+    angle: "How AI tools closed the execution gap. A corporate manager with 5 hours/week can now out-ship a seed-stage team. The new unfair advantage isn't capital, it's focus + AI.",
     bestFor: "AI, future-of-work, no-code, developer tooling shows",
     duration: "20-40 min",
   },
   {
     num: "06",
     title: "Month 4, Zero Customers: The Night I Almost Deleted Everything",
-    angle: "The unglamorous truth about month 4. Cursor over 'Cancel Subscription.' The voice that says 'go back to managing.' What saved me — and the framework I built from it.",
+    angle: "The unglamorous truth about month 4. Cursor over 'Cancel Subscription.' The voice that says 'go back to managing.' What saved me, and the framework I built from it.",
     bestFor: "Founder mental health, authenticity, failure-story podcasts",
     duration: "15-25 min",
   },
@@ -130,7 +130,7 @@ const FORMATS = [
 const SAMPLE_QUESTIONS = [
   "You're anonymous. Why should anyone trust your revenue claims?",
   "What's the actual math on 0.5% equity that made you start building?",
-  "Walk us through the Triple-Separation Protocol — how does someone actually stay invisible?",
+  "Walk us through the Triple-Separation Protocol, how does someone actually stay invisible?",
   "You spent 3 months choosing the 'right' idea, then launched the wrong one. What happened?",
   "What does Month 4 feel like? The zero-customer wall?",
   "How does a corporate manager with 5 hours/week out-ship a full-time founder?",
@@ -146,10 +146,10 @@ const FACT_SHEET = {
   founded: "2025",
   tagline: "The world's first anonymity-native business system for corporate managers.",
   description:
-    "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. Founded by Adrian — a pseudonymous Managing Director who built $4,100/month in recurring revenue across 3 products without quitting his job or revealing his identity.",
+    "Invisible Exit is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. Founded by Adrian, a pseudonymous Managing Director who built $4,100/month in recurring revenue across 3 products without quitting his job or revealing his identity.",
   pricing: "From $9/month (founding member pricing). Pro tier at $29/mo. Weekend Workshop at $97. 90-Day Intensive at $2,000.",
   frameworks: "The Salary-Runway Method, The Triple-Separation Protocol, The Cartridge System",
-  community: "Founding cohort open — early members building now",
+  community: "Founding cohort open, early members building now",
   contact: "hello@invisibleexit.com",
   social: {
     primary: "https://invisibleexit.com/blog (55 original guides)",
@@ -161,21 +161,21 @@ const FACT_SHEET = {
 
 const MEDIA_ASSETS = [
   { label: "OG Image (1200×630)", url: "https://invisibleexit.com/og-image.png", type: "PNG" },
-  { label: "Logo — Dark", url: "https://invisibleexit.com/og-image.png", type: "PNG" },
+  { label: "Logo, Dark", url: "https://invisibleexit.com/og-image.png", type: "PNG" },
   { label: "Founder Monogram", url: "/adrian", type: "Page (screenshot recommended)" },
   { label: "Framework Diagram", url: "/frameworks", type: "Page (screenshot recommended)" },
 ];
 
 const TRUST_SIGNALS = [
-  { icon: ShieldCheck, title: "Stripe-Verified Revenue", desc: "Every revenue claim documented via Stripe screenshots. Not a claim — a receipt." },
+  { icon: ShieldCheck, title: "Stripe-Verified Revenue", desc: "Every revenue claim documented via Stripe screenshots. Not a claim, a receipt." },
   { icon: Users, title: "A Cohort, Not a List", desc: "Founding members build alongside each other. Not vanity subscribers." },
   { icon: Code2, title: "3 Named Frameworks", desc: "Proprietary methodologies independently taught, not recycled from other gurus." },
   { icon: Globe2, title: "Built To Travel", desc: "Anonymity-first by design, so the system works from anywhere. Not US-centric." },
 ];
 
-const BOILERPLATE_SHORT = `Invisible Exit is the world's first anonymity-native business system — 5 AI-powered tools that help corporate managers build $4,000+/month in micro-SaaS revenue while employed, without their employer finding out. Founded by Adrian (pseudonym), a Managing Director who built $4,100/month across 3 products without quitting his job. From $9/month at invisibleexit.com.`;
+const BOILERPLATE_SHORT = `Invisible Exit is the world's first anonymity-native business system, 5 AI-powered tools that help corporate managers build $4,000+/month in micro-SaaS revenue while employed, without their employer finding out. Founded by Adrian (pseudonym), a Managing Director who built $4,100/month across 3 products without quitting his job. From $9/month at invisibleexit.com.`;
 
-const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products — without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The founding cohort is open now. Pricing starts at $9/month for founding members.`;
+const BOILERPLATE_LONG = `Invisible Exit (invisibleexit.com) is a membership platform with 5 AI-powered tools that help corporate managers build anonymous micro-SaaS businesses while employed. The platform was created by Adrian (pseudonym), a 37-year-old Managing Director at a European tech company who built $4,100/month in recurring revenue across 3 products, without quitting his job, without writing code, and without his employer discovering his side businesses. The system is built on 3 proprietary frameworks: The Salary-Runway Method (your job is the launchpad), The Triple-Separation Protocol (anonymity engineering), and The Cartridge System (the system beats the idea). The founding cohort is open now. Pricing starts at $9/month for founding members.`;
 
 // ── COMPONENT ──
 
@@ -193,7 +193,7 @@ const PressPage = () => {
   return (
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
-        title="Press & Media Kit — Invisible Exit"
+        title="Press & Media Kit, Invisible Exit"
         description="Media kit, speaking topics, interview formats, fact sheet, and sample questions for podcast hosts, journalists, and partners covering the anonymous micro-SaaS movement."
         url="/press"
       />
@@ -230,7 +230,7 @@ const PressPage = () => {
           </h1>
           <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-8">
             Podcast host? Journalist? Partner? Everything you need to evaluate,
-            book, and prepare for an interview with Invisible Exit — in one place.
+            book, and prepare for an interview with Invisible Exit, in one place.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
@@ -395,7 +395,7 @@ const PressPage = () => {
             ))}
           </div>
 
-          {/* Boilerplate — Short */}
+          {/* Boilerplate, Short */}
           <div className="max-w-3xl mx-auto mb-6">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-bold text-foreground">Short Boilerplate (for show notes)</h3>
@@ -412,7 +412,7 @@ const PressPage = () => {
             </div>
           </div>
 
-          {/* Boilerplate — Long */}
+          {/* Boilerplate, Long */}
           <div className="max-w-3xl mx-auto mb-12">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-bold text-foreground">Long Boilerplate (for articles)</h3>

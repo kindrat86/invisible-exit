@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BookOpen, Code2, Globe2, Mic, FileText, TrendingUp } from "lucide-react";
 
 /**
- * AuthorityBar — Expert Secrets Ch 15-16 (Archetype / Authority)
+ * AuthorityBar, Expert Secrets Ch 15-16 (Archetype / Authority)
  *
  * Brunson's rule: people follow people. But when the founder is anonymous,
  * authority must come from the BODY OF WORK, not the face.
@@ -23,7 +23,7 @@ import { BookOpen, Code2, Globe2, Mic, FileText, TrendingUp } from "lucide-react
  * scroll-down visitors see after the hero.
  *
  * 2026-07-24: removed the fabricated "$4,100/mo Verified MRR" and "96
- * Languages / Builders in 14 countries" signals — invisibleexit has zero
+ * Languages / Builders in 14 countries" signals, invisibleexit has zero
  * paying customers, and the i18n system the languages claim referenced
  * was already removed in commit 424567a. Replaced both with claims that
  * are true today and don't require a "trust me". See conversion-audit
@@ -35,7 +35,7 @@ const SIGNALS = [
     icon: TrendingUp,
     value: "5",
     label: "AI-Powered Tools",
-    sublabel: "Freedom calculator, idea validator, stealth audit, launch, brand — try free",
+    sublabel: "Freedom calculator, idea validator, stealth audit, launch, brand, try free",
     href: "/freedom",
   },
   {
@@ -56,14 +56,14 @@ const SIGNALS = [
     icon: Mic,
     value: "Media-Ready",
     label: "6 Speaking Topics",
-    sublabel: "Prepped for podcasts & press — book a slot",
+    sublabel: "Prepped for podcasts & press, book a slot",
     href: "/press",
   },
   {
     icon: Globe2,
     value: "4,000+",
     label: "Pages Published",
-    sublabel: "Guides, tools, and resources — all original",
+    sublabel: "Guides, tools, and resources, all original",
     href: "/best",
   },
   {
@@ -88,7 +88,7 @@ const AuthorityBar = () => {
             The Work Is the Proof.
           </h2>
           <p className="text-xs text-muted-foreground mt-2 max-w-lg mx-auto">
-            No face. No podcast tour. No guest articles — yet. Just documented
+            No face. No podcast tour. No guest articles, yet. Just documented
             systems, verified revenue, and 55 original guides.
           </p>
         </div>

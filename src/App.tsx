@@ -13,14 +13,14 @@ import ReferralBanner from "./components/ReferralBanner.tsx";
 import { ScrollReveal } from "./components/ScrollReveal.tsx";
 import { MobileCTABar } from "./components/MobileCTABar.tsx";
 import ExitIntentPopup from "./components/ExitIntentPopup.tsx";
-// Eager: the homepage is the money page — no spinner between prerendered
+// Eager: the homepage is the money page, no spinner between prerendered
 // shell and hydrated hero.
 import Index from "./pages/Index.tsx";
 
 // ── Lazy: all other routes (code-splitting for smaller initial bundle) ──
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
-// SEO content pages — lazy-loaded but pre-rendered by prerender-meta.mjs
+// SEO content pages, lazy-loaded but pre-rendered by prerender-meta.mjs
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
 const BlogCategory = lazy(() => import("./pages/BlogCategory.tsx"));
@@ -405,7 +405,7 @@ const App = () => (
         <BackToTop />
         <MobileCTABar />
         <ExitIntentPopup />
-        {/* Brunson Trust Bar — Dotcom Secrets Ch 7 */}
+        {/* Brunson Trust Bar, Dotcom Secrets Ch 7 */}
         <div dangerouslySetInnerHTML={{ __html: `<!-- BRUNSON TRUST BAR -- idempotency:trust-bar-v1 -->
 <section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
   <div style="max-width:900px;margin:0 auto">

@@ -72,7 +72,7 @@ const GlossaryIndex = () => {
           {/* TL;DR extractable summary */}
           <div className="tl-dr-summary mb-6 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white/70 text-sm leading-relaxed">
             <strong className="text-white/90">TL;DR:</strong>{" "}
-            The Invisible Exit Glossary defines 31 key terms across micro-SaaS, stealth operations, financial independence, and anonymous business building — providing plain-English explanations for employed professionals building side income without quitting.
+            The Invisible Exit Glossary defines 31 key terms across micro-SaaS, stealth operations, financial independence, and anonymous business building, providing plain-English explanations for employed professionals building side income without quitting.
           </div>
           {/* Search bar */}
           <div className="relative">

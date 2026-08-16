@@ -37,7 +37,7 @@ const READ_POLICY: Record<string, ReadPolicy> = {
       "updated_at",
     ],
   },
-  // Authenticated — always scoped to the caller's own rows
+  // Authenticated, always scoped to the caller's own rows
   profiles: { access: "auth", scopeCol: "id" },
   fym_entries: { access: "auth", scopeCol: "user_id" },
   fym_badges: { access: "auth", scopeCol: "user_id" },
@@ -125,7 +125,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const params: unknown[] = [];
   const whereParts: string[] = [];
 
-  // Mandatory ownership scoping for authenticated tables — never optional.
+  // Mandatory ownership scoping for authenticated tables, never optional.
   if (policy.scopeCol) {
     const scopeValue = policy.scopeClaim === "email" ? claims!.email : claims!.sub;
     params.push(scopeValue);

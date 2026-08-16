@@ -68,15 +68,15 @@ function generateLlmsTxt(): string {
 
   lines.push("# Invisible Exit");
   lines.push("");
-  lines.push("> Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
+  lines.push("> Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
   lines.push("");
-  lines.push("Invisible Exit provides: (1) FYM Dashboard — calculate your freedom number and track recurring revenue; (2) Idea Pipeline — validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub — entity separation, compliance audit, and invisibility scoring; (4) Launch Control — go-live automation for time-constrained founders; (5) Brand Manager — faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $9/month.");
+  lines.push("Invisible Exit provides: (1) FYM Dashboard, calculate your freedom number and track recurring revenue; (2) Idea Pipeline, validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub, entity separation, compliance audit, and invisibility scoring; (4) Launch Control, go-live automation for time-constrained founders; (5) Brand Manager, faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $9/month.");
   lines.push("");
 
   // ── Core Pages ──
   lines.push("## Core Pages");
   lines.push("");
-  lines.push(`- [Home](https://invisibleexit.com/): Main landing page — value proposition, 5 tools, pricing, and FAQ`);
+  lines.push(`- [Home](https://invisibleexit.com/): Main landing page, value proposition, 5 tools, pricing, and FAQ`);
   lines.push(`- [About](https://invisibleexit.com/about): About the founder and the Invisible Exit methodology`);
   lines.push(`- [Blog](https://invisibleexit.com/blog): ${blogPosts.length} articles on financial independence, micro-SaaS, stealth operations, and audience building for employed founders`);
 
@@ -90,7 +90,7 @@ function generateLlmsTxt(): string {
     lines.push(`- [Blog: ${cat.replace(/-/g, " ")}](https://invisibleexit.com/blog/category/${cat}): Category landing page`);
   }
   lines.push(`- [Glossary](https://invisibleexit.com/glossary): Plain-English definitions of micro-SaaS, recurring revenue, and stealth operations terms`);
-  lines.push(`- [Story](https://invisibleexit.com/story): The complete origin story — how a corporate manager built $4K/month invisibly`);
+  lines.push(`- [Story](https://invisibleexit.com/story): The complete origin story, how a corporate manager built $4K/month invisibly`);
   lines.push(`- [Adrian](https://invisibleexit.com/adrian): The anonymous founder's identity page`);
   lines.push(`- [Masterclass](https://invisibleexit.com/masterclass): Free 45-minute masterclass for corporate managers`);
   lines.push(`- [Privacy Policy](https://invisibleexit.com/privacy): Privacy policy`);
@@ -98,10 +98,10 @@ function generateLlmsTxt(): string {
   lines.push("");
   lines.push("## Funnel & Framework Pages");
   lines.push("");
-  lines.push(`- [Pro Membership](https://invisibleexit.com/pro): Pro tier — full access to all 5 AI tools`);
+  lines.push(`- [Pro Membership](https://invisibleexit.com/pro): Pro tier, full access to all 5 AI tools`);
   lines.push(`- [Freedom Number Calculator](https://invisibleexit.com/freedom): Calculate your freedom number and MRR target`);
   lines.push(`- [Non-Compete Scanner](https://invisibleexit.com/tools/non-compete-scanner): Free in-browser scanner that flags employment-contract clauses (non-compete, IP assignment, moonlighting bans) that could block a side business, scored against all 50 states' laws`);
-  lines.push(`- [Freedom Number Calculator Tool](https://invisibleexit.com/tools/freedom-calculator): Interactive calculator — when does side-business MRR replace your salary (tax-adjusted, embeddable)`);
+  lines.push(`- [Freedom Number Calculator Tool](https://invisibleexit.com/tools/freedom-calculator): Interactive calculator, when does side-business MRR replace your salary (tax-adjusted, embeddable)`);
   lines.push(`- [Inner Circle](https://invisibleexit.com/inner-circle): Private community of employed founders building invisible revenue`);
   lines.push(`- [Affiliate Program](https://invisibleexit.com/affiliates): Earn recurring commissions referring Invisible Exit`);
   lines.push(`- [Dream 100](https://invisibleexit.com/dream-100): Dream 100 audience-building framework`);
@@ -446,7 +446,7 @@ function generateLlmsTxt(): string {
     lines.push(`- [${p.h1}](${SITE}/vs-career/${p.slug}): Profession vs career entrepreneurship comparison`);
   }
   for (const f of firstYearEntries) {
-    lines.push(`- [${f.h1}](${SITE}/first-year/${f.slug}): First year of side business — what to expect`);
+    lines.push(`- [${f.h1}](${SITE}/first-year/${f.slug}): First year of side business, what to expect`);
   }
   for (const t of toolCrossReference) {
     lines.push(`- [${t.h1}](${SITE}/tools/${t.slug}): Tool comparison and cross-reference`);
@@ -498,7 +498,7 @@ function generateLlmsTxt(): string {
   lines.push("- AI-powered business building tools and workflows for solo founders");
   lines.push("- Micro-SaaS idea validation, launch, and growth strategies");
   lines.push("- Financial independence through recurring revenue (the $4,000/month freedom threshold)");
-  lines.push("- Employer invisibility — non-compete clauses, moonlighting rules, compliance");
+  lines.push("- Employer invisibility, non-compete clauses, moonlighting rules, compliance");
   lines.push("- Faceless content and distribution (YouTube without face, Reddit strategy, anonymous branding)");
   lines.push("- Step-by-step frameworks for building outside a 9-to-5 (5-hour weekend system, 90-day roadmap)");
   lines.push("- State-by-state legal guides for side business formation (LLC, non-competes, taxes)");
@@ -513,13 +513,13 @@ function generateLlmsTxt(): string {
 function generateLlmsFullTxt(): string {
   const lines: string[] = [];
 
-  lines.push("# Invisible Exit — Full Content Index for AI/LLM Systems");
+  lines.push("# Invisible Exit, Full Content Index for AI/LLM Systems");
   lines.push("");
   lines.push("> Complete content inventory with extended summaries. Each entry includes the title, URL, category, read time, and a detailed content summary.");
   lines.push("");
   lines.push("## Platform Overview");
   lines.push("");
-  lines.push("Invisible Exit is a faceless side-business system for employed professionals — a membership platform of 5 AI tools for building anonymous micro-SaaS recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $9/month. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or business exit-planning / M&A.)");
+  lines.push("Invisible Exit is a faceless side-business system for employed professionals, a membership platform of 5 AI tools for building anonymous micro-SaaS recurring revenue while employed. The platform provides business idea validation, revenue tracking, stealth operations guidance, launch automation, and anonymous brand building. Pricing from $9/month. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or business exit-planning / M&A.)");
   lines.push("");
 
   // ── Blog Posts ──
@@ -772,7 +772,7 @@ function generateLlmsFullTxt(): string {
     lines.push(`- **Summary:** ${s.intro}`);
     lines.push(`- **Stack:**`);
     for (const item of s.stack) {
-      lines.push(`  - ${item.category}: ${item.tool} — ${item.why} (${item.cost})`);
+      lines.push(`  - ${item.category}: ${item.tool}, ${item.why} (${item.cost})`);
     }
     lines.push(`- **Weekly Time:** ${s.weeklyTimeCommitment}`);
     if (s.faqs && s.faqs.length > 0) {

@@ -53,7 +53,7 @@ const PSYCHOGRAPHICS = [
 const DEEP_DESIRES = [
   {
     desire: "Optionality",
-    detail: "Not to quit — but to have the ABILITY to quit. The power to say no without fear.",
+    detail: "Not to quit, but to have the ABILITY to quit. The power to say no without fear.",
   },
   {
     desire: "Proof of Separation",
@@ -118,7 +118,7 @@ const DREAM_CUSTOMER_PAGE = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Dream Customer Avatar — Who We Build For | Invisible Exit"
+        title="Dream Customer Avatar, Who We Build For | Invisible Exit"
         description="The complete psychographic profile of the Invisible Exit dream customer: corporate managers trapped by golden handcuffs who want to build invisible recurring revenue."
         url="/who"
       />
@@ -139,8 +139,8 @@ const DREAM_CUSTOMER_PAGE = () => {
             exactly who you're trying to attract.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto">
-            This is the complete profile — demographics, psychographics, desires, fears, and
-            awareness levels — of the person we build every tool, page, and email for.
+            This is the complete profile, demographics, psychographics, desires, fears, and
+            awareness levels, of the person we build every tool, page, and email for.
           </p>
         </div>
       </section>
@@ -155,7 +155,7 @@ const DREAM_CUSTOMER_PAGE = () => {
             <p className="text-xl md:text-2xl font-bold text-foreground leading-relaxed">
               "A corporate manager earning $120K+ with vesting equity who feels trapped by the
               golden handcuffs, has 5–8 hours of weekly free time, and secretly wants to prove
-              their worth exists outside the company — without anyone finding out."
+              their worth exists outside the company, without anyone finding out."
             </p>
           </div>
         </div>
@@ -256,7 +256,7 @@ const DREAM_CUSTOMER_PAGE = () => {
         </div>
       </section>
 
-      {/* Awareness Levels — Eugene Schwartz */}
+      {/* Awareness Levels, Eugene Schwartz */}
       <section className="bg-white section-normal border-b border-border">
         <div className="container-narrow">
           <div className="flex items-center gap-3 mb-2">
@@ -305,7 +305,7 @@ const DREAM_CUSTOMER_PAGE = () => {
           <div className="mt-6 p-4 rounded-lg bg-amber-50 border border-amber-200 dark:bg-amber-950/20 dark:border-amber-900/50">
             <p className="text-sm text-foreground">
               <strong>Key insight:</strong> 85% of our dream customer is Unaware or Problem-Aware.
-              Most of our traffic strategy must target the top of the funnel — awareness-building
+              Most of our traffic strategy must target the top of the funnel, awareness-building
               content, not product pages.
             </p>
           </div>

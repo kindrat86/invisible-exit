@@ -1,7 +1,7 @@
 /**
  * /api/stripe-webhook.ts
  *
- * Vercel serverless route — converted from
+ * Vercel serverless route, converted from
  * supabase/functions/stripe-webhook/index.ts
  *
  * Receives Stripe webhook events. Verifies signature, then handles:

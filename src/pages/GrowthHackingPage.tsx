@@ -23,7 +23,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
 /**
- * TRAFFIC SECRETS: Secrets #19-20 — Growth Hacking & Butterfly Marketing
+ * TRAFFIC SECRETS: Secrets #19-20, Growth Hacking & Butterfly Marketing
  *
  * Russell's viral traffic playbook. The concept: build share-ability into
  * every step of the funnel so that every visitor brings 0.5+ new visitors.
@@ -113,7 +113,7 @@ const VIRAL_MECHANICS: ViralMechanic[] = [
     score: 50,
     desc: "Every Soap Opera and Seinfeld email includes a PS: 'If this helped you, forward it to someone who needs to read it.'",
     mechanic: "Organic sharing: no reward, just a nudge. The story-driven emails are inherently shareable because they're narrative, not pitch.",
-    kFactor: "Est. 0.05 (low but compounding — forwards bring high-intent visitors)",
+    kFactor: "Est. 0.05 (low but compounding, forwards bring high-intent visitors)",
   },
   {
     icon: Zap,
@@ -194,7 +194,7 @@ const GrowthHackingPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Growth Hacking Framework — The Viral Loop Engine | Invisible Exit"
+        title="Growth Hacking Framework, The Viral Loop Engine | Invisible Exit"
         description="How Invisible Exit builds virality into every step of the funnel. 7 viral mechanics, the full viral loop diagram, and viral coefficient estimates for each."
         url="/growth"
       />

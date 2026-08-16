@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 13 — Us vs Them / Tribal Identity
+ * EXPERT SECRETS: Chapter 13:  Us vs Them / Tribal Identity
  *
  * Russell: "A movement needs shared language. When people use the same
  * words, they feel like they belong to the same tribe."
@@ -29,7 +29,7 @@ const TERMS: Term[] = [
   {
     term: "Freedom Number",
     definition: "The exact monthly recurring revenue needed to replace your salary and cover expenses. The number that makes employment optional.",
-    origin: "Born from the realization that 0.5% equity = $120K/year passive = your salary. Freedom isn't a feeling — it's a number.",
+    origin: "Born from the realization that 0.5% equity = $120K/year passive = your salary. Freedom isn't a feeling, it's a number.",
     usage: "'I calculated my Freedom Number: $4,200/month. That's 145 customers at $29.'",
     category: "metric",
   },
@@ -49,7 +49,7 @@ const TERMS: Term[] = [
   },
   {
     term: "The Salary-Runway Method",
-    definition: "Proprietary framework. Treats your employment salary as non-dilutive startup funding — runway that costs zero equity.",
+    definition: "Proprietary framework. Treats your employment salary as non-dilutive startup funding, runway that costs zero equity.",
     origin: "Named the night Adrian deleted his resignation letter and reframed salary as funding.",
     usage: "'Using the Salary-Runway Method, I have 14 months of runway at zero equity cost.'",
     category: "framework",
@@ -57,14 +57,14 @@ const TERMS: Term[] = [
   {
     term: "The Triple-Separation Protocol",
     definition: "Proprietary framework. Three layers of separation: legal entity, digital footprint, and identity. Makes employer detection mathematically impossible.",
-    origin: "Named the night of the '3-second panic' — when a colleague found a similar website on a team call.",
+    origin: "Named the night of the '3-second panic', when a colleague found a similar website on a team call.",
     usage: "'I set up the Triple-Separation Protocol: Wyoming LLC, anonymous domain, separate Stripe. Zero connection.'",
     category: "framework",
   },
   {
     term: "The Cartridge System",
     definition: "Proprietary framework. Build the 5-tool pipeline first, then swap product ideas in and out like cartridges in a printer. The system doesn't care which idea you pick.",
-    origin: "Named after pivoting from a $9/month product to $4,100/month — without rebuilding infrastructure.",
+    origin: "Named after pivoting from a $9/month product to $4,100/month, without rebuilding infrastructure.",
     usage: "'Stop choosing ideas. Use the Cartridge System. Build the pipeline, swap cartridges.'",
     category: "framework",
   },
@@ -77,14 +77,14 @@ const TERMS: Term[] = [
   },
   {
     term: "The Cage Has a Door",
-    definition: "The core metaphor of the movement. Employment feels like a cage, but it has a door — you just have to look for it and build the key.",
+    definition: "The core metaphor of the movement. Employment feels like a cage, but it has a door, you just have to look for it and build the key.",
     origin: "Amsterdam taxi moment: the first $0.97 Stripe payment proved the door existed.",
     usage: "'The cage has a door. Most people never look for it. I found it.'",
     category: "core",
   },
   {
     term: "Cartridge",
-    definition: "A product idea that plugs into the 5-tool pipeline. Interchangeable. The system works with any cartridge — the pipeline is what matters.",
+    definition: "A product idea that plugs into the 5-tool pipeline. Interchangeable. The system works with any cartridge, the pipeline is what matters.",
     origin: "From the Cartridge System: 'ideas are cartridges, the system is the printer.'",
     usage: "'My first cartridge made $9. Third cartridge hit $850. The printer works.'",
     category: "framework",
@@ -98,7 +98,7 @@ const TERMS: Term[] = [
   },
   {
     term: "5 Hours",
-    definition: "The weekly time budget for building. Not a limitation — a forcing function that creates ruthless focus.",
+    definition: "The weekly time budget for building. Not a limitation, a forcing function that creates ruthless focus.",
     origin: "'I have 5 hours a week. That's enough. It has to be enough. And it is.'",
     usage: "'I built $4,100/month in 5 hours a week. The constraint was the advantage.'",
     category: "core",
@@ -114,7 +114,7 @@ const TERMS: Term[] = [
     term: "Boring Product",
     definition: "A micro-SaaS in an unsexy market (plumbing, logistics, electricians). Less competition, higher willingness to pay, lower churn.",
     origin: "'The boring product (a PDF generator for electricians) pays most of the mortgage.'",
-    usage: "'I chose a boring product — scheduling tool for dental offices. $47/month per user. Zero competition.'",
+    usage: "'I chose a boring product, scheduling tool for dental offices. $47/month per user. Zero competition.'",
     category: "core",
   },
   {

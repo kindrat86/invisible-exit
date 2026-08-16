@@ -80,7 +80,7 @@ export default function PricingModelPage() {
         <FAQAccordion faqs={entry.faqs} />
         <CTABox
           title="Choosing a pricing model?"
-          description="Calculate your freedom number first — then price accordingly."
+          description="Calculate your freedom number first, then price accordingly."
         />
       </div>
     </ContentPage>

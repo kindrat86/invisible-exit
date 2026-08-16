@@ -21,7 +21,7 @@ GOTCHAS_FILE = REPO_ROOT / ".github" / "seo-geo-automation" / "gotchas.md"
 CHANGELOG_FILE = REPO_ROOT / "SEO_CHANGELOG.md"
 GLM_API_URL = "https://api.z.ai/api/coding/paas/v4/chat/completions"
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
-# DeepSeek retired the `deepseek-chat` alias — /v1/models now serves only
+# DeepSeek retired the `deepseek-chat` alias, /v1/models now serves only
 # deepseek-v4-pro and deepseek-v4-flash, and the old name 400s. Both are
 # reasoning models, so reasoning tokens eat into the same output budget as
 # the JSON answer (see TruncatedResponse below).
@@ -32,7 +32,7 @@ DATE = datetime.now().strftime("%Y-%m-%d")
 
 
 class TruncatedResponse(RuntimeError):
-    """Model stopped because it hit max_tokens — the JSON object is incomplete."""
+    """Model stopped because it hit max_tokens, the JSON object is incomplete."""
 
     def __init__(self, content: str):
         super().__init__("response truncated at max_tokens")
@@ -44,7 +44,7 @@ class TruncatedResponse(RuntimeError):
 # GLM was quota-exhausted, the DeepSeek fallback inherited GLM's 16384 and
 # truncated at the then-current deepseek-chat's 8192 cap, so json.loads()
 # had nothing parseable). Models absent from this table keep the requested
-# budget — finish_reason == "length" is the backstop either way.
+# budget, finish_reason == "length" is the backstop either way.
 MODEL_MAX_TOKENS = {
     "glm-5.2": 16384,
     "deepseek-chat": 8192,
@@ -85,20 +85,20 @@ def _chat_api(api_url: str, api_key: str, model: str, system_prompt: str, user_p
                 content = choice["message"]["content"]
                 if choice.get("finish_reason") == "length":
                     print(
-                        f"{label} response hit the {max_tokens}-token ceiling — truncated.",
+                        f"{label} response hit the {max_tokens}-token ceiling, truncated.",
                         file=sys.stderr,
                     )
                     raise TruncatedResponse(content)
                 return content
         except TruncatedResponse:
-            # Retrying the identical request just truncates again — the caller
+            # Retrying the identical request just truncates again, the caller
             # re-asks in a shorter format instead.
             raise
         except urllib.error.HTTPError as e:
             body = e.read().decode() if e.fp else ""
             print(f"{label} API error {e.code} (attempt {attempt+1}/3): {body}", file=sys.stderr)
             last_err = e
-            # Rate-limited or quota exhausted — don't retry, let caller fall back
+            # Rate-limited or quota exhausted, don't retry, let caller fall back
             if e.code == 429:
                 break
         except Exception as e:
@@ -132,7 +132,7 @@ def glm_chat(system_prompt: str, user_prompt: str, max_tokens: int = 8192) -> st
     if ds_key:
         return _chat_api(DEEPSEEK_API_URL, ds_key, DEEPSEEK_MODEL, system_prompt, user_prompt, max_tokens, "DeepSeek")
 
-    raise RuntimeError("No API key available — set GLM_API_KEY or DEEPSEEK_API_KEY")
+    raise RuntimeError("No API key available, set GLM_API_KEY or DEEPSEEK_API_KEY")
 
 
 def read_file(path: Path) -> str:
@@ -183,7 +183,7 @@ def collect_asset_inventory() -> str:
     """List the non-page assets that ship in public/.
 
     Without this the model only ever saw meta tags REFERENCING assets, never
-    evidence of the assets themselves — so it inferred absence from silence
+    evidence of the assets themselves, so it inferred absence from silence
     and reported `og-image.png` as missing on every run for weeks, while the
     file was tracked in git and serving 200. The 4005-page HTML fleet is
     deliberately excluded; it is covered by the sitemap checks.
@@ -204,12 +204,12 @@ def collect_asset_inventory() -> str:
             continue
         rel = path.relative_to(public_dir)
         if any(part.startswith(".") for part in rel.parts):
-            continue  # .vercel/, .well-known/ — build and protocol internals
+            continue  # .vercel/, .well-known/, build and protocol internals
         if len(rel.parts) == 1:
             root_rows.append(f"/{rel} ({path.stat().st_size} bytes)")
         elif path.suffix.lower() in image_suffixes:
             # Per-page sidecars across the 4005-page fleet (public/og/ alone
-            # holds ~1070 cards) get summarised, not enumerated — listing
+            # holds ~1070 cards) get summarised, not enumerated, listing
             # them would cost more prompt than the rest of the audit.
             by_dir.setdefault("/" + rel.parts[0], []).append(rel.name)
 
@@ -218,18 +218,18 @@ def collect_asset_inventory() -> str:
         if len(names) <= 10:
             rows.extend(f"{directory}/{n}" for n in names)
         else:
-            rows.append(f"{directory}/ — {len(names)} image files (e.g. {names[0]})")
+            rows.append(f"{directory}/, {len(names)} image files (e.g. {names[0]})")
 
     if not rows:
         return ""
     return (
         "These files EXIST and are served from the site root. Any path listed "
-        "here is present — never report it as missing.\n" + "\n".join(rows)
+        "here is present, never report it as missing.\n" + "\n".join(rows)
     )
 
 
 def run_audit():
-    print(f"=== SEO/GEO Audit Starting — Mode: {AUDIT_MODE} — {DATE} ===")
+    print(f"=== SEO/GEO Audit Starting, Mode: {AUDIT_MODE}, {DATE} ===")
 
     instructions = read_file(INSTRUCTIONS_FILE)
     memory = read_file(MEMORY_FILE)
@@ -270,7 +270,7 @@ Rules:
 1. Be specific. Reference exact files and line content.
 2. Only suggest changes for public-facing marketing pages.
 3. Never mention the target audience by name.
-4. If everything passes, say so — don't invent issues.
+4. If everything passes, say so, don't invent issues.
 5. Never report a file as missing unless it is absent from the ASSET
    INVENTORY section of the repo context. That list is the only evidence
    about which non-page files exist; a meta tag referencing a path is not
@@ -293,7 +293,7 @@ Analyze the files above and produce your audit findings as the JSON object speci
         # report-only audit run is far more useful than a red X on the cron,
         # and a half-written diff must never reach `git apply` anyway.
         print(
-            "Response was truncated — re-running in findings-only mode (no diff).",
+            "Response was truncated, re-running in findings-only mode (no diff).",
             file=sys.stderr,
         )
         compact_prompt = (
@@ -343,7 +343,7 @@ def apply_changes(result: dict):
     print(f"\n=== AUDIT FINDINGS ({DATE}) ===")
     for f in findings:
         status_icon = "✅" if f.get("status") == "PASS" else "❌"
-        print(f"  {status_icon} {f['check']}: {f['status']} — {f.get('notes', '')}")
+        print(f"  {status_icon} {f['check']}: {f['status']}, {f.get('notes', '')}")
 
     print(f"\n=== CHANGES ({len(changes)}) ===")
     for c in changes:
@@ -377,11 +377,11 @@ def apply_changes(result: dict):
                 # commit the temp artifact to main, and the PR would claim the
                 # changes landed when nothing was applied.
                 print(
-                    "DIFF NOT APPLIED — discarding it; the findings below still stand."
+                    "DIFF NOT APPLIED, discarding it; the findings below still stand."
                 )
                 diff_path.unlink(missing_ok=True)
                 result["changes_made"] = [
-                    "NOTE: the proposed diff did not apply cleanly and was discarded — "
+                    "NOTE: the proposed diff did not apply cleanly and was discarded, "
                     "no code changes were made this run."
                 ] + list(changes)
                 changes = result["changes_made"]
@@ -455,7 +455,7 @@ def main():
             for f in result.get("findings", [])
         )
         with open(gh_summary, "w") as f:
-            f.write(f"## SEO/GEO Audit — {DATE} ({AUDIT_MODE})\n\n")
+            f.write(f"## SEO/GEO Audit, {DATE} ({AUDIT_MODE})\n\n")
             f.write(f"{summary}\n\n")
             if findings_md:
                 f.write(f"| Check | Status | Notes |\n|-------|--------|-------|\n{findings_md}\n\n")
@@ -465,7 +465,7 @@ def main():
                     f.write(f"- {c}\n")
 
     if not has_changes:
-        print("\nNo changes needed — site is clean.")
+        print("\nNo changes needed, site is clean.")
 
 
 if __name__ == "__main__":

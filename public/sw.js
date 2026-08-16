@@ -1,4 +1,4 @@
-// Invisible Exit Service Worker — PWA offline support + performance caching
+// Invisible Exit Service Worker, PWA offline support + performance caching
 const CACHE_VERSION = 'ie-v4';
 const STATIC_CACHE = `ie-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ie-pages-${CACHE_VERSION}`;
@@ -11,7 +11,7 @@ const PRECACHE_URLS = [
   '/site.webmanifest',
 ];
 
-// Install — pre-cache critical assets
+// Install, pre-cache critical assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
@@ -19,7 +19,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// Activate — clean old caches
+// Activate, clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -34,7 +34,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // Fetch strategy:
-// - Navigation requests: network-first, cache fallback. NOT cache-first —
+// - Navigation requests: network-first, cache fallback. NOT cache-first, 
 //   stale HTML references old hashed chunks after a deploy → white screen.
 // - Static assets (JS/CSS/fonts): cache-first (immutable, hashed filenames)
 self.addEventListener('fetch', (event) => {

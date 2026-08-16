@@ -144,7 +144,7 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Operating in-state; high taxes but flexible market",
     tips: [
       "Budget for the $800 annual LLC franchise tax regardless of profit.",
-      "Non-competes are essentially banned—use NDAs instead.",
+      "Non-competes are essentially banned-use NDAs instead.",
       "File the Statement of Information within 90 days of formation."
     ],
     faqs: [
@@ -169,7 +169,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "Low fees and worker-friendly non-compete rules",
     tips: [
-      "Annual report is only $10—very cheap to maintain.",
+      "Annual report is only $10, very cheap to maintain.",
       "Non-competes voided for sub-$100K earners; verify tier.",
       "Use the Colorado Secretary of State online portal for fastest filing."
     ],
@@ -216,7 +216,7 @@ export const stateGuides: StateGuide[] = [
     stateIncomeTaxRate: "0% for LLC income (pass-through)",
     selfEmploymentNote: "Federal 15.3% SE tax applies.",
     anonymousLlcAllowed: true,
-    anonymousLlcNotes: "Members not listed on public filings—strong anonymity.",
+    anonymousLlcNotes: "Members not listed on public filings-strong anonymity.",
     processingTime: "1-2 weeks",
     expeditedAvailable: true,
     bestFor: "Privacy, national prestige, and Court of Chancery",
@@ -226,7 +226,7 @@ export const stateGuides: StateGuide[] = [
       "Operating agreement is not filed but is legally essential."
     ],
     faqs: [
-      { question: "Does Delaware LLC income face state tax?", answer: "No—LLC income is pass-through and not taxed at the Delaware level." },
+      { question: "Does Delaware LLC income face state tax?", answer: "No-LLC income is pass-through and not taxed at the Delaware level." },
       { question: "Can Delaware LLCs be anonymous?", answer: "Yes, member names are not required on the formation filing." }
     ]
   },
@@ -248,7 +248,7 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Operating in DC metro with strong worker protections",
     tips: [
       "File the two-year report by April 1 to avoid penalties.",
-      "DC bans non-competes for most workers—check exemptions.",
+      "DC bans non-competes for most workers-check exemptions.",
       "Use a DC registered agent with a physical district address."
     ],
     faqs: [
@@ -273,9 +273,9 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "No state income tax + warm climate",
     tips: [
-      "Annual report is $138.75—higher than most states.",
+      "Annual report is $138.75, higher than most states.",
       "File before May 1 each year to avoid $400 late fee.",
-      "Non-competes are enforced—draft carefully."
+      "Non-competes are enforced-draft carefully."
     ],
     faqs: [
       { question: "Does Florida have a state income tax?", answer: "No, Florida has no personal state income tax." },
@@ -325,7 +325,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "Operating in-state with low annual fees",
     tips: [
-      "Annual filing is just $12.50—cheap to maintain.",
+      "Annual filing is just $12.50, cheap to maintain.",
       "Hawaii has a high top income tax rate.",
       "Confirm GE tax (general excise) obligations if you sell services."
     ],
@@ -351,7 +351,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "No annual report burden",
     tips: [
-      "No annual report required—low ongoing admin.",
+      "No annual report required-low ongoing admin.",
       "Idaho income tax is flat-ish at high rates.",
       "Use SOS online filing to confirm a registered agent quickly."
     ],
@@ -403,7 +403,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Low-rate tax environment in the Midwest",
     tips: [
-      "Annual report is due every two years—cheap at $31.",
+      "Annual report is due every two years-cheap at $31.",
       "Indiana income tax is among the lowest flat rates.",
       "Confirm registered agent consent before filing."
     ],
@@ -429,9 +429,9 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Cheap filing fee and modest annual cost",
     tips: [
-      "Filing fee is just $50—low entry cost.",
+      "Filing fee is just $50, low entry cost.",
       "Biennial report due in odd years.",
-      "Iowa has reformed tax brackets recently—check current rates."
+      "Iowa has reformed tax brackets recently-check current rates."
     ],
     faqs: [
       { question: "How often is the Iowa report due?", answer: "Every two years." },
@@ -482,11 +482,11 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Lowest filing fee and cheap annual cost",
     tips: [
       "$40 filing fee is among the cheapest in the US.",
-      "Annual report is only $15—low ongoing cost.",
+      "Annual report is only $15, low ongoing cost.",
       "Confirm Kentucky LLET tax obligations if revenue is high."
     ],
     faqs: [
-      { question: "What is Kentucky's filing fee?", answer: "$40—one of the lowest in the US." },
+      { question: "What is Kentucky's filing fee?", answer: "$40, one of the lowest in the US." },
       { question: "How much is the annual report?", answer: "$15 per year." }
     ]
   },
@@ -507,7 +507,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Low-tax Southern state",
     tips: [
-      "Annual report is just $35—cheap.",
+      "Annual report is just $35, cheap.",
       "Top income tax rate is low at 3%.",
       "Use Louisiana geauxBiz portal for online filing."
     ],
@@ -533,8 +533,8 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "Northeast operations with no annual report",
     tips: [
-      "No annual report required—low ongoing admin.",
-      "Filing fee is $175—higher than average.",
+      "No annual report required-low ongoing admin.",
+      "Filing fee is $175, higher than average.",
       "Maine income tax rates are among the higher end."
     ],
     faqs: [
@@ -559,7 +559,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Mid-Atlantic base despite high annual fees",
     tips: [
-      "The $300 annual fee is high—budget accordingly.",
+      "The $300 annual fee is high-budget accordingly.",
       "Maryland local counties levy their own income tax.",
       "File the personal property return by April 15."
     ],
@@ -586,11 +586,11 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Operating in MA despite high filing fee",
     tips: [
       "$500 filing fee is among the highest in the US.",
-      "No annual report required—small relief.",
+      "No annual report required-small relief.",
       "Non-competes must comply with the 2018 statute's strict rules."
     ],
     faqs: [
-      { question: "How much is the Massachusetts LLC filing fee?", answer: "$500—one of the highest in the US." },
+      { question: "How much is the Massachusetts LLC filing fee?", answer: "$500, one of the highest in the US." },
       { question: "Are MA non-competes enforceable?", answer: "Yes, but tightly regulated under the 2018 statute." }
     ]
   },
@@ -611,7 +611,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Low flat tax + cheap filing fee",
     tips: [
-      "$50 filing fee and $25 annual—very cheap.",
+      "$50 filing fee and $25 annual-very cheap.",
       "Michigan has a flat 4.25% income tax.",
       "File the annual statement by February 15."
     ],
@@ -639,10 +639,10 @@ export const stateGuides: StateGuide[] = [
     tips: [
       "Annual renewal is free but still mandatory.",
       "Minnesota banned non-competes starting 2025.",
-      "Income tax rates are high—plan accordingly."
+      "Income tax rates are high-plan accordingly."
     ],
     faqs: [
-      { question: "Are Minnesota non-competes enforceable?", answer: "No—banned for most workers as of 2025." },
+      { question: "Are Minnesota non-competes enforceable?", answer: "No-banned for most workers as of 2025." },
       { question: "Is the Minnesota annual renewal free?", answer: "Yes, no fee, but filing is still required." }
     ]
   },
@@ -663,8 +663,8 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Cheap filing and no annual report",
     tips: [
-      "$50 filing fee and no annual report—very cheap.",
-      "Mississippi is phasing out income tax—check current rates.",
+      "$50 filing fee and no annual report-very cheap.",
+      "Mississippi is phasing out income tax-check current rates.",
       "Use the SOS online portal for fast filing."
     ],
     faqs: [
@@ -689,8 +689,8 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Cheap filing and no annual report",
     tips: [
-      "$50 filing fee and no annual report—very cheap.",
-      "Missouri is reducing income tax—check current rate.",
+      "$50 filing fee and no annual report-very cheap.",
+      "Missouri is reducing income tax-check current rate.",
       "Verify franchise tax if assets exceed $1M."
     ],
     faqs: [
@@ -715,7 +715,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "Low-cost Mountain West state",
     tips: [
-      "$70 filing fee and $20 annual—cheap to maintain.",
+      "$70 filing fee and $20 annual-cheap to maintain.",
       "Montana has no general sales tax.",
       "File the annual report by April 15."
     ],
@@ -762,7 +762,7 @@ export const stateGuides: StateGuide[] = [
     stateIncomeTaxRate: "0% (no state income tax)",
     selfEmploymentNote: "Federal 15.3% SE tax still applies.",
     anonymousLlcAllowed: true,
-    anonymousLlcNotes: "Members not required on public filings—strong anonymity.",
+    anonymousLlcNotes: "Members not required on public filings-strong anonymity.",
     processingTime: "2-4 weeks",
     expeditedAvailable: true,
     bestFor: "Privacy + no income tax (premium pricing)",
@@ -840,12 +840,12 @@ export const stateGuides: StateGuide[] = [
     stateIncomeTaxRate: "1.9-5.9%",
     selfEmploymentNote: "Federal 15.3% SE tax applies.",
     anonymousLlcAllowed: true,
-    anonymousLlcNotes: "Members not required on public filings—strong anonymity.",
+    anonymousLlcNotes: "Members not required on public filings-strong anonymity.",
     processingTime: "2-3 weeks",
     expeditedAvailable: false,
     bestFor: "Cheapest anonymous LLC option",
     tips: [
-      "$50 filing fee and no annual report—cheapest anonymous LLC.",
+      "$50 filing fee and no annual report-cheapest anonymous LLC.",
       "Members are not disclosed publicly.",
       "Use a New Mexico registered agent for full privacy."
     ],
@@ -897,7 +897,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Southeast state with flat-ish tax",
     tips: [
-      "Annual report is $200—budget for it.",
+      "Annual report is $200, budget for it.",
       "NC income tax is flat-ish around 4.5-4.75%.",
       "File by April 15 each year."
     ],
@@ -928,7 +928,7 @@ export const stateGuides: StateGuide[] = [
       "Annual report due by November 15."
     ],
     faqs: [
-      { question: "Are ND non-competes enforceable?", answer: "No—banned for most workers." },
+      { question: "Are ND non-competes enforceable?", answer: "No-banned for most workers." },
       { question: "What is ND's top income tax rate?", answer: "Approximately 2.5%." }
     ]
   },
@@ -949,12 +949,12 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "No annual report + low income tax",
     tips: [
-      "No annual report required—low ongoing admin.",
+      "No annual report required-low ongoing admin.",
       "Ohio income tax brackets top out around 3.5%.",
       "Confirm commercial activity tax (CAT) if revenue exceeds $3M."
     ],
     faqs: [
-      { question: "Does Ohio require an annual report?", answer: "No—Ohio does not require annual reports for LLCs." },
+      { question: "Does Ohio require an annual report?", answer: "No-Ohio does not require annual reports for LLCs." },
       { question: "What is Ohio's top income tax rate?", answer: "Approximately 3.5%." }
     ]
   },
@@ -976,11 +976,11 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Worker-friendly state with low annual cost",
     tips: [
       "Annual report is just $25.",
-      "OK banned non-competes—check the latest effective date.",
+      "OK banned non-competes-check the latest effective date.",
       "Use OK SOS online filing portal."
     ],
     faqs: [
-      { question: "Are OK non-competes enforceable?", answer: "No—banned under recent reform." },
+      { question: "Are OK non-competes enforceable?", answer: "No-banned under recent reform." },
       { question: "How much is the OK annual report?", answer: "$25 per year." }
     ]
   },
@@ -1001,7 +1001,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "West Coast operations outside California",
     tips: [
-      "Annual report is $100—moderate.",
+      "Annual report is $100, moderate.",
       "Oregon has a high top income tax rate.",
       "File the annual report on the anniversary date of formation."
     ],
@@ -1028,8 +1028,8 @@ export const stateGuides: StateGuide[] = [
     bestFor: "Flat 3.07% tax + cheap annual fee",
     tips: [
       "PA has a flat 3.07% income tax.",
-      "Annual report is just $7—very cheap.",
-      "PA introduced an annual report in 2024—don't skip it."
+      "Annual report is just $7, very cheap.",
+      "PA introduced an annual report in 2024, don't skip it."
     ],
     faqs: [
       { question: "What is PA's income tax rate?", answer: "A flat 3.07%." },
@@ -1079,7 +1079,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: false,
     bestFor: "No annual report + moderate income tax",
     tips: [
-      "No annual report required—low ongoing admin.",
+      "No annual report required-low ongoing admin.",
       "SC income tax tops out around 6.4%.",
       "Use SC SOS online portal for fast filing."
     ],
@@ -1100,7 +1100,7 @@ export const stateGuides: StateGuide[] = [
     stateIncomeTaxRate: "0% (no state income tax)",
     selfEmploymentNote: "Federal 15.3% SE tax still applies.",
     anonymousLlcAllowed: true,
-    anonymousLlcNotes: "Members not required on public filings—strong anonymity.",
+    anonymousLlcNotes: "Members not required on public filings-strong anonymity.",
     processingTime: "2-3 weeks",
     expeditedAvailable: true,
     bestFor: "No income tax + anonymity",
@@ -1136,8 +1136,8 @@ export const stateGuides: StateGuide[] = [
       "Confirm franchise/excise tax obligations annually."
     ],
     faqs: [
-      { question: "Does Tennessee have a state income tax?", answer: "No—the Hall income tax was fully repealed in 2021." },
-      { question: "How much is the TN LLC filing fee?", answer: "$300—among the highest." }
+      { question: "Does Tennessee have a state income tax?", answer: "No-the Hall income tax was fully repealed in 2021." },
+      { question: "How much is the TN LLC filing fee?", answer: "$300, among the highest." }
     ]
   },
   {
@@ -1158,7 +1158,7 @@ export const stateGuides: StateGuide[] = [
     bestFor: "No income tax (large market)",
     tips: [
       "No annual report, but franchise tax report is required.",
-      "No state income tax—a major benefit.",
+      "No state income tax-a major benefit.",
       "Franchise tax only applies above the no-tax-due threshold."
     ],
     faqs: [
@@ -1183,7 +1183,7 @@ export const stateGuides: StateGuide[] = [
     expeditedAvailable: true,
     bestFor: "Low fees + fast processing in Mountain West",
     tips: [
-      "$70 filing fee and $18 annual—cheap to maintain.",
+      "$70 filing fee and $18 annual-cheap to maintain.",
       "Utah has a near-flat income tax around 4.65%.",
       "Use the Utah SOS online portal for fast turnaround."
     ],
@@ -1262,7 +1262,7 @@ export const stateGuides: StateGuide[] = [
     bestFor: "West Coast tech businesses",
     tips: [
       "WA has no personal income tax on wages but a 7% capital gains tax.",
-      "Annual report is $60—moderate.",
+      "Annual report is $60, moderate.",
       "Confirm B&O tax obligations if revenue is significant."
     ],
     faqs: [
@@ -1334,7 +1334,7 @@ export const stateGuides: StateGuide[] = [
     stateIncomeTaxRate: "0% (no state income tax)",
     selfEmploymentNote: "Federal 15.3% SE tax still applies.",
     anonymousLlcAllowed: true,
-    anonymousLlcNotes: "Members not required on public filings—best anonymity in the US.",
+    anonymousLlcNotes: "Members not required on public filings-best anonymity in the US.",
     processingTime: "1-2 weeks",
     expeditedAvailable: true,
     bestFor: "Best anonymous LLC + no income tax",
@@ -1344,7 +1344,7 @@ export const stateGuides: StateGuide[] = [
       "Use a Wyoming registered agent for maximum privacy."
     ],
     faqs: [
-      { question: "Are Wyoming LLCs anonymous?", answer: "Yes—members are not on public filings." },
+      { question: "Are Wyoming LLCs anonymous?", answer: "Yes-members are not on public filings." },
       { question: "Does Wyoming have a state income tax?", answer: "No." }
     ]
   }

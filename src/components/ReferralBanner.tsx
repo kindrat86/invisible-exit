@@ -3,7 +3,7 @@ import { X, Gift } from "lucide-react";
 import { getReferralCode } from "@/lib/referral";
 
 /**
- * Referral Engine — referred-visitor banner.
+ * Referral Engine, referred-visitor banner.
  * When the visitor arrived via a referral link (?ref=CODE), tell them the
  * deal up front: first month free, applied automatically at checkout.
  */
@@ -33,7 +33,7 @@ const ReferralBanner = () => {
           <Gift className="w-4 h-4 text-primary-light" aria-hidden="true" />
         </div>
         <p className="text-sm leading-snug">
-          A colleague referred you — <strong>your first month is free</strong>.
+          A colleague referred you, <strong>your first month is free</strong>.
           The discount is applied automatically at checkout.
         </p>
         <button

@@ -107,7 +107,7 @@ export default function ReverseCalculator({ inputs }: ReverseCalculatorProps) {
         {/* Already met */}
         {result && "alreadyMet" in result && result.alreadyMet && (
           <p className="text-sm text-green-600 font-medium">
-            You've already hit your target. Congratulations — you're ahead of
+            You've already hit your target. Congratulations, you're ahead of
             schedule. Consider raising your goal to build a bigger safety cushion.
           </p>
         )}

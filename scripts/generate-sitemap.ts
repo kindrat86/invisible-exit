@@ -16,7 +16,7 @@ function shouldNoindexSitemapUrl(loc: string): boolean {
   if (path === "/" || path === "" || path.startsWith("/freedom") || path === "/site-index.html") {
     return false;
   }
-  // KEEP single-profession idea pages — only NOINDEX cross-products
+  // KEEP single-profession idea pages, only NOINDEX cross-products
   if (path.startsWith("/ideas/")) {
     const segments = path.split("/").filter(Boolean);
     if (segments.length === 2) return false;
@@ -118,7 +118,7 @@ async function main() {
 
   const today = new Date().toISOString().split("T")[0];
   // Truthful lastmod: only blog posts carry real dates. Non-blog pSEO pages
-  // are generated fresh each build — stamping "today" is misleading. Empty string
+  // are generated fresh each build, stamping "today" is misleading. Empty string
   // signals the XML writer to omit the lastmod tag (optional per sitemap spec).
   const NO_LASTMOD = "";
   const latestPostDate = blogPosts
@@ -222,7 +222,7 @@ async function main() {
       changefreq: "monthly" as const,
       priority: "0.7" as const,
     })),
-    // Legal pages (removed from sitemap — they are noindex)
+    // Legal pages (removed from sitemap, they are noindex)
     // /privacy and /terms are legal pages with no SEO value
     // Keeping them in the sitemap signals to Google they're important when they're not
     {
@@ -397,12 +397,12 @@ async function main() {
     // /site-index.html is the crawlable discovery hub itself, which
     // shouldNoindexSitemapUrl() has always whitelisted; /network is a real
     // static page (public/network.html, rewritten from /network).
-    // NOT added: the /niches hub — App.tsx routes it to <Navigate to="/blog" />,
+    // NOT added: the /niches hub, App.tsx routes it to <Navigate to="/blog" />,
     // so submitting it would just feed Google a client-side redirect.
     { loc: "https://invisibleexit.com/network", lastmod: today, changefreq: "monthly", priority: "0.5" },
     { loc: "https://invisibleexit.com/site-index.html", lastmod: today, changefreq: "weekly", priority: "0.5" },
     // Static research datasets (public/data/<slug>/index.html, served via /data/(.*) rewrite).
-    // These are NOT dataReports entries (those are React routes) — list them explicitly
+    // These are NOT dataReports entries (those are React routes), list them explicitly
     // or the build-regenerated sitemap drops them.
     { loc: "https://invisibleexit.com/data/golden-handcuffs-index", lastmod: "2026-08-13", changefreq: "monthly", priority: "0.8" },
     { loc: "https://invisibleexit.com/data/micro-saas-exit-multiples", lastmod: "2026-07-20", changefreq: "monthly", priority: "0.8" },
@@ -675,7 +675,7 @@ async function main() {
       priority: "0.7" as const,
     })),
 
-    // pSEO Round 2 — Greg Isenberg expansion
+    // pSEO Round 2, Greg Isenberg expansion
     ...professionMistakes.map((m: { slug: string }) => ({
       loc: `https://invisibleexit.com/mistakes/${m.slug}`,
       lastmod: today,
@@ -928,9 +928,9 @@ async function main() {
 
   // Post-process: truthful lastmod. Only individual blog posts (real
   // publishedAt dates) and the /blog hub (latestPostDate, a genuinely
-  // meaningful aggregate) carry real dates. Everything else — including
+  // meaningful aggregate) carry real dates. Everything else, including
   // /blog/category/* pages, which also contain the substring "/blog/" and
-  // were wrongly kept by a naive `.includes("/blog/")` check — is
+  // were wrongly kept by a naive `.includes("/blog/")` check, is
   // programmatic and gets no lastmod.
   const realLastmodLocs = new Set([
     "https://invisibleexit.com/blog",
@@ -1014,7 +1014,7 @@ const submaps: Record<string, SitemapEntry[]> = {
   "time-frameworks": filteredEntries.filter(e => e.loc.includes("/time-frameworks/")),
 };
 
-// Write each sub-sitemap (image annotations only — hreflang removed 2026-07-23)
+// Write each sub-sitemap (image annotations only, hreflang removed 2026-07-23)
 
 const submapFiles: string[] = [];
 for (const [name, subs] of Object.entries(submaps)) {
@@ -1025,7 +1025,7 @@ for (const [name, subs] of Object.entries(submaps)) {
       // Truthful lastmod: omit when unknown (non-blog pSEO pages). Optional per spec.
       const lastmodXml = e.lastmod ? '    <lastmod>' + e.lastmod + '</lastmod>\n' : '';
       let url = '  <url>\n    <loc>' + e.loc + '</loc>\n' + lastmodXml + '    <changefreq>' + e.changefreq + '</changefreq>\n    <priority>' + e.priority + '</priority>\n';
-      // Hreflang removed 2026-07-23: no real translations exist — all locale URLs 308-redirect.
+      // Hreflang removed 2026-07-23: no real translations exist, all locale URLs 308-redirect.
       // Broken hreflang in sitemaps is worse than none (Google may penalize).
       // Image annotation for blog posts
       if (e.loc.includes('/blog/') && !e.loc.includes('/category/')) {

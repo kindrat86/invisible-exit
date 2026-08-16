@@ -31,7 +31,7 @@ export default function UpgradeBanner() {
         <Rocket className="w-5 h-5 text-[#60A5FA] shrink-0" />
         <div className="min-w-0">
           <p className="text-white text-sm font-medium">
-            Unlock all features — $17.99/month (founding price, locked for life)
+            Unlock all features, $17.99/month (founding price, locked for life)
           </p>
           <p className="text-white/50 text-xs">Limited to the first 100 Founding Members</p>
         </div>

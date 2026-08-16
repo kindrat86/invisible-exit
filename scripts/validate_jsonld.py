@@ -48,7 +48,7 @@ def check_file(path):
         try:
             parsed = json.loads(block)
         except json.JSONDecodeError as e:
-            errors.append(f"{path} [block {i}]: invalid JSON — {e}")
+            errors.append(f"{path} [block {i}]: invalid JSON, {e}")
             continue
 
         nodes = parsed if isinstance(parsed, list) else [parsed]

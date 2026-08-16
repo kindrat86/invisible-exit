@@ -25,10 +25,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // React core — stable, cached long-term. clsx/tailwind-merge live here
+          // React core, stable, cached long-term. clsx/tailwind-merge live here
           // so the entry's cn() helper doesn't drag the charts chunk onto every page.
           "vendor-react": ["react", "react-dom", "react-router-dom", "clsx", "tailwind-merge"],
-          // Radix UI primitives — shared across many components
+          // Radix UI primitives, shared across many components
           "vendor-radix": [
             "@radix-ui/react-accordion",
             "@radix-ui/react-alert-dialog",
@@ -51,13 +51,13 @@ export default defineConfig({
             "@radix-ui/react-toast",
             "@radix-ui/react-tooltip",
           ],
-          // Icons — large set, rarely changes
+          // Icons, large set, rarely changes
           "vendor-icons": ["lucide-react"],
           // Data layer
           "vendor-data": ["@tanstack/react-query"],
-          // Charting — only used in dashboard
+          // Charting, only used in dashboard
           "vendor-charts": ["recharts", "date-fns"],
-          // Capture — only used in specific tools
+          // Capture, only used in specific tools
           "vendor-capture": ["html2canvas"],
         },
       },

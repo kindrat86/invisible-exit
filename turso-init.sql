@@ -1,5 +1,5 @@
 -- ═══════════════════════════════════════════════════════════════
--- InvisibleExit — Turso SQLite Initialization Script
+-- InvisibleExit, Turso SQLite Initialization Script
 -- Consolidated from 13 Supabase migrations, converted Postgres → SQLite
 -- ═══════════════════════════════════════════════════════════════
 -- SQLite differences from Postgres:
@@ -178,7 +178,7 @@ INSERT OR IGNORE INTO roadmap_features (id, title, description) VALUES
   (lower(hex(randomblob(16))), 'Peer Mastermind Matching', 'Get matched with other founding members at your stage for anonymous accountability and strategy sessions.'),
   (lower(hex(randomblob(16))), 'Tax Optimization Playbook', 'Jurisdiction-specific guides on structuring your side income to minimize tax liability legally.'),
   (lower(hex(randomblob(16))), 'Automated MRR Tracking Integrations', 'Connect Stripe, Gumroad, or Paddle to auto-import revenue data into your FYM calculator.'),
-  (lower(hex(randomblob(16))), 'Content Repurposing Engine', 'Turn one piece of content into 10 formats automatically — blog, tweets, LinkedIn, email, shorts.'),
+  (lower(hex(randomblob(16))), 'Content Repurposing Engine', 'Turn one piece of content into 10 formats automatically, blog, tweets, LinkedIn, email, shorts.'),
   (lower(hex(randomblob(16))), 'Competitor Intelligence Dashboard', 'Track competitor pricing, features, and positioning changes in your niche automatically.'),
   (lower(hex(randomblob(16))), 'Exit Simulation Mode', 'Model what happens if you quit today: runway, income gaps, insurance, and a 90-day transition plan.'),
   (lower(hex(randomblob(16))), 'Anonymous Networking Directory', 'Find and connect with other invisible entrepreneurs in your industry without exposing your identity.'),

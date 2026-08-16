@@ -1,7 +1,7 @@
 /**
  * /api/email-sequence-scheduler.ts
  *
- * Vercel serverless route — converted from
+ * Vercel serverless route, converted from
  * supabase/functions/email-sequence-scheduler/index.ts
  *
  * Called by Vercel Cron (or manually). Auth via CRON_SECRET.
@@ -75,7 +75,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // ── TESTER SUPPRESSION ──
       // Exclude tester addresses from marketing sends.
       // Scope: Invisible Exit / Adrian <escape@invisibleexit.com> only.
-      // Matches by domain — all @sipiteno.com and @sipi.bot addresses
+      // Matches by domain, all @sipiteno.com and @sipi.bot addresses
       // are internal test accounts.
       // (Ported from supabase/functions/email-sequence-scheduler, which was
       // never deployed: the Vercel cron hits THIS route, not the edge function.)
@@ -89,7 +89,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
            WHERE id = $3`,
           [tsTester, tsTester, schedule.id],
         );
-        continue; // Skip tester — mark complete, do not send
+        continue; // Skip tester, mark complete, do not send
       }
 
       // ── BUYER SUPPRESSION ──
@@ -128,7 +128,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         if (daysSent.includes(day)) continue;
         if (daysSinceStart < day) break;
 
-        // This email is due — find the matching entry in the sequence array
+        // This email is due, find the matching entry in the sequence array
         const emailData = allEmails.find((e) => e.day === day);
         if (!emailData) {
           // Day not in this sequence's schedule; mark as sent to skip next time

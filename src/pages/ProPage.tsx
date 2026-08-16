@@ -62,11 +62,11 @@ const COMPARISON = [
 const FAQS = [
   {
     q: "How is Pro different from the $9 starter plan?",
-    a: "Starter is DIY — you get the 5 tools and email sequence, but you're on your own. Pro is done-with-others: weekly coaching calls, community access, idea validation reports, and monthly MRR audits. You get direct access to Adrian and a community of peers.",
+    a: "Starter is DIY, you get the 5 tools and email sequence, but you're on your own. Pro is done-with-others: weekly coaching calls, community access, idea validation reports, and monthly MRR audits. You get direct access to Adrian and a community of peers.",
   },
   {
     q: "How is Pro different from the $2,000 Intensive?",
-    a: "The Intensive is 1-on-1 with Adrian for 90 days. Pro is group-based and ongoing. The Intensive includes a custom stealth audit, idea sprint, and launch review — all personalized to you. Pro gives you ongoing access at a fraction of the cost.",
+    a: "The Intensive is 1-on-1 with Adrian for 90 days. Pro is group-based and ongoing. The Intensive includes a custom stealth audit, idea sprint, and launch review, all personalized to you. Pro gives you ongoing access at a fraction of the cost.",
   },
   {
     q: "Can I upgrade from Starter to Pro later?",
@@ -122,7 +122,7 @@ const ProPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Invisible Exit Pro — Group Coaching + Community ($29/month)"
+        title="Invisible Exit Pro, Group Coaching + Community ($29/month)"
         description="Weekly group coaching with Adrian, private community access, idea validation reports, and monthly MRR audits. For managers who want done-with-others support. $29/month."
         url="/pro"
       />
@@ -146,7 +146,7 @@ const ProPage = () => {
             Weekly coaching. Private community. Idea validation. MRR audits.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto mb-10">
-            For managers who want more than tools — but don't need 1-on-1 coaching (yet).
+            For managers who want more than tools, but don't need 1-on-1 coaching (yet).
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-white/50 text-sm mb-2">
@@ -240,13 +240,13 @@ const ProPage = () => {
                   <tr key={row.feature} className="border-b border-border">
                     <td className="py-3 px-4 text-sm text-foreground">{row.feature}</td>
                     <td className="text-center py-3 px-4">
-                      {row.starter ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">—</span>}
+                      {row.starter ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">, </span>}
                     </td>
                     <td className="text-center py-3 px-4 bg-primary/5">
-                      {row.pro ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">—</span>}
+                      {row.pro ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">, </span>}
                     </td>
                     <td className="text-center py-3 px-4">
-                      {row.founding ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">—</span>}
+                      {row.founding ? <Check className="w-4 h-4 text-success mx-auto" /> : <span className="text-muted-foreground/30">, </span>}
                     </td>
                   </tr>
                 ))}
@@ -324,7 +324,7 @@ const ProPage = () => {
 
           {!applied ? (
             <form onSubmit={handleApply} className="max-w-md mx-auto">
-              {/* DOTCOM SECRETS Ch 8: Qualify Backend Buyers — multi-step form */}
+              {/* DOTCOM SECRETS Ch 8: Qualify Backend Buyers, multi-step form */}
               {appStep === 0 && (
                 <div className="animate-fade-in">
                   <p className="text-white/40 text-xs mb-2 text-center">Step 1 of 3</p>
@@ -353,9 +353,9 @@ const ProPage = () => {
                   <p className="text-white/60 text-sm font-medium mb-4">What's your current situation?</p>
                   <div className="space-y-2 mb-4">
                     {[
-                      { val: "employed", label: "Employed — building on the side" },
-                      { val: "thinking", label: "Thinking about starting — need a system" },
-                      { val: "started", label: "Already started — need help scaling" },
+                      { val: "employed", label: "Employed, building on the side" },
+                      { val: "thinking", label: "Thinking about starting, need a system" },
+                      { val: "started", label: "Already started, need help scaling" },
                       { val: "other", label: "Something else" },
                     ].map((opt) => (
                       <button
@@ -386,7 +386,7 @@ const ProPage = () => {
                 <div className="animate-fade-in">
                   <p className="text-white/40 text-xs mb-3 text-center">Step 3 of 3</p>
                   <p className="text-white/60 text-sm font-medium mb-4">
-                    {paymentPlan === "annual" ? "Lock in $290/year — save $58" : "Confirm $29/month"}
+                    {paymentPlan === "annual" ? "Lock in $290/year, save $58" : "Confirm $29/month"}
                   </p>
                   <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 mb-4 text-center">
                     <p className="text-white/50 text-xs">Your plan</p>
@@ -398,7 +398,7 @@ const ProPage = () => {
                     disabled={loading}
                     className="btn-primary w-full text-lg"
                   >
-                    {loading ? "Submitting..." : `Apply for Pro — ${paymentPlan === "annual" ? "$290/year" : "$29/month"}`}
+                    {loading ? "Submitting..." : `Apply for Pro, ${paymentPlan === "annual" ? "$290/year" : "$29/month"}`}
                     {!loading && <ArrowRight className="w-5 h-5" />}
                   </button>
                   <p className="text-white/40 text-xs mt-3">

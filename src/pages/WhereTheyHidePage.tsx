@@ -38,7 +38,7 @@ const COMMUNITIES: Community[] = [
   { name: "r/EntrepreneurRideAlong", type: "Reddit", size: "350K", intent: "Real-time business building", angle: "Month-by-month $0→$4K MRR build log", difficulty: "Low" },
 
   // Communities / Forums
-  { name: "Indie Hackers", type: "Community", size: "500K+", intent: "Bootstrapped founders, MRR-focused", angle: "Corporate manager building anonymously — full timeline", difficulty: "Low" },
+  { name: "Indie Hackers", type: "Community", size: "500K+", intent: "Bootstrapped founders, MRR-focused", angle: "Corporate manager building anonymously, full timeline", difficulty: "Low" },
   { name: "Hacker News", type: "Community", size: "8M/month", intent: "Tech, startups, building", angle: "Micro-SaaS without code: the AI tool stack", difficulty: "High" },
   { name: "Product Hunt", type: "Community", size: "3M+", intent: "New products, tools", angle: "Launch Invisible Exit tools as standalone PH posts", difficulty: "Medium" },
   { name: "Dev.to", type: "Community", size: "1.2M", intent: "Developer tutorials", angle: "Building micro-SaaS with AI (no-code path)", difficulty: "Low" },
@@ -49,7 +49,7 @@ const COMMUNITIES: Community[] = [
   { name: "LinkedIn Groups (Career Strategy)", type: "LinkedIn", size: "10K-100K", intent: "Career transitions", angle: "Side business as career insurance", difficulty: "Medium" },
 
   // Twitter/X
-  { name: "Twitter/X (Tech/Startup)", type: "Twitter", size: "Niche", intent: "Building in public, tech commentary", angle: "Anonymous building — the Adrian thread series", difficulty: "Low" },
+  { name: "Twitter/X (Tech/Startup)", type: "Twitter", size: "Niche", intent: "Building in public, tech commentary", angle: "Anonymous building, the Adrian thread series", difficulty: "Low" },
   { name: "FinTwit (Financial Twitter)", type: "Twitter", size: "Large", intent: "Investing, money, FIRE", angle: "MRR > stock options (math thread)", difficulty: "Medium" },
 
   // Podcasts
@@ -91,7 +91,7 @@ const PLATFORM_BREAKDOWN = [
     platform: "Communities",
     count: 5,
     totalReach: "13M+",
-    strategy: "Indie Hackers is priority #1 — our exact audience. Post the full build timeline. Engage in comments daily. MicroConf for high-trust relationships.",
+    strategy: "Indie Hackers is priority #1:  our exact audience. Post the full build timeline. Engage in comments daily. MicroConf for high-trust relationships.",
     color: "text-blue-500",
     bg: "bg-blue-500/10",
   },
@@ -140,7 +140,7 @@ const WHERE_THEY_HIDE = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Where Your Dream Customer Hides — Community Atlas | Invisible Exit"
+        title="Where Your Dream Customer Hides, Community Atlas | Invisible Exit"
         description="31 communities, subreddits, podcasts, newsletters, and platforms where corporate managers trapped by golden handcuffs congregate online."
         url="/where"
       />

@@ -5,19 +5,19 @@ import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * DOTCOM SECRETS: Chapter 6 — Communication Funnel
+ * DOTCOM SECRETS: Chapter 6:  Communication Funnel
  *
  * Russell's Exit Intent Popup: capture visitors who are about to leave
  * without converting. The offer must be irresistible (free + instant value)
- * and the timing must be exit-intent (NOT time-delayed — a timed popup is
+ * and the timing must be exit-intent (NOT time-delayed, a timed popup is
  * exactly the intrusive interstitial Google penalizes on mobile).
  *
  * Trigger rules:
  *   - Desktop: mouse leaves viewport through the top
- *   - Mobile: fast scroll-up after real scroll depth — but never on pSEO
+ *   - Mobile: fast scroll-up after real scroll depth, but never on pSEO
  *     content routes (organic landers must not get interstitials)
  *   - Once per session (sessionStorage) AND at most once per 7 days
- *     (localStorage timestamp) — storage failures never crash the page
+ *     (localStorage timestamp), storage failures never crash the page
  */
 
 const HIDDEN_ROUTES = [
@@ -63,7 +63,7 @@ function safeSet(storage: "local" | "session", key: string, value: string) {
   try {
     (storage === "local" ? localStorage : sessionStorage).setItem(key, value);
   } catch {
-    /* private mode / blocked storage — degrade silently */
+    /* private mode / blocked storage, degrade silently */
   }
 }
 
@@ -133,7 +133,7 @@ export default function ExitIntentPopup() {
 
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Mobile: rapid scroll up after real depth — suppressed on content routes
+    // Mobile: rapid scroll up after real depth, suppressed on content routes
     let handleScroll: (() => void) | null = null;
     if (!onContentRoute) {
       let lastScrollY = window.scrollY;
@@ -213,7 +213,7 @@ export default function ExitIntentPopup() {
         } else {
           const err = await res.json().catch(() => ({}));
           console.error("Newsletter API error:", err);
-          toast.error("Something went wrong — please try again.");
+          toast.error("Something went wrong, please try again.");
         }
         return;
       }
@@ -224,7 +224,7 @@ export default function ExitIntentPopup() {
       toast.success("Check your inbox!");
     } catch (err) {
       console.error(err);
-      toast.error("Network error — please check your connection and retry.");
+      toast.error("Network error, please check your connection and retry.");
     } finally {
       setLoading(false);
     }
@@ -267,7 +267,7 @@ export default function ExitIntentPopup() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 text-primary-light text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
                 <Gift className="w-3.5 h-3.5" />
-                WAIT — BEFORE YOU GO
+                WAIT, BEFORE YOU GO
               </div>
 
               {/* Headline */}

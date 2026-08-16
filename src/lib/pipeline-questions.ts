@@ -18,7 +18,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Real demand shows up as real frustration. If nobody is complaining, nobody will pay to fix it.",
     yesScore: 5,
     impact: "Critical",
-    positiveImplication: "Strong demand signal — real people are actively seeking a solution.",
+    positiveImplication: "Strong demand signal, real people are actively seeking a solution.",
     negativeImplication: "No visible demand. You may be solving a problem nobody has.",
   },
   {
@@ -29,7 +29,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Willingness to pay for a bad solution proves willingness to pay for a good one. Free alternatives with no paid workarounds signal weak demand.",
     yesScore: 4,
     impact: "Critical",
-    positiveImplication: "Proven willingness to pay — customers already spend money on this problem.",
+    positiveImplication: "Proven willingness to pay, customers already spend money on this problem.",
     negativeImplication: "No existing paid solutions. Monetization will require educating the market.",
   },
   {
@@ -40,7 +40,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Vague targets like 'small businesses' mean you haven't found real demand. Specificity like 'freelance bookkeepers who waste 3 hrs/week on receipt matching' is signal.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Clear customer avatar — you know exactly who to sell to.",
+    positiveImplication: "Clear customer avatar, you know exactly who to sell to.",
     negativeImplication: "Vague target audience. Marketing and messaging will be unfocused.",
   },
   {
@@ -51,7 +51,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Building in a dying market means fighting headwinds. Check Google Trends for the problem keyword over the past 2 years.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Growing or stable market — tailwinds will help your growth.",
+    positiveImplication: "Growing or stable market, tailwinds will help your growth.",
     negativeImplication: "Declining market. You'll fight for a shrinking pie.",
   },
   {
@@ -62,7 +62,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If you can't get in front of prospects quickly (subreddits, Facebook groups, Slack communities, cold DMs), paid acquisition will eat your margins.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Easy distribution — you can reach prospects without spending money.",
+    positiveImplication: "Easy distribution, you can reach prospects without spending money.",
     negativeImplication: "Hard to reach customers cheaply. Customer acquisition cost will be high.",
   },
   {
@@ -86,7 +86,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If reaching $500 MRR takes more than 3 months, the feedback loop is too slow for a side project. You need fast revenue to stay motivated.",
     yesScore: 5,
     impact: "Critical",
-    positiveImplication: "Fast path to revenue — you'll see results before losing motivation.",
+    positiveImplication: "Fast path to revenue, you'll see results before losing motivation.",
     negativeImplication: "Slow revenue ramp. Risk of burnout before reaching meaningful income.",
   },
   {
@@ -97,7 +97,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Scalability matters. If doubling revenue requires doubling your hours, you're building a job, not a business. Look for software leverage.",
     yesScore: 4,
     impact: "Critical",
-    positiveImplication: "Scalable model — revenue can grow without proportional time investment.",
+    positiveImplication: "Scalable model, revenue can grow without proportional time investment.",
     negativeImplication: "Linear scaling. More revenue = more hours. This becomes a second job.",
   },
   {
@@ -108,7 +108,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Low pricing ($5-9/mo) requires massive volume. At $29+ you need fewer customers to reach freedom numbers. If the problem isn't painful enough for $29, reconsider.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Strong pricing power — fewer customers needed to hit your FYM target.",
+    positiveImplication: "Strong pricing power, fewer customers needed to hit your FYM target.",
     negativeImplication: "Low willingness to pay. You'll need high volume to reach meaningful revenue.",
   },
   {
@@ -119,7 +119,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Complex billing (metered, tiered enterprise, multi-party marketplaces) slows you down. Simple SaaS or one-time is best for weekend builds.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Simple billing — Stripe/LemonSqueezy handles everything out of the box.",
+    positiveImplication: "Simple billing, Stripe/LemonSqueezy handles everything out of the box.",
     negativeImplication: "Complex billing logic. You'll spend weekends on invoicing instead of features.",
   },
   {
@@ -130,7 +130,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "You need to collect money invisibly. Ensure the payment processor shows your LLC name, not your personal name, on customer receipts.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Invisible payments — your LLC name appears on receipts, not yours.",
+    positiveImplication: "Invisible payments, your LLC name appears on receipts, not yours.",
     negativeImplication: "Payment exposure risk. Your name may appear on customer bank statements.",
   },
   {
@@ -141,7 +141,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If competitors charge $99/mo and you can deliver 80% of the value at $29/mo, you have a pricing wedge. If everything is free, monetization is hard.",
     yesScore: 2,
     impact: "Nice-to-have",
-    positiveImplication: "Pricing wedge available — you can undercut incumbents and still profit.",
+    positiveImplication: "Pricing wedge available, you can undercut incumbents and still profit.",
     negativeImplication: "Race to the bottom. Free or cheap competitors make monetization difficult.",
   },
 
@@ -154,7 +154,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Scope is the startup killer. If the MVP requires learning a new framework or takes weeks, you'll lose momentum before getting your first customer.",
     yesScore: 5,
     impact: "Critical",
-    positiveImplication: "Fast to build — you can have something live by Sunday night.",
+    positiveImplication: "Fast to build, you can have something live by Sunday night.",
     negativeImplication: "Scope too large. You'll lose weeks before shipping anything.",
   },
   {
@@ -165,7 +165,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "The best MVPs do one thing well. If you need auth + billing + dashboards + integrations + AI before launch, scope is too big.",
     yesScore: 4,
     impact: "Critical",
-    positiveImplication: "Focused MVP — one killer feature, not a feature factory.",
+    positiveImplication: "Focused MVP, one killer feature, not a feature factory.",
     negativeImplication: "Platform play. Too many features required before launch.",
   },
   {
@@ -176,7 +176,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Modern tools let you ship in hours, not weeks. If your idea requires custom ML models, native apps, or hardware, it's likely too complex for a side project.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Leveraging modern tools — ship in hours, not weeks.",
+    positiveImplication: "Leveraging modern tools, ship in hours, not weeks.",
     negativeImplication: "Custom tech required. Build time will be 10x longer than expected.",
   },
   {
@@ -187,7 +187,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If you need Kubernetes, custom servers, or complex CI/CD pipelines, operational overhead will eat your evenings. Deploy in one click or skip it.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "One-click deploy — no DevOps headaches eating your evenings.",
+    positiveImplication: "One-click deploy, no DevOps headaches eating your evenings.",
     negativeImplication: "Complex infrastructure. You'll spend more time on ops than product.",
   },
   {
@@ -198,7 +198,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If every customer requires onboarding calls or hand-holding, support becomes a second job. Self-serve products with good docs scale your time.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Self-serve product — minimal support burden after launch.",
+    positiveImplication: "Self-serve product, minimal support burden after launch.",
     negativeImplication: "High-touch support needed. Each customer costs you time.",
   },
   {
@@ -209,7 +209,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Regulated industries add months of compliance work. Unless you already have domain expertise, avoid healthcare data, financial transactions, or children's products.",
     yesScore: 2,
     impact: "Nice-to-have",
-    positiveImplication: "No regulatory burden — ship fast without compliance overhead.",
+    positiveImplication: "No regulatory burden, ship fast without compliance overhead.",
     negativeImplication: "Regulatory minefield. Compliance requirements could delay launch by months.",
   },
 
@@ -222,7 +222,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If the business requires you to be a public thought leader, do podcasts, or attend events, your employer will find out. Brand-led businesses are not invisible.",
     yesScore: 5,
     impact: "Critical",
-    positiveImplication: "Fully anonymous operation — no personal brand exposure needed.",
+    positiveImplication: "Fully anonymous operation, no personal brand exposure needed.",
     negativeImplication: "Personal branding required. Your employer or colleagues will discover this.",
   },
   {
@@ -233,7 +233,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Even without non-competes, operating in the same space as your day job creates legal risk and increases the chance a colleague discovers your venture.",
     yesScore: 4,
     impact: "Critical",
-    positiveImplication: "Clear industry separation — minimal legal risk from your employer.",
+    positiveImplication: "Clear industry separation, minimal legal risk from your employer.",
     negativeImplication: "Same industry as your employer. High risk of discovery and legal conflict.",
   },
   {
@@ -244,7 +244,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Synchronous calls with customers risk schedule conflicts with your day job and leave voice/video recordings that could identify you.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Async-first — no calls to juggle around your day job.",
+    positiveImplication: "Async-first, no calls to juggle around your day job.",
     negativeImplication: "Sync calls needed. Schedule conflicts and identity exposure risk.",
   },
   {
@@ -255,7 +255,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If you must be online during business hours to fulfill orders, your day job performance will suffer and colleagues may notice your distraction.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Automated delivery — the product works while you're in meetings.",
+    positiveImplication: "Automated delivery, the product works while you're in meetings.",
     negativeImplication: "Manual fulfillment required. Your day job will suffer.",
   },
   {
@@ -266,7 +266,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Physical locations create paper trails (leases, permits) and increase the chance of being seen by someone you know. Pure digital is pure invisible.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "100% digital — no physical footprint to trace back to you.",
+    positiveImplication: "100% digital, no physical footprint to trace back to you.",
     negativeImplication: "Physical presence needed. Paper trails and chance encounters increase exposure.",
   },
   {
@@ -277,7 +277,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Check that every account (hosting, domain, SaaS tools, app store) can be registered under your LLC. Some platforms require personal identity verification.",
     yesScore: 2,
     impact: "Nice-to-have",
-    positiveImplication: "Full LLC ownership — every asset is behind the corporate veil.",
+    positiveImplication: "Full LLC ownership, every asset is behind the corporate veil.",
     negativeImplication: "Some platforms require personal identity. Partial name exposure possible.",
   },
 
@@ -290,7 +290,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If incumbents already do everything well and cheaply, there's no gap to exploit. The best moats start with underserved niches the big players ignore.",
     yesScore: 5,
     impact: "Critical",
-    positiveImplication: "Clear market gap — incumbents are missing something obvious.",
+    positiveImplication: "Clear market gap, incumbents are missing something obvious.",
     negativeImplication: "No visible gap. Incumbents already serve this market well.",
   },
   {
@@ -301,7 +301,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "User-generated data, integrations, or community effects create compounding moats. Pure commodity tools get cloned overnight.",
     yesScore: 4,
     impact: "Critical",
-    positiveImplication: "Compounding advantage — gets stronger with every user.",
+    positiveImplication: "Compounding advantage, gets stronger with every user.",
     negativeImplication: "Commodity product. Can be cloned by anyone in a weekend.",
   },
   {
@@ -312,7 +312,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Markets under $10M TAM are invisible to venture-backed companies. That's perfect for a micro-SaaS earning $5-20K/mo. Be the big fish in a small pond.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Niche market — too small for big players, perfect for micro-SaaS.",
+    positiveImplication: "Niche market, too small for big players, perfect for micro-SaaS.",
     negativeImplication: "Large visible market. Expect well-funded competitors to move in.",
   },
   {
@@ -323,7 +323,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "If customers can switch to a competitor in 5 minutes, they will. Integrations, stored data, and custom workflows make switching painful.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "High switching costs — customers stay because leaving is painful.",
+    positiveImplication: "High switching costs, customers stay because leaving is painful.",
     negativeImplication: "Easy to switch away. You'll compete on price alone.",
   },
   {
@@ -334,7 +334,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Your day job knowledge (without using proprietary info) gives you insight competitors lack. This speed advantage compounds with each release.",
     yesScore: 3,
     impact: "Important",
-    positiveImplication: "Domain expertise advantage — you ship faster because you understand the problem deeply.",
+    positiveImplication: "Domain expertise advantage, you ship faster because you understand the problem deeply.",
     negativeImplication: "No unique insight. Competitors can match your features easily.",
   },
   {
@@ -345,7 +345,7 @@ export const PIPELINE_QUESTIONS: PipelineQuestion[] = [
     hint: "Paid acquisition is expensive and unpredictable. If you can rank for long-tail keywords, list on a marketplace, or tap a community, growth is cheaper.",
     yesScore: 2,
     impact: "Nice-to-have",
-    positiveImplication: "Organic distribution — free traffic from SEO, marketplaces, or communities.",
+    positiveImplication: "Organic distribution, free traffic from SEO, marketplaces, or communities.",
     negativeImplication: "No organic channels. You'll rely on paid ads or manual outreach.",
   },
 ];

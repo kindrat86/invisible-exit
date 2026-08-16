@@ -9,7 +9,7 @@ export default function BankingHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Business Banking Guides — Best Banks for LLCs by State | Invisible Exit"
+        title="Business Banking Guides, Best Banks for LLCs by State | Invisible Exit"
         description="State-by-state business banking guides for LLCs and side businesses. Compare local and online banks, fees, features, and business checking options for every state."
         url="https://invisibleexit.com/banking"
       />

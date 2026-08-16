@@ -12,11 +12,11 @@ import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * AttributionSurvey — AEO Module 4 (self-reported attribution).
+ * AttributionSurvey, AEO Module 4 (self-reported attribution).
  *
  * The single most reliable way to tie AI visibility to revenue. AI referral
  * traffic is severely undercounted in GA4 (no referrer on in-content links,
- * desktop apps, etc.) — most AI-influenced conversions land as "direct" or
+ * desktop apps, etc.), most AI-influenced conversions land as "direct" or
  * "organic brand search". Asking the user directly captures what analytics
  * can't. Ahrefs: ~3% of conversions came from AI self-reported, converting
  * 23× the rate of organic.
@@ -88,7 +88,7 @@ export default function AttributionSurvey({ userId, delayMs = 1500 }: Props) {
 
   const handleDismiss = () => {
     trackEvent("attribution_survey_dismissed");
-    // Mark as seen so it doesn't nag — but don't record a source. A dismiss
+    // Mark as seen so it doesn't nag, but don't record a source. A dismiss
     // is still signal (the user didn't want to answer); we won't re-prompt.
     localStorage.setItem(STORAGE_KEY(userId), new Date().toISOString());
     setOpen(false);
@@ -109,7 +109,7 @@ export default function AttributionSurvey({ userId, delayMs = 1500 }: Props) {
       <DialogContent className="max-w-md bg-[#1B2A4A] border-white/10 text-white">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-white">
-            Quick one — how did you first hear about Invisible Exit?
+            Quick one, how did you first hear about Invisible Exit?
           </DialogTitle>
           <DialogDescription className="text-white/70">
             One tap. Helps us know what's actually working so we can do more of it.

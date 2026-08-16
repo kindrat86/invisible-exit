@@ -10,10 +10,10 @@ import sys
 # Ordered rules: (old, new). Longest/most-specific first.
 RULES = [
     # ── FAQ/claims rewrites (do these before generic price rules) ──
-    ("The $0.97/month founding member price is a loss-leader — it costs more to serve each member than $0.97/month.",
-     "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin."),
-    ("There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9.99/month. You're locking in $0.97 for life — not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
-     "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life — not a trial, not an intro rate. Your card gets charged $9 every month until you cancel."),
+    ("The $0.97/month founding member price is a loss-leader, it costs more to serve each member than $0.97/month.",
+     "The $9/month Founder price is an early-believer price, priced to be a no-brainer, not to maximize margin."),
+    ("There isn't one. The $0.97 exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $9.99/month. You're locking in $0.97 for life, not a trial, not an intro rate. Your card gets charged $0.97 every month until you cancel.",
+     "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life, not a trial, not an intro rate. Your card gets charged $9 every month until you cancel."),
     ("Yes. Founding members lock in $0.97/month for life. When founding closes, the price goes to $12/month. You keep $0.97 forever.",
      "Yes. Founding members lock in $9/month for life. When founding closes, the price goes to $19/month. You keep $9 forever."),
     ("After that, the price goes to $12/month permanently.",
@@ -33,7 +33,7 @@ RULES = [
      'buyers: 6, price: "$29", monthly: "$87", annual: "$1,044"'),
     # A/B test copy data
     ("($11.64/yr) next to monthly ($0.97/mo)", "($108/yr) next to monthly ($9/mo)"),
-    ('description: "$0.97/month — equivalent to $11.64/', 'description: "$9/month — equivalent to $108/'),
+    ('description: "$0.97/month, equivalent to $11.64/', 'description: "$9/month, equivalent to $108/'),
     ('description: "$0.97/month (monthly only)"', 'description: "$9/month (monthly only)"'),
     # Alternatives/comparison data
     ('pricing: "$0.97 trial, $29/mo"', 'pricing: "$9/mo, $29/mo Pro"'),
@@ -69,7 +69,7 @@ RULES = [
     ("$47 Pro", "$29 Pro"),
     ("Pro Upgrade ($47)", "Pro Upgrade ($29)"),
     ("go Pro ($47)", "go Pro ($29)"),
-    ("Upgrade to Pro — $47/mo", "Upgrade to Pro — $29/mo"),
+    ("Upgrade to Pro, $47/mo", "Upgrade to Pro, $29/mo"),
     ("The $47/month kicks in", "The $29/month kicks in"),
     ("Group Coaching + Community ($47/month)", "Group Coaching + Community ($29/month)"),
     ("done-with-others support. $47/month.", "done-with-others support. $29/month."),
@@ -82,7 +82,7 @@ RULES = [
     ("save $94", "save $58"),
     ("Save $94/year", "Save $58/year"),
     ("$94 vs monthly", "$58 vs monthly"),
-    ("Lock in $290/year — save $58", "Lock in $290/year — save $58"),  # normalize after chained rules
+    ("Lock in $290/year, save $58", "Lock in $290/year, save $58"),  # normalize after chained rules
 
     # ── Public-price anchor $97.99 -> $29 (new public Pro price is $29) ──
     ("$97.99/month", "$29/month"),

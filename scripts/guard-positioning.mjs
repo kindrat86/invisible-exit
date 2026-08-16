@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * POSITIONING GUARDRAIL — Invisible Exit is a faceless side-business system for
+ * POSITIONING GUARDRAIL, Invisible Exit is a faceless side-business system for
  * employed professionals, NOT a privacy / anonymous-browsing / incognito tool.
  * (See GUARDRAILS.md and canonical-descriptors.json → invisibleexit.never_call_it.)
  *
@@ -10,7 +10,7 @@
  * It is intentionally self-contained (no import from ~/.growth-engine): Vercel
  * only clones this repo at build time.
  *
- * Scope note: it scans the static pages + generators — NOT src/ (which may
+ * Scope note: it scans the static pages + generators, NOT src/ (which may
  * legitimately recommend a VPN etc. for *founder* anonymity) and NOT the huge
  * built dist/. The signal it keys on is Invisible Exit describing ITSELF as a
  * privacy browser, or linking to the deleted privacy-browser pages.
@@ -29,7 +29,7 @@ const FORBIDDEN_PATHS =
 
 // Privacy-BROWSER product-positioning phrases. Deliberately specific: these
 // describe Invisible Exit AS a private-browsing product. Bare tool names
-// (tor/mullvad/vpn) are NOT here — the site may legitimately recommend them for
+// (tor/mullvad/vpn) are NOT here, the site may legitimately recommend them for
 // founder anonymity; resurrected comparison pages are caught by path/filename.
 const FORBIDDEN_PHRASES =
   /anonymous session\s*&\s*private browsing|private[- ]browsing sessions?|isolated browsing sessions?|private sessions that auto-destroy|auto-destroy(?:s|ing)?\s+(?:history|cookies|all|session)|destroys?[^.<]{0,40}tracking data on exit|browser fingerprint|anti-tracking tool|private[- ]browsing tool|private-session tool|zero-trace|session-level privacy/i;
@@ -94,7 +94,7 @@ for (const g of GEN_FILES) {
 
 if (violations.length) {
   console.error('\n🚨 POSITIONING GUARDRAIL FAILED');
-  console.error('   Invisible Exit is a faceless side-business system — NOT a privacy /');
+  console.error('   Invisible Exit is a faceless side-business system, NOT a privacy /');
   console.error('   anonymous-browsing tool. Remove the following before building (see GUARDRAILS.md):\n');
   for (const v of violations) console.error('   ✗ ' + v);
   console.error(`\n   ${violations.length} violation(s). Build blocked.\n`);

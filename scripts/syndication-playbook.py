@@ -21,7 +21,7 @@ SYNDICATION_TARGETS = [
         "url": "https://medium.com/new-story",
         "backlink_type": "canonical (cross-domain rel=canonical via import)",
         "domain_authority": 95,
-        "strategy": "Use Medium's 'Import Story' feature — it automatically sets rel=canonical to your URL. This is the #1 syndication backlink play.",
+        "strategy": "Use Medium's 'Import Story' feature, it automatically sets rel=canonical to your URL. This is the #1 syndication backlink play.",
         "posts_to_syndicate": [
             "https://invisibleexit.com/blog/freedom-number",
             "https://invisibleexit.com/blog/how-to-start-micro-saas-while-employed",
@@ -83,9 +83,9 @@ tags: [microsaas, sideproject, entrepreneurship, ai]
         "url": "https://www.reddit.com/r/sidehustle/submit",
         "backlink_type": "In-post link (contextual, high-engagement potential)",
         "domain_authority": 91,
-        "strategy": "Don't just drop links — share genuine value. Post the calculator as a free tool with a text post explaining the methodology.",
+        "strategy": "Don't just drop links, share genuine value. Post the calculator as a free tool with a text post explaining the methodology.",
         "post_ideas": [
-            "I built a free Freedom Number calculator that shows exactly how much side income you need to quit — no email required",
+            "I built a free Freedom Number calculator that shows exactly how much side income you need to quit, no email required",
             "After 3 years of building side businesses while employed, here's my complete playbook (53 free guides)",
             "The 4% rule for side hustles: How to calculate your escape number [free tool]",
         ],
@@ -95,7 +95,7 @@ tags: [microsaas, sideproject, entrepreneurship, ai]
         "url": "https://news.ycombinator.com/submit",
         "backlink_type": "Direct link in submission",
         "domain_authority": 93,
-        "strategy": "Submit the Freedom Number Calculator as 'Show HN: Freedom Number Calculator — how much side income to quit your job'",
+        "strategy": "Submit the Freedom Number Calculator as 'Show HN: Freedom Number Calculator, how much side income to quit your job'",
     },
 
     # ===== TIER 3: Profile backlinks =====
@@ -131,10 +131,10 @@ is designed to be embedded on other sites. Each embed = one permanent backlink.
 
 PROMOTION PLAN:
 1. Post on r/sidehustle, r/financialindependence, r/personalfinance:
-   "I built a free embeddable Freedom Number calculator — just add one line of HTML"
+   "I built a free embeddable Freedom Number calculator, just add one line of HTML"
 2. Reach out to personal finance bloggers:
    "I noticed your article on financial independence. I built a free embeddable 
-   calculator your readers might find useful — no signup, just an iframe."
+   calculator your readers might find useful, no signup, just an iframe."
 3. Create a Product Hunt launch for the calculator tool specifically
 4. Submit to "free tools for bloggers" directories
 5. Post on Indie Hackers with the embed code

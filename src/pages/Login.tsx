@@ -208,7 +208,7 @@ export default function Login() {
           <p className="text-gray-300 leading-relaxed text-lg">
             <strong>Invisible Exit is a suite of five connected AI tools</strong> that
             helps employed corporate managers and founders build an anonymous
-            micro-SaaS side business — validate a niche, launch it, and reach a
+            micro-SaaS side business, validate a niche, launch it, and reach a
             &ldquo;freedom number&rdquo; of recurring revenue without quitting their
             job or building a public personal brand. The whole system is designed for
             people who want a real income stream on the side while staying invisible

@@ -57,8 +57,8 @@ export default function SalaryPage() {
         <section className="mt-10">
           <h2 className="text-2xl font-bold text-slate-900">The Freedom Number Math</h2>
           <p className="mt-3 text-slate-700">
-            As a {entry.role} earning {entry.avgSalary}, your freedom number — the monthly recurring revenue
-            that gives you the option to leave — is <strong>{entry.freedomNumber}</strong>.
+            As a {entry.role} earning {entry.avgSalary}, your freedom number, the monthly recurring revenue
+            that gives you the option to leave, is <strong>{entry.freedomNumber}</strong>.
             That's the point where your side business income covers your core living expenses.
           </p>
           <p className="mt-3 text-slate-700">

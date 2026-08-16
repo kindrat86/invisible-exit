@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * for staggered animations.
  *
  * This component wraps the app and observes all `.reveal` elements.
- * No props needed — just drop it in once.
+ * No props needed, just drop it in once.
  */
 export function ScrollReveal() {
   const observerRef = useRef<IntersectionObserver | null>(null);

@@ -137,7 +137,7 @@ const ExploreHubPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Explore All Resources — Complete Site Index | Invisible Exit"
+        title="Explore All Resources, Complete Site Index | Invisible Exit"
         description="Browse all 800+ pages: micro-SaaS ideas by profession, state guides, calculators, comparison pages, glossary terms, data reports, and blog articles."
         url="/explore"
       />

@@ -344,7 +344,7 @@ const Blog = () => {
                 If this blog has helped you, share it with someone who is still sitting on the fence. One article can start their invisible exit.
               </p>
               <ShareButtons
-                title="Invisible Exit Blog — Build $4K/month MRR while employed"
+                title="Invisible Exit Blog, Build $4K/month MRR while employed"
                 url="https://invisibleexit.com/blog"
               />
             </div>

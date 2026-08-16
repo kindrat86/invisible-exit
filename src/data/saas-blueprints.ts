@@ -38,7 +38,7 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build an AI Wrapper SaaS (Step-by-Step)",
     metaDescription: "Complete blueprint for building an AI wrapper micro-SaaS. Tech stack, pricing model, API costs, and a step-by-step build guide with time estimates.",
     h1: "How to Build an AI Wrapper Micro-SaaS",
-    intro: "An AI wrapper wraps a large language model (GPT-4, Claude, Gemini) with a specialized interface for a specific use case. It is the fastest path to a profitable micro-SaaS in 2026 because the underlying AI does the heavy lifting — your job is to build the right interface and target the right niche.",
+    intro: "An AI wrapper wraps a large language model (GPT-4, Claude, Gemini) with a specialized interface for a specific use case. It is the fastest path to a profitable micro-SaaS in 2026 because the underlying AI does the heavy lifting, your job is to build the right interface and target the right niche.",
     marketOpportunity: "The AI wrapper market is exploding. ChatGPT proved demand exists; the opportunity is vertical-specific wrappers that solve one problem for one audience better than a general chatbot ever could. Examples: AI for legal contract review, AI for financial report summaries, AI for real estate listing descriptions. Each niche has 1,000-50,000 potential customers willing to pay $20-$100/month.",
     techStack: ["Next.js or React + Vite", "OpenAI or Anthropic API", "Supabase (auth + database)", "Stripe or Lemon Squeezy (payments)", "Vercel (hosting)", "Tailwind CSS"],
     steps: [
@@ -60,7 +60,7 @@ export const saasBlueprints: SaasBlueprint[] = [
     faqs: [
       { question: "How much does it cost to run an AI wrapper?", answer: "API costs: $0.01-$0.10 per request (GPT-4o-mini is cheapest). At 100 active users making 50 requests/month each, your API cost is $50-$500/month. Hosting: free (Vercel). Database: free (Supabase). Break-even: 3-10 paying customers." },
       { question: "Is the AI wrapper market saturated?", answer: "General AI wrappers are saturated. Vertical-specific wrappers (one tool for one niche) are NOT. The key is targeting a specific audience that ChatGPT does not serve well because it is too general." },
-      { question: "What is the biggest risk with an AI wrapper?", answer: "Platform risk — OpenAI or Anthropic could build your feature natively. Mitigate by building deep workflow features (integrations, team collaboration, specialized outputs) that a general chatbot cannot match." },
+      { question: "What is the biggest risk with an AI wrapper?", answer: "Platform risk, OpenAI or Anthropic could build your feature natively. Mitigate by building deep workflow features (integrations, team collaboration, specialized outputs) that a general chatbot cannot match." },
     ],
   },
   {
@@ -70,13 +70,13 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a Directory Site (Complete Blueprint)",
     metaDescription: "Step-by-step guide to building a profitable directory website. Tech stack, monetization strategies, SEO playbook, and growth tactics.",
     h1: "How to Build a Directory Micro-SaaS",
-    intro: "A directory site curates and organizes resources, tools, or businesses in a specific niche. They are one of the most reliable micro-SaaS models because they capture search intent directly — people search 'best X for Y' and land on your page.",
+    intro: "A directory site curates and organizes resources, tools, or businesses in a specific niche. They are one of the most reliable micro-SaaS models because they capture search intent directly, people search 'best X for Y' and land on your page.",
     marketOpportunity: "Directories work because they capture high-intent search traffic. 'Best AI tools for accountants' or 'top Slack communities for founders' get searched thousands of times monthly. A well-structured directory can rank for hundreds of long-tail keywords, build an email list, and monetize through paid listings, affiliate links, and sponsorships.",
     techStack: ["Next.js or Astro", "Supabase or Airtable (database)", "Tailwind CSS", "Algolia (search, optional)", "Vercel or Netlify", "Stripe (paid listings)"],
     steps: [
       { name: "Pick a niche with search demand", description: "Use Google Keyword Planner or Ahrefs to find 'best [X] for [Y]' queries with 500+ monthly searches. Examples: 'best AI tools for HR', 'top newsletters for SaaS founders', 'best micro-SaaS communities'.", tools: ["Ahrefs", "Google Keyword Planner"], timeEstimate: "1-2 days" },
       { name: "Build the database structure", description: "Define what each entry contains: name, description, category, tags, pricing, rating, URL, image. Use Supabase or Airtable as your backend.", tools: ["Supabase", "Airtable"], timeEstimate: "1 day" },
-      { name: "Seed with 50-100 entries", description: "Manually research and add the top 50-100 resources in your niche. Quality matters — this is your content. Write unique descriptions (not copy-pasted).", tools: ["Manual research"], timeEstimate: "3-5 days" },
+      { name: "Seed with 50-100 entries", description: "Manually research and add the top 50-100 resources in your niche. Quality matters, this is your content. Write unique descriptions (not copy-pasted).", tools: ["Manual research"], timeEstimate: "3-5 days" },
       { name: "Build the frontend", description: "Create: homepage with search, category pages, individual listing pages, submission form. Use server-side rendering for SEO. Add filters and sorting.", tools: ["Next.js", "Tailwind"], timeEstimate: "5-7 days" },
       { name: "Add monetization", description: "Offer paid featured listings ($50-$200/month). Add affiliate links where relevant. Sell sponsorships on category pages. Create a 'premium' tier with verified reviews.", tools: ["Stripe", "Lemon Squeezy"], timeEstimate: "2-3 days" },
       { name: "SEO and link building", description: "Submit to Google Search Console. Build backlinks by mentioning listed companies (they will link back). Create 'best of' listicles that rank. Add new entries weekly.", tools: ["GSC", "Ahrefs"], timeEstimate: "Ongoing" },
@@ -101,7 +101,7 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a SaaS Calculator Tool",
     metaDescription: "Complete guide to building a profitable calculator or estimator tool as a micro-SaaS. ROI calculators, pricing estimators, and niche tools.",
     h1: "How to Build a SaaS Calculator Tool",
-    intro: "A calculator tool helps users compute something valuable — ROI, cost savings, pricing, timeline. They are powerful because they capture high-intent traffic, generate leads, and can monetize through lead capture or premium features.",
+    intro: "A calculator tool helps users compute something valuable, ROI, cost savings, pricing, timeline. They are powerful because they capture high-intent traffic, generate leads, and can monetize through lead capture or premium features.",
     marketOpportunity: "People search for calculators constantly: 'ROI calculator', 'salary calculator', 'SaaS pricing calculator', 'freelance rate calculator'. Each of these has 1K-50K monthly searches. A well-built calculator ranks fast because it provides immediate value and gets shared.",
     techStack: ["React + Vite or Next.js", "Tailwind CSS", "No backend needed (client-side math)", "Email capture: Resend or Loops", "Vercel (hosting)"],
     steps: [
@@ -120,7 +120,7 @@ export const saasBlueprints: SaasBlueprint[] = [
       { phase: "Grow", duration: "Months 2-6", goal: "10K+ visits/mo, email list growing" },
     ],
     faqs: [
-      { question: "Can a calculator tool make money?", answer: "Yes — through lead generation (sell to related SaaS), affiliate links, premium features ($5-$20/mo for saved results, team features, API), or as a top-of-funnel for a larger product. The biggest value is list building." },
+      { question: "Can a calculator tool make money?", answer: "Yes, through lead generation (sell to related SaaS), affiliate links, premium features ($5-$20/mo for saved results, team features, API), or as a top-of-funnel for a larger product. The biggest value is list building." },
     ],
   },
   {
@@ -130,7 +130,7 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a SaaS Directory (2026 Guide)",
     metaDescription: "Blueprint for building a SaaS directory that ranks and makes money. Monetization, SEO strategy, and tech stack for employed founders.",
     h1: "How to Build a SaaS Directory",
-    intro: "A SaaS directory catalogs software products by category, features, and pricing. It is one of the most proven pSEO models — G2, Capterra, and GetApp all built massive businesses this way.",
+    intro: "A SaaS directory catalogs software products by category, features, and pricing. It is one of the most proven pSEO models, G2, Capterra, and GetApp all built massive businesses this way.",
     marketOpportunity: "Every SaaS category has dozens of tools, and buyers need help comparing them. A niche SaaS directory (e.g., 'best tools for solo founders', 'best AI writing tools', 'best project management for agencies') can capture comparison intent and monetize through affiliate commissions, paid listings, and lead generation.",
     techStack: ["Astro or Next.js (SSR for SEO)", "Supabase or Notion as CMS", "Tailwind CSS", "Algolia (search)", "Stripe (paid listings)"],
     steps: [
@@ -158,11 +158,11 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a Chrome Extension Micro-SaaS",
     metaDescription: "Complete guide to building and monetizing a Chrome extension. Tech stack, pricing, Chrome Web Store optimization, and growth.",
     h1: "How to Build a Chrome Extension Micro-SaaS",
-    intro: "A Chrome extension is one of the lowest-friction micro-SaaS models — no hosting, no backend (usually), instant distribution via the Chrome Web Store, and a clear monetization path.",
-    marketOpportunity: "Chrome extensions solve problems right where the user already is — in their browser. Examples: ad blockers, productivity timers, tab managers, AI writing assistants, screenshot tools. The Chrome Web Store has 150M+ users, and good extensions grow organically through word of mouth.",
+    intro: "A Chrome extension is one of the lowest-friction micro-SaaS models, no hosting, no backend (usually), instant distribution via the Chrome Web Store, and a clear monetization path.",
+    marketOpportunity: "Chrome extensions solve problems right where the user already is, in their browser. Examples: ad blockers, productivity timers, tab managers, AI writing assistants, screenshot tools. The Chrome Web Store has 150M+ users, and good extensions grow organically through word of mouth.",
     techStack: ["JavaScript/TypeScript", "Manifest V3", "React or vanilla JS for popup", "Chrome Storage API", "Supabase (optional sync backend)"],
     steps: [
-      { name: "Find a browser pain point", description: "What do people do repeatedly in their browser that could be automated? Look at your own browsing habits. Read Chrome Web Store reviews for existing extensions — what do users want?", tools: ["Chrome Web Store research"], timeEstimate: "1-2 days" },
+      { name: "Find a browser pain point", description: "What do people do repeatedly in their browser that could be automated? Look at your own browsing habits. Read Chrome Web Store reviews for existing extensions, what do users want?", tools: ["Chrome Web Store research"], timeEstimate: "1-2 days" },
       { name: "Build the extension", description: "Use Manifest V3. Build the popup UI (React works well). Add content scripts that interact with web pages. Test locally.", tools: ["VS Code", "Chrome DevTools"], timeEstimate: "5-10 days" },
       { name: "Add freemium monetization", description: "Free tier with basic features. Premium tier ($3-$10/month) with advanced features. Use Stripe Payment Links or Gumroad for subscriptions.", tools: ["Stripe", "Gumroad"], timeEstimate: "2-3 days" },
       { name: "Publish to Chrome Web Store", description: "Pay $5 developer fee. Write compelling description with keywords. Add screenshots and a demo video. Choose the right category.", tools: ["Chrome Web Store"], timeEstimate: "2-5 days (review)" },
@@ -217,8 +217,8 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a Newsletter Business (2026 Blueprint)",
     metaDescription: "Complete guide to building a profitable newsletter. Growth strategies, monetization, sponsorship rates, and tech stack.",
     h1: "How to Build a Newsletter Business",
-    intro: "A newsletter is one of the most defensible content businesses — you own the audience, not an algorithm. In 2026, paid newsletters and newsletter-sponsored communities are proven revenue models.",
-    marketOpportunity: "Newsletters are having a moment. Beehiiv, Substack, and ConvertKit have made it easy to start. The opportunity is niche newsletters — 'AI for HR professionals', 'micro-SaaS for employed founders', 'regulatory compliance for fintech'. Each can reach 5,000-50,000 subscribers and earn $2K-$20K/month.",
+    intro: "A newsletter is one of the most defensible content businesses, you own the audience, not an algorithm. In 2026, paid newsletters and newsletter-sponsored communities are proven revenue models.",
+    marketOpportunity: "Newsletters are having a moment. Beehiiv, Substack, and ConvertKit have made it easy to start. The opportunity is niche newsletters, 'AI for HR professionals', 'micro-SaaS for employed founders', 'regulatory compliance for fintech'. Each can reach 5,000-50,000 subscribers and earn $2K-$20K/month.",
     techStack: ["Beehiiv or Substack (easiest)", "ConvertKit/Kit (more control)", "Notion (content planning)", "Canva (hero images)", "Twitter/LinkedIn (growth)"],
     steps: [
       { name: "Choose a niche you can write about weekly", description: "The #1 reason newsletters fail is the founder stops writing. Pick a topic narrow enough to be the definitive source, broad enough to sustain weekly content.", tools: ["Market research"], timeEstimate: "2-3 days" },
@@ -247,14 +247,14 @@ export const saasBlueprints: SaasBlueprint[] = [
     metaTitle: "How to Build a Dashboard Micro-SaaS",
     metaDescription: "Blueprint for building a dashboard or analytics micro-SaaS. Connect to existing data sources, visualize, and charge for insights.",
     h1: "How to Build a Dashboard Micro-SaaS",
-    intro: "A dashboard tool pulls data from existing services (Stripe, Google Analytics, GitHub, etc.) and presents it in a useful way. The value is aggregation — users see all their metrics in one place.",
+    intro: "A dashboard tool pulls data from existing services (Stripe, Google Analytics, GitHub, etc.) and presents it in a useful way. The value is aggregation, users see all their metrics in one place.",
     marketOpportunity: "Every SaaS tool creates data silos. A dashboard that aggregates data and provides actionable insights is valuable. Examples: Stripe revenue dashboard for founders, GitHub metrics for engineering managers, social media analytics for agencies. Charge $20-$100/month.",
     techStack: ["React + Vite", "Recharts or Tremor (charts)", "Supabase (database + auth)", "OAuth (connect data sources)", "Stripe (billing)", "Vercel"],
     steps: [
       { name: "Choose a data source to aggregate", description: "What data do people check in multiple places? Stripe + bank + PayPal for revenue. GitHub + Jira + Slack for engineering. Analytics + ads + CRM for marketing.", tools: ["Market research"], timeEstimate: "1-2 days" },
       { name: "Build the API integrations", description: "Implement OAuth for each data source. Build sync logic. Cache data in your database. Handle rate limits and errors gracefully.", tools: ["OAuth", "Supabase"], timeEstimate: "5-10 days" },
       { name: "Build the dashboard UI", description: "Create visualizations: line charts, bar charts, summary cards, alerts. Use Tremor or Recharts for chart components. Make it feel fast.", tools: ["React", "Tremor", "Recharts"], timeEstimate: "5-7 days" },
-      { name: "Add actionable insights", description: "The dashboard should not just show data — it should tell the user what to DO. 'Revenue dropped 20% — check churn', 'CAC increased — review ad spend'.", tools: ["Logic + alerts"], timeEstimate: "2-3 days" },
+      { name: "Add actionable insights", description: "The dashboard should not just show data, it should tell the user what to DO. 'Revenue dropped 20%, check churn', 'CAC increased, review ad spend'.", tools: ["Logic + alerts"], timeEstimate: "2-3 days" },
       { name: "Launch and iterate", description: "Post on Product Hunt and Reddit. Offer a 14-day free trial. Talk to early users weekly. Add features they request.", tools: ["Product Hunt", "Reddit"], timeEstimate: "Ongoing" },
     ],
     pricing: { model: "Tiered subscription", range: "$19-$99/month", example: "Starter $19/mo (1 data source), Pro $49/mo (5 sources + alerts), Team $99/mo (unlimited + sharing)" },
@@ -266,7 +266,7 @@ export const saasBlueprints: SaasBlueprint[] = [
       { phase: "Iterate", duration: "Months 2-6", goal: "50+ paying customers" },
     ],
     faqs: [
-      { question: "What makes a dashboard SaaS successful?", answer: "Actionable insights, not just pretty charts. Users do not want data — they want to know what to do. The best dashboards say 'here is what changed, and here is what you should do about it'." },
+      { question: "What makes a dashboard SaaS successful?", answer: "Actionable insights, not just pretty charts. Users do not want data, they want to know what to do. The best dashboards say 'here is what changed, and here is what you should do about it'." },
     ],
   },
 ];

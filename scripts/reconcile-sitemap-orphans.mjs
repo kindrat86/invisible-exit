@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * reconcile-sitemap-orphans.mjs — sweep dist/ for indexable HTML pages that are
+ * reconcile-sitemap-orphans.mjs, sweep dist/ for indexable HTML pages that are
  * NOT present in any generated sub-sitemap, and emit them as sitemap-orphans.xml.
  *
  * Fixes the data-drift orphan problem: generate-sitemap.ts builds the sitemap
@@ -9,7 +9,7 @@
  * out of the sitemap while remaining live and indexable. This script guarantees
  * the sitemap covers every indexable page actually present in the build output.
  *
- * Served-URL filter: this site is NOT cleanUrls — flat `x.html` files are only
+ * Served-URL filter: this site is NOT cleanUrls, flat `x.html` files are only
  * reachable at their clean URL when a vercel.json rewrite maps `/cluster/:slug`
  * to `/cluster/:slug.html`. Directory pages (`x/index.html`) are served by the
  * static directory-index default. Flat files with no matching rewrite 404 at
@@ -17,7 +17,7 @@
  * vercel.json rewrites and drop any flat page whose clean URL has no rewrite.
  *
  * Runs AFTER all page generation (post-prerender), BEFORE generate:site-index so
- * the discovery hub picks it up. Idempotent — safe to run repeatedly.
+ * the discovery hub picks it up. Idempotent, safe to run repeatedly.
  */
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, relative } from "node:path";
@@ -27,7 +27,7 @@ const DIST = join(CWD, "dist");
 const BASE = "https://invisibleexit.com";
 
 if (!existsSync(DIST)) {
-  console.log("(no dist/ — skipping orphan reconcile)");
+  console.log("(no dist/, skipping orphan reconcile)");
   process.exit(0);
 }
 
@@ -114,7 +114,7 @@ function walk(dir) {
 walk(DIST);
 
 // 2. Collect every URL already referenced by any sub-sitemap in dist/.
-//    (Exclude sitemap-orphans.xml itself — it is the file we regenerate.)
+//    (Exclude sitemap-orphans.xml itself, it is the file we regenerate.)
 const existing = new Set();
 for (const f of readdirSync(DIST)) {
   if (f === "sitemap-orphans.xml") continue;
@@ -134,7 +134,7 @@ for (const f of readdirSync(DIST)) {
 const orphans = [...indexable].filter((p) => !existing.has(p)).sort();
 
 if (orphans.length === 0) {
-  console.log("✓ 0 orphan pages — sitemaps already complete");
+  console.log("✓ 0 orphan pages, sitemaps already complete");
   process.exit(0);
 }
 

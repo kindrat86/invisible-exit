@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════════
-   R18 — WORLD-CLASS MOBILE-FIRST DESIGN SYSTEM
+   R18, WORLD-CLASS MOBILE-FIRST DESIGN SYSTEM
    Deployed across all 10 portfolio domains
    Features: touch ripple, autofill override, dark mode transition,
    sticky CTA, bottom sheet, scroll snap, viewport units,
@@ -31,7 +31,7 @@
   --ux-transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --ux-transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
   --ux-nav-height: 64px;
-  /* R18 — mobile bottom bar */
+  /* R18, mobile bottom bar */
   --ux-bottom-bar-height: 0px;
 }
 
@@ -58,7 +58,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   min-height: 100dvh;
-  /* R18 — theme transition */
+  /* R18, theme transition */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -304,11 +304,11 @@ button:active, .btn:active, a.btn:active { transform: scale(0.97); }
     bottom: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-bottom));
     right: calc(clamp(1.5rem, 4vw, 2rem) + env(safe-area-inset-right));
   }
-  /* R18 — sticky CTA respects safe area */
+  /* R18, sticky CTA respects safe area */
   .ux-sticky-cta {
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
-  /* R18 — bottom sheet respects safe area */
+  /* R18, bottom sheet respects safe area */
   .ux-bottom-sheet {
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -337,7 +337,7 @@ button:active, .btn:active, a.btn:active { transform: scale(0.97); }
 }
 .ux-skip-link:focus { top: 0.75rem; }
 
-/* ── 17. IMAGES — CLS PREVENTION ────────────────────────────────── */
+/* ── 17. IMAGES, CLS PREVENTION ────────────────────────────────── */
 img, video, iframe, embed { max-width: 100%; height: auto; display: block; }
 img:not([width]):not([height]) { aspect-ratio: 16/9; }
 img[loading="lazy"] { opacity: 0; transition: opacity 0.3s ease; }
@@ -369,7 +369,7 @@ label {
 }
 ::placeholder { color: var(--ux-text-muted); opacity: 1; }
 
-/* ── R18 — AUTOFILL OVERRIDE (kill Chrome/Safari yellow bg) ─────── */
+/* ── R18, AUTOFILL OVERRIDE (kill Chrome/Safari yellow bg) ─────── */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -389,7 +389,7 @@ input:-webkit-autofill:active {
   }
 }
 
-/* ── R18 — TOUCH RIPPLE EFFECT ──────────────────────────────────── */
+/* ── R18, TOUCH RIPPLE EFFECT ──────────────────────────────────── */
 .ux-ripple {
   position: relative;
   overflow: hidden;
@@ -415,7 +415,7 @@ input:-webkit-autofill:active {
 /* ── 19. SPACING ────────────────────────────────────────────────── */
 section, .section { padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem); }
 
-/* ── R18 — VIEWPORT-AWARE SECTIONS ───────────────────────────────── */
+/* ── R18, VIEWPORT-AWARE SECTIONS ───────────────────────────────── */
 .ux-section-full { min-height: 100dvh; display: flex; align-items: center; }
 .ux-section-narrow { max-width: 800px; margin: 0 auto; }
 
@@ -481,7 +481,7 @@ body.nav-open { overflow: hidden; }
   opacity: 1;
   transform: translateY(0);
 }
-/* R18 — mobile nav swipe-down-to-close hint */
+/* R18, mobile nav swipe-down-to-close hint */
 .ux-nav-swipe-hint {
   width: 36px;
   height: 5px;
@@ -538,7 +538,7 @@ body.nav-open { overflow: hidden; }
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   R18 — NEW MOBILE-FIRST FEATURES BELOW
+   R18, NEW MOBILE-FIRST FEATURES BELOW
    ════════════════════════════════════════════════════════════════════ */
 
 /* ── 28. STICKY MOBILE CTA BAR ───────────────────────────────────── */
@@ -887,17 +887,17 @@ a[aria-label] > svg:only-child {
    off-centre. After: 0.
 
    Selector notes, each one learned from a measured failure:
-   · Descendant match, not `> p` — containers routinely wrap copy in an
+   · Descendant match, not `> p`, containers routinely wrap copy in an
      unstyled <div>, and direct-child matching missed most paragraphs.
    · The `:not(...text-left...)` guard is REQUIRED. A centred container
      often holds a `text-left` card; without the guard those left-aligned
      paragraphs get centred too and go ragged against their headings
      (measured: 17 wrongly centred on gitdealflow, 4 on invisibleexit).
-   · The two `:not()` chains must NOT be separated by whitespace —
+   · The two `:not()` chains must NOT be separated by whitespace, 
      whitespace is a descendant combinator and changes the meaning.
    · `!important` is required: the site's build CSS resets paragraph
      margins and otherwise wins the cascade.
-   · `.brunson-trust-bar` is named explicitly — the injected trust band
+   · `.brunson-trust-bar` is named explicitly, the injected trust band
      centres via its own class, not a `text-center` utility.
    Marker: CENTERED TEXT BOX REPAIR */
 :is([class*="text-center"], .center, .brunson-trust-bar,

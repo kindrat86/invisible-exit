@@ -23,7 +23,7 @@ export default function TaxGuidePage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`Tax Guide for ${guide.stateName} — LLC & Side Business Taxes | Invisible Exit`}
+        title={`Tax Guide for ${guide.stateName}, LLC & Side Business Taxes | Invisible Exit`}
         description={`Complete tax guide for side businesses and LLCs in ${guide.stateName}. Income tax rate: ${guide.incomeTaxRate}. Sales tax: ${guide.salesTaxNote}. Credits, deductions, filing deadlines.`}
         url={`https://invisibleexit.com/tax-guides/${guide.slug}`}
       />

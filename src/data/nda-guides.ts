@@ -95,16 +95,16 @@ const ndaGuides: NdaGuide[] = stateKeys.map((slug) => {
   const isModerate = enf === "moderate";
 
   const keyRules = isWeak
-    ? `${s.name} courts narrowly construe non-disclosure agreements. California, Colorado, and North Dakota each have public policy limitations that make broad NDAs difficult to enforce — especially those covering trade secret definitions or unlimited duration.`
+    ? `${s.name} courts narrowly construe non-disclosure agreements. California, Colorado, and North Dakota each have public policy limitations that make broad NDAs difficult to enforce, especially those covering trade secret definitions or unlimited duration.`
     : isVaries
     ? `In ${s.name} (DC), enforceability depends heavily on the specific language. Courts will scrutinize NDAs for reasonableness of scope, duration, and geographic limits. Overly broad agreements are likely to be modified or voided.`
     : `In ${s.name}, NDAs are generally enforceable if they are reasonable in scope, duration, and geography. Non-compete restrictions within NDAs face additional scrutiny, but pure confidentiality provisions are typically upheld.`;
 
   const implications = isWeak
-    ? `Good news: broad NDAs from your employer are harder to enforce in ${s.name}. If your employer claims you breached an NDA by starting a side business, they must prove specific confidential information was used — not just that you work in the same industry. However, you should still avoid using any employer-provided data, client lists, or proprietary tools.`
+    ? `Good news: broad NDAs from your employer are harder to enforce in ${s.name}. If your employer claims you breached an NDA by starting a side business, they must prove specific confidential information was used, not just that you work in the same industry. However, you should still avoid using any employer-provided data, client lists, or proprietary tools.`
     : isVaries
     ? `The mixed legal landscape in ${s.name} means you should be extra cautious. An NDA your employer asks you to sign may or may not hold up in court, but the legal fees to fight it are real. Have any pre-existing side-business NDA reviewed by a ${s.name}-licensed attorney before signing.`
-    : `${s.name} courts generally favor enforcing NDAs as written. Before starting a side business, review any NDA you've signed with your employer for clauses about "other business activities," "corporate opportunities," or "business interests" — these can be interpreted broadly.`;
+    : `${s.name} courts generally favor enforcing NDAs as written. Before starting a side business, review any NDA you've signed with your employer for clauses about "other business activities," "corporate opportunities," or "business interests", these can be interpreted broadly.`;
 
   const whatToCheck = [
     "Does the NDA define 'confidential information' narrowly or broadly?",
@@ -119,21 +119,21 @@ const ndaGuides: NdaGuide[] = stateKeys.map((slug) => {
   const faqs = [
     makeFaq(
       `Does my employer's NDA prevent me from starting a side business in ${s.name}?`,
-      `Not automatically. An NDA protects specific confidential information — it doesn't ban you from working on your own projects. However, if your side business operates in the same industry as your employer, they may argue you're using their confidential information. In ${s.name}, ${isWeak ? "courts are skeptical of such broad claims" : isVaries ? "outcomes depend heavily on the specific NDA language" : "you should be cautious as courts tend to uphold NDAs as written"}.`
+      `Not automatically. An NDA protects specific confidential information, it doesn't ban you from working on your own projects. However, if your side business operates in the same industry as your employer, they may argue you're using their confidential information. In ${s.name}, ${isWeak ? "courts are skeptical of such broad claims" : isVaries ? "outcomes depend heavily on the specific NDA language" : "you should be cautious as courts tend to uphold NDAs as written"}.`
     ),
     makeFaq(
       `Can I start a side business if I signed an NDA in ${s.name}?`,
-      `Yes, but with precautions. Don't use your employer's equipment, data, or time. Keep your side business in a different niche if possible. If your NDA has a broad definition of "confidential information," ask an attorney to review it. ${s.name} law ${isWeak ? "gives you some protection against overreach" : isVaries ? "is unclear — get specific legal advice" : "generally favors the employer's NDA rights"}.`
+      `Yes, but with precautions. Don't use your employer's equipment, data, or time. Keep your side business in a different niche if possible. If your NDA has a broad definition of "confidential information," ask an attorney to review it. ${s.name} law ${isWeak ? "gives you some protection against overreach" : isVaries ? "is unclear, get specific legal advice" : "generally favors the employer's NDA rights"}.`
     ),
     makeFaq(
       `What happens if my employer sues me for violating an NDA in ${s.name}?`,
       isWeak
-        ? `They would need to prove you actually disclosed or used specific confidential information — not just that you started a competing business. ${s.name} courts require specific evidence, not general allegations. However, legal defense costs can still be significant ($10K-$50K+).`
+        ? `They would need to prove you actually disclosed or used specific confidential information, not just that you started a competing business. ${s.name} courts require specific evidence, not general allegations. However, legal defense costs can still be significant ($10K-$50K+).`
         : `They would likely get a temporary restraining order and discovery into your side business. ${s.name} courts take NDAs seriously, so you'd need to prove you didn't use any protected information. Legal costs typically start at $15K-$75K.`
     ),
     makeFaq(
       `Should I sign a new NDA with my employer if I already have a side business in ${s.name}?`,
-      `Not without reviewing it carefully. If you already have a side business, ask your employer to explicitly exclude it from the NDA's scope in writing before signing. If they refuse, consider whether the risk is worth it — you may need to disclose your side business or pause it.`
+      `Not without reviewing it carefully. If you already have a side business, ask your employer to explicitly exclude it from the NDA's scope in writing before signing. If they refuse, consider whether the risk is worth it, you may need to disclose your side business or pause it.`
     ),
   ];
 

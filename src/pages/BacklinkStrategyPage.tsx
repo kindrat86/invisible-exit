@@ -126,7 +126,7 @@ const BacklinkStrategyPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Backlink Strategy — Guest Posts, HARO & Link Building Framework | Invisible Exit"
+        title="Backlink Strategy, Guest Posts, HARO & Link Building Framework | Invisible Exit"
         description="The complete backlink acquisition plan: guest post targets, HARO workflow, link exchange framework, and skyscraper content strategy. Turn 229 pages into an authoritative domain."
         url="/backlink-strategy"
       />

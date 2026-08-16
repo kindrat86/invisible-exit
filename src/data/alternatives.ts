@@ -49,14 +49,14 @@ export const alternatives: AlternativeEntry[] = [
     product: "Substack",
     category: "Newsletter",
     metaTitle: "Substack Alternatives for Anonymous Solo Founders (2026)",
-    metaDescription: "The best Substack alternatives for faceless newsletter growth. Beehiiv, ConvertKit, and more — each compared for anonymous founders building audiences.",
+    metaDescription: "The best Substack alternatives for faceless newsletter growth. Beehiiv, ConvertKit, and more, each compared for anonymous founders building audiences.",
     h1: "Best Substack Alternatives for Anonymous Founders",
     intro: "Substack is great for writers, but its discoverability is dropping and the platform takes 10% of revenue. For anonymous founders building a newsletter alongside a micro-SaaS, there are better options.",
     whySwitch: [
       "Substack takes 10% of subscription revenue on top of Stripe/Paddle fees",
       "No native landing pages or sales funnel tools",
       "Limited customization for building a brand vs. Substack's brand",
-      "No course or digital product hosting — you need another tool",
+      "No course or digital product hosting, you need another tool",
     ],
     alternatives: [
       { name: "Beehiiv", url: "https://beehiiv.com", pricing: "Free / $42/month", bestFor: "All-in-one newsletter + growth tools", pros: ["Built-in growth tools", "Recommendations", "AI writing assistant"], cons: ["Free tier has limits", "Learning curve"] },
@@ -80,7 +80,7 @@ export const alternatives: AlternativeEntry[] = [
     intro: "Carrd is perfect for simple one-pagers, but micro-SaaS often needs more: pricing tables, authentication, blog integration, and payment forms. Here are alternatives that grow with you.",
     whySwitch: [
       "Carrd's one-page limit restricts SEO content depth for blog + landing pages",
-      "No native blog capabilities — you need a separate tool",
+      "No native blog capabilities, you need a separate tool",
       "Limited form handling for pre-sales and waitlists",
       "No A/B testing for optimizing conversion",
     ],
@@ -89,9 +89,9 @@ export const alternatives: AlternativeEntry[] = [
       { name: "Unicorn Platform", url: "https://unicornplatform.com", pricing: "$19/month", bestFor: "SaaS landing pages designed for conversions", pros: ["SaaS-specific templates", "Blog built-in", "Changelog"], cons: ["Less design freedom", "Fewer integrations"] },
       { name: "Vercel + Tailwind", url: "https://vercel.com", pricing: "Free", bestFor: "Developers who want full control over their landing page", pros: ["Free hosting", "Maximum flexibility", "Edge functions"], cons: ["Requires coding", "No visual editor"] },
     ],
-    verdict: "Framer is the best Carrd alternative for most founders. It gives you beautiful landing pages with CMS, blog, and forms — all in one tool.",
+    verdict: "Framer is the best Carrd alternative for most founders. It gives you beautiful landing pages with CMS, blog, and forms, all in one tool.",
     faqs: [
-      { question: "Can I migrate from Carrd to Framer?", answer: "Not directly — you'll need to rebuild your page. However, Framer's import tools make it easier. Spend the afternoon on it and you'll have a better, more flexible site." },
+      { question: "Can I migrate from Carrd to Framer?", answer: "Not directly, you'll need to rebuild your page. However, Framer's import tools make it easier. Spend the afternoon on it and you'll have a better, more flexible site." },
       { question: "Do I need a separate blog tool with Framer?", answer: "No, Framer has built-in CMS for blog posts. One tool, one domain, one stack." },
     ],
   },
@@ -104,7 +104,7 @@ export const alternatives: AlternativeEntry[] = [
     h1: "Best Gumroad Alternatives for Micro-SaaS",
     intro: "Gumroad is great for selling ebooks and templates, but for micro-SaaS with recurring subscriptions, the 10% fee and limited analytics make it expensive. Here are better options.",
     whySwitch: [
-      "Gumroad takes 10% on top of payment processing fees — expensive for recurring billing",
+      "Gumroad takes 10% on top of payment processing fees, expensive for recurring billing",
       "No native tax handling for physical goods or global sales",
       "Limited analytics for subscription metrics like churn and LTV",
       "Not designed for SaaS features like team accounts or usage-based billing",
@@ -116,7 +116,7 @@ export const alternatives: AlternativeEntry[] = [
     ],
     verdict: "For micro-SaaS, use Stripe for subscriptions. The API is unmatched, fees are lower at scale, and you have full control over the checkout experience. For digital products alongside a SaaS, add Gumroad or Lemon Squeezy.",
     faqs: [
-      { question: "Can I use Stripe without coding?", answer: "Yes — Stripe Payment Links and Stripe Checkout let you accept payments with zero code. Link a payment link from any landing page." },
+      { question: "Can I use Stripe without coding?", answer: "Yes, Stripe Payment Links and Stripe Checkout let you accept payments with zero code. Link a payment link from any landing page." },
       { question: "What about EU VAT handling?", answer: "Stripe Tax handles EU VAT automatically for digital products. Paddle and Lemon Squeezy also handle it. Gumroad does too, but the fee is higher." },
     ],
   },
@@ -127,7 +127,7 @@ export const alternatives: AlternativeEntry[] = [
     metaTitle: "WordPress Alternatives for Solo Founders (2026)",
     metaDescription: "The best WordPress alternatives for solo founders who need a blog + content site without the maintenance burden of WordPress.",
     h1: "Best WordPress Alternatives for Solo Founders",
-    intro: "WordPress powers 43% of the web, but maintaining it as a solo founder with 5 hours per week is expensive overhead. Updates, security, plugins, hosting — it adds up. Here are lighter options.",
+    intro: "WordPress powers 43% of the web, but maintaining it as a solo founder with 5 hours per week is expensive overhead. Updates, security, plugins, hosting, it adds up. Here are lighter options.",
     whySwitch: [
       "WordPress requires regular maintenance (updates, backups, security)",
       "Plugin conflicts and bloat slow down your site",
@@ -139,7 +139,7 @@ export const alternatives: AlternativeEntry[] = [
       { name: "Write.as", url: "https://write.as", pricing: "$3/month", bestFor: "Distraction-free writing", pros: ["Simple", "Privacy-focused", "Very affordable"], cons: ["Too simple for most", "No plugins"] },
       { name: "Astro + Decap CMS", url: "https://astro.build", pricing: "Free (open source)", bestFor: "Static site generator with CMS", pros: ["Extremely fast", "Free hosting", "Markdown-driven"], cons: ["Requires development skills", "No visual editor"] },
     ],
-    verdict: "Ghost is the best WordPress alternative for solo founders. It handles newsletters, memberships, and content — all in one platform — without plugin management.",
+    verdict: "Ghost is the best WordPress alternative for solo founders. It handles newsletters, memberships, and content, all in one platform, without plugin management.",
     faqs: [
       { question: "Can I migrate from WordPress to Ghost?", answer: "Yes, Ghost has a built-in WordPress import tool. It migrates posts, authors, and tags. Redirect your old URLs for SEO continuity." },
       { question: "Does Ghost support SEO?", answer: "Yes, Ghost has excellent SEO out of the box: canonical URLs, structured data, XML sitemaps, and fast page load times." },

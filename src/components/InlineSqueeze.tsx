@@ -14,7 +14,7 @@ import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * DOTCOM SECRETS Ch 4 & Ch 6 — Inline Squeeze on Homepage
+ * DOTCOM SECRETS Ch 4 & Ch 6, Inline Squeeze on Homepage
  *
  * Problem: Homepage had no email capture. 8+ competing CTAs. Visitors bounced
  * before reaching the /freedom squeeze page.
@@ -57,7 +57,7 @@ const FUNNEL_STEPS = [
     icon: Rocket,
     num: "3",
     title: "Start the 5-Tool System",
-    desc: "All 5 tools — freedom number, idea pipeline, stealth ops, launch control, brand manager.",
+    desc: "All 5 tools, freedom number, idea pipeline, stealth ops, launch control, brand manager.",
     cta: "Start for $9/mo",
     href: "/start",
     price: "$9/mo",
@@ -130,7 +130,7 @@ const InlineSqueeze = () => {
 
         <div className="container-narrow relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            {/* Urgency badge — removed fabricated scarcity */}
+            {/* Urgency badge, removed fabricated scarcity */}
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-xs text-amber-200 font-semibold uppercase tracking-wider">
@@ -145,7 +145,7 @@ const InlineSqueeze = () => {
 
             <p className="text-lg text-white/60 mb-2 max-w-xl mx-auto animate-fade-up" style={{ animationDelay: "50ms" }}>
               No credit card. No spam. Just a 90-second calculator that tells you
-              exactly how much recurring revenue you need to replace your salary —
+              exactly how much recurring revenue you need to replace your salary, 
               and how long it takes at your hours/week.
             </p>
 
@@ -251,7 +251,7 @@ const InlineSqueeze = () => {
             </h2>
             <p className="text-white/50 text-sm max-w-md mx-auto">
               Welcome email sent to <strong className="text-white/70">{email}</strong>.
-              Now here's your path — 3 steps from trapped to building.
+              Now here's your path, 3 steps from trapped to building.
             </p>
           </div>
 

@@ -94,7 +94,7 @@ function generateEntry(years: number, salary: number): CostOfWaiting {
       },
       {
         question: `What if I'd started ${years} ${years === 1 ? "year" : "years"} ago?`,
-        answer: `If you'd started ${years} ${years === 1 ? "year" : "years"} ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $${(microSaasTotal / 1000).toFixed(0)}K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month — unlike salary, which stops when you stop working.`,
+        answer: `If you'd started ${years} ${years === 1 ? "year" : "years"} ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $${(microSaasTotal / 1000).toFixed(0)}K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.`,
       },
     ],
   };

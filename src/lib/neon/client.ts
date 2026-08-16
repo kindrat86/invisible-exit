@@ -317,7 +317,7 @@ const auth = {
   },
 
   async signUp({ email, password }: { email: string; password: string }) {
-    // Same as login — creates account then signs in
+    // Same as login, creates account then signs in
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
@@ -447,7 +447,7 @@ const functions = {
 };
 
 // ─────────────────────────────────────────────────────────────
-// Main export — drop-in supabase replacement
+// Main export, drop-in supabase replacement
 // ─────────────────────────────────────────────────────────────
 
 export const neonClient = {

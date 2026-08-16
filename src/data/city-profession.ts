@@ -85,7 +85,7 @@ const CITIES: CityDatum[] = [
     state: "New York",
     costOfLiving: "Very High",
     scene:
-      "the densest B2B market in the country — finance, media, advertising, and fashion headquarters stacked on top of each other, with a startup scene that rivals SF for deal flow",
+      "the densest B2B market in the country, finance, media, advertising, and fashion headquarters stacked on top of each other, with a startup scene that rivals SF for deal flow",
     avgSalary: "$85K",
     meetups:
       "NY Tech Meetup, Product Guild NYC, SaaS Meetup NYC, New York Angels pitches, Tech:NYC events",
@@ -137,7 +137,7 @@ const CITIES: CityDatum[] = [
     state: "Illinois",
     costOfLiving: "Moderate",
     scene:
-      "diversified Midwest economy spanning finance, logistics, manufacturing, and healthcare — creating B2B SaaS niches in unsexy-but-profitable verticals that coastal hubs completely overlook",
+      "diversified Midwest economy spanning finance, logistics, manufacturing, and healthcare, creating B2B SaaS niches in unsexy-but-profitable verticals that coastal hubs completely overlook",
     avgSalary: "$70K",
     meetups:
       "Chicago Tech Meetup, 1871 startup hub events, Chicago Innovation nights, Builtin Chicago sessions, TechNexus meetups",
@@ -150,7 +150,7 @@ const CITIES: CityDatum[] = [
     state: "California",
     costOfLiving: "Very High",
     scene:
-      "the capital of the creator economy — home to YouTube studios, podcast networks, talent agencies, and gaming studios — plus a fast-growing SaaS scene in Santa Monica and Venice Beach",
+      "the capital of the creator economy, home to YouTube studios, podcast networks, talent agencies, and gaming studios, plus a fast-growing SaaS scene in Santa Monica and Venice Beach",
     avgSalary: "$78K",
     meetups:
       "LA Tech meetup, Silicon Beach events, Product School LA, Creator Economy meetups, Cross Campus sessions",
@@ -163,7 +163,7 @@ const CITIES: CityDatum[] = [
     state: "Texas",
     costOfLiving: "Moderate",
     scene:
-      "DFW metroplex corporate powerhouse — AT&T, Toyota, JCPenney, and HP headquarters — with a fast-growing fintech and enterprise-software corridor that's more affordable than Austin",
+      "DFW metroplex corporate powerhouse, AT&T, Toyota, JCPenney, and HP headquarters, with a fast-growing fintech and enterprise-software corridor that's more affordable than Austin",
     avgSalary: "$65K",
     meetups:
       "Dallas Startup Week, The DEC Network events, Dallas Tech Meetup, Capital Factory Dallas, DFW Startup Community",
@@ -176,7 +176,7 @@ const CITIES: CityDatum[] = [
     state: "Oregon",
     costOfLiving: "High",
     scene:
-      "indie-hacker haven that celebrates bootstrapped, quirky, independent products over VC-chasing — a city where 'keep it weird' applies to software and open-source culture runs deep",
+      "indie-hacker haven that celebrates bootstrapped, quirky, independent products over VC-chasing, a city where 'keep it weird' applies to software and open-source culture runs deep",
     avgSalary: "$68K",
     meetups:
       "Portland Indie Hackers, PIE (Portland Incubator Experiment), TechfestPDX, Oregon Entrepreneurs Network, PDX Python meetups",
@@ -189,7 +189,7 @@ const CITIES: CityDatum[] = [
     state: "Georgia",
     costOfLiving: "Moderate",
     scene:
-      "the leading tech hub of the Southeast — processing 70% of all US payment-card transactions, with a deep fintech talent pool from Fiserv, Global Payments, and NCR plus a booming Black-founder ecosystem",
+      "the leading tech hub of the Southeast, processing 70% of all US payment-card transactions, with a deep fintech talent pool from Fiserv, Global Payments, and NCR plus a booming Black-founder ecosystem",
     avgSalary: "$62K",
     meetups:
       "Atlanta Tech Meetup, Techstars Atlanta, Center for Civic Innovation, ATDC events, Atlanta Black Tech meetups",
@@ -215,7 +215,7 @@ const CITIES: CityDatum[] = [
     state: "Florida",
     costOfLiving: "High",
     scene:
-      "crypto-and-fintech boomtown that rebranded itself as the 'capital of capital' — attracting founders, VCs, and remote workers from SF and NYC, plus serving as the gateway to Latin American markets",
+      "crypto-and-fintech boomtown that rebranded itself as the 'capital of capital', attracting founders, VCs, and remote workers from SF and NYC, plus serving as the gateway to Latin American markets",
     avgSalary: "$60K",
     meetups:
       "eMerge Americas, Refresh Miami, Miami Tech Meetup, Mana Commons events, Blacktech Week sessions",
@@ -228,7 +228,7 @@ const CITIES: CityDatum[] = [
     state: "Anywhere",
     costOfLiving: "Varies",
     scene:
-      "the distributed workforce — no commute, no office politics, and the freedom to choose your LLC's home state, your timezone, and your own peak-productivity hours",
+      "the distributed workforce, no commute, no office politics, and the freedom to choose your LLC's home state, your timezone, and your own peak-productivity hours",
     avgSalary: "Varies",
     meetups:
       "Indie Hackers community, WIP.co maker chat, Trends.vc, MicroConf Connect, r/SaaS and r/Entrepreneur",
@@ -261,7 +261,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "AI code-documentation generator wired to your repo",
     ],
     unfairAdvantage:
-      "you can build, ship, and iterate the product yourself — no technical co-founder or contractor needed",
+      "you can build, ship, and iterate the product yourself, no technical co-founder or contractor needed",
     whatToAvoid:
       "do not use your employer's code, infra, or repos. Build on personal hardware, in an unrelated domain.",
   },
@@ -276,7 +276,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Product analytics onboarding tool for non-technical founders",
     ],
     unfairAdvantage:
-      "you understand customer discovery, prioritization, and go-to-market — the exact skills that turn a side project into revenue",
+      "you understand customer discovery, prioritization, and go-to-market, the exact skills that turn a side project into revenue",
     whatToAvoid:
       "do not build tools that compete with your employer's product roadmap or use customer data from your company.",
   },
@@ -291,7 +291,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Attribution dashboard connecting Stripe to ad spend for bootstrappers",
     ],
     unfairAdvantage:
-      "you already know how to find customers and write copy that converts — the hardest part of getting a SaaS to revenue",
+      "you already know how to find customers and write copy that converts, the hardest part of getting a SaaS to revenue",
     whatToAvoid:
       "do not reuse your employer's customer lists, creative assets, or media-buying data. Build for a different audience segment.",
   },
@@ -306,7 +306,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Client-proof gallery tool for freelance designers",
     ],
     unfairAdvantage:
-      "you can design a credible brand and landing page without paying an agency — instantly lowering customer-acquisition cost",
+      "you can design a credible brand and landing page without paying an agency, instantly lowering customer-acquisition cost",
     whatToAvoid:
       "do not reuse your employer's design files, brand assets, or component libraries in your own product.",
   },
@@ -321,7 +321,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Engagement-scoping tool with templated deliverables and pricing",
     ],
     unfairAdvantage:
-      "you already sell expertise — a productized version of your methodology is the most natural SaaS pivot there is",
+      "you already sell expertise, a productized version of your methodology is the most natural SaaS pivot there is",
     whatToAvoid:
       "do not use client data, proprietary frameworks, or deliverables from your firm. Rebuild methodologies from scratch.",
   },
@@ -336,7 +336,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Investor-reporting automation for portfolio companies",
     ],
     unfairAdvantage:
-      "you speak the language of revenue, margins, and unit economics — the language investors and B2B buyers pay to understand",
+      "you speak the language of revenue, margins, and unit economics, the language investors and B2B buyers pay to understand",
     whatToAvoid:
       "do not use employer models, client financials, or proprietary datasets. Target a completely different company segment.",
   },
@@ -351,7 +351,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Embedded analytics widget for SaaS apps to show customers their data",
     ],
     unfairAdvantage:
-      "you can build the data pipeline and the analytics layer yourself — and every SaaS eventually needs both",
+      "you can build the data pipeline and the analytics layer yourself, and every SaaS eventually needs both",
     whatToAvoid:
       "do not use employer data, schemas, or proprietary ETL code. Rebuild connectors and models from public data.",
   },
@@ -366,7 +366,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Cash-flow forecasting dashboard for small businesses",
     ],
     unfairAdvantage:
-      "you understand compliance, billing cycles, and financial workflows — the exact pain points businesses pay $29-$99/month to solve",
+      "you understand compliance, billing cycles, and financial workflows, the exact pain points businesses pay $29-$99/month to solve",
     whatToAvoid:
       "do not build tools that compete with your firm's services or use client data from your employer. Target a different client segment.",
   },
@@ -381,7 +381,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Privacy policy generator for SaaS and indie hackers",
     ],
     unfairAdvantage:
-      "you understand regulatory compliance and contract language — among the most monetizable niche expertise in B2B SaaS",
+      "you understand regulatory compliance and contract language, among the most monetizable niche expertise in B2B SaaS",
     whatToAvoid:
       "do not practice law through your SaaS (unauthorized practice of law). Build tools that assist non-lawyers or streamline firm operations.",
   },
@@ -396,7 +396,7 @@ const PROFESSIONS: ProfessionDatum[] = [
       "Project kickoff checklist productizer for freelance PMs",
     ],
     unfairAdvantage:
-      "you already ship deliverables on time and on budget — the exact operational discipline that gets a SaaS to launch",
+      "you already ship deliverables on time and on budget, the exact operational discipline that gets a SaaS to launch",
     whatToAvoid:
       "do not reuse employer project plans, client lists, or proprietary methodologies. Build for a different industry vertical.",
   },
@@ -415,15 +415,15 @@ function lowerProfession(name: string): string {
 function costText(city: CityDatum): string {
   switch (city.costOfLiving) {
     case "Very High":
-      return `${city.name}'s cost of living is very high, which means you need either a W-2 cushion or a fast path to revenue — but the trade-off is that local B2B customers pay premium pricing ($99-$499/month) that offsets the burn rate.`;
+      return `${city.name}'s cost of living is very high, which means you need either a W-2 cushion or a fast path to revenue, but the trade-off is that local B2B customers pay premium pricing ($99-$499/month) that offsets the burn rate.`;
     case "High":
       return `${city.name}'s cost of living is high, so plan for a 3-to-6-month runway before your SaaS covers living costs. The upside: local customers and network density shorten the time-to-first-customer.`;
     case "Moderate":
-      return `${city.name}'s cost of living is moderate, which is a real advantage — your SaaS revenue covers personal burn-rate sooner, letting you reach profitability on fewer customers than a coastal founder needs.`;
+      return `${city.name}'s cost of living is moderate, which is a real advantage, your SaaS revenue covers personal burn-rate sooner, letting you reach profitability on fewer customers than a coastal founder needs.`;
     case "Low":
       return `${city.name}'s low cost of living is a structural edge: you can reach personal profitability on as few as 20-40 paying customers, something impossible in SF or NYC.`;
     case "Varies":
-      return `because you're remote, your cost of living depends on where you choose to live — geo-arbitrage (earning in dollars, spending in a cheaper market) is one of the most powerful runway multipliers available.`;
+      return `because you're remote, your cost of living depends on where you choose to live, geo-arbitrage (earning in dollars, spending in a cheaper market) is one of the most powerful runway multipliers available.`;
   }
 }
 
@@ -431,7 +431,7 @@ function costText(city: CityDatum): string {
 function introText(city: CityDatum, prof: ProfessionDatum): string {
   return (
     `${city.name} is ${city.scene}. ` +
-    `For ${lowerProfession(prof.name)}, ${prof.unfairAdvantage} — and ${city.name}'s ${city.scene.includes("no state income tax") ? "tax and networking advantages" : "local ecosystem"} make it an unusually good place to turn that edge into ${prof.name === "Consultants" ? "a productized offering" : "a profitable micro-SaaS"}. ` +
+    `For ${lowerProfession(prof.name)}, ${prof.unfairAdvantage}, and ${city.name}'s ${city.scene.includes("no state income tax") ? "tax and networking advantages" : "local ecosystem"} make it an unusually good place to turn that edge into ${prof.name === "Consultants" ? "a productized offering" : "a profitable micro-SaaS"}. ` +
     `${city.advantage}.`
   );
 }

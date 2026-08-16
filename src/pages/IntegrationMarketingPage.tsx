@@ -19,7 +19,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
 /**
- * TRAFFIC SECRETS: Secret #17 — Integration Marketing
+ * TRAFFIC SECRETS: Secret #17:  Integration Marketing
  *
  * Russell Brunson: "Each of your Dream 100 has a distribution channel,
  * and it's your job to figure out how you can plug your products into
@@ -27,7 +27,7 @@ import SEOHead from "@/components/SEOHead";
  *
  * This page provides embeddable widgets, email sequence integrations,
  * and partnership templates that other creators/newsletter owners can
- * drop into their existing funnels — creating integration marketing
+ * drop into their existing funnels, creating integration marketing
  * opportunities that work while we sleep.
  */
 
@@ -101,7 +101,7 @@ const EMBED_WIDGET = `<iframe
 
 const THANK_YOU_BLOCK = `<div style="max-width:500px;margin:24px auto;padding:24px;border-radius:12px;background:#0f172a;color:white;font-family:sans-serif;text-align:center;">
   <h3 style="color:#60a5fa;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Recommended Resource</h3>
-  <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">Want to build a side business without quitting your job? Calculate your Freedom Number — the exact MRR you need to never work for someone else again.</p>
+  <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">Want to build a side business without quitting your job? Calculate your Freedom Number, the exact MRR you need to never work for someone else again.</p>
   <a href="YOUR_AFFILIATE_LINK" style="display:inline-block;padding:12px 28px;background:#3b82f6;color:white;text-decoration:none;border-radius:8px;font-weight:600;">Calculate Your Freedom Number →</a>
   <p style="font-size:12px;color:#94a3b8;margin-top:12px;">5 AI tools. $9/month. Cancel anytime.</p>
 </div>`;
@@ -140,7 +140,7 @@ const PARTNER_PERKS = [
     icon: DollarSign,
     title: "30% Lifetime Recurring",
     description:
-      "Every subscriber you refer earns you 30% — for as long as they stay subscribed. $17.99 founding plan = $5.40/month per referral. 100 referrals = $540/month passive.",
+      "Every subscriber you refer earns you 30%, for as long as they stay subscribed. $17.99 founding plan = $5.40/month per referral. 100 referrals = $540/month passive.",
   },
   {
     icon: Shield,
@@ -152,7 +152,7 @@ const PARTNER_PERKS = [
     icon: Zap,
     title: "Instant Swipe Assets",
     description:
-      "Email copy, embed widgets, thank-you page blocks, banner ads, and social media templates — all ready to copy-paste. No design work required.",
+      "Email copy, embed widgets, thank-you page blocks, banner ads, and social media templates, all ready to copy-paste. No design work required.",
   },
   {
     icon: Users,
@@ -174,7 +174,7 @@ const IntegrationMarketingPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Integration Marketing — Partner With Invisible Exit"
+        title="Integration Marketing, Partner With Invisible Exit"
         description="Embed our Freedom Calculator, add us to your email sequence, or co-create content. 30% recurring commission, 60-day cookies, ready-made assets."
         url="/partners/embed"
       />
@@ -195,7 +195,7 @@ const IntegrationMarketingPage = () => {
           <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             You already have an audience, an email list, and trust. We have the
             tools. Here's how to integrate our offer into what you're already
-            doing — and earn 30% recurring on every conversion.
+            doing, and earn 30% recurring on every conversion.
           </p>
         </div>
       </section>
@@ -339,7 +339,7 @@ const IntegrationMarketingPage = () => {
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-blue-400" />
                   <span className="text-white/70 text-sm font-medium">
-                    Email Swipe Copy — "The Equity Math"
+                    Email Swipe Copy, "The Equity Math"
                   </span>
                 </div>
                 <button

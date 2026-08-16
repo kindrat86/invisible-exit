@@ -10,7 +10,7 @@ export default function TimeFrameworkHubPage() {
     <div className="min-h-screen bg-white">
       <SEOHead
         title="Time Management Frameworks for Side Businesses & Employed Founders | Invisible Exit"
-        description="Proven time management frameworks for side businesses. From the 5-Hour Weekend to the 90-Day Sprint — find the system that works for your schedule."
+        description="Proven time management frameworks for side businesses. From the 5-Hour Weekend to the 90-Day Sprint, find the system that works for your schedule."
         url="https://invisibleexit.com/time-frameworks"
       />
       <Navbar />

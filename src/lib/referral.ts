@@ -1,9 +1,9 @@
 /**
- * Referral Engine — client-side capture.
+ * Referral Engine, client-side capture.
  *
  * Any landing URL carrying ?ref=CODE (or ?via=CODE) stores the code for 90
  * days. The API shim (src/lib/neon/client.ts) automatically attaches it to
- * every create-checkout call, and the server validates it — an unknown or
+ * every create-checkout call, and the server validates it, an unknown or
  * malformed code is simply ignored.
  */
 
@@ -13,7 +13,7 @@ const MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000; // 90 days
 
 const CODE_RE = /^[a-z0-9-]{3,32}$/;
 
-/** Call once on app boot — reads ?ref= / ?via= from the URL. */
+/** Call once on app boot, reads ?ref= / ?via= from the URL. */
 export function captureReferralFromUrl(): void {
   try {
     const params = new URLSearchParams(window.location.search);
@@ -23,7 +23,7 @@ export function captureReferralFromUrl(): void {
       localStorage.setItem(TS_KEY, String(Date.now()));
     }
   } catch {
-    // Storage unavailable (private mode) — referral attribution silently off.
+    // Storage unavailable (private mode), referral attribution silently off.
   }
 }
 

@@ -9,8 +9,8 @@ export default function CostAnalysisHubPage() {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Cost Analysis — How Much Does It Cost? | Invisible Exit"
-        description="Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500 — see exactly where every dollar goes."
+        title="Cost Analysis, How Much Does It Cost? | Invisible Exit"
+        description="Realistic cost breakdowns for starting and running a micro-SaaS. From $0 to $2,500, see exactly where every dollar goes."
         url="https://invisibleexit.com/cost-analysis"
       />
       <Navbar />

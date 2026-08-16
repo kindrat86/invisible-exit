@@ -3,14 +3,14 @@
  *
  * Why this exists: on 2026-07-25 an exhaustive crawl found 122 broken internal
  * links on invisibleexit.com. Every one was a hub page linking a slug its data
- * never produces — /reddit linked "for-accountants" while the data emits
+ * never produces, /reddit linked "for-accountants" while the data emits
  * "reddit-for-accountants", /pricing-models linked "freemium" while the data emits
  * "freemium-pricing", /non-compete linked a bare profession into a route keyed by
  * profession+state, and SalaryPage cross-linked all 25 professions into families
  * with 6-25 pages. The hub link lists were hardcoded arrays that had drifted from
  * the data the prerenderer iterates.
  *
- * Two capped crawls had previously reported this site as "0 broken" — the defect
+ * Two capped crawls had previously reported this site as "0 broken", the defect
  * was only visible to an uncapped crawl of production. This check makes it visible
  * at build time instead, from dist/, which is the same set of files that ships.
  *
@@ -18,7 +18,7 @@
  *   - a file in dist (dir/index.html, or path.html)
  *   - a redirect/rewrite source in vercel.json
  *
- * BASELINE BEHAVIOUR — deliberate. This repo is deployed continuously and by
+ * BASELINE BEHAVIOUR, deliberate. This repo is deployed continuously and by
  * automation; a guard that fails immediately on a large pre-existing backlog would
  * block every deploy and spawn CI-failure sessions. So it fails only on links that
  * are NOT in scripts/internal-links-baseline.json. Shrink that file as families are
@@ -56,7 +56,7 @@ const routeSources = [
  * ORDER IS LOAD-BEARING. `:name(pattern)` must be handled BEFORE bare `:name`,
  * because the param name is consumed by its own group. Converting `:name` first
  * turns the locale rule `/:lang(zh|hi|…|te|…)/:path*` into `[^/]+(zh|hi|…)/.*`,
- * which matches `/non-compete/accountants` — `[^/]+` eats "non-compe" and "te"
+ * which matches `/non-compete/accountants`, `[^/]+` eats "non-compe" and "te"
  * satisfies the Telugu alternative. That false positive excused ~49 genuinely
  * broken links when this guard was first written.
  */
@@ -77,7 +77,7 @@ function sourceToRe(src) {
         continue;
       }
     }
-    // Literal char — escape anything regex-significant.
+    // Literal char, escape anything regex-significant.
     out += /[.+?^${}()|[\]\\*]/.test(ch) ? "\\" + ch : ch;
     i++;
   }
@@ -101,7 +101,7 @@ function servedByFile(p) {
 
 // ---- scan -------------------------------------------------------------------
 if (!existsSync(DIST)) {
-  console.error("[check-internal-links] dist/ not found — run the build first.");
+  console.error("[check-internal-links] dist/ not found, run the build first.");
   process.exit(1);
 }
 
@@ -111,7 +111,7 @@ const broken = new Map(); // href -> Set(source pages)
 // ---- machine-facing text surfaces -------------------------------------------
 // llms.txt is the file we hand to AI crawlers, and it was the largest source of
 // dead links on this domain: 133 of its 1,420 advertised URLs 404'd (measured
-// live 2026-08-11) — whole retired families, /ai-tools/ ×80, /vs-career/ ×25,
+// live 2026-08-11), whole retired families, /ai-tools/ ×80, /vs-career/ ×25,
 // /pricing/ ×12, /mistakes/ ×6, /cost-of-waiting/ ×6.
 //
 // It went unnoticed because this checker walked only *.html and matched only
@@ -119,10 +119,10 @@ const broken = new Map(); // href -> Set(source pages)
 // was invisible to the one guard built to catch exactly this. The generator
 // (scripts/generate-llms-txt.ts) emits URLs straight from the data arrays and
 // runs at build step 3, BEFORE vite build and the prerenderers, so it cannot
-// check what actually got built — which is why the check has to live here.
+// check what actually got built, which is why the check has to live here.
 // These files are PRUNED, not merely reported. The generator
 // (scripts/generate-llms-txt.ts) emits URLs straight from the data arrays and
-// runs at build step 3 — before vite build and both prerenderers — so it cannot
+// runs at build step 3:  before vite build and both prerenderers, so it cannot
 // know which families actually got built. Families like /ai-tools/ and
 // /vs-career/ were retired from the prerenderer while their data arrays stayed,
 // and they are not even in NOINDEX_URL_PATTERNS, so nothing downstream caught it.
@@ -139,7 +139,7 @@ function hrefFrom(raw) {
   if (href.startsWith("https://invisibleexit.com")) {
     href = href.replace(/^https:\/\/invisibleexit\.com/, "") || "/";
   } else if (!href.startsWith("/")) {
-    return null; // external or relative — not ours to validate
+    return null; // external or relative, not ours to validate
   }
   href = href.split("#")[0].split("?")[0];
   if (!href.startsWith("/")) return null;
@@ -166,7 +166,7 @@ for (const name of TEXT_SURFACES) {
     const ours = [...new Set(raws.map(hrefFrom).filter(Boolean))];
     if (ours.length === 0) { kept.push(line); continue; }
     // STRICTER THAN THE HTML SCAN, deliberately. A vercel rewrite matching the
-    // source proves only that routing accepts the path — not that its
+    // source proves only that routing accepts the path, not that its
     // destination exists. `/vs/:slug -> /vs/:slug.html` matched
     // /vs/marketing-manager-vs-micro-saas-founder and let it survive the first
     // prune, but the .html was never built and it 404s in production. For a file
@@ -189,7 +189,7 @@ if (pruned.size) {
     for (const h of dead) { const f = h.split("/")[1] || "/"; fam[f] = (fam[f] ?? 0) + 1; }
     const top = Object.entries(fam).sort((a, b) => b[1] - a[1])
       .map(([f, n]) => `/${f}/ ×${n}`).join(", ");
-    console.log(`  ${name}: ${dead.length} removed — ${top}`);
+    console.log(`  ${name}: ${dead.length} removed, ${top}`);
   }
   console.log("  These are DATA DRIFT: the generator emits families the prerenderer no longer");
   console.log("  builds. The shipped file is now correct; fix generate-llms-txt.ts to stop it.");
@@ -200,14 +200,14 @@ for (const file of pages) {
   for (const m of html.matchAll(/<a\s[^>]*href="([^"]+)"/g)) {
     let href = m[1].trim();
     if (/^(https?:|mailto:|tel:|javascript:|data:|#)/i.test(href)) continue;
-    if (!href.startsWith("/")) continue;         // relative — skip, rare here
+    if (!href.startsWith("/")) continue;         // relative, skip, rare here
     href = href.split("#")[0].split("?")[0];
     if (href === "") continue;
     // Template literals that leaked into static HTML are their own bug class, but
-    // they are not "missing pages" — surface them separately, never silently.
+    // they are not "missing pages", surface them separately, never silently.
     // A BARE "$" is not a leak: cost-of-waiting slugs legitimately contain one
     // (`/cost-of-waiting/5-years-$100k-salary`). Only flag actual interpolation
-    // syntax — ${…}, a backtick, {{…}}, or string concatenation.
+    // syntax, ${…}, a backtick, {{…}}, or string concatenation.
     if (/\$\{|`|\{\{|\}\}|\+\s*['"]|['"]\s*\+/.test(href)) {
       const k = `TEMPLATE_LEAK ${href}`;
       if (!broken.has(k)) broken.set(k, new Set());
@@ -238,7 +238,7 @@ const fixed = [...baseline].filter((h) => !found.includes(h));
 console.log(`[check-internal-links] scanned ${pages.length} page(s)`);
 console.log(`  broken internal link targets: ${found.length} (baseline allows ${baseline.size})`);
 if (fixed.length) {
-  console.log(`  ✅ ${fixed.length} baseline entr${fixed.length === 1 ? "y" : "ies"} now resolve — ` +
+  console.log(`  ✅ ${fixed.length} baseline entr${fixed.length === 1 ? "y" : "ies"} now resolve, ` +
               `re-run with --update-baseline to shrink the baseline`);
 }
 
@@ -257,4 +257,4 @@ if (fresh.length) {
   process.exit(1);
 }
 
-console.log("[check-internal-links] OK — no new broken internal links");
+console.log("[check-internal-links] OK, no new broken internal links");

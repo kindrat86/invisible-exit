@@ -82,7 +82,7 @@ const GrowthLabPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Growth Lab — Distribution Engine | Invisible Exit"
+        title="Growth Lab, Distribution Engine | Invisible Exit"
         description="The complete traffic and distribution toolkit: Dream 100 tracker, hooks library, ad creative library, content calendar, and traffic blueprint. Everything you need to fill the funnel."
         url="/growth-lab"
       />

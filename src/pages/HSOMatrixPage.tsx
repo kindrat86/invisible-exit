@@ -40,7 +40,7 @@ const HSO_MATRIX: HSOEntry[] = [
     channel: "Reddit (Indie Hackers)",
     hook: "Corporate manager, built $4,100 MRR while employed. Here's the full timeline.",
     story: "Month 1-3: zero customers. Month 4: first $9 customer. Month 6: $850 MRR. Month 9: $2,100. Month 12: $4,100. I didn't have a better idea than anyone else. I had a better system. 5 tools, 5 hours/week, completely anonymous. Still employed.",
-    offer: "5 tools that help you do the same — $9/month to start.",
+    offer: "5 tools that help you do the same, $9/month to start.",
     cta: "See the 5-Tool System",
     landingPage: "/masterclass",
   },
@@ -48,7 +48,7 @@ const HSO_MATRIX: HSOEntry[] = [
     id: "linkedin-identity",
     channel: "LinkedIn Post",
     hook: "The first $0.97 I earned online changed my relationship with my $120K salary.",
-    story: "For 8 years, I defined myself by my salary. $120K = what I'm worth. Then a stranger paid me $0.97 for something I built while I slept. Suddenly my salary wasn't my identity — it was one income stream. The shift: employee to owner. That's the real value of the first dollar.",
+    story: "For 8 years, I defined myself by my salary. $120K = what I'm worth. Then a stranger paid me $0.97 for something I built while I slept. Suddenly my salary wasn't my identity, it was one income stream. The shift: employee to owner. That's the real value of the first dollar.",
     offer: "Calculate your freedom number and start the identity shift.",
     cta: "Start Your Shift",
     landingPage: "/freedom",
@@ -66,7 +66,7 @@ const HSO_MATRIX: HSOEntry[] = [
     id: "email-soap-opera",
     channel: "Email (Soap Opera)",
     hook: "I screamed in a taxi over $0.97",
-    story: "6 AM. Amsterdam. First morning of my family vacation. Two notifications hit my phone. First: corporate emails — colleagues fighting over responsibilities. Second: Stripe — $0.97 from a stranger. I screamed. My wife thought I was insane. But it wasn't about the money. It was proof the cage has a door.",
+    story: "6 AM. Amsterdam. First morning of my family vacation. Two notifications hit my phone. First: corporate emails, colleagues fighting over responsibilities. Second: Stripe, $0.97 from a stranger. I screamed. My wife thought I was insane. But it wasn't about the money. It was proof the cage has a door.",
     offer: "Get the 5-tool system that started with that $0.97.",
     cta: "See the System",
     landingPage: "/freedom",
@@ -76,7 +76,7 @@ const HSO_MATRIX: HSOEntry[] = [
     channel: "Podcast Interview",
     hook: "The Amsterdam Taxi Story (origin of Invisible Exit)",
     story: "[5-minute version]: Managing Director at a European tech company. $120K salary. 0.5% equity. On paper, I won the career lottery. Then I did the math on my equity. Then I got a Stripe notification at 6 AM on vacation. The rest is the Invisible Exit story.",
-    offer: "Invisible Exit — 5 tools for corporate managers who want invisible income.",
+    offer: "Invisible Exit, 5 tools for corporate managers who want invisible income.",
     cta: "Visit invisibleexit.com",
     landingPage: "/",
   },
@@ -94,7 +94,7 @@ const HSO_MATRIX: HSOEntry[] = [
     channel: "Quora Answer",
     hook: "Should I quit my $120K job to start a business?",
     story: "No. Don't quit. Your salary is runway funding. Your job is the launchpad, not the trap. Use your corporate income to fund your side business. 5 hours/week is enough if you have a system. I built $4,100 MRR while employed. Never quit. Graduate.",
-    offer: "Calculate your freedom number first — then decide.",
+    offer: "Calculate your freedom number first, then decide.",
     cta: "Calculate Your Freedom Number",
     landingPage: "/freedom",
   },
@@ -154,7 +154,7 @@ const HSO_MATRIX_PAGE = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Hook, Story, Offer Matrix — 8 Content Frameworks | Invisible Exit"
+        title="Hook, Story, Offer Matrix, 8 Content Frameworks | Invisible Exit"
         description="Russell Brunson's Hook-Story-Offer framework applied to 8 content channels: Twitter, Reddit, LinkedIn, YouTube, email, podcast, blog, and Quora."
         url="/hso"
       />

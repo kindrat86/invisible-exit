@@ -1,7 +1,7 @@
 /**
  * /api/winback-sequence.ts
  *
- * Vercel serverless route — converted from
+ * Vercel serverless route, converted from
  * supabase/functions/winback-sequence/index.ts
  *
  * POST { email }
@@ -17,7 +17,7 @@ import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 import { query } from "./_lib/db";
 import { sendEmail, wrap } from "./email-sequence";
 
-// ═══ WIN-BACK SEQUENCE — 3 emails over 7 days ═══
+// ═══ WIN-BACK SEQUENCE, 3 emails over 7 days ═══
 // (Day 0 sent immediately; Days 3 & 7 scheduled via email_sequence_schedule)
 
 function winbackDay0() {
@@ -89,7 +89,7 @@ export async function triggerWinback(email: string): Promise<{
   }
 
   // 2. Create email_sequence_schedule entry for winback sequence
-  //    (Days 3 & 7 — the scheduler will pick them up via sendEmail import)
+  //    (Days 3 & 7, the scheduler will pick them up via sendEmail import)
   const now = new Date().toISOString();
   try {
     await query(
@@ -99,10 +99,10 @@ export async function triggerWinback(email: string): Promise<{
     );
   } catch (schedErr) {
     console.error("Winback schedule insert failed:", schedErr);
-    // Email was already sent — don't fail the whole thing
+    // Email was already sent, don't fail the whole thing
   }
 
-  // 3. Update subscriber status (best-effort — column may not exist)
+  // 3. Update subscriber status (best-effort, column may not exist)
   try {
     await query(
       `UPDATE subscribers SET source = 'cancelled_winback' WHERE email = $1`,

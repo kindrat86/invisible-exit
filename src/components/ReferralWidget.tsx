@@ -91,7 +91,7 @@ const ReferralWidget = () => {
           </h3>
           <p className="text-sm text-muted-foreground">
             {freeForLife
-              ? "Keep sharing — every referral still gives a friend their first month free."
+              ? "Keep sharing, every referral still gives a friend their first month free."
               : "Every referral = 1 free month for you + first month free for them."}
           </p>
         </div>
@@ -157,7 +157,7 @@ const ReferralWidget = () => {
             <Linkedin className="w-3.5 h-3.5" /> Share on LinkedIn
           </a>
           <a
-            href={`mailto:?subject=${encodeURIComponent("First month of Invisible Exit — free")}&body=${shareText}%0A%0A${encodeURIComponent(referralLink)}`}
+            href={`mailto:?subject=${encodeURIComponent("First month of Invisible Exit, free")}&body=${shareText}%0A%0A${encodeURIComponent(referralLink)}`}
             onClick={() => trackEvent("referral_share_clicked", { channel: "email" })}
             className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
           >
@@ -167,7 +167,7 @@ const ReferralWidget = () => {
 
         <div className="bg-surface rounded-lg p-3 text-xs text-muted-foreground leading-relaxed">
           💡 Your link gives colleagues their <strong>first month free</strong>. When they
-          subscribe, you get a free month automatically — and at {FREE_FOR_LIFE_AT} referrals
+          subscribe, you get a free month automatically, and at {FREE_FOR_LIFE_AT} referrals
           your membership is <strong>free for life</strong>.
         </div>
       </div>

@@ -1,4 +1,4 @@
-# REPORT — invisibleexit.com Traffic Maximization
+# REPORT, invisibleexit.com Traffic Maximization
 
 **Date:** 2026-07-23  
 **Agent:** Hermes (deepseek-v4-pro)  
@@ -12,7 +12,7 @@
 
 | Check | Result |
 |-------|--------|
-| Swarm | Clear — no competing agent |
+| Swarm | Clear, no competing agent |
 | Site 200 | ✅ |
 | Sitemap child count | 18 (1,926 URLs before prune) |
 | Dirty tree | 17 sitemaps + rss.xml + 4 HERMES reports (preserved, not discarded) |
@@ -20,44 +20,44 @@
 
 ## Task Status
 
-### T1 — Homepage Title Branding ✅
+### T1, Homepage Title Branding ✅
 - **Before:** "How to Build a $4,000/Month Side Business Without Quitting"
 - **After:** "$4K/Month Side Income Without Quitting | Invisible Exit" (55 chars, fits 60-char SERP limit)
 - Files: `scripts/prerender-meta.mjs`, `src/pages/Index.tsx`
 - **Gate:** `curl -s https://invisibleexit.com/ | grep -c 'Invisible Exit'` → **1** ✅
 
-### T2 — Index-Bloat Prune ✅
+### T2, Index-Bloat Prune ✅
 - **Before:** ~1,926 URLs across 18 sitemaps
 - **After:** 844 URLs across 15 sitemaps (898 with image-sitemap)
 - **Excluded:** 1,028 thin pSEO pages (55% reduction)
-- **Config:** `src/data/noindex-config.ts` — URL pattern matching
+- **Config:** `src/data/noindex-config.ts`, URL pattern matching
 - **Modified:** `scripts/generate-sitemap.ts` (filter + NO_LASTMOD), `scripts/prerender-meta.mjs` (auto-detect)
 - **NOINDEX targets:** `/ideas/*/in/*`, `/ideas/*/with/*`, `/cities/`, `/revenue/`, `/break-even/`, `/cost-of-waiting/`, `/non-compete/`, `/first-year/`, `/mistakes/`, `/reddit/`, `/pricing-models/`, `/skills/`, `/audience/`
 - **KEPT:** blog, glossary, compare, guides, best tools, calculators, data reports, banking, tax-guides, nda-guides, insurance, time-frameworks, niches, single-profession idea pages, core pages, budget, hours
 - **Gates:** NOINDEX page has meta tag ✅ | KEEP page does not ✅
 
-### T3 — Hreflang Integrity ✅
-- **Audit result:** 0/5 locales pass (es, fr, de, ja, zh — all 308 redirect, no translations)
+### T3, Hreflang Integrity ✅
+- **Audit result:** 0/5 locales pass (es, fr, de, ja, zh, all 308 redirect, no translations)
 - **Action:** Removed 98 hreflang annotations from prerender + sitemaps. Kept x-default self-reference.
 - **Owner decision:** Invest in translations or drop i18n (documented in owner packet)
 
-### T4 — TL;DR Extractable Blocks ✅
-- **Homepage:** Added under H1 — verbatim facts from existing site copy
-- **Glossary hub:** Added under H1 — 31-term summary
-- **State guides (all 52):** Added under H1 — state-specific LLF fee + non-compete + tax rate
-- **Note:** TL;DR blocks render via React (JS hydration). Curl won't show them — expected for SPA.
-- **ZERO new numeric claims introduced** — all facts reused from existing site data.
+### T4, TL;DR Extractable Blocks ✅
+- **Homepage:** Added under H1, verbatim facts from existing site copy
+- **Glossary hub:** Added under H1, 31-term summary
+- **State guides (all 52):** Added under H1, state-specific LLF fee + non-compete + tax rate
+- **Note:** TL;DR blocks render via React (JS hydration). Curl won't show them, expected for SPA.
+- **ZERO new numeric claims introduced**, all facts reused from existing site data.
 
-### T5 — llms-full.txt + Lastmod + IndexNow ✅
+### T5, llms-full.txt + Lastmod + IndexNow ✅
 - **llms-full.txt:** 18 sections (verified ≥15). Serves 200 ✅
-- **Lastmod:** Truthful now — only blog posts carry real dates. Non-blog pages omit lastmod (optional per sitemap spec).
+- **Lastmod:** Truthful now, only blog posts carry real dates. Non-blog pages omit lastmod (optional per sitemap spec).
 - **IndexNow:** Triggered post-deploy. IndexNow: 785 URLs → HTTP 403 (portal not activated). Bing WMT fallback: 100 URLs → HTTP 200 ✅
 
-### T6 — Owner-Action Packet ✅
+### T6, Owner-Action Packet ✅
 Created `OWNER_ACTIONS_INVISIBLEEXIT.md` with:
 1. GSC verification + sitemap submission instructions
 2. Bing WMT import guide
-3. i18n decision memo (0/5 locales pass — invest or drop)
+3. i18n decision memo (0/5 locales pass, invest or drop)
 4. REVIEW-bucket list of 17 borderline page types
 5. Stale service worker warning
 6. Post-deploy verification checklist
@@ -86,9 +86,9 @@ Created `OWNER_ACTIONS_INVISIBLEEXIT.md` with:
 |--------|--------|-------|-------|
 | Sitemap URLs | ~1,926 | 898 | -53% |
 | Pages NOINDEXed | 0 | 1,028 | +1,028 |
-| Pages KEPT | ~1,926 | 844 | — |
+| Pages KEPT | ~1,926 | 844 |, |
 | hreflang tags/page | 98 | 1 (x-default) | -99% |
-| Title length | 56 chars (no brand) | 55 chars (with brand) | — |
+| Title length | 56 chars (no brand) | 55 chars (with brand) |, |
 | Lastmod truthfulness | All `today` | Blog-only real dates | Fixed |
 
 ---
@@ -103,10 +103,10 @@ Created `OWNER_ACTIONS_INVISIBLEEXIT.md` with:
 - ✅ Backup branch created
 
 ## Known Issues
-1. **TL;DR blocks are React-rendered** — not visible in curl (SPA hydration required). Acceptable per original site architecture.
-2. **Stale service worker** — returning visitors may see old title until SW updates. Documented in owner packet.
-3. **Pre-existing tsc errors** in API files (stripe-webhook version mismatch, roadmap-request type errors) — build still passes.
-4. **Bing WMT quota low** (100/day) — full 785 URLs couldn't be IndexNow-submitted in one batch.
+1. **TL;DR blocks are React-rendered**, not visible in curl (SPA hydration required). Acceptable per original site architecture.
+2. **Stale service worker**, returning visitors may see old title until SW updates. Documented in owner packet.
+3. **Pre-existing tsc errors** in API files (stripe-webhook version mismatch, roadmap-request type errors), build still passes.
+4. **Bing WMT quota low** (100/day), full 785 URLs couldn't be IndexNow-submitted in one batch.
 
 ---
 

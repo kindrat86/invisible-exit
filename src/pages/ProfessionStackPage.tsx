@@ -85,7 +85,7 @@ export default function ProfessionStackPage() {
         <section className="mt-10 rounded-xl bg-gradient-to-br from-slate-900 to-blue-900 p-8 text-center text-white">
           <h2 className="text-2xl font-bold">Ready to Start Building?</h2>
           <p className="mt-2 text-slate-300">
-            Get all 5 AI-powered tools — including the Idea Pipeline that validates your micro-SaaS in 48 hours.
+            Get all 5 AI-powered tools, including the Idea Pipeline that validates your micro-SaaS in 48 hours.
           </p>
           <Link
             to="/freedom"

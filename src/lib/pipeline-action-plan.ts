@@ -8,7 +8,7 @@ export const ACTION_PLAN_PHASES = [
 ];
 
 export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
-  // Phase 1: Hours 0-8 — Market Validation
+  // Phase 1: Hours 0-8, Market Validation
   {
     id: "ap_1",
     phase: "hour_0_8",
@@ -27,7 +27,7 @@ export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
     id: "ap_3",
     phase: "hour_0_8",
     phaseLabel: "Hours 0-8: Market Validation",
-    text: "DM 10 people who complained about the problem — ask what they tried",
+    text: "DM 10 people who complained about the problem, ask what they tried",
     category: "market",
   },
   {
@@ -38,7 +38,7 @@ export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
     category: "moat",
   },
 
-  // Phase 2: Hours 8-24 — Offer Design
+  // Phase 2: Hours 8-24, Offer Design
   {
     id: "ap_5",
     phase: "hour_8_24",
@@ -64,11 +64,11 @@ export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
     id: "ap_8",
     phase: "hour_8_24",
     phaseLabel: "Hours 8-24: Offer Design",
-    text: "Set up payment (Stripe/LemonSqueezy) under your LLC — test checkout flow",
+    text: "Set up payment (Stripe/LemonSqueezy) under your LLC, test checkout flow",
     category: "revenue",
   },
 
-  // Phase 3: Hours 24-40 — Build MVP
+  // Phase 3: Hours 24-40, Build MVP
   {
     id: "ap_9",
     phase: "hour_24_40",
@@ -98,7 +98,7 @@ export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
     category: "build",
   },
 
-  // Phase 4: Hours 40-48 — First Customers
+  // Phase 4: Hours 40-48, First Customers
   {
     id: "ap_13",
     phase: "hour_40_48",
@@ -110,14 +110,14 @@ export const ACTION_PLAN_TASKS: ActionPlanTask[] = [
     id: "ap_14",
     phase: "hour_40_48",
     phaseLabel: "Hours 40-48: First Customers",
-    text: "DM 5 people who expressed interest — offer early access or discount",
+    text: "DM 5 people who expressed interest, offer early access or discount",
     category: "revenue",
   },
   {
     id: "ap_15",
     phase: "hour_40_48",
     phaseLabel: "Hours 40-48: First Customers",
-    text: "Track signups, clicks, and any payments — record your conversion metrics",
+    text: "Track signups, clicks, and any payments, record your conversion metrics",
     category: "revenue",
   },
   {

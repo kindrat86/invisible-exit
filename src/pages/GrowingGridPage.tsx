@@ -19,7 +19,7 @@ const TESTING_FRAMEWORK = [
   {
     icon: Target,
     name: "Test One Variable",
-    description: "Change ONE thing per test. Headline, CTA color, image, price anchor. Never test two variables at once — you won't know which drove the result.",
+    description: "Change ONE thing per test. Headline, CTA color, image, price anchor. Never test two variables at once, you won't know which drove the result.",
     example: "Testing 'Start Building' vs 'Calculate Your Freedom Number' on the hero CTA button. Same page, same color, same position. Only the text changes.",
   },
   {
@@ -75,13 +75,13 @@ const EXPERIMENTS: Experiment[] = [
     page: "/freedom",
     hypothesis: "Leading with the interactive calculator (value-first) will outperform leading with the Amsterdam story (emotion-first) on email capture rate.",
     variants: [
-      { label: "A", description: "Calculator first — show the tool immediately", weight: 50 },
-      { label: "B", description: "Story first — show the Amsterdam taxi narrative, then calculator", weight: 50 },
+      { label: "A", description: "Calculator first, show the tool immediately", weight: 50 },
+      { label: "B", description: "Story first, show the Amsterdam taxi narrative, then calculator", weight: 50 },
     ],
     status: "completed",
     metric: "email_captured",
     result: "Variant A (Calculator first) won with +41% email capture rate. 892 visitors over 21 days. Variant A: 28.3%. Variant B: 20.1%.",
-    insight: "Value-first wins decisively. Users want the tool, not the story, on first interaction. The story works better AFTER they've seen their number — it provides the 'why' after the 'what.'",
+    insight: "Value-first wins decisively. Users want the tool, not the story, on first interaction. The story works better AFTER they've seen their number, it provides the 'why' after the 'what.'",
   },
   {
     id: "exp-003",
@@ -89,8 +89,8 @@ const EXPERIMENTS: Experiment[] = [
     page: "/tripwire",
     hypothesis: "$7 will convert at least 30% higher than $9, making up for the lower revenue per sale. Break-even threshold: 28.6% higher conversion.",
     variants: [
-      { label: "A", description: "Stealth Blueprint — $7", weight: 50 },
-      { label: "B", description: "Stealth Blueprint — $9", weight: 50 },
+      { label: "A", description: "Stealth Blueprint, $7", weight: 50 },
+      { label: "B", description: "Stealth Blueprint, $9", weight: 50 },
     ],
     status: "planned",
     metric: "tripwire_purchased",
@@ -150,7 +150,7 @@ const EXPERIMENTS: Experiment[] = [
     hypothesis: "Showing the annual price ($108/yr) next to monthly ($9/mo) will increase monthly conversions by making $9 feel cheaper by comparison.",
     variants: [
       { label: "A", description: "$9/month (monthly only)", weight: 50 },
-      { label: "B", description: "$9/month — equivalent to $108/year (anchored)", weight: 50 },
+      { label: "B", description: "$9/month, equivalent to $108/year (anchored)", weight: 50 },
     ],
     status: "planned",
     metric: "checkout_initiated",
@@ -180,7 +180,7 @@ const GROWING_GRID_PAGE = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="The Growing Grid — A/B Testing Dashboard | Invisible Exit"
+        title="The Growing Grid, A/B Testing Dashboard | Invisible Exit"
         description="8 planned A/B tests across the Invisible Exit funnel: hero headline, squeeze page, tripwire pricing, CTA buttons, exit popups, email subjects, and pricing anchors."
         url="/testing"
       />
@@ -196,7 +196,7 @@ const GROWING_GRID_PAGE = () => {
             The Growing <span className="text-gradient-light">Grid</span>
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-4">
-            Russell Brunson: "The one who tests the most, wins." This is our testing grid —
+            Russell Brunson: "The one who tests the most, wins." This is our testing grid, 
             every experiment across the funnel, ranked by priority.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto">
@@ -342,7 +342,7 @@ const GROWING_GRID_PAGE = () => {
                 <h3 className="text-lg font-bold text-foreground mb-2">Russell's Testing Rule</h3>
                 <p className="text-body text-muted-foreground leading-relaxed">
                   "Most people think the goal of testing is to find the winning headline. It's not.
-                  The goal is to find the losing headlines — fast — so you can kill them and
+                  The goal is to find the losing headlines, fast, so you can kill them and
                   redirect traffic to the next test. The winners reveal themselves. Your job is to
                   clear the losers out of the way."
                 </p>

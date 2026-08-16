@@ -81,7 +81,7 @@ export const FREEDOM_LEVELS: FreedomLevelDef[] = [
   {
     level: 1,
     name: "Proof of Life",
-    description: "A real stranger pays you real money. Your side business is no longer an idea — it's a business.",
+    description: "A real stranger pays you real money. Your side business is no longer an idea, it's a business.",
     motivationalCopy:
       "You did it. Someone you've never met paid you for something you built. The cage has a door. Now build momentum.",
   },
@@ -104,19 +104,19 @@ export const FREEDOM_LEVELS: FreedomLevelDef[] = [
     name: "Walk Away Money",
     description: "Your side income fully covers your monthly expenses. You could quit your job tomorrow and your family's lifestyle wouldn't change.",
     motivationalCopy:
-      "You can walk away. The math works. Your side projects cover your rent, groceries, insurance, everything. The only question left isn't 'can I leave?' — it's 'when do I want to?'",
+      "You can walk away. The math works. Your side projects cover your rent, groceries, insurance, everything. The only question left isn't 'can I leave?', it's 'when do I want to?'",
   },
   {
     level: 5,
     name: "True FYM",
-    description: "Your side income covers your lifestyle AND you've banked 3 years of living expenses. You're not just free — you're wealthy.",
+    description: "Your side income covers your lifestyle AND you've banked 3 years of living expenses. You're not just free, you're wealthy.",
     motivationalCopy:
       "You did it. True FYM. Three years of runway in the bank, plus monthly income that covers your entire life. The cage is open. Hand in your resignation whenever you're ready.",
   },
 ];
 
 export const LEVEL_ZERO_COPY =
-  "Every exit starts at $0. Head to the Idea Directory and pick your first project. Your years as a Managing Director aren't a weakness — they're founder gold. You already know how to run a business. Now build your own.";
+  "Every exit starts at $0. Head to the Idea Directory and pick your first project. Your years as a Managing Director aren't a weakness, they're founder gold. You already know how to run a business. Now build your own.";
 
 export function evaluateFreedomLevel(data: CalculatorInputsExpanded): number {
   const { monthlySideRevenue, monthlyExpenses, monthsToExit, monthlyGrowthRate } = data;
@@ -332,10 +332,10 @@ export function getRiskContext(ratio: number): string {
   if (ratio > 20)
     return "Your corporate salary is 20x larger than your side income. You're still heavily dependent on your employer. Focus on growing revenue AND keeping your operation invisible.";
   if (ratio > 5)
-    return "You're building real side income, but your corporate salary still dwarfs it. Keep growing — you're on the right track but still exposed.";
+    return "You're building real side income, but your corporate salary still dwarfs it. Keep growing, you're on the right track but still exposed.";
   if (ratio > 2) return "You're getting close to balance. Your side income is becoming meaningful compared to your salary. Freedom is within reach.";
   if (ratio > 1)
-    return "Your side income nearly matches your corporate salary. You're almost there — start thinking about your transition plan.";
+    return "Your side income nearly matches your corporate salary. You're almost there, start thinking about your transition plan.";
   return "Your side income exceeds your corporate salary. The math says you can leave. What are you still doing there?";
 }
 

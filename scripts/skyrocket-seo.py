@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Skyrocket SEO — injects 4 high-impact improvements across all static HTML pages:
+Skyrocket SEO, injects 4 high-impact improvements across all static HTML pages:
 1. Internal link mesh: hub pages get rich link sections to all children (crawl discovery)
 2. Related-content cross-links at page bottom (PageRank flow + lower bounce)
 3. SoftwareApplication schema on homepage (Google Product rich results)
 4. og:image meta on every page (social sharing CTR)
 
-Idempotent: detects existing injections and skips. Zero fabrication — uses only
+Idempotent: detects existing injections and skips. Zero fabrication, uses only
 real page titles, URLs, and descriptions already present in the HTML.
 """
 import re, os, json
@@ -20,7 +20,7 @@ MARKER = "<!-- skyrocket-seo-v1 -->"
 # NOTE (2026-07-18): The former for/, alternatives-to/, vs/ and glossary/ hubs
 # pointed at privacy-browser pSEO pages (Tor/Mullvad/Brave/fingerprinting/etc.)
 # that misrepresented the brand. Invisible Exit is a faceless side-business system
-# for employed professionals — NOT a privacy / anonymous-browsing tool (see
+# for employed professionals, NOT a privacy / anonymous-browsing tool (see
 # canonical-descriptors.json → never_call_it). Those pages were deleted, so their
 # hub/sibling mesh is removed here to stop this script from re-injecting links to
 # pages that no longer exist. Repopulate only with real side-business hubs.

@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * /pricing — Fixes the 404 that was in the schema markup.
+ * /pricing, Fixes the 404 that was in the schema markup.
  * Shows the full value ladder: Free → $9/mo → $7 tripwire → $29/mo Pro.
  * Brunson DotCom Secrets Ch 1 (Value Ladder) + Ch 7 (One Funnel One Offer).
  */
@@ -45,7 +45,7 @@ const TIERS = [
     cta: "Start for $9/mo",
     href: "/start",
     highlight: true,
-    badge: "Founding price — locked for life",
+    badge: "Founding price, locked for life",
     annualNote: "or $79/year (save $29)",
   },
   {
@@ -121,7 +121,7 @@ const PricingPage = () => {
               <span className="text-gradient-light">Build Your Exit.</span>
             </h1>
             <p className="text-body-lg text-white/60 max-w-xl mx-auto mb-8">
-              Start for $9/month — founding members lock the rate in for life. Or save with $79/year.
+              Start for $9/month, founding members lock the rate in for life. Or save with $79/year.
             </p>
             <div className="inline-flex items-center gap-3 bg-success/10 border border-success/20 rounded-full px-5 py-2.5">
               <Shield className="w-4 h-4 text-success" />

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
 /**
- * TRAFFIC SECRETS: Chapters 11-12 — The Magnetic Content Formula
+ * TRAFFIC SECRETS: Chapters 11-12, The Magnetic Content Formula
  *
  * Russell's Hub-and-Spoke framework:
  *   - The HUB: A 3000+ word definitive guide on one topic
@@ -71,7 +71,7 @@ const PILLAR_STRUCTURE = [
     part: "The Hook",
     elements: [
       "Pattern interrupt headline (curiosity gap)",
-      "The 'before' state — specific pain the reader feels right now",
+      "The 'before' state, specific pain the reader feels right now",
       "One-paragraph story that proves you solved it",
       "The promise: what they'll know after reading",
     ],
@@ -122,7 +122,7 @@ const HubAndSpokePage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Hub-and-Spoke Content Strategy — 3 Pillar Guides | Invisible Exit"
+        title="Hub-and-Spoke Content Strategy, 3 Pillar Guides | Invisible Exit"
         description="The complete Traffic Secrets content strategy: 3 pillar guides (5000+ words each) linked to 30+ spoke posts. Turn 229 pages into an SEO machine."
         url="/content-strategy"
       />
@@ -253,7 +253,7 @@ const HubAndSpokePage = () => {
           <p className="text-eyebrow text-primary mb-4 text-center">The Spokes</p>
           <h2 className="text-h1 text-foreground mb-4 text-center">10 Spoke Post Ideas</h2>
           <p className="text-body text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-            Each spoke links back to its hub. Most already exist as blog posts — they just need
+            Each spoke links back to its hub. Most already exist as blog posts, they just need
             internal links added.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto">

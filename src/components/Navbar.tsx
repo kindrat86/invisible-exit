@@ -167,7 +167,7 @@ const Navbar = () => {
               <span className={`inline transition-all duration-300 ${brandFontSize}`}>Invisible Exit</span>
             </Link>
 
-            {/* Desktop nav — suppressed on the homepage (one funnel, one offer) */}
+            {/* Desktop nav, suppressed on the homepage (one funnel, one offer) */}
             <div className="hidden lg:flex items-center gap-1">
               {!isHomepage && DESKTOP_LINKS.map((link) => (
                 <Link
@@ -225,7 +225,7 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Scroll progress indicator — thin line at bottom of navbar */}
+        {/* Scroll progress indicator, thin line at bottom of navbar */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5">
           <div
             className="h-full bg-gradient-to-r from-primary to-primary-light transition-all duration-75"
@@ -240,7 +240,7 @@ const Navbar = () => {
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in touch-none" />
 
-          {/* Drawer panel — slides in from right */}
+          {/* Drawer panel, slides in from right */}
           <div
             id="mobile-nav-drawer"
             role="dialog"

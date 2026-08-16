@@ -1,5 +1,5 @@
 /**
- * /api/referral.ts — Referral Engine backend.
+ * /api/referral.ts, Referral Engine backend.
  *
  * POST (auth required):
  *   { action: "get_or_create" } →
@@ -59,7 +59,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           );
           row = { referrer_code: code };
         } catch {
-          // UNIQUE collision on referrer_code — retry with a new suffix
+          // UNIQUE collision on referrer_code, retry with a new suffix
         }
       }
     }

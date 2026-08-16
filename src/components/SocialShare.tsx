@@ -24,7 +24,7 @@ const SITE_URL = "https://invisibleexit.com";
  * Without it, your traffic is limited to the people who already know you."
  *
  * This component adds social sharing to every blog post, calculator result,
- * and content page — turning passive readers into distribution nodes.
+ * and content page, turning passive readers into distribution nodes.
  */
 const SocialShare = ({
   title,

@@ -60,7 +60,7 @@ function generateVs(p: ProfCareer): ProfessionVsCareer {
     careerPath: {
       salaryRange: p.salaryRange,
       growthPotential: "3-5% annual raises, promotion every 3-5 years, capped by org structure",
-      riskLevel: "Low — stable paycheck, benefits, clear career path. But high opportunity cost.",
+      riskLevel: "Low, stable paycheck, benefits, clear career path. But high opportunity cost.",
       timeToMastery: "5-10 years to senior level, 15-20 to leadership",
       pros: [
         "Predictable income and benefits",
@@ -80,10 +80,10 @@ function generateVs(p: ProfCareer): ProfessionVsCareer {
     saasPath: {
       potentialRevenue: "$0 → $4K-$25K/month MRR in 12-18 months",
       timeToFirstDollar: "30-90 days with pre-selling",
-      riskLevel: "Medium — mostly time investment, minimal capital needed ($100-500/mo)",
+      riskLevel: "Medium, mostly time investment, minimal capital needed ($100-500/mo)",
       skillsRequired: [p.transferableSkill, "basic no-code or AI-assisted development", "content marketing", "customer empathy"],
       pros: [
-        "No income ceiling — revenue scales with effort and market",
+        "No income ceiling, revenue scales with effort and market",
         "Build an asset you own and can sell",
         "Location and time independence",
         `Your ${p.advantage} becomes a competitive moat`,
@@ -100,19 +100,19 @@ function generateVs(p: ProfCareer): ProfessionVsCareer {
     comparison: [
       { factor: "Starting income", career: `${p.salaryRange.split("-")[0]} immediately`, saas: "$0 for 1-3 months" },
       { factor: "5-year income potential", career: p.salaryRange, saaS: "$10K-$50K/month (uncapped)" },
-      { factor: "Daily autonomy", career: "Low — meetings, manager, deadlines", saas: "High — you choose what to build and when" },
+      { factor: "Daily autonomy", career: "Low, meetings, manager, deadlines", saas: "High, you choose what to build and when" },
       { factor: "Risk profile", career: "Low day-to-day, high long-term (layoffs)", saas: "Medium upfront, decreasing over time" },
       { factor: "Skill building", career: `Deep expertise in ${p.name.toLowerCase()}`, saas: "Broad expertise across business + tech" },
       { factor: "Time commitment", career: "40-50 hours/week (fixed)", saas: "5-15 hours/week (flexible)" },
-      { factor: "Asset ownership", career: "None (you're an employee)", saas: "100% — you own the product, code, customers" },
+      { factor: "Asset ownership", career: "None (you're an employee)", saas: "100%, you own the product, code, customers" },
       { factor: "Exit value", career: "Severance (2-8 weeks)", saaS: "$50K-$500K+ (micro-SaaS multiples)" },
     ] as any,
-    verdict: `Don't choose — do both. Keep your ${p.name.toLowerCase().replace(/s$/, "")} career and build your micro-SaaS on the side. Your job provides stability and capital; your side business provides upside and freedom. The goal isn't to quit — it's to reach the point where quitting becomes optional. For most ${p.name.toLowerCase()}, that point is $4,000/month in recurring revenue.`,
-    hybridApproach: `The Invisible Exit approach: use your ${p.transferableSkill} from your day job to build a micro-SaaS in a non-competing market. Spend 5-10 hours per week (mornings, weekends, lunch breaks). Form an anonymous LLC. Build in stealth. When your side income exceeds your salary, you can decide whether to quit — but you never have to.`,
+    verdict: `Don't choose, do both. Keep your ${p.name.toLowerCase().replace(/s$/, "")} career and build your micro-SaaS on the side. Your job provides stability and capital; your side business provides upside and freedom. The goal isn't to quit, it's to reach the point where quitting becomes optional. For most ${p.name.toLowerCase()}, that point is $4,000/month in recurring revenue.`,
+    hybridApproach: `The Invisible Exit approach: use your ${p.transferableSkill} from your day job to build a micro-SaaS in a non-competing market. Spend 5-10 hours per week (mornings, weekends, lunch breaks). Form an anonymous LLC. Build in stealth. When your side income exceeds your salary, you can decide whether to quit, but you never have to.`,
     faqs: [
       {
         question: `Can I really build a side business as a ${p.name.toLowerCase().replace(/s$/, "")}?`,
-        answer: `Yes. Your ${p.advantage} gives you a head start. Many successful micro-SaaS founders came from ${p.name.toLowerCase()} backgrounds — their domain expertise identified problems that outsiders missed.`,
+        answer: `Yes. Your ${p.advantage} gives you a head start. Many successful micro-SaaS founders came from ${p.name.toLowerCase()} backgrounds, their domain expertise identified problems that outsiders missed.`,
       },
       {
         question: "Won't my employer find out?",

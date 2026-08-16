@@ -120,7 +120,7 @@ const GlossaryTermPage = () => {
         </div>
       </section>
 
-      {/* Definition box — featured-snippet optimized */}
+      {/* Definition box, featured-snippet optimized */}
       <section className="bg-blue-50 border-l-4 border-[#3B82F6] py-8 px-6">
         <div className="mx-auto max-w-3xl">
           <p className="text-gray-900 text-lg leading-relaxed font-medium">
@@ -196,7 +196,7 @@ const GlossaryTermPage = () => {
       <section className="bg-gray-50 py-12">
         <div className="max-w-3xl mx-auto px-4">
           <div className="mb-8">
-            <SocialShare title={`${term!.term} — Definition | Invisible Exit`} url={`/glossary/${slug}`} />
+            <SocialShare title={`${term!.term}, Definition | Invisible Exit`} url={`/glossary/${slug}`} />
           </div>
           <InlineNewsletter source={`glossary_${slug}`} />
         </div>

@@ -48,7 +48,7 @@ export const timelines: TimelineEntry[] = [
     metaTitle: "Month 3 of Your Micro-SaaS: MVP Launch (2026)",
     metaDescription: "What to accomplish by month 3 of your micro-SaaS journey: MVP launch, first paying customer, and validation infrastructure.",
     h1: "Month 3: MVP Launch",
-    intro: "By month 3, you should have a functional MVP and your first paying customer. The goal is not perfection — it's a working solution that one person pays for.",
+    intro: "By month 3, you should have a functional MVP and your first paying customer. The goal is not perfection, it's a working solution that one person pays for.",
     milestones: [
       { milestone: "Pre-sell to at least 3 customers", completed: true, description: "Convince 3 people to pay before you build. If you can't, the problem isn't painful enough." },
       { milestone: "Build the MVP (one core feature only)", completed: true, description: "Build only the single feature that solves the core problem. Resist scope creep fiercely." },
@@ -80,7 +80,7 @@ export const timelines: TimelineEntry[] = [
       { milestone: "Write 5 blog posts", completed: false, description: "Answer the exact questions your customers Googled before finding you. Each post drives organic traffic." },
     ],
     metricsToCheck: ["MRR trend (up or flat?)", "Churn rate (below 10%?)", "Customer acquisition cost", "Net promoter score or customer satisfaction"],
-    commonAtThisStage: ["Growth plateau — same customers, same channels", "Feature request overwhelm — everyone wants something different", "The realization that building is only half the job (distribution is the other half)"],
+    commonAtThisStage: ["Growth plateau, same customers, same channels", "Feature request overwhelm, everyone wants something different", "The realization that building is only half the job (distribution is the other half)"],
     mistakes: ["Building features when you should be selling", "Neglecting churn analysis (losers disguise as 'busy')", "Being everywhere instead of dominating one channel"],
     whatsNext: "Months 7-12 are about scaling to $2K+ MRR. Invest in content, referrals, and the product improvements that reduce churn.",
     faqs: [
@@ -103,7 +103,7 @@ export const timelines: TimelineEntry[] = [
       { milestone: "Annual plans offered", completed: false, description: "15%+ of customers on annual billing. Improves retention and cash flow." },
     ],
     metricsToCheck: ["MRR growth rate (month over month)", "Churn rate (under 8%?)", "Referral source breakdown", "Annual vs monthly revenue split"],
-    commonAtThisStage: ["Growth feels slow — you're not doubling every month", "Competing with your own product's feature requests", "Balancing job, business, and life is exhausting"],
+    commonAtThisStage: ["Growth feels slow, you're not doubling every month", "Competing with your own product's feature requests", "Balancing job, business, and life is exhausting"],
     mistakes: ["Giving up too early (most $2K MRR businesses die before $4K)", "Hiring too soon (you don't have margin yet)", "Not raising prices (your product is worth more now)"],
     whatsNext: "Months 13-18 are the final push to $4K/month (freedom number). Focus on SEO, partnerships, and the features that unlock higher price tiers.",
     faqs: [
@@ -131,7 +131,7 @@ export const timelines: TimelineEntry[] = [
     whatsNext: "You've reached the freedom number. Now you decide: grow the business, start another, or take a breather. You've earned the right to choose.",
     faqs: [
       { question: "Is $4K MRR really enough to quit?", answer: "For most single people in non-VHCOL areas, yes. $4K MRR = ~$3K after taxes. If your core expenses are under $3K, you have a decision to make." },
-      { question: "What if I want more before quitting?", answer: "That's fine. Keep growing. But be honest — is it about financial safety or fear? Your business has customers who pay you every month. That's more predictable than any job." },
+      { question: "What if I want more before quitting?", answer: "That's fine. Keep growing. But be honest, is it about financial safety or fear? Your business has customers who pay you every month. That's more predictable than any job." },
     ],
   },
 ];

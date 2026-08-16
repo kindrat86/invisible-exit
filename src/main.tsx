@@ -16,10 +16,10 @@ window.addEventListener("vite:preloadError", (e) => {
       sessionStorage.setItem("chunk-reload", "1");
       window.location.reload();
     }
-    // Flag already set: this session already reloaded once — swallow the
+    // Flag already set: this session already reloaded once, swallow the
     // error instead of reload-looping.
   } catch {
-    /* storage blocked — do not reload blindly (would risk a loop) */
+    /* storage blocked, do not reload blindly (would risk a loop) */
   }
 });
 // Consider the load healthy after 15s and re-arm the one-shot reload guard.
@@ -40,7 +40,7 @@ if ("serviceWorker" in navigator) {
         registration.update();
       },
       (err) => {
-        // SW registration failed — non-critical, site still works
+        // SW registration failed, non-critical, site still works
         console.debug("SW registration skipped:", err.message);
       },
     );

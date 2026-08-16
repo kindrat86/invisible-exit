@@ -48,24 +48,24 @@ function generateMistake(p: typeof professions[0]): ProfessionMistake {
     slug: `mistakes-${p.slug}-make`,
     profession: p.name,
     metaTitle: `7 Mistakes ${p.name} Make Building a Side Business (2026)`,
-    metaDescription: `The most common mistakes ${profLower} make when building a micro-SaaS side business — and exactly how to avoid them. Real examples and fixes.`,
+    metaDescription: `The most common mistakes ${profLower} make when building a micro-SaaS side business, and exactly how to avoid them. Real examples and fixes.`,
     h1: `7 Mistakes ${p.name} Make When Building a Side Business`,
-    intro: `${p.name} have unique advantages when building side businesses — deep domain expertise, analytical skills, and professional networks. But those same strengths can become liabilities. Here are the 7 mistakes that derail ${profLower} most often, and how to fix each one.`,
+    intro: `${p.name} have unique advantages when building side businesses, deep domain expertise, analytical skills, and professional networks. But those same strengths can become liabilities. Here are the 7 mistakes that derail ${profLower} most often, and how to fix each one.`,
     mistakes: [
       {
         mistake: `Over-committing to ${p.weakness}`,
-        why: `${p.name} are trained to be thorough and rigorous. In a day job, that's an asset. In a side business, it becomes perfection paralysis — you spend weekends polishing instead of shipping.`,
+        why: `${p.name} are trained to be thorough and rigorous. In a day job, that's an asset. In a side business, it becomes perfection paralysis, you spend weekends polishing instead of shipping.`,
         fix: "Set a hard deadline for every milestone. Use the 48-hour rule: if you can't validate an idea in 48 hours, it's too complex. Ship the ugly version first.",
       },
       {
         mistake: "Choosing ideas that compete with their employer",
         why: `Many ${profLower} naturally gravitate toward problems in their own industry. This creates legal risk (non-compete violations) and ethical conflicts.`,
-        fix: "Build in an unrelated market. Your industry knowledge is transferable — the workflow patterns, not the domain content. Use the Stealth Ops Hub to audit compliance.",
+        fix: "Build in an unrelated market. Your industry knowledge is transferable, the workflow patterns, not the domain content. Use the Stealth Ops Hub to audit compliance.",
       },
       {
         mistake: "Underpricing or giving the product away for free",
         why: `${p.name} often undervalue their work because they're used to salaried income. They price at $5/month when they should charge $29/month.`,
-        fix: "Price based on value delivered, not your comfort level. If your product saves someone 5 hours/week, it's worth at least $29/month. Test higher prices — you'll be surprised.",
+        fix: "Price based on value delivered, not your comfort level. If your product saves someone 5 hours/week, it's worth at least $29/month. Test higher prices, you'll be surprised.",
       },
       {
         mistake: "Building features instead of finding customers",
@@ -84,8 +84,8 @@ function generateMistake(p: typeof professions[0]): ProfessionMistake {
       },
       {
         mistake: "Ignoring distribution until the product is 'ready'",
-        why: `${p.name} are builders by nature. They assume a good product will market itself. It won't — distribution is 80% of success.`,
-        fix: "Start building your audience on Day 1. Post on Reddit, write SEO content, create YouTube videos. Distribution takes longer than product development — start now.",
+        why: `${p.name} are builders by nature. They assume a good product will market itself. It won't, distribution is 80% of success.`,
+        fix: "Start building your audience on Day 1. Post on Reddit, write SEO content, create YouTube videos. Distribution takes longer than product development, start now.",
       },
     ],
     positiveSigns: [
@@ -102,7 +102,7 @@ function generateMistake(p: typeof professions[0]): ProfessionMistake {
       },
       {
         question: `How much time should ${profLower} invest weekly?`,
-        answer: "5-10 focused hours per week is sufficient. Consistency matters more than total hours — 1 hour daily beats 7 hours on Sunday.",
+        answer: "5-10 focused hours per week is sufficient. Consistency matters more than total hours, 1 hour daily beats 7 hours on Sunday.",
       },
       {
         question: `What's the biggest advantage ${profLower} have in building side businesses?`,

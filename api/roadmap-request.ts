@@ -47,7 +47,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       );
     } catch (dbErr) {
       console.error("roadmap-request insert error:", dbErr);
-      // Continue — still try to send email
+      // Continue, still try to send email
     }
 
     // Send email notification via Resend

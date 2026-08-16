@@ -1,6 +1,6 @@
 /**
  * "Cost of" analysis pages for /cost-of/:topic.
- * Targets "how much does it cost" searches — bottom-of-funnel, high-intent.
+ * Targets "how much does it cost" searches, bottom-of-funnel, high-intent.
  * Each page gives a realistic cost breakdown with ranges and tradeoffs.
  * Ideal for FAQ/HowTo schema and featured snippets.
  */
@@ -41,7 +41,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       { item: "Domain Name", range: "$10 – $15", typical: "$12", note: "One-time cost. Get a .com from Cloudflare at cost (no markup). Avoid premium domains." },
       { item: "Hosting (first month)", range: "$0 – $20", typical: "$0", note: "Vercel Hobby tier is free. Railway has a free tier. Supabase free tier covers databases. Upgrade when you have customers." },
       { item: "AI Tools for Development", range: "$0 – $40", typical: "$20", note: "Claude free tier works for MVP. Cursor free tier works. Claude Pro ($20/mo) or ChatGPT Plus ($20/mo) for serious development." },
-      { item: "Payment Processor Setup", range: "$0 – $0", typical: "$0", note: "Stripe costs nothing to set up — pay per transaction (2.9% + $0.30). Lemon Squeezy charges 5% + $0.50 per transaction." },
+      { item: "Payment Processor Setup", range: "$0 – $0", typical: "$0", note: "Stripe costs nothing to set up, pay per transaction (2.9% + $0.30). Lemon Squeezy charges 5% + $0.50 per transaction." },
       { item: "LLC Formation", range: "$100 – $800", typical: "$300", note: "DIY in Wyoming: $100 + $39 registered agent. Full-service (Northwest): $300. Skip LLC until you have paying customers." },
       { item: "Business Bank Account", range: "$0 – $0", typical: "$0", note: "Mercury (free), Relay (free), Novo (free). No monthly fees, no minimum balance." },
       { item: "Design (Logo + Landing Page)", range: "$0 – $200", typical: "$0", note: "Canva (free) for logo. Carrd (free) for landing page. Squarespace theme ($16/mo) if you want something polished." },
@@ -56,7 +56,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       "Use free tiers ruthlessly. Vercel Hobby, Supabase Free, PostHog Free, and Stripe (transaction-only) cover 90% of micro-SaaS needs.",
       "Build your own landing page with Carrd or a simple HTML template. Do not pay for Webflow or Squarespace until you have revenue.",
       "Do not hire a developer or designer. AI tools (Cursor, Claude) can build an MVP solo.",
-      "Buy your domain from Cloudflare (at cost — $8-10/year). Avoid GoDaddy markups and premium domains.",
+      "Buy your domain from Cloudflare (at cost, $8-10/year). Avoid GoDaddy markups and premium domains.",
     ],
     faqs: [
       { question: "What is the absolute minimum to start?", answer: "$0. Use free tiers of Vercel (hosting), Stripe (payments), Claude (development), and Carrd (landing page). Upgrade when you have paying customers." },
@@ -71,7 +71,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     metaTitle: "How Much Does an Anonymous LLC Cost? (2026) | Invisible Exit",
     metaDescription: "Complete cost breakdown for forming an anonymous LLC. State fees, registered agent, and ongoing costs. Wyoming vs New Mexico vs Delaware pricing compared.",
     h1: "How Much Does an Anonymous LLC Cost?",
-    intro: "An anonymous LLC — where your personal name does not appear on public records — costs more than a standard LLC. But for employed founders who need privacy, it is worth the premium. Here is exactly what it costs.",
+    intro: "An anonymous LLC, where your personal name does not appear on public records, costs more than a standard LLC. But for employed founders who need privacy, it is worth the premium. Here is exactly what it costs.",
     totalRange: "$300 – $1,200",
     typicalTotal: "$550 (first year), $250/year ongoing",
     breakdown: [
@@ -82,7 +82,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       { item: "Business Bank Account", range: "$0 – $0", typical: "$0", note: "Mercury, Relay, or Novo are free. No monthly fees." },
       { item: "Virtual Mailbox", range: "$120 – $180/year", typical: "$120/year", note: "iPostal1 ($10/month). Anytime Mailbox ($10/month). Provides a real street address for your LLC while keeping your home address private." },
       { item: "Annual Report / Franchise Tax", range: "$0 – $300/year", typical: "$62/year", note: "Wyoming: $62 annual report. New Mexico: $0 (no annual report!). Delaware: $300 minimum franchise tax. New Mexico is cheapest ongoing." },
-      { item: "Professional Setup Service (Optional)", range: "$300 – $800", typical: "$0", note: "Northwest ($39 + state fee) or LegalZoom ($299 + state fee) handle the paperwork. DIY is easy — most founders can do it themselves." },
+      { item: "Professional Setup Service (Optional)", range: "$300 – $800", typical: "$0", note: "Northwest ($39 + state fee) or LegalZoom ($299 + state fee) handle the paperwork. DIY is easy, most founders can do it themselves." },
     ],
     oneTimeVsRecurring: {
       oneTime: "Formation fee ($100) + EIN ($0) + operating agreement ($0) = $100 one-time",
@@ -92,7 +92,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       "Form in New Mexico for the lowest ongoing costs. No annual report ($0/year) vs Wyoming ($62/year) vs Delaware ($300/year).",
       "Do the paperwork yourself. Most state filing systems are straightforward fill-in-the-blank forms. Northwest provides free guides.",
       "You do not need a virtual mailbox immediately. Use your registered agent's address for the first few months and add a mailbox when you start receiving physical mail.",
-      "Combine registered agent and formation service. Northwest ($39 first year) includes the EIN application. Skip LegalZoom — you pay $300 for what you can do yourself in 30 minutes.",
+      "Combine registered agent and formation service. Northwest ($39 first year) includes the EIN application. Skip LegalZoom, you pay $300 for what you can do yourself in 30 minutes.",
     ],
     faqs: [
       { question: "Which state is cheapest for an anonymous LLC?", answer: "New Mexico: $50 formation, $0 annual report, zero public disclosure of members. Cheapest upfront AND ongoing. Wyoming ($100 + $62/year) is second best." },
@@ -167,7 +167,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     ],
     faqs: [
       { question: "What is the minimum monthly cost at $0 MRR?", answer: "$0/month. Everything can be free tier: Vercel Hobby, Supabase Free, Claude free tier, Stripe (pay per transaction)." },
-      { question: "When should I upgrade from free tiers?", answer: "When your usage exceeds free tier limits — usually around 500-1,000 users or 1M API events/month. Do not upgrade before you need to." },
+      { question: "When should I upgrade from free tiers?", answer: "When your usage exceeds free tier limits, usually around 500-1,000 users or 1M API events/month. Do not upgrade before you need to." },
       { question: "How do costs scale with revenue?", answer: "Roughly 5-10% of revenue goes to operational costs. At $4K MRR: $200-400/month. At $10K MRR: $500-1,000/month. The margin improves as you scale." },
     ],
   },
@@ -184,21 +184,21 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       { item: "DIY (You Are Your Own Agent)", range: "$0 – $0", typical: "$0", note: "Free, but your home address goes on public records. Not recommended for anyone building an anonymous side business." },
       { item: "Northwest Registered Agent", range: "$39 – $125/year", typical: "$125", note: "Best value. $39 first year with formation, $125/year renewal. Includes document scanning, compliance reminders, and privacy protection." },
       { item: "Incfile", range: "$0 – $119/year", typical: "$0", note: "$0 first year with LLC formation ($0 + state fee), then $119/year. Good if you use their formation service. Basic document forwarding." },
-      { item: "LegalZoom", range: "$299 – $299/year", typical: "$299", note: "Most expensive option. Includes online dashboard and compliance alerts. Overpriced for what you get — you pay for the brand." },
+      { item: "LegalZoom", range: "$299 – $299/year", typical: "$299", note: "Most expensive option. Includes online dashboard and compliance alerts. Overpriced for what you get, you pay for the brand." },
       { item: "ZenBusiness", range: "$199 – $199/year", typical: "$199", note: "Mid-range. Includes compliance monitoring and document storage. Better value than LegalZoom but more expensive than Northwest." },
       { item: "Bizee (formerly IncFile)", range: "$0 – $119/year", typical: "$0", note: "Free first year with formation. Competent but basic. Fine for a simple registered agent need." },
     ],
     oneTimeVsRecurring: {
-      oneTime: "No one-time costs — registered agents are annual subscriptions",
+      oneTime: "No one-time costs, registered agents are annual subscriptions",
       recurring: "Northwest ($125/year), Incfile ($119/year), LegalZoom ($299/year), ZenBusiness ($199/year)",
     },
     savingTips: [
       "Northwest is the best value-to-privacy ratio for anonymous LLCs ($39 first year, $125/year after).",
       "Do not be your own registered agent if privacy matters. Your home address becomes public record.",
-      "Avoid LegalZoom registered agent service — you pay 2x for the same service. Use their formation service if you want but switch to Northwest for the agent.",
+      "Avoid LegalZoom registered agent service, you pay 2x for the same service. Use their formation service if you want but switch to Northwest for the agent.",
     ],
     faqs: [
-      { question: "Do I really need a paid registered agent?", answer: "If you value privacy (and as an employed founder, you should), yes. A paid agent keeps your home address off public records. The cost is $10/month — worth it for one less exposure point." },
+      { question: "Do I really need a paid registered agent?", answer: "If you value privacy (and as an employed founder, you should), yes. A paid agent keeps your home address off public records. The cost is $10/month, worth it for one less exposure point." },
       { question: "Can I change registered agents later?", answer: "Yes. File a Statement of Change with your state (usually $10-50 fee). Your new agent handles the paperwork. Switching is common as needs change." },
       { question: "What does a registered agent actually do?", answer: "Receives legal documents (service of process), government mail (annual report reminders, tax notices), forwards them to you, and keeps your personal address private. That is it." },
     ],
@@ -234,7 +234,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     faqs: [
       { question: "What is the cheapest hosting stack for a micro-SaaS?", answer: "Vercel Hobby (frontend, free) + Supabase Free (database, free) + Cloudflare (domain/DNS, free) + Railway free credits (backend, free). Total: $0/month for the first 500+ users." },
       { question: "How much does hosting cost at 1,000 users?", answer: "Vercel Pro ($20) + Supabase Pro ($25) + Railway ($5-20) = $45-65/month. At $4K MRR from 1,000 users, hosting costs ~1-2% of revenue." },
-      { question: "Hosting vs platform-as-a-service — which is cheaper?", answer: "PaaS (Vercel, Railway, Render) is cheaper for micro-SaaS because you share infrastructure. Dedicated hosting (DigitalOcean, Hetzner) is cheaper at scale (10K+ users). For micro-SaaS, PaaS wins every time." },
+      { question: "Hosting vs platform-as-a-service, which is cheaper?", answer: "PaaS (Vercel, Railway, Render) is cheaper for micro-SaaS because you share infrastructure. Dedicated hosting (DigitalOcean, Hetzner) is cheaper at scale (10K+ users). For micro-SaaS, PaaS wins every time." },
     ],
   },
   {
@@ -295,7 +295,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     },
     savingTips: [
       "No insurance needed pre-revenue or under $2K MRR if your product does not handle sensitive data. The risk is negligible.",
-      "Get professional liability (E&O) first — it covers your biggest risk: a customer claiming your software caused them financial loss.",
+      "Get professional liability (E&O) first, it covers your biggest risk: a customer claiming your software caused them financial loss.",
       "Bundle policies when possible. Thimble and Next Insurance offer micro-SaaS-friendly policies starting at $25/month.",
       "Increase your deductible to lower monthly premiums. A $2,500 deductible vs $500 can cut premiums by 40%.",
     ],
@@ -316,9 +316,9 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     typicalTotal: "$150 (DIY Wyoming LLC)",
     breakdown: [
       { item: "State Formation Fee (DIY)", range: "$50 – $500", typical: "$100", note: "New Mexico: $50 (cheapest). Wyoming: $100. Arizona: $50. Colorado: $50. Iowa: $50. Maryland: $100. Avoid: Massachusetts ($500), Texas ($300), California ($800 franchise tax upfront)." },
-      { item: "DIY vs. Formation Service", range: "$0 – $300", typical: "$0", note: "DIY is free (you fill out the form yourself). Formation services (Northwest $39, Incfile $0) handle the paperwork but charge for optional extras. The form is simple — save the money." },
+      { item: "DIY vs. Formation Service", range: "$0 – $300", typical: "$0", note: "DIY is free (you fill out the form yourself). Formation services (Northwest $39, Incfile $0) handle the paperwork but charge for optional extras. The form is simple, save the money." },
       { item: "Registered Agent (First Year)", range: "$0 – $125", typical: "$39", note: "Northwest: $39 first year. You can be your own agent for $0 in most states (but your address becomes public). Budget option: use a free virtual mailbox address." },
-      { item: "EIN from IRS", range: "$0 – $0", typical: "$0", note: "Always free from IRS.gov. Never pay anyone to get an EIN — it is a 5-minute online form." },
+      { item: "EIN from IRS", range: "$0 – $0", typical: "$0", note: "Always free from IRS.gov. Never pay anyone to get an EIN, it is a 5-minute online form." },
       { item: "Operating Agreement", range: "$0 – $0", typical: "$0", note: "Free templates from Northwest, Wyoming SBDC, or LegalZoom's blog. A single-member operating agreement is a few paragraphs." },
       { item: "Business License (Optional)", range: "$0 – $100", typical: "$0", note: "Most micro-SaaS businesses do not need a business license (SaaS is generally unregulated). Check your city/county requirements. Often $0 for online businesses." },
     ],
@@ -327,7 +327,7 @@ export const costAnalysisPages: CostAnalysisPage[] = [
       recurring: "Registered agent ($125/yr) + annual report ($0-62/yr) = $62-187/year ongoing",
     },
     savingTips: [
-      "Form in New Mexico ($50) or Wyoming ($100) — the two cheapest privacy-friendly states. Skip Delaware ($300 minimum franchise tax/year).",
+      "Form in New Mexico ($50) or Wyoming ($100), the two cheapest privacy-friendly states. Skip Delaware ($300 minimum franchise tax/year).",
       "Do the paperwork yourself. The LLC Articles of Organization form is 1-2 pages. Fill in the blanks. Your state secretary of state website has the form.",
       "Skip the formation service. Northwest charges $39 for what takes you 20 minutes. Incfile charges $0 but upsells you on registered agent and other services.",
       "Do not need an LLC immediately? Start as a sole proprietor for $0. Upgrade when you have paying customers. An LLC adds $150-500/year in costs.",
@@ -344,16 +344,16 @@ export const costAnalysisPages: CostAnalysisPage[] = [
     metaTitle: "How Much Does It Cost to Market a Micro-SaaS? | Invisible Exit",
     metaDescription: "Micro-SaaS marketing costs at every stage. From $0 (organic/content marketing) to $500/month (paid ads). What to spend and when to spend it.",
     h1: "How Much Does It Cost to Market a Micro-SaaS?",
-    intro: "Marketing is where micro-SaaS founders waste the most money. Ads before product-market fit. Expensive agencies. Useless tools. Here is exactly what to spend on marketing at each stage — and what not to spend on.",
+    intro: "Marketing is where micro-SaaS founders waste the most money. Ads before product-market fit. Expensive agencies. Useless tools. Here is exactly what to spend on marketing at each stage, and what not to spend on.",
     totalRange: "$0 – $500/month",
     typicalTotal: "$50/month (at $4K MRR)",
     breakdown: [
       { item: "Content Marketing (SEO)", range: "$0 – $0", typical: "$0", note: "Write blog posts and optimize existing pages. Free. This is your primary marketing channel for the first 6-12 months. Use AI tools to write, but you provide the niche expertise." },
-      { item: "Social Media (Organic)", range: "$0 – $0", typical: "$0", note: "Post on LinkedIn, Reddit, X/Twitter, and niche communities. Free. Share valuable content and engage with your target audience. Do not post ads — post helpful insights." },
+      { item: "Social Media (Organic)", range: "$0 – $0", typical: "$0", note: "Post on LinkedIn, Reddit, X/Twitter, and niche communities. Free. Share valuable content and engage with your target audience. Do not post ads, post helpful insights." },
       { item: "Email Marketing Tool", range: "$0 – $20/month", typical: "$0", note: "Buttondown (free for <100 subscribers). MailerLite free tier (1K subscribers, 12K emails/month). ConvertKit free (1K subscribers, limited features). Free tiers cover your first year." },
       { item: "SEO Tool (Keyword Research)", range: "$0 – $50/month", typical: "$0", note: "Ahrefs Webmaster Tools (free). Google Search Console (free). Google Keyword Planner (free). Ubersuggest (free tier). Do not pay for SEO tools until you have 100+ blog posts." },
-      { item: "Google Ads or Social Ads", range: "$0 – $500/month", typical: "$0", note: "Do not run ads until you have product-market fit and organic channels are exhausted. Minimum budget for meaningful data: $500/month. Most micro-SaaS never need ads — organic SEO is enough." },
-      { item: "Influencer/Affiliate Commissions", range: "$0 – $100/month", typical: "$0", note: "Offer 20-30% recurring commission to affiliate partners. Pay only when they deliver a customer. Best value marketing spend — you only pay for results." },
+      { item: "Google Ads or Social Ads", range: "$0 – $500/month", typical: "$0", note: "Do not run ads until you have product-market fit and organic channels are exhausted. Minimum budget for meaningful data: $500/month. Most micro-SaaS never need ads, organic SEO is enough." },
+      { item: "Influencer/Affiliate Commissions", range: "$0 – $100/month", typical: "$0", note: "Offer 20-30% recurring commission to affiliate partners. Pay only when they deliver a customer. Best value marketing spend, you only pay for results." },
       { item: "Content Distribution Tools", range: "$0 – $0", typical: "$0", note: "Buffer (free tier: 3 social accounts). Later (free tier: 30 posts). Tailwind (free tier for Pinterest). Post manually for the first 50 blog posts." },
       { item: "PR & Outreach", range: "$0 – $0", typical: "$0", note: "Personal outreach to niche blogs and podcasts. Free. Write a compelling 'why I built this' story and pitch to 10-20 relevant publications or podcasts in your niche." },
     ],

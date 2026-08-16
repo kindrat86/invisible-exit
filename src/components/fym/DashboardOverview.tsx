@@ -558,7 +558,7 @@ function FoundingMemberCard() {
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(
-      `I'm a Founding Member of Invisible Exit — building my exit plan in stealth. ${shareUrl}`
+      `I'm a Founding Member of Invisible Exit, building my exit plan in stealth. ${shareUrl}`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);

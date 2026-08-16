@@ -36,7 +36,7 @@ const TIERS = [
   { tier: "$3K/month", tierSlug: "3000", customers: "30-300 customers", pricing: "$10-$100/month per customer", timeline: "6-12 months", desc: "enough to cover a mortgage or replace a junior salary" },
   { tier: "$5K/month", tierSlug: "5000", customers: "50-500 customers", pricing: "$10-$100/month per customer", timeline: "8-18 months", desc: "the threshold where most people can quit their day job" },
   { tier: "$10K/month", tierSlug: "10000", customers: "100-1,000 customers", pricing: "$10-$100/month per customer", timeline: "12-24 months", desc: "top 1% of solo SaaS founders" },
-  { tier: "$20K/month", tierSlug: "20000", customers: "200-2,000 customers", pricing: "$10-$100/month per customer", timeline: "18-36 months", desc: "elite micro-SaaS territory — rarefied air" },
+  { tier: "$20K/month", tierSlug: "20000", customers: "200-2,000 customers", pricing: "$10-$100/month per customer", timeline: "18-36 months", desc: "elite micro-SaaS territory, rarefied air" },
 ] as const;
 
 const PROFESSIONS = [
@@ -83,22 +83,22 @@ function generateRevenueTargets(): RevenueTarget[] {
         metaDescription: `Realistic path to ${tier.tier} in recurring revenue for ${prof.name.toLowerCase()}. Customer math, pricing strategy, and ${prof.ideas.length} micro-SaaS ideas that leverage your ${prof.skills}.`,
         h1: `How to Make ${tier.tier} as ${prof.name}`,
         intro: `Making ${tier.tier} in recurring revenue is ${tier.desc}. For ${prof.name.toLowerCase()}, this is achievable because you already have the ${prof.skills} that customers will pay for. Here's the exact math, pricing strategy, and ideas to get there in ${tier.timeline}.`,
-        customerMath: `At ${tier.pricing}, you need ${tier.customers} to reach ${tier.tier}. That's not a massive audience — it's a focused niche done well.`,
+        customerMath: `At ${tier.pricing}, you need ${tier.customers} to reach ${tier.tier}. That's not a massive audience, it's a focused niche done well.`,
         pricingStrategy: `Price at ${tier.pricing}. Resist the urge to go cheaper. A $10/month product needs 10x more customers than a $100/month product, which means 10x more marketing, 10x more support, and 10x more churn.`,
         timeline: tier.timeline,
         bestIdeas: prof.ideas,
         faqs: [
           {
             question: `How realistic is ${tier.tier} for a ${prof.name.toLowerCase().replace(/s$/, "")} building a side business?`,
-            answer: `${tier.tier} is ${tier.tierSlug === "1000" ? "very achievable — most committed founders reach this within months" : tier.tierSlug === "3000" ? "achievable with consistent effort over 6-12 months" : tier.tierSlug === "5000" ? "the freedom threshold — achievable in 8-18 months of focused work" : tier.tierSlug === "10000" ? "ambitious but realistic — it puts you in the top tier of solo SaaS founders" : "elite territory requiring 18-36 months of sustained effort and multiple product iterations"}. The key is leveraging your ${prof.skills} — you're not starting from scratch.`,
+            answer: `${tier.tier} is ${tier.tierSlug === "1000" ? "very achievable, most committed founders reach this within months" : tier.tierSlug === "3000" ? "achievable with consistent effort over 6-12 months" : tier.tierSlug === "5000" ? "the freedom threshold, achievable in 8-18 months of focused work" : tier.tierSlug === "10000" ? "ambitious but realistic, it puts you in the top tier of solo SaaS founders" : "elite territory requiring 18-36 months of sustained effort and multiple product iterations"}. The key is leveraging your ${prof.skills}, you're not starting from scratch.`,
           },
           {
             question: `What's the fastest path to ${tier.tier}?`,
-            answer: `Start with the ideas that are closest to your existing skills. ${prof.ideas[0]} and ${prof.ideas[1]} are specifically suited to ${prof.name.toLowerCase()}. Charge from day one — even $10/month validates demand better than 100 free signups.`,
+            answer: `Start with the ideas that are closest to your existing skills. ${prof.ideas[0]} and ${prof.ideas[1]} are specifically suited to ${prof.name.toLowerCase()}. Charge from day one, even $10/month validates demand better than 100 free signups.`,
           },
           {
             question: `Should I quit my job to reach ${tier.tier} faster?`,
-            answer: `No. The Invisible Exit method is about building until your recurring revenue replaces enough of your salary to make leaving feel safe. ${tier.tier}${tier.tierSlug === "1000" || tier.tierSlug === "3000" ? " is a milestone, not a quitting point — keep your job until you hit your full freedom number" : " may be enough to quit depending on your expenses, but don't leave until you have 6 months of runway saved on top of your MRR"}.`,
+            answer: `No. The Invisible Exit method is about building until your recurring revenue replaces enough of your salary to make leaving feel safe. ${tier.tier}${tier.tierSlug === "1000" || tier.tierSlug === "3000" ? " is a milestone, not a quitting point, keep your job until you hit your full freedom number" : " may be enough to quit depending on your expenses, but don't leave until you have 6 months of runway saved on top of your MRR"}.`,
           },
         ],
       });

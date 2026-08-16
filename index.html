@@ -66,12 +66,12 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- Analytics deferred until after first paint.
-         NO AD / RETARGETING PIXELS HERE — deliberate, do not re-add. Removed 2026-07-25:
+         NO AD / RETARGETING PIXELS HERE, deliberate, do not re-add. Removed 2026-07-25:
          Meta 1278454893564023, Reddit a2_iqsi13q5oijk, LinkedIn Insight 7293451,
          Google Ads AW-18046014876, and the GTM container GTM-T8X36MNB / GT-KTTZ3L7C.
          The site is operated from the EU with no consent mechanism, so ePrivacy Art 5(3)
          required prior consent for every one of them; meanwhile 180 days of PostHog across
-         the portfolio recorded 0 gclid, 0 rdt_cid and 0 cpc traffic — no campaign has ever
+         the portfolio recorded 0 gclid, 0 rdt_cid and 0 cpc traffic, no campaign has ever
          run, so they were pure liability. The GTM container went too: it can inject
          arbitrary remote tags without a code change, which would silently defeat the CSP.
          GA4 is kept as plain analytics. If retargeting is ever funded, ship a consent
@@ -80,7 +80,7 @@
     <script>
       // Defer analytics loading until browser is idle
       window.addEventListener('load', function() {
-        // Google Analytics 4 (gtag.js) — analytics only, no Ads/Tag-Manager containers
+        // Google Analytics 4 (gtag.js), analytics only, no Ads/Tag-Manager containers
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -99,7 +99,7 @@
         for(var j=0;j<d.length;j++){document.cookie=s[i]+'=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT'+d[j];}}})();
 
         // PostHog is initialized once by the app bundle (src/integrations/posthog.ts).
-        // Do NOT add a second init here — it double-counts events and un-masks
+        // Do NOT add a second init here, it double-counts events and un-masks
         // session-recording inputs.
       });
     </script>
@@ -114,7 +114,7 @@
       "url": "https://invisibleexit.com",
       "logo": "https://invisibleexit.com/favicon.png",
       "description": "Invisible Exit provides AI-powered tools that help corporate managers and employed founders build anonymous micro-SaaS businesses and side income without risking their day job or personal identity.",
-      "disambiguatingDescription": "Invisible Exit is an AI toolkit for building an anonymous micro-SaaS side business while employed — not the video game 'Invisible, Inc.' by Klei Entertainment, and not M&A or business exit-planning / exit-strategy advisory.",
+      "disambiguatingDescription": "Invisible Exit is an AI toolkit for building an anonymous micro-SaaS side business while employed, not the video game 'Invisible, Inc.' by Klei Entertainment, and not M&A or business exit-planning / exit-strategy advisory.",
       "foundingDate": "2024",
       "sameAs": [
         "https://www.reddit.com/r/invisibleexit",
@@ -314,7 +314,7 @@
             "name": "What are the pricing tiers? Is $9/month really forever?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "There are three tiers. Founding Member: $9/month — full access to all five tools, locked for life. Pro: $29/month — adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time — a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $9/month even after founding closes."
+              "text": "There are three tiers. Founding Member: $9/month, full access to all five tools, locked for life. Pro: $29/month, adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time, a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $9/month even after founding closes."
             }
           },
           {
@@ -322,7 +322,7 @@
             "name": "I work for a tech company with strict IP assignment clauses. Can I still do this?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "IP assignment clauses typically claim ownership of inventions created using company time, equipment, or trade secrets — not everything you build on your own time with your own resources. The Stealth Ops Hub's compliance audit specifically flags IP-assignment language and helps you identify whether your side project falls outside the clause's scope. The key principle: build in an unrelated market, on your own equipment, outside work hours, using no proprietary knowledge. If your contract has a 'we own everything you create' clause, consult an employment attorney before starting — but many corporate managers discover their clauses are narrower than they assumed once they read the exact language."
+              "text": "IP assignment clauses typically claim ownership of inventions created using company time, equipment, or trade secrets, not everything you build on your own time with your own resources. The Stealth Ops Hub's compliance audit specifically flags IP-assignment language and helps you identify whether your side project falls outside the clause's scope. The key principle: build in an unrelated market, on your own equipment, outside work hours, using no proprietary knowledge. If your contract has a 'we own everything you create' clause, consult an employment attorney before starting, but many corporate managers discover their clauses are narrower than they assumed once they read the exact language."
             }
           },
           {
@@ -330,7 +330,7 @@
             "name": "Who is behind Invisible Exit? Is there a real person?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design — not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do."
+              "text": "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design, not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do."
             }
           },
           {
@@ -346,7 +346,7 @@
             "name": "What happens if I get promoted, change jobs, or get laid off?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Invisible Exit is designed to be independent of your employment status. If you get promoted: your side business continues unchanged — it was always built outside your employer's scope. If you change jobs: review your new contract against the Stealth Ops audit checklist before starting anything new, but your existing side business is unaffected. If you get laid off: you have a revenue-generating side business already running, which means you have runway other people don't. The FYM Dashboard tracks your freedom number so you know exactly how many months of expenses your side revenue covers."
+              "text": "Invisible Exit is designed to be independent of your employment status. If you get promoted: your side business continues unchanged, it was always built outside your employer's scope. If you change jobs: review your new contract against the Stealth Ops audit checklist before starting anything new, but your existing side business is unaffected. If you get laid off: you have a revenue-generating side business already running, which means you have runway other people don't. The FYM Dashboard tracks your freedom number so you know exactly how many months of expenses your side revenue covers."
             }
           },
           {
@@ -354,7 +354,7 @@
             "name": "Does Invisible Exit work outside the United States?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice — the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ."
+              "text": "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice, the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ."
             }
           },
           {
@@ -362,7 +362,7 @@
             "name": "Is the $9/month price sustainable? What's the catch?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9."
+              "text": "The $9/month Founder price is an early-believer price, priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many, marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9."
             }
           },
           {
@@ -370,7 +370,7 @@
             "name": "Does Invisible Exit violate my employment contract?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most employment contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints — you build in unrelated markets, on your own time, with your own tools. The Stealth Ops Hub runs a compliance audit against common contract clauses including non-compete, IP assignment, and moonlighting. Always review your specific contract with a legal professional."
+              "text": "Most employment contracts restrict competing in your employer's industry or using company resources. Invisible Exit is designed around those constraints, you build in unrelated markets, on your own time, with your own tools. The Stealth Ops Hub runs a compliance audit against common contract clauses including non-compete, IP assignment, and moonlighting. Always review your specific contract with a legal professional."
             }
           },
           {
@@ -386,7 +386,7 @@
             "name": "How much money do I need to never work again?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and eliminates the fear of financial free-fall. A micro-SaaS charging $29/month needs 138 paying customers to reach this threshold — achievable in 12-18 months."
+              "text": "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and eliminates the fear of financial free-fall. A micro-SaaS charging $29/month needs 138 paying customers to reach this threshold, achievable in 12-18 months."
             }
           },
           {
@@ -426,13 +426,13 @@
             "name": "Is the $9/month price sustainable? What is the catch?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9."
+              "text": "The $9/month Founder price is an early-believer price, priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many, marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9."
             }
           }
         ]
       }
     </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Invisible Exit", "alternateName": ["InvisibleExit", "Invisible Exit system"], "applicationCategory": "ProductivityApplication", "operatingSystem": "Web", "description": "Invisible Exit is a faceless side-business system for employed professionals — a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.", "disambiguatingDescription": "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income — unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory.", "url": "https://invisibleexit.com", "offers": {"@type": "Offer", "price": "9", "priceCurrency": "USD"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Invisible Exit", "alternateName": ["InvisibleExit", "Invisible Exit system"], "applicationCategory": "ProductivityApplication", "operatingSystem": "Web", "description": "Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity.", "disambiguatingDescription": "Invisible Exit is a faceless side-business membership platform for employed professionals building anonymous micro-SaaS income, unrelated to the video game 'Invisible, Inc.' or traditional business exit-planning / M&A advisory.", "url": "https://invisibleexit.com", "offers": {"@type": "Offer", "price": "9", "priceCurrency": "USD"}}</script>
     <!-- AEO 2026-07-18: aggregateRating removed (self-served). Google's structured-data
          guidelines treat self-served aggregate ratings as spam; AI models learn to distrust
          uncorroborated claims. Restore ONLY via third-party review platform (Trustpilot Free /
@@ -451,7 +451,7 @@
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:outline-none">Skip to content</a>
     <!-- The GTM iframe and the Meta / LinkedIn <noscript> beacons were removed 2026-07-25
-         together with their script-side pixels — see the note in <head>. Do not re-add. -->
+         together with their script-side pixels, see the note in <head>. Do not re-add. -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
@@ -535,16 +535,16 @@
 <section class="aeo-home" aria-label="About Invisible Exit">
   <div class="aeo-home-wrap">
     <h2>What Invisible Exit Is</h2>
-    <p><strong>Invisible Exit is a suite of five connected AI tools that helps employed corporate managers and founders build an anonymous micro-SaaS side business — validate a niche, launch it, and reach a "freedom number" of recurring revenue without quitting their job or building a public personal brand.</strong> The whole system is designed for people who want a real income stream on the side while staying invisible to their current employer. Plans start at $9/month.</p>
+    <p><strong>Invisible Exit is a suite of five connected AI tools that helps employed corporate managers and founders build an anonymous micro-SaaS side business, validate a niche, launch it, and reach a "freedom number" of recurring revenue without quitting their job or building a public personal brand.</strong> The whole system is designed for people who want a real income stream on the side while staying invisible to their current employer. Plans start at $9/month.</p>
 
     <h2>The Five Tools</h2>
     <dl>
       <dt>Freedom Number Dashboard</dt>
       <dd>Calculates the monthly side income that would cover your living expenses, so you know the exact target that makes leaving your job optional rather than desperate.</dd>
       <dt>Idea Validation</dt>
-      <dd>A library of 500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential, plus AI-powered validation of your own idea in about 48 hours — so you build something people will pay for.</dd>
+      <dd>A library of 500+ micro-SaaS ideas scored by industry fit, time investment, and revenue potential, plus AI-powered validation of your own idea in about 48 hours, so you build something people will pay for.</dd>
       <dt>Compliance &amp; Anonymity</dt>
-      <dd>Entity-separation and digital-invisibility guides plus a compliance audit against the clauses that trip up employed founders — non-compete, IP-assignment, and moonlighting terms — so you keep devices, accounts, and domains cleanly separate from your employer.</dd>
+      <dd>Entity-separation and digital-invisibility guides plus a compliance audit against the clauses that trip up employed founders, non-compete, IP-assignment, and moonlighting terms, so you keep devices, accounts, and domains cleanly separate from your employer.</dd>
       <dt>Launch Automation</dt>
       <dd>Go-live tooling built for a five-hour weekend: Stripe integration, landing-page generation, and a launch-sequence builder that take you from idea to a live paid product.</dd>
       <dt>Faceless Audience Builder</dt>
@@ -559,7 +559,7 @@
     <span style="background:rgba(0,212,170,0.12);color:#00d4aa;padding:4px 14px;border-radius:20px;font-size:.78rem;font-weight:600">FREE · 5-PART EMAIL SERIES</span>
     <h2 style="font-size:1.6rem;margin:16px 0 8px;line-height:1.3;color:#e8eaed">The Faceless Founder Playbook</h2>
     <p style="font-size:1rem;color:#94a3b8;margin-bottom:24px">How corporate managers build $4,000/mo in anonymous side revenue without code, without quitting, without being found out.</p>
-    <form action="/api/newsletter-welcome" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto" onsubmit="var f=this,b=f.querySelector('button');fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:f.email.value,source:'homepage_squeeze'})}).then(function(r){if(r.ok){f.innerHTML='<p style=&quot;color:#00d4aa;font-weight:600&quot;>Check your inbox — the first email is on its way.</p>';}else{b.disabled=false;b.textContent='Try again';}}).catch(function(){b.disabled=false;b.textContent='Try again';});b.disabled=true;b.textContent='Sending…';return false;">
+    <form action="/api/newsletter-welcome" method="POST" style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto" onsubmit="var f=this,b=f.querySelector('button');fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:f.email.value,source:'homepage_squeeze'})}).then(function(r){if(r.ok){f.innerHTML='<p style=&quot;color:#00d4aa;font-weight:600&quot;>Check your inbox, the first email is on its way.</p>';}else{b.disabled=false;b.textContent='Try again';}}).catch(function(){b.disabled=false;b.textContent='Try again';});b.disabled=true;b.textContent='Sending…';return false;">
       <input type="email" name="email" placeholder="manager@company.com" required style="padding:14px 18px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e8eaed;font-size:1rem;outline:none">
       <button type="submit" style="background:linear-gradient(135deg,#00d4aa,#2deec0);color:#04130e;padding:14px;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer">Send Me the Free Playbook</button>
     </form>
@@ -569,7 +569,7 @@
 
     <h2>Frequently Asked Questions</h2>
     <h3>What is Invisible Exit?</h3>
-    <p>A suite of five AI-powered tools that help corporate managers and employed founders build an anonymous micro-SaaS business on the side — from calculating a freedom number to validating an idea, staying compliant, launching, and building a faceless audience.</p>
+    <p>A suite of five AI-powered tools that help corporate managers and employed founders build an anonymous micro-SaaS business on the side, from calculating a freedom number to validating an idea, staying compliant, launching, and building a faceless audience.</p>
     <h3>Can I build a side business while employed without my employer finding out?</h3>
     <p>Yes. Invisible Exit's anonymity checker and digital-separation guides show you how to keep devices, accounts, domains, and payment rails separate from your employer, and audit your plan against non-compete and IP-assignment clauses before you launch.</p>
     <h3>What is a freedom number and how do I calculate it?</h3>
@@ -577,13 +577,13 @@
     <h3>How much does Invisible Exit cost?</h3>
     <p>Invisible Exit starts at $9/month for the core tools suite, which includes the freedom-number calculator, the scored idea library, and the compliance and launch guides.</p>
     <h3>Do I need a personal brand to build a side business?</h3>
-    <p>No. Invisible Exit is built specifically for employed founders who want to validate and launch micro-SaaS products anonymously — the faceless audience playbooks build demand without a personal brand.</p>
+    <p>No. Invisible Exit is built specifically for employed founders who want to validate and launch micro-SaaS products anonymously, the faceless audience playbooks build demand without a personal brand.</p>
     <p><a href="/">Explore the tools →</a></p>
   </div>
 </section>
 <!-- /aeo-topic-depth-injected -->
 
-<!-- BRUNSON TRUST BAR — idempotency:trust-bar-v1 -->
+<!-- BRUNSON TRUST BAR, idempotency:trust-bar-v1 -->
 <section class="brunson-trust-bar" style="background:linear-gradient(135deg, #0f172a, #1e293b);color:#e8eaed;padding:40px 24px;margin:60px 0 0;border-top:3px solid #00d4aa;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="max-width:900px;margin:0 auto">
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-bottom:28px">
@@ -598,7 +598,7 @@
 </section>
 <!-- /BRUNSON TRUST BAR -->
 
-<!-- BRUNSON FUTURE-BASED CAUSE / MOVEMENT — Expert Secrets Ch.4 (idempotency:brunson-movement-v1) -->
+<!-- BRUNSON FUTURE-BASED CAUSE / MOVEMENT, Expert Secrets Ch.4 (idempotency:brunson-movement-v1) -->
 <section id="brunson-movement" style="padding:5rem 0;background:radial-gradient(ellipse at top,#0f172a 0%,#0a0a0a 70%);color:#fff;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
     <p style="color:#00d4aa;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;margin:0 0 1.5rem">Our Movement</p>
@@ -606,7 +606,7 @@
       We believe you shouldn't have to quit your job, show your face, or risk your reputation to build <span style="color:#00d4aa">financial independence</span>.
     </p>
     <p style="font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.7;color:#cbd5e1;margin:0 0 1.5rem">
-      The tools exist now to build real recurring revenue <span style="color:#00d4aa">in the shadows</span> — quietly, professionally, on your own terms.
+      The tools exist now to build real recurring revenue <span style="color:#00d4aa">in the shadows</span>, quietly, professionally, on your own terms.
     </p>
     <p style="font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.7;color:#cbd5e1;margin:0 0 2rem">
       The side hustle <strong style="color:#fff">doesn't have to be loud</strong> to be lucrative. And it <strong style="color:#fff">doesn't have to be your full-time job</strong> to be your full-time income.
@@ -619,19 +619,19 @@
 </section>
 <!-- /BRUNSON MOVEMENT -->
 
-<!-- BRUNSON VALUE STACK (Ch.9) — idempotency:value-stack-v2 -->
+<!-- BRUNSON VALUE STACK (Ch.9), idempotency:value-stack-v2 -->
 <section id="brunson-value-stack" style="padding:4rem 0;background:#0a0a0a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <div style="max-width:900px;margin:0 auto;padding:0 1.5rem">
     <div style="text-align:center;margin-bottom:2.5rem">
       <p style="color:#00d4aa;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin:0 0 .5rem">The Founding Stack</p>
       <h2 style="font-size:clamp(1.5rem,3.5vw,2.2rem);margin:0;color:#fff">Five tools, one subscription. Founding members pay $9.</h2>
-      <p style="color:#94a3b8;font-size:1rem;margin-top:.75rem">Every tool you need to build invisible recurring revenue — in one membership.</p>
+      <p style="color:#94a3b8;font-size:1rem;margin-top:.75rem">Every tool you need to build invisible recurring revenue, in one membership.</p>
     </div>
     <div style="background:#111317;border:1px solid #1f2937;border-radius:12px;overflow:hidden">
       <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">① Freedom Number Calculator</strong><br><span style="color:#64748b;font-size:.85rem">Exact monthly revenue target in 90 seconds.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
       <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">② Idea Validator</strong><br><span style="color:#64748b;font-size:.85rem">500+ scored micro-SaaS blueprints. Find one that fits.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
       <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">③ Stealth Ops & Compliance</strong><br><span style="color:#64748b;font-size:.85rem">Separate entity + anonymity playbooks.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
-      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">④ Launch Automation</strong><br><span style="color:#64748b;font-size:.85rem">Landing page, Stripe, email — wired.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
+      <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">④ Launch Automation</strong><br><span style="color:#64748b;font-size:.85rem">Landing page, Stripe, email, wired.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
       <div style="display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid #1f2937"><div><strong style="color:#fff">⑤ Faceless Brand Builder</strong><br><span style="color:#64748b;font-size:.85rem">Grow demand without a personal brand.</span></div><div style="color:#00d4aa;font-weight:700;white-space:nowrap">included</div></div>
       <div style="display:flex;justify-content:space-between;padding:1.25rem 1.5rem;background:rgba(0,212,170,.05)">
         <div><strong style="color:#94a3b8">All five tools</strong></div>
@@ -647,7 +647,7 @@
 </section>
 <!-- /BRUNSON VALUE STACK -->
 
-<!-- CROSS-PORTFOLIO NETWORK FOOTER — generated 2026-07-18 -->
+<!-- CROSS-PORTFOLIO NETWORK FOOTER, generated 2026-07-18 -->
 <style>
 .portfolio-network {
     max-width: 1200px;

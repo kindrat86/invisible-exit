@@ -50,7 +50,7 @@ const CATEGORY_META: Record<
       "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. The $4,000/month freedom threshold.",
     h1: "Financial Independence Through Micro-SaaS",
     intro:
-      "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything — and how to get there faster than traditional saving.",
+      "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything, and how to get there faster than traditional saving.",
     faqs: [
       {
         question: "How much money do I need to never work again?",
@@ -60,7 +60,7 @@ const CATEGORY_META: Record<
       {
         question: "Is recurring revenue better than salary for financial independence?",
         answer:
-          "Recurring revenue compounds — every customer added this month continues paying next month. Unlike one-time sales or salary, recurring revenue creates a growing baseline that eventually exceeds your cost of living, at which point your job becomes optional.",
+          "Recurring revenue compounds, every customer added this month continues paying next month. Unlike one-time sales or salary, recurring revenue creates a growing baseline that eventually exceeds your cost of living, at which point your job becomes optional.",
       },
       {
         question: "How long does it take to reach financial independence with micro-SaaS?",
@@ -85,7 +85,7 @@ const CATEGORY_META: Record<
       {
         question: "What are the best micro-SaaS ideas for corporate managers?",
         answer:
-          "The best ideas are narrow, painful, and easy to explain — not exciting startup ideas. Corporate managers are uniquely positioned to spot workflow problems in their industry. The strongest candidates solve a specific recurring pain that a small, well-defined audience will pay to eliminate.",
+          "The best ideas are narrow, painful, and easy to explain, not exciting startup ideas. Corporate managers are uniquely positioned to spot workflow problems in their industry. The strongest candidates solve a specific recurring pain that a small, well-defined audience will pay to eliminate.",
       },
     ],
   },
@@ -120,7 +120,7 @@ const CATEGORY_META: Record<
       {
         question: "What is an invisible exit?",
         answer:
-          "An invisible exit is the transition from employment to entrepreneurship achieved by building a side business invisibly — without your employer knowing — until your recurring revenue replaces enough of your salary to make leaving feel safe. The business is built quietly, tested thoroughly, and scaled before you ever give notice.",
+          "An invisible exit is the transition from employment to entrepreneurship achieved by building a side business invisibly, without your employer knowing, until your recurring revenue replaces enough of your salary to make leaving feel safe. The business is built quietly, tested thoroughly, and scaled before you ever give notice.",
       },
       {
         question: "How long does an invisible exit take?",
@@ -185,7 +185,7 @@ const CATEGORY_META: Record<
       {
         question: "Can AI really replace a startup team?",
         answer:
-          "AI can replace much of early-stage execution — coding, copywriting, design, customer support research. It cannot replace founder judgment, ownership, and accountability. A solo founder with AI tools can now compete with a funded 5-person team on execution speed, but strategic decisions remain human work.",
+          "AI can replace much of early-stage execution, coding, copywriting, design, customer support research. It cannot replace founder judgment, ownership, and accountability. A solo founder with AI tools can now compete with a funded 5-person team on execution speed, but strategic decisions remain human work.",
       },
     ],
   },

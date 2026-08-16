@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DREAM_100_TIERS = [
   {
-    tier: "Tier 1 — Dream Partners",
+    tier: "Tier 1:  Dream Partners",
     description: "Influencers and creators who already speak to corporate managers, ambitious professionals, and the 'golden handcuffs' audience.",
     examples: [
       "Career coaches with 10K+ audience (LinkedIn, YouTube, newsletters)",
@@ -18,7 +18,7 @@ const DREAM_100_TIERS = [
     action: "Personal cold email with a free year of Invisible Exit. Goal: interview on their podcast or a co-created piece of content.",
   },
   {
-    tier: "Tier 2 — Strategic Affiliates",
+    tier: "Tier 2:  Strategic Affiliates",
     description: "Communities, newsletters, and platforms where our exact audience already gathers.",
     examples: [
       "r/cscareerquestions, r/experienceddevs, r/FIRE, r/Entrepreneur (Reddit)",
@@ -30,7 +30,7 @@ const DREAM_100_TIERS = [
     action: "Affiliate program pitch (30% recurring). Provide swipe copy, banner assets, and a custom landing page.",
   },
   {
-    tier: "Tier 3 — Content Amplifiers",
+    tier: "Tier 3:  Content Amplifiers",
     description: "Platforms and channels that can distribute our story to new audiences at scale.",
     examples: [
       "Guest posts on career/business publications (Mid, Substack features)",
@@ -75,7 +75,7 @@ const Dream100Page = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Dream 100 — Strategic Partner Framework | Invisible Exit"
+        title="Dream 100, Strategic Partner Framework | Invisible Exit"
         description="How we identify, research, and build relationships with the 100 people who already have our audience. The Russell Brunson Dream 100 strategy, adapted."
         url="/dream-100"
       />
@@ -114,7 +114,7 @@ const Dream100Page = () => {
             </p>
             <p>
               If each Dream 100 partner has 5,000 followers and just 1% convert, that's
-              <strong className="text-foreground"> 5,000 new users</strong> — without spending
+              <strong className="text-foreground"> 5,000 new users</strong>, without spending
               a dollar on ads.
             </p>
             <p>

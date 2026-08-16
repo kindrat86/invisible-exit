@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-// NOTE: imported eagerly by App.tsx — keep this module free of heavy deps
+// NOTE: imported eagerly by App.tsx, keep this module free of heavy deps
 // (no recharts/html2canvas) so the entry bundle stays lean.
 import { useEffect, useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
@@ -124,15 +124,15 @@ const FAQS = [
   },
   {
     q: "What are the pricing tiers? Is $9/month really forever?",
-    a: "There are three tiers. Founding Member: $9/month — full access to all five tools, locked for life. Pro: $29/month — adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time — a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $9/month even after founding closes.",
+    a: "There are three tiers. Founding Member: $9/month, full access to all five tools, locked for life. Pro: $29/month, adds weekly group coaching, monthly MRR audits, and the private Inner Circle community. Intensive: $2,000 one-time, a done-with-you 90-day program with 1-on-1 coaching from Adrian (limited to 5 spots per month). Founding Member pricing is permanently locked: as long as you stay subscribed, you keep $9/month even after founding closes.",
   },
   {
     q: "I work for a tech company with strict IP assignment clauses. Can I still do this?",
-    a: "IP assignment clauses typically claim ownership of inventions created using company time, equipment, or trade secrets — not everything you build on your own time with your own resources. The Stealth Ops Hub's compliance audit specifically flags IP-assignment language and helps you identify whether your side project falls outside the clause's scope. The key principle: build in an unrelated market, on your own equipment, outside work hours, using no proprietary knowledge. If your contract has a 'we own everything you create' clause, consult an employment attorney before starting — but many corporate managers discover their clauses are narrower than they assumed once they read the exact language.",
+    a: "IP assignment clauses typically claim ownership of inventions created using company time, equipment, or trade secrets, not everything you build on your own time with your own resources. The Stealth Ops Hub's compliance audit specifically flags IP-assignment language and helps you identify whether your side project falls outside the clause's scope. The key principle: build in an unrelated market, on your own equipment, outside work hours, using no proprietary knowledge. If your contract has a 'we own everything you create' clause, consult an employment attorney before starting, but many corporate managers discover their clauses are narrower than they assumed once they read the exact language.",
   },
   {
     q: "Who is behind Invisible Exit? Is there a real person?",
-    a: "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design — not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do.",
+    a: "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design, not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do.",
   },
   {
     q: "Do I need a separate bank account, LLC, and phone number?",
@@ -140,15 +140,15 @@ const FAQS = [
   },
   {
     q: "What happens if I get promoted, change jobs, or get laid off?",
-    a: "Invisible Exit is designed to be independent of your employment status. If you get promoted: your side business continues unchanged — it was always built outside your employer's scope. If you change jobs: review your new contract against the Stealth Ops audit checklist before starting anything new, but your existing side business is unaffected. If you get laid off: you have a revenue-generating side business already running, which means you have runway other people don't. The FYM Dashboard tracks your freedom number so you know exactly how many months of expenses your side revenue covers.",
+    a: "Invisible Exit is designed to be independent of your employment status. If you get promoted: your side business continues unchanged, it was always built outside your employer's scope. If you change jobs: review your new contract against the Stealth Ops audit checklist before starting anything new, but your existing side business is unaffected. If you get laid off: you have a revenue-generating side business already running, which means you have runway other people don't. The FYM Dashboard tracks your freedom number so you know exactly how many months of expenses your side revenue covers.",
   },
   {
     q: "Does Invisible Exit work outside the United States?",
-    a: "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice — the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ.",
+    a: "The frameworks work in any jurisdiction, but the legal modules (LLC formation, employment contract clauses, state privacy laws) are U.S.-centric. For non-U.S. founders: the business-validation, MRR-tracking, and audience-building tools are fully applicable. The compliance audit adapts to common-law jurisdictions (UK, Canada, Australia, New Zealand) with minor adjustments. Civil-law jurisdictions (EU, Latin America, parts of Asia) should supplement with local legal advice, the structural principles (entity separation, unrelated markets, separate equipment) still apply, but the specific entity types and contract-law nuances differ.",
   },
   {
     q: "Is the $9/month price sustainable? What's the catch?",
-    a: "The $9/month Founder price is an early-believer price — priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many — marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9.",
+    a: "The $9/month Founder price is an early-believer price, priced to be a no-brainer, not to maximize margin. The business model works because: (1) some founders upgrade to Pro ($29/month) or Intensive ($2,000); (2) the community creates content and case studies that attract more members; (3) the tools are built once and serve many, marginal cost per user approaches zero at scale. There is no hidden catch: no forced upgrades, no trial that converts to a higher price, no billing surprises. The 30-day money-back guarantee means your maximum risk is $9.",
   },
 ];
 
@@ -170,7 +170,7 @@ const Index = () => {
   }, []);
 
   const handleCheckout = async () => {
-    // DOTCOM SECRETS Ch 8: Two-step order — send to /start order page, not direct checkout
+    // DOTCOM SECRETS Ch 8: Two-step order, send to /start order page, not direct checkout
     trackEvent("homepage_cta_clicked", { source: "landing_page" });
     navigate("/start");
   };
@@ -193,7 +193,7 @@ const Index = () => {
       {/* ── 1. Hero ── */}
       <section className="hero-dark-radial pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24 section">
         <div className="container-narrow text-center">
-          {/* EXPERT SECRETS Ch 1: Polarizing Leader — "If this offends you, leave" */}
+          {/* EXPERT SECRETS Ch 1: Polarizing Leader, "If this offends you, leave" */}
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in">
             <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
             <span className="text-xs text-red-300 font-semibold uppercase tracking-wider text-balance">
@@ -202,7 +202,7 @@ const Index = () => {
           </div>
 
           <p className="text-eyebrow text-primary-light mb-6 text-balance animate-fade-in" style={{ animationDelay: "50ms" }}>
-            You Know Who You Are — The Title, The Salary, The 0.5%. Keep Reading.
+            You Know Who You Are, The Title, The Salary, The 0.5%. Keep Reading.
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] animate-fade-up">
@@ -210,7 +210,7 @@ const Index = () => {
               <>
                 How Corporate Managers Build{" "}
                 <span className="text-gradient-light">$4,000/Month in Recurring Revenue</span>{" "}
-                — Without Quitting, Without Code, Without Being Found Out
+                - Without Quitting, Without Code, Without Being Found Out
               </>
             ) : (
               <>
@@ -221,27 +221,27 @@ const Index = () => {
             )}
           </h1>
 
-          {/* TL;DR extractable summary — verbatim facts from existing site copy */}
+          {/* TL;DR extractable summary, verbatim facts from existing site copy */}
           <div className="tl-dr-summary max-w-2xl mx-auto mb-8 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white/70 text-sm leading-relaxed animate-fade-up" style={{ animationDelay: "150ms" }}>
             <strong className="text-white/90">TL;DR:</strong>{" "}
-            Invisible Exit is a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue. The system is designed to reach $4,000/month in side income within 12–18 months using just 5 hours per week — without quitting your job, writing code, or revealing your identity.
+            Invisible Exit is a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue. The system is designed to reach $4,000/month in side income within 12–18 months using just 5 hours per week, without quitting your job, writing code, or revealing your identity.
           </div>
 
-          {/* Canonical entity descriptor — AEO disambiguation (vs. "Invisible, Inc." game / exit-planning) */}
+          {/* Canonical entity descriptor, AEO disambiguation (vs. "Invisible, Inc." game / exit-planning) */}
           <p className="text-white font-semibold text-base sm:text-lg max-w-2xl mx-auto mb-3 animate-fade-up">
             Invisible Exit is the faceless side-business system for employed professionals.
           </p>
 
-          {/* Mechanism sub-headline — HOW the promise gets delivered (Brunson: vehicle clarity) */}
+          {/* Mechanism sub-headline, HOW the promise gets delivered (Brunson: vehicle clarity) */}
           <p className="text-white/80 text-base sm:text-lg font-medium max-w-2xl mx-auto mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
-            The answer: build a <strong className="text-white">micro-SaaS</strong> on the side —
-            one niche problem, about $29/month, roughly 138 customers = $4,000/month — run through
+            The answer: build a <strong className="text-white">micro-SaaS</strong> on the side, 
+            one niche problem, about $29/month, roughly 138 customers = $4,000/month, run through
             a separate legal entity your employer never sees. <strong className="text-white">5 AI-powered
             tools</strong> handle each step: calculate your exit number, validate your idea, stay
-            invisible, launch, and grow a faceless brand — in 5 hours a week.
+            invisible, launch, and grow a faceless brand, in 5 hours a week.
           </p>
 
-          {/* DOTCOM SECRETS Ch 2: Category Creation — right below the headline */}
+          {/* DOTCOM SECRETS Ch 2: Category Creation, right below the headline */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4 animate-fade-up" style={{ animationDelay: "75ms" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs text-primary-light font-medium text-balance">
@@ -251,11 +251,11 @@ const Index = () => {
 
           <p className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "100ms" }}>
             {heroVariant === "benefit"
-              ? `You're 37. Managing Director. $165K salary. 0.5% equity that vests in 4 years. You can't sleep because the golden handcuffs are starting to feel like they're tightening. I know — I was you 14 months ago. Here's the system that got me out.`
-              : `You're reading this on your work phone, aren't you? In a meeting that could've been an email. Making $165K for someone else's exit. I found a different door — and I'll show you the key. You have 5 hours a week. That's all this takes.`}
+              ? `You're 37. Managing Director. $165K salary. 0.5% equity that vests in 4 years. You can't sleep because the golden handcuffs are starting to feel like they're tightening. I know, I was you 14 months ago. Here's the system that got me out.`
+              : `You're reading this on your work phone, aren't you? In a meeting that could've been an email. Making $165K for someone else's exit. I found a different door, and I'll show you the key. You have 5 hours a week. That's all this takes.`}
           </p>
 
-          {/* CTA — ONE THING: Scroll to inline squeeze (email capture first, then calculator) */}
+          {/* CTA, ONE THING: Scroll to inline squeeze (email capture first, then calculator) */}
           <div className="flex flex-col items-center gap-4 mb-6 animate-fade-up" style={{ animationDelay: "200ms" }}>
             <button
               onClick={() => {
@@ -281,11 +281,11 @@ const Index = () => {
                 I didn't want to build this. I wanted to build in peace. But I had to leave the key.
               </span>
               <span className="text-primary text-sm font-bold">”</span>
-              <span className="text-white/60 text-[11px] whitespace-nowrap shrink-0">— Adrian</span>
+              <span className="text-white/60 text-[11px] whitespace-nowrap shrink-0">, Adrian</span>
             </div>
           </div>
 
-          {/* EXPERT SECRETS Ch 16: Cost of Delay — live counter */}
+          {/* EXPERT SECRETS Ch 16: Cost of Delay, live counter */}
           <div className="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
             <span className="text-amber-200 text-xs font-medium text-balance">
@@ -332,11 +332,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 1b-2. INLINE SQUEEZE — Email capture before content wall ── */}
+      {/* ── 1b-2. INLINE SQUEEZE, Email capture before content wall ── */}
       {/* DOTCOM Secrets Ch 4 & Ch 6: Convert homepage from content page to funnel entry */}
       <InlineSqueeze />
 
-      {/* ── 1b-3. AUTHORITY BAR — Expert Secrets Ch 15-16 ── */}
+      {/* ── 1b-3. AUTHORITY BAR, Expert Secrets Ch 15-16 ── */}
       {/* Surfaces authority signals that are otherwise invisible to first-time visitors */}
       <AuthorityBar />
 
@@ -369,7 +369,7 @@ const Index = () => {
               It buys you a longer leash. The same leash, with more steps.
             </p>
             <p>
-              The old vehicle — salary, equity, promotion ladder — was never designed to
+              The old vehicle, salary, equity, promotion ladder, was never designed to
               take you to freedom. It was designed to keep you productive for someone else's
               exit. The faster we bury that dream, the faster we build something real.
             </p>
@@ -393,7 +393,7 @@ const Index = () => {
               Russell Brunson's formula: <strong className="text-foreground">Who</strong> your dream customer is,
               <strong className="text-foreground"> Where</strong> they hide,
               the <strong className="text-foreground">Bait</strong> that gets them to raise their hand, and the
-              <strong className="text-foreground"> Result</strong> they get. Here's ours — no guesswork.
+              <strong className="text-foreground"> Result</strong> they get. Here's ours, no guesswork.
             </p>
           </div>
 
@@ -408,7 +408,7 @@ const Index = () => {
               </div>
               <h3 className="text-sm font-bold text-foreground mb-3">I'm Writing to One Person</h3>
 
-              {/* Vivid persona portrait — Brunson Dream Customer */}
+              {/* Vivid persona portrait, Brunson Dream Customer */}
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
                 <p className="text-sm text-foreground leading-relaxed">
                   You're <strong>37</strong>. <strong>Managing Director</strong> or VP. You make <strong>$165K</strong> (base + bonus).
@@ -416,7 +416,7 @@ const Index = () => {
                 </p>
                 <p className="text-xs text-muted-foreground leading-relaxed mt-2">
                   You run teams, ship projects, manage P&Ls. You're good at your job.
-                  But every Sunday night your chest tightens. Not because you hate the work —
+                  But every Sunday night your chest tightens. Not because you hate the work, 
                   because you know there's a door, and you haven't found it yet.
                 </p>
               </div>
@@ -424,7 +424,7 @@ const Index = () => {
               <div className="space-y-1.5 mb-4">
                 {[
                   "15+ years of operational experience (your unfair advantage)",
-                  "5 hours/week of dead time — lunch breaks, evenings, weekends",
+                  "5 hours/week of dead time, lunch breaks, evenings, weekends",
                   "Golden handcuffs: salary too good to quit, equity too small to wait for",
                   "You've thought about a side business for 2+ years but never started",
                 ].map((item) => (
@@ -436,7 +436,7 @@ const Index = () => {
               </div>
               <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg p-3 space-y-1">
                 <p className="text-[11px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">This isn't you if</p>
-                {["You're already a full-time founder", "You want to build a public personal brand", "You expect overnight success", "You make under $100K — build cash flow first"].map((item) => (
+                {["You're already a full-time founder", "You want to build a public personal brand", "You expect overnight success", "You make under $100K, build cash flow first"].map((item) => (
                   <div key={item} className="flex items-start gap-1.5">
                     <X className="w-3 h-3 text-red-400 shrink-0 mt-0.5" />
                     <span className="text-[11px] text-red-700/70 dark:text-red-300/70">{item}</span>
@@ -487,7 +487,7 @@ const Index = () => {
                 <p className="text-sm font-bold text-primary mb-1">Freedom Number Calculator</p>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   A 90-second interactive tool that calculates the exact monthly revenue
-                  you need to replace your salary — and the number of customers that gets you there.
+                  you need to replace your salary, and the number of customers that gets you there.
                 </p>
               </div>
               <div className="space-y-1.5 mb-4">
@@ -528,7 +528,7 @@ const Index = () => {
               <div className="bg-success/5 border border-success/20 rounded-xl p-4 mb-3">
                 <p className="text-3xl font-bold text-success mb-1">$4,000<span className="text-sm font-normal text-muted-foreground">/month MRR</span></p>
                 <p className="text-xs text-muted-foreground">
-                  What the system is designed to reach in 12–18 months at 5 hours/week — a target, not a typical or guaranteed result.
+                  What the system is designed to reach in 12–18 months at 5 hours/week, a target, not a typical or guaranteed result.
                 </p>
               </div>
               <div className="space-y-1.5 mb-4">
@@ -549,7 +549,7 @@ const Index = () => {
                 <p className="text-[11px] text-muted-foreground italic leading-relaxed">
                   "I stopped obsessing over the perfect idea and started working the system."
                 </p>
-                <p className="text-[11px] text-foreground font-semibold mt-1">— Jennifer L., $2,300 MRR</p>
+                <p className="text-[11px] text-foreground font-semibold mt-1">, Jennifer L., $2,300 MRR</p>
               </div>
             </div>
           </div>
@@ -582,11 +582,11 @@ const Index = () => {
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-3">
               Your future co-founders and first customers are in the same communities you scroll
-              during lunch. Here's where the movement quietly grows — and where you should be reading, learning, and eventually engaging.
+              during lunch. Here's where the movement quietly grows, and where you should be reading, learning, and eventually engaging.
             </p>
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 text-xs text-amber-700">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse shrink-0" />
-              <span className="font-medium">20+ congregations mapped — here are the 6 most active today</span>
+              <span className="font-medium">20+ congregations mapped, here are the 6 most active today</span>
             </div>
           </div>
 
@@ -598,7 +598,7 @@ const Index = () => {
                 url: "https://www.reddit.com/r/invisibleexit",
                 members: "Growing",
                 description:
-                  "Our home base. Anonymous builders share wins, ask stealth questions, and post MRR updates. No self-promotion — just real talk from people who get it.",
+                  "Our home base. Anonymous builders share wins, ask stealth questions, and post MRR updates. No self-promotion, just real talk from people who get it.",
                 vibe: "Authentic. Supportive.",
               },
               {
@@ -607,7 +607,7 @@ const Index = () => {
                 url: "https://www.youtube.com/@InvisibleExit",
                 members: "Launching",
                 description:
-                  "Adrian's channel — launching with full walkthroughs on finding your freedom number, validating ideas in 48 hours, and launching without showing your face.",
+                  "Adrian's channel, launching with full walkthroughs on finding your freedom number, validating ideas in 48 hours, and launching without showing your face.",
                 vibe: "Practical. Step-by-step.",
               },
               {
@@ -694,7 +694,7 @@ const Index = () => {
       {/* ── PSYCHOGRAPHIC IDENTIFICATION (Traffic Secrets Secret #1) ── */}
       {/* The Formula above defines WHO they are demographically. This section
            surfaces the fears, desires, and awareness stage that demographics
-           can't capture — the "that's ME" moment before the frameworks. */}
+           can't capture, the "that's ME" moment before the frameworks. */}
       <section className="bg-surface section-normal border-y border-border">
         <div className="container-narrow">
           <div className="text-center mb-10">
@@ -724,7 +724,7 @@ const Index = () => {
                   {
                     fear: "Discovery",
                     detail:
-                      "Your employer finds the side business. The career you spent 15 years building — gone in one Slack message.",
+                      "Your employer finds the side business. The career you spent 15 years building, gone in one Slack message.",
                   },
                   {
                     fear: "Failure",
@@ -770,22 +770,22 @@ const Index = () => {
                   {
                     desire: "Optionality",
                     detail:
-                      "Not to quit — but to have the ABILITY to quit. The power to disagree in a meeting without calculating the financial consequences.",
+                      "Not to quit, but to have the ABILITY to quit. The power to disagree in a meeting without calculating the financial consequences.",
                   },
                   {
                     desire: "Proof of Separation",
                     detail:
-                      "Evidence that your worth exists outside the company. One Stripe notification — $29 from a stranger — changes everything.",
+                      "Evidence that your worth exists outside the company. One Stripe notification, $29 from a stranger, changes everything.",
                   },
                   {
                     desire: "Stealth",
                     detail:
-                      "To build without your employer, colleagues, or LinkedIn network knowing. Anonymity isn't hiding — it's freedom to fail without consequences.",
+                      "To build without your employer, colleagues, or LinkedIn network knowing. Anonymity isn't hiding, it's freedom to fail without consequences.",
                   },
                   {
                     desire: "Systems, Not Hustle",
                     detail:
-                      "A repeatable system that works in 5 hours a week — not a 60-hour grind that burns you out before you reach escape velocity.",
+                      "A repeatable system that works in 5 hours a week, not a 60-hour grind that burns you out before you reach escape velocity.",
                   },
                 ].map((d) => (
                   <div
@@ -809,7 +809,7 @@ const Index = () => {
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
               <p className="text-sm text-foreground leading-relaxed">
                 If you read both columns and thought{" "}
-                <strong className="text-primary">"that's me"</strong> — you're not
+                <strong className="text-primary">"that's me"</strong>, you're not
                 unaware anymore. You're{" "}
                 <strong className="text-foreground">problem-aware</strong>. You
                 know the cage exists. You've felt the bars. You just haven't found
@@ -823,7 +823,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 1b. The 3 FRAMEWORKS — named, proprietary, linked (Expert Secrets Ch 10-11) ── */}
+      {/* ── 1b. The 3 FRAMEWORKS, named, proprietary, linked (Expert Secrets Ch 10-11) ── */}
       {/* EXPERT SECRETS Ch 10: Proprietary Frameworks. Each gets a NAME, an ORIGIN STORY,
            a PROCESS, and a MEASURABLE OUTPUT. This transforms "5 tools" into "3
            methodologies no one else can teach." */}
@@ -839,9 +839,9 @@ const Index = () => {
               The 5 tools are the <strong>implementation</strong> of 3 named
               methodologies:{" "}
               <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Salary-Runway Method</Link>
-              ,{" "}
+{" "}
               <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Triple-Separation Protocol</Link>
-              , and{" "}
+and{" "}
               <Link to="/frameworks" className="text-primary underline hover:text-primary-hover">The Cartridge System</Link>.
               Each has a specific origin, a step-by-step process, and a
               measurable output. Nobody else teaches them.
@@ -864,7 +864,7 @@ const Index = () => {
                 title: "Anonymity Is Your Greatest Asset",
                 story: "Week 3. Team call. Colleague says: 'This website looks like something we'd build.' My blood ran cold for 3 seconds. Then I remembered: different name, different entity, different Stripe, different hosting. Zero connection. Those 3 seconds of panic were the best $25/month I ever spent.",
                 epiphany: "Anonymity isn't hiding. It's freedom to fail without consequences.",
-                microEpiphany: "Three seconds of panic proved the system worked. Not because I was lucky — because detection was mathematically impossible.",
+                microEpiphany: "Three seconds of panic proved the system worked. Not because I was lucky, because detection was mathematically impossible.",
                 steps: ["Separate the legal entity (Wyoming LLC)", "Separate the digital footprint (hosting, Stripe, domain)", "Separate the identity (no name, no LinkedIn, no cross-link)"],
               },
               {
@@ -873,7 +873,7 @@ const Index = () => {
                 title: "The System Beats the Idea",
                 story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one. It made $9/month. So I pivoted. Second product: $47/month. Third: $850. Fourth: $4,100. The system didn't care which idea I picked.",
                 epiphany: "Build the system first. Swap ideas like cartridges.",
-                microEpiphany: "The system didn't care which idea I picked. The wrong idea made $9/month — but the system was already built. So I pivoted and the system still worked.",
+                microEpiphany: "The system didn't care which idea I picked. The wrong idea made $9/month, but the system was already built. So I pivoted and the system still worked.",
                 steps: ["Build the 5-tool pipeline first", "Launch the 'wrong' idea to test the system", "Pivot ideas without rebuilding infrastructure"],
               },
             ].map((secret) => (
@@ -893,7 +893,7 @@ const Index = () => {
                 <p className="text-caption text-muted-foreground italic mb-3 leading-relaxed border-l-2 border-primary/30 pl-4">
                   "{secret.story}"
                 </p>
-                {/* EXPERT SECRETS Ch 8: Micro-Epiphany — the specific "aha" moment per secret */}
+                {/* EXPERT SECRETS Ch 8: Micro-Epiphany, the specific "aha" moment per secret */}
                 <div className="bg-primary/5 border border-primary/15 rounded-lg p-2.5 mb-3">
                   <p className="text-xs text-primary italic leading-relaxed">
                     ✦ {secret.microEpiphany}
@@ -912,18 +912,18 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Manifesto link — de-emphasized, inline reference not CTA */}
+          {/* Manifesto link, de-emphasized, inline reference not CTA */}
           <div className="text-center mt-12">
             <Link
               to="/manifesto"
               onClick={() => trackEvent("homepage_manifesto_clicked")}
               className="text-muted-foreground hover:text-primary text-sm underline transition-colors"
             >
-              Read the full manifesto — the 6 principles of the Invisible Builder
+              Read the full manifesto, the 6 principles of the Invisible Builder
             </Link>
           </div>
 
-          {/* 2026-07-24: removed a "Case studies / Proof stories" block — 3 fully
+          {/* 2026-07-24: removed a "Case studies / Proof stories" block, 3 fully
               invented named people (Sarah K., Marcus T., Jennifer L.) with fake
               specific MRR results and quotes, presented as real proof.
               invisibleexit has zero paying customers; there is nothing real to
@@ -935,13 +935,13 @@ const Index = () => {
       <section className="bg-surface section-normal border-y border-border">
         <div className="container-narrow">
           <div className="text-center mb-10">
-            <p className="text-eyebrow text-primary mb-4">A New Category — Not a Better Tool</p>
+            <p className="text-eyebrow text-primary mb-4">A New Category, Not a Better Tool</p>
             <h2 className="text-h2 text-foreground mb-4">
               What Is <span className="text-gradient">The Invisible Exit System?</span>
             </h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               This isn't a course. It's not a community. It's not a SaaS tool.
-              It's a new category — the world's first anonymity-native framework
+              It's a new category, the world's first anonymity-native framework
               for building recurring revenue while employed.
             </p>
           </div>
@@ -956,7 +956,7 @@ const Index = () => {
               <h3 className="font-bold text-foreground mb-3 text-sm">"Side Hustle" Courses</h3>
               <div className="space-y-2">
                 {[
-                  "Teach you to improve — build a better side business",
+                  "Teach you to improve, build a better side business",
                   "Require you to build publicly (personal brand, LinkedIn)",
                   "Compete with 10,000 other courses teaching the same thing",
                   "Put you in competition with your employer's market",
@@ -978,11 +978,11 @@ const Index = () => {
               <h3 className="font-bold text-foreground mb-3 text-sm">The Invisible Exit System</h3>
               <div className="space-y-2">
                 {[
-                  "Teaches you to build invisible — your employer never knows",
+                  "Teaches you to build invisible, your employer never knows",
                   "Operates under a pseudonym with separate entities",
                   "Uses proprietary frameworks no one else teaches",
                   "Builds in markets unrelated to your employer",
-                  "Uses your job as runway — no quitting required",
+                  "Uses your job as runway, no quitting required",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <span className="text-emerald-500 text-xs shrink-0 mt-0.5">✓</span>
@@ -1050,7 +1050,7 @@ const Index = () => {
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
                 <p className="text-eyebrow text-primary text-xs mb-2">Imagine This</p>
                 <p className="text-sm text-foreground/80 italic leading-relaxed">
-                  It's a Saturday morning. Your phone buzzes. You pick it up —
+                  It's a Saturday morning. Your phone buzzes. You pick it up, 
                   not to check Slack, but to check Stripe. <strong className="text-primary not-italic">$127 overnight.</strong>{" "}
                   From 4 customers you've never met, in a country you've never
                   visited, for a product you built in your lunch breaks. Your
@@ -1078,7 +1078,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── Uncomfortable Truths (Expert Secrets Ch 1 — Polarizing Leader) ── */}
+      {/* ── Uncomfortable Truths (Expert Secrets Ch 1, Polarizing Leader) ── */}
       <section className="bg-red-50 dark:bg-red-950/10 section-normal border-y border-red-200 dark:border-red-900/20">
         <div className="container-narrow">
           <div className="text-center mb-10">
@@ -1109,11 +1109,11 @@ const Index = () => {
               },
               {
                 truth: "Your personal brand is a liability.",
-                detail: "Building publicly means your employer can see everything. Your competitors can copy everything. Your failures are permanent. Anonymity isn't hiding — it's strategy.",
+                detail: "Building publicly means your employer can see everything. Your competitors can copy everything. Your failures are permanent. Anonymity isn't hiding, it's strategy.",
               },
               {
                 truth: "You don't need more motivation. You need math.",
-                detail: "Motiation fades by Thursday. Math is forever. Your freedom number — the exact monthly revenue that replaces your salary — is the only number that matters. Everything else is noise.",
+                detail: "Motiation fades by Thursday. Math is forever. Your freedom number, the exact monthly revenue that replaces your salary, is the only number that matters. Everything else is noise.",
               },
             ].map((item, i) => (
               <div key={i} className="bg-white dark:bg-surface border border-red-200 dark:border-red-900/30 rounded-xl p-5 flex items-start gap-4">
@@ -1144,17 +1144,17 @@ const Index = () => {
           <h2 className="text-h2 text-foreground mb-6">I Didn't Want Escape. I Wanted Optionality.</h2>
           <div className="text-body text-muted-foreground space-y-5 max-w-2xl">
             <p>
-              People assume I wanted to quit. I didn't. I loved parts of my job — the team, the
+              People assume I wanted to quit. I didn't. I loved parts of my job, the team, the
               strategy, the wins. What I wanted was something simpler and more dangerous:
               <strong className="text-foreground"> optionality.</strong> The ability to stay
               because I chose to, not because I had to. The freedom to disagree in a meeting
               without calculating the financial consequences. I wanted to build something that
-              was <em>mine</em> — not a line item in someone else's cap table.
+              was <em>mine</em>, not a line item in someone else's cap table.
             </p>
             <p>
               For 8 years, I told myself the IPO was coming. That my 0.5% would become real.
               The golden handcuffs felt like a partnership. I wasn't unhappy. I was
-              <strong className="text-foreground"> comfortably trapped</strong> — and that's the
+              <strong className="text-foreground"> comfortably trapped</strong>, and that's the
               most dangerous kind of trapped, because nothing forces you to move.
             </p>
           </div>
@@ -1171,7 +1171,7 @@ const Index = () => {
             </p>
             <p>
               Then I spent <strong className="text-foreground">three weekends</strong> researching LLC
-              formations — Wyoming vs. Delaware vs. Estonia — instead of building. That was roughly
+              formations, Wyoming vs. Delaware vs. Estonia, instead of building. That was roughly
               <strong className="text-foreground"> $2,400 in lost building time</strong> (at my hourly rate)
               gone to Googling things I could have had answered in minutes.
             </p>
@@ -1203,7 +1203,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Vehicle Belief — BROKEN WITH A STORY, NOT LOGIC (Expert Secrets Ch 7-8) */}
+            {/* Vehicle Belief, BROKEN WITH A STORY, NOT LOGIC (Expert Secrets Ch 7-8) */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-red-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-red-100 text-red-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -1216,7 +1216,7 @@ const Index = () => {
               {/* EPIPHANY BRIDGE MICRO-STORY (Russell: beliefs break with stories, not arguments) */}
               <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
                 <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
-                  I almost quit. Resignation letter drafted. Then I looked at my bank account: my salary had quietly funded 14 months of building — without giving up a single share. A VC would have charged me 20% of the company for the same runway. My job gave it to me for free. The only cost was 5 hours a week that I'd been spending on Netflix anyway.
+                  I almost quit. Resignation letter drafted. Then I looked at my bank account: my salary had quietly funded 14 months of building, without giving up a single share. A VC would have charged me 20% of the company for the same runway. My job gave it to me for free. The only cost was 5 hours a week that I'd been spending on Netflix anyway.
                 </p>
                 <p className="text-xs text-foreground font-semibold">
                   That's when it clicked: the job wasn't the obstacle. It was the best funding round I never had to pitch for.
@@ -1234,7 +1234,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Internal Belief — MICRO-STORY */}
+            {/* Internal Belief, MICRO-STORY */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-amber-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-amber-100 text-amber-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -1246,10 +1246,10 @@ const Index = () => {
               </h3>
               <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
                 <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
-                  Month 3. I was staring at a half-built landing page, convinced I was too corporate to do this. Then my developer cancelled. I had no choice — I managed the build myself. And I realized something: I already knew how to scope a project, set a deadline, communicate with users, read a P&L, and ship under pressure. Those aren't "corporate skills." Those are the exact skills that separate founders who ship from founders who stall.
+                  Month 3. I was staring at a half-built landing page, convinced I was too corporate to do this. Then my developer cancelled. I had no choice, I managed the build myself. And I realized something: I already knew how to scope a project, set a deadline, communicate with users, read a P&L, and ship under pressure. Those aren't "corporate skills." Those are the exact skills that separate founders who ship from founders who stall.
                 </p>
                 <p className="text-xs text-foreground font-semibold">
-                  I shipped the landing page myself that weekend. It converted at 3.2%. No code required — just the operational judgment I'd been undervaluing for 15 years.
+                  I shipped the landing page myself that weekend. It converted at 3.2%. No code required, just the operational judgment I'd been undervaluing for 15 years.
                 </p>
               </div>
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3">
@@ -1264,7 +1264,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* External Belief — MICRO-STORY */}
+            {/* External Belief, MICRO-STORY */}
             <div className="card-base p-6 sm:p-8 border-l-4 border-blue-400/50">
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-blue-100 text-blue-600 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
@@ -1276,10 +1276,10 @@ const Index = () => {
               </h3>
               <div className="bg-surface rounded-lg p-4 mb-4 border border-border/50">
                 <p className="text-xs text-muted-foreground italic leading-relaxed mb-2">
-                  Week 3 of building. My colleague said during a team call: "Hey, has anyone seen this website? It looks like something we'd build." My blood ran cold for 3 seconds. Then I remembered: different name, different LLC, different Stripe, different hosting, different market. Zero digital connection. The call moved on. Nobody ever mentioned it again. Those 3 seconds of panic proved the system worked — and they were the best $25/month I've ever spent.
+                  Week 3 of building. My colleague said during a team call: "Hey, has anyone seen this website? It looks like something we'd build." My blood ran cold for 3 seconds. Then I remembered: different name, different LLC, different Stripe, different hosting, different market. Zero digital connection. The call moved on. Nobody ever mentioned it again. Those 3 seconds of panic proved the system worked, and they were the best $25/month I've ever spent.
                 </p>
                 <p className="text-xs text-foreground font-semibold">
-                  14 months later: still invisible. Not because I'm clever — because the Triple-Separation Protocol made detection mathematically impossible, not just unlikely.
+                  14 months later: still invisible. Not because I'm clever, because the Triple-Separation Protocol made detection mathematically impossible, not just unlikely.
                 </p>
               </div>
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
@@ -1314,7 +1314,7 @@ const Index = () => {
       </section>
 
       {/* ── 3. Start Here Reading Path ── */}
-      {/* ── 4. The 5 Tools — each mapped to a proprietary framework ── */}
+      {/* ── 4. The 5 Tools, each mapped to a proprietary framework ── */}
       <section className="hero-dark section-wide">
         <div className="container-standard">
           <p className="text-eyebrow text-primary-light mb-4 text-center">The Invisible Exit System</p>
@@ -1399,21 +1399,21 @@ const Index = () => {
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               Stopped waiting for an IPO and started building invisible recurring
               revenue. If you're skeptical, trapped, and wondering if this is
-              real — that's exactly where every builder starts.
+              real, that's exactly where every builder starts.
             </p>
           </div>
 
           {/* ── FOUNDING COHORT STATUS ── */}
           {/* 2026-07-24: replaced fabricated live counters (127 builders, $31K
               combined MRR, 73/1,000 progress bar) with an honest founding-open
-              framing. invisibleexit has zero paying customers today — no number
+              framing. invisibleexit has zero paying customers today, no number
               here is faked or rounded up. See conversion-audit-scored-2026-07-24. */}
           <div className="max-w-2xl mx-auto mb-12 text-center">
             <div className="card-base p-6 border-t-4 border-primary/40 inline-block">
-              <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">Founding cohort — 100 seats, opening now</p>
+              <p className="text-2xl sm:text-3xl font-bold text-primary mb-1">Founding cohort, 100 seats, opening now</p>
               <p className="text-sm text-muted-foreground">
                 No inflated headcount, no fake activity ticker. Be one of the first
-                — the $9/mo founding price is locked for members who join early.
+                - the $9/mo founding price is locked for members who join early.
               </p>
             </div>
           </div>
@@ -1433,7 +1433,7 @@ const Index = () => {
                 <h4 className="text-base font-bold text-foreground mb-2">We Build Invisible</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Every member operates under a pseudonym. No real names, no employer
-                  info, no LinkedIn. Stealth isn't a feature — it's our first principle.
+                  info, no LinkedIn. Stealth isn't a feature, it's our first principle.
                   Your employer will never know.
                 </p>
               </div>
@@ -1455,7 +1455,7 @@ const Index = () => {
                 <h4 className="text-base font-bold text-foreground mb-2">We Share Numbers</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   No vanity metrics. No follower counts. Members share MRR, churn rate,
-                  customer counts — verified by Stripe. The only number that matters is
+                  customer counts, verified by Stripe. The only number that matters is
                   your Freedom Number. Everything else is noise.
                 </p>
               </div>
@@ -1464,7 +1464,7 @@ const Index = () => {
 
           {/* ── FOUNDING MEMBER WALL (honest placeholder) ── */}
           {/* 2026-07-24: removed a fabricated roster of 6 named pseudonyms with
-              invented MRR figures explicitly claimed as "verified by Stripe" —
+              invented MRR figures explicitly claimed as "verified by Stripe", 
               invisibleexit has zero paying customers, so every entry and the
               "27 founding members" count on /founding-wall was fictional. This
               is the single worst honesty violation this audit found on the
@@ -1475,7 +1475,7 @@ const Index = () => {
             <p className="text-eyebrow text-primary mb-2">The Founding Wall</p>
             <h3 className="text-2xl font-bold text-foreground mb-3">Be the First Name Here</h3>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              This wall is empty right now — on purpose. No invented members, no
+              This wall is empty right now, on purpose. No invented members, no
               backdated MRR. The first real founding members (real pseudonyms,
               real Stripe-verified revenue, once it exists) will appear here.
             </p>
@@ -1503,7 +1503,7 @@ const Index = () => {
                     "Bookmark articles about starting something",
                     "Wait for an IPO that won't buy freedom",
                     "Believe corporate loyalty is a virtue",
-                    "Say 'someday' — the most expensive word",
+                    "Say 'someday', the most expensive word",
                     "Let their employer decide their worth",
                     "Build publicly where their boss can see",
                   ].map((item, i) => (
@@ -1521,11 +1521,11 @@ const Index = () => {
                 </p>
                 <div className="space-y-2">
                   {[
-                    "Start something — this Saturday",
+                    "Start something, this Saturday",
                     "Calculate the freedom number and build toward it",
                     "Treat employment as a transaction that funds the exit",
                     "Start with 5 hours this week",
-                    "Let the market decide — $29 × 138 customers",
+                    "Let the market decide, $29 × 138 customers",
                     "Build invisibly under a separate entity",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-2">
@@ -1566,7 +1566,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. Value Stack + Bonuses (DotCom Secrets Ch 12 & Ch 18 — Brunson's Stack) ── */}
+      {/* ── 6. Value Stack + Bonuses (DotCom Secrets Ch 12 & Ch 18, Brunson's Stack) ── */}
       <section className="bg-surface section-normal relative overflow-hidden">
         {/* Ambient glow for the stack section */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
@@ -1585,19 +1585,19 @@ const Index = () => {
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/25 rounded-full px-5 py-2 mb-2 animate-fade-up">
             <Clock className="w-4 h-4 text-red-600 animate-pulse" />
             <span className="text-xs text-red-700 font-semibold text-balance">
-              Founding member pricing ends when the 100th spot fills — currently 27 claimed. No extensions. No exceptions.
+              Founding member pricing ends when the 100th spot fills, currently 27 claimed. No extensions. No exceptions.
             </span>
           </div>
         </div>
 
         <div className="container-narrow space-y-2.5 relative z-10">
-          {/* SECTION 1: Anchored against the alternative — what each tool replaces */}
-          <p className="text-eyebrow text-muted-foreground mb-2 animate-fade-up">The 5 Tools — Anchored Against Real Alternatives</p>
+          {/* SECTION 1: Anchored against the alternative, what each tool replaces */}
+          <p className="text-eyebrow text-muted-foreground mb-2 animate-fade-up">The 5 Tools, Anchored Against Real Alternatives</p>
           {[
             { name: "FYM Dashboard", anchor: "vs. Baremetrics · ChartMogul", anchorPrice: "$79/mo", ourPrice: "Included", outcome: "Real-time MRR tracking, churn analytics, exit timeline" },
             { name: "Idea Pipeline", anchor: "vs. MicroConf · Idea validation tools", anchorPrice: "$49/mo", ourPrice: "Included", outcome: "500+ scored ideas + 48h AI validation" },
             { name: "Stealth Ops Hub", anchor: "vs. Compliance audits · Privacy tools", anchorPrice: "$39/mo", ourPrice: "Included", outcome: "Entity separation, invisibility score, contract audit" },
-            { name: "Launch Control", anchor: "vs. Webflow · Carrd · Notion OS", anchorPrice: "$36/mo", ourPrice: "Included", outcome: "Launch in 5 hrs/week — Stripe, landing pages, sequences" },
+            { name: "Launch Control", anchor: "vs. Webflow · Carrd · Notion OS", anchorPrice: "$36/mo", ourPrice: "Included", outcome: "Launch in 5 hrs/week, Stripe, landing pages, sequences" },
             { name: "Brand Manager", anchor: "vs. Hootsuite · Buffer · VidIQ", anchorPrice: "$49/mo", ourPrice: "Included", outcome: "Faceless content: YouTube scripts, Reddit playbooks, SEO" },
           ].map((item, i) => (
             <div
@@ -1632,20 +1632,20 @@ const Index = () => {
           {/* "Why are these free? Because I need case studies for my launch." */}
           <div className="mt-8 mb-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
             <p className="text-eyebrow text-primary mb-2">
-              🎁 Fast-Action Bonuses (3) — Start today or lose them
+              🎁 Fast-Action Bonuses (3), Start today or lose them
             </p>
             <div className="bg-primary/5 border border-primary/15 rounded-lg px-4 py-2.5 mb-4">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Why are these free?</strong> We're building case studies for our public launch.
                 The first 100 founding members get these bonuses as a thank-you for being early. After that, they become paid add-ons.
-                <span className="text-primary font-semibold"> You're getting them for committing now — not later.</span>
+                <span className="text-primary font-semibold"> You're getting them for committing now, not later.</span>
               </p>
             </div>
           </div>
           {[
-            { name: 'The "Is My Contract Safe?" Audit Checklist — 47 clauses every manager must check before starting', value: "$47" },
-            { name: '25 Pre-Written Micro-SaaS Idea Swipes — ready to validate in 48 hours', value: "$67" },
-            { name: 'The 90-Day Faceless Content Engine — YouTube scripts + Reddit playbooks + SEO templates', value: "$57" },
+            { name: 'The "Is My Contract Safe?" Audit Checklist, 47 clauses every manager must check before starting', value: "$47" },
+            { name: '25 Pre-Written Micro-SaaS Idea Swipes, ready to validate in 48 hours', value: "$67" },
+            { name: 'The 90-Day Faceless Content Engine, YouTube scripts + Reddit playbooks + SEO templates', value: "$57" },
           ].map((bonus) => (
             <div
               key={bonus.name}
@@ -1664,7 +1664,7 @@ const Index = () => {
             </div>
           ))}
 
-          {/* SECTION 3: The Dramatic Reveal — Brunson Ch 18 style */}
+          {/* SECTION 3: The Dramatic Reveal, Brunson Ch 18 style */}
           <div className="relative mt-10">
             {/* Thin separator line */}
             <div className="absolute -top-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -1720,7 +1720,7 @@ const Index = () => {
 
             {/* ── HONESTY AT THE DECISION POINT ── */}
             {/* No customers yet means no testimonials yet. A straight founder's note
-                converts better than an invented one — and doesn't poison trust. */}
+                converts better than an invented one, and doesn't poison trust. */}
             <div className="mt-6 max-w-lg mx-auto bg-white/60 backdrop-blur border border-success/20 rounded-xl p-5 animate-fade-up" style={{ animationDelay: "580ms" }}>
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-success to-primary flex items-center justify-center shrink-0 text-white font-bold text-sm">
@@ -1733,14 +1733,14 @@ const Index = () => {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed italic">
                     "Why $9? Because I want the price to be a non-decision. You're joining early, while I'm still
-                    building this in public — so you get the founding price locked for life, and I get people using the
+                    building this in public, so you get the founding price locked for life, and I get people using the
                     tools and telling me what to fix. If it's not for you, cancel in two clicks."
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* BRUNSON CH 11: The One Thing — simplify the entire offer to ONE sentence */}
+            {/* BRUNSON CH 11: The One Thing, simplify the entire offer to ONE sentence */}
             <div className="mt-8 max-w-lg mx-auto bg-primary/10 border border-primary/25 rounded-xl p-4 text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
               <p className="text-xs text-primary uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
               <p className="text-foreground font-bold text-base">Get all 5 tools + 3 bonuses for $9/month. Cancel anytime.</p>
@@ -1760,12 +1760,12 @@ const Index = () => {
               </div>
               <p className="text-sm text-foreground font-medium leading-relaxed mb-3">
                 <strong className="text-success">If</strong> you use the Freedom Number Calculator, validate one idea,
-                and don't have a clear path to $4,000/month within 30 days —{" "}
+                and don't have a clear path to $4,000/month within 30 days, {" "}
                 <strong className="text-success">then</strong> email me and I'll refund every penny.
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 No forms. No "retention specialist" calls. No awkward questions. One email = full refund.{" "}
-                <strong className="text-foreground">And you keep all 3 bonuses forever — even if you cancel.</strong>{" "}
+                <strong className="text-foreground">And you keep all 3 bonuses forever, even if you cancel.</strong>{" "}
                 That's how confident I am this works.
               </p>
             </div>
@@ -1844,21 +1844,21 @@ const Index = () => {
             {/* Kill the 3 false beliefs at the offer: "Why so cheap? What's the catch? Can I do this?" */}
             <div className="mt-10 max-w-lg mx-auto animate-fade-up" style={{ animationDelay: "800ms" }}>
               <p className="text-center text-xs text-muted-foreground/70 font-semibold uppercase tracking-wider mb-4">
-                Wait — Before You Go…
+                Wait, Before You Go…
               </p>
               <div className="space-y-2">
                 {[
                   {
                     q: "Why $9? What's the catch?",
-                    a: "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life — not a trial, not an intro rate. Your card gets charged $9 every month until you cancel.",
+                    a: "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life, not a trial, not an intro rate. Your card gets charged $9 every month until you cancel.",
                   },
                   {
                     q: "Is this one of those things where it's $9 today and $97 next week?",
-                    a: "No. The price is $9/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $29/month — a completely separate choice you can make later. Or never.",
+                    a: "No. The price is $9/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $29/month, a completely separate choice you can make later. Or never.",
                   },
                   {
                     q: "What if I sign up and realize I don't have time?",
-                    a: "Then cancel. One click in your dashboard, no questions, no friction. You'll still have 30 days to decide under the guarantee. The entire system is designed for 5 hours/week — if you don't have that right now, bookmark it and come back when you do.",
+                    a: "Then cancel. One click in your dashboard, no questions, no friction. You'll still have 30 days to decide under the guarantee. The entire system is designed for 5 hours/week, if you don't have that right now, bookmark it and come back when you do.",
                   },
                 ].map((item, i) => (
                   <details key={i} className="group bg-white/50 border border-border/50 rounded-lg overflow-hidden">
@@ -1897,7 +1897,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6b. The Path Forward — Recap (Ch 2: Continuity/Frequency) ── */}
+      {/* ── 6b. The Path Forward, Recap (Ch 2: Continuity/Frequency) ── */}
       <section className="bg-white section-normal border-t border-border">
         <div className="container-standard">
           <div className="text-center mb-10">
@@ -2092,7 +2092,7 @@ const Index = () => {
             <h2 className="text-h2 text-foreground mb-4">Why Members Stay Month After Month</h2>
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               A subscription is a promise. Russell Brunson's Chapter 12 teaches that the
-              continuous loop — the thing that makes people stay — must compound value every
+              continuous loop, the thing that makes people stay, must compound value every
               month. Here's what keeps Invisible Exit members engaged long after the first week.
             </p>
           </div>
@@ -2142,7 +2142,7 @@ const Index = () => {
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
               The loop compounds: more MRR → higher invisibility score → more confidence →
               more products → more MRR. The system feeds itself. That's why members who start
-              at $9/month upgrade to Founding — the loop is worth more than any single tool.
+              at $9/month upgrade to Founding, the loop is worth more than any single tool.
             </p>
           </div>
         </div>
@@ -2159,13 +2159,13 @@ const Index = () => {
               <div>
                 <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-5">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                  FREE BOOK — Just Pay Shipping
+                  FREE BOOK, Just Pay Shipping
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
                   Prefer to Read First?
                 </h3>
                 <p className="text-white/60 text-base leading-relaxed mb-4 max-w-lg">
-                  Get the complete <strong className="text-white">Invisible Exit Manifesto</strong> —
+                  Get the complete <strong className="text-white">Invisible Exit Manifesto</strong>, 
                   152 pages, 7 chapters, the exact $4,100/month system. Free. You just cover $4.95 shipping.
                 </p>
                 <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -2193,7 +2193,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 11. Final CTA — Continuous Loop + Multi-CTA ── */}
+      {/* ── 11. Final CTA, Continuous Loop + Multi-CTA ── */}
       <section className="hero-dark section-wide">
         <div className="container-narrow text-center">
           {/* Qualifier */}
@@ -2206,7 +2206,7 @@ const Index = () => {
             The 97% would have left by now. The fact that you're still here means something.
           </p>
 
-          {/* EXPERT SECRETS Ch 15: The "5 Years From Now" Close — All-or-Nothing framing */}
+          {/* EXPERT SECRETS Ch 15: The "5 Years From Now" Close, All-or-Nothing framing */}
           <div className="max-w-2xl mx-auto my-10 bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8 text-left">
             <p className="text-eyebrow text-primary-light mb-4 text-center">Five Years From Now</p>
             <div className="space-y-4 text-white/60 text-sm sm:text-base leading-relaxed">
@@ -2214,10 +2214,10 @@ const Index = () => {
                 Picture yourself five years from today. Two versions of you exist.
               </p>
               <p>
-                <strong className="text-white/40">Version one:</strong> You closed this page. You went back to the spreadsheet. The IPO happened — or it didn't. You're still in the same chair, with the same 0.5%, telling yourself the same story about "someday." Five more years of golden handcuffs. Five more years of someone else owning your exit.
+                <strong className="text-white/40">Version one:</strong> You closed this page. You went back to the spreadsheet. The IPO happened, or it didn't. You're still in the same chair, with the same 0.5%, telling yourself the same story about "someday." Five more years of golden handcuffs. Five more years of someone else owning your exit.
               </p>
               <p>
-                <strong className="text-primary-light">Version two:</strong> You calculated your freedom number today. You started small — 5 hours a week, one boring product, one anonymous LLC. Today, five years later, you have $8,000/month in recurring revenue from products you own. You walk into meetings differently. You negotiate differently. You're still employed — but by choice, not by necessity. The handcuffs came off quietly, three years ago, and nobody at your company ever noticed.
+                <strong className="text-primary-light">Version two:</strong> You calculated your freedom number today. You started small, 5 hours a week, one boring product, one anonymous LLC. Today, five years later, you have $8,000/month in recurring revenue from products you own. You walk into meetings differently. You negotiate differently. You're still employed, but by choice, not by necessity. The handcuffs came off quietly, three years ago, and nobody at your company ever noticed.
               </p>
               <p className="text-white font-medium pt-2">
                 Same person. Same salary. Same 5 hours. The only difference is what you decided to do in the next 90 seconds.
@@ -2238,7 +2238,7 @@ const Index = () => {
               }}
               className="btn-primary text-lg px-8 inline-flex items-center gap-2"
             >
-              I'm Ready — Calculate My Freedom Number
+              I'm Ready, Calculate My Freedom Number
               <ArrowRight className="w-5 h-5" />
             </button>
             <p className="text-sm text-white/40 mt-3">

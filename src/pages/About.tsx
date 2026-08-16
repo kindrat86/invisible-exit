@@ -76,7 +76,7 @@ const About = () => {
     <div className="min-h-screen">
       <SEOHead
         title="About Invisible Exit | Built by a Corporate Manager, for Corporate Managers"
-        description="Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed — without his employer finding out. The platform shares the exact frameworks that worked."
+        description="Invisible Exit was founded by Adrian, a corporate manager who built a profitable micro-SaaS while employed, without his employer finding out. The platform shares the exact frameworks that worked."
         url="/about"
       />
       {jsonLdArray.map((ld, i) => (
@@ -114,7 +114,7 @@ const About = () => {
             Invisible Exit is a membership platform with 5 AI-powered tools that help
             corporate managers build anonymous micro-SaaS businesses. The platform was
             created by <strong>Adrian</strong>, a corporate manager who built a profitable
-            side business while employed — without his employer discovering it.
+            side business while employed, without his employer discovering it.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             After years of watching talented colleagues stay trapped by golden handcuffs,

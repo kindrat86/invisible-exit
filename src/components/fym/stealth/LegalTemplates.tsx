@@ -70,7 +70,7 @@ export default function LegalTemplates() {
       await navigator.clipboard.writeText(content);
       toast.success("Template copied to clipboard");
     } catch {
-      toast.error("Failed to copy — try selecting the text manually");
+      toast.error("Failed to copy, try selecting the text manually");
     }
   };
 

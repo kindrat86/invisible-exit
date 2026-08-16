@@ -18,9 +18,9 @@ import { trackEvent } from "@/lib/analytics";
 import GuaranteeBox from "@/components/GuaranteeBox";
 
 /**
- * DOTCOM SECRETS: Chapter 9 — Book Funnels
+ * DOTCOM SECRETS: Chapter 9:  Book Funnels
  *
- * Russell's highest-converting organic funnel: "Free Book — Just Pay Shipping."
+ * Russell's highest-converting organic funnel: "Free Book, Just Pay Shipping."
  *
  * Structure:
  *   1. Book cover mockup + "FREE" badge
@@ -209,7 +209,7 @@ const BookFunnelPage = () => {
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
         title="FREE BOOK: The Invisible Exit Manifesto | Invisible Exit"
-        description="Get the complete Invisible Exit Manifesto FREE — just pay shipping. 7 chapters. The exact system for building invisible recurring revenue while employed."
+        description="Get the complete Invisible Exit Manifesto FREE, just pay shipping. 7 chapters. The exact system for building invisible recurring revenue while employed."
         url="/free-book"
       />
 
@@ -274,7 +274,7 @@ const BookFunnelPage = () => {
           <div>
             <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-6">
               <BookOpen className="w-4 h-4" />
-              FREE BOOK — JUST PAY SHIPPING
+              FREE BOOK, JUST PAY SHIPPING
             </div>
 
             <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
@@ -426,7 +426,7 @@ const BookFunnelPage = () => {
             </p>
             <p className="text-white/50 text-sm mb-6">
               While you wait for the physical book, start with the Freedom Number
-              calculator — it takes 90 seconds.
+              calculator, it takes 90 seconds.
             </p>
             <Link
               to="/freedom"
@@ -580,7 +580,7 @@ const BookFunnelPage = () => {
               className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-[hsl(222_47%_11%)] font-bold text-lg py-4 px-8 rounded-xl transition-all hover:shadow-lg hover:shadow-amber-500/25 min-h-[56px]"
             >
               <BookOpen className="w-5 h-5" />
-              Yes — Send Me the FREE Book
+              Yes, Send Me the FREE Book
               <ArrowRight className="w-5 h-5" />
             </button>
             <p className="text-white/30 text-xs mt-3">

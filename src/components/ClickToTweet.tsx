@@ -24,14 +24,14 @@ export function ClickToTweet({
   const handleClick = () => {
     trackEvent("click_to_tweet_clicked", { quote: quote.slice(0, 80) });
 
-    const text = `${quote} — @${via}`;
+    const text = `${quote}, @${via}`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&via=${via}`;
     window.open(url, "_blank", "noopener,noreferrer,width=600,height=400");
   };
 
   const handleCopy = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigator.clipboard.writeText(`"${quote}" — @${via}`);
+    navigator.clipboard.writeText(`"${quote}", @${via}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

@@ -129,7 +129,7 @@ const ValueStack = () => {
               { label: "Community access ($97/mo × 12)", value: "$1,164" },
               { label: "Monthly masterclasses ($197 × 12)", value: "$2,364" },
               { label: "Early access to new features", value: "$240" },
-              { label: "Founding wall + status", value: "—" },
+              { label: "Founding wall + status", value: ", " },
             ].map((row, i) => (
               <div key={i} className="flex items-center justify-between py-1.5 border-b border-white/5">
                 <span className="text-white/50 text-sm">{row.label}</span>

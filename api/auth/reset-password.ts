@@ -11,7 +11,7 @@ const APP_URL = process.env.APP_URL || "https://invisibleexit.com";
 async function sendResetEmail(email: string, token: string): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn("[reset-password] RESEND_API_KEY not set — skipping email send");
+    console.warn("[reset-password] RESEND_API_KEY not set, skipping email send");
     return;
   }
   const { Resend } = await import("resend");

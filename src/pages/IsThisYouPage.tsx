@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * EXPERT SECRETS: Chapter 1 — The Charismatic Leader / Audience Qualification
+ * EXPERT SECRETS: Chapter 1:  The Charismatic Leader / Audience Qualification
  *
  * Russell: "Not everyone is your customer. The faster you repel the
  * wrong people, the faster you attract the right ones."

@@ -28,9 +28,9 @@ def convert(md_path: str):
     body = markdown.markdown(md_text, extensions=["tables", "fenced_code", "sane_lists"])
     title = md_text.splitlines()[0].lstrip("# ").strip()
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>{title} — InvisibleExit</title><style>{CSS}</style></head>
+<title>{title}, InvisibleExit</title><style>{CSS}</style></head>
 <body>{body}
-<div class="brand-footer">InvisibleExit — the faceless side-business system for employed professionals · invisibleexit.com</div>
+<div class="brand-footer">InvisibleExit, the faceless side-business system for employed professionals · invisibleexit.com</div>
 </body></html>"""
     html_path = p.with_suffix(".pdf.html")
     html_path.write_text(html)

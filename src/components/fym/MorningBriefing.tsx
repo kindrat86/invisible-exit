@@ -36,7 +36,7 @@ function MorningBriefingInner({ briefing, hasEntries }: MorningBriefingProps) {
             Welcome
           </p>
           <p className="text-sm text-white/80">
-            Let's see where you stand. Fill in your numbers below — what you
+            Let's see where you stand. Fill in your numbers below, what you
             spend, what you earn on the side, and what freedom looks like for you. Then save your first entry. Your exit journey starts today.
           </p>
         </div>

@@ -1,7 +1,7 @@
 {
   "protocolVersion": "0.3.0",
   "name": "Invisible Exit Agent",
-  "description": "Faceless side-business system for employed professionals — 5 AI tools to validate, launch, and grow anonymous micro-SaaS recurring revenue without quitting your job.",
+  "description": "Faceless side-business system for employed professionals, 5 AI tools to validate, launch, and grow anonymous micro-SaaS recurring revenue without quitting your job.",
   "url": "https://invisibleexit.com",
   "preferredTransport": "JSONRPC",
   "iconUrl": "https://invisibleexit.com/icon.png",
@@ -38,7 +38,7 @@
   "attribution": "Invisible Exit, https://invisibleexit.com",
   "content": [
     {
-      "title": "Invisible Exit — Side Business System",
+      "title": "Invisible Exit, Side Business System",
       "url": "https://invisibleexit.com/",
       "description": "Build a $4,000/month side business without quitting your job. 5 AI tools for anonymous micro-SaaS.",
       "type": "homepage"

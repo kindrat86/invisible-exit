@@ -37,7 +37,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaTitle: "12 Stripe Alternatives for Micro-SaaS (2026)",
     metaDescription: "The best Stripe alternatives for micro-SaaS founders. Compare pricing, features, ease of setup, and international availability for recurring billing.",
     h1: "Stripe Alternatives for Micro-SaaS Founders",
-    intro: "Stripe dominates online payments, but it is not the only option. For micro-SaaS founders — especially those outside the US or building subscription products — several alternatives offer better pricing, easier setup, or features Stripe lacks.",
+    intro: "Stripe dominates online payments, but it is not the only option. For micro-SaaS founders, especially those outside the US or building subscription products, several alternatives offer better pricing, easier setup, or features Stripe lacks.",
     why: "Common reasons to look beyond Stripe: unavailable in your country, high transaction fees (2.9% + 30¢), complex tax handling (Stripe Tax is expensive), or you need merchant of record (MoR) services that handle VAT/GST automatically.",
     alternatives: [
       { name: "Lemon Squeezy", url: "https://lemonsqueezy.com", bestFor: "Merchant of record, digital products, global VAT handling", pricing: "5% + 50¢ per transaction", pros: ["Handles global tax compliance (VAT, GST, sales tax)", "No Stripe account needed", "Instant global payouts", "Built-in affiliate system"], cons: ["5% fee is higher than Stripe", "Less developer control", "Limited customization"] },
@@ -60,7 +60,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaDescription: "Cheaper Mailchimp alternatives for micro-SaaS and side businesses. Compare pricing, automation, deliverability, and ease of use.",
     h1: "Mailchimp Alternatives for Micro-SaaS Founders",
     intro: "Mailchimp has become expensive as your list grows, and its automation features lag behind dedicated platforms. Here are the best alternatives for micro-SaaS founders.",
-    why: "Mailchimp pricing scales steeply — at 10,000 subscribers you pay $100+/month. Other platforms offer better automation, transactional email, or simply lower prices.",
+    why: "Mailchimp pricing scales steeply, at 10,000 subscribers you pay $100+/month. Other platforms offer better automation, transactional email, or simply lower prices.",
     alternatives: [
       { name: "Resend", url: "https://resend.com", bestFor: "Developers, transactional + marketing email", pricing: "Free to 3,000/mo, then $20/mo for 50K", pros: ["Developer-first API", "React email templates", "Generous free tier", "Marketing + transactional in one"], cons: ["Newer platform", "No visual email builder yet", "Limited integrations"] },
       { name: "Loops", url: "https://loops.so", bestFor: "SaaS email marketing, lifecycle emails", pricing: "Free to 1,000 contacts, then $50/mo for 10K", pros: ["Beautiful UI", "Built for SaaS", "Lifecycle email sequences", "No-code audience builder"], cons: ["Newer, smaller ecosystem", "No free tier beyond 1K", "Limited A/B testing"] },
@@ -113,7 +113,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
       { name: "Turso", url: "https://turso.tech", bestFor: "Edge SQLite, multi-region", pricing: "Free to 9GB, then $29/mo", pros: ["Edge replication (fast globally)", "SQLite-based (simple)", "Generous free tier", "Low latency everywhere"], cons: ["SQLite limitations", "No built-in auth", "Newer ecosystem"] },
     ],
     faqs: [
-      { question: "What is the best self-hosted Supabase alternative?", answer: "PocketBase — a single binary that includes database, auth, real-time, and storage. If you need full Supabase features, self-host Supabase via Docker (it is open-source)." },
+      { question: "What is the best self-hosted Supabase alternative?", answer: "PocketBase, a single binary that includes database, auth, real-time, and storage. If you need full Supabase features, self-host Supabase via Docker (it is open-source)." },
     ],
   },
   {
@@ -144,7 +144,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaTitle: "7 ChatGPT Alternatives for Building Micro-SaaS",
     metaDescription: "ChatGPT alternatives for coding, writing, and business tasks: Claude, Gemini, Cursor, Copilot, and more. Compare context windows and pricing.",
     h1: "ChatGPT Alternatives for Building a Side Business",
-    intro: "ChatGPT is the default AI tool, but alternatives can be better for specific tasks — coding, writing, research, or privacy.",
+    intro: "ChatGPT is the default AI tool, but alternatives can be better for specific tasks, coding, writing, research, or privacy.",
     why: "Different AI models excel at different things. Claude writes better prose. Gemini has a massive context window. Cursor integrates directly into your IDE.",
     alternatives: [
       { name: "Claude (Anthropic)", url: "https://claude.ai", bestFor: "Writing, long-context analysis, coding", pricing: "Free tier, $20/mo Pro", pros: ["200K token context window", "Better at nuanced writing", "Excellent code generation", "Constitutional AI (safer)"], cons: ["No image generation", "Smaller training data cutoff", "Usage limits on free tier"] },
@@ -166,7 +166,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaDescription: "Shopify alternatives for selling digital products, SaaS subscriptions, and online courses. Compare features and pricing for micro-SaaS.",
     h1: "Shopify Alternatives for Digital Product Founders",
     intro: "Shopify is overkill (and expensive) for selling digital products, SaaS subscriptions, or courses. These alternatives are purpose-built for digital sales.",
-    why: "Shopify charges $29+/month minimum plus transaction fees. For digital products, you need license key delivery, download links, and subscription management — not inventory tracking.",
+    why: "Shopify charges $29+/month minimum plus transaction fees. For digital products, you need license key delivery, download links, and subscription management, not inventory tracking.",
     alternatives: [
       { name: "Lemon Squeezy", url: "https://lemonsqueezy.com", bestFor: "Digital products, SaaS, subscriptions", pricing: "5% + 50¢ per transaction", pros: ["No monthly fee", "Handles VAT/Tax globally", "License keys built in", "Instant payouts"], cons: ["5% fee on every sale", "Less customization", "No physical products"] },
       { name: "Gumroad", url: "https://gumroad.com", bestFor: "One-off digital products, courses", pricing: "10% + 30¢ per transaction", pros: ["Easiest setup", "Built-in audience discovery", "Course delivery included", "No monthly fee"], cons: ["10% fee is high", "Limited customization", "Not ideal for SaaS subscriptions"] },
@@ -249,7 +249,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaTitle: "6 Zendesk Alternatives for Micro-SaaS",
     metaDescription: "Affordable Zendesk alternatives for solo founders and micro-SaaS. Compare Crisp, Intercom, Plain, and self-hosted help desks.",
     h1: "Zendesk Alternatives for Micro-SaaS Founders",
-    intro: "Zendesk starts at $55/seat/mo — absurd for a micro-SaaS. These alternatives offer live chat, ticketing, and knowledge bases at a fraction of the cost.",
+    intro: "Zendesk starts at $55/seat/mo, absurd for a micro-SaaS. These alternatives offer live chat, ticketing, and knowledge bases at a fraction of the cost.",
     why: "For a solo founder with 50-500 customers, you need a lightweight help desk, not an enterprise support suite.",
     alternatives: [
       { name: "Plain", url: "https://plain.com", bestFor: "API-first support, developer tools", pricing: "Free to 100 issues/mo, then $35/mo", pros: ["Built for developers", "API-first design", "Modern UI", "Generous free tier"], cons: ["Newer platform", "Limited integrations", "No live chat yet"] },
@@ -274,7 +274,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     why: "For a solo founder who just needs a booking link, Calendly's free tier is limited. Self-hostable alternatives offer full control.",
     alternatives: [
       { name: "Cal.com", url: "https://cal.com", bestFor: "Open-source Calendly alternative", pricing: "Free self-hosted, $12/mo cloud", pros: ["Open-source", "Self-hostable", "Full-featured free tier", "Modern, clean UI"], cons: ["Self-hosting requires setup", "Smaller ecosystem", "Fewer integrations"] },
-      { name: "TidyCal", url: "https://tidycal.com", bestFor: "One-time payment, lifetime deal", pricing: "$39 lifetime (!)", pros: ["Lifetime deal — pay once", "Simple and fast", "No monthly fees ever", "Booking pages + forms"], cons: ["Limited features", "No team scheduling", "UI is basic"] },
+      { name: "TidyCal", url: "https://tidycal.com", bestFor: "One-time payment, lifetime deal", pricing: "$39 lifetime (!)", pros: ["Lifetime deal, pay once", "Simple and fast", "No monthly fees ever", "Booking pages + forms"], cons: ["Limited features", "No team scheduling", "UI is basic"] },
       { name: "SavvyCal", url: "https://savvycal.com", bestFor: "Scheduling with overlay calendars", pricing: "$12/mo", pros: ["Best scheduling UX", "Overlay calendar comparison", "SMS reminders", "Powerful routing"], cons: ["No free tier", "Newer platform", "Less known"] },
       { name: "Arrangr", url: "https://arrangr.com", bestFor: "Round-robin and group scheduling", pricing: "Free tier, $10/mo Pro", pros: ["Group scheduling", "Round-robin assignment", "Free tier available", "Good for teams"], cons: ["Less polished UI", "Fewer integrations", "Niche focus"] },
       { name: "Mixmax", url: "https://mixmax.com", bestFor: "Email-integrated scheduling", pricing: "From $9/mo", pros: ["Schedule from Gmail", "Email sequences + tracking", "CRM integration", "Good for sales"], cons: ["Gmail-only", "Overlaps with other tools", "Can feel bloated"] },
@@ -292,7 +292,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
     metaDescription: "Affordable Intercom alternatives: Crisp, Chatwoot, Plain, Help Scout. Compare pricing, features, and open-source options.",
     h1: "Intercom Alternatives for Micro-SaaS",
     intro: "Intercom starts at $39/seat/mo and gets expensive fast. These alternatives offer similar features at a fraction of the cost.",
-    why: "For a micro-SaaS with under 500 customers, Intercom is overkill. You need live chat, maybe a chatbot, and a shared inbox — not an enterprise customer platform.",
+    why: "For a micro-SaaS with under 500 customers, Intercom is overkill. You need live chat, maybe a chatbot, and a shared inbox, not an enterprise customer platform.",
     alternatives: [
       { name: "Crisp", url: "https://crisp.chat", bestFor: "All-in-one chat, chatbot, CRM", pricing: "Free tier, $25/mo Pro", pros: ["Much cheaper than Intercom", "Chatbot included on Pro", "Multi-channel inbox", "Free tier"], cons: ["Fewer features", "Limited automation", "Smaller ecosystem"] },
       { name: "Chatwoot", url: "https://chatwoot.com", bestFor: "Open-source Intercom clone", pricing: "Free self-hosted, €17/seat", pros: ["Open-source", "Multi-channel", "Self-hostable", "Intercom-like UI"], cons: ["Self-hosting needed", "Fewer integrations", "Community support"] },
@@ -344,7 +344,7 @@ export const toolAlternatives: ToolAlternativePage[] = [
       { name: "Akira", url: "https://design.akiraapp.com", bestFor: "Native Linux design tool", pricing: "Free (open-source)", pros: ["Open-source", "Native Linux app", "Early stage but promising", "No subscription"], cons: ["Very early development", "Limited features", "Small team"] },
     ],
     faqs: [
-      { question: "What is the best open-source Figma alternative?", answer: "Penpot — open-source, self-hostable, and SVG-native. It is the closest to a true Figma replacement in the open-source world." },
+      { question: "What is the best open-source Figma alternative?", answer: "Penpot, open-source, self-hostable, and SVG-native. It is the closest to a true Figma replacement in the open-source world." },
     ],
   },
   {

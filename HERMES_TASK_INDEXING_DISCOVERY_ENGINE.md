@@ -1,7 +1,7 @@
-# HERMES TASK — invisibleexit.com: Instant-Indexing & Discovery Engine
+# HERMES TASK, invisibleexit.com: Instant-Indexing & Discovery Engine
 
 > **Runbook for:** Hermes Agent running DeepSeek v4 Pro
-> **Mode:** AUTONOMOUS — build, validate, commit, deploy, and submit for indexing without human intervention, subject to the fail-safes in §1.
+> **Mode:** AUTONOMOUS, build, validate, commit, deploy, and submit for indexing without human intervention, subject to the fail-safes in §1.
 > **Repo:** `~/invisible-exit` (Vite + React SPA, ~4,005 built pages, heavy pSEO + i18n)
 > **Deploy:** Vercel **prebuilt** with `--archive=tgz` (project `invisible-exit`).
 > **Author of runbook:** Claude (2026-07-21), grounded in a live audit.
@@ -10,51 +10,51 @@
 
 ## 0. What you are building and why
 
-invisibleexit.com has **4,005 built pages** (ideas, professions, cities, salaries, niches, compare, guides, blog, glossary, i18n). For a fleet this size, the bottleneck to organic traffic is **discovery and indexation** — search engines have to find, crawl, and index pages before any of them can rank. The audit found this layer is **half-wired**:
+invisibleexit.com has **4,005 built pages** (ideas, professions, cities, salaries, niches, compare, guides, blog, glossary, i18n). For a fleet this size, the bottleneck to organic traffic is **discovery and indexation**, search engines have to find, crawl, and index pages before any of them can rank. The audit found this layer is **half-wired**:
 
 1. **IndexNow is set up but dormant.** A valid key file exists (`public/invisibleexit-indexnow-2026.txt`, key = `invisibleexit-indexnow-2026`) but **no script ever submits a single URL.** Instant indexing infrastructure, never fired.
-2. **Sitemap index is incomplete.** `sitemap.xml` references 15 of the 18 sub-sitemaps — `sitemap-pseo.xml` and `sitemap-scenarios.xml` are **orphaned** (their pages are built but never submitted). A stale competing `sitemap-index.xml` (2 entries) muddies things.
+2. **Sitemap index is incomplete.** `sitemap.xml` references 15 of the 18 sub-sitemaps, `sitemap-pseo.xml` and `sitemap-scenarios.xml` are **orphaned** (their pages are built but never submitted). A stale competing `sitemap-index.xml` (2 entries) muddies things.
 3. **`public/robots.txt` has no `Sitemap:` line at all.**
 4. **No HTML sitemap** for crawl paths / PageRank distribution to deep pages.
 
-You will ship a **Discovery Engine** that fixes all four — deterministically and low-risk.
+You will ship a **Discovery Engine** that fixes all four, deterministically and low-risk.
 
-**Why this is the right lever (and out-of-the-box, not "just Bing SEO"):** IndexNow pings Bing and Yandex — and **Bing's index powers ChatGPT Search and Microsoft Copilot.** So activating instant indexing on a 4,000-page fleet is simultaneously a classic-search AND an **AI-search (AEO)** win: new/changed pages appear in ChatGPT Search / Copilot far faster. Combined with a complete sitemap index + HTML hub, this gets the *whole fleet* discovered — the prerequisite for every downstream ranking.
+**Why this is the right lever (and out-of-the-box, not "just Bing SEO"):** IndexNow pings Bing and Yandex, and **Bing's index powers ChatGPT Search and Microsoft Copilot.** So activating instant indexing on a 4,000-page fleet is simultaneously a classic-search AND an **AI-search (AEO)** win: new/changed pages appear in ChatGPT Search / Copilot far faster. Combined with a complete sitemap index + HTML hub, this gets the *whole fleet* discovered, the prerequisite for every downstream ranking.
 
 ---
 
-## 1. 🚨 GUARDRAILS + FAIL-SAFES — READ FIRST
+## 1. 🚨 GUARDRAILS + FAIL-SAFES, READ FIRST
 
 ### 1a. NEVER fabricate.
 - Every URL you submit or list must come from the site's **own sitemaps / built pages**. Do not invent URLs.
 
 ### 1b. Only ping LIVE URLs.
-- IndexNow must run **after** deploy, against URLs read from the **live** sitemaps — never ping a URL before it's live (that gets the key throttled).
+- IndexNow must run **after** deploy, against URLs read from the **live** sitemaps, never ping a URL before it's live (that gets the key throttled).
 
 ### 1c. Don't break the build.
-- This repo has **pre-existing `tsc` errors** — do NOT add a `tsc --noEmit` gate or "fix" unrelated type errors. The build uses `vite build` + `tsx` scripts (lenient). Your new scripts must run cleanly under `npx tsx` (plain, defensively-typed TS). Keep them dependency-free.
+- This repo has **pre-existing `tsc` errors**, do NOT add a `tsc --noEmit` gate or "fix" unrelated type errors. The build uses `vite build` + `tsx` scripts (lenient). Your new scripts must run cleanly under `npx tsx` (plain, defensively-typed TS). Keep them dependency-free.
 - Do NOT touch the SPA router, `index.html`'s existing scripts, or i18n/prerender logic. Everything you add is either a **new script**, a **generated static file in `dist/`/`public/`**, or a **one-line `package.json`/`robots.txt` edit**.
 
 ### 1d. Idempotency + non-fatal indexing.
 - All scripts must be safe to re-run (no duplicate sitemap entries, no duplicate robots lines).
-- IndexNow submission failures are **non-fatal** — log and continue; never let them fail the deploy.
+- IndexNow submission failures are **non-fatal**, log and continue; never let them fail the deploy.
 
 ### 1e. Working tree.
 - The tree may have minor generated changes (e.g. `public/blog/rss.xml`). `git add` **only the files this task creates/edits** (listed in Definition of Done). Do not commit unrelated changes.
 
 ### 1f. Stale service worker.
-- Known gotcha: a service worker can serve a stale first load. This does not affect crawlers or your deploy — ignore it, but do not add/modify any SW.
+- Known gotcha: a service worker can serve a stale first load. This does not affect crawlers or your deploy, ignore it, but do not add/modify any SW.
 
 ---
 
-## 2. Deliverable A — `scripts/reconcile-sitemap-index.ts`
+## 2. Deliverable A, `scripts/reconcile-sitemap-index.ts`
 
-A post-build reconciler that rebuilds `dist/sitemap.xml` as a **complete** index of every `sitemap-*.xml` present in `dist/` (auto-includes `pseo`, `scenarios`, and any future sub-sitemap). Deterministic and future-proof — beats hand-editing the generator.
+A post-build reconciler that rebuilds `dist/sitemap.xml` as a **complete** index of every `sitemap-*.xml` present in `dist/` (auto-includes `pseo`, `scenarios`, and any future sub-sitemap). Deterministic and future-proof, beats hand-editing the generator.
 
 ```ts
 #!/usr/bin/env npx tsx
 /**
- * reconcile-sitemap-index.ts — rebuild dist/sitemap.xml so the sitemap INDEX
+ * reconcile-sitemap-index.ts, rebuild dist/sitemap.xml so the sitemap INDEX
  * references EVERY content sub-sitemap in dist/ (fixes orphaned pseo/scenarios).
  * Runs at the END of the build. Idempotent.
  */
@@ -65,7 +65,7 @@ const DIST = join(process.cwd(), "dist");
 const BASE = "https://invisibleexit.com";
 const today = new Date().toISOString().slice(0, 10);
 
-if (!existsSync(DIST)) { console.log("(no dist/ — skipping sitemap reconcile)"); process.exit(0); }
+if (!existsSync(DIST)) { console.log("(no dist/, skipping sitemap reconcile)"); process.exit(0); }
 
 // All content sub-sitemaps, EXCLUDING the index files themselves.
 const EXCLUDE = new Set(["sitemap.xml", "sitemap-index.xml"]);
@@ -86,7 +86,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http:/
 writeFileSync(join(DIST, "sitemap.xml"), xml);
 
 // Neutralize the stale competing index so it can't confuse crawlers: make it
-// identical to the canonical one (don't delete — a 404 on a previously-known
+// identical to the canonical one (don't delete, a 404 on a previously-known
 // file is worse than a duplicate).
 if (existsSync(join(DIST, "sitemap-index.xml"))) writeFileSync(join(DIST, "sitemap-index.xml"), xml);
 
@@ -95,14 +95,14 @@ console.log(`✓ sitemap index reconciled: ${subs.length} sub-sitemaps reference
 
 ---
 
-## 3. Deliverable B — `scripts/submit-indexnow.ts`
+## 3. Deliverable B, `scripts/submit-indexnow.ts`
 
 Activates the dormant IndexNow key. Reads URLs from the **live** sitemaps, submits new/changed ones to IndexNow (Bing + Yandex + Copilot/ChatGPT-Search index), and tracks state so it never spams.
 
 ```ts
 #!/usr/bin/env npx tsx
 /**
- * submit-indexnow.ts — submit live URLs to IndexNow (Bing/Yandex → also powers
+ * submit-indexnow.ts, submit live URLs to IndexNow (Bing/Yandex → also powers
  * ChatGPT Search + Copilot). Reads the LIVE sitemaps so only real, live URLs
  * are pinged. State-tracked (data/.indexnow-state.json) to submit only new/
  * changed URLs. Non-fatal on any error.
@@ -135,13 +135,13 @@ function lastmods(xml: string): Record<string, string> {
 // 0) Verify the key file is live (IndexNow requires it reachable)
 const keyCheck = await getText(KEY_LOCATION);
 if (!keyCheck || !keyCheck.includes(KEY)) {
-  console.error(`WARN: key file not live/valid at ${KEY_LOCATION} — skipping IndexNow (non-fatal). Ensure it deployed.`);
+  console.error(`WARN: key file not live/valid at ${KEY_LOCATION}, skipping IndexNow (non-fatal). Ensure it deployed.`);
   process.exit(0);
 }
 
 // 1) Collect live URLs + their lastmods from all sub-sitemaps in the index
 const index = await getText(`${BASE}/sitemap.xml`);
-if (!index) { console.error("WARN: live sitemap.xml unreachable — skipping IndexNow (non-fatal)."); process.exit(0); }
+if (!index) { console.error("WARN: live sitemap.xml unreachable, skipping IndexNow (non-fatal)."); process.exit(0); }
 const subUrls = locs(index).filter((u) => u.endsWith(".xml"));
 const current: Record<string, string> = {};
 for (const su of subUrls) {
@@ -150,7 +150,7 @@ for (const su of subUrls) {
   Object.assign(current, lastmods(xml));
 }
 const allUrls = Object.keys(current);
-if (allUrls.length === 0) { console.error("WARN: 0 URLs from live sitemaps — skipping."); process.exit(0); }
+if (allUrls.length === 0) { console.error("WARN: 0 URLs from live sitemaps, skipping."); process.exit(0); }
 
 // 2) Diff against state → only new/changed URLs
 let prev: Record<string, string> = {};
@@ -183,7 +183,7 @@ if (toSubmit.length > 0) {
 
 ---
 
-## 4. Deliverable C — robots.txt + HTML sitemap hub
+## 4. Deliverable C, robots.txt + HTML sitemap hub
 
 ### 4a. Fix `public/robots.txt` (idempotent)
 It currently declares **no** `Sitemap:` line. Append these two lines if not already present:
@@ -193,13 +193,13 @@ Sitemap: https://invisibleexit.com/image-sitemap.xml
 ```
 Verify: `grep -c "Sitemap:" public/robots.txt` → must be ≥ 1. (Also confirm the build copies `public/robots.txt` to `dist/robots.txt`; if the build regenerates robots, add the lines to whatever script emits it instead.)
 
-### 4b. `scripts/generate-site-index.ts` — human/crawler HTML hub
+### 4b. `scripts/generate-site-index.ts`, human/crawler HTML hub
 Generates `dist/site-index.html` (and `public/site-index.html` so it survives rebuilds): a plain, crawlable index linking to every section hub + a sample of deep pages. Distributes crawl paths + PageRank to deep pages.
 
 ```ts
 #!/usr/bin/env npx tsx
 /**
- * generate-site-index.ts — build a crawlable HTML sitemap hub at /site-index.html
+ * generate-site-index.ts, build a crawlable HTML sitemap hub at /site-index.html
  * from the live/dist sub-sitemaps. Additive static page. Idempotent.
  */
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -207,7 +207,7 @@ import { join } from "node:path";
 
 const DIST = join(process.cwd(), "dist");
 const BASE = "https://invisibleexit.com";
-if (!existsSync(DIST)) { console.log("(no dist/ — skipping site-index)"); process.exit(0); }
+if (!existsSync(DIST)) { console.log("(no dist/, skipping site-index)"); process.exit(0); }
 
 const EXCLUDE = new Set(["sitemap.xml", "sitemap-index.xml", "image-sitemap.xml"]);
 const subs = readdirSync(DIST).filter((f) => /^sitemap-.*\.xml$/.test(f) && !EXCLUDE.has(f)).sort();
@@ -225,11 +225,11 @@ for (const f of subs) {
 }
 
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Site Index — Invisible Exit</title>
+<title>Site Index, Invisible Exit</title>
 <meta name="description" content="Full index of Invisible Exit: every guide, idea, calculator, profession, city, and comparison for building a faceless side business.">
 <link rel="canonical" href="${BASE}/site-index.html">
 <style>body{font:16px/1.6 system-ui,sans-serif;max-width:1100px;margin:0 auto;padding:2rem 1rem;color:#111}h1{margin:0 0 1rem}section{margin:1.5rem 0}h2{font-size:1.1rem;border-bottom:1px solid #eee;padding-bottom:.3rem}ul{columns:3;list-style:none;padding:0}@media(max-width:800px){ul{columns:1}}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}small{color:#888;font-weight:400}</style>
-</head><body><h1>Invisible Exit — Site Index</h1>
+</head><body><h1>Invisible Exit, Site Index</h1>
 <p>Every page, organized by section. Looking for the homepage? <a href="/">invisibleexit.com</a>.</p>
 ${sections}</body></html>`;
 
@@ -241,7 +241,7 @@ Add `/site-index.html` to the core sitemap: after generating, append it to `dist
 
 ---
 
-## 5. Deliverable D — wire scripts into `package.json`
+## 5. Deliverable D, wire scripts into `package.json`
 
 Add two scripts and append the two build-time generators to the `build` chain (the IndexNow submit runs post-deploy, NOT in build).
 
@@ -259,7 +259,7 @@ Then append to the END of the existing `"build"` value (after `generate:distribu
 
 ---
 
-## 6. VALIDATE (before deploy) — all must pass
+## 6. VALIDATE (before deploy), all must pass
 
 ```bash
 cd ~/invisible-exit
@@ -296,11 +296,11 @@ git add scripts/reconcile-sitemap-index.ts scripts/submit-indexnow.ts scripts/ge
         package.json public/robots.txt public/site-index.html
 git commit -m "Add instant-indexing & discovery engine (IndexNow + complete sitemap index + HTML hub)"
 
-# Deploy — Vercel prebuilt with archive flag (project invisible-exit).
+# Deploy, Vercel prebuilt with archive flag (project invisible-exit).
 # dist/ is already built by step 6. Use the repo's established prebuilt deploy:
 npx vercel build --prod
 npx vercel deploy --prebuilt --prod --archive=tgz
-# (If a deploy script exists — check `grep -n deploy package.json` or scripts/ — prefer it.)
+# (If a deploy script exists, check `grep -n deploy package.json` or scripts/, prefer it.)
 
 # --- Verify the live sitemap is now complete ---
 sleep 20
@@ -311,15 +311,15 @@ curl -sI https://invisibleexit.com/invisibleexit-indexnow-2026.txt | head -1    
 # --- Fire IndexNow against the LIVE sitemaps (Bing/Yandex → Copilot/ChatGPT Search) ---
 npx tsx scripts/submit-indexnow.ts
 ```
-The IndexNow script is non-fatal: if the key file check or submit fails, it logs and exits 0 — the deploy still stands. On first run it submits the whole fleet; thereafter only new/changed URLs.
+The IndexNow script is non-fatal: if the key file check or submit fails, it logs and exits 0, the deploy still stands. On first run it submits the whole fleet; thereafter only new/changed URLs.
 
 ---
 
 ## 8. POST-DEPLOY (do these to complete the loop)
 
-1. **Google Search Console** (Google ignores IndexNow): add/confirm the sitemap `https://invisibleexit.com/sitemap.xml` under Sitemaps (now complete). Google's own `/ping` endpoint was retired in 2023 — do NOT try to ping Google; a clean, complete, freshly-`lastmod`'d sitemap + Search Console is the correct path.
+1. **Google Search Console** (Google ignores IndexNow): add/confirm the sitemap `https://invisibleexit.com/sitemap.xml` under Sitemaps (now complete). Google's own `/ping` endpoint was retired in 2023, do NOT try to ping Google; a clean, complete, freshly-`lastmod`'d sitemap + Search Console is the correct path.
 2. **Bing Webmaster Tools:** confirm the sitemap; IndexNow submissions will already be flowing.
-3. **Weekly refresh** (keeps instant-indexing live as pages change) — add to a Hermes weekly task:
+3. **Weekly refresh** (keeps instant-indexing live as pages change), add to a Hermes weekly task:
    ```bash
    cd ~/invisible-exit && npm run build && npx vercel build --prod && \
    npx vercel deploy --prebuilt --prod --archive=tgz && npx tsx scripts/submit-indexnow.ts
@@ -327,19 +327,19 @@ The IndexNow script is non-fatal: if the key file check or submit fails, it logs
 
 ---
 
-## 9. Expected results (honest, mechanism-based — estimates, not guarantees)
+## 9. Expected results (honest, mechanism-based, estimates, not guarantees)
 
-**This is an upstream discovery/indexation play.** It doesn't add content — it ensures the 4,005 pages you already have get **found, crawled, and indexed** across search + AI-search engines. Indexation is the prerequisite for all organic traffic; you can't rank a page an engine hasn't indexed.
+**This is an upstream discovery/indexation play.** It doesn't add content, it ensures the 4,005 pages you already have get **found, crawled, and indexed** across search + AI-search engines. Indexation is the prerequisite for all organic traffic; you can't rank a page an engine hasn't indexed.
 
 | Effect | Mechanism | Realistic outcome | When |
 |---|---|---|---|
 | **Faster + fuller indexation (Bing/Yandex)** | IndexNow pushes new/changed URLs instantly instead of waiting for crawl | New/updated pages indexed in hours–days on Bing/Yandex vs. weeks | days |
-| **AI-search presence (ChatGPT Search / Copilot)** | Bing's index powers both; IndexNow feeds Bing | Faster appearance in ChatGPT Search & Copilot answers — a genuine AEO win most sites miss | 1–4 weeks |
+| **AI-search presence (ChatGPT Search / Copilot)** | Bing's index powers both; IndexNow feeds Bing | Faster appearance in ChatGPT Search & Copilot answers, a genuine AEO win most sites miss | 1–4 weeks |
 | **Google discovers the orphaned pages** | `pseo` + `scenarios` sub-sitemaps now in the index; complete sitemap + accurate `lastmod` | Previously-unsubmitted pages enter Google's crawl queue; re-crawl prioritization improves | 2–6 weeks |
 | **Crawl-path + PageRank to deep pages** | `/site-index.html` hub links every section/deep page | Deep pages leave "discovered – not indexed"; better crawl-budget use on a 4k-page site | 3–8 weeks |
 
 **Straight talk:**
-- **Google does not use IndexNow** — the Google win here comes from the *complete sitemap index + freshness + HTML hub*, not the ping. The ping's value is Bing/Yandex + (importantly) the AI-search engines Bing feeds.
+- **Google does not use IndexNow**, the Google win here comes from the *complete sitemap index + freshness + HTML hub*, not the ping. The ping's value is Bing/Yandex + (importantly) the AI-search engines Bing feeds.
 - The size of the win scales with **how many pages are currently unindexed.** If most of the 4,005 are already indexed, expect a modest lift + faster future updates; if a large share are undiscovered (likely, given orphaned sitemaps + no IndexNow + no HTML hub), the lift can be substantial.
 - This is the *upstream* fix. Once pages are reliably indexed, the next levers are on-page quality + internal linking + off-site authority. Measure in Search Console: **Coverage → "Indexed" count** should rise; then watch impressions.
 

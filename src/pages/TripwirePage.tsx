@@ -19,7 +19,7 @@ import { trackEvent } from "@/lib/analytics";
 import GuaranteeBox from "@/components/GuaranteeBox";
 
 /**
- * DOTCOM SECRETS: Chapter 12 — Reverse Self-Liquidating Offer
+ * DOTCOM SECRETS: Chapter 12:  Reverse Self-Liquidating Offer
  *
  * This is the $7 tripwire that converts opt-in → buyer.
  * It must:
@@ -64,7 +64,7 @@ const TripwirePage = () => {
   }, []);
 
   const handlePurchase = async () => {
-    // 2026-07-24: was "tripwire_purchased" — fired on click, before checkout even
+    // 2026-07-24: was "tripwire_purchased", fired on click, before checkout even
     // started, inflating PostHog with purchases that never happened. Real
     // purchase confirmation belongs on the Stripe webhook (api/stripe-webhook.ts).
     trackEvent("tripwire_checkout_clicked", { price: 7, founders_toolkit: addToolkit });
@@ -158,7 +158,7 @@ const TripwirePage = () => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-red-600/95 backdrop-blur-sm border-b border-red-400/20 px-4 py-2.5">
         <div className="max-w-3xl mx-auto flex items-center justify-center gap-3">
           <Clock className="w-4 h-4 text-white animate-pulse shrink-0" />
-          {/* Checked 2026-07-25: this countdown is NOT cosmetic — the purchase button
+          {/* Checked 2026-07-25: this countdown is NOT cosmetic, the purchase button
               is `disabled` once it reaches 00:00 (see the CTA below), so the claim is
               enforced and stays. Contrast churnlens/oto, where an identical banner sat
               over a public Stripe link and enforced nothing; that one was removed. */}
@@ -176,11 +176,11 @@ const TripwirePage = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-6">
             <Zap className="w-4 h-4" />
-            ONE-TIME OFFER — EXPIRES IN {timeLeft.mins}:{String(timeLeft.secs).padStart(2, "0")}
+            ONE-TIME OFFER, EXPIRES IN {timeLeft.mins}:{String(timeLeft.secs).padStart(2, "0")}
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Wait — Before You Start...
+            Wait, Before You Start...
           </h1>
           <p className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto mb-2">
             Get the complete{" "}
@@ -274,7 +274,7 @@ const TripwirePage = () => {
             ) : (
               <>
                 <Lock className="w-5 h-5" />
-                Yes — Give Me the Blueprint{addToolkit ? " + Toolkit" : ""} — {addToolkit ? "$44" : "$7"}
+                Yes, Give Me the Blueprint{addToolkit ? " + Toolkit" : ""}, {addToolkit ? "$44" : "$7"}
               </>
             )}
             {!loading && <ArrowRight className="w-5 h-5" />}
@@ -289,7 +289,7 @@ const TripwirePage = () => {
             <span>30-day refund</span>
           </div>
           {/* 2026-07-24: removed a fake "47 managers bought this week" live-buyer-count
-              strip with invented avatar initials — invisibleexit has zero paying
+              strip with invented avatar initials, invisibleexit has zero paying
               customers on any tier. See conversion-audit-scored-2026-07-24. */}
         </div>
 
@@ -311,7 +311,7 @@ const TripwirePage = () => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span className="text-white text-base font-bold">
-                  WAIT — Add the Founder's Toolkit
+                  WAIT, Add the Founder's Toolkit
                 </span>
                 <span className="bg-amber-500/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
                   Save $60
@@ -328,7 +328,7 @@ const TripwirePage = () => {
                 <span className="text-white/30 text-xs">(added to your $7 payment = $44 total)</span>
               </div>
               <p className="text-white/30 text-[11px] italic mt-2">
-                ☑ Checked by default — uncheck to skip
+                ☑ Checked by default, uncheck to skip
               </p>
             </div>
           </label>
@@ -343,7 +343,7 @@ const TripwirePage = () => {
             "The 47-point checklist alone found 3 clauses in my contract I didn't know about.
             One of them could have cost me everything. Worth 100x the price."
           </p>
-          <p className="text-white/40 text-xs">— Senior PM, $165K salary</p>
+          <p className="text-white/40 text-xs">, Senior PM, $165K salary</p>
         </div>
 
         {/* ── The Why (Story) ── */}
@@ -356,7 +356,7 @@ const TripwirePage = () => {
           <p>
             My blood ran cold for 3 seconds. Then I remembered: different name, different entity,
             different Stripe, different hosting. Zero connection. Those 3 seconds of panic were
-            worth more than any course I'd ever bought — because they proved the system worked.
+            worth more than any course I'd ever bought, because they proved the system worked.
           </p>
           <p>
             This blueprint is that system. Not the philosophy. The actual checklist. The exact
@@ -395,7 +395,7 @@ const TripwirePage = () => {
             to="/start"
             className="text-white/30 underline hover:text-white/50 transition-colors text-sm"
           >
-            Skip this offer — get the full tools for $9/month →
+            Skip this offer, get the full tools for $9/month →
           </Link>
           <p className="text-white/20 text-xs mt-3">
             You won't see this price again. Regular price: $47.

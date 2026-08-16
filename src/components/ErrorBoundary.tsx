@@ -39,7 +39,7 @@ export default class ErrorBoundary extends Component<Props, State> {
                 We hit a snag.
               </h1>
               <p className="text-blue-200/80 text-base">
-                The page couldn't load fully. Your content is still here — try refreshing.
+                The page couldn't load fully. Your content is still here, try refreshing.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

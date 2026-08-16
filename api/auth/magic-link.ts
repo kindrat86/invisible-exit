@@ -10,12 +10,12 @@ const APP_URL = process.env.APP_URL || "https://invisibleexit.com";
 
 /**
  * Lazily import Resend so the route still boots if the dependency is missing
- * (returns success without sending — token is still stored for dev/testing).
+ * (returns success without sending, token is still stored for dev/testing).
  */
 async function sendMagicLinkEmail(email: string, token: string): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn("[magic-link] RESEND_API_KEY not set — skipping email send");
+    console.warn("[magic-link] RESEND_API_KEY not set, skipping email send");
     return;
   }
   const { Resend } = await import("resend");
@@ -85,7 +85,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await sendMagicLinkEmail(normalizedEmail, token);
   } catch (err) {
     console.error("[magic-link] email send failed:", err);
-    // don't leak — return success so we don't reveal which emails exist
+    // don't leak, return success so we don't reveal which emails exist
   }
 
   return res.status(200).json({ success: true });

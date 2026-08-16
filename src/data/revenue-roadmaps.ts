@@ -40,9 +40,9 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     intro: "$500/month is the first meaningful milestone. It proves someone will pay for your product, covers your tool costs, and gives you the psychological boost to keep going. For an employed founder, this is achievable in 2-3 months of focused effort.",
     customerMath: { pricing: "$29/month", customersNeeded: 18, monthlyRevenue: "$522/month" },
     stages: [
-      { mrr: "$0-$100", customers: "1-4 paying", focus: "Validate and build", timeToReach: "Weeks 1-4", keyActions: ["Pick a problem you can solve", "Build a minimal MVP", "Get 1 paying customer manually", "Charge from day one — no free tier"] },
+      { mrr: "$0-$100", customers: "1-4 paying", focus: "Validate and build", timeToReach: "Weeks 1-4", keyActions: ["Pick a problem you can solve", "Build a minimal MVP", "Get 1 paying customer manually", "Charge from day one, no free tier"] },
       { mrr: "$100-$300", customers: "5-10 paying", focus: "Refine and find channels", timeToReach: "Weeks 5-8", keyActions: ["Talk to every customer", "Fix onboarding friction", "Find 1-2 reliable acquisition channels", "Post in relevant communities weekly"] },
-      { mrr: "$300-$500", customers: "11-18 paying", focus: "Scale what works", timeToReach: "Weeks 9-12", keyActions: ["Double down on best channel", "Add annual billing option", "Ask for referrals", "Improve retention — reduce churn"] },
+      { mrr: "$300-$500", customers: "11-18 paying", focus: "Scale what works", timeToReach: "Weeks 9-12", keyActions: ["Double down on best channel", "Add annual billing option", "Ask for referrals", "Improve retention, reduce churn"] },
     ],
     channelStrategy: [
       { phase: "First 5 customers", channel: "Personal outreach + communities", why: "You need direct conversations to learn what customers actually want" },
@@ -77,7 +77,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     realisticTimeline: "4-6 months for an employed founder working 8-10 hours/week.",
     faqs: [
       { question: "Is $1,000/month realistic while employed?", answer: "Yes. 4-6 months of focused effort (8-10 hours/week) is realistic. The key is pricing at $29-$49/month so you only need 20-35 customers, not 200." },
-      { question: "What should I price my micro-SaaS at?", answer: "Start at $29/month minimum. $49 is better. Do not charge $9/month — you need 111 customers for $1K MRR vs 35 at $29. Higher pricing means fewer customers to support." },
+      { question: "What should I price my micro-SaaS at?", answer: "Start at $29/month minimum. $49 is better. Do not charge $9/month, you need 111 customers for $1K MRR vs 35 at $29. Higher pricing means fewer customers to support." },
     ],
   },
   {
@@ -87,7 +87,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     metaTitle: "How to Make $2,000/Month in Micro-SaaS (Roadmap)",
     metaDescription: "The realistic path from $0 to $2,000/month in recurring revenue. Customer math, pricing tiers, channels, and timeline for employed founders.",
     h1: "How to Make $2,000/Month in Micro-SaaS",
-    intro: "$2,000/month covers most people's rent or mortgage. For an employed founder, this is the point where your side income starts to feel real — it changes how you think about your job.",
+    intro: "$2,000/month covers most people's rent or mortgage. For an employed founder, this is the point where your side income starts to feel real, it changes how you think about your job.",
     customerMath: { pricing: "$49/month", customersNeeded: 41, monthlyRevenue: "$2,009/month" },
     stages: [
       { mrr: "$0-$1,000", customers: "1-35 paying", focus: "Product-market fit", timeToReach: "Weeks 1-24", keyActions: ["Build and validate", "Reach $1K MRR first", "Identify best acquisition channel", "Reduce churn below 5%"] },
@@ -109,7 +109,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     target: "$4,000/month",
     amount: 4000,
     metaTitle: "How to Make $4,000/Month in Micro-SaaS (Freedom Number)",
-    metaDescription: "The path from $0 to $4,000/month — the freedom number for most corporate managers. Customer math, channels, and exit planning.",
+    metaDescription: "The path from $0 to $4,000/month, the freedom number for most corporate managers. Customer math, channels, and exit planning.",
     h1: "How to Make $4,000/Month in Micro-SaaS",
     intro: "$4,000/month is the freedom number for most corporate managers. At this level, your recurring revenue covers core living expenses with a 12-month buffer. It is the point where your job becomes optional.",
     customerMath: { pricing: "$49/month", customersNeeded: 82, monthlyRevenue: "$4,018/month" },
@@ -126,8 +126,8 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     realisticTimeline: "12-18 months for an employed founder working 10-15 hours/week.",
     faqs: [
       { question: "Can I really reach $4K/month while employed?", answer: "Yes. Most Invisible Exit members hit $4K MRR in 12-18 months. The key is consistency: 10-15 focused hours per week, pricing at $49-$79/month, and building one acquisition channel that compounds (SEO or content)." },
-      { question: "What happens when I reach $4,000/month?", answer: "You have optionality. You can keep your job and invest the $4K. You can reduce hours. You can quit. The psychological shift — knowing you CAN leave — changes everything, even if you stay." },
-      { question: "Should I quit my job when I hit $4K MRR?", answer: "Most people wait until $5K-$6K MRR to have a buffer. But $4K changes the power dynamic — you stop being afraid at work. That is the real freedom number." },
+      { question: "What happens when I reach $4,000/month?", answer: "You have optionality. You can keep your job and invest the $4K. You can reduce hours. You can quit. The psychological shift, knowing you CAN leave, changes everything, even if you stay." },
+      { question: "Should I quit my job when I hit $4K MRR?", answer: "Most people wait until $5K-$6K MRR to have a buffer. But $4K changes the power dynamic, you stop being afraid at work. That is the real freedom number." },
     ],
   },
   {
@@ -175,7 +175,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     ],
     realisticTimeline: "4-8 weeks for an employed founder working 5 hours/week.",
     faqs: [
-      { question: "Why is the first $100 so important?", answer: "It is proof. Proof that someone will pay. Proof that your idea has value. Most founders never make a single dollar online — getting to $100 puts you ahead of 90% of people who 'want to start something'." },
+      { question: "Why is the first $100 so important?", answer: "It is proof. Proof that someone will pay. Proof that your idea has value. Most founders never make a single dollar online, getting to $100 puts you ahead of 90% of people who 'want to start something'." },
       { question: "What if nobody will pay for my idea?", answer: "Then you learned that before spending months building. Charge from day one. If 20 people say no, your problem or audience is wrong. Pivot. The $100 proves you found something real." },
     ],
   },
@@ -186,7 +186,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     metaTitle: "How to Scale Micro-SaaS to $50K/Month (2026)",
     metaDescription: "The path from $10K to $50K MRR. Building a team, enterprise sales, platform expansion, and the transition from founder to CEO.",
     h1: "How to Scale Micro-SaaS to $50,000/Month",
-    intro: "$50,000/month is beyond most solo founders' dreams. At this level, you have a real company — employees, systems, processes. But getting from $10K to $50K requires fundamentally different skills than building the product.",
+    intro: "$50,000/month is beyond most solo founders' dreams. At this level, you have a real company, employees, systems, processes. But getting from $10K to $50K requires fundamentally different skills than building the product.",
     customerMath: { pricing: "$99/month", customersNeeded: 506, monthlyRevenue: "$50,094/month" },
     stages: [
       { mrr: "$10,000-$20,000", customers: "318-637 paying", focus: "Build a team", timeToReach: "Months 37-48", keyActions: ["Hire full-time developer", "Hire customer success person", "Implement proper CRM", "Build sales pipeline"] },
@@ -209,7 +209,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     target: "$5,000/month",
     amount: 5000,
     metaTitle: "How to Make $5,000/Month in Micro-SaaS (Quit-Ready)",
-    metaDescription: "The path from $2K to $5K MRR — the point where most corporate managers can consider quitting. Customer math, timeline, and strategy.",
+    metaDescription: "The path from $2K to $5K MRR, the point where most corporate managers can consider quitting. Customer math, timeline, and strategy.",
     h1: "How to Make $5,000/Month in Micro-SaaS",
     intro: "$5,000/month is the quit-ready number for most corporate managers. At this level, your side income fully replaces your core living expenses with a buffer. You can confidently leave your job.",
     customerMath: { pricing: "$59/month", customersNeeded: 85, monthlyRevenue: "$5,015/month" },
@@ -225,7 +225,7 @@ export const revenueRoadmaps: RevenueRoadmap[] = [
     ],
     realisticTimeline: "10-14 months from $0 to $5K MRR for an employed founder working 10-15 hours/week.",
     faqs: [
-      { question: "Is $5K/month enough to quit my job?", answer: "For most corporate managers, yes — especially if you have 6-12 months of savings as a buffer. $5K covers core expenses. The question is not whether you CAN quit, but whether you have the confidence and the runway." },
+      { question: "Is $5K/month enough to quit my job?", answer: "For most corporate managers, yes, especially if you have 6-12 months of savings as a buffer. $5K covers core expenses. The question is not whether you CAN quit, but whether you have the confidence and the runway." },
       { question: "How do I prepare to quit?", answer: "Build a 6-month cash runway before quitting (your $5K MRR + savings). Document your business processes. Set up healthcare. Test running the business full-time during a 2-week vacation." },
     ],
   },

@@ -168,7 +168,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_3_step_1",
         title: "Research Business-Friendly Banks",
         description:
-          "Mercury and Relay are the top choices for online business banking — free accounts, no minimum balance, and easy to set up with just an EIN and Articles of Organization. Local credit unions are also great.",
+          "Mercury and Relay are the top choices for online business banking, free accounts, no minimum balance, and easy to set up with just an EIN and Articles of Organization. Local credit unions are also great.",
         estimated_time: "20 minutes",
         tools: ["Mercury", "Relay", "Local credit union"],
         cost: "Free (most business checking accounts)",
@@ -185,7 +185,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_3_step_3",
         title: "Set Up Payment Processor Under LLC",
         description:
-          "Register Stripe and/or PayPal under your LLC name. This is critical — when customers pay you, their bank statement will show your LLC name, not your personal name. Connect to your business bank account.",
+          "Register Stripe and/or PayPal under your LLC name. This is critical, when customers pay you, their bank statement will show your LLC name, not your personal name. Connect to your business bank account.",
         estimated_time: "30 minutes",
         tools: ["Stripe", "PayPal Business"],
         cost: "Processing fees only (2.9% + $0.30 standard)",
@@ -194,7 +194,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_3_step_4",
         title: "Configure Invoicing Under LLC",
         description:
-          "Set up your invoicing system (Stripe Invoicing, FreshBooks, or Wave) under your LLC name and business address. All invoices should show your LLC name, business email, and virtual address — never personal details.",
+          "Set up your invoicing system (Stripe Invoicing, FreshBooks, or Wave) under your LLC name and business address. All invoices should show your LLC name, business email, and virtual address, never personal details.",
         estimated_time: "15 minutes",
         tools: ["Stripe Invoicing", "FreshBooks", "Wave (free)"],
         cost: "$0–$15/month",
@@ -298,7 +298,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_5_step_1",
         title: "Create Contractor Onboarding Document",
         description:
-          "Write a welcome doc that introduces your company (LLC), explains the project, and sets expectations — all without revealing your personal identity. Use your business alias and LLC name throughout.",
+          "Write a welcome doc that introduces your company (LLC), explains the project, and sets expectations, all without revealing your personal identity. Use your business alias and LLC name throughout.",
         estimated_time: "1 hour",
         tip: "Frame yourself as 'the founder' or use a first-name alias. Contractors don't need your last name or personal details.",
       },
@@ -315,7 +315,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_5_step_3",
         title: "Configure Project Management Under LLC",
         description:
-          "Set up a project management tool (Notion, Linear, Asana, or Trello) under your business email. Invite contractors using their email. All project communications go through this tool — not personal channels.",
+          "Set up a project management tool (Notion, Linear, Asana, or Trello) under your business email. Invite contractors using their email. All project communications go through this tool, not personal channels.",
         estimated_time: "30 minutes",
         tools: ["Notion", "Linear", "Asana", "Trello"],
         cost: "Free (basic plans)",
@@ -365,7 +365,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_6_step_1",
         title: "Understand Pass-Through Taxation",
         description:
-          "As a single-member LLC, your business income 'passes through' to your personal tax return on Schedule C. The LLC itself doesn't file a separate return (unless you elect S-Corp status). This means your employer CANNOT see your LLC's tax filings — they only see your W-2.",
+          "As a single-member LLC, your business income 'passes through' to your personal tax return on Schedule C. The LLC itself doesn't file a separate return (unless you elect S-Corp status). This means your employer CANNOT see your LLC's tax filings, they only see your W-2.",
         estimated_time: "30 minutes",
         tip: "The key insight: your employer only sees your W-2. They never see your Schedule C, Schedule SE, or any LLC-related tax forms.",
       },
@@ -443,7 +443,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_7_step_3",
         title: "Choose Anonymous-Friendly Hosting",
         description:
-          "Use Vercel, Netlify, Railway, or Render — they don't require personal identification beyond an email. Sign up with your business email. For more control, use DigitalOcean or Linode with your LLC details.",
+          "Use Vercel, Netlify, Railway, or Render, they don't require personal identification beyond an email. Sign up with your business email. For more control, use DigitalOcean or Linode with your LLC details.",
         estimated_time: "20 minutes",
         tools: ["Vercel", "Netlify", "Railway", "DigitalOcean"],
         cost: "$0–$20/month",
@@ -486,7 +486,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_8_step_1",
         title: "Create Business-Only Social Accounts",
         description:
-          "Create new accounts on relevant platforms (Twitter/X, Instagram, LinkedIn Page, Reddit, etc.) using your business email and business phone number. Use your brand name and logo — never your face or real name.",
+          "Create new accounts on relevant platforms (Twitter/X, Instagram, LinkedIn Page, Reddit, etc.) using your business email and business phone number. Use your brand name and logo, never your face or real name.",
         estimated_time: "30 minutes",
         tip: "Create a LinkedIn Company Page (not a personal profile) for your business. Company pages don't require linking to a personal profile's network.",
       },
@@ -568,7 +568,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_9_step_4",
         title: "Create LLC-Branded Proposals",
         description:
-          "Build proposal templates in Google Docs or Notion using your LLC letterhead, brand colors, and business contact information. Sign proposals as '[First Name], Founder at [LLC Name]' — never your full legal name.",
+          "Build proposal templates in Google Docs or Notion using your LLC letterhead, brand colors, and business contact information. Sign proposals as '[First Name], Founder at [LLC Name]', never your full legal name.",
         estimated_time: "45 minutes",
       },
       {
@@ -610,7 +610,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         description:
           "Write a calm, factual response for if your employer confronts you. Key points: (1) the business operates in a different industry, (2) you use zero company resources, (3) all work is done on personal time and equipment, (4) the business is owned by an LLC, not you personally.",
         estimated_time: "45 minutes",
-        tip: "Never volunteer information. Answer only what is asked. Stay calm and professional. Do not apologize — you've done nothing wrong if you've followed the playbook.",
+        tip: "Never volunteer information. Answer only what is asked. Stay calm and professional. Do not apologize, you've done nothing wrong if you've followed the playbook.",
       },
       {
         id: "mission_10_step_2",
@@ -625,7 +625,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         description:
           "Gather and organize: (1) Your Invention Assignment Disclaimer (with dates), (2) Git commit timestamps showing after-hours work, (3) Receipts proving personal device and tool purchases, (4) Time logs showing all work on personal time, (5) Your LLC formation date and documents.",
         estimated_time: "1 hour",
-        tip: "Store this evidence package outside your work devices and network — personal cloud storage, encrypted USB, or your attorney's office.",
+        tip: "Store this evidence package outside your work devices and network, personal cloud storage, encrypted USB, or your attorney's office.",
       },
       {
         id: "mission_10_step_4",
@@ -639,7 +639,7 @@ export const PLAYBOOK_MISSIONS: PlaybookMission[] = [
         id: "mission_10_step_5",
         title: "Understand Non-Compete Enforceability",
         description:
-          "Research how non-competes are enforced in your state. Key factors: (1) Duration — courts rarely enforce beyond 1-2 years, (2) Geographic scope — must be reasonable, (3) Industry scope — must be specific, (4) Consideration — you must have received something in exchange. Many non-competes are unenforceable.",
+          "Research how non-competes are enforced in your state. Key factors: (1) Duration, courts rarely enforce beyond 1-2 years, (2) Geographic scope, must be reasonable, (3) Industry scope, must be specific, (4) Consideration, you must have received something in exchange. Many non-competes are unenforceable.",
         estimated_time: "30 minutes",
         tip: "The FTC has proposed banning most non-competes nationwide. Check the current status of this regulation at ftc.gov.",
       },
