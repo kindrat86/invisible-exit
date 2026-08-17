@@ -16,14 +16,15 @@
     "reconcile:sitemap": "npx tsx scripts/reconcile-sitemap-index.ts",
     "generate:site-index": "npx tsx scripts/generate-site-index.ts",
     "submit:indexnow": "npx tsx scripts/submit-indexnow.ts",
-    "build": "npm run guard:positioning && npm run generate:sitemap && npm run generate:llms && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts && npm run generate:distribution && node scripts/reconcile-sitemap-orphans.mjs && npm run generate:site-index && npm run reconcile:sitemap && npm run verify:jsonld && npm run check:links",
+    "build": "npm run guard:positioning && npm run generate:sitemap && npm run generate:og && npm run generate:rss && vite build && tsx scripts/prerender-meta.mjs && tsx scripts/prerender-blog.ts && npm run generate:llms && npm run generate:distribution && node scripts/reconcile-sitemap-orphans.mjs && npm run generate:site-index && npm run reconcile:sitemap && npm run verify:jsonld && npm run check:links && npm run assert:llms-drift",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "verify:jsonld": "node scripts/verify-jsonld.mjs dist",
-    "check:links": "node scripts/check-internal-links.mjs"
+    "check:links": "node scripts/check-internal-links.mjs",
+    "assert:llms-drift": "node scripts/assert-llms-drift.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

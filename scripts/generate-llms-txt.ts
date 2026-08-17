@@ -59,6 +59,7 @@ import { exitStrategyPages } from "../src/data/exit-strategies.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, "..", "public");
+const DIST = resolve(__dirname, "..", "dist");
 const SITE = "https://invisibleexit.com";
 
 // ---------- llms.txt (concise index) ----------
@@ -867,8 +868,19 @@ function generateLlmsFullTxt(): string {
 // ---------- Write ----------
 
 mkdirSync(PUBLIC, { recursive: true });
-writeFileSync(resolve(PUBLIC, "llms.txt"), generateLlmsTxt(), "utf-8");
-writeFileSync(resolve(PUBLIC, "llms-full.txt"), generateLlmsFullTxt(), "utf-8");
+mkdirSync(DIST, { recursive: true });
+// Write to BOTH public/ (git-tracked raw output) and dist/ (shipped artifact).
+// This script now runs AFTER `vite build` (see package.json), so Vite no longer
+// copies public/ -> dist/ for us; dist/ must be written explicitly. The build's
+// final `assert:llms-drift` step then compares the two URL sets — if the
+// prerenderer's routes ever drift from these data arrays, check-internal-links
+// prunes dist/ and the assertion fails loudly instead of shipping silently.
+const llmsTxt = generateLlmsTxt();
+const llmsFullTxt = generateLlmsFullTxt();
+writeFileSync(resolve(PUBLIC, "llms.txt"), llmsTxt, "utf-8");
+writeFileSync(resolve(PUBLIC, "llms-full.txt"), llmsFullTxt, "utf-8");
+writeFileSync(resolve(DIST, "llms.txt"), llmsTxt, "utf-8");
+writeFileSync(resolve(DIST, "llms-full.txt"), llmsFullTxt, "utf-8");
 
 const totalPages =
   blogPosts.length +
