@@ -76,7 +76,7 @@ export function checkRateLimit(
 /**
  * Get client IP from Vercel request headers.
  */
-export function getClientIP(req: { headers: Record<string, string | string[]> }): string {
+export function getClientIP(req: { headers: Record<string, string | string[] | undefined> }): string {
   const forwarded = req.headers["x-forwarded-for"];
   if (typeof forwarded === "string") {
     return forwarded.split(",")[0].trim();

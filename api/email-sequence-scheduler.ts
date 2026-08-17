@@ -14,6 +14,7 @@
  */
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import { query, queryOne } from "./_lib/db";
+import { getHeader } from "./_lib/headers";
 import { sendEmail, getSequence } from "./email-sequence";
 
 const MAX_DAYS: Record<string, number> = {
@@ -38,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // ── CRON_SECRET auth ──
-  const authHeader = req.headers["authorization"] ?? "";
+  const authHeader = getHeader(req, "authorization");
   const providedSecret = authHeader.replace(/^Bearer\s+/i, "");
   const expected = process.env.CRON_SECRET;
 

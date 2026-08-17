@@ -20,8 +20,13 @@ import { sendEmail } from "./email-sequence";
 import { triggerWinback } from "./winback-sequence";
 import { recordReferralConversion } from "./_lib/referral";
 
+// apiVersion is pinned to the current Stripe API version ("dahlia", 2026-06-24).
+// The installed stripe SDK (17.7.0) predates it, so its LatestApiVersion type
+// only knows "acacia". The cast keeps the compiler happy WITHOUT changing the
+// runtime header (the SDK forwards the string verbatim). Bump the SDK in a
+// separate, deliberate task to drop this cast.
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-06-24.dahlia",
+  apiVersion: "2026-06-24.dahlia" as unknown as Stripe.LatestApiVersion,
 });
 
 export const config = { api: { bodyParser: false } };

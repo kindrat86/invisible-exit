@@ -2,7 +2,7 @@
  * Shared JWT auth helpers for /api/ routes.
  * Not a route itself, imported by auth + db handlers.
  */
-import type { VercelRequest, VercelResponse } from "./_lib/types";
+import type { VercelRequest, VercelResponse } from "./types";
 import jwt from "jsonwebtoken";
 
 /**

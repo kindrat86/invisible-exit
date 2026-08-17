@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "./_lib/types";
+import { getHeader } from "./_lib/headers";
 import Stripe from "stripe";
 import {
   findReferrer,
@@ -140,8 +141,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // This creates a checkout session with BOTH line items (Ch 14 Order Bump pattern)
     // First: resolve customer email (same logic as below)
     let customerEmail: string | undefined;
-    const authHeader = req.headers["authorization"];
-    if (authHeader?.startsWith("Bearer ")) {
+    const authHeader = getHeader(req, "authorization");
+    if (authHeader.startsWith("Bearer ")) {
       try {
         const jwt = (await import("jsonwebtoken")).default;
         const token = authHeader.replace("Bearer ", "");

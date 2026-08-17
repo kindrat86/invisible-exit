@@ -176,6 +176,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!table || !policy) {
     return res.status(400).json({ error: "Invalid or disallowed table" });
   }
+  // `policy` is narrowed above, but TypeScript does not carry that narrowing
+  // into the nested buildData() closure below. Bind a fresh non-optional alias
+  // so the closure sees a WritePolicy, not `WritePolicy | undefined`.
+  const writePolicy: WritePolicy = policy;
   if (!action || !policy.actions[action]) {
     return res.status(400).json({ error: `Action not allowed on ${table}` });
   }
@@ -210,18 +214,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
     const data: Record<string, unknown> = {};
     for (const [rawKey, value] of Object.entries(raw)) {
-      const key = policy.aliases?.[rawKey] ?? rawKey;
+      const key = writePolicy.aliases?.[rawKey] ?? rawKey;
       if (!IDENT_RE.test(key)) continue;
       if (actionPolicy.columns && !actionPolicy.columns.includes(key)) continue; // drop unknown cols
-      if (policy.scopeCol && key === policy.scopeCol) continue; // never client-controlled
+      if (writePolicy.scopeCol && key === writePolicy.scopeCol) continue; // never client-controlled
       data[key] = value;
     }
     // Server-forced values (moderation flags, ownership) always win.
-    if (policy.forced && (action === "insert" || action === "upsert")) {
-      Object.assign(data, policy.forced(claims));
+    if (writePolicy.forced && (action === "insert" || action === "upsert")) {
+      Object.assign(data, writePolicy.forced(claims));
     }
-    if (policy.scopeCol && (action === "insert" || action === "upsert")) {
-      data[policy.scopeCol] = scopeValue;
+    if (writePolicy.scopeCol && (action === "insert" || action === "upsert")) {
+      data[writePolicy.scopeCol] = scopeValue;
     }
     return data;
   }

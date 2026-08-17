@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from "./_lib/types";
 import jwt from "jsonwebtoken";
 import { Resend } from "resend";
 import { queryOne } from "./_lib/db";
+import { getHeader } from "./_lib/headers";
 
 interface JwtPayload {
   sub: string;
@@ -15,8 +16,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     // Verify JWT from Authorization header
-    const authHeader = req.headers["authorization"];
-    if (!authHeader?.startsWith("Bearer ")) {
+    const authHeader = getHeader(req, "authorization");
+    if (!authHeader.startsWith("Bearer ")) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const token = authHeader.replace("Bearer ", "");
