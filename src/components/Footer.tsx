@@ -278,20 +278,26 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Portfolio cross-links, reciprocal backlink mesh */}
-            <div className="mt-5 pt-4 border-t border-white/5">
-              <p className="text-white/60 text-xs mb-2">Our Network</p>
+            {/* Portfolio cross-promo with source-level attribution */}
+            <nav
+              className="mt-5 pt-4 border-t border-white/5"
+              aria-label="More products from Sipiteno"
+              data-portfolio-cross-promo="v1"
+              data-portfolio-origin="invisibleexit.com"
+            >
+              <p className="text-white/60 text-xs mb-2">More from Sipiteno</p>
               <div className="flex flex-wrap gap-x-1 gap-y-1">
-                <a href="https://gitdealflow.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">GitDealFlow</a>
-                <a href="https://signals.gitdealflow.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Signals</a>
-                <a href="https://sipiteno.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Sipiteno</a>
-                <a href="https://unlocksaas.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">UnlockSaaS</a>
-                <a href="https://voicelogpro.com" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">VoiceLogPro</a>
-                <a href="https://carshake.online" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">CarShake</a>
-                <a href="https://churnlens.site" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">ChurnLens</a>
-                <a href="https://sanctionsai.dev" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">SanctionsAI</a>
+                <a href="https://gitdealflow.com/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">GitDealFlow</a>
+                <a href="https://signals.gitdealflow.com/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">VC Deal Flow Signal</a>
+                <a href="https://sipiteno.com/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">Sipiteno</a>
+                <a href="https://unlocksaas.com/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">UnlockSaaS</a>
+                <a href="https://voicelogpro.com/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">VoiceLogPro</a>
+                <a href="https://carshake.online/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">CarShake</a>
+                <a href="https://churnlens.site/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">ChurnLens</a>
+                <a href="https://sanctionsai.dev/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">SanctionsAI</a>
+                <a href="https://sipi.bot/?utm_source=invisibleexit.com&utm_medium=referral&utm_campaign=portfolio_crosspromo&utm_content=footer" target="_blank" rel="noopener" className="text-white/60 hover:text-white/90 text-xs transition-colors py-2 px-1 min-h-[44px] inline-flex items-center">sipi.bot</a>
               </div>
-            </div>
+            </nav>
           </div>
 
           {/* Collapsible sections */}
