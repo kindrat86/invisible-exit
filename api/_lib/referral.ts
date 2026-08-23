@@ -179,7 +179,7 @@ export async function recordReferralConversion(
 
     // ── 3. Notify the referrer ──
     try {
-      const { sendEmail } = await import("../email-sequence");
+      const { sendEmail } = await import("../email-sequence.js");
       const remaining = Math.max(0, FREE_FOR_LIFE_THRESHOLD - conversions);
       const rewardLine =
         rewardApplied === "free_for_life"
