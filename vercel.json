@@ -291,6 +291,16 @@
   ],
   "redirects": [
     {
+      "source": "/stealth",
+      "destination": "/blog/category/stealth-operations",
+      "permanent": true
+    },
+    {
+      "source": "/launch",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/data/micro-saas-revenue-benchmarks-2026",
       "destination": "/data",
       "permanent": true
