@@ -23,6 +23,18 @@ export const NOINDEX_URL_PATTERNS: string[] = [
   "/pricing-models/",     // pricing models (thin)
   "/skills/",             // skill monetization (thin template)
   "/audience/",           // audience/demographic pages (thin)
+
+  // REVIEW-bucket prune — added 2026-08-22
+  "/by-budget/",
+  "/case-studies/",
+  "/cost-analysis/",
+  "/failure-stories/",
+  "/how-to/",
+  "/is-it-legal/",
+  "/quit-your-job/",
+  "/reviews/",
+  "/side-hustles/",
+  "/weekend-builds/",
 ];
 
 /**

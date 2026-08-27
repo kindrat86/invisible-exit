@@ -2,40 +2,13 @@
  * Generates public/sitemap.xml from blog-posts, comparisons, and glossary data.
  * Run: npx tsx scripts/generate-sitemap.ts
  */
-import { writeFileSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { shouldNoindex } from "../src/data/noindex-config.js";
 
-/**
- * Check if a URL should be excluded from sitemaps (thin programmatic pSEO pages).
- * Mirrors the logic in src/data/noindex-config.ts and scripts/prerender-meta.mjs.
- */
 function shouldNoindexSitemapUrl(loc: string): boolean {
-  const url = new URL(loc);
-  const path = url.pathname;
-  if (path === "/" || path === "" || path.startsWith("/freedom") || path === "/site-index.html") {
-    return false;
-  }
-  // KEEP single-profession idea pages, only NOINDEX cross-products
-  if (path.startsWith("/ideas/")) {
-    const segments = path.split("/").filter(Boolean);
-    if (segments.length === 2) return false;
-    return true;
-  }
-  const noindexPatterns = [
-    "/cities/",
-    "/revenue/",
-    "/break-even/",
-    "/cost-of-waiting/",
-    "/non-compete/",
-    "/first-year/",
-    "/mistakes/",
-    "/reddit/",
-    "/pricing-models/",
-    "/skills/",
-    "/audience/",
-  ];
-  return noindexPatterns.some(p => path.startsWith(p));
+  return shouldNoindex(new URL(loc).pathname);
 }
 
 interface SitemapEntry {
@@ -1056,11 +1029,28 @@ const indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '\n</sitemapindex>\n';
 writeFileSync(resolve(publicDir, "sitemap.xml"), indexXml, "utf-8");
 
+// Prune noindex URLs from legacy sub-sitemaps that are still copied from public/.
+// Some of these files predate this generator but are referenced by the final
+// reconciled sitemap index. The shared config must apply to them too.
+let legacyPruned = 0;
+for (const fileName of readdirSync(publicDir).filter(name => /^sitemap-.*\.xml$/.test(name))) {
+  const filePath = resolve(publicDir, fileName);
+  const xml = readFileSync(filePath, "utf-8");
+  const pruned = xml.replace(/\s*<url>[\s\S]*?<\/url>/g, block => {
+    const loc = block.match(/<loc>\s*([^<]+)\s*<\/loc>/)?.[1];
+    if (!loc || !shouldNoindex(new URL(loc).pathname)) return block;
+    legacyPruned += 1;
+    return "";
+  });
+  if (pruned !== xml) writeFileSync(filePath, pruned, "utf-8");
+}
+
 // Note: sitemap-full.xml is no longer generated.
 // The split sub-sitemap approach (sitemap-{type}.xml) is the canonical structure.
 // Keeping a 1,463-URL monolithic sitemap wastes disk and creates crawl-budget confusion.
 
 console.log(`\nSitemap index written (${filteredEntries.length} total URLs across ${submapFiles.length} sub-sitemaps; ${noindexCount} thin pages excluded)`);
+console.log(`  Legacy sitemap prune: ${legacyPruned} noindex URLs removed`);
 console.log(`  Blog posts: ${blogPosts.length}`);
 console.log(`  Categories: ${categorySlugs.length}`);
 console.log(`  Comparisons: ${comparisons.length}`);

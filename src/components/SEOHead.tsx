@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { shouldNoindex } from "@/data/noindex-config";
 
 interface SEOHeadProps {
   title: string;
@@ -47,12 +48,13 @@ export default function SEOHead({
   const fullUrl = url
     ? (url.startsWith("http") ? url : `https://invisibleexit.com${url}`)
     : typeof window !== "undefined" ? window.location.href : "https://invisibleexit.com";
+  const effectiveNoindex = noindex || shouldNoindex(new URL(fullUrl).pathname);
 
   useEffect(() => {
     document.title = title;
 
     setMeta("name", "description", description);
-    setMeta("name", "robots", noindex ? "noindex, follow" : "index, follow");
+    setMeta("name", "robots", effectiveNoindex ? "noindex, follow" : "index, follow");
     setLink("canonical", fullUrl);
 
     // Open Graph
@@ -76,7 +78,7 @@ export default function SEOHead({
     if (type === "article" && modifiedDate) {
       setMeta("property", "article:modified_time", modifiedDate);
     }
-  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, noindex, url]);
+  }, [title, description, fullUrl, image, type, publishedDate, modifiedDate, effectiveNoindex, url]);
 
   return null;
 }

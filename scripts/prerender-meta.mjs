@@ -62,6 +62,7 @@ import { cities } from "../src/data/cities.ts";
 import { skills } from "../src/data/skills.ts";
 import { audienceIdeas } from "../src/data/audience-ideas.ts";
 import { cityProfessionPages } from "../src/data/city-profession.ts";
+import { shouldNoindex } from "../src/data/noindex-config.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -207,39 +208,6 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-}
-
-/**
- * Auto-detect thin programmatic pSEO pages for NOINDEX.
- * Conservative: only tags cross-product templates and clearly thin page types.
- * Mirrors the logic in src/data/noindex-config.ts.
- */
-function shouldNoindexPath(path) {
-  // NEVER noindex these
-  if (path === "/" || path === "" || path.startsWith("/freedom") || path === "/site-index.html") {
-    return false;
-  }
-  // KEEP single-profession idea pages (/ideas/accountant), only NOINDEX cross-products
-  if (path.startsWith("/ideas/")) {
-    const segments = path.split("/").filter(Boolean);
-    if (segments.length === 2) return false; // single profession → KEEP
-    return true; // /ideas/*/in/* or /ideas/*/with/* → NOINDEX
-  }
-  // Thin programmatic pages, URL prefixes to NOINDEX
-  const noindexPatterns = [
-    "/cities/",
-    "/revenue/",
-    "/break-even/",
-    "/cost-of-waiting/",
-    "/non-compete/",
-    "/first-year/",
-    "/mistakes/",
-    "/reddit/",
-    "/pricing-models/",
-    "/skills/",
-    "/audience/",
-  ];
-  return noindexPatterns.some(p => path.startsWith(p));
 }
 
 /**
@@ -418,7 +386,7 @@ ${hreflangLinks}
 
 function writePage(template, routePath, meta) {
   // Auto-detect NOINDEX for thin programmatic pSEO pages
-  if (shouldNoindexPath(routePath)) {
+  if (shouldNoindex(routePath)) {
     meta = { ...meta, noindex: true };
   }
   const html = injectMeta(template, meta, routePath);
@@ -438,7 +406,7 @@ function getRoutes() {
   routes.push({
     path: "/",
     meta: {
-      title: "Build a Faceless Side Business Without Quitting | Invisible Exit",
+      title: "Faceless Side Business Without Quitting | Invisible Exit",
       description:
         "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $9/mo.",
       url: `${SITE}/`,
