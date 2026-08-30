@@ -157,7 +157,7 @@ const ResetPassword = lazy(() => import("./pages/ResetPassword.tsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
 const Badge = lazy(() => import("./pages/Badge.tsx"));
 const Confirmation = lazy(() => import("./pages/Confirmation.tsx"));
-const CheckoutSuccess = lazy(() => import("./pages/CheckoutSuccess.tsx"));
+const WelcomePage = lazy(() => import("./pages/WelcomePage.tsx"));
 const AdminFeatureRequests = lazy(() => import("./pages/AdminFeatureRequests.tsx"));
 
 const queryClient = new QueryClient();
@@ -190,7 +190,8 @@ const App = () => (
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/oto/founding" element={<OTOFounding />} />
           <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/checkout/success" element={<CheckoutSuccess />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/checkout/success" element={<WelcomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/reset-password" element={<ResetPassword />} />

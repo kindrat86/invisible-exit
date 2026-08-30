@@ -49,7 +49,7 @@ const WeekendWorkshopPage = () => {
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: {
           tier: "workshop",
-          returnUrl: window.location.origin + "/checkout/success?sku=weekend-workshop",
+          returnUrl: window.location.origin + "/welcome",
         },
       });
       if (!error && data?.url) {

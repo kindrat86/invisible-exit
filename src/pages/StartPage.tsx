@@ -4,8 +4,7 @@ import { ArrowRight, Check, Shield, Lock, Zap, Clock, AlertCircle } from "lucide
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import { startCheckout } from "@/lib/checkout";
 import { trackEvent, trackGoogleConversion } from "@/lib/analytics";
 
 /**
@@ -110,17 +109,8 @@ const StartPage = () => {
     trackGoogleConversion(9);
     setCheckoutLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: {
-          tier: "starter",
-          returnUrl: window.location.origin + "/checkout/success",
-          ...(promo ? { coupon: promo } : {}),
-        },
-      });
-      if (error) throw error;
-      if (data?.url) window.location.href = data.url;
+      await startCheckout("starter", { coupon: promo ?? undefined });
     } catch (err) {
-      toast.error("Could not start checkout. Please try again.");
       console.error(err);
     } finally {
       setCheckoutLoading(false);

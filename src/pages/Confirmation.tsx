@@ -78,7 +78,7 @@ const Confirmation = () => {
         {
           body: {
             tier: "founders_toolkit",
-            returnUrl: window.location.origin + "/checkout/success",
+            returnUrl: window.location.origin + "/welcome",
           },
         }
       );

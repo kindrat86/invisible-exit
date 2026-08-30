@@ -111,7 +111,10 @@ type AnalyticsEvent =
   | "weekend_workshop_applied"
   | "attribution_survey_shown"
   | "attribution_survey_submitted"
-  | "attribution_survey_dismissed";
+  | "attribution_survey_dismissed"
+  | "checkout_start"
+  | "checkout_error"
+  | "welcome_login_ok";
 
 export function trackEvent(
   event: AnalyticsEvent,
