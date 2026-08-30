@@ -893,6 +893,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/welcome",
+      "destination": "/index.html"
+    },
+    {
       "source": "/checkout/success",
       "destination": "/index.html"
     },
