@@ -46,6 +46,7 @@ const TIERS = [
     highlight: true,
     badge: "Founding price, locked for life",
     annualNote: "or $79/year (save $29)",
+    firstChargeNote: "First charge $16 today ($9/mo + $7 one-time Stealth Ops Blueprint), then $9/month",
   },
   {
     name: "Stealth Pro",
@@ -110,7 +111,7 @@ const PricingPage = () => {
               <span className="text-gradient-light">Build Your Exit.</span>
             </h1>
             <p className="text-body-lg text-white/60 max-w-xl mx-auto mb-8">
-              Start for $9/month, founding members lock the rate in for life. Or save with $79/year.
+              Start for $9/month, founding members lock the rate in for life. Or save with $79/year. First charge adds a one-time $7 Stealth Ops Blueprint ($16 total at checkout).
             </p>
             <div className="inline-flex items-center gap-3 bg-success/10 border border-success/20 rounded-full px-5 py-2.5">
               <Shield className="w-4 h-4 text-success" />
@@ -150,6 +151,9 @@ const PricingPage = () => {
                     <span className="text-muted-foreground text-sm font-normal">{tier.period}</span>
                     {"annualNote" in tier && tier.annualNote && (
                       <p className="text-xs text-muted-foreground mt-1">{tier.annualNote}</p>
+                    )}
+                    {"firstChargeNote" in tier && tier.firstChargeNote && (
+                      <p className="text-xs text-foreground font-medium mt-1">{tier.firstChargeNote}</p>
                     )}
                   </div>
 

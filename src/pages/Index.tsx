@@ -1821,7 +1821,7 @@ and{" "}
               </p>
               <div className="space-y-3">
                 {[
-                  { step: "1 min", title: "Secure Stripe checkout", desc: "Apple Pay, Google Pay, or card. $9 charged today. Cancel in one click anytime." },
+                  { step: "1 min", title: "Secure Stripe checkout", desc: "Apple Pay, Google Pay, or card. First charge $16: $9/mo + $7 one-time Stealth Ops Blueprint. Cancel in one click anytime." },
                   { step: "2 min", title: "Instant dashboard access", desc: "Set your salary, expenses, and timeline. Get your Freedom Number immediately." },
                   { step: "5 min", title: "First idea validation", desc: "Browse 500+ scored micro-SaaS ideas filtered to your industry. Save 3–5." },
                   { step: "Day 2", title: "Stealth Ops audit runs", desc: "Upload your employment contract (optional). Get your invisibility score + fixes." },
@@ -1850,11 +1850,11 @@ and{" "}
                 {[
                   {
                     q: "Why $9? What's the catch?",
-                    a: "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life, not a trial, not an intro rate. Your card gets charged $9 every month until you cancel.",
+                    a: "There isn't one. The $9 Founder rate exists for one reason: I need founding members and case studies before the public launch. When we go public, the price goes to $19/month. You're locking in $9 for life, not a trial, not an intro rate. Full honesty on the first charge: checkout includes the $7 one-time Stealth Ops Blueprint, so you pay $16 today, then $9 every month until you cancel.",
                   },
                   {
                     q: "Is this one of those things where it's $9 today and $97 next week?",
-                    a: "No. The price is $9/month, locked for the life of your subscription. No surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $29/month, a completely separate choice you can make later. Or never.",
+                    a: "No. The recurring price is $9/month, locked for the life of your subscription. The first charge is $16 ($9 subscription + a one-time $7 Stealth Ops Blueprint, shown as its own line in Stripe checkout). After that it's $9/month, no surprise upgrades, no hidden tiers. If you want coaching and community, that's Pro at $29/month, a completely separate choice you can make later. Or never.",
                   },
                   {
                     q: "What if I sign up and realize I don't have time?",

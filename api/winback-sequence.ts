@@ -42,7 +42,7 @@ function winbackDay3() {
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I pivoted. Two weeks later: first customer. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're in Month 4 right now, I want you to know: the wall is real, but it's not permanent. The system works. It just needs consistency.</p>`,
     `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">
-<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month. Cancel anytime. 30-day money-back guarantee.</strong></p>
+<p style="font-size:14px;line-height:1.6;color:#4A5568;margin:0 0 12px 0;"><strong>5 Tools. $9/month after a one-time $7 Stealth Ops Blueprint (first charge $16). Cancel anytime. 30-day money-back guarantee.</strong></p>
 <a href="https://invisibleexit.com/start" style="display:inline-block;padding:12px 24px;background:#3B82F6;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;">Come Back for $9/month</a>
 </div>`,
   );

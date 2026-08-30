@@ -45,7 +45,7 @@ const GRAND_TOTAL = TOTAL_VALUE_MONTHLY + TOTAL_BONUS_VALUE; // $198
 const FAQS = [
   {
     q: "Is this really $9/month?",
-    a: "Yes. Founding members lock in $9/month for life. When founding closes, the price goes to $19/month. You keep $9 forever.",
+    a: "Yes, the recurring price is $9/month for life. When founding closes, the price goes to $19/month. You keep $9 forever. One honest note: checkout also includes the $7 one-time Stealth Ops Blueprint, so your first charge is $16. After that, it is $9 every month.",
   },
   {
     q: "Can I cancel anytime?",
@@ -121,7 +121,7 @@ const StartPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Start Building for $9/Month | Invisible Exit"
-        description="Get all 5 tools, FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, for $9/month. 30-day money-back guarantee."
+        description="Get all 5 tools, FYM Dashboard, Idea Pipeline, Stealth Ops Hub, Launch Control, Brand Manager, for $9/month plus a one-time $7 Stealth Ops Blueprint (first charge $16). 30-day money-back guarantee."
         url="/start"
         noindex
       />
@@ -151,7 +151,7 @@ const StartPage = () => {
             <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "50ms" }}>
               {fromTripwire
                 ? "The Stealth Ops Blueprint shows you how to stay invisible. These 5 tools show you what to build, validate, launch, and grow, all while keeping your day job."
-                : "All 5 tools. 3 bonuses. $9/month. Locked for life."}
+                : "All 5 tools. 3 bonuses. $9/month, locked for life. One-time $7 Stealth Ops Blueprint at checkout ($16 first charge)."}
             </p>
 
             {/* Trust bar */}
@@ -172,7 +172,7 @@ const StartPage = () => {
             <p className="text-eyebrow text-primary mb-4 text-center">The Full Stack</p>
             <h2 className="text-h1 text-foreground mb-2 text-center">Here's Everything You Get</h2>
             <p className="text-body text-muted-foreground text-center mb-10 max-w-xl mx-auto">
-              5 tools + 3 fast-action bonuses. Total value <strong className="text-foreground">${GRAND_TOTAL}</strong>. Your founding price: $9/month.
+              5 tools + 3 fast-action bonuses. Total value <strong className="text-foreground">${GRAND_TOTAL}</strong>. Your founding price: $9/month + $7 one-time Stealth Ops Blueprint ($16 first charge).
             </p>
 
             {/* Core tools */}
@@ -231,12 +231,15 @@ const StartPage = () => {
                 <div className="flex items-center justify-between py-4">
                   <span className="text-foreground font-semibold text-lg">Your price today:</span>
                   <div className="text-right">
-                    <span className="text-4xl sm:text-5xl font-bold text-primary">$9</span>
-                    <span className="text-lg font-normal text-muted-foreground">/mo</span>
+                    <span className="text-4xl sm:text-5xl font-bold text-primary">$16</span>
+                    <span className="text-lg font-normal text-muted-foreground">/first charge</span>
                   </div>
                 </div>
+                <p className="text-caption text-center mb-2">
+                  $9/month subscription + $7 one-time Stealth Ops Blueprint = $16 today.
+                </p>
                 <p className="text-caption text-center mb-6">
-                  That's ${GRAND_TOTAL}/month in value for $9/month. Locked for life.
+                  Then $9/month. That's ${GRAND_TOTAL}/month in value. Locked for life.
                 </p>
               </div>
             </div>
@@ -265,8 +268,8 @@ const StartPage = () => {
               )}
             </button>
             <p className="text-sm text-muted-foreground mt-4">
-              $9/month · Secure Stripe checkout.
-              {" "}Cancel anytime.
+              First charge $16 ($9/mo + $7 one-time Stealth Ops Blueprint).{" "}
+              Then $9/month · Secure Stripe checkout · Cancel anytime.
             </p>
             <div className="flex items-center justify-center gap-4 mt-4 text-xs text-muted-foreground/60">
               <span className="flex items-center gap-1.5">
@@ -365,7 +368,7 @@ const StartPage = () => {
               )}
             </button>
             <p className="text-sm text-white/40 mt-4">
-              30-day money-back guarantee · Cancel anytime · Locked at $9/month for life
+              30-day money-back guarantee · Cancel anytime · $16 first charge ($9/mo + $7 one-time Stealth Ops Blueprint), then $9/month for life
             </p>
           </div>
         </section>
