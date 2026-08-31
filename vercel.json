@@ -1260,11 +1260,5 @@
       "source": "/data/(.*)",
       "destination": "/data/$1/index.html"
     }
-  ],
-  "crons": [
-    {
-      "path": "/api/email-sequence-scheduler",
-      "schedule": "0 9 * * *"
-    }
   ]
 }
