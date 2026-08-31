@@ -387,8 +387,9 @@ export async function sendEmail(
   const normalizedEmail = to.trim().toLowerCase();
   const unsubscribeToken = createHmac("sha256", unsubscribeSecret)
     .update(normalizedEmail)
-    .digest("hex");
-  const unsubscribeUrl = `https://invisibleexit.com/api/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${unsubscribeToken}`;
+    .digest("base64url")
+    .slice(0, 32);
+  const unsubscribeUrl = `https://invisibleexit.com/api/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&t=${unsubscribeToken}`;
   const htmlWithUnsubscribe = `${html}
 <p style="font-size:12px;color:#8A95A8;text-align:center;margin-top:24px;">
   <a href="${unsubscribeUrl}" style="color:#8A95A8;">Unsubscribe in one click</a>

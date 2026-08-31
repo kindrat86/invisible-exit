@@ -47,8 +47,9 @@ describe("native lifecycle email safety", () => {
     const payload = JSON.parse(String(request.body));
     const token = createHmac("sha256", "test-secret")
       .update(email.trim().toLowerCase())
-      .digest("hex");
-    const unsubscribeUrl = `https://invisibleexit.com/api/unsubscribe?email=${encodeURIComponent(email.trim().toLowerCase())}&token=${token}`;
+      .digest("base64url")
+      .slice(0, 32);
+    const unsubscribeUrl = `https://invisibleexit.com/api/unsubscribe?email=${encodeURIComponent(email.trim().toLowerCase())}&t=${token}`;
 
     expect(payload.bcc).toEqual(["sales@sipiteno.com"]);
     expect(payload.html).toContain(unsubscribeUrl);
