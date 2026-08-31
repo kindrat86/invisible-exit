@@ -942,7 +942,13 @@ and{" "}
             <p className="text-body text-muted-foreground max-w-2xl mx-auto">
               This isn't a course. It's not a community. It's not a SaaS tool.
               It's a new category, the world's first anonymity-native framework
-              for building recurring revenue while employed.
+              for building recurring revenue while employed. New to building
+              under a brand instead of your name? Read the{" "}
+              <a href="/how-to-build-a-business-while-employed-without-using-your-real-name" className="text-primary underline hover:text-primary-hover">
+                full guide to building a business without using your real name
+              </a>
+              , including what your employment agreement actually restricts and
+              where brand privacy ends.
             </p>
           </div>
 
