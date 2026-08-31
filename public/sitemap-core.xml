@@ -359,6 +359,14 @@
     </image:image>
   </url>
   <url>
+    <loc>https://invisibleexit.com/how-to-build-a-business-while-employed-without-using-your-real-name</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://invisibleexit.com/og/how-to-build-a-business-while-employed-without-using-your-real-name.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://invisibleexit.com/site-index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
