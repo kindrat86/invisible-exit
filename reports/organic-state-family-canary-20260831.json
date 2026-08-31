@@ -1,0 +1,1825 @@
+{
+  "generated_at_utc": "2026-08-31T13:11:39.278896+00:00",
+  "gsc_property": "https://invisibleexit.com/",
+  "window": {
+    "start": "2026-08-01",
+    "end": "2026-08-30",
+    "dataState": "all"
+  },
+  "summary": {
+    "banking": {
+      "total": 51,
+      "zero_impression": 27,
+      "with_impressions": 24,
+      "with_clicks": 0,
+      "impressions": 91,
+      "clicks": 0
+    },
+    "insurance": {
+      "total": 51,
+      "zero_impression": 45,
+      "with_impressions": 6,
+      "with_clicks": 0,
+      "impressions": 10,
+      "clicks": 0
+    },
+    "tax-guides": {
+      "total": 51,
+      "zero_impression": 34,
+      "with_impressions": 17,
+      "with_clicks": 0,
+      "impressions": 30,
+      "clicks": 0
+    },
+    "nda-guides": {
+      "total": 51,
+      "zero_impression": 50,
+      "with_impressions": 1,
+      "with_clicks": 0,
+      "impressions": 1,
+      "clicks": 0
+    }
+  },
+  "canary": [
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/iowa",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/kentucky",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/maryland",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/alabama",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/georgia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/iowa",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/alaska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/kansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/alabama",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/alaska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/california",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/georgia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    }
+  ],
+  "all_records": [
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/alabama",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 98.7
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/alaska",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 65.4
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/arkansas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 97.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/california",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 87.2
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/georgia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 59.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/hawaii",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 61.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/iowa",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/kansas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 96.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/kentucky",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/maine",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 57.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/maryland",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/massachusetts",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 81.6
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/michigan",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 79.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/minnesota",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 67.5
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/mississippi",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/missouri",
+      "clicks": 0,
+      "impressions": 17,
+      "position": 96.1
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/montana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/nebraska",
+      "clicks": 0,
+      "impressions": 17,
+      "position": 72.2
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/nevada",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 86.5
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/new-hampshire",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/new-jersey",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/new-mexico",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/new-york",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/north-carolina",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 88.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/north-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/ohio",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/oklahoma",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 81.5
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/oregon",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/pennsylvania",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 94.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/rhode-island",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 89.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/south-carolina",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/south-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/tennessee",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 83.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/texas",
+      "clicks": 0,
+      "impressions": 9,
+      "position": 76.4
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/utah",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/vermont",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 94.2
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/virginia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 39.0
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/washington",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/west-virginia",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 53.5
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/wisconsin",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "banking",
+      "url": "https://invisibleexit.com/banking/wyoming",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/alabama",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/alaska",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 93.0
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/california",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 80.0
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/georgia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/idaho",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 70.2
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/iowa",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/kansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/kentucky",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/maine",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/maryland",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 68.0
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/massachusetts",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/michigan",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/minnesota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/mississippi",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/missouri",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/montana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/nebraska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/nevada",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/new-hampshire",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/new-jersey",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/new-mexico",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/new-york",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/north-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/north-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/ohio",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/oklahoma",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/oregon",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/pennsylvania",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 50.0
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/rhode-island",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/south-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/south-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/tennessee",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/texas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/utah",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/vermont",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 86.0
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/virginia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/washington",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/west-virginia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/wisconsin",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "insurance",
+      "url": "https://invisibleexit.com/insurance/wyoming",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/alabama",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 73.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/alaska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/california",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 87.7
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/colorado",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 48.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/connecticut",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/florida",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 100.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/georgia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 90.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/iowa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 64.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/kansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/kentucky",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 66.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/maine",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/maryland",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/massachusetts",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/michigan",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/minnesota",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 46.6
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/mississippi",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/missouri",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/montana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/nebraska",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 47.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/nevada",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 63.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/new-hampshire",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/new-jersey",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/new-mexico",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/new-york",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 89.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/north-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/north-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/ohio",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 93.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/oklahoma",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/oregon",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/pennsylvania",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/rhode-island",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 34.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/south-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/south-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/tennessee",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/texas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 55.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/utah",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/vermont",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/virginia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/washington",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 83.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/west-virginia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 92.0
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/wisconsin",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 44.5
+    },
+    {
+      "family": "tax-guides",
+      "url": "https://invisibleexit.com/tax-guides/wyoming",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/alabama",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/alaska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/arizona",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/arkansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/california",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/colorado",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/connecticut",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 72.0
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/delaware",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/district-of-columbia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/florida",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/georgia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/hawaii",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/idaho",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/illinois",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/indiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/iowa",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/kansas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/kentucky",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/louisiana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/maine",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/maryland",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/massachusetts",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/michigan",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/minnesota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/mississippi",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/missouri",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/montana",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/nebraska",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/nevada",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/new-hampshire",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/new-jersey",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/new-mexico",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/new-york",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/north-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/north-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/ohio",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/oklahoma",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/oregon",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/pennsylvania",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/rhode-island",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/south-carolina",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/south-dakota",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/tennessee",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/texas",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/utah",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/vermont",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/virginia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/washington",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/west-virginia",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/wisconsin",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    },
+    {
+      "family": "nda-guides",
+      "url": "https://invisibleexit.com/nda-guides/wyoming",
+      "clicks": 0,
+      "impressions": 0,
+      "position": null
+    }
+  ]
+}
