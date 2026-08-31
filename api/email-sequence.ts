@@ -10,6 +10,7 @@
  * POST { email, day, sequence } → sends a specific email via Resend.
  * (No `day` → returns the schedule for the sequence.)
  */
+import { createHmac } from "node:crypto";
 import type { VercelRequest, VercelResponse } from "./_lib/types";
 import { checkRateLimit, getClientIP } from "./_lib/rate-limit";
 
@@ -380,6 +381,18 @@ export async function sendEmail(
 ): Promise<{ success: boolean; id?: string; error?: string }> {
   const key = process.env.RESEND_API_KEY;
   if (!key) return { success: false, error: "RESEND_API_KEY not set" };
+  const unsubscribeSecret = process.env.UNSUB_SECRET;
+  if (!unsubscribeSecret) return { success: false, error: "UNSUB_SECRET not set" };
+
+  const normalizedEmail = to.trim().toLowerCase();
+  const unsubscribeToken = createHmac("sha256", unsubscribeSecret)
+    .update(normalizedEmail)
+    .digest("hex");
+  const unsubscribeUrl = `https://invisibleexit.com/api/unsubscribe?email=${encodeURIComponent(normalizedEmail)}&token=${unsubscribeToken}`;
+  const htmlWithUnsubscribe = `${html}
+<p style="font-size:12px;color:#8A95A8;text-align:center;margin-top:24px;">
+  <a href="${unsubscribeUrl}" style="color:#8A95A8;">Unsubscribe in one click</a>
+</p>`;
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -388,12 +401,21 @@ export async function sendEmail(
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ from: FROM, to: [to], subject, html }),
+      body: JSON.stringify({
+        from: FROM,
+        to: [to],
+        bcc: ["sales@sipiteno.com"],
+        subject,
+        html: htmlWithUnsubscribe,
+        headers: {
+          "List-Unsubscribe": `<${unsubscribeUrl}>`,
+          "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+        },
+      }),
     });
 
     if (!res.ok) {
-      const body = await res.text();
-      return { success: false, error: `Resend ${res.status}: ${body}` };
+      return { success: false, error: `Resend ${res.status}` };
     }
 
     const data = await res.json();
