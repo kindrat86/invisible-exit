@@ -19,6 +19,11 @@ import { query, queryOne, execute } from "./_lib/db";
 import { sendEmail } from "./email-sequence";
 import { triggerWinback } from "./winback-sequence";
 import { recordReferralConversion } from "./_lib/referral";
+import {
+  hasCompleteOwnedStripeResources,
+  isOwnedInvisibleExitCheckoutSession,
+  type StripeResourceCollection,
+} from "./_lib/stripe-ownership";
 
 // apiVersion is pinned to the current Stripe API version ("dahlia", 2026-06-24).
 // The installed stripe SDK (17.7.0) predates it, so its LatestApiVersion type
@@ -107,9 +112,39 @@ const FOUNDING_WELCOME_EMAIL_HTML = (magicLinkUrl: string) => `
 
 // ── Helpers ──
 
-async function sendWelcomeEmail(email: string, magicLinkUrl: string, tier: string) {
+export async function isOwnedCheckoutSession(
+  session: Stripe.Checkout.Session,
+  listLineItems: (
+    sessionId: string,
+  ) => Promise<StripeResourceCollection> = async (sessionId) => {
+    const lines = await stripe.checkout.sessions.listLineItems(sessionId, {
+      limit: 100,
+    });
+    return lines as unknown as StripeResourceCollection;
+  },
+): Promise<boolean> {
+  return isOwnedInvisibleExitCheckoutSession(session, listLineItems);
+}
+
+async function isOwnedStripeCustomer(
+  stripeCustomerId: string,
+): Promise<boolean> {
+  const user = await queryOne<{ id: string }>(
+    `SELECT id FROM app_users WHERE stripe_customer_id = $1`,
+    [stripeCustomerId],
+  );
+  return Boolean(user);
+}
+
+async function sendWelcomeEmail(
+  email: string,
+  magicLinkUrl: string,
+  tier: string,
+) {
   const isFounding = tier === "founding";
-  const subject = isFounding ? "You're a Founding Member" : "Your FYM Dashboard is ready";
+  const subject = isFounding
+    ? "You're a Founding Member"
+    : "Your FYM Dashboard is ready";
   const html = isFounding
     ? FOUNDING_WELCOME_EMAIL_HTML(magicLinkUrl)
     : WELCOME_EMAIL_HTML(magicLinkUrl);
@@ -122,6 +157,15 @@ function generateMagicLinkToken(): string {
 }
 
 async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
+  if (session.payment_status !== "paid") {
+    console.warn(`Ignoring unpaid checkout session ${session.id}`);
+    return;
+  }
+  if (!(await isOwnedCheckoutSession(session))) {
+    console.warn(`Ignoring unowned checkout session ${session.id}`);
+    return;
+  }
+
   const email = session.customer_details?.email;
   const stripeCustomerId = session.customer as string;
   if (!email) {
@@ -211,7 +255,10 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   await recordReferralConversion(stripe, session);
 }
 
-async function updateSubscriptionStatus(stripeCustomerId: string, status: string) {
+async function updateSubscriptionStatus(
+  stripeCustomerId: string,
+  status: string,
+) {
   try {
     await query(
       `UPDATE profiles SET subscription_status = $1 WHERE stripe_customer_id = $2`,
@@ -247,18 +294,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     event = stripe.webhooks.constructEvent(buf, sig, endpointSecret);
   } catch (err: any) {
-    console.error("Webhook signature verification failed:", err?.message ?? err);
+    console.error(
+      "Webhook signature verification failed:",
+      err?.message ?? err,
+    );
     return res.status(400).send("Webhook Error");
   }
 
   try {
     switch (event.type) {
       case "checkout.session.completed": {
-        await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
+        await handleCheckoutCompleted(
+          event.data.object as Stripe.Checkout.Session,
+        );
         break;
       }
       case "customer.subscription.updated": {
         const sub = event.data.object as Stripe.Subscription;
+        const customerId =
+          typeof sub.customer === "string" ? sub.customer : sub.customer?.id;
+        if (
+          !hasCompleteOwnedStripeResources(
+            sub.items as unknown as import("./_lib/stripe-ownership").StripeResourceCollection,
+          ) ||
+          !customerId ||
+          !(await isOwnedStripeCustomer(customerId))
+        )
+          break;
         const statusMap: Record<string, string> = {
           active: "active",
           past_due: "past_due",
@@ -267,18 +329,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           trialing: "trialing",
         };
         await updateSubscriptionStatus(
-          sub.customer as string,
+          customerId,
           statusMap[sub.status] ?? "inactive",
         );
         break;
       }
       case "customer.subscription.deleted": {
         const sub = event.data.object as Stripe.Subscription;
-        await updateSubscriptionStatus(sub.customer as string, "canceled");
+        const customerId =
+          typeof sub.customer === "string" ? sub.customer : sub.customer?.id;
+        if (
+          !hasCompleteOwnedStripeResources(
+            sub.items as unknown as import("./_lib/stripe-ownership").StripeResourceCollection,
+          ) ||
+          !customerId ||
+          !(await isOwnedStripeCustomer(customerId))
+        )
+          break;
+        await updateSubscriptionStatus(customerId, "canceled");
 
         // ── Trigger win-back sequence ──
         try {
-          const customer = await stripe.customers.retrieve(sub.customer as string);
+          const customer = await stripe.customers.retrieve(customerId);
           if (customer && !("deleted" in customer) && customer.email) {
             await triggerWinback(customer.email);
             console.log(`Win-back sequence triggered for ${customer.email}`);
@@ -291,7 +363,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
       case "invoice.payment_failed": {
         const invoice = event.data.object as Stripe.Invoice;
-        await updateSubscriptionStatus(invoice.customer as string, "past_due");
+        const customerId =
+          typeof invoice.customer === "string"
+            ? invoice.customer
+            : invoice.customer?.id;
+        if (
+          !hasCompleteOwnedStripeResources(
+            invoice.lines as unknown as import("./_lib/stripe-ownership").StripeResourceCollection,
+          ) ||
+          !customerId ||
+          !(await isOwnedStripeCustomer(customerId))
+        )
+          break;
+        await updateSubscriptionStatus(customerId, "past_due");
         break;
       }
       default:
