@@ -373,6 +373,14 @@ async function main() {
     // NOT added: the /niches hub, App.tsx routes it to <Navigate to="/blog" />,
     // so submitting it would just feed Google a client-side redirect.
     { loc: "https://invisibleexit.com/network", lastmod: today, changefreq: "monthly", priority: "0.5" },
+    // Canonical guide, static page (public/how-to-build-a-business-while-employed-without-using-your-real-name.html,
+    // rewritten from the clean URL). Listed explicitly or the build-regenerated sitemap drops it.
+    {
+      loc: "https://invisibleexit.com/how-to-build-a-business-while-employed-without-using-your-real-name",
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.8",
+    },
     { loc: "https://invisibleexit.com/site-index.html", lastmod: today, changefreq: "weekly", priority: "0.5" },
     // Static research datasets (public/data/<slug>/index.html, served via /data/(.*) rewrite).
     // These are NOT dataReports entries (those are React routes), list them explicitly
