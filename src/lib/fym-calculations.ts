@@ -66,8 +66,8 @@ export function monthsToTarget(
   monthlyGrowthRate: number,
   targetMrr: number
 ): number | null {
-  if (startMrr <= 0 || monthlyGrowthRate <= 0) return null;
   if (startMrr >= targetMrr) return 0;
+  if (startMrr <= 0 || monthlyGrowthRate <= 0) return null;
   return Math.ceil(
     Math.log(targetMrr / startMrr) / Math.log(1 + monthlyGrowthRate / 100)
   );
