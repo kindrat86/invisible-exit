@@ -1,7 +1,7 @@
 # Moonlighting & Side-Business Clause Reference — Primary Source Research
 
-Brand: Invisible Exit · Site: invisibleexit.com · Backlog order 5, research slices 1-2 (CA, WA, NY, TX, IL, CO, MA)
-Research dates: 2026-09-03 and 2026-09-06 (each quote records its live verification date)
+Brand: Invisible Exit · Site: invisibleexit.com · Backlog order 5, research slices 1-3 (CA, WA, NY, TX, IL, CO, MA, ND)
+Research dates: 2026-09-03, 2026-09-06 and 2026-09-07 (each quote records its live verification date)
 Guardrail: NOTHING in this file is publishable as-is. This is a source inventory only.
 Publishing tick must re-pull each URL, quote-check, satisfy §5.1 (sourced numbers only),
 §5.2 (dataset assertions) and §5.7 (1:1 URL displacement, zero net-new until week 14).
@@ -60,7 +60,13 @@ rest pending. PENDING = not captured. Never upgrade a status without a live re-p
 - source_urls: https://scocal.stanford.edu/opinion/edwards-v-arthur-andersen-33130/
   (Stanford SCOCAL mirror, full opinion text) and
   https://www.gmsr.com/wp-content/uploads/2016/06/Edwards-v-Arthur-Andersen-LLP-Opinion.pdf
-  (opinion PDF). Official courts.ca.gov opinion PDF not yet pulled — grab before publishing.
+  (opinion PDF). The former official archive URL
+  https://www4.courts.ca.gov/opinions/archive/S147190.PDF returned an HTTP error on 2026-09-07,
+  and the current courts.ca.gov search surfaced only the superseded Court of Appeal opinion.
+  The original Supreme Court PDF remains available at
+  https://cases.justia.com/california/supreme-court/S147190.PDF?ts=1462305080 and the Stanford
+  SCOCAL page identifies it as docket S147190, filed August 7, 2008. Neither is an official
+  courts.ca.gov host, so keep the official-artifact gap explicit rather than mislabeling a mirror.
 - Captured holding: "We hold that the noncompetition agreement here is invalid under section
   16600, and we reject the narrow-restraint exception urged by Andersen. Noncompetition
   agreements are invalid under section 16600 in California even if narrowly drawn, unless they
@@ -179,27 +185,42 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ## Texas
 
-### Tex. Bus. & Com. Code § 15.50(a) — criteria for enforceability — VERIFIED via unofficial mirror
-- source_url (captured this session, UNOFFICIAL 2023 mirror):
-  https://law.justia.com/codes/texas/2023/business-and-commerce-code/title-2/chapter-15/subchapter-e/section-15-50/
-  Universal citation shown: TX Bus & Com Code § 15.50 (2023).
-- Official source NOT yet captured: https://statutes.capitol.texas.gov/Docs/BC/htm/BC.15.50.htm
-  renders only a nav shell to this extractor (2 attempts), and statutes.legis.texas.gov gave a
-  connect_error. Before publishing: verify quote against the official site (browser, not
-  extractor) or law.justia is acceptable ONLY with the official cite confirmed elsewhere.
-- Captured text: "(a) Notwithstanding Section 15.05 of this code, and subject to any applicable
-  provision of Subsection (b), a covenant not to compete is enforceable if it is ancillary to
-  or part of an otherwise enforceable agreement at the time the agreement is made to the extent
-  that it contains limitations as to time, geographical area, and scope of activity to be
-  restrained that are reasonable and do not impose a greater restraint than is necessary to
-  protect the goodwill or other business interest of the promisee."
-- PENDING: subsection (b) (court reformation of overbroad covenants) not captured; TX
-  anti-moonlighting caselaw (Pharma-Serve/Elfield-style "additional employment" disputes is a
-  memory, NOT a verified cite — do not use until pulled) not researched.
-- Side-business relevance: TX is a reasonableness jurisdiction — an otherwise-enforceable
-  agreement with a reasonably-scoped restraint CAN stand, unlike CA/WA. That contrast is the
-  editorial spine of the TX page.
-- last_verified: 2026-09-03
+### Tex. Bus. & Com. Code § 15.50(a) — criteria for enforceability — VERIFIED on official legislative host
+- source_url: https://tcss.legis.texas.gov/resources/bc/htm/bc.15.htm#15.50
+- Official source host: Texas Constitution and Statutes / Texas Legislative Council. The older
+  statutes.capitol.texas.gov deep links returned only the navigation shell to the extractor;
+  the tcss.legis.texas.gov resource exposed the current statutory text on 2026-09-07.
+- Captured current subsection (a): "Notwithstanding Section 15.05 and subject to any applicable
+  provision of Subsection (b) and Section 15.501, a covenant not to compete is enforceable if it
+  is ancillary to or part of an otherwise enforceable agreement at the time the agreement is
+  made to the extent that it contains limitations as to time, geographical area, and scope of
+  activity to be restrained that are reasonable and do not impose a greater restraint than is
+  necessary to protect the goodwill or other business interest of the promisee."
+- Currency correction: the 2023 mirror captured in slice 1 predates the 2025 amendment. The
+  current text adds the cross-reference to § 15.501, and the official history records S.B. 1318
+  as effective September 1, 2025. Never publish the old quote as current law.
+- Side-business relevance: § 15.50 governs enforceability of covenants not to compete. It does
+  not itself create permission to compete with an employer while still employed.
+- last_verified: 2026-09-07
+
+### Navigant Consulting, Inc. v. Wilkinson, 508 F.3d 277 (5th Cir. 2007) — VERIFIED
+- source_url: https://www.ca5.uscourts.gov/Opinions/pub/06/06-11071-CV0.wpd.pdf
+- Official source: published Fifth Circuit opinion, No. 06-11071, revised December 13, 2007,
+  applying Texas law to employees who planned and acted toward a competing venture while employed.
+- Captured rule: an at-will employee may plan to compete, take active preparatory steps while
+  employed, and generally need not disclose those plans. The opinion then quotes Johnson v.
+  Brewer & Pritchard, P.C., 73 S.W.3d 193, 202 (Tex. 2002), for the limits: the employee may not
+  appropriate trade secrets, solicit the employer's customers while still employed, carry away
+  customer lists, or pursue future interests at the employer's expense using employer funds or
+  employees or conduct designed to hurt the employer.
+- Captured application: the court held the evidence sufficient for a jury to find breach where
+  trusted employees attempted to sell their employer's practice for personal gain, disclosed
+  confidential information, solicited employees, and used a lease they negotiated for the
+  employer as leverage. The court affirmed the judgment except for remanding the fee award.
+- Side-business relevance: this supplies the missing Texas line between permissible preparation
+  and disloyal in-employment conduct. It does not mean every Texas employee is a fiduciary; the
+  opinion expressly analyzes employees in a relationship of trust and confidence.
+- last_verified: 2026-09-07
 
 ---
 
@@ -268,6 +289,45 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
   leave formulas until the entire current section is re-pulled into the §5.1 manifest.
 - last_verified: 2026-09-06
 
+### Chelsea Industries, Inc. v. Gaffney, 389 Mass. 1 (1983) — VERIFIED
+- source_url: https://www.masscasesarchive.com/masscases.com/cases/sjc/389/389mass1.html
+- Source: full Supreme Judicial Court opinion in the Massachusetts Cases Archive, linked to the
+  Commonwealth's Trial Court Law Libraries. The opinion identifies the court, citation, dates and
+  participating justices; use the official reporter citation rather than treating a case summary
+  as authority.
+- Captured rule: trusted executive employees "owe a duty of loyalty to their employer and must
+  protect the interests of the employer." The court states that an executive employee is "barred
+  from actively competing with his employer during the tenure of his employment, even in the
+  absence of an express covenant so providing."
+- Captured application: the court upheld the finding that the executives breached their duty by
+  using their positions, employer resources and customer relationships while establishing a
+  competing business. The opinion also recognizes forfeiture of compensation as a possible remedy
+  for disloyal conduct even without proof of actual injury.
+- Side-business relevance: this closes the Massachusetts in-employment gap for trusted executives.
+  It does not establish that every employee owes the same fiduciary duty, and § 24L still concerns
+  post-employment covenants rather than permission to compete during employment.
+- last_verified: 2026-09-07
+
+---
+
+## North Dakota
+
+### N.D. Cent. Code §§ 14-02.4-03 and 14-02.4-08 — lawful off-duty activity — VERIFIED
+- source_url: https://ndlegis.gov/cencode/t14c02-4.pdf
+- Official source: current North Dakota Century Code chapter 14-02.4 PDF on ndlegis.gov.
+- Captured § 14-02.4-03(1): it is a discriminatory practice to refuse to hire, discharge, or give
+  adverse or unequal treatment concerning listed employment terms because of "participation in
+  lawful activity off the employer's premises during nonworking hours which is not in direct
+  conflict with the essential business-related interests of the employer."
+- Captured § 14-02.4-08 exception: an employer may act when the otherwise protected lawful activity
+  is contrary to a bona fide occupational qualification that reasonably and rationally relates to
+  the duties of a particular employee or employee group rather than all employees.
+- Scope caution: the chapter does not define "lawful activity" as a side business specifically.
+  Future Invisible Exit copy may say the text is broad enough to require analysis of off-duty work,
+  but must not promise that a competing business is protected. Direct conflict with essential
+  business interests and the occupational-qualification exception remain fact-specific limits.
+- last_verified: 2026-09-07
+
 ---
 
 ## Rejected / dead ends (do not cite)
@@ -280,24 +340,24 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ## Candidate sources for the NEXT research slice (UNVERIFIED — pull before believing)
 
-- California: locate the official courts.ca.gov S147190 Supreme Court opinion artifact. The
-  current official case page found in search is the superseded Court of Appeal decision; keep
-  the Stanford full-opinion mirror until the Supreme Court artifact is verified.
-- Texas: official § 15.50 text plus in-employment anti-moonlighting / duty-of-loyalty cases.
-- Massachusetts: in-employment duty-of-loyalty and employee-invention statutes/cases; §24L alone
-  only answers post-employment noncompetes.
-- State 8: pick a state with a primary law explicitly addressing lawful off-duty employment,
-  not another generic post-employment noncompete statute.
+- California: the former official S147190 archive URL is dead and the current official search
+  surfaced only the superseded appellate opinion. Ask the California Supreme Court archive or
+  preserve the original-opinion mirrors with the source limitation explicit.
+- North Dakota: find controlling state appellate interpretation of "lawful activity" and "direct
+  conflict" before claiming the chapter covers a paid side business rather than off-duty conduct
+  generally.
+- States 9-10: select only states with primary statutes expressly covering lawful off-duty work or
+  outside employment, not more generic post-employment noncompete statutes.
 - Federal overlay: FTC noncompete rule status after the 2024 Texas litigation — must be
   re-verified from a primary court document before ANY federal mention is published.
 
 ## Verification checklist for the publishing tick
 
 1. Re-pull every source_url above; confirm each captured quote still matches verbatim.
-2. Close the remaining source gaps: official Edwards S147190 opinion, official Texas §15.50,
-   Massachusetts in-employment authority, and one additional state with an off-duty-work law.
-3. Cut any state whose core in-employment rule is not supported by primary authority; a
-   post-employment noncompete statute alone does not answer whether a current employee may compete.
+2. Keep the California official-artifact limitation explicit unless the Supreme Court archive
+   supplies S147190; do not substitute the superseded appellate opinion.
+3. Find controlling North Dakota interpretation before treating "lawful activity" as a blanket
+   shield for paid moonlighting; cut any state whose core rule lacks primary authority.
 4. No dollar thresholds, dates, or case cites may appear on-page without a row in the
    § 5.1 machine-readable manifest pointing at the exact source_url.
 5. § 5.7: any page published must displace an existing URL 1:1 — reuse a retired /data/ or
@@ -307,8 +367,9 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ## Coverage status
 
-CA core statutes done (4 sources; official Edwards artifact still pending) · WA core statutes done
-(5 sections plus session law) · NY statute + direct-competition duty-of-loyalty case done ·
-IL selected current sections done · CO current session-law amendment done · MA post-employment
-scope done but in-employment authority pending · TX official text/caselaw pending.
-Seven states started; six have at least one official primary source. Nothing is published.
+CA core statutes done (4 sources; official Edwards artifact unavailable on the migrated archive) ·
+WA core statutes done (5 sections plus session law) · NY statute + direct-competition duty-of-loyalty
+case done · TX current official statute + federal appellate Texas-law case done · IL selected current
+sections done · CO current session-law amendment done · MA post-employment statute + in-employment
+trusted-executive case done · ND off-duty-activity statute done, judicial scope pending.
+Eight states started; all eight have at least one official or primary-law source. Nothing is published.
