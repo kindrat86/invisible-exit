@@ -1,7 +1,7 @@
 # Moonlighting & Side-Business Clause Reference — Primary Source Research
 
-Brand: Invisible Exit · Site: invisibleexit.com · Backlog order 5, research slices 1-3 (CA, WA, NY, TX, IL, CO, MA, ND)
-Research dates: 2026-09-03, 2026-09-06 and 2026-09-07 (each quote records its live verification date)
+Site: invisibleexit.com · Backlog order 5, research slice 1 (CA, WA, NY, TX)
+Research date: 2026-09-03 (every quote below was pulled live from its source_url this session)
 Guardrail: NOTHING in this file is publishable as-is. This is a source inventory only.
 Publishing tick must re-pull each URL, quote-check, satisfy §5.1 (sourced numbers only),
 §5.2 (dataset assertions) and §5.7 (1:1 URL displacement, zero net-new until week 14).
@@ -18,55 +18,31 @@ rest pending. PENDING = not captured. Never upgrade a status without a live re-p
   (NOTE: needs the trailing dot after 16600; the dotless URL renders an empty shell)
 - Captured text: "(a) Except as provided in this chapter, every contract by which anyone is
   restrained from engaging in a lawful profession, trade, or business of any kind is to that
-  extent void." Subsection (b)(1): "This section shall be read broadly, in accordance with
-  Edwards v. Arthur Andersen LLP (2008) 44 Cal.4th 937, to void the application of any
-  noncompete agreement in an employment context, or any noncompete clause in an employment
-  contract, no matter how narrowly tailored, that does not satisfy an exception in this chapter."
+  extent void." and "(b) (1) This section shall be read broadly, in accordance with Edwards v.
+  [caption truncated in capture — re-pull for full (b) text before publishing]"
 - Side-business relevance: a broad "you may not run any side business" clause is a restraint
   on "a lawful ... business of any kind" -> void in CA outside the statutory exceptions
   (sale of business / partnership / LLC dissolution: §§ 16601, 16602, 16602.5, per Edwards).
-- last_verified: 2026-09-06
+- last_verified: 2026-09-03
 
-### CA Bus. & Prof. Code § 16600.5 — out-of-state contracts and remedies — VERIFIED
-- source_url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=16600.5&lawCode=BPC
-- Captured text: "Any contract that is void under this chapter is unenforceable regardless of
-  where and when the contract was signed." An employer or former employer may not attempt to
-  enforce such a contract even when it was signed and employment was maintained outside California.
-  An employer may not enter into a contract containing a provision void under the chapter.
-- Captured remedies: an employee, former employee, or prospective employee may seek injunctive
-  relief, actual damages, or both; a prevailing claimant is entitled to reasonable attorney's
-  fees and costs. The section identifies SB 699 and an effective date of January 1, 2024.
-- Side-business relevance: the statute addresses attempts to enforce out-of-state restraints
-  that are void under the California chapter. It does not by itself answer which worker or
-  transaction has enough California connection, so the future tool must not present it as a
-  universal choice-of-law rule.
-- last_verified: 2026-09-06
-
-### Cal. Lab. Code § 2870 — employee inventions excluded from assignment — VERIFIED
+### Cal. Lab. Code § 2870 — employee inventions excluded from assignment — VERIFIED (exceptions)
 - source_url: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=2870.&lawCode=LAB
-- Captured subsection (a): an invention-assignment provision "shall not apply to an invention
-  that the employee developed entirely on his or her own time without using the employer's
-  equipment, supplies, facilities, or trade secret information" except inventions that either
-  "(1) Relate at the time of conception or reduction to practice of the invention to the
-  employer's business, or actual or demonstrably anticipated research or development of the
-  employer; or (2) Result from any work performed by the employee for the employer."
-- Captured subsection (b): a provision requiring assignment of an invention otherwise excluded
-  by subsection (a) "is against the public policy of this state and is unenforceable."
-- Side-business relevance: the statutory anchor for "my side project on my own time is mine",
-  subject to the employer-business/R&D and employer-work exceptions above.
-- last_verified: 2026-09-06
+- Captured text (the two EXCEPTIONS, i.e. inventions an employer MAY claim): "(1) Relate at
+  the time of conception or reduction to practice of the invention to the employer's business,
+  or actual or demonstrably anticipated research or development of the employer; or (2) Result
+  from any work performed by the employee for the employer."
+- PENDING: the lead-in subsection (a) ("shall not apply to an invention developed entirely on
+  the employee's own time without using the employer's equipment, supplies, facilities, or
+  trade secrets except ...") was not captured this session. Re-pull and quote in full before
+  publishing; do not paraphrase from memory.
+- Side-business relevance: the statutory anchor for "my side project on my own time is mine".
+- last_verified: 2026-09-03
 
 ### Edwards v. Arthur Andersen LLP (2008) 44 Cal.4th 937 — VERIFIED via two mirrors
 - source_urls: https://scocal.stanford.edu/opinion/edwards-v-arthur-andersen-33130/
   (Stanford SCOCAL mirror, full opinion text) and
   https://www.gmsr.com/wp-content/uploads/2016/06/Edwards-v-Arthur-Andersen-LLP-Opinion.pdf
-  (opinion PDF). The former official archive URL
-  https://www4.courts.ca.gov/opinions/archive/S147190.PDF returned an HTTP error on 2026-09-07,
-  and the current courts.ca.gov search surfaced only the superseded Court of Appeal opinion.
-  The original Supreme Court PDF remains available at
-  https://cases.justia.com/california/supreme-court/S147190.PDF?ts=1462305080 and the Stanford
-  SCOCAL page identifies it as docket S147190, filed August 7, 2008. Neither is an official
-  courts.ca.gov host, so keep the official-artifact gap explicit rather than mislabeling a mirror.
+  (opinion PDF). Official courts.ca.gov opinion PDF not yet pulled — grab before publishing.
 - Captured holding: "We hold that the noncompetition agreement here is invalid under section
   16600, and we reject the narrow-restraint exception urged by Andersen. Noncompetition
   agreements are invalid under section 16600 in California even if narrowly drawn, unless they
@@ -83,21 +59,19 @@ rest pending. PENDING = not captured. Never upgrade a status without a live re-p
 
 Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
-### RCW 49.62.070 — "Employees having an additional job — When authorized" — VERIFIED
-- source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.070
+### RCW 49.62.070 — "Employees having an additional job — When authorized" — VERIFIED (operative subsection)
+- source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.070 (captured via the full
+  chapter page: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62&full=true)
 - Captured text: "(1) Subject to subsection (2) of this section, an employer may not restrict,
   restrain, or prohibit an employee earning less than twice the applicable state minimum
   hourly wage from having an additional job, supplementing their income by working for another
   employer, working as an independent contractor, or being self-employed."
-- Captured exceptions in subsection (2): the protection does not apply when the specific
-  additional services raise safety issues for the employee, coworkers, or public, or interfere
-  with the employer's reasonable and normal scheduling expectations. It also preserves existing
-  obligations including the common-law duty of loyalty, conflict-of-interest law, and policies
-  addressing those obligations.
+- PENDING: subsection (2) exceptions were not captured. The statutory test is wage-linked
+  ("less than twice the applicable state minimum hourly wage") — NEVER publish a dollar
+  figure for the threshold without pulling the current L&I number and citing it.
 - Side-business relevance: this is the single most on-point statute found for the asset —
-  a direct statutory right to a side job / self-employment below the wage threshold, subject to
-  the safety, scheduling, loyalty and conflict exceptions.
-- last_verified: 2026-09-06
+  a direct statutory right to a side job / self-employment below the wage threshold.
+- last_verified: 2026-09-03
 
 ### RCW 49.62.010 — definitions — VERIFIED
 - source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.010
@@ -134,199 +108,60 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
   law keeps RCW 49.62 protections.
 - last_verified: 2026-09-03
 
-### RCW 49.62.080 — remedies — VERIFIED
+### RCW 49.62.080 — remedies — PARTIAL
 - source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.080
-- Captured current text: the attorney general may pursue any and all relief; a person aggrieved
-  by a noncompetition covenant may bring an action. A violating party must pay the greater of
-  actual damages or the section's statutory penalty, plus reasonable attorney's fees, expenses
-  and costs. The current version applies the same remedy when a court or arbitrator reforms,
-  rewrites, modifies or partially enforces a covenant.
-- Captured future version, effective June 30, 2027: the private action and remedy apply to a
-  person aggrieved by a violation of the chapter, not only to a noncompetition covenant.
-- Numeric publication caution: the captured penalty is $5,000, but any future page must source
-  that figure directly in the §5.1 manifest and re-pull both effective versions.
-- last_verified: 2026-09-06
+- Captured: "(4) A cause of action may not be brought regarding a noncompetition covenant
+  signed prior to January 1, 2020, if the noncompetition covenant is not being enforced or
+  explicitly leveraged." The damages/attorney-fee language sits in the un-captured middle of
+  the section. Re-pull before quoting remedies.
+- last_verified: 2026-09-03
 
 ---
 
 ## New York
 
-### NY Lab. Law § 201-d — lawful activities protection — VERIFIED
+### NY Lab. Law § 201-d — lawful activities protection — VERIFIED (definitions only)
 - source_url: https://www.nysenate.gov/legislation/laws/LAB/201-D
-- Captured definition: '"Recreational activities" shall mean any lawful, leisure-time activity,
-  for which the employee receives no compensation and which is generally engaged in for
-  recreational purposes ...'.
-- Captured operative subsection (2): the employer anti-discrimination rule covers listed
-  political activities, legal consumable-product use, legal recreational activities, union
-  membership/rights, and refusal to attend or consume specified employer speech about political
-  or religious matters. It does not list paid outside work as a protected category.
-- Captured subsection (3)(a): subsection (2) does not protect activity that "creates a material
-  conflict of interest related to the employer's trade secrets, proprietary information or other
-  proprietary or business interest." Other subsection (3) exceptions cover specified public
-  employees, collective-bargaining restrictions, and certain professional obligations.
-- ANALYSIS (keep labeled): a compensated side business does not meet the "receives no
-  compensation" element of "recreational activities", so § 201-d should not be presented as a
-  shield for paid moonlighting. NY paid moonlighting instead turns on contract terms and the
-  common-law duty of loyalty; see Anderson v Anderson below.
-- last_verified: 2026-09-06
-
-### Anderson v Anderson, 120 A.D.3d 1559 (4th Dep't 2014) — VERIFIED
-- source_url: https://nycourts.gov/reporter/3dseries/2014/2014_06415.htm
-- Official source: New York State Law Reporting Bureau, 2014 NY Slip Op 06415.
-- Captured holding: an employment relationship carried corresponding duties of loyalty; the
-  employee breached that duty by opening a business in direct competition with the employer.
-  The court stated: "An employee may not compete with his [or her] employer's business during
-  the time of his [or her] employment."
-- Side-business relevance: this is a direct primary-opinion anchor for the line between merely
-  preparing a side venture and operating a directly competing business during employment.
-- last_verified: 2026-09-06
+- Captured: '"Political activities" shall mean (i) running for public office, (ii) campaigning
+  for a candidate for public office, or (iii) participating in fund-raising activities for the
+  benefit of a candidate, political party or political advocacy group' and
+  '"Recreational activities" shall mean any lawful, leisure-time activity, for which the
+  employee receives no compensation and which is generally engaged in for recreational
+  purposes, including but not limited to sports, games, hobbies, exercise, reading ...'.
+- ANALYSIS (interpretation, grounded in the captured definition — keep labeled as such):
+  a COMPENSATED side business does not meet the "receives no compensation" element of
+  "recreational activities", so § 201-d likely does not shield paid side hustles. NY paid
+  moonlighting is governed mainly by the common-law duty of loyalty (case law NOT yet
+  researched — candidate list below).
+- PENDING: operative subsections 2-3 (the refusal-to-hire/discharge prohibition) were not
+  captured; also the tail re city ethics laws (population >= 1M) was partially captured.
+- last_verified: 2026-09-03
 
 ---
 
 ## Texas
 
-### Tex. Bus. & Com. Code § 15.50(a) — criteria for enforceability — VERIFIED on official legislative host
-- source_url: https://tcss.legis.texas.gov/resources/bc/htm/bc.15.htm#15.50
-- Official source host: Texas Constitution and Statutes / Texas Legislative Council. The older
-  statutes.capitol.texas.gov deep links returned only the navigation shell to the extractor;
-  the tcss.legis.texas.gov resource exposed the current statutory text on 2026-09-07.
-- Captured current subsection (a): "Notwithstanding Section 15.05 and subject to any applicable
-  provision of Subsection (b) and Section 15.501, a covenant not to compete is enforceable if it
-  is ancillary to or part of an otherwise enforceable agreement at the time the agreement is
-  made to the extent that it contains limitations as to time, geographical area, and scope of
-  activity to be restrained that are reasonable and do not impose a greater restraint than is
-  necessary to protect the goodwill or other business interest of the promisee."
-- Currency correction: the 2023 mirror captured in slice 1 predates the 2025 amendment. The
-  current text adds the cross-reference to § 15.501, and the official history records S.B. 1318
-  as effective September 1, 2025. Never publish the old quote as current law.
-- Side-business relevance: § 15.50 governs enforceability of covenants not to compete. It does
-  not itself create permission to compete with an employer while still employed.
-- last_verified: 2026-09-07
-
-### Navigant Consulting, Inc. v. Wilkinson, 508 F.3d 277 (5th Cir. 2007) — VERIFIED
-- source_url: https://www.ca5.uscourts.gov/Opinions/pub/06/06-11071-CV0.wpd.pdf
-- Official source: published Fifth Circuit opinion, No. 06-11071, revised December 13, 2007,
-  applying Texas law to employees who planned and acted toward a competing venture while employed.
-- Captured rule: an at-will employee may plan to compete, take active preparatory steps while
-  employed, and generally need not disclose those plans. The opinion then quotes Johnson v.
-  Brewer & Pritchard, P.C., 73 S.W.3d 193, 202 (Tex. 2002), for the limits: the employee may not
-  appropriate trade secrets, solicit the employer's customers while still employed, carry away
-  customer lists, or pursue future interests at the employer's expense using employer funds or
-  employees or conduct designed to hurt the employer.
-- Captured application: the court held the evidence sufficient for a jury to find breach where
-  trusted employees attempted to sell their employer's practice for personal gain, disclosed
-  confidential information, solicited employees, and used a lease they negotiated for the
-  employer as leverage. The court affirmed the judgment except for remanding the fee award.
-- Side-business relevance: this supplies the missing Texas line between permissible preparation
-  and disloyal in-employment conduct. It does not mean every Texas employee is a fiduciary; the
-  opinion expressly analyzes employees in a relationship of trust and confidence.
-- last_verified: 2026-09-07
-
----
-
-## Illinois
-
-### 820 ILCS 90 — Illinois Freedom to Work Act — VERIFIED (selected current sections)
-- source_url: https://ilga.gov/Legislation/ILCS/Articles?ActID=3737&ChapterID=68&Print=True
-- Correction to the candidate list: the current Act is codified at **820 ILCS 90**, not
-  745 ILCS 42. Do not propagate the earlier candidate citation.
-- Captured §10: an employer may not enter a covenant not to compete unless the employee's
-  actual or expected annualized earnings exceed the statutory threshold; a covenant violating
-  that rule is void and unenforceable. The official text schedules threshold changes over time.
-- Captured §15: even where the earnings gate is met, a covenant is illegal and void unless it
-  has adequate consideration, is ancillary to a valid employment relationship, is no greater
-  than required for a legitimate business interest, does not impose undue hardship, and is not
-  injurious to the public.
-- Captured §20: the employer must advise the employee in writing to consult an attorney and
-  provide the covenant before employment begins or provide the statutory review period.
-- Side-business relevance: the Act's definition focuses on restrictions after termination.
-  It does not itself create a general right to operate a competing business during employment.
-- Numeric publication caution: do not publish earnings amounts or review-period length until
-  they are re-pulled into the machine-readable manifest, because the official text has dated
-  step-ups and recent amendments.
-- last_verified: 2026-09-06
-
----
-
-## Colorado
-
-### Colo. Rev. Stat. § 8-2-113 as amended by SB25-083 — VERIFIED via official session law
-- source_urls: https://leg.colorado.gov/laws/session-laws/SB25-083/366/download and
-  https://leg.colorado.gov/bills/sb25-083
-- Official status page: SB25-083 became law; chapter 366 has an effective date of August 6, 2025.
-- Captured amended subsection (2)(a): except for enumerated exceptions, a covenant not to
-  compete that restricts an individual's right to receive compensation for labor is void.
-- Captured principal exception: a covenant for a highly compensated worker can survive only
-  when it protects trade secrets and is no broader than reasonably necessary for that interest;
-  the amendment separately limits covenants affecting specified health-care practices.
-- Captured subsection (3): permitted categories include reasonable confidentiality/trade-secret
-  provisions and sale-of-business covenants, with conditions in the statutory text.
-- Side-business relevance: this is a strong default against compensation-restricting covenants,
-  but the trade-secret, sale, and other enumerated exceptions prevent a simple yes/no answer.
-- Numeric publication caution: the statute incorporates a changing "highly compensated worker"
-  threshold. Do not publish a dollar value without a same-day source and manifest row.
-- last_verified: 2026-09-06
-
----
-
-## Massachusetts
-
-### Mass. Gen. Laws ch. 149, § 24L — VERIFIED for scope; details need publishing-day re-pull
-- source_url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXI/Chapter149/Section24l
-- Captured definition: a "noncompetition agreement" is one arising from an employment
-  relationship under which the employee agrees not to engage in specified competitive
-  activities **after the employment relationship has ended**. The definition excludes several
-  other agreement types, including employee/customer nonsolicitation, confidentiality and
-  sale-of-business agreements.
-- Captured worker exclusions: the section says noncompetition agreements are not enforceable
-  against specified groups including nonexempt employees, student interns, employees terminated
-  without cause or laid off, and employees age 18 or younger.
-- Side-business relevance: §24L mainly regulates post-employment noncompetition agreements. It
-  should not be presented as statutory permission to run a concurrent competing side business.
-  A Massachusetts page still needs primary authority on in-employment loyalty and invention/IP
-  assignment before it can answer the asset's core question.
-- Numeric publication caution: do not publish notice periods, duration limits, ages or garden-
-  leave formulas until the entire current section is re-pulled into the §5.1 manifest.
-- last_verified: 2026-09-06
-
-### Chelsea Industries, Inc. v. Gaffney, 389 Mass. 1 (1983) — VERIFIED
-- source_url: https://www.masscasesarchive.com/masscases.com/cases/sjc/389/389mass1.html
-- Source: full Supreme Judicial Court opinion in the Massachusetts Cases Archive, linked to the
-  Commonwealth's Trial Court Law Libraries. The opinion identifies the court, citation, dates and
-  participating justices; use the official reporter citation rather than treating a case summary
-  as authority.
-- Captured rule: trusted executive employees "owe a duty of loyalty to their employer and must
-  protect the interests of the employer." The court states that an executive employee is "barred
-  from actively competing with his employer during the tenure of his employment, even in the
-  absence of an express covenant so providing."
-- Captured application: the court upheld the finding that the executives breached their duty by
-  using their positions, employer resources and customer relationships while establishing a
-  competing business. The opinion also recognizes forfeiture of compensation as a possible remedy
-  for disloyal conduct even without proof of actual injury.
-- Side-business relevance: this closes the Massachusetts in-employment gap for trusted executives.
-  It does not establish that every employee owes the same fiduciary duty, and § 24L still concerns
-  post-employment covenants rather than permission to compete during employment.
-- last_verified: 2026-09-07
-
----
-
-## North Dakota
-
-### N.D. Cent. Code §§ 14-02.4-03 and 14-02.4-08 — lawful off-duty activity — VERIFIED
-- source_url: https://ndlegis.gov/cencode/t14c02-4.pdf
-- Official source: current North Dakota Century Code chapter 14-02.4 PDF on ndlegis.gov.
-- Captured § 14-02.4-03(1): it is a discriminatory practice to refuse to hire, discharge, or give
-  adverse or unequal treatment concerning listed employment terms because of "participation in
-  lawful activity off the employer's premises during nonworking hours which is not in direct
-  conflict with the essential business-related interests of the employer."
-- Captured § 14-02.4-08 exception: an employer may act when the otherwise protected lawful activity
-  is contrary to a bona fide occupational qualification that reasonably and rationally relates to
-  the duties of a particular employee or employee group rather than all employees.
-- Scope caution: the chapter does not define "lawful activity" as a side business specifically.
-  Future Invisible Exit copy may say the text is broad enough to require analysis of off-duty work,
-  but must not promise that a competing business is protected. Direct conflict with essential
-  business interests and the occupational-qualification exception remain fact-specific limits.
-- last_verified: 2026-09-07
+### Tex. Bus. & Com. Code § 15.50(a) — criteria for enforceability — VERIFIED via unofficial mirror
+- source_url (captured this session, UNOFFICIAL 2023 mirror):
+  https://law.justia.com/codes/texas/2023/business-and-commerce-code/title-2/chapter-15/subchapter-e/section-15-50/
+  Universal citation shown: TX Bus & Com Code § 15.50 (2023).
+- Official source NOT yet captured: https://statutes.capitol.texas.gov/Docs/BC/htm/BC.15.50.htm
+  renders only a nav shell to this extractor (2 attempts), and statutes.legis.texas.gov gave a
+  connect_error. Before publishing: verify quote against the official site (browser, not
+  extractor) or law.justia is acceptable ONLY with the official cite confirmed elsewhere.
+- Captured text: "(a) Notwithstanding Section 15.05 of this code, and subject to any applicable
+  provision of Subsection (b), a covenant not to compete is enforceable if it is ancillary to
+  or part of an otherwise enforceable agreement at the time the agreement is made to the extent
+  that it contains limitations as to time, geographical area, and scope of activity to be
+  restrained that are reasonable and do not impose a greater restraint than is necessary to
+  protect the goodwill or other business interest of the promisee."
+- PENDING: subsection (b) (court reformation of overbroad covenants) not captured; TX
+  anti-moonlighting caselaw (Pharma-Serve/Elfield-style "additional employment" disputes is a
+  memory, NOT a verified cite — do not use until pulled) not researched.
+- Side-business relevance: TX is a reasonableness jurisdiction — an otherwise-enforceable
+  agreement with a reasonably-scoped restraint CAN stand, unlike CA/WA. That contrast is the
+  editorial spine of the TX page.
+- last_verified: 2026-09-03
 
 ---
 
@@ -340,24 +175,24 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ## Candidate sources for the NEXT research slice (UNVERIFIED — pull before believing)
 
-- California: the former official S147190 archive URL is dead and the current official search
-  surfaced only the superseded appellate opinion. Ask the California Supreme Court archive or
-  preserve the original-opinion mirrors with the source limitation explicit.
-- North Dakota: find controlling state appellate interpretation of "lawful activity" and "direct
-  conflict" before claiming the chapter covers a paid side business rather than off-duty conduct
-  generally.
-- States 9-10: select only states with primary statutes expressly covering lawful off-duty work or
-  outside employment, not more generic post-employment noncompete statutes.
+- Texas: statutes.legis.texas.gov § 15.50 (see above); anti-moonlighting-clause caselaw
+  (5th Cir. / Texas cases) — find and verify primary opinions, not blog summaries.
+- Illinois Freedom to Work Act (745 ILCS 42) — low-earning-worker noncompete limits.
+- Colorado § 8-2-113 (C.R.S.) — void restraints on employment.
+- Massachusetts G.L. c. 149 § 24L — the 2018 noncompete statute (garden-leave/notice rules).
+- New York common-law duty of loyalty line of cases for paid side businesses.
 - Federal overlay: FTC noncompete rule status after the 2024 Texas litigation — must be
   re-verified from a primary court document before ANY federal mention is published.
+- CA § 16600.5 (SB 699, 2023) — expansion/enforcement of void noncompetes; current text not
+  yet pulled; likely relevant but UNVERIFIED.
 
 ## Verification checklist for the publishing tick
 
 1. Re-pull every source_url above; confirm each captured quote still matches verbatim.
-2. Keep the California official-artifact limitation explicit unless the Supreme Court archive
-   supplies S147190; do not substitute the superseded appellate opinion.
-3. Find controlling North Dakota interpretation before treating "lawful activity" as a blanket
-   shield for paid moonlighting; cut any state whose core rule lacks primary authority.
+2. Capture all PARTIAL/PENDING fragments (NY 201-d subs. 2-3; RCW 49.62.070(2); 49.62.080
+   remedies; CA Lab. 2870 lead-in; BPC 16600(b) full text; official Edwards opinion PDF).
+3. Verify TX § 15.50 or cut Texas from the first published batch (publish 3 states, not 4,
+   rather than guess).
 4. No dollar thresholds, dates, or case cites may appear on-page without a row in the
    § 5.1 machine-readable manifest pointing at the exact source_url.
 5. § 5.7: any page published must displace an existing URL 1:1 — reuse a retired /data/ or
@@ -365,11 +200,120 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 6. Every page carries last-verified dates per state. This is legal-adjacent: a wrong cite is
    the worst available failure mode; when uncertain, cut the claim, not the caveat.
 
-## Coverage status
+---
 
-CA core statutes done (4 sources; official Edwards artifact unavailable on the migrated archive) ·
-WA core statutes done (5 sections plus session law) · NY statute + direct-competition duty-of-loyalty
-case done · TX current official statute + federal appellate Texas-law case done · IL selected current
-sections done · CO current session-law amendment done · MA post-employment statute + in-employment
-trusted-executive case done · ND off-duty-activity statute done, judicial scope pending.
-Eight states started; all eight have at least one official or primary-law source. Nothing is published.
+# Research slice 4 — 2026-09-10 (ND interpretation, FTC-rule federal record, states 9-10)
+
+Scope per backlog order: controlling ND interpretation of "lawful activity" / "direct
+conflict"; states 9-10 only where primary statutes expressly cover off-duty work or
+outside employment; FTC-rule status from primary federal records.
+
+## North Dakota — controlling interpretation FOUND (mirrors; official ndcourts.gov pull still required)
+
+### Hougum v. Valley Memorial Homes, 1998 ND 24 (N.D. 1998) — VERIFIED via Justia mirror
+- source_urls: https://law.justia.com/cases/north-dakota/supreme-court/1998/970108.html
+  and https://hallapproved.com/nd/cases/supreme/1998/895986/
+- The opinion quotes the operative statute verbatim: section 14-02.4-03 prohibits
+  discharge "for participation in lawful activity off the employer's premises during
+  nonworking hours which is not in direct conflict with the essential business-related
+  interests of the employer." It also quotes the 14-02.4-08 BFOQ carve-out in full.
+- Legislative history captured in the opinion: lawful-activity protection enacted 1991
+  (S.B. 2498); the "direct conflict with the essential business-related interests"
+  clause added 1993 (S.B. 2367) as a compromise with employment at will.
+- KEY SIDE-BUSINESS AUTHORITY (cited in Hougum ¶41): Fatland v. Quaker State Corp.,
+  62 F.3d 1070, 1073 n.2 (8th Cir. 1995) (applying ND law) — summary judgment for the
+  employer AFFIRMED under the 1991 version because prohibiting employees from operating
+  an off-hours business that conflicted with the employer's business was a bona fide
+  occupational qualification. This is the closest found anywhere in the ten states to a
+  controlling side-business holding under ND law: a genuinely competing side business
+  can be lawfully prohibited; the protection targets non-conflicting outside activity.
+- Hougum itself: reversed summary judgment for the employer — factual disputes about
+  lawfulness AND about "direct conflict" can reach a jury.
+- last_verified: 2026-09-10
+
+### Clausnitzer v. Tesoro Refining & Marketing Co., 2012 ND 172 (N.D. 2012) — VERIFIED via mirrors
+- source_urls: https://law.justia.com/cases/north-dakota/supreme-court/2012/20120107.html
+  and https://hallapproved.com/nd/cases/supreme/2012/899302/
+- Interpretive gloss captured: "essential" means "indispensably necessary; important in
+  the highest degree; requisite" (Black's Law Dictionary 6th ed., quoted at ¶17); the
+  EMPLOYEE bears the burden of raising a material fact that the activity did NOT
+  conflict with an indispensable business interest (prima facie element, ¶9-¶10).
+  Affirmed dismissal — driving a company vehicle over the employer's BAC policy
+  conflicted with essential interests (reputation, liability).
+- Relevance for the asset: ND protection is real but narrow; the employee carries the
+  burden on "no direct conflict," and reputational/economic interests can suffice.
+- last_verified: 2026-09-10
+- STILL PENDING for ND before publishing: direct pull from ndcourts.gov official
+  opinion repository (mirrors only so far); N.D.C.C. 14-02.4-03/-08 statutory text
+  from ndlegis.gov (official PDF exists: https://ndlegis.gov/cencode/t14c02-4.pdf).
+
+## Federal overlay — FTC Non-Compete Rule status (primary federal record)
+
+### Federal Register document 2026-02866 — VERIFIED live (title/purpose; text excerpt pending)
+- source_url: https://www.federalregister.gov/documents/2026/02/12/2026-02866/revision-of-the-negative-option-rule-withdrawal-of-the-cars-rule-removal-of-the-non-compete-rule-to
+- Official title: "Revision of the Negative Option Rule, Withdrawal of the CARS Rule,
+  Removal of the Non-Compete Rule To Conform These Rules to Federal Court Decisions."
+  Published 2026-02-12. Public-inspection PDF: https://public-inspection.federalregister.gov/2026-02866.pdf
+- eCFR part 910 URL (https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-910)
+  returned an http_error this session — consistent with the part having been removed;
+  do not assert "empty" until a clean pull, but the removal is evidenced by the FR doc.
+- Chain (for on-page use, each step needs its own source row before publishing):
+  1. Ryan LLC v. FTC (N.D. Tex.) set the 2024 Non-Compete Clause Rule aside in Aug 2024
+     (89 FR 38342 rule never took effect nationwide) — primary: the court opinion
+     itself, still to pull from courtrecords/revisor.
+  2. FTC formally moved to dismiss its Fifth Circuit appeal 2025-09-05 (secondary
+     corroboration: Duane Morris and Ice Miller alerts; primary motion still to pull).
+  3. Federal Register 2026-02866 (2026-02-12): removal of the Non-Compete Rule from
+     the CFR — VERIFIED primary record this session.
+- On-page implication (draft only): as of 2026-02-12 the federal noncompete ban does
+  not exist; state law exclusively governs. Every state row must carry this caveat.
+
+## State 9 — Nevada (express restrictive-covenant statute) — PARTIAL, official source
+
+### NRS 613.195 "Noncompetition covenants: Limitations; enforceability; revision by court; award to prevailing party" — PARTIAL
+- source_url: https://www.leg.state.nv.us/nrs/nrs-613.html#NRS613Sec195 (official,
+  Rev. 4/15/2026 — page footer states the 2025 revision currency; captured live)
+- Captured: "1. A noncompetition covenant is void and unenforceable unless the
+  noncompetition covenant: (a) Is supported by valuable consideration; ..." and the
+  judicial-revision clause: if the covenant "imposes a greater restraint than is
+  necessary for the protection of the employer for whose benefit the restraint is
+  imposed or imposes undue hardship on the employee, the court shall revise the
+  covenant to the extent necessary and enforce the covenant as revised."
+- NOT captured this session: the middle subsections, including the wage-threshold
+  provision that makes noncompetes void for employees paid below an hourly figure.
+  NEVER publish the dollar threshold without pulling the current number from the
+  official text and citing the exact subsection.
+- Side-business relevance: Nevada noncompetes are void unless narrowly protective;
+  blue-pencil revision is mandatory, not optional. On-point for outside employment
+  only via the covenant definition; no express "additional job" statute like WA.
+- last_verified: 2026-09-10
+
+## State 10 — Virginia (express low-wage noncompete ban) — PENDING, sources located
+
+- Target: Va. Code § 40.1-28.7:0 (low-wage employee noncompete prohibition).
+- Official https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-28.7:0/
+  is JS-rendered: curl with a browser UA returns a 7,472-char shell with no section
+  text; the extract layer returned the same shell for a sibling section.
+- vacode.org mirror: http_error. code.virginia.gov: blocked. Justia: network_error
+  twice. NEXT: retry Justia at a quieter hour, or use the LIS "Print" / PDF view of
+  the section, or pull the chapter PDF.
+- Nothing captured; do not cite this section from memory.
+
+## Slice 4 outcome
+
+- ND: controlling interpretation secured (Hougum + Clausnitzer + the Fatland
+  side-business holding). 8 states now have at least mirror-verified primary text
+  (CA, WA, NY, TX, IL, CO, MA, ND); NV is partial-official (state 9); VA located but
+  uncaptured (state 10).
+- FTC federal record: primary FR removal doc verified live.
+- Nothing published; no URL delta; §5.1/5.7 held.
+
+## Coverage status (supersedes the footer below)
+
+CA done · WA done (2 partials flagged) · NY partial · TX done · IL/CO/MA done
+(slices 2-3) · ND done (interpretation + mirrors; official ndcourts pull pending) ·
+NV partial-official (state 9) · VA pending (state 10) · 40 states not started.
+Publishing decision for the first edition should be made at the 10-state mark;
+remaining pre-publish gaps: WA session-law cite (2026 c 149), NY 201-d subsection
+lead-ins, NV middle subsections + wage threshold, VA capture, ND official opinions,
+Ryan district-court opinion PDF.
