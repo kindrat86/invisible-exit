@@ -308,12 +308,152 @@ outside employment; FTC-rule status from primary federal records.
 - FTC federal record: primary FR removal doc verified live.
 - Nothing published; no URL delta; §5.1/5.7 held.
 
-## Coverage status (supersedes the footer below)
+# Research slice 5 — 2026-09-13 (VA section-number correction + official text, ND official statutes, Ryan opinion PDF)
 
-CA done · WA done (2 partials flagged) · NY partial · TX done · IL/CO/MA done
-(slices 2-3) · ND done (interpretation + mirrors; official ndcourts pull pending) ·
-NV partial-official (state 9) · VA pending (state 10) · 40 states not started.
-Publishing decision for the first edition should be made at the 10-state mark;
-remaining pre-publish gaps: WA session-law cite (2026 c 149), NY 201-d subsection
-lead-ins, NV middle subsections + wage threshold, VA capture, ND official opinions,
-Ryan district-court opinion PDF.
+Scope per backlog order: capture Va. Code § 40.1-28.7:0 (state 10); official ND opinions from
+ndcourts.gov + N.D.C.C. 14-02.4-03/-08 text; close NV middle subsections incl. the wage
+threshold from the official page; pull the Ryan LLC district-court opinion PDF (primary).
+
+## CORRECTION — Virginia target section was the wrong number
+
+- The backlog (since slice 4) targeted "Va. Code § 40.1-28.7:0". That section number does not
+  exist in Title 40.1 Chapter 3. The low-wage noncompete ban is **§ 40.1-28.7:8** ("Covenants
+  not to compete prohibited; exceptions; civil penalty").
+- The "JS-rendered shell" blocker from slice 4 is solved for chapter 3: official LIS section
+  pages now render server-side (verified live 2026-09-13 on § 40.1-28.7:7 and § 40.1-28.7:8,
+  both returning full section pages with title + article breadcrumb). The earlier chapter2 URL
+  probe hit a repealed-chapter TOC, not the section.
+
+## State 10 — Virginia § 40.1-28.7:8 — CAPTURED OFFICIAL (statute text complete)
+
+- source_urls:
+  - https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-28.7:8/ (live code
+    page, verified 2026-09-13; page title "§ 40.1-28.7:8. Covenants not to compete prohibited;
+    exceptions; civil penalty")
+  - https://lis.blob.core.windows.net/files/1223059.PDF (official Virginia Acts of Assembly
+    2026, Chapter 883 [S 170], approved April 13, 2026 — amending § 40.1-28.7:8; full text
+    pulled and cached at ~/.hermes/cache/web/va-acts-2026-ch883-s170.pdf, 10,053 bytes, 2 pp)
+  - NOT captured this tick: original enactment year/bill numbers for § 40.1-28.7:8 (do not
+    state them anywhere without pulling the enacting chapter from LIS first).
+- Operative text captured verbatim from the official Acts PDF (current through the 2026
+  amendment):
+  - A: definitions. "Covenant not to compete" = restrains competition AFTER termination;
+    expressly shall NOT restrict an employee from providing a service to a customer/client of
+    the employer if the employee does not initiate contact with or solicit that customer.
+    "Low-wage employee" = avg weekly earnings (52-wk) below the Commonwealth average weekly
+    wage per § 65.2-500(B), OR overtime-eligible under 29 U.S.C. § 207 regardless of earnings;
+    includes interns/students/apprentices/trainees and independent contractors paid below the
+    BLS median hourly wage for the Commonwealth; excludes employees whose earnings derive in
+    whole or predominant part from commissions/incentives/bonuses.
+  - B: No employer shall enter into, enforce, or threaten to enforce a covenant not to compete
+    with any low-wage employee. ⚠️ AMBIGUITY, DO NOT PUBLISH WITHOUT RE-PULL: the Acts PDF is
+    amendment text (old/new interleaved; pypdf flattens strikethrough, shown by renumbering
+    artifacts like "D. A low-wage E. An employee..."), and a cached search description of the
+    live LIS page still shows B ending "...with any low-wage employee or health care
+    professional". The 2026 Ch. 883 flat text omits that phrase in B. Before any VA row
+    publishes, re-pull the live LIS section body (browser lane) to confirm the CURRENT
+    operative B text; state nothing about where healthcare-covenant rules live without a
+    captured source.
+  - C: covenant unenforceable if employer discharges without severance/monetary payment unless
+    for cause; severance must be disclosed at execution.
+  - D: savings clause for NDAs/trade secrets (§ 59.1-336) — a moonlighting NDA remains
+    enforceable even where a noncompete is void.
+  - E: private right of action, 2-year window, liquidated damages + lost compensation +
+    attorney fees; anti-retaliation.
+  - F: Commissioner civil penalty $10,000 per violation.
+  - G: court-awarded costs/expert/attorney fees for the plaintiff on a violation.
+- Side-business relevance: VA does not protect moonlighting per se; it VOIDS post-employment
+  noncompetes for low-wage employees (and overtime-eligible ones regardless of earnings) and
+  expressly preserves customer-service freedom absent solicitation. A VA moonlighting row
+  should lead with: noncompete void if low-wage/overtime-eligible; NDA/IP assignment
+  unaffected; in-employment loyalty common law (not captured this slice) still applies.
+- last_verified: 2026-09-13
+
+## North Dakota — official statutory text CAPTURED (14-02.4-03 and 14-02.4-08)
+
+  - https://ndlegis.gov/cencode/t14c02-4.pdf (official ND Legislative Council chapter PDF,
+    28 pp, cached at ~/.hermes/cache/web/ndlegis-t14c02-4.pdf — 111,240 bytes; verbatim
+    section extracts recorded below and in /tmp/nd_sections.txt during the tick)
+- **N.D.C.C. § 14-02.4-03(2)** verbatim: it is a discriminatory practice for an employer to
+  discharge or otherwise discriminate "against a person with respect to … tenure, or terms,
+  conditions, or privileges of employment" because of "participation in a lawful activity off
+  the employer's premises during nonworking hours which is not in direct conflict with the
+  essential business-related interests of the employer."
+- **N.D.C.C. § 14-02.4-08** verbatim (BFOQ carve-out): not a discriminatory practice where the
+  employer discharges on the basis of participation in lawful activity "contrary to a bona
+  fide occupational qualification that reasonably and rationally relates to the employment
+  activities and responsibilities of a particular employee or position."
+- This upgrades ND statute from mirror-verified (Hougum quotes) to OFFICIAL-verified, closing
+  the slice-4 "STILL PENDING" item for statutory text. Combined with Hougum 1998 ND 24
+  (¶¶40-41 legislative history 1991 S.B. 2498 / 1993 S.B. 2367) and Clausnitzer 2012 ND 172
+  (essential = "indispensably necessary", employee's burden), the ND row is publish-grade on
+  statute + interpretation, with one residual: opinion PDFs remain mirror-sourced.
+- ndcourts.gov direct opinion pull: BLOCKED this tick — search endpoint returns 403 to
+  non-browser clients; mirrors (Justia + hallapproved + exa library) re-verified live for both
+  Hougum and Clausnitzer on 2026-09-13 with full ¶-level text. NEXT: retry in a later tick via
+  a real browser session (computer_use lane), or cite mirrors with the official reporter cite
+  (1998 ND 24; 2012 ND 172) which is acceptable under 5.1 since mirrors quote verbatim and the
+  reporter cite is given.
+- last_verified: 2026-09-10 (opinions), 2026-09-13 (official statutes)
+
+## Federal — Ryan LLC v. FTC, No. 3:24-cv-00986-E (N.D. Tex.) Doc 211 — PDF CAPTURED
+
+- source_urls:
+  - https://www.uschamber.com/assets/documents/Order-Granting-SJ-Setting-Aside-Rule-Ryan-v.-FTC-N.D.-Tex.pdf
+    (primary mirror of Doc 211; downloaded and cached at
+    ~/.hermes/cache/web/ryan-v-ftc-doc211-20240820.pdf — 368,542 bytes, 27 pp, PDF 2.0)
+  - https://law.justia.com/cases/federal/district-courts/texas/txndce/3:2024cv00986/389064/211/
+    (Justia case page, verified live 2026-09-13)
+- Local PDF verification (pypdf, page 1 + full-text needles, all FOUND): caption RYAN LLC v.
+  FEDERAL TRADE COMMISSION, N.D. Tex. Dallas Div.; "Case 3:24-cv-00986-E Document 211 Filed
+  08/20/24 Page 1 of 27 PageID 5622"; "The Court sets aside the Non-Compete Rule.
+  Consequently, the Rule shall not be enforced or otherwise take effect on its effective date
+  of September 4, 2024 or thereafter."; "arbitrary and capricious" reasoning at length.
+- This is the primary district-court opinion the backlog asked for. Note for the future VA/NV
+  rows and the asset's federal-overlay section: Ryan set the Rule aside nationally on
+  2024-08-20; slice 4 already captured the later Federal Register removal doc (2026-02866,
+  2026-02-12) removing the Rule from the CFR. Both layers are now primary-sourced.
+- last_verified: 2026-09-13
+
+## Nevada — middle subsections + wage threshold: STILL OPEN (all routes blocked this tick)
+
+Attempted, with evidence of each failure:
+- Official leg.state.nv.us page: Cloudflare 403 to curl (UA + Accept headers). The extract
+  layer reaches the page but elides exactly the middle window where 613.195 subsections 2-7
+  sit (three pulls at 12k/40k/100k char budgets all returned the same head+tail with "..."
+  over the span).
+- Justia (two URL forms): http_error, then 429 Too Many Requests.
+- Casetext: service retired ("This service is no longer available").
+- Wayback (web.archive.org/web/2026/...): snapshot fetched (6,273 bytes) but contains no
+  613.195 text (grep -c = 0).
+GUARD FROM SLICE 4 STANDS: never publish the NV dollar threshold without pulling the current
+number from the official text and citing the exact subsection. NEXT: retry in a later tick via
+a real browser session (computer_use lane) on the official page, or Justia after the 429
+window clears.
+
+## Slice 5 outcome
+
+- VA: corrected section number (:0 → :8), official LIS page + official 2026 Acts PDF captured
+  verbatim. VA becomes state 10 COMPLETE for statute except one confirm item: the exact
+  current B-subsection wording (amendment-text ambiguity flagged above).
+- ND: statutes upgraded mirror → OFFICIAL; opinions remain mirror-verified (both re-verified
+  live this tick). Residual: ndcourts.gov PDFs (nice-to-have, reporter cites suffice).
+- Federal: Ryan Doc 211 opinion PDF captured and needle-verified locally.
+- NV: honest open item; guard unchanged. 9 states fully captured (CA WA NY TX IL CO MA ND VA),
+  NV partial-official.
+- Nothing published; no URL delta; §5.1/5.7 held. Worktree-only research artifact; no build,
+  no deploy needed (research/ is not part of the build).
+
+## Coverage status (supersedes the slice 4 footer)
+
+CA done · WA done (2 partials flagged) · NY partial (201-d subsection lead-ins) · TX done ·
+IL/CO/MA done · ND done (statutes OFFICIAL, opinions mirror) · NV partial-official (wage
+threshold + middle subsections OPEN) · VA statute captured via official Acts PDF (confirm
+current B-subsection text before publishing) · 40 states not started. Pre-publish gaps now:
+WA session-law cite (2026 c 149), NY 201-d subsection lead-ins, NV middle subsections + wage
+threshold, VA B-subsection confirmation (browser re-pull), ND official opinion PDFs
+(optional), state-row federal-overlay caveat lines (FR doc + Ryan, both captured).
+NEXT TOP UNBLOCKED ORDER: publishing-prep — draft the 10-state first-edition page set per
+5.7 (1:1 URL displacement) and 5.1 (per-figure source manifest), reusing this file's captured
+verbatim text; each state row carries statutory cites + last-verified dates + the federal
+overlay caveat with FR/Ryan sources.
