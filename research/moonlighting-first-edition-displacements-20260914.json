@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "brand": "Invisible Exit",
+  "status": "STAGED_NOT_EXECUTED",
+  "policy": "One new indexable URL requires one existing indexable URL to retire. This file authorizes no redirect, no noindex, no sitemap change and no deploy.",
+  "planned_additions": [
+    {
+      "url": "https://invisibleexit.com/research/moonlighting-and-side-business-clauses",
+      "type": "canonical_reference_hub",
+      "indexable": true,
+      "publication_gate": "All release blockers in the source manifest must close first."
+    }
+  ],
+  "planned_retirements": [
+    {
+      "url": "https://invisibleexit.com/banking/mississippi",
+      "current_family": "banking",
+      "evidence_path": "reports/organic-state-family-canary-20260831.json",
+      "evidence_window": {"start":"2026-08-01","end":"2026-08-30"},
+      "clicks": 0,
+      "impressions": 0,
+      "reason": "The prepared state-family audit identifies the family as near-duplicate and this URL had no measured demand in the recorded window.",
+      "not_in_existing_50_url_canary": true,
+      "required_action_at_publication": "Redirect to the honest banking hub only after that hub's unsourced claims are removed; remove the retired URL from discovery emitters in the same commit."
+    }
+  ],
+  "budget": {"urls_added":1,"urls_removed":1,"net":0},
+  "collision_note": "The selected retirement is outside the existing 50-URL owner-gated state-family canary, so it is not double-counted against that batch.",
+  "release_note": "Re-check trailing search data immediately before publication. If the retirement URL has since earned a click, replace it with another verified zero-demand URL and update this evidence file."
+}
