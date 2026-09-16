@@ -50,7 +50,16 @@ function withSessionId(url: string): string {
   return `${url}${url.includes("?") ? "&" : "?"}session_id={CHECKOUT_SESSION_ID}`;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+interface CreateCheckoutDependencies {
+  createSession?: (
+    params: Stripe.Checkout.SessionCreateParams,
+  ) => Promise<Pick<Stripe.Checkout.Session, "url">>;
+}
+
+export function createCheckoutHandler(
+  dependencies: CreateCheckoutDependencies = {},
+) {
+  return async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -193,7 +202,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       sessionParams.customer_email = customerEmail;
     }
 
-    const session = await stripe.checkout.sessions.create(sessionParams);
+    const session = dependencies.createSession
+      ? await dependencies.createSession(sessionParams)
+      : await stripe.checkout.sessions.create(sessionParams);
 
     return res.status(200).json({ url: session.url });
   } catch (error) {
@@ -202,4 +213,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: "An unexpected error occurred. Please try again.",
     });
   }
+  };
 }
+
+export default createCheckoutHandler();

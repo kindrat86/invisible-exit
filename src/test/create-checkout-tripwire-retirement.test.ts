@@ -11,12 +11,6 @@ vi.hoisted(() => {
   process.env.SITE_URL = "https://invisibleexit.com";
 });
 
-vi.mock("stripe", () => ({
-  default: class StripeMock {
-    checkout = { sessions: { create: mocks.createSession } };
-  },
-}));
-
 vi.mock("../../api/_lib/referral", () => ({
   findReferrer: vi.fn(),
   ensureReferredFirstMonthCoupon: vi.fn(),
@@ -25,7 +19,9 @@ vi.mock("../../api/_lib/referral", () => ({
   REFERRAL_COUPON_FIRST_MONTH: "fixture_referral_coupon",
 }));
 
-import handler from "../../api/create-checkout";
+import { createCheckoutHandler } from "../../api/create-checkout";
+
+const handler = createCheckoutHandler({ createSession: mocks.createSession });
 
 function response() {
   return {
