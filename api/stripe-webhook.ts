@@ -165,6 +165,12 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     console.warn(`Ignoring unowned checkout session ${session.id}`);
     return;
   }
+  // A retired one-time Blueprint sale is not a subscription. In particular,
+  // never create a Starter account or welcome-email side effects for it.
+  if (session.metadata?.product === "tripwire") {
+    console.warn(`Ignoring retired tripwire checkout session ${session.id}`);
+    return;
+  }
 
   const email = session.customer_details?.email;
   const stripeCustomerId = session.customer as string;

@@ -40,10 +40,6 @@ const SqueezePage = () => {
   const [expenses, setExpenses] = useState("");
   const [hoursPerWeek, setHoursPerWeek] = useState("5");
 
-  // ── DOTCOM SECRETS Ch 14: Order Bump ──
-  // Checkbox on the email step that adds a $7 one-time to the $9/mo checkout
-  const [addStealthBlueprint, setAddStealthBlueprint] = useState(false);
-
   // Calculated result
   const [result, setResult] = useState<CalcResult | null>(null);
 
@@ -107,7 +103,6 @@ const SqueezePage = () => {
             freedom_number: result.freedomNumber,
             salary: result.annualSalary,
             timeline: result.timelineMonths,
-            add_stealth_blueprint: addStealthBlueprint,
           },
         }),
       });
@@ -130,7 +125,6 @@ const SqueezePage = () => {
       trackEvent("squeeze_page_submitted", {
         source: "freedom_calculator",
         freedomNumber: result.freedomNumber,
-        add_stealth_blueprint: addStealthBlueprint,
       });
       toast.success("Check your inbox, your detailed breakdown is on the way!");
       setEmailDelivered(true);
@@ -595,30 +589,6 @@ const SqueezePage = () => {
                     className="w-full rounded-xl bg-white/10 border border-white/15 text-white placeholder:text-white/40 py-3.5 px-5 text-base focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[52px]"
                   />
 
-                  {/* ── DOTCOM SECRETS Ch 14: ORDER BUMP ── */}
-                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${addStealthBlueprint ? "bg-primary/10 border-primary/40" : "bg-white/5 border-white/10 hover:bg-white/[0.07]"}`}>
-                    <input
-                      type="checkbox"
-                      checked={addStealthBlueprint}
-                      onChange={(e) => setAddStealthBlueprint(e.target.checked)}
-                      className="mt-1 w-5 h-5 rounded accent-primary shrink-0 cursor-pointer"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <span className="text-white text-sm font-semibold">
-                          YES, send me the $7 Stealth Ops Blueprint offer next
-                        </span>
-                      </div>
-                      <p className="text-white/50 text-xs leading-relaxed mb-1">
-                        The 47-point employment contract audit + entity setup walkthroughs
-                        (normally $47, $7 one-time for founding members).
-                      </p>
-                      <p className="text-white/60 text-[11px] italic">
-                        You'll complete the purchase on the next page, nothing is charged here.
-                      </p>
-                    </div>
-                  </label>
-
                   <button
                     type="submit"
                     disabled={loading}
@@ -632,10 +602,10 @@ const SqueezePage = () => {
 
               {/* Direct CTA, skip email */}
               <Link
-                to="/tripwire"
+                to="/start"
                 className="block text-center w-full py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all text-sm"
               >
-                Skip email, get the $7 Stealth Ops Blueprint →
+                Skip email, explore the $9/month membership →
               </Link>
             </div>
           )}
@@ -752,13 +722,13 @@ const SqueezePage = () => {
 
               <div className="space-y-3 mt-6">
                 <Link
-                  to={addStealthBlueprint ? "/tripwire" : "/start"}
+                  to="/start"
                   onClick={() =>
                     trackEvent("homepage_cta_clicked", { source: "squeeze_post_email" })
                   }
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold py-3.5 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/25 min-h-[52px]"
                 >
-                  {addStealthBlueprint ? "Get the $7 Blueprint + Start" : "Get All 5 Tools, $9/month"}
+                  Get All 5 Tools, $9/month
                 </Link>
                 <Link
                   to="/story"

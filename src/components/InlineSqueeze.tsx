@@ -46,11 +46,11 @@ const FUNNEL_STEPS = [
   {
     icon: Shield,
     num: "2",
-    title: "Get the Stealth Ops Blueprint",
-    desc: "47-point checklist for keeping your employer from finding out. Entity setup, compliance, digital separation.",
-    cta: "Get Blueprint",
-    href: "/tripwire",
-    price: "$7 one-time",
+    title: "Stealth Ops Blueprint (Paused)",
+    desc: "We are not taking payment until every promised resource has a verified delivery path.",
+    cta: "View Membership Instead",
+    href: "/start",
+    price: "Unavailable",
     priceColor: "text-amber-300",
   },
   {

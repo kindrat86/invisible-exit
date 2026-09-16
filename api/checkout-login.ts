@@ -72,6 +72,11 @@ export function createCheckoutLoginHandler(
           .status(400)
           .json({ error: "Checkout does not belong to InvisibleExit" });
       }
+      if (session.metadata?.product === "tripwire") {
+        return res.status(409).json({
+          error: "This one-time offer does not include a subscription account",
+        });
+      }
 
       const email = session.customer_details?.email;
       if (!email) {

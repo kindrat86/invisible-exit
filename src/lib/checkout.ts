@@ -2,7 +2,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/analytics";
 import { toast } from "sonner";
 
-export type CheckoutTier = "tripwire" | "starter" | "founding" | "standard" | "workshop";
+export type CheckoutTier = "starter" | "founding" | "standard" | "workshop";
 
 interface CheckoutOptions {
   returnUrl?: string;
