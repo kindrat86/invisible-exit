@@ -285,6 +285,44 @@ describe("stripe webhook ownership", () => {
     expect(mocks.recordReferralConversion).not.toHaveBeenCalled();
   });
 
+  it("acknowledges a paid owned tripwire without subscription or email side effects", async () => {
+    const payload = JSON.stringify({
+      id: "evt_paid_retired_tripwire_fixture",
+      object: "event",
+      type: "checkout.session.completed",
+      data: {
+        object: {
+          ...foreignGitDealFlowSession,
+          id: "cs_live_paid_retired_tripwire_fixture",
+          payment_link: null,
+          customer: "cus_retired_tripwire_buyer",
+          customer_details: { email: "tripwire-buyer@example.com" },
+          metadata: { product: "tripwire" },
+          line_items: {
+            data: [
+              {
+                price: {
+                  id: "price_1U3kCuCwGoUDklRel1O7JYdq",
+                  product: "prod_UsdZ2wQbECjvAz",
+                },
+              },
+            ],
+            has_more: false,
+          },
+        },
+      },
+    });
+
+    const res = response();
+    await handler(request(payload) as never, res as never);
+
+    expect(res.statusCode).toBe(200);
+    expect(mocks.queryOne).not.toHaveBeenCalled();
+    expect(mocks.query).not.toHaveBeenCalled();
+    expect(mocks.sendEmail).not.toHaveBeenCalled();
+    expect(mocks.recordReferralConversion).not.toHaveBeenCalled();
+  });
+
   it("fulfills a paid owned checkout after ownership approval", async () => {
     const payload = JSON.stringify({
       id: "evt_paid_owned_invisibleexit_fixture",

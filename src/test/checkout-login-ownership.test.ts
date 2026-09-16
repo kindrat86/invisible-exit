@@ -167,6 +167,46 @@ describe("checkout-login ownership", () => {
     expect(mocks.queryOne).not.toHaveBeenCalled();
   });
 
+  it("rejects an owned one-time tripwire before creating a subscription account", async () => {
+    const tripwireSession = {
+      ...foreignGitDealFlowSession,
+      id: "cs_live_retiredtripwire123",
+      payment_link: null,
+      metadata: { product: "tripwire" },
+      line_items: {
+        data: [
+          {
+            price: {
+              id: "price_1U3kCuCwGoUDklRel1O7JYdq",
+              product: "prod_UsdZ2wQbECjvAz",
+            },
+          },
+        ],
+        has_more: false,
+      },
+    };
+    const handler = createCheckoutLoginHandler({
+      retrieveSession: vi.fn().mockResolvedValue(tripwireSession),
+    });
+    const res = response();
+
+    await handler(
+      {
+        method: "POST",
+        headers: {},
+        body: { session_id: tripwireSession.id },
+      } as never,
+      res as never,
+    );
+
+    expect(res.statusCode).toBe(409);
+    expect(res.body).toEqual({
+      error: "This one-time offer does not include a subscription account",
+    });
+    expect(mocks.execute).not.toHaveBeenCalled();
+    expect(mocks.queryOne).not.toHaveBeenCalled();
+  });
+
   it.each([
     {
       label: "owned Payment Link",
