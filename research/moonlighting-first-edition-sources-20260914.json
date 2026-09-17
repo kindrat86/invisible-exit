@@ -7,7 +7,7 @@
     "path": "research/moonlighting-clause-sources-20260903.md",
     "baseline_commit": "412365e",
     "historical_complete_slices_commit": "179b193",
-    "note": "Commit 179b193 contains the complete slices 1-3 text for IL, CO and MA. Commit 412365e supplies the later ND, federal and VA verification. No live page may be generated from this draft without re-pulling all cited sources."
+    "note": "Commit 179b193 contains the complete slices 1-3 text for IL, CO and MA; that text was RESTORED into the canonical inventory file on 2026-09-17 after later history had lost it (see RESTORED 2026-09-17 section). Commit 412365e supplies the later ND, federal and VA verification; VA subsection B was live-re-confirmed 2026-09-17. No live page may be generated from this draft without owner review plus a same-day re-pull of all cited sources."
   },
   "sources": [
     {"id":"federal-ryan","jurisdiction":"Federal","citation":"Ryan LLC v. FTC, No. 3:24-cv-00986-E, Doc. 211","source_url":"https://www.uschamber.com/assets/documents/Order-Granting-SJ-Setting-Aside-Rule-Ryan-v.-FTC-N.D.-Tex.pdf","last_verified":"2026-09-13","source_kind":"primary_opinion_mirror"},
@@ -30,8 +30,8 @@
     {"id":"nd-14-02-4","jurisdiction":"North Dakota","citation":"N.D.C.C. sections 14-02.4-03 and 14-02.4-08","source_url":"https://ndlegis.gov/cencode/t14c02-4.pdf","last_verified":"2026-09-13","source_kind":"official_statute"},
     {"id":"nd-hougum","jurisdiction":"North Dakota","citation":"Hougum v. Valley Memorial Homes, 1998 ND 24","source_url":"https://law.justia.com/cases/north-dakota/supreme-court/1998/970108.html","last_verified":"2026-09-10","source_kind":"opinion_mirror"},
     {"id":"nd-clausnitzer","jurisdiction":"North Dakota","citation":"Clausnitzer v. Tesoro Refining & Marketing Co., 2012 ND 172","source_url":"https://law.justia.com/cases/north-dakota/supreme-court/2012/20120107.html","last_verified":"2026-09-10","source_kind":"opinion_mirror"},
-    {"id":"va-40-1-28-7-8","jurisdiction":"Virginia","citation":"Va. Code section 40.1-28.7:8","source_url":"https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-28.7:8/","last_verified":"2026-09-13","source_kind":"official_statute","release_blocker":"Re-pull current subsection B in a browser before publication."},
-    {"id":"va-2026-ch883","jurisdiction":"Virginia","citation":"Virginia Acts of Assembly 2026, chapter 883, S 170","source_url":"https://lis.blob.core.windows.net/files/1223059.PDF","last_verified":"2026-09-13","source_kind":"official_session_law","release_blocker":"Amendment extraction interleaves old and new text; confirm operative code wording."}
+    {"id":"va-40-1-28-7-8","jurisdiction":"Virginia","citation":"Va. Code section 40.1-28.7:8","source_url":"https://law.lis.virginia.gov/vacode/title40.1/chapter3/section40.1-28.7:8/","last_verified":"2026-09-17","source_kind":"official_statute","verification_note":"Subsection B re-pulled live 2026-09-17 from the official LIS code page (page current as of 9/16/2026). Confirmed verbatim: No employer shall enter into, enforce, or threaten to enforce a covenant not to compete with any low-wage employee or health care professional. The flattened Ch. 883 amendment PDF had omitted the phrase; the live code includes it."},
+    {"id":"va-2026-ch883","jurisdiction":"Virginia","citation":"Virginia Acts of Assembly 2026, chapter 883, S 170","source_url":"https://lis.blob.core.windows.net/files/1223059.PDF","last_verified":"2026-09-13","source_kind":"official_session_law","verification_note":"Amendment-PDF flattening ambiguity resolved 2026-09-17: operative code wording confirmed against the live official LIS section page (source va-40-1-28-7-8). This record remains the authority for the 2026 amendment itself."}
   ],
   "claims": [
     {"id":"federal-overlay","states":["Federal"],"source_ids":["federal-ryan","federal-fr-2026-02866"],"status":"verified_for_draft","proposition":"The district court set aside the FTC Non-Compete Rule, and the later Federal Register record removed it from the CFR."},
@@ -58,7 +58,7 @@
     {"id":"nd-cases","states":["North Dakota"],"source_ids":["nd-hougum","nd-clausnitzer"],"status":"verified_for_draft_with_mirror_limitation","proposition":"The cited state opinions treat direct conflict as a substantive limit; official opinion PDFs remain a release-quality improvement."},
     {"id":"nd-verified","states":["North Dakota"],"source_ids":["nd-14-02-4","nd-hougum","nd-clausnitzer"],"status":"metadata","proposition":"The displayed verification month is supported by the source dates."},
     {"id":"va-framework","states":["Virginia"],"source_ids":["va-40-1-28-7-8","va-2026-ch883"],"status":"draft_only_blocked","proposition":"The official sources define the post-employment covenant framework and record the 2026 amendment."},
-    {"id":"va-blocker","states":["Virginia"],"source_ids":["va-40-1-28-7-8","va-2026-ch883"],"status":"release_blocker","proposition":"The current operative subsection must be confirmed because flattened amendment text is ambiguous."},
+    {"id":"va-blocker","states":["Virginia"],"source_ids":["va-40-1-28-7-8","va-2026-ch883"],"status":"resolved_2026-09-17","proposition":"RESOLVED: current operative subsection B confirmed by live official re-pull on 2026-09-17; it covers low-wage employees and health care professionals. Remaining release gates: owner review and same-day re-pull of every cited source at publish time."},
     {"id":"va-verified","states":["Virginia"],"source_ids":["va-40-1-28-7-8","va-2026-ch883"],"status":"metadata","proposition":"The displayed verification month is supported by the source dates."}
   ],
   "excluded_states": [

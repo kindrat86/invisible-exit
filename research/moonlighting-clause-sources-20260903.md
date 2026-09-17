@@ -165,6 +165,99 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ---
 
+## Illinois / Colorado / Massachusetts — RESTORED 2026-09-17 from commit 179b193
+
+(Slice-2/3 verified text was lost from later history of this file; re-inserted verbatim.
+Provenance: git show 179b193. Re-pull all source_urls on the publishing tick per 5.1.)
+
+## Illinois
+
+### 820 ILCS 90 — Illinois Freedom to Work Act — VERIFIED (selected current sections)
+- source_url: https://ilga.gov/Legislation/ILCS/Articles?ActID=3737&ChapterID=68&Print=True
+- Correction to the candidate list: the current Act is codified at **820 ILCS 90**, not
+  745 ILCS 42. Do not propagate the earlier candidate citation.
+- Captured §10: an employer may not enter a covenant not to compete unless the employee's
+  actual or expected annualized earnings exceed the statutory threshold; a covenant violating
+  that rule is void and unenforceable. The official text schedules threshold changes over time.
+- Captured §15: even where the earnings gate is met, a covenant is illegal and void unless it
+  has adequate consideration, is ancillary to a valid employment relationship, is no greater
+  than required for a legitimate business interest, does not impose undue hardship, and is not
+  injurious to the public.
+- Captured §20: the employer must advise the employee in writing to consult an attorney and
+  provide the covenant before employment begins or provide the statutory review period.
+- Side-business relevance: the Act's definition focuses on restrictions after termination.
+  It does not itself create a general right to operate a competing business during employment.
+- Numeric publication caution: do not publish earnings amounts or review-period length until
+  they are re-pulled into the machine-readable manifest, because the official text has dated
+  step-ups and recent amendments.
+- last_verified: 2026-09-06
+
+---
+
+## Colorado
+
+### Colo. Rev. Stat. § 8-2-113 as amended by SB25-083 — VERIFIED via official session law
+- source_urls: https://leg.colorado.gov/laws/session-laws/SB25-083/366/download and
+  https://leg.colorado.gov/bills/sb25-083
+- Official status page: SB25-083 became law; chapter 366 has an effective date of August 6, 2025.
+- Captured amended subsection (2)(a): except for enumerated exceptions, a covenant not to
+  compete that restricts an individual's right to receive compensation for labor is void.
+- Captured principal exception: a covenant for a highly compensated worker can survive only
+  when it protects trade secrets and is no broader than reasonably necessary for that interest;
+  the amendment separately limits covenants affecting specified health-care practices.
+- Captured subsection (3): permitted categories include reasonable confidentiality/trade-secret
+  provisions and sale-of-business covenants, with conditions in the statutory text.
+- Side-business relevance: this is a strong default against compensation-restricting covenants,
+  but the trade-secret, sale, and other enumerated exceptions prevent a simple yes/no answer.
+- Numeric publication caution: the statute incorporates a changing "highly compensated worker"
+  threshold. Do not publish a dollar value without a same-day source and manifest row.
+- last_verified: 2026-09-06
+
+---
+
+## Massachusetts
+
+### Mass. Gen. Laws ch. 149, § 24L — VERIFIED for scope; details need publishing-day re-pull
+- source_url: https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXI/Chapter149/Section24l
+- Captured definition: a "noncompetition agreement" is one arising from an employment
+  relationship under which the employee agrees not to engage in specified competitive
+  activities **after the employment relationship has ended**. The definition excludes several
+  other agreement types, including employee/customer nonsolicitation, confidentiality and
+  sale-of-business agreements.
+- Captured worker exclusions: the section says noncompetition agreements are not enforceable
+  against specified groups including nonexempt employees, student interns, employees terminated
+  without cause or laid off, and employees age 18 or younger.
+- Side-business relevance: §24L mainly regulates post-employment noncompetition agreements. It
+  should not be presented as statutory permission to run a concurrent competing side business.
+  A Massachusetts page still needs primary authority on in-employment loyalty and invention/IP
+  assignment before it can answer the asset's core question.
+- Numeric publication caution: do not publish notice periods, duration limits, ages or garden-
+  leave formulas until the entire current section is re-pulled into the §5.1 manifest.
+- last_verified: 2026-09-06
+
+### Chelsea Industries, Inc. v. Gaffney, 389 Mass. 1 (1983) — VERIFIED
+- source_url: https://www.masscasesarchive.com/masscases.com/cases/sjc/389/389mass1.html
+- Source: full Supreme Judicial Court opinion in the Massachusetts Cases Archive, linked to the
+  Commonwealth's Trial Court Law Libraries. The opinion identifies the court, citation, dates and
+  participating justices; use the official reporter citation rather than treating a case summary
+  as authority.
+- Captured rule: trusted executive employees "owe a duty of loyalty to their employer and must
+  protect the interests of the employer." The court states that an executive employee is "barred
+  from actively competing with his employer during the tenure of his employment, even in the
+  absence of an express covenant so providing."
+- Captured application: the court upheld the finding that the executives breached their duty by
+  using their positions, employer resources and customer relationships while establishing a
+  competing business. The opinion also recognizes forfeiture of compensation as a possible remedy
+  for disloyal conduct even without proof of actual injury.
+- Side-business relevance: this closes the Massachusetts in-employment gap for trusted executives.
+  It does not establish that every employee owes the same fiduciary duty, and § 24L still concerns
+  post-employment covenants rather than permission to compete during employment.
+- last_verified: 2026-09-07
+
+---
+
+---
+
 ## Rejected / dead ends (do not cite)
 
 - RCW 49.44.270: the live RCW site returns "Citation not found ... repealed, expired,
@@ -177,9 +270,9 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 - Texas: statutes.legis.texas.gov § 15.50 (see above); anti-moonlighting-clause caselaw
   (5th Cir. / Texas cases) — find and verify primary opinions, not blog summaries.
-- Illinois Freedom to Work Act (745 ILCS 42) — low-earning-worker noncompete limits.
-- Colorado § 8-2-113 (C.R.S.) — void restraints on employment.
-- Massachusetts G.L. c. 149 § 24L — the 2018 noncompete statute (garden-leave/notice rules).
+- ~~Illinois Freedom to Work Act (745 ILCS 42)~~ — WRONG cite, corrected: the current Act is 820 ILCS 90 (verified above).
+- ~~Colorado § 8-2-113~~ — verified above via official SB25-083 session law.
+- ~~Massachusetts G.L. c. 149 § 24L~~ — verified above (scope); Chelsea Industries closes the in-employment gap.
 - New York common-law duty of loyalty line of cases for paid side businesses.
 - Federal overlay: FTC noncompete rule status after the 2024 Texas litigation — must be
   re-verified from a primary court document before ANY federal mention is published.
@@ -346,14 +439,13 @@ threshold from the official page; pull the Ryan LLC district-court opinion PDF (
     BLS median hourly wage for the Commonwealth; excludes employees whose earnings derive in
     whole or predominant part from commissions/incentives/bonuses.
   - B: No employer shall enter into, enforce, or threaten to enforce a covenant not to compete
-    with any low-wage employee. ⚠️ AMBIGUITY, DO NOT PUBLISH WITHOUT RE-PULL: the Acts PDF is
-    amendment text (old/new interleaved; pypdf flattens strikethrough, shown by renumbering
-    artifacts like "D. A low-wage E. An employee..."), and a cached search description of the
-    live LIS page still shows B ending "...with any low-wage employee or health care
-    professional". The 2026 Ch. 883 flat text omits that phrase in B. Before any VA row
-    publishes, re-pull the live LIS section body (browser lane) to confirm the CURRENT
-    operative B text; state nothing about where healthcare-covenant rules live without a
-    captured source.
+    with any low-wage employee or health care professional. ✅ RESOLVED 2026-09-17: live
+    official LIS code page re-pulled (page current as of 9/16/2026) and subsection B reads,
+    verbatim, "No employer shall enter into, enforce, or threaten to enforce a covenant not to
+    compete with any low-wage employee or health care professional." The cached-search-description
+    reading was correct; the Ch. 883 amendment PDF's flat-text omission was the flattening
+    artifact. Current operative text INCLUDES "or health care professional". Still do not
+    state anything further about healthcare-covenant rules without a captured source.
   - C: covenant unenforceable if employer discharges without severance/monetary payment unless
     for cause; severance must be disclosed at execution.
   - D: savings clause for NDAs/trade secrets (§ 59.1-336) — a moonlighting NDA remains
@@ -447,12 +539,14 @@ window clears.
 ## Coverage status (supersedes the slice 4 footer)
 
 CA done · WA done (2 partials flagged) · NY partial (201-d subsection lead-ins) · TX done ·
-IL/CO/MA done · ND done (statutes OFFICIAL, opinions mirror) · NV partial-official (wage
-threshold + middle subsections OPEN) · VA statute captured via official Acts PDF (confirm
-current B-subsection text before publishing) · 40 states not started. Pre-publish gaps now:
-WA session-law cite (2026 c 149), NY 201-d subsection lead-ins, NV middle subsections + wage
-threshold, VA B-subsection confirmation (browser re-pull), ND official opinion PDFs
-(optional), state-row federal-overlay caveat lines (FR doc + Ryan, both captured).
+IL/CO/MA done (RESTORED into this file 2026-09-17 from 179b193; was lost from later history)
+· ND done (statutes OFFICIAL, opinions mirror) · NV partial-official (wage threshold + middle
+subsections OPEN) · VA statute captured, B-subsection CONFIRMED 2026-09-17 via live official
+LIS re-pull (includes "or health care professional") · 40 states not started. Pre-publish gaps
+now: WA session-law cite (2026 c 149), NY 201-d subsection lead-ins, NV middle subsections +
+wage threshold, ND official opinion PDFs (optional), state-row federal-overlay caveat lines
+(FR doc + Ryan, both captured). SOURCE-INTEGRITY REPAIR 2026-09-17: IL/CO/MA restored; VA
+ambiguity resolved; manifest statuses updated (see moonlighting-first-edition-sources JSON).
 NEXT TOP UNBLOCKED ORDER: publishing-prep — draft the 10-state first-edition page set per
 5.7 (1:1 URL displacement) and 5.1 (per-figure source manifest), reusing this file's captured
 verbatim text; each state row carries statutory cites + last-verified dates + the federal

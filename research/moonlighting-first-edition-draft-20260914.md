@@ -94,7 +94,7 @@ Last source verification: September 2026. [claim:nd-verified]
 
 Virginia's official code defines a covenant not to compete as a restraint that applies after employment ends, and its low-wage framework preserves separate confidentiality and trade-secret rules. The official session-law source also changed the section in 2026. [claim:va-framework]
 
-**Release blocker:** the amendment text and the current live-code wording for the operative prohibition were ambiguous in the captured extract. The release version must re-pull the current subsection in a browser and must not state the affected worker categories until that wording is confirmed. [claim:va-blocker]
+**Release blocker:** wording RESOLVED 2026-09-17 by live official re-pull: subsection B prohibits enforcing a covenant not to compete against any low-wage employee or health care professional, verbatim from the official code page. [claim:va-blocker] Remaining release gates: owner review and same-day re-pull of every cited source at publish time.
 
 **Draft answer:** keep this row unpublished until the live operative wording is confirmed. Even then, describe it as a post-employment covenant rule, not a general right to operate a concurrent competing business.
 
