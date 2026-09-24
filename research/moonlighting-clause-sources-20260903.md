@@ -93,9 +93,14 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
   noncompetition covenants are void and unenforceable regardless of when the parties entered
   into the noncompetition covenant. (2) It is a violation of this chapter for an employer to
   enforce, attempt to enforce, or threaten to enforce ... any noncompetition covenant".
-- Headline research finding (verify session-law chapter cite 2026 c 149 on next pull): WA moves
-  from a wage-threshold regime to a full ban on noncompetition covenants on 2027-06-30.
-- last_verified: 2026-09-03
+- Session cite VERIFIED 2026-09-24 on the official chapter page: 2026 c 149 (ESHB 1155,
+  signed 2026-03-23). The chapter's effective-date section RCW 49.62.900 states verbatim:
+  "This act takes effect June 30, 2027." Official page carries dual-version headers
+  throughout ("(Effective until June 30, 2027.)" / "(Effective June 30, 2027.)").
+  Wording of the 49.62.020(1) future-version sentence re-confirmed verbatim on the same pull.
+- Net effect: WA moves from a wage-threshold regime to a full ban on noncompetition
+  covenants on 2027-06-30.
+- last_verified: 2026-09-24 (020 both versions + session cite + 49.62.900 effective date)
 
 ### RCW 49.62.050 — out-of-state forum/choice-of-law carve-outs void — VERIFIED
 - source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.050
@@ -120,22 +125,30 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
 
 ## New York
 
-### NY Lab. Law § 201-d — lawful activities protection — VERIFIED (definitions only)
-- source_url: https://www.nysenate.gov/legislation/laws/LAB/201-D
-- Captured: '"Political activities" shall mean (i) running for public office, (ii) campaigning
-  for a candidate for public office, or (iii) participating in fund-raising activities for the
-  benefit of a candidate, political party or political advocacy group' and
-  '"Recreational activities" shall mean any lawful, leisure-time activity, for which the
-  employee receives no compensation and which is generally engaged in for recreational
-  purposes, including but not limited to sports, games, hobbies, exercise, reading ...'.
-- ANALYSIS (interpretation, grounded in the captured definition — keep labeled as such):
-  a COMPENSATED side business does not meet the "receives no compensation" element of
-  "recreational activities", so § 201-d likely does not shield paid side hustles. NY paid
-  moonlighting is governed mainly by the common-law duty of loyalty (case law NOT yet
-  researched — candidate list below).
-- PENDING: operative subsections 2-3 (the refusal-to-hire/discharge prohibition) were not
-  captured; also the tail re city ethics laws (population >= 1M) was partially captured.
-- last_verified: 2026-09-03
+### NY Lab. Law § 201-d — lawful activities protection — VERIFIED (full section captured, official)
+- source_url: https://www.nysenate.gov/legislation/laws/LAB/201-D (official NYS Senate
+  consolidation; full text pulled 2026-09-24 via r.jina.ai rendering of the official page
+  after the extract layer and direct curl both elided/blocked the span)
+- Captured subsection 1 definitions (a)-(e): "Political activities", "Recreational
+  activities" ("...for which the employee receives no compensation..."), "Work hours",
+  "Political matters", "Religious matters".
+- Captured subsection 2 lead-in VERBATIM: "Unless otherwise provided by law, it shall be
+  unlawful for any employer or employment agency to refuse to hire, employ or license, or
+  to discharge from employment or otherwise discriminate against an individual in
+  compensation, promotion or terms, conditions or privileges of employment because of:"
+  followed by paragraphs (a) political activities outside working hours/off premises/
+  without employer equipment (with civil-service carve-outs), (b) legal use of consumable
+  products including cannabis off-hours/off-premises, (c) legal recreational activities
+  including cannabis outside work hours/off premises/without employer equipment,
+  (d) union membership and NLRA/article-14 civil service rights, (e) refusal to attend
+  employer-sponsored meetings or receive political/religious communications.
+- ANALYSIS (interpretation, grounded in the captured text — keep labeled as such):
+  none of subsection 2's protected categories covers a compensated side business; a
+  COMPENSATED side business does not meet the "receives no compensation" element of
+  "recreational activities" either. NY paid moonlighting is governed mainly by the
+  common-law duty of loyalty (case law NOT yet researched — candidate list below).
+- RESOLVED 2026-09-24: former PENDING item "operative subsections 2-3" — the operative
+  prohibition is subsection 2 (the section has no subsection 3); captured in full.
 
 ---
 
@@ -507,21 +520,57 @@ threshold from the official page; pull the Ryan LLC district-court opinion PDF (
   2026-02-12) removing the Rule from the CFR. Both layers are now primary-sourced.
 - last_verified: 2026-09-13
 
-## Nevada — middle subsections + wage threshold: STILL OPEN (all routes blocked this tick)
+## Nevada — COMPLETE against the official source (2026-09-24)
 
-Attempted, with evidence of each failure:
-- Official leg.state.nv.us page: Cloudflare 403 to curl (UA + Accept headers). The extract
-  layer reaches the page but elides exactly the middle window where 613.195 subsections 2-7
-  sit (three pulls at 12k/40k/100k char budgets all returned the same head+tail with "..."
-  over the span).
-- Justia (two URL forms): http_error, then 429 Too Many Requests.
-- Casetext: service retired ("This service is no longer available").
-- Wayback (web.archive.org/web/2026/...): snapshot fetched (6,273 bytes) but contains no
-  613.195 text (grep -c = 0).
-GUARD FROM SLICE 4 STANDS: never publish the NV dollar threshold without pulling the current
-number from the official text and citing the exact subsection. NEXT: retry in a later tick via
-a real browser session (computer_use lane) on the official page, or Justia after the 429
-window clears.
+BLOCKED ROUTES THIS TICK (kept from slice 5 for honesty): official page Cloudflare 403 to
+curl; extract layer elided the middle span at 12k/40k/60k/100k budgets; Justia http_error +
+network_error + 429; Casetext retired; Wayback snapshot textless.
+ROUTE THAT WORKED: r.jina.ai rendering of the official page
+(https://www.leg.state.nv.us/nrs/nrs-613.html) — 167,737 chars captured, page footer states
+"Rev. 9/9/2026 1:16:52 PM--2026R1", so the capture is the current official revision.
+
+### NRS 613.195 — all subsections captured verbatim (official)
+- source_url: https://www.leg.state.nv.us/nrs/nrs-613.html#NRS613Sec195
+- 1. Void unless (a) valuable consideration; (b) no restraint greater than required to
+  protect the employer; (c) no undue hardship on the employee; (d) restrictions
+  appropriate in relation to the valuable consideration.
+- 2. May not restrict service to a FORMER customer/client who (a) was not solicited by the
+  former employee, (b) voluntarily chose to leave and seek services, (c) subject to the
+  employee otherwise complying with time/geography/scope limits; violating provisions void.
+- 3. VERBATIM: "A noncompetition covenant may not apply to an employee who is paid solely
+  on an hourly wage basis, exclusive of any tips or gratuities."
+- 4. Negotiating/executing/attempting to enforce a covenant void under this section does
+  not violate NRS 613.200.
+- 5. Layoff/reorganization: covenant enforceable only while the employer keeps paying
+  salary, benefits or equivalent compensation, including severance.
+- 6. Mandatory judicial revision (blue pencil) where consideration exists but any
+  time/geography/scope limit is unreasonable, overbroad, or an undue hardship.
+- 7. Attorney's fees to the employee where the covenant violated subsection 2 or 3.
+- 8. Definitions of "employer" and "noncompetition covenant" (post-termination restraint
+  on pursuing a similar vocation).
+- CORRECTION TO PRIOR SLICES (5.1-critical): there is NO wage THRESHOLD in NRS 613.195.
+  Subsection 3 is a categorical exclusion for employees "paid solely on an hourly wage
+  basis" with no dollar figure and no multiplier. The slice-4/5 guard "never publish the
+  NV dollar threshold without the official current text" was guarding against a number
+  that does not exist in the statute. Do not publish any dollar threshold for Nevada.
+- Side-business relevance: Nevada noncompetes are void unless narrowly supported by
+  consideration and proportionate restraint; mandatory blue-pencil revision; hourly-only
+  employees are excluded entirely. No express "additional job" statute like WA RCW 49.62.070.
+- last_verified: 2026-09-24
+
+## Slice 6 outcome (2026-09-24)
+
+- WA session cite verified against the official chapter page: 2026 c 149 (ESHB 1155,
+  signed 2026-03-23), effective-date section RCW 49.62.900 "This act takes effect
+  June 30, 2027."
+- NY Lab. Law 201-d captured in full from the official NYS Senate page; the "subsections
+  2-3" pending item is resolved (the operative prohibition is subsection 2; there is no
+  subsection 3).
+- NV NRS 613.195 completed from the official page (Rev. 9/9/2026--2026R1) via the
+  r.jina.ai rendering route; the supposed "wage threshold" does not exist — subsection 3
+  is a categorical hourly-wage exclusion. NV promoted from excluded to includable.
+- Nothing published; no URL delta; §5.1/5.7 held. Worktree-only research artifact; no
+  build, no deploy needed (research/ is not part of the build).
 
 ## Slice 5 outcome
 
@@ -536,18 +585,24 @@ window clears.
 - Nothing published; no URL delta; §5.1/5.7 held. Worktree-only research artifact; no build,
   no deploy needed (research/ is not part of the build).
 
-## Coverage status (supersedes the slice 4 footer)
+## Coverage status (supersedes the slice 5 footer) — UPDATED 2026-09-24
 
-CA done · WA done (2 partials flagged) · NY partial (201-d subsection lead-ins) · TX done ·
-IL/CO/MA done (RESTORED into this file 2026-09-17 from 179b193; was lost from later history)
-· ND done (statutes OFFICIAL, opinions mirror) · NV partial-official (wage threshold + middle
-subsections OPEN) · VA statute captured, B-subsection CONFIRMED 2026-09-17 via live official
-LIS re-pull (includes "or health care professional") · 40 states not started. Pre-publish gaps
-now: WA session-law cite (2026 c 149), NY 201-d subsection lead-ins, NV middle subsections +
-wage threshold, ND official opinion PDFs (optional), state-row federal-overlay caveat lines
-(FR doc + Ryan, both captured). SOURCE-INTEGRITY REPAIR 2026-09-17: IL/CO/MA restored; VA
-ambiguity resolved; manifest statuses updated (see moonlighting-first-edition-sources JSON).
-NEXT TOP UNBLOCKED ORDER: publishing-prep — draft the 10-state first-edition page set per
-5.7 (1:1 URL displacement) and 5.1 (per-figure source manifest), reusing this file's captured
-verbatim text; each state row carries statutory cites + last-verified dates + the federal
-overlay caveat with FR/Ryan sources.
+11 states fully or near-fully captured from primary sources: CA · WA (session cite 2026 c 149
+VERIFIED; two partials remain: 49.62.070(2) exceptions, 49.62.080 middle) · NY (201-d COMPLETE,
+official) · TX (15.50(a) captured via unofficial mirror + official-current correction noted;
+official statutes.capitol.texas.gov page STILL not captured — last open capture item) ·
+IL/CO/MA (restored verbatim 2026-09-17) · ND (statutes OFFICIAL, opinions mirror) ·
+NV (613.195 COMPLETE, official Rev. 9/9/2026--2026R1; NO wage threshold exists — subsection 3
+is a categorical hourly-wage exclusion) · VA (captured, B-subsection confirmed 2026-09-17).
+40 states not started. REMAINING PRE-PUBLISH ITEMS: (1) TX official-page capture (nice-to-have;
+mirror quote + official-correction already recorded), (2) WA 49.62.070(2)/49.62.080 partials
+(if those propositions are used in copy), (3) ND official opinion PDFs (optional; reporter
+cites suffice), (4) OWNER review of the draft, (5) same-day re-pull of every cited source at
+publish time per the draft's own release limits. SOURCE-INTEGRITY REPAIR 2026-09-17: IL/CO/MA
+restored; VA ambiguity resolved; manifest statuses updated.
+NEXT TOP UNBLOCKED ORDER (slice 7, publishing-prep): extend the staged draft and manifest with
+Nevada as state 11 (manifest source row nrs-613-195 last_verified 2026-09-24; draft NV row;
+drop NV from excluded_states), add the WA 2027-06-30 full-ban sentence to the staged WA row
+(future-effective framing, never current law), then re-run
+scripts/validate-moonlighting-publishing-prep.mjs. After that, the release gates are OWNER
+review and the publish-day re-pull of every cited source.

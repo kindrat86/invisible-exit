@@ -28,7 +28,9 @@ Last source verification: September 2026. [claim:ca-verified]
 
 Washington directly protects certain lower-paid employees who take another job, contract independently, or become self-employed. The protection is tied to a multiple of the applicable state minimum wage, so this draft omits a dollar amount. Safety, normal scheduling expectations, loyalty, and conflicts remain exceptions. [claim:wa-additional-work]
 
-Washington separately defines noncompetition covenants broadly while excluding confidentiality, trade-secret, and nonsolicitation agreements from that definition. Its current code also contains a future version under which noncompetition covenants become void. That future rule must not be described as current law before its effective date. [claim:wa-noncompete]
+Washington separately defines noncompetition covenants broadly while excluding confidentiality, trade-secret, and nonsolicitation agreements from that definition. [claim:wa-noncompete]
+
+Washington separately provides that beginning June 30, 2027, all noncompetition covenants are void and unenforceable regardless of when the parties entered into them, and that enforcing, attempting to enforce, or threatening to enforce one violates the chapter. This sentence describes a law that is not yet in effect and must never be presented as current law before that date. [claim:wa-repeal]
 
 **Draft answer:** lower-paid employees have an express statutory starting point for nonconflicting additional work, but it is not a license to create safety problems, ignore normal scheduling, misuse information, or compete disloyally.
 
@@ -96,9 +98,17 @@ Virginia's official code defines a covenant not to compete as a restraint that a
 
 **Release blocker:** wording RESOLVED 2026-09-17 by live official re-pull: subsection B prohibits enforcing a covenant not to compete against any low-wage employee or health care professional, verbatim from the official code page. [claim:va-blocker] Remaining release gates: owner review and same-day re-pull of every cited source at publish time.
 
-**Draft answer:** keep this row unpublished until the live operative wording is confirmed. Even then, describe it as a post-employment covenant rule, not a general right to operate a concurrent competing business.
+**Draft answer:** describe Virginia as a post-employment covenant rule, not a general right to operate a concurrent competing business. A direct statutory prohibition covers low-wage employees and health care professionals. [claim:va-blocker]
 
 Last source verification: September 2026. [claim:va-verified]
+
+## Nevada
+
+Nevada voids a noncompetition covenant unless it is supported by valuable consideration, imposes no restraint greater than necessary to protect the employer, imposes no undue hardship, and carries restrictions appropriate to that consideration. Where a covenant is supported by consideration but overbroad, a court must revise it and enforce it as revised. Employees paid solely on an hourly wage basis, excluding tips and gratuities, cannot be bound by a noncompetition covenant at all. [claim:nv-covenant]
+
+**Draft answer:** hourly-paid workers are categorically outside Nevada noncompete enforcement. For everyone else, the fight is over consideration and proportionality, not whether a court can rewrite the covenant, because Nevada courts are required to revise overbroad covenants rather than throw them out.
+
+Last source verification: September 2026. [claim:nv-verified]
 
 ## Practical checklist before acting
 
