@@ -1,8 +1,9 @@
 import { useState, useMemo } from "react";
-import { Plus } from "lucide-react";
+import { Plus, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScenarioCard from "./ScenarioCard";
-import UpgradeOverlay from "@/components/UpgradeOverlay";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import { formatCurrency } from "@/lib/fym-calculations";
 import type { CalculatorInputsExpanded } from "@/types/fym";
 
@@ -162,14 +163,36 @@ export default function ScenarioEngine({ inputs, hasFullAccess = true }: Scenari
             />
           ))
         ) : (
-          <UpgradeOverlay
-            title="Compare different paths to freedom"
-            description="Founding members compare up to 3 growth scenarios side by side. Find which combination gets you to freedom fastest."
-          >
-            <div className="min-w-[280px] h-[240px] bg-gray-50 rounded-xl border border-gray-200/50 flex items-center justify-center">
-              <p className="text-sm text-gray-400">Scenario A</p>
+          <div className="min-w-[280px] snap-start shrink-0 rounded-xl border border-[#60A5FA]/20 bg-[#60A5FA]/5 p-6 flex flex-col items-center justify-center text-center">
+            <div className="w-10 h-10 rounded-xl bg-[#60A5FA]/10 flex items-center justify-center mb-3">
+              <Rocket className="w-5 h-5 text-[#60A5FA]" />
             </div>
-          </UpgradeOverlay>
+            <h4 className="text-sm font-semibold text-[#0B1D3A] mb-1">
+              Compare growth paths
+            </h4>
+            <p className="text-xs text-[#4A5568] mb-4 leading-relaxed">
+              Add scenarios to find the fastest path to your freedom number.
+            </p>
+            <button
+              onClick={async () => {
+                try {
+                  const { data, error } = await supabase.functions.invoke("create-checkout", {
+                    body: { tier: "founding", returnUrl: window.location.origin + "/dashboard" },
+                  });
+                  if (error) throw error;
+                  if (data?.url) window.location.href = data.url;
+                } catch {
+                  toast.error("Could not start checkout. Please try again.");
+                }
+              }}
+              className="bg-[#60A5FA] hover:bg-[#3B82F6] text-white font-semibold px-4 py-2 rounded-lg transition-colors text-xs"
+            >
+              See Founding Toolkit — $17.99/mo
+            </button>
+            <p className="text-[10px] text-[#9CA3AF] mt-2">
+              Founding price, locked for life.
+            </p>
+          </div>
         )}
       </div>
 
