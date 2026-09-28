@@ -55,11 +55,14 @@ export default function InsuranceHubPage() {
         <div className="mt-12 bg-amber-50 rounded-xl p-6 border-l-4 border-amber-400">
           <h2 className="text-lg font-bold text-gray-900 mb-3">Quick Insurance Tips for Side Businesses</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>• General liability insurance ($30–50/month) is the minimum, most commercial leases and contracts require it.</li>
-            <li>• If you build software (SaaS, apps), add professional liability (E&O), it covers coding errors that cost clients money.</li>
-            <li>• Store customer data? Cyber liability insurance ($40–150/month) covers breach response and legal defense.</li>
-            <li>• Workers' comp laws vary significantly by state. Know your state's threshold before hiring your first employee.</li>
+            <li>• Insurance pricing varies widely by trade, coverage limits, and state, so any dollar figure you see online is a starting point, not a quote. Get a real quote before you budget.</li>
+            <li>• If your side business is software or consulting, ask an insurer or broker specifically about professional liability (E&O) and what it does and does not cover.</li>
+            <li>• General liability is the coverage most often named in client contracts and commercial leases. Read those requirements before you sign.</li>
+            <li>• Workers' compensation rules are state-specific and turn on whether a worker counts as an employee, so check your state's rules before hiring anyone.</li>
           </ul>
+          <p className="mt-3 text-xs text-gray-500">
+            Pricing varies by carrier, trade, and state; the guides above cover state-specific requirements. Last reviewed 2026-09-28.
+          </p>
         </div>
       </div>
       <Footer />

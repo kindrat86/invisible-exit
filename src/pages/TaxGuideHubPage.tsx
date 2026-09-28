@@ -54,11 +54,14 @@ export default function TaxGuideHubPage() {
         <div className="mt-12 bg-amber-50 rounded-xl p-6 border-l-4 border-amber-400">
           <h2 className="text-lg font-bold text-gray-900 mb-3">Quick Tax Tips for Side Businesses</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>• Set aside 25-30% of your side business income for taxes (federal self-employment + state income).</li>
-            <li>• Make quarterly estimated tax payments to avoid underpayment penalties. Use IRS Form 1040-ES.</li>
-            <li>• Track every business expense. The QBI deduction lets you deduct 20% of qualified business income.</li>
-            <li>• Consider a SEP IRA, contributions are tax-deductible and grow tax-deferred until retirement.</li>
+            <li>• Pay estimated taxes quarterly if you expect to owe at least $1,000 for the year, after withholding and refundable credits.</li>
+            <li>• The safe harbors: pay 90% of this year's tax, or 100% of last year's (110% if your prior-year AGI topped $150,000), whichever is smaller.</li>
+            <li>• Self-employment tax is Social Security and Medicare for people who work for themselves, and it applies to your net side-business profit.</li>
+            <li>• The QBI deduction lets many side-business owners deduct up to 20% of qualified business income, subject to income limits and other rules.</li>
           </ul>
+          <p className="mt-3 text-xs text-gray-500">
+            Sources: <a href="https://www.irs.gov/pub/irs-pdf/f1040es.pdf" className="underline">IRS Form 1040-ES (2026)</a> ($1,000 threshold and safe harbors), <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" className="underline">IRS: self-employment tax</a>, and <a href="https://www.law.cornell.edu/uscode/text/26/199A" className="underline">26 U.S.C. § 199A</a> (QBI). Last verified 2026-09-28.
+          </p>
         </div>
       </div>
       <Footer />

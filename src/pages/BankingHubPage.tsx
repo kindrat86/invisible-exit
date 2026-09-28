@@ -54,11 +54,14 @@ export default function BankingHubPage() {
         <div className="mt-12 bg-amber-50 rounded-xl p-6 border-l-4 border-amber-400">
           <h2 className="text-lg font-bold text-gray-900 mb-3">Quick Tips for Business Banking</h2>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li>• Keep personal and business accounts strictly separate for liability protection.</li>
-            <li>• Most online banks (Mercury, Relay, Novo) offer free checking with no minimum balance for LLCs.</li>
-            <li>• Look for banks that offer free ACH transfers and QuickBooks integration to save on software costs.</li>
-            <li>• If you need branch access, choose a national bank like Chase or Bank of America with local branches.</li>
+            <li>• Keep personal and business accounts strictly separate. Clean separation is what preserves your LLC's liability shield, and it makes tax time far simpler.</li>
+            <li>• An EIN from the IRS is free and issued online in minutes. Get one before you open the account so it sits under your business's tax ID, not your personal one.</li>
+            <li>• FDIC deposit insurance protects at least $250,000 at each FDIC-insured bank. If your operating balance can cross that line, spread it across more than one bank.</li>
+            <li>• Compare what you will actually pay: monthly fees, transaction limits, wire costs, and whether the bank exports cleanly to your bookkeeping.</li>
           </ul>
+          <p className="mt-3 text-xs text-gray-500">
+            Sources: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number" className="underline">IRS: Get an EIN</a> (free, issued online) and <a href="https://www.fdic.gov/deposit-insurance" className="underline">FDIC deposit insurance</a> (at least $250,000 at each insured bank). Last verified 2026-09-28.
+          </p>
         </div>
       </div>
       <Footer />
