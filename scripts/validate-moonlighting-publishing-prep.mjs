@@ -64,7 +64,8 @@ const retirements = displacement.planned_retirements.length;
 if (additions !== retirements || displacement.budget.net !== 0) {
   errors.push(`URL budget is not neutral: ${additions} additions, ${retirements} retirements.`);
 }
-if (!draft.includes('Nevada is excluded')) errors.push('Draft must retain the Nevada exclusion.');
+if (!draft.includes('Nevada is included')) errors.push('Draft must retain the Nevada state row with its inclusion status.');
+if (!references.includes('nv-covenant')) errors.push('Draft must retain the Nevada covenant claim reference.');
 if (!draft.includes('Release blocker:')) errors.push('Draft must retain the Virginia release blocker.');
 
 if (errors.length) {

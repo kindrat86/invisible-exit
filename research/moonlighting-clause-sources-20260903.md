@@ -66,12 +66,21 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
   restrain, or prohibit an employee earning less than twice the applicable state minimum
   hourly wage from having an additional job, supplementing their income by working for another
   employer, working as an independent contractor, or being self-employed."
-- PENDING: subsection (2) exceptions were not captured. The statutory test is wage-linked
-  ("less than twice the applicable state minimum hourly wage") — NEVER publish a dollar
-  figure for the threshold without pulling the current L&I number and citing it.
+- Subsection (2) CAPTURED VERBATIM 2026-09-29 from the official section page (direct pull,
+  no mirror): "(2)(a) This section shall not apply to any such additional services when the
+  specific services to be offered by the employee raise issues of safety for the employee,
+  coworkers, or the public, or interfere with the reasonable and normal scheduling
+  expectations of the employer. (b) This section does not alter the obligations of an
+  employee to an employer under existing law, including the common law duty of loyalty and
+  laws preventing conflicts of interest and any corresponding policies addressing such
+  obligations."
+- The statutory test is wage-linked ("less than twice the applicable state minimum hourly
+  wage") — NEVER publish a dollar figure for the threshold without pulling the current L&I
+  number and citing it.
 - Side-business relevance: this is the single most on-point statute found for the asset —
   a direct statutory right to a side job / self-employment below the wage threshold.
-- last_verified: 2026-09-03
+- last_verified: 2026-09-29 (full section including subsection (2); subsection (1) first
+  captured 2026-09-03)
 
 ### RCW 49.62.010 — definitions — VERIFIED
 - source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.010
@@ -113,13 +122,23 @@ Full chapter text cached at: ~/.hermes/cache/web/app.leg.wa.gov-044aa3638a.md
   law keeps RCW 49.62 protections.
 - last_verified: 2026-09-03
 
-### RCW 49.62.080 — remedies — PARTIAL
-- source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.080
-- Captured: "(4) A cause of action may not be brought regarding a noncompetition covenant
-  signed prior to January 1, 2020, if the noncompetition covenant is not being enforced or
-  explicitly leveraged." The damages/attorney-fee language sits in the un-captured middle of
-  the section. Re-pull before quoting remedies.
-- last_verified: 2026-09-03
+### RCW 49.62.080 — remedies — VERIFIED (both versions)
+- source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.080 (official section page,
+  direct pull 2026-09-29)
+- Current version (Effective until June 30, 2027) captured in full: (1) the attorney general,
+  on behalf of a person or persons, may pursue any and all relief, and an aggrieved person
+  may bring a cause of action for the relief in (2) and (3); (2) a violator owes the greater
+  of actual damages or a statutory penalty of five thousand dollars, plus reasonable
+  attorneys' fees, expenses, and costs; (3) if a court or arbitrator reforms, rewrites,
+  modifies, or only partially enforces a covenant, the party seeking enforcement owes the
+  same greater-of remedy; (4) no cause of action for a covenant signed before January 1,
+  2020 that is not being enforced or explicitly leveraged.
+- Effective June 30, 2027 version (2026 c 149): simplified — an AG or aggrieved-person
+  action for subsection (2) relief; the reformation-triggered remedy of (3) and the
+  pre-2020 grandfather clause of (4) do not appear in the future version's captured text.
+- The five-thousand-dollar statutory penalty is quoted from the official page; re-pull
+  same-day at publish time before any published use.
+- last_verified: 2026-09-29
 
 ---
 
@@ -558,6 +577,34 @@ ROUTE THAT WORKED: r.jina.ai rendering of the official page
   employees are excluded entirely. No express "additional job" statute like WA RCW 49.62.070.
 - last_verified: 2026-09-24
 
+## Slice 7 outcome (2026-09-29, publishing-prep)
+
+- WA 49.62.070(2) CAPTURED VERBATIM from the official section page (safety, scheduling,
+  duty-of-loyalty exceptions) — the conditional gap that gated the draft's WA-row exception
+  sentence is closed. WA 49.62.080 captured in full (both versions): greater-of
+  actual-damages-or-$5,000 remedy plus fees, reformation-triggered remedy, pre-2020
+  grandfather clause; future version simplified.
+- Draft WA row gained a remedies paragraph (3 claim-tagged sentences, [claim:wa-remedies]).
+  Manifest gained source wa-49-62-080 (last_verified 2026-09-29) and claim wa-remedies;
+  wa-49-62-070 last_verified bumped to 2026-09-29.
+- STALE-DRAFT REPAIR: the release-limits section still said "Nevada is excluded because its
+  current middle statutory subsections and changing wage threshold were not captured
+  reliably" — both clauses are false since slice 6 (NV complete, and NO threshold exists).
+  Corrected to "Nevada is included as the eleventh state" with the no-threshold finding,
+  claim-tagged. Validator's Nevada assertion retargeted from the exclusion string to the
+  NV inclusion string + nv-covenant reference.
+- TX official page: statutes.capitol.texas.gov now serves a JS app shell at every route
+  (chapter htm, section htm BC.15.50.htm, GetStatute.aspx endpoint; r.jina.ai returned the
+  same shell from cache). Official capture needs the browser lane. STILL OPEN as a
+  nice-to-have: mirror quote + official-current correction note remain the recorded basis.
+- Validator: PASS — 25 sources, 30 claims, 34 claim references, 12,670 body chars, URL
+  delta 0. Nothing published; no URL delta; §5.1/5.7 held. Worktree-only (isolated
+  worktree off 000b453); no build, no deploy needed (research/ and the validator script
+  are not part of the shipped build).
+- REMAINING RELEASE GATES: (1) TX official-page capture (nice-to-have, browser lane),
+  (2) OWNER review of the draft, (3) same-day re-pull of every cited source at publish
+  time.
+
 ## Slice 6 outcome (2026-09-24)
 
 - WA session cite verified against the official chapter page: 2026 c 149 (ESHB 1155,
@@ -585,24 +632,22 @@ ROUTE THAT WORKED: r.jina.ai rendering of the official page
 - Nothing published; no URL delta; §5.1/5.7 held. Worktree-only research artifact; no build,
   no deploy needed (research/ is not part of the build).
 
-## Coverage status (supersedes the slice 5 footer) — UPDATED 2026-09-24
+## Coverage status (supersedes the slice 6 footer) — UPDATED 2026-09-29
 
 11 states fully or near-fully captured from primary sources: CA · WA (session cite 2026 c 149
-VERIFIED; two partials remain: 49.62.070(2) exceptions, 49.62.080 middle) · NY (201-d COMPLETE,
-official) · TX (15.50(a) captured via unofficial mirror + official-current correction noted;
-official statutes.capitol.texas.gov page STILL not captured — last open capture item) ·
+VERIFIED; 49.62.070 full incl. subsection (2) captured 2026-09-29; 49.62.080 full both
+versions captured 2026-09-29) · NY (201-d COMPLETE, official) · TX (15.50(a) captured via
+unofficial mirror + official-current correction noted; official statutes.capitol.texas.gov
+page STILL not captured — JS app shell at all routes, browser lane required; nice-to-have) ·
 IL/CO/MA (restored verbatim 2026-09-17) · ND (statutes OFFICIAL, opinions mirror) ·
 NV (613.195 COMPLETE, official Rev. 9/9/2026--2026R1; NO wage threshold exists — subsection 3
 is a categorical hourly-wage exclusion) · VA (captured, B-subsection confirmed 2026-09-17).
-40 states not started. REMAINING PRE-PUBLISH ITEMS: (1) TX official-page capture (nice-to-have;
-mirror quote + official-correction already recorded), (2) WA 49.62.070(2)/49.62.080 partials
-(if those propositions are used in copy), (3) ND official opinion PDFs (optional; reporter
-cites suffice), (4) OWNER review of the draft, (5) same-day re-pull of every cited source at
+40 states not started. REMAINING PRE-PUBLISH ITEMS: (1) TX official-page capture
+(nice-to-have; needs browser lane), (2) ND official opinion PDFs (optional; reporter cites
+suffice), (3) OWNER review of the draft, (4) same-day re-pull of every cited source at
 publish time per the draft's own release limits. SOURCE-INTEGRITY REPAIR 2026-09-17: IL/CO/MA
-restored; VA ambiguity resolved; manifest statuses updated.
-NEXT TOP UNBLOCKED ORDER (slice 7, publishing-prep): extend the staged draft and manifest with
-Nevada as state 11 (manifest source row nrs-613-195 last_verified 2026-09-24; draft NV row;
-drop NV from excluded_states), add the WA 2027-06-30 full-ban sentence to the staged WA row
-(future-effective framing, never current law), then re-run
-scripts/validate-moonlighting-publishing-prep.mjs. After that, the release gates are OWNER
-review and the publish-day re-pull of every cited source.
+restored; VA ambiguity resolved; manifest statuses updated. SLICE 7 2026-09-29: WA partials
+closed; draft NV status corrected; validator green (25/30/34).
+NEXT TOP UNBLOCKED ORDER: none autonomous — the remaining gates are OWNER review and the
+publish-day re-pull of every cited source. A later tick may optionally capture the TX
+official page via the browser lane and ND opinion PDFs; neither blocks drafting.

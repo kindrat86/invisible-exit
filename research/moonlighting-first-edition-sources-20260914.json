@@ -55,7 +55,15 @@
       "jurisdiction": "Washington",
       "citation": "RCW 49.62.070",
       "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.070",
-      "last_verified": "2026-09-06",
+      "last_verified": "2026-09-29",
+      "source_kind": "official_statute"
+    },
+    {
+      "id": "wa-49-62-080",
+      "jurisdiction": "Washington",
+      "citation": "RCW 49.62.080",
+      "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=49.62.080",
+      "last_verified": "2026-09-29",
       "source_kind": "official_statute"
     },
     {
@@ -543,6 +551,17 @@
       ],
       "status": "verified_for_draft",
       "proposition": "Chapter 2026 c 149 provides that beginning June 30, 2027 all noncompetition covenants are void and unenforceable regardless of when entered, and makes enforcement or threats of enforcement a violation of the chapter."
+    },
+    {
+      "id": "wa-remedies",
+      "states": [
+        "Washington"
+      ],
+      "source_ids": [
+        "wa-49-62-080"
+      ],
+      "status": "verified_for_draft",
+      "proposition": "A person aggrieved by a violating covenant may recover the greater of actual damages or a fixed statutory penalty plus reasonable attorneys' fees, expenses, and costs; reformation of a covenant triggers the same remedy against the enforcing party; and no action lies for a pre-2020 covenant that is not being enforced or explicitly leveraged. The remedy section is simplified in the version effective June 30, 2027."
     }
   ],
   "excluded_states": []

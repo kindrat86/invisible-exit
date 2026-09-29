@@ -32,6 +32,8 @@ Washington separately defines noncompetition covenants broadly while excluding c
 
 Washington separately provides that beginning June 30, 2027, all noncompetition covenants are void and unenforceable regardless of when the parties entered into them, and that enforcing, attempting to enforce, or threatening to enforce one violates the chapter. This sentence describes a law that is not yet in effect and must never be presented as current law before that date. [claim:wa-repeal]
 
+Washington also gives an employee aggrieved by a violating covenant a statutory remedy: the greater of actual damages or a five-thousand-dollar penalty, plus reasonable attorneys' fees, expenses, and costs, and the same remedy applies against a party that seeks enforcement of a covenant a court rewrites. [claim:wa-remedies] No action lies under that section for a covenant signed before January 1, 2020 that is not being enforced or explicitly leveraged. [claim:wa-remedies] The remedy section is amended in the version that takes effect June 30, 2027. [claim:wa-remedies]
+
 **Draft answer:** lower-paid employees have an express statutory starting point for nonconflicting additional work, but it is not a license to create safety problems, ignore normal scheduling, misuse information, or compete disloyally.
 
 Last source verification: September 2026. [claim:wa-verified]
@@ -123,4 +125,4 @@ Last source verification: September 2026. [claim:nv-verified]
 
 ## Editorial and release limits
 
-This first edition is one canonical reference page with state rows, not a programmatic state-page grid. It remains an internal draft until the Virginia wording is confirmed, all source URLs are re-pulled, the final body clears the unique-text requirement, and one existing zero-demand URL is retired at the same time. Nevada is excluded because its current middle statutory subsections and changing wage threshold were not captured reliably. No claim should be added to the release unless it resolves to the companion manifest.
+This first edition is one canonical reference page with state rows, not a programmatic state-page grid. It remains an internal draft until all source URLs are re-pulled, the final body clears the unique-text requirement, and one existing zero-demand URL is retired at the same time. Nevada is included as the eleventh state: its statute was captured in full from the official source, and that capture showed the long-assumed wage threshold does not exist, because the hourly-wage exclusion is categorical. [claim:nv-verified] No claim should be added to the release unless it resolves to the companion manifest.
