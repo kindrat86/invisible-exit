@@ -590,7 +590,7 @@ ROUTE THAT WORKED: r.jina.ai rendering of the official page
 - STALE-DRAFT REPAIR: the release-limits section still said "Nevada is excluded because its
   current middle statutory subsections and changing wage threshold were not captured
   reliably" — both clauses are false since slice 6 (NV complete, and NO threshold exists).
-  Corrected to "Nevada is included as the eleventh state" with the no-threshold finding,
+  Corrected to "Nevada is included as the tenth state" with the no-threshold finding,
   claim-tagged. Validator's Nevada assertion retargeted from the exclusion string to the
   NV inclusion string + nv-covenant reference.
 - TX official page: statutes.capitol.texas.gov now serves a JS app shell at every route
@@ -634,7 +634,7 @@ ROUTE THAT WORKED: r.jina.ai rendering of the official page
 
 ## Coverage status (supersedes the slice 6 footer) — UPDATED 2026-09-29
 
-11 states fully or near-fully captured from primary sources: CA · WA (session cite 2026 c 149
+10 states fully or near-fully captured from primary sources: CA · WA (session cite 2026 c 149
 VERIFIED; 49.62.070 full incl. subsection (2) captured 2026-09-29; 49.62.080 full both
 versions captured 2026-09-29) · NY (201-d COMPLETE, official) · TX (15.50(a) captured via
 unofficial mirror + official-current correction noted; official statutes.capitol.texas.gov
