@@ -1,0 +1,102 @@
+{
+  "artifact": "banking depth sections (WI, MO, VT, MN)",
+  "created": "2026-10-05",
+  "guardrail": "5.1 no fabricated statistics; master prompt §6.4 depth slice",
+  "url_delta": 0,
+  "sources": [
+    {
+      "id": "wi-dfi-fees",
+      "url": "https://dfi.wi.gov/Pages/BusinessServices/BusinessEntities/Fees.aspx",
+      "publisher": "Wisconsin Department of Financial Institutions",
+      "access": "2026-10-05",
+      "method": "Internet Archive snapshot 2026-09-17 of the official fee table (live host did not resolve from our network on 2026-10-05); table row: Limited Liability Company, Incorporation/Organization $170.00; via Online Filing $130.00; Annual Report $40.00; via Online Filing $25.00; next-day expedite $100.00",
+      "cached": "~/.hermes/cache/web/wi-fees-wayback.html"
+    },
+    {
+      "id": "mo-sos-faq",
+      "url": "https://www.sos.mo.gov/business/faqs",
+      "publisher": "Missouri Secretary of State",
+      "access": "2026-10-05",
+      "method": "Live capture. FAQ text: filing articles of organization for an LLC online saves $55.00 ($50.00 online versus $105.00 by paper); fictitious-name registration requirement quoted verbatim",
+      "cached": "~/.hermes/cache/web/www.sos.mo.gov-ecc9af48de.md"
+    },
+    {
+      "id": "mo-sos-fees-pdf",
+      "url": "https://www.sos.mo.gov/CMSImages/Business/fees.pdf",
+      "publisher": "Missouri Secretary of State",
+      "access": "2026-10-05",
+      "method": "Internet Archive snapshot of the official Schedule of Fees and Charges; CHAPTER 347 Limited Liability Companies: Certificate of LLC (domestic/foreign)(paper) $105.00; Annual Registration Report timely paper $45.00, on-line $20.00; Startup for Soldiers waiver paragraph quoted verbatim",
+      "cached": "~/.hermes/cache/web/mo-fees-wb.pdf"
+    },
+    {
+      "id": "vt-sos-fees",
+      "url": "https://sos.vermont.gov/business-services/fees-statutes/",
+      "publisher": "Vermont Secretary of State",
+      "access": "2026-10-05",
+      "method": "Live capture of official fee table, DOMESTIC LIMITED LIABILITY COMPANY section: Articles of Organization, 11 V.S.A. § 4023, $155.00; Annual Report, 11 V.S.A. § 4033, $45.00; Statement of Foreign Qualification, 11 V.S.A. § 3302, $170.00",
+      "cached": "~/.hermes/cache/web/vt-fees.html"
+    },
+    {
+      "id": "mn-sos-fees",
+      "url": "https://www.sos.state.mn.us/business-liens/business-forms-fees/business-filing-certification-fee-schedule/",
+      "publisher": "Minnesota Secretary of State",
+      "access": "2026-10-05",
+      "method": "Internet Archive snapshot 2024-12-27 of the official fee schedule (live page bot-gated by Radware on 2026-10-05); Limited Liability Company (Domestic) - Chapter 322C: Articles of Organization Original Filing $135.00 mail / $155.00 in person and online; Annual Renewal $0",
+      "cached": "~/.hermes/cache/web/mn-fees-wb2024.html"
+    },
+    {
+      "id": "fdic-250k",
+      "url": "https://www.fdic.gov/deposit-insurance",
+      "publisher": "FDIC",
+      "access": "2026-09-28",
+      "method": "Verified during commit 000b453 hub fix: deposit insurance at least $250,000 per depositor, per insured bank",
+      "cached": "commit 000b453 BankingHubPage.tsx source line"
+    },
+    {
+      "id": "irs-ein",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+      "publisher": "IRS",
+      "access": "2026-09-28",
+      "method": "Verified during commit 000b453 hub fix: EIN free, issued online",
+      "cached": "commit 000b453 BankingHubPage.tsx source line"
+    }
+  ],
+  "claims": [
+    { "id": "wi-170-paper", "state": "wisconsin", "figure": "$170", "source": "wi-dfi-fees" },
+    { "id": "wi-130-online", "state": "wisconsin", "figure": "$130", "source": "wi-dfi-fees" },
+    { "id": "wi-ar-40", "state": "wisconsin", "figure": "$40", "source": "wi-dfi-fees" },
+    { "id": "wi-ar-25-online", "state": "wisconsin", "figure": "$25", "source": "wi-dfi-fees" },
+    { "id": "wi-expedite-100", "state": "wisconsin", "figure": "$100", "source": "wi-dfi-fees" },
+    { "id": "wi-expedite-250", "state": "wisconsin", "figure": "$250", "source": "wi-dfi-fees" },
+    { "id": "wi-expedite-500", "state": "wisconsin", "figure": "$500", "source": "wi-dfi-fees" },
+    { "id": "mo-105-paper", "state": "missouri", "figure": "$105", "source": "mo-sos-fees-pdf" },
+    { "id": "mo-105-faq", "state": "missouri", "figure": "$105", "source": "mo-sos-faq" },
+    { "id": "mo-50-online", "state": "missouri", "figure": "$50", "source": "mo-sos-faq" },
+    { "id": "mo-savings-55", "state": "missouri", "figure": "$55.00", "source": "mo-sos-faq" },
+    { "id": "mo-ar-45-paper", "state": "missouri", "figure": "$45", "source": "mo-sos-fees-pdf" },
+    { "id": "mo-ar-20-online", "state": "missouri", "figure": "$20", "source": "mo-sos-fees-pdf" },
+    { "id": "mo-fictitious-required", "state": "missouri", "figure": null, "source": "mo-sos-faq" },
+    { "id": "mo-soldiers-waiver", "state": "missouri", "figure": null, "source": "mo-sos-fees-pdf" },
+    { "id": "vt-articles-155", "state": "vermont", "figure": "$155", "source": "vt-sos-fees" },
+    { "id": "vt-statute-4023", "state": "vermont", "figure": null, "source": "vt-sos-fees" },
+    { "id": "vt-ar-45", "state": "vermont", "figure": "$45", "source": "vt-sos-fees" },
+    { "id": "vt-statute-4033", "state": "vermont", "figure": null, "source": "vt-sos-fees" },
+    { "id": "vt-foreign-qual-170", "state": "vermont", "figure": "$170", "source": "vt-sos-fees" },
+    { "id": "vt-statute-3302", "state": "vermont", "figure": null, "source": "vt-sos-fees" },
+    { "id": "vt-vs-wi-ar", "state": "vermont", "figure": "$40", "source": "wi-dfi-fees" },
+    { "id": "vt-vs-mo-ar-20", "state": "vermont", "figure": "$20", "source": "mo-sos-fees-pdf" },
+    { "id": "vt-vs-mo-ar-45", "state": "vermont", "figure": "$45", "source": "vt-sos-fees" },
+    { "id": "vt-vs-mn-ar-0", "state": "vermont", "figure": "$0", "source": "mn-sos-fees" },
+    { "id": "mn-135-mail", "state": "minnesota", "figure": "$135", "source": "mn-sos-fees" },
+    { "id": "mn-155-online", "state": "minnesota", "figure": "$155", "source": "mn-sos-fees" },
+    { "id": "mn-ar-0", "state": "minnesota", "figure": "$0", "source": "mn-sos-fees" },
+    { "id": "mn-chapter-322c", "state": "minnesota", "figure": null, "source": "mn-sos-fees" },
+    { "id": "mn-archived-note", "state": "minnesota", "figure": null, "source": "mn-sos-fees" },
+    { "id": "fdic-250k", "state": "all", "figure": "$250,000", "source": "fdic-250k" },
+    { "id": "irs-ein-free", "state": "all", "figure": null, "source": "irs-ein" }
+  ],
+  "removed_from_copy": [
+    "per-bank minimum deposits and monthly fees rendered from banking.ts (numbers with no source manifest; left as-is this tick, flagged as follow-up integrity work)",
+    "no state's filing fees stated without its source link rendered on the page"
+  ]
+}

@@ -45,6 +45,7 @@ import { costAnalysisPages } from "../src/data/cost-analysis.ts";
 import { howToGuides } from "../src/data/how-to-guides.ts";
 import { isItLegalPages } from "../src/data/is-it-legal.ts";
 import { bankingGuides } from "../src/data/banking.ts";
+import { bankingDepth } from "../src/data/banking-depth.ts";
 import { taxGuides } from "../src/data/tax-guides.ts";
 import { ndaGuides } from "../src/data/nda-guides.ts";
 import { insuranceGuides } from "../src/data/insurance.ts";
@@ -3066,11 +3067,16 @@ function getRoutes() {
   for (const bg of bankingGuides) {
     const url = `${SITE}/banking/${bg.slug}`;
     const recommendedBankCount = bg.recommendedBanks.length;
+    const depth = bankingDepth[bg.slug];
     routes.push({
       path: `/banking/${bg.slug}`,
       meta: {
-        title: `Business Banking in ${bg.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`,
-        description: `Best business banking options in ${bg.stateName}. Compare ${recommendedBankCount} recommended banks for your LLC. Fees, features, and online banking options for ${bg.stateName} founders.`,
+        title: depth
+          ? depth.seoTitle
+          : `Business Banking in ${bg.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`,
+        description: depth
+          ? depth.seoDescription
+          : `Best business banking options in ${bg.stateName}. Compare ${recommendedBankCount} recommended banks for your LLC. Fees, features, and online banking options for ${bg.stateName} founders.`,
         url,
         image: `${SITE}/og/banking-${bg.slug}.svg`,
         type: "article",

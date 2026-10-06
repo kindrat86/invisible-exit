@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 .vercel
 .env*
-data/
+/data/

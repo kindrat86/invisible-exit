@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { bankingGuides } from "@/data/banking";
+import { bankingDepth } from "@/data/banking-depth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -20,10 +21,12 @@ export default function BankingPage() {
     );
   }
 
+  const depth = bankingDepth[guide.slug];
+
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`Business Banking in ${guide.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`}
+        title={depth ? depth.seoTitle : `Business Banking in ${guide.stateName}, Best Banks for LLCs & Side Businesses | Invisible Exit`}
         description={`Best business banking options in ${guide.stateName}. Compare local and online banks for your LLC. Recommended banks, fees, and tips for ${guide.stateName} founders.`}
         url={`https://invisibleexit.com/banking/${guide.slug}`}
       />
@@ -48,6 +51,39 @@ export default function BankingPage() {
             Find the best business bank accounts for your LLC or side business in {guide.stateName}. Compare fees, features, and online banking options.
           </p>
         </div>
+
+        {/* Depth section: sourced state-specific content (see research/banking-depth-claims-20261005.json) */}
+        {depth && (
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{depth.heading}</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              {depth.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+            <ul className="mt-5 space-y-2">
+              {depth.bullets.map((b, i) => (
+                <li key={i} className="flex gap-2 text-sm text-gray-700">
+                  <span className="text-blue-500 flex-shrink-0">•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-gray-500">
+              Sources:{" "}
+              {depth.sources.map((s, i) => (
+                <span key={i}>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">
+                    {s.label}
+                  </a>
+                  {i < depth.sources.length - 1 ? " · " : ""}
+                </span>
+              ))}
+              . Last verified {depth.lastVerified}.
+              {depth.verificationNote && <span> {depth.verificationNote}</span>}
+            </p>
+          </section>
+        )}
 
         {/* Recommended Banks */}
         <section className="mb-12">
