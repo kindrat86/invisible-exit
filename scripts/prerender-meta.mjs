@@ -47,6 +47,7 @@ import { isItLegalPages } from "../src/data/is-it-legal.ts";
 import { bankingGuides } from "../src/data/banking.ts";
 import { bankingDepth } from "../src/data/banking-depth.ts";
 import { taxGuides } from "../src/data/tax-guides.ts";
+import { taxDepth } from "../src/data/tax-depth.ts";
 import { ndaGuides } from "../src/data/nda-guides.ts";
 import { insuranceGuides } from "../src/data/insurance.ts";
 import { timeFrameworks } from "../src/data/time-frameworks.ts";
@@ -3116,11 +3117,16 @@ function getRoutes() {
   // ---------- Tax guides (state by state) ----------
   for (const tg of taxGuides) {
     const url = `${SITE}/tax-guides/${tg.slug}`;
+    const depth = taxDepth[tg.slug];
     routes.push({
       path: `/tax-guides/${tg.slug}`,
       meta: {
-        title: `Tax Guide for ${tg.stateName}, LLC & Side Business Taxes | Invisible Exit`,
-        description: `Complete tax guide for side businesses and LLCs in ${tg.stateName}. Income tax rate: ${tg.incomeTaxRate}. Sales tax: ${tg.salesTaxNote}. Credits, deductions, filing deadlines.`,
+        title: depth
+          ? depth.seoTitle
+          : `Tax Guide for ${tg.stateName}, LLC & Side Business Taxes | Invisible Exit`,
+        description: depth
+          ? depth.seoDescription
+          : `Complete tax guide for side businesses and LLCs in ${tg.stateName}. Income tax rate: ${tg.incomeTaxRate}. Sales tax: ${tg.salesTaxNote}. Credits, deductions, filing deadlines.`,
         url,
         image: `${SITE}/og/tax-${tg.slug}.svg`,
         type: "article",

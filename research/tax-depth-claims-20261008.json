@@ -1,0 +1,179 @@
+{
+  "artifact": "tax-guides depth sections (NJ, MO, KY, CA, WA) + shared federal layer",
+  "created": "2026-10-08",
+  "guardrail": "5.1 no fabricated statistics; master prompt §6.4 depth slice",
+  "url_delta": 0,
+  "targets": {
+    "gsc_28d": {
+      "new-jersey": { "impressions": 9, "avg_position": 48.1 },
+      "missouri": { "impressions": 4, "avg_position": 13.2 },
+      "kentucky": { "impressions": 2, "avg_position": 71.0 },
+      "california": { "impressions": 1, "avg_position": 27.0 },
+      "washington": { "impressions": 1, "avg_position": 72.0 }
+    },
+    "note": "The five /tax-guides/<state> pages with the highest impressions and average position >10 in the trailing 28 days, outside the already-depth-treated /banking family. KY/CA/WA had 1-2 impressions each; they were included to complete one coherent family slice per the standing default."
+  },
+  "sources": [
+    {
+      "id": "nj-ot4-cbt",
+      "url": "https://www.nj.gov/treasury/taxation/ot4.shtml",
+      "publisher": "NJ Division of Taxation",
+      "access": "2026-10-08",
+      "method": "Live capture. Rates and Accounting Periods: 'The Corporation Business Tax rate is 9% on adjusted entire net income or on the portion allocable to New Jersey. The rate is 7.5% for all corporations with entire net income of $100,000 or less. The rate is 6.5% for all corporations with entire net income of $50,000 or less.' Minimum tax schedule by NJ gross receipts: <$100k $500; $100k-<$250k $750; $250k-<$500k $1000; $500k-<$1M $1,500; >=$1M $2,000. Page footer: Last Updated 09/28/26.",
+      "cached": "~/.hermes/cache/web/www.nj.gov-4d8d0a3001.md"
+    },
+    {
+      "id": "nj-1065-instructions",
+      "url": "https://www.nj.gov/treasury/taxation/pdf/current/1065i.pdf",
+      "publisher": "NJ Division of Taxation",
+      "access": "2026-10-08",
+      "method": "Live capture of official 2025 NJ-1065 PDF (16 pages, pypdf-extracted). Verbatim: 'Most entities classified as partnerships for federal income tax purposes that have income or loss derived from New Jersey sources and that have more than two owners must make a payment of a filing fee of $150 for each owner up to a maximum of $250,000. The filing fee is due on or before the 15th day of the fourth month after the close of each privilege period.'",
+      "cached": "~/.hermes/cache/web/nj-1065i.pdf"
+    },
+    {
+      "id": "mo-rate-chart",
+      "url": "https://dor.mo.gov/taxation/individual/tax-types/income/year-changes/",
+      "publisher": "Missouri Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. 'Tax Rate Changes - Indexed for Inflation' table: $0 to $1,313 tax $0; top band 'Over $9,191: $256 plus 4.70% of excess over $9,191'. Search snippet from dor.mo.gov (2025 reference guide) corroborates: 'For 2025, the top individual income tax rate is 4.7%'.",
+      "cached": "~/.hermes/cache/web/mo-yearchanges.html"
+    },
+    {
+      "id": "mo-4711-es-trigger",
+      "url": "https://dor.mo.gov/forms/4711_2023.pdf",
+      "publisher": "Missouri Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture of official 4711 reference guide PDF (pypdf-extracted). Verbatim: 'Under Missouri law, a taxpayer must file Form MO-1040ES, Estimated Tax Declaration for Individuals, if their tax liability is expected to be $100 or more and Missouri tax is not withheld.' NOTE: guide is the 2023 edition (live link); the MO-1040ES trigger language is the statute's and is unchanged in later editions per DOR pages, but re-verify against the current-year 4711 at next touch.",
+      "cached": "~/.hermes/cache/web/mo-4711-2023.pdf"
+    },
+    {
+      "id": "mo-sales-use",
+      "url": "https://dor.mo.gov/taxation/business/tax-types/sales-use/",
+      "publisher": "Missouri Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. 'The state sales tax rate is 4.225%. Cities, counties and certain districts may also impose local sales taxes as well, so the amount of tax sellers collect from the purchaser depends on the combined state and local rate at the location of the seller.' Also: 'The state use tax rate is 4.225%.'",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "ky-individual-income-tax",
+      "url": "https://revenue.ky.gov/Individual/Individual-Income-Tax/Pages/default.aspx",
+      "publisher": "Kentucky Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'The tax rate is four (4) percent and allows itemized deductions and certain income reducing deductions as defined in KRS 141.019.'",
+      "cached": "~/.hermes/cache/web/ky-iit.html"
+    },
+    {
+      "id": "ky-llet",
+      "url": "https://revenue.ky.gov/Business/Corporation-Income-and-Limited-Liability-Entity-Tax/Pages/default.aspx",
+      "publisher": "Kentucky Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture (byte-checked in downloaded HTML, 108,719 bytes). Verbatim: 'If either total gross receipts or total gross profits amounts to $3 million or less, then the company just pays a $175 minimum LLET.' And: 'it multiplies its Kentucky gross receipts by 0.095% and its Kentucky gross profits by 0.75% to figure its LLET liability', paying 'the smaller of the amount calculated on gross receipts or the amount calculated on gross profits'.",
+      "cached": "~/.hermes/cache/web/ky-llet.html"
+    },
+    {
+      "id": "ky-sales-use",
+      "url": "https://revenue.ky.gov/Business/Sales-Use-Tax/Pages/default.aspx",
+      "publisher": "Kentucky Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'Kentucky Sales and Use Tax is imposed at the rate of 6 percent of gross receipts or purchase price. There are no local sales and use taxes in Kentucky.'",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "ca-ftb-llc",
+      "url": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html",
+      "publisher": "California Franchise Tax Board",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'Every LLC that is doing business or organized in California must pay an annual tax of $800. This yearly tax will be due, even if you are not conducting business, until you cancel your LLC.' First-year: due 'the 15th day of the 4th month from the date you file with the SOS'. LLC fee table: $250,000-$499,999 $900; $500,000-$999,999 $2,500; $1,000,000-$4,999,999 $6,000; $5,000,000 or more $11,790. 'LLCs must estimate and pay the fee by the 15th day of the 6th month, of the current tax year.' First-year exception window: 'tax years beginning on or after January 1, 2021, and before January 1, 2024'.",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "wa-bo-classifications",
+      "url": "https://dor.wa.gov/taxes-rates/business-occupation-tax/business-occupation-tax-classifications",
+      "publisher": "Washington Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture of the classifications table. Service & other activities (Less than $1,000,000 in the prior year) .015; ($1,000,000 to $4,999,999) .0175; ($5 million or more) .021; Retailing .00471; Manufacturing .00484; Wholesaling .00484.",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "wa-bo-overview",
+      "url": "https://dor.wa.gov/taxes-rates/business-occupation-tax",
+      "publisher": "Washington Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'Washington has a unique business tax structure. Most businesses in Washington are subject to a gross receipts tax known as business and occupation (B&O) tax.' And: 'Because it is based on gross income, businesses cannot deduct expenses such as labor, materials, taxes, or other costs of doing business.' More than 50 B&O classifications.",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "wa-retail-sales-tax",
+      "url": "https://dor.wa.gov/taxes-rates/retail-sales-tax",
+      "publisher": "Washington Department of Revenue",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'Starting October 1, 2025: Some business services are now subject to retail sales tax, as required by state law, ESSB 5814.'",
+      "cached": "web_extract inline content 2026-10-08"
+    },
+    {
+      "id": "irs-se-tax",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
+      "publisher": "Internal Revenue Service",
+      "access": "2026-10-08",
+      "method": "Live capture. Verbatim: 'For 2024, the first $168,600 of your combined wages, tips, and net earnings is subject to any combination of the social security part of self-employment tax...' and 'all of your wages and tips are subject to the 2.9% Medicare part of the SE tax on all your net earnings'; 12.4% Social Security part; 'you can deduct the employer-equivalent portion of your SE tax when calculating your adjusted gross income'.",
+      "cached": "~/.hermes/cache/web/www.irs.gov-f9df6cacfc.md"
+    },
+    {
+      "id": "irs-1040es-2026",
+      "url": "https://www.irs.gov/forms-pubs/about-form-1040-es",
+      "publisher": "Internal Revenue Service",
+      "access": "2026-10-08",
+      "method": "Live page + official 2026 Form 1040-ES PDF (https://www.irs.gov/pub/irs-pdf/f1040es.pdf, pypdf-extracted). Verbatim from PDF: expect to owe 'at least $1,000 in tax'; safe harbor 'a. 90% of the tax to be shown on your 2026 tax return, or b. 100% of the tax shown on your 2025 tax return'; 'if your 2025 AGI was more than $150,000 ($75,000 if MFS), substitute 110% for 100% in (2b)'; payment dates 'April 15, 2026 / June 15, 2026 / Sept. 15, 2026 / Jan. 15, 2027'.",
+      "cached": "~/.hermes/cache/web/irs-1040es-2026.pdf"
+    }
+  ],
+  "claims": [
+    { "id": "nj-fee-150-per-owner", "state": "new-jersey", "figure": "$150", "source": "nj-1065-instructions" },
+    { "id": "nj-fee-cap-250k", "state": "new-jersey", "figure": "$250,000", "source": "nj-1065-instructions" },
+    { "id": "nj-fee-due-15th-4th-month", "state": "new-jersey", "figure": null, "source": "nj-1065-instructions" },
+    { "id": "nj-cbt-9pct", "state": "new-jersey", "figure": "9%", "source": "nj-ot4-cbt" },
+    { "id": "nj-cbt-75-at-100k", "state": "new-jersey", "figure": "7.5%", "source": "nj-ot4-cbt" },
+    { "id": "nj-cbt-65-at-50k", "state": "new-jersey", "figure": "6.5%", "source": "nj-ot4-cbt" },
+    { "id": "nj-cbt-min-500", "state": "new-jersey", "figure": "$500", "source": "nj-ot4-cbt" },
+    { "id": "nj-cbt-min-2000", "state": "new-jersey", "figure": "$2,000", "source": "nj-ot4-cbt" },
+    { "id": "mo-top-rate-47", "state": "missouri", "figure": "4.7%", "source": "mo-rate-chart" },
+    { "id": "mo-zero-below-1313", "state": "missouri", "figure": "$1,313", "source": "mo-rate-chart" },
+    { "id": "mo-top-band-over-9191", "state": "missouri", "figure": "$9,191", "source": "mo-rate-chart" },
+    { "id": "mo-es-trigger-100", "state": "missouri", "figure": "$100", "source": "mo-4711-es-trigger" },
+    { "id": "mo-sales-4225", "state": "missouri", "figure": "4.225%", "source": "mo-sales-use" },
+    { "id": "ky-flat-4pct", "state": "kentucky", "figure": "4%", "source": "ky-individual-income-tax" },
+    { "id": "ky-llet-min-175", "state": "kentucky", "figure": "$175", "source": "ky-llet" },
+    { "id": "ky-llet-3m-threshold", "state": "kentucky", "figure": "$3 million", "source": "ky-llet" },
+    { "id": "ky-llet-receipts-0095", "state": "kentucky", "figure": "0.095%", "source": "ky-llet" },
+    { "id": "ky-llet-profits-075", "state": "kentucky", "figure": "0.75%", "source": "ky-llet" },
+    { "id": "ky-sales-6pct", "state": "kentucky", "figure": "6 percent", "source": "ky-sales-use" },
+    { "id": "ca-annual-800", "state": "california", "figure": "$800", "source": "ca-ftb-llc" },
+    { "id": "ca-first-year-15th-4th-month", "state": "california", "figure": null, "source": "ca-ftb-llc" },
+    { "id": "ca-fee-900", "state": "california", "figure": "$900", "source": "ca-ftb-llc" },
+    { "id": "ca-fee-2500", "state": "california", "figure": "$2,500", "source": "ca-ftb-llc" },
+    { "id": "ca-fee-6000", "state": "california", "figure": "$6,000", "source": "ca-ftb-llc" },
+    { "id": "ca-fee-11790", "state": "california", "figure": "$11,790", "source": "ca-ftb-llc" },
+    { "id": "ca-fee-due-15th-6th-month", "state": "california", "figure": null, "source": "ca-ftb-llc" },
+    { "id": "ca-first-year-exception-window", "state": "california", "figure": null, "source": "ca-ftb-llc" },
+    { "id": "wa-service-15-under-1m", "state": "washington", "figure": "1.5%", "source": "wa-bo-classifications" },
+    { "id": "wa-service-175-1m-to-5m", "state": "washington", "figure": "1.75%", "source": "wa-bo-classifications" },
+    { "id": "wa-service-21-over-5m", "state": "washington", "figure": "2.1%", "source": "wa-bo-classifications" },
+    { "id": "wa-retailing-0471", "state": "washington", "figure": "0.471%", "source": "wa-bo-classifications" },
+    { "id": "wa-manufacturing-wholesale-0484", "state": "washington", "figure": "0.484%", "source": "wa-bo-classifications" },
+    { "id": "wa-essb-5814-oct-2025", "state": "washington", "figure": null, "source": "wa-retail-sales-tax" },
+    { "id": "wa-gross-no-deductions", "state": "washington", "figure": null, "source": "wa-bo-overview" },
+    { "id": "fed-se-153", "state": "federal", "figure": "15.3%", "source": "irs-se-tax" },
+    { "id": "fed-se-124-ss", "state": "federal", "figure": "12.4%", "source": "irs-se-tax" },
+    { "id": "fed-se-29-medicare", "state": "federal", "figure": "2.9%", "source": "irs-se-tax" },
+    { "id": "fed-ss-cap-168600", "state": "federal", "figure": "$168,600", "source": "irs-se-tax" },
+    { "id": "fed-es-1000-threshold", "state": "federal", "figure": "$1,000", "source": "irs-1040es-2026" },
+    { "id": "fed-safe-harbor-90-100", "state": "federal", "figure": "90%/100%", "source": "irs-1040es-2026" },
+    { "id": "fed-safe-harbor-110-150k", "state": "federal", "figure": "110%/$150,000/$75,000", "source": "irs-1040es-2026" },
+    { "id": "fed-2026-payment-dates", "state": "federal", "figure": null, "source": "irs-1040es-2026" }
+  ],
+  "removed_from_copy": [
+    "No state-specific estimated-payment due-date claims for KY (the official 740 Packet Instructions PDF returned a SharePoint error page on 2026-10-08); the shared federal 1040-ES layer covers estimated payments instead.",
+    "No NJ LLC annual 'minimum tax $500' claim tied directly to LLCs: the $500 CBT minimum applies to the corporate regime; copy explains it applies when an LLC elects corporate treatment.",
+    "No figure for 'average' or 'typical' tax burdens anywhere; every number is a published rate, fee, threshold, or date."
+  ]
+}

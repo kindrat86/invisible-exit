@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { taxGuides } from "@/data/tax-guides";
+import { taxDepth, taxDepthFederal } from "@/data/tax-depth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -20,10 +21,12 @@ export default function TaxGuidePage() {
     );
   }
 
+  const depth = taxDepth[guide.slug];
+
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title={`Tax Guide for ${guide.stateName}, LLC & Side Business Taxes | Invisible Exit`}
+        title={depth ? depth.seoTitle : `Tax Guide for ${guide.stateName}, LLC & Side Business Taxes | Invisible Exit`}
         description={`Complete tax guide for side businesses and LLCs in ${guide.stateName}. Income tax rate: ${guide.incomeTaxRate}. Sales tax: ${guide.salesTaxNote}. Credits, deductions, filing deadlines.`}
         url={`https://invisibleexit.com/tax-guides/${guide.slug}`}
       />
@@ -48,6 +51,70 @@ export default function TaxGuidePage() {
             Understand your tax obligations as a side business or LLC owner in {guide.stateName}. Income tax rates, self-employment tax, sales tax, credits, and deductions.
           </p>
         </div>
+
+        {/* Depth section: sourced state-specific content (see research/tax-depth-claims-20261008.json) */}
+        {depth && (
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{depth.heading}</h2>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              {depth.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+            <ul className="mt-5 space-y-2">
+              {depth.bullets.map((b, i) => (
+                <li key={i} className="flex gap-2 text-sm text-gray-700">
+                  <span className="text-blue-500 flex-shrink-0">•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-gray-500">
+              Sources:{" "}
+              {depth.sources.map((s, i) => (
+                <span key={i}>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">
+                    {s.label}
+                  </a>
+                  {i < depth.sources.length - 1 ? " · " : ""}
+                </span>
+              ))}
+              . Last verified {depth.lastVerified}.
+              {depth.verificationNote && <span> {depth.verificationNote}</span>}
+            </p>
+
+            {taxDepthFederal && (
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">{taxDepthFederal.heading}</h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  {taxDepthFederal.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+                <ul className="mt-5 space-y-2">
+                  {taxDepthFederal.bullets.map((b, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-gray-700">
+                      <span className="text-blue-500 flex-shrink-0">•</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-sm text-gray-500">
+                  Sources:{" "}
+                  {taxDepthFederal.sources.map((s, i) => (
+                    <span key={i}>
+                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">
+                        {s.label}
+                      </a>
+                      {i < taxDepthFederal.sources.length - 1 ? " · " : ""}
+                    </span>
+                  ))}
+                  . Last verified {taxDepthFederal.lastVerified}.
+                </p>
+              </div>
+            )}
+          </section>
+        )}
 
         {/* Key Tax Info */}
         <section className="mb-12 grid gap-4 sm:grid-cols-3">
