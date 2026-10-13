@@ -4,8 +4,6 @@ export interface RecommendedBank {
   name: string;
   bestFor: string;
   link: string;
-  minDeposit: number;
-  monthlyFee: number;
   features: string[];
 }
 
@@ -35,8 +33,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -49,8 +45,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -63,8 +57,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -77,8 +69,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -156,8 +146,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -170,8 +158,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -184,8 +170,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -198,8 +182,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -277,8 +259,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -291,8 +271,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -305,8 +283,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -319,8 +295,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -398,8 +372,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -412,8 +384,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -426,8 +396,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -440,8 +408,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -519,8 +485,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -533,8 +497,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 14,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -547,8 +509,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -561,8 +521,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -640,8 +598,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -654,8 +610,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -668,8 +622,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -682,8 +634,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -761,8 +711,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -775,8 +723,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -789,8 +735,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -803,8 +747,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -882,8 +824,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -896,8 +836,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -910,8 +848,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -924,8 +860,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1003,8 +937,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1017,8 +949,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1031,8 +961,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1045,8 +973,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1124,8 +1050,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1138,8 +1062,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1152,8 +1074,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1166,8 +1086,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1245,8 +1163,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1259,8 +1175,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1273,8 +1187,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1287,8 +1199,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1366,8 +1276,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1380,8 +1288,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1394,8 +1300,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1408,8 +1312,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1487,8 +1389,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1501,8 +1401,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1515,8 +1413,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1529,8 +1425,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1608,8 +1502,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1622,8 +1514,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1636,8 +1526,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1650,8 +1538,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1729,8 +1615,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1743,8 +1627,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1757,8 +1639,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1771,8 +1651,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1850,8 +1728,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1864,8 +1740,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1878,8 +1752,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -1892,8 +1764,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -1971,8 +1841,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -1985,8 +1853,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -1999,8 +1865,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2013,8 +1877,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2092,8 +1954,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2106,8 +1966,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2120,8 +1978,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2134,8 +1990,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2213,8 +2067,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2227,8 +2079,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2241,8 +2091,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2255,8 +2103,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2334,8 +2180,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2348,8 +2192,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2362,8 +2204,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2376,8 +2216,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2455,8 +2293,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2469,8 +2305,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2483,8 +2317,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2497,8 +2329,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2576,8 +2406,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2590,8 +2418,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2604,8 +2430,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2618,8 +2442,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2697,8 +2519,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2711,8 +2531,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2725,8 +2543,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2739,8 +2555,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2818,8 +2632,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2832,8 +2644,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2846,8 +2656,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2860,8 +2668,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -2939,8 +2745,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -2953,8 +2757,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -2967,8 +2769,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -2981,8 +2781,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3060,8 +2858,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3074,8 +2870,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3088,8 +2882,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3102,8 +2894,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3181,8 +2971,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3195,8 +2983,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3209,8 +2995,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3223,8 +3007,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3302,8 +3084,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3316,8 +3096,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3330,8 +3108,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3344,8 +3120,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3423,8 +3197,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3437,8 +3209,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3451,8 +3221,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3465,8 +3233,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3544,8 +3310,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3558,8 +3322,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3572,8 +3334,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3586,8 +3346,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3665,8 +3423,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3679,8 +3435,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3693,8 +3447,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3707,8 +3459,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3786,8 +3536,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3800,8 +3548,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3814,8 +3560,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3828,8 +3572,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -3907,8 +3649,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -3921,8 +3661,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -3935,8 +3673,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -3949,8 +3685,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4028,8 +3762,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4042,8 +3774,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4056,8 +3786,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4070,8 +3798,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4149,8 +3875,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4163,8 +3887,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4177,8 +3899,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4191,8 +3911,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4270,8 +3988,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4284,8 +4000,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4298,8 +4012,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4312,8 +4024,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4391,8 +4101,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4405,8 +4113,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4419,8 +4125,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4433,8 +4137,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4512,8 +4214,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4526,8 +4226,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4540,8 +4238,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4554,8 +4250,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4633,8 +4327,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4647,8 +4339,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4661,8 +4351,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4675,8 +4363,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4754,8 +4440,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4768,8 +4452,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4782,8 +4464,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4796,8 +4476,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4875,8 +4553,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -4889,8 +4565,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -4903,8 +4577,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -4917,8 +4589,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -4996,8 +4666,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5010,8 +4678,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5024,8 +4690,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5038,8 +4702,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5117,8 +4779,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5131,8 +4791,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5145,8 +4803,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5159,8 +4815,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5238,8 +4892,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 15,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5252,8 +4904,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5266,8 +4916,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5280,8 +4928,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5359,8 +5005,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5373,8 +5017,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5387,8 +5029,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5401,8 +5041,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5480,8 +5118,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5494,8 +5130,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5508,8 +5142,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5522,8 +5154,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5601,8 +5231,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5615,8 +5243,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5629,8 +5255,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5643,8 +5267,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5722,8 +5344,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5736,8 +5356,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5750,8 +5368,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5764,8 +5380,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5843,8 +5457,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5857,8 +5469,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5871,8 +5481,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -5885,8 +5493,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -5964,8 +5570,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -5978,8 +5582,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 12,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -5992,8 +5594,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -6006,8 +5606,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",
@@ -6085,8 +5683,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Chase Business Complete Banking",
         "bestFor": "Everyday business banking with branch access",
         "link": "https://www.chase.com/business/banking",
-        "minDeposit": 0,
-        "monthlyFee": 12,
         "features": [
           "24/7 business customer service",
           "QuickAccept card reader",
@@ -6099,8 +5695,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Bank of America Business Advantage",
         "bestFor": "Low fees with strong digital tools",
         "link": "https://www.bankofamerica.com/smallbusiness",
-        "minDeposit": 100,
-        "monthlyFee": 10,
         "features": [
           "No monthly fee with $1,000 minimum balance",
           "Business credit card options",
@@ -6113,8 +5707,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Wells Fargo Business Choice Checking",
         "bestFor": "Branch access with low transaction limits",
         "link": "https://www.wellsfargo.com/biz",
-        "minDeposit": 25,
-        "monthlyFee": 10,
         "features": [
           "200 free transactions per month",
           "Free business debit card",
@@ -6127,8 +5719,6 @@ export const bankingGuides: BankingGuide[] = [
         "name": "Mercury Business Banking",
         "bestFor": "Tech-forward founders and startups",
         "link": "https://mercury.com",
-        "minDeposit": 0,
-        "monthlyFee": 0,
         "features": [
           "No monthly fees",
           "No minimum balance",

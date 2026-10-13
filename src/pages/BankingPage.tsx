@@ -96,15 +96,6 @@ export default function BankingPage() {
                     <h3 className="text-lg font-bold text-gray-900">{bank.name}</h3>
                     <p className="text-sm text-gray-500 mt-1">{bank.bestFor}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-400">Min Deposit</p>
-                    <p className="text-lg font-bold text-gray-900">${bank.minDeposit}</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-                    {bank.monthlyFee === 0 ? "No monthly fee" : `$${bank.monthlyFee}/mo`}
-                  </span>
                 </div>
                 <ul className="space-y-2 mb-4">
                   {bank.features.map((feature, j) => (
