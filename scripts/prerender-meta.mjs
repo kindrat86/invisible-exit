@@ -391,7 +391,15 @@ function writePage(template, routePath, meta) {
   if (shouldNoindex(routePath)) {
     meta = { ...meta, noindex: true };
   }
-  const html = injectMeta(template, meta, routePath);
+  let html = injectMeta(template, meta, routePath);
+  // LaunchNest badge: the footer renders client-side only, but LaunchNest's
+  // verifier fetches raw HTML for https://invisibleexit.com/ and needs the
+  // badge link+image in the served document. Inject it before </body> in the
+  // prerendered homepage shell; the SPA footer still renders it for humans.
+  if (routePath === "/" && !html.includes("launchnest.io/p/invisible-exit")) {
+    const badge = `<a href="https://launchnest.io/p/invisible-exit" target="_blank" rel="noopener"><img src="https://launchnest.io/badge/invisible-exit.svg?variant=featured" alt="Invisible Exit on LaunchNest" width="220" height="56" /></a>`;
+    html = html.replace("</body>", `${badge}</body>`);
+  }
   const filePath =
     routePath === "/"
       ? join(DIST, "index.html")
