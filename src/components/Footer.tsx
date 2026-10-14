@@ -319,6 +319,19 @@ const Footer = () => {
             >
               Listed on ToolIndex
             </a>
+            <a
+              href="https://launchnest.io/p/invisible-exit"
+              target="_blank"
+              rel="noopener"
+              aria-label="Invisible Exit on LaunchNest"
+            >
+              <img
+                src="https://launchnest.io/badge/invisible-exit.svg?variant=featured"
+                alt="Invisible Exit on LaunchNest"
+                width="220"
+                height="56"
+              />
+            </a>
             <p className="hidden sm:block text-white/50 text-xs sm:text-sm">
               Built by a corporate manager, for corporate managers.
             </p>
