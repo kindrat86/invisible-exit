@@ -29,6 +29,7 @@ const HIDDEN_ROUTES = [
   "/masterclass",
   "/tripwire",
   "/ask",
+  "/check",
 ];
 
 /** Organic-entry content routes: no scroll-triggered popups on mobile. */
