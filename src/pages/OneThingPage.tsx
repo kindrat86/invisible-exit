@@ -72,7 +72,7 @@ const OneThingPage = () => {
             </div>
             <div className="bg-primary/10 border border-primary/30 rounded-lg px-6 py-4">
               <p className="text-white text-sm font-bold">
-                <span className="text-primary-light">Product 4:</span> Same system. $4,100/month. Still growing.
+                <span className="text-primary-light">Product 4:</span> Same system. Still standing.
               </p>
             </div>
           </div>

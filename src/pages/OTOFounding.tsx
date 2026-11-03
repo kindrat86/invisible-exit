@@ -247,50 +247,6 @@ const OTOFounding = () => {
       {/* ─── 7. Value Stack ─── */}
       <ValueStack />
 
-      {/* ─── 7b. Social Proof ─── */}
-      <section className="px-6 py-12">
-        <div className="max-w-[720px] mx-auto">
-          <h2 className="text-[24px] font-bold text-white mb-8 text-center">
-            What Early Members Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                quote: "I validated my first micro-SaaS idea in 3 weeks. The stealth ops checklist alone was worth 100x the price.",
-                name: "Director of Ops",
-                detail: "Fortune 500 → $4K MRR",
-                initials: "DO",
-              },
-              {
-                quote: "The freedom number calculator changed how I see my equity. I realized I was building someone else's dream.",
-                name: "Senior PM",
-                detail: "$145K → First SaaS revenue in 60 days",
-                initials: "SP",
-              },
-              {
-                quote: "I spent two years thinking about starting. This gave me a system I could follow with 5 hours a week.",
-                name: "Eng Manager",
-                detail: "Built first product while employed",
-                initials: "EM",
-              },
-            ].map((t, i) => (
-              <div key={i} className="bg-white/[0.03] border border-white/10 rounded-xl p-5">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-[#60A5FA]/20 flex items-center justify-center text-[#60A5FA] text-xs font-bold">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="text-white text-xs font-semibold">{t.name}</p>
-                    <p className="text-white/40 text-[10px]">{t.detail}</p>
-                  </div>
-                </div>
-                <p className="text-white/60 text-sm italic leading-relaxed">"{t.quote}"</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── 7c. FAQ Objection Crushing ─── */}
       <section className="px-6 py-12">
         <div className="max-w-[720px] mx-auto">

@@ -59,7 +59,7 @@ const PILLAR_GUIDES = [
       "Section 4: The 48-hour validation framework, test before you build",
       "Section 5: AI tools that replace a 5-person team (the Invisible Exit stack)",
       "Section 6: Pricing models, subscription, one-time, freemium, usage-based",
-      "Section 7: Case studies, 3 products from $0 to $4K MRR (pseudonymous)",
+      "Section 7: The framework applied to real product categories (pseudonymous)",
       "Section 8: The build-vs-buy decision, when to build, when to buy, when to partner",
     ],
     internalLinks: [

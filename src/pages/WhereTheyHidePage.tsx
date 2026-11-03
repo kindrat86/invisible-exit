@@ -31,7 +31,7 @@ const COMMUNITIES: Community[] = [
   { name: "r/cscareerquestions", type: "Reddit", size: "1.2M", intent: "Career strategy, compensation, golden handcuffs", angle: "The 0.5% equity math post", difficulty: "Medium" },
   { name: "r/experienceddevs", type: "Reddit", size: "450K", intent: "Senior devs frustrated with corporate", angle: "Anonymous side business case study", difficulty: "Medium" },
   { name: "r/FIRE", type: "Reddit", size: "800K", intent: "Financial independence, retire early", angle: "MRR vs stock options: which buys freedom faster", difficulty: "Low" },
-  { name: "r/Entrepreneur", type: "Reddit", size: "2.1M", intent: "Side businesses, startups", angle: "Micro-SaaS from $0 to $4K MRR timeline", difficulty: "High" },
+  { name: "r/Entrepreneur", type: "Reddit", size: "2.1M", intent: "Side businesses, startups", angle: "Micro-SaaS build-in-public timelines", difficulty: "High" },
   { name: "r/SideHustle", type: "Reddit", size: "1.5M", intent: "Side income, extra revenue streams", angle: "5-hour weekend system for employed professionals", difficulty: "Low" },
   { name: "r/personalfinance", type: "Reddit", size: "18M", intent: "Money management, investing", angle: "Recurring revenue as diversification", difficulty: "High" },
   { name: "r/digitalnomad", type: "Reddit", size: "2M", intent: "Location independence", angle: "Build the system first, then go nomad", difficulty: "Medium" },

@@ -20,7 +20,7 @@ import { trackEvent } from "@/lib/analytics";
  */
 
 const SHARE_TEXT =
-  "My Freedom Number is $4,000/month MRR. That's the exact recurring revenue I need to never work for someone else again. Calculate yours:";
+  "My Freedom Number is the recurring revenue I need to never work for someone else again. Calculate yours:";
 
 const SHARE_URLS = {
   twitter: (url: string, text: string) =>
@@ -37,7 +37,7 @@ interface ShareableResultProps {
 }
 
 const ShareableResult = ({
-  freedomNumber = "$4,000/month MRR",
+  freedomNumber = "your monthly number",
   className = "",
 }: ShareableResultProps) => {
   const [copied, setCopied] = useState(false);

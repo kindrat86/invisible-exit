@@ -53,9 +53,9 @@ const CONTENT: ContentItem[] = [
     day: 4,
     source: "Seinfeld 4, Month 4 Wall",
     hook: "Month 4. Zero customers. I almost deleted everything.",
-    twitter: "Month 4 of my side business.\n\nZero customers.\n\nI sat at my desk at 11 PM. Cursor over 'Cancel Subscription.' Voice in my head:\n\n'You're not a founder. Go back to managing.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\n$4,000/month MRR = optionality.\n\nThe math doesn't care about your feelings.\n\nI closed the cancel tab. Pivoted.\n\nTwo weeks later: first customer. $9/month.",
-    reddit: "**Month 4 of my side business. Zero customers. I almost quit. Here's what saved me.**\n\nI'd been building for 4 months. One product live. Nobody cared. Zero customers. I checked Stripe 40 times a day. Nothing.\n\nI sat in my car after work one Tuesday and thought: maybe I'm not cut out for this.\n\nThen I opened my freedom number calculation. The math hadn't changed. $4,000/month MRR = optionality. The math doesn't care about your feelings.\n\nI pivoted using my idea pipeline. Two weeks later: first paying customer. $9/month.\n\nThe system doesn't care about your feelings either. It just needs consistency.\n\nAnyone else hit the Month 4 wall?",
-    linkedin: "Month 4. Zero customers. 11 PM on a Tuesday.\n\nI had my cursor over the 'Cancel Subscription' button on my hosting dashboard. The voice in my head was specific:\n\n'You're not a founder. You're a manager. Go back to managing.'\n\nThen I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. $4,000/month MRR = optionality.\n\nI closed the cancel tab. Pivoted. Two weeks later: first customer. $9/month.\n\nThe system doesn't care about your feelings. It just needs consistency.\n\nIf you're in Month 4 right now, keep going.",
+    twitter: "Month 4 of my side business.\n\nZero customers.\n\nI sat at my desk at 11 PM. Cursor over 'Cancel Subscription.' Voice in my head:\n\n'You're not a founder. Go back to managing.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\nRecurring revenue = optionality.\n\nThe math doesn't care about your feelings.\n\nI closed the cancel tab. Pivoted.\n\nTwo weeks later: first customer. $9/month.",
+    reddit: "**Month 4 of my side business. Zero customers. I almost quit. Here's what saved me.**\n\nI'd been building for 4 months. One product live. Nobody cared. Zero customers. I checked Stripe 40 times a day. Nothing.\n\nI sat in my car after work one Tuesday and thought: maybe I'm not cut out for this.\n\nThen I opened my freedom number calculation. The math hadn't changed. Recurring revenue = optionality. The math doesn't care about your feelings.\n\nI pivoted using my idea pipeline. Two weeks later: first paying customer. $9/month.\n\nThe system doesn't care about your feelings either. It just needs consistency.\n\nAnyone else hit the Month 4 wall?",
+    linkedin: "Month 4. Zero customers. 11 PM on a Tuesday.\n\nI had my cursor over the 'Cancel Subscription' button on my hosting dashboard. The voice in my head was specific:\n\n'You're not a founder. You're a manager. Go back to managing.'\n\nThen I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. Recurring revenue = optionality.\n\nI closed the cancel tab. Pivoted. Two weeks later: first customer. $9/month.\n\nThe system doesn't care about your feelings. It just needs consistency.\n\nIf you're in Month 4 right now, keep going.",
     youtube: "TITLE: Month 4, Zero Customers, The Night I Almost Deleted Everything\n\nHOOK: The voice said 'you're not a founder.' Here's how I proved it wrong.\n\nSCRIPT:\n- Month 4. Zero customers. Zero trial signups in 9 days.\n- 11 PM. Cursor over Cancel Subscription.\n- The voice: 'Go back to managing.'\n- Opened freedom number calculation. Math hadn't changed.\n- Pivoted. Two weeks later: first $9/month customer.\n- Lesson: the math doesn't care about feelings.\n- CTA: Calculate your freedom number.",
     cta: "Read the full story: invisibleexit.com/story",
   },
@@ -72,11 +72,11 @@ const CONTENT: ContentItem[] = [
   {
     day: 6,
     source: "Seinfeld 6, Boss's Bonus",
-    hook: "My boss got a €15,000 bonus. He was thrilled. My side business made $4,100/month.",
-    twitter: "My boss got his annual bonus last week.\n\n€15,000.\n\nHe was thrilled.\n\nMy side business generated $4,100 MRR this month.\n\n$49,200/year.\nGrowing 8% monthly.\nNo boss.\nNo board.\nNo equity dilution.\n\nHis bonus is capped.\nMy MRR compounds.\n\nDifferent games.",
-    reddit: "**My boss's €15K bonus vs. my $4.1K/month side business MRR**\n\nMy boss got his annual bonus last week. €15,000. He was thrilled.\n\nMy side business generated $4,100 MRR this month. That's $49,200/year. Growing 8% monthly. No boss. No board. No equity dilution.\n\nHis bonus is capped. My MRR compounds.\n\nI'm not saying this to brag. I'm saying it because the math is the math. If you're earning $120K with 0.5% equity, your boss's bonus IS your ceiling.\n\nUnless you build something of your own.",
-    linkedin: "My boss got his annual bonus last week. €15,000. He was genuinely thrilled.\n\nMy side business generated $4,100 in MRR this month. $49,200/year. Growing 8% monthly.\n\nHis bonus is capped by someone else's decision. My MRR compounds based on my execution.\n\nNo boss. No board. No equity dilution.\n\nI'm not sharing this to brag. I'm sharing it because for 8 years, I thought the bonus structure was the game. It's not. It's ONE game. There are others.\n\nThe question isn't 'should you quit.' It's 'are you playing the right game?'",
-    youtube: "TITLE: My Boss's €15K Bonus vs My $4.1K/Month Side Business\n\nHOOK: His bonus is capped. My MRR compounds.\n\nSCRIPT:\n- Boss got €15K bonus. Thrilled.\n- My side business: $4,100 MRR. $49K/year.\n- Growing 8% monthly. No boss, no board.\n- His bonus = capped by someone else.\n- My MRR = compounds based on my execution.\n- Different games. Different math.\n- CTA: Calculate which game you're playing.",
+    hook: "My boss got a €15,000 bonus. He was thrilled. My side business didn't need his permission.",
+    twitter: "My boss got his annual bonus last week.\n\n€15,000.\n\nHe was thrilled.\n\nMy side business shipped two releases this month.\n\nNo boss.\nNo board.\nNo equity dilution.\nNo boss.\nNo board.\nNo equity dilution.\n\nHis bonus is capped.\nMy MRR compounds.\n\nDifferent games.",
+    reddit: "**My boss's €15K bonus vs. my side business**\n\nMy boss got his annual bonus last week. €15,000. He was thrilled.\n\nMy side business is small, but it's mine. No boss. No board. No equity dilution.\n\nHis bonus is capped. My MRR compounds.\n\nI'm not saying this to brag. I'm saying it because the math is the math. If you're earning $120K with 0.5% equity, your boss's bonus IS your ceiling.\n\nUnless you build something of your own.",
+    linkedin: "My boss got his annual bonus last week. €15,000. He was genuinely thrilled.\n\nMy side business is small, but every unit of progress compounds based on my execution.\n\nHis bonus is capped by someone else's decision.\n\nNo boss. No board. No equity dilution.\n\nI'm not sharing this to brag. I'm sharing it because for 8 years, I thought the bonus structure was the game. It's not. It's ONE game. There are others.\n\nThe question isn't 'should you quit.' It's 'are you playing the right game?'",
+    youtube: "TITLE: My Boss's €15K Bonus vs My Side Business\n\nHOOK: His bonus is capped. Ownership compounds.\n\nSCRIPT:\n- Boss got €15K bonus. Thrilled.\n- My side business: mine alone. No boss, no board.\n- His bonus = capped by someone else.\n- My MRR = compounds based on my execution.\n- Different games. Different math.\n- CTA: Calculate which game you're playing.",
     cta: "Calculate your number: invisibleexit.com/freedom",
   },
   {
@@ -119,7 +119,7 @@ The first 15 minutes are brutal. But after that, something happens: my brain act
 
 No meetings. No Slack. No "urgent" requests. Just me and the code.
 
-I built $600 of my $4K MRR during those early morning sessions. Not despite the early start. Because of it.
+I built my first product during those early morning sessions. Not despite the early start. Because of it.
 
 The morning gives you execution energy. The office takes it away.
 
@@ -177,7 +177,7 @@ Under the table, my Apple Watch buzzes. Stripe notification: $32.47. Two new cus
 
 I smiled through the rest of the meeting. She thought I was happy about the quarterly numbers.
 
-I was thinking about the $4K MRR compounding outside the building. The revenue she was presenting is someone else's. The revenue on my watch is mine.
+I was thinking about my own products compounding outside the building. The revenue she was presenting is someone else's. The revenue on my watch is mine.
 
 This tiny moment, checking YOUR income while someone presents THEIR income, changed how I sit in meetings.
 
@@ -203,7 +203,7 @@ SCRIPT:
 - In a quarterly review. Manager presenting results.
 - Apple Watch buzzes: Stripe $32.47. Two new customers.
 - I smile. She thinks I'm happy about company revenue.
-- I'm thinking about MY $4K MRR compounding outside.
+- I'm thinking about MY products compounding outside.
 - That moment: checking YOUR income while they present THEIR income.
 - Changes how you sit in meetings.
 - CTA: Calculate your freedom number.`,
@@ -365,7 +365,7 @@ Tax season came. My accountant asked the usual questions. Then:
 
 "Any other income?"
 
-I said: "Three micro-SaaS products. Anonymous LLC. Under a different name. Revenue about $4K/month."
+I said: "Three micro-SaaS products. Anonymous LLC. Under a different name. Revenue: none of your business (literally)."
 
 He closed his notebook. Got another coffee. Sat down.
 
@@ -376,7 +376,7 @@ Best $400 I ever spent.
 If you have side business income and a regular job, talk to a CPA who understands both. The tax savings alone can fund your first year of hosting.`,
     linkedin: `Tax season taught me something surprising about running a side business while employed.
 
-When I told my accountant about my three micro-SaaS products, separate LLC, anonymous structure, $4K/month MRR, he closed his notebook and got a second coffee.
+When I told my accountant about my three micro-SaaS products, separate LLC, anonymous structure, he closed his notebook and got a second coffee.
 
 The next 45 minutes were transformative. He walked me through entity structuring for tax efficiency, passive vs active income classification, and deductions I'd never considered.
 
@@ -389,7 +389,7 @@ HOOK: He closed his notebook and got another coffee.
 
 SCRIPT:
 - Tax season. Accountant asks about other income.
-- I mention three micro-SaaS products, anonymous LLC, $4K MRR.
+- I mention three micro-SaaS products, anonymous LLC.
 - He closes notebook. Gets more coffee.
 - Next 45 minutes: tax masterclass.
 - Entity structures. Passive vs active income. Deductions.
@@ -401,7 +401,7 @@ SCRIPT:
   {
     day: 13,
     source: "Seinfeld 13, Building During Lunch Breaks",
-    hook: "I built a $4K/month business in 45-minute lunch breaks. Here's the math.",
+    hook: "I built my side business in 45-minute lunch breaks. Here's the schedule.",
     twitter: `People ask how I find time to build.
 
 The answer is uncomfortable:
@@ -430,7 +430,7 @@ That's 3.75 hours/week. 195 hours/year. Equivalent to 5 full work weeks.
 
 The trick: I stopped eating lunch with colleagues. I ate at my desk and built. Everyone assumed I was catching up on email.
 
-I was building $4K/month MRR.
+I was building my own products.
 
 The time is there. It's just disguised as lunch.`,
     linkedin: `I built a side business almost entirely during 45-minute lunch breaks.
@@ -442,7 +442,7 @@ Hidden in plain sight. During the workday.
 I stopped eating lunch with colleagues. I ate at my desk and built. They thought I was catching up on email.
 
 The time exists. It's just disguised as something else.`,
-    youtube: `TITLE: How I Built $4K/Month During 45-Minute Lunch Breaks
+    youtube: `TITLE: How I Built Products During 45-Minute Lunch Breaks
 
 HOOK: 195 hours/year. Hidden in your lunch break.
 
@@ -926,7 +926,7 @@ What I didn't say:
 
 The focus came from the side business.
 
-Building $4K MRR in 5 hours/week forced me to:
+Building products in 5 hours/week forced me to:
 → Cut unnecessary meetings
 → Decline low-impact projects
 → Protect deep work blocks
@@ -943,7 +943,7 @@ I nodded. Said thank you.
 
 What I didn't say: the focus came from my side business.
 
-Building $4K MRR in 5 hours/week forced me to ruthlessly prioritize at work. I cut meetings I didn't need to attend. Declined projects that didn't move the needle. Protected deep work blocks. Said no to everything non-essential.
+Building products in 5 hours/week forced me to ruthlessly prioritize at work. I cut meetings I didn't need to attend. Declined projects that didn't move the needle. Protected deep work blocks. Said no to everything non-essential.
 
 The irony: my day job performance IMPROVED because of my side business. The side business didn't distract me, it made me more efficient with the time I had.
 
@@ -1191,7 +1191,7 @@ He looked at me with a mix of pity and envy.
 
 What he doesn't know:
 
-I make $4K/month from products I built while staying employed.
+I own products I built while staying employed.
 
 He took the romantic path: quit, bet everything, lost.
 I took the boring path: stayed, built slowly, won.
@@ -1209,7 +1209,7 @@ He asked: "You still at the firm?"
 
 He looked at me with what I can only describe as pity mixed with envy.
 
-What he doesn't know: I make $4K/month from products I built while staying employed. I took the boring, invisible path. He took the romantic one.
+What he doesn't know: I own products I built while staying employed. I took the boring, invisible path. He took the romantic one.
 
 His path is celebrated in startup culture. Quit everything. Bet on yourself. Go all in.
 
@@ -1226,20 +1226,20 @@ He quit two years ago to start a business full-time. Burned through savings. No 
 
 "You still at the firm?" he asked. "Yeah," I said. He gave me a look of pity.
 
-What he doesn't know: I earn $4K/month from products I built while staying employed. His path, quit everything, bet it all, is the one startup culture celebrates. My path, stay employed, build invisibly, protect the downside, is invisible.
+What he doesn't know: I own products I built while staying employed. His path, quit everything, bet it all, is the one startup culture celebrates. My path, stay employed, build invisibly, protect the downside, is invisible.
 
 His path has no floor. Mine does. His failure was public. Mine would be private.
 
 The slow, invisible path is less glamorous. But it has a safety net that lets you take bigger swings with less risk.`,
     youtube: `TITLE: My Colleague Quit to Start a Business and Failed. I Didn't Quit. I Won.
 
-HOOK: He looked at me with pity. He doesn't know I make $4K/month on the side.
+HOOK: He looked at me with pity. He doesn't know what I've built on the side.
 
 SCRIPT:
 - Ran into former colleague. He quit 2 years ago. Failed.
 - Burned savings. Moved back with parents.
 - "You still at the firm?" Pity in his eyes.
-- What he doesn't know: $4K/month from side products.
+- What he doesn't know: products of my own on the side.
 - His path: romantic, celebrated, no floor.
 - My path: invisible, boring, has a safety net.
 - The slow path is less glamorous but has a floor.
@@ -1463,7 +1463,7 @@ There's a difference:
 → Quitting = binary. You either stay or go.
 → Optionality = continuous. You're free to choose every day.
 
-With $4K/month MRR, I don't have to quit.
+With recurring revenue, I don't have to quit.
 
 But I can.
 
@@ -1485,7 +1485,7 @@ Everyone assumes building a side business is about escaping your day job. Here's
 
 The goal was never to leave. The goal was to not NEED to stay.
 
-With $4K/month in MRR, I don't have to quit. But I can. That option changes everything:
+With recurring revenue, I don't have to quit. But I can. That option changes everything:
 
 How I negotiate salary (I don't need the raise, so I negotiate from strength)
 How I handle bad days (a bad meeting doesn't ruin my week, I have something else)
@@ -1501,7 +1501,7 @@ I'm not.
 
 The goal was never to leave. The goal was to not need to stay.
 
-With $4K/month in recurring revenue, I don't have to quit. But I can. And that option changes everything about how I experience my career:
+With recurring revenue covering my core expenses, I don't have to quit. But I can. And that option changes everything about how I experience my career:
 
 How I negotiate, from strength, not necessity.
 How I handle difficult days, a bad meeting doesn't threaten my livelihood.
@@ -1509,7 +1509,7 @@ How I show up, I'm present because I choose to be, not because I must be.
 How I see my salary, as one income stream, not the only one.
 
 Freedom isn't quitting. Freedom is having the option. And that option transforms how you experience every single day of your career.`,
-    youtube: `TITLE: Why I'm NOT Quitting My Job (Even With $4K/Month Side Income)
+    youtube: `TITLE: Why I'm NOT Quitting My Job (Even With Side Income)
 
 HOOK: Everyone thinks the goal is to quit. It's not. The goal is to not need to.
 
@@ -1517,7 +1517,7 @@ SCRIPT:
 - Assumption: side business = escape plan.
 - Reality: I don't want to quit.
 - Goal was never to leave. Goal was to not NEED to stay.
-- With $4K MRR: I don't have to quit. But I can.
+- With recurring revenue: I don't have to quit. But I can.
 - Changes: negotiation, bad days, meetings, salary.
 - Freedom isn't quitting. Freedom is having the option.
 - CTA: Read the full story: invisibleexit.com/story`,
@@ -1526,10 +1526,10 @@ SCRIPT:
   {
     day: 30,
     source: "Seinfeld 30, The Freedom Number Reached",
-    hook: "I hit $4,000/month MRR. Here's what I expected to feel vs what I actually felt.",
+    hook: "The month my side business felt real. Here's what I expected to feel vs what I actually felt.",
     twitter: `Month 14.
 
-$4,000/month MRR.
+MRR that covers the essentials.
 
 The freedom number.
 
@@ -1537,14 +1537,14 @@ What I expected to feel: euphoria, celebration, vindication.
 
 What I actually felt: calm.
 
-Not because $4K is underwhelming. Because the goal was never the money.
+Not because the number is underwhelming. Because the goal was never the money.
 
 The goal was the identity shift:
 
 → Employee who depends on a salary
 → Builder who happens to also be employed
 
-$4K didn't change my lifestyle.
+The revenue didn't change my lifestyle.
 It changed my posture.
 
 I sit differently in meetings now.
@@ -1557,26 +1557,26 @@ Because I no longer have to stay.
 
 The cage always had a door.
 I just built my own key.`,
-    reddit: `**Hit $4,000/month MRR. Here's what it actually feels like.**
+    reddit: `**Hit MRR that covers the essentials. Here's what it actually feels like.**
 
-Month 14. $4,000/month MRR. The freedom number I calculated 14 months ago.
+Month 14. MRR that covers the essentials. The freedom number I calculated 14 months ago.
 
 What I expected: euphoria. Celebration. Vindication. "I made it."
 
 What I actually felt: calm. Deep, quiet calm.
 
-Not because $4K is underwhelming. It's not. It's life-changing in the most literal sense. But the goal was never the money.
+Not because the number is underwhelming. It's not. It's life-changing in the most literal sense. But the goal was never the money.
 
 The goal was the identity shift. From "employee who depends on a salary" to "builder who happens to also be employed."
 
-$4K didn't change my lifestyle. I still go to work. Still attend the same meetings. Still draw the same salary.
+The revenue didn't change my lifestyle. I still go to work. Still attend the same meetings. Still draw the same salary.
 
 What changed: my posture. I sit differently. Negotiate differently. Make decisions differently. Not because I'm planning to quit, because I no longer have to stay.
 
 The cage always had a door. I just built my own key.
 
 To anyone just starting: the first $0.97 is harder than the last $400. Keep going.`,
-    linkedin: `This week, I crossed $4,000/month in recurring revenue.
+    linkedin: `This week, my side business covered my core expenses.
 
 The freedom number I calculated 14 months ago.
 
@@ -1584,22 +1584,22 @@ What I expected to feel: euphoria, celebration, vindication. What I actually fel
 
 The goal was never the money. The goal was the identity shift: from someone who depends on a salary to someone who builds their own income while employed.
 
-$4,000 didn't change my lifestyle. I still work. Still attend meetings. Still draw the same salary. What changed is my posture. I sit differently in rooms where I used to feel trapped. I negotiate from strength, not necessity. I make decisions based on what I want, not what I need.
+The revenue didn't change my lifestyle. I still work. Still attend meetings. Still draw the same salary. What changed is my posture. I sit differently in rooms where I used to feel trapped. I negotiate from strength, not necessity. I make decisions based on what I want, not what I need.
 
 The cage always had a door. I just built my own key.
 
 To anyone in month 1, 3, or 6: the first dollar is harder than the last thousand. Keep building.`,
-    youtube: `TITLE: I Hit $4,000/Month MRR. Here's What It Actually Feels Like.
+    youtube: `TITLE: The Month My Side Business Covered My Expenses. Here's What It Feels Like.
 
 HOOK: Expected euphoria. Felt calm. Here's why.
 
 SCRIPT:
-- Month 14. $4,000/month MRR. The freedom number.
+- Month 14. MRR that covers the essentials. The freedom number.
 - Expected: euphoria, celebration.
 - Actual: deep, quiet calm.
 - The goal was never the money. It was the identity shift.
 - Employee who depends on salary → builder who's also employed.
-- $4K didn't change lifestyle. Changed posture.
+- The revenue didn't change lifestyle. Changed posture.
 - Sit differently. Negotiate differently. Decide differently.
 - Not planning to quit. No longer have to stay.
 - The cage always had a door. I built my own key.

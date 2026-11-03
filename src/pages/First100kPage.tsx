@@ -149,7 +149,7 @@ const PHASES: Phase[] = [
     goal: "Traffic compounds. Brand search volume grows. Paid ads at scale.",
     traffic: 100000,
     emails: 15000,
-    mrr: "$2,000-$4,100",
+    mrr: "compounding",
     color: "text-primary",
     borderColor: "border-primary",
     tasks: [
@@ -163,7 +163,7 @@ const PHASES: Phase[] = [
     ],
     milestones: [
       "15,000 email subscribers",
-      "$4,100 MRR (freedom number hit)",
+      "Recurring revenue covering core expenses",
       "100,000 monthly unique visitors",
       "Brand search volume > 500/month",
       "First viral content piece (100K+ views)",

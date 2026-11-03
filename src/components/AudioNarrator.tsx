@@ -21,7 +21,7 @@ const chapterTitles = [
   "Secret #3:  The System",
   "The Wall, Month 4, zero customers.",
   "External Conflict, The competitor.",
-  "The One Thing, 12 months. $4,100 MRR.",
+  "The One Thing, twelve months later.",
   "Return with the Elixir",
 ];
 

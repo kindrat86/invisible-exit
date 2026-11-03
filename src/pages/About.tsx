@@ -121,14 +121,14 @@ const About = () => {
             non-compete fears, and the belief that building a business required quitting
             their job, Adrian decided to share the exact operating system that worked for
             him: validate ideas in 48 hours, build in 5 focused hours per week, reach
-            $4,000/month in recurring revenue, and exit on your own terms.
+            recurring revenue that covers your core expenses, and exit on your own terms.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-12">What we believe</h2>
           <ul className="space-y-3 text-gray-600">
             <li className="flex items-start gap-3">
               <span className="text-[#3B82F6] font-bold mt-1">→</span>
-              <span><strong>Financial freedom doesn't require millions.</strong> $4,000/month in recurring revenue changes everything for most corporate managers.</span>
+              <span><strong>Financial freedom doesn't require millions.</strong> Recurring revenue that covers your core expenses changes everything.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-[#3B82F6] font-bold mt-1">→</span>

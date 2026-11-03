@@ -100,7 +100,7 @@ const CHAPTERS = [
     title: "The system beats the idea.",
     body: [
       "I spent 3 months choosing the \"right\" idea. Spreadsheet after spreadsheet. Market sizing. Competitor analysis. Procrastination disguised as research.",
-      "Then I launched the wrong idea. And it made $9/month. So I pivoted. The second product made $47/month. The third hit $850. The fourth crossed $4,000.",
+      "Then I launched the wrong idea. And it went nowhere. So I pivoted. Then pivoted again. Each attempt taught the system something, until the system, not the idea, was what worked.",
       "The lesson was brutal and simple: stop obsessing over the idea. Build the system first, freedom number → idea pipeline → stealth ops → launch → brand, and you can swap ideas in and out like cartridges in a printer.",
       "The system doesn't care which idea you pick. The system cares that you HAVE a system.",
       ", Adrian",
@@ -116,7 +116,7 @@ const CHAPTERS = [
       "That detail, the gym bag, the socks, the 11 days, is what broke me. Not the Stripe dashboard. Not the zero dollars. The gym bag. Because it meant I wasn't even showing up for myself anymore. I was showing up for a dashboard nobody looked at.",
       "Here's the false belief that almost killed me: I believed that if I picked the RIGHT idea, success would be inevitable. That the idea was the bottleneck. That choosing correctly was 80% of the work. I had spent 3 months picking and I had $0 to show for it.",
       "I sat there in that cold car and thought: maybe I'm not cut out for this. Maybe the golden handcuffs are the best I'll get. Maybe I should just be grateful and stop pretending I can build something. That voice, the one that says 'you chose wrong, give up', was loud and specific. It sounded like my own voice but with better grammar.",
-      "Then I did something I hadn't done in months: I opened my freedom number calculation. I had built it so carefully on Day 1, then never looked at it again. The math hadn't changed. $4,000/month MRR = optionality. The mortgage was $2,100. Car was $340. The school was $800. I wasn't trying to get rich. I was trying to get breathing room.",
+      "Then I did something I hadn't done in months: I opened my freedom number calculation. I had built it so carefully on Day 1, then never looked at it again. The math hadn't changed. Recurring revenue that covers the mortgage, the car payment, the school fees equals optionality. I wasn't trying to get rich. I was trying to get breathing room.",
       "The math doesn't care about your feelings. And in that parking lot, it hit me: the idea wasn't the problem. The SYSTEM was the problem. I had no pipeline. No validation process. No way to test and pivot quickly. I was treating a system problem as an idea problem. Like trying to fix a broken engine by changing the radio station.",
       "That's when I stopped. Not the product, stopped believing. I drove home (stopped for groceries, normal Tuesday), made dinner, put my kid to bed, and started from scratch. Not with a new idea. With a piece of paper. One question: if the idea doesn't matter, what does? The answer wrote itself: a system to generate, validate, and launch ideas on a 5-hour/week budget.",
       "Two weeks later: first paying customer. $9/month. The cage door cracked open, not because I found the right idea, but because I stopped believing ideas mattered more than systems.",
@@ -131,7 +131,7 @@ const CHAPTERS = [
       "That same night, after the parking lot, after the groceries, after the kid went to bed, I sat at the kitchen table and did something I'd never done before. I wrote two visions of my life, side by side, 18 months into the future.",
       "Timeline A: I kept doing what I was doing. Another 18 months of corporate execution. Another quarterly review. Another team offsite where we discuss 'culture' while people check their phones under the table. Maybe a promotion. My 0.5% equity presumably worth... something. Not nothing. But not enough.",
       "I pictured the exact Tuesday morning of that future: same alarm, same commute, same coffee from the same machine, same Slack notifications I'd read before the first sip. Financially stable. Emotionally numb. Nothing wrong, and nothing mine.",
-      "Timeline B: I had $4,000/month in recurring revenue. Not from luck. From a system. In Timeline B, my Tuesday morning looked like this: I woke up, opened a revenue dashboard I controlled, saw three Stripe deposits from three separate products, and knew, knew in my bones, that I could walk into my boss's office, quit, and be fine. I wouldn't do it. I like my job. But I COULD. That knowing was the entire point.",
+      "Timeline B: I had recurring revenue covering our core expenses. Not from luck. From a system. In Timeline B, my Tuesday morning looked like this: I woke up, opened a revenue dashboard I controlled, saw payments coming in from products I owned, and knew, knew in my bones, that I could walk into my boss's office, quit, and be fine. I wouldn't do it. I like my job. But I COULD. That knowing was the entire point.",
       "The difference between the two timelines wasn't talent. It wasn't luck. It wasn't access. The difference was a single decision: do I build IN my constraints, or do I wait until I have no constraints left?",
       "Timeline A costs nothing. Timeline B costs 5 hours a week and the courage to be bad at something new for six months. I chose B. That's not a motivational line. That's a literal kitchen-table accounting. I chose the harder option because the Tuesday morning in Timeline A was eating me alive.",
       ", Adrian",
@@ -152,14 +152,12 @@ const CHAPTERS = [
   {
     num: "10",
     eyebrow: "The One Thing",
-    title: "12 months. $4,100 MRR. Still employed. Still invisible.",
+    title: "12 months later. Still employed. Still invisible.",
     body: [
-      "Here's the honest timeline:",
-      "Month 1–3: Built, launched, zero customers. Questioned everything. Almost quit twice.",
-      "Month 4: First customer ($9/mo). Screamed in the car.",
-      "Month 6: $850 MRR. Still employed. Employer clueless.",
-      "Month 9: $2,100 MRR. Turned down a promotion because the raise would have cost me 10 hours/week and $7,200/year in potential MRR.",
-      "Month 12: $4,100 MRR across 3 products. The boring one (a PDF generator for electricians) pays most of the mortgage.",
+      "Here's the honest timeline: yours will be different, and anyone who promises you a number is selling you a fantasy.",
+      "Months 1–3: Built, launched, zero customers. Questioned everything. Almost quit twice.",
+      "Month 4: First customer. Screamed in the car.",
+      "The point isn't the pace. The point is that after a year I was no longer guessing: a validated idea, a live product, early customers, and a repeatable way to find the next one.",
       "I didn't get rich. I got free. There's a difference. Rich is a number. Free is an option. I bought the option to say no, to the promotion, to the next reorganization, to the 0.5% that will never buy my life.",
       ", Adrian",
     ],
@@ -220,7 +218,7 @@ const StoryPage = () => {
   return (
     <div className="min-h-screen bg-[hsl(222_47%_11%)]">
       <SEOHead
-        title="My Story, How I Built $4K/Month While Employed | Invisible Exit"
+        title="My Story, Building a Side Business While Employed | Invisible Exit"
         description="The complete story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. Read in 15 minutes."
         url="/story"
       />
@@ -232,7 +230,7 @@ const StoryPage = () => {
           <p className="text-eyebrow text-primary-light mb-6">The Complete Story</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
             How I Built a{" "}
-            <span className="text-gradient-light">$4,000/Month Side Business</span>{" "}
+            <span className="text-gradient-light">Side Business</span>{" "}
             While Employed, Without Anyone Knowing
           </h1>
           <p className="text-body-lg text-white/60 max-w-2xl mx-auto mb-4">
@@ -284,10 +282,6 @@ const StoryPage = () => {
 
               {/* Authority chips, Brunson's "identity badges" that build trust fast */}
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                <span className="inline-flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">
-                  <TrendingUp className="w-3.5 h-3.5 text-success" />
-                  $4,100/mo verified
-                </span>
                 <span className="inline-flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-full px-3.5 py-1 text-xs text-white/60">
                   <Building2 className="w-3.5 h-3.5 text-primary-light" />
                   3 active products
@@ -500,7 +494,7 @@ const StoryPage = () => {
                 <div className="space-y-4 text-white/60 text-sm leading-relaxed">
                   <p>
                     <strong className="text-white">I didn't want to build this.</strong> I wanted to keep
-                    building micro-SaaS products in peace. I wanted to collect my $4,100/month,
+                    building micro-SaaS products in peace. I wanted to tend my own products,
                     walk into work calm, and go home. I didn't want to be a guru, a coach, or a
                     movement leader. That's not my personality.
                   </p>

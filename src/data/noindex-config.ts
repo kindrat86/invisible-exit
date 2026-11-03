@@ -24,6 +24,19 @@ export const NOINDEX_URL_PATTERNS: string[] = [
   "/skills/",             // skill monetization (thin template)
   "/audience/",           // audience/demographic pages (thin)
 
+  // VALUE REALITY CHECK 2026-11-03 — thin unsourced YMYL state pages
+  // (directive invisibleexit-rework phase 1). /banking/* rendered "$undefined"
+  // fees since unsourced figures were removed from banking.ts; /insurance/*
+  // shows invented premium ranges with no carrier source; /nda-guides/* and
+  // /tax-guides/* assert state-specific money/legal posture without official
+  // statute citations. All four families stay 200 but out of the index until
+  // every claim carries an official source (phase 2 rebuilds them from
+  // verified statute text).
+  "/banking/",
+  "/insurance/",
+  "/nda-guides/",
+  "/tax-guides/",
+
   // REVIEW-bucket prune — added 2026-08-22
   "/by-budget/",
   "/case-studies/",

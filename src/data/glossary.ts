@@ -31,7 +31,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       {
         question: "How much does a micro-SaaS make?",
         answer:
-          "A micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue, the threshold where most corporate managers can consider leaving their job. At $50/month with 200 customers, it generates $10,000/month.",
+          "Pure arithmetic: a micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue; at $50/month with 200 customers, $10,000/month. Whether you reach that, and when, depends on your idea and market. Your personal threshold is your own freedom number, not a fixed figure.",
       },
       {
         question: "How is micro-SaaS different from regular SaaS?",
@@ -62,7 +62,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Freedom Number",
     category: "Financial Independence",
     definition:
-      "Your freedom number is the monthly recurring revenue needed to cover your core living expenses, making your job optional. For most corporate managers earning $120K-$200K, the freedom number is $4,000/month in net recurring revenue.",
+      "Your freedom number is the monthly recurring revenue needed to cover your core living expenses, making your job optional. It is personal: it comes from your expense math, not from a fixed rule of thumb.",
     detailed:
       "The freedom number is not the same as replacing your full salary. It's the point where leaving your job feels like a calculated risk rather than a cliff dive. For dual-income households, $4,000/month typically covers mortgage/rent, food, insurance, and basic costs, providing 12+ months of runway to grow the business full-time. Combined with savings, hitting the freedom number eliminates the 'I'll be homeless' fear that keeps most people trapped in golden handcuffs.",
     relatedTerms: ["what-is-recurring-revenue", "what-is-micro-saas"],
@@ -206,7 +206,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "ARR (Annual Recurring Revenue) is the yearly value of all active subscriptions, calculated as MRR × 12. A micro-SaaS with $4,000/month MRR has $48,000 ARR. ARR is the standard metric for valuing and comparing subscription businesses.",
     detailed:
-      "Investors and acquirers use ARR to value SaaS businesses, typically applying a multiple of 3x-8x ARR for micro-SaaS exits. A $48,000 ARR business might sell for $150,000-$400,000 depending on growth rate, churn, and market. For corporate managers, ARR is the number that makes the invisible exit tangible, reaching $48,000 ARR means you have both income ($4K/month) and a sellable asset worth six figures.",
+      "Investors and acquirers use ARR to value SaaS businesses, typically applying a multiple of 3x-8x ARR for micro-SaaS exits. A $48,000 ARR business might sell for $150,000-$400,000 depending on growth rate, churn, and market. For corporate managers, ARR is the number that makes the invisible exit tangible, reaching $48,000 ARR means you have both income and, in many cases, a sellable asset.",
     relatedTerms: ["what-is-mrr", "what-is-recurring-revenue", "what-is-freedom-number"],
     faqs: [
       {
@@ -217,7 +217,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       {
         question: "What is a good ARR for a solo founder?",
         answer:
-          "For corporate managers building a side business, $48,000-$120,000 ARR ($4K-$10K/month) is the target range that replaces a mid-level salary. At $100,000+ ARR, the business is typically sellable for $300,000-$800,000.",
+          "Valuations vary widely with growth, churn, and market; small SaaS businesses commonly sell for a multiple of annual profit or ARR. Use ranges as context, not as a forecast for your business.",
       },
     ],
   },

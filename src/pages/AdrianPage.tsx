@@ -16,7 +16,7 @@ const TIMELINE = [
   { year: "2020", event: "Daughter born. Everything changed. The stakes got real. 'Someday' started feeling expensive." },
   { year: "2022", event: "Promoted to Managing Director. 0.5% equity. IPO announced for 2025. Golden handcuffs phase 2: locked." },
   { year: "2024", event: "Amsterdam. The taxi. The $0.97. The door." },
-  { year: "2025", event: "Built the system. $4,100 MRR. Still employed. Still invisible. Launched Invisible Exit to share the system." },
+  { year: "2025", event: "Built the system. Still employed. Still invisible. Launched Invisible Exit to share the system." },
 ];
 
 const FAQS = [
@@ -47,7 +47,7 @@ const AdrianPage = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Who Is Adrian?, The Anonymous Founder Behind Invisible Exit"
-        description="37-year-old Managing Director. $120K salary. <0.5% equity. Building $4K/month on the side. Identity protected by design."
+        description="37-year-old Managing Director. $120K salary. <0.5% equity. Building recurring revenue on the side. Identity protected by design."
         url="/adrian"
       />
       <Navbar />
@@ -77,7 +77,7 @@ const AdrianPage = () => {
             37. Managing Director. $120K salary. Less than 0.5% equity.
           </p>
           <p className="text-base text-white/50 max-w-xl mx-auto mb-8">
-            Building $4,000+/month in invisible recurring revenue while employed.
+            Building invisible recurring revenue while employed.
             Identity protected, because that's the whole point.
           </p>
 
@@ -131,7 +131,7 @@ const AdrianPage = () => {
               {
                 title: "After",
                 state: "The Reluctant Leader",
-                body: "$4,100 MRR. Still employed. Built the system, then built a platform to share it. Not because he wanted to lead, because the math demanded it.",
+                body: "Still employed. Built the system, then built a platform to share it. Not because he wanted to lead, because the math demanded it.",
                 color: "text-success",
               },
             ].map((phase) => (
@@ -197,7 +197,7 @@ const AdrianPage = () => {
               the mouse. I could feel the relief of giving up, the comfort of going back to just being an employee.
             </p>
             <p className="text-foreground font-medium">
-              Then I opened my Freedom Number calculation. <strong>$4,000/month MRR = optionality.</strong>
+              Then I opened my Freedom Number calculation. <strong>Recurring revenue that covers core expenses = optionality.</strong>
               The math hadn't changed because I had a bad week. The math doesn't care about feelings.
               I closed the hosting tab. I opened the Idea Pipeline. I pivoted.
             </p>
@@ -284,7 +284,7 @@ const AdrianPage = () => {
           <p className="text-eyebrow text-primary mb-4 text-center">My System</p>
           <h2 className="text-h1 text-foreground mb-4 text-center">The Invisible Exit Framework</h2>
           <p className="text-body text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            This is the system I built. It's not theory. It's what took me from $0 to $4,100 MRR.
+            This is the system I built. It's not theory. It's the system I used to build my own products while employed.
           </p>
           <FrameworkDiagram />
         </div>

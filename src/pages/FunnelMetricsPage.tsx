@@ -426,7 +426,7 @@ const FunnelMetricsPage = () => {
             {/* Break-even Analysis */}
             <div className="mt-6 bg-primary/5 border border-primary/15 rounded-xl p-4 text-center">
               <p className="text-sm text-muted-foreground">
-                At this rate, you'd hit <strong className="text-foreground">$4,000/month MRR</strong> in{" "}
+                At this rate, your next milestone comes in{" "}
                 <strong className="text-primary" id="calc-timeline">, months</strong>.
               </p>
               <p className="text-xs text-muted-foreground mt-1" id="calc-cac">

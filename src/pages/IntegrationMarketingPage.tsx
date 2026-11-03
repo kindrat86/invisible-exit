@@ -124,7 +124,7 @@ That's his salary. Even a billion-dollar exit doesn't buy freedom.
 So he built something on the side. 5 hours a week. Completely anonymous.
 
 Month 4: first $9 customer.
-Month 12: $4,100 MRR.
+Month 12: a repeatable system.
 Month 14: he turned down a VP promotion.
 
 The system is called Invisible Exit. 5 AI tools for employed professionals who want to build recurring revenue without their employer finding out.

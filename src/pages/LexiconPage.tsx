@@ -64,7 +64,7 @@ const TERMS: Term[] = [
   {
     term: "The Cartridge System",
     definition: "Proprietary framework. Build the 5-tool pipeline first, then swap product ideas in and out like cartridges in a printer. The system doesn't care which idea you pick.",
-    origin: "Named after pivoting from a $9/month product to $4,100/month, without rebuilding infrastructure.",
+    origin: "Named after swapping products without rebuilding infrastructure.",
     usage: "'Stop choosing ideas. Use the Cartridge System. Build the pipeline, swap cartridges.'",
     category: "framework",
   },
@@ -100,7 +100,7 @@ const TERMS: Term[] = [
     term: "5 Hours",
     definition: "The weekly time budget for building. Not a limitation, a forcing function that creates ruthless focus.",
     origin: "'I have 5 hours a week. That's enough. It has to be enough. And it is.'",
-    usage: "'I built $4,100/month in 5 hours a week. The constraint was the advantage.'",
+    usage: "'I built my products in 5 hours a week. The constraint was the advantage.'",
     category: "core",
   },
   {

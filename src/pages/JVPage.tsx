@@ -268,7 +268,7 @@ I found something that changed how I think about corporate jobs.
 
 It's called Invisible Exit, 5 tools that help corporate managers build anonymous side businesses while employed. No code. No quitting. No employer finding out.
 
-The creator (a fellow Managing Director at a European tech company) built $4,100/month in side revenue while working full-time. His employer never knew.
+The creator (a fellow Managing Director at a European tech company) built his own side products while working full-time. His employer never knew.
 
 I negotiated a special deal for my audience: [YOUR_CUSTOM_OFFER].
 

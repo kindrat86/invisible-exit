@@ -29,7 +29,7 @@ const OLD_VS_NEW = [
   {
     aspect: "The Timeline",
     oldWay: "5-8 years to a liquidity event you don't control.",
-    newWay: "12-18 months to $4,000/month MRR you own today.",
+    newWay: "A system you own, building recurring revenue on your own timeline.",
     oldIcon: Lock,
     newIcon: Shield,
   },
@@ -60,7 +60,7 @@ const PRINCIPLES = [
   {
     num: "01",
     title: "Revenue beats equity.",
-    body: "0.5% equity in someone else's company is a leash, not an asset. $4,000/month in recurring revenue from products you own is freedom you control today, not in 5 years when an IPO 'might' happen.",
+    body: "0.5% equity in someone else's company is a leash, not an asset. Recurring revenue from products you own is freedom you control today, not in 5 years when an IPO 'might' happen.",
   },
   {
     num: "02",
@@ -237,7 +237,7 @@ const ManifestoPage = () => {
           </h2>
           <div className="bg-white/5 border border-white/20 rounded-2xl p-8 sm:p-10 max-w-2xl mx-auto">
             <p className="text-xl sm:text-2xl font-semibold leading-relaxed">
-              "I can build $4,000/month in recurring revenue from products I own, 
+              "I can build recurring revenue from products I own, 
               invisibly, in 5 hours a week, while my salary funds the entire
               thing without risk."
             </p>
@@ -401,7 +401,7 @@ const ManifestoPage = () => {
             </p>
             <p>
               Imagine if 10,000 managers, each building quietly, each earning
-              $4,000/month from products they own, walked into their annual
+              recurring revenue from products they own, walked into their annual
               review knowing the golden handcuffs were already off.
             </p>
             <p>
@@ -421,7 +421,7 @@ const ManifestoPage = () => {
               <p className="text-xs text-white/40 mt-1">managers building</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl font-bold text-white">$4K/mo</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">MRR</p>
               <p className="text-xs text-white/40 mt-1">avg target hit</p>
             </div>
             <div>
@@ -443,7 +443,7 @@ const ManifestoPage = () => {
             </p>
             <p>
               I wanted to keep building micro-SaaS products in peace. I wanted to
-              collect my $4,100/month, walk into work calm, and go home. I didn't
+              tend my own products, walk into work calm, and go home. I didn't
               want to be a guru, a coach, or a movement leader. That's not my
               personality. I'm an introvert who manages 40 people and hides behind
               a pseudonym.

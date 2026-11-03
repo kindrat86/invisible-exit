@@ -43,7 +43,7 @@ THE 3 SECRETS I LEARNED:
 2. Anonymity is your greatest asset. Separate entity, separate name, separate everything. You can experiment without fear.
 3. The system beats the idea. I spent 3 months choosing the "right" idea. Then launched the wrong one. It made $9/month. The system worked regardless.
 
-THE RESULTS: Month 1-3: zero customers. Month 4: first $9 customer. Month 6: $850 MRR. Month 9: $2,100 MRR. Month 12: $4,100 MRR. Still employed. Still invisible.
+THE ARC: Month 1-3: zero customers. Month 4: first customer. Then the slow compounding that nobody tweets about. Still employed. Still invisible.
 
 THE LESSON: The first dollar online isn't about money. It's about the identity shift from employee to owner. Once you feel it, you can't unfeel it.`,
   },
@@ -64,7 +64,7 @@ This version covers:
 - Chapter 7: Secret #3:  The System (system beats idea)
 - Chapter 8: Internal Conflict (Month 4, the wall, almost quit)
 - Chapter 9: External Conflict (competitor near-miss)
-- Chapter 10: The One Thing (12-month timeline, $4,100 MRR)
+- Chapter 10: The One Thing (what a year of quiet building actually buys you)
 
 For the full version, read: invisibleexit.com/story`,
   },
@@ -88,7 +88,7 @@ Two notifications hit my phone simultaneously:
 
 I screamed in the taxi. The $0.97 wasn't money, it was proof that the cage has a door.
 
-Over the next 12 months, I built $4,100/month in recurring revenue while still employed. My employer never found out. I turned down a promotion. I documented everything.
+Over the next 12 months, I built a repeatable system and my own products while still employed. My employer never found out. I turned down a promotion. I documented everything.
 
 The story covers:
 - The math that proves even a $1B IPO won't buy freedom
@@ -111,7 +111,7 @@ invisibleexit.com/story`,
 
 Following up on my note from last week. I know you're busy, so I'll keep this short.
 
-I'm the anonymous Managing Director who built $4,100/month in side revenue while employed, without my employer finding out. The story involves a $0.97 Stripe notification in an Amsterdam taxi that triggered an identity shift.
+I'm the anonymous Managing Director who built side products while employed, without my employer finding out. The story involves a $0.97 Stripe notification in an Amsterdam taxi that triggered an identity shift.
 
 Your audience of [AUDIENCE_DESCRIPTION] is exactly who this story is for. I can talk about:
 - Why I turned down a VP promotion (the math)
@@ -134,7 +134,7 @@ I'd like to pitch an article for [PUBLICATION_NAME]:
 
 **Title:** Even a $1B IPO Won't Buy Your Freedom (Here's the Math)
 
-**Angle:** Corporate managers earning $120K-$200K with <0.5% equity are trapped by a math problem they've never calculated. I'll break down the numbers (even a billion-dollar exit barely covers your salary in passive income) and share the alternative: building $4,000/month in recurring revenue while employed.
+**Angle:** Corporate managers earning $120K-$200K with <0.5% equity are trapped by a math problem they've never calculated. I'll break down the numbers (even a billion-dollar exit barely covers your salary in passive income) and share the alternative: building recurring revenue while employed.
 
 **What I'll cover:**
 - The equity math (with real numbers, not platitudes)
@@ -142,7 +142,7 @@ I'd like to pitch an article for [PUBLICATION_NAME]:
 - The "stealth ops" framework (entity separation, compliance)
 - How to build in 5 hours/week without your employer finding out
 
-**About me:** Anonymous Managing Director (37) at a European tech company. $4,100 MRR in side businesses. Identity protected by design. Founder of Invisible Exit.
+**About me:** Anonymous Managing Director (37) at a European tech company. Side businesses built while employed. Identity protected by design. Founder of Invisible Exit.
 
 **Word count:** 1,500-2,500 words. Original content. Available to write within 2 weeks.
 

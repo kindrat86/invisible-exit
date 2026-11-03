@@ -43,9 +43,9 @@ Let's do different math. Math built for people who want freedom, not a pension.
 
 Forget the "25x your annual expenses" rule for a moment. For corporate managers, the real question is: **what monthly recurring revenue (MRR) replaces the psychological safety of your salary?**
 
-For most managers earning $120K-$200K, the answer isn't replacing the full salary. It's reaching the point where leaving feels like a lateral move, not a cliff dive.
+For most managers, the answer isn't replacing the full salary. It's reaching the point where leaving feels like a lateral move, not a cliff dive.
 
-That number, for most people, is **$4,000/month in net recurring revenue**.
+A commonly used example is **$4,000/month in net recurring revenue**, but your number comes from your own expense math, not from a rule.
 
 Here's why:
 - $4,000/month covers core living expenses for most dual-income households
@@ -98,7 +98,7 @@ The trick is building without your employer noticing, which is exactly what the 
 
 ## Your Next Step
 
-Stop waiting for the "perfect number." Start building toward $4,000/month in recurring revenue. The math works. The timeline is realistic. The only variable is whether you start.`,
+Stop waiting for the "perfect number." Calculate your own freedom number and start building toward it. The arithmetic is simple. The timeline depends on you. The only variable is whether you start.`,
     faqs: [
       {
         question: "What is the 4% rule for financial independence?",
@@ -106,11 +106,11 @@ Stop waiting for the "perfect number." Start building toward $4,000/month in rec
       },
       {
         question: "How much money does a corporate manager need to never work again?",
-        answer: "Rather than the traditional millions in savings, a corporate manager earning $120K-$200K typically needs $4,000/month in net recurring revenue from a micro-SaaS business. This covers core expenses, provides runway to grow full-time, and eliminates the fear of financial free-fall.",
+        answer: "There is no universal number: it is the recurring revenue that covers your core expenses and provides runway to grow full-time. The Freedom Number Calculator derives it from your actual expenses rather than a rule of thumb.",
       },
       {
         question: "How does micro-SaaS income compare to traditional retirement savings?",
-        answer: "A micro-SaaS charging $29/month needs just 138 customers to generate $4,000/month. This is achievable in 12-18 months, compared to decades of traditional saving. Plus, recurring revenue compounds, every customer added this month still pays next month.",
+        answer: "Arithmetic, not a promise: a micro-SaaS charging $29/month needs 138 customers to generate $4,000/month. How long that takes depends entirely on the idea and the market. And recurring revenue compounds: every customer added this month still pays next month.",
       },
     ],
     relatedSlugs: ["real-estate-vs-micro-saas-freedom-math", "zero-to-4000-invisible-exit-timeline"],
@@ -186,7 +186,7 @@ The Invisible Exit isn't about rage-quitting. It's a methodical 18-month plan:
 
 **Months 10-15**: Grow to $2,000-$4,000/month MRR. Automate everything possible.
 
-**Months 16-18**: Hit your target MRR. Prepare your transition. Give notice on your terms.
+**Months 16-18**: Consolidate what you have. If the numbers work for you, prepare your transition and give notice on your terms.
 
 ## The Risk of Not Starting
 
@@ -215,7 +215,7 @@ You need a niche problem, 5-7 hours per week, and a systematic approach to build
       },
       {
         question: "Can you build a SaaS while working full-time?",
-        answer: "Yes. The Invisible Exit framework is designed for full-time corporate managers with 5-7 hours per week. Using AI tools for development and content, stealth operations for invisibility, and a systematic 18-month timeline, executives can build a micro-SaaS to $4,000/month MRR without quitting their day job.",
+        answer: "Yes, people do build micro-SaaS products while working full-time, typically with 5-7 hours per week using AI tools for development and content and stealth operations for invisibility. What revenue you reach depends on your idea and market; no honest framework can promise a figure.",
       },
     ],
     relatedSlugs: ["invisible-business-model", "ai-tools-replace-startup-team"],
@@ -361,13 +361,13 @@ The goal isn't to hide. It's to protect your transition period so you can leave 
   },
   {
     slug: "zero-to-4000-invisible-exit-timeline",
-    title: "The Month-By-Month Timeline From $0 to $4,000 MRR (No Luck Required)",
+    title: "The Month-By-Month Timeline From $0 to First MRR (A Realistic Sequence)",
     excerpt:
       "A month-by-month breakdown of building recurring revenue while maintaining your corporate role.",
     category: "Exit Planning",
     readTime: "15 min read",
     publishedAt: "2026-03-20",
-    content: `This is the exact 18-month timeline that Invisible Exit members follow to go from zero to $4,000/month in recurring revenue while keeping their day job. No theory. Just the sequence.
+    content: `This is an 18-month working timeline for going from zero to meaningful recurring revenue while keeping your day job. It is a plan structure, not a promise: your revenue at each stage depends on your idea and your market. No theory. Just the sequence.
 
 ## Phase 1: Foundation (Months 1-3)
 
@@ -498,7 +498,7 @@ The clock starts when you start. Not when you feel ready.`,
     faqs: [
       {
         question: "How long does it take to build a micro-SaaS to $4,000 MRR?",
-        answer: "Following the Invisible Exit timeline, it takes 12-18 months to reach $4,000/month in recurring revenue. The first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on hitting target MRR and preparing your exit.",
+        answer: "Nobody honest can promise a timeline: it depends on the idea, the market, and your hours. A typical working sequence: the first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on consolidating MRR and preparing your exit. Treat the numbers as a plan structure, not a forecast.",
       },
       {
         question: "What are the first steps to building a micro-SaaS?",
@@ -510,8 +510,8 @@ The clock starts when you start. Not when you feel ready.`,
       },
     ],
     howTo: {
-      name: "How to Build a Micro-SaaS to $4,000 MRR in 18 Months",
-      description: "A step-by-step guide to building $4,000/month in recurring revenue while keeping your corporate job.",
+      name: "How to Build a Micro-SaaS While Keeping Your Corporate Job",
+      description: "A step-by-step sequence for building recurring revenue while keeping your corporate job.",
       totalTime: "P18M",
       steps: [
         { name: "Foundation (Months 1-3)", text: "Choose your niche by listing 10 industries you understand, interview potential customers, validate with a landing page and 5 pre-sales, then build your MVP focusing on one core feature." },
@@ -720,7 +720,7 @@ Micro-SaaS can be completely invisible:
 | Factor | Real Estate | Micro-SaaS |
 |--------|------------|------------|
 | Capital required | $80,000+ | $200 |
-| Time to $4K/month | 3-7 years | 12-18 months |
+| Time to $4K/month | 3-7 years | depends on idea and market |
 | Monthly time commitment | 10-20 hrs | 5-7 hrs |
 | Invisibility | Low | High |
 | Scalability | Linear | Exponential |
@@ -764,7 +764,7 @@ For corporate managers who need to build income invisibly while employed, the ma
     faqs: [
       {
         question: "Is micro-SaaS more profitable than real estate?",
-        answer: "For the first few years, yes. A micro-SaaS can reach $4,000/month net cash flow in 12-18 months with $200 upfront. A rental property requires $80,000+ upfront and may only cash flow $150/month initially. It takes 8-12 rental properties ($600K-$900K capital) to match what one micro-SaaS can generate.",
+        answer: "For the first few years, yes. A micro-SaaS needs roughly $200 upfront, while a rental property requires $80,000+ upfront and may only cash flow $150/month initially, so it takes 8-12 rental properties ($600K-$900K capital) to match one successful micro-SaaS. Whether a micro-SaaS actually reaches $4,000/month, and how fast, depends on the idea and market.",
       },
       {
         question: "What is freedom math for corporate managers?",

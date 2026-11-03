@@ -244,7 +244,7 @@ const ComparePage = () => {
               Invisible Exit doesn't improve your current path. It hands you a
               different vehicle entirely, one designed from the ground up for
               corporate managers who need to stay invisible, work in 5 hours/week,
-              and reach $4,000/month in 12-18 months.
+              and build recurring revenue at your own pace.
             </p>
           </div>
         </div>

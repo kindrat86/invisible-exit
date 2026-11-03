@@ -9,7 +9,7 @@ const GUEST_POST_TARGETS = [
     site: "Indie Hackers",
     dr: "72",
     audience: "Founders, side-hustlers",
-    angle: "How I built $4K MRR while employed (full timeline)",
+    angle: "How I built products while employed (full method)",
     format: "Article or community post",
   },
   {

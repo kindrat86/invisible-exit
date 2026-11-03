@@ -55,9 +55,9 @@ const VIDEO_PIPELINE = [
     format: "Long-form (8-10 min)",
     searchVolume: "Medium",
     keyword: "micro saas idea validation, system beats idea",
-    hook: "The system worked regardless. Month 4: first $9 customer. Month 12: $4,100 MRR. Here's the system.",
-    script: "HOOK (0:00-0:15): 'I spent 90 days choosing the perfect idea. Then I launched the wrong one. It made $4,100/month.'\n\nTHE WRONG WAY (0:15-3:00): Idea paralysis. Researching, planning, optimizing. Zero revenue.\n\nTHE SYSTEM (3:00-7:00): The Cartridge System. Build the system, not the idea. Show the pipeline. How I swapped ideas in and out.\n\nTIMELINE (7:00-8:30): Month-by-month MRR chart on screen.\n\nCTA (8:30-9:00): 'Get the 5-tool system at invisibleexit.com.'",
-    thumbnail: "Timeline graph: $0 → $4,100 with month markers. Text: 'Wrong idea. Right system.'",
+    hook: "The system worked regardless of which idea I picked. Here's the system.",
+    script: "HOOK (0:00-0:15): 'I spent 90 days choosing the perfect idea. Then I launched the wrong one. The system I built while testing it is what survived.'\n\nTHE WRONG WAY (0:15-3:00): Idea paralysis. Researching, planning, optimizing. Zero revenue.\n\nTHE SYSTEM (3:00-7:00): The Cartridge System. Build the system, not the idea. Show the pipeline. How I swapped ideas in and out.\n\nTIMELINE (7:00-8:30): Month-by-month MRR chart on screen.\n\nCTA (8:30-9:00): 'Get the 5-tool system at invisibleexit.com.'",
+    thumbnail: "Text: 'Wrong idea. Right system.' over a cartridge-swap diagram.",
   },
   {
     priority: 5,

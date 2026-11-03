@@ -79,7 +79,7 @@ const FRAMEWORKS = [
     originDate: "Month 5",
     originTitle: "The Wrong Idea That Made $9",
     originStory:
-      "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Competitor analysis. Analysis paralysis disguised as research. Then I launched the WRONG idea. It made $9/month. I almost quit. Instead, I pivoted, without rebuilding the infrastructure. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. That's when I named it: ideas are cartridges. The system is the printer.",
+      "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Competitor analysis. Analysis paralysis disguised as research. Then I launched the WRONG idea. It went nowhere. I almost quit. Instead, I pivoted, without rebuilding the infrastructure. Then pivoted again, and again. The system didn't care which idea I picked. That's when I named it: ideas are cartridges. The system is the printer.",
     theMethod: [
       "Build the 5-tool pipeline FIRST (freedom number → idea validation → stealth ops → launch → brand)",
       "Launch the 'wrong' idea to test the system, prove the pipeline works before optimizing the product",
@@ -96,7 +96,7 @@ const MILESTONES = [
   { date: "2024-Q1", event: "Drafted resignation letter. Deleted it. Named the concept: Salary-Runway Method." },
   { date: "2024-Q2", event: "Team call panic. Named the Triple-Separation Protocol that night." },
   { date: "2024-Q3", event: "Launched wrong idea. Made $9. Named the Cartridge System." },
-  { date: "2024-Q4", event: "Pivoted 3 times. $4,100 MRR. System proven." },
+  { date: "2024-Q4", event: "Pivoted 3 times. System proven." },
   { date: "2025-Q1", event: "Built Invisible Exit. Codified the 3 frameworks into teachable methodologies." },
   { date: "2025-Q2", event: "Launched the 5-tool pipeline as the implementation of all 3 frameworks." },
 ];
@@ -138,7 +138,7 @@ const FrameworkOriginsPage = () => {
             </span>
             <span>·</span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-4 h-4" /> $4,100/month MRR proven
+              <Check className="w-4 h-4" /> The system, proven on my own products
             </span>
           </div>
         </div>

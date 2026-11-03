@@ -13,8 +13,8 @@ const SLIDES = [
     title: "Introduction",
     eyebrow: "From Adrian, Why This Matters",
     hook: "Over the next 45 minutes, I'm going to show you a fundamentally different vehicle for financial freedom, one that doesn't require quitting your job, raising capital, or revealing your identity.",
-    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. I'm not a guru. I'm not a serial entrepreneur. I'm a corporate manager who figured out that the cage has a door, and spent 14 months building the key. Over the next 45 minutes, I'll show you the 3 frameworks that took me from trapped to $4,100/month in invisible recurring revenue. This isn't theory. This is the exact system, step by step. By the end, you'll know your freedom number, your timeline, and the framework to get there.",
-    stat: "By Adrian, 14 months from $0 to $4,100 MRR",
+    body: "I'm Adrian. Managing Director at a European tech company. $120K salary. Less than 0.5% equity. I'm not a guru. I'm not a serial entrepreneur. I'm a corporate manager who figured out that the cage has a door, and spent 14 months building the key. Over the next 45 minutes, I'll show you the 3 frameworks I used to build invisible recurring revenue while staying employed. This isn't theory. This is the exact system, step by step. By the end, you'll know your freedom number, your timeline, and the framework to get there.",
+    stat: "By Adrian, a corporate manager who built products while employed",
   },
   {
     title: "The Big Promise",
@@ -27,7 +27,7 @@ const SLIDES = [
     title: "The One Thing",
     eyebrow: "If You Remember Nothing Else...",
     hook: "Build the system first. Ideas are cartridges you swap in and out.",
-    body: "If you get nothing else from this masterclass, get this: the system matters more than the idea. I spent 3 months choosing the 'right' idea and launched the wrong one. It made $9/month. But the system was built, so I pivoted. Second product: $47/mo. Third: $850. Fourth: $4,100. The system didn't care which idea I picked. Build the pipeline once. Swap ideas like cartridges. This is the one thing that separates builders from thinkers.",
+    body: "If you get nothing else from this masterclass, get this: the system matters more than the idea. I spent 3 months choosing the 'right' idea and launched the wrong one. It went nowhere. But the system was built, so I pivoted, and kept pivoting. The system didn't care which idea I picked. Build the pipeline once. Swap ideas like cartridges. This is the one thing that separates builders from thinkers.",
     stat: "The One Thing: System > Idea",
   },
   {
@@ -103,7 +103,7 @@ const SLIDES = [
   {
     title: "Your Next Step",
     eyebrow: "The Offer, Act Now",
-    hook: "Every month you wait costs you $4,000 in unrealized MRR.",
+    hook: "Every month you wait, nothing gets built. Start quiet, start small.",
     body: "All 5 tools. $9/month. Cancel anytime. 30-day money-back guarantee. The founding price is limited to the first 100 members, after that, it goes to $9.99/month. If you've read this far, you're already in the 3%. The 97% would have left by slide 3. Calculate your freedom number today and see exactly how close you are.",
     stat: "Start for $9, before founding closes",
   },
@@ -147,7 +147,7 @@ const MasterclassPage = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Free Masterclass: Build a $4K/Month Side Business While Employed | Invisible Exit"
+        title="Free Masterclass: Build a Side Business While Employed | Invisible Exit"
         description="45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job."
         url="/masterclass"
       />
@@ -162,7 +162,7 @@ const MasterclassPage = () => {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             How Corporate Managers Are Building{" "}
-            <span className="text-gradient-light">$4,000/Month Side Businesses</span>{" "}
+            <span className="text-gradient-light">Side Businesses</span>{" "}
             in 12 Months
           </h1>
 

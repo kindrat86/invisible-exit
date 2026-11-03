@@ -653,11 +653,14 @@ ${faqHtml}
 // ---------- Banking guide body ----------
 
 function bankingGuideBodyHtml(g: typeof bankingGuides[0]): string {
-  const bankCards = g.recommendedBanks.map((b: { name: string; bestFor: string; minDeposit: number; monthlyFee: number; features: string[] }) =>
+  // 2026-11-03 value audit: minDeposit/monthlyFee were removed from banking.ts
+  // (commit 3c1caee, unsourced per-bank figures) but this template kept
+  // rendering them, shipping literal "$undefined" to every /banking/* page.
+  // Render only fields that still exist on the type.
+  const bankCards = g.recommendedBanks.map((b: { name: string; bestFor: string; features: string[] }) =>
     `<div style="padding:1.25rem;border:1px solid #e5e7eb;border-radius:0.5rem;margin-bottom:1rem">
 <h3 style="font-weight:700;font-size:1.125rem;margin-bottom:0.25rem">${b.name}</h3>
 <p style="font-size:0.875rem;color:#6b7280;margin-bottom:0.5rem"><strong>Best for:</strong> ${b.bestFor}</p>
-<p style="font-size:0.875rem;color:#4b5563;margin-bottom:0.5rem">Min deposit: <strong>$${b.minDeposit}</strong> | Monthly fee: <strong>$${b.monthlyFee}</strong></p>
 <ul style="font-size:0.875rem;color:#4b5563;padding-left:1.25rem;margin:0">${b.features.map(f => `<li>${f}</li>`).join("")}</ul>
 </div>`
   ).join("\n");
@@ -1125,11 +1128,6 @@ function homepageBodyHtml(): string {
 <a href="/dashboard" style="display:inline-block;padding:1rem 2rem;background-color:#0f172a;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600">Get Started for $9</a>
 </div>
 </section>
-<!-- 2026-07-24: removed a "What Members Say" block, 3 invented named
-testimonials (Sarah K., Marcus T., Jennifer L.) with fake results, injected
-by this single template into every blog page in the fleet. invisibleexit has
-zero paying customers; there is nothing real to cite here yet. See
-conversion-audit-scored-2026-07-24. -->
 <section style="padding:2rem 1.5rem;text-align:center;border-top:1px solid #e5e7eb;background:#f9fafb">
 <div style="max-width:64rem;margin:0 auto">
 <nav style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:left;margin-bottom:2rem">

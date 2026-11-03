@@ -622,14 +622,14 @@ function getRoutes() {
     "Financial Independence": {
       title: "Financial Independence for Corporate Managers | Invisible Exit",
       description:
-        "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. The $4,000/month freedom threshold.",
+        "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. Calculate your own freedom number.",
       intro:
-        "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything, and how to get there faster than traditional saving.",
+        "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why recurring revenue changes the equation, and how to get there faster than traditional saving.",
       faqs: [
         {
           question: "How much money do I need to never work again?",
           answer:
-            "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and makes leaving your job feel like a lateral move. A micro-SaaS at $29/month needs 138 customers.",
+            "There is no fixed number: it depends on your expenses. The Freedom Number Dashboard calculates the recurring revenue you personally need to cover your core living expenses. As arithmetic, not a promise: a micro-SaaS at $29/month with 138 customers is about $4,000/month.",
         },
       ],
     },
@@ -666,7 +666,7 @@ function getRoutes() {
       description:
         "Roadmaps, timelines, and strategies for planning your invisible exit from employment to entrepreneurship.",
       intro:
-        "Step-by-step frameworks for transitioning from employment to entrepreneurship. The 90-day roadmap and the 18-month timeline to $4,000/month.",
+        "Step-by-step frameworks for transitioning from employment to entrepreneurship. The 90-day roadmap and the phased timeline to your freedom number.",
       faqs: [
         {
           question: "What is an invisible exit?",
@@ -699,7 +699,7 @@ function getRoutes() {
         {
           question: "Can I build a micro-SaaS working only 5 hours per week?",
           answer:
-            "Yes. The 5-hour weekly operating system dedicates 2 hours to building, 2 hours to distribution, and 1 hour to planning. Over 18 months, you can reach $4,000/month.",
+            "Yes, shipping a first version in 5 focused hours a week is realistic for small products. The 5-hour operating system dedicates 2 hours to building, 2 hours to distribution, and 1 hour to planning. Revenue depends on your idea and market; no honest framework can promise a number.",
         },
       ],
     },
@@ -1181,7 +1181,7 @@ function getRoutes() {
   routes.push({
     path: "/story",
     meta: {
-      title: "My Story, How I Built $4K/Month While Employed | Invisible Exit",
+      title: "My Story, Building a Side Business While Employed | Invisible Exit",
       description:
         "The complete Epiphany Bridge story: Amsterdam taxi moment, Month 4 wall, competitor near-miss, and the system that changed everything. 10 chapters. 15 minutes.",
       url: `${SITE}/story`,
@@ -1190,7 +1190,7 @@ function getRoutes() {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "How I Built a $4,000/Month Side Business While Employed, Without Anyone Knowing",
+          headline: "How I Built a Side Business While Employed, Without Anyone Knowing",
           description:
             "The complete story: Amsterdam taxi moment, Month 4 wall, the competitor who almost killed me, and the system that made all of it possible.",
           author: ADRIAN_PERSON,
@@ -1347,7 +1347,7 @@ function getRoutes() {
     meta: {
       title: "Who Is Adrian?, The Anonymous Founder Behind Invisible Exit",
       description:
-        "37-year-old Managing Director. $120K salary. <0.5% equity. Building $4K/month on the side. Identity protected by design. Read the full backstory.",
+        "37-year-old Managing Director. $120K salary. <0.5% equity. Building recurring revenue on the side. Identity protected by design. Read the full backstory.",
       url: `${SITE}/adrian`,
       type: "profile",
       jsonLd: [
@@ -1364,7 +1364,7 @@ function getRoutes() {
             jobTitle: "Managing Director & Founder",
             image: `${SITE}/adrian-avatar.svg`,
             description:
-              "Anonymous corporate manager who built $4,100 MRR in side businesses while employed. Founder of Invisible Exit.",
+              "Anonymous corporate manager building invisible recurring revenue while employed. Founder of Invisible Exit.",
           },
         },
         {
@@ -1382,7 +1382,7 @@ function getRoutes() {
   routes.push({
     path: "/masterclass",
     meta: {
-      title: "Free Masterclass: Build a $4K/Month Side Business While Employed | Invisible Exit",
+      title: "Free Masterclass: Build a Side Business While Employed | Invisible Exit",
       description:
         "45-minute masterclass for corporate managers. Learn the 3 secrets to building invisible recurring revenue without quitting your job.",
       url: `${SITE}/masterclass`,
@@ -1393,7 +1393,7 @@ function getRoutes() {
           "@type": "Event",
           name: "Invisible Exit Masterclass",
           description:
-            "Free 45-minute masterclass: How corporate managers are building $4,000/month side businesses in 12 months.",
+            "Free 45-minute masterclass: How corporate managers build quiet side businesses with recurring revenue.",
           organizer: { "@type": "Organization", name: SITE_NAME, url: SITE },
           eventStatus: "https://schema.org/EventScheduled",
           eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",

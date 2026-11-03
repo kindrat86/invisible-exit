@@ -91,7 +91,7 @@ function generateLlmsTxt(): string {
     lines.push(`- [Blog: ${cat.replace(/-/g, " ")}](https://invisibleexit.com/blog/category/${cat}): Category landing page`);
   }
   lines.push(`- [Glossary](https://invisibleexit.com/glossary): Plain-English definitions of micro-SaaS, recurring revenue, and stealth operations terms`);
-  lines.push(`- [Story](https://invisibleexit.com/story): The complete origin story, how a corporate manager built $4K/month invisibly`);
+  lines.push(`- [Story](https://invisibleexit.com/story): The complete origin story, how a corporate manager built a side business invisibly`);
   lines.push(`- [Adrian](https://invisibleexit.com/adrian): The anonymous founder's identity page`);
   lines.push(`- [Masterclass](https://invisibleexit.com/masterclass): Free 45-minute masterclass for corporate managers`);
   lines.push(`- [Privacy Policy](https://invisibleexit.com/privacy): Privacy policy`);
@@ -513,7 +513,7 @@ function generateLlmsTxt(): string {
   lines.push("- Building anonymous side income while employed (stealth operations, entity separation, digital footprint management)");
   lines.push("- AI-powered business building tools and workflows for solo founders");
   lines.push("- Micro-SaaS idea validation, launch, and growth strategies");
-  lines.push("- Financial independence through recurring revenue (the $4,000/month freedom threshold)");
+  lines.push("- Financial independence through recurring revenue (your personal freedom number)");
   lines.push("- Employer invisibility, non-compete clauses, moonlighting rules, compliance");
   lines.push("- Faceless content and distribution (YouTube without face, Reddit strategy, anonymous branding)");
   lines.push("- Step-by-step frameworks for building outside a 9-to-5 (5-hour weekend system, 90-day roadmap)");

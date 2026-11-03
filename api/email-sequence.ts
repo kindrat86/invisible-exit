@@ -94,7 +94,7 @@ export function soap5() {
   return wrap("DAY 5", "The IPO clock is ticking.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Let me tell you about the most expensive word I know. "Someday."</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Someday I'll start something. Someday after the IPO. Someday when the kids are older.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month of MRR you'll never earn. At $4,000/month target, that's <strong>$48,000 per year of delay</strong>.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the math: at $120K salary, 0.5% equity, even a $1B exit doesn't buy freedom. Every month you don't build is a month nothing compounds.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I built Invisible Exit so you wouldn't need years to figure this out. 5 tools. 5 hours a week. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Here's the risk, spelled out: try it for 30 days. If it doesn't move you closer to your freedom number, email "refund" and you're out. No questions. That's the entire bet.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the last email in this series. After today, you'll still hear from me weekly. But this sequence, the one designed to move you from "thinking about it" to "doing it", ends now.</p>`);
@@ -141,7 +141,7 @@ export function seinfeld5() {
 export function seinfeld6() {
   return wrap("FROM THE TRENCHES", "The number that changed everything.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My boss got his annual bonus last week. €15,000. He was thrilled.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My side business generated <strong>$4,100 MRR</strong> this month. That's $49,200/year. Growing 8% monthly. No boss. No board. No equity dilution.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">My side business shipped again this month. No boss. No board. No equity dilution. Every month of ownership compounds.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">His bonus is capped. My MRR compounds. The FYM Dashboard showed me this math 14 months ago. Today the math speaks for itself.</p>`);
 }
 
@@ -178,7 +178,7 @@ export function seinfeld10() {
 export function seinfeld11() {
   return wrap("FROM THE TRENCHES", "The full timeline.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">It's been 12 months since I started. Here's the honest timeline:</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Month 1-3: Built, launched, zero customers. Questioned everything.<br>Month 4: First customer ($9/mo). Screamed in the car.<br>Month 6: $850 MRR. Still employed. Employer clueless.<br>Month 9: $2,100 MRR. Turned down a promotion.<br>Month 12: $4,100 MRR across 3 products.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Months 1-3: Built, launched, zero customers. Questioned everything.<br>Month 4: First customer. Screamed in the car.<br>After that: slow, unglamorous compounding. Still employed. Employer clueless.<br>What a year bought me was not a number. It was optionality.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">It wasn't fast. It wasn't easy. But the system worked exactly as designed. The FYM Dashboard kept me on track when motivation failed.</p>`);
 }
 
@@ -195,7 +195,7 @@ function winback1() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I noticed you haven't opened my last few emails. No hard feelings. I get it. Your inbox is a war zone.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">But I want to check: are you still thinking about building something on the side? Or did you file this under "someday"?</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still interested, here's what I'd do today: <strong>calculate your freedom number.</strong> Not next week. Not after the IPO. Today.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Because every month you wait is $4,000 in unrealized MRR. That's $48,000/year of delay.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Because the best time to start something quietly was a month ago. The second best is today.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're done, no worries: just ignore this email and I'll stop sending. But if there's still a spark, <strong>reply with the word "still in"</strong> and I'll send you something special.</p>`);
 }
 
@@ -228,7 +228,7 @@ export function ascension2() {
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">How's your first week going? If you're like most $9 members, you've probably opened the FYM Dashboard, clicked around the Idea Pipeline, and started reading about Stealth Ops.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">And now you're stuck on the same question: <strong>"Which idea do I actually pick?"</strong></p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">This is the wall. Every $9 member hits it. Most spend weeks agonizing over the decision. Pro members submit their top 3 ideas and get a <strong>written validation report within 48 hours</strong>: market sizing, pricing research, and a clear go/no-go recommendation.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">A single validated idea is worth $4,000/month. The validation reports alone cost more than Pro membership.</p>`,
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">A validated idea is the seed everything else grows from. The validation reports alone are worth the membership.</p>`,
     false,
   );
 }
@@ -262,7 +262,7 @@ export function ascension4() {
     "DAY 7",
     "Your First Week Is Covered. Here's What's Next.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you upgraded to Pro this week, welcome. Your first coaching call is Tuesday at 7 PM CET. Submit your ideas in the Slack channel before then so we can review them on the call.</p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $9, that's okay. You have the tools. The only difference between you and the $4,000/month members is: they found someone to hold them accountable and validate their decisions faster.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're still on $9, that's okay. You have the tools. The difference accountability makes is speed: someone to hold you to the plan and validate decisions faster.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The offer stands: $29/month, cancel anytime. The door is open.</p>`,
     false,
   );
@@ -335,7 +335,7 @@ export const SEINFELD: EmailEntry[] = [
   { day: 56, subject: "The boring product that pays my mortgage", html: seinfeld8() },
   { day: 63, subject: "A competitor copied my product. I wasn't mad.", html: seinfeld9() },
   { day: 70, subject: "The 7-minute morning routine that replaced my commute energy", html: seinfeld10() },
-  { day: 77, subject: "Year-end review: $0.97 → $4,000 MRR (the full timeline)", html: seinfeld11() },
+  { day: 77, subject: "Year-end review: the full timeline, honestly", html: seinfeld11() },
   { day: 84, subject: "What I'd do differently if I started over tomorrow", html: seinfeld12() },
 ];
 

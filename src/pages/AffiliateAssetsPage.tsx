@@ -50,7 +50,7 @@ Your salary: $120K/year.
 
 Even a BILLION DOLLAR EXIT doesn't buy your freedom. It buys a longer leash.
 
-That's the problem Invisible Exit solves. It's a system for building $4,000/month in recurring revenue from products YOU own, while you're still employed.
+That's the problem Invisible Exit solves. It's a system for building recurring revenue from products YOU own, while you're still employed.
 
 5 AI-powered tools. $9/month. Cancel anytime.
 

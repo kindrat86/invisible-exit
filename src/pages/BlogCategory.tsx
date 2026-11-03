@@ -47,15 +47,15 @@ const CATEGORY_META: Record<
   "Financial Independence": {
     title: "Financial Independence for Corporate Managers | Invisible Exit",
     description:
-      "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. The $4,000/month freedom threshold.",
+      "How corporate managers can reach financial independence through micro-SaaS recurring revenue instead of traditional retirement savings. Calculate your own freedom number.",
     h1: "Financial Independence Through Micro-SaaS",
     intro:
-      "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why $4,000/month in recurring revenue changes everything, and how to get there faster than traditional saving.",
+      "The math, frameworks, and psychology of reaching financial independence as an employed professional. Why recurring revenue changes the equation, and how to get there faster than traditional saving.",
     faqs: [
       {
         question: "How much money do I need to never work again?",
         answer:
-          "For corporate managers earning $120K-$200K, the target is $4,000/month in net recurring revenue. This covers core living expenses, provides 12+ months of runway, and makes leaving your job feel like a lateral move rather than a cliff dive. A micro-SaaS at $29/month needs 138 customers to reach this.",
+          "There is no fixed target: your freedom number is the recurring revenue that covers your core living expenses and provides runway. A micro-SaaS at $29/month needs 138 customers for $4,000/month, as arithmetic, not a promise.",
       },
       {
         question: "Is recurring revenue better than salary for financial independence?",
@@ -65,7 +65,7 @@ const CATEGORY_META: Record<
       {
         question: "How long does it take to reach financial independence with micro-SaaS?",
         answer:
-          "With consistent effort, corporate managers can reach $4,000/month in recurring revenue in 12-18 months. The timeline depends on niche selection, pricing, and consistent marketing. At 5% monthly churn, maintaining $4,000/month requires adding about 7 new customers per month.",
+          "No honest source can promise a revenue timeline; it depends on niche selection, pricing, and consistent marketing. At 5% monthly churn, maintaining $4,000/month requires adding about 7 new customers per month.",
       },
     ],
   },
@@ -115,7 +115,7 @@ const CATEGORY_META: Record<
       "Roadmaps, timelines, and strategies for planning your invisible exit from employment to entrepreneurship. From first 90 days to sellable asset.",
     h1: "Planning Your Invisible Exit",
     intro:
-      "Step-by-step frameworks for transitioning from employment to entrepreneurship. The 90-day roadmap, the 18-month timeline to $4,000/month, and how to build a micro-SaaS that's sellable.",
+      "Step-by-step frameworks for transitioning from employment to entrepreneurship. The 90-day roadmap, the phased timeline to your freedom number, and how to build a micro-SaaS that's sellable.",
     faqs: [
       {
         question: "What is an invisible exit?",
@@ -125,7 +125,7 @@ const CATEGORY_META: Record<
       {
         question: "How long does an invisible exit take?",
         answer:
-          "Most corporate managers can complete an invisible exit in 12-18 months. The first 90 days establish direction and validate the idea. Months 4-12 focus on building recurring revenue to the $4,000/month threshold. The exit itself is a psychological shift as much as a financial one.",
+          "The first 90 days establish direction and validate the idea. The following months focus on building recurring revenue toward your freedom number. How long that takes depends on the idea and the market, and the exit itself is a psychological shift as much as a financial one.",
       },
     ],
   },
@@ -155,7 +155,7 @@ const CATEGORY_META: Record<
       {
         question: "Can I build a micro-SaaS working only 5 hours per week?",
         answer:
-          "Yes, but it requires discipline. The 5-hour weekly operating system dedicates 2 hours to building, 2 hours to distribution, and 1 hour to planning. Over 18 months at this pace, you can validate, build, and reach $4,000/month in recurring revenue.",
+          "Yes, but it requires discipline. The 5-hour weekly operating system dedicates 2 hours to building, 2 hours to distribution, and 1 hour to planning. At this pace you can validate and build while employed; the revenue you reach depends on your idea and market.",
       },
     ],
   },

@@ -38,7 +38,7 @@ function winbackDay3() {
   return wrap("WIN-BACK · DAY 4", "Month 4. I almost hit delete.",
     `<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">When I first started building on the side, I almost quit too. Month 4. Zero customers. Cursor hovering over "Cancel Subscription."</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">The voice in my head was clear: <em>"You're not a founder. Go back to managing."</em></p>
-<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Then I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. $4,000/month MRR = optionality. The math doesn't care about your feelings.</p>
+<p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">Then I opened my Freedom Number calculation. The math hadn't changed because I had a bad week. Recurring revenue = optionality. The math doesn't care about your feelings.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">I pivoted. Two weeks later: first customer. $9/month.</p>
 <p style="font-size:16px;line-height:1.7;color:#4A5568;margin-bottom:20px;">If you're in Month 4 right now, I want you to know: the wall is real, but it's not permanent. The system works. It just needs consistency.</p>`,
     `<div style="background:#F0F4FF;border-radius:8px;padding:20px;margin-bottom:24px;text-align:center;">

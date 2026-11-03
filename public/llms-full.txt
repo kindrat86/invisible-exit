@@ -21,9 +21,9 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - Q: What is the 4% rule for financial independence?
   A: The 4% rule states you need 25 times your annual expenses saved to retire safely. However, for corporate managers, building $4,000/month in recurring micro-SaaS revenue is a faster, more practical path to financial independence than traditional retirement savings.
 - Q: How much money does a corporate manager need to never work again?
-  A: Rather than the traditional millions in savings, a corporate manager earning $120K-$200K typically needs $4,000/month in net recurring revenue from a micro-SaaS business. This covers core expenses, provides runway to grow full-time, and eliminates the fear of financial free-fall.
+  A: There is no universal number: it is the recurring revenue that covers your core expenses and provides runway to grow full-time. The Freedom Number Calculator derives it from your actual expenses rather than a rule of thumb.
 - Q: How does micro-SaaS income compare to traditional retirement savings?
-  A: A micro-SaaS charging $29/month needs just 138 customers to generate $4,000/month. This is achievable in 12-18 months, compared to decades of traditional saving. Plus, recurring revenue compounds, every customer added this month still pays next month.
+  A: Arithmetic, not a promise: a micro-SaaS charging $29/month needs 138 customers to generate $4,000/month. How long that takes depends entirely on the idea and the market. And recurring revenue compounds: every customer added this month still pays next month.
 
 ### Why Managing Directors Are Quietly Building Micro-SaaS (And Not Telling Their Employers)
 
@@ -40,7 +40,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - Q: Why are corporate executives building side businesses?
   A: Corporate executives are building side businesses because golden handcuffs (RSUs, bonuses, benefits) create an endless 'just one more year' cycle. AI tools have eliminated the technical barrier to building software, and micro-niches are more profitable than ever. Executives have unique advantages: capital, network, pattern recognition, and discipline.
 - Q: Can you build a SaaS while working full-time?
-  A: Yes. The Invisible Exit framework is designed for full-time corporate managers with 5-7 hours per week. Using AI tools for development and content, stealth operations for invisibility, and a systematic 18-month timeline, executives can build a micro-SaaS to $4,000/month MRR without quitting their day job.
+  A: Yes, people do build micro-SaaS products while working full-time, typically with 5-7 hours per week using AI tools for development and content and stealth operations for invisibility. What revenue you reach depends on your idea and market; no honest framework can promise a figure.
 
 ### The Invisible Business Model: How to Build Revenue Your Employer Can't See
 
@@ -59,7 +59,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - Q: What makes a micro-SaaS business invisible?
   A: A micro-SaaS is invisible when it operates through a privacy-protected LLC, uses separate digital identities (domain, email, social accounts), markets under a brand name rather than your personal name, and generates revenue through SEO and content marketing rather than personal brand building.
 
-### The Month-By-Month Timeline From $0 to $4,000 MRR (No Luck Required)
+### The Month-By-Month Timeline From $0 to First MRR (A Realistic Sequence)
 
 - **URL:** https://invisibleexit.com/blog/zero-to-4000-invisible-exit-timeline
 - **Category:** Exit Planning
@@ -70,7 +70,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 **FAQs:**
 
 - Q: How long does it take to build a micro-SaaS to $4,000 MRR?
-  A: Following the Invisible Exit timeline, it takes 12-18 months to reach $4,000/month in recurring revenue. The first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on hitting target MRR and preparing your exit.
+  A: Nobody honest can promise a timeline: it depends on the idea, the market, and your hours. A typical working sequence: the first 3 months focus on validation, months 4-6 on getting first customers, months 7-12 on content-driven growth, and months 13-18 on consolidating MRR and preparing your exit. Treat the numbers as a plan structure, not a forecast.
 - Q: What are the first steps to building a micro-SaaS?
   A: Start by listing 10 industries you understand from corporate experience, identifying pain points in each. Interview 5 people in your top niches, then validate by creating a landing page and getting 5 pre-sales. Only then build your MVP, focusing on the single core feature that solves the main pain point.
 - Q: How much does it cost to start a micro-SaaS?
@@ -104,7 +104,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 **FAQs:**
 
 - Q: Is micro-SaaS more profitable than real estate?
-  A: For the first few years, yes. A micro-SaaS can reach $4,000/month net cash flow in 12-18 months with $200 upfront. A rental property requires $80,000+ upfront and may only cash flow $150/month initially. It takes 8-12 rental properties ($600K-$900K capital) to match what one micro-SaaS can generate.
+  A: For the first few years, yes. A micro-SaaS needs roughly $200 upfront, while a rental property requires $80,000+ upfront and may only cash flow $150/month initially, so it takes 8-12 rental properties ($600K-$900K capital) to match one successful micro-SaaS. Whether a micro-SaaS actually reaches $4,000/month, and how fast, depends on the idea and market.
 - Q: What is freedom math for corporate managers?
   A: Freedom math calculates the fastest path from corporate employment to financial independence. It compares investment paths (real estate vs. micro-SaaS) by upfront capital, time to $4,000/month cash flow, hours per week required, invisibility from employers, and scalability.
 - Q: How do recurring SaaS revenues compare to rental income?
@@ -825,7 +825,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **Definition:** A micro-SaaS is a small software-as-a-service business that targets a narrow niche, typically operated by a solo founder or tiny team, charging $10-$100/month per customer. It needs 50-500 paying customers to generate meaningful recurring revenue.
 - **FAQs:**
   - Q: How much does a micro-SaaS make?
-    A: A micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue, the threshold where most corporate managers can consider leaving their job. At $50/month with 200 customers, it generates $10,000/month.
+    A: Pure arithmetic: a micro-SaaS charging $29/month with 138 customers generates $4,000/month in recurring revenue; at $50/month with 200 customers, $10,000/month. Whether you reach that, and when, depends on your idea and market. Your personal threshold is your own freedom number, not a fixed figure.
   - Q: How is micro-SaaS different from regular SaaS?
     A: Regular SaaS companies raise capital, hire teams, and target large markets (millions of users). Micro-SaaS businesses are bootstrapped, solo-founded, and target narrow niches (hundreds to low thousands of users). The lower scale means lower revenue but also dramatically lower risk and overhead.
 
@@ -838,7 +838,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 
 ### Freedom Number
 - **URL:** https://invisibleexit.com/glossary/what-is-freedom-number
-- **Definition:** Your freedom number is the monthly recurring revenue needed to cover your core living expenses, making your job optional. For most corporate managers earning $120K-$200K, the freedom number is $4,000/month in net recurring revenue.
+- **Definition:** Your freedom number is the monthly recurring revenue needed to cover your core living expenses, making your job optional. It is personal: it comes from your expense math, not from a fixed rule of thumb.
 - **FAQs:**
   - Q: How do I calculate my freedom number?
     A: Add up your essential monthly living expenses: housing, food, insurance, transportation, and minimum debt payments. Exclude discretionary spending (dining out, entertainment, vacations). For most corporate managers, this comes to $3,000-$5,000/month. That's your freedom number, the recurring revenue target that makes your job optional.
@@ -901,7 +901,7 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
   - Q: How do you calculate ARR?
     A: Multiply your Monthly Recurring Revenue (MRR) by 12. If you have 138 customers paying $29/month, MRR is $4,002 and ARR is $48,024. Only include recurring subscription revenue, exclude one-time fees, setup charges, and non-recurring services.
   - Q: What is a good ARR for a solo founder?
-    A: For corporate managers building a side business, $48,000-$120,000 ARR ($4K-$10K/month) is the target range that replaces a mid-level salary. At $100,000+ ARR, the business is typically sellable for $300,000-$800,000.
+    A: Valuations vary widely with growth, churn, and market; small SaaS businesses commonly sell for a multiple of annual profit or ARR. Use ranges as context, not as a forecast for your business.
 
 ### Lifetime Value (LTV)
 - **URL:** https://invisibleexit.com/glossary/what-is-ltv

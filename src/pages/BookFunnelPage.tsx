@@ -68,7 +68,7 @@ const CHAPTERS = [
   {
     num: "7",
     title: "The Boring Product That Pays the Mortgage",
-    hook: "My $4,100/month doesn't come from the exciting product. It comes from a PDF generator for electricians.",
+    hook: "The product that finally worked wasn't the exciting one. It was the boring one nobody would brag about.",
   },
 ];
 
@@ -284,7 +284,7 @@ const BookFunnelPage = () => {
             </h1>
 
             <p className="text-lg text-white/70 mb-4 leading-relaxed">
-              152 pages. 7 chapters. The exact system I used to build $4,100/month
+              152 pages. 7 chapters. The exact system I used to build my own products
               in invisible recurring revenue while working my $120K corporate job.
             </p>
 

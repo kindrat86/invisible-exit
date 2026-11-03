@@ -132,7 +132,7 @@ const FAQS = [
   },
   {
     q: "Who is behind Invisible Exit? Is there a real person?",
-    a: "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a profitable micro-SaaS portfolio while fully employed as a director at a company with strict IP policies, reaching $4,000/month in side revenue before leaving. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design, not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do.",
+    a: "Yes. The founder is Adrian, a former corporate director with 8+ years in enterprise product management and an MBA. He built a micro-SaaS portfolio while fully employed as a director at a company with strict IP policies. His identity page is at invisibleexit.com/adrian. The brand is pseudonymous by design, not to hide, but to separate the business identity from the founder's personal identity, which is exactly what the system teaches you to do.",
   },
   {
     q: "Do I need a separate bank account, LLC, and phone number?",
@@ -178,7 +178,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="$4K/Month Side Income Without Quitting | Invisible Exit"
+        title="Build a Side Business Without Quitting Your Job | Invisible Exit"
         description="5 AI-powered tools that help corporate managers build anonymous micro-SaaS revenue without quitting, without code, without your employer finding out. From $9/mo."
         url="/"
       />
@@ -209,7 +209,7 @@ const Index = () => {
             {heroVariant === "benefit" ? (
               <>
                 How Corporate Managers Build{" "}
-                <span className="text-gradient-light">$4,000/Month in Recurring Revenue</span>{" "}
+                <span className="text-gradient-light">Side Businesses That Pay Recurring Revenue</span>{" "}
                 - Without Quitting, Without Code, Without Being Found Out
               </>
             ) : (
@@ -224,7 +224,7 @@ const Index = () => {
           {/* TL;DR extractable summary, verbatim facts from existing site copy */}
           <div className="tl-dr-summary max-w-2xl mx-auto mb-8 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white/70 text-sm leading-relaxed animate-fade-up" style={{ animationDelay: "150ms" }}>
             <strong className="text-white/90">TL;DR:</strong>{" "}
-            Invisible Exit is a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue. The system is designed to reach $4,000/month in side income within 12–18 months using just 5 hours per week, without quitting your job, writing code, or revealing your identity.
+            Invisible Exit is a membership platform of five AI tools that help corporate managers build anonymous micro-SaaS recurring revenue. The system is built for about 5 hours per week, without quitting your job, writing code, or revealing your identity. What you earn depends on your idea and your market; the tools handle the planning, validation, and stealth operations.
           </div>
 
           {/* Canonical entity descriptor, AEO disambiguation (vs. "Invisible, Inc." game / exit-planning) */}
@@ -234,8 +234,8 @@ const Index = () => {
 
           {/* Mechanism sub-headline, HOW the promise gets delivered (Brunson: vehicle clarity) */}
           <p className="text-white/80 text-base sm:text-lg font-medium max-w-2xl mx-auto mb-4 animate-fade-up" style={{ animationDelay: "50ms" }}>
-            The answer: build a <strong className="text-white">micro-SaaS</strong> on the side, 
-            one niche problem, about $29/month, roughly 138 customers = $4,000/month, run through
+            The answer: build a <strong className="text-white">micro-SaaS</strong> on the side,
+            one niche problem, one simple price, run through
             a separate legal entity your employer never sees. <strong className="text-white">5 AI-powered
             tools</strong> handle each step: calculate your exit number, validate your idea, stay
             invisible, launch, and grow a faceless brand, in 5 hours a week.
@@ -289,7 +289,7 @@ const Index = () => {
           <div className="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
             <span className="text-amber-200 text-xs font-medium text-balance">
-              Every month you wait costs you ~$4,000 in unrealized MRR. That's <strong className="text-amber-100 whitespace-nowrap">$48,000/year of delay</strong>.
+              Every month you wait is a month of progress you never get back. Start small, start quiet, start now.
             </span>
           </div>
 
@@ -374,7 +374,7 @@ const Index = () => {
               exit. The faster we bury that dream, the faster we build something real.
             </p>
             <p className="text-foreground font-medium text-lg pt-4">
-              The new vehicle is simpler: $4,000/month in recurring revenue from products
+              The new vehicle is simpler: recurring revenue from products
               you own. Not equity in someone else's company. Revenue from your own.
             </p>
           </div>
@@ -526,30 +526,21 @@ const Index = () => {
               </div>
               <h3 className="text-sm font-bold text-foreground mb-3">The Outcome</h3>
               <div className="bg-success/5 border border-success/20 rounded-xl p-4 mb-3">
-                <p className="text-3xl font-bold text-success mb-1">$4,000<span className="text-sm font-normal text-muted-foreground">/month MRR</span></p>
+                <p className="text-3xl font-bold text-success mb-1">Plan, validate, launch<span className="text-sm font-normal text-muted-foreground">, quietly</span></p>
                 <p className="text-xs text-muted-foreground">
-                  What the system is designed to reach in 12–18 months at 5 hours/week, a target, not a typical or guaranteed result.
+                  What the system walks you through step by step at about 5 hours/week. A framework, not a promised result.
                 </p>
               </div>
               <div className="space-y-1.5 mb-4">
                 {[
                   { label: "Validated idea", time: "48 hours" },
-                  { label: "First paying customer", time: "30–60 days" },
-                  { label: "First $1,000 MRR", time: "4–8 months" },
-                  { label: "Full salary replacement", time: "12–18 months" },
-                  { label: "Time investment", time: "5 hours/week" },
+                  { label: "First $1,000 MRR", time: "months of consistent work" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center justify-between text-xs">
                     <span className="text-muted-foreground">{item.label}</span>
                     <span className="font-semibold text-foreground">{item.time}</span>
                   </div>
                 ))}
-              </div>
-              <div className="bg-surface rounded-lg p-3 border border-border/50">
-                <p className="text-[11px] text-muted-foreground italic leading-relaxed">
-                  "I stopped obsessing over the perfect idea and started working the system."
-                </p>
-                <p className="text-[11px] text-foreground font-semibold mt-1">, Jennifer L., $2,300 MRR</p>
               </div>
             </div>
           </div>
@@ -562,7 +553,7 @@ const Index = () => {
                 who we find on <strong className="text-foreground">Reddit, LinkedIn, and YouTube</strong> asking about stealth side businesses,
                 by offering a <strong className="text-foreground">free Freedom Number Calculator</strong> that shows them exactly how much
                 recurring revenue they need to quit,
-                so they can build <strong className="text-success">$4,000/month in MRR</strong> in 12–18 months without their employer finding out.
+                so they can build a quiet side business that pays recurring revenue without their employer finding out.
               </p>
             </div>
           </div>
@@ -616,7 +607,7 @@ const Index = () => {
                 url: "https://www.indiehackers.com/",
                 members: "500K+",
                 description:
-                  "The single best congregation of bootstrapped founders on the web. Full build timelines from $0 to $4K MRR from members who started here.",
+                  "The single best congregation of bootstrapped founders on the web. Full build timelines from people who started there.",
                 vibe: "Transparent. MRR-focused.",
               },
               {
@@ -871,7 +862,7 @@ and{" "}
                 num: "3",
                 framework: "The Cartridge System",
                 title: "The System Beats the Idea",
-                story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one. It made $9/month. So I pivoted. Second product: $47/month. Third: $850. Fourth: $4,100. The system didn't care which idea I picked.",
+                story: "I spent 3 months choosing the 'right' idea. Spreadsheets. Market sizing. Analysis paralysis. Then I launched the wrong one and had to pivot. What saved me was not the idea. It was having a repeatable way to test, launch, and swap.",
                 epiphany: "Build the system first. Swap ideas like cartridges.",
                 microEpiphany: "The system didn't care which idea I picked. The wrong idea made $9/month, but the system was already built. So I pivoted and the system still worked.",
                 steps: ["Build the 5-tool pipeline first", "Launch the 'wrong' idea to test the system", "Pivot ideas without rebuilding infrastructure"],
@@ -1111,7 +1102,7 @@ and{" "}
               },
               {
                 truth: "'Someday' is the most expensive word you own.",
-                detail: "Every month you wait is another month of unrealized MRR. At $4,000/month, one year of 'someday' costs you $48,000. That's real money you'll never get back.",
+                detail: "Every month you wait is another month nothing is built. The plan you keep in your head pays nothing.",
               },
               {
                 truth: "Your personal brand is a liability.",
@@ -1751,7 +1742,7 @@ and{" "}
               <p className="text-xs text-primary uppercase tracking-wider font-semibold mb-1">THE ONE THING</p>
               <p className="text-foreground font-bold text-base">Get all 5 tools + 3 bonuses for $9/month. Cancel anytime.</p>
               <p className="text-muted-foreground text-xs mt-1">
-                Because every month you wait is <strong className="text-foreground">$4,000 in MRR</strong> you'll never recover.
+                Because the best time to start something quietly is a month ago. The second best is today.
               </p>
             </div>
 
@@ -1765,8 +1756,7 @@ and{" "}
                 <p className="text-sm font-bold text-foreground uppercase tracking-wide">The Invisible Exit Guarantee</p>
               </div>
               <p className="text-sm text-foreground font-medium leading-relaxed mb-3">
-                <strong className="text-success">If</strong> you use the Freedom Number Calculator, validate one idea,
-                and don't have a clear path to $4,000/month within 30 days, {" "}
+                <strong className="text-success">If</strong> the tools are not useful to you in the first 30 days, {" "}
                 <strong className="text-success">then</strong> email me and I'll refund every penny.
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
@@ -2172,7 +2162,7 @@ and{" "}
                 </h3>
                 <p className="text-white/60 text-base leading-relaxed mb-4 max-w-lg">
                   Get the complete <strong className="text-white">Invisible Exit Manifesto</strong>, 
-                  152 pages, 7 chapters, the exact $4,100/month system. Free. You just cover $4.95 shipping.
+                  152 pages, 7 chapters, the complete side-business system. Free. You just cover $4.95 shipping.
                 </p>
                 <div className="flex flex-wrap items-center gap-3 text-sm">
                   <span className="text-white/60 line-through">$24.99</span>

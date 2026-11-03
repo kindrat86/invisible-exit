@@ -73,7 +73,7 @@ const AD_CONCEPTS: AdConcept[] = [
   {
     angle: "Authority, The System Beats Idea",
     hook: "I spent 3 months choosing the 'right' idea. Then I launched the wrong one.",
-    bodyCopy: "It made $9/month.\n\nThe system worked regardless.\n\nMonth 4: first customer\nMonth 6: $850 MRR\nMonth 9: $2,100 MRR\nMonth 12: $4,100 MRR\n\nI didn't have a better idea. I had a better system.\n\n5 tools. 5 hours/week. Still employed.",
+    bodyCopy: "It went nowhere.\n\nThe system worked regardless.\n\nI didn't have a better idea. I had a better system.\n\n5 tools. 5 hours/week. Still employed.",
     cta: "See the 5-Tool System",
     format: "Video",
     audience: "Aspiring entrepreneurs, side-hustle seekers",
@@ -81,7 +81,7 @@ const AD_CONCEPTS: AdConcept[] = [
   },
   {
     angle: "Comparison, Bonus vs MRR",
-    hook: "My boss got a €15K bonus. My side business made $4,100/month.",
+    hook: "My boss got a €15K bonus. My side business didn't need his permission.",
     bodyCopy: "He was thrilled.\n\nHis bonus: capped. Decided by someone else.\nMy MRR: compounding. 8% monthly growth.\n\n$49,200/year.\nNo boss. No board. No equity dilution.\n\nDifferent games.\nDifferent math.\n\nWhich are you playing?",
     cta: "Run the Numbers",
     format: "Image",
@@ -91,7 +91,7 @@ const AD_CONCEPTS: AdConcept[] = [
   {
     angle: "Vulnerability, Almost Quit",
     hook: "Month 4. Zero customers. I almost deleted everything.",
-    bodyCopy: "11 PM on a Tuesday.\nCursor over 'Cancel Subscription.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\n$4,000/month = optionality.\n\nThe math doesn't care about your feelings.\n\nTwo weeks later: first customer. $9/month.\n\nConsistency beats motivation.",
+    bodyCopy: "11 PM on a Tuesday.\nCursor over 'Cancel Subscription.'\n\nThen I opened my freedom number calculation.\n\nThe math hadn't changed.\nRecurring revenue = optionality.\n\nThe math doesn't care about your feelings.\n\nTwo weeks later: first customer. $9/month.\n\nConsistency beats motivation.",
     cta: "Calculate Your Freedom Number",
     format: "Carousel",
     audience: "Aspiring entrepreneurs who have tried and failed",
