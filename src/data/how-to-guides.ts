@@ -416,7 +416,7 @@ export const howToGuides: HowToGuide[] = [
       "Quitting your job at $2,000 MRR. Wait until $4,000 MRR is stable for 3+ months. The side business is insurance until then.",
     ],
     faqs: [
-      { question: "How long does it take to reach $4,000 MRR?", answer: "6-12 months working 10-15 hours/week is realistic. Some founders do it in 3 months with a hot niche. Most take 8-14 months. The #1 variable is niche selection." },
+      { question: "How long does it take to reach $4,000 MRR?", answer: "There is no honest fixed timeline: it depends on your niche, pricing, and the hours you can invest. The phases below give a workable sequence, not a schedule. Treat any month count as a plan, not a promise." },
       { question: "Should I charge monthly or annually?", answer: "Both. Monthly ($29-49) for low commitment. Annual (2 months free) for committed customers who want to save. Annual customers churn less and pay upfront." },
       { question: "How many customers do I need for $4,000 MRR?", answer: "At $29/month: 138 customers. At $49/month: 82 customers. At $79/month: 51 customers. Higher prices = fewer customers to support." },
       { question: "What if I hit $2,000 MRR and growth stalls?", answer: "This is normal. The fix is usually: (1) raise prices, (2) add a higher-tier plan, or (3) double down on your best acquisition channel. The product is not the problem, distribution is." },

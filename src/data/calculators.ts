@@ -62,7 +62,7 @@ export const calculators: CalculatorData[] = [
     faqs: [
       { question: "What is a freedom number?", answer: "Your freedom number is the monthly recurring revenue that covers essential expenses, making your job optional. It is typically 40-60% lower than your salary because work-related and lifestyle costs are excluded." },
       { question: "How is the freedom number different from FI/RE?", answer: "FI/RE calculates total investment needed to withdraw 4% annually. The freedom number focuses on recurring revenue from a business, which is faster to build and does not require $1M+ in capital." },
-      { question: "How many customers do I need?", answer: "Divide your freedom number by your monthly price. At $4,000/month expenses and $29/month pricing, you need 138 customers. That is achievable in 12-18 months with consistent effort." },
+      { question: "How many customers do I need?", answer: "Divide your freedom number by your monthly price. At $4,000/month expenses and $29/month pricing, you need 138 customers. How long that takes depends on your idea and market; there is no honest fixed timeline." },
     ],
   },
   {

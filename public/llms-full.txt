@@ -3094,15 +3094,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 1-year
 - **Salary Earned:** $80,000
-- **Micro-SaaS Revenue (if started):** $21,314
-- **Opportunity Cost:** $58,686
-- **Compounded Loss:** $31,970
-- **Summary:** You earn $80K/year. Over 1 year, that's $80K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $21K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $21,314
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 1 year, that's $80K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $21K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $21K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3110,15 +3109,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 1-year
 - **Salary Earned:** $100,000
-- **Micro-SaaS Revenue (if started):** $26,642
-- **Opportunity Cost:** $73,358
-- **Compounded Loss:** $39,963
-- **Summary:** You earn $100K/year. Over 1 year, that's $100K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $27K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $26,642
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 1 year, that's $100K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $27K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $27K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3126,15 +3124,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 1-year
 - **Salary Earned:** $120,000
-- **Micro-SaaS Revenue (if started):** $31,970
-- **Opportunity Cost:** $88,030
-- **Compounded Loss:** $47,955
-- **Summary:** You earn $120K/year. Over 1 year, that's $120K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $32K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $31,970
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 1 year, that's $120K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $32K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $32K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3142,15 +3139,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 1-year
 - **Salary Earned:** $150,000
-- **Micro-SaaS Revenue (if started):** $39,963
-- **Opportunity Cost:** $110,037
-- **Compounded Loss:** $59,944
-- **Summary:** You earn $150K/year. Over 1 year, that's $150K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $40K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $39,963
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 1 year, that's $150K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $40K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $40K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3158,15 +3154,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 1-year
 - **Salary Earned:** $180,000
-- **Micro-SaaS Revenue (if started):** $47,955
-- **Opportunity Cost:** $132,045
-- **Compounded Loss:** $71,933
-- **Summary:** You earn $180K/year. Over 1 year, that's $180K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $48K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $47,955
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 1 year, that's $180K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $48K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $48K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3174,15 +3169,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 1-year
 - **Salary Earned:** $200,000
-- **Micro-SaaS Revenue (if started):** $53,284
-- **Opportunity Cost:** $146,716
-- **Compounded Loss:** $79,926
-- **Summary:** You earn $200K/year. Over 1 year, that's $200K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $53K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $53,284
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 1 year, that's $200K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $53K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $53K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3190,15 +3184,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 1-year
 - **Salary Earned:** $250,000
-- **Micro-SaaS Revenue (if started):** $66,605
-- **Opportunity Cost:** $183,395
-- **Compounded Loss:** $99,907
-- **Summary:** You earn $250K/year. Over 1 year, that's $250K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $67K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $66,605
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 1 year, that's $250K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $67K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $67K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3206,15 +3199,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/1-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 1-year
 - **Salary Earned:** $300,000
-- **Micro-SaaS Revenue (if started):** $79,926
-- **Opportunity Cost:** $220,074
-- **Compounded Loss:** $119,889
-- **Summary:** You earn $300K/year. Over 1 year, that's $300K in salary. But if you'd started building a micro-SaaS 1 year ago, you'd have $80K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $79,926
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 1 year, that's $300K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $80K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 1 year ago?
     A: If you'd started 1 year ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $80K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3222,15 +3214,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 3-years
 - **Salary Earned:** $240,000
-- **Micro-SaaS Revenue (if started):** $157,466
-- **Opportunity Cost:** $82,534
-- **Compounded Loss:** $236,200
-- **Summary:** You earn $80K/year. Over 3 years, that's $240K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $157K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $157,466
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 3 years, that's $240K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $157K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $157K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3238,15 +3229,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 3-years
 - **Salary Earned:** $300,000
-- **Micro-SaaS Revenue (if started):** $196,833
-- **Opportunity Cost:** $103,167
-- **Compounded Loss:** $295,250
-- **Summary:** You earn $100K/year. Over 3 years, that's $300K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $197K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $196,833
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 3 years, that's $300K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $197K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $197K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3254,15 +3244,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 3-years
 - **Salary Earned:** $360,000
-- **Micro-SaaS Revenue (if started):** $236,200
-- **Opportunity Cost:** $123,800
-- **Compounded Loss:** $354,300
-- **Summary:** You earn $120K/year. Over 3 years, that's $360K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $236K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $236,200
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 3 years, that's $360K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $236K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $236K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3270,15 +3259,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 3-years
 - **Salary Earned:** $450,000
-- **Micro-SaaS Revenue (if started):** $295,250
-- **Opportunity Cost:** $154,750
-- **Compounded Loss:** $442,874
-- **Summary:** You earn $150K/year. Over 3 years, that's $450K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $295K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $295,250
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 3 years, that's $450K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $295K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $295K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3286,15 +3274,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 3-years
 - **Salary Earned:** $540,000
-- **Micro-SaaS Revenue (if started):** $354,300
-- **Opportunity Cost:** $185,700
-- **Compounded Loss:** $531,449
-- **Summary:** You earn $180K/year. Over 3 years, that's $540K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $354K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $354,300
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 3 years, that's $540K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $354K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $354K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3302,15 +3289,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 3-years
 - **Salary Earned:** $600,000
-- **Micro-SaaS Revenue (if started):** $393,666
-- **Opportunity Cost:** $206,334
-- **Compounded Loss:** $590,499
-- **Summary:** You earn $200K/year. Over 3 years, that's $600K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $394K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $393,666
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 3 years, that's $600K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $394K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $394K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3318,15 +3304,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 3-years
 - **Salary Earned:** $750,000
-- **Micro-SaaS Revenue (if started):** $492,083
-- **Opportunity Cost:** $257,917
-- **Compounded Loss:** $738,124
-- **Summary:** You earn $250K/year. Over 3 years, that's $750K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $492K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $492,083
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 3 years, that's $750K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $492K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $492K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3334,15 +3319,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/3-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 3-years
 - **Salary Earned:** $900,000
-- **Micro-SaaS Revenue (if started):** $590,499
-- **Opportunity Cost:** $309,501
-- **Compounded Loss:** $885,749
-- **Summary:** You earn $300K/year. Over 3 years, that's $900K in salary. But if you'd started building a micro-SaaS 3 years ago, you'd have $590K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $590,499
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 3 years, that's $900K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $590K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 3 years ago?
     A: If you'd started 3 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $590K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3350,15 +3334,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 5-years
 - **Salary Earned:** $400,000
-- **Micro-SaaS Revenue (if started):** $354,774
-- **Opportunity Cost:** $45,226
-- **Compounded Loss:** $532,161
-- **Summary:** You earn $80K/year. Over 5 years, that's $400K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $355K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $354,774
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 5 years, that's $400K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $355K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $355K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3366,15 +3349,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 5-years
 - **Salary Earned:** $500,000
-- **Micro-SaaS Revenue (if started):** $443,467
-- **Opportunity Cost:** $56,533
-- **Compounded Loss:** $665,201
-- **Summary:** You earn $100K/year. Over 5 years, that's $500K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $443K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $443,467
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 5 years, that's $500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $443K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $443K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3382,15 +3364,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 5-years
 - **Salary Earned:** $600,000
-- **Micro-SaaS Revenue (if started):** $532,161
-- **Opportunity Cost:** $67,839
-- **Compounded Loss:** $798,241
-- **Summary:** You earn $120K/year. Over 5 years, that's $600K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $532K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $532,161
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 5 years, that's $600K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $532K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $532K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3398,15 +3379,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 5-years
 - **Salary Earned:** $750,000
-- **Micro-SaaS Revenue (if started):** $665,201
-- **Opportunity Cost:** $84,799
-- **Compounded Loss:** $997,801
-- **Summary:** You earn $150K/year. Over 5 years, that's $750K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $665K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $665,201
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 5 years, that's $750K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $665K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $665K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3414,15 +3394,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 5-years
 - **Salary Earned:** $900,000
-- **Micro-SaaS Revenue (if started):** $798,241
-- **Opportunity Cost:** $101,759
-- **Compounded Loss:** $1,197,361
-- **Summary:** You earn $180K/year. Over 5 years, that's $900K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $798K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $798,241
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 5 years, that's $900K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $798K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $798K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3430,15 +3409,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 5-years
 - **Salary Earned:** $1,000,000
-- **Micro-SaaS Revenue (if started):** $886,934
-- **Opportunity Cost:** $113,066
-- **Compounded Loss:** $1,330,401
-- **Summary:** You earn $200K/year. Over 5 years, that's $1000K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $887K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $886,934
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 5 years, that's $1000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $887K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $887K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3446,15 +3424,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 5-years
 - **Salary Earned:** $1,250,000
-- **Micro-SaaS Revenue (if started):** $1,108,668
-- **Opportunity Cost:** $141,332
-- **Compounded Loss:** $1,663,002
-- **Summary:** You earn $250K/year. Over 5 years, that's $1250K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $1109K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,108,668
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 5 years, that's $1250K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1109K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1109K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3462,15 +3439,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/5-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 5-years
 - **Salary Earned:** $1,500,000
-- **Micro-SaaS Revenue (if started):** $1,330,401
-- **Opportunity Cost:** $169,599
-- **Compounded Loss:** $1,995,602
-- **Summary:** You earn $300K/year. Over 5 years, that's $1500K in salary. But if you'd started building a micro-SaaS 5 years ago, you'd have $1330K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,330,401
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 5 years, that's $1500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1330K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 5 years ago?
     A: If you'd started 5 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1330K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3478,15 +3454,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 10-years
 - **Salary Earned:** $800,000
-- **Micro-SaaS Revenue (if started):** $928,199
-- **Opportunity Cost:** $-128,199
-- **Compounded Loss:** $1,392,298
-- **Summary:** You earn $80K/year. Over 10 years, that's $800K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $928K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $928,199
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 10 years, that's $800K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $928K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $928K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3494,15 +3469,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 10-years
 - **Salary Earned:** $1,000,000
-- **Micro-SaaS Revenue (if started):** $1,160,249
-- **Opportunity Cost:** $-160,249
-- **Compounded Loss:** $1,740,373
-- **Summary:** You earn $100K/year. Over 10 years, that's $1000K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $1160K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,160,249
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 10 years, that's $1000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1160K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1160K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3510,15 +3484,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 10-years
 - **Salary Earned:** $1,200,000
-- **Micro-SaaS Revenue (if started):** $1,392,298
-- **Opportunity Cost:** $-192,298
-- **Compounded Loss:** $2,088,448
-- **Summary:** You earn $120K/year. Over 10 years, that's $1200K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $1392K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,392,298
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 10 years, that's $1200K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1392K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1392K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3526,15 +3499,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 10-years
 - **Salary Earned:** $1,500,000
-- **Micro-SaaS Revenue (if started):** $1,740,373
-- **Opportunity Cost:** $-240,373
-- **Compounded Loss:** $2,610,560
-- **Summary:** You earn $150K/year. Over 10 years, that's $1500K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $1740K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,740,373
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 10 years, that's $1500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1740K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1740K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3542,15 +3514,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 10-years
 - **Salary Earned:** $1,800,000
-- **Micro-SaaS Revenue (if started):** $2,088,448
-- **Opportunity Cost:** $-288,448
-- **Compounded Loss:** $3,132,672
-- **Summary:** You earn $180K/year. Over 10 years, that's $1800K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $2088K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,088,448
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 10 years, that's $1800K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2088K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2088K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3558,15 +3529,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 10-years
 - **Salary Earned:** $2,000,000
-- **Micro-SaaS Revenue (if started):** $2,320,497
-- **Opportunity Cost:** $-320,497
-- **Compounded Loss:** $3,480,746
-- **Summary:** You earn $200K/year. Over 10 years, that's $2000K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $2320K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,320,497
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 10 years, that's $2000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2320K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2320K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3574,15 +3544,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 10-years
 - **Salary Earned:** $2,500,000
-- **Micro-SaaS Revenue (if started):** $2,900,622
-- **Opportunity Cost:** $-400,622
-- **Compounded Loss:** $4,350,933
-- **Summary:** You earn $250K/year. Over 10 years, that's $2500K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $2901K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,900,622
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 10 years, that's $2500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2901K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2901K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3590,15 +3559,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/10-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 10-years
 - **Salary Earned:** $3,000,000
-- **Micro-SaaS Revenue (if started):** $3,480,746
-- **Opportunity Cost:** $-480,746
-- **Compounded Loss:** $5,221,119
-- **Summary:** You earn $300K/year. Over 10 years, that's $3000K in salary. But if you'd started building a micro-SaaS 10 years ago, you'd have $3481K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $3,480,746
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 10 years, that's $3000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $3481K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 10 years ago?
     A: If you'd started 10 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $3481K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3606,15 +3574,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 15-years
 - **Salary Earned:** $1,200,000
-- **Micro-SaaS Revenue (if started):** $1,525,319
-- **Opportunity Cost:** $-325,319
-- **Compounded Loss:** $2,287,979
-- **Summary:** You earn $80K/year. Over 15 years, that's $1200K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $1525K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,525,319
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 15 years, that's $1200K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1525K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1525K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3622,15 +3589,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 15-years
 - **Salary Earned:** $1,500,000
-- **Micro-SaaS Revenue (if started):** $1,906,649
-- **Opportunity Cost:** $-406,649
-- **Compounded Loss:** $2,859,973
-- **Summary:** You earn $100K/year. Over 15 years, that's $1500K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $1907K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $1,906,649
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 15 years, that's $1500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $1907K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $1907K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3638,15 +3604,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 15-years
 - **Salary Earned:** $1,800,000
-- **Micro-SaaS Revenue (if started):** $2,287,979
-- **Opportunity Cost:** $-487,979
-- **Compounded Loss:** $3,431,968
-- **Summary:** You earn $120K/year. Over 15 years, that's $1800K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $2288K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,287,979
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 15 years, that's $1800K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2288K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2288K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3654,15 +3619,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 15-years
 - **Salary Earned:** $2,250,000
-- **Micro-SaaS Revenue (if started):** $2,859,973
-- **Opportunity Cost:** $-609,973
-- **Compounded Loss:** $4,289,960
-- **Summary:** You earn $150K/year. Over 15 years, that's $2250K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $2860K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,859,973
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 15 years, that's $2250K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2860K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2860K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3670,15 +3634,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 15-years
 - **Salary Earned:** $2,700,000
-- **Micro-SaaS Revenue (if started):** $3,431,968
-- **Opportunity Cost:** $-731,968
-- **Compounded Loss:** $5,147,952
-- **Summary:** You earn $180K/year. Over 15 years, that's $2700K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $3432K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $3,431,968
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 15 years, that's $2700K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $3432K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $3432K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3686,15 +3649,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 15-years
 - **Salary Earned:** $3,000,000
-- **Micro-SaaS Revenue (if started):** $3,813,298
-- **Opportunity Cost:** $-813,298
-- **Compounded Loss:** $5,719,947
-- **Summary:** You earn $200K/year. Over 15 years, that's $3000K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $3813K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $3,813,298
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 15 years, that's $3000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $3813K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $3813K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3702,15 +3664,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 15-years
 - **Salary Earned:** $3,750,000
-- **Micro-SaaS Revenue (if started):** $4,766,622
-- **Opportunity Cost:** $-1,016,622
-- **Compounded Loss:** $7,149,934
-- **Summary:** You earn $250K/year. Over 15 years, that's $3750K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $4767K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $4,766,622
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 15 years, that's $3750K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $4767K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $4767K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3718,15 +3679,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/15-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 15-years
 - **Salary Earned:** $4,500,000
-- **Micro-SaaS Revenue (if started):** $5,719,947
-- **Opportunity Cost:** $-1,219,947
-- **Compounded Loss:** $8,579,920
-- **Summary:** You earn $300K/year. Over 15 years, that's $4500K in salary. But if you'd started building a micro-SaaS 15 years ago, you'd have $5720K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $5,719,947
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 15 years, that's $4500K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $5720K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 15 years ago?
     A: If you'd started 15 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $5720K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3734,15 +3694,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$80k-salary
 - **Salary:** $80K | **Horizon:** 20-years
 - **Salary Earned:** $1,600,000
-- **Micro-SaaS Revenue (if started):** $2,125,007
-- **Opportunity Cost:** $-525,007
-- **Compounded Loss:** $3,187,511
-- **Summary:** You earn $80K/year. Over 20 years, that's $1600K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $2125K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,125,007
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $80K/year. Over 20 years, that's $1600K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2125K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $80K/year translate to monthly?
     A: $80K/year = $6,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $4,533/month depending on your state.
   - Q: How long does it take to replace a $80K salary with micro-SaaS?
-    A: At $80K/year, your freedom number is approximately $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. Most founders reach this in 14-20 months.
+    A: At $80K/year, a common benchmark is about $4,667/month in net MRR. With a micro-SaaS charging $29/month, that's 161 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2125K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3750,15 +3709,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$100k-salary
 - **Salary:** $100K | **Horizon:** 20-years
 - **Salary Earned:** $2,000,000
-- **Micro-SaaS Revenue (if started):** $2,656,259
-- **Opportunity Cost:** $-656,259
-- **Compounded Loss:** $3,984,388
-- **Summary:** You earn $100K/year. Over 20 years, that's $2000K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $2656K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $2,656,259
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $100K/year. Over 20 years, that's $2000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $2656K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $100K/year translate to monthly?
     A: $100K/year = $8,333/month before taxes. After federal, state, and FICA taxes, take-home is approximately $5,667/month depending on your state.
   - Q: How long does it take to replace a $100K salary with micro-SaaS?
-    A: At $100K/year, your freedom number is approximately $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. Most founders reach this in 14-20 months.
+    A: At $100K/year, a common benchmark is about $5,833/month in net MRR. With a micro-SaaS charging $29/month, that's 202 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $2656K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3766,15 +3724,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$120k-salary
 - **Salary:** $120K | **Horizon:** 20-years
 - **Salary Earned:** $2,400,000
-- **Micro-SaaS Revenue (if started):** $3,187,511
-- **Opportunity Cost:** $-787,511
-- **Compounded Loss:** $4,781,266
-- **Summary:** You earn $120K/year. Over 20 years, that's $2400K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $3188K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $3,187,511
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $120K/year. Over 20 years, that's $2400K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $3188K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $120K/year translate to monthly?
     A: $120K/year = $10,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $6,800/month depending on your state.
   - Q: How long does it take to replace a $120K salary with micro-SaaS?
-    A: At $120K/year, your freedom number is approximately $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. Most founders reach this in 14-20 months.
+    A: At $120K/year, a common benchmark is about $7,000/month in net MRR. With a micro-SaaS charging $29/month, that's 242 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $3188K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3782,15 +3739,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$150k-salary
 - **Salary:** $150K | **Horizon:** 20-years
 - **Salary Earned:** $3,000,000
-- **Micro-SaaS Revenue (if started):** $3,984,388
-- **Opportunity Cost:** $-984,388
-- **Compounded Loss:** $5,976,582
-- **Summary:** You earn $150K/year. Over 20 years, that's $3000K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $3984K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $3,984,388
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $150K/year. Over 20 years, that's $3000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $3984K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $150K/year translate to monthly?
     A: $150K/year = $12,500/month before taxes. After federal, state, and FICA taxes, take-home is approximately $8,500/month depending on your state.
   - Q: How long does it take to replace a $150K salary with micro-SaaS?
-    A: At $150K/year, your freedom number is approximately $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. Most founders reach this in 14-20 months.
+    A: At $150K/year, a common benchmark is about $8,750/month in net MRR. With a micro-SaaS charging $29/month, that's 302 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $3984K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3798,15 +3754,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$180k-salary
 - **Salary:** $180K | **Horizon:** 20-years
 - **Salary Earned:** $3,600,000
-- **Micro-SaaS Revenue (if started):** $4,781,266
-- **Opportunity Cost:** $-1,181,266
-- **Compounded Loss:** $7,171,899
-- **Summary:** You earn $180K/year. Over 20 years, that's $3600K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $4781K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $4,781,266
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $180K/year. Over 20 years, that's $3600K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $4781K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $180K/year translate to monthly?
     A: $180K/year = $15,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $10,200/month depending on your state.
   - Q: How long does it take to replace a $180K salary with micro-SaaS?
-    A: At $180K/year, your freedom number is approximately $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. Most founders reach this in 14-20 months.
+    A: At $180K/year, a common benchmark is about $10,500/month in net MRR. With a micro-SaaS charging $29/month, that's 363 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $4781K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3814,15 +3769,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$200k-salary
 - **Salary:** $200K | **Horizon:** 20-years
 - **Salary Earned:** $4,000,000
-- **Micro-SaaS Revenue (if started):** $5,312,518
-- **Opportunity Cost:** $-1,312,518
-- **Compounded Loss:** $7,968,777
-- **Summary:** You earn $200K/year. Over 20 years, that's $4000K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $5313K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $5,312,518
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $200K/year. Over 20 years, that's $4000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $5313K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $200K/year translate to monthly?
     A: $200K/year = $16,667/month before taxes. After federal, state, and FICA taxes, take-home is approximately $11,333/month depending on your state.
   - Q: How long does it take to replace a $200K salary with micro-SaaS?
-    A: At $200K/year, your freedom number is approximately $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. Most founders reach this in 14-20 months.
+    A: At $200K/year, a common benchmark is about $11,667/month in net MRR. With a micro-SaaS charging $29/month, that's 403 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $5313K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3830,15 +3784,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$250k-salary
 - **Salary:** $250K | **Horizon:** 20-years
 - **Salary Earned:** $5,000,000
-- **Micro-SaaS Revenue (if started):** $6,640,647
-- **Opportunity Cost:** $-1,640,647
-- **Compounded Loss:** $9,960,971
-- **Summary:** You earn $250K/year. Over 20 years, that's $5000K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $6641K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $6,640,647
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $250K/year. Over 20 years, that's $5000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $6641K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $250K/year translate to monthly?
     A: $250K/year = $20,833/month before taxes. After federal, state, and FICA taxes, take-home is approximately $14,167/month depending on your state.
   - Q: How long does it take to replace a $250K salary with micro-SaaS?
-    A: At $250K/year, your freedom number is approximately $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. Most founders reach this in 14-20 months.
+    A: At $250K/year, a common benchmark is about $14,583/month in net MRR. With a micro-SaaS charging $29/month, that's 503 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $6641K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 
@@ -3846,15 +3799,14 @@ Invisible Exit is a faceless side-business system for employed professionals, a 
 - **URL:** https://invisibleexit.com/cost-of-waiting/20-years-$300k-salary
 - **Salary:** $300K | **Horizon:** 20-years
 - **Salary Earned:** $6,000,000
-- **Micro-SaaS Revenue (if started):** $7,968,777
-- **Opportunity Cost:** $-1,968,777
-- **Compounded Loss:** $11,953,165
-- **Summary:** You earn $300K/year. Over 20 years, that's $6000K in salary. But if you'd started building a micro-SaaS 20 years ago, you'd have $7969K in additional recurring revenue. Here's the breakdown.
+- **Micro-SaaS Revenue (modeled, if started):** $7,968,777
+- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.
+- **Summary:** You earn $300K/year. Over 20 years, that's $6000K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $7969K, not a prediction. Here's the breakdown.
 - **FAQs:**
   - Q: What does $300K/year translate to monthly?
     A: $300K/year = $25,000/month before taxes. After federal, state, and FICA taxes, take-home is approximately $17,000/month depending on your state.
   - Q: How long does it take to replace a $300K salary with micro-SaaS?
-    A: At $300K/year, your freedom number is approximately $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. Most founders reach this in 14-20 months.
+    A: At $300K/year, a common benchmark is about $17,500/month in net MRR. With a micro-SaaS charging $29/month, that's 604 customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.
   - Q: What if I'd started 20 years ago?
     A: If you'd started 20 years ago with consistent effort (5-8 hours/week), you'd have accumulated approximately $7969K in total micro-SaaS revenue. That's recurring revenue that continues paying you every month, unlike salary, which stops when you stop working.
 

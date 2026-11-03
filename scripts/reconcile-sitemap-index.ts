@@ -14,9 +14,15 @@ const today = new Date().toISOString().slice(0, 10);
 if (!existsSync(DIST)) { console.log("(no dist/, skipping sitemap reconcile)"); process.exit(0); }
 
 // All content sub-sitemaps, EXCLUDING the index files themselves.
+// Empty sub-sitemaps (0 <loc>) are dropped entirely: the four state-guide
+// families went noindex on 2026-11-03 and their files are regenerated empty;
+// referencing them would make GSC report "Couldn't fetch" on every read.
 const EXCLUDE = new Set(["sitemap.xml", "sitemap-index.xml"]);
 const subs = readdirSync(DIST)
   .filter((f) => /^sitemap-.*\.xml$/.test(f) && !EXCLUDE.has(f))
+  .filter((f) => {
+    try { return readFileSync(join(DIST, f), "utf8").includes("<loc>"); } catch { return false; }
+  })
   .concat(existsSync(join(DIST, "image-sitemap.xml")) ? ["image-sitemap.xml"] : [])
   .sort();
 

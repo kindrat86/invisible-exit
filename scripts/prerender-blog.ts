@@ -2126,7 +2126,7 @@ ${hubSvgFigure("Manifesto", "A movement for trapped professionals", "The Invisib
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Timeline, Old Way</p><p style="font-size:0.875rem;color:#6b7280">5-8 years to a liquidity event you don't control.</p></div>
-<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">12-18 months to $4,000/month MRR you own today.</p></div>
+<div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#3b82f6;margin-bottom:0.25rem">Invisible Way</p><p style="font-size:0.875rem;color:#0f172a">Recurring revenue you own and grow month by month, on your timeline.</p></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem;margin-bottom:1rem;border:1px solid #e2e8f0;border-radius:0.75rem;background:white">
 <div><p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;color:#ef4444;margin-bottom:0.25rem">The Visibility, Old Way</p><p style="font-size:0.875rem;color:#6b7280">LinkedIn brand. Conference talks. Your name on everything.</p></div>
@@ -3817,9 +3817,6 @@ ${hubSvgFigure("Origin Story", "How a corporate manager built $4K/month", "The c
 </div>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
-<!-- 2026-07-24: removed a "$4,100/mo verified" badge, a specific, false
-Stripe-verification claim (invisibleexit has zero paying customers). See
-conversion-audit-scored-2026-07-24. -->
 <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#eff6ff">Still employed</span>
 <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid #e5e7eb;border-radius:9999px;font-size:0.75rem;color:#374151;background:#f0fdf4">Entity-separated &amp; legal</span>
 </div>

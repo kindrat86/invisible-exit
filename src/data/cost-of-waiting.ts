@@ -74,9 +74,9 @@ function generateEntry(years: number, salary: number): CostOfWaiting {
     salaryLabel: formatSalary(salary),
     yearsLabel: formatYears(years),
     metaTitle: `Cost of Waiting ${years} ${years === 1 ? "Year" : "Years"} at ${formatSalary(salary)} Salary | Invisible Exit`,
-    metaDescription: `If you wait ${years} ${years === 1 ? "year" : "years"} before building a micro-SaaS at ${formatSalary(salary)}/year, you lose $${(opportunityCost / 1000).toFixed(0)}K+ in potential recurring revenue. See the math.`,
+    metaDescription: `Illustrative model: waiting ${years} ${years === 1 ? "year" : "years"} before building a micro-SaaS at ${formatSalary(salary)}/year means forgoing an estimated $${(microSaasTotal / 1000).toFixed(0)}K in cumulative side revenue. See the assumptions.`,
     h1: `The Cost of Waiting ${years} ${years === 1 ? "Year" : "Years"} at ${formatSalary(salary)}/Year`,
-    intro: `You earn ${formatSalary(salary)}/year. Over ${years} ${years === 1 ? "year" : "years"}, that's $${(salaryEarned / 1000).toFixed(0)}K in salary. But if you'd started building a micro-SaaS ${years} ${years === 1 ? "year" : "years"} ago, you'd have $${(microSaasTotal / 1000).toFixed(0)}K in additional recurring revenue. Here's the breakdown.`,
+    intro: `You earn ${formatSalary(salary)}/year. Over ${years} ${years === 1 ? "year" : "years"}, that's $${(salaryEarned / 1000).toFixed(0)}K in salary. This page models what a side micro-SaaS built steadily over the same period could have cumulatively earned: an illustrative estimate of $${(microSaasTotal / 1000).toFixed(0)}K, not a prediction. Here's the breakdown.`,
     salaryEarned,
     microSaasRevenue: Math.round(microSaasTotal),
     opportunityCost: Math.round(opportunityCost),
@@ -90,7 +90,7 @@ function generateEntry(years: number, salary: number): CostOfWaiting {
       },
       {
         question: `How long does it take to replace a ${formatSalary(salary)} salary with micro-SaaS?`,
-        answer: `At ${formatSalary(salary)}/year, your freedom number is approximately $${Math.round((salary / 12) * 0.7).toLocaleString()}/month in net MRR. With a micro-SaaS charging $29/month, that's ${Math.ceil((salary / 12 * 0.7) / 29)} customers. Most founders reach this in 14-20 months.`,
+        answer: `At ${formatSalary(salary)}/year, a common benchmark is about $${Math.round((salary / 12) * 0.7).toLocaleString()}/month in net MRR. With a micro-SaaS charging $29/month, that's ${Math.ceil((salary / 12 * 0.7) / 29)} customers. How long that takes varies hugely by niche and effort; there is no honest fixed timeline.`,
       },
       {
         question: `What if I'd started ${years} ${years === 1 ? "year" : "years"} ago?`,

@@ -6,7 +6,9 @@
  * etc.) have near-zero unique body content beyond swapped variable names.
  * 
  * Pages NOT in this list: blog, glossary, compare, guides, best tools, calculators,
- * data reports, resources, banking, tax-guides, nda-guides, insurance, time-frameworks,
+ * data reports, resources, the hub pages of the four state-guide families
+ * (/banking, /tax-guides, /nda-guides, /insurance — their per-state children
+ * ARE noindexed since 2026-11-03), time-frameworks,
  * niches, budget pages, hours pages, core marketing pages, single-profession idea pages
  * (/ideas/accountant, /ideas/software-engineer), all have substantial unique content.
  */

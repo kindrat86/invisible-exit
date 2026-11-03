@@ -809,9 +809,8 @@ function generateLlmsFullTxt(): string {
     lines.push(`- **URL:** ${SITE}/cost-of-waiting/${c.slug}`);
     lines.push(`- **Salary:** ${c.salaryLabel} | **Horizon:** ${c.yearsLabel}`);
     lines.push(`- **Salary Earned:** $${c.salaryEarned.toLocaleString()}`);
-    lines.push(`- **Micro-SaaS Revenue (if started):** $${c.microSaasRevenue.toLocaleString()}`);
-    lines.push(`- **Opportunity Cost:** $${c.opportunityCost.toLocaleString()}`);
-    lines.push(`- **Compounded Loss:** $${c.compoundedLoss.toLocaleString()}`);
+    lines.push(`- **Micro-SaaS Revenue (modeled, if started):** $${c.microSaasRevenue.toLocaleString()}`);
+    lines.push(`- **Note:** figures are an illustrative model (salary vs. modeled side revenue), not a prediction.`);
     lines.push(`- **Summary:** ${c.intro}`);
     if (c.faqs && c.faqs.length > 0) {
       lines.push("- **FAQs:**");
