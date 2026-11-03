@@ -416,9 +416,9 @@ function getRoutes() {
   routes.push({
     path: "/",
     meta: {
-      title: "Faceless Side Business Without Quitting | Invisible Exit",
+      title: "Who Owns Your Side Project? Free Ownership Check | Invisible Exit",
       description:
-        "Build anonymous micro-SaaS revenue while employed. Invisible Exit: 5 AI tools to validate, launch, and grow a side business without quitting. From $9/mo.",
+        "Free 3-minute check: can your employer claim your side project? Quotes your state's invention-assignment statute from the official source, flags risky phrases in your own contract clause, and gives you a next-step pack. Runs in your browser, nothing uploaded.",
       url: `${SITE}/`,
       type: "website",
       // No route-level jsonLd for "/": index.html already carries the

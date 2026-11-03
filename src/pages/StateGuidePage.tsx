@@ -99,6 +99,20 @@ export default function StateGuidePage() {
           <div className={`rounded-lg p-6 mb-4 ${nonCompeteLabel[guide.nonCompeteEnforceable].color.replace("text-", "bg-").replace("-600", "-50").replace("-800", "-50")}`}>
             <p className="text-gray-800">{guide.nonCompeteNotes}</p>
           </div>
+          <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-6">
+            <p className="text-gray-800 mb-3">
+              <strong>Before the entity question comes the ownership question:</strong> can your
+              employer claim the project itself? The free Side-Project Ownership Check quotes{" "}
+              {guide.state}'s invention-assignment statute from the official source and flags the
+              risky phrases in your own contract clause.
+            </p>
+            <Link
+              to="/check"
+              className="inline-flex items-center gap-1.5 font-semibold text-blue-700 hover:text-blue-900"
+            >
+              Run the free ownership check →
+            </Link>
+          </div>
         </section>
 
         {/* Anonymous LLC */}

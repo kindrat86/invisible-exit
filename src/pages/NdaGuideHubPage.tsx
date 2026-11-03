@@ -67,6 +67,14 @@ export default function NdaGuideHubPage() {
             <li>• Never build your side business on employer data, equipment, or work time. Misusing those is what turns a side project into a losing lawsuit.</li>
             <li>• Check your employment agreement for assignment and moonlighting clauses. Those often bind you more than any non-compete does.</li>
           </ul>
+          <p className="mt-4 mb-2 text-sm text-gray-700">
+            <strong>Start with ownership:</strong> the free{" "}
+            <Link to="/check" className="text-blue-700 hover:text-blue-900 font-semibold underline underline-offset-2">
+              Side-Project Ownership Check
+            </Link>{" "}
+            quotes your state's invention-assignment statute from the official source and flags
+            the risky phrases in your own contract clause. Client-side, nothing uploaded.
+          </p>
           <p className="mt-3 text-xs text-gray-500">
             This is general information, not legal advice. For state-by-state detail, see the guides above. Last reviewed 2026-09-28.
           </p>

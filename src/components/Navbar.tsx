@@ -195,10 +195,10 @@ const Navbar = () => {
                 Free Book
               </Link>
               <Link
-                to="/freedom"
+                to="/check"
                 className="text-white/60 hover:text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
               >
-                Free Calculator
+                Free Ownership Check
               </Link>
               <Link
                 to="/start"
@@ -306,11 +306,11 @@ const Navbar = () => {
             <div className="sticky bottom-0 px-5 py-4 border-t border-white/10 bg-[hsl(222_47%_11%)]/95 backdrop-blur-xl safe-bottom">
               <div className="space-y-2.5">
                 <Link
-                  to="/freedom"
+                  to="/check"
                   className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors active:scale-[0.97]"
                   style={{ minHeight: "48px" }}
                 >
-                  Calculate Freedom Number (Free)
+                  Run the Ownership Check (Free)
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link

@@ -69,15 +69,15 @@ function generateLlmsTxt(): string {
 
   lines.push("# Invisible Exit");
   lines.push("");
-  lines.push("> Invisible Exit is a faceless side-business system for employed professionals, a membership platform of five AI tools that build anonymous micro-SaaS recurring revenue without quitting your job, writing code, or revealing your identity. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
+  lines.push("> Invisible Exit is a site for employed founders: free client-side tools and guides about the legal and practical sides of building a side business while you have a day job. The centerpiece is the Side-Project Ownership Check, which quotes each state's invention-assignment statute from the official legislature source. (Disambiguation: unrelated to the video game \"Invisible, Inc.\" or traditional business exit-planning / M&A advisory.)");
   lines.push("");
-  lines.push("Invisible Exit provides: (1) FYM Dashboard, calculate your freedom number and track recurring revenue; (2) Idea Pipeline, validate micro-SaaS ideas in 48 hours; (3) Stealth Ops Hub, entity separation, compliance audit, and invisibility scoring; (4) Launch Control, go-live automation for time-constrained founders; (5) Brand Manager, faceless audience building with YouTube scripts and Reddit playbooks. Pricing from $9/month.");
+  lines.push("Invisible Exit provides: (1) the Side-Project Ownership Check at /check, six questions plus an optional pasted contract clause, answered client-side with your state's statute quoted from the official source, clause-phrase flags and a next-step pack (free, not legal advice); (2) state side-business, NDA and non-compete guides; (3) a freedom number calculator; (4) an optional membership with planning tools from $9/month.");
   lines.push("");
 
   // ── Core Pages ──
   lines.push("## Core Pages");
   lines.push("");
-  lines.push(`- [Home](https://invisibleexit.com/): Main landing page, value proposition, 5 tools, pricing, and FAQ`);
+  lines.push(`- [Home](https://invisibleexit.com/): Homepage for the Side-Project Ownership Check: one honest promise, how the check works, and links to the state guides`);
   lines.push(`- [About](https://invisibleexit.com/about): About the founder and the Invisible Exit methodology`);
   lines.push(`- [Blog](https://invisibleexit.com/blog): ${blogPosts.length} articles on financial independence, micro-SaaS, stealth operations, and audience building for employed founders`);
 

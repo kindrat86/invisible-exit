@@ -71,6 +71,18 @@ export default function NdaGuidePage() {
         <section className="mb-12 bg-blue-50 rounded-xl p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-3">What This Means for Your Side Business</h2>
           <p className="text-gray-700">{guide.sideBusinessImplications}</p>
+          <p className="text-gray-700 mt-4 mb-3">
+            Related and more fundamental: who owns what you build on your own time? The free
+            Side-Project Ownership Check quotes {guide.stateName}'s invention-assignment statute
+            from the official source and flags the risky phrases in your own contract clause.
+            It runs in your browser and nothing is uploaded.
+          </p>
+          <Link
+            to="/check"
+            className="inline-flex items-center gap-1.5 font-semibold text-blue-700 hover:text-blue-900"
+          >
+            Run the free ownership check →
+          </Link>
         </section>
 
         {/* What to Check */}
