@@ -286,6 +286,10 @@ Invisible Exit provides: (1) FYM Dashboard, calculate your freedom number and tr
 - [Personal Runway Calculator](https://invisibleexit.com/calculators/runway-calculator): Your runway is how many months you can survive on savings without any income. The longer your runway, the more risks you
 - [Equity vs. Micro-SaaS Calculator](https://invisibleexit.com/calculators/equity-vs-saas): If you are waiting for a corporate equity event (IPO, acquisition, vesting), you are making a bet. This calculator compa
 
+## Free Tools
+
+- [Side-Project Ownership Check](https://invisibleexit.com/check): 6 questions + optional pasted contract clause. Shows your state's invention-assignment statute quoted from the official source, flags broad phrases in your clause, and gives a prior-inventions list, disclosure template and separation checklist. Runs client-side, nothing uploaded. Not legal advice.
+
 ## Data & Benchmark Reports (0)
 
 
