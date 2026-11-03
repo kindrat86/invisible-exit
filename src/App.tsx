@@ -36,6 +36,7 @@ const ResourcePage = lazy(() => import("./pages/ResourcePage.tsx"));
 
 // pSEO expansion pages (Greg Isenberg)
 const AlternativesPage = lazy(() => import("./pages/AlternativesPage.tsx"));
+const OwnershipCheckPage = lazy(() => import("./pages/OwnershipCheckPage.tsx"));
 const SalaryPage = lazy(() => import("./pages/SalaryPage.tsx"));
 const RevenueMilestonePage = lazy(() => import("./pages/RevenueMilestonePage.tsx"));
 const TimelinePage = lazy(() => import("./pages/TimelinePage.tsx"));
@@ -185,6 +186,7 @@ const App = () => (
         <div className="page-enter">
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/check" element={<OwnershipCheckPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/start" element={<StartPage />} />
           <Route path="/pricing" element={<PricingPage />} />

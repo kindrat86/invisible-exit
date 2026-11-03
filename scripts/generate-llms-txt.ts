@@ -177,6 +177,12 @@ function generateLlmsTxt(): string {
     lines.push(`- [${calc.h1}](${SITE}/calculators/${calc.slug}): ${calc.intro.slice(0, 120)}`);
   }
   lines.push("");
+  lines.push("## Free Tools");
+  lines.push("");
+  lines.push(
+    `- [Side-Project Ownership Check](${SITE}/check): 6 questions + optional pasted contract clause. Shows your state's invention-assignment statute quoted from the official source, flags broad phrases in your clause, and gives a prior-inventions list, disclosure template and separation checklist. Runs client-side, nothing uploaded. Not legal advice.`,
+  );
+  lines.push("");
 
   // ── Data Reports ──
   lines.push(`## Data & Benchmark Reports (${dataReports.length})`);

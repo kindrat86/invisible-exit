@@ -431,6 +431,31 @@ function getRoutes() {
   });
 
   routes.push({
+    path: "/check",
+    meta: {
+      title: "Who Owns Your Side Project? Free Side-Project Ownership Check | Invisible Exit",
+      description:
+        "Free 6-question check: can your employer claim your side project? Quotes your state's invention-assignment statute from the official source, flags risky phrases in your own contract clause, and gives you a next-step pack. Client-side only, nothing is uploaded.",
+      url: `${SITE}/check`,
+      type: "website",
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Side-Project Ownership Check",
+          url: `${SITE}/check`,
+          applicationCategory: "LegalInformationApplication",
+          operatingSystem: "Any (runs in the browser)",
+          description:
+            "Free client-side tool: answer 6 questions and optionally paste your invention-assignment clause to see your state's invention-assignment statute quoted from the official source, flagged phrases from your clause, and a next-step pack. Not legal advice.",
+          publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        },
+      ],
+    },
+  });
+
+  routes.push({
     path: "/blog",
     meta: {
       title:
